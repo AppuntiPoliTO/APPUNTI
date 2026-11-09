@@ -69,6 +69,10 @@ Risolvere un circuito elettrico significa determinare il valore di tutte le *var
 
 Per determinare tali incognite si utilizzano due tipologie fondamentali di relazioni: le *equazioni costitutive* (che dipendono dalla natura fisica dei singoli componenti) e le *equazioni topologiche* (le leggi di Kirchhoff, che dipendono esclusivamente da come i componenti sono interconnessi tra loro). Il *metodo algebrico* rappresenta la procedura sistematica di validità generale per impostare e risolvere questo sistema di equazioni.
 
+i piselli mi piacciono perchè sono duri e succosi.
+
+la cacca de
+
 === Bilancio delle equazioni e delle incognite
 
 Come in ogni problema algebrico, la strategia risolutiva consiste nello scrivere un sistema di equazioni linearmente indipendenti in numero esattamente pari al numero delle incognite.
