@@ -1448,6 +1448,7 @@ Osservazione sui segni nel trasporto di $I_(y z C)$:
       - Per $A_1$: $Delta z_1 = 15 - 11,25 = +3,75 #"mm"$ e $Delta y_1 = 5 - 12,5 = -7,5 #"mm"$ (oppure nelle slide $-12,5 + 5$), per cui il prodotto $(+3,75)(-7,5) dot 300 = -8437,5 #"mm"^4$ è negativo.
       - Per $A_2$: $Delta z_2 = 7,5 - 11,25 = -3,75 #"mm"$ e $Delta y_2 = 20 - 12,5 = +7,5 #"mm"$, per cui anche $(-3,75)(+7,5) dot 300 = -8437,5 #"mm"^4$ è negativo.
 #pagebreak()
+#include "RISPOSTA_GEMINI.typ"
 #include "27-50_appunti.typ"
 #include "07_RELAZIONI di EQUIVALENZA CdS-COMPONENTI di TENSIONE_appunti.typ"
 #include "08_SOLLECITAZIONI SEMPLICI - SFORZO NORMALE e FLESSIONE_appunti.typ"
