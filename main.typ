@@ -893,8 +893,6 @@ $ nabla f\(upright(bold(p))_0\)= arrow(0) $ dove $arrow(0)$ indica il
 vettore nullo in $bb(R)^n$.
 
 
-cazzi duri nel culo per tuti hahahahahahah quanto adoro i cazzi
-
 == Teorema di Fermat (per funzioni di più variabili)
 <teorema-di-fermat-per-funzioni-di-più-variabili>
 Sia $f : D arrow.r bb(R)$, con $D subset.eq bb(R)^n$, di classe $C^1$ in
