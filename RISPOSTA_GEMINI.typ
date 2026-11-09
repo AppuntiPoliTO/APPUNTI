@@ -145,7 +145,7 @@ La macchina è costituita dall'accoppiamento di una *struttura fissa* (8) e di u
 *Principio di funzionamento (prova di trazione)*
 + Una *pompa* (2) invia olio in pressione all'interno di un *cilindro idraulico* (1), la cui pressione è costantemente monitorata da un *manometro* (7).
 + La pressione provoca la corsa verticale del *pistone* (3).
-+ Poiché il pistone è solidale alla traversa della *struttura mobile* (4), il suo movimento trasferisce direttamente il carico assiale alla ganascia superiore, inducendo lo sforzo di trazione sul *provino* (5).],[#image("macchina_prova_idraulica.png", width:80%)])
++ Poiché il pistone è solidale alla traversa della *struttura mobile* (4), il suo movimento trasferisce direttamente il carico assiale alla ganascia superiore, inducendo lo sforzo di trazione sul *provino* (5).],[#image("gransuconeidraulico.png", width:80%)])
 
 
 
