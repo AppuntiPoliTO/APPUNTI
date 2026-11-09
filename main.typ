@@ -893,7 +893,7 @@ $ nabla f\(upright(bold(p))_0\)= arrow(0) $ dove $arrow(0)$ indica il
 vettore nullo in $bb(R)^n$.
 
 
-cazzi du ri nel culo per tutt
+cazzi duri nel culo per tuti hahahahahahah quanto adoro i cazzi
 
 == Teorema di Fermat (per funzioni di più variabili)
 <teorema-di-fermat-per-funzioni-di-più-variabili>
