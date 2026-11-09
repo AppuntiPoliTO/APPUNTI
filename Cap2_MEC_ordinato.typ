@@ -1,4 +1,63 @@
-// === Cap2 RIORDINATO E DEDUPLICATO ===
+#import "@preview/cetz:0.5.3": canvas, draw
+#import "@preview/zap:0.6.0"
+#import zap: *
+#import zap.cetz.draw: bezier, arc, content
+
+// Distingue automaticamente tra #line/#rect/#circle di Typst e quelli dei circuiti CeTZ:
+#let line(..args) = if args.pos().len() == 0 { std.line(..args) } else { zap.cetz.draw.line(..args) }
+#let rect(..args) = if args.pos().len() <= 1 { std.rect(..args) } else { zap.cetz.draw.rect(..args) }
+#let circle(..args) = if args.pos().len() == 0 or type(args.pos().first()) != array { std.circle(..args) } else { zap.cetz.draw.circle(..args) }
+#let nota(body) = block(
+  fill: luma(240),
+  inset: 10pt,
+  radius: 4pt,
+  width: 100%,
+  stroke: (left: 3pt + luma(120)),
+  body
+)
+
+// === IMPOSTAZIONI GLOBALI COMPONENTI ===
+// Cambia qui "ieee" (zig-zag) o "iec" (rettangolo) per modificare TUTTI i circuiti del file!
+#let resistor = zap.resistor.with(variant: "ieee")
+#let rheostat = zap.rheostat.with(variant: "ieee")
+#let potentiometer = zap.potentiometer.with(variant: "ieee")
+#let inductor = zap.inductor.with(variant: "ieee")
+#let vsource = zap.vsource.with(variant: "iec") // "iec" = cerchio con linea, "ieee" = cerchio con +/-
+#let isource = zap.isource.with(variant: "iec")
+
+// === IMPOSTAZIONI PAGINA E TESTO ===
+#set page(
+  paper: "a4",
+  margin: 1.5cm,
+  numbering: "1",
+  number-align: bottom + right,
+)
+#set text(lang: "it", size: 11pt)
+#set par(justify: true)
+#set heading(numbering: "1.")
+#let nota(body) = block(
+  fill: luma(240),
+  inset: 10pt,
+  radius: 4pt,
+  width: 100%,
+  stroke: (left: 3pt + luma(120)),
+  body
+)
+
+// === FUNZIONI E MACRO ===
+#let sans(body, size: 11pt, weight: "regular") = text(
+  font: ("Liberation Sans", "Arial", "Helvetica", "DejaVu Sans Mono", "Libertinus Serif"),
+  size: size,
+  weight: weight,
+  body
+)
+
+#let immagine-originale = image
+#let image(nome-file, ..args) = immagine-originale("images/" + nome-file, ..args)
+
+#let circ = sym.degree
+#let varphi = $phi$
+
 
 
 = Metodi di soluzione di circuiti
