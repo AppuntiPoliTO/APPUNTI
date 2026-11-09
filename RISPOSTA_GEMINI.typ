@@ -838,7 +838,7 @@ Se si tiene conto della progressiva riduzione dell'area della sezione retta del 
 
 = Tensione ammissibile e coefficiente di sicurezza
 
-== Criterio di verifica statica e scelta della tensione limite
+== Criterio di verifica statica e scelta della tensione limite cazzi nel culo
 
 I dati sperimentali relativi alle proprietà meccaniche dei materiali, ottenuti mediante la prova di trazione, vengono impiegati direttamente nei calcoli pratici di progettazione e verifica per determinare la resistenza strutturale dei sistemi meccanici.
 
