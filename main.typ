@@ -97,11 +97,10 @@
 
 #include "Cap2_MEC_handouts_appunti.typ"
 
-#include "Cap2_1_MEC_handouts_appunti.typ"
 
 #include "Cap3_MEC_handouts_appunti.typ"
 
-#include "Cap3_1_MEC_handouts_appunti.typ"
+
 
 #include "Cap4_MEC_handouts_appunti.typ"
 
