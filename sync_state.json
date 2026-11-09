@@ -1,0 +1,44 @@
+{
+  "branches": {
+    "doc/aldomoro-meccanica-dei-fluidi": {
+      "folder_name": "_ALDOMORO_ Meccanica dei Fluidi",
+      "branch": "doc/aldomoro-meccanica-dei-fluidi",
+      "last_commit_oid": "e995cd78fd710f831ca93d06b0b4b99aa413946a",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-09 21:09:46",
+      "last_error": null
+    },
+    "doc/aldomoro-ecm": {
+      "folder_name": "_ALDOMORO__ECM",
+      "branch": "doc/aldomoro-ecm",
+      "last_commit_oid": "dce485be498d873777c40b4a20c6fec6bede34d8",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-09 21:09:55",
+      "last_error": null
+    },
+    "doc/aldomoro-elettrotecnica": {
+      "folder_name": "_ALDOMORO_ elettrotecnica",
+      "branch": "doc/aldomoro-elettrotecnica",
+      "last_commit_oid": "e23a90b8fdd0379c97545ed5112656c4b1fed295",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-09 21:09:43",
+      "last_error": null
+    },
+    "doc/aldomoro-fms": {
+      "folder_name": "_ALDOMORO_ fms",
+      "branch": "doc/aldomoro-fms",
+      "last_commit_oid": "aab66e4e86eb9668d7cd52875b423b4320abd702",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-09 21:09:50",
+      "last_error": null
+    },
+    "doc/aldomoro-analisi-2": {
+      "folder_name": "_ALDOMORO_ Analisi 2",
+      "branch": "doc/aldomoro-analisi-2",
+      "last_commit_oid": "03e69e4cff02edc4ade445f4d938ae1f95857d64",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-09 21:09:52",
+      "last_error": null
+    }
+  }
+}
