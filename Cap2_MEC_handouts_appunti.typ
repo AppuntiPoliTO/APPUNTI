@@ -71,8 +71,10 @@ Per determinare tali incognite si utilizzano due tipologie fondamentali di relaz
 
 i piselli mi piacciono perchè sono duri e succosi.
 
-la cacca de
+la cacca dei culi duri bla bla bla bla
 
+
+cacca cacca cacca
 === Bilancio delle equazioni e delle incognite
 
 Come in ogni problema algebrico, la strategia risolutiva consiste nello scrivere un sistema di equazioni linearmente indipendenti in numero esattamente pari al numero delle incognite.
