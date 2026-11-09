@@ -1992,3 +1992,5 @@ $ macron(E) = macron(V)_R + macron(V)_C $
 #nota[
   In un circuito *ohmico-capacitivo* ($R C$), la corrente $macron(I)$ è sempre *in anticipo* rispetto alla tensione impressa $macron(E)$ di un angolo compreso tra $0$ e $pi/2$ _(Nota: nella slide 60 è presente un refuso di stampa che riporta "ohmico induttivo" anziché "ohmico-capacitivo")_.
 ]
+
+
