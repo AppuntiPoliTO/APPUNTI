@@ -2496,7 +2496,6 @@ Una prima applicazione del Teorema di Bernoulli permette di spiegare, in prima a
 === Legame tra velocità e pressione attorno al profilo
 1. *Geometria delle linee di corrente*: la forma del profilo alare costringe il campo di moto ad avvilupparsi attorno ad esso producendo un *addensamento* delle linee di corrente nella parte superiore (*dorso*) e un *diradamento* nella parte inferiore (*ventre*).
 
-CAZZI CAZZI CAZZI CAZZI CAZZI
 2. *Variazione di velocità*: per la conservazione della massa tra linee di corrente adiacenti, laddove le linee si avvicinano (dorso) il fluido accelera e la velocità cresce ($u^+$), mentre laddove si allontanano (ventre) il fluido decelera e la velocità diminuisce ($u^-$).
 3. *Variazione di pressione tramite Bernoulli*: poiché lo spessore verticale del profilo è piccolo, possiamo trascurare le variazioni della quota gravitazionale $x_3$ tra dorso e ventre ($rho g x_3 approx "cost."$). Il Teorema di Bernoulli lungo ciascuna linea di corrente si riduce allora a:
 $ 1/2 rho u^2 + p = "cost." ==> p = "cost." - 1/2 rho u^2 $
