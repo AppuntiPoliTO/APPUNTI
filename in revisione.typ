@@ -13,7 +13,7 @@
   width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,)
 #let circ = sym.degree
 #let varphi = $phi$
-#let diff = "dif"
+
 
 = Calcolo del vettore vorticità e influenza della gravità
 
@@ -31,9 +31,9 @@ Le singole componenti del vettore di rotazione $arrow(Omega)$ si ricavano dalle 
 
 $ Omega_3 = -1/2 ((dif u_1)/(dif x_2) - (dif u_2)/(dif x_1)) $
 
-$ Omega_2 = 1/2 ((diff u_1)/(diff x_3) - (diff u_3)/(diff x_1)) quad arrow.r.double quad arrow(Omega) = mat(Omega_1; Omega_2; Omega_3) $
+$ Omega_2 = 1/2 ((dif u_1)/(dif x_3) - (dif u_3)/(dif x_1)) quad arrow.r.double quad arrow(Omega) = mat(Omega_1; Omega_2; Omega_3) $
 
-$ Omega_1 = -1/2 ((diff u_2)/(diff x_3) - (diff u_3)/(diff x_2)) $
+$ Omega_1 = -1/2 ((dif u_2)/(dif x_3) - (dif u_3)/(dif x_2)) $
 
 #grid(
   columns: (1fr, 1fr),
@@ -103,7 +103,7 @@ e mostrando che il gradiente longitudinale di pressione $G = (d p)/(d x) = "cost
 Il sistema completo delle equazioni di Navier-Stokes e di continuità per un fluido incomprimibile è dato da:
 
 $ cases(
-  rho ((diff arrow(u))/(diff t) + arrow(u) dot nabla arrow(u)) = -nabla p + mu Delta arrow(u),
+  rho ((dif arrow(u))/(dif t) + arrow(u) dot nabla arrow(u)) = -nabla p + mu Delta arrow(u),
   nabla dot arrow(u) = 0
 ) $
 
@@ -111,17 +111,17 @@ Le condizioni al contorno di aderenza alle pareti impongono:
 - $arrow(u) = (-U, 0, 0)$ per $y = 0$ (parete inferiore in moto verso le $x$ negative);
 - $arrow(u) = 0$ per $y = e$ (parete superiore ferma).
 
-Cercando una soluzione della forma $arrow(u) = (u(y), 0, 0)^T$ in regime stazionario, ovvero sapendo che $(diff arrow(u))/(diff t) = 0$, valutiamo il termine convettivo non lineare:
+Cercando una soluzione della forma $arrow(u) = (u(y), 0, 0)^T$ in regime stazionario, ovvero sapendo che $(dif arrow(u))/(dif t) = 0$, valutiamo il termine convettivo non lineare:
 
-$ arrow(u) dot nabla arrow(u) = u_j (diff u_i)/(diff x_j) = (u_x diff/(diff x) + u_y diff/(diff y) + u_z diff/(diff z)) arrow(u) = 0 $
+$ arrow(u) dot nabla arrow(u) = u_j (dif u_i)/(dif x_j) = (u_x dif/(dif x) + u_y dif/(dif y) + u_z dif/(dif z)) arrow(u) = 0 $
 
-Il termine convettivo è identicamente nullo poiché $u_y = u_z = 0$ e la componente $u_x = u(y)$ dipende unicamente dalla coordinata trasversale $y$. Analogamente, il termine diffusivo viscoso si semplifica come segue:
+Il termine convettivo è identicamente nullo poiché $u_y = u_z = 0$ e la componente $u_x = u(y)$ dipende unicamente dalla coordinata trasversale $y$. Analogamente, il termine difusivo viscoso si semplifica come segue:
 
-$ mu Delta arrow(u) = mu ((diff^2 u)/(diff x^2) + (diff^2 u)/(diff y^2) + (diff^2 u)/(diff z^2), 0, 0) = mu ((d^2 u)/(d y^2), 0, 0) $
+$ mu Delta arrow(u) = mu ((dif^2 u)/(dif x^2) + (dif^2 u)/(dif y^2) + (dif^2 u)/(dif z^2), 0, 0) = mu ((d^2 u)/(d y^2), 0, 0) $
 
 Dalle componenti lungo gli assi $y$ e $z$ dell'equazione di quantità di moto si deduce immediatamente che il gradiente di pressione trasversale è nullo:
 
-$ (diff p)/(diff y) = (diff p)/(diff z) = 0 quad arrow.r.double quad p = p(x) $
+$ (dif p)/(dif y) = (dif p)/(dif z) = 0 quad arrow.r.double quad p = p(x) $
 
 La proiezione lungo l'asse $x$ si riduce pertanto a:
 
@@ -131,7 +131,7 @@ Poiché il membro di sinistra è una funzione della sola variabile $y$, mentre i
 
 $ f(y) = f(x) = "cost" $
 
-Integrando due volte rispetto a $y$ l'equazione differenziale ordinaria $(d^2 u)/(d y^2) = G/mu$, si ottiene:
+Integrando due volte rispetto a $y$ l'equazione diferenziale ordinaria $(d^2 u)/(d y^2) = G/mu$, si ottiene:
 
 $ (d u)/(d y) = G/(2 mu) y + A quad arrow.r.double quad u(y) = G/(2 mu) y^2 + A y + B $
 
@@ -213,7 +213,7 @@ Si distinguono i seguenti regimi caratteristici al variare del gradiente di pres
 
 Per un fluido newtoniano incomprimibile, il tensore degli sforzi totali $sigma_(i j)$ si esprime come:
 
-$ sigma_(i j) = -p delta_(i j) + tau_(i j) = -p delta_(i j) + 2 mu D_(i j) = -p delta_(i j) + mu ((diff u_i)/(diff x_j) + (diff u_j)/(diff x_i)) $
+$ sigma_(i j) = -p delta_(i j) + tau_(i j) = -p delta_(i j) + 2 mu D_(i j) = -p delta_(i j) + mu ((dif u_i)/(dif x_j) + (dif u_j)/(dif x_i)) $
 
 Essendo il campo di velocità della forma $arrow(u) = (u(y), 0, 0)$, l'unica componente non banale del tensore degli sforzi viscosi è lo sforzo di taglio $tau = tau_(x y) = tau_(y x)$:
 
@@ -280,19 +280,19 @@ Tale rapporto tra la forza tangenziale $F_x$ e il carico normale $F_y$ rappresen
 
 = Energia meccanica nei fluidi viscosi
 
-== Bilancio differenziale di energia cinetica
+== Bilancio diferenziale di energia cinetica
 
 Il bilancio di energia cinetica si ottiene moltiplicando scalarmente l'equazione di Navier-Stokes in notazione indiciale per la velocità $u_i$:
 
-$ u_i dot (rho (D u_i)/(D t)) = u_i dot (diff/(diff x_j) sigma_(i j) + rho g_i) $
+$ u_i dot (rho (D u_i)/(D t)) = u_i dot (dif/(dif x_j) sigma_(i j) + rho g_i) $
 
-Sviluppando il membro di sinistra ed esprimendo la forza di volume tramite il potenziale gravitazionale $psi$, definito in modo che $g_i = -nabla psi = - (diff psi)/(diff x_i)$ (essendo $psi = -g_i x_i = g x_3$), si ottiene:
+Sviluppando il membro di sinistra ed esprimendo la forza di volume tramite il potenziale gravitazionale $psi$, definito in modo che $g_i = -nabla psi = - (dif psi)/(dif x_i)$ (essendo $psi = -g_i x_i = g x_3$), si ottiene:
 
-$ D/(D t) ((rho u^2)/2) = u_i dot (diff/(diff x_j) sigma_(i j) - rho (diff psi)/(diff x_i)) $
+$ D/(D t) ((rho u^2)/2) = u_i dot (dif/(dif x_j) sigma_(i j) - rho (dif psi)/(dif x_i)) $
 
 Esplicitando la derivata materiale a primo membro in forma euleriana (con $u^2 = u_1 u_1 + u_2 u_2 + u_3 u_3 = u_i dot u_i$):
 
-$ diff/(diff t) ((rho u^2)/2) = -u_j diff/(diff x_j) ((rho u^2)/2) - u_i rho (diff psi)/(diff x_i) + u_i (diff sigma_(i j))/(diff x_j) $
+$ dif/(dif t) ((rho u^2)/2) = -u_j dif/(dif x_j) ((rho u^2)/2) - u_i rho (dif psi)/(dif x_i) + u_i (dif sigma_(i j))/(dif x_j) $
 
 === Caso di fluido ideale (non viscoso)
 
@@ -302,11 +302,11 @@ $ sigma_(i j) = -p delta_(i j) $
 
 cosicché il termine di potenza degli sforzi superficiali si riduce a:
 
-$ u_i (diff sigma_(i j))/(diff x_j) = -u_i diff/(diff x_j) (p delta_(i j)) = -u_i (diff p)/(diff x_i) $
+$ u_i (dif sigma_(i j))/(dif x_j) = -u_i dif/(dif x_j) (p delta_(i j)) = -u_i (dif p)/(dif x_i) $
 
 Nel caso incomprimibile e stazionario per il potenziale, il bilancio di energia cinetica diviene quindi:
 
-$ diff/(diff t) (rho u^2 / 2) = -u_j diff/(diff x_j) [underbrace(rho u^2 / 2 + rho psi + p, cal(H) ": carico")] $
+$ dif/(dif t) (rho u^2 / 2) = -u_j dif/(dif x_j) [underbrace(rho u^2 / 2 + rho psi + p, cal(H) ": carico")] $
 
 === Caso di fluido viscoso (newtoniano)
 
@@ -314,34 +314,34 @@ Per un fluido newtoniano il tensore degli sforzi comprende anche il tensore degl
 
 $ sigma_(i j) = -p delta_(i j) + tau_(i j) $
 
-Studiamo come si trasforma il termine $u_i (diff sigma_(i j))/(diff x_j)$, che in notazione vettoriale corrisponde a $arrow(u) dot (nabla dot bold(sigma))$. Applicando la regola di derivazione del prodotto a ritroso, possiamo scomporlo in due contributi:
+Studiamo come si trasforma il termine $u_i (dif sigma_(i j))/(dif x_j)$, che in notazione vettoriale corrisponde a $arrow(u) dot (nabla dot bold(sigma))$. Applicando la regola di derivazione del prodotto a ritroso, possiamo scomporlo in due contributi:
 
-$ u_i (diff sigma_(i j))/(diff x_j) = underbrace(diff/(diff x_j) (u_i sigma_(i j)), (A)) - underbrace(sigma_(i j) (diff u_i)/(diff x_j), (B)) $
+$ u_i (dif sigma_(i j))/(dif x_j) = underbrace(dif/(dif x_j) (u_i sigma_(i j)), (A)) - underbrace(sigma_(i j) (dif u_i)/(dif x_j), (B)) $
 
 dove:
 - *(A)* è un operatore di divergenza e rappresenta pertanto un *termine di flusso*;
 - *(B)* rappresenta un *termine di pozzo o sorgente* locale.
 
-Iniziamo a trattare il termine *(B)* ricordando la relazione costitutiva $sigma_(i j) = -p delta_(i j) + 2 mu D_(i j)$. Sfruttando la simmetria del tensore di deformazione $D_(i j)$, per cui la contrazione con il gradiente di velocità equivale a $D_(i j) (diff u_i)/(diff x_j) = D_(i j) D_(i j)$, si ottiene:
+Iniziamo a trattare il termine *(B)* ricordando la relazione costitutiva $sigma_(i j) = -p delta_(i j) + 2 mu D_(i j)$. Sfruttando la simmetria del tensore di deformazione $D_(i j)$, per cui la contrazione con il gradiente di velocità equivale a $D_(i j) (dif u_i)/(dif x_j) = D_(i j) D_(i j)$, si ottiene:
 
-$ -sigma_(i j) (diff u_i)/(diff x_j) = p (diff u_j)/(diff x_j) - 2 mu D_(i j) D_(i j) $
+$ -sigma_(i j) (dif u_i)/(dif x_j) = p (dif u_j)/(dif x_j) - 2 mu D_(i j) D_(i j) $
 
-Ricordiamo che, per l'equazione di continuità generale, la divergenza della velocità è legata alla variazione materiale di densità da $(diff u_j)/(diff x_j) = - 1/rho (D rho)/(D t)$. Inoltre, il termine $2 mu D_(i j) D_(i j)$ è una somma di quadrati ed è quindi *sempre positivo*.
+Ricordiamo che, per l'equazione di continuità generale, la divergenza della velocità è legata alla variazione materiale di densità da $(dif u_j)/(dif x_j) = - 1/rho (D rho)/(D t)$. Inoltre, il termine $2 mu D_(i j) D_(i j)$ è una somma di quadrati ed è quindi *sempre positivo*.
 
 Sviluppiamo ora il termine di divergenza *(A)*:
 
-$ diff/(diff x_j) (u_i sigma_(i j)) = - diff/(diff x_j) (u_j p) + diff/(diff x_j) (u_i tau_(i j)) = -p (diff u_j)/(diff x_j) - u_j (diff p)/(diff x_j) + diff/(diff x_j) (u_i tau_(i j)) $
+$ dif/(dif x_j) (u_i sigma_(i j)) = - dif/(dif x_j) (u_j p) + dif/(dif x_j) (u_i tau_(i j)) = -p (dif u_j)/(dif x_j) - u_j (dif p)/(dif x_j) + dif/(dif x_j) (u_i tau_(i j)) $
 
-Mettendo insieme i risultati ottenuti per *(A)* e *(B)*, i termini di dilatazione reversibile $p (diff u_j)/(diff x_j)$ si elidono esattamente:
+Mettendo insieme i risultati ottenuti per *(A)* e *(B)*, i termini di dilatazione reversibile $p (dif u_j)/(dif x_j)$ si elidono esattamente:
 
-$ u_i (diff sigma_(i j))/(diff x_j) = underbrace(-p (diff u_j)/(diff x_j) - u_j (diff p)/(diff x_j) + diff/(diff x_j) (u_i tau_(i j)), (A)) + underbrace(p (diff u_j)/(diff x_j) - 2 mu D_(i j) D_(i j), (B)) = $
-$ = -u_j (diff p)/(diff x_j) + diff/(diff x_j) (u_i tau_(i j)) - 2 mu D_(i j) D_(i j) $
+$ u_i (dif sigma_(i j))/(dif x_j) = underbrace(-p (dif u_j)/(dif x_j) - u_j (dif p)/(dif x_j) + dif/(dif x_j) (u_i tau_(i j)), (A)) + underbrace(p (dif u_j)/(dif x_j) - 2 mu D_(i j) D_(i j), (B)) = $
+$ = -u_j (dif p)/(dif x_j) + dif/(dif x_j) (u_i tau_(i j)) - 2 mu D_(i j) D_(i j) $
 
-Il primo addendo $-u_j (diff p)/(diff x_j)$ coincide con il termine già incontrato nel caso di fluido non viscoso ($sigma_(i j) = -p delta_(i j)$), mentre gli altri due sono i termini aggiuntivi generati dalla viscosità del fluido.
+Il primo addendo $-u_j (dif p)/(dif x_j)$ coincide con il termine già incontrato nel caso di fluido non viscoso ($sigma_(i j) = -p delta_(i j)$), mentre gli altri due sono i termini aggiuntivi generati dalla viscosità del fluido.
 
 Riscriviamo dunque l'equazione locale di bilancio dell'energia cinetica:
 
-$ diff/(diff t) (rho u^2 / 2) = -u_j diff/(diff x_j) [underbrace(rho u^2 / 2 + p + rho psi, cal(H))] - D + diff/(diff x_j) (u_i tau_(i j)) $
+$ dif/(dif t) (rho u^2 / 2) = -u_j dif/(dif x_j) [underbrace(rho u^2 / 2 + p + rho psi, cal(H))] - D + dif/(dif x_j) (u_i tau_(i j)) $
 
 laddove si è definita la *dissipazione viscosa locale*:
 
@@ -349,17 +349,17 @@ $ D = 2 mu D_(i j) D_(i j) $
 
 == Bilancio integrale su un volume di controllo
 
-Integriamo l'equazione differenziale di bilancio su un volume di controllo fisso $V$ delimitato da una superficie chiusa $S$:
+Integriamo l'equazione diferenziale di bilancio su un volume di controllo fisso $V$ delimitato da una superficie chiusa $S$:
 
-$ d/(d t) integral_V (rho u^2 / 2) d V = - integral_V u_j (diff cal(H))/(diff x_j) d V - underbrace(integral_V D d V, D_v) + integral_V diff/(diff x_j) (u_i tau_(i j)) d V $
+$ d/(d t) integral_V (rho u^2 / 2) d V = - integral_V u_j (dif cal(H))/(dif x_j) d V - underbrace(integral_V D d V, D_v) + integral_V dif/(dif x_j) (u_i tau_(i j)) d V $
 
 Trasformiamo il primo e il terzo termine a secondo membro in integrali di superficie mediante il teorema della divergenza (assumendo fluido incomprimibile $rho = "cost"$):
 
-$ integral_V u_j (diff cal(H))/(diff x_j) d V = integral_V [diff/(diff x_j) (cal(H) u_j) - cal(H) underbrace((diff u_j)/(diff x_j), = 0 "se" rho = "cost!")] d V = integral_V diff/(diff x_j) (cal(H) u_j) d V = integral_S cal(H) u_j n_j d S $
+$ integral_V u_j (dif cal(H))/(dif x_j) d V = integral_V [dif/(dif x_j) (cal(H) u_j) - cal(H) underbrace((dif u_j)/(dif x_j), = 0 "se" rho = "cost!")] d V = integral_V dif/(dif x_j) (cal(H) u_j) d V = integral_S cal(H) u_j n_j d S $
 
 Questo integrale esprime il flusso del carico totale $cal(H)$ attraverso la superficie di controllo $S$. Analogamente, per il terzo termine relativo al lavoro delle forze viscose:
 
-$ integral_V diff/(diff x_j) (u_i tau_(i j)) d V = integral_S u_i tau_(i j) n_j d S = P_m $
+$ integral_V dif/(dif x_j) (u_i tau_(i j)) d V = integral_S u_i tau_(i j) n_j d S = P_m $
 
 Questo termine rappresenta la potenza meccanica (lavoro nell'unità di tempo) fornita attraverso la superficie $S$ in presenza di forti gradienti di velocità. Il bilancio integrale di energia cinetica diviene dunque:
 
@@ -434,15 +434,15 @@ $ Delta cal(H) Q_v = D_v - P_m $
 
 == Equazione del moto e profilo di velocità in coordinate cilindriche
 
-Studiamo il moto stazionario e incomprimibile ($rho = "cost"$, $diff/(diff t) = 0$) all'interno di una condotta cilindrica circolare di raggio $R$ e lunghezza $L$. Adottando un sistema di coordinate cilindriche $(r, theta, z)$ con asse $z$ coincidente con l'asse della condotta, cerchiamo una soluzione puramente assiale e assialsimmetrica nella forma:
+Studiamo il moto stazionario e incomprimibile ($rho = "cost"$, $dif/(dif t) = 0$) all'interno di una condotta cilindrica circolare di raggio $R$ e lunghezza $L$. Adottando un sistema di coordinate cilindriche $(r, theta, z)$ con asse $z$ coincidente con l'asse della condotta, cerchiamo una soluzione puramente assiale e assialsimmetrica nella forma:
 
 $ arrow(u) = (0, 0, u(r)) $
 
 Sotto queste ipotesi ($nabla dot arrow(u) = 0$, $arrow(u) dot nabla arrow(u) = 0$), l'equazione di bilancio della quantità di moto si riduce al sistema:
 
 $ cases(
-  0 = - (diff p)/(diff r) = - 1/r (diff p)/(diff theta),
-  0 = - (diff p)/(diff z) + mu 1/r d/(d r) (r (d u)/(d r))
+  0 = - (dif p)/(dif r) = - 1/r (dif p)/(dif theta),
+  0 = - (dif p)/(dif z) + mu 1/r d/(d r) (r (d u)/(d r))
 ) $
 
 Dalle prime due relazioni segue che la pressione dipende unicamente dalla coordinata assiale, $p = p(z)$. Riguardo l'ultima equazione lungo l'asse $z$, separando le variabili si ha:
@@ -496,7 +496,7 @@ In questo modo, fissato il gradiente di pressione $G$ si ottiene univocamente la
 
 === Tensore degli sforzi viscosi
 
-Dal tensore degli sforzi completo $sigma_(i j) = -p delta_(i j) + tau_(i j)$, con $tau_(i j) = 2 mu D_(i j)$ e $D_(i j) = 1/2 ((diff u_i)/(diff x_j) + (diff u_j)/(diff x_i))$, nel caso specifico del moto assialsimmetrico in condotta (indicando con $x$ o $z$ la direzione assiale) la matrice degli sforzi viscosi assume la forma:
+Dal tensore degli sforzi completo $sigma_(i j) = -p delta_(i j) + tau_(i j)$, con $tau_(i j) = 2 mu D_(i j)$ e $D_(i j) = 1/2 ((dif u_i)/(dif x_j) + (dif u_j)/(dif x_i))$, nel caso specifico del moto assialsimmetrico in condotta (indicando con $x$ o $z$ la direzione assiale) la matrice degli sforzi viscosi assume la forma:
 
 $ tau_(i j) = mat(
   0, tau_(r x), 0;
@@ -506,7 +506,7 @@ $ tau_(i j) = mat(
 
 L'unica componente tangenziale non nulla è data da:
 
-$ tau_(r x) = 2 mu 1/2 ((diff u_x)/(diff r) + (diff u_r)/(diff x)) = mu (diff u_x)/(diff r) $
+$ tau_(r x) = 2 mu 1/2 ((dif u_x)/(dif r) + (dif u_r)/(dif x)) = mu (dif u_x)/(dif r) $
 
 #grid(
   columns: (1fr, 1fr),
