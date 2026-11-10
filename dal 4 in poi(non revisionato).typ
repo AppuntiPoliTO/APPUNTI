@@ -4,8 +4,6 @@
 #set par(justify: true)
 #set heading(numbering: none)
 #set page(margin: 1.5cm)
-#let immagine-originale = image
-#let image(nome-file, ..args) = immagine-originale("images/" + nome-file, ..args)
 // Nota / osservazione
 #let nota(body) = block(
   width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,)
@@ -629,7 +627,7 @@ $
     Le particelle fluide hanno vorticità negativa, ruotano in senso orario.
   ],
   [
-    #image("1753a06c-3b5c-4cb4-8343-a662a538e037-09_167_134_835_971.jpg", width: 70%)
+    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-09_167_134_835_971.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -675,7 +673,7 @@ $ (D arrow(u))/(D t) = -1/rho nabla p^* + nu Delta arrow(u) $
     - mostrare che $G = (dif p)/(dif x) = "cost"$.
   ],
   [
-    #image("1753a06c-3b5c-4cb4-8343-a662a538e037-11_717_1742_183_213.jpg", width: 70%)
+    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-11_717_1742_183_213.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -758,7 +756,7 @@ $ u(y) = underbrace(1/2 G/mu (y^2 - e y), "parabolica") + underbrace(U/e (y - e)
       si oppone al moto.
   ],
   [
-    #image("1753a06c-3b5c-4cb4-8343-a662a538e037-14_541_1126_1597_770.jpg", width: 70%)
+    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-14_541_1126_1597_770.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -772,7 +770,7 @@ $ u(y) = underbrace(1/2 G/mu (y^2 - e y), "parabolica") + underbrace(U/e (y - e)
       sostiene il moto.
   ],
   [
-    #image("1753a06c-3b5c-4cb4-8343-a662a538e037-14_522_968_2233_855.jpg", width: 70%)
+    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-14_522_968_2233_855.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -796,7 +794,7 @@ Forza per unità di superficie sulla parete inferiore ($y = 0$):
     $
   ],
   [
-    #image("1753a06c-3b5c-4cb4-8343-a662a538e037-15_252_646_343_1185.jpg", width: 70%)
+    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-15_252_646_343_1185.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -816,9 +814,9 @@ Sulla parete superiore ($y = e$):
     con $tau_e = tau(y = e) = (mu U)/e + (G e)/2$.
   ],
   [
-    #image("1753a06c-3b5c-4cb4-8343-a662a538e037-15_187_683_1579_1340.jpg", width: 70%)
+    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-15_187_683_1579_1340.jpg", width: 70%)
     #v(0.5em)
-    #image("1753a06c-3b5c-4cb4-8343-a662a538e037-15_329_460_2073_920.jpg", width: 70%)
+    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-15_329_460_2073_920.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -880,7 +878,7 @@ Cosa diviene il termine $u_i (partial sigma_(i j))/(partial x_j)$? (scritto in n
     - *(B)* Termine di pozzo o sorgente.
   ],
   [
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-03_488_1612_259_222.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-03_488_1612_259_222.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -944,7 +942,7 @@ Flusso di $cal(H)$ attraverso la superficie di controllo:
     $ dif/(dif t) integral_V rho u^2 / 2 dif V = -integral_S u_j cal(H) n_j dif S - D_v + P_m $
   ],
   [
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-06_630_1735_97_84.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-06_630_1735_97_84.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -964,7 +962,7 @@ Flusso di $cal(H)$ attraverso la superficie di controllo:
     laddove $Q_v cal(H) = integral_S cal(H) arrow(u) dot arrow(n) dif S$ e il flusso di volume $Q_v = integral_S arrow(u) dot arrow(n) dif S$.
   ],
   [
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-07_584_1521_566_307.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-07_584_1521_566_307.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1005,9 +1003,9 @@ dimostra la natura fisica delle perdite di carico $arrow.r.double$ dissipazione 
     $
   ],
   [
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-09_366_1262_679_212.jpg", width: 70%)
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-09_451_793_1072_242.jpg", width: 70%)
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-09_333_811_1288_1204.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-09_366_1262_679_212.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-09_451_793_1072_242.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-09_333_811_1288_1204.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1053,7 +1051,7 @@ $
     $ u_d = 1/S underbrace(integral_S arrow(u) dot arrow(n) dif S, Q_v = "flusso in volume") = 1/(pi R^2) integral_0^R u(r) 2 pi r dif r $
   ],
   [
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-11_765_1089_1487_272.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-11_765_1089_1487_272.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1099,7 +1097,7 @@ $ tau_(r x) = mu (partial u_x)/(partial r) $
     $ tau_(r x) = (G r)/2 $
   ],
   [
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-13_618_930_2017_67.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-13_618_930_2017_67.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1141,7 +1139,7 @@ $
       $
   ],
   [
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-16_1061_1933_456_109.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-16_1061_1933_456_109.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1187,7 +1185,7 @@ $
     $ arrow.r.long Q = (A/(3 B))^(1/2) = Q_"max" $
   ],
   [
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-18_711_1055_2122_369.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-18_711_1055_2122_369.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1227,7 +1225,7 @@ Diametro $d = 2 "cm"$; lunghezza $L = 20 "m"$.
     $
   ],
   [
-    #image("3cb734d7-9607-49d0-8970-a51574b61853-19_483_963_2207_26.jpg", width: 70%)
+    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-19_483_963_2207_26.jpg", width: 70%)
   ]
 )
 
@@ -1282,7 +1280,7 @@ Analisi di $arrow(M)$:
     ovunque alla parete.
   ],
   [
-    #image("04e73b15-c902-4152-a68f-147f1a1b72b6-03_579_1742_269_200.jpg", width: 70%)
+    #image("images/04e73b15-c902-4152-a68f-147f1a1b72b6-03_579_1742_269_200.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1349,7 +1347,7 @@ La forza è negativa, è la forza esercitata dalla parete sul fluido, ovvero la 
     $
   ],
   [
-    #image("04e73b15-c902-4152-a68f-147f1a1b72b6-06_384_1177_138_346.jpg", width: 70%)
+    #image("images/04e73b15-c902-4152-a68f-147f1a1b72b6-06_384_1177_138_346.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1388,7 +1386,7 @@ Occhio alle normali!
     $
   ],
   [
-    #image("04e73b15-c902-4152-a68f-147f1a1b72b6-07_394_933_273_142.jpg", width: 70%)
+    #image("images/04e73b15-c902-4152-a68f-147f1a1b72b6-07_394_933_273_142.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1411,7 +1409,7 @@ Il modulo della forza fluido-parete è uguale e opposto, si oppone al deflusso d
     $
   ],
   [
-    #image("04e73b15-c902-4152-a68f-147f1a1b72b6-08_684_1331_206_36.jpg", width: 70%)
+    #image("images/04e73b15-c902-4152-a68f-147f1a1b72b6-08_684_1331_206_36.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1434,7 +1432,7 @@ Il modulo della forza fluido-parete è uguale e opposto, si oppone al deflusso d
     $
   ],
   [
-    #image("04e73b15-c902-4152-a68f-147f1a1b72b6-09_818_1171_280_44.jpg", width: 70%)
+    #image("images/04e73b15-c902-4152-a68f-147f1a1b72b6-09_818_1171_280_44.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1461,7 +1459,7 @@ Il modulo della forza fluido-parete è uguale e opposto, si oppone al deflusso d
     $
   ],
   [
-    #image("04e73b15-c902-4152-a68f-147f1a1b72b6-09_654_916_1451_79.jpg", width: 70%)
+    #image("images/04e73b15-c902-4152-a68f-147f1a1b72b6-09_654_916_1451_79.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1479,7 +1477,7 @@ Questo stesso metodo si può usare per valutare la forza esercitata sul fluido d
     Entrambi i termini possono essere misurati con un tubo di Pitot, evitando complicate misure sulla parete del corpo tozzo.
   ],
   [
-    #image("04e73b15-c902-4152-a68f-147f1a1b72b6-10_738_1950_761_25.jpg", width: 70%)
+    #image("images/04e73b15-c902-4152-a68f-147f1a1b72b6-10_738_1950_761_25.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1570,9 +1568,9 @@ Conoscendo l'evoluzione della "palla di fuoco" $r_f (t)$ con le foto, Taylor ha 
     $
   ],
   [
-    #image("8f76413d-40a2-4d00-94f5-9372a6e5c576-04_511_178_405_170.jpg", width: 70%)
+    #image("images/8f76413d-40a2-4d00-94f5-9372a6e5c576-04_511_178_405_170.jpg", width: 70%)
     #v(0.5em)
-    #image("8f76413d-40a2-4d00-94f5-9372a6e5c576-04_266_736_503_1265.jpg", width: 70%)
+    #image("images/8f76413d-40a2-4d00-94f5-9372a6e5c576-04_266_736_503_1265.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1706,7 +1704,7 @@ Il valore dell'integrale è detto $C_D$ "coefficiente di resistenza" e dipende d
     $
   ],
   [
-    #image("8f76413d-40a2-4d00-94f5-9372a6e5c576-11_604_1518_2160_53.jpg", width: 70%)
+    #image("images/8f76413d-40a2-4d00-94f5-9372a6e5c576-11_604_1518_2160_53.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1732,9 +1730,9 @@ $
     Il bordo superiore dello strato limite, $delta(x_1)$, aumenta con la coordinata longitudinale. Si ha in ogni caso che $delta(x_1) << L ==> $ separazione di scale.
   ],
   [
-    #image("8f76413d-40a2-4d00-94f5-9372a6e5c576-12_582_408_1450_464.jpg", width: 70%)
+    #image("images/8f76413d-40a2-4d00-94f5-9372a6e5c576-12_582_408_1450_464.jpg", width: 70%)
     #v(0.5em)
-    #image("8f76413d-40a2-4d00-94f5-9372a6e5c576-12_773_1164_1305_877.jpg", width: 70%)
+    #image("images/8f76413d-40a2-4d00-94f5-9372a6e5c576-12_773_1164_1305_877.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1787,7 +1785,7 @@ Ordine di grandezza delle variazioni di pressione lungo $x_1$.
     Le variazioni di pressione lungo $x_2$ sono trascurabili: la seconda equazione si riduce a $(partial P) / (partial x_2) = 0$.
   ],
   [
-    #image("8f76413d-40a2-4d00-94f5-9372a6e5c576-15_945_1839_1140_165.jpg", width: 70%)
+    #image("images/8f76413d-40a2-4d00-94f5-9372a6e5c576-15_945_1839_1140_165.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1814,7 +1812,7 @@ Ordine di grandezza delle variazioni di pressione lungo $x_1$.
     $
   ],
   [
-    #image("8f76413d-40a2-4d00-94f5-9372a6e5c576-16_791_767_406_1217.jpg", width: 70%)
+    #image("images/8f76413d-40a2-4d00-94f5-9372a6e5c576-16_791_767_406_1217.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1852,7 +1850,7 @@ $
     $
   ],
   [
-    #image("8f76413d-40a2-4d00-94f5-9372a6e5c576-17_599_356_299_1516.jpg", width: 70%)
+    #image("images/8f76413d-40a2-4d00-94f5-9372a6e5c576-17_599_356_299_1516.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1906,7 +1904,7 @@ potenziale gravitazionale.
     Campo di moto attorno ad una sfera
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_325_1555_188_202.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_325_1555_188_202.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1921,7 +1919,7 @@ potenziale gravitazionale.
     $ 1 / 2 rho u^2 + p = "cost" $
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_342_1090_650_775.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_342_1090_650_775.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1934,7 +1932,7 @@ potenziale gravitazionale.
     Distacco.
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_838_1067_1086_285.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_838_1067_1086_285.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1947,8 +1945,8 @@ potenziale gravitazionale.
     $"Re" tilde.op 40 div 50$
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_633_486_1701_1482.jpg", width: 70%)
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_414_1761_2259_68.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_633_486_1701_1482.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_414_1761_2259_68.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1965,7 +1963,7 @@ potenziale gravitazionale.
     $ A(omega) = integral_(-infinity)^(+infinity) x(t) e^(-i omega t) dif t $
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-04_436_1042_29_308.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-04_436_1042_29_308.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1980,7 +1978,7 @@ potenziale gravitazionale.
     per $"Re" > 200$
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-04_339_503_1015_1489.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-04_339_503_1015_1489.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -1993,7 +1991,7 @@ potenziale gravitazionale.
     $ u(t) = 1 / (2 pi) integral_(-infinity)^(+infinity) A(omega) e^(i omega t) dif omega $
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-04_709_1690_1534_270.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-04_709_1690_1534_270.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -2015,7 +2013,7 @@ potenziale gravitazionale.
     $ overline(u'^n) = integral_(-infinity)^(+infinity) xi^n p(u') dif u' $
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-05_480_687_226_1322.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-05_480_687_226_1322.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -2031,7 +2029,7 @@ potenziale gravitazionale.
     $
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-05_539_1303_2012_288.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-05_539_1303_2012_288.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -2077,7 +2075,7 @@ Energia Cinetica Turbolenta. Interpretazione di $overline(u'_i u'_j)$:
     $
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-07_462_833_1830_140.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-07_462_833_1830_140.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -2117,7 +2115,7 @@ Interpretazione fisica di $P$ (flusso):
     $P$ rappresenta il trasferimento di energia cinetica dal flusso medio.
   ],
   [
-    #image("dd564104-7c88-49b3-8aa7-fc7d01e14c7c-09_547_611_1055_236.jpg", width: 70%)
+    #image("images/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-09_547_611_1055_236.jpg", width: 70%)
   ]
 )
 #v(1em)
