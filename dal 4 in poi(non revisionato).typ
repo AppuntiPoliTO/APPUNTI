@@ -673,7 +673,7 @@ $ (D arrow(u))/(D t) = -1/rho nabla p^* + nu Delta arrow(u) $
     - mostrare che $G = (dif p)/(dif x) = "cost"$.
   ],
   [
-    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-11_717_1742_183_213.jpg", width: 70%)
+    //#image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-11_717_1742_183_213.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -770,7 +770,7 @@ $ u(y) = underbrace(1/2 G/mu (y^2 - e y), "parabolica") + underbrace(U/e (y - e)
       sostiene il moto.
   ],
   [
-    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-14_522_968_2233_855.jpg", width: 70%)
+    //#image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-14_522_968_2233_855.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -794,7 +794,7 @@ Forza per unità di superficie sulla parete inferiore ($y = 0$):
     $
   ],
   [
-    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-15_252_646_343_1185.jpg", width: 70%)
+    //#image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-15_252_646_343_1185.jpg", width: 70%)
   ]
 )
 #v(1em)
@@ -814,9 +814,9 @@ Sulla parete superiore ($y = e$):
     con $tau_e = tau(y = e) = (mu U)/e + (G e)/2$.
   ],
   [
-    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-15_187_683_1579_1340.jpg", width: 70%)
+    //#image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-15_187_683_1579_1340.jpg", width: 70%)
     #v(0.5em)
-    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-15_329_460_2073_920.jpg", width: 70%)
+    //#image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-15_329_460_2073_920.jpg", width: 70%)
   ]
 )
 #v(1em)
