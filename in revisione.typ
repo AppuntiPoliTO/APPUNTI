@@ -403,7 +403,9 @@ $ d/(d t) integral_V rho u^2 / 2 d V = - integral_S u_j cal(H) n_j d S - D_v + P
     Consideriamo un tronco di condotta attraversato da un fluido in cui è installata una macchina a fluido (turbina o pompa). La superficie di controllo $S$ è costituita dalla sezione di ingresso $S_1$, dalla sezione di uscita $S_2$, dalle pareti fisse della condotta $S_w$ (su cui $arrow(u) = 0$) e dalla superficie mobile delle pale della macchina $S_m$ (su cui la portata massica attraversante è nulla, ma vi è scambio di potenza $P_m$).
 
     Scomponendo il flusso convettivo di carico totale sulle diverse porzioni del contorno:
-    $ - integral_S arrow(u) cal(H) dot arrow(n) d S = - integral_(S_1) arrow(u) cal(H) dot arrow(n) d S_1 - integral_(S_2) arrow(u) cal(H) dot arrow(n) d S_2 - integral_(S_m) arrow(u) cal(H) dot arrow(n) d S_m = $
+    $ - integral_S arrow(u) cal(H) dot arrow(n) d S = $
+    $
+    =- integral_(S_1) arrow(u) cal(H) dot arrow(n) d S_1 - integral_(S_2) arrow(u) cal(H) dot arrow(n) d S_2 - integral_(S_m) arrow(u) cal(H) dot arrow(n) d S_m = $
     $ = Q_v cal(H)_1 - Q_v cal(H)_2 $
   ],
   [
