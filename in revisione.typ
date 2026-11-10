@@ -100,11 +100,11 @@ $ (D arrow(u))/(D t) = - 1/rho nabla p^* + nu Delta arrow(u) $
   [
     Si consideri il moto stazionario di un fluido viscoso confinato tra due pareti piane parallele poste a distanza $e$. Il problema consiste nello scrivere le equazioni di bilancio di quantità di moto con le relative condizioni al limite, cercando una soluzione stazionaria del tipo:
   ],
-  [#canvas(length: 1cm, {
+  [#canvas(length: 1.5cm, {
   import draw: *
 
   // Pareti e asse x
-  line((-2.2, 0), (4.6, 0), mark: (end: ">"), stroke: 1pt)
+  line((-2.2, 0), (4.6, 0), mark: (end: "stealth"), stroke: 1pt)
   line((-2.2, 2.6), (3.2, 2.6), stroke: 1pt)
 
   // Tratteggio parete superiore
@@ -130,25 +130,25 @@ $ (D arrow(u))/(D t) = - 1/rho nabla p^* + nu Delta arrow(u) $
   line((3.1, 0), (2.8, -0.2), stroke: 0.6pt)
 
   // Asse verticale
-  line((0, 0), (0, 3.2), mark: (end: ">"), stroke: 1pt)
+  line((0, 0), (0, 3.2), mark: (end: "stealth"), stroke: 1pt)
 
   // Profilo di velocità
   bezier((-0.9, 0), (0, 2.6), (0.2, 1.15), (1.2, 2.35), stroke: 1pt)
 
   // Vettori velocità (parte inferiore, verso sinistra)
-  line((0, 0.03), (-0.87, 0.03), mark: (end: ">"), stroke: 0.6pt)
-  line((0, 0.20), (-0.70, 0.20), mark: (end: ">"), stroke: 0.6pt)
-  line((0, 0.43), (-0.47, 0.43), mark: (end: ">"), stroke: 0.6pt)
-  line((0, 0.66), (-0.24, 0.66), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 0.03), (-0.87, 0.03), mark: (end: "stealth"), stroke: 0.6pt)
+  line((0, 0.20), (-0.70, 0.20), mark: (end: "stealth"), stroke: 0.6pt)
+  line((0, 0.43), (-0.47, 0.43), mark: (end: "stealth"), stroke: 0.6pt)
+  line((0, 0.66), (-0.24, 0.66), mark: (end: "stealth"), stroke: 0.6pt)
   line((0, 0.87), (-0.06, 0.87), stroke: 0.6pt)
 
   // Vettori velocità (parte superiore, verso destra)
-  line((0, 1.35), (0.30, 1.35), mark: (end: ">"), stroke: 0.6pt)
-  line((0, 1.55), (0.43, 1.55), mark: (end: ">"), stroke: 0.6pt)
-  line((0, 1.80), (0.54, 1.80), mark: (end: ">"), stroke: 0.6pt)
-  line((0, 2.07), (0.56, 2.07), mark: (end: ">"), stroke: 0.6pt)
-  line((0, 2.31), (0.46, 2.31), mark: (end: ">"), stroke: 0.6pt)
-  line((0, 2.46), (0.30, 2.46), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 1.35), (0.30, 1.35), mark: (end: "stealth"), stroke: 0.6pt)
+  line((0, 1.55), (0.43, 1.55), mark: (end: "stealth"), stroke: 0.6pt)
+  line((0, 1.80), (0.54, 1.80), mark: (end: "stealth"), stroke: 0.6pt)
+  line((0, 2.07), (0.56, 2.07), mark: (end: "stealth"), stroke: 0.6pt)
+  line((0, 2.31), (0.46, 2.31), mark: (end: "stealth"), stroke: 0.6pt)
+  line((0, 2.46), (0.30, 2.46), mark: (end: "stealth"), stroke: 0.6pt)
 
   // Linea di quota l
   line((2.7, -0.1), (2.7, 2.75), stroke: 0.6pt)
@@ -244,32 +244,32 @@ Si distinguono i seguenti regimi caratteristici al variare del gradiente di pres
     #canvas(length: 1cm, {
       import draw: *
       // Pannello 1: G < 0 (si oppone al moto)
-      line((-0.5, 0), (2.5, 0), mark: (end: ">"), stroke: 0.8pt)
+      line((-0.5, 0), (2.5, 0), mark: (end: "stealth"), stroke: 0.8pt)
       content((2.6, 0), text(size: 7pt)[$x$], anchor: "west")
       line((-0.3, 2.2), (2.2, 2.2), stroke: 0.8pt)
-      line((0.8, -0.2), (0.8, 2.6), mark: (end: ">"), stroke: 0.8pt)
+      line((0.8, -0.2), (0.8, 2.6), mark: (end: "stealth"), stroke: 0.8pt)
       content((0.8, 2.7), text(size: 7pt)[$y$], anchor: "south")
       content((-0.4, 2.2), text(size: 7pt)[$y=e$], anchor: "east")
       content((-0.4, 0), text(size: 7pt)[$y=0$], anchor: "east")
       bezier((0, 0), (0.8, 2.2), (1.3, 0.8), (1.3, 1.7), stroke: 1pt)
-      line((0.8, 0), (0, 0), mark: (end: ">"), stroke: 0.7pt)
-      line((0.8, 0.4), (0.58, 0.4), mark: (end: ">"), stroke: 0.6pt)
-      line((0.8, 1.3), (1.08, 1.3), mark: (end: ">"), stroke: 0.6pt)
-      line((0.8, 1.8), (1.02, 1.8), mark: (end: ">"), stroke: 0.6pt)
+      line((0.8, 0), (0, 0), mark: (end: "stealth"), stroke: 0.7pt)
+      line((0.8, 0.4), (0.58, 0.4), mark: (end: "stealth"), stroke: 0.6pt)
+      line((0.8, 1.3), (1.08, 1.3), mark: (end: "stealth"), stroke: 0.6pt)
+      line((0.8, 1.8), (1.02, 1.8), mark: (end: "stealth"), stroke: 0.6pt)
       content((0.4, -0.35), text(size: 7pt)[$(-U, 0, 0)$], anchor: "north")
       content((0.8, -0.8), text(size: 7pt)[$p^+ quad G < 0 quad p^-$], anchor: "north")
 
       // Pannello 2: G > 0 (sostiene il moto)
-      line((3.5, 0), (6.3, 0), mark: (end: ">"), stroke: 0.8pt)
+      line((3.5, 0), (6.3, 0), mark: (end: "stealth"), stroke: 0.8pt)
       content((6.4, 0), text(size: 7pt)[$x$], anchor: "west")
       line((3.5, 2.2), (6.0, 2.2), stroke: 0.8pt)
-      line((5.2, -0.2), (5.2, 2.6), mark: (end: ">"), stroke: 0.8pt)
+      line((5.2, -0.2), (5.2, 2.6), mark: (end: "stealth"), stroke: 0.8pt)
       content((5.2, 2.7), text(size: 7pt)[$y$], anchor: "south")
       bezier((4.0, 0), (5.2, 2.2), (3.9, 0.9), (4.5, 1.7), stroke: 1pt)
-      line((5.2, 0), (4.0, 0), mark: (end: ">"), stroke: 0.7pt)
-      line((5.2, 0.55), (4.05, 0.55), mark: (end: ">"), stroke: 0.6pt)
-      line((5.2, 1.1), (4.25, 1.1), mark: (end: ">"), stroke: 0.6pt)
-      line((5.2, 1.65), (4.65, 1.65), mark: (end: ">"), stroke: 0.6pt)
+      line((5.2, 0), (4.0, 0), mark: (end: "stealth"), stroke: 0.7pt)
+      line((5.2, 0.55), (4.05, 0.55), mark: (end: "stealth"), stroke: 0.6pt)
+      line((5.2, 1.1), (4.25, 1.1), mark: (end: "stealth"), stroke: 0.6pt)
+      line((5.2, 1.65), (4.65, 1.65), mark: (end: "stealth"), stroke: 0.6pt)
       content((5.35, 1.1), text(size: 7pt)[$u(y)$], anchor: "west")
       content((4.7, -0.8), text(size: 7pt)[$G > 0$], anchor: "north")
     })
@@ -308,22 +308,22 @@ $ sigma_(i j) = mat(
     #canvas(length: 1cm, {
       import draw: *
       // Parete inferiore y = 0
-      line((0, 2.2), (2.6, 2.2), mark: (end: ">"), stroke: 0.9pt)
+      line((0, 2.2), (2.6, 2.2), mark: (end: "stealth"), stroke: 0.9pt)
       content((2.7, 2.2), text(size: 7pt)[$x$], anchor: "west")
-      line((1.1, 2.2), (1.1, 3.1), mark: (end: ">"), stroke: 1pt)
+      line((1.1, 2.2), (1.1, 3.1), mark: (end: "stealth"), stroke: 1pt)
       content((1.3, 2.7), text(size: 7pt)[$n_i = mat(0; 1; 0)$], anchor: "west")
 
       // Parete superiore y = e
       line((0, 1.2), (2.4, 1.2), stroke: 0.9pt)
-      line((1.1, 1.2), (1.1, 0.4), mark: (end: ">"), stroke: 1pt)
+      line((1.1, 1.2), (1.1, 0.4), mark: (end: "stealth"), stroke: 1pt)
       content((1.3, 0.8), text(size: 7pt)[$n_i = mat(0; -1; 0)$], anchor: "west")
 
       // Scomposizione vettore trazione T_i
-      line((4.8, 0.5), (4.8, 2.3), mark: (end: ">"), stroke: 1pt)
+      line((4.8, 0.5), (4.8, 2.3), mark: (end: "stealth"), stroke: 1pt)
       content((5.0, 1.8), text(size: 7pt)[$p$], anchor: "west")
-      line((4.8, 0.5), (3.5, 0.5), mark: (end: ">"), stroke: 1pt)
+      line((4.8, 0.5), (3.5, 0.5), mark: (end: "stealth"), stroke: 1pt)
       content((4.15, 0.35), text(size: 7pt)[$-tau_e$], anchor: "north")
-      line((4.8, 0.5), (3.5, 2.1), mark: (end: ">"), stroke: 1.2pt)
+      line((4.8, 0.5), (3.5, 2.1), mark: (end: "stealth"), stroke: 1.2pt)
       content((3.4, 2.2), text(size: 7pt)[$T_i$], anchor: "south")
     })
   ]
@@ -454,16 +454,16 @@ $ d/(d t) integral_V rho u^2 / 2 d V = - integral_S u_j cal(H) n_j d S - D_v + P
       line((0.5, 2.4), (5.5, 2.4), stroke: 1pt)
       // Sezione ingresso S_1
       circle((0.5, 1.6), radius: (0.25, 0.8), stroke: 0.9pt)
-      line((0.5, 1.6), (-0.1, 1.6), mark: (end: ">"), stroke: 0.8pt)
+      line((0.5, 1.6), (-0.1, 1.6), mark: (end: "stealth"), stroke: 0.8pt)
       content((-0.15, 1.6), text(size: 7pt)[$arrow(n)$], anchor: "east")
-      line((0.5, 1.4), (1.2, 1.4), mark: (end: ">"), stroke: 0.8pt)
+      line((0.5, 1.4), (1.2, 1.4), mark: (end: "stealth"), stroke: 0.8pt)
       content((1.25, 1.4), text(size: 7pt)[$arrow(u)$], anchor: "west")
       content((0.5, 0.5), text(size: 7pt)[$S_1$], anchor: "north")
 
       // Sezione uscita S_2
       arc((5.5, 1.6), start: -90deg, stop: 90deg, radius: (0.25, 0.8), anchor: "origin", stroke: 0.9pt)
       arc((5.5, 1.6), start: 90deg, stop: 270deg, radius: (0.25, 0.8), anchor: "origin", stroke: (dash: "dashed", thickness: 0.7pt))
-      line((5.5, 1.6), (6.2, 1.6), mark: (end: ">"), stroke: 0.8pt)
+      line((5.5, 1.6), (6.2, 1.6), mark: (end: "stealth"), stroke: 0.8pt)
       content((6.25, 1.6), text(size: 7pt)[$arrow(n)$], anchor: "west")
       content((5.5, 0.5), text(size: 7pt)[$S_2$], anchor: "north")
 
@@ -474,7 +474,7 @@ $ d/(d t) integral_V rho u^2 / 2 d V = - integral_S u_j cal(H) n_j d S - D_v + P
       content((2.8, 0.95), text(size: 7pt)[$P_m, S_m$], anchor: "north")
 
       // Normale parete S_w
-      line((3.2, 2.4), (3.2, 2.9), mark: (end: ">"), stroke: 0.8pt)
+      line((3.2, 2.4), (3.2, 2.9), mark: (end: "stealth"), stroke: 0.8pt)
       content((3.3, 2.8), text(size: 7pt)[$arrow(n)$], anchor: "west")
       content((4.0, 0.5), text(size: 7pt)[$S_w$], anchor: "north")
     })
@@ -593,15 +593,15 @@ $ tau_(r x) = 2 mu 1/2 ((dif u_x)/(dif r) + (dif u_r)/(dif x)) = mu (dif u_x)/(d
       // Pannello A: Profilo parabolico u(r)
       line((0, 0.2), (2.6, 0.2), stroke: 0.9pt)
       line((0, 2.2), (2.6, 2.2), stroke: 0.9pt)
-      line((-0.2, 1.2), (2.9, 1.2), mark: (end: ">"), stroke: 0.6pt)
+      line((-0.2, 1.2), (2.9, 1.2), mark: (end: "stealth"), stroke: 0.6pt)
       content((2.95, 1.2), text(size: 7pt)[$z$], anchor: "west")
-      line((0.5, -0.1), (0.5, 2.6), mark: (end: ">"), stroke: 0.8pt)
+      line((0.5, -0.1), (0.5, 2.6), mark: (end: "stealth"), stroke: 0.8pt)
       content((0.5, 2.65), text(size: 7pt)[$r$], anchor: "south")
       bezier((0.5, 0.2), (2.1, 1.2), (1.3, 0.45), (2.1, 0.85), stroke: 1pt)
       bezier((2.1, 1.2), (0.5, 2.2), (2.1, 1.55), (1.3, 1.95), stroke: 1pt)
-      line((0.5, 1.2), (2.1, 1.2), mark: (end: ">"), stroke: 0.6pt)
-      line((0.5, 1.6), (1.84, 1.6), mark: (end: ">"), stroke: 0.6pt)
-      line((0.5, 0.8), (1.84, 0.8), mark: (end: ">"), stroke: 0.6pt)
+      line((0.5, 1.2), (2.1, 1.2), mark: (end: "stealth"), stroke: 0.6pt)
+      line((0.5, 1.6), (1.84, 1.6), mark: (end: "stealth"), stroke: 0.6pt)
+      line((0.5, 0.8), (1.84, 0.8), mark: (end: "stealth"), stroke: 0.6pt)
       line((2.1, 1.2), (2.1, 0.0), stroke: (dash: "dashed", thickness: 0.5pt))
       content((2.1, -0.05), text(size: 7pt)[$u_0$], anchor: "north")
 
@@ -609,7 +609,7 @@ $ tau_(r x) = 2 mu 1/2 ((dif u_x)/(dif r) + (dif u_r)/(dif x)) = mu (dif u_x)/(d
       line((3.8, 0.2), (6.0, 0.2), stroke: 0.9pt)
       line((3.8, 2.2), (6.0, 2.2), stroke: 0.9pt)
       line((3.6, 1.2), (6.2, 1.2), stroke: (dash: "dashed", thickness: 0.6pt))
-      line((5.0, -0.1), (5.0, 2.6), mark: (end: ">"), stroke: 0.8pt)
+      line((5.0, -0.1), (5.0, 2.6), mark: (end: "stealth"), stroke: 0.8pt)
       content((5.0, 2.65), text(size: 7pt)[$r$], anchor: "south")
       line((5.0, 1.2), (4.0, 2.2), stroke: 1pt)
       line((5.0, 1.2), (4.0, 0.2), stroke: 1pt)
