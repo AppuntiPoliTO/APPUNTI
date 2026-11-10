@@ -6,8 +6,7 @@
 #set math.equation(numbering: "(1)")
 #set heading(numbering: none)
 
-#let immagine-originale = image
-#let image(nome-file, ..args) = immagine-originale("images/" + nome-file, ..args)
+
 // Nota / osservazione
 #let nota(body) = block(
   width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,)
@@ -94,7 +93,76 @@ $ (D arrow(u))/(D t) = - 1/rho nabla p^* + nu Delta arrow(u) $
 
 == Equazioni di bilancio di quantità di moto e condizioni al limite
 
-Si consideri il moto stazionario di un fluido viscoso confinato tra due pareti piane parallele poste a distanza $e$. Il problema consiste nello scrivere le equazioni di bilancio di quantità di moto con le relative condizioni al limite, cercando una soluzione stazionaria del tipo:
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (center + horizon, center + horizon),
+  [
+    Si consideri il moto stazionario di un fluido viscoso confinato tra due pareti piane parallele poste a distanza $e$. Il problema consiste nello scrivere le equazioni di bilancio di quantità di moto con le relative condizioni al limite, cercando una soluzione stazionaria del tipo:
+  ],
+  [#canvas(length: 1cm, {
+  import draw: *
+
+  // Pareti e asse x
+  line((-2.2, 0), (4.6, 0), mark: (end: ">"), stroke: 1pt)
+  line((-2.2, 2.6), (3.2, 2.6), stroke: 1pt)
+
+  // Tratteggio parete superiore
+  line((-1.9, 2.6), (-1.6, 2.8), stroke: 0.6pt)
+  line((-1.4, 2.6), (-1.1, 2.8), stroke: 0.6pt)
+  line((-0.9, 2.6), (-0.6, 2.8), stroke: 0.6pt)
+  line((-0.4, 2.6), (-0.1, 2.8), stroke: 0.6pt)
+  line((0.1, 2.6), (0.4, 2.8), stroke: 0.6pt)
+  line((0.6, 2.6), (0.9, 2.8), stroke: 0.6pt)
+  line((1.1, 2.6), (1.4, 2.8), stroke: 0.6pt)
+  line((1.6, 2.6), (1.9, 2.8), stroke: 0.6pt)
+  line((2.1, 2.6), (2.4, 2.8), stroke: 0.6pt)
+
+  // Tratteggio parete inferiore
+  line((-1.7, 0), (-2.0, -0.2), stroke: 0.6pt)
+  line((-1.1, 0), (-1.4, -0.2), stroke: 0.6pt)
+  line((-0.5, 0), (-0.8, -0.2), stroke: 0.6pt)
+  line((0.1, 0), (-0.2, -0.2), stroke: 0.6pt)
+  line((0.7, 0), (0.4, -0.2), stroke: 0.6pt)
+  line((1.3, 0), (1.0, -0.2), stroke: 0.6pt)
+  line((1.9, 0), (1.6, -0.2), stroke: 0.6pt)
+  line((2.5, 0), (2.2, -0.2), stroke: 0.6pt)
+  line((3.1, 0), (2.8, -0.2), stroke: 0.6pt)
+
+  // Asse verticale
+  line((0, 0), (0, 3.2), mark: (end: ">"), stroke: 1pt)
+
+  // Profilo di velocità
+  bezier((-0.9, 0), (0, 2.6), (0.2, 1.15), (1.2, 2.35), stroke: 1pt)
+
+  // Vettori velocità (parte inferiore, verso sinistra)
+  line((0, 0.03), (-0.87, 0.03), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 0.20), (-0.70, 0.20), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 0.43), (-0.47, 0.43), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 0.66), (-0.24, 0.66), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 0.87), (-0.06, 0.87), stroke: 0.6pt)
+
+  // Vettori velocità (parte superiore, verso destra)
+  line((0, 1.35), (0.30, 1.35), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 1.55), (0.43, 1.55), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 1.80), (0.54, 1.80), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 2.07), (0.56, 2.07), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 2.31), (0.46, 2.31), mark: (end: ">"), stroke: 0.6pt)
+  line((0, 2.46), (0.30, 2.46), mark: (end: ">"), stroke: 0.6pt)
+
+  // Linea di quota l
+  line((2.7, -0.1), (2.7, 2.75), stroke: 0.6pt)
+  line((2.6, -0.1), (2.8, 0.15), stroke: 0.6pt)
+  line((2.6, 2.45), (2.8, 2.75), stroke: 0.6pt)
+
+  // Etichette
+  content((-2.6, 2.6), text(size: 7pt)[$y = l$], anchor: "east")
+  content((-2.6, 0.0), text(size: 7pt)[$y = 0$], anchor: "east")
+  content((2.9, 1.5), text(size: 7pt)[$l$], anchor: "west")
+  content((4.75, 0.0), text(size: 7pt)[$x$], anchor: "west")
+  content((-0.2, -0.7), text(size: 7pt)[$(-U, 0, 0)$], anchor: "north")
+})])
+
 
 $ arrow(u) = mat(u(y); 0; 0) quad "e" quad p = p(x) $
 
