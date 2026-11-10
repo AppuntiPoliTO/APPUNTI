@@ -14,46 +14,6 @@
 #let varphi = $phi$
 
 
-= Calcolo del vettore vorticità e influenza della gravità
-
-== Tensore di velocità di rotazione e vettore vorticità
-
-Il tensore antisimmetrico di velocità di rotazione $overline(overline(Omega))$ è definito in funzione delle sue componenti scalari come:
-
-$ overline(overline(Omega)) = mat(
-  0, -Omega_3, Omega_2;
-  Omega_3, 0, -Omega_1;
-  -Omega_2, Omega_1, 0
-) $
-
-Le singole componenti del vettore di rotazione $arrow(Omega)$ si ricavano dalle derivate parziali incrociate del campo di velocità:
-
-$ Omega_3 = -1/2 ((dif u_1)/(dif x_2) - (dif u_2)/(dif x_1)) $
-
-$ Omega_2 = 1/2 ((dif u_1)/(dif x_3) - (dif u_3)/(dif x_1)) quad arrow.r.double quad arrow(Omega) = mat(Omega_1; Omega_2; Omega_3) $
-
-$ Omega_1 = -1/2 ((dif u_2)/(dif x_3) - (dif u_3)/(dif x_2)) $
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (center + horizon, center + horizon),
-  [
-    Nel caso specifico in esame, l'unica componente non nulla è:
-    $ Omega_3 = - U_e / (2 h) $
-    Poiché tale componente assume un valore negativo, le particelle fluide possiedono una vorticità negativa e ruotano conseguentemente in senso orario.
-  ],
-  [
-    #canvas(length: 1cm, {
-      import draw: *
-      arc((0, 0), start: -110deg, stop: 110deg, radius: 1.3, anchor: "origin", stroke: 1.2pt)
-      line((-0.44, -1.22), (-0.75, -1.05), stroke: 1.2pt)
-      line((-0.44, -1.22), (-0.15, -1.45), stroke: 1.2pt)
-      line((-0.35, 0), (0.35, 0), stroke: 2pt)
-    })
-  ]
-)
-#v(1em)
 
 == Influenza della gravità sulla dinamica del moto nei fluidi a densità costante
 
