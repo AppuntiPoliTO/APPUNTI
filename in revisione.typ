@@ -49,6 +49,262 @@ $ (D arrow(u))/(D t) = - 1/rho nabla p^* + nu Delta arrow(u) $
   2. La pressione cambia significato fisico, venendo sostituita dalla pressione motrice $p^*$ che governa effettivamente la dinamica del fluido.
 ]
 
+=== Esempio di flusso viscoso
+
+$arrow.r$ Moto di Couette $equiv$ Piano
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (center + horizon, center + horizon),
+  [
+    La normale è entrante; significa che calcolo la forza della placca sul fluido.
+
+    Il campo evolve linearmente con $x_2$:
+
+    $ (partial u_1)/(partial x_2) = U_e / h $
+  ],
+  [
+    #canvas(length: 1cm, {
+  import draw: *
+
+  // 1. Parete inferiore e tratteggio (nero)
+  line((0, 0), (7.7, 0), mark: (end: ">", size: 0.15), stroke: 1pt + black)
+  line((0.25, 0), (0.05, -0.22), stroke: 0.8pt + black)
+  line((0.90, 0), (0.70, -0.22), stroke: 0.8pt + black)
+  line((1.55, 0), (1.35, -0.22), stroke: 0.8pt + black)
+  line((2.20, 0), (2.00, -0.22), stroke: 0.8pt + black)
+  line((2.85, 0), (2.65, -0.22), stroke: 0.8pt + black)
+  line((3.50, 0), (3.30, -0.22), stroke: 0.8pt + black)
+  line((4.15, 0), (3.95, -0.22), stroke: 0.8pt + black)
+  line((4.80, 0), (4.60, -0.22), stroke: 0.8pt + black)
+  line((5.95, 0), (5.75, -0.22), stroke: 0.8pt + black)
+  line((6.70, 0), (6.50, -0.22), stroke: 0.8pt + black)
+
+  // 2. Lastra superiore (nero)
+  line((7.1, 2.5), (0.2, 2.5), (0.2, 2.2), (7.1, 2.2), stroke: 1pt + black)
+  bezier((7.1, 2.5), (7.1, 2.35), (7.02, 2.45), (7.02, 2.40), stroke: 1pt + black)
+  bezier((7.1, 2.35), (7.1, 2.2), (7.18, 2.30), (7.18, 2.25), stroke: 1pt + black)
+
+  // 3. Profilo di velocità (rosso-marrone)
+  line((2.3, 0), (2.3, 2.2), stroke: 0.9pt + rgb("#8c3824"))
+  line((2.3, 0), (4.7, 2.2), stroke: 0.9pt + rgb("#8c3824"))
+
+  line((2.3, 0.35), (2.68, 0.35), mark: (end: ">", size: 0.12), stroke: 0.8pt + rgb("#8c3824"))
+  line((2.3, 0.72), (3.09, 0.72), mark: (end: ">", size: 0.14), stroke: 0.8pt + rgb("#8c3824"))
+  line((2.3, 1.10), (3.50, 1.10), mark: (end: ">", size: 0.15), stroke: 0.8pt + rgb("#8c3824"))
+  line((2.3, 1.47), (3.90, 1.47), mark: (end: ">", size: 0.15), stroke: 0.8pt + rgb("#8c3824"))
+  line((2.3, 1.85), (4.32, 1.85), mark: (end: ">", size: 0.15), stroke: 0.8pt + rgb("#8c3824"))
+  
+
+  // 4. Versore normale n e velocità U
+  line((5.44, 2.2), (5.44, 1.8),mark: (end: ">", size: 0.16), stroke: 0.8pt + rgb("#8c3824"))
+  content((5.60, 1.8), text(size: 8pt, fill: rgb("#8c3824"))[$arrow(n)=(0,-1,0)$], anchor: "west")
+  line((5.44, 0), (5.44, 0.4),mark: (end: ">", size: 0.16), stroke: 0.8pt + rgb("#8c3824"))
+  content((5.60, 0.28), text(size: 8pt, fill: rgb("#8c3824"))[$arrow(n)=(0,1,0)$], anchor: "west")
+  line((6.8, 2.35), (8.0, 2.35), mark: (end: ">", size: 0.16), stroke: 0.9pt + rgb("#8c3824"))
+
+  // 5. Quota h e assi x_2, x_3 (nero)
+  line((0.85, 0.05), (0.85, 2.15), mark: (start: ">", end: ">", size: 0.15), stroke: 0.8pt + black)
+
+
+  // 6. Etichette (tutte con text(size: 7pt))
+  content((0.70, 1.1), text(size: 7pt, fill: black)[$h$], anchor: "east")
+
+  
+  content((7.45, 2.72), text(size: 7pt, fill: rgb("#8c3824"))[$arrow(U)_e$], anchor: "south")
+
+
+  content((7.65, -0.22), text(size: 7pt, fill: black)[$x_1$], anchor: "west")
+
+})
+  ]
+)
+#v(1em)
+
+// [DA AUDIO]
+Si considera un fluido viscoso compreso tra due piastre piane parallele indefinite, poste a distanza $h$ (unica dimensione geometrica caratteristica del problema). La piastra inferiore ($x_2 = 0$) è ferma, mentre la piastra superiore ($x_2 = h$) trasla nel proprio piano con velocità costante $U_e$ lungo la direzione $x_1$.
+
+A differenza di un fluido ideale (che trasmette solo sforzi normali e rispetta unicamente la condizione di impermeabilità, potendo scorrere senza attrito lungo la parete), un fluido reale viscoso è in grado di trasmettere sforzi tangenziali. Pertanto, vale la *condizione di aderenza* (*no-slip condition*): il fluido a contatto con una parete solida ha velocità relativa nulla rispetto ad essa, assumendone la medesima velocità:
+
+$ cases(
+  u_1 (x_2 = 0) = 0,
+  u_1 (x_2 = h) = U_e
+) $
+
+Si formulano le seguenti ipotesi sul campo di moto:
+- regime stazionario: $partial / (partial t) = 0$;
+- moto piano e unidirezionale lungo $x_1$: $arrow(u) = (u_1, u_2, u_3) = (u_1, 0, 0)$, con $u_2 = 0$ e $u_3 = 0$ identicamente nulli;
+- invarianza lungo $x_1$ e $x_3$ per l'indefinitezza delle piastre: tutte le derivate spaziali rispetto a $x_1$ e $x_3$ sono nulle ($partial / (partial x_1) = 0$, $partial / (partial x_3) = 0$), per cui $u_1 = u_1 (x_2)$.
+
+Integrando il gradiente costante $(partial u_1)/(partial x_2) = U_e / h$ con le condizioni di aderenza, il profilo di velocità risulta lineare:
+
+$ u_1 (x_2) = U_e x_2 / h $
+
+Devo calcolare il tensore degli sforzi in prossimità della parete mobile $x_2 = h$:
+
+$ lr(sigma_(i j)|)_(x_2 = h) = mat(delim: "[",
+  -p + mu ((partial u_1)/(partial x_1) + (partial u_1)/(partial x_1)), mu ((partial u_1)/(partial x_2) + (partial u_2)/(partial x_1)), mu ((partial u_1)/(partial x_3) + (partial u_3)/(partial x_1));
+  mu ((partial u_1)/(partial x_2) + (partial u_2)/(partial x_1)), -p + mu ((partial u_2)/(partial x_2) + (partial u_2)/(partial x_2)), mu ((partial u_2)/(partial x_3) + (partial u_3)/(partial x_2));
+  mu ((partial u_1)/(partial x_3) + (partial u_3)/(partial x_1)), mu ((partial u_2)/(partial x_3) + (partial u_3)/(partial x_2)), -p + mu ((partial u_3)/(partial x_3) + (partial u_3)/(partial x_3))
+)_(x_2 = h) $
+
+Nel caso specifico ho che:
+
+$
+lr(sigma_(i j)|)_(x_2 = h) &= mat(delim: "[",
+  -p, lr(mu (partial u_1)/(partial x_2)|)_(x_2 = h), 0;
+  lr(mu (partial u_1)/(partial x_2)|)_(x_2 = h), -p, 0;
+  0, 0, -p
+)
+= mat(delim: "[",
+  -p, mu U_e / h, 0;
+  mu U_e / h, -p, 0;
+  0, 0, -p
+)
+$
+
+// [DA AUDIO]
+I singoli contributi viscosi $tau_(i j) = 2 mu D_(i j) = mu ((partial u_i)/(partial x_j) + (partial u_j)/(partial x_i))$ si semplificano come segue:
+- Componenti normali viscose (diagonali):
+
+$ tau_(1 1) = 2 mu (partial u_1)/(partial x_1) = 0 quad ("poiché" u_1 "non dipende da" x_1) $
+
+$ tau_(2 2) = 2 mu (partial u_2)/(partial x_2) = 0, quad tau_(3 3) = 2 mu (partial u_3)/(partial x_3) = 0 quad ("poiché" u_2 = u_3 = 0) $
+
+  Sulla diagonale principale sopravvive dunque il solo contributo isotropo della pressione $-p$.
+- Componenti tangenziali nel piano $(x_1, x_2)$:
+
+$ tau_(1 2) = mu ((partial u_1)/(partial x_2) + (partial u_2)/(partial x_1)) = mu (U_e / h + 0) = mu U_e / h $
+
+  Per la simmetria del tensore degli sforzi si ha $tau_(2 1) = tau_(1 2) = mu U_e / h$. Poiché il gradiente di velocità è uniforme, tale sforzo tangenziale è costante in ogni punto del dominio fluido (sia in $x_2 = 0$ che in $x_2 = h$).
+- Componenti tangenziali fuori piano:
+
+$ tau_(1 3) = tau_(3 1) = mu ((partial u_1)/(partial x_3) + (partial u_3)/(partial x_1)) = 0, quad tau_(2 3) = tau_(3 2) = mu ((partial u_2)/(partial x_3) + (partial u_3)/(partial x_2)) = 0 $
+
+  poiché $u_2 = u_3 = 0$ e nessuna grandezza varia lungo $x_3$.
+
+Posso ora calcolare la forza per unità di superficie $T_i = T_(i j) n_j$ ($arrow(T) = overline(overline(sigma)) dot arrow(n)$) esercitata dalla piastra sul fluido:
+
+$
+sigma_i &= sigma_(i j) n_j 
+&= mat(
+  -p, mu U_e / h, 0;
+  mu U_e / h, -p, 0;
+  0, 0, -p
+) mat(0; 1; 0) 
+&= (mu U_e / h, -p, 0)
+$
+
+$tau_w$: sforzo a parete.
+
+// [DA AUDIO]
+Poiché le piastre hanno estensione infinita lungo $x_1$ e $x_3$, la forza totale risulterebbe infinita; ha quindi senso calcolare unicamente la *forza per unità di superficie* (vettore tensione $arrow(t)$ di componenti $t_i = sigma_(i j) n_j$).
+
+Considerando la parete inferiore ($x_2 = 0$), l'orientazione del versore normale $arrow(n)$ distingue l'azione del fluido sulla parete dalla reazione della parete sul fluido:
+1. *Forza per unità di superficie esercitata dal fluido sulla parete inferiore*: si utilizza il versore normale uscente dalla parete $arrow(n) = (0, 1, 0)^T$, ottenendo:
+
+$ arrow(t)_("fluido" arrow.r "parete") = (mu U_e / h, -p, 0) $
+
+   Il fluido esercita sulla parete inferiore una componente tangenziale positiva $+mu U_e / h$ lungo $x_1$ (tende a trascinare la parete nel verso del moto) e una componente normale negativa $-p$ lungo $x_2$ (schiaccia la parete verso il basso).
+2. *Forza per unità di superficie esercitata dalla parete inferiore sul fluido*: per il principio di azione e reazione, si utilizza il versore normale opposto $arrow(n) = (0, -1, 0)^T$ (oppure questo stesso versore come normale uscente dal fluido sulla parete superiore in $x_2 = h$), ottenendo:
+
+$ arrow(t)_("parete" arrow.r "fluido") = mat(
+  -p, mu U_e / h, 0;
+  mu U_e / h, -p, 0;
+  0, 0, -p
+) mat(0; -1; 0) = (-mu U_e / h, p, 0) $
+
+   La parete inferiore reagisce sostenendo il fluido con una pressione normale $+p$ diretta lungo $+x_2$ ed esercitando uno sforzo tangenziale $-mu U_e / h$ diretto lungo $-x_1$, ovvero opposto al moto, che tende a frenare il fluido.
+
+// [DA AUDIO]
+#v(0.5em)
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (center + horizon, center + horizon),
+  [
+    #canvas(length: 1cm, {
+      import draw: *
+
+      // Titolo schema 1
+      content((3.0, 2.3), text(size: 8pt, weight: "bold")[Fluido $arrow.r$ Parete ($arrow(n) = (0, 1, 0)$)], anchor: "center")
+
+      // Parete inferiore e tratteggio
+      line((0.5, 1.0), (5.5, 1.0), mark: (end: ">", size: 0.15), stroke: 1pt + black)
+      content((5.6, 1.0), text(size: 7pt)[$x_1$], anchor: "west")
+      line((0.8, 1.0), (0.6, 0.78), stroke: 0.8pt + black)
+      line((1.4, 1.0), (1.2, 0.78), stroke: 0.8pt + black)
+      line((2.0, 1.0), (1.8, 0.78), stroke: 0.8pt + black)
+      line((2.6, 1.0), (2.4, 0.78), stroke: 0.8pt + black)
+      line((3.2, 1.0), (3.0, 0.78), stroke: 0.8pt + black)
+      line((3.8, 1.0), (3.6, 0.78), stroke: 0.8pt + black)
+      line((4.4, 1.0), (4.2, 0.78), stroke: 0.8pt + black)
+      line((5.0, 1.0), (4.8, 0.78), stroke: 0.8pt + black)
+
+      // Versore normale n uscente dalla parete (verso l'alto)
+      line((1.5, 1.0), (1.5, 1.8), mark: (end: ">", size: 0.14), stroke: 0.8pt + rgb("#555555"))
+      content((1.4, 1.6), text(size: 7pt, fill: rgb("#555555"))[$arrow(n)$], anchor: "east")
+
+      // Componente tangenziale +mu Ue / h
+      line((2.8, 1.0), (4.6, 1.0), mark: (end: ">", size: 0.15), stroke: 1pt + rgb("#8c3824"))
+      content((3.7, 1.25), text(size: 7pt, fill: rgb("#8c3824"))[$mu U_e / h$], anchor: "south")
+
+      // Componente normale -p
+      line((2.8, 1.0), (2.8, -0.4), mark: (end: ">", size: 0.15), stroke: 1pt + rgb("#8c3824"))
+      content((2.65, 0.3), text(size: 7pt, fill: rgb("#8c3824"))[$-p$], anchor: "east")
+
+      // Linee di proiezione tratteggiate
+      line((4.6, 1.0), (4.6, -0.4), stroke: (paint: rgb("#555555"), thickness: 0.6pt, dash: "dashed"))
+      line((2.8, -0.4), (4.6, -0.4), stroke: (paint: rgb("#555555"), thickness: 0.6pt, dash: "dashed"))
+
+      // Vettore risultante t
+      line((2.8, 1.0), (4.6, -0.4), mark: (end: ">", size: 0.16), stroke: 1.2pt + black)
+      content((4.7, -0.45), text(size: 7pt, fill: black)[$arrow(t)_("fluido" arrow.r "parete")$], anchor: "west")
+    })
+  ],
+  [
+    #canvas(length: 1cm, {
+      import draw: *
+
+      // Titolo schema 2
+      content((3.0, 2.6), text(size: 8pt, weight: "bold")[Parete $arrow.r$ Fluido ($arrow(n) = (0, -1, 0)$)], anchor: "center")
+
+      // Parete inferiore e tratteggio
+      line((0.5, 0.2), (5.5, 0.2), mark: (end: ">", size: 0.15), stroke: 1pt + black)
+      content((5.6, 0.2), text(size: 7pt)[$x_1$], anchor: "west")
+      line((0.8, 0.2), (0.6, -0.02), stroke: 0.8pt + black)
+      line((1.4, 0.2), (1.2, -0.02), stroke: 0.8pt + black)
+      line((2.0, 0.2), (1.8, -0.02), stroke: 0.8pt + black)
+      line((2.6, 0.2), (2.4, -0.02), stroke: 0.8pt + black)
+      line((3.2, 0.2), (3.0, -0.02), stroke: 0.8pt + black)
+      line((3.8, 0.2), (3.6, -0.02), stroke: 0.8pt + black)
+      line((4.4, 0.2), (4.2, -0.02), stroke: 0.8pt + black)
+      line((5.0, 0.2), (4.8, -0.02), stroke: 0.8pt + black)
+
+      // Versore normale n entrante nella parete (verso il basso)
+      line((4.8, 0.2), (4.8, -0.6), mark: (end: ">", size: 0.14), stroke: 0.8pt + rgb("#555555"))
+      content((4.9, -0.3), text(size: 7pt, fill: rgb("#555555"))[$arrow(n)$], anchor: "west")
+
+      // Componente tangenziale -mu Ue / h (opposta al moto)
+      line((3.4, 0.2), (1.6, 0.2), mark: (end: ">", size: 0.15), stroke: 1pt + rgb("#8c3824"))
+      content((2.5, -0.05), text(size: 7pt, fill: rgb("#8c3824"))[$-mu U_e / h$], anchor: "north")
+
+      // Componente normale +p (verso l'alto)
+      line((3.4, 0.2), (3.4, 1.6), mark: (end: ">", size: 0.15), stroke: 1pt + rgb("#8c3824"))
+      content((3.55, 0.9), text(size: 7pt, fill: rgb("#8c3824"))[$+p$], anchor: "west")
+
+      // Linee di proiezione tratteggiate
+      line((1.6, 0.2), (1.6, 1.6), stroke: (paint: rgb("#555555"), thickness: 0.6pt, dash: "dashed"))
+      line((3.4, 1.6), (1.6, 1.6), stroke: (paint: rgb("#555555"), thickness: 0.6pt, dash: "dashed"))
+
+      // Vettore risultante t
+      line((3.4, 0.2), (1.6, 1.6), mark: (end: ">", size: 0.16), stroke: 1.2pt + black)
+      content((1.5, 1.75), text(size: 7pt, fill: black)[$arrow(t)_("parete" arrow.r "fluido")$], anchor: "east")
+    })
+  ]
+)
+
 = Esempio: Teoria della lubrificazione
 
 == Equazioni di bilancio di quantità di moto e condizioni al limite
