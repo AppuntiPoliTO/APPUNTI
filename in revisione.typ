@@ -3,8 +3,9 @@
 #set page(paper: "a4", margin: 2cm)
 #set text(lang: "it", size: 11pt)
 #set par(justify: true)
+#set math.equation(numbering: "(1)")
 #set heading(numbering: none)
-#set page(margin: 1.5cm)
+
 #let immagine-originale = image
 #let image(nome-file, ..args) = immagine-originale("images/" + nome-file, ..args)
 // Nota / osservazione
@@ -57,7 +58,7 @@ $ Omega_1 = -1/2 ((diff u_2)/(diff x_3) - (diff u_3)/(diff x_2)) $
 
 == Influenza della gravità sulla dinamica del moto nei fluidi a densità costante
 
-Per analizzare l'effetto della forza di gravità in un fluido a densità $\rho = "cost"$, è sempre possibile scomporre la pressione totale $p$ nella somma di un contributo idrostatico $p_"hs"$ e di una pressione dinamica (o motrice) $p^*$:
+Per analizzare l'effetto della forza di gravità in un fluido a densità $rho = "cost"$, è sempre possibile scomporre la pressione totale $p$ nella somma di un contributo idrostatico $p_"hs"$ e di una pressione dinamica (o motrice) $p^*$:
 
 $ p = p_"hs" + p^* $
 
@@ -214,7 +215,7 @@ Per un fluido newtoniano incomprimibile, il tensore degli sforzi totali $sigma_(
 
 $ sigma_(i j) = -p delta_(i j) + tau_(i j) = -p delta_(i j) + 2 mu D_(i j) = -p delta_(i j) + mu ((diff u_i)/(diff x_j) + (diff u_j)/(diff x_i)) $
 
-Essendo il campo di velocità della forma $arrow(u) = (u(y), 0, 0)$, l'unica componente non banale del tensore degli sforzi viscosi è lo sforzo di taglio $\tau = \tau_(x y) = \tau_(y x)$:
+Essendo il campo di velocità della forma $arrow(u) = (u(y), 0, 0)$, l'unica componente non banale del tensore degli sforzi viscosi è lo sforzo di taglio $tau = tau_(x y) = tau_(y x)$:
 
 $ sigma_(i j) = mat(
   -p, tau, 0;
@@ -352,7 +353,7 @@ Integriamo l'equazione differenziale di bilancio su un volume di controllo fisso
 
 $ d/(d t) integral_V (rho u^2 / 2) d V = - integral_V u_j (diff cal(H))/(diff x_j) d V - underbrace(integral_V D d V, D_v) + integral_V diff/(diff x_j) (u_i tau_(i j)) d V $
 
-Trasformiamo il primo e il terzo termine a secondo membro in integrali di superficie mediante il teorema della divergenza (assumendo fluido incomprimibile $\rho = "cost"$):
+Trasformiamo il primo e il terzo termine a secondo membro in integrali di superficie mediante il teorema della divergenza (assumendo fluido incomprimibile $rho = "cost"$):
 
 $ integral_V u_j (diff cal(H))/(diff x_j) d V = integral_V [diff/(diff x_j) (cal(H) u_j) - cal(H) underbrace((diff u_j)/(diff x_j), = 0 "se" rho = "cost!")] d V = integral_V diff/(diff x_j) (cal(H) u_j) d V = integral_S cal(H) u_j n_j d S $
 
@@ -433,7 +434,7 @@ $ Delta cal(H) Q_v = D_v - P_m $
 
 == Equazione del moto e profilo di velocità in coordinate cilindriche
 
-Studiamo il moto stazionario e incomprimibile ($\rho = "cost"$, $diff/(diff t) = 0$) all'interno di una condotta cilindrica circolare di raggio $R$ e lunghezza $L$. Adottando un sistema di coordinate cilindriche $(r, theta, z)$ con asse $z$ coincidente con l'asse della condotta, cerchiamo una soluzione puramente assiale e assialsimmetrica nella forma:
+Studiamo il moto stazionario e incomprimibile ($rho = "cost"$, $diff/(diff t) = 0$) all'interno di una condotta cilindrica circolare di raggio $R$ e lunghezza $L$. Adottando un sistema di coordinate cilindriche $(r, theta, z)$ con asse $z$ coincidente con l'asse della condotta, cerchiamo una soluzione puramente assiale e assialsimmetrica nella forma:
 
 $ arrow(u) = (0, 0, u(r)) $
 
@@ -483,7 +484,7 @@ Calcoliamo esplicitamente l'integrale della portata volumetrica $Q_v$:
 $ Q_v = 2 pi integral_0^R u(r) r d r = 2 pi integral_0^R (G R^2)/(4 mu) [r^2 / R^2 - 1] r d r = $
 $ = (pi G R^2)/(2 mu) [r^4 / (4 R^2) - r^2 / 2]_0^R = (pi G R^2)/(2 mu) [R^2 / 4 - R^2 / 2] = - (pi G R^2)/(2 mu) dot 1/4 R^2 = - pi/(8 mu) G R^4 $
 
-Dividendo per la sezione $\pi R^2$, ricaviamo l'espressione della velocità media e il suo legame con la velocità massima sull'asse:
+Dividendo per la sezione $pi R^2$, ricaviamo l'espressione della velocità media e il suo legame con la velocità massima sull'asse:
 
 $ u_d = Q_v / (pi R^2) = - (G R^2)/(8 mu) quad arrow.r.double quad u_d = u_0 / 2 $
 
