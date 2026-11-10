@@ -1103,7 +1103,7 @@ $ tau_(r x) = mu (partial u_x)/(partial r) $
   ]
 )
 #v(1em)
-
+/*
 = Dissipazione e perdite di carico
 
 $
