@@ -734,7 +734,8 @@ Applicando il principio di sovrapposizione degli effetti, si analizzano separata
 Considerando attivo unicamente il carico $F_1$ posto nella mezzeria della campata $A B$ (di lunghezza $L = 2 a$), il tratto $A B$ si comporta come una trave inflessa semplicemente appoggiata a singola campata con carico concentrato in mezzeria. Il tratto a sbalzo $B C$, essendo completamente scarico ($M = 0$), rimane rettilineo e subisce una rotazione rigida attorno all
  cerniera $B$ pari alla rotazione d'estremità $theta_B$ della campata $A B$.
 
-#align(center)[#canvas(length: 1cm, {
+#align(center)[
+#canvas(length: 1cm, {
   import draw: *
 
   // Contorno trave indeformata ABC
