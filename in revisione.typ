@@ -13,7 +13,7 @@
   width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,)
 #let circ = sym.degree
 #let varphi = $phi$
-
+#let diff = dif
 
 = Calcolo del vettore vorticità e influenza della gravità
 
@@ -29,7 +29,7 @@ $ overline(overline(Omega)) = mat(
 
 Le singole componenti del vettore di rotazione $arrow(Omega)$ si ricavano dalle derivate parziali incrociate del campo di velocità:
 
-$ Omega_3 = -1/2 ((diff u_1)/(diff x_2) - (diff u_2)/(diff x_1)) $
+$ Omega_3 = -1/2 ((dif u_1)/(dif x_2) - (dif u_2)/(dif x_1)) $
 
 $ Omega_2 = 1/2 ((diff u_1)/(diff x_3) - (diff u_3)/(diff x_1)) quad arrow.r.double quad arrow(Omega) = mat(Omega_1; Omega_2; Omega_3) $
 
