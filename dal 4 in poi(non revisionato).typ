@@ -756,7 +756,7 @@ $ u(y) = underbrace(1/2 G/mu (y^2 - e y), "parabolica") + underbrace(U/e (y - e)
       si oppone al moto.
   ],
   [
-    #image("images/1753a06c-3b5c-4cb4-8343-a662a538e037-14_541_1126_1597_770.jpg", width: 70%)
+    #image("images/suca.jpg", width: 70%)
   ]
 )
 #v(1em)
