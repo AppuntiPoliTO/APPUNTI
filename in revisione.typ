@@ -3,7 +3,7 @@
 #set page(paper: "a4", margin: 2cm)
 #set text(lang: "it", size: 11pt)
 #set par(justify: true)
-#set math.equation(numbering: "(1)")
+
 #set heading(numbering: none)
 
 
