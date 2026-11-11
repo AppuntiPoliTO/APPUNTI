@@ -2,19 +2,85 @@
 #set page(paper: "a4", margin: 2cm)
 #set text(lang: "it", size: 11pt)
 #set par(justify: true)
+
 #set heading(numbering: none)
-#set page(margin: 1.5cm)
-#let immagine-originale = image
-#let image(nome-file, ..args) = immagine-originale("images/" + nome-file, ..args)
+
+
 // Nota / osservazione
 #let nota(body) = block(
   width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,)
 #let circ = sym.degree
 #let varphi = $phi$
 
-#show outline.entry.where(level: 1): it => {
-  v(1.2em, weak: true) // Aggiunge spazio vuoto sopra ogni nuovo capitolo
-  strong(it)           // Rende in grassetto titolo, puntini e numero di pagina
+// Didascalia breve sotto le figure
+#let dida(body) = align(center, text(size: 9pt, fill: luma(80), body))
+
+// ---------------------------------------------------------------
+// Palette unica per tutte le figure
+// ---------------------------------------------------------------
+#let c-geo = black                 // pareti, assi, quote
+#let c-vel = rgb("#8c3824")        // velocità e profili di velocità
+#let c-norm = rgb("#1f4e8c")       // versori normali
+#let c-forza = rgb("#2e6b3e")      // sforzi, forze, pressione
+#let c-aux = rgb("#666666")        // linee ausiliarie e di costruzione
+
+// ---------------------------------------------------------------
+// Elementi grafici riutilizzati
+// ---------------------------------------------------------------
+// Freccia semplice
+#let freccia(a, b, col: c-geo, sp: 0.8pt) = draw.line(
+  a, b, stroke: sp + col, mark: (end: "stealth", fill: col))
+
+// Quota (doppia freccia)
+#let quota(a, b) = draw.line(
+  a, b, stroke: 0.8pt + c-geo,
+  mark: (start: "stealth", end: "stealth", fill: c-geo))
+
+// Etichetta di testo
+#let etichetta(pos, body, col: c-geo, anchor: "center") = draw.content(
+  pos, text(size: 7pt, fill: col, body), anchor: anchor)
+
+// Parete solida con tratteggio (sotto: true -> tratteggio verso il basso)
+#let parete(x0, x1, y, sotto: true, passo: 0.55) = {
+  draw.line((x0, y), (x1, y), stroke: 1pt + c-geo)
+  let n = calc.floor((x1 - x0 - 0.3) / passo) + 1
+  let d = if sotto { -0.2 } else { 0.2 }
+  for i in range(n) {
+    let x = x0 + 0.25 + i * passo
+    draw.line((x, y), (x + d, y + d), stroke: 0.6pt + c-geo)
+  }
+}
+
+// Profilo di velocità u = f(eta), con eta = y/e in [0, 1].
+// x0: ascissa dell'asse di riferimento, y0: quota della parete inferiore,
+// H: altezza del meato, s: scala delle velocità, n: numero di vettori.
+#let profilo(x0, y0, f, H: 1.8, s: 1.1, n: 6) = {
+  draw.line((x0, y0), (x0, y0 + H), stroke: 0.6pt + c-aux)
+  let pts = range(0, 41).map(i => (x0 + s * f(i / 40), y0 + H * i / 40))
+  draw.line(..pts, stroke: 1pt + c-vel)
+  for i in range(0, n + 1) {
+    let eta = 0.08 + 0.84 * i / n
+    let u = f(eta)
+    if calc.abs(u) > 0.12 {
+      freccia((x0, y0 + H * eta), (x0 + s * u, y0 + H * eta), col: c-vel, sp: 0.6pt)
+    }
+  }
+}
+
+// Meato con profilo e verso della spinta di pressione
+// k = G e^2 / (2 mu U); verso = +1 spinta verso x positive, -1 verso x negative
+#let caso-gradiente(y0, k, titolo, verso) = {
+  let H = 1.8
+  parete(0, 5.2, y0)
+  parete(0, 5.2, y0 + H, sotto: false)
+  profilo(2.9, y0, eta => (eta - 1) * (1 + k * eta), H: H, s: 1.2)
+  etichetta((2.6, y0 + H + 0.55), titolo)
+  etichetta((2.3, y0 - 0.42), $-U$, col: c-vel)
+  let ym = y0 + H / 2
+  let (a, b) = if verso > 0 { ((4.0, ym), (5.0, ym)) } else { ((5.0, ym), (4.0, ym)) }
+  freccia(a, b, col: c-forza, sp: 1pt)
+  etichetta((a.at(0), ym + 0.3), $p^+$, col: c-forza)
+  etichetta((b.at(0), ym + 0.3), $p^-$, col: c-forza)
 }
 
 
@@ -1018,7 +1084,7 @@ $ arrow(S) = -gamma hat(n) integral_A h dif A $
 Dal sistema di riferimento adottato, l'affondamento $h$ vale geometricamente $h = x sin alpha$:
     $ arrow(S) = -hat(n) gamma sin alpha integral_A x dif A $
 #align(center)[
-  #image("image9new.png", width: 60%)
+  #image("images/image9new.png", width: 60%)
 ]
 L'integrale $integral_A x dif A$ rappresenta il Momento statico di primo ordine dell'area rispetto all'asse di sponda $y$, indicato con $M_y = x_G A$, dove $x_G$ è la coordinata del baricentro. Sostituendo:
 $ arrow(S) = -hat(n) gamma underbrace(sin alpha thin x_G, h_G) A = - underbrace(gamma h_G, p_G) A thin hat(n) $
@@ -2176,7 +2242,7 @@ Un celebre risultato si ottiene applicando il bilancio di massa a un condotto a 
     Poiché le pareti sono impermeabili, il flusso normale attraverso $S_w$ è nullo ($bold(u) dot hat(n)_w = 0$). Sulle sezioni di ingresso e uscita assumiamo velocità uniformi e allineate con la normale. Scegliendo $hat(n)$ uscente dal volume:
   ],
   [
-    #image("condotto.png", width:110% )
+    #image("images/condotto.png", width:110% )
   ]
 )
 #v(1em)
