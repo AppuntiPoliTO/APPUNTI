@@ -638,3 +638,5 @@ $ f = (|t_x|)/(|t_y|) tilde (G e)/(G L) = e / L << 1 $
 
 // Numero di Reynolds
 #let Rey = math.upright("Re")
+
+
