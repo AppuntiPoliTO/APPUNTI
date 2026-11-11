@@ -3919,6 +3919,177 @@ dove $f_i$ rappresenta la forza di volume per unità di massa (ad esempio la gra
 
 // Numero di Reynolds
 #let Rey = math.upright("Re")
+= Energia meccanica nei fluidi viscosi
+
+Si vuole ora studiare il bilancio di energia meccanica per i fluidi viscosi (reali). L'approccio seguito ricalca quello già adottato per i fluidi ideali — che aveva condotto alla formulazione del teorema di Bernoulli — mostrando tuttavia come l'introduzione della viscosità alteri il bilancio di energia meccanica attraverso la comparsa di nuovi termini dissipativi.
+
+Si richiami l'equazione generale indefinita di bilancio della quantità di moto (equazione di Cauchy) in notazione indiciale:
+
+$ rho (D u_i)/(D t) = rho f_i + (partial sigma_(i j))/(partial x_j) $
+
+dove $f_i$ rappresenta la forza di volume per unità di massa (ad esempio la gravità, $rho f_i = -rho g delta_(i 3)$) e $sigma_(i j)$ è il tensore degli sforzi. La natura del fluido entra nel bilancio attraverso la legge costitutiva per $sigma_(i j)$:
+- per un *fluido ideale*, il tensore degli sforzi è puramente isotropo e legato unicamente al contributo delle pressioni:
+  $ sigma_(i j) = -p delta_(i j) $
+- per un *fluido viscoso reale*, al contributo isotropo di pressione si somma la parte deviatorica associata agli sforzi viscosi $tau_(i j)$:
+  $ sigma_(i j) = -p delta_(i j) + tau_(i j) $
+
+// [DA AUDIO]
+Per ricavare l'equazione di bilancio dell'energia meccanica, si moltiplicano scalarmente entrambi i membri dell'equazione di Cauchy per il vettore velocità $u_i$ e si esplicita la forza di volume gravitazionale attraverso il relativo potenziale ($rho f_i = -rho g (partial z)/(partial x_i)$). Assumendo il fluido incomprimibile a densità costante ($rho = "cost"$), la densità può essere portata all'interno delle derivate; ricordando che $u^2 = u_i u_i$, il termine inerziale al primo membro diventa la derivata materiale dell'energia cinetica per unità di volume:
+
+$ u_i rho (D u_i)/(D t) = (D)/(D t) (1/2 rho u^2) = partial/(partial t) (1/2 rho u^2) + u_i partial/(partial x_i) (1/2 rho u^2) $
+
+Includendo il termine potenziale gravitazionale (indipendente dal tempo), l'equazione di bilancio assume la forma:
+
+$ partial/(partial t) (1/2 rho u^2) + u_i partial/(partial x_i) (1/2 rho u^2 + rho g z) = u_i (partial sigma_(i j))/(partial x_j) $
+
+Considerando un campo di moto *stazionario* ($partial / (partial t) = 0$) e portando il termine convettivo a secondo membro, si ottiene la relazione generale:
+
+$ - u_i partial/(partial x_i) (1/2 rho u^2 + rho g z) + u_i (partial sigma_(i j))/(partial x_j) = 0 $
+
+Si mantiene per il momento inesplicitato il tensore degli sforzi $sigma_(i j)$ così da mettere direttamente a confronto l'effetto della sua sostituzione nel caso ideale e nel caso viscoso reale.
+
+// [DA AUDIO]
+== Caso A: fluido ideale e conservazione del carico totale
+
+Nel caso di un fluido ideale, il tensore degli sforzi è dato da $sigma_(i j) = -p delta_(i j)$. Il termine associato agli sforzi nell'equazione dell'energia meccanica si riduce pertanto a:
+
+$ u_i (partial sigma_(i j))/(partial x_j) = u_i partial/(partial x_j) (-p delta_(i j)) = - u_i (partial p)/(partial x_i) $
+
+Sostituendo tale espressione nell'equazione di bilancio stazionaria e raccogliendo tutti i termini sotto un'unica derivata spaziale, si ha:
+
+$ - u_i partial/(partial x_i) (1/2 rho u^2 + p + rho g z) = 0 $
+
+Riconoscendo all'interno della parentesi il *carico totale* locale (energia meccanica per unità di volume)
+
+$ cal(H) = 1/2 rho u^2 + p + rho g z $
+
+l'equazione si riscrive nella forma compatta:
+
+$ - u_i (partial cal(H))/(partial x_i) = 0 $
+
+Da questa relazione differenziale discende il classico risultato del *teorema di Bernoulli*: in un fluido ideale in moto stazionario, il carico totale $cal(H)$ si mantiene costante lungo ciascuna linea di corrente.
+
+Poiché il fluido è incomprimibile ($rho = "cost"$), applicando la regola di derivazione del prodotto è possibile riscrivere il termine convettivo come:
+
+$ u_i (partial cal(H))/(partial x_i) = partial/(partial x_i) (u_i cal(H)) - cal(H) underbrace((partial u_i)/(partial x_i), = 0) = 0 $
+
+Essendo nulla la divergenza del campo di velocità per l'equazione di continuità ($(partial u_i)/(partial x_i) = nabla dot arrow(u) = 0$), per un fluido ideale il bilancio differenziale di energia meccanica si riduce all'annullarsi di una divergenza:
+
+$ partial/(partial x_i) (u_i cal(H)) = nabla dot (arrow(u) cal(H)) = 0 $
+
+=== Formulazione integrale per un tronco di condotta e confronto con l'esperienza
+
+Per passare dalla forma differenziale a quella integrale, si consideri il caso specifico del moto all'interno di un tronco di condotta cilindrica orizzontale, il cui volume di controllo $V$ è delimitato dalla sezione di ingresso $S_1$, dalla sezione di uscita $S_2$ e dalla parete solida laterale $S_w$ (*wall*). Integrando l'equazione differenziale sul volume $V$ e applicando il teorema della divergenza di Gauss, si ottiene:
+
+$ integral_V partial/(partial x_i) (u_i cal(H)) dif V = integral_S cal(H) u_i n_i dif S = integral_(S_1) cal(H) u_i n_i dif S + integral_(S_2) cal(H) u_i n_i dif S + integral_(S_w) cal(H) u_i n_i dif S = 0 $
+
+dove $n_i$ indica la normale esterna alla superficie di controllo. Sulla parete fissa $S_w$ l'integrale è identicamente nullo: pur trattandosi di un fluido ideale — per il quale non è possibile imporre la condizione di aderenza ($arrow(u) = 0$) — vale comunque la condizione di *impermeabilità* della parete solida, in virtù della quale la velocità è puramente tangenziale alla parete e quindi ortogonale alla normale ($u_i n_i = arrow(u) dot arrow(n) = 0$ su $S_w$). Il bilancio si riduce quindi ai soli flussi attraverso le sezioni di ingresso e di uscita:
+
+$ integral_(S_1) cal(H) u_i n_i dif S + integral_(S_2) cal(H) u_i n_i dif S = 0 $
+
+Si richiami la definizione di *flusso di volume* (portata volumetrica) attraverso una sezione trasversale:
+
+$ Q_v = integral_S u_i n_i dif S $
+
+Per la conservazione della massa in un fluido a densità costante, il flusso di volume entrante attraverso $S_1$ è uguale a quello uscente attraverso $S_2$ ($Q_v = "cost"$). Ciò consente di definire il *carico totale medio sulla sezione* $H$ come la media del carico locale pesata sul flusso volumetrico:
+
+$ H = 1/Q_v integral_S cal(H) |u_i n_i| dif S $
+
+Tenendo conto dell'orientamento della normale esterna $arrow(n)$ — che sulla sezione di ingresso $S_1$ ha verso opposto alla velocità $arrow(u)$ ($u_i n_i < 0$), mentre sulla sezione di uscita $S_2$ ha verso concorde ($u_i n_i > 0$) — il bilancio integrale si esprime in forma compatta come:
+
+$ - Q_v H_1 + Q_v H_2 = 0 quad arrow.r.double quad H_2 - H_1 = 0 quad arrow.r.double quad H_2 = H_1 $
+
+Nel modello di fluido ideale, dunque, il carico totale medio si conserva integralmente tra la sezione di entrata e quella di uscita.
+
+Nelle applicazioni ingegneristiche (in cui si analizzano condotte lunghe anche chilometri e non interessa risolvere il dettaglio del profilo puntuale di velocità sulla sezione), il carico medio sulla sezione viene espresso direttamente in funzione della *velocità media di sezione* (o velocità *bulk*) $u_d = Q_v \/ S$:
+
+$ H = 1/2 rho u_d^2 + p + rho g z $
+
+In una condotta a sezione circolare costante ($S = "cost"$), essendo $Q_v = "cost"$, la velocità media $u_d$ è costante lungo il tubo ($u_(d,1) = u_(d,2)$); se inoltre la condotta è orizzontale, anche la quota $z$ è costante ($z_1 = z_2$). Di conseguenza, un'eventuale differenza tra $H_1$ e $H_2$ può essere associata unicamente a una variazione di pressione tra le due sezioni ($H_1 - H_2 = p_1 - p_2$).
+
+Secondo il teorema di Bernoulli ($H_1 = H_2$), misurando con dei manometri la pressione a parete nelle due sezioni si dovrebbe rilevare una variazione di pressione nulla. Tuttavia, l'evidenza sperimentale mostra sistematicamente che, per qualunque fluido reale in moto, il carico nella sezione di uscita è *sempre minore* di quello nella sezione di entrata:
+
+$ H_2 < H_1 quad arrow.r.double quad Delta H = H_1 - H_2 > 0 $
+
+Nella realtà si manifesta dunque sempre una *perdita di carico* $Delta H > 0$, ovvero una sottrazione (dissipazione) di energia meccanica lungo il moto.
+
+// [DA AUDIO]
+== Caso B: fluido viscoso reale e funzione di dissipazione
+
+Per comprendere l'origine fisica della dissipazione di energia meccanica, si riprenda l'equazione di bilancio introducendo la legge costitutiva di un fluido viscoso newtoniano:
+
+$ sigma_(i j) = -p delta_(i j) + tau_(i j), quad "con" quad tau_(i j) = 2 mu D_(i j) $
+
+dove $D_(i j) = 1/2 ((partial u_i)/(partial x_j) + (partial u_j)/(partial x_i))$ è il tensore velocità di deformazione. Sviluppando il termine viscoso $u_i (partial tau_(i j)) / (partial x_j)$ per mezzo della regola di derivazione del prodotto e della simmetria di $tau_(i j)$:
+
+$ u_i (partial tau_(i j))/(partial x_j) = partial/(partial x_j) (u_i tau_(i j)) - tau_(i j) (partial u_i)/(partial x_j) = partial/(partial x_j) (2 mu u_i D_(i j)) - 2 mu D_(i j) D_(i j) $
+
+l'equazione differenziale di bilancio dell'energia meccanica in regime stazionario si arricchisce di due nuovi termini rispetto al caso ideale:
+
+$ - partial/(partial x_i) (u_i cal(H)) - 2 mu D_(i j) D_(i j) + partial/(partial x_j) (u_i tau_(i j)) = 0 $
+
+Entrambi i nuovi termini contengono la viscosità dinamica $mu$ e il tensore dei gradienti di velocità $D_(i j)$ (sono quindi entrambi termini viscosi), ma rivestono due ruoli fisici profondamente diversi, riconoscibili dalla loro struttura matematica.
+
+#nota[
+  *Struttura generale delle equazioni di bilancio: termini di flusso e termini di sorgente/pozzo.* In qualunque equazione di bilancio sul continuo, i termini possono essere suddivisi in due categorie:
+  1. *termini di flusso (o di trasporto)*: descrivono il trasporto della grandezza attraverso il contorno del dominio. Matematicamente sono sempre espressi come una *divergenza* ($partial / (partial x_i)$), poiché tramite il teorema della divergenza si traducono in integrali di superficie (flussi entranti e uscenti dal volume di controllo);
+  2. *termini di sorgente o di pozzo*: non possono essere ricondotti alla divergenza di alcun campo vettoriale e rappresentano la generazione (sorgente) o la distruzione/sottrazione (pozzo) locale della grandezza all'interno del volume di controllo.
+]
+
+Alla luce di tale classificazione, nell'equazione dell'energia meccanica:
+- il termine convettivo $-partial / (partial x_i) (u_i cal(H))$ e il termine viscoso $+partial / (partial x_j) (u_i tau_(i j)) = partial / (partial x_j) (2 mu u_i D_(i j))$ sono espressi come divergenze e costituiscono pertanto due *termini di flusso*;
+- il termine $-2 mu D_(i j) D_(i j)$ non può essere scritto come divergenza ed è dunque un *termine di pozzo*.
+
+=== Natura matematica e fisica della funzione di dissipazione
+
+Si definisce *funzione di dissipazione* viscosa la quantità scalare:
+
+$ cal(D) = 2 mu D_(i j) D_(i j) $
+
+Esplicitando la doppia sommatoria sugli indici ripetuti $i, j in {1, 2, 3}$, il prodotto contratto $D_(i j) D_(i j)$ si sviluppa nella somma dei quadrati delle nove componenti del tensore velocità di deformazione:
+
+$ D_(i j) D_(i j) = D_(11)^2 + D_(12)^2 + D_(13)^2 + D_(21)^2 + D_(22)^2 + D_(23)^2 + D_(31)^2 + D_(32)^2 + D_(33)^2 $
+
+dove ciascuna componente racchiude i gradienti spaziali di velocità (ad esempio $D_(12) = 1/2 ((partial u_1)/(partial x_2) + (partial u_2)/(partial x_1))$). La funzione di dissipazione $cal(D) = 2 mu D_(i j) D_(i j)$ gode quindi di tre proprietà fondamentali:
+1. ha natura *scalare*;
+2. è data da una *somma di quadrati* moltiplicata per la viscosità $mu > 0$, ed è pertanto una quantità *sempre definita positiva* ($cal(D) >= 0$);
+3. dipende direttamente dai *gradienti di velocità* presenti nel fluido.
+
+Poiché nell'equazione di bilancio il termine compare preceduto dal segno meno ($-cal(D) <= 0$), la viscosità agisce *inevitabilmente* come un termine di pozzo, il cui unico effetto possibile è quello di sottrarre irreversibilmente energia meccanica (carico) al fluido in movimento.
+
+=== Bilancio integrale su una condotta semplice e interpretazione fisica
+
+Riscrivendo l'equazione differenziale nella forma
+
+$ partial/(partial x_i) (u_i cal(H)) = - cal(D) + partial/(partial x_j) (u_i tau_(i j)) $
+
+e integrando sul volume di controllo $V$ di un tronco di condotta delimitato da $S_1$, $S_2$ e $S_w$, l'applicazione del teorema della divergenza ai due termini di flusso fornisce:
+
+$ underbrace(integral_S cal(H) u_i n_i dif S, Q_v (H_2 - H_1)) = - underbrace(integral_V cal(D) dif V, D_v) + underbrace(integral_S u_i tau_(i j) n_j dif S, P_m) $
+
+dove:
+- $D_v = integral_V cal(D) dif V = integral_V 2 mu D_(i j) D_(i j) dif V >= 0$ è la *dissipazione viscosa sul volume* (che, non provenendo da una divergenza, resta espressa come integrale di volume);
+- $P_m = integral_S u_i tau_(i j) n_j dif S$ rappresenta la *potenza meccanica degli sforzi viscosi* scambiata attraverso la superficie di controllo $S$.
+
+Nel caso di un tronco di condotta semplice a pareti fisse (privo di macchine a fluido), sulla parete solida $S_w$ vale la condizione di aderenza $u_i = 0$, che annulla identicamente l'integrale di $P_m$ su $S_w$; sulle sezioni di ingresso $S_1$ e di uscita $S_2$, invece, il flusso diffusivo viscoso di energia meccanica risulta del tutto trascurabile rispetto al flusso convettivo $Q_v H$ ($P_m approx 0$). Il bilancio integrale si riduce allora a:
+
+$ Q_v (H_2 - H_1) = - Q_v Delta H = - D_v quad arrow.r.double quad Q_v Delta H = D_v quad arrow.r.double quad Delta H = D_v / Q_v $
+
+Tale relazione mostra che la perdita di carico $Delta H = H_1 - H_2 > 0$ tra le due sezioni è interamente generata dal termine $D_v$: fisicamente, lo scorrimento relativo di lamine adiacenti di fluido a velocità differenti (gradienti di velocità $D_(i j) != 0$) sotto l'azione degli sforzi viscosi sottrae energia meccanica al flusso.
+
+#nota[
+  *Aspetti energetici, termodinamici e dimensionali della dissipazione:*
+  - *Conversione in energia interna (termica)*: l'energia meccanica sottratta dal termine di pozzo $-cal(D)$ viene trasferita all'energia interna del fluido; nell'equazione di bilancio dell'energia termica, infatti, il medesimo termine $+cal(D)$ compare con segno positivo come *termine sorgente* di calore. Dal punto di vista termico, tuttavia, l'innalzamento di temperatura tra ingresso e uscita di una condotta (ad esempio in acqua o in aria) è talmente esiguo da risultare praticamente non misurabile, mentre dal punto di vista meccanico l'effetto associato alla perdita di carico $Delta H$ è macroscopico e determinante.
+  - *Unità di misura*: nel Sistema Internazionale, la dissipazione integrale $D_v$ ha le dimensioni di una *potenza* ($"W" = "J"\/"s"$), mentre la funzione di dissipazione locale $cal(D) = 2 mu D_(i j) D_(i j)$ ha le dimensioni di una *potenza per unità di volume* ($"W"\/"m"^3$).
+]
+
+
+// ===============================================================
+// PARTE 2 — condotte, perdite di carico, moto di Poiseuille
+// ===============================================================
+
+// Numero di Reynolds
+#let Rey = math.upright("Re")
 == Applicazione: moto in condotta in presenza di una macchina a fluido
 
 #grid(
@@ -3930,6 +4101,8 @@ dove $f_i$ rappresenta la forza di volume per unità di massa (ad esempio la gra
     - la sezione di ingresso $S_1$ e la sezione di uscita $S_2$;
     - le pareti fisse della condotta $S_w$, su cui $arrow(u) = 0$;
     - la superficie mobile delle pale della macchina $S_m$, attraverso cui la portata massica è nulla ma avviene lo scambio di potenza $P_m$.
+      // [DA AUDIO]
+      Poiché le pale della turbomacchina sono in movimento, su $S_m$ la velocità del fluido non è nulla ($arrow(u) != 0$): di conseguenza, l'integrale del flusso diffusivo degli sforzi sulla superficie della macchina non si annulla ed è proprio il termine responsabile del trasferimento di potenza meccanica $P_m$ tra il fluido e la macchina.
   ],
   [
     #canvas(length: 1cm, {
@@ -3984,6 +4157,15 @@ $ P_m - D_v = integral_S arrow(u) cal(H) dot arrow(n) dif S = Q_v [cal(H)_2 - ca
 Definendo la *perdita di carico* tra ingresso e uscita come $Delta cal(H) = cal(H)_1 - cal(H)_2$, si ottiene:
 
 $ Delta cal(H) Q_v = D_v - P_m $
+
+// [DA AUDIO]
+Riscrivendo la variazione di carico tra uscita e ingresso come
+
+$ cal(H)_2 - cal(H)_1 = - Delta cal(H) = (P_m - D_v) / Q_v $
+
+si distinguono due regimi operativi a seconda del tipo di turbomacchina installata:
+- *Pompa ($P_m > 0$)*: la macchina fornisce potenza meccanica al fluido; poiché la potenza immessa supera ampiamente le perdite viscose ($P_m >> D_v$), si ottiene un aumento netto di carico ($cal(H)_2 > cal(H)_1$, ovvero $Delta cal(H) < 0$), che consente ad esempio di sollevare un liquido a quote superiori;
+- *Turbina ($P_m < 0$)*: la macchina estrae potenza meccanica dal fluido, determinando un'ulteriore caduta di carico ($cal(H)_2 < cal(H)_1$) all'interno della condotta.
 
 #nota[
   Nel caso particolare di un semplice tronco di condotta passivo, in cui non vi sia potenza meccanica fornita o estratta ($P_m = 0$), la relazione diventa:
@@ -4292,7 +4474,6 @@ $ tau_(r z) = tau_(z r) = 2 mu 1/2 ((partial u_z)/(partial r) + (partial u_r)/(p
 // ===============================================================
 // PARTE 3 — applicazioni delle perdite di carico
 // ===============================================================
-
 = Applicazione: rendimento di una installazione idroelettrica
 
 #grid(
