@@ -3826,6 +3826,8 @@ $ u(y) = underbrace(1/2 G/mu (y^2 - e y), "parabolica") + underbrace(U/e (y - e)
 Al variare del gradiente di pressione $G = (dif p)/(dif x)$ si distinguono i seguenti regimi caratteristici:
 - *Caso a) $G = 0$*: in assenza di gradiente di pressione imposto, il profilo si riduce alla sola componente lineare (moto alla Couette puro):
   $ u(y) = U/e (y - e) $
+  // [DA AUDIO]
+  Si ritrova così il campo di moto lineare già analizzato nel caso del trascinamento semplice, in cui la velocità varia linearmente da $u(e) = 0$ (parete superiore ferma) a $u(0) = -U$ (parete inferiore in moto, ovvero da $0$ a $-1$ in termini della velocità adimensionale $u/U$).
 - *Caso b) $G != 0$*: sviluppando i prodotti si ha la combinazione quadratica completa:
   $ u(y) = 1/2 G/mu y^2 - 1/2 G/mu y e + (U y)/e - U = 1/2 G/mu y^2 + y (U/e - 1/2 G/mu e) - U $
 
@@ -3835,8 +3837,11 @@ Al variare del gradiente di pressione $G = (dif p)/(dif x)$ si distinguono i seg
   align: (left + horizon, center + horizon),
   [
     Il segno di $G = (dif p)/(dif x)$ va confrontato con il trascinamento della parete inferiore, che si muove con velocità $-U$ nella direzione delle $x$ negative:
-    - *Caso $G = (dif p)/(dif x) < 0$*: la pressione diminuisce lungo $x$ ($p^+$ a sinistra, $p^-$ a destra) e spinge il fluido verso le $x$ positive; il gradiente di pressione *si oppone al moto* di trascinamento della parete inferiore.
+    // [RIORDINATO DA AUDIO]
     - *Caso $G = (dif p)/(dif x) > 0$*: la pressione cresce lungo $x$ ($p^-$ a sinistra, $p^+$ a destra) e spinge il fluido verso le $x$ negative; il gradiente *sostiene il moto* della parete inferiore.
+      // [DA AUDIO]
+      Alle piccole scale, infatti, il moto indotto dal gradiente di pressione è sempre diretto lungo $-nabla p$ (ossia favorito da un gradiente negativo di pressione, dalla regione a pressione più alta $p^+$ verso quella a pressione più bassa $p^-$). L'effetto del gradiente di pressione si somma quindi concordemente a quello indotto dallo scorrimento della lamina inferiore, incurvando ("spanciando") il profilo parabolico verso le $x$ negative. Se $G > 0$ è sufficientemente grande (ossia $G > (2 mu U)/e^2$), la velocità del fluido all'interno del canale può superare in modulo quella della parete mobile ($|u(y)| > U$, ovvero $u(y) < -U$), pur restando vincolata sulla parete inferiore ($y = 0$) alla condizione di aderenza $u(0) = -U$.
+    - *Caso $G = (dif p)/(dif x) < 0$*: la pressione diminuisce lungo $x$ ($p^+$ a sinistra, $p^-$ a destra) e spinge il fluido verso le $x$ positive; il gradiente di pressione *si oppone al moto* di trascinamento della parete inferiore.
   ],
   [
     #canvas(length: 1cm, {
@@ -3846,6 +3851,67 @@ Al variare del gradiente di pressione $G = (dif p)/(dif x)$ si distinguono i seg
   ]
 )
 
+// [DA AUDIO]
+Al variare dell'intensità e del segno di $G$, i profili di velocità descrivono un fascio di parabole passanti per i punti vincolati alle pareti $u(0) = -U$ e $u(e) = 0$: per $G > 0$ tutte le curve risultano incurvate nel verso del moto della piastra ($x$ negative), mentre per $G < 0$ si incurvano nel verso opposto ($x$ positive), potendo dar luogo a un'inversione del flusso nella porzione superiore del canale.
+
+È inoltre possibile valutare lo sforzo tangenziale viscoso nel fluido:
+
+$ tau(y) = mu (dif u)/(dif y) = mu [U/e + G/(2 mu) (2 y - e)] = mu U/e + G (y - e/2) $
+
+Valutando tale espressione sulla piastra inferiore ($y = 0$) e su quella superiore ($y = e$), si ottiene:
+
+$ tau|_(y=0) = mu lr((dif u)/(dif y)|)_(y=0) = mu U/e - 1/2 G e, quad tau|_(y=e) = mu lr((dif u)/(dif y)|)_(y=e) = mu U/e + 1/2 G e $
+
+Si osserva che, nel caso $G > 0$, quando $G = (2 mu U)/e^2$ il gradiente di velocità e lo sforzo tangenziale sulla piastra inferiore ($y = 0$) si annullano, per poi cambiare segno per valori di $G$ superiori (quando la velocità interna del fluido eccede in modulo quella della piastra).
+
+// [DA AUDIO]
+== Estensione a una piastra di lunghezza finita e analisi degli ordini di grandezza
+
+Il problema analizzato può essere esteso qualitativamente al caso reale in cui una delle due pareti (ad esempio una piastra o pattino che scorre sopra un piano con un fluido incomprimibile interposto) abbia un'estensione longitudinale finita $L$ anziché infinita. L'ipotesi cardine della teoria della lubrificazione consiste nella *separazione di scale* geometriche tra la dimensione longitudinale $L$ della piastra e lo spessore $e$ del meato:
+
+$ L >> e quad arrow.r.double quad e/L << 1 $
+
+Tale separazione di scale permette di definire $L$ come la lunghezza caratteristica lungo la quale si instaura la variazione di pressione $Delta p$. Poiché il gradiente longitudinale di pressione è dell'ordine di $G = (dif p)/(dif x) tilde p/L$, la pressione (o variazione di pressione) caratteristica generata nel meato ha ordine di grandezza:
+
+$ p tilde G L $
+
+Allo stesso modo, dall'espressione dello sforzo tangenziale ricavata in precedenza ($tau = mu U/e minus.plus 1/2 G e$), si deduce che gli sforzi tangenziali viscosi associati al gradiente di pressione hanno ordine di grandezza:
+
+$ tau tilde G e $
+
+Si consideri ora la forza per unità di superficie (vettore tensione a parete) esercitata dal fluido sulla parete sottostante ($y = 0$):
+
+$ arrow(T) = lr(bold(sigma) dot arrow(n)|)_(y=0) $
+
+Scomponendo tale vettore lungo gli assi coordinati, si osserva che:
+- la componente longitudinale $T_x$ è associata unicamente agli sforzi tangenziali viscosi, per cui ha ordine di grandezza $T_x tilde tau tilde G e$;
+- la componente verticale $T_y$ è associata unicamente alla pressione (che sostiene il carico normale, ossia il peso della piastra soprastante), per cui ha ordine di grandezza $T_y tilde p tilde G L$.
+
+Definendo il *coefficiente di attrito* $f$ come il rapporto tra il modulo della componente tangenziale di attrito e quello della componente normale pressoria, si ottiene:
+
+$ f = (|T_x|)/(|T_y|) tilde (G e)/(G L) = e/L << 1 $
+
+Affinché su una piastra di lunghezza finita $L$ si instauri effettivamente tale gradiente di pressione portante durante il moto relativo, il pattino non può essere perfettamente parallelo al piano ma deve risultare leggermente inclinato.
+
+#nota[
+  Il risultato $f tilde e/L << 1$ costituisce il fondamento fisico della *teoria della lubrificazione*: grazie alla separazione tra la scala longitudinale $L$ (sulla quale si sviluppa il gradiente di pressione) e la scala trasversale $e$ (sulla quale si concentrano il gradiente di velocità e gli sforzi viscosi), gli sforzi tangenziali $tau$ lungo $x$ risultano di un ordine di grandezza molto inferiore rispetto alla pressione $p$ che sostiene il peso della piastra, garantendo così un coefficiente di attrito estremamente ridotto.
+]
+
+// [DA AUDIO]
+= Energia meccanica nei fluidi viscosi
+
+Si vuole ora studiare il bilancio di energia meccanica per i fluidi viscosi (reali). L'approccio seguito ricalca quello già adottato per i fluidi ideali — che aveva condotto alla formulazione del teorema di Bernoulli — mostrando tuttavia come l'introduzione della viscosità alteri il bilancio di energia meccanica attraverso la comparsa di nuovi termini dissipativi.
+
+Si richiami l'equazione generale indefinita di bilancio della quantità di moto (equazione di Cauchy) in notazione indiciale:
+
+$ rho (D u_i)/(D t) = rho f_i + (partial sigma_(i j))/(partial x_j) $
+
+dove $f_i$ rappresenta la forza di volume per unità di massa (ad esempio la gravità, $rho f_i = -rho g delta_(i 3)$) e $sigma_(i j)$ è il tensore degli sforzi. La natura del fluido entra nel bilancio attraverso la legge costitutiva per $sigma_(i j)$:
+- per un *fluido ideale*, il tensore degli sforzi è puramente isotropo e legato unicamente al contributo delle pressioni:
+  $ sigma_(i j) = -p delta_(i j) $
+- per un *fluido viscoso reale*, al contributo isotropo di pressione si somma la parte deviatorica associata agli sforzi viscosi $tau_(i j)$:
+  $ sigma_(i j) = -p delta_(i j) + tau_(i j) $
+
 
 // ===============================================================
 // PARTE 2 — condotte, perdite di carico, moto di Poiseuille
@@ -3853,7 +3919,6 @@ Al variare del gradiente di pressione $G = (dif p)/(dif x)$ si distinguono i seg
 
 // Numero di Reynolds
 #let Rey = math.upright("Re")
-
 == Applicazione: moto in condotta in presenza di una macchina a fluido
 
 #grid(
