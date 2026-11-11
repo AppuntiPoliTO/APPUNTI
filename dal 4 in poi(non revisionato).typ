@@ -1122,7 +1122,7 @@ $
   &= (8 mu)/(D^2 \/ 4) dot D/(1/2 rho u_d) = 64 mu/(rho D u_d) = 64 / "Re"_D \
   "Re"_D &= (rho u_d D)/mu
 $
-
+#pagebreak()
 = Applicazione: rendimento di una installazione idroelettrica
 
 #grid(
