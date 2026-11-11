@@ -1,5 +1,3 @@
-// Formulario di Elettrotecnica — Prof. Lazzeroni
-// Compilare con Typst recente (>= 0.13) e connessione per scaricare @preview/zap
 #import "@preview/zap:0.6.0"
 
 // ---------- Impostazioni ----------
