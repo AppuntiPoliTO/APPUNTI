@@ -3442,123 +3442,8 @@ Da questo risultato discendono importanti conseguenze fisiche:
 - *Calcolo della pressione totale*: una volta determinato $p^*$ tramite l'equazione del moto (ad esempio attorno a un corpo investito da una corrente, dove $p^* > 0$ nella zona di impatto a monte e $p^* < 0$ a valle), la pressione effettiva $p$ si ottiene sommando a posteriori il contributo idrostatico $p_("HS")$ calcolato separatamente tramite la statica dei fluidi ($nabla p_("HS") = rho arrow(g)$) a partire da una pressione di riferimento.
 - *Limiti di validità*: l'indipendenza del campo di moto dalla gravità cessa di valere non appena la densità non è più uniforme ($rho != "cost"$), come avviene in presenza di forti gradienti di temperatura (convezione naturale) o in flussi multifase a superficie libera (ad esempio acqua che scorre in aria, dove il salto di densità di un fattore circa $10^3$ tra i due fluidi rende il termine gravitazionale determinante).
 
-#import "@preview/cetz:0.3.4": canvas, draw
-#set page(paper: "a4", margin: 2cm)
-#set text(lang: "it", size: 11pt)
-#set par(justify: true)
-
-#set heading(numbering: none)
 
 
-// Nota / osservazione
-#let nota(body) = block(
-  width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,)
-#let circ = sym.degree
-#let varphi = $phi$
-
-// Didascalia breve sotto le figure
-#let dida(body) = align(center, text(size: 9pt, fill: luma(80), body))
-
-// ---------------------------------------------------------------
-// Palette unica per tutte le figure
-// ---------------------------------------------------------------
-#let c-geo = black                 // pareti, assi, quote
-#let c-vel = rgb("#8c3824")        // velocità e profili di velocità
-#let c-norm = rgb("#1f4e8c")       // versori normali
-#let c-forza = rgb("#2e6b3e")      // sforzi, forze, pressione
-#let c-aux = rgb("#666666")        // linee ausiliarie e di costruzione
-
-// ---------------------------------------------------------------
-// Elementi grafici riutilizzati
-// ---------------------------------------------------------------
-// Freccia semplice
-#let freccia(a, b, col: c-geo, sp: 0.8pt) = draw.line(
-  a, b, stroke: sp + col, mark: (end: "stealth", fill: col))
-
-// Quota (doppia freccia)
-#let quota(a, b) = draw.line(
-  a, b, stroke: 0.8pt + c-geo,
-  mark: (start: "stealth", end: "stealth", fill: c-geo))
-
-// Etichetta di testo
-#let etichetta(pos, body, col: c-geo, anchor: "center") = draw.content(
-  pos, text(size: 7pt, fill: col, body), anchor: anchor)
-
-// Parete solida con tratteggio (sotto: true -> tratteggio verso il basso)
-#let parete(x0, x1, y, sotto: true, passo: 0.55) = {
-  draw.line((x0, y), (x1, y), stroke: 1pt + c-geo)
-  let n = calc.floor((x1 - x0 - 0.3) / passo) + 1
-  let d = if sotto { -0.2 } else { 0.2 }
-  for i in range(n) {
-    let x = x0 + 0.25 + i * passo
-    draw.line((x, y), (x + d, y + d), stroke: 0.6pt + c-geo)
-  }
-}
-
-// Profilo di velocità u = f(eta), con eta = y/e in [0, 1].
-// x0: ascissa dell'asse di riferimento, y0: quota della parete inferiore,
-// H: altezza del meato, s: scala delle velocità, n: numero di vettori.
-#let profilo(x0, y0, f, H: 1.8, s: 1.1, n: 6) = {
-  draw.line((x0, y0), (x0, y0 + H), stroke: 0.6pt + c-aux)
-  let pts = range(0, 41).map(i => (x0 + s * f(i / 40), y0 + H * i / 40))
-  draw.line(..pts, stroke: 1pt + c-vel)
-  for i in range(0, n + 1) {
-    let eta = 0.08 + 0.84 * i / n
-    let u = f(eta)
-    if calc.abs(u) > 0.12 {
-      freccia((x0, y0 + H * eta), (x0 + s * u, y0 + H * eta), col: c-vel, sp: 0.6pt)
-    }
-  }
-}
-
-// Meato con profilo e verso della spinta di pressione
-// k = G e^2 / (2 mu U); verso = +1 spinta verso x positive, -1 verso x negative
-#let caso-gradiente(y0, k, titolo, verso) = {
-  let H = 1.8
-  parete(0, 5.2, y0)
-  parete(0, 5.2, y0 + H, sotto: false)
-  profilo(2.9, y0, eta => (eta - 1) * (1 + k * eta), H: H, s: 1.2)
-  etichetta((2.6, y0 + H + 0.55), titolo)
-  etichetta((2.3, y0 - 0.42), $-U$, col: c-vel)
-  let ym = y0 + H / 2
-  let (a, b) = if verso > 0 { ((4.0, ym), (5.0, ym)) } else { ((5.0, ym), (4.0, ym)) }
-  freccia(a, b, col: c-forza, sp: 1pt)
-  etichetta((a.at(0), ym + 0.3), $p^+$, col: c-forza)
-  etichetta((b.at(0), ym + 0.3), $p^-$, col: c-forza)
-}
-
-
-== Influenza della gravità sulla dinamica del moto nei fluidi a densità costante
-
-Per analizzare l'effetto della forza di gravità in un fluido a densità $rho = "cost"$, è sempre possibile scomporre la pressione totale $p$ nella somma di un contributo idrostatico $p_"hs"$ e di una pressione dinamica (o motrice) $p^*$:
-
-$ p = p_"hs" + p^* $
-
-La distribuzione idrostatica della pressione soddisfa la relazione fondamentale:
-
-$ nabla p_"hs" = rho arrow(g) $
-
-Si osservi che $p_"hs"$ non è costante: dipende unicamente dalla coordinata verticale $z$. Al contrario, il termine $p^*(arrow(x))$ dipende in generale da tutte e tre le coordinate spaziali (e, in linea di principio, anche dal tempo $t$). Poiché il gradiente è un operatore lineare, la scomposizione vale anche per i gradienti:
-
-$ nabla p = nabla p_"hs" + nabla p^* $
-
-Si riprenda l'equazione di Navier-Stokes (N-S) per un fluido incomprimibile:
-
-$ (D arrow(u))/(D t) = - 1/rho nabla p + arrow(g) + nu Delta arrow(u) $
-
-Sostituendo la scomposizione della pressione nei termini di forza di pressione e di volume, e usando $nabla p_"hs" = rho arrow(g)$, si ricava:
-
-$ -1/rho nabla(p_"hs" + p^*) + arrow(g) = -1/rho (rho arrow(g)) - 1/rho nabla p^* + arrow(g) = -1/rho nabla p^* $
-
-È quindi possibile riscrivere l'equazione di Navier-Stokes nella forma compatta:
-
-$ (D arrow(u))/(D t) = - 1/rho nabla p^* + nu Delta arrow(u) $
-
-#nota[
-  Dalla riformulazione dell'equazione di Navier-Stokes in termini di $p^*$ emergono due conseguenze fisiche fondamentali:
-  1. l'accelerazione di gravità $arrow(g)$ scompare esplicitamente dall'equazione del moto;
-  2. la pressione cambia significato fisico: al posto di $p$ compare la pressione motrice $p^*$, che è quella che governa effettivamente la dinamica del fluido.
-]
 
 === Esempio di flusso viscoso: moto di Couette piano
 
@@ -3783,6 +3668,40 @@ $ arrow(t)_("parete" arrow.r "fluido") = mat(delim: "[",
   ]
 )
 #dida[Parete inferiore: azione del fluido sulla parete (a sinistra) e reazione della parete sul fluido (a destra).]
+
+= ANCORA NON HO FINITO DI CONTROLLARE DA QUI IN POI
+
+== Influenza della gravità sulla dinamica del moto nei fluidi a densità costante
+
+Per analizzare l'effetto della forza di gravità in un fluido a densità $rho = "cost"$, è sempre possibile scomporre la pressione totale $p$ nella somma di un contributo idrostatico $p_"hs"$ e di una pressione dinamica (o motrice) $p^*$:
+
+$ p = p_"hs" + p^* $
+
+La distribuzione idrostatica della pressione soddisfa la relazione fondamentale:
+
+$ nabla p_"hs" = rho arrow(g) $
+
+Si osservi che $p_"hs"$ non è costante: dipende unicamente dalla coordinata verticale $z$. Al contrario, il termine $p^*(arrow(x))$ dipende in generale da tutte e tre le coordinate spaziali (e, in linea di principio, anche dal tempo $t$). Poiché il gradiente è un operatore lineare, la scomposizione vale anche per i gradienti:
+
+$ nabla p = nabla p_"hs" + nabla p^* $
+
+Si riprenda l'equazione di Navier-Stokes (N-S) per un fluido incomprimibile:
+
+$ (D arrow(u))/(D t) = - 1/rho nabla p + arrow(g) + nu Delta arrow(u) $
+
+Sostituendo la scomposizione della pressione nei termini di forza di pressione e di volume, e usando $nabla p_"hs" = rho arrow(g)$, si ricava:
+
+$ -1/rho nabla(p_"hs" + p^*) + arrow(g) = -1/rho (rho arrow(g)) - 1/rho nabla p^* + arrow(g) = -1/rho nabla p^* $
+
+È quindi possibile riscrivere l'equazione di Navier-Stokes nella forma compatta:
+
+$ (D arrow(u))/(D t) = - 1/rho nabla p^* + nu Delta arrow(u) $
+
+#nota[
+  Dalla riformulazione dell'equazione di Navier-Stokes in termini di $p^*$ emergono due conseguenze fisiche fondamentali:
+  1. l'accelerazione di gravità $arrow(g)$ scompare esplicitamente dall'equazione del moto;
+  2. la pressione cambia significato fisico: al posto di $p$ compare la pressione motrice $p^*$, che è quella che governa effettivamente la dinamica del fluido.
+]
 
 = Esempio: Teoria della lubrificazione
 
