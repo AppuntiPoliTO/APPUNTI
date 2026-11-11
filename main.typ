@@ -95,7 +95,6 @@
 )
 #pagebreak()
 
-san
 
 #include "Cap2_MEC_handouts_appunti.typ"
 
