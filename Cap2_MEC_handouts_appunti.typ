@@ -46,6 +46,7 @@
 
 // === FUNZIONI E MACRO ===
 #let sans(body, size: 11pt, weight: "regular") = text(
+  font: ( "Arial", "DejaVu Sans Mono", "Libertinus Serif"),
   size: size,
   weight: weight,
   body
