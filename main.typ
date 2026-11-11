@@ -3898,26 +3898,7 @@ Affinché su una piastra di lunghezza finita $L$ si instauri effettivamente tale
 ]
 
 // [DA AUDIO]
-= Energia meccanica nei fluidi viscosi
 
-Si vuole ora studiare il bilancio di energia meccanica per i fluidi viscosi (reali). L'approccio seguito ricalca quello già adottato per i fluidi ideali — che aveva condotto alla formulazione del teorema di Bernoulli — mostrando tuttavia come l'introduzione della viscosità alteri il bilancio di energia meccanica attraverso la comparsa di nuovi termini dissipativi.
-
-Si richiami l'equazione generale indefinita di bilancio della quantità di moto (equazione di Cauchy) in notazione indiciale:
-
-$ rho (D u_i)/(D t) = rho f_i + (partial sigma_(i j))/(partial x_j) $
-
-dove $f_i$ rappresenta la forza di volume per unità di massa (ad esempio la gravità, $rho f_i = -rho g delta_(i 3)$) e $sigma_(i j)$ è il tensore degli sforzi. La natura del fluido entra nel bilancio attraverso la legge costitutiva per $sigma_(i j)$:
-- per un *fluido ideale*, il tensore degli sforzi è puramente isotropo e legato unicamente al contributo delle pressioni:
-  $ sigma_(i j) = -p delta_(i j) $
-- per un *fluido viscoso reale*, al contributo isotropo di pressione si somma la parte deviatorica associata agli sforzi viscosi $tau_(i j)$:
-  $ sigma_(i j) = -p delta_(i j) + tau_(i j) $
-
-
-// ===============================================================
-// PARTE 2 — condotte, perdite di carico, moto di Poiseuille
-// ===============================================================
-
-// Numero di Reynolds
 #let Rey = math.upright("Re")
 = Energia meccanica nei fluidi viscosi
 
