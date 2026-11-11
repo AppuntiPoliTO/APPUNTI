@@ -1230,7 +1230,7 @@ Diametro $d = 2 "cm"$; lunghezza $L = 20 "m"$.
 )
 
 // pdf 7
-
+#pagebreak()
 = Equazione globale della meccanica dei fluidi
 
 $
