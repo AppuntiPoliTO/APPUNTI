@@ -638,5 +638,288 @@ $ f = (|t_x|)/(|t_y|) tilde (G e)/(G L) = e / L << 1 $
 
 // Numero di Reynolds
 #let Rey = math.upright("Re")
+= Energia meccanica nei fluidi viscosi
 
+Il bilancio di energia cinetica si ottiene moltiplicando scalarmente l'equazione di Navier-Stokes per $u_i$:
+
+$ u_i dot (rho (D u_i)/(D t)) = u_i dot (partial/(partial x_j) sigma_(i j) + rho g_i) $
+
+// [DA AUDIO]
+Lo scopo di questa analisi è estendere il bilancio di energia meccanica — che nel caso dei fluidi ideali conduce al teorema di Bernoulli — al caso dei fluidi reali, mettendo in luce i nuovi termini introdotti dalla viscosità. A tal fine si parte dall'equazione generale di bilancio della quantità di moto di Cauchy:
+
+$ rho (D u_i)/(D t) = rho g_i + (partial sigma_(i j))/(partial x_j) $
+
+distinguendo due leggi costitutive per il tensore degli sforzi $sigma_(i j)$:
+- *Caso A (fluido ideale)*: $sigma_(i j) = -p delta_(i j)$, in cui agisce il solo contributo isotropo delle pressioni;
+- *Caso B (fluido reale viscoso newtoniano)*: $sigma_(i j) = -p delta_(i j) + tau_(i j) = -p delta_(i j) + 2 mu D_(i j)$.
+
+Sviluppo a sinistra e includo $psi$, potenziale gravitazionale $g_i = -nabla psi = -partial/(partial x_i) psi$, essendo $psi = -g_i x_i = g x_3$:
+
+$
+  (D)/(D t) (frac(rho u^2, 2)) &= u_i dot (partial/(partial x_j) sigma_(i j) - rho (partial psi)/(partial x_i)) \
+  partial/(partial t) (frac(rho u^2, 2)) &= -u_j partial/(partial x_j) (frac(rho u^2, 2)) - u_i rho (partial psi)/(partial x_i) + u_i (partial sigma_(i j))/(partial x_j)
+$ <eq:bilancio_ec>
+
+essendo $u^2 = u_1 u_1 + u_2 u_2 + u_3 u_3 = u_i dot u_i$.
+
+// [DA AUDIO]
+Nel passaggio precedente si è assunto che la densità sia costante ($rho = "cost"$), cosicché $rho$ può essere portato dentro gli operatori di derivata. In regime stazionario ($partial / (partial t) = 0$), raccogliendo l'energia cinetica e il potenziale gravitazionale dentro la derivata spaziale e lasciando momentaneamente inesplicitato il tensore degli sforzi, l'equazione (eq:bilancio_ec) si scrive:
+
+$ 0 = -u_i partial/(partial x_i) (rho u^2 / 2 + rho psi) + u_i (partial sigma_(i j))/(partial x_j) $
+
+Per un fluido ideale, non viscoso:
+
+$ sigma_(i j) = -p delta_(i j) $
+
+cosicché $u_i (partial sigma_(i j))/(partial x_j) = -u_i partial/(partial x_j) (p delta_(i j)) = -u_i (partial p)/(partial x_i)$.
+Il bilancio di energia cinetica diviene:
+
+$ partial/(partial t) (rho u^2 / 2) = -u_j partial/(partial x_j) [underbrace(rho u^2 / 2 + rho psi + p, cal(H): "carico")] $
+
+// [DA AUDIO]
+=== Caso A: fluido ideale in forma differenziale
+
+In regime stazionario ($partial / (partial t) = 0$), il bilancio per un fluido ideale si riduce a:
+
+$ u_i (partial cal(H))/(partial x_i) = 0 $
+
+Tale relazione esprime il *teorema di Bernoulli*: il carico totale per unità di volume $cal(H) = rho u^2 / 2 + rho psi + p$ si mantiene costante lungo le linee di corrente.
+
+Applicando la regola di derivazione del prodotto (di Leibniz), il primo membro può essere riscritto come:
+
+$ u_i (partial cal(H))/(partial x_i) = partial/(partial x_i) (u_i cal(H)) - cal(H) (partial u_i)/(partial x_i) = 0 $
+
+Poiché il fluido è incomprimibile ($rho = "cost"$), l'equazione di continuità impone che la divergenza della velocità sia identicamente nulla, $(partial u_i)/(partial x_i) = 0$. L'equazione differenziale del bilancio di energia meccanica nel Caso A assume pertanto la forma conservativa:
+
+$ partial/(partial x_i) (u_i cal(H)) = nabla dot (arrow(u) cal(H)) = 0 $
+
+// [DA AUDIO]
+=== Caso A: formulazione integrale per una condotta orizzontale
+
+Per passare dalla forma differenziale $partial (u_i cal(H)) / (partial x_i) = 0$ a una formulazione integrale, si considera il moto stazionario all'interno di una condotta cilindrica orizzontale. Si definisce un volume di controllo $V$ delimitato dalla sezione di ingresso $S_1$, dalla sezione di uscita $S_2$ e dalla superficie laterale solida della parete del tubo $S_w$ (*wall*).
+
+Integrando l'equazione differenziale sul volume $V$ e applicando il teorema della divergenza (di Gauss), si trasforma l'integrale di volume nella somma di tre integrali di superficie:
+
+$ integral_V partial/(partial x_i) (u_i cal(H)) dif V = integral_S u_i cal(H) n_i dif S = integral_(S_1) u_i cal(H) n_i dif S + integral_(S_2) u_i cal(H) n_i dif S + integral_(S_w) u_i cal(H) n_i dif S = 0 $
+
+Sulla parete solida $S_w$, trattandosi di un fluido ideale, non vale la condizione di aderenza ($arrow(u) = 0$), ma vale comunque la *condizione di impermeabilità*: la velocità del fluido è puramente tangenziale alla parete e quindi ortogonale al versore normale $arrow(n)$, ovvero $arrow(u) dot arrow(n) = u_i n_i = 0$. Di conseguenza il flusso attraverso la parete laterale è nullo:
+
+$ integral_(S_w) u_i cal(H) n_i dif S = 0 quad arrow.r.double quad integral_(S_1) u_i cal(H) n_i dif S + integral_(S_2) u_i cal(H) n_i dif S = 0 $
+
+Si introduce la *portata volumetrica* (o flusso di volume) $Q_v$ attraverso la sezione della condotta:
+
+$ Q_v = integral_(S_2) u_i n_i dif S $
+
+che per la conservazione della massa a densità costante è la medesima tra ingresso e uscita ($Q_(v, 1) = Q_(v, 2) = Q_v$). Si definisce quindi il *carico medio sulla sezione* $H$, pesato sul flusso di volume:
+
+$ H = 1/Q_v integral_S cal(H) |u_i n_i| dif S $
+
+Tenendo conto dell'orientazione dei versori normali uscenti dal volume di controllo:
+- sulla sezione di ingresso $S_1$, il vettore velocità $arrow(u)$ e il versore normale uscente $arrow(n)_1$ hanno verso opposto ($u_i n_i < 0$), per cui $integral_(S_1) cal(H) u_i n_i dif S = -Q_v H_1$;
+- sulla sezione di uscita $S_2$, la velocità $arrow(u)$ e la normale uscente $arrow(n)_2$ hanno verso concorde ($u_i n_i > 0$), per cui $integral_(S_2) cal(H) u_i n_i dif S = +Q_v H_2$.
+
+Il bilancio integrale per un fluido ideale diventa quindi:
+
+$ -Q_v H_1 + Q_v H_2 = 0 quad arrow.r.double quad Q_v (H_2 - H_1) = 0 quad arrow.r.double quad H_2 = H_1 $
+
+Nel caso ideale, pertanto, il carico medio alla sezione di uscita è uguale al carico medio alla sezione di entrata: l'energia meccanica si conserva integralmente lungo la condotta.
+
+Nelle applicazioni ingegneristiche (in cui si studiano condotte lunghe anche chilometri e non interessa il dettaglio del profilo locale di velocità) si definisce la *velocità media di portata* (*bulk velocity*):
+
+$ U_b = Q_v / S $
+
+esprimendo il carico medio sulla sezione nella forma pratica:
+
+$ H = 1/2 rho U_b^2 + p + rho g z $
+
+In una condotta a sezione circolare costante ($S = "cost"$), essendo $Q_v = "cost"$, anche la velocità media $U_b$ è costante lungo il tubo ($U_(b, 1) = U_(b, 2)$); se inoltre la condotta è orizzontale, la quota $z$ è anch'essa costante ($z_1 = z_2$). Di conseguenza, una eventuale differenza di carico $H_1 - H_2$ tra le sezioni $1$ e $2$ può essere indotta unicamente da una variazione di pressione $p_1 - p_2$.
+
+#nota[
+  *Confronto con l'esperienza e concetto di perdita di carico.* Secondo il modello di fluido ideale (teorema di Bernoulli), misurando la pressione a parete nelle sezioni $S_1$ e $S_2$ di una condotta orizzontale a sezione costante si dovrebbe rilevare $p_1 = p_2$ ($H_1 = H_2$).
+
+  Nella realtà sperimentale, con qualunque fluido reale si misura sistematicamente $H_2 < H_1$ (ossia $p_2 < p_1$). Si produce dunque una *perdita di carico* $Delta H = H_1 - H_2 > 0$, ovvero una dissipazione irreversibile di energia meccanica sottratta al fluido durante il moto.
+]
+
+// [DA AUDIO]
+// Grafico renderizzabile con CeTZ: condotta cilindrica orizzontale con volume di controllo V, sezioni S1, S2, parete Sw, versori normali e prese di pressione
+#align(center, canvas(length: 1cm, {
+  // Pareti superiore e inferiore della condotta (Sw)
+  draw.line((1.0, 2.2), (8.0, 2.2), stroke: 1.2pt + black)
+  draw.line((1.0, 0.2), (8.0, 0.2), stroke: 1.2pt + black)
+
+  // Sezioni S1 (ingresso) e S2 (uscita) tratteggiate
+  draw.line((2.2, 0.2), (2.2, 2.2), stroke: (paint: rgb("#1f4e8c"), thickness: 1pt, dash: "dashed"))
+  draw.line((6.8, 0.2), (6.8, 2.2), stroke: (paint: rgb("#1f4e8c"), thickness: 1pt, dash: "dashed"))
+
+  // Etichette superfici e volume
+  draw.content((2.2, -0.2), text(size: 8pt, fill: rgb("#1f4e8c"))[$S_1$])
+  draw.content((6.8, -0.2), text(size: 8pt, fill: rgb("#1f4e8c"))[$S_2$])
+  draw.content((4.5, 2.55), text(size: 8pt)[$S_w$ (parete)])
+  draw.content((4.5, 1.2), text(size: 9pt)[$V$])
+
+  // Versori normali uscenti n1, n2, nw
+  draw.line((2.2, 1.2), (1.3, 1.2), stroke: 0.9pt + rgb("#1f4e8c"), mark: (end: "stealth", fill: rgb("#1f4e8c")))
+  draw.content((1.3, 1.5), text(size: 8pt, fill: rgb("#1f4e8c"))[$arrow(n)_1$])
+
+  draw.line((6.8, 1.2), (7.7, 1.2), stroke: 0.9pt + rgb("#1f4e8c"), mark: (end: "stealth", fill: rgb("#1f4e8c")))
+  draw.content((7.7, 1.5), text(size: 8pt, fill: rgb("#1f4e8c"))[$arrow(n)_2$])
+
+  draw.line((4.5, 0.2), (4.5, -0.5), stroke: 0.9pt + rgb("#1f4e8c"), mark: (end: "stealth", fill: rgb("#1f4e8c")))
+  draw.content((4.95, -0.35), text(size: 8pt, fill: rgb("#1f4e8c"))[$arrow(n)_w$])
+
+  // Vettori velocità media Ub in S1 e S2
+  draw.line((1.5, 0.7), (2.9, 0.7), stroke: 1pt + rgb("#8c3824"), mark: (end: "stealth", fill: rgb("#8c3824")))
+  draw.content((2.9, 0.45), text(size: 8pt, fill: rgb("#8c3824"))[$arrow(U)_b$])
+
+  draw.line((6.1, 0.7), (7.5, 0.7), stroke: 1pt + rgb("#8c3824"), mark: (end: "stealth", fill: rgb("#8c3824")))
+  draw.content((7.5, 0.45), text(size: 8pt, fill: rgb("#8c3824"))[$arrow(U)_b$])
+
+  // Prese di pressione p1 e p2 a parete
+  draw.line((2.2, 2.2), (2.2, 2.8), stroke: 0.8pt + rgb("#2e6b3e"))
+  draw.circle((2.2, 3.05), radius: 0.25, stroke: 0.8pt + rgb("#2e6b3e"))
+  draw.content((2.2, 3.05), text(size: 7pt, fill: rgb("#2e6b3e"))[$p_1$])
+
+  draw.line((6.8, 2.2), (6.8, 2.8), stroke: 0.8pt + rgb("#2e6b3e"))
+  draw.circle((6.8, 3.05), radius: 0.25, stroke: 0.8pt + rgb("#2e6b3e"))
+  draw.content((6.8, 3.05), text(size: 7pt, fill: rgb("#2e6b3e"))[$p_2$])
+}))
+
+Per un fluido viscoso (newtoniano) ho invece:
+
+$ sigma_(i j) = -p delta_(i j) + tau_(i j) $
+
+Cosa diviene il termine $u_i (partial sigma_(i j))/(partial x_j)$? (scritto in notazione vettoriale $arrow(u) dot (nabla dot bold(sigma))$)
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (center + horizon, center + horizon),
+  [
+    Riscrivendo:
+    $ u_i (partial sigma_(i j))/(partial x_j) = underbrace(partial/(partial x_j) (u_i sigma_(i j)), (A)) - underbrace(sigma_(i j) (partial u_i)/(partial x_j), (B)) $
+    - *(A)* Operatore di divergenza $arrow.r$ termine di flusso!
+    - *(B)* Termine di pozzo o sorgente.
+  ],
+  [
+    
+  ]
+)
+#v(1em)
+
+// [DA AUDIO]
+In generale, in qualunque equazione di bilancio su un dominio di controllo, i termini si suddividono in due categorie fisiche e matematiche:
+- *termini di flusso*: sono sempre associati a un operatore di *divergenza* ($partial / (partial x_j) (...)$). Grazie al teorema della divergenza essi passano dall'integrale di volume all'integrale sulla superficie di contorno, rappresentando ciò che entra o esce attraverso i confini del dominio per semplice trasporto spaziale;
+- *termini di pozzo o di sorgente*: non possono essere espressi come divergenza di alcuna grandezza e rappresentano ciò che viene generato (sorgente) o distrutto (pozzo) localmente all'interno del volume di controllo.
+
+Iniziamo a trattare *(B)* ricordando che $sigma_(i j) = -p delta_(i j) + 2 mu D_(i j)$. Attenzione (!), il passaggio non è immediato:
+
+$ -sigma_(i j) (partial u_i)/(partial x_j) = p (partial u_j)/(partial x_j) - 2 mu D_(i j) D_(i j) $
+
+Ricordiamo che:
+
+$ (partial u_j)/(partial x_j) = -1/rho (D rho)/(D t) $
+
+Il termine $2 mu D_(i j) D_(i j)$ è sempre positivo! (è un quadrato).
+
+// [DA AUDIO]
+Esplicitando la doppia sommatoria sugli indici ripetuti $i, j in {1, 2, 3}$, il prodotto contratto $D_(i j) D_(i j)$ si sviluppa nella somma dei quadrati delle $9$ componenti del tensore velocità di deformazione:
+
+$ D_(i j) D_(i j) = D_(1 1)^2 + D_(1 2)^2 + D_(1 3)^2 + D_(2 1)^2 + D_(2 2)^2 + D_(2 3)^2 + D_(3 1)^2 + D_(3 2)^2 + D_(3 3)^2 >= 0 $
+
+dove ciascuna componente racchiude i gradienti di velocità, ad esempio:
+
+$ D_(1 2) = 1/2 ((partial u_1)/(partial x_2) + (partial u_2)/(partial x_1)) $
+
+Di questo termine occorre pertanto ricordare tre proprietà fondamentali:
+1. ha *natura scalare* (contrazione completa di due tensori del secondo ordine);
+2. è la *somma di termini tutti al quadrato*, dunque è sempre non negativo ($>= 0$);
+3. contiene i *gradienti spaziali di velocità*: ogni qualvolta lamine adiacenti di fluido scorrono con velocità differenti ($D_(i j) != 0$), tale termine è strettamente positivo e, comparendo nell'equazione di bilancio preceduto dal segno meno ($-2 mu D_(i j) D_(i j)$), agisce inevitabilmente come un *pozzo* che sottrae carico (energia meccanica) al fluido.
+
+*(A)*
+
+$
+  partial/(partial x_j) (u_i sigma_(i j)) &= -partial/(partial x_j) (u_j p) + partial/(partial x_j) (u_i tau_(i j)) = \
+  &= -p (partial u_j)/(partial x_j) - u_j (partial p)/(partial x_j) + partial/(partial x_j) (u_i tau_(i j))
+$
+
+Metto tutto insieme:
+
+$
+  u_i (partial sigma_(i j))/(partial x_j) &= underbrace(-p (partial u_j)/(partial x_j) - u_j (partial p)/(partial x_j) + partial/(partial x_j) (u_i tau_(i j)), (A)) + underbrace(p (partial u_j)/(partial x_j) - 2 mu D_(i j) D_(i j), (B)) = \
+  &= -u_j (partial p)/(partial x_j) + partial/(partial x_j) (u_i tau_(i j)) - 2 mu D_(i j) D_(i j)
+$
+
+Il primo termine $-u_j (partial p)/(partial x_j)$ è il termine che avevamo anche prima, nel caso di fluido non viscoso, i.e. $sigma_(i j) = -p delta_(i j)$.
+
+Gli altri due sono i termini aggiuntivi che si hanno a causa della viscosità.
+
+Riscrivo l'eq:bilancio_ec:
+
+$ partial/(partial t) (rho u^2 / 2) = -u_j partial/(partial x_j) [underbrace(rho u^2 / 2 + p + rho psi, cal(H))] - D + partial/(partial x_j) (u_i tau_(i j)) $
+
+laddove:
+
+$ D = 2 mu D_(i j) D_(i j) arrow.r.long "dissipazione viscosa (locale)" $
+
+// [DA AUDIO]
+Entrambi i nuovi termini viscosi $-D = -2 mu D_(i j) D_(i j)$ e $partial (u_i tau_(i j)) / (partial x_j)$ dipendono dalla viscosità $mu$ e dai gradienti di velocità $D_(i j)$ (essendo $tau_(i j) = 2 mu D_(i j)$), ma mentre $partial (u_i tau_(i j)) / (partial x_j)$ è una divergenza (e quindi un *termine di flusso*), $-D$ non è esprimibile come divergenza ed è un *termine di pozzo*.
+
+In regime stazionario ($partial / (partial t) = 0$) e per fluido incomprimibile ($rho = "cost" arrow.r.double (partial u_j)/(partial x_j) = 0$), portando la divergenza del flusso di carico a primo membro si ottiene la forma differenziale stazionaria del Caso B:
+
+$ partial/(partial x_i) (u_i cal(H)) = -D + partial/(partial x_j) (tau_(i j) u_i) $
+
+Faccio l'integrale su un volume di controllo $V$:
+
+$ dif/(dif t) integral_V (rho u^2 / 2) dif V = -integral_V u_j (partial cal(H))/(partial x_j) dif V - underbrace(integral_V D dif V, D_v) + integral_V partial/(partial x_j) (u_i tau_(i j)) dif V $
+
+Trasformo il $1 degree$ e $3 degree$ termine a destra in integrali di superficie:
+
+$
+  integral_V u_j (partial cal(H))/(partial x_j) dif V &= integral_V [partial/(partial x_j) (cal(H) u_j) - cal(H) underbrace((partial u_j)/(partial x_j), = 0 "se" rho = "cost"!)] dif V = \
+  &= integral_V partial/(partial x_j) (cal(H) u_j) dif V = integral_S cal(H) u_j n_j dif S
+$
+
+Flusso di $cal(H)$ attraverso la superficie di controllo:
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (center + horizon, center + horizon),
+  [
+    $ integral_V partial/(partial x_j) (u_i tau_(i j)) dif V = integral_S u_i tau_(i j) n_j dif S = P_m $
+    Questo termine rappresenta il lavoro fornito alla superficie $S$, in presenza di forti gradienti di velocità! Il bilancio di energia cinetica diviene dunque:
+    $ dif/(dif t) integral_V rho u^2 / 2 dif V = -integral_S u_j cal(H) n_j dif S - D_v + P_m $
+  ],
+  [
+    
+  ]
+)
+#v(1em)
+
+// [DA AUDIO]
+=== Caso B: bilancio integrale per una condotta e significato fisico della dissipazione
+
+Applicando il bilancio integrale in regime stazionario ($dif / (dif t) = 0$) al volume di controllo $V$ della condotta cilindrica considerato in precedenza, si osserva che:
+- i flussi sulle pareti solide $S_w$ si annullano per la condizione di aderenza ($arrow(u) = 0$);
+- il flusso convettivo di carico attraverso le sezioni di ingresso $S_1$ e di uscita $S_2$ vale, come nel Caso A, $integral_(S_1 union S_2) u_j cal(H) n_j dif S = Q_v (H_2 - H_1)$;
+- il termine di pozzo non è una divergenza e non può essere trasformato in integrale di superficie: esso rimane un integrale di volume $D_v = integral_V D dif V = integral_V 2 mu D_(i j) D_(i j) dif V$, che rappresenta la *dissipazione viscosa sul volume*;
+- l'integrale di superficie $P_m = integral_S tau_(i j) u_i n_j dif S$ rappresenta la *potenza meccanica degli sforzi viscosi* scambiata attraverso le sezioni di contorno.
+
+Il bilancio stazionario per la condotta assume dunque la forma:
+
+$ Q_v (H_2 - H_1) = -D_v + P_m $
+
+Nel caso specifico di una condotta, il termine $P_m$ (flusso di energia meccanica associato agli sforzi viscosi attraverso le due sezioni di ingresso e di uscita $S_1$ e $S_2$) è di molti ordini di grandezza inferiore rispetto al flusso di carico $Q_v (H_2 - H_1)$ e può pertanto essere trascurato ($P_m approx 0$), mentre risulterà essenziale in problemi con pareti mobili.
+
+Definendo la *perdita di carico* tra la sezione di ingresso e quella di uscita come $Delta H = H_1 - H_2 > 0$, si ottiene la relazione fondamentale:
+
+$ -Q_v Delta H = -D_v quad arrow.r.double quad Q_v Delta H = D_v quad arrow.r.double quad Delta H = H_1 - H_2 = D_v / Q_v $
+
+Questa espressione mostra che la perdita di carico $Delta H$ osservata sperimentalmente è direttamente prodotta dalla dissipazione viscosa di volume $D_v$: lo scorrimento relativo di lamine fluide a velocità diverse ($D_(i j) != 0$) in presenza di viscosità $mu$ sottrae inevitabilmente energia meccanica al flusso.
+
+#nota[
+  *Aspetti energetici, termici e dimensionali della dissipazione:*
+  - *Conversione in energia interna*: l'energia meccanica sottratta dal termine di pozzo $-D$ non scompare, ma viene trasferita all'*energia interna* (termica) del fluido, dove ricompare col segno positivo ($+D$) come *termine sorgente* nell'equazione di bilancio dell'energia termica. Dal punto di vista termometrico, tuttavia, il conseguente riscaldamento del fluido tra ingresso e uscita di una condotta (ad esempio in acqua o aria) è talmente esiguo da risultare praticamente non misurabile, mentre dal punto di vista meccanico l'effetto di $D_v$ (la perdita di carico $Delta H$) è macroscopico e determinante.
+  - *Unità di misura e nomenclatura*: il termine globale $D_v = integral_V D dif V$ ha le dimensioni di una *potenza* ($"W" = "J" / "s"$); l'integrando locale $D = 2 mu D_(i j) D_(i j)$ ha invece le dimensioni di una *potenza per unità di volume* ($"W" / "m"^3$) e prende il nome di *funzione di dissipazione*.
+]
 
