@@ -482,3 +482,380 @@ Al variare del gradiente di pressione $G = (dif p)/(dif x)$ si distinguono i seg
     })
   ]
 )
+
+
+// ===============================================================
+// PARTE 2 — condotte, perdite di carico, moto di Poiseuille
+// ===============================================================
+
+// Numero di Reynolds
+#let Rey = math.upright("Re")
+
+== Applicazione: moto in condotta in presenza di una macchina a fluido
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),
+  [
+    Si consideri un tronco di condotta attraversato da un fluido, in cui è installata una macchina a fluido (turbina o pompa). La superficie di controllo $S$ è costituita da:
+    - la sezione di ingresso $S_1$ e la sezione di uscita $S_2$;
+    - le pareti fisse della condotta $S_w$, su cui $arrow(u) = 0$;
+    - la superficie mobile delle pale della macchina $S_m$, attraverso cui la portata massica è nulla ma avviene lo scambio di potenza $P_m$.
+  ],
+  [
+    #canvas(length: 1cm, {
+      // Pareti della condotta
+      draw.line((0.5, 0.8), (5.5, 0.8), stroke: 1pt + c-geo)
+      draw.line((0.5, 2.4), (5.5, 2.4), stroke: 1pt + c-geo)
+
+      // Sezione di ingresso S_1
+      draw.circle((0.5, 1.6), radius: (0.25, 0.8), stroke: 1pt + c-geo)
+      freccia((0.5, 1.6), (-0.1, 1.6), col: c-norm)
+      etichetta((-0.15, 1.6), $arrow(n)$, col: c-norm, anchor: "east")
+      freccia((0.5, 1.4), (1.2, 1.4), col: c-vel)
+      etichetta((1.25, 1.4), $arrow(u)$, col: c-vel, anchor: "west")
+      etichetta((0.5, 0.5), $S_1$, anchor: "north")
+
+      // Sezione di uscita S_2
+      draw.arc((5.5, 1.6), start: -90deg, stop: 90deg, radius: (0.25, 0.8), anchor: "origin", stroke: 1pt + c-geo)
+      draw.arc((5.5, 1.6), start: 90deg, stop: 270deg, radius: (0.25, 0.8), anchor: "origin", stroke: (paint: c-geo, dash: "dashed", thickness: 0.7pt))
+      freccia((5.5, 1.6), (6.2, 1.6), col: c-norm)
+      etichetta((6.25, 1.6), $arrow(n)$, col: c-norm, anchor: "west")
+      etichetta((5.5, 0.5), $S_2$, anchor: "north")
+
+      // Macchina a fluido S_m
+      draw.circle((2.8, 1.6), radius: 0.12, fill: white, stroke: 1pt + c-geo)
+      draw.circle((2.8, 1.95), radius: (0.12, 0.25), stroke: 0.8pt + c-geo)
+      draw.circle((2.8, 1.25), radius: (0.12, 0.25), stroke: 0.8pt + c-geo)
+      etichetta((2.8, 0.95), $P_m, S_m$, anchor: "north")
+
+      // Normale alla parete S_w
+      freccia((3.6, 2.4), (3.6, 2.9), col: c-norm)
+      etichetta((3.7, 2.8), $arrow(n)$, col: c-norm, anchor: "west")
+      etichetta((4.2, 0.5), $S_w$, anchor: "north")
+    })
+  ]
+)
+#v(0.5em)
+
+Il flusso convettivo di carico totale si scompone sulle diverse porzioni del contorno. Il contributo di $S_w$ è nullo perché $arrow(u) = 0$, quello di $S_m$ perché non è attraversata da portata:
+
+$
+- integral_S arrow(u) cal(H) dot arrow(n) dif S
+&= - integral_(S_1) arrow(u) cal(H) dot arrow(n) dif S_1 - integral_(S_2) arrow(u) cal(H) dot arrow(n) dif S_2 - integral_(S_m) arrow(u) cal(H) dot arrow(n) dif S_m \
+&= Q_v cal(H)_1 - Q_v cal(H)_2
+$
+
+Nella relazione precedente si è assunto $cal(H)$ uniforme sulle sezioni trasversali, per cui $integral_S cal(H) arrow(u) dot arrow(n) dif S = Q_v cal(H)$, essendo il flusso volumetrico (portata) definito da $Q_v = integral_S arrow(u) dot arrow(n) dif S$.
+
+In regime stazionario ($partial / (partial t) = 0$) il bilancio integrale si riduce a:
+
+$ P_m - D_v = integral_S arrow(u) cal(H) dot arrow(n) dif S = Q_v [cal(H)_2 - cal(H)_1] $
+
+Definendo la *perdita di carico* tra ingresso e uscita come $Delta cal(H) = cal(H)_1 - cal(H)_2$, si ottiene:
+
+$ Delta cal(H) Q_v = D_v - P_m $
+
+#nota[
+  Nel caso particolare di un semplice tronco di condotta passivo, in cui non vi sia potenza meccanica fornita o estratta ($P_m = 0$), la relazione diventa:
+  $ Delta cal(H) = D_v / Q_v $
+  Questa formula mostra direttamente la natura fisica delle perdite di carico: esse sono l'effetto macroscopico della *dissipazione viscosa* $D_v$ all'interno del fluido.
+]
+
+== Coefficiente di perdita di carico e numero di Reynolds
+
+// [DA AUDIO]
+In una condotta orizzontale a sezione costante il termine di velocità e il termine gravitazionale del carico totale sono gli stessi nelle due sezioni: l'unico termine che può cambiare è la pressione. La perdita di carico coincide quindi con la differenza di pressione,
+
+$ Delta cal(H) = cal(H)_1 - cal(H)_2 = p_1 - p_2 $
+
+e si ottiene con una semplice misura di pressione.
+
+// [DA AUDIO]
+Ripetendo la misura per diametri $D$ diversi, viscosità diverse, portate diverse e distanze $L$ diverse tra le due prese di pressione, si ottiene una quantità enorme di valori di $Delta cal(H)$. Ci si chiede allora se tutti questi valori possano essere raggruppati in una descrizione unificata del fenomeno, cioè se esistano delle grandezze che permettano di calcolare $Delta cal(H)$ indipendentemente dal caso particolare.
+
+// [DA AUDIO]
+La procedura, che si può applicare direttamente ai dati sperimentali, è la seguente:
++ si definisce la perdita di carico per unità di lunghezza, $Delta cal(H) \/ L$;
++ la si adimensionalizza dividendo per $1/2 rho u_d^2$, che ha le dimensioni di una pressione (pascal) come $cal(H)$; $u_d$ è la velocità mediata sulla sezione e il fattore $1/2$ si mette per convenzione;
++ si adimensionalizza la lunghezza con la lunghezza caratteristica del problema, il diametro $D$.
+
+Si ottiene così il *coefficiente di perdita di carico* $lambda$:
+
+$ lambda = (Delta cal(H)) / L dot D / (1/2 rho u_d^2) $
+
+Si può mostrare che $lambda$ dipende da un unico numero adimensionale, il *numero di Reynolds*, costruito con la velocità media, il diametro e la viscosità cinematica:
+
+$ Rey = (u_d D) / nu $
+
+Per ogni esperimento, dai valori misurati si calcolano quindi due sole quantità, $lambda$ e $Rey$: la dipendenza delle perdite di carico da cinque parametri ($Delta cal(H)$, $u_d$, $D$, $rho$ o $nu$, $L$) si riduce alla dipendenza da un solo parametro.
+
+// [DA AUDIO]
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),
+  [
+    Riportando i dati sul piano $(Rey, lambda)$ si riconoscono tre regioni:
+    - una prima regione, a $Rey$ bassi, in cui i dati seguono la legge $lambda = 64 \/ Rey$;
+    - una regione a $Rey$ alti in cui $lambda prop Rey^(-1\/4)$, con una dipendenza molto più debole;
+    - una regione intermedia, poco definita, di transizione tra le due.
+  ],
+  [
+    #canvas(length: 1cm, {
+      // Regione di transizione
+      draw.rect((2.6, 0), (3.2, 4.3), fill: luma(225), stroke: none)
+      etichetta((2.9, 3.6), [?], col: c-aux)
+
+      // Assi (scala logaritmica)
+      freccia((0, 0), (6.6, 0), sp: 1pt)
+      freccia((0, 0), (0, 4.7), sp: 1pt)
+      etichetta((6.65, 0), $Rey$, anchor: "west")
+      etichetta((0, 4.75), $lambda$, anchor: "south")
+
+      // Legge laminare e legge turbolenta
+      draw.line((0.2, 3.76), (2.6, 1.12), stroke: 1.2pt + c-geo)
+      draw.line((3.2, 1.32), (6.0, 0.55), stroke: 1.2pt + c-geo)
+      etichetta((1.6, 2.75), $lambda = 64 \/ Rey$, anchor: "west")
+      etichetta((4.6, 1.35), $lambda prop Rey^(-1\/4)$, anchor: "south")
+
+      // Regimi
+      etichetta((1.3, -0.3), [laminare], col: c-aux)
+      etichetta((2.9, -0.3), [transiz.], col: c-aux)
+      etichetta((4.6, -0.3), [turbolento], col: c-aux)
+    })
+    #dida[Andamento qualitativo, in scala logaritmica.]
+  ]
+)
+
+// [AUDIO INCERTO: la trascrizione dice che la prima legge vale "per Reynolds dai 1000 ai 2000" e la seconda "per Reynolds superiori a 2000"; il limite inferiore non è comprensibile, è stato tenuto solo il valore 2000.]
+// [DA AUDIO]
+La prima legge vale per numeri di Reynolds inferiori a circa 2000, la seconda per valori superiori. Non esiste però un valore fisso di soglia: esso dipende molto da fattori esterni, cioè da quanto il campo di moto è disturbato da oscillazioni e perturbazioni provenienti dall'ambiente.
+
+// [DA AUDIO]
+Ai due comportamenti di $lambda$ corrispondono due comportamenti del campo di moto, che si possono visualizzare introducendo un colorante nella condotta attraverso un piccolo beccuccio:
+- per $Rey$ bassi il colorante viene trasportato a valle del punto di iniezione lungo un filamento che rimane del tutto ordinato. Il moto è detto *laminare*: alla scala microscopica le molecole si muovono sempre in modo caotico, ma alla scala macroscopica il campo di moto è ordinato (caos microscopico, ordine macroscopico). È il tipo di moto analizzato finora;
+- per $Rey$ alti il filamento, che visualizza le traiettorie, diventa molto disordinato e caotico. Il moto è detto *turbolento*: il disordine non è più solo microscopico ma si manifesta anche alla scala macroscopica.
+
+#align(center, canvas(length: 1cm, {
+  let condotta(x0, titolo, amp) = {
+    parete(x0, x0 + 5, 0)
+    parete(x0, x0 + 5, 1.2, sotto: false)
+    // beccuccio di iniezione
+    draw.line((x0 + 0.2, 1.2), (x0 + 0.2, 0.6), (x0 + 0.6, 0.6), stroke: 1.2pt + c-geo)
+    // filamento di colorante
+    let pts = range(0, 81).map(i => {
+      let t = i / 80
+      let a = amp * calc.min(1, 3 * t)
+      (x0 + 0.6 + 4.2 * t,
+       0.6 + a * (calc.sin(23 * t) + 0.6 * calc.sin(57 * t + 1) + 0.4 * calc.sin(101 * t)))
+    })
+    draw.line(..pts, stroke: 0.9pt + c-vel)
+    etichetta((x0 + 2.5, 1.8), titolo)
+  }
+  condotta(0, [$Rey$ basso: moto laminare], 0)
+  condotta(5.8, [$Rey$ alto: moto turbolento], 0.24)
+}))
+#dida[Filamento di colorante iniettato nella condotta nei due regimi.]
+
+// [DA AUDIO]
+L'evidenza sperimentale mostra quindi due comportamenti nettamente diversi, riconoscibili anche a occhio, che si riflettono in due leggi molto diverse per il coefficiente di perdita di carico; tra i due regimi esiste una regione di transizione poco definita.
+
+#nota[
+  // [DA AUDIO]
+  *Portata generale del risultato.* Il grafico, relativo a una condotta orizzontale, mostra che le perdite di carico adimensionalizzate dipendono solo dal numero di Reynolds. Esperimenti condotti con diametri diversi, distanze diverse tra le prese, fluidi diversi e portate diverse si dispongono sulle stesse curve: una volta trasformati i dati in $lambda$ e $Rey$, non è più possibile sapere in quale condotta sia stato ottenuto un dato valore. Viceversa, noto $lambda$, si ricava $Delta cal(H)$ per qualunque diametro, distanza, portata e viscosità. Le due relazioni valgono quindi per tutte le condotte, tutti i diametri e tutti i fluidi, purché newtoniani.
+]
+
+// [DA AUDIO]
+Il valore $64$ della legge laminare non è soltanto un dato sperimentale: è un valore esatto, che si può calcolare a partire dalle equazioni di Navier-Stokes. L'obiettivo dei paragrafi seguenti è arrivare a questo calcolo.
+
+= Moto, dissipazione e perdite di carico in una condotta circolare: moto di Poiseuille
+
+== Equazione del moto e profilo di velocità in coordinate cilindriche
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),
+  [
+    Si studia il moto stazionario e incomprimibile ($rho = "cost"$, $partial / (partial t) = 0$) all'interno di una condotta cilindrica circolare di raggio $R$ e lunghezza $L$. Si adotta un sistema di coordinate cilindriche $(r, theta, z)$ con asse $z$ coincidente con l'asse della condotta; sulla parete, $r = R$, vale la condizione di aderenza $arrow(u) = 0$.
+  ],
+  [
+    #canvas(length: 1cm, {
+      // Asse della condotta
+      draw.line((0.5, 1.2), (6.6, 1.2), stroke: (paint: c-aux, thickness: 0.5pt, dash: "dash-dotted"))
+
+      // Superficie laterale e sezioni di estremità
+      draw.line((0.5, 0.4), (6.0, 0.4), stroke: 1pt + c-geo)
+      draw.line((0.5, 2.0), (6.0, 2.0), stroke: 1pt + c-geo)
+      draw.circle((0.5, 1.2), radius: (0.25, 0.8), stroke: 1pt + c-geo)
+      draw.arc((6.0, 1.2), start: -90deg, stop: 90deg, radius: (0.25, 0.8), anchor: "origin", stroke: 1pt + c-geo)
+      draw.arc((6.0, 1.2), start: 90deg, stop: 270deg, radius: (0.25, 0.8), anchor: "origin", stroke: (paint: c-geo, dash: "dashed", thickness: 0.7pt))
+
+      // Assi r e z
+      freccia((0.5, 1.2), (0.5, 2.7))
+      etichetta((0.62, 2.7), $r$, anchor: "west")
+      freccia((0.5, 1.2), (1.7, 1.2))
+      etichetta((1.75, 1.35), $z$, anchor: "west")
+
+      // Raggio R e lunghezza L
+      quota((4.4, 1.22), (4.4, 1.98))
+      etichetta((4.52, 1.6), $R$, anchor: "west")
+      quota((0.5, -0.1), (6.0, -0.1))
+      etichetta((3.25, -0.35), $L$)
+    })
+  ]
+)
+
+// [DA AUDIO]
+Le equazioni di Navier-Stokes in coordinate cilindriche sono fornite nell'allegato disponibile tra gli appunti del corso sul Portale della didattica. Come nel caso del moto tra due piastre piane, che qui si sta sostanzialmente generalizzando, si assume la forma della soluzione: una sola componente di velocità non nulla, quella lungo $z$, dipendente unicamente da $r$. Il profilo atteso si annulla alla parete e ha un massimo che, per simmetria, non può che trovarsi sull'asse:
+
+$ arrow(u) = (0, 0, u(r)) $
+
+Sotto queste ipotesi la maggior parte dei termini delle equazioni è identicamente nulla ($nabla dot arrow(u) = 0$, $arrow(u) dot nabla arrow(u) = 0$) e il bilancio della quantità di moto si riduce al sistema:
+
+$ cases(
+  0 = - (partial p)/(partial r) = - 1/r (partial p)/(partial theta),
+  0 = - (partial p)/(partial z) + mu 1/r dif/(dif r) (r (dif u)/(dif r))
+) $
+
+Dalle prime due relazioni segue che la pressione dipende unicamente dalla coordinata assiale, $p = p(z)$. L'equazione lungo $z$ si scrive allora:
+
+$ (dif p)/(dif z) = mu 1/r dif/(dif r) (r (dif u)/(dif r)) = G $
+
+// [DA AUDIO]
+Il ragionamento è lo stesso del caso piano: il primo membro dipende solo da $z$ e il secondo solo da $r$, quindi l'uguaglianza è possibile solo se entrambi sono pari a una costante, il gradiente di pressione assiale $G$. Essendo $u$ funzione della sola $r$, le derivate sono derivate ordinarie. Rispetto al caso piano c'è però qualche sottigliezza in più nell'integrazione.
+
+Si riscrive l'equazione come
+
+$ dif/(dif r) (r (dif u)/(dif r)) = (G r)/mu $
+
+e si integra una prima volta rispetto a $r$:
+
+$ r (dif u)/(dif r) = (G r^2)/(2 mu) + C quad arrow.r.double quad (dif u)/(dif r) = (G r)/(2 mu) + C/r $
+
+// [DA AUDIO]
+Per $r arrow.r 0$, cioè sull'asse della condotta, il primo termine tende a zero mentre il termine $C \/ r$ diverge, producendo una singolarità sull'asse. Un campo di moto singolare sull'asse non è fisicamente interpretabile: per garantire la regolarità della soluzione si deve porre
+
+$ C = 0 quad arrow.r.double quad (dif u)/(dif r) = (G r)/(2 mu) $
+
+Separando le variabili e integrando una seconda volta:
+
+$ integral dif u = G/(2 mu) integral r dif r quad arrow.r.double quad u(r) = (G r^2)/(4 mu) + B $
+
+La condizione di aderenza alla parete della condotta, $u = 0$ per $r = R$, fornisce:
+
+$ u(R) = 0 = (G R^2)/(4 mu) + B quad arrow.r.double quad B = - (G R^2)/(4 mu) $
+
+Si ottiene così la distribuzione radiale di velocità del moto di Hagen-Poiseuille:
+
+$ u(r) = G/mu (r^2 / 4 - R^2 / 4) = - (G R^2)/(4 mu) (1 - (r/R)^2) $
+
+Il profilo di velocità è dunque *parabolico* e raggiunge il suo valore massimo $u_0$ sull'asse della condotta ($r = 0$):
+
+$ u_0 = u(r = 0) = - (G R^2)/(4 mu) quad arrow.r.double quad u(r) = u_0 (1 - (r/R)^2) $
+
+// [DA AUDIO]
+Il segno meno è coerente con il verso del moto: il fluido si muove verso le $z$ positive solo se la pressione diminuisce lungo $z$, cioè se $G = (dif p)/(dif z) < 0$; in tal caso $u_0 > 0$. Senza gradiente di pressione non ci sarebbe moto.
+
+#nota[
+  // [DA AUDIO]
+  *Validità della soluzione.* La soluzione è stata trovata ipotizzandone in partenza la forma: in nessun momento si ammette che la velocità possa avere componenti diverse da $u(r)$ lungo $z$. Questa assunzione è coerente unicamente con la descrizione del moto *laminare*. Se la velocità avesse componenti non nulle nelle altre due direzioni, come accade nel moto turbolento, tutta la descrizione verrebbe meno.
+]
+
+#nota[
+  // [DA AUDIO]
+  *Indicazione d'esame.* Questo svolgimento è stato domanda d'esame l'anno scorso ed è una tipica domanda. La traccia è:
+  + ricavare il profilo di velocità $u(r)$ in funzione di $G$;
+  + calcolare il flusso di volume $Q_v$;
+  + calcolare la velocità media sulla sezione $u_d$;
+  + calcolare la funzione di dissipazione;
+  + ricavare $lambda$, come definito sopra, in funzione del numero di Reynolds costruito con $u_d$ e il diametro $D$.
+]
+
+== Velocità media ("bulk"), portata e sforzi viscosi
+
+Si definisce la velocità media di portata (o velocità *"bulk"*) $u_d$ come rapporto tra il flusso volumetrico $Q_v$ e l'area della sezione trasversale $S = pi R^2$:
+
+$ u_d = 1/S underbrace(integral_S arrow(u) dot arrow(n) dif S, Q_v = "flusso in volume") = 1/(pi R^2) integral_0^R u(r) 2 pi r dif r $
+
+Il flusso volumetrico $Q_v$ vale:
+
+$
+Q_v &= 2 pi integral_0^R u(r) r dif r = 2 pi integral_0^R (G R^2)/(4 mu) [r^2 / R^2 - 1] r dif r \
+    &= (pi G R^2)/(2 mu) [r^4 / (4 R^2) - r^2 / 2]_0^R = (pi G R^2)/(2 mu) [R^2 / 4 - R^2 / 2] = - pi/(8 mu) G R^4
+$
+
+Dividendo per la sezione $pi R^2$ si ricavano la velocità media e il suo legame con la velocità massima sull'asse:
+
+$ u_d = Q_v / (pi R^2) = - (G R^2)/(8 mu) quad arrow.r.double quad u_d = u_0 / 2 $
+
+Invertendo tale relazione si ottiene il gradiente di pressione necessario a sostenere una data velocità media:
+
+$ (dif p)/(dif z) = G = - (8 mu u_d)/R^2 $
+
+Fissato il gradiente di pressione $G$ resta quindi determinata univocamente la portata $Q_v$ (e dunque $u_d$), e viceversa.
+
+=== Tensore degli sforzi viscosi
+
+Il tensore degli sforzi completo è $sigma_(i j) = -p delta_(i j) + tau_(i j)$, con $tau_(i j) = 2 mu D_(i j)$ e $D_(i j) = 1/2 ((partial u_i)/(partial x_j) + (partial u_j)/(partial x_i))$. Per il moto assialsimmetrico in condotta, nella base $(r, theta, z)$, la matrice degli sforzi viscosi assume la forma:
+
+$ tau_(i j) = mat(delim: "[",
+  0, 0, tau_(r z);
+  0, 0, 0;
+  tau_(z r), 0, 0
+) $
+
+L'unica componente tangenziale non nulla è:
+
+$ tau_(r z) = tau_(z r) = 2 mu 1/2 ((partial u_z)/(partial r) + (partial u_r)/(partial z)) = mu (dif u)/(dif r) $
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),
+  [
+    Ricordando il profilo parabolico di velocità e la sua derivata radiale:
+    $ u(r) = 2 u_d [1 - r^2 / R^2] = (G R^2)/(4 mu) [r^2 / R^2 - 1] $
+    $ (dif u)/(dif r) = (G r)/(2 mu) $
+    si ricava immediatamente l'andamento lineare dello sforzo di taglio lungo il raggio:
+    $ tau_(r z) = (G r)/2 $
+    Lo sforzo è nullo sull'asse e massimo in modulo alla parete; per un moto diretto nel verso positivo dell'asse $G$ è negativo, e così $tau_(r z)$.
+  ],
+  [
+    #canvas(length: 1cm, {
+      // Pannello A: profilo parabolico u(r)
+      parete(0, 2.8, 0.2)
+      parete(0, 2.8, 2.2, sotto: false)
+      profilo(0.5, 0.2, eta => 1 - calc.pow(2 * eta - 1, 2), H: 2.0, s: 1.6)
+      draw.line((-0.2, 1.2), (2.9, 1.2), stroke: (paint: c-aux, thickness: 0.5pt, dash: "dash-dotted"))
+      freccia((2.9, 1.2), (3.1, 1.2), sp: 0.6pt)
+      etichetta((3.15, 1.2), $z$, anchor: "west")
+      freccia((0.5, 0.2), (0.5, 2.8))
+      etichetta((0.5, 2.85), $r$, anchor: "south")
+      // u_0 e u_d = u_0 / 2
+      draw.line((2.1, 1.2), (2.1, -0.15), stroke: (paint: c-aux, thickness: 0.5pt, dash: "dashed"))
+      etichetta((2.1, -0.2), $u_0$, col: c-vel, anchor: "north")
+      draw.line((1.3, 1.9), (1.3, -0.15), stroke: (paint: c-aux, thickness: 0.5pt, dash: "dashed"))
+      etichetta((1.3, -0.2), $u_d$, col: c-vel, anchor: "north")
+
+      // Pannello B: andamento lineare di tau_rz(r)
+      parete(4.0, 6.4, 0.2)
+      parete(4.0, 6.4, 2.2, sotto: false)
+      draw.line((3.9, 1.2), (6.5, 1.2), stroke: (paint: c-aux, thickness: 0.5pt, dash: "dash-dotted"))
+      freccia((5.4, 0.2), (5.4, 2.8))
+      etichetta((5.4, 2.85), $r$, anchor: "south")
+      draw.line((4.4, 2.2), (5.4, 1.2), (4.4, 0.2), stroke: 1pt + c-forza)
+      draw.line((4.65, 1.95), (5.4, 1.95), stroke: 0.5pt + c-forza)
+      draw.line((4.9, 1.7), (5.4, 1.7), stroke: 0.5pt + c-forza)
+      draw.line((5.15, 1.45), (5.4, 1.45), stroke: 0.5pt + c-forza)
+      draw.line((5.15, 0.95), (5.4, 0.95), stroke: 0.5pt + c-forza)
+      draw.line((4.9, 0.7), (5.4, 0.7), stroke: 0.5pt + c-forza)
+      draw.line((4.65, 0.45), (5.4, 0.45), stroke: 0.5pt + c-forza)
+      etichetta((5.5, 0.5), $tau_(r z)$, col: c-forza, anchor: "west")
+    })
+    #dida[Profilo di velocità (a sinistra) e sforzo di taglio (a destra).]
+  ]
+)
+#v(1em)
