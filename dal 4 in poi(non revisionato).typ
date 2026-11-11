@@ -878,7 +878,7 @@ Cosa diviene il termine $u_i (partial sigma_(i j))/(partial x_j)$? (scritto in n
     - *(B)* Termine di pozzo o sorgente.
   ],
   [
-    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-03_488_1612_259_222.jpg", width: 70%)
+    
   ]
 )
 #v(1em)
@@ -942,7 +942,7 @@ Flusso di $cal(H)$ attraverso la superficie di controllo:
     $ dif/(dif t) integral_V rho u^2 / 2 dif V = -integral_S u_j cal(H) n_j dif S - D_v + P_m $
   ],
   [
-    #image("images/3cb734d7-9607-49d0-8970-a51574b61853-06_630_1735_97_84.jpg", width: 70%)
+    
   ]
 )
 #v(1em)
