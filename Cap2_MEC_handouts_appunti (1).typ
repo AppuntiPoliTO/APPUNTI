@@ -32,7 +32,7 @@ L'equazione costitutiva $V = f(I)$ si scrive anche per un *lato composto*, cioè
 #grid(
   columns: (auto, 1fr), column-gutter: 1em, align: horizon,
   include "figure/cap2/02-lati-composti.typ",
-  Lati composti
+  formula[Lati composti][
     (a) Serie di resistori, convenzione degli utilizzatori:
     $ V = (R_1 + R_2 + R_3) I $
     (b) Serie di generatori ideali, LKT sulla maglia fittizia:
@@ -43,7 +43,7 @@ L'equazione costitutiva $V = f(I)$ si scrive anche per un *lato composto*, cioè
 
     (d) Lato attivo parallelo $A_k parallel R_k$: in $R_k$ scorre $A_k - i_k$, quindi
     $ v_k = R_k A_k - R_k i_k $
-  
+  ],
 )
 // VERIFICARE: verso della corrente in R_k (vedi segnalazioni S1)
 
