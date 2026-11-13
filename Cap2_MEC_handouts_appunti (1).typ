@@ -1,5 +1,11 @@
 #import "lib.typ": *
 #set heading(numbering: "1.")
+#set page(
+  paper: "a4",
+  margin: 1.5cm,
+  numbering: "1",
+  number-align: bottom + right,
+)
 = Reti in regime stazionario e transitori
 
 == Metodo algebrico <metodo-algebrico>
