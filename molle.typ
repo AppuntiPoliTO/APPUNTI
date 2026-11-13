@@ -1059,19 +1059,6 @@ $ F_("crit") = k L_0 K_L $
 
 dove $k$ è la rigidezza della molla, $L_0$ la lunghezza libera a riposo e $K_L$ un coefficiente tabulato in funzione del rapporto $L_0 / D$ e delle condizioni di vincolo alle estremità (estremi incernierati, liberi di ruotare sull'appoggio, oppure estremi incastrati, saldamente ancorati). Per evitare l'instabilità, il carico massimo d'esercizio deve rimanere inferiore a $F_("crit")$; inoltre, costruttivamente si può contrastare il fenomeno guidando la molla all'interno di pareti o sedi che forniscano una reazione laterale.
 
-#table(
-  columns: 3,
-  align: (center, center, center),
-  [#strong[$L_0 / D$]], [#strong[$K_L$ — Estremi incernierati]], [#strong[$K_L$ — Estremi incastrati]],
-  [1], [0.72], [0.72],
-  [2], [0.63], [0.71],
-  [3], [0.38], [0.68],
-  [4], [0.20], [0.63],
-  [5], [0.11], [0.53],
-  [6], [0.07], [0.38],
-  [7], [0.05], [0.26],
-  [8], [0.04], [0.19],
-)
 
 #grid(
   columns: (1fr, 1fr),
