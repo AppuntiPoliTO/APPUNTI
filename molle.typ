@@ -558,7 +558,7 @@ Nella normativa tecnica la verifica statica si effettua confrontando la tensione
 
 $ tau_("nom") = lambda' frac(8 F D, pi d^3) lt.eq tau_("amm") $
 
-Nel caso delle #strong[molle formate a freddo] (norma DIN 17223), il parametro meccanico preso a riferimento è il carico unitario di rottura $R_m$. Questi materiali esibiscono infatti resistenze molto elevate e un comportamento che tende al fragile; inoltre, la resistenza diminuisce all'aumentare del diametro del filo $d$ a causa dell'incidenza dell'effetto scala rispetto al processo produttivo. La normativa definisce la tensione tangenziale ammissibile direttamente come la metà del carico unitario di rottura:
+Nel caso delle #strong[molle formate a freddo], il parametro meccanico preso a riferimento è il carico unitario di rottura $R_m$. Questi materiali esibiscono infatti resistenze molto elevate e un comportamento che tende al fragile; inoltre, la resistenza diminuisce all'aumentare del diametro del filo $d$ a causa dell'incidenza dell'effetto scala rispetto al processo produttivo. La normativa definisce la tensione tangenziale ammissibile direttamente come la metà del carico unitario di rottura:
 
 $ tau_("amm") = 0.5 R_m $
 
