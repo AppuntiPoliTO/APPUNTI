@@ -955,16 +955,7 @@ $ Delta tau_("nom") = lambda' Delta F frac(8 D, pi d^3) lt.eq Delta tau_("amm") 
 
 con $Delta F = F_(m a x) - F_(m i n)$ e $lambda'$ coefficiente di Wahl, ma $Delta tau_("amm")$ è fornito direttamente in tabella come valore limite per fatica all'origine ($F_(m i n) = 0$), in funzione del diametro $d$ e del trattamento superficiale. L'ipotesi di fatica all'origine (carico pulsante da zero, quindi con $tau_m eq.not 0$) risulta generalmente più gravosa rispetto a una sollecitazione puramente alternata ($tau_m = 0$) sul diagramma di Haigh, rendendo tale riferimento utilizzabile in via cautelativa anche qualora il componente operi in regime alternato (come in alcuni attuatori).
 
-#table(
-  columns: 4,
-  align: (center, center, center, center),
-  [#strong[$d$ [mm]]], [#strong[$Delta tau_("amm")$ [MPa] — Acciaio laminato]], [#strong[$Delta tau_("amm")$ [MPa] — Acciaio rettificato]], [#strong[$Delta tau_("amm")$ [MPa] — Acciaio rettificato e pallinato]],
-  [10], [120], [320], [380],
-  [20], [110], [290], [345],
-  [30], [100], [260], [310],
-  [40], [90], [230], [275],
-  [50], [80], [200], [240],
-)
+
 
 ==== Fenomeni secondari: ingobbamento e sfarfallamento
 Nelle molle di compressione particolarmente snelle (lunghezza libera $L_0$ elevata rispetto al diametro dell'elica $D$) e non guidate lateralmente, può manifestarsi un fenomeno di instabilità elastica per carico di punta macroscopico detto #strong[ingobbamento] (#emph[buckling]), analogo a quello delle travi compresse. Il carico critico che porta all'ingobbamento vale:
