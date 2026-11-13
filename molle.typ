@@ -957,7 +957,7 @@ con $Delta F = F_(m a x) - F_(m i n)$ e $lambda'$ coefficiente di Wahl, ma $Delt
 
 
 
-==== Fenomeni secondari: ingobbamento e sfarfallamento
+=== Fenomeni secondari: ingobbamento e sfarfallamento
 Nelle molle di compressione particolarmente snelle (lunghezza libera $L_0$ elevata rispetto al diametro dell'elica $D$) e non guidate lateralmente, può manifestarsi un fenomeno di instabilità elastica per carico di punta macroscopico detto #strong[ingobbamento] (#emph[buckling]), analogo a quello delle travi compresse. Il carico critico che porta all'ingobbamento vale:
 
 $ F_("crit") = k L_0 K_L $
