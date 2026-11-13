@@ -573,431 +573,221 @@ $ tau_("amm") = 0.9 frac(R_(p 0.2), sqrt(3)) $
 In questa espressione compaiono due coefficienti distinti:
 1. Il fattore $0.9$ introduce un modesto ma significativo margine di sicurezza per coprire le incertezze sul comportamento effettivo del materiale, poiché le tabelle normative forniscono i parametri per tipologia di acciaio senza declinarli puntualmente in base alla scala del diametro del filo.
 2. Il divisore $sqrt(3)$ rende omogenea la tensione normale $R_(p 0.2)$ con una tensione tangenziale secondo il criterio di cedimento di Von Mises per materiali duttili ($sigma_("id") = sqrt(sigma^2 + 3 tau^2)$), in cui $sqrt(3)$ costituisce proprio il fattore moltiplicativo del termine tangenziale.
-
-=== Molle a elica cilindrica in trazione
+==== Acciaio per molle
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Nelle molle ad elica cilindrica progettate per lavorare a trazione, le spire terminali vengono ripiegate (ruotate di $90 degree$ rispetto alla giacitura delle spire ordinarie) per formare gli anelli o ganci di collegamento attraverso cui viene applicato il carico esterno. Proprio l'anello terminale costituisce l'elemento strutturalmente più critico dell'intero componente: la rottura in esercizio si verifica infatti tipicamente alle estremità a causa del complesso stato tensionale e dei severi effetti di intaglio generati dai piccoli raggi di curvatura utilizzati per sagomare il gancio (che richiedono, per una trattazione analitica rigorosa, l'impiego della teoria della trave curva).
+  align: (left + horizon, center + horizon),[Gli acciai specifici per molle sono progettati dal punto di vista metallurgico per offrire non solo un'elevata resistenza meccanica, ma anche un campo di linearità elastica molto esteso. Confrontando la curva sforzo-deformazione ($sigma - epsilon.alt$) di un acciaio per molle con quella di un acciaio comune da costruzione, si osserva che nell'acciaio comune il limite elastico (pianerotto di snervamento) è basso rispetto a $R_m$, limitando l'energia assorbibile in campo elastico (area sottesa al tratto lineare). Nell'acciaio per molle, invece, $R_m$ è molto elevato e il limite elastico ($R_(p 0.2)$) è molto vicino a $R_m$; ciò garantisce un'area sottesa al tratto elastico lineare decisamente maggiore e spiega perché l'allungamento percentuale a rottura $A_"%"$ risulti relativamente contenuto rispetto agli acciai comuni.
 
-Nello specifico, poiché la forza di trazione $F$ agisce lungo l'asse centrale del cilindro dell'elica, la sezione maggiormente sollecitata del gancio è la sezione $"A-A"$ situata alla massima distanza dall'asse di carico: su tale sezione agiscono contemporaneamente uno sforzo normale di trazione e un elevato momento flettente (prodotto dalla forza $F$ moltiplicata per il braccio rispetto al baricentro della sezione stessa), componente flettente che invece risulta trascurabile nelle spire ordinarie della molla. Una seconda sezione critica da controllare nei riguardi della curvatura di raccordo è la sezione $"B-B"$ alla radice della piegatura dell'anello.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Disegno tecnico quotato in due viste ortogonali dell'estremità a gancio di una molla a elica cilindrica di trazione (diametro filo d, diametro elica D) sottoposta alla forza assiale F, affiancato dalla fotografia di una molla di trazione reale con spire a contatto. Nella vista frontale del gancio sono indicati il raggio medio $r_1$, il raggio interno $r_3$ e la sezione orizzontale critica A-A posta sul fianco dell'anello a distanza D/2 dall'asse; nella vista laterale piegata sono indicati il raggio medio $r_2$, il raggio interno $r_4$ e la sezione critica B-B nella curva di raccordo tra l'ultima spira e il gancio]])
+Il carico di rottura $R_m$ di un acciaio per molle varia tipicamente da $1500$ a $2400 "MPa"$ a seconda della composizione e del diametro del filo (normativa di riferimento UNI-EN 10270-2, #emph[Filo di acciaio per molle meccaniche]). Esempi di acciai per filo per molle sono VDSiCrV e FDSiCrV; la presenza di silicio ($"Si"$) nell'acciaio innalza sia il limite elastico sia $R_m$.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma tensione-deformazione $sigma - epsilon.alt$ che confronta l'acciaio per molle (curva più alta con $R_m$ elevato, limite elastico prossimo a $R_m$, ampia area elastica lineare tratteggiata in verde e ridotto allungamento a rottura) con l'acciaio comune (curva più bassa con pianerotto di snervamento marcato, ridotta area elastica lineare tratteggiata in rosso e grande allungamento a rottura)]])
 
-Dal punto di vista costruttivo e funzionale, le molle di trazione vengono avvolte con le spire a contatto diretto tra loro e precaricate già durante la fabbricazione; di conseguenza, esse richiedono l'applicazione di un "tiro" iniziale (forza di precarico $F_0$) prima che le spire inizino a distaccarsi e a produrre una deformazione elastica misurabile. La forza di precarico $F_0$ viene determinata imponendo una tensione tangenziale iniziale di precarico $tau_i$ pari a:
+==== Verifica a fatica: caratterizzazione sperimentale e diagramma di Haigh
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[La caratterizzazione a fatica viene condotta sperimentalmente direttamente sul componente (molla) tramite prove ripetute di trazione e compressione, oppure di sola compressione, a seconda dello standard e dell'applicazione. Le macchine di prova permettono anche di variare la frequenza di applicazione del carico per valutarne la sensibilità del materiale e lo smorzamento interno, nonché di riprodurre profili di missione complessi riconducibili a curve cumulate di carico (regola di Miner).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: fotografia di un banco di prova a fatica con attuatore lineare che sottopone a cicli di carico assiale una molla ad elica di colore rosso]])
 
-$ tau_i = (0.4 div 0.8) dot.op frac(d, D) dot.op R_m $
+I metodi di verifica a fatica possono essere quelli generali. I risultati sperimentali consentono di costruire un #strong[diagramma di Haigh stimato] adimensionalizzato, ponendo in ascissa la tensione tangenziale media normalizzata $tau_m / R_m$ e in ordinata la tensione tangenziale alternata normalizzata $tau_a / R_m$. Le rette di Goodman corrispondenti a diversi livelli di vita ($10^3$, $10^4$, $10^5$ e $10^6$ cicli, quest'ultima rappresentativa della vita illimitata) mostrano i rispettivi limiti sull'asse delle ordinate:
+- per $10^6$ cicli: $tau_a / R_m = 0.29$, coerentemente con la relazione tra limite di fatica in torsione alternata e in flessione rotante ($tau_(D-1) tilde.eq 0.58 sigma_(D-1)$, con $sigma_(D-1) tilde.eq 0.5 R_m$, da cui $tau_(D-1) tilde.eq 0.29 R_m$);
+- per numeri di cicli inferiori ($10^5$, $10^4$, $10^3$), ci si trova nella zona a termine della curva di Wöhler, per cui i rapporti sull'asse delle ordinate salgono rispettivamente a $0.39$, $0.54$ e $0.72$.
 
-Ricordando la relazione generale di torsione $tau_("max") = frac(8 F c, pi d^2)$ (da cui $F = frac(pi d^2, 8 c) tau_("max")$), la forza di precarico iniziale vale:
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Contrariamente al criterio di Sines (secondo cui in presenza di sole tensioni tangenziali non vi sarebbe dipendenza della resistenza a fatica dalla tensione media), nelle molle si osserva sperimentalmente una marcata dipendenza da $tau_m$: tutte le rette scendono verso l'asse delle ascisse intersecandolo al valore $tau_m / R_m = 0.8$ (dove il fattore $0.8$ anziché $1$ tiene conto di un coefficiente di sicurezza/incertezza su $R_m$). Nel diagramma è inoltre tracciata la retta centrale di parità ($tau_a / R_m = tau_m / R_m$, corrispondente al carico pulsante dallo zero).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma di Haigh stimato con asse orizzontale $tau_m / R_m$ (da 0 a 1) e asse verticale $tau_a / R_m$ (da 0 a 0.8); quattro rette inclinate che partono dal punto $(0.8, 0)$ e intersecano l'asse verticale a $0.72$ ($10^3$ cicli), $0.54$ ($10^4$ cicli), $0.39$ ($10^5$ cicli) e $0.29$ ($10^6$ cicli), oltre a una retta bisettrice passante per l'origine fino a $(0.8, 0.8)$ e alla nota $tau_(D-1) tilde.eq 0.58 sigma_(D-1) (sigma_(D-1) tilde.eq 0.5 R_m) = 0.29 dots.h$]])
+
+==== Processo ed effetto della pallinatura (#emph[shot peening])
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[La resistenza a fatica dipende in modo decisivo dal processo di produzione e dai trattamenti superficiali. La #strong[pallinatura] (#emph[shot peening]) consiste nel proiettare un getto calibrato di micropallini sulla superficie esterna del filo della molla già formata, tramite una o più giranti centrifughe in rotazione (ad esempio in macchine pallinatrici a turbine come la PNE-2M della Pangborn Group, dotata di 2 turbine in linea per una capacità di $900 "pezzi/h"$). Le molle avanzano su una guida spinte da appositi pulsori attraverso la zona investita dal flusso dei pallini.
+
+L'impatto di ciascun pallino provoca una deformazione plastica localissima (microcratere) che genera un campo di #strong[tensioni residue di compressione] sulla superficie del filo. Poiché sulla sezione circolare del filo soggetto a torsione la tensione tangenziale è distribuita linearmente con massimo alla superficie esterna, le tensioni residue di compressione fanno sì che la sollecitazione applicata debba prima compensare tale stato residuo prima di raggiungere valori di trazione/taglio critici. Sul diagramma di resistenza a fatica a vita infinita ($tau_(m i n)$ in ascissa, $tau_(m a x)$ in ordinata, per oltre $2 dot.op 10^6$ cicli), l'effetto della pallinatura si manifesta in un netto innalzamento del limite di resistenza (ad esempio da $510 "MPa"$ fino a $689 "MPa"$ all'origine, e da un punto limite di $(862, 862) "MPa"$ a $(965, 965) "MPa"$ lungo la linea di carico statico).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: fotografia e schema funzionale di una macchina pallinatrice a turbine PNE-2M (Pangborn Group) con tre molle che scorrono su una guida sotto due getti verdi di pallini lanciati da giranti centrifughe rosse, affiancati dall'illustrazione "Shot peening" di una molla investita dal getto di pallini]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma di resistenza a fatica $tau_(m a x)$ [MPa] contro $tau_(m i n)$ [MPa] (da 0 a 1000 MPa) con la bisettrice "Linea di carico statico" e il confronto tra la curva "Vita infinita senza pallinatura" (da $510$ a $(862, 862)$ MPa) e la curva "Vita infinita con pallinatura" (da $689$ a $(965, 965)$ MPa)]])
+
+==== Verifica a fatica secondo le normative DIN
+La verifica a fatica secondo normativa tedesca confronta l'escursione nominale della tensione tangenziale nel ciclo ($Delta tau_("nom")$), legata all'escursione di forza $Delta F = F_(m a x) - F_(m i n)$, con un'escursione ammissibile $Delta tau_("amm")$.
+
+Per le #strong[molle formate a freddo (DIN 17223)]:
+
+$ Delta tau_("nom") = lambda' Delta F frac(8 D, pi d^3) lt.eq Delta tau_("amm") $
+
+$ Delta tau_("amm") = b_d Delta tau_0 - b_tau tau_(m i n) $
+
+dove $lambda'$ è il coefficiente di Wahl, $Delta tau_0$, $b_d$ e $b_tau$ sono coefficienti tabulati dalla norma ($b_d$ tiene conto dell'effetto scala sul diametro del filo $d$, mentre $b_tau$ pesa l'effetto della tensione media/minima), e la tensione tangenziale minima $tau_(m i n)$ è calcolata includendo un coefficiente correttivo specifico per gli effetti del taglio $lambda'''$:
+
+$ tau_(m i n) = lambda''' frac(8 F_(m i n) D, pi d^3), quad quad lambda''' = 1 + frac(0.5, c) $
+
+I valori tabulati secondo DIN 17223 per le tre classi di acciaio (con distinzione tra molla non pallinata e pallinata) sono i seguenti:
+
+// NOTA: \div convertito in div
+#table(
+  columns: 4,
+  align: (left, center, center, center),
+  [#strong[Parametro / $d$ [mm]]], [#strong[Acciai non legati per alte sollecitazioni (non pallinato / pallinato)]], [#strong[Acciai per molle bonificati (non pallinato / pallinato)]], [#strong[Acciai per molle da valvola (non pallinato / pallinato)]],
+  [$Delta tau_0$ [MPa]], [390 / 490], [315 / 410], [450 / 570],
+  [$b_tau$], [0.22 / 0.20], [0.20 / 0.18], [0.27 / 0.26],
+  [$b_d$ ($d = 1 div 5$)], [1], [1], [1],
+  [$b_d$ ($d = 6$)], [0.95], [1], [1],
+  [$b_d$ ($d = 7$)], [0.91], [0.97], [0.97],
+  [$b_d$ ($d = 8$)], [0.88], [0.92], [–],
+  [$b_d$ ($d = 10$)], [0.83], [0.89], [–],
+  [$b_d$ ($d = 12$)], [0.78], [0.89], [–],
+  [$b_d$ ($d = 14$)], [0.75], [0.89], [–],
+  [$b_d$ ($d = 17$)], [0.69], [–], [–],
+)
+
+Per le #strong[molle formate a caldo (DIN 17221)], la verifica mantiene la stessa espressione per $Delta tau_("nom")$:
+
+$ Delta tau_("nom") = lambda' Delta F frac(8 D, pi d^3) lt.eq Delta tau_("amm") $
+
+con $Delta F = F_(m a x) - F_(m i n)$ e $lambda'$ coefficiente di Wahl, ma $Delta tau_("amm")$ è fornito direttamente in tabella come valore limite per fatica all'origine ($F_(m i n) = 0$), in funzione del diametro $d$ e del trattamento superficiale. L'ipotesi di fatica all'origine (carico pulsante da zero, quindi con $tau_m eq.not 0$) risulta generalmente più gravosa rispetto a una sollecitazione puramente alternata ($tau_m = 0$) sul diagramma di Haigh, rendendo tale riferimento utilizzabile in via cautelativa anche qualora il componente operi in regime alternato (come in alcuni attuatori).
+
+#table(
+  columns: 4,
+  align: (center, center, center, center),
+  [#strong[$d$ [mm]]], [#strong[$Delta tau_("amm")$ [MPa] — Acciaio laminato]], [#strong[$Delta tau_("amm")$ [MPa] — Acciaio rettificato]], [#strong[$Delta tau_("amm")$ [MPa] — Acciaio rettificato e pallinato]],
+  [10], [120], [320], [380],
+  [20], [110], [290], [345],
+  [30], [100], [260], [310],
+  [40], [90], [230], [275],
+  [50], [80], [200], [240],
+)
+
+==== Fenomeni secondari: ingobbamento e sfarfallamento
+Nelle molle di compressione particolarmente snelle (lunghezza libera $L_0$ elevata rispetto al diametro dell'elica $D$) e non guidate lateralmente, può manifestarsi un fenomeno di instabilità elastica per carico di punta macroscopico detto #strong[ingobbamento] (#emph[buckling]), analogo a quello delle travi compresse. Il carico critico che porta all'ingobbamento vale:
+
+$ F_("crit") = k L_0 K_L $
+
+dove $k$ è la rigidezza della molla, $L_0$ la lunghezza libera a riposo e $K_L$ un coefficiente tabulato in funzione del rapporto $L_0 / D$ e delle condizioni di vincolo alle estremità (estremi incernierati, liberi di ruotare sull'appoggio, oppure estremi incastrati, saldamente ancorati). Per evitare l'instabilità, il carico massimo d'esercizio deve rimanere inferiore a $F_("crit")$; inoltre, costruttivamente si può contrastare il fenomeno guidando la molla all'interno di pareti o sedi che forniscano una reazione laterale.
+
+#table(
+  columns: 3,
+  align: (center, center, center),
+  [#strong[$L_0 / D$]], [#strong[$K_L$ — Estremi incernierati]], [#strong[$K_L$ — Estremi incastrati]],
+  [1], [0.72], [0.72],
+  [2], [0.63], [0.71],
+  [3], [0.38], [0.68],
+  [4], [0.20], [0.63],
+  [5], [0.11], [0.53],
+  [6], [0.07], [0.38],
+  [7], [0.05], [0.26],
+  [8], [0.04], [0.19],
+)
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: fotografia di una molla ad elica cilindrica in compressione non guidata soggetta a carico verticale dall'alto che presenta un evidente ingobbamento laterale]])
+
+In presenza di carichi dinamici alternati con frequenza prossima alla frequenza propria della molla si verifica il fenomeno della risonanza, detto #strong[sfarfallamento] delle spire: l'ampiezza di vibrazione cresce in modo incontrollato (con alcune spire che oscillano fortemente e altre che appaiono ferme in corrispondenza dei nodi dei modi di vibrazione), portando a sovrasollecitazione e rottura del filo. Per evitarlo si impone che la prima frequenza propria della molla sia almeno $20$ volte superiore alla frequenza del carico applicato:
+
+$ lambda_(1, "molla") = frac(d, D l_(e q)) sqrt(frac(G, 8 rho)), quad quad l_(e q) = pi D i $
+
+$ lambda_(1, "molla") gt.eq 20 dot.op lambda_("carico") $
+
+==== Procedura di calcolo per molle di torsione (ad elica cilindrica)
+Il dimensionamento di una molla ad elica cilindrica (lavorante a torsione del filo) è un #strong[calcolo iterativo di verifica]. Sono generalmente noti l'ingombro disponibile ($tilde.eq D$), la freccia e il carico massimi (oppure la rigidezza $k$ e uno dei due parametri, legati da $k = frac(Delta F, Delta f) = frac(F_(m a x), f_(m a x))$), e talvolta la lunghezza sotto carico massimo $L_(F_(m a x))$ (dettati da vincoli di ingombro e dall'esigenza di evitare interferenze o contatti con altre parti).
+
+La sequenza operativa prevede i seguenti passi:
+1. Scelta di un diametro del filo unificato di tentativo $d = D/7 div D/12$ (in modo che il rapporto $c$ risulti proporzionato), del materiale ($R_m$, $R_(p 0.2}$) e del tipo di formatura (a freddo o a caldo).
+2. Calcolo del coefficiente $c = D/d$.
+3. Calcolo della massima tensione statica:
+   $ tau_(m a x) = lambda' frac(8 F_(m a x) D, pi d^3) = lambda' frac(8 F_(m a x) c, pi d^2) $
+4. Verifica statica (secondo la formula per molle a freddo o a caldo): se non soddisfatta, aumentare $d$ o cambiare materiale e tornare al punto 2.
+5. Verifica a fatica (se necessaria): se non soddisfatta, cambiare $d$ o materiale e tornare al punto 2.
+6. Calcolo del numero di spire efficaci:
+   $ i = frac(G d, 8 c^3 k) $
+7. Calcolo della lunghezza a pacco $L_b$ (con apposita tabella).
+8. Calcolo della lunghezza sotto carico massimo (o verifica del gioco residuo tra le spire, generalmente $g_(r e s) = d/4$ o da specifica):
+   $ L_(F_(m a x)) gt.eq L_b + g_(r e s) i $
+9. Calcolo della lunghezza libera a riposo:
+   $ L_0 = L_(F_(m a x)) + f_(m a x) $
+10. Eventuale verifica a sfarfallamento (agendo eventualmente sulla rigidezza $k$).
+11. Eventuale verifica a ingobbamento ($F_(m a x) < F_("crit")$).
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma a blocchi del calcolo iterativo di verifica ("scelta di tentativo" $arrow.r$ "verifica": se "SI" termina, se "NO" passa a "modifiche" e ritorna a "verifica")]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Un esempio classico di applicazione è la sospensione automobilistica con molla elicoidale, in particolare nella configurazione #strong[sospensione MacPherson], in cui la molla a elica è montata direttamente attorno all'ammortizzatore tra connessione al telaio e connessione al mozzo ruota (con cerniere rispetto al telaio).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di applicazione di una sospensione automobilistica su ruota con asse, ammortizzatore e molla elicoidale, affiancato dallo schema e dalla vista di una sospensione MacPherson con indicate connessione al telaio, ammortizzatore, molla a elica, cerniere rispetto al telaio e connessione al mozzo ruota]])
+
+==== Complessi di molle: collegamento in parallelo e in serie
+Nelle applicazioni in cui più molle lavorano simultaneamente, la rigidezza equivalente dipende dal modo in cui sono collegate.
+
+Nel collegamento #strong[in parallelo] (ad esempio due molle concentriche poste tra gli stessi piani d'appoggio), le molle subiscono lo stesso spostamento (freccia), mentre la forza totale è la somma delle forze sostenute dalle singole molle:
+
+// NOTA: \implies convertito in arrow.r.double
+$ f = f_1 = f_2, quad quad F = F_1 + F_2 $
+
+$ F = k f = (k_1 + k_2) f arrow.r.double k = k_1 + k_2 $
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[In generale, per $N$ molle in parallelo:
+
+$ k = sum_(i=1)^N k_i $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di due molle concentriche in parallelo (molla 1 esterna e molla 2 interna) compresse tra una base fissa e un piattello superiore su cui agisce la forza $F$ con freccia $f$]])
+
+Nel collegamento #strong[in serie] (molle poste in sequenza lungo l'asse con un piattello intermedio di interfaccia), le molle sopportano lo stesso carico, mentre la freccia totale è la somma delle frecce parziali:
+
+$ F = F_1 = F_2, quad quad f = f_1 + f_2 $
+
+$ f = frac(F, k) = frac(F_1, k_1) + frac(F_2, k_2) = F (frac(1, k_1) + frac(1, k_2)) $
+
+Introducendo la #strong[deformabilità] $delta = frac(1, k)$, si ottiene:
+
+$ frac(1, k) = frac(1, k_1) + frac(1, k_2) = delta $
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[In generale, per $N$ molle in serie:
+
+$ frac(1, k) = sum_(i=1)^N frac(1, k_i), quad quad delta = sum_(i=1)^N delta_i $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di due molle in serie (molla 1 superiore e molla 2 inferiore separate da un piattello intermedio) appoggiate su una base fissa e caricate dall'alto con forza $F$ e spostamento totale $f$]])
+
+Sussiste un'analogia elettromeccanica con la resistenza elettrica $R$, associando alla resistenza elettrica non la rigidezza $k$ bensì la deformabilità $delta = 1/k$:
+
+#table(
+  columns: 3,
+  align: (left, center, center),
+  [#strong[Configurazione]], [#strong[Molle (rigidezza $k$ e deformabilità $delta = 1/k$)]], [#strong[Resistenze elettriche ($R$)]],
+  [#strong[In serie]], [$frac(1, k) = sum_(i=1)^N frac(1, k_i), quad delta = sum_(i=1)^N delta_i$], [$R = sum_(i=1)^N R_i$],
+  [#strong[In parallelo]], [$frac(1, delta) = sum_(i=1)^N frac(1, delta_i), quad k = sum_(i=1)^N k_i$], [$frac(1, R) = sum_(i=1)^N frac(1, R_i)$],
+)
+
+==== Molle a elica cilindrica "in trazione"
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Per le molle elicoidali di trazione il punto critico è l'anello terminale (gancio di collegamento). Poiché il gancio è ruotato di $90 degree$ rispetto alle spire normali e la forza $F$ è applicata lungo l'asse dell'elica, nelle estremità si instaura uno stato tensionale complesso (modellabile come trave curva) dovuto all'accoppiamento tra forza normale, momento flettente (prodotto dal braccio della forza $F$ rispetto alla sezione critica) ed effetti di intaglio legati ai piccoli raggi di curvatura ($r_1, r_2, r_3, r_4$). La verifica critica si concentra in particolare sulla sezione trasversale esposta al massimo momento flettente (sezione A-A o B-B).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: due schemi di estremità a gancio per molle di trazione con carico assiale $F$, diametro filo $d$, diametro elica $D$, raggi di curvatura $r_1, r_3$ (sezione critica A-A) e $r_2, r_4$ (sezione critica B-B), affiancati dalla fotografia di una molla cilindrica di trazione con occhielli terminali]])
+
+Le molle di trazione vengono realizzate con le spire a contatto e precaricate durante la costruzione; richiedono pertanto un "tiro" iniziale $F_0$ prima di iniziare a deformarsi. Il carico di precarico $F_0$ si calcola imponendo una tensione iniziale $tau_i$:
+
+$ tau_i = (0.4 - 0.8) dot.op frac(d, D) dot.op R_m $
 
 $ F_0 = frac(pi dot.op d^2, 8 c) tau_i = frac(pi dot.op d^3, 8 D) tau_i $
 
-La lunghezza a riposo della molla $L_0$, misurata all'interno degli occhielli terminali (indicando con $D_i$ il diametro interno dell'elica), è espressa da:
+La lunghezza libera all'interno degli occhielli vale:
 
 $ L_0 = (i + 1) d + 2 dot.op 0.8 dot.op D_i $
 
-Pertanto, la forza totale $F$ necessaria in esercizio per ottenere una determinata freccia $f$ è data dalla somma dell'aliquota elastica lineare e del precarico iniziale $F_0$:
+e la forza necessaria per ottenere una freccia $f$ voluta risulta quindi:
 
 $ F = frac(G dot.op d dot.op f, 8 dot.op c^3 dot.op i) + F_0 $
 
-== Molle a passo variabile e molle coniche
+(con la relazione tra carico e tensione tangenziale massima $tau_(m a x) = frac(8 F c, pi d^2)$, ovvero $F = frac(pi d^2, 8 c) dot.op tau_(m a x)$).
+
+==== Molle a passo variabile e molle coniche
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Qualora l'applicazione richieda una caratteristica elastica forza-spostamento #strong[non lineare], si ricorre all'impiego di molle a passo variabile oppure di molle ad elica coniche (aventi geometria tronco-conica, largamente diffuse anche in piccoli dispositivi di uso comune come i contatti dei vani portapile).
-
-Nelle molle coniche il diametro dell'elica decresce progressivamente da un'estremità all'altra. Quando viene applicata una forza assiale di compressione, iniziano a deformarsi rapidamente le spire di diametro maggiore, le quali presentano una rigidezza inferiore (sono più cedevoli poiché caratterizzate da un rapporto $c = D / d$ più alto). A mano a mano che il carico aumenta e le spire più larghe arrivano a fine corsa o si impacchettano cessando di contribuire alla deformazione, entrano progressivamente in azione le spire di diametro più piccolo, che risultano molto più rigide.
-
-Di conseguenza, il legame tra forza e freccia non è più rettilineo ma segue una curva irrigidente (#emph[hardening]): la molla oppone una reazione modesta per piccoli spostamenti, ma sviluppa una forza di reazione sempre più intensa al crescere dell'insistenza del carico. Inoltre, la configurazione tronco-conica offre un'eccellente stabilità geometrica che previene efficacemente il fenomeno dell'ingobbamento (#emph[buckling]), poiché l'ampia base d'appoggio stabilizza la struttura e, in caso di schiacciamento completo, le spire di diametro decrescente possono compenetrarsi disponendosi quasi come anelli concentrici sul piano di base.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Tre illustrazioni affiancate: a sinistra lo schema di una molla cilindrica a passo variabile sottoposta a compressione assiale; al centro lo schema di una molla tronco-conica sottoposta a compressione assiale; a destra la fotografia di una molla ad elica tronco-conica metallica]])
-
-== Molle a lamina
-=== Introduzione, caratteristiche generali e ambiti di applicazione
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Le molle a elica cilindrica non esauriscono tutte le applicazioni classiche della meccanica. Un'altra tipologia largamente impiegata è costituita dalle molle di flessione a lamina (e dalla loro configurazione impacchettata detta molla a balestra), le quali fanno ricorso a una o più lamine metalliche fissate agli estremi e sollecitate a flessione sotto l'azione dei carichi dinamici. Queste soluzioni trovano frequente impiego nei convogli ferroviari merci, nei veicoli industriali pesanti e negli autocarri.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Fotografie di pacchi di molle a lamina impacchettate e applicazioni su assali automobilistici, carrelli ferroviari e sospensioni di veicoli industriali pesanti]])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema tridimensionale di un assale con sospensione a balestra (Leaf Spring Suspension)]])
-
-Dal confronto funzionale e costruttivo tra le molle a lamina (o a balestra) e i gruppi sospensione costituiti da molle a elica cilindrica e ammortizzatori emergono specifici vantaggi e svantaggi:
-
-1. #strong[Vantaggi delle molle a lamina]: presentano una geometria semplice e bassi costi di produzione. La configurazione più elementare è la molla monolama (#emph[mono leaf spring]), detta anche molla parabolica, costituita da una singola lamina che si rastrema dallo spessore centrale verso le estremità per distribuire correttamente il carico verticale. Nelle configurazioni multilamina, grazie all'elevato numero di strati metallici uniti in una struttura compatta, le balestre forniscono un notevole supporto strutturale tra ruote, assali e telaio (#emph[chassis]), riuscendo a sopportare carichi verticali molto elevati nel settore dei veicoli industriali pesanti. Inoltre, la molla a lamina consente di distribuire il carico verticale su una regione ampia del telaio anziché concentrarlo in un singolo punto di sospensione, evitando forze concentrate eccessive.
-2. #strong[Svantaggi delle molle a lamina]: offrono scarse possibilità di regolazione dell'assetto della sospensione, aspetto invece fondamentale nelle applicazioni automobilistiche ad alte prestazioni (dove si preferiscono molle elicoidali e ammortizzatori). Poiché le estremità della lamina sono vincolate direttamente al telaio, vi è poco margine per accorciare o estendere le foglie e si può intervenire unicamente sulle proprietà di resistenza e flessibilità del materiale. Inoltre, essendo le foglie strettamente serrate tra loro e imbullonate al telaio, esse consentono quasi esclusivamente il movimento verticale, a differenza del gruppo molla elicoidale-ammortizzatore che permette un campo di moto più ampio; questa rigidità cinematica può causare una forte usura sui giunti e sulle connessioni. Per tali ragioni, il loro impiego nelle autovetture è diminuito drasticamente, pur rimanendo lo standard nei veicoli pesanti.
-
-In sintesi, le molle di flessione a lamina vengono adottate quando l'elemento elastico deve operare in spazi limitati in direzione verticale: mentre una molla a elica cilindrica soggetta a forze elevate richiederebbe uno sviluppo verticale e diametrale considerevole, la molla a lamina distribuisce l'ingombro in direzione longitudinale lungo l'asse del veicolo, richiedendo di contro punti di ancoraggio relativamente distanti tra loro. Gli schemi elementari di studio di questi componenti si basano sul modello della lamina incastrata sollecitata a flessione; a seconda della geometria adottata per la pianta (rettangolare, triangolare o trapezia), esse presentano diversi fattori di utilizzazione.
-
-=== Fattore di utilizzazione
-Per valutare l'efficienza con cui una molla converte il lavoro meccanico applicato in energia potenziale elastica, si introduce il #strong[fattore di utilizzazione] $U$. Esso è definito come il rapporto tra l'energia di deformazione elastica immagazzinabile dalla molla e l'energia immagazzinabile da una barra in trazione (o compressione) avente lo stesso volume e soggetta alla medesima tensione massima che si raggiunge nella molla. Il fattore di utilizzazione rappresenta dunque un indice che esprime il livello di sfruttamento del materiale.
-
-In generale, l'energia di deformazione elastica $E$ immagazzinata in un solido di volume $V$ è data dall'integrale esteso all'intero volume della densità di energia locale del cubetto infinitesimo:
-
-$ E = integral_V frac(1, 2) dot.op sigma dot.op epsilon.alt dot.op d V $
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Per calcolare il fattore di utilizzazione di una trave a sezione rettangolare costante (di spessore $h$, larghezza $b$, lunghezza $l$ e volume $V = h dot.op b dot.op l$), si confrontano i due casi di sollecitazione elementare:],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schemi di confronto per il calcolo del fattore di utilizzazione. A sinistra: trave di lunghezza l e altezza h nel piano xy soggetta a trazione-compressione con distribuzione rettangolare uniforme di tensione normale costante. A destra: stessa trave soggetta a flessione uniforme tramite momenti M alle estremità, con distribuzione lineare a farfalla delle tensioni normali e valore massimo alle fibre estreme]])
-
-1. #strong[Trazione o compressione semplice]: la trave è soggetta a sforzo normale costante. La distribuzione delle tensioni normali nella sezione trasversale è uniforme in tutti i punti e pari a $sigma = overline(sigma)$, cui corrisponde una deformazione anch'essa costante $epsilon.alt = overline(epsilon.alt) = frac(overline(sigma), E)$ (dove $E$ al denominatore indica il modulo di Young del materiale). L'energia di deformazione elastica a trazione $E^t$ risulta:
-  $ E^t = integral_V frac(1, 2) dot.op sigma dot.op epsilon.alt dot.op d V = frac(1, 2) dot.op overline(sigma) dot.op overline(epsilon.alt) dot.op h dot.op b dot.op l = frac(1, 2) dot.op frac(overline(sigma)^2, E) dot.op h dot.op b dot.op l $
-2. #strong[Flessione uniforme]: la stessa trave è soggetta a un momento flettente $M$ costante lungo tutta la linea d'asse. Dalla teoria elementare della trave di De Saint-Venant, la distribuzione delle tensioni normali nella sezione trasversale è lineare, nulla sull'asse neutro ($y = 0$) e pari al valore massimo $overline(sigma)$ alle fibre estreme poste a quota $y = plus.minus h / 2$:
-  $ sigma = frac(overline(sigma), h / 2) dot.op y $
-  Sostituendo tale distribuzione nell'integrale dell'energia di deformazione elastica a flessione $E^f$ (con $epsilon.alt = sigma / E$ e $d V = d x dot.op d y dot.op d z$), si ottiene:
-  $ E^f = integral_V frac(1, 2) dot.op sigma dot.op epsilon.alt dot.op d V = integral_V frac(1, 2) dot.op frac(sigma^2, E) dot.op d V = integral_V frac(1, 2) dot.op frac(1, E) (frac(overline(sigma), h / 2) dot.op y)^2 d x dot.op d y dot.op d z $
-  $ E^f = frac(1, 2) dot.op frac(overline(sigma)^2, E) dot.op b dot.op l dot.op frac(4, h^2) integral_(-h / 2)^(h / 2) y^2 d y = frac(1, 2) dot.op frac(overline(sigma)^2, E) dot.op b dot.op l dot.op frac(4, h^2) dot.op 2 dot.op frac(1, 3) frac(h^3, 8) = frac(1, 6) dot.op frac(overline(sigma)^2, E) dot.op b dot.op l dot.op h $
-
-Confrontando le due espressioni a parità di volume e di tensione massima $overline(sigma)$, si ricava il fattore di utilizzazione per la flessione uniforme:
-
-$ U = frac(E^f, E^t) = frac(1, 3) $
-
-Il passaggio dallo sforzo normale alla flessione uniforme comporta quindi la perdita di due terzi della capacità di immagazzinare energia elastica: mentre in trazione tutto il materiale è sollecitato uniformemente al livello massimo $overline(sigma)$, nella flessione solo le fibre più esterne raggiungono la tensione massima, mentre il resto della sezione lavora a livelli di tensione inferiori.
-
-=== Molla a lamina con pianta rettangolare
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Si analizza ora il comportamento di una molla a lamina reale schematizzata come una trave a pianta rettangolare (di larghezza costante $b_0$, spessore costante $h$ e lunghezza $l$), incastrata a un'estremità e caricata all'estremo libero da una forza verticale concentrata $F$. Si assume l'ascissa $x$ lungo la linea d'asse a partire dall'estremo libero ($x = 0$) fino alla sezione di incastro ($x = l$).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema assonometrico di una molla a lamina incastrata con pianta rettangolare di larghezza costante b0, spessore h e lunghezza l, soggetta a una forza verticale F all'estremo libero, con coordinata x misurata dall'estremo libero ed elemento infinitesimo dx, affiancato da una fotografia del componente reale]])
-
-A differenza del caso di flessione uniforme, la forza $F$ genera un momento flettente $M_f = F x$ variabile linearmente lungo l'asse della trave (diagramma triangolare, nullo all'estremo libero e massimo all'incastro). Di conseguenza, anche la tensione massima in ciascuna sezione trasversale varia con la coordinata $x$:
-
-$ sigma = frac(M_f, w_f) = frac(F x, b_0 h^2 / 6) $
-
-dove $w_f = frac(b_0 h^2, 6)$ è il modulo di resistenza a flessione della sezione rettangolare. Dalla teoria della linea elastica, la rotazione elementare $d alpha$ di un tronco infinitesimo $d x$ è data da:
-
-$ d alpha = frac(M_f, E I) d x = frac(F x, E I) d x $
-
-Integrando sull'intera lunghezza $l$ della lamina, si ottiene la freccia $f$ all'estremità libera:
-
-$ f = integral_0^l x frac(F x, E I) d x = frac(F l^3, 3 E I) $
-
-La rigidezza flessionale $k$ della lamina e il momento d'inerzia (del secondo ordine) $I$ della sezione trasversale valgono rispettivamente:
-
-$ k = frac(3 E I, l^3), quad I = frac(b_0 h^3, 12) $
-
-Valutando l'energia elastica immagazzinata sull'intero volume, il fattore di utilizzazione della molla a lamina con pianta rettangolare risulta:
-
-$ U = frac(E^f, E^t) = frac(1, 9) $
-
-Il valore $U = frac(1, 9) = frac(1, 3) dot.op frac(1, 3)$ è il risultato di due penalizzazioni simultanee rispetto alla barra in trazione pura: un primo fattore $1 / 3$ è dovuto alla distribuzione triangolare (lineare) delle tensioni all'interno della singola sezione trasversale per effetto della flessione; un secondo fattore $1 / 3$ è causato dal fatto che il momento flettente varia linearmente lungo l'asse $x$, per cui la tensione non raggiunge il valore massimo ammissibile in tutte le sezioni della trave, ma esclusivamente nella sezione di incastro ($x = l$):
-
-$ sigma_(m a x) = frac(F l, b_0 h^2 / 6) $
-
-Poiché la molla a pianta rettangolare sfrutta in modo molto ridotto il materiale ($U = 1 / 9$), conviene progettare una forma di molla #strong[di uniforme resistenza], ossia sagomata in modo tale che la tensione massima risulti costante lungo l'intera lunghezza $l$ della trave ($sigma_(m a x) = "cost"$).
-
-Per imporre la condizione di uniforme resistenza $sigma = frac(F x, b h^2 / 6) = "cost"$ al variare di $x$ (non potendo modificare la forza $F$ né la lunghezza $l$), si può intervenire sulla geometria della sezione attraverso due alternative:
-
-1. #strong[Variare lo spessore mantenendo costante la larghezza della pianta (molla parabolica)]: poiché lo spessore compare al quadrato al denominatore, per compensare la variazione lineare di $x$ al numeratore è necessario far variare lo spessore con legge parabolica crescente dall'estremo libero verso l'incastro ($h^2 = x$).
-2. #strong[Variare la larghezza in pianta mantenendo costante lo spessore (pianta triangolare)]: poiché la larghezza $b$ compare linearmente al denominatore, è sufficiente farla variare linearmente con l'ascissa $x$ ($b = x$).
-
-La seconda alternativa è tradizionalmente preferita perché presenta minori problemi costruttivi: realizzare una variazione lineare della larghezza in pianta è tecnologicamente più semplice ed economico rispetto a sagomare con precisione uno spessore variabile con legge parabolica.
-
-=== Molla a lamina con pianta triangolare
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Adottando una pianta triangolare di spessore costante $h$ e larghezza $b$ variabile linearmente da zero (all'estremo libero $x = 0$) fino al valore $b_0$ (all'incastro $x = l$), la legge di variazione della larghezza è:
-
-$ b = b_0 frac(x, l) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema assonometrico di una molla a lamina incastrata con pianta triangolare di larghezza b0 all'incastro e vertice nell'estremo libero dove agisce la forza verticale F, spessore costante h, lunghezza l, ascissa x ed elemento infinitesimo dx]])
-
-Sostituendo tale espressione nella relazione della tensione flessionale, la dipendenza dalla coordinata $x$ si elide e la tensione risulta costante e pari al valore massimo in tutte le sezioni trasversali della lamina:
-
-$ sigma = frac(F x, b h^2 / 6) = frac(F x, b_0 frac(x, l) h^2 / 6) = frac(F l, b_0 h^2 / 6) = sigma_(m a x) = "cost" $
-
-Per effetto della maggiore cedevolezza verso la punta, la freccia $f$ all'estremo libero, la rigidezza $k$ e il momento d'inerzia all'incastro $I$ assumono le seguenti espressioni (con il coefficiente $2$ in luogo di $3$):
-
-$ f = frac(F l^3, 2 E I), quad k = frac(2 E I, l^3), quad I = frac(b_0 h^3, 12) $
-
-Esaminando la linea elastica della lamina triangolare, il momento d'inerzia di una generica sezione a distanza $x$ dall'estremo libero vale:
-
-$ I(x) = frac(1, 12) dot.op b(x) dot.op h^3 $
-
-Sostituendo $I(x)$ nell'equazione della curvatura $frac(1, r)$ della trave inflessa, si ottiene:
-
-$ frac(1, r) = frac(M, E I) = frac(F x, E dot.op b_0 frac(x, l) h^3 / 12) = frac(12 dot.op F dot.op l, E dot.op b_0 dot.op h^3) = "cost" $
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Poiché il raggio di curvatura $r$ è costante lungo tutto lo sviluppo longitudinale, #strong[la deformata della molla a pianta triangolare è un arco di circonferenza].],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Disegno tecnico costruttivo in vista laterale e in pianta di una molla a lamina con pianta triangolare di lunghezza L, spessore h e larghezza variabile b(x) fino a b0 all'incastro, con freccia delta all'estremità libera dove è applicato il carico F tramite un attacco sagomato]])
-
-Avendo eliminato il gradiente di tensione lungo l'asse longitudinale della trave, si recupera interamente il secondo fattore $1 / 3$ di penalizzazione e il #strong[fattore di utilizzazione] risale a:
-
-$ U = frac(1, 3) $
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Un esempio applicativo dell'ottimizzazione della pianta si riscontra nei convertitori di energia vibratoria (#emph[energy harvester] piezoelettrici), costituiti da una lamina metallica di alluminio incastrata su cui viene depositato uno strato piezoceramico: quando la struttura è soggetta a vibrazioni, la deformazione flessionale del substrato e del materiale piezoceramico genera per effetto piezoelettrico una distribuzione di carica elettrica prelevabile tramite elettrodi. In tali dispositivi, la lamina rettangolare offre prestazioni ridotte ($U = 1 / 9$), mentre quella triangolare ($U = 1 / 3$) non consente di estendere il materiale piezoceramico fino all'estremità appuntita. Anche nelle applicazioni meccaniche generali, infatti, l'estremità a punta della pianta triangolare non permette un'agevole applicazione del carico $F$ né la realizzazione pratica di un vincolo. Per superare questo limite costruttivo è necessario mantenere una larghezza finita all'estremità libera, passando così alla #strong[molla con pianta trapezia].],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Fotografia di prototipi di lamine incastrate per energy harvester piezoelettrici con confronto visivo tra la configurazione a pianta rettangolare con U = 1/9 e le configurazioni rastremate a pianta triangolare/trapezia con U = 1/3]])
-
-=== Molla a lamina con pianta trapezia
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Nella molla a lamina con pianta trapezia lo spessore $h$ è costante, mentre la larghezza varia linearmente dalla base maggiore $b_0$ (in corrispondenza dell'incastro) alla base minore $b_0'$ (in corrispondenza dell'estremo libero su cui agisce il carico $F$).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema assonometrico di una molla a lamina incastrata con pianta trapezia avente base maggiore b0 all'incastro, base minore b0' all'estremo libero caricato dalla forza F, spessore costante h, lunghezza l, ascissa x ed elemento dx]])
-
-Il comportamento meccanico ed elastico della lamina trapezia è descritto introducendo il fattore adimensionale di rastremazione $alpha$:
-
-$ alpha = frac(3, 2 + b_0' / b_0) = frac(3 b_0, 2 b_0 + b_0') $
-
-La tensione in una generica sezione $sigma$ (che tende a mantenersi prossima all'uniformità, pur non essendo rigorosamente costante) e la tensione massima all'incastro $sigma_(m a x)$ sono date da:
-
-$ sigma = frac(F x, b h^2 / 6), quad sigma_(m a x) = frac(F l, b_0 h^2 / 6) $
-
-La freccia all'estremo libero $f$, la rigidezza flessionale $k$ e il momento d'inerzia nella sezione d'incastro $I$ si esprimono correggendo le formule della trave rettangolare mediante il coefficiente $alpha$:
-
-$ f = alpha frac(F l^3, 3 E I), quad k = frac(3 E I, alpha l^3), quad I = frac(b_0 h^3, 12) $
-
-Il #strong[fattore di utilizzazione] della molla con pianta trapezia è pari a:
-
-$ U = frac(2 alpha b_0, 9 (b_0 + b_0')) $
-
-Quando la base minore $b_0' arrow.r 0$, ci si riconduce al caso limite della pianta triangolare ($alpha arrow.r 3 / 2$) e il fattore di utilizzazione tende al valore ottimale $U = 1 / 3$; viceversa, quanto più $b_0'$ si avvicina a $b_0$, tanto più il trapezio approssima la pianta rettangolare ($alpha arrow.r 1$) e il fattore di utilizzazione scende verso il valore $U = 1 / 9$.
-
-=== Molla a balestra
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Per realizzare una sospensione ancorata alle due estremità e collegata centralmente alla massa sospesa, la configurazione teorica ottimale sarebbe costituita dall'unione di #strong[due molle a pianta trapezia unite per la base maggiore] (una lamina unica a doppio trapezio simmetrica rispetto al piano mediano, di lunghezza complessiva $2 l$). Per simmetria, infatti, ciascuna delle due metà si comporta rispetto alla sezione centrale esattamente come una lamina incastrata. Tuttavia, un'unica foglia così larga comporterebbe un ingombro trasversale eccessivo e incompatibile con gli spazi disponibili sotto il telaio di un veicolo.
-
-La #strong[molla a balestra] consente di ridurre l'ingombro trasversale mantenendo le proprietà della pianta trapezia: si immagina di sezionare idealmente la lamina a doppio trapezio in tante strisce longitudinali e di sovrapporle al listello rettangolare centrale.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema geometrico di derivazione della molla a balestra: in alto, lamina piana a doppio trapezio di spessore h suddivisa in strisce longitudinali (a, b/2, c/2, d/2, e/2, f/2); in basso, sovrapposizione delle foglie di uguale larghezza b0' e lunghezza decrescente fino alla lunghezza massima 2l della foglia madre a]])
-
-Dal punto di vista geometrico e costruttivo, la molla a balestra presenta le seguenti caratteristiche:
-
-1. Equivale all'unione di due molle a pianta trapezia unite per la base maggiore.
-2. È formata da #strong[foglie] sovrapposte di diversa lunghezza e uguale larghezza $b_0'$.
-3. Ogni foglia è l'unione di due mezze foglie longitudinali (ciascuna di larghezza $b_0' / 2$ nello schema del doppio trapezio) opposte rispetto alla mezzeria.
-4. La prima foglia (indicata con $a$, la più lunga e dotata di occhielli alle estremità per il vincolo al telaio) è detta #strong[foglia madre]. Nella realizzazione pratica, le estremità delle foglie non conservano gli spigoli vivi del taglio teorico ma vengono opportunamente smussate e rastremate.
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Disegno tecnico complessivo di una molla a balestra: schema di taglio delle foglie dal profilo romboidale/trapezoidale, vista frontale della balestra montata su supporti di estremità con staffa centrale nella sezione A-A, freccia f e carico F, e dettagli costruttivi delle estremità delle lamine]])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Le diverse foglie non sono incollate tra loro, bensì impacchettate e strette al centro mediante una staffa metallica (attacco a U) o un perno di unione. In questo modo le lamine restano solidali nel pacco ma sono libere di inflettersi e di scorrere longitudinalmente l'una rispetto all'altra durante la deformazione elastica. Poiché durante la flessione si verifica uno #strong[strisciamento relativo tra lamina e lamina] sotto l'azione della pressione di contatto, si generano forze di attrito che vengono ridotte interponendo un #strong[lubrificante a base di grafite].],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Illustrazione di una molla a balestra inserita in una sospensione automobilistica con indicazione di ruota, asse, ammortizzatore e attacco a U, affiancata dal confronto visivo della balestra a riposo e sotto carico]])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Fotografie di molle a balestra reali installate su veicoli pesanti e dettagli dei pacchi multilamina con staffe di serraggio, perno centrale e singola foglia madre con occhielli]])
-
-=== Equivalenza tra molla a balestra e molla trapezia
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[La possibilità di dimensionare la molla a balestra utilizzando il modello analitico della molla a pianta trapezia si fonda sull'osservazione della deformata: poiché per la molla a pianta triangolare la linea elastica è un arco di circonferenza a curvatura costante, tutte le foglie ricavate per sezionamento e sovrapposte nella balestra, essendo obbligate a mantenersi a contatto e ad avere all'incirca la stessa linea elastica, lavorano nelle medesime condizioni in cui lavoravano quando erano affiancate nel piano.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema di equivalenza tra metà molla a pianta trapezia (base maggiore b0, base minore b0', spessore h, forza F) e metà molla a balestra impacchettata all'incastro (foglie di larghezza b0/n, lunghezza L, forza F e momento d'incastro M)]])
-
-Considerando per simmetria metà balestra di lunghezza $L$ (o $l$) costituita da $n$ foglie di spessore $h$ e larghezza $b_0' = b_0 / n$, sotto le ipotesi di #strong[attrito nullo] tra le foglie e di ripartizione uniforme del carico e del momento all'incastro tra le varie foglie, il momento flettente totale all'incastro vale:
-
-$ M = F dot.op L $
-
-Su ciascuna delle $n$ foglie all'incastro agisce una frazione del momento totale pari a:
-
-$ M_("foglia") = frac(M, n) $
-
-Il modulo di resistenza a flessione della singola foglia di larghezza $b_0 / n$ è $W_("foglia") = frac((b_0 / n) dot.op h^2, 6)$. Di conseguenza, la tensione massima di flessione in ogni foglia nella sezione di incastro risulta:
-
-$ sigma = frac(M_("foglia"), W_("foglia")) = frac((M / n) dot.op 6, (b_0 / n) dot.op h^2) = frac(F dot.op L dot.op 6, b_0 dot.op h^2) $
-
-Si dimostra così che la tensione in ogni foglia all'incastro è esattamente pari alla tensione che si sviluppa all'incastro nella molla a pianta trapezia equivalente.
-
-Nella realtà fisica sussistono #strong[due sostanziali differenze] tra il comportamento della molla a balestra e quello della molla trapezia piana:
-
-1. Nella balestra è presente #strong[attrito] dovuto allo scorrimento relativo tra le foglie, il quale dissipa parte dell'energia.
-2. L'#strong[inflessione delle lamine della balestra non avviene nello stesso piano] dell'originale molla trapezia: essendo le foglie sovrapposte, esse giacciono su piani distinti e possiedono assi neutri non coincidenti tra loro.
-
-L'esperienza garantisce tuttavia una buona attendibilità dei risultati forniti dal modello ideale. In prima approssimazione, pertanto, il calcolo della freccia, della tensione massima e della rigidezza di una balestra a $n$ foglie si effettua direttamente con le formule della molla a pianta trapezia equivalente:
-
-$ alpha = frac(3, 2 + b_0' / b_0), quad frac(b_0', b_0) = frac(1, n) arrow.r b_0 = n b_0', quad I = frac(b_0 h^3, 12) $
-
-$ f = alpha frac(F l^3, 3 E I), quad sigma_(m a x) = frac(F l, b_0 h^2 / 6), quad k = frac(3 E I, alpha l^3) $
-
-L'errore introdotto da questa approssimazione è #strong[a favore di sicurezza], poiché trascurare l'attrito e lo sfalsamento dei piani porta a una leggera #strong[sovrastima sia della freccia sia della tensione], rendendo il dimensionamento conservativo sia nei riguardi della resistenza strutturale sia nella verifica degli ingombri cinematici.
-
-=== La molla a balestra a profilo parabolico
-Come alternativa alla variazione della larghezza in pianta, la condizione di uniforme resistenza ($sigma_(m a x) = "cost"$ in ogni sezione) può essere ottenuta mantenendo costante la larghezza della lamina e variandone lo spessore con legge parabolica. Si riassumono le due leggi geometriche che realizzano l'uniforme resistenza:
-
-1. #strong[Molla a pianta triangolare] (spessore costante, larghezza variabile linearmente):
-  $ b = b_0 dot.op frac(x, l) $
-2. #strong[Molla a profilo parabolico] (larghezza costante, spessore variabile con la radice quadrata dell'ascissa $x$ rispetto allo spessore massimo $h_0$ all'incastro):
-  $ h = sqrt(frac(x, L)) dot.op h_0 $
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Confronto assonometrico tra una molla a pianta triangolare (larghezza variabile b(x), spessore costante h, forza F) e una molla a profilo parabolico (larghezza costante b, spessore variabile h(x) su lunghezza L, forza F)]])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Sebbene la realizzazione di un profilo parabolico richieda processi tecnologici più complessi e precisi per sagomare lo spessore (massimo nella zona centrale di incastro e progressivamente decrescente verso gli estremi), questa soluzione è effettivamente impiegata nella pratica industriale sia in configurazione #strong[monolama] sia in configurazione #strong[bilama] (due lamine paraboliche sovrapposte). Inoltre, l'introduzione dei #strong[materiali compositi] ha reso molto più agevole la fabbazione di balestre a profilo parabolico, in quanto il processo di stratificazione delle fibre si presta naturalmente a modulare lo spessore lungo l'asse della lamina.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Rappresentazione assonometrica di una molla a balestra a profilo parabolico monolama e di una molla a balestra a profilo parabolico bilama]])
-
-#pagebreak()
-
-=== Esercizi
-
-=== Esercizio 1: Applicazione di molle a balestra a profilo parabolico su un veicolo «Ducato» medio
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Si consideri l'applicazione industriale di molle a balestra a profilo parabolico bilama installate sull'assale posteriore di un veicolo commerciale «Ducato» medio. Sul veicolo agisce un carico complessivo $C = 2 P$, ripartito in modo che sull'assale gravi un carico verticale $P$. Ciascuna delle due balestre posteriori sopporta un carico pari a $P / 2$, che si divide in due forze $F = P / 2$ applicate agli estremi della balestra secondo lo schema di carico del telaio.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema dell'autotelaio di un veicolo Ducato medio con indicazione dei carichi C = 2P, carico sull'asse P e forze P/2 = F sulla balestra posteriore, affiancato dal disegno della balestra parabolica bilama e dalla tabella dei dati di funzionamento]])
-
-#strong[Svolgimento:]
-I valori operativi di carico e di inflessione elastica (freccia) rilevati per il veicolo «Ducato» medio nelle diverse condizioni di esercizio sono riportati di seguito:
-
-- #strong[Condizione a vuoto]:
-  - Carico sull'asse: $100 quad [k g]$
-  - Carico su ogni balestra: $50 quad [k g]$
-  - Freccia: $9 quad [m m]$
-- #strong[Condizione di carico dinamico]:
-  - Carico sull'asse: $2094 quad [k g]$
-  - Carico su ogni balestra: $1047 quad [k g]$
-  - Freccia: $178 quad [m m]$
-- #strong[Condizione di carico statico massimo]:
-  - Carico sull'asse: $2906 quad [k g]$
-  - Carico su ogni balestra: $1453 quad [k g]$
-  - Freccia: $247 quad [m m]$
-  == Lezione 09_5: Molle – Altre tipologie e assorbimento degli urti
-
-=== Teoria
-
-=== Panoramica sulle ulteriori tipologie di molle
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Accanto alle configurazioni classiche, nella pratica costruttiva degli elementi delle macchine si impiegano diverse architetture alternative di molle, ciascuna caratterizzata da specifici modelli analitici di progettazione e comportamenti meccanici mirati a particolari esigenze di carico, ingombro e dissipazione.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Panoramica fotografica di diverse tipologie di molle: molla elicoidale di compressione (Helical Compression Spring), molla elicoidale di trazione (Helical Extension Spring), molla conica (Conical Spring), molla a serpentina (Serpentine Spring), molla di torsione (Torsion Spring), molla a balestra (Laminated or Leaf Spring), molla a tazza (Disc or Belleville Spring) e molla lavorata dal pieno (Machined Spring)]])
-
-=== Uso delle molle per l'assorbimento degli urti
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Uno degli obiettivi fondamentali dell'impiego delle molle nelle macchine è l'assorbimento degli urti, ovvero il contenimento dell'energia cinetica posseduta da un corpo in movimento. Quando una massa $m$ dotata di una velocità di impatto $v$ (ad esempio in traslazione) urta contro un arresto elastico, si richiede generalmente di azzerare la velocità di spostamento del corpo all'interno di uno spazio relativamente contenuto e di un volume definito, trasformando l'energia cinetica posseduta dal corpo impattante ($W_s$) in energia di deformazione elastica e/o plastica ($W$) della molla.
-
-L'energia cinetica del corpo al momento dell'impatto è proporzionale alla sua massa e al quadrato della velocità:
-
-$ W_s = frac(1, 2) dot.op m dot.op v^2 $
-
-L'energia di deformazione immagazzinata sull'intero volume della molla corrisponde geometricamente all'area sottesa dalla curva caratteristica della molla, ovvero dal diagramma che correla la forza applicata $F$ con la freccia $f$ (o, in modo analogo, il momento torcente o flettente con la rotazione che si manifesta nel sistema):
-
-$ W = integral F dot.op d f $
-
-Nel caso di comportamento elastico lineare della molla, l'energia di deformazione assume l'espressione:
-
-$ W = frac(1, 2) F f = frac(1, 2) k f^2 $
-
-Più è grande l'area sottesa dalla curva forza-spostamento, più è elevata la capacità del sistema di assorbire urti. In fase di dimensionamento, nota la massa da fermare e la velocità massima al momento dell'impatto, si effettua un bilancio energetico facendo corrispondere l'area totale sottesa dalla caratteristica elastica alla quantità di energia da contenere. A parità di energia assorbita (e quindi di area sottesa), è possibile individuare diverse soluzioni progettuali tarando differentemente il rapporto tra la forza massima sviluppata e la freccia massima, come evidenziato dal confronto tra triangoli di uguale area ma diversa pendenza nel diagramma lineare.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Due diagrammi forza-spostamento con la freccia f in ascissa e la forza F in ordinata. A sinistra è rappresentata una curva caratteristica generica non lineare con l'area sottesa tratteggiata verticalmente. A destra, per il caso elastico lineare, sono rappresentate due rette uscenti dall'origine con pendenze differenti che definiscono due triangoli (uno più alto e stretto con tratteggio verticale, uno più basso e largo con tratteggio orizzontale) aventi la medesima area sottesa]])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Un secondo caso di contenimento energetico riguarda la caduta di un grave su una molla, in cui la sospensione deve assorbire l'impatto arrestando la massa fino a velocità nulla ($v = 0$). In questa configurazione non è necessario passare esplicitamente attraverso il calcolo della velocità di impatto e dell'energia cinetica, poiché è possibile determinare direttamente l'energia potenziale gravitazionale $W_p$ associata al grave e uguagliarla all'energia di deformazione elastica lineare immagazzinabile dalla molla.
-
-Detta $g$ l'accelerazione di gravità dell'ambiente operativo (terrestre o spaziale con diversa costante gravitazionale), il peso associato alla massa è pari a $m dot.op g$, mentre il percorso totale compiuto dal grave fino all'arresto risulta dalla somma dell'altezza di caduta libera $h$ e della freccia $f$ sviluppata dalla molla durante la compressione. Uguagliando l'energia potenziale gravitazionale all'energia di deformazione elastica si ottiene:
-
-$ W_p = m dot.op g dot.op (h + f) = W = frac(1, 2) F dot.op f = frac(1, 2) k dot.op f^2 arrow.r.double f $
-
-Dalla relazione energetica si ricavano i requisiti sulla rigidezza $k$ e sulla freccia $f$; una volta nota la freccia, si calcola la forza massima agente sulla molla tramite la relazione lineare:
-
-$ F = k dot.op f $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema meccanico della caduta di un grave di massa m soggetto al campo di gravità g diretto verso il basso. La massa cade da un'altezza libera h rispetto all'estremità superiore di una molla scarica vincolata a terra e la comprime di una freccia ulteriore f fino a raggiungere la condizione di arresto con velocità v = 0]])
-
-=== Molle Belleville (a disco conico o a tazza)
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Le molle Belleville, denominate anche molle a disco conico o a tazza, sono costituite da un corpo anulare troncoconico caricato assialmente. L'applicazione del carico lungo la direzione dell'asse determina una deformazione per flessione e rotazione della sezione trasversale nel piano meridiano.
-
-A causa della geometria troncoconica (analogamente a quanto avviene nelle molle a elica conica o troncoconica), la curva caratteristica forza-spostamento non è lineare: la rigidezza della molla varia sensibilmente con lo spostamento, sebbene nelle applicazioni pratiche venga spesso assunta come approssimativamente costante e pari al valore corrispondente al primo tratto della curva caratteristica. Una singola molla a tazza presenta una rigidezza estremamente elevata, rendendola ideale nei casi in cui sia necessario fornire una reazione elastica molto intensa in uno spazio assiale fortemente limitato.
-
-Per ridurre la rigidezza e rendere la molla più cedevole è possibile realizzare degli intagli radiali, oppure disporre più molle combinate in serie e/o in parallelo.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: A sinistra, sezione meridiana di una molla Belleville troncoconica quotata con diametro interno d, diametro esterno D, spessore della lamina t e altezza interna del tronco di cono h. Al centro, diagramma adimensionale con il rapporto freccia su altezza (delta/h) in ascissa (da 0 a 1) e il rapporto di forza $F / F_h$ in ordinata (da 0 a 1,4), riportante le curve caratteristiche per diversi rapporti geometrici (h/t = 1, h/t = 1,5, h/t = 2 e andamento lineare). In basso, confronto schematico in sezione tra due molle disposte in parallelo (sovrapposte con lo stesso orientamento di conicità) e due molle disposte in serie (affacciate in modo speculare rispetto al piano orizzontale medio)]])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Nella configurazione liscia (priva di intagli), le molle a tazza trovano frequente impiego anche come elementi di sicurezza con funzione di antisvitamento, antiscorrimento o per impedire la rotazione relativa tra organi fissati tra loro, esercitando una reazione elastica assiale continua su collegamenti filettati sotto tiro.
-
-Unendo più molle Belleville a pacchi (in parallelo, con le superfici coniche congruenti a contatto diretto) o a colonne (in serie, con gli elementi disposti in modo speculare rispetto al piano medio di contatto), oppure combinando serie di pacchi in parallelo, si ottengono le caratteristiche di rigidezza e corsa desiderate: nella disposizione in parallelo le rigidezze si sommano, mentre nella disposizione in serie il reciproco della rigidezza equivalente è dato dalla somma dei reciproci delle singole rigidezze.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Fotografie di molle a tazza lisce singole, impilate in colonna e applicate sotto la testa di un organo di collegamento filettato, accompagnate da due disegni tecnici in sezione di complessi di molle Belleville guidati su un perno centrale: a sinistra una colonna di singole molle disposte tutte in serie (orientamento alternato), a destra una colonna mista composta da pacchi di due molle in parallelo disposti in serie tra loro]])
-
-==== Stato tensionale nelle molle Belleville
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[L'analisi analitica dello stato di sollecitazione nelle molle a tazza è complessa e si basa sulla teoria dei gusci (solidi assialsimmetrici). La distribuzione delle tensioni lungo la superficie troncoconica e all'interno della sezione resistente è fortemente non lineare.
-
-Le sollecitazioni predominanti sono le tensioni circonferenziali $sigma_c$, le quali presentano espressioni analitiche articolate in funzione del diametro esterno $D$, del diametro interno $d$, dello spessore $t$, della freccia, del modulo di elasticità longitudinale (di Young) $E$ e del coefficiente di Poisson $nu$. Isolando idealmente un settore infinitesimo della molla, sulle facce meridiani si manifestano per il principio di azione e reazione le tensioni circonferenziali scambiate con la parte restante del solido:
-1. Il lato interno della sezione trasversale, individuato dal segmento $I"-"I V$, è sollecitato a compressione ($sigma_c^-$), raggiungendo il valore massimo della tensione nel punto superiore interno $I$.
-2. Il lato esterno della sezione, compreso tra i punti $I I$ e $I I I$, è sollecitato a trazione ($sigma_c^+$) e lungo tale tratto non si riscontra una sensibile variazione del valore della tensione di trazione.
-
-Accanto alla formulazione analitica derivata dalla teoria dei gusci assialsimmetrici, nella pratica progettuale si ricorre frequentemente a modelli numerici, indispensabili soprattutto quando la geometria viene modificata mediante intagli.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: A sinistra, spaccato assonometrico di un settore di molla a tazza con la sezione trasversale rettangolare inclinata di vertici I (spigolo interno superiore), II (spigolo esterno superiore), III (spigolo esterno inferiore) e IV (spigolo interno inferiore). A destra, vista in pianta di un settore anulare con la rappresentazione vettoriale della distribuzione non lineare delle tensioni circonferenziali di compressione $sigma_c^-$ sul bordo interno e di trazione $sigma_c^+$ sul bordo esterno]])
-
-==== Molla a tazza con intagli e molla per frizione
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[La realizzazione di intagli radiali parziali sul bordo interno della superficie troncoconica conferisce alla molla a tazza una maggiore elasticità, riducendone la rigidezza complessiva. Poiché le tensioni circonferenziali sono le principali responsabili della rigidezza del disco, l'asportazione di materiale tramite gli intagli interrompe la continuità anulare interna: le porzioni sporgenti non possono più esercitare un'interazione reciproca di cerchiamento (richiamo elastico laterale circonferenziale) e lavorano essenzialmente a flessione come mensole caricate all'estremità.
-
-Di conseguenza, a parità di incremento di forza si ottiene un'inflessione decisamente maggiore e una pendenza della curva caratteristica molto meno pronunciata. Nella curva caratteristica sperimentale di una molla a tazza con intagli si osserva infatti una ridotta variazione della forza (compresa tra circa $600 "N"$ e $700 "N"$) mentre la freccia compie un'ampia escursione passando da $2 "mm"$ a $7.5 "mm"$.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: A sinistra, vista laterale in sezione e vista in pianta di una molla a tazza dotata di intagli radiali interni sagomati. A destra, diagramma sperimentale forza-spostamento con la freccia in millimetri in ascissa (da 0 a 10 mm) e la forza in Newton in ordinata (da 0 a 800 N), mostrante un tratto quasi orizzontale a pendenza ridotta tra 2 mm e 7,5 mm di freccia]])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Estremizzando il concetto della molla a tazza intagliata si ottiene la molla a diaframma per frizione, ampiamente impiegata in campo automobilistico negli innesti a frizione che operano per attrito. In questo componente i lunghi intagli radiali si estendono quasi fino alla corona circolare di base: il tronco di cono risulta così suddiviso in una serie di lamine radiali incastrate a un'estremità, il cui comportamento meccanico è analogo a quello delle molle a lamina (a balestra) sollecitate essenzialmente a flessione. L'assenza del richiamo elastico circonferenziale nella zona centrale abbatte la rigidezza, consentendo un disinnesto rapido e agevole; questa architettura ha sostituito le tradizionali molle elicoidali negli innesti a frizione degli autoveicoli, garantendo una maggiore robustezza costruttiva e una notevole semplificazione delle operazioni di montaggio.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Disegno assonometrico di una molla a diaframma per frizione automobilistica, costituita da un anello periferico continuo da cui convergono verso il centro numerose lamine radiali separate da profondi intagli con fori di scarico alla base]])
-
-=== Molle a elica di torsione
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Le molle a elica di torsione, largamente utilizzate nelle apparecchiature domestiche e negli elettrodomestici, presentano una conformazione geometrica simile alle molle a elica cilindrica, ma sono dotate di due bracci di estremità sollecitati da forze laterali giacenti nel piano trasversale all'asse dell'elica. Macroscopicamente la molla reagisce a una coppia torcente esterna contenendo la rotazione relativa $phi.alt$ di avvicinamento o allontanamento tra le due leve di estremità; tuttavia, a livello locale nella sezione trasversale del filo, la sollecitazione dominante non è la torsione (come accadeva nelle molle elicoidali di trazione e compressione), bensì la flessione.
-
-Durante il funzionamento, le spire possono inflettersi lateralmente; per limitare tale inflessione in fase di montaggio si dispone un perno di guida in corrispondenza dell'asse longitudinale della molla. Tra il diametro interno della molla e il perno deve necessariamente sussistere un gioco radiale, poiché all'aumentare della forza applicata la molla tende a chiudersi e il suo diametro interno diminuisce.
-
-Trascurando gli attriti e la flessibilità propria dei bracci di estremità, il momento flettente $M$ agente sulla sezione del filo si determina per equilibrio valutando le forze $F_1$ e $F_2$ applicate alle due estremità per i rispettivi bracci di leva $a$ e $b$:
-
-$ M = F_1 dot.op a = F_2 dot.op b $
-
-La tensione normale massima di flessione $sigma$ nella sezione trasversale del filo è proporzionale a quella di una trave rettilinea soggetta a flessione, corretta mediante un fattore di forma $K_i$ dipendente dalla curvatura della spira (concettualmente analogo al coefficiente di Wahl utilizzato a torsione):
-- Per filo a sezione circolare di diametro $d$:
-
-$ sigma = K_i frac(32 M, pi d^3) $
-
-- Per filo a sezione rettangolare di larghezza assiale $b$ e spessore radiale $h$:
-
-$ sigma = K_i frac(6 M, b h^2) $
-
-L'angolo di rotazione elastica relativa $phi.alt$ tra le estremità è direttamente proporzionale al momento flettente $M$ e alla lunghezza sviluppata complessiva del filo $L$, ed è inversamente proporzionale alla rigidezza flessionale $E dot.op J$ della sezione trasversale (dove $E$ è il modulo di Young, $J$ il momento di inerzia flessionale della sezione, $n$ il numero di spire e $D$ il diametro medio dell'elica):
-
-$ phi.alt = frac(M, E dot.op J) dot.op L quad "con" quad L = n pi D $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Vista laterale e vista frontale di una molla a elica cilindrica di torsione. Nella vista frontale sono indicati i due bracci rettilinei di estremità caricati rispettivamente dalla forza $F_1$ con braccio di leva a e dalla forza $F_2$ con braccio di leva b rispetto all'asse della molla, oltre all'angolo di deformazione relativa phi]])
-
-=== Molla ad anelli a forza normale
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[La molla ad anelli lavora in direzione dello sforzo normale assiale ed è costituita da una successione alternata di anelli interni e di anelli esterni avvolgenti, accoppiati tra loro lungo superfici coniche secondo due geometrie complementari:
-1. Negli anelli interni la superficie interna è cilindrica, mentre la superficie esterna è costituita da due tronchi di cono contrapposti e speculari rispetto al piano medio.
-2. Negli anelli esterni la superficie esterna è cilindrica, mentre la superficie interna è costituita da due tronchi di cono. Gli anelli interni ed esterni sono a reciproco contatto lungo le rispettive superfici coniche.
-
-Quando il pacco di anelli è sottoposto a una forza assiale di compressione $F$, si genera un effetto cuneo (analogo a quello degli accoppiamenti troncoconici albero-mozzo) che produce una forte pressione di contatto distribuita normalmente alle superfici coniche di interfaccia. Per effetto di tale geometria, la pressione di contatto dilata radialmente gli anelli esterni (che esercitano un'azione cerchiante) e contrae radialmente gli anelli interni. Grazie a questa deformazione radiale, gli anelli scorrono assialmente gli uni sugli altri; i piccoli spostamenti assiali relativi si sommano lungo l'intero numero di elementi componendo lo spostamento totale assiale, ossia la freccia complessiva del pacco di anelli. Ciascun anello si comporta strutturalmente come un solido assialsimmetrico e la sollecitazione principale che si sviluppa in tutti gli elementi è la tensione circonferenziale (di trazione negli anelli esterni e di compressione in quelli interni).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Sezione longitudinale di una molla ad anelli sottoposta a una forza di compressione assiale F, affiancata da un dettaglio ingrandito dell'interfaccia di contatto biconica tra gli anelli esterni (a dorso cilindrico esterno) e gli anelli interni (a foro cilindrico interno)]])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Oltre alla reazione puramente elastica legata alla deformazione circonferenziale degli anelli, lo strisciamento relativo lungo le superfici coniche genera importanti azioni tangenziali di attrito, introducendo un marcato fenomeno di dissipazione energetica (isteresi meccanica).
-
-Analizzando il diagramma forza-spostamento della molla:
-- Durante la fase di compressione, all'aumentare della forza $F$ gli anelli si avvicinano seguendo la retta di carico $O A$, con una pendenza superiore rispetto a quella che si avrebbe in assenza di attrito.
-- Una volta raggiunta la massima compressione nel punto $A$, la molla non ritorna immediatamente verso la posizione iniziale indeformata non appena il carico inizia a diminuire: gli anelli rimangono compatti e bloccati fino a quando la forza esterna $F$ non viene ridotta al valore inferiore corrispondente al punto $B$, in corrispondenza del quale si inverte il moto relativo vincendo l'attrito in direzione opposta e percorrendo il tratto di scarico $B O$.
-
-Affinché il sistema sia reversibile e gli anelli possano ritornare spontaneamente nella configurazione iniziale indeformata riducendo la forza $F$ (evitando l'impuntamento o autobloccaggio del cono), è necessario che il semiangolo di inclinazione delle superfici coniche $alpha$ sia strettamente maggiore dell'angolo di attrito $phi.alt$ (la cui tangente è pari al coefficiente di attrito tra le superfici a contatto):
-
-$ alpha > phi.alt $
-
-L'area racchiusa dal ciclo di isteresi triangolare $O A B$ nel diagramma forza-spostamento rappresenta l'energia meccanica dissipata per attrito durante il ciclo di carico e scarico. Grazie all'elevata capacità di assorbire e dissipare energia impulsiva, le molle ad anelli sono impiegate d'elezione nei respingenti delle vetture ferroviarie e nei supporti di grossi ganci soggetti a operazioni gravose di carico e scarico di pesi elevati.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: A sinistra, sezione longitudinale del pacco di anelli compresso dalla forza F; in alto al centro, dettaglio geometrico del contatto conico con indicazione del semiangolo di conicità alfa; al centro, diagramma forza-spostamento (forza F in ordinata, spostamento delta in ascissa) che mostra il ciclo di isteresi triangolare O-A-B-O (con area OAB tratteggiata verticalmente e punto C sull'asse delle ascisse in corrispondenza della freccia massima), confrontato con la retta tratteggiata intermedia relativa al comportamento ideale privo di attrito]])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Dal punto di vista costruttivo, i respingenti ad anelli vengono realizzati secondo due varianti principali:
-1. #strong[Configurazione cilindrica]: tutti gli anelli interni ed esterni hanno rispettivamente le medesime dimensioni diametrali lungo l'intero sviluppo assiale della colonna. Sotto carico gli anelli interni si avvicinano scorrendo dentro quelli esterni fino all'eventuale impacchettamento.
-2. #strong[Configurazione a doppia conicità]: oltre alla conicità locale delle superfici di contatto di ciascun anello, i diametri medi degli anelli variano progressivamente da un'estremità all'altra della molla, conferendo all'intero pacco un profilo esterno troncoconico che rinforza ulteriormente il principio di conicità.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: In alto a sinistra, fotografia di una molla ad anelli a struttura cilindrica parzialmente sezionata; in alto a destra, fotografia di molle ad anelli a doppia conicità (profilo esterno troncoconico); al centro, schema funzionale di un modulo composto da un anello esterno (SMA outer ring) e due semianelli interni (HSS inner ring) confrontato nella condizione scarica (unloaded) e sotto carico (loaded); in basso, fotografia dei respingenti su locomotori ferroviari affiancata dai disegni costruttivi in sezione di un respingente ferroviario con molla ad anelli a struttura conica (in basso a sinistra) e di un respingente con molla ad anelli a struttura cilindrica (in basso a destra)]])
+  align: (left + horizon, center + horizon),[Le molle a passo variabile e le molle coniche (ad elica tronco-conica, utilizzate ad esempio nei vani batterie di dispositivi domestici) vengono impiegate per ottenere #strong[caratteristiche forza-spostamento non lineari] di tipo #emph[hardening] (irrigidimento progressivo). Nelle molle coniche, all'applicare del carico si deformano per prime le spire di diametro maggiore, più docili e cedevoli; quando queste arrivano a contatto o si impacchettano, entrano progressivamente in gioco le spire più piccole e rigide, aumentando la rigidezza complessiva del sistema. Questa geometria offre inoltre il vantaggio di evitare o ridurre drasticamente il problema dell'ingobbamento (#emph[buckling]) e consente talvolta alle spire di annidarsi quasi concentricamente.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di una molla cilindrica a passo variabile, schema di una molla conica sotto carico assiale di compressione e fotografia di una molla elicoidale conica]])
