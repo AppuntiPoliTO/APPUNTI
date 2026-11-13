@@ -562,10 +562,7 @@ Nel caso delle #strong[molle formate a freddo], il parametro meccanico preso a r
 
 $ tau_("amm") = 0.5 R_m $
 
-Il dimezzamento del valore di $R_m$ traduce il passaggio dal campo della tensione normale al campo della tensione tangenziale (analogamente a quanto avviene nella rappresentazione del cerchio di Mohr). Sebbene in questa espressione sembri assente un coefficiente di sicurezza esplicito, le incertezze legate al materiale e al processo sono già assorbite cautelativamente nei valori numerici puntuali di $R_m$ che la normativa fornisce in tabella in funzione del diametro $d$ (dove i diametri da $7$ a $10 "mm"$ sono tipicamente impiegati in ambito automobilistico) e della classe di acciaio:
-- #strong[(1)] Acciai non legati per alte sollecitazioni;
-- #strong[(2)] Acciai per molle bonificati;
-- #strong[(3)] Acciai per molle da valvola.
+Il dimezzamento del valore di $R_m$ traduce il passaggio dal campo della tensione normale al campo della tensione tangenziale (analogamente a quanto avviene nella rappresentazione del cerchio di Mohr). Sebbene in questa espressione sembri assente un coefficiente di sicurezza esplicito, le incertezze legate al materiale e al processo sono già assorbite cautelativamente nei valori numerici puntuali di $R_m$ che la normativa fornisce in tabella.
 
 Nel caso delle #strong[molle formate a caldo] (acciai temprati e rinvenuti, norma DIN 2076), la disuguaglianza di verifica rimane formalmente identica:
 
