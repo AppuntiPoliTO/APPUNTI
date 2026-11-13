@@ -53,6 +53,7 @@ fig-scala({
     bezier((12.2, 2.85), (11.1, 2.85), (11.65, 2.65), mark: (end: "stealth", fill: black, scale: 0.6))
   }, s: 75%),
 [(a) $E_1$ attivo, $E_2$ passivato],
+v(1em),
 fig-scala({
     
     import zap.cetz.draw: *
