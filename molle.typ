@@ -165,7 +165,43 @@ Dal punto di vista fisico e progettuale, il valore del rapporto $c = D/d$ govern
   column-gutter: -3em,
   align: (left + horizon, center + horizon),[Nella teoria della trave curva (sia a flessione che a torsione), a differenza della barra ad asse rettilineo, quando interviene una curvatura importante l'asse neutro (luogo dei punti a deformazione e tensione nulla) non coincide più con la linea d'asse geometrica passante per il centro della sezione, ma si sposta verso l'interno del raggio di curvatura. 
 ],[
-#image("trave curva a.png", width:70%)
+#canvas(length: 0.65cm, {
+  import draw: *
+
+  line((-2.60, 0.75), (2.60, 0.75), stroke: 1pt)
+  line((-2.60, -0.75), (2.60, -0.75), stroke: 1pt)
+
+  bezier((-2.60, 0.75), (-2.60, 0.0), (-2.82, 0.50), (-2.75, 0.20), stroke: 0.9pt)
+  bezier((-2.60, 0.0), (-2.60, -0.75), (-2.45, -0.20), (-2.42, -0.55), stroke: 0.9pt)
+  bezier((-2.60, 0.0), (-2.60, -0.75), (-2.85, -0.25), (-2.85, -0.65), stroke: 0.9pt)
+
+  bezier((2.60, 0.75), (2.60, 0.0), (2.80, 0.50), (2.75, 0.20), stroke: 0.9pt)
+  bezier((2.60, 0.0), (2.60, -0.75), (2.45, -0.20), (2.42, -0.55), stroke: 0.9pt)
+  bezier((2.60, 0.0), (2.60, -0.75), (2.85, -0.25), (2.85, -0.65), stroke: 0.9pt)
+
+  line((-3.40, 0.0), (-2.45, 0.0), stroke: 0.8pt)
+  line((-2.30, 0.0), (0.20, 0.0), stroke: 0.8pt)
+  line((0.35, 0.0), (2.45, 0.0), stroke: 0.8pt)
+  line((2.60, 0.0), (3.40, 0.0), stroke: 0.8pt)
+
+  line((0.0, -0.75), (0.0, 0.75), stroke: 0.8pt)
+  content((0.0, 0.95), [#text(size: 8pt)[$0$]], anchor: "south")
+  content((0.0, -0.95), [#text(size: 8pt)[$0$]], anchor: "north")
+
+  line((-1.15, -0.75), (1.15, 0.75), stroke: (paint: red, thickness: 1.8pt))
+
+  content((1.15, 1.55), [#text(size: 8pt)[$tau = display((T c) / J)$]], anchor: "center")
+  content((-1.05, -1.55), [#text(size: 8pt)[$tau = display((T c) / J)$]], anchor: "center")
+
+  arc((-5.15, 0.0), start: -24deg, stop: 24deg, radius: 3.20, anchor: "origin", mark: (start: ">"), stroke: 1.5pt)
+  content((-2.35, -1.55), [#text(size: 8pt)[$T$]], anchor: "north")
+
+  arc((-0.95, 0.0), start: -22deg, stop: 24deg, radius: 3.20, anchor: "origin", mark: (end: ">"), stroke: 1.5pt)
+  content((2.20, 1.55), [#text(size: 8pt)[$T$]], anchor: "south")
+
+  content((0.0, -2.65), [#text(size: 8pt)[(a)]], anchor: "center")
+  content((0.0, -3.35), [#text(size: 8pt)[Barra di torsione ad asse rettilineo]], anchor: "center")
+})
 ],[  Di conseguenza, la distribuzione delle tensioni tangenziali lungo il diametro della sezione non è più lineare (rappresentata da una retta con valori simmetrici $tau = frac(T r, J)$ agli estremi), ma diventa non lineare, seguendo una legge di ordine superiore. Tale distribuzione risulta sbilanciata: sulle fibre più interne rispetto alla curvatura, dove la curvatura è più accentuata, si sviluppa un picco di tensione $tau > frac(T r, J)$, mentre sulle fibre esterne si raggiunge un valore inferiore $tau < frac(T r, J)$.],[#canvas(length: 0.8cm, {
   import draw: *
 
