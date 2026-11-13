@@ -575,67 +575,11 @@ In questa espressione compaiono due coefficienti distinti:
 2. Il divisore $sqrt(3)$ rende omogenea la tensione normale $R_(p 0.2)$ con una tensione tangenziale secondo il criterio di cedimento di Von Mises per materiali duttili ($sigma_("id") = sqrt(sigma^2 + 3 tau^2)$), in cui $sqrt(3)$ costituisce proprio il fattore moltiplicativo del termine tangenziale.
 ==== Acciaio per molle
 #grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
+  columns: (1.1fr, 1fr),
+  column-gutter: -0em,
   align: (left + horizon, center + horizon),[Gli acciai specifici per molle sono progettati dal punto di vista metallurgico per offrire non solo un'elevata resistenza meccanica, ma anche un campo di linearità elastica molto esteso. Confrontando la curva sforzo-deformazione ($sigma - epsilon.alt$) di un acciaio per molle con quella di un acciaio comune da costruzione, si osserva che nell'acciaio comune il limite elastico (pianerotto di snervamento) è basso rispetto a $R_m$, limitando l'energia assorbibile in campo elastico (area sottesa al tratto lineare). Nell'acciaio per molle, invece, $R_m$ è molto elevato e il limite elastico ($R_(p 0.2)$) è molto vicino a $R_m$; ciò garantisce un'area sottesa al tratto elastico lineare decisamente maggiore e spiega perché l'allungamento percentuale a rottura $A_"%"$ risulti relativamente contenuto rispetto agli acciai comuni.
 
-Il carico di rottura $R_m$ di un acciaio per molle varia tipicamente da $1500$ a $2400 "MPa"$ a seconda della composizione e del diametro del filo],[// FASE 1 - ANALISI
-// 1. PANNELLI E SCALA
-// Un unico pannello. Griglia di riferimento immagine 1000 x 650 px.
-// Scelta scala: N = 120 px per 1 cm. Origine O = (212, 588) px -> (0, 0) cm.
-// Larghezza totale elementi: da x = -1.63 cm a x = 6.35 cm (7.98 cm totali, nel range 6-9 cm).
-//
-// 2. FIGURE IN PROSPETTIVA
-// Grafico 2D ortogonale: assi verticale e orizzontale esatti.
-//
-// 3. ELEMENTI
-// - Assi arancioni spessi con punta piena: verticale sigma da (0, 0) a (0, 4.75); orizzontale epsilon da (0, 0) a (4.60, 0).
-// - Retta elastica blu da (0, 0) a (1.15, 3.60) (pendenza k = 3.1304).
-// - Curva "Acciaio per molle": da (1.15, 3.60) a campana fino a (1.72, 3.71) passando per il massimo a (1.44, 3.92).
-// - Curva "Acciaio comune": si separa dalla retta elastica a (0.511, 1.60), passa al limite elastico (0.71, 2.00),
-//   presenta una zona di snervamento oscillante fino a (1.276, 2.061), poi un ampio arco plastico fino a (5.135, 2.223).
-// - Tratteggio verde: linea verticale verde da (1.15, 0) a (1.15, 3.60) e 15 linee oblique verdi nel triangolo sottostante.
-// - Tratteggio rosso: linea verticale rossa da (0.71, 0) a (0.71, 2.00) e 11 linee oblique rosse nel triangolo sottostante.
-// - Punti evidenziati: cerchietto ciano con bordo blu a (1.15, 3.60); cerchietto verde-acqua con bordo blu a (0.71, 2.00);
-//   pallino rosso pieno sopra la cresta a (1.40, 3.97).
-// - Frecce orizzontali tratteggiate blu: da (1.08, 3.60) a (0.02, 3.60) e da (0.64, 2.00) a (0.02, 2.00).
-// - Riquadri con bordo grigio-blu e testo corsivo: due riquadri "Limite elastico" a sinistra, "Acciaio per molle" in alto, "Acciaio comune" a destra.
-// - Etichette: sigma in alto a sinistra dell'asse y, epsilon a destra dell'asse x, R_m sopra il pallino rosso.
-// - IGNORATO: effetto doppio contorno sui bordi degli assi arancioni dovuto a resa grafica dello schizzo originale.
-//
-// 4. CLASSIFICAZIONE DI OGNI CURVA
-// Curva 1 - Tratto elastico (0, 0) -> (1.15, 3.60): rettilineo -> LINE.
-//
-// Curva 2 - Archetto superiore "Acciaio per molle":
-// Campioni (i, x, y):
-//   1: (1.15, 3.60), 2: (1.18, 3.76), 3: (1.26, 3.87), 4: (1.44, 3.92), 5: (1.58, 3.88), 6: (1.68, 3.78), 7: (1.72, 3.71).
-// Test cerchio su A=(1.15, 3.60), B=(1.44, 3.92), C=(1.72, 3.71):
-//   cx = 1.44, cy = 3.63, r = 0.29.
-//   Scarti ei: d1=0.292 (0.7%), d2=0.291 (0.3%), d3=0.300 (3.4%), d4=0.290 (0.0%), d5=0.287 (1.0%), d6=0.283 (2.4%), d7=0.291 (0.3%).
-//   e_max = 0.034 <= 0.08 -> ARCO DI CERCHIO.
-//   Angoli: t(1.72, 3.71) = atan2(0.08, 0.28) = 16.0deg; t(1.15, 3.60) = atan2(-0.03, -0.29) = 186.0deg.
-//
-// Curva 3 - Raccordo distacco acciaio comune (0.511, 1.60) -> (0.71, 2.00):
-//   Raccordo tra retta pendenza 3.13 e zona di snervamento -> BEZIER NECESSARIO (cambio di tangente tra tratti).
-//
-// Curva 4 - Zona snervamento oscillante (0.71, 2.00) -> (1.276, 2.061):
-//   Campioni (i, x, y):
-//   1: (0.71, 2.00), 2: (0.84, 2.11), 3: (0.97, 2.09), 4: (1.04, 2.04), 5: (1.10, 2.08), 6: (1.19, 2.07), 7: (1.28, 2.06).
-//   BEZIER NECESSARIO: presenza di flessi multipli (picco, valle, secondo picco, sella). 3 bezier raccordate in modo liscio.
-//
-// Curva 5 - Grande arco plastico "Acciaio comune":
-// Campioni (i, x, y):
-//   1: (1.28, 2.06), 2: (1.73, 2.40), 3: (2.23, 2.73), 4: (2.73, 2.88), 5: (3.23, 2.89), 6: (3.82, 2.80), 7: (4.40, 2.62), 8: (5.13, 2.22).
-// Test cerchio su A=(1.28, 2.06), B=(3.00, 2.90), C=(5.13, 2.22):
-//   D = -5.918, cx = 3.29, cy = 0.13, r = 2.79.
-//   Scarti ei: d1=2.787 (0.1%), d2=2.755 (1.3%), d3=2.809 (0.7%), d4=2.808 (0.6%), d5=2.763 (1.0%), d6=2.724 (2.3%), d7=2.728 (2.2%), d8=2.785 (0.2%).
-//   e_max = 0.023 <= 0.08 -> ARCO DI CERCHIO.
-//   Angoli: t(5.135, 2.223) = atan2(2.093, 1.845) = 48.6deg; t(1.276, 2.061) = atan2(1.931, -2.014) = 136.2deg.
-
-// FASE 2 - COSTRUZIONE
-// Tratteggio verde (m = 0.58, passo q = 0.24, x2 = 1.15): calcolate le intersezioni con y = 3.1304*x e y = 0.
-// Tratteggio rosso (m = 0.45, passo q = 0.18, x2 = 0.71): calcolate le intersezioni con bordo sinistro e y = 0.
-// Punti di controllo bezier snervamento verificati per continuita C1 nel raccordo a (1.276, 2.061) con tangente (0.692, 0.722) dell'arco.
+],[
 #canvas(length: 1cm, {
   import draw: *
 
@@ -671,12 +615,6 @@ Il carico di rottura $R_m$ di un acciaio per molle varia tipicamente da $1500$ a
   line((0.533, 0.000), (0.71, 0.080), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
   line((0.71, 0), (0.71, 2.00), stroke: (paint: rgb("#e60000"), thickness: 1pt))
 
-  // Riquadri testo
-  rect((-1.63, 3.38), (-0.03, 3.82), stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
-  rect((-1.63, 1.78), (-0.03, 2.22), stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
-  rect((1.83, 3.56), (4.03, 4.08), stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
-  rect((4.30, 1.60), (6.35, 2.12), stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
-
   // Assi coordinati
   line((0, 0), (0, 4.75), mark: (end: ">", size: 0.28, fill: orange), stroke: (paint: orange, thickness: 2pt))
   line((0, 0), (4.60, 0), mark: (end: ">", size: 0.28, fill: orange), stroke: (paint: orange, thickness: 2pt))
@@ -699,32 +637,16 @@ Il carico di rottura $R_m$ di un acciaio per molle varia tipicamente da $1500$ a
   circle((0.71, 2.00), radius: 0.065, fill: rgb("#00cc99"), stroke: (paint: rgb("#222899"), thickness: 1pt))
   circle((1.40, 3.97), radius: 0.06, fill: rgb("#e60000"), stroke: none)
 
-  // Etichette
-  content((-0.40, 4.45), [$sigma$])
-  content((4.85, -0.25), [$epsilon$])
-  content((1.40, 4.25), [$upright(R)_"m"$])
-  content((-0.83, 3.60), [_Limite elastico_])
-  content((-0.83, 2.00), [_Limite elastico_])
-  content((2.93, 3.82), [_Acciaio per molle_])
-  content((5.325, 1.86), [_Acciaio comune_])
-})
-// FASE 3 - VERIFICA
-// 1. Primitive e controlli sugli archi:
-//    - Retta elastica: line (esatta).
-//    - Archetto superiore: arc centrato in (1.44, 3.63), r = 0.29.
-//      Verifica punto noto (1.15, 3.60): d = sqrt((1.15-1.44)^2 + (3.60-3.63)^2) = sqrt(0.0841 + 0.0009) = 0.2915 (scarto 0.0015 < 0.02).
-//      Verifica vertice (1.44, 3.92): d = |3.92 - 3.63| = 0.2900 = r. OK.
-//    - Grande arco acciaio comune: arc centrato in (3.29, 0.13), r = 2.79.
-//      Verifica estremo sinistro (1.276, 2.061): d = sqrt((-2.014)^2 + 1.931^2) = 2.790 = r. OK.
-//      Verifica estremo destro (5.135, 2.223): d = sqrt(1.845^2 + 2.093^2) = 2.790 = r. OK.
-// 2. Continuità dei contorni:
-//    - La curva acciaio comune si raccordata in (0.511, 1.60) sulla retta y = 3.1304*x (y = 1.600).
-//    - Tutti i tratti della zona di snervamento condividono esattamente i punti di giunzione: (0.71, 2.00), (0.97, 2.09), (1.10, 2.08), (1.276, 2.061).
-//    - L'archetto acciaio per molle parte da (1.152, 3.600) sul centro del pallino superiore (1.15, 3.60).
-// 3. Bezier presenti: 4 in totale (1 per il raccordo di distacco con cambio tangente, 3 per lo snervamento con flessi multipli). Nessuna bezier sostituibile da cerchio o ellisse.
-// 4. Regole codice verificate: nessuna parola vietata, tutti i parametri espliciti, ogni arc ha anchor: "origin" e start < stop.
-// 5. Colori, etichette e layout coerenti con l'immagine originale.])
-
+  // Etichette e riquadri auto-adattanti
+  content((-0.18, 4.55), [$sigma$], anchor: "east")
+  content((4.72, -0.05), [$epsilon$], anchor: "north-west")
+  content((1.40, 4.10), [#text(size: 0.85em)[$upright(R)_"m"$]], anchor: "south")
+  content((-0.08, 3.60), [#text(size: 0.72em)[_Limite elastico_]], anchor: "east", frame: "rect", padding: 0.08, fill: white, stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
+  content((-0.08, 2.00), [#text(size: 0.72em)[_Limite elastico_]], anchor: "east", frame: "rect", padding: 0.08, fill: white, stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
+  content((1.85, 3.82), [#text(size: 0.72em)[_Acciaio per molle_]], anchor: "west", frame: "rect", padding: 0.08, fill: white, stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
+  content((4.25, 1.85), [#text(size: 0.72em)[_Acciaio comune_]], anchor: "west", frame: "rect", padding: 0.08, fill: white, stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
+})])
+Il carico di rottura $R_m$ di un acciaio per molle varia tipicamente da $1500$ a $2400 "MPa"$ a seconda della composizione e del diametro del filo
 ==== Verifica a fatica: caratterizzazione sperimentale e diagramma di Haigh
 #grid(
   columns: (1fr, 1fr),
