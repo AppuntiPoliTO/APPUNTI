@@ -32,7 +32,7 @@
 // Stessi colori del formulario
 #let formula(title, body) = block(
   width: 100%, breakable: false, inset: 8pt, radius: 3pt,
-  fill: rgb("#eef4fa"), stroke: (left: 2.5pt + rgb("#1f4e79")),
+  fill: rgb("#eef4fa"), stroke: (left: 1pt + rgb("#1f4e79")),
   [#text(weight: "bold", fill: rgb("#1f4e79"), title) #parbreak() #body],
 )
 #let esempio(body) = block(
