@@ -37,12 +37,12 @@
 )
 #let esempio(body) = block(
   width: 100%, breakable: false, inset: 8pt, radius: 3pt,
-  fill: rgb("#f6f6ee"), stroke: (left: 2.5pt + rgb("#8a7a2a")),
+  fill: rgb("#f6f6ee"), stroke: (left: 0.5pt + rgb("#8a7a2a")),
   [#text(weight: "bold", fill: rgb("#8a7a2a"))[Esempio.] #body],
 )
 #let attenzione(body) = block(
   width: 100%, breakable: false, inset: 8pt, radius: 3pt,
-  fill: rgb("#fbeeee"), stroke: (left: 2.5pt + rgb("#a03030")),
+  fill: rgb("#fbeeee"), stroke: (left: 0.5pt + rgb("#a03030")),
   [#text(weight: "bold", fill: rgb("#a03030"))[Attenzione.] #body],
 )
 
