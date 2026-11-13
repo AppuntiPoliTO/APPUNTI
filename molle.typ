@@ -579,7 +579,136 @@ In questa espressione compaiono due coefficienti distinti:
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Gli acciai specifici per molle sono progettati dal punto di vista metallurgico per offrire non solo un'elevata resistenza meccanica, ma anche un campo di linearità elastica molto esteso. Confrontando la curva sforzo-deformazione ($sigma - epsilon.alt$) di un acciaio per molle con quella di un acciaio comune da costruzione, si osserva che nell'acciaio comune il limite elastico (pianerotto di snervamento) è basso rispetto a $R_m$, limitando l'energia assorbibile in campo elastico (area sottesa al tratto lineare). Nell'acciaio per molle, invece, $R_m$ è molto elevato e il limite elastico ($R_(p 0.2)$) è molto vicino a $R_m$; ciò garantisce un'area sottesa al tratto elastico lineare decisamente maggiore e spiega perché l'allungamento percentuale a rottura $A_"%"$ risulti relativamente contenuto rispetto agli acciai comuni.
 
-Il carico di rottura $R_m$ di un acciaio per molle varia tipicamente da $1500$ a $2400 "MPa"$ a seconda della composizione e del diametro del filo],[#image("Acciaio molle.png")])
+Il carico di rottura $R_m$ di un acciaio per molle varia tipicamente da $1500$ a $2400 "MPa"$ a seconda della composizione e del diametro del filo],[// FASE 1 - ANALISI
+// 1. PANNELLI E SCALA
+// Un unico pannello. Griglia di riferimento immagine 1000 x 650 px.
+// Scelta scala: N = 120 px per 1 cm. Origine O = (212, 588) px -> (0, 0) cm.
+// Larghezza totale elementi: da x = -1.63 cm a x = 6.35 cm (7.98 cm totali, nel range 6-9 cm).
+//
+// 2. FIGURE IN PROSPETTIVA
+// Grafico 2D ortogonale: assi verticale e orizzontale esatti.
+//
+// 3. ELEMENTI
+// - Assi arancioni spessi con punta piena: verticale sigma da (0, 0) a (0, 4.75); orizzontale epsilon da (0, 0) a (4.60, 0).
+// - Retta elastica blu da (0, 0) a (1.15, 3.60) (pendenza k = 3.1304).
+// - Curva "Acciaio per molle": da (1.15, 3.60) a campana fino a (1.72, 3.71) passando per il massimo a (1.44, 3.92).
+// - Curva "Acciaio comune": si separa dalla retta elastica a (0.511, 1.60), passa al limite elastico (0.71, 2.00),
+//   presenta una zona di snervamento oscillante fino a (1.276, 2.061), poi un ampio arco plastico fino a (5.135, 2.223).
+// - Tratteggio verde: linea verticale verde da (1.15, 0) a (1.15, 3.60) e 15 linee oblique verdi nel triangolo sottostante.
+// - Tratteggio rosso: linea verticale rossa da (0.71, 0) a (0.71, 2.00) e 11 linee oblique rosse nel triangolo sottostante.
+// - Punti evidenziati: cerchietto ciano con bordo blu a (1.15, 3.60); cerchietto verde-acqua con bordo blu a (0.71, 2.00);
+//   pallino rosso pieno sopra la cresta a (1.40, 3.97).
+// - Frecce orizzontali tratteggiate blu: da (1.08, 3.60) a (0.02, 3.60) e da (0.64, 2.00) a (0.02, 2.00).
+// - Riquadri con bordo grigio-blu e testo corsivo: due riquadri "Limite elastico" a sinistra, "Acciaio per molle" in alto, "Acciaio comune" a destra.
+// - Etichette: sigma in alto a sinistra dell'asse y, epsilon a destra dell'asse x, R_m sopra il pallino rosso.
+// - IGNORATO: effetto doppio contorno sui bordi degli assi arancioni dovuto a resa grafica dello schizzo originale.
+//
+// 4. CLASSIFICAZIONE DI OGNI CURVA
+// Curva 1 - Tratto elastico (0, 0) -> (1.15, 3.60): rettilineo -> LINE.
+//
+// Curva 2 - Archetto superiore "Acciaio per molle":
+// Campioni (i, x, y):
+//   1: (1.15, 3.60), 2: (1.18, 3.76), 3: (1.26, 3.87), 4: (1.44, 3.92), 5: (1.58, 3.88), 6: (1.68, 3.78), 7: (1.72, 3.71).
+// Test cerchio su A=(1.15, 3.60), B=(1.44, 3.92), C=(1.72, 3.71):
+//   cx = 1.44, cy = 3.63, r = 0.29.
+//   Scarti ei: d1=0.292 (0.7%), d2=0.291 (0.3%), d3=0.300 (3.4%), d4=0.290 (0.0%), d5=0.287 (1.0%), d6=0.283 (2.4%), d7=0.291 (0.3%).
+//   e_max = 0.034 <= 0.08 -> ARCO DI CERCHIO.
+//   Angoli: t(1.72, 3.71) = atan2(0.08, 0.28) = 16.0deg; t(1.15, 3.60) = atan2(-0.03, -0.29) = 186.0deg.
+//
+// Curva 3 - Raccordo distacco acciaio comune (0.511, 1.60) -> (0.71, 2.00):
+//   Raccordo tra retta pendenza 3.13 e zona di snervamento -> BEZIER NECESSARIO (cambio di tangente tra tratti).
+//
+// Curva 4 - Zona snervamento oscillante (0.71, 2.00) -> (1.276, 2.061):
+//   Campioni (i, x, y):
+//   1: (0.71, 2.00), 2: (0.84, 2.11), 3: (0.97, 2.09), 4: (1.04, 2.04), 5: (1.10, 2.08), 6: (1.19, 2.07), 7: (1.28, 2.06).
+//   BEZIER NECESSARIO: presenza di flessi multipli (picco, valle, secondo picco, sella). 3 bezier raccordate in modo liscio.
+//
+// Curva 5 - Grande arco plastico "Acciaio comune":
+// Campioni (i, x, y):
+//   1: (1.28, 2.06), 2: (1.73, 2.40), 3: (2.23, 2.73), 4: (2.73, 2.88), 5: (3.23, 2.89), 6: (3.82, 2.80), 7: (4.40, 2.62), 8: (5.13, 2.22).
+// Test cerchio su A=(1.28, 2.06), B=(3.00, 2.90), C=(5.13, 2.22):
+//   D = -5.918, cx = 3.29, cy = 0.13, r = 2.79.
+//   Scarti ei: d1=2.787 (0.1%), d2=2.755 (1.3%), d3=2.809 (0.7%), d4=2.808 (0.6%), d5=2.763 (1.0%), d6=2.724 (2.3%), d7=2.728 (2.2%), d8=2.785 (0.2%).
+//   e_max = 0.023 <= 0.08 -> ARCO DI CERCHIO.
+//   Angoli: t(5.135, 2.223) = atan2(2.093, 1.845) = 48.6deg; t(1.276, 2.061) = atan2(1.931, -2.014) = 136.2deg.
+
+// FASE 2 - COSTRUZIONE
+// Tratteggio verde (m = 0.58, passo q = 0.24, x2 = 1.15): calcolate le intersezioni con y = 3.1304*x e y = 0.
+// Tratteggio rosso (m = 0.45, passo q = 0.18, x2 = 0.71): calcolate le intersezioni con bordo sinistro e y = 0.
+// Punti di controllo bezier snervamento verificati per continuita C1 nel raccordo a (1.276, 2.061) con tangente (0.692, 0.722) dell'arco.
+#canvas(length: 1cm, {
+  import draw: *
+
+  // Tratteggio verde (triangolo limite elastico superiore)
+  line((1.078, 3.375), (1.15, 3.417), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.984, 3.081), (1.15, 3.177), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.890, 2.786), (1.15, 2.937), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.796, 2.492), (1.15, 2.697), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.702, 2.197), (1.15, 2.457), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.608, 1.903), (1.15, 2.217), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.514, 1.608), (1.15, 1.977), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.420, 1.313), (1.15, 1.737), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.325, 1.019), (1.15, 1.497), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.231, 0.724), (1.15, 1.257), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.137, 0.430), (1.15, 1.017), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.043, 0.135), (1.15, 0.777), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.224, 0.000), (1.15, 0.537), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((0.638, 0.000), (1.15, 0.297), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((1.052, 0.000), (1.15, 0.057), stroke: (paint: rgb("#006600"), thickness: 0.9pt))
+  line((1.15, 0), (1.15, 3.60), stroke: (paint: rgb("#006600"), thickness: 1pt))
+
+  // Tratteggio rosso (triangolo limite elastico inferiore)
+  line((0.620, 1.840), (0.71, 1.880), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.520, 1.614), (0.71, 1.700), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.448, 1.402), (0.71, 1.520), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.381, 1.191), (0.71, 1.340), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.313, 0.981), (0.71, 1.160), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.246, 0.771), (0.71, 0.980), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.179, 0.561), (0.71, 0.800), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.112, 0.350), (0.71, 0.620), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.045, 0.140), (0.71, 0.440), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.133, 0.000), (0.71, 0.260), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.533, 0.000), (0.71, 0.080), stroke: (paint: rgb("#e60000"), thickness: 0.9pt))
+  line((0.71, 0), (0.71, 2.00), stroke: (paint: rgb("#e60000"), thickness: 1pt))
+
+  // Riquadri testo
+  rect((-1.63, 3.38), (-0.03, 3.82), stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
+  rect((-1.63, 1.78), (-0.03, 2.22), stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
+  rect((1.83, 3.56), (4.03, 4.08), stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
+  rect((4.30, 1.60), (6.35, 2.12), stroke: (paint: rgb("#99a0c8"), thickness: 0.8pt))
+
+  // Assi coordinati
+  line((0, 0), (0, 4.75), mark: (end: ">", size: 0.28, fill: orange), stroke: (paint: orange, thickness: 2pt))
+  line((0, 0), (4.60, 0), mark: (end: ">", size: 0.28, fill: orange), stroke: (paint: orange, thickness: 2pt))
+
+  // Curve sforzo-deformazione
+  line((0, 0), (1.15, 3.60), stroke: (paint: rgb("#222899"), thickness: 1.4pt))
+  arc((1.44, 3.63), start: 16deg, stop: 186deg, radius: 0.29, anchor: "origin", stroke: (paint: rgb("#222899"), thickness: 1.4pt))
+  bezier((0.511, 1.60), (0.71, 2.00), (0.56, 1.75), (0.65, 1.92), stroke: (paint: rgb("#222899"), thickness: 1.4pt))
+  bezier((0.71, 2.00), (0.97, 2.09), (0.78, 2.11), (0.91, 2.14), stroke: (paint: rgb("#222899"), thickness: 1.4pt))
+  bezier((0.97, 2.09), (1.10, 2.08), (1.02, 2.048), (1.06, 2.04), stroke: (paint: rgb("#222899"), thickness: 1.4pt))
+  bezier((1.10, 2.08), (1.276, 2.061), (1.14, 2.12), (1.236, 2.019), stroke: (paint: rgb("#222899"), thickness: 1.4pt))
+  arc((3.29, 0.13), start: 48.6deg, stop: 136.2deg, radius: 2.79, anchor: "origin", stroke: (paint: rgb("#222899"), thickness: 1.4pt))
+
+  // Frecce tratteggiate verso "Limite elastico"
+  line((1.08, 3.60), (0.02, 3.60), mark: (end: ">", size: 0.14, fill: rgb("#222899")), stroke: (paint: rgb("#222899"), dash: "dashed", thickness: 1pt))
+  line((0.64, 2.00), (0.02, 2.00), mark: (end: ">", size: 0.14, fill: rgb("#222899")), stroke: (paint: rgb("#222899"), dash: "dashed", thickness: 1pt))
+
+  // Punti notevoli
+  circle((1.15, 3.60), radius: 0.065, fill: rgb("#00ccff"), stroke: (paint: rgb("#222899"), thickness: 1pt))
+  circle((0.71, 2.00), radius: 0.065, fill: rgb("#00cc99"), stroke: (paint: rgb("#222899"), thickness: 1pt))
+  circle((1.40, 3.97), radius: 0.06, fill: rgb("#e60000"), stroke: none)
+
+  // Etichette
+  content((-0.40, 4.45), [$sigma$])
+  content((4.85, -0.25), [$epsilon$])
+  content((1.40, 4.25), [$upright(R)_"m"$])
+  content((-0.83, 3.60), [_Limite elastico_])
+  content((-0.83, 2.00), [_Limite elastico_])
+  content((2.93, 3.82), [_Acciaio per molle_])
+  content((5.325, 1.86), [_Acciaio comune_])
+})
+])
 
 ==== Verifica a fatica: caratterizzazione sperimentale e diagramma di Haigh
 #grid(
