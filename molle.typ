@@ -748,7 +748,7 @@ I metodi di verifica a fatica possono essere quelli generali. I risultati sperim
   content((-0.82, 2.45), [#text(size: 0.80em)[$tau_a \/ R_"m"$]], angle: 90deg)
 })])
 
-==== Processo ed effetto della pallinatura (#emph[shot peening])
+=== Processo ed effetto della pallinatura (#emph[shot peening])
 La resistenza a fatica dipende in modo decisivo dal processo di produzione e dai trattamenti superficiali. La #strong[pallinatura] (#emph[shot peening]) consiste nel proiettare un getto calibrato di micropallini sulla superficie esterna del filo della molla già formata, tramite una o più giranti centrifughe in rotazione. Le molle avanzano su una guida spinte da appositi pulsori attraverso la zona investita dal flusso dei pallini.
 
 L'impatto di ciascun pallino provoca una deformazione plastica localissima (microcratere) che genera un campo di #strong[tensioni residue di compressione] sulla superficie del filo. Poiché sulla sezione circolare del filo soggetto a torsione la tensione tangenziale è distribuita linearmente con massimo alla superficie esterna, le tensioni residue di compressione fanno sì che la sollecitazione applicata debba prima compensare tale stato residuo prima di raggiungere valori di trazione/taglio critici. Sul diagramma di resistenza a fatica a vita infinita ($tau_(m i n)$ in ascissa, $tau_(m a x)$ in ordinata, per oltre $2 dot.op 10^6$ cicli), l'effetto della pallinatura si manifesta in un netto innalzamento del limite di resistenza (ad esempio da $510 "MPa"$ fino a $689 "MPa"$ all'origine, e da un punto limite di $(862, 862) "MPa"$ a $(965, 965) "MPa"$ lungo la linea di carico statico).
