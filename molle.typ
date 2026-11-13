@@ -554,28 +554,25 @@ Le molle possono essere formate a caldo oppure a freddo. Nel processo di formatu
 Nel processo di formatura a freddo, invece, il materiale di partenza viene fornito già in configurazione bonificata. Il filo viene avvolto a freddo e guidato direttamente verso la troncatura di uscita per formare la molla; segue un trattamento termico a $400 degree "C"$ per $30$ minuti avente prevalentemente funzione di distensione, dopodiché il ciclo prosegue con le operazioni viste per il processo a caldo (assestamento a pacco, pallinatura, verniciatura e taratura). Poiché le condizioni metallurgiche e tecnologiche dei due processi sono sostanzialmente differenti, la normativa tecnica prevede due approcci distinti e formule specifiche per le verifiche di resistenza.
 
 === Resistenza statica in esercizio: molle formate a freddo e a caldo
-Nella normativa tecnica la verifica statica si effettua confrontando la tensione tangenziale nominale in esercizio nella sezione trasversale del filo ($tau_("nom")$), calcolata con il modello della barra di torsione corretta mediante il coefficiente di Wahl $lambda'$, con la tensione tangenziale ammissibile del materiale ($tau_("amm")$):
+Nella normativa tecnica, la verifica statica confronta la tensione tangenziale nominale in esercizio nella sezione trasversale del filo ($tau_("nom")$) — calcolata tramite il modello della barra di torsione corretto con il coefficiente di Wahl $lambda'$ — con la tensione tangenziale ammissibile del materiale ($tau_("amm")$):
 
 $ tau_("nom") = lambda' frac(8 F D, pi d^3) lt.eq tau_("amm") $
 
-Nel caso delle #strong[molle formate a freddo], il parametro meccanico preso a riferimento è il carico unitario di rottura $R_m$. Questi materiali esibiscono infatti resistenze molto elevate e un comportamento che tende al fragile; inoltre, la resistenza diminuisce all'aumentare del diametro del filo $d$ a causa dell'incidenza dell'effetto scala rispetto al processo produttivo. La normativa definisce la tensione tangenziale ammissibile direttamente come la metà del carico unitario di rottura:
+La disuguaglianza rimane formalmente identica sia per le molle formate a freddo sia per quelle formate a caldo; a variare è invece il criterio con cui viene definita $tau_("amm")$.
+
+Nel caso delle #strong[molle formate a freddo], si assume come riferimento il carico unitario di rottura $R_m$. Questi materiali mostrano infatti resistenze molto elevate, un comportamento tendenzialmente fragile e un calo di resistenza all'aumentare del diametro del filo $d$ dovuto all'effetto scala del processo produttivo. La tensione tangenziale ammissibile è fissata direttamente come:
 
 $ tau_("amm") = 0.5 R_m $
 
-Il dimezzamento del valore di $R_m$ traduce il passaggio dal campo della tensione normale al campo della tensione tangenziale (analogamente a quanto avviene nella rappresentazione del cerchio di Mohr). Sebbene in questa espressione sembri assente un coefficiente di sicurezza esplicito, le incertezze legate al materiale e al processo sono già assorbite cautelativamente nei valori numerici puntuali di $R_m$ che la normativa fornisce in tabella.
+Il fattore $0.5$ traduce il passaggio dalla tensione normale a quella tangenziale (analogamente alla rappresentazione del cerchio di Mohr). Sebbene manchi un coefficiente di sicurezza esplicito, le incertezze legate a materiale e processo sono già assorbite in modo cautelativo nei valori puntuali di $R_m$ tabulati dalla normativa.
 
-Nel caso delle #strong[molle formate a caldo] (acciai temprati e rinvenuti), la disuguaglianza di verifica rimane formalmente identica:
-
-$ tau_("nom") = lambda' frac(8 F D, pi d^3) lt.eq tau_("amm") $
-
-Tuttavia, il parametro di riferimento diventa lo snervamento, espresso dal carico unitario di scostamento dalla proporzionalità $R_(p 0.2)$. Sebbene i bassi valori di allungamento percentuale a rottura ($A_%$) collochino questi acciai al limite della definizione di comportamento duttile, il valore di snervamento $R_(p 0.2)$ risulta molto elevato e prossimo al carico di rottura $R_m$; in ottica conservativa si assume pertanto come riferimento il primo livello di resistenza, corrispondente all'insorgenza dei fenomeni plastici. La tensione tangenziale ammissibile è espressa come:
+Per le #strong[molle formate a caldo] (acciai temprati e rinvenuti), il parametro di riferimento diventa invece il carico unitario di scostamento dalla proporzionalità $R_(p 0.2)$. Sebbene i bassi valori di allungamento percentuale a rottura ($A_%$) collochino questi acciai al limite del comportamento duttile, $R_(p 0.2)$ risulta molto elevato e prossimo a $R_m$; in ottica conservativa ci si riferisce pertanto al primo livello di resistenza, corrispondente all'insorgenza dei fenomeni plastici:
 
 $ tau_("amm") = 0.9 frac(R_(p 0.2), sqrt(3)) $
 
-In questa relazione compaiono due coefficienti distinti:
-1. Il fattore $0.9$ riduce il limite al $90%$ di $R_(p 0.2)$, introducendo un modesto ma significativo margine di sicurezza per coprire le incertezze sul comportamento effettivo del materiale, poiché la tabella normativa fornisce i parametri per diverse tipologie di acciaio senza declinarli puntualmente in funzione della scala del diametro del filo.
-2. Il divisore $sqrt(3)$ consente di rendere omogenea la tensione normale $R_(p 0.2)$ con una tensione tangenziale ammissibile applicando il criterio di cedimento di Von Mises per materiali duttili ($sigma_("id") = sqrt(sigma^2 + 3 tau^2)$), in cui $sqrt(3)$ è esattamente il coefficiente moltiplicativo della tensione tangenziale $tau$.
-3. 
+In questa espressione compaiono due coefficienti distinti:
+1. Il fattore $0.9$ introduce un modesto ma significativo margine di sicurezza per coprire le incertezze sul comportamento effettivo del materiale, poiché le tabelle normative forniscono i parametri per tipologia di acciaio senza declinarli puntualmente in base alla scala del diametro del filo.
+2. Il divisore $sqrt(3)$ rende omogenea la tensione normale $R_(p 0.2)$ con una tensione tangenziale secondo il criterio di cedimento di Von Mises per materiali duttili ($sigma_("id") = sqrt(sigma^2 + 3 tau^2)$), in cui $sqrt(3)$ costituisce proprio il fattore moltiplicativo del termine tangenziale.
 === Caratteristiche metallurgiche dell'acciaio per molle
 #grid(
   columns: (1fr, 1fr),
