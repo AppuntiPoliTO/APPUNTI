@@ -16,6 +16,7 @@
   number-align: bottom + right,
 )
 
+#image("images/fig_molle_5014.png", width: 75%)
 
 #set heading(numbering: "1.")
 
