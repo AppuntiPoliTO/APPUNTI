@@ -553,11 +553,6 @@ Le molle possono essere formate a caldo oppure a freddo. Nel processo di formatu
 
 Nel processo di formatura a freddo, invece, il materiale di partenza viene fornito già in configurazione bonificata. Il filo viene avvolto a freddo e guidato direttamente verso la troncatura di uscita per formare la molla; segue un trattamento termico a $400 degree "C"$ per $30$ minuti avente prevalentemente funzione di distensione, dopodiché il ciclo prosegue con le operazioni viste per il processo a caldo (assestamento a pacco, pallinatura, verniciatura e taratura). Poiché le condizioni metallurgiche e tecnologiche dei due processi sono sostanzialmente differenti, la normativa tecnica prevede due approcci distinti e formule specifiche per le verifiche di resistenza.
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Fotografia ravvicinata del processo di avvolgimento a caldo su tornio di una molla ad elica cilindrica a filo grosso, visibilmente incandescente durante la lavorazione]])
-
 === Resistenza statica in esercizio: molle formate a freddo e a caldo
 Nella normativa tecnica la verifica statica si effettua confrontando la tensione tangenziale nominale in esercizio nella sezione trasversale del filo ($tau_("nom")$), calcolata con il modello della barra di torsione corretta mediante il coefficiente di Wahl $lambda'$, con la tensione tangenziale ammissibile del materiale ($tau_("amm")$):
 
