@@ -945,24 +945,9 @@ dove $lambda'$ è il coefficiente di Wahl, $Delta tau_0$, $b_d$ e $b_tau$ sono c
 
 $ tau_(m i n) = lambda''' frac(8 F_(m i n) D, pi d^3), quad quad lambda''' = 1 + frac(0.5, c) $
 
-I valori tabulati secondo DIN 17223 per le tre classi di acciaio (con distinzione tra molla non pallinata e pallinata) 
+I valori per le tre classi di acciaio (con distinzione tra molla non pallinata e pallinata) sono tabulati secondo il *DIN 17223*.
 
-// NOTA: \div convertito in div
-#table(
-  columns: 4,
-  align: (left, center, center, center),
-  [#strong[Parametro / $d$ [mm]]], [#strong[Acciai non legati per alte sollecitazioni (non pallinato / pallinato)]], [#strong[Acciai per molle bonificati (non pallinato / pallinato)]], [#strong[Acciai per molle da valvola (non pallinato / pallinato)]],
-  [$Delta tau_0$ [MPa]], [390 / 490], [315 / 410], [450 / 570],
-  [$b_tau$], [0.22 / 0.20], [0.20 / 0.18], [0.27 / 0.26],
-  [$b_d$ ($d = 1 div 5$)], [1], [1], [1],
-  [$b_d$ ($d = 6$)], [0.95], [1], [1],
-  [$b_d$ ($d = 7$)], [0.91], [0.97], [0.97],
-  [$b_d$ ($d = 8$)], [0.88], [0.92], [–],
-  [$b_d$ ($d = 10$)], [0.83], [0.89], [–],
-  [$b_d$ ($d = 12$)], [0.78], [0.89], [–],
-  [$b_d$ ($d = 14$)], [0.75], [0.89], [–],
-  [$b_d$ ($d = 17$)], [0.69], [–], [–],
-)
+
 
 Per le #strong[molle formate a caldo (DIN 17221)], la verifica mantiene la stessa espressione per $Delta tau_("nom")$:
 
