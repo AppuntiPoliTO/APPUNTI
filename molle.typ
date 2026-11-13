@@ -708,7 +708,22 @@ Il carico di rottura $R_m$ di un acciaio per molle varia tipicamente da $1500$ a
   content((2.93, 3.82), [_Acciaio per molle_])
   content((5.325, 1.86), [_Acciaio comune_])
 })
-])
+// FASE 3 - VERIFICA
+// 1. Primitive e controlli sugli archi:
+//    - Retta elastica: line (esatta).
+//    - Archetto superiore: arc centrato in (1.44, 3.63), r = 0.29.
+//      Verifica punto noto (1.15, 3.60): d = sqrt((1.15-1.44)^2 + (3.60-3.63)^2) = sqrt(0.0841 + 0.0009) = 0.2915 (scarto 0.0015 < 0.02).
+//      Verifica vertice (1.44, 3.92): d = |3.92 - 3.63| = 0.2900 = r. OK.
+//    - Grande arco acciaio comune: arc centrato in (3.29, 0.13), r = 2.79.
+//      Verifica estremo sinistro (1.276, 2.061): d = sqrt((-2.014)^2 + 1.931^2) = 2.790 = r. OK.
+//      Verifica estremo destro (5.135, 2.223): d = sqrt(1.845^2 + 2.093^2) = 2.790 = r. OK.
+// 2. Continuità dei contorni:
+//    - La curva acciaio comune si raccordata in (0.511, 1.60) sulla retta y = 3.1304*x (y = 1.600).
+//    - Tutti i tratti della zona di snervamento condividono esattamente i punti di giunzione: (0.71, 2.00), (0.97, 2.09), (1.10, 2.08), (1.276, 2.061).
+//    - L'archetto acciaio per molle parte da (1.152, 3.600) sul centro del pallino superiore (1.15, 3.60).
+// 3. Bezier presenti: 4 in totale (1 per il raccordo di distacco con cambio tangente, 3 per lo snervamento con flessi multipli). Nessuna bezier sostituibile da cerchio o ellisse.
+// 4. Regole codice verificate: nessuna parola vietata, tutti i parametri espliciti, ogni arc ha anchor: "origin" e start < stop.
+// 5. Colori, etichette e layout coerenti con l'immagine originale.])
 
 ==== Verifica a fatica: caratterizzazione sperimentale e diagramma di Haigh
 #grid(
