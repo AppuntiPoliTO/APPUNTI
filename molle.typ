@@ -564,7 +564,7 @@ $ tau_("amm") = 0.5 R_m $
 
 Il dimezzamento del valore di $R_m$ traduce il passaggio dal campo della tensione normale al campo della tensione tangenziale (analogamente a quanto avviene nella rappresentazione del cerchio di Mohr). Sebbene in questa espressione sembri assente un coefficiente di sicurezza esplicito, le incertezze legate al materiale e al processo sono già assorbite cautelativamente nei valori numerici puntuali di $R_m$ che la normativa fornisce in tabella.
 
-Nel caso delle #strong[molle formate a caldo] (acciai temprati e rinvenuti, norma DIN 2076), la disuguaglianza di verifica rimane formalmente identica:
+Nel caso delle #strong[molle formate a caldo] (acciai temprati e rinvenuti), la disuguaglianza di verifica rimane formalmente identica:
 
 $ tau_("nom") = lambda' frac(8 F D, pi d^3) lt.eq tau_("amm") $
 
