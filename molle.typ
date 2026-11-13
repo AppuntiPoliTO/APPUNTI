@@ -165,7 +165,7 @@ Dal punto di vista fisico e progettuale, il valore del rapporto $c = D/d$ govern
   column-gutter: -3em,
   align: (left + horizon, center + horizon),[Nella teoria della trave curva (sia a flessione che a torsione), a differenza della barra ad asse rettilineo, quando interviene una curvatura importante l'asse neutro (luogo dei punti a deformazione e tensione nulla) non coincide più con la linea d'asse geometrica passante per il centro della sezione, ma si sposta verso l'interno del raggio di curvatura. 
 ],[
-#canvas(length: 0.65cm, {
+#canvas(length: 0.8cm, {
   import draw: *
 
   line((-2.60, 0.75), (2.60, 0.75), stroke: 1pt)
