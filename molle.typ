@@ -1052,8 +1052,11 @@ con $Delta F = F_(m a x) - F_(m i n)$ e $lambda'$ coefficiente di Wahl, ma $Delt
 
 
 
-==== Fenomeni secondari: ingobbamento e sfarfallamento
-#canvas(length: 0.75cm, {
+=== Fenomeni secondari: ingobbamento e sfarfallamento
+#grid(
+  columns: (1fr, 1.5fr),
+  column-gutter: -3em,
+  align: (left + horizon, center + horizon),[],[#canvas(length: 0.75cm, {
   import draw: *
 
   // --- PIASTRA DI COMPRESSIONE SUPERIORE E STELO ---
@@ -1141,7 +1144,7 @@ con $Delta F = F_(m a x) - F_(m i n)$ e $lambda'$ coefficiente di Wahl, ma $Delt
   // Spira 12 (base inferiore piatta)
   line((-0.70, -6.62), (1.00, -6.62), stroke: (paint: black, thickness: 6.2pt, cap: "round"))
   line((-0.70, -6.62), (1.00, -6.62), stroke: (paint: rgb("#e89984"), thickness: 4.2pt, cap: "round"))
-})
+})])
 
 Nelle molle di compressione particolarmente snelle (lunghezza libera $L_0$ elevata rispetto al diametro dell'elica $D$) e non guidate lateralmente, può manifestarsi un fenomeno di instabilità elastica per carico di punta macroscopico detto #strong[ingobbamento] (#emph[buckling]), analogo a quello delle travi compresse. Il carico critico che porta all'ingobbamento vale:
 
