@@ -146,7 +146,7 @@
 
 // === FUNZIONI E MACRO ===
 #let sans(body, size: 11pt, weight: "regular") = text(
-  font: ("Liberation Sans", "Arial", "Helvetica", "DejaVu Sans Mono", "Libertinus Serif"),
+  font: ( "Arial", "DejaVu Sans Mono", "Libertinus Serif"),
   size: size,
   weight: weight,
   body
