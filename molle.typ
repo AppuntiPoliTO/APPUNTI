@@ -1148,7 +1148,112 @@ dove $k$ è la rigidezza della molla, $L_0$ la lunghezza libera a riposo e $K_L$
   line((-0.70, -6.62), (1.00, -6.62), stroke: (paint: rgb("#e89984"), thickness: 4.2pt, cap: "round"))
 })
 
+#canvas(length: 0.65cm, {
+  import draw: *
 
+  // --- ASSE CENTRALE SUL FONDO ---
+  line((0.0, 0.20), (0.0, 4.35), stroke: (dash: "dash-dotted", thickness: 0.7pt))
+
+  // --- SPIRA 1: METÀ POSTERIORE (sale da sinistra a destra) ---
+  bezier((-1.75, 1.35), (1.75, 2.05), (-1.75, 2.25), (1.75, 2.95), stroke: 1.1pt)
+  bezier((-1.75, 0.65), (1.75, 1.35), (-1.75, 1.55), (1.75, 2.25), stroke: 1.1pt)
+
+  // Copertura bianca per la metà anteriore della Spira 1
+  line(
+    (-2.45, 1.35), (-2.30, 0.75), (-1.50, 0.32), (0.0, 0.22), (1.50, 0.55), (2.35, 1.10), (2.45, 1.70),
+    (1.75, 1.70), (1.20, 1.15), (0.0, 0.92), (-1.20, 0.98), (-1.75, 1.35),
+    close: true, fill: white, stroke: none
+  )
+
+  // --- SPIRA 1: METÀ ANTERIORE (scende e gira davanti) ---
+  bezier((-2.45, 1.65), (-2.45, 1.25), (-2.55, 1.50), (-2.55, 1.35), stroke: 1.1pt)
+  bezier((-2.45, 1.25), (2.45, 1.70), (-2.45, -0.15), (2.45, 0.30), stroke: 1.1pt)
+  bezier((2.45, 1.70), (2.45, 2.15), (2.55, 1.85), (2.55, 2.00), stroke: 1.1pt)
+  bezier((-1.75, 1.35), (1.75, 1.70), (-1.75, 0.65), (1.75, 1.00), stroke: 1.1pt)
+
+
+  // --- SPIRA 2: METÀ POSTERIORE (sale da sinistra a destra) ---
+  bezier((-1.75, 2.75), (1.75, 3.45), (-1.75, 3.65), (1.75, 4.35), stroke: 1.1pt)
+  bezier((-1.75, 2.05), (1.75, 2.75), (-1.75, 2.95), (1.75, 3.65), stroke: 1.1pt)
+
+  // Copertura bianca per la metà anteriore della Spira 2
+  line(
+    (-2.45, 2.75), (-2.30, 2.15), (-1.50, 1.72), (0.0, 1.62), (1.50, 1.95), (2.35, 2.50), (2.45, 3.10),
+    (1.75, 3.10), (1.20, 2.55), (0.0, 2.32), (-1.20, 2.38), (-1.75, 2.75),
+    close: true, fill: white, stroke: none
+  )
+
+  // --- SPIRA 2: METÀ ANTERIORE (scende e gira davanti) ---
+  bezier((-2.45, 3.05), (-2.45, 2.65), (-2.55, 2.90), (-2.55, 2.75), stroke: 1.1pt)
+  bezier((-2.45, 2.65), (2.45, 3.10), (-2.45, 1.25), (2.45, 1.70), stroke: 1.1pt)
+  bezier((2.45, 3.10), (2.45, 3.55), (2.55, 3.25), (2.55, 3.40), stroke: 1.1pt)
+  bezier((-1.75, 2.75), (1.75, 3.10), (-1.75, 2.05), (1.75, 2.40), stroke: 1.1pt)
+
+
+  // --- SPIRA 3 (SUPERIORE): GIRA DIETRO E TERMINA NELLA SEZIONE A ---
+  // Copertura bianca per la parte anteriore sinistra della Spira 3 (dove c'è la sezione A)
+  line(
+    (-2.45, 4.15), (-2.40, 3.45), (-1.65, 2.86), (-1.35, 3.54), (-1.75, 3.85), (-1.75, 4.15),
+    close: true, fill: white, stroke: none
+  )
+
+  // Bordo esterno superiore (da destra sale al colmo e scende a sinistra fino alla base di A)
+  bezier((2.45, 3.55), (0.0, 5.05), (2.45, 4.55), (1.35, 5.05), stroke: 1.1pt)
+  bezier((0.0, 5.05), (-2.45, 4.05), (-1.35, 5.05), (-2.45, 4.60), stroke: 1.1pt)
+  bezier((-2.45, 4.05), (-1.62, 2.86), (-2.45, 3.45), (-2.05, 3.00), stroke: 1.1pt)
+
+  // Bordo interno superiore (da destra sale al colmo interno e scende fino alla cima di A)
+  bezier((1.75, 3.45), (0.0, 4.35), (1.75, 4.05), (0.95, 4.35), stroke: 1.1pt)
+  bezier((0.0, 4.35), (-1.75, 3.90), (-0.95, 4.35), (-1.75, 4.15), stroke: 1.1pt)
+  bezier((-1.75, 3.90), (-1.38, 3.54), (-1.75, 3.70), (-1.58, 3.58), stroke: 1.1pt)
+
+
+  // --- SEZIONE TRASVERSALE A (ELLISSE CAMPITA E TRATTEGGIATA) ---
+  // Centro sezione: C_A = (-1.50, 3.20)
+  line(
+    (-1.38, 3.54), (-1.26, 3.45), (-1.22, 3.26), (-1.28, 3.04),
+    (-1.42, 2.89), (-1.62, 2.86), (-1.74, 2.96), (-1.78, 3.15),
+    (-1.70, 3.37), (-1.55, 3.51),
+    close: true, fill: black.transparentize(72%), stroke: 1.1pt
+  )
+
+  // Tratteggio interno alla sezione A
+  line((-1.72, 3.30), (-1.45, 3.52), stroke: 0.5pt)
+  line((-1.77, 3.12), (-1.30, 3.48), stroke: 0.5pt)
+  line((-1.72, 2.96), (-1.23, 3.34), stroke: 0.5pt)
+  line((-1.58, 2.87), (-1.25, 3.12), stroke: 0.5pt)
+
+  content((-1.90, 3.50), [#text(size: 8pt)[$A$]], anchor: "east")
+
+
+  // --- FORZA ASSIALE F ---
+  line((0.0, -1.35), (0.0, 0.55), mark: (end: ">"), stroke: 1.6pt)
+  content((0.28, -1.05), [#text(size: 9pt)[$F$]], anchor: "west")
+
+
+  // --- TERNA LOCALE (x, y, z) CENTRATA IN (-1.50, 3.20) ---
+  // Asse z (verticale)
+  line((-1.50, 3.20), (-1.50, 4.05), mark: (end: ">"), stroke: 0.8pt)
+  content((-1.35, 4.08), [#text(size: 8pt)[$z$]], anchor: "west")
+
+  // Asse x (radiale verso l'esterno/basso-sinistra)
+  line((-1.50, 3.20), (-2.25, 2.82), mark: (end: ">"), stroke: 0.8pt)
+  content((-2.32, 2.75), [#text(size: 8pt)[$x$]], anchor: "north")
+
+  // Asse y (orizzontale verso destra)
+  line((-1.50, 3.20), (-0.70, 3.20), mark: (end: ">"), stroke: 0.8pt)
+  content((-0.62, 3.32), [#text(size: 8pt)[$y$]], anchor: "south")
+
+
+  // --- VETTORI AZIONI INTERNE N E T (IN ROSSO) ---
+  // Vettore T (taglio, verso il basso-sinistra)
+  line((-1.50, 3.20), (-2.05, 2.10), mark: (end: ">"), stroke: (paint: red, thickness: 1.6pt))
+  content((-1.62, 2.25), [#text(fill: red, size: 8pt)[$T$]], anchor: "west")
+
+  // Vettore N (normale alla sezione, verso il basso-destra)
+  line((-1.50, 3.20), (-0.05, 2.75), mark: (end: ">"), stroke: (paint: red, thickness: 1.6pt))
+  content((-0.25, 2.98), [#text(fill: red, size: 8pt)[$N$]], anchor: "south")
+})
 
 In presenza di carichi dinamici alternati con frequenza prossima alla frequenza propria della molla si verifica il fenomeno della risonanza, detto #strong[sfarfallamento] delle spire: l'ampiezza di vibrazione cresce in modo incontrollato (con alcune spire che oscillano fortemente e altre che appaiono ferme in corrispondenza dei nodi dei modi di vibrazione), portando a sovrasollecitazione e rottura del filo. Per evitarlo si impone che la prima frequenza propria della molla sia almeno $20$ volte superiore alla frequenza del carico applicato:
 
