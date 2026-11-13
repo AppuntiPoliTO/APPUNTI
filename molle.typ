@@ -166,7 +166,66 @@ Dal punto di vista fisico e progettuale, il valore del rapporto $c = D/d$ govern
   align: (left + horizon, center + horizon),[Nella teoria della trave curva (sia a flessione che a torsione), a differenza della barra ad asse rettilineo, quando interviene una curvatura importante l'asse neutro (luogo dei punti a deformazione e tensione nulla) non coincide più con la linea d'asse geometrica passante per il centro della sezione, ma si sposta verso l'interno del raggio di curvatura. 
 ],[
 #image("trave curva a.png", width:70%)
-],[  Di conseguenza, la distribuzione delle tensioni tangenziali lungo il diametro della sezione non è più lineare (rappresentata da una retta con valori simmetrici $tau = frac(T r, J)$ agli estremi), ma diventa non lineare, seguendo una legge di ordine superiore. Tale distribuzione risulta sbilanciata: sulle fibre più interne rispetto alla curvatura, dove la curvatura è più accentuata, si sviluppa un picco di tensione $tau > frac(T r, J)$, mentre sulle fibre esterne si raggiunge un valore inferiore $tau < frac(T r, J)$.],[#image("trave curva b.png", width:55%)])
+],[  Di conseguenza, la distribuzione delle tensioni tangenziali lungo il diametro della sezione non è più lineare (rappresentata da una retta con valori simmetrici $tau = frac(T r, J)$ agli estremi), ma diventa non lineare, seguendo una legge di ordine superiore. Tale distribuzione risulta sbilanciata: sulle fibre più interne rispetto alla curvatura, dove la curvatura è più accentuata, si sviluppa un picco di tensione $tau > frac(T r, J)$, mentre sulle fibre esterne si raggiunge un valore inferiore $tau < frac(T r, J)$.],[#canvas(length: 0.65cm, {
+  import draw: *
+
+  line((-1.05, 0.0), (-0.15, 0.0), stroke: 0.7pt)
+  line((0.15, 0.0), (1.05, 0.0), stroke: 0.7pt)
+  line((-0.08, 0.0), (0.08, 0.0), stroke: 0.7pt)
+  line((0.0, -0.45), (0.0, 0.12), stroke: 0.7pt)
+
+  line((0.0, 0.22), (0.0, 4.90), stroke: 0.7pt)
+  line((0.0, 5.05), (0.0, 6.20), stroke: 0.7pt)
+  content((0.12, 5.95), [#text(size: 8pt)[Piano m]], anchor: "west")
+
+  line((0.0, 0.22), (-0.85, 4.82), stroke: 0.7pt)
+  line((-0.88, 4.98), (-1.08, 6.12), stroke: 0.7pt)
+  content((-1.15, 5.75), [#text(size: 8pt)[Piano n]], anchor: "east")
+
+  arc((0.0, 0.0), start: 52deg, stop: 126deg, radius: 4.60, anchor: "origin", stroke: 1pt)
+  arc((0.0, 0.0), start: 52deg, stop: 126deg, radius: 3.20, anchor: "origin", stroke: 1pt)
+
+  arc((0.0, 0.0), start: 45deg, stop: 62deg, radius: 3.90, anchor: "origin", stroke: 0.7pt)
+  arc((0.0, 0.0), start: 65deg, stop: 112deg, radius: 3.90, anchor: "origin", stroke: 0.7pt)
+  arc((0.0, 0.0), start: 115deg, stop: 123deg, radius: 3.90, anchor: "origin", stroke: 0.7pt)
+  arc((0.0, 0.0), start: 126deg, stop: 136deg, radius: 3.90, anchor: "origin", stroke: 0.7pt)
+
+  bezier((-2.70, 3.72), (-2.29, 3.16), (-2.92, 3.52), (-2.50, 3.25), stroke: 0.9pt)
+  bezier((-2.29, 3.16), (-1.88, 2.59), (-2.08, 3.07), (-1.75, 2.75), stroke: 0.9pt)
+  bezier((-2.29, 3.16), (-1.88, 2.59), (-2.52, 2.92), (-2.12, 2.45), stroke: 0.9pt)
+
+  bezier((2.83, 3.62), (2.40, 3.07), (3.02, 3.42), (2.60, 3.18), stroke: 0.9pt)
+  bezier((2.40, 3.07), (1.97, 2.52), (2.20, 2.96), (1.85, 2.68), stroke: 0.9pt)
+  bezier((2.40, 3.07), (1.97, 2.52), (2.62, 2.84), (2.20, 2.38), stroke: 0.9pt)
+
+  circle((-0.56, 3.15), radius: 0.06, fill: black, stroke: none)
+  circle((0.0, 3.20), radius: 0.06, fill: black, stroke: none)
+  circle((-0.80, 4.53), radius: 0.06, fill: black, stroke: none)
+  circle((0.0, 4.60), radius: 0.06, fill: black, stroke: none)
+
+  content((-0.68, 2.85), [#text(size: 8pt)[$a$]], anchor: "east")
+  content((0.15, 2.85), [#text(size: 8pt)[$b$]], anchor: "west")
+  content((-0.92, 4.82), [#text(size: 8pt)[$c$]], anchor: "east")
+  content((0.15, 4.85), [#text(size: 8pt)[$d$]], anchor: "west")
+
+  line((0.0, 3.20), (-1.55, 3.20), stroke: 0.9pt)
+  line((0.0, 4.60), (0.95, 4.50), stroke: 0.9pt)
+
+  arc((-1.788, 6.712), start: -86.12deg, stop: -38.93deg, radius: 3.520, anchor: "origin", stroke: (paint: red, thickness: 1.8pt))
+
+  line((-1.25, 2.35), (-1.52, 3.12), mark: (end: ">"), stroke: 0.6pt)
+  content((-1.15, 1.75), [#text(size: 8pt)[$tau > display((T c) / J)$]], anchor: "center")
+  content((1.45, 5.15), [#text(size: 8pt)[$tau < display((T c) / J)$]], anchor: "west")
+
+  arc((-3.55, 2.45), start: -12deg, stop: 62deg, radius: 1.80, anchor: "origin", mark: (start: ">"), stroke: 1.5pt)
+  content((-2.05, 1.75), [#text(size: 8pt)[$T$]], anchor: "north")
+
+  arc((0.55, 4.20), start: -56deg, stop: 5deg, radius: 1.95, anchor: "origin", mark: (end: ">"), stroke: 1.5pt)
+  content((2.60, 4.55), [#text(size: 8pt)[$T$]], anchor: "south")
+
+  content((0.0, -0.95), [#text(size: 8pt)[(b)]], anchor: "center")
+  content((0.0, -1.65), [#text(size: 8pt)[Barra di torsione ad asse curvo]], anchor: "center")
+})])
 
 Scorporando i due contributi che compongono la tensione tangenziale massima nella molla, si ha:
 - #strong[Effetto della curvatura:]
@@ -945,7 +1004,7 @@ dove $lambda'$ è il coefficiente di Wahl, $Delta tau_0$, $b_d$ e $b_tau$ sono c
 
 $ tau_(m i n) = lambda''' frac(8 F_(m i n) D, pi d^3), quad quad lambda''' = 1 + frac(0.5, c) $
 
-I valori per le tre classi di acciaio (con distinzione tra molla non pallinata e pallinata) sono tabulati ma gli autori degli appunti evitano di inserire tabelle essendo fornite per eventuali esercizi.
+I valori per le tre classi di acciaio (con distinzione tra molla non pallinata e pallinata) sono tabulati ma gli autori degli appunti evitano di inserire tabelle essendo fornite per eventuali esercizi
 
 
 
@@ -957,7 +1016,7 @@ con $Delta F = F_(m a x) - F_(m i n)$ e $lambda'$ coefficiente di Wahl, ma $Delt
 
 
 
-=== Fenomeni secondari: ingobbamento e sfarfallamento
+==== Fenomeni secondari: ingobbamento e sfarfallamento
 Nelle molle di compressione particolarmente snelle (lunghezza libera $L_0$ elevata rispetto al diametro dell'elica $D$) e non guidate lateralmente, può manifestarsi un fenomeno di instabilità elastica per carico di punta macroscopico detto #strong[ingobbamento] (#emph[buckling]), analogo a quello delle travi compresse. Il carico critico che porta all'ingobbamento vale:
 
 $ F_("crit") = k L_0 K_L $
