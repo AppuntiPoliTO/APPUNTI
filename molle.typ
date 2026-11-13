@@ -575,24 +575,7 @@ $ tau_("amm") = 0.9 frac(R_(p 0.2), sqrt(3)) $
 In questa relazione compaiono due coefficienti distinti:
 1. Il fattore $0.9$ riduce il limite al $90%$ di $R_(p 0.2)$, introducendo un modesto ma significativo margine di sicurezza per coprire le incertezze sul comportamento effettivo del materiale, poiché la tabella normativa fornisce i parametri per diverse tipologie di acciaio senza declinarli puntualmente in funzione della scala del diametro del filo.
 2. Il divisore $sqrt(3)$ consente di rendere omogenea la tensione normale $R_(p 0.2)$ con una tensione tangenziale ammissibile applicando il criterio di cedimento di Von Mises per materiali duttili ($sigma_("id") = sqrt(sigma^2 + 3 tau^2)$), in cui $sqrt(3)$ è esattamente il coefficiente moltiplicativo della tensione tangenziale $tau$.
-
-#table(
-  columns: 4,
-  align: center,
-  [Materiale], [$R_m " [MPa]"$], [$R_(p 0.2) " [MPa]"$], [$A_%$],
-  [$"C40"$], [$1200"--"1550$], [$1050$], [$8$],
-  [$"C60"$], [$1250"--"1550$], [$1050$], [$6$],
-  [$"C70"$], [$1300"--"1600$], [$1050$], [$5$],
-  [$"C75"$], [$1350"--"1600$], [$1050$], [$5$],
-  [$"C90"$], [$1350"--"1650$], [$1100$], [$4$],
-  [$"C100"$], [$1350"--"1650$], [$1100$], [$4$],
-  [$"50Si7"$], [$1300"--"1600$], [$1150$], [$7$],
-  [$"55Si8"$], [$1400"--"1700$], [$1250$], [$5$],
-  [$"60SiCr8"$], [$1500"--"1750$], [$1350$], [$5$],
-  [$"50CrV4"$], [$1400"--"1700$], [$1250$], [$6$],
-  [$"52SiCrNi8"$], [$1600"--"1850$], [$1350$], [$5$],
-)
-
+3. 
 === Caratteristiche metallurgiche dell'acciaio per molle
 #grid(
   columns: (1fr, 1fr),
