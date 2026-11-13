@@ -1054,9 +1054,11 @@ con $Delta F = F_(m a x) - F_(m i n)$ e $lambda'$ coefficiente di Wahl, ma $Delt
 
 === Fenomeni secondari: ingobbamento e sfarfallamento
 #grid(
-  columns: (1fr, 1.5fr),
+  columns: (1fr, 1fr),
   column-gutter: -3em,
-  align: (left + horizon, center + horizon),[],[#canvas(length: 0.75cm, {
+  align: (left + horizon, center + horizon),[Nelle molle di compressione particolarmente snelle (lunghezza libera $L_0$ elevata rispetto al diametro dell'elica $D$) e non guidate lateralmente, può manifestarsi un fenomeno di instabilità elastica per carico di punta macroscopico detto #strong[ingobbamento] (#emph[buckling]), analogo a quello delle travi compresse. Il carico critico che porta all'ingobbamento vale:
+
+$ F_("crit") = k L_0 K_L $],[#canvas(length: 0.60cm, {
   import draw: *
 
   // --- PIASTRA DI COMPRESSIONE SUPERIORE E STELO ---
@@ -1146,9 +1148,7 @@ con $Delta F = F_(m a x) - F_(m i n)$ e $lambda'$ coefficiente di Wahl, ma $Delt
   line((-0.70, -6.62), (1.00, -6.62), stroke: (paint: rgb("#e89984"), thickness: 4.2pt, cap: "round"))
 })])
 
-Nelle molle di compressione particolarmente snelle (lunghezza libera $L_0$ elevata rispetto al diametro dell'elica $D$) e non guidate lateralmente, può manifestarsi un fenomeno di instabilità elastica per carico di punta macroscopico detto #strong[ingobbamento] (#emph[buckling]), analogo a quello delle travi compresse. Il carico critico che porta all'ingobbamento vale:
 
-$ F_("crit") = k L_0 K_L $
 
 dove $k$ è la rigidezza della molla, $L_0$ la lunghezza libera a riposo e $K_L$ un coefficiente tabulato in funzione del rapporto $L_0 / D$ e delle condizioni di vincolo alle estremità (estremi incernierati, liberi di ruotare sull'appoggio, oppure estremi incastrati, saldamente ancorati). Per evitare l'instabilità, il carico massimo d'esercizio deve rimanere inferiore a $F_("crit")$; inoltre, costruttivamente si può contrastare il fenomeno guidando la molla all'interno di pareti o sedi che forniscano una reazione laterale.
 
