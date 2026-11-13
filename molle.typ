@@ -945,7 +945,7 @@ dove $lambda'$ è il coefficiente di Wahl, $Delta tau_0$, $b_d$ e $b_tau$ sono c
 
 $ tau_(m i n) = lambda''' frac(8 F_(m i n) D, pi d^3), quad quad lambda''' = 1 + frac(0.5, c) $
 
-I valori per le tre classi di acciaio (con distinzione tra molla non pallinata e pallinata) sono tabulati secondo il *DIN 17223*.
+I valori per le tre classi di acciaio (con distinzione tra molla non pallinata e pallinata) sono tabulati ma gli autori degli appunti evitano di inserire tabelle essendo fornite per eventuali esercizi.
 
 
 
