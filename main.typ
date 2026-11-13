@@ -13,7 +13,6 @@
   number-align: bottom + right,
 )
 
-
 #set heading(numbering: "1.")
 // --- INTESTAZIONE --- cazzi nel culo pisellatici
 #align(center)[
