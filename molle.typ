@@ -567,22 +567,6 @@ Il dimezzamento del valore di $R_m$ traduce il passaggio dal campo della tension
 - #strong[(2)] Acciai per molle bonificati;
 - #strong[(3)] Acciai per molle da valvola.
 
-#table(
-  columns: 4,
-  align: center,
-  [$d " [mm]"$], [$R_m " [MPa]"$ (1)], [$R_m " [MPa]"$ (2)], [$R_m " [MPa]"$ (3)],
-  [$1$], [$2266$], [$1766$], [$1668$],
-  [$2$], [$2021$], [$1619$], [$1521$],
-  [$3$], [$1825$], [$1521$], [$1432$],
-  [$4$], [$1697$], [$1481$], [$1403$],
-  [$5$], [$1599$], [$1403$], [$1344$],
-  [$6$], [$1521$], [$1403$], [$1344$],
-  [$7$], [$1452$], [$1364$], [$1305$],
-  [$8$], [$1403$], [$1295$], [$-$],
-  [$9$], [$1354$], [$1295$], [$-$],
-  [$10$], [$1324$], [$1256$], [$-$],
-)
-
 Nel caso delle #strong[molle formate a caldo] (acciai temprati e rinvenuti, norma DIN 2076), la disuguaglianza di verifica rimane formalmente identica:
 
 $ tau_("nom") = lambda' frac(8 F D, pi d^3) lt.eq tau_("amm") $
