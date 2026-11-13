@@ -1,5 +1,5 @@
 #import "lib.typ": *
-
+#set heading(numbering: "1.")
 = Reti in regime stazionario e transitori
 
 == Metodo algebrico <metodo-algebrico>

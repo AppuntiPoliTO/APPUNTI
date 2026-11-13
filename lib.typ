@@ -9,7 +9,7 @@
 #let rect(..args) = if args.pos().len() <= 1 { std.rect(..args) } else { zap.cetz.draw.rect(..args) }
 #let circle(..args) = if args.pos().len() == 0 or type(args.pos().first()) != array { std.circle(..args) } else { zap.cetz.draw.circle(..args) }
 
-#set heading(numbering: "1.")
+
 
 // === IMPOSTAZIONI GLOBALI COMPONENTI ===
 // Cambia qui "ieee" (zig-zag) o "iec" (rettangolo) per modificare TUTTI i circuiti!
