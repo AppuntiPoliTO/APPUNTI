@@ -3151,10 +3151,10 @@ $ sigma = frac(F x, b h^2 / 6) = "cost" $
 
 si presentano due possibili alternative geometriche (non potendo agire né sulla forza $F$ né sulla lunghezza $l$):
 1. #strong[Variare lo spessore (molla parabolica)] mantenendo costante la larghezza della pianta, imponendo una legge quadratica dello spessore rispetto all'ascissa:
-   $ h^2 = x $
+   $h^2 = x$ \
    In tal modo la vista laterale assume un profilo parabolico crescente dall'estremità libera verso l'incastro.
 2. #strong[Variare la larghezza in pianta (pianta triangolare)] mantenendo costante lo spessore:
-   $ b = x $
+   $b = x$\
 
 La seconda alternativa è solitamente preferita dal punto di vista tecnologico poiché comporta minori problemi costruttivi rispetto alla realizzazione accurata di uno spessore variabile con profilo parabolico.
 
