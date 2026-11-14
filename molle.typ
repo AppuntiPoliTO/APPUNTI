@@ -1250,9 +1250,248 @@ $ F = frac(G dot.op d dot.op f, 8 dot.op c^3 dot.op i) + F_0 $
 
 (con la relazione tra carico e tensione tangenziale massima $tau_(m a x) = frac(8 F c, pi d^2)$, ovvero $F = frac(pi d^2, 8 c) dot.op tau_(m a x)$).
 
-==== Molle a passo variabile e molle coniche
+=== Molle a passo variabile e molle coniche
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Le molle a passo variabile e le molle coniche (ad elica tronco-conica, utilizzate ad esempio nei vani batterie di dispositivi domestici) vengono impiegate per ottenere #strong[caratteristiche forza-spostamento non lineari] di tipo #emph[hardening] (irrigidimento progressivo). Nelle molle coniche, all'applicare del carico si deformano per prime le spire di diametro maggiore, più docili e cedevoli; quando queste arrivano a contatto o si impacchettano, entrano progressivamente in gioco le spire più piccole e rigide, aumentando la rigidezza complessiva del sistema. Questa geometria offre inoltre il vantaggio di evitare o ridurre drasticamente il problema dell'ingobbamento (#emph[buckling]) e consente talvolta alle spire di annidarsi quasi concentricamente.],[#image("images/fig_molle_9011.png", width: 75%)
 ])
+== Molle a lamina
+=== Generalità, applicazioni e confronto con le molle a elica cilindrica
+Le molle a lamina rappresentano una tipologia di elementi elastici largamente impiegata nella pratica ingegneristica in alternativa alle molle a elica cilindrica. Esse ricorrono a lamine che possono essere impacchettate tra loro e fissate alle estremità in modo da inflettersi sotto l'azione di carichi dinamici. Nella configurazione a balestra, costituita da più foglie collegate mediante dispositivi di serraggio e fissaggio, trovano frequente impiego alla base dei convogli merci ferroviari, nei veicoli industriali pesanti e negli autocarri.
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: composizione introduttiva di immagini reali e schemi di molle a lamina e a balestra: pacchi di molle a balestra con occhielli alle estremità in officina, assale con sospensione a balestra, dettaglio di sospensione ferroviaria a balestra sopra la ruota su rotaia, assale automobilistico con due molle a balestra longitudinali (indicate come "Leaf springs") e dettaglio di balestra multi-foglia montata su ruota di veicolo pesante; più vista tridimensionale di un assale con sospensione a balestra ("Leaf Spring Suspension")]])
+
+Rispetto alle sospensioni tradizionali basate su molle a elica cilindrica e ammortizzatori, le molle a lamina e a balestra presentano specifici vantaggi e svantaggi progettuali.
+
+#strong[Vantaggi:]
+- Semplicità costruttiva e costi di produzione contenuti; nella configurazione più semplice (molla monolama o parabolica), si utilizza una sola lamina che si rastrema dallo spessore centrale verso le estremità per distribuire opportunamente il carico verticale.
+- Elevata capacità di supporto tra ruote, assi e telaio grazie alla struttura compatta a più strati metallici, idonea a sopportare carichi verticali molto elevati (motivo della loro persistente diffusione nei veicoli pesanti).
+- Distribuzione del carico verticale lungo l'estensione della balestra anziché concentrazione in un unico punto, evitando forze localizzate eccessive che la sospensione potrebbe non tollerare.
+- Riduzione dell'ingombro verticale: mentre una molla a elica cilindrica sottoposta a forze elevate richiederebbe uno sviluppo verticale importante, la molla a lamina distribuisce l'ingombro longitudinalmente lungo il veicolo o lungo l'asse.
+
+#strong[Svantaggi:]
+- Scarsa regolabilità della sospensione: poiché le estremità della balestra sono collegate al telaio, vi è pochissimo margine per accorciare o estendere le foglie, rendendo possibile agire quasi esclusivamente sulla resistenza e flessibilità del materiale. Ciò le rende poco adatte a impieghi automobilistici ad alte prestazioni dove è essenziale variare la taratura per diverse condizioni di guida.
+- Gradi di libertà limitati: sono progettate essenzialmente per il movimento verticale, a differenza dell'accoppiamento molla elicoidale-ammortizzatore che consente un campo di movimento più ampio.
+- Usura severa su giunti e connessioni bullonate dovuta al vincolo rigido di serraggio e fissaggio al telaio.
+- Necessità di punti di ancoraggio distribuiti e relativamente distanti lungo l'asse o il telaio del veicolo, rendendole comunque ingombranti in senso longitudinale.
+
+Dal punto di vista meccanico, pur presentando spesso in configurazione montata un profilo apparentemente semi-ellittico, le molle di flessione a lamina lavorano tipicamente #strong[a flessione]:
+- Si utilizzano quando l'elemento elastico deve operare in spazi limitati.
+- Gli schemi elementari di studio sono basati sulle lamine incastrate.
+- A seconda della geometria adottata per la pianta (rettangolare, triangolare, trapezia), presentano diversi #strong[fattori di utilizzazione].
+
+==== Fattore di utilizzazione
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Per valutare la capacità di conversione dell'energia meccanica applicata in energia di deformazione elastica si introduce il #strong[fattore di utilizzazione] della molla, definito come il rapporto tra l'energia immagazzinabile dalla molla e l'energia immagazzinabile da una barra in trazione dello stesso volume soggetta alla medesima tensione massima che si verifica nella molla. Esso costituisce un indice che esprime il livello di utilizzo del materiale.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di confronto tra barra a sezione costante rettangolare (altezza $h$, profondità $b$, lunghezza $l$, sistema di assi $x$ orizzontale e $y$ verticale) soggetta a trazione-compressione con diagramma delle tensioni normale uniforme pari a $overline(sigma)$ e la stessa barra soggetta a flessione uniforme tramite coppia di momenti flettenti $M$ alle estremità con diagramma delle tensioni lineare a farfalla di valore massimo $overline(sigma)$ ai lembi superiore e inferiore]])
+
+L'energia di deformazione elastica integrata sul volume $V$ è espressa in generale da:
+
+$ E = integral_V frac(1, 2) dot.op sigma dot.op epsilon.alt dot.op d V $
+
+Nel caso di #strong[trazione o compressione] su una barra a sezione costante soggetta a sforzo normale, la distribuzione delle tensioni normali sulla sezione trasversale è uniforme e costante lungo tutta la trave, pari a $sigma = overline(sigma)$ (con deformazione corrispondente $overline(epsilon.alt)$). L'energia immagazzinata $E^t$ vale:
+
+$ E^t = integral_V frac(1, 2) dot.op sigma dot.op epsilon.alt dot.op d V = frac(1, 2) dot.op overline(sigma) dot.op overline(epsilon.alt) dot.op h dot.op b dot.op l = frac(1, 2) dot.op frac(overline(sigma)^2, E) dot.op h dot.op b dot.op l $
+
+dove $E$ è il modulo di Young del materiale e $h dot.op b dot.op l$ rappresenta il volume della trave.
+
+Nel caso di #strong[flessione uniforme], secondo la teoria elementare della trave, la distribuzione delle tensioni normali dovute al momento flettente costante $M$ varia linearmente lungo l'altezza $h$ della sezione in funzione della distanza $y$ dall'asse neutro, raggiungendo il valore massimo $overline(sigma)$ in corrispondenza di $y = plus.minus h/2$:
+
+$ sigma = frac(overline(sigma), h/2) dot.op y $
+
+Sostituendo tale espressione nell'integrale dell'energia di deformazione elastica e integrando lungo lo spessore tra $-h/2$ e $+h/2$, si ottiene l'energia immagazzinata a flessione $E^f$:
+
+$ E^f = integral_V frac(1, 2) dot.op sigma dot.op epsilon.alt dot.op d V = integral_V frac(1, 2) dot.op frac(sigma^2, E) dot.op d V = integral_V frac(1, 2) dot.op frac(1, E) dot.op (frac(overline(sigma), h/2) dot.op y)^2 d x dot.op d y dot.op d z $
+
+$ E^f = frac(1, 2) dot.op frac(overline(sigma)^2, E) dot.op b dot.op l dot.op frac(4, h^2) integral_(-h/2)^(h/2) y^2 d y = frac(1, 2) dot.op frac(overline(sigma)^2, E) dot.op b dot.op l dot.op frac(4, h^2) dot.op 2 dot.op frac(1, 3) dot.op frac(h^3, 8) = frac(1, 6) dot.op frac(overline(sigma)^2, E) dot.op b dot.op l dot.op h $
+
+Confrontando i due risultati a parità di volume e di tensione massima $overline(sigma)$, si ottiene il fattore di utilizzazione per una trave soggetta a flessione uniforme:
+
+$ U = frac(E^f, E^t) = frac(1, 3) $
+
+La riduzione a un terzo deriva dal fatto che nella trazione pura tutto il materiale della sezione trasversale lavora alla tensione massima, mentre nella flessione solo i lembi esterni raggiungono $overline(sigma)$, con sfruttamento parziale delle fibre interne.
+
+==== Molla a lamina con pianta rettangolare
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Considerando una trave a mensola incastrata a un'estremità e caricata all'estremo libero da una forza verticale $F$, avente pianta rettangolare di larghezza costante $b_0$, spessore $h$ e lunghezza $l$, la tensione normale varia lungo l'asse della trave in funzione dell'ascissa $x$ misurata dall'estremità libera.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: vista tridimensionale di una molla a lamina incastrata a pianta rettangolare (larghezza $b_0$, spessore $h$, lunghezza $l$), con forza verticale $F$ applicata all'estremo libero, ascissa $x$ misurata dall'estremo libero ed elemento infinitesimo $d x$; affiancata a fotografia di una lamina rettangolare in alluminio incastrata con strato piezoceramico applicato]])
+
+Poiché il momento flettente $M_f = F x$ ha andamento triangolare (nullo all'estremo libero e massimo all'incastro), la tensione normale alla coordinata $x$ e la rotazione elementare $d alpha$ risultano:
+
+$ sigma = frac(M_f, w_f) = frac(F x, b_0 h^2 / 6) $
+
+$ d alpha = frac(M_f, E I) d x = frac(F x, E I) d x $
+
+Integrando lungo l'intera lunghezza $l$ della mensola si ottengono la freccia $f$ all'estremità libera, la rigidezza $k$ e il momento d'inerzia $I$ della sezione rettangolare:
+
+$ f = integral_0^l x frac(F x, E I) d x = frac(F l^3, 3 E I) $
+
+$ k = frac(3 E I, l^3), quad I = frac(b_0 h^3, 12) $
+
+In questo caso il fattore di utilizzazione scende ulteriormente a:
+
+$ U = frac(E^f, E^t) = frac(1, 9) $
+
+Tale valore ($1/3$ di $1/3$) deriva da due penalizzazioni simultanee:
+1. La distribuzione lineare (non uniforme) della tensione all'interno della singola sezione trasversale dovuta alla flessione (primo fattore $1/3$).
+2. La variazione lineare (triangolare) del momento flettente lungo la linea d'asse, per cui la tensione non è uniformemente pari al valore massimo in tutte le sezioni, ma raggiunge il suo picco solo all'incastro ($x = l$):
+
+$ sigma_(m a x) = frac(F l, b_0 h^2 / 6) $
+
+La lamina rettangolare non utilizza quindi appieno il materiale. Per recuperare la perdita lungo l'asse conviene ricorrere a una #strong[molla di uniforme resistenza], progettata in modo da mantenere $sigma_(m a x) = "costante"$ lungo l'intera lunghezza.
+
+==== Solidi di uniforme resistenza: alternative progettuali
+Per imporre che la tensione massima sia costante lungo tutta la trave:
+
+$ sigma = frac(F x, b h^2 / 6) = "cost" $
+
+si presentano due possibili alternative geometriche (non potendo agire né sulla forza $F$ né sulla lunghezza $l$):
+1. #strong[Variare lo spessore (molla parabolica)] mantenendo costante la larghezza della pianta, imponendo una legge quadratica dello spessore rispetto all'ascissa:
+   $ h^2 = x $
+   In tal modo la vista laterale assume un profilo parabolico crescente dall'estremità libera verso l'incastro.
+2. #strong[Variare la larghezza in pianta (pianta triangolare)] mantenendo costante lo spessore:
+   $ b = x $
+
+La seconda alternativa è solitamente preferita dal punto di vista tecnologico poiché comporta minori problemi costruttivi rispetto alla realizzazione accurata di uno spessore variabile con profilo parabolico.
+
+==== Molla a lamina con pianta triangolare
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Adottando una pianta triangolare di larghezza $b_0$ all'incastro, larghezza nulla al punto di applicazione della forza $F$ e spessore costante $h$, la larghezza locale $b$ varia linearmente con l'ascissa $x$ misurata dalla punta:
+
+$ b = b_0 frac(x, l) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: vista tridimensionale di una molla a lamina incastrata a pianta triangolare (larghezza alla base $b_0$, spessore $h$, lunghezza $l$), con forza verticale $F$ applicata alla punta, ascissa $x$ misurata dalla punta ed elemento infinitesimo $d x$]])
+
+Sostituendo l'espressione della larghezza nella formula della tensione massima si verifica che la tensione rimane rigorosamente costante in ogni sezione lungo tutta la lunghezza della molla:
+
+$ sigma = frac(F x, b h^2 / 6) = frac(F x, b_0 frac(x, l) h^2 / 6) = frac(F l, b_0 h^2 / 6) = "cost" = sigma_(m a x) $
+
+Il momento d'inerzia locale varia lungo l'asse secondo $I(x) = frac(1, 12) dot.op b(x) dot.op h^3$. Calcolando la curvatura $frac(1, r)$ tramite l'equazione della linea elastica, si osserva che essa è costante su tutta la lunghezza:
+
+$ frac(1, r) = frac(M, E I) = frac(F x, E dot.op b_0 frac(x, l) h^3 / 12) = frac(12 dot.op F dot.op l, E dot.op b_0 dot.op h^3) = "cost" $
+
+Poiché il raggio di curvatura $r$ è costante, la deformata della lamina a pianta triangolare è esattamente un #strong[arco di circonferenza]. La freccia all'estremità libera $f$ e la rigidezza $k$ (espresse in funzione del momento d'inerzia all'incastro $I$) valgono:
+
+$ f = frac(F l^3, 2 E I) $
+
+$ k = frac(2 E I, l^3), quad I = frac(b_0 h^3, 12) $
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Recuperando la perdita dovuta alla variazione del momento flettente lungo la linea d'asse, la molla utilizza meglio il materiale e il fattore di utilizzazione ritorna pari a:
+
+$ U = frac(1, 3) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: disegno costruttivo della molla a lamina con pianta triangolare comprendente vista laterale (con forza $F$, freccia $delta$, lunghezza $L$, spessore $h$, ascissa $x$), vista in pianta con sistema di incastro a piastra bullonata e raccordo d'estremità per l'applicazione del carico, e diagramma/sezione con larghezza variabile $b(x)$ fino a $b_0$; affiancato a fotografia di confronto di tre lamine con substrato in alluminio e strato piezoceramico (rettangolare con $U=1/9$, triangolare/rastremata con $U=1/3$, e una terza a pianta più ampia)]])
+
+Dal punto di vista pratico e costruttivo, tuttavia, un'estremità appuntita non permette un'agevole applicazione del carico né un comodo collegamento con gli altri organi della macchina. Lo stesso problema emerge ad esempio nei recuperatori di energia piezoelettrici [?] (lamine in alluminio incastrate rivestite con strati piezoceramici dotati di elettrodi per convertire l'energia delle vibrazioni in energia elettrica), dove una punta stretta impedisce di sfruttare fino in fondo la superficie utile del materiale piezoceramico. Per questo motivo si adotta una soluzione di compromesso: la #strong[molla con pianta trapezia].
+
+==== Molla a lamina con pianta trapezia
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Nella molla a pianta trapezia la larghezza varia linearmente da una base maggiore $b_0$ all'incastro fino a una base minore finita $b_0'$ all'estremità libera, così da consentire l'applicazione del carico o del vincolo.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: vista tridimensionale di una molla a lamina incastrata a pianta trapezia (base maggiore all'incastro $b_0$, base minore all'estremità libera $b_0'$, spessore $h$, lunghezza $l$), con forza verticale $F$ applicata all'estremo libero, ascissa $x$ ed elemento infinitesimo $d x$]])
+
+La rastremazione della trave è caratterizzata dal fattore adimensionale $alpha$:
+
+$ alpha = frac(3, 2 + b_0' / b_0) = frac(3 b_0, 2 b_0 + b_0') $
+
+La tensione nella generica sezione, la tensione massima all'incastro, la freccia $f$ e la rigidezza $k$ risultano:
+
+$ sigma = frac(F x, b h^2 / 6), quad sigma_(m a x) = frac(F l, b_0 h^2 / 6) $
+
+$ f = alpha frac(F l^3, 3 E I) $
+
+$ k = frac(3 E I, alpha l^3), quad I = frac(b_0 h^3, 12) $
+
+Il fattore di utilizzazione della molla a pianta trapezia è espresso da:
+
+$ U = frac(2 alpha b_0, 9(b_0 + b_0')) $
+
+Si osserva che al limite per $b_0' arrow.r 0$ (ritornando alla pianta triangolare) $alpha arrow.r 3/2$ e il fattore di utilizzazione tende a $1/3$; viceversa, al crescere di $b_0'$ verso $b_0$ ci si avvicina alla pianta rettangolare e il fattore di utilizzazione scende verso $1/9$.
+
+==== Molla a balestra
+Per realizzare una molla completa avente punti di ancoraggio alle due estremità e punto di applicazione del carico nella sezione centrale (che per simmetria si comporta come un incastro per ciascuna delle due metà), occorrerebbe unire due molle a pianta trapezia per la base maggiore. Una foglia unica a doppio trapezio risulterebbe però di ingombro trasversale eccessivo per poter essere installata sotto il telaio di un veicolo.
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[La #strong[molla a balestra] risolve tale problema riducendo l'ingombro trasversale: essa equivale all'unione di due molle a pianta trapezia unite per la base maggiore, ma sezionate longitudinalmente in listelle sovrapposte le une alle altre invece che affiancate sullo stesso piano.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di generazione della molla a balestra dalla doppia molla trapezia di lunghezza totale $2 l$, base centrale $b_0$, spessore $h$ ed estremità $b_0'$: suddivisione longitudinale in strisce simmetriche ($a$, $b/2$, $c/2$, $d/2$, $e/2$, $f/2$), ricomposizione delle coppie di mezze foglie in foglie intere di uguale larghezza $b_0'$ ($a, b, c, d, e, f$) e sovrapposizione a pacco con la foglia $a$ (foglia madre) in cima]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Le caratteristiche geometriche e costruttive principali della molla a balestra sono:
+- Equivale all'unione di 2 molle a pianta trapezia unite per la base maggiore.
+- È formata da #strong[foglie] sovrapposte di diversa lunghezza e uguale larghezza $b_0'$.
+- Ogni foglia è l'unione di due mezze foglie longitudinali opposte rispetto alla mezzeria (tranne la lamina centrale).
+- La prima foglia ($a$ in figura), di lunghezza maggiore $2 l$ e dotata in genere di occhielli alle estremità per l'ancoraggio al telaio, è detta #strong[foglia madre].
+- Le foglie non sono incollate tra loro, bensì tenute insieme da fasce o cavallotti (ad esempio attacchi a U o fascette di serraggio) e da un perno di unione centrale; ciò consente alle foglie di flettersi e scorrere moderatamente le une rispetto alle altre.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: disegno tecnico di molla a balestra montata (sezione longitudinale del pacco di foglie con occhielli d'estremità, carico centrale $F$, freccia $f$, fascette di collegamento e sezione trasversale $A-A$ del cavallotto, oltre ai dettagli $a, b, c$ delle forme terminali delle foglie); affiancato a schema applicativo in sospensione automobilistica con asse, ruota, ammortizzatore, attacco a U e stati "A riposo" e "Sotto carico", più fotografie reali dell'esploso delle foglie]])
+
+Durante la flessione si verifica #strong[strisciamento tra lamina e lamina]; per ridurre le forze di attrito e la conseguente usura si fa uso di #strong[lubrificante a base di grafite].
+
+==== Equivalenza tra molla a balestra e molla trapezia
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Poiché per una molla a pianta triangolare la linea elastica appartiene a un arco di circonferenza, è ragionevole assumere che tutte le foglie della balestra, obbligate a mantenersi a contatto dai dispositivi di serraggio e quindi ad avere all'incirca la stessa linea elastica, lavorino in modo analogo a quando erano affiancate nella molla a pianta trapezia originale.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di confronto tra la mezza molla trapezia di lunghezza $L$, spessore $h$, base maggiore $b_0$ e base minore $b_0'$ caricata all'estremo da $F$, e la corrispondente molla a balestra vista lateralmente e in pianta di larghezza $b_0/n$ con momento all'incastro $M$ e forza $F$]])
+
+Nell'ipotesi di attrito nullo tra le foglie e di carico e momento all'incastro ripartiti equamente tra le $n$ foglie, il momento totale all'incastro vale:
+
+$ M = F dot.op L $
+
+Su ciascuna delle $n$ foglie all'incastro agisce quindi un momento:
+
+$ M_("foglia") = frac(M, n) $
+
+Poiché la larghezza complessiva $b_0$ è stata suddivisa in $n$ foglie uguali di larghezza $b_0 / n$, la tensione di ogni foglia nella sezione di incastro risulta:
+
+$ sigma = frac(M_("foglia"), W_("foglia")) = frac((M / n) dot.op 6, (b_0 / n) dot.op h^2) = frac(F dot.op L dot.op 6, b_0 dot.op h^2) $
+
+La tensione di ogni foglia all'incastro è pertanto pari alla tensione della molla trapezia equivalente all'incastro.
+
+In realtà sussistono due sostanziali differenze tra la molla a balestra reale e la molla trapezia equivalente:
+1. Nella balestra esiste #strong[attrito] dovuto allo scorrimento relativo tra le lamine (compresse tra loro dalle fascette di collegamento), che dissipa energia.
+2. L'inflessione delle lamine della balestra #strong[non avviene nello stesso piano] dell'originale molla trapezia (ciascuna foglia possiede un proprio asse neutro distinto).
+
+Nonostante queste differenze, l'esperienza assicura una buona attendibilità dei risultati ottenuti con la schematizzazione a molla trapezia. In prima approssimazione, il calcolo della freccia e della tensione massima si effettua quindi utilizzando le formule della molla a pianta trapezia equivalente:
+
+$ alpha = frac(3, 2 + b_0' / b_0), quad frac(b_0', b_0) = frac(1, n) arrow.r b_0 = n b_0', quad I = frac(b_0 h^3, 12) $
+
+$ f = alpha frac(F l^3, 3 E I), quad sigma_(m a x) = frac(F l, b_0 h^2 / 6), quad k = frac(3 E I, alpha l^3) $
+
+dove $n$ indica il numero di foglie. L'errore commesso con questa schematizzazione è in realtà #strong[a favore di sicurezza], poiché il calcolo approssimato porta alla sovrastima sia della freccia (utile per verificare eventuali interferenze con il telaio o il terreno) sia della tensione massima nel materiale.
+
+==== Molla a balestra a profilo parabolico
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Come visto per il solido di uniforme resistenza, per ottenere $sigma_(m a x) = "cost"$ in ogni sezione si può scegliere tra variare la larghezza in pianta (molla a pianta triangolare, con $b = b_0 dot.op frac(x, l)$) oppure variare lo spessore mantenendo costante la larghezza $b$ (#strong[molla a profilo parabolico]):
+
+$ h = sqrt(frac(x, L)) dot.op h_0 $
+
+dove $h_0$ è lo spessore all'incastro (sezione centrale della balestra) e $L$ è la semilunghezza.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: confronto tridimensionale tra la molla a pianta triangolare (larghezza variabile $b(x) = b_0 dot.op x / l$, spessore costante $h$, forza $F$) e la molla a profilo parabolico (larghezza costante $b$, spessore variabile $h(x) = sqrt(x / L) dot.op h_0$, lunghezza $L$, forza $F$); affiancato alle viste di una molla a balestra a profilo parabolico monolama e di una molla a balestra a profilo parabolico bilama]])
+
+La soluzione a profilo parabolico permette di avere in ogni sezione trasversale la stessa tensione massima di flessione presente nella sezione centrale di incastro, ottimizzando l'impiego del materiale lungo la linea d'asse. Pur richiedendo processi tecnologici più complessi e precisi rispetto alla sagomatura in pianta per ottenere la variazione quadratica di spessore, trova effettiva applicazione pratica sia in configurazione #strong[monolama] (spessore decrescente dal centro verso gli occhielli) sia in configurazione #strong[bilama]. Oggi tale geometria risulta particolarmente agevole da realizzare mediante l'impiego di #strong[materiali compositi], nei quali il processo di stratificazione consente naturalmente di variare lo spessore secondo il profilo parabolico desiderato.
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Un'applicazione automobilistica reale di molle a balestra a profilo parabolico bilama riguarda l'assale posteriore del veicolo #strong[Ducato medio], sul quale il carico complessivo $C = 2 P$ si ripartisce equamente sulle due balestre ($P / 2 = F$ per ciascuna semi-balestra), con i seguenti valori di esercizio:],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: vista prospettica dell'autotelaio posteriore di un veicolo Ducato medio con indicazione dei carichi sull'assale ($C = 2 P$, $P$ per lato, $P / 2 = F$) e dettaglio della molla a balestra bilama a profilo parabolico]])
+
+#table(
+  columns: 4,
+  align: left,
+  [#strong[Carico sull'asse [kg]]], [#strong[Carico su ogni balestra [kg]]], [#strong[Freccia [mm]]], [#strong[Tipo di carico]],
+  [100], [50], [9], [A vuoto],
+  [2094], [1047], [178], [Dinamico],
+  [2906], [1453], [247], [Statico massimo],
+)
+
+=== Esercizi
+Nessun esercizio presente nelle fonti fornite.
