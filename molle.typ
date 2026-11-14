@@ -3420,15 +3420,12 @@ Si osserva che al limite per $b_0' arrow.r 0$ (ritornando alla pianta triangolar
   align: (left + top, center + bottom),[Per realizzare una molla completa avente punti di ancoraggio alle due estremità e punto di applicazione del carico nella sezione centrale (che per simmetria si comporta come un incastro per ciascuna delle due metà), occorrerebbe unire due molle a pianta trapezia per la base maggiore. Una foglia unica a doppio trapezio risulterebbe però di ingombro trasversale eccessivo per poter essere installata sotto il telaio di un veicolo. La #strong[molla a balestra] risolve tale problema riducendo l'ingombro trasversale: essa equivale all'unione di due molle a pianta trapezia unite per la base maggiore, ma sezionate longitudinalmente in listelle sovrapposte le une alle altre invece che affiancate sullo stesso piano.],[#image("images/fig_molle_4495.png", width: 70%)
 ])
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Le caratteristiche geometriche e costruttive principali della molla a balestra sono:
+Le caratteristiche geometriche e costruttive principali della molla a balestra sono:
 - Equivale all'unione di 2 molle a pianta trapezia unite per la base maggiore.
 - È formata da #strong[foglie] sovrapposte di diversa lunghezza e uguale larghezza $b_0'$.
 - Ogni foglia è l'unione di due mezze foglie longitudinali opposte rispetto alla mezzeria (tranne la lamina centrale).
 - La prima foglia, di lunghezza maggiore $2 l$ e dotata in genere di occhielli alle estremità per l'ancoraggio al telaio, è detta #strong[foglia madre].
-- Le foglie non sono incollate tra loro, bensì tenute insieme da fasce o cavallotti (ad esempio attacchi a U o fascette di serraggio) e da un perno di unione centrale; ciò consente alle foglie di flettersi e scorrere moderatamente le une rispetto alle altre.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: disegno tecnico di molla a balestra montata (sezione longitudinale del pacco di foglie con occhielli d'estremità, carico centrale $F$, freccia $f$, fascette di collegamento e sezione trasversale $A-A$ del cavallotto, oltre ai dettagli $a, b, c$ delle forme terminali delle foglie); affiancato a schema applicativo in sospensione automobilistica con asse, ruota, ammortizzatore, attacco a U e stati "A riposo" e "Sotto carico", più fotografie reali dell'esploso delle foglie]])
+- Le foglie non sono incollate tra loro, bensì tenute insieme da fasce o cavallotti (ad esempio attacchi a U o fascette di serraggio) e da un perno di unione centrale; ciò consente alle foglie di flettersi e scorrere moderatamente le une rispetto alle altre.
 
 Durante la flessione si verifica #strong[strisciamento tra lamina e lamina]; per ridurre le forze di attrito e la conseguente usura si fa uso di #strong[lubrificante a base di grafite].
 
