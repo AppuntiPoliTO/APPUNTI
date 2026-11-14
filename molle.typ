@@ -3164,9 +3164,55 @@ La seconda alternativa è solitamente preferita dal punto di vista tecnologico p
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Adottando una pianta triangolare di larghezza $b_0$ all'incastro, larghezza nulla al punto di applicazione della forza $F$ e spessore costante $h$, la larghezza locale $b$ varia linearmente con l'ascissa $x$ misurata dalla punta:
 
-$ b = b_0 frac(x, l) $],[
+$ b = b_0 frac(x, l) $
+Sostituendo l'espressione della larghezza nella formula della tensione massima si verifica che la tensione rimane rigorosamente costante in ogni sezione lungo tutta la lunghezza della molla:],[#canvas(length: 1cm, {
+  import draw: *
+
+  // --- 1. PARETE D'INCASTRO ---
+  line((3.00, 4.01), (3.00, 7.42), (0.00, 5.55), (0.00, 0.00), (3.00, 1.87), (3.00, 2.62), stroke: 1.1pt)
+
+  // --- 2. MENSOLA TRIANGOLARE ---
+  // Faccia superiore A - B - C
+  line((0.61, 4.18), (2.04, 5.08), (4.96, 1.84), close: true, stroke: 1.1pt)
+  // Faccia laterale anteriore A - A' - C' - C
+  line((0.61, 4.18), (0.61, 3.76), (4.96, 1.42), (4.96, 1.84), stroke: 1.1pt)
+
+  // Punto di applicazione della forza in C
+  circle((4.96, 1.84), radius: 0.07, fill: black, stroke: none)
+
+  // --- 3. FORZA CONCENTRATA F ---
+  line((4.96, 3.60), (4.96, 2.15), stroke: 1.2pt)
+  line((4.83, 2.25), (5.09, 2.25), (4.96, 1.91), close: true, fill: black, stroke: none)
+  content((4.80, 3.50), [$F$], anchor: "east")
+
+  // --- 4. QUOTE E RIFERIMENTI ---
+  // Quota b_0 (larghezza all'incastro)
+  line((0.57, 4.20), (0.20, 4.39), stroke: 0.5pt)
+  line((2.00, 5.10), (1.60, 5.31), stroke: 0.5pt)
+  line((0.26, 4.36), (1.66, 5.26), mark: (start: ">", end: ">"), stroke: 0.5pt)
+  content((0.90, 5.20), [$b_0$], anchor: "east")
+
+  // Quota h (spessore della mensola)
+  line((2.16, 4.08), (2.16, 3.35), mark: (end: ">"), stroke: 0.5pt)
+  line((2.16, 2.18), (2.16, 2.93), mark: (end: ">"), stroke: 0.5pt)
+  content((1.98, 2.48), [$h$], anchor: "east")
+
+  // Quota l (lunghezza della mensola)
+  line((0.61, 3.64), (0.61, 2.45), stroke: 0.5pt)
+  line((4.96, 1.28), (4.96, 0.05), stroke: 0.5pt)
+  line((0.61, 2.58), (4.96, 0.24), mark: (start: ">", end: ">"), stroke: 0.5pt)
+  content((2.65, 1.05), [$l$], anchor: "north")
+
+  // Quota x e differenziale dx (dal vertice C verso la base)
+  line((4.96, 1.84), (3.65, 2.77), mark: (end: ">"), stroke: 0.5pt)
+  line((3.65, 2.77), (3.30, 3.02), mark: (start: ">", end: ">"), stroke: 0.5pt)
+  // Trattino obliquo di separazione tra il tratto x e il tratto dx
+  line((3.60, 2.96), (3.77, 2.56), stroke: 0.5pt)
+  content((4.40, 2.50), [$x$], anchor: "west")
+  content((3.22, 3.16), [$dif x$], anchor: "east")
+})
 ])
-Sostituendo l'espressione della larghezza nella formula della tensione massima si verifica che la tensione rimane rigorosamente costante in ogni sezione lungo tutta la lunghezza della molla:
+
 
 $ sigma = frac(F x, b h^2 / 6) = frac(F x, b_0 frac(x, l) h^2 / 6) = frac(F l, b_0 h^2 / 6) = "cost" = sigma_(m a x) $
 
