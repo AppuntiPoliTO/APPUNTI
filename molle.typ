@@ -113,7 +113,154 @@ $ W = frac(F f, 2) $ A seconda della legge di variazione della rigidezza, la car
   columns: (1.2fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[La forma di molla più vicina alla teoria classica della trave, utilizzata come paradigma per lo studio strutturale di molle più complesse (come quelle ad elica cilindrica), è la barra di torsione. Essa è costituita da un cilindro solido (una trave a sezione circolare) incastrato a un'estremità e libero all'altra. All'estremità libera è tipicamente collegato un braccio rigido (piattello o leva) a cui viene applicata una forza $F$. Il comportamento della barra è dominato dal momento torcente $M_t = F dot.op r$, dove $r$ è il braccio rigido. La tensione tangenziale massima $tau_(m a x)$ si calcola dividendo il momento torcente per il modulo di resistenza a torsione $w_t$:],[
-#image("images/barra di torsione.png",width:90%)
+#canvas(length: 1cm, {
+  import draw: *
+
+  // --- 1. SUPPORTO ANTERIORE (CHE ELIMINA LA FLESSIONE) ---
+  // Facce in sezione (riempimento grigio chiaro + tratteggio di sezione)
+  line((-0.14, 0.26), (0.16, 0.43), (0.16, 0.73), (-0.14, 0.56), close: true, fill: luma(220), stroke: 0.8pt)
+  line((-0.14, -0.56), (0.16, -0.39), (0.16, -0.17), (-0.14, -0.34), close: true, fill: luma(220), stroke: 0.8pt)
+  line((0.28, 0.80), (0.56, 0.96), (0.56, 0.66), (0.42, 0.58), (0.42, 0.72), (0.28, 0.64), close: true, fill: luma(220), stroke: 0.8pt)
+
+  // Tratteggio sezione superiore anteriore
+  line((-0.14, 0.36), (-0.04, 0.52), stroke: 0.5pt)
+  line((-0.14, 0.46), (0.04, 0.66), stroke: 0.5pt)
+  line((-0.06, 0.31), (0.12, 0.71), stroke: 0.5pt)
+  line((0.04, 0.36), (0.16, 0.63), stroke: 0.5pt)
+  line((0.11, 0.40), (0.16, 0.51), stroke: 0.5pt)
+
+  // Tratteggio sezione inferiore anteriore
+  line((-0.14, -0.46), (-0.04, -0.28), stroke: 0.5pt)
+  line((-0.08, -0.52), (0.04, -0.24), stroke: 0.5pt)
+  line((0.00, -0.48), (0.12, -0.20), stroke: 0.5pt)
+  line((0.08, -0.43), (0.16, -0.25), stroke: 0.5pt)
+
+  // Tratteggio sezione posteriore supporto
+  line((0.28, 0.70), (0.36, 0.84), stroke: 0.5pt)
+  line((0.35, 0.68), (0.44, 0.89), stroke: 0.5pt)
+  line((0.42, 0.68), (0.52, 0.93), stroke: 0.5pt)
+  line((0.47, 0.61), (0.56, 0.83), stroke: 0.5pt)
+
+  // Contorno esterno del supporto (con bordo sinistro spezzato)
+  line((-0.14, 0.56), (-0.42, 0.72), (-0.46, 0.45), (-0.43, 0.15), (-0.47, -0.15), (-0.42, -0.40), (-0.14, -0.56), stroke: 0.9pt)
+  line((-0.42, 0.72), (0.28, 1.12), (0.56, 0.96), stroke: 0.9pt)
+  line((-0.14, 0.56), (0.28, 0.80), stroke: 0.8pt)
+  line((0.16, 0.73), (0.28, 0.80), stroke: 0.8pt)
+  line((0.16, 0.43), (0.28, 0.50), (0.28, 0.64), stroke: 0.8pt)
+  line((-0.14, -0.56), (0.16, -0.39), stroke: 0.9pt)
+
+  // Cava semicilindrica del supporto
+  arc((-0.14, -0.04), start: 90deg, stop: 270deg, radius: (0.18, 0.30), anchor: "origin", stroke: 0.9pt)
+
+  // --- 2. INCASTRO (BLOCCO POSTERIORE) ---
+  // Faccia anteriore del blocco d'incastro
+  line((2.58, 1.92), (2.58, 2.55), (2.92, 2.75), (3.18, 2.60), (3.35, 2.35), (3.55, 2.22), (3.55, 1.18), (3.35, 1.06), (3.12, 1.22), (2.90, 1.28), (2.78, 1.44), stroke: 0.9pt)
+  // Fascia laterale sezionata dell'incastro
+  line((3.55, 2.22), (3.73, 2.32), (3.73, 1.28), (3.55, 1.18), close: true, fill: luma(220), stroke: 0.8pt)
+  line((3.35, 2.35), (3.53, 2.45), (3.73, 2.32), stroke: 0.8pt)
+  line((2.92, 2.75), (3.10, 2.85), (3.36, 2.70), (3.53, 2.45), stroke: 0.8pt)
+  // Tratteggio fascia incastro
+  line((3.55, 2.10), (3.73, 2.22), stroke: 0.5pt)
+  line((3.55, 1.98), (3.73, 2.10), stroke: 0.5pt)
+  line((3.55, 1.86), (3.73, 1.98), stroke: 0.5pt)
+  line((3.55, 1.74), (3.73, 1.86), stroke: 0.5pt)
+  line((3.55, 1.62), (3.73, 1.74), stroke: 0.5pt)
+  line((3.55, 1.50), (3.73, 1.62), stroke: 0.5pt)
+  line((3.55, 1.38), (3.73, 1.50), stroke: 0.5pt)
+  line((3.55, 1.26), (3.73, 1.38), stroke: 0.5pt)
+
+  // --- 3. ALBERO CILINDRICO ---
+  // Estremita' anteriore (in O = (0,0) fino al braccio in s = 0.60)
+  circle((0, 0), radius: (0.14, 0.22), fill: white, stroke: 0.9pt)
+  line((0, 0.22), (0.48, 0.50), stroke: 0.9pt)
+  line((0, -0.22), (0.48, 0.06), stroke: 0.9pt)
+  arc((0.48, 0.28), start: -90deg, stop: 90deg, radius: (0.14, 0.22), anchor: "origin", stroke: 0.9pt)
+
+  // Tratto principale dell'albero (dal retro del braccio fino all'incastro)
+  line((0.72, 0.64), (3.12, 2.02), stroke: 0.9pt)
+  line((0.92, 0.25), (3.12, 1.58), stroke: 0.9pt)
+  arc((3.12, 1.80), start: -90deg, stop: 90deg, radius: (0.14, 0.22), anchor: "origin", stroke: 0.9pt)
+
+  // --- 4. BRACCIO RIGIDO ---
+  // Configurazione deformata (tratteggiata)
+  line((0.48, -0.22), (3.27, -2.35), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((3.27, -2.35), (3.35, -2.31), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((3.35, -2.31), (3.45, -1.25), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((3.27, -2.35), (3.37, -1.29), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((0.95, 0.35), (3.37, -1.29), stroke: (dash: "dashed", thickness: 0.7pt))
+
+  // Configurazione indeformata (continua)
+  // Bordo inferiore, faccia anteriore, spessore superiore e bordo di fondo
+  line((0.48, 0.06), (0.48, -0.22), (3.37, -2.02), (3.37, -1.16), (0.42, 0.72), (0.28, 0.64), stroke: 0.9pt)
+  line((0.42, 0.72), (0.50, 0.76), (3.45, -1.12), (3.45, -1.98), (3.37, -2.02), stroke: 0.9pt)
+  line((3.37, -1.16), (3.45, -1.12), stroke: 0.9pt)
+
+  // --- 5. LINEE D'ASSE E DI RIFERIMENTO (TRATTO-PUNTO / SOTTILI) ---
+  // Asse dell'albero
+  line((-0.75, -0.43), (3.42, 1.97), stroke: (dash: "loosely-dashed", thickness: 0.5pt))
+  line((-0.75, -0.43), (3.42, 1.97), stroke: 0.4pt)
+  // Asse verticale all'incastro
+  line((3.12, 1.50), (3.12, 2.15), stroke: (dash: "dashed", thickness: 0.5pt))
+  // Asse del braccio indeformato (prolungato per la quota f)
+  line((0.48, 0.25), (3.98, -2.02), stroke: (dash: "dashed", thickness: 0.5pt))
+  // Asse del braccio ruotato (prolungato per la quota f)
+  line((0.48, 0.25), (3.98, -2.37), stroke: (dash: "dashed", thickness: 0.5pt))
+
+  // --- 6. QUOTE E LINEE DI ESTENSIONE ---
+  // Quota r (lunghezza braccio rigido)
+  line((-0.14, 0.00), (-0.14, 1.85), stroke: 0.5pt)
+  line((-0.14, 1.68), (3.41, -0.62), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  content((1.75, 0.62), [$r$], anchor: "south-west")
+
+  // Quota l (lunghezza albero)
+  line((3.12, 1.80), (6.05, -0.10), stroke: 0.4pt)
+  line((3.41, -1.60), (5.92, -0.02), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  content((5.10, -0.45), [$l$], anchor: "south-east")
+
+  // Quota d (diametro albero)
+  line((1.95, 1.85), (1.95, 1.35), mark: (end: ">"), stroke: 0.6pt)
+  line((1.95, 0.40), (1.95, 0.90), mark: (end: ">"), stroke: 0.6pt)
+  line((1.95, 0.90), (1.95, 1.35), stroke: 0.5pt)
+  content((1.82, 1.62), [$d$], anchor: "east")
+
+  // Quota angolare theta
+  arc((0.48, 0.25), start: -39deg, stop: -20deg, radius: 0.95, anchor: "origin", stroke: 0.5pt)
+  line((1.31, -0.16), (1.25, -0.25), mark: (end: ">"), stroke: 0.5pt)
+  line((1.16, -0.46), (1.22, -0.35), mark: (end: ">"), stroke: 0.5pt)
+  content((1.35, -0.28), [$theta$], anchor: "west")
+
+  // Quota f (abbassamento verticale)
+  line((3.90, -1.55), (3.90, -1.97), mark: (end: ">"), stroke: 0.5pt)
+  line((3.90, -2.75), (3.90, -2.32), mark: (end: ">"), stroke: 0.5pt)
+  line((3.90, -1.97), (3.90, -2.32), stroke: 0.4pt)
+  content((4.02, -2.18), [$f$], anchor: "west")
+
+  // --- 7. VETTORI (FORZA F E MOMENTO TORCENTE M_t) ---
+  // Forza F
+  line((3.41, 0.12), (3.41, -1.14), mark: (end: ">", scale: 1.4), stroke: 1.0pt)
+  content((3.52, -0.35), [$F$], anchor: "west")
+
+  // Momento torcente M_t
+  arc((-0.88, -0.32), start: -55deg, stop: 155deg, radius: (0.24, 0.36), anchor: "origin", stroke: 1.0pt)
+  line((-0.68, -0.50), (-0.82, -0.68), mark: (end: ">", scale: 1.3), stroke: 1.0pt)
+  content((-0.25, -1.05), [$M_t$], anchor: "north")
+
+  // --- 8. ETICHETTE TESTUALI E RICHIAMI ---
+  // "supporto che elimina la flessione"
+  content((-0.65, 2.35), [supporto che], anchor: "west")
+  content((-0.65, 2.00), [elimina la], anchor: "west")
+  content((-0.65, 1.65), [flessione], anchor: "west")
+  line((-0.45, 1.50), (-0.92, 0.72), (-0.45, 0.05), stroke: 0.5pt)
+
+  // "incastro"
+  content((3.45, 2.35), [incastro], anchor: "west")
+  line((3.40, 2.35), (2.82, 2.08), stroke: 0.5pt)
+
+  // "braccio rigido"
+  content((0.95, -1.52), [braccio], anchor: "north")
+  content((0.95, -1.85), [rigido], anchor: "north")
+  line((1.15, -1.42), (1.48, -0.82), stroke: 0.5pt)
+})
 ])
 $ tau_(m a x) = frac(M_t, w_t) = frac(F r, pi d^3 / 16) $
 
