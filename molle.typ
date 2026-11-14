@@ -1196,7 +1196,8 @@ $ F = k f = (k_1 + k_2) f arrow.r.double k = k_1 + k_2 $
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[In generale, per $N$ molle in parallelo:
 
-$ k = sum_(i=1)^N k_i $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di due molle concentriche in parallelo (molla 1 esterna e molla 2 interna) compresse tra una base fissa e un piattello superiore su cui agisce la forza $F$ con freccia $f$]])
+$ k = sum_(i=1)^N k_i $],[#image("images/fig_molle_9014.png", width: 75%)
+])
 
 Nel collegamento #strong[in serie] (molle poste in sequenza lungo l'asse con un piattello intermedio di interfaccia), le molle sopportano lo stesso carico, mentre la freccia totale è la somma delle frecce parziali:
 
