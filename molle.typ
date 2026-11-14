@@ -1185,7 +1185,7 @@ Un esempio classico di applicazione è la sospensione automobilistica con molla 
 
 
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1.1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nelle applicazioni in cui più molle lavorano simultaneamente, la rigidezza equivalente dipende dal modo in cui sono collegate.
 
@@ -1214,7 +1214,7 @@ Introducendo la #strong[deformabilità] $delta = frac(1, k)$, si ottiene:
 $ frac(1, k) = frac(1, k_1) + frac(1, k_2) = delta $
  In generale, per $N$ molle in serie:
 
-$ frac(1, k) = sum_(i=1)^N frac(1, k_i), quad quad delta = sum_(i=1)^N delta_i $],[#image("images/fig_molle_3552.png", width: 60%)
+$ frac(1, k) = sum_(i=1)^N frac(1, k_i), quad quad delta = sum_(i=1)^N delta_i $],[#image("images/fig_molle_3552.png", width: 65%)
 ])
 
 Sussiste un'analogia elettromeccanica con la resistenza elettrica $R$, associando alla resistenza elettrica non la rigidezza $k$ bensì la deformabilità $delta = 1/k$:
