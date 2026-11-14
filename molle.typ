@@ -2841,16 +2841,17 @@ Dal punto di vista meccanico, pur presentando spesso in configurazione montata u
 - Si utilizzano quando l'elemento elastico deve operare in spazi limitati.
 - Gli schemi elementari di studio sono basati sulle lamine incastrate.
 - A seconda della geometria adottata per la pianta (rettangolare, triangolare, trapezia), presentano diversi #strong[fattori di utilizzazione].
-
+#pagebreak()
 === Fattore di utilizzazione
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [
-    Testo descrittivo affiancato
+    #image("images/fig_molle_3421.png", width: 69%)
   ],
-  [#image("images/fig_molle_3421.png", width: 100%)]
+  [#image("images/fig_molle_4818.png", width: 75%)]
+
 )
 
 Per valutare la capacità di conversione dell'energia meccanica applicata in energia di deformazione elastica si introduce il #strong[fattore di utilizzazione] della molla, definito come il rapporto tra l'energia immagazzinabile dalla molla e l'energia immagazzinabile da una barra in trazione dello stesso volume soggetta alla medesima tensione massima che si verifica nella molla. Esso costituisce un indice che esprime il livello di utilizzo del materiale.
