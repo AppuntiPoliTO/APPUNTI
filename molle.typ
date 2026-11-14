@@ -2850,7 +2850,7 @@ Dal punto di vista meccanico, pur presentando spesso in configurazione montata u
   [
     #image("images/fig_molle_3421.png", width: 69%)
   ],
-  [#image("images/fig_molle_4818.png", width: 75%)]
+  [#move(image("images/fig_molle_4818.png", width: 75%),)]
 
 )
 
