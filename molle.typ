@@ -2956,7 +2956,7 @@ Dal punto di vista meccanico, pur presentando spesso in configurazione montata u
 #grid(
   columns: 2,
   column-gutter: 0.6cm,
-  align: center + horizon,
+  align: right + horizon,
   canvas(length: 0.95cm, {
     import draw: *
 
