@@ -3184,9 +3184,9 @@ $ k = frac(2 E I, l^3), quad I = frac(b_0 h^3, 12) $
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Recuperando la perdita dovuta alla variazione del momento flettente lungo la linea d'asse, la molla utilizza meglio il materiale e il fattore di utilizzazione ritorna pari a:
+  align: (left + horizon, center + top),[Recuperando la perdita dovuta alla variazione del momento flettente lungo la linea d'asse, la molla utilizza meglio il materiale e il fattore di utilizzazione ritorna pari a:
 
-$ U = frac(1, 3) $ Dal punto di vista pratico e costruttivo, tuttavia, un'estremità appuntita non permette un'agevole applicazione del carico né un comodo collegamento con gli altri organi della macchina. Lo stesso problema emerge ad esempio nei recuperatori di energia piezoelettrici (lamine in alluminio incastrate rivestite con strati piezoceramici dotati di elettrodi per convertire l'energia delle vibrazioni in energia elettrica), dove una punta stretta impedisce di sfruttare fino in fondo la superficie utile del materiale piezoceramico. Per questo motivo si adotta una soluzione di compromesso: la #strong[molla con pianta trapezia].
+$ U = frac(1, 3) $ Dal punto di vista pratico e costruttivo, tuttavia, un'estremità appuntita non permette un'agevole applicazione del carico né un comodo collegamento con gli altri organi della macchina.
 ],[#canvas(length: 1cm, {
   import draw: *
 
@@ -3290,7 +3290,7 @@ $ U = frac(1, 3) $ Dal punto di vista pratico e costruttivo, tuttavia, un'estrem
   line((3.84, -3.68), (3.84, -4.48), stroke: 0.5pt)
   content((4.02, -4.10), [$b_0$], anchor: "west")
 })])
-
+Lo stesso problema emerge ad esempio nei recuperatori di energia piezoelettrici (lamine in alluminio incastrate rivestite con strati piezoceramici dotati di elettrodi per convertire l'energia delle vibrazioni in energia elettrica), dove una punta stretta impedisce di sfruttare fino in fondo la superficie utile del materiale piezoceramico. Per questo motivo si adotta una soluzione di compromesso: la #strong[molla con pianta trapezia].
 
 
 ==== Molla a lamina con pianta trapezia
