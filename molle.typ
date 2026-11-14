@@ -2953,14 +2953,14 @@ Dal punto di vista meccanico, pur presentando spesso in configurazione montata u
 - A seconda della geometria adottata per la pianta (rettangolare, triangolare, trapezia), presentano diversi #strong[fattori di utilizzazione].
 #pagebreak()
 === Fattore di utilizzazione
-#grid(
+#align(center, grid(
   columns: 2,
   column-gutter: 0.6cm,
-  align: right + horizon,
-  canvas(length: 0.95cm, {
+  align: center + horizon,
+  canvas(length: 0.9cm, {
     import draw: *
 
-    rect((-1.15, -0.75), (5.45, 2.55), stroke: none)
+    rect((-1.15, -0.75), (5.65, 2.55), stroke: none)
 
     line((2.05, 0.1), (2.95, 0.1), stroke: (thickness: 0.5pt, paint: luma(70)))
     line((2.05, 0.2), (2.95, 0.2), stroke: (thickness: 0.5pt, paint: luma(70)))
@@ -2998,10 +2998,10 @@ Dal punto di vista meccanico, pur presentando spesso in configurazione montata u
     content((2.25, -0.44), [$l$], anchor: "south")
     content((2.50, 1.96), [$overline(sigma)$], anchor: "south")
   }),
-  canvas(length: 0.95cm, {
+  canvas(length: 0.9cm, {
     import draw: *
 
-    rect((-1.15, -0.75), (5.45, 2.55), stroke: none)
+    rect((-1.15, -0.75), (5.65, 2.55), stroke: none)
 
     line((2.25, 1.0), (2.35, 1.0), stroke: (thickness: 0.5pt, paint: luma(70)))
     line((2.25, 1.1), (2.45, 1.1), stroke: (thickness: 0.5pt, paint: luma(70)))
@@ -3037,7 +3037,7 @@ Dal punto di vista meccanico, pur presentando spesso in configurazione montata u
     content((-0.55, 2.10), [$M$], anchor: "south")
     content((5.05, 2.10), [$M$], anchor: "south")
   })
-)
+))
 
 Per valutare la capacità di conversione dell'energia meccanica applicata in energia di deformazione elastica si introduce il #strong[fattore di utilizzazione] della molla, definito come il rapporto tra l'energia immagazzinabile dalla molla e l'energia immagazzinabile da una barra in trazione dello stesso volume soggetta alla medesima tensione massima che si verifica nella molla. Esso costituisce un indice che esprime il livello di utilizzo del materiale.
 
