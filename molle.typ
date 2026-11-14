@@ -3089,7 +3089,8 @@ La seconda alternativa è solitamente preferita dal punto di vista tecnologico p
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Adottando una pianta triangolare di larghezza $b_0$ all'incastro, larghezza nulla al punto di applicazione della forza $F$ e spessore costante $h$, la larghezza locale $b$ varia linearmente con l'ascissa $x$ misurata dalla punta:
 
-$ b = b_0 frac(x, l) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: vista tridimensionale di una molla a lamina incastrata a pianta triangolare (larghezza alla base $b_0$, spessore $h$, lunghezza $l$), con forza verticale $F$ applicata alla punta, ascissa $x$ misurata dalla punta ed elemento infinitesimo $d x$]])
+$ b = b_0 frac(x, l) $],[#image("images/fig_molle_5833.png", width: 75%)
+])
 
 Sostituendo l'espressione della larghezza nella formula della tensione massima si verifica che la tensione rimane rigorosamente costante in ogni sezione lungo tutta la lunghezza della molla:
 
