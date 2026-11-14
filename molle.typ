@@ -3412,12 +3412,13 @@ $ U = frac(2 alpha b_0, 9(b_0 + b_0')) $
 Si osserva che al limite per $b_0' arrow.r 0$ (ritornando alla pianta triangolare) $alpha arrow.r 3/2$ e il fattore di utilizzazione tende a $1/3$; viceversa, al crescere di $b_0'$ verso $b_0$ ci si avvicina alla pianta rettangolare e il fattore di utilizzazione scende verso $1/9$.
 
 === Molla a balestra
-Per realizzare una molla completa avente punti di ancoraggio alle due estremità e punto di applicazione del carico nella sezione centrale (che per simmetria si comporta come un incastro per ciascuna delle due metà), occorrerebbe unire due molle a pianta trapezia per la base maggiore. Una foglia unica a doppio trapezio risulterebbe però di ingombro trasversale eccessivo per poter essere installata sotto il telaio di un veicolo.
+
 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[La #strong[molla a balestra] risolve tale problema riducendo l'ingombro trasversale: essa equivale all'unione di due molle a pianta trapezia unite per la base maggiore, ma sezionate longitudinalmente in listelle sovrapposte le une alle altre invece che affiancate sullo stesso piano.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di generazione della molla a balestra dalla doppia molla trapezia di lunghezza totale $2 l$, base centrale $b_0$, spessore $h$ ed estremità $b_0'$: suddivisione longitudinale in strisce simmetriche ($a$, $b/2$, $c/2$, $d/2$, $e/2$, $f/2$), ricomposizione delle coppie di mezze foglie in foglie intere di uguale larghezza $b_0'$ ($a, b, c, d, e, f$) e sovrapposizione a pacco con la foglia $a$ (foglia madre) in cima]])
+  align: (left + horizon, center + horizon),[Per realizzare una molla completa avente punti di ancoraggio alle due estremità e punto di applicazione del carico nella sezione centrale (che per simmetria si comporta come un incastro per ciascuna delle due metà), occorrerebbe unire due molle a pianta trapezia per la base maggiore. Una foglia unica a doppio trapezio risulterebbe però di ingombro trasversale eccessivo per poter essere installata sotto il telaio di un veicolo. La #strong[molla a balestra] risolve tale problema riducendo l'ingombro trasversale: essa equivale all'unione di due molle a pianta trapezia unite per la base maggiore, ma sezionate longitudinalmente in listelle sovrapposte le une alle altre invece che affiancate sullo stesso piano.],[#image("images/fig_molle_4495.png", width: 75%)
+])
 
 #grid(
   columns: (1fr, 1fr),
