@@ -1199,7 +1199,7 @@ $ F = k f = (k_1 + k_2) f arrow.r.double k = k_1 + k_2 $ In generale, per $N$ mo
 $ k = sum_(i=1)^N k_i $],[#image("images/fig_molle_9014.png", width: 60%)
 ])
 
-
+#v
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
