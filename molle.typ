@@ -3394,7 +3394,7 @@ La rastremazione della trave è caratterizzata dal fattore adimensionale $alpha$
 )
 
 
-$ alpha = frac(3, 2 + b_0' / b_0) = frac(3 b_0, 2 b_0 + b_0') $
+
 
 La tensione nella generica sezione, la tensione massima all'incastro, la freccia $f$ e la rigidezza $k$ risultano:
 
