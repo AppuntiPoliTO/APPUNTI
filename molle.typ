@@ -147,8 +147,9 @@ $ G = frac(E, 2(1+nu)) $
   bezier((3.151, 2.142), (3.291, 1.900), (3.085, 2.060), (3.185, 1.940), fill: black.transparentize(84%), stroke: none)
   bezier((3.151, 2.142), (3.291, 1.900), (3.327, 2.160), (3.397, 1.990), fill: black.transparentize(84%), stroke: none)
 
-  // Assi geometrici (croce sulla faccia anteriore e asse longitudinale)
+  // Assi geometrici (croce anteriore s = 0, asse longitudinale e asse trasversale s = 7.20)
   line((0.460, -0.797), (-0.460, 0.797), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((6.625, 2.925), (5.845, 4.275), stroke: (dash: "dash-dotted", thickness: 0.5pt))
   line((-0.476, -0.275), (2.122, 1.225), stroke: (dash: "dash-dotted", thickness: 0.5pt))
   line((2.468, 1.425), (2.944, 1.700), stroke: (dash: "dash-dotted", thickness: 0.5pt))
   line((3.291, 1.900), (6.712, 3.875), stroke: (dash: "dash-dotted", thickness: 0.5pt))
@@ -197,6 +198,12 @@ $ G = frac(E, 2(1+nu)) $
   line((3.431, 1.658), (4.643, 2.358), stroke: 1pt)
   bezier((4.363, 2.842), (4.784, 3.513), (4.640, 3.002), (4.720, 3.220), stroke: 1pt)
   bezier((4.643, 2.358), (5.434, 2.387), (4.920, 2.518), (5.160, 2.480), stroke: 1pt)
+
+  // Parti circolari coperte nella testa destra (tratteggiate, s = 5.90 e s = 7.20)
+  bezier((5.434, 2.387), (5.412, 3.125), (5.601, 2.484), (5.591, 2.814), stroke: (dash: "dashed", thickness: 0.7pt))
+  bezier((5.412, 3.125), (4.784, 3.513), (5.233, 3.436), (4.951, 3.610), stroke: (dash: "dashed", thickness: 0.7pt))
+  bezier((5.910, 4.163), (5.932, 3.425), (5.743, 4.066), (5.753, 3.736), stroke: (dash: "dashed", thickness: 0.7pt))
+  bezier((5.932, 3.425), (6.560, 3.037), (6.111, 3.114), (6.393, 2.940), stroke: (dash: "dashed", thickness: 0.7pt))
 
   // Spalla anteriore e corpo testa scanalata destra (s = 5.90 .. 7.20)
   bezier((4.784, 3.513), (4.806, 2.775), (4.605, 3.416), (4.639, 3.086), stroke: 1pt)
