@@ -3357,7 +3357,7 @@ $ U = frac(2 alpha b_0, 9(b_0 + b_0')) $
 
 Si osserva che al limite per $b_0' arrow.r 0$ (ritornando alla pianta triangolare) $alpha arrow.r 3/2$ e il fattore di utilizzazione tende a $1/3$; viceversa, al crescere di $b_0'$ verso $b_0$ ci si avvicina alla pianta rettangolare e il fattore di utilizzazione scende verso $1/9$.
 
-==== Molla a balestra
+=== Molla a balestra
 Per realizzare una molla completa avente punti di ancoraggio alle due estremità e punto di applicazione del carico nella sezione centrale (che per simmetria si comporta come un incastro per ciascuna delle due metà), occorrerebbe unire due molle a pianta trapezia per la base maggiore. Una foglia unica a doppio trapezio risulterebbe però di ingombro trasversale eccessivo per poter essere installata sotto il telaio di un veicolo.
 
 #grid(
@@ -3377,7 +3377,7 @@ Per realizzare una molla completa avente punti di ancoraggio alle due estremità
 
 Durante la flessione si verifica #strong[strisciamento tra lamina e lamina]; per ridurre le forze di attrito e la conseguente usura si fa uso di #strong[lubrificante a base di grafite].
 
-==== Equivalenza tra molla a balestra e molla trapezia
+=== Equivalenza tra molla a balestra e molla trapezia
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -3409,7 +3409,7 @@ $ f = alpha frac(F l^3, 3 E I), quad sigma_(m a x) = frac(F l, b_0 h^2 / 6), qua
 
 dove $n$ indica il numero di foglie. L'errore commesso con questa schematizzazione è in realtà #strong[a favore di sicurezza], poiché il calcolo approssimato porta alla sovrastima sia della freccia (utile per verificare eventuali interferenze con il telaio o il terreno) sia della tensione massima nel materiale.
 
-==== Molla a balestra a profilo parabolico
+=== Molla a balestra a profilo parabolico
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -3434,6 +3434,3 @@ La soluzione a profilo parabolico permette di avere in ogni sezione trasversale 
   [2094], [1047], [178], [Dinamico],
   [2906], [1453], [247], [Statico massimo],
 )
-
-=== Esercizi
-Nessun esercizio presente nelle fonti fornite.
