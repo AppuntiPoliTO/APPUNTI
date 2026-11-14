@@ -2882,7 +2882,7 @@ $ U = frac(E^f, E^t) = frac(1, 3) $
 
 La riduzione a un terzo deriva dal fatto che nella trazione pura tutto il materiale della sezione trasversale lavora alla tensione massima, mentre nella flessione solo i lembi esterni raggiungono $overline(sigma)$, con sfruttamento parziale delle fibre interne.
 
-==== Molla a lamina con pianta rettangolare
+=== Molla a lamina con pianta rettangolare
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
