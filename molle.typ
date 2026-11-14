@@ -1093,10 +1093,10 @@ Il legame tra il numero di spire efficaci $i$, il numero di spire totali $n$ (co
 
 
 #grid(
-  columns: (1.3fr, 1fr),
+  columns: (1.4fr, 1fr),
   column-gutter: -2em,
   align: (left + horizon, center + horizon),[La lunghezza a pacco $L_b$ si ottiene quando, comprimendo la molla, tutte le spire vengono portate perfettamente a contatto l'una con l'altra. In questa condizione di impacchettamento si altera completamente il principio di funzionamento meccanico: le spire non lavorano più come barre di torsione sospese libere di ruotare elasticamente, ma diventano anelli adagiati uno sull'altro che trasmettono una pressione di contatto diretta, trasformando la molla in un blocco o tubetto rigido di metallo. ],[
-#canvas(length: 1cm, {
+#canvas(length: 0.7cm, {
   import draw: *
 
   // 1) Tratto terminale inferiore dietro spira 1
@@ -1143,9 +1143,6 @@ Il legame tra il numero di spire efficaci $i$, il numero di spire totali $n$ (co
   line((-1.66, 4.55), (-1.20, 5.10), stroke: 0.6pt)
   line((-1.58, 4.38), (-1.04, 4.95), stroke: 0.6pt)
   line((-1.40, 4.30), (-1.01, 4.72), stroke: 0.6pt)
-
-  // Etichetta
-  content((-2.70, 0.15), [(a)], anchor: "center")
 })
 ])
 Affinché la molla svolga la propria funzione (restituire forza elastica e assorbire gli urti), l'azione elastica deve essere garantita anche sotto l'azione del carico massimo di esercizio $F_(m a x)$. Bisogna quindi imporre come condizione al contorno di progettazione che con carico massimo la molla non vada completamente "a pacco", garantendo che la lunghezza della molla sotto carico massimo $L_(F m a x)$ soddisfi la disuguaglianza:
