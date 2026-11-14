@@ -1199,7 +1199,11 @@ $ F = k f = (k_1 + k_2) f arrow.r.double k = k_1 + k_2 $ In generale, per $N$ mo
 $ k = sum_(i=1)^N k_i $],[#image("images/fig_molle_9014.png", width: 60%)
 ])
 
-Nel collegamento #strong[in serie] (molle poste in sequenza lungo l'asse con un piattello intermedio di interfaccia), le molle sopportano lo stesso carico, mentre la freccia totale è la somma delle frecce parziali:
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Nel collegamento #strong[in serie] (molle poste in sequenza lungo l'asse con un piattello intermedio di interfaccia), le molle sopportano lo stesso carico, mentre la freccia totale è la somma delle frecce parziali:
 
 $ F = F_1 = F_2, quad quad f = f_1 + f_2 $
 
@@ -1208,11 +1212,7 @@ $ f = frac(F, k) = frac(F_1, k_1) + frac(F_2, k_2) = F (frac(1, k_1) + frac(1, k
 Introducendo la #strong[deformabilità] $delta = frac(1, k)$, si ottiene:
 
 $ frac(1, k) = frac(1, k_1) + frac(1, k_2) = delta $
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[In generale, per $N$ molle in serie:
+ In generale, per $N$ molle in serie:
 
 $ frac(1, k) = sum_(i=1)^N frac(1, k_i), quad quad delta = sum_(i=1)^N delta_i $],[#image("images/fig_molle_3552.png", width: 45%)
 ])
