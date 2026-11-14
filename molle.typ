@@ -1180,7 +1180,7 @@ La sequenza operativa prevede i seguenti passi:
 11. Eventuale verifica a ingobbamento ($F_(m a x) < F_("crit")$).
 
 Un esempio classico di applicazione è la sospensione automobilistica con molla elicoidale, in particolare nella configurazione #strong[sospensione MacPherson], in cui la molla a elica è montata direttamente attorno all'ammortizzatore tra connessione al telaio e connessione al mozzo ruota (con cerniere rispetto al telaio).
-
+#pagebreak()
 === Complessi di molle: collegamento in parallelo e in serie
 
 
@@ -1196,7 +1196,7 @@ $ f = f_1 = f_2, quad quad F = F_1 + F_2 $
 
 $ F = k f = (k_1 + k_2) f arrow.r.double k = k_1 + k_2 $ In generale, per $N$ molle in parallelo:
 
-$ k = sum_(i=1)^N k_i $],[#image("images/fig_molle_9014.png", width: 60%)
+$ k = sum_(i=1)^N k_i $],[#image("images/fig_molle_9014.png", width: 78%)
 ])
 
 #v(2em)
@@ -1214,7 +1214,7 @@ Introducendo la #strong[deformabilità] $delta = frac(1, k)$, si ottiene:
 $ frac(1, k) = frac(1, k_1) + frac(1, k_2) = delta $
  In generale, per $N$ molle in serie:
 
-$ frac(1, k) = sum_(i=1)^N frac(1, k_i), quad quad delta = sum_(i=1)^N delta_i $],[#image("images/fig_molle_3552.png", width: 45%)
+$ frac(1, k) = sum_(i=1)^N frac(1, k_i), quad quad delta = sum_(i=1)^N delta_i $],[#image("images/fig_molle_3552.png", width: 60%)
 ])
 
 Sussiste un'analogia elettromeccanica con la resistenza elettrica $R$, associando alla resistenza elettrica non la rigidezza $k$ bensì la deformabilità $delta = 1/k$:
