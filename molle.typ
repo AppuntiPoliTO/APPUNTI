@@ -1182,19 +1182,19 @@ La sequenza operativa prevede i seguenti passi:
 Un esempio classico di applicazione è la sospensione automobilistica con molla elicoidale, in particolare nella configurazione #strong[sospensione MacPherson], in cui la molla a elica è montata direttamente attorno all'ammortizzatore tra connessione al telaio e connessione al mozzo ruota (con cerniere rispetto al telaio).
 
 === Complessi di molle: collegamento in parallelo e in serie
-Nelle applicazioni in cui più molle lavorano simultaneamente, la rigidezza equivalente dipende dal modo in cui sono collegate.
+
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Nelle applicazioni in cui più molle lavorano simultaneamente, la rigidezza equivalente dipende dal modo in cui sono collegate.
 
 Nel collegamento #strong[in parallelo] (ad esempio due molle concentriche poste tra gli stessi piani d'appoggio), le molle subiscono lo stesso spostamento (freccia), mentre la forza totale è la somma delle forze sostenute dalle singole molle:
 
 // NOTA: \implies convertito in arrow.r.double
 $ f = f_1 = f_2, quad quad F = F_1 + F_2 $
 
-$ F = k f = (k_1 + k_2) f arrow.r.double k = k_1 + k_2 $
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[In generale, per $N$ molle in parallelo:
+$ F = k f = (k_1 + k_2) f arrow.r.double k = k_1 + k_2 $ In generale, per $N$ molle in parallelo:
 
 $ k = sum_(i=1)^N k_i $],[#image("images/fig_molle_9014.png", width: 60%)
 ])
