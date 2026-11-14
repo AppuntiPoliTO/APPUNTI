@@ -3158,7 +3158,7 @@ si presentano due possibili alternative geometriche (non potendo agire né sulla
 
 La seconda alternativa è solitamente preferita dal punto di vista tecnologico poiché comporta minori problemi costruttivi rispetto alla realizzazione accurata di uno spessore variabile con profilo parabolico.
 
-==== Molla a lamina con pianta triangolare
+=== Molla a lamina con pianta triangolare
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -3293,7 +3293,7 @@ $ U = frac(1, 3) $ Dal punto di vista pratico e costruttivo, tuttavia, un'estrem
 Lo stesso problema emerge ad esempio nei recuperatori di energia piezoelettrici (lamine in alluminio incastrate rivestite con strati piezoceramici dotati di elettrodi per convertire l'energia delle vibrazioni in energia elettrica), dove una punta stretta impedisce di sfruttare fino in fondo la superficie utile del materiale piezoceramico. Per questo motivo si adotta una soluzione di compromesso: la #strong[molla con pianta trapezia].
 
 
-==== Molla a lamina con pianta trapezia
+=== Molla a lamina con pianta trapezia
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
