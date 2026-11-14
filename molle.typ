@@ -1159,7 +1159,7 @@ $ lambda_(1, "molla") = frac(d, D l_(e q)) sqrt(frac(G, 8 rho)), quad quad l_(e 
 
 $ lambda_(1, "molla") gt.eq 20 dot.op lambda_("carico") $
 
-==== Procedura di calcolo per molle di torsione (ad elica cilindrica)
+=== Procedura di calcolo per molle di torsione (ad elica cilindrica)
 Il dimensionamento di una molla ad elica cilindrica (lavorante a torsione del filo) è un #strong[calcolo iterativo di verifica]. Sono generalmente noti l'ingombro disponibile ($tilde.eq D$), la freccia e il carico massimi (oppure la rigidezza $k$ e uno dei due parametri, legati da $k = frac(Delta F, Delta f) = frac(F_(m a x), f_(m a x))$), e talvolta la lunghezza sotto carico massimo $L_(F_(m a x))$ (dettati da vincoli di ingombro e dall'esigenza di evitare interferenze o contatti con altre parti).
 
 La sequenza operativa prevede i seguenti passi:
