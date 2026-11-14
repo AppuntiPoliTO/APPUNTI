@@ -2842,7 +2842,7 @@ Dal punto di vista meccanico, pur presentando spesso in configurazione montata u
 - Gli schemi elementari di studio sono basati sulle lamine incastrate.
 - A seconda della geometria adottata per la pianta (rettangolare, triangolare, trapezia), presentano diversi #strong[fattori di utilizzazione].
 
-==== Fattore di utilizzazione
+=== Fattore di utilizzazione
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
