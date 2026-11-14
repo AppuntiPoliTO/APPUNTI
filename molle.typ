@@ -3468,6 +3468,6 @@ dove $h_0$ è lo spessore all'incastro (sezione centrale della balestra) e $L$ �
 
 La soluzione a profilo parabolico permette di avere in ogni sezione trasversale la stessa tensione massima di flessione presente nella sezione centrale di incastro, ottimizzando l'impiego del materiale lungo la linea d'asse. Pur richiedendo processi tecnologici più complessi e precisi rispetto alla sagomatura in pianta per ottenere la variazione quadratica di spessore, trova effettiva applicazione pratica sia in configurazione #strong[monolama] (spessore decrescente dal centro verso gli occhielli) sia in configurazione #strong[bilama]. Oggi tale geometria risulta particolarmente agevole da realizzare mediante l'impiego di #strong[materiali compositi], nei quali il processo di stratificazione consente naturalmente di variare lo spessore secondo il profilo parabolico desiderato.
 
-Un'applicazione automobilistica reale di molle a balestra a profilo parabolico bilama riguarda l'assale posteriore del veicolo #strong[Ducato medio], sul quale il carico complessivo $C = 2 P$ si ripartisce equamente sulle due balestre ($P / 2 = F$ per ciascuna semi-balestra), con i seguenti valori di esercizio:
+
 
 
