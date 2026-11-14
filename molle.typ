@@ -3427,7 +3427,7 @@ Si osserva che al limite per $b_0' arrow.r 0$ (ritornando alla pianta triangolar
 - Equivale all'unione di 2 molle a pianta trapezia unite per la base maggiore.
 - È formata da #strong[foglie] sovrapposte di diversa lunghezza e uguale larghezza $b_0'$.
 - Ogni foglia è l'unione di due mezze foglie longitudinali opposte rispetto alla mezzeria (tranne la lamina centrale).
-- La prima foglia ($a$ in figura), di lunghezza maggiore $2 l$ e dotata in genere di occhielli alle estremità per l'ancoraggio al telaio, è detta #strong[foglia madre].
+- La prima foglia, di lunghezza maggiore $2 l$ e dotata in genere di occhielli alle estremità per l'ancoraggio al telaio, è detta #strong[foglia madre].
 - Le foglie non sono incollate tra loro, bensì tenute insieme da fasce o cavallotti (ad esempio attacchi a U o fascette di serraggio) e da un perno di unione centrale; ciò consente alle foglie di flettersi e scorrere moderatamente le une rispetto alle altre.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: disegno tecnico di molla a balestra montata (sezione longitudinale del pacco di foglie con occhielli d'estremità, carico centrale $F$, freccia $f$, fascette di collegamento e sezione trasversale $A-A$ del cavallotto, oltre ai dettagli $a, b, c$ delle forme terminali delle foglie); affiancato a schema applicativo in sospensione automobilistica con asse, ruota, ammortizzatore, attacco a U e stati "A riposo" e "Sotto carico", più fotografie reali dell'esploso delle foglie]])
 
 Durante la flessione si verifica #strong[strisciamento tra lamina e lamina]; per ridurre le forze di attrito e la conseguente usura si fa uso di #strong[lubrificante a base di grafite].
