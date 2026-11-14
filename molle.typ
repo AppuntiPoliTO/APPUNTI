@@ -3337,13 +3337,13 @@ Lo stesso problema emerge ad esempio nei recuperatori di energia piezoelettrici 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),
+  align: (left + top, center + horizon),
   [
     Nella molla a pianta trapezia la larghezza varia linearmente da una base maggiore $b_0$ all'incastro fino a una base minore finita $b_0'$ all'estremità libera, così da consentire l'applicazione del carico o del vincolo.
 
 La rastremazione della trave è caratterizzata dal fattore adimensionale $alpha$:
   ],
-  [#canvas(length: 1cm, {
+  [#canvas(length: 0.8cm, {
   import draw: *
 
   // Parete d'incastro (interrotta dietro la mensola tra y = 2.04 e y = 3.69)
@@ -3389,7 +3389,7 @@ La rastremazione della trave è caratterizzata dal fattore adimensionale $alpha$
   line((3.51, 2.51), (3.77, 2.65), stroke: 0.5pt)
   line((3.00, 2.84), (3.26, 2.98), stroke: 0.5pt)
   content((4.20, 2.92), [$x$], anchor: "south")
-  content((2.48, 3.32), [$dif x$], anchor: "east")
+  content((2.6, 3.6), [$dif x$], anchor: "east")
 })]
 )
 
