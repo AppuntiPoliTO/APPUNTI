@@ -3430,12 +3430,7 @@ Le caratteristiche geometriche e costruttive principali della molla a balestra s
 Durante la flessione si verifica #strong[strisciamento tra lamina e lamina]; per ridurre le forze di attrito e la conseguente usura si fa uso di #strong[lubrificante a base di grafite].
 
 === Equivalenza tra molla a balestra e molla trapezia
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Poiché per una molla a pianta triangolare la linea elastica appartiene a un arco di circonferenza, è ragionevole assumere che tutte le foglie della balestra, obbligate a mantenersi a contatto dai dispositivi di serraggio e quindi ad avere all'incirca la stessa linea elastica, lavorino in modo analogo a quando erano affiancate nella molla a pianta trapezia originale.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di confronto tra la mezza molla trapezia di lunghezza $L$, spessore $h$, base maggiore $b_0$ e base minore $b_0'$ caricata all'estremo da $F$, e la corrispondente molla a balestra vista lateralmente e in pianta di larghezza $b_0/n$ con momento all'incastro $M$ e forza $F$]])
-
-Nell'ipotesi di attrito nullo tra le foglie e di carico e momento all'incastro ripartiti equamente tra le $n$ foglie, il momento totale all'incastro vale:
+Poiché per una molla a pianta triangolare la linea elastica appartiene a un arco di circonferenza, è ragionevole assumere che tutte le foglie della balestra, obbligate a mantenersi a contatto dai dispositivi di serraggio e quindi ad avere all'incirca la stessa linea elastica, lavorino in modo analogo a quando erano affiancate nella molla a pianta trapezia originale. Nell'ipotesi di attrito nullo tra le foglie e di carico e momento all'incastro ripartiti equamente tra le $n$ foglie, il momento totale all'incastro vale:
 
 $ M = F dot.op L $
 
