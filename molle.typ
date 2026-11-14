@@ -3484,7 +3484,7 @@ dove $h_0$ Ã¨ lo spessore all'incastro (sezione centrale della balestra) e $L$ Ã
 
   line((0.09, 1.15), (3.42, 3.51), (5.84, 2.59), (2.48, 0.25), close: true, fill: rgb(135, 198, 248), stroke: (paint: rgb(25, 85, 145), thickness: 0.7pt))
 
-  line((2.48, 0.25), (5.84, 2.59), (5.84, 2.13), close: true, fill: rgb("#ffffff"), stroke: (paint: rgb(25, 85, 145), thickness: 0.7pt))
+  line((2.48, 0.25), (5.84, 2.59), (5.84, 2.13), close: true, fill: rgb(135, 198, 248), stroke: (paint: rgb(25, 85, 145), thickness: 0.7pt))
 
   line((0.09, 1.15), (-0.16, 0.42), stroke: (paint: luma(180), thickness: 0.5pt))
   line((2.48, 0.25), (2.23, -0.48), stroke: (paint: luma(180), thickness: 0.5pt))
