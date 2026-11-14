@@ -1182,11 +1182,6 @@ La sequenza operativa prevede i seguenti passi:
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma a blocchi del calcolo iterativo di verifica ("scelta di tentativo" $arrow.r$ "verifica": se "SI" termina, se "NO" passa a "modifiche" e ritorna a "verifica")]])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
   align: (left + horizon, center + horizon),[Un esempio classico di applicazione è la sospensione automobilistica con molla elicoidale, in particolare nella configurazione #strong[sospensione MacPherson], in cui la molla a elica è montata direttamente attorno all'ammortizzatore tra connessione al telaio e connessione al mozzo ruota (con cerniere rispetto al telaio).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di applicazione di una sospensione automobilistica su ruota con asse, ammortizzatore e molla elicoidale, affiancato dallo schema e dalla vista di una sospensione MacPherson con indicate connessione al telaio, ammortizzatore, molla a elica, cerniere rispetto al telaio e connessione al mozzo ruota]])
 
 ==== Complessi di molle: collegamento in parallelo e in serie
