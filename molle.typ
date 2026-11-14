@@ -3165,7 +3165,45 @@ La seconda alternativa è solitamente preferita dal punto di vista tecnologico p
   align: (left + horizon, center + horizon),[Adottando una pianta triangolare di larghezza $b_0$ all'incastro, larghezza nulla al punto di applicazione della forza $F$ e spessore costante $h$, la larghezza locale $b$ varia linearmente con l'ascissa $x$ misurata dalla punta:
 
 $ b = b_0 frac(x, l) $
-Sostituendo l'espressione della larghezza nella formula della tensione massima si verifica che la tensione rimane rigorosamente costante in ogni sezione lungo tutta la lunghezza della molla:],[
+Sostituendo l'espressione della larghezza nella formula della tensione massima si verifica che la tensione rimane rigorosamente costante in ogni sezione lungo tutta la lunghezza della molla:],[#canvas(length: 0.8cm, {
+  import draw: *
+
+  // Parete d'incastro (interrotta dietro la mensola tra y = 2.47 e y = 4.01)
+  line((3.00, 4.01), (3.00, 7.42), (0.00, 5.55), (0.00, 0.00), (3.00, 1.87), (3.00, 2.47), stroke: 1.1pt)
+
+  // Mensola triangolare: faccia superiore A-B-C e faccia laterale A-A'-C'-C
+  line((0.61, 4.18), (2.04, 5.07), (4.96, 1.84), close: true, stroke: 1.1pt)
+  line((0.61, 4.18), (0.61, 3.76), (4.96, 1.42), (4.96, 1.84), stroke: 1.1pt)
+
+  // Punto di applicazione C e forza concentrata F
+  circle((4.96, 1.84), radius: 0.07, fill: black, stroke: none)
+  line((4.96, 3.60), (4.96, 1.91), mark: (end: ">"), stroke: 1.2pt)
+  content((4.80, 3.40), [$F$], anchor: "east")
+
+  // Quota b_0 (larghezza all'incastro, parallela ad A-B)
+  line((0.57, 4.20), (0.20, 4.40), stroke: 0.5pt)
+  line((2.00, 5.09), (1.63, 5.29), stroke: 0.5pt)
+  line((0.27, 4.36), (1.70, 5.25), mark: (start: ">", end: ">"), stroke: 0.5pt)
+  content((0.90, 4.95), [$b_0$], anchor: "south-east")
+
+  // Quota h (spessore della mensola a x = 2.16)
+  line((2.16, 3.95), (2.16, 3.35), mark: (end: ">"), stroke: 0.5pt)
+  line((2.16, 2.25), (2.16, 2.93), mark: (end: ">"), stroke: 0.5pt)
+  content((2.04, 2.55), [$h$], anchor: "east")
+
+  // Quota l (lunghezza della mensola, parallela ad A'-C')
+  line((0.61, 3.66), (0.61, 2.45), stroke: 0.5pt)
+  line((4.96, 1.32), (4.96, 0.11), stroke: 0.5pt)
+  line((0.61, 2.58), (4.96, 0.24), mark: (start: ">", end: ">"), stroke: 0.5pt)
+  content((2.78, 1.25), [$l$], anchor: "north")
+
+  // Quota x e differenziale dif x lungo la mediana da C verso A-B
+  line((4.96, 1.84), (3.69, 2.81), mark: (end: ">"), stroke: 0.5pt)
+  line((3.69, 2.81), (3.32, 3.09), mark: (start: ">", end: ">"), stroke: 0.5pt)
+  line((3.52, 2.70), (3.86, 2.92), stroke: 0.5pt)
+  content((4.40, 2.65), [$x$], anchor: "south-west")
+  content((3.25, 3.22), [$dif x$], anchor: "east")
+})
 ])
 
 
