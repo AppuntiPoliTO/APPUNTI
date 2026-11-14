@@ -1096,7 +1096,57 @@ Il legame tra il numero di spire efficaci $i$, il numero di spire totali $n$ (co
   columns: (1.3fr, 1fr),
   column-gutter: -2em,
   align: (left + horizon, center + horizon),[La lunghezza a pacco $L_b$ si ottiene quando, comprimendo la molla, tutte le spire vengono portate perfettamente a contatto l'una con l'altra. In questa condizione di impacchettamento si altera completamente il principio di funzionamento meccanico: le spire non lavorano più come barre di torsione sospese libere di ruotare elasticamente, ma diventano anelli adagiati uno sull'altro che trasmettono una pressione di contatto diretta, trasformando la molla in un blocco o tubetto rigido di metallo. ],[
-#image("images/pacco.png",width:50%)
+#canvas(length: 1cm, {
+  import draw: *
+
+  // 1) Tratto terminale inferiore dietro spira 1
+  line((-2.35, 0.82), (-1.60, 0.55), (-0.90, 0.34), (-0.20, 0.17), (0.55, 0.07), (0.55, 0.93), (-2.35, 1.25), close: true, fill: white, stroke: none)
+  arc((1.849, 11.074), start: 247.73deg, stop: 263.27deg, radius: 11.080, anchor: "origin", stroke: 1pt)
+  circle((0.55, 0.50), radius: (0.22, 0.43), fill: white, stroke: 1pt)
+  line((0.36, 0.36), (0.64, 0.88), stroke: 0.6pt)
+  line((0.40, 0.18), (0.74, 0.72), stroke: 0.6pt)
+  line((0.52, 0.08), (0.76, 0.44), stroke: 0.6pt)
+
+  // 2) Tratto terminale superiore dietro spira 4
+  line((-1.35, 5.15), (-0.45, 5.12), (0.50, 5.05), (1.45, 4.89), (2.35, 4.66), (2.35, 4.10), (-1.35, 4.29), close: true, fill: white, stroke: none)
+  arc((-1.081, -7.031), start: 73.64deg, stop: 91.26deg, radius: 12.184, anchor: "origin", stroke: 1pt)
+
+  // 3) Spira 1 (y_L = 1.25)
+  line((-2.320, 1.679), (-2.632, 1.575), (-2.779, 1.280), (-2.675, 0.968), (-2.380, 0.821), (-1.070, 0.775), (0.226, 0.820), (1.516, 0.956), (2.431, 1.108), (2.706, 1.289), (2.772, 1.612), (2.590, 1.886), (2.269, 1.952), (1.397, 1.807), (0.166, 1.678), (-1.070, 1.635), close: true, fill: white, stroke: none)
+  arc((-2.35, 1.25), start: 85.96deg, stop: 265.96deg, radius: 0.43, anchor: "origin", stroke: 1pt)
+  arc((-1.070, 19.358), start: 265.96deg, stop: 280.86deg, radius: 18.5833, anchor: "origin", stroke: 1pt)
+  arc((2.35, 1.53), start: -79.14deg, stop: 100.86deg, radius: 0.43, anchor: "origin", stroke: 1pt)
+  arc((-1.070, 19.358), start: 265.96deg, stop: 280.86deg, radius: 17.7233, anchor: "origin", stroke: 1pt)
+
+  // 4) Spira 2 (y_L = 2.15)
+  line((-2.320, 2.579), (-2.632, 2.475), (-2.779, 2.180), (-2.675, 1.868), (-2.380, 1.721), (-1.070, 1.675), (0.226, 1.720), (1.516, 1.856), (2.431, 2.008), (2.706, 2.189), (2.772, 2.512), (2.590, 2.786), (2.269, 2.852), (1.397, 2.707), (0.166, 2.578), (-1.070, 2.535), close: true, fill: white, stroke: none)
+  arc((-2.35, 2.15), start: 85.96deg, stop: 265.96deg, radius: 0.43, anchor: "origin", stroke: 1pt)
+  arc((-1.070, 20.258), start: 265.96deg, stop: 280.86deg, radius: 18.5833, anchor: "origin", stroke: 1pt)
+  arc((2.35, 2.43), start: -79.14deg, stop: 100.86deg, radius: 0.43, anchor: "origin", stroke: 1pt)
+  arc((-1.070, 20.258), start: 265.96deg, stop: 280.86deg, radius: 17.7233, anchor: "origin", stroke: 1pt)
+
+  // 5) Spira 3 (y_L = 3.05)
+  line((-2.320, 3.479), (-2.632, 3.375), (-2.779, 3.080), (-2.675, 2.768), (-2.380, 2.621), (-1.070, 2.575), (0.226, 2.620), (1.516, 2.756), (2.431, 2.908), (2.706, 3.089), (2.772, 3.412), (2.590, 3.686), (2.269, 3.752), (1.397, 3.607), (0.166, 3.478), (-1.070, 3.435), close: true, fill: white, stroke: none)
+  arc((-2.35, 3.05), start: 85.96deg, stop: 265.96deg, radius: 0.43, anchor: "origin", stroke: 1pt)
+  arc((-1.070, 21.158), start: 265.96deg, stop: 280.86deg, radius: 18.5833, anchor: "origin", stroke: 1pt)
+  arc((2.35, 3.33), start: -79.14deg, stop: 100.86deg, radius: 0.43, anchor: "origin", stroke: 1pt)
+  arc((-1.070, 21.158), start: 265.96deg, stop: 280.86deg, radius: 17.7233, anchor: "origin", stroke: 1pt)
+
+  // 6) Spira 4 (y_L = 3.95) e faccia superiore davanti
+  line((-2.320, 4.379), (-2.632, 4.275), (-2.779, 3.980), (-2.675, 3.668), (-2.380, 3.521), (-1.070, 3.475), (0.226, 3.520), (1.516, 3.656), (2.431, 3.808), (2.706, 3.989), (2.772, 4.312), (2.590, 4.586), (2.269, 4.652), (1.397, 4.507), (0.166, 4.378), (-1.070, 4.335), close: true, fill: white, stroke: none)
+  arc((-2.35, 3.95), start: 85.96deg, stop: 265.96deg, radius: 0.43, anchor: "origin", stroke: 1pt)
+  arc((-1.070, 22.058), start: 265.96deg, stop: 280.86deg, radius: 18.5833, anchor: "origin", stroke: 1pt)
+  arc((2.35, 4.23), start: -79.14deg, stop: 100.86deg, radius: 0.43, anchor: "origin", stroke: 1pt)
+  arc((-1.070, 22.058), start: 265.96deg, stop: 280.86deg, radius: 17.7233, anchor: "origin", stroke: 1pt)
+
+  circle((-1.35, 4.72), radius: (0.34, 0.43), fill: white, stroke: 1pt)
+  line((-1.66, 4.55), (-1.20, 5.10), stroke: 0.6pt)
+  line((-1.58, 4.38), (-1.04, 4.95), stroke: 0.6pt)
+  line((-1.40, 4.30), (-1.01, 4.72), stroke: 0.6pt)
+
+  // Etichetta
+  content((-2.70, 0.15), [(a)], anchor: "center")
+})
 ])
 Affinché la molla svolga la propria funzione (restituire forza elastica e assorbire gli urti), l'azione elastica deve essere garantita anche sotto l'azione del carico massimo di esercizio $F_(m a x)$. Bisogna quindi imporre come condizione al contorno di progettazione che con carico massimo la molla non vada completamente "a pacco", garantendo che la lunghezza della molla sotto carico massimo $L_(F m a x)$ soddisfi la disuguaglianza:
 $ L_(F m a x) gt.eq L_b + g_(r e s) i $
