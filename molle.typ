@@ -1196,7 +1196,7 @@ $ F = k f = (k_1 + k_2) f arrow.r.double k = k_1 + k_2 $
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[In generale, per $N$ molle in parallelo:
 
-$ k = sum_(i=1)^N k_i $],[#image("images/fig_molle_9014.png", width: 75%)
+$ k = sum_(i=1)^N k_i $],[#image("images/fig_molle_9014.png", width: 60%)
 ])
 
 Nel collegamento #strong[in serie] (molle poste in sequenza lungo l'asse con un piattello intermedio di interfaccia), le molle sopportano lo stesso carico, mentre la freccia totale è la somma delle frecce parziali:
@@ -1214,7 +1214,8 @@ $ frac(1, k) = frac(1, k_1) + frac(1, k_2) = delta $
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[In generale, per $N$ molle in serie:
 
-$ frac(1, k) = sum_(i=1)^N frac(1, k_i), quad quad delta = sum_(i=1)^N delta_i $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di due molle in serie (molla 1 superiore e molla 2 inferiore separate da un piattello intermedio) appoggiate su una base fissa e caricate dall'alto con forza $F$ e spostamento totale $f$]])
+$ frac(1, k) = sum_(i=1)^N frac(1, k_i), quad quad delta = sum_(i=1)^N delta_i $],[#image("images/fig_molle_3552.png", width: 45%)
+])
 
 Sussiste un'analogia elettromeccanica con la resistenza elettrica $R$, associando alla resistenza elettrica non la rigidezza $k$ bensì la deformabilità $delta = 1/k$:
 
