@@ -1199,7 +1199,7 @@ $ F = k f = (k_1 + k_2) f arrow.r.double k = k_1 + k_2 $ In generale, per $N$ mo
 $ k = sum_(i=1)^N k_i $],[#image("images/fig_molle_9014.png", width: 60%)
 ])
 
-#v
+#v(2em)
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -1227,7 +1227,7 @@ Sussiste un'analogia elettromeccanica con la resistenza elettrica $R$, associand
   [#strong[In parallelo]], [$frac(1, delta) = sum_(i=1)^N frac(1, delta_i), quad k = sum_(i=1)^N k_i$], [$frac(1, R) = sum_(i=1)^N frac(1, R_i)$],
 )
 
-==== Molle a elica cilindrica "in trazione"
+=== Molle a elica cilindrica "in trazione"
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
