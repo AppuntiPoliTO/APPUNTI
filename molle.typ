@@ -1179,12 +1179,9 @@ La sequenza operativa prevede i seguenti passi:
 10. Eventuale verifica a sfarfallamento (agendo eventualmente sulla rigidezza $k$).
 11. Eventuale verifica a ingobbamento ($F_(m a x) < F_("crit")$).
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Un esempio classico di applicazione è la sospensione automobilistica con molla elicoidale, in particolare nella configurazione #strong[sospensione MacPherson], in cui la molla a elica è montata direttamente attorno all'ammortizzatore tra connessione al telaio e connessione al mozzo ruota (con cerniere rispetto al telaio).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di applicazione di una sospensione automobilistica su ruota con asse, ammortizzatore e molla elicoidale, affiancato dallo schema e dalla vista di una sospensione MacPherson con indicate connessione al telaio, ammortizzatore, molla a elica, cerniere rispetto al telaio e connessione al mozzo ruota]])
+Un esempio classico di applicazione è la sospensione automobilistica con molla elicoidale, in particolare nella configurazione #strong[sospensione MacPherson], in cui la molla a elica è montata direttamente attorno all'ammortizzatore tra connessione al telaio e connessione al mozzo ruota (con cerniere rispetto al telaio).
 
-==== Complessi di molle: collegamento in parallelo e in serie
+=== Complessi di molle: collegamento in parallelo e in serie
 Nelle applicazioni in cui più molle lavorano simultaneamente, la rigidezza equivalente dipende dal modo in cui sono collegate.
 
 Nel collegamento #strong[in parallelo] (ad esempio due molle concentriche poste tra gli stessi piani d'appoggio), le molle subiscono lo stesso spostamento (freccia), mentre la forza totale è la somma delle forze sostenute dalle singole molle:
