@@ -3337,9 +3337,15 @@ Lo stesso problema emerge ad esempio nei recuperatori di energia piezoelettrici 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Nella molla a pianta trapezia la larghezza varia linearmente da una base maggiore $b_0$ all'incastro fino a una base minore finita $b_0'$ all'estremità libera, così da consentire l'applicazione del carico o del vincolo.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: vista tridimensionale di una molla a lamina incastrata a pianta trapezia (base maggiore all'incastro $b_0$, base minore all'estremità libera $b_0'$, spessore $h$, lunghezza $l$), con forza verticale $F$ applicata all'estremo libero, ascissa $x$ ed elemento infinitesimo $d x$]])
+  align: (left + horizon, center + horizon),
+  [
+    Nella molla a pianta trapezia la larghezza varia linearmente da una base maggiore $b_0$ all'incastro fino a una base minore finita $b_0'$ all'estremità libera, così da consentire l'applicazione del carico o del vincolo.
 
 La rastremazione della trave è caratterizzata dal fattore adimensionale $alpha$:
+  ],
+  [#image("images/fig_molle_4407.png", width: 70%)]
+)
+
 
 $ alpha = frac(3, 2 + b_0' / b_0) = frac(3 b_0, 2 b_0 + b_0') $
 
