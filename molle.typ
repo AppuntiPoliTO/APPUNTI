@@ -3468,16 +3468,6 @@ dove $h_0$ è lo spessore all'incastro (sezione centrale della balestra) e $L$ �
 
 La soluzione a profilo parabolico permette di avere in ogni sezione trasversale la stessa tensione massima di flessione presente nella sezione centrale di incastro, ottimizzando l'impiego del materiale lungo la linea d'asse. Pur richiedendo processi tecnologici più complessi e precisi rispetto alla sagomatura in pianta per ottenere la variazione quadratica di spessore, trova effettiva applicazione pratica sia in configurazione #strong[monolama] (spessore decrescente dal centro verso gli occhielli) sia in configurazione #strong[bilama]. Oggi tale geometria risulta particolarmente agevole da realizzare mediante l'impiego di #strong[materiali compositi], nei quali il processo di stratificazione consente naturalmente di variare lo spessore secondo il profilo parabolico desiderato.
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Un'applicazione automobilistica reale di molle a balestra a profilo parabolico bilama riguarda l'assale posteriore del veicolo #strong[Ducato medio], sul quale il carico complessivo $C = 2 P$ si ripartisce equamente sulle due balestre ($P / 2 = F$ per ciascuna semi-balestra), con i seguenti valori di esercizio:],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: vista prospettica dell'autotelaio posteriore di un veicolo Ducato medio con indicazione dei carichi sull'assale ($C = 2 P$, $P$ per lato, $P / 2 = F$) e dettaglio della molla a balestra bilama a profilo parabolico]])
+Un'applicazione automobilistica reale di molle a balestra a profilo parabolico bilama riguarda l'assale posteriore del veicolo #strong[Ducato medio], sul quale il carico complessivo $C = 2 P$ si ripartisce equamente sulle due balestre ($P / 2 = F$ per ciascuna semi-balestra), con i seguenti valori di esercizio:
 
-#table(
-  columns: 4,
-  align: left,
-  [#strong[Carico sull'asse [kg]]], [#strong[Carico su ogni balestra [kg]]], [#strong[Freccia [mm]]], [#strong[Tipo di carico]],
-  [100], [50], [9], [A vuoto],
-  [2094], [1047], [178], [Dinamico],
-  [2906], [1453], [247], [Statico massimo],
-)
+
