@@ -2814,12 +2814,6 @@ $ F = frac(G dot.op d dot.op f, 8 dot.op c^3 dot.op i) + F_0 $
 == Molle a lamina
 === Generalità, applicazioni e confronto con le molle a elica cilindrica
 Le molle a lamina rappresentano una tipologia di elementi elastici largamente impiegata nella pratica ingegneristica in alternativa alle molle a elica cilindrica. Esse ricorrono a lamine che possono essere impacchettate tra loro e fissate alle estremità in modo da inflettersi sotto l'azione di carichi dinamici. Nella configurazione a balestra, costituita da più foglie collegate mediante dispositivi di serraggio e fissaggio, trovano frequente impiego alla base dei convogli merci ferroviari, nei veicoli industriali pesanti e negli autocarri.
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: composizione introduttiva di immagini reali e schemi di molle a lamina e a balestra: pacchi di molle a balestra con occhielli alle estremità in officina, assale con sospensione a balestra, dettaglio di sospensione ferroviaria a balestra sopra la ruota su rotaia, assale automobilistico con due molle a balestra longitudinali (indicate come "Leaf springs") e dettaglio di balestra multi-foglia montata su ruota di veicolo pesante; più vista tridimensionale di un assale con sospensione a balestra ("Leaf Spring Suspension")]])
-
 Rispetto alle sospensioni tradizionali basate su molle a elica cilindrica e ammortizzatori, le molle a lamina e a balestra presentano specifici vantaggi e svantaggi progettuali.
 
 #strong[Vantaggi:]
