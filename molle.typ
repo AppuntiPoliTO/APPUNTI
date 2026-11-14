@@ -3069,7 +3069,7 @@ $ sigma_(m a x) = frac(F l, b_0 h^2 / 6) $
 
 La lamina rettangolare non utilizza quindi appieno il materiale. Per recuperare la perdita lungo l'asse conviene ricorrere a una #strong[molla di uniforme resistenza], progettata in modo da mantenere $sigma_(m a x) = "costante"$ lungo l'intera lunghezza.
 
-==== Solidi di uniforme resistenza: alternative progettuali
+=== Solidi di uniforme resistenza: alternative progettuali
 Per imporre che la tensione massima sia costante lungo tutta la trave:
 
 $ sigma = frac(F x, b h^2 / 6) = "cost" $
