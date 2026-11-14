@@ -3479,7 +3479,7 @@ Si osserva che al limite per $b_0' arrow.r 0$ (ritornando alla pianta triangolar
   line((4.18, 5.50), (4.62, 5.44), stroke: 0.5pt)
   content((4.65, 5.44), [$b / 2$], anchor: "west")
   line((4.42, 5.24), (4.94, 5.12), stroke: 0.5pt)
-  content((5, 5.12), [$a$], anchor: "west")
+  content((4.9, 5.3), [$a$], anchor: "west")
 
   // --- 2. VISTA INTERMEDIA (LAMELLE A PUNTA SOVRAPPOSTE) ---
   // Lamella a (n = 0)
