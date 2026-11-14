@@ -3342,6 +3342,7 @@ Lo stesso problema emerge ad esempio nei recuperatori di energia piezoelettrici 
     Nella molla a pianta trapezia la larghezza varia linearmente da una base maggiore $b_0$ all'incastro fino a una base minore finita $b_0'$ all'estremità libera, così da consentire l'applicazione del carico o del vincolo.
 
 La rastremazione della trave è caratterizzata dal fattore adimensionale $alpha$:
+$ alpha = frac(3, 2 + b_0' / b_0) = frac(3 b_0, 2 b_0 + b_0') $
   ],
   [#canvas(length: 0.8cm, {
   import draw: *
