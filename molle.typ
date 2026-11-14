@@ -45,7 +45,63 @@ dove $F$ e $M$ sono rispettivamente la forza in Newton e il momento in Newton-me
   align: (left + horizon, center + horizon),[L'energia complessiva immagazzinata dalla molla corrisponde all'area sottesa alla curva caratteristica. Nel caso di una caratteristica lineare, tale area è un triangolo, pertanto l'energia potenziale elastica $W$ vale:
 
 $ W = frac(F f, 2) $ A seconda della legge di variazione della rigidezza, la caratteristica può deviare dal comportamento lineare, presentando due tipologie di non linearità:],[
-#image("images/grafico molla 1.png", width:90%)
+// FASE 1 - ANALISI (IMMAGINE 5: Grafico Forza-Freccia F(M) vs f(theta) con curve hardening, lineare, softening)
+// 1. PANNELLI E SCALA: 1 pannello, larghezza ~330 px, N = 45 px per 1 cm -> larghezza ~7.3 cm.
+//    Origine O = (0, 0) all'incrocio degli assi (px_O = 62, py_O = 175).
+// 2. COLORI: nero per assi, curve e testi; rosso (presente nell'immagine) per il tratteggio dell'area triangolare.
+// 3. CLASSIFICAZIONE CURVE:
+//    - Retta lineare: segmento da (0, 0) a (2.85, 2.85), chiusura verticale a (2.85, 0).
+//    - Curva hardening (tratteggiata): campioni (0,0), (0.44,0.49), (0.89,1.07), (1.33,1.73), (1.67,2.31), (1.96,2.89), (2.18,3.44).
+//      Test cerchio: cx=-7.659, cy=7.265, r=10.557, e_max = 0.0009 <= 0.08 -> ARCO DI CERCHIO.
+//      Idealizzazione tangente esatta a 45deg in (0,0): centro (-7.50, 7.50), r = 10.607, start = 315deg, stop = 337deg.
+//    - Curva softening (punteggiata): campioni (0,0), (0.50,0.44), (1.00,0.78), (1.50,1.00), (2.00,1.13), (2.50,1.18), (3.05,1.18).
+//      Test cerchio: cx=2.680, cy=-2.394, r=3.593, e_max = 0.005 <= 0.08 -> ARCO DI CERCHIO.
+//      Idealizzazione tangente esatta a 45deg in (0,0): centro (2.65, -2.65), r = 3.748, start = 82deg, stop = 135deg.
+
+// FASE 2 - COSTRUZIONE
+#canvas(length: 1cm, {
+  import draw: *
+
+  // Tratteggio obliquo rosso nell'area sottesa alla retta lineare (pendenza -1, passo 0.60)
+  line((0.30, 0.30), (0.60, 0.00), stroke: (paint: red, thickness: 0.7pt))
+  line((0.60, 0.60), (1.20, 0.00), stroke: (paint: red, thickness: 0.7pt))
+  line((0.90, 0.90), (1.80, 0.00), stroke: (paint: red, thickness: 0.7pt))
+  line((1.20, 1.20), (2.40, 0.00), stroke: (paint: red, thickness: 0.7pt))
+  line((1.50, 1.50), (2.85, 0.15), stroke: (paint: red, thickness: 0.7pt))
+  line((1.80, 1.80), (2.85, 0.75), stroke: (paint: red, thickness: 0.7pt))
+  line((2.10, 2.10), (2.85, 1.35), stroke: (paint: red, thickness: 0.7pt))
+  line((2.40, 2.40), (2.85, 1.95), stroke: (paint: red, thickness: 0.7pt))
+  line((2.70, 2.70), (2.85, 2.55), stroke: (paint: red, thickness: 0.7pt))
+
+  // Assi cartesiani
+  line((-0.35, 0.00), (3.65, 0.00), mark: (end: ">"), stroke: 0.8pt)
+  line((0.00, -0.35), (0.00, 3.45), mark: (end: ">"), stroke: 0.8pt)
+
+  // Curve: lineare, chiusura verticale, hardening (tratteggiata), softening (punteggiata)
+  line((0.00, 0.00), (2.85, 2.85), stroke: 1.0pt)
+  line((2.85, 2.85), (2.85, 0.00), stroke: 0.6pt)
+  arc((-7.50, 7.50), start: 315deg, stop: 337deg, radius: 10.607, anchor: "origin", stroke: (dash: "dashed", thickness: 1.0pt))
+  arc((2.65, -2.65), start: 82deg, stop: 135deg, radius: 3.748, anchor: "origin", stroke: (dash: "dotted", thickness: 1.0pt))
+
+  // Frecce di richiamo
+  line((3.00, 3.50), (2.28, 3.16), mark: (end: ">"), stroke: 0.6pt)
+  line((3.20, 2.35), (2.15, 2.15), mark: (end: ">"), stroke: 0.6pt)
+  line((3.95, 1.45), (2.48, 1.55), mark: (end: ">"), stroke: 0.6pt)
+  line((3.40, 0.85), (2.15, 1.06), mark: (end: ">"), stroke: 0.6pt)
+
+  // Etichette
+  content((-0.18, 3.25), [$F (M)$], anchor: "east")
+  content((2.95, -0.32), [$f (theta)$], anchor: "north")
+  content((3.05, 3.50), [hardening], anchor: "west")
+  content((3.25, 2.35), [lineare], anchor: "west")
+  content((4.00, 1.45), [$W = (F f) / 2$], anchor: "west")
+  content((3.45, 0.85), [softening], anchor: "west")
+})
+// FASE 3 - VERIFICA:
+// 1. Curve hardening e softening: archi di cerchio (e_max = 0.0009 e 0.005); zero bezier.
+// 2. Verifica origine arco hardening a 315deg: (-7.50 + 10.607*cos(315deg), 7.50 + 10.607*sin(315deg)) = (0.000, 0.000).
+// 3. Verifica origine arco softening a 135deg: (2.65 + 3.748*cos(135deg), -2.65 + 3.748*sin(135deg)) = (0.000, 0.000).
+// 4. Verifica linee rosse contenute esattamente nel triangolo (0,0)-(2.85,2.85)-(2.85,0).
 ])
 
 
