@@ -2994,8 +2994,8 @@ La riduzione a un terzo deriva dal fatto che nella trazione pura tutto il materi
 
 === Molla a lamina con pianta rettangolare
 #grid(
-  columns: (1fr, fr),
-  column-gutter: -3em,
+  columns: (1fr, 1fr),
+  column-gutter: 0em,
   align: (left + horizon, center + horizon),[Considerando una trave a mensola incastrata a un'estremità e caricata all'estremo libero da una forza verticale $F$, avente pianta rettangolare di larghezza costante $b_0$, spessore $h$ e lunghezza $l$, la tensione normale varia lungo l'asse della trave in funzione dell'ascissa $x$ misurata dall'estremità libera. Poiché il momento flettente $M_f = F x$ ha andamento triangolare (nullo all'estremo libero e massimo all'incastro), la tensione normale alla coordinata $x$ e la rotazione elementare $d alpha$ risultano:],[#canvas(length: 0.7cm, {
   import draw: *
 
