@@ -3331,7 +3331,7 @@ $ U = frac(1, 3) $ Dal punto di vista pratico e costruttivo, tuttavia, un'estrem
   content((4.02, -4.10), [$b_0$], anchor: "west")
 })])
 Lo stesso problema emerge ad esempio nei recuperatori di energia piezoelettrici (lamine in alluminio incastrate rivestite con strati piezoceramici dotati di elettrodi per convertire l'energia delle vibrazioni in energia elettrica), dove una punta stretta impedisce di sfruttare fino in fondo la superficie utile del materiale piezoceramico. Per questo motivo si adotta una soluzione di compromesso: la #strong[molla con pianta trapezia].
-
+#pagebreak()
 
 === Molla a lamina con pianta trapezia
 #grid(
