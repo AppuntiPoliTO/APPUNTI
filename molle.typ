@@ -1554,8 +1554,8 @@ In questa espressione compaiono due coefficienti distinti:
   line((0.71, 0), (0.71, 2.00), stroke: (paint: rgb("#e60000"), thickness: 1pt))
 
   // Assi coordinati
-  line((0, 0), (0, 4.75), mark: (end: ">", size: 0.28, fill: orange), stroke: (paint: rgb("#e60000"), thickness: 2pt))
-  line((0, 0), (4.60, 0), mark: (end: ">", size: 0.28, fill: orange), stroke: (paint: rgb("#e60000"), thickness: 2pt))
+  line((0, 0), (0, 4.75), mark: (end: ">", size: 0.28, fill: orange), stroke: (paint: rgb("#000000"), thickness: 2pt))
+  line((0, 0), (4.60, 0), mark: (end: ">", size: 0.28, fill: orange), stroke: (paint: rgb("#000000"), thickness: 2pt))
 
   // Curve sforzo-deformazione
   line((0, 0), (1.15, 3.60), stroke: (paint: rgb("#222899"), thickness: 1.4pt))
