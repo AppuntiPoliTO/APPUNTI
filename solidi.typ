@@ -26,45 +26,7 @@
   [Un solido assialsimmetrico è generato idealmente dalla rivoluzione di una sezione piana nell'intorno
 di un asse di riferimento, che costituisce quindi un asse di rotazione e
 di simmetria per la figura. L'analisi tensionale dei solidi assialsimmetrici serve a risolvere le problematiche strutturali di oggetti generati dalla rivoluzione di una sezione geometrica piana attorno a un asse di simmetria (es. reattori nucleari, recipienti in pressione, bombole per gas e silos).
-In questi corpi la sezione trasversale non è trascurabile rispetto alla lunghezza dell'elemento. Pertanto, il modello semplificato della trave di De Saint-Venant risulta inapplicabile per calcolare tensioni, deformazioni e spostamenti.],[#canvas(length: 0.8cm, {
-  import draw: *
-  
-  // Faccia frontale
-  circle((0, 0), radius: 2.2, stroke: 1pt)
-  circle((0, 0), radius: 1.3, stroke: 1pt)
-  
-  // Faccia posteriore e corpo del cilindro
-  arc((4.0, 3.0), start: -53.13deg, stop: 126.87deg, radius: 2.2, anchor: "origin", stroke: 1pt)
-  line((-1.32, 1.76), (2.68, 4.76), stroke: 1pt)
-  line((1.32, -1.76), (5.32, 1.24), stroke: 1pt)
-  
-  // Assi di riferimento centrali
-  line((-2.8, 0), (2.8, 0), stroke: (dash: "dash-dotted", thickness: 0.8pt))
-  line((0, -2.8), (0, 2.8), stroke: (dash: "dash-dotted", thickness: 0.8pt))
-  
-  // Linea radiale e arco per l'angolo theta
-  line((0, 0), (-1.43, 1.00), stroke: 0.8pt)
-  arc((0, 0), start: 0deg, stop: 145deg, radius: 0.5, mark: (end: ">"), anchor: "origin", stroke: 0.8pt)
-  content((0.6, 0.4), [$theta$])
-  
-  // Sistema di coordinate locale 1 (destra, raggio 1.75)
-  circle((1.75, 0), radius: 0.08, fill: black, stroke: none)
-  line((1.75, 0), (2.55, 0), mark: (end: ">"), stroke: 1pt)
-  line((1.75, 0), (1.75, 0.8), mark: (end: ">"), stroke: 1pt)
-  content((2.6, -0.3), [$r$])
-  content((1.4, 0.6), [$c$])
-  content((1.9, -0.3), [$z$])
-  
-  // Sistema di coordinate locale 2 (sinistra, raggio 1.75, angolo 145 deg)
-  circle((-1.43, 1.00), radius: 0.08, fill: black, stroke: none)
-  line((-1.43, 1.00), (-2.09, 1.46), mark: (end: ">"), stroke: 1pt)
-  line((-1.43, 1.00), (-1.89, 0.34), mark: (end: ">"), stroke: 1pt)
-  content((-2.3, 1.6), [$r$])
-  content((-1.9, 0.1), [$c$])
-  content((-1.1, 1.1), [$z$])
-  
-  
-})])
+In questi corpi la sezione trasversale non è trascurabile rispetto alla lunghezza dell'elemento. Pertanto, il modello semplificato della trave di De Saint-Venant risulta inapplicabile per calcolare tensioni, deformazioni e spostamenti.],[#include "figs/solidi-fig01.typ"])
 
 Affinché la trattazione sia rigorosa, imponiamo un triplice vincolo sulle condizioni iniziali del modello:
 1.  *Assialsimmetria geometrica:* Il solido deve avere una geometria caratterizzata da una simmetria assiale, ad esempio un cilindro è un rettangolo rivoluzionato attorno all'asse centrale.
@@ -89,44 +51,7 @@ $ sigma(r,theta , z) = sigma(r) $
   Essendo le facce laterali libere da carichi, la tensione assiale è nulla, instaurando un puro stato di tensione piano (biassiale). Si assume $sigma_z = 0$.
 - *Anelli*: Elementi aventi dimensioni ridotte sia in spessore assiale sia radialmente (anelli sottili).
 
-Come equazioni risolventi vengono usate le equazioni di equilibrio di congruenza ed elasticità del materiale.],[#canvas(length: 0.7cm, {
-  import draw: *
-  
-  // Corpo e faccia posteriore (disegnati per primi, in secondo piano)
-  arc((4.0, 2.5), start: -58deg, stop: 122deg, radius: 2.0, anchor: "origin", stroke: 1pt)
-  line((-1.06, 1.70), (2.94, 4.20), stroke: 1pt)
-  line((1.06, -1.70), (5.06, 0.80), stroke: 1pt)
-  
-  // Faccia frontale (con riempimento bianco per coprire perfettamente le giunzioni)
-  circle((0, 0), radius: 2.0, fill: white, stroke: 1pt)
-  circle((0, 0), radius: 1.4, fill: white, stroke: 1pt)
-  
-  // Assi di simmetria (in primo piano)
-  line((-2.5, 0), (2.5, 0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  line((0, -2.5), (0, 2.5), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  
-  // Quota D_i
-  line((-1.4, 0), (-1.4, -3.2), stroke: 0.6pt)
-  line((1.4, 0), (1.4, -3.2), stroke: 0.6pt)
-  line((-1.4, -2.8), (1.4, -2.8), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  content((0, -2.5), [$D_i$]) // Distanziato dalla linea a y=-2.8
-  
-  // Quota D_e
-  line((-2.0, 0), (-2.0, -4.2), stroke: 0.6pt)
-  line((2.0, 0), (2.0, -4.2), stroke: 0.6pt)
-  line((-2.0, -3.8), (2.0, -3.8), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  content((0, -3.5), [$D_e$]) // Distanziato dalla linea a y=-3.8
-  
-  // Quota s
-  line((0.50, 0.50), (0.99, 0.99), mark: (end: ">"), stroke: 0.6pt)
-  line((1.90, 1.90), (1.41, 1.41), mark: (end: ">"), stroke: 0.6pt)
-  content((1.4, 1.9), [$s$]) // Posizionato in modo da non toccare la freccia esterna
-  
-  // Quota L
-  line((1.06, -1.8), (2.06, -3.20), stroke: 0.6pt)
-  line((5.06, 0.80), (6.06, -0.70), stroke: 0.6pt)
-  line((1.76, -2.75), (5.76, -0.25), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  content((3.5, -1.1), [$L$]) })])
+Come equazioni risolventi vengono usate le equazioni di equilibrio di congruenza ed elasticità del materiale.],[#include "figs/solidi-fig02.typ"])
 
 
 #v(1em)
@@ -143,147 +68,7 @@ I recipienti cilindrici in pressione sono solidi assialsimmetrici complessi, il 
 #grid(
   columns: (0.9fr, 1fr),
   column-gutter: 1em,
-  align: (center + horizon, center + horizon),[#canvas(length: 1cm, {
-  import draw: *
-  
-  // Assi di simmetria
-  line((0, -2.2), (0, 2.2), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  line((-2.2, 0), (2.2, 0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  
-  // Faccia frontale
-  circle((0, 0), radius: 1.4, stroke: 1pt)
-  circle((0, 0), radius: 1.8, stroke: 1pt)
-  
-  // Corpo del cilindro (linee tangenti)
-  line((-0.632, 1.685), (3.368, 3.185), stroke: 1pt)
-  line((0.632, -1.685), (4.632, -0.185), stroke: 1pt)
-  
-  // Faccia posteriore (arco visibile tra i punti di tangenza)
-  arc((4.0, 1.5), start: -69.44deg, stop: 110.56deg, radius: 1.8, anchor: "origin", stroke: 1pt)
-  
-  // Frecce pressione interna p_i
-  line((0.580, 0.155), (1.352, 0.362), mark: (end: ">"), stroke: 1pt)
-  line((0.424, 0.424), (0.990, 0.990), mark: (end: ">"), stroke: 1pt)
-  line((0.155, 0.580), (0.362, 1.352), mark: (end: ">"), stroke: 1pt)
-  line((-0.155, 0.580), (-0.362, 1.352), mark: (end: ">"), stroke: 1pt)
-  line((-0.424, 0.424), (-0.990, 0.990), mark: (end: ">"), stroke: 1pt)
-  line((-0.580, 0.155), (-1.352, 0.362), mark: (end: ">"), stroke: 1pt)
-  line((-0.580, -0.155), (-1.352, -0.362), mark: (end: ">"), stroke: 1pt)
-  line((-0.424, -0.424), (-0.990, -0.990), mark: (end: ">"), stroke: 1pt)
-  line((-0.155, -0.580), (-0.362, -1.352), mark: (end: ">"), stroke: 1pt)
-  line((0.155, -0.580), (0.362, -1.352), mark: (end: ">"), stroke: 1pt)
-  line((0.424, -0.424), (0.990, -0.990), mark: (end: ">"), stroke: 1pt)
-  line((0.580, -0.155), (1.352, -0.362), mark: (end: ">"), stroke: 1pt)
-  
-  // Quota D_i (da 135 a 315 gradi)
-  line((-0.990, 0.990), (0.990, -0.990), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  
-  // Quota s (spessore, a 45 gradi)
-  line((0.707, 0.707), (0.990, 0.990), mark: (end: ">"), stroke: 0.6pt)
-  line((1.556, 1.556), (1.273, 1.273), mark: (end: ">"), stroke: 0.6pt)
-  
-  // Quota L (lunghezza cilindro)
-  line((0.702, -1.872), (1.158, -3.089), stroke: 0.6pt)
-  line((4.702, -0.372), (5.158, -1.589), stroke: 0.6pt)
-  line((1.053, -2.808), (5.053, -1.308), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  
-  // Etichette
-  content((-0.6, -0.4), [$p_i$])
-  content((0.2, 0.3), [$D_i$])
-  content((1.7, 1.6), [$s$])
-  content((3.2, -2.4), [$L$])
-})],[#canvas(length: 1cm, {
-  import draw: *
-
-  // ================= SCHEMA PRINCIPALE =================
-
-  // --- Contorni base e linee longitudinali ---
-  // Piastra base frontale
-  line((-2.5, 0), (2.5, 0), stroke: 1pt) // Bordo superiore (superficie di taglio fluido)
-  line((-2.5, -0.4), (2.5, -0.4), stroke: 1pt) // Bordo inferiore
-  line((-2.5, 0), (-2.5, -0.4), stroke: 1pt) // Spigolo sinistro
-  line((2.5, 0), (2.5, -0.4), stroke: 1pt) // Spigolo destro
-
-  // Piastra base prospettiva
-  line((2.5, 0), (6.5, 1.5), stroke: 1pt) // Bordo destro superiore
-  line((2.5, -0.4), (6.5, 1.1), stroke: 1pt) // Bordo destro inferiore
-  line((6.5, 1.1), (6.5, 1.5), stroke: 1pt) // Spigolo posteriore verticale
-
-  // Cilindro prospettiva
-  line((-0.88, 2.34), (3.12, 3.84), stroke: 1pt) // Silhouette superiore
-
-  // --- Archi cilindrici ---
-  // Archi frontali
-  arc((0,0), start: 0deg, stop: 180deg, radius: 2.5, anchor: "origin", stroke: 1pt) // Esterno
-  arc((0,0), start: 0deg, stop: 180deg, radius: 2.0, anchor: "origin", stroke: 1pt) // Interno
-
-  // Arco posteriore (da angolo 0 della prospettiva fino alla tangenza)
-  arc((4.0, 1.5), start: 0deg, stop: 110.6deg, radius: 2.5, anchor: "origin", stroke: 1pt)
-
-  // --- Frecce Pressione (p_i) ---
-  // Frecce radiali
-  line((0.91, 0.42), (1.63, 0.76), mark: (end: ">"), stroke: 1pt) // 25 deg
-  line((0.50, 0.87), (0.90, 1.56), mark: (end: ">"), stroke: 1pt) // 60 deg
-  line((0, 1.0), (0, 1.8), mark: (end: ">"), stroke: 1pt)         // 90 deg
-  line((-0.50, 0.87), (-0.90, 1.56), mark: (end: ">"), stroke: 1pt) // 120 deg
-  line((-0.91, 0.42), (-1.63, 0.76), mark: (end: ">"), stroke: 1pt) // 155 deg
-
-  // Frecce verticali verso il basso
-  line((-1.5, 0.8), (-1.5, 0.1), mark: (end: ">"), stroke: 1pt)
-  line((-1.0, 0.8), (-1.0, 0.1), mark: (end: ">"), stroke: 1pt)
-  line((-0.5, 0.8), (-0.5, 0.1), mark: (end: ">"), stroke: 1pt)
-  line((0, 0.8), (0, 0.1), mark: (end: ">"), stroke: 1pt)
-  line((0.5, 0.8), (0.5, 0.1), mark: (end: ">"), stroke: 1pt)
-  line((1.0, 0.8), (1.0, 0.1), mark: (end: ">"), stroke: 1pt)
-  line((1.5, 0.8), (1.5, 0.1), mark: (end: ">"), stroke: 1pt)
-
-  // Etichetta p_i
-  content((-0.2, 0.7), [$p_i$])
-
-  // --- Quote e Dimensioni ---
-  // Linee di estensione verticali
-  line((-2.5, -0.6), (-2.5, -1.6), stroke: 0.6pt)
-  line((-2.0, -0.2), (-2.0, -1.6), stroke: 0.6pt)
-  line((2.0, -0.2), (2.0, -1.6), stroke: 0.6pt)
-  line((2.5, -0.6), (2.5, -1.6), stroke: 0.6pt)
-
-  // Linea di quota orizzontale principale
-  line((-3.0, -1.2), (3.0, -1.2), stroke: 0.6pt)
-
-  // Marcatori (Punti e Croci)
-  circle((-2.5, -1.2), radius: 0.04, fill: black, stroke: none)
-  line((-2.08, -1.12), (-1.92, -1.28), stroke: 0.6pt) // Croce sx
-  line((-2.08, -1.28), (-1.92, -1.12), stroke: 0.6pt)
-  line((1.92, -1.12), (2.08, -1.28), stroke: 0.6pt) // Croce dx
-  line((1.92, -1.28), (2.08, -1.12), stroke: 0.6pt)
-  circle((2.5, -1.2), radius: 0.04, fill: black, stroke: none)
-
-  // Etichette quote
-  content((-2.25, -0.9), [$s$])
-  content((0, -0.9), [$D_i$])
-  content((2.25, -0.9), [$s$])
-
-
-  // ================= DETTAGLIO (Destra) =================
-  
-  // Parete curva superiore (archi da 0 a 25 gradi, centro a x=5.5)
-  arc((5.5, 0), start: 0deg, stop: 25deg, radius: 2.0, anchor: "origin", stroke: 1pt) // Interno (7.5 -> 7.31)
-  arc((5.5, 0), start: 0deg, stop: 25deg, radius: 2.4, anchor: "origin", stroke: 1pt) // Esterno (7.9 -> 7.67)
-  line((7.5, 0), (7.9, 0), stroke: 1pt) // Bordo inferiore parete curva
-
-  // Piastra base inferiore (forma a gradino)
-  line((6.8, -0.6), (7.9, -0.6), stroke: 1pt) // Bordo superiore piastra
-  line((7.9, -0.6), (7.9, -1.0), stroke: 1pt) // Faccia esterna verticale
-  line((7.9, -1.0), (6.8, -1.0), stroke: 1pt) // Bordo inferiore piastra
-
-  // Frecce di tensione sigma_c (doppia punta)
-  line((7.6, 0), (7.6, -0.6), mark: (start: ">", end: ">"), stroke: 1pt)
-  line((7.8, 0), (7.8, -0.6), mark: (start: ">", end: ">"), stroke: 1pt)
-
-  // Etichetta sigma_c
-  content((8.3, -0.3), [$sigma_c$])
-
-})])
+  align: (center + horizon, center + horizon),[#include "figs/solidi-fig03.typ"],[#include "figs/solidi-fig04.typ"])
 Nel caso di un tubo con pressione interna $p_i$, andiamo a determinare
 le tensioni.
 
@@ -327,29 +112,7 @@ $r + u$, con lunghezza circonferenziale finale $l_f = 2 pi\(r + u\)$.
 deformazione circonferenziale è per definizione il rapporto percentuale
 dell'allungamento: \ $ epsilon.alt_c = frac(l_f - l_i, l_i) = frac(2 pi\(r + u\)- 2 pi r, 2 pi r) = u / r $ Da questa si ricava la relazione inversa che permette il calcolo dello
 spostamento radiale, di estremo interesse in progettazione: \ $ u = epsilon.alt_c dot.op r = epsilon.alt_c D/2 $],[
-#canvas(length: 1cm, {
-  import draw: *
-  
-  // Cerchio interno
-  circle((0, 0), radius: 1.5, stroke: (paint: blue, thickness: 1.5pt))
-  
-  // Cerchio esterno
-  circle((0, 0), radius: 2.5, stroke: (paint: red, thickness: 1.5pt, dash: "dashed"))
-  
-  // Frecce radiali uscenti
-  line((1.5, 0), (2.5, 0), mark: (end: ">"), stroke: 1pt)
-  line((1.061, 1.061), (1.768, 1.768), mark: (end: ">"), stroke: 1pt)
-  line((0, 1.5), (0, 2.5), mark: (end: ">"), stroke: 1pt)
-  line((-1.061, 1.061), (-1.768, 1.768), mark: (end: ">"), stroke: 1pt)
-  line((-1.5, 0), (-2.5, 0), mark: (end: ">"), stroke: 1pt)
-  line((-1.061, -1.061), (-1.768, -1.768), mark: (end: ">"), stroke: 1pt)
-  line((0, -1.5), (0, -2.5), mark: (end: ">"), stroke: 1pt)
-  line((1.061, -1.061), (1.768, -1.768), mark: (end: ">"), stroke: 1pt)
-  
-  // Etichette
-  content((0.8, -0.2), [$l_i$])
-  content((2.9, 1.1), [$l_f$])
-})
+#include "figs/solidi-fig05.typ"
 ]
 ) 
 
@@ -367,33 +130,7 @@ spostamento radiale, di estremo interesse in progettazione: \ $ u = epsilon.alt_
     Poiché in un tubo sottile il diametro medio $D_s$ è approssimabile al diametro interno $D_i$, la tensione assiale risulta pari alla metà della tensione circonferenziale $sigma_c$.
   ],
   [
-#canvas(length: 0.8cm, {
-  import draw: *
-  rect((-1.8, -3), (-0.8, 3), stroke: 1pt)
-  line((0, 3), (6, 3), (6, -3), (0, -3), (0, -2), (5, -2), (5, 2), (0, 2), close: true, stroke: 1pt)
-  line((-2, 0), (6.5, 0), stroke: (dash: "dashed", thickness: 1pt))
-  line((-2.8, 3), (-2.4, 3), stroke: 1pt)
-  line((-2.8, 2), (-2.4, 2), stroke: 1pt)
-  line((-2.8, -2), (-2.4, -2), stroke: 1pt)
-  line((-2.8, -3), (-2.4, -3), stroke: 1pt)
-  line((-2.6, 2), (-2.6, 3), mark: (start: ">", end: ">"), stroke: 1pt)
-  line((-2.6, -2), (-2.6, 2), mark: (start: ">", end: ">"), stroke: 1pt)
-  line((-2.6, -3), (-2.6, -2), mark: (start: ">", end: ">"), stroke: 1pt)
-  content((-3.2, 2.5), [$s$])
-  content((-3.2, 0), [$D_i$])
-  content((-3.2, -2.5), [$s$])
-  line((-0.8, 2.7), (-0.2, 2.7), mark: (end: ">"), stroke: 1pt)
-  line((0, 2.3), (-0.6, 2.3), mark: (end: ">"), stroke: 1pt)
-  line((-0.8, -2.3), (-0.2, -2.3), mark: (end: ">"), stroke: 1pt)
-  line((0, -2.7), (-0.6, -2.7), mark: (end: ">"), stroke: 1pt)
-  content((-0.4, -1.6), [$sigma_z$])
-  line((3.8, 1.5), (5, 1.5), mark: (end: ">"), stroke: 1pt)
-  line((3.8, 0.75), (5, 0.75), mark: (end: ">"), stroke: 1pt)
-  line((3.8, 0), (5, 0), mark: (end: ">"), stroke: 1pt)
-  line((3.8, -0.75), (5, -0.75), mark: (end: ">"), stroke: 1pt)
-  line((3.8, -1.5), (5, -1.5), mark: (end: ">"), stroke: 1pt)
-  content((3.2, 0.75), [$p_i$])
-})
+#include "figs/solidi-fig06.typ"
   ]
 )
 #v(1em)
@@ -433,49 +170,7 @@ $ u_i = D_i / 2 epsilon_c = D_i / 2 \{ p_i / E (1 + nu) [ D_i / (2s) (1 - nu) + 
     
   ],
   move(dx: +17pt)[ 
-#canvas(length: 0.8cm, {
-  import draw: *
-  //assi cartesiani
-   line((2.5, 2), (2.5, 3.5), stroke: (paint: rgb("#898d91")), thickness: 1.5pt, mark:(end:">", fill: rgb("#898d91")))
-   content((2.3, 3), text(fill: rgb("#476481"))[$"r"$], anchor: "south")
-   line((2.5, 2), (4, 2), stroke: (paint: rgb("#898d91")), thickness: 1.5pt, mark:(end:">", fill: rgb("#898d91")))
-   content((3.6, 1.7), text(fill: rgb("#476481"))[$"c"$], anchor: "south")
-   line((2.5, 2), (3.5, 3), stroke: (paint: rgb("#898d91")), thickness: 1.5pt, mark:(end:">", fill: rgb("#898d91")))
-   content((3, 2.8), text(fill: rgb("#476481"))[$"a"$], anchor: "south")
-  // Linee di costruzione
-  line((0, 0), (0, 6.5), stroke: (paint: rgb("#898d91"), thickness: 1pt, dash: "dash-dotted"))
-  line((0, 0), (-1.04, 3.86), stroke: (paint: rgb("#898d91"), thickness: 1pt, dash: "dotted"))
-  line((0, 0), (1.04, 3.86), stroke: (paint: rgb("#898d91"), thickness: 1pt, dash: "dotted"))
-  line((1.39, 1.95), (2.04, 4.36), stroke: (paint: rgb("#898d91"), thickness: 1pt, dash: "dotted"))
-
-  // Spigoli Nascosti
-  arc((1.0, 0.5), start: 75deg, stop: 105deg, radius: 4, anchor: "origin", stroke: (paint: rgb("#898d91"), thickness: 1.5pt, dash: "dashed"))
-  line((-0.04, 4.36), (-0.55, 6.30), stroke: (paint: rgb("#898d91"), thickness: 1.5pt, dash: "dashed"))
-  line((-1.04, 3.86), (-0.04, 4.36), stroke: (paint: rgb("#898d91"), thickness: 1.5pt, dash: "dashed")) 
-
-  // Spigoli Visibili 
-  arc((0, 0), start: 75deg, stop: 105deg, radius: 4, anchor: "origin", stroke: (paint: rgb("#898d91"), thickness: 1.5pt))
-  arc((0, 0), start: 75deg, stop: 105deg, radius: 6, anchor: "origin", stroke: (paint: rgb("#898d91"), thickness: 1.5pt))
-  line((-1.04, 3.86), (-1.55, 5.80), stroke: (paint: rgb("#898d91"), thickness: 1.5pt))
-  line((1.04, 3.86), (1.55, 5.80), stroke: (paint: rgb("#898d91"), thickness: 1.5pt))
-  arc((1.0, 0.5), start: 75deg, stop: 105deg, radius: 6, anchor: "origin", stroke: (paint: rgb("#898d91"), thickness: 1.5pt))
-  line((-1.55, 5.80), (-0.55, 6.30), stroke: (paint: rgb("#898d91"), thickness: 1.5pt))
-  line((1.55, 5.80), (2.55, 6.30), stroke: (paint: rgb("#898d91"), thickness: 1.5pt))
-  line((1.04, 3.86), (2.04, 4.36), stroke: (paint: rgb("#898d91"), thickness: 1.5pt))
-  line((2.04, 4.36), (2.55, 6.30), stroke: (paint: rgb("#898d91"), thickness: 1.5pt))
-
-  // Annotazioni
-  arc((0, 0), start: 75deg, stop: 105deg, radius: 2.2, anchor: "origin", mark: (start: ">", end: ">", fill: rgb("#476481")), stroke: (paint: rgb("#476481"), thickness: 1pt))
-  content((0, 2.5), text(fill: rgb("#476481"))[$dif theta$], anchor: "south")
-
-  line((0.65, 2.41), (1.65, 2.91), mark: (start: ">", end: ">", fill: rgb("#476481")), stroke: (paint: rgb("#476481"), thickness: 1pt))
-  content((1.1, 2.85), text(fill: rgb("#476481"))[$bold(b)$], anchor: "south")
-
-  line((2.55, 6.30), (4.00, 5.91), stroke: (paint: rgb("#898d91"), thickness: 0.8pt))
-  line((2.04, 4.36), (3.49, 3.97), stroke: (paint: rgb("#898d91"), thickness: 0.8pt))
-  line((3.20, 4.05), (3.71, 5.99), mark: (start: ">", end: ">", fill: rgb("#476481")), stroke: (paint: rgb("#476481"), thickness: 1pt))
-  content((3.65, 5.02), text(fill: rgb("#4b6986"))[$bold("dr")$], anchor: "west")
-})
+#include "figs/solidi-fig07.typ"
   ]
 )
 Delle 6 equazioni di equilibrio nello spazio tridimensionale del solido 5 sono soddisfatte per via della simmetria:
@@ -504,40 +199,7 @@ Inoltre per le forze parallele all'asse c notiamo che queste sono identiche a ca
 
   ],
   move(dx: +11pt)[
-#canvas(length: 0.8cm, {
-  import draw: *
-  arc((1.0, -7.5), start: 78deg, stop: 102deg, radius: 8, anchor: "origin", stroke: (paint: rgb("#838383"), thickness: 1.5pt, dash: "dashed"))
-  line((-1.66, -0.17), (-0.66, 0.33), stroke: (paint: rgb("#838383"), thickness: 1.5pt, dash: "dashed"))
-  line((-0.66, 0.33), (-1.18, 2.77), stroke: (paint: rgb("#838383"), thickness: 1.5pt, dash: "dashed"))
-  arc((0.5, -7.75), start: 78deg, stop: 102deg, radius: 10.5, anchor: "origin", stroke: (paint: rgb("#838383"), thickness: 1.5pt, dash: "dashed"))
-  line((1.92, 1.05), (2.92, 1.55), stroke: (paint: rgb("#838383"), thickness: 1.5pt, dash: "dashed"))
-  line((-1.92, 1.05), (-0.92, 1.55), stroke: (paint: rgb("#838383"), thickness: 1.5pt, dash: "dashed"))
-  line((1.66, -0.17), (1.56, -0.66), stroke: (paint: rgb("#838383"), thickness: 1.5pt, dash: "dashed"))
-  line((2.66, 0.33), (2.56, -0.16), stroke: (paint: rgb("#838383"), thickness: 1.5pt, dash: "dashed"))
-  line((-1.66, -0.17), (-1.56, -0.66), stroke: (paint: rgb("#838383"), thickness: 1.5pt, dash: "dashed"))
-  line((0.5, -0.5), (0.5, 3.2), stroke: (paint: rgb("#838383"), thickness: 1.5pt, dash: "dash-dotted"))
-  arc((0, -8), start: 78deg, stop: 102deg, radius: 8, anchor: "origin", stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  arc((0, -8), start: 78deg, stop: 102deg, radius: 10.5, anchor: "origin", stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  arc((1.0, -7.5), start: 78deg, stop: 102deg, radius: 10.5, anchor: "origin", stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  line((-1.66, -0.17), (-2.18, 2.27), stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  line((1.66, -0.17), (2.18, 2.27), stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  line((-2.18, 2.27), (-1.18, 2.77), stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  line((2.18, 2.27), (3.18, 2.77), stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  line((1.66, -0.17), (2.66, 0.33), stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  line((2.66, 0.33), (3.18, 2.77), stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  circle((0.5, 2.75), radius: 0.08, fill: rgb("#cccccc"), stroke: (paint: rgb("#838383"), thickness: 1.2pt))
-  circle((0.5, 0.25), radius: 0.08, fill: rgb("#cccccc"), stroke: (paint: rgb("#838383"), thickness: 1.2pt))
-  circle((2.42, 1.30), radius: 0.08, fill: rgb("#cccccc"), stroke: (paint: rgb("#838383"), thickness: 1.2pt))
-  circle((-1.42, 1.30), radius: 0.08, fill: rgb("#cccccc"), stroke: (paint: rgb("#838383"), thickness: 1.2pt))
-  line((0.5, 2.75), (0.5, 4.2), mark: (end: ">", fill: rgb("#838383")), stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  line((0.5, 0.25), (0.5, -1.2), mark: (end: ">", fill: rgb("#838383")), stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  line((2.42, 1.30), (4.38, 0.88), mark: (end: ">", fill: rgb("#838383")), stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  line((-1.42, 1.30), (-3.38, 0.88), mark: (end: ">", fill: rgb("#838383")), stroke: (paint: rgb("#838383"), thickness: 1.5pt))
-  content((0.7, 3.6), text(fill: rgb("#476481"))[$(sigma_r dot r dif theta dot b) + dif/(dif r) (sigma_r dot r dif theta dot b) dif r$], anchor: "west")
-  content((0.5, -1.5), text(fill: rgb("#476481"))[$sigma_r dot r dif theta dot b$], anchor: "north")
-  content((-3.5, 0.88), text(fill: rgb("#476481"))[$sigma_c dot dif r dot b$], anchor: "east")
-  content((4.5, 0.88), text(fill: rgb("#476481"))[$sigma_c dot dif r dot b$], anchor: "west")
-})
+#include "figs/solidi-fig08.typ"
   ]
 )
 #grid(
@@ -546,46 +208,7 @@ Inoltre per le forze parallele all'asse c notiamo che queste sono identiche a ca
   align: (left + horizon, center + horizon), [La risultante radiale delle forze dovute alla tensione circonferenziale è $sigma_c dot "dr" dot b dot sin((dif theta)/2) $ essendo $sin((dif theta )/2) approx (dif theta)/2$ $arrow.r sigma_c dot d r dot b dot (dif theta)/2.$\ Nel concio elementare un eventuale carico di volume si scrive come $Phi_v dot r dif theta dot b dot d r. $\ Pertanto nell'equazione di equilibrio figurano:\ 
 $sigma_r arrow.r dif/ (dif r)(sigma_r dot r dot dif theta dot b) dif r arrow.r Phi_V  dot r dot dif theta dot b dot dif r \ sigma_c arrow.r - sigma_C dot dif r dot b dot dif theta$ \ Considerando b non dipendente da r e nessun carico volumetrico applicato otteniamo:\ $cancel(b dot dif theta) dif/(dif r)(sigma_r dot r ) cancel(dif r) - sigma_C cancel(dot b dot dif theta dot dif r)= 0 $ \  ],
   
-  move(dx: -7pt)[#canvas(length: 0.8cm, {
-  import draw: *
-
-  // Blocco ad anello (bordi spessi, grigio)
-  arc((0,0), start: 75deg, stop: 105deg, radius: 7.0, anchor: "origin", stroke: 2pt + rgb("#8a8a8a"))
-  arc((0,0), start: 75deg, stop: 105deg, radius: 4.0, anchor: "origin", stroke: 2pt + rgb("#8a8a8a"))
-  line((1.035, 3.864), (1.812, 6.761), stroke: 2pt + rgb("#8a8a8a"))
-  line((-1.035, 3.864), (-1.812, 6.761), stroke: 2pt + rgb("#8a8a8a"))
-
-  // Lati convergenti inferiori
-  line((0,0), (1.035, 3.864), stroke: 1.5pt + rgb("#666666"))
-  line((0,0), (-1.035, 3.864), stroke: 1.5pt + rgb("#666666"))
-
-  // Assi (tratteggiati)
-  line((0, -0), (0, 7.8), stroke: (dash: "dash-dotted", thickness: 1.2pt, paint: rgb("#838383")))
-  line((-3.0, 5.2), (3.0, 5.2), stroke: (dash: "dashed", thickness: 1.2pt, paint: rgb("#838383")))
-
-  // Vettori Forza
-  line((1.393, 5.2), (3.808, 4.553), mark: (end: ">"), stroke: 1.5pt + rgb("#8a8a8a"))
-  line((-1.393, 5.2), (-3.808, 4.553), mark: (end: ">"), stroke: 1.5pt + rgb("#8a8a8a"))
-
-  // Archetti angolari d(theta)/2
-  arc((0,0), start: 75deg, stop: 90deg, radius: 2.2, anchor: "origin", stroke: 1pt + rgb("#888888"))
-  arc((0,0), start: 90deg, stop: 105deg, radius: 2.2, anchor: "origin", stroke: 1pt + rgb("#888888"))
-  
-  // Quota angolare esterna destra
-  arc((1.393, 5.2), start: 345deg, stop: 360deg, radius: 1.4, anchor: "origin", mark: (start: ">"), stroke: 1pt + rgb("#666666"))
-
-  // Etichette (Testo puro Typst, nessun tag illegale o plugin LaTeX)
-  content((0.40, 2.80), text(fill: rgb("#4a5c6e"))[$ (dif theta) / 2 $])
-  content((-0.40, 2.80), text(fill: rgb("#4a5c6e"))[$ (dif theta) / 2 $])
-  
-  content((2.9, 5.8), text(fill: rgb("#4a5c6e"))[$ (dif theta) / 2 $])
-  
-  content((2.8, 3.8), text(fill: rgb("#4a5c6e"))[$ sigma_c dot dif r dot b $])
-  content((-2.8, 3.8), text(fill: rgb("#4a5c6e"))[$ sigma_c dot dif r dot b $])
-
- 
-  
-})])
+  move(dx: -7pt)[#include "figs/solidi-fig09.typ"])
 Questa equazione può essere scritta in due forme equivalenti, utili per legare la tensione circonferenziale alla variazione dello sforzo radiale nello spessore:
   $ sigma_c &= dif/(dif r) (sigma_r dot r) quad & (1^a " forma") \ 
   sigma_c &= r (dif sigma_r)/(dif r) + sigma_r quad & (2^a " forma") $
@@ -704,61 +327,7 @@ interno e a quella atmosferica esterna, oppure di alberi e mozzi
 soggetti a forzamento. Nei dischi da turbina, l'interazione con le
 palette (collegate tramite pin) può essere schematizzata come una
 pressione, sebbene di segno opposto qualora generi una trazione verso
-l'esterno.],[#canvas(length: 0.8cm, {
-  import draw: *
-  
-  // Riempimenti
-  circle((0, 0), radius: 1.5, fill: rgb("dcded0"), stroke: none)
-  line((-0.174, 1.992), (-0.218, 2.490), (-0.647, 2.415), (-1.057, 2.266), (-0.845, 1.813), (-0.518, 1.932), close: true, fill: rgb("989b9d"), stroke: none)
-
-  // Contorni base
-  circle((0, 0), radius: 3.0, stroke: 1pt + black)
-  circle((0, 0), radius: 1.5, stroke: 1pt + black)
-  
-  // Mirino centrale
-  line((-0.7, 0), (0.7, 0), stroke: (paint: black, thickness: 1.5pt, dash: "dash-dotted"))
-  line((0, -0.7), (0, 0.7), stroke: (paint: black, thickness: 1.5pt, dash: "dash-dotted"))
-
-  // Linee radiali tratteggiate (cuneo)
-  line((0, 0), (-0.262, 2.989), stroke: (paint: rgb("45525e"), thickness: 1.5pt, dash: "dotted"))
-  line((0, 0), (-1.268, 2.719), stroke: (paint: rgb("45525e"), thickness: 1.5pt, dash: "dotted"))
-
-  // Vettori esterni (p_e)
-  // Tratteggiati
-  line((4.136, 0.729), (2.954, 0.521), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt, dash: "dotted"))
-  // Continui
-  line((0.366, 4.184), (0.262, 2.989), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt))
-  line((1.436, 3.947), (1.026, 2.819), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt))
-  line((2.409, 3.441), (1.721, 2.458), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt))
-  line((3.217, 2.700), (2.298, 1.928), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt))
-  line((3.806, 1.775), (2.719, 1.268), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt))
-
-  // Vettori interni (p_i)
-  // Tratteggiati
-  line((-1.149, 0.964), (-1.762, 1.478), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt, dash: "dotted"))
-  line((-1.149, -0.964), (-1.762, -1.478), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt, dash: "dotted"))
-  // Continui
-  line((-1.410, 0.513), (-2.161, 0.787), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt))
-  line((-1.500, 0.000), (-2.300, 0.000), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt))
-  line((-1.410, -0.513), (-2.161, -0.787), mark: (end: ">"), stroke: (paint: rgb("45525e"), thickness: 1.5pt))
-
-  // Linee di riferimento e quote
-  // Quota D_i
-  line((-1.5, -1.6), (-1.5, -4.0), stroke: 1pt + rgb("45525e"))
-  line((1.5, -1.6), (1.5, -4.0), stroke: 1pt + rgb("45525e"))
-  line((-1.5, -3.8), (1.5, -3.8), mark: (start: ">", end: ">"), stroke: 1.5pt + rgb("45525e"))
-  content((0, -3.4), text(fill: rgb("45525e"), size: 12pt)[$bold(D)_bold(i)$])
-
-  // Quota D_e
-  line((-3.0, -0.5), (-3.0, -5.2), stroke: 1pt + rgb("45525e"))
-  line((3.0, -0.5), (3.0, -5.2), stroke: 1pt + rgb("45525e"))
-  line((-3.0, -5.0), (3.0, -5.0), mark: (start: ">", end: ">"), stroke: 1.5pt + rgb("45525e"))
-  content((0, -4.5), text(fill: rgb("45525e"), size: 12pt)[$bold(D)_bold(e)$])
-
-  // Etichette pressioni
-  content((3.8, 2.2), text(fill: rgb("45525e"), size: 12pt)[$bold(p)_bold(e)$])
-  content((0.0, -1.0), text(fill: rgb("45525e"), size: 12pt)[$bold(p)_bold(i)$])
-})]
+l'esterno.],[#include "figs/solidi-fig10.typ"]
 )
 
 Le condizioni al contorno si scrivono come:
@@ -802,41 +371,7 @@ interno, che risulta il punto maggiormente sollecitato.
     Il punto più sollecitato si trova al bordo interno, a contatto con il fluido. Essendo la funzione della sollecitazione decrescente col quadrato del raggio, la differenza tra le tensioni principali è sempre massima al bordo interno $r_i$.
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  line((-1, 0), (7.5, 0), mark: (end: ">"), stroke: 1pt)
-  line((0, -4), (0, 5.6), mark: (end: ">"), stroke: 1pt)
-
-  line((0, 1), (7.5, 1), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 2), (7.5, 2), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, -3.5), (1, -3.5), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((1, -3.5), (1, 5.5), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((6, 0), (6, 2.3), stroke: (dash: "dashed", thickness: 0.6pt))
-
-  bezier((1, -3.5), (6, 0), (1.2, -1.0), (3.0, 0), stroke: 1pt)
-  bezier((1, 5.5), (6, 2), (1.2, 3.0), (3.0, 2.0), stroke: 1pt)
-
-  circle((1, -3.5), radius: 0.08, fill: black, stroke: none)
-
-  line((6.5, 2.6), (6.5, 2.1), mark: (end: ">"), stroke: 0.8pt)
-  line((6.5, 0.4), (6.5, 0.9), mark: (end: ">"), stroke: 0.8pt)
-
-  content((-0.4, 5.5), [ $ sigma $ ])
-  content((7.2, -0.4), text(fill: red)[$ r $])
-  content((-0.3, -0.3), [$ 0 $])
-  
-  content((0.7, -0.8), [$ D_i/2 $])
-  content((6, -0.8), [$ D_e/2 $])
-  
-  content((-0.6, -3.5), [$ -p_i $])
-  content((-0.5, 1), [$ A $])
-  content((-0.5, 2), [$ 2A $])
-
-  content((3, -1.5), [$ sigma_r $])
-  content((3, 3.3), [$ sigma_c $])
-  content((6.5, 3.0), [$ A = B/r_e^2 $])
-})
+    #include "figs/solidi-fig11.typ"
   ]
 )
 #v(1em)
@@ -866,39 +401,7 @@ $ cases(
   minore e una curvatura più accentuata su cui si concentra la tensione.
   ],
   [
-   #canvas(length: 1cm, {
-  import draw: *
-
-  line((-0.5, 0), (7.5, 0), mark: (end: ">"), stroke: 1pt)
-  line((0, -6.5), (0, 1.5), mark: (end: ">"), stroke: 1pt)
-
-  line((0, -2.5), (7.0, -2.5), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, -3.0), (7.0, -3.0), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, -6.0), (1.5, -6.0), stroke: (dash: "dashed", thickness: 0.6pt))
-
-  line((1.5, 0), (1.5, -6.0), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((6.0, 0), (6.0, -3.5), stroke: (dash: "dashed", thickness: 0.6pt))
-
-  bezier((1.5, 0), (6.0, -2.5), (2.0, -2.0), (4.0, -2.4), stroke: 1pt)
-  bezier((1.5, -6.0), (6.0, -3.5), (2.0, -4.0), (4.0, -3.6), stroke: 1pt)
-
-  circle((1.5, -6.0), radius: 0.08, fill: black, stroke: none)
-  circle((6.0, -3.5), radius: 0.08, fill: black, stroke: none)
-
-  content((-0.4, 1.2), [$ sigma $])
-  content((7.2, -0.4), [$ r $])
-  content((-0.6, 0), [$ 0 $], anchor: "east")
-  
-  content((0.75, -0.8), [$ D_i/2 $])
-  content((6.5, -0.8), [$ D_e/2 $])
-  
-  content((-0.2, -2.5), [$ -p_e $], anchor: "east")
-  content((-0.2, -3.0), [$ A $], anchor: "east")
-  content((-0.2, -6.0), [$ 2A $], anchor: "east")
-
-  content((4.0, -1.8), [$ sigma_r $])
-  content((3.5, -4.6), [$ sigma_c $])
-})
+   #include "figs/solidi-fig12.typ"
   ]
 )
 #pagebreak()
@@ -932,47 +435,7 @@ che descrive $sigma_c$. Le intersezioni di quest'ultima con le verticali
 dei due raggi forniscono i valori esatti di $sigma_c$ ai bordi.
 
 Questo metodo permette di calcolare graficamente tutte le tensioni con
-estrema precisione e senza alcun dubbio sulle pendenze.],[#canvas(length: 1cm, {
-  import draw: *
-
-  line((-0.5, 0), (7.5, 0), mark: (end: ">"), stroke: 1pt)
-  line((0, -8.5), (0, 1.5), mark: (end: ">"), stroke: 1pt)
-
-  line((0, -3), (7.0, -3), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, -4), (6.0, -4), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((1.5, 0), (1.5, -5), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((6.0, 0), (6.0, -8), stroke: (dash: "dashed", thickness: 0.6pt))
-
-  line((0, -4), (6, 0), stroke: 1pt)
-  line((0, -4), (6, -8), stroke: 1pt)
-
-  circle((6.0, 0), radius: 0.08, fill: black, stroke: none)
-  circle((1.5, -3.0), radius: 0.08, fill: black, stroke: none)
-  circle((0, -4.0), radius: 0.08, fill: black, stroke: none)
-  circle((1.5, -5.0), radius: 0.08, fill: black, stroke: none)
-  circle((6.0, -8.0), radius: 0.08, fill: black, stroke: none)
-
-  content((-0.4, 1.2), [$sigma$])
-  content((7.2, -0.6), text(fill: red)[$ 1/r^2 $])
-  content((-0.6, 0), [$ 0 $], anchor: "east")
-  content((0.8, -1.0), text(fill: red)[$ D_e/2 $])
-  content((6.5, -1.0), text(fill: red)[$ D_i/2 $])
-
-  content((-0.2, -3.0), [$ -p_e $], anchor: "east")
-  content((-0.2, -4.0), [$ A $], anchor: "east")
-  content((6.5, -7.6), [$ 2A $])
-
-  content((3.5, -2.5), [$ sigma_r $])
-  content((3.5, -5.5), [$ sigma_c $])
-
-  content((5.8, 0.4), text(fill: blue)[*1*])
-  content((1.1, -2.6), text(fill: blue)[*2*])
-  content((3.2, -1.4), text(fill: blue)[*3*])
-  content((-0.4, -4.8), text(fill: blue)[*4*])
-  content((3.2, -6.8), text(fill: blue)[*5*])
-  content((1.9, -4.8), text(fill: blue)[*6*])
-  content((5.5, -7.5), text(fill: blue)[*7*])
-})])
+estrema precisione e senza alcun dubbio sulle pendenze.],[#include "figs/solidi-fig13.typ"])
 
 
 
@@ -997,33 +460,7 @@ La tensione assiale $sigma_z$ dipende dai vincoli d'installazione:
       sigma_z = (p_i D_i^2)/(D_e^2 - D_i^2) = A = "cost" $ 
   ],
   [
-    #canvas(length: 0.8cm, {
-  import draw: *
-  rect((-1.8, -3), (-0.8, 3), stroke: 1pt)
-  line((0, 3), (6, 3), (6, -3), (0, -3), (0, -2), (5, -2), (5, 2), (0, 2), close: true, stroke: 1pt)
-  line((-2, 0), (6.5, 0), stroke: (dash: "dashed", thickness: 1pt))
-  line((-2.8, 3), (-2.4, 3), stroke: 1pt)
-  line((-2.8, 2), (-2.4, 2), stroke: 1pt)
-  line((-2.8, -2), (-2.4, -2), stroke: 1pt)
-  line((-2.8, -3), (-2.4, -3), stroke: 1pt)
-  line((-2.6, 2), (-2.6, 3), mark: (start: ">", end: ">"), stroke: 1pt)
-  line((-2.6, -2), (-2.6, 2), mark: (start: ">", end: ">"), stroke: 1pt)
-  line((-2.6, -3), (-2.6, -2), mark: (start: ">", end: ">"), stroke: 1pt)
-  content((-3.2, 2.5), [$s$])
-  content((-3.2, 0), [$D_i$])
-  content((-3.2, -2.5), [$s$])
-  line((-0.8, 2.7), (-0.2, 2.7), mark: (end: ">"), stroke: 1pt)
-  line((0, 2.3), (-0.6, 2.3), mark: (end: ">"), stroke: 1pt)
-  line((-0.8, -2.3), (-0.2, -2.3), mark: (end: ">"), stroke: 1pt)
-  line((0, -2.7), (-0.6, -2.7), mark: (end: ">"), stroke: 1pt)
-  content((-0.4, -1.6), [$sigma_z$])
-  line((3.8, 1.5), (5, 1.5), mark: (end: ">"), stroke: 1pt)
-  line((3.8, 0.75), (5, 0.75), mark: (end: ">"), stroke: 1pt)
-  line((3.8, 0), (5, 0), mark: (end: ">"), stroke: 1pt)
-  line((3.8, -0.75), (5, -0.75), mark: (end: ">"), stroke: 1pt)
-  line((3.8, -1.5), (5, -1.5), mark: (end: ">"), stroke: 1pt)
-  content((3.2, 0.75), [$p_i$])
-})
+    #include "figs/solidi-fig14.typ"
   ]
 )
 #v(1em)
@@ -1108,90 +545,12 @@ interno di un cuscinetto calettato su un albero, ruotante a velocità
 angolare $omega$ costante. L'azione non è una pressione statica, ma una
 forza centrifuga originata dalla massa del corpo in rotazione.
 
-],[#canvas(length: 0.6cm, {
-  import draw: *
-
-  // Contorni faccia anteriore (circonferenze concentriche)
-  circle((0, 0), radius: 2.74, stroke: 1.4pt)
-  circle((0, 0), radius: 2.30, stroke: 1.4pt)
-
-  // Contorno posteriore e generatrici del cilindro
-  arc((1.50, 0.62), start: -67.54deg, stop: 112.46deg, radius: 2.74, anchor: "origin", stroke: 1.4pt)
-  line((-1.05, 2.53), (0.45, 3.15), stroke: 1.4pt)
-  line((1.05, -2.53), (2.55, -1.91), stroke: 1.4pt)
-
-  // Assi di simmetria (tratto-punto)
-  line((-3.10, 0), (3.10, 0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  line((0, -3.10), (0, 3.10), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-
-  // Quote diametri D_i e D_e
-  line((-1.76, 1.48), (1.76, -1.48), mark: (start: ">", end: ">", fill: none, scale: 1.3), stroke: 0.7pt)
-  line((-0.71, -2.65), (0.71, 2.65), mark: (start: ">", end: ">", fill: none, scale: 1.3), stroke: 0.7pt)
-
-  // Quota spessore s
-  line((1.06, 1.06), (1.63, 1.63), mark: (end: ">", fill: none, scale: 1.3), stroke: 0.7pt)
-  line((2.55, 2.55), (1.94, 1.94), mark: (end: ">", fill: none, scale: 1.3), stroke: 0.7pt)
-
-  // Quota larghezza B
-  line((1.30, -2.60), (2.75, -3.22), stroke: 0.7pt)
-  line((2.80, -1.98), (4.25, -2.60), stroke: 0.7pt)
-  line((2.30, -3.03), (3.80, -2.41), mark: (start: ">", end: ">", fill: none, scale: 1.3), stroke: 0.7pt)
-
-  // Freccia di rotazione omega
-  arc((1.50, 0.62), start: -8deg, stop: 42deg, radius: 3.85, anchor: "origin", mark: (end: ">", fill: black, scale: 1.5), stroke: 1.5pt)
-
-  // Etichette
-  content((-1.35, 0.42), [$D_i$], anchor: "center")
-  content((0.78, 0.80), [$D_e$], anchor: "center")
-  content((2.10, 2.68), [$s$], anchor: "center")
-  content((3.55, -3.35), [$B$], anchor: "center")
-  content((4.85, 1.40), [$omega$], anchor: "center")
-})
+],[#include "figs/solidi-fig15.typ"
 ],[Sull'elemento infinitesimo di volume $d V = s B dot.op r d phi.alt$ (con
 spessore radiale $s$ e profondità assiale $B$), agisce una forza
 centrifuga radiale:
 $ d F = d m omega^2 r = rho d V omega^2 r = rho s B omega^2 r^2 d phi.alt $],[
-#canvas(length: 1cm, {
-  import draw: *
-
-  // Contorno dell'elemento infinitesimo (faccia anteriore, superiore e laterale destra)
-  arc((0, 0), start: 83deg, stop: 97deg, radius: 10.40, anchor: "origin", stroke: 1.3pt)
-  arc((0, 0), start: 83deg, stop: 97deg, radius: 13.00, anchor: "origin", stroke: 1.3pt)
-  line((-1.27, 10.32), (-1.58, 12.90), stroke: 1.3pt)
-  line((1.27, 10.32), (1.58, 12.90), stroke: 1.3pt)
-
-  arc((1.33, 0.43), start: 83deg, stop: 97deg, radius: 13.00, anchor: "origin", stroke: 1.3pt)
-  line((-1.58, 12.90), (-0.25, 13.33), stroke: 1.3pt)
-  line((1.58, 12.90), (2.91, 13.33), stroke: 1.3pt)
-  line((1.27, 10.32), (2.60, 10.75), stroke: 1.3pt)
-  line((2.60, 10.75), (2.91, 13.33), stroke: 1.3pt)
-
-  // Superficie cilindrica media (tratto-punto)
-  arc((0, 0), start: 97deg, stop: 105deg, radius: 11.70, anchor: "origin", stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  arc((0, 0), start: 75.5deg, stop: 81.5deg, radius: 11.70, anchor: "origin", stroke: (dash: "dash-dotted", thickness: 0.6pt))
-
-  // Linee radiali e arco per l'angolo infinitesimo d\phi
-  line((-1.02, 8.34), (-1.25, 10.15), stroke: 0.7pt)
-  line((1.02, 8.34), (1.25, 10.15), stroke: 0.7pt)
-  arc((0, 0), start: 80deg, stop: 100deg, radius: 8.95, anchor: "origin", stroke: 0.7pt)
-
-  // Quota raggio r
-  line((-1.99, 9.18), (-2.53, 11.42), mark: (end: ">", fill: none, scale: 1.3), stroke: 0.7pt)
-
-  // Vettore velocità angolare \omega
-  arc((0, 0), start: 79deg, stop: 96.5deg, radius: 11.05, anchor: "origin", mark: (end: ">", fill: black, scale: 1.4), stroke: 1.4pt)
-
-  // Vettore forza centrifuga dF
-  line((0.50, 13.15), (0.50, 14.55), mark: (end: ">", fill: black, scale: 1.8), stroke: 1.4pt)
-
-  // Etichette
-  content((0.75, 13.78), [$dif F$], anchor: "west")
-  content((2.05, 12.68), [$B$], anchor: "center")
-  content((1.58, 11.82), [$s$], anchor: "center")
-  content((0.10, 11.55), [$omega$], anchor: "center")
-  content((-2.75, 10.30), [$r$], anchor: "center")
-  content((-0.15, 9.45), [$dif phi$], anchor: "center")
-})
+#include "figs/solidi-fig16.typ"
 
 ])
 #grid(
@@ -1209,44 +568,7 @@ Dato che lo spessore dell'anello è esiguo, è lecito approssimare
 $r tilde.equiv D_e\/2$, ottenendo un valore costante:
 $ sigma_c^omega tilde.equiv rho omega^2 D_e^2 / 4 = sigma_0 = upright("costante") $
 Le tensioni radiale e assiale per effetto centrifugo sono invece nulle
-($sigma_r^omega = sigma_z^omega = 0$).],[#canvas(length: 0.95cm, {
-  import draw: *
-
-  // Semianello (archi interno ed esterno)
-  arc((0, 0), start: 0deg, stop: 180deg, radius: 2.92, anchor: "origin", stroke: 1.3pt)
-  arc((0, 0), start: 0deg, stop: 180deg, radius: 2.48, anchor: "origin", stroke: 1.3pt)
-
-  // Assi di simmetria (tratto-punto)
-  line((-3.30, 0), (3.20, 0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  line((0, -0.35), (0, 3.30), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-
-  // Raggio all'angolo \phi e linea orizzontale in P
-  line((0, 0), (2.31, 1.39), stroke: 0.6pt)
-  line((2.31, 1.39), (3.95, 1.39), stroke: 0.6pt)
-
-  // Archi di quota per gli angoli \phi
-  arc((0, 0), start: 0deg, stop: 31deg, radius: 1.80, anchor: "origin", mark: (end: ">", fill: none, scale: 1.2), stroke: 0.6pt)
-  arc((2.31, 1.39), start: 0deg, stop: 31deg, radius: 1.05, anchor: "origin", mark: (end: ">", fill: none, scale: 1.1), stroke: 0.6pt)
-
-  // Vettore risultante F^\omega
-  line((0, 3.12), (0, 4.45), mark: (end: ">", fill: black, scale: 1.7), stroke: 1.8pt)
-
-  // Vettori dF e dF\sin\phi applicati in P(2.31, 1.39)
-  line((2.31, 1.39), (4.09, 2.46), mark: (end: ">", fill: black, scale: 1.7), stroke: 1.4pt)
-  line((2.31, 1.39), (2.31, 2.46), mark: (end: ">", fill: black, scale: 1.4), stroke: 1.4pt)
-
-  // Vettori delle forze di trazione T
-  line((-2.70, -0.06), (-2.70, -1.25), mark: (end: ">", fill: black, scale: 1.4), stroke: 1.4pt)
-  line((2.70, -0.06), (2.70, -1.25), mark: (end: ">", fill: black, scale: 1.4), stroke: 1.4pt)
-
-  // Etichette
-  content((0.45, 3.82), [$F^omega$], anchor: "west")
-  content((2.92, 2.95), [$dif F sin phi$], anchor: "center")
-  content((3.85, 1.90), [$dif F$], anchor: "west")
-  content((2.08, 0.58), [$phi$], anchor: "center")
-  content((-2.48, -0.82), [$T = sigma_c^omega s B$], anchor: "west")
-  content((3.00, -0.82), [$T$], anchor: "west")
-})])
+($sigma_r^omega = sigma_z^omega = 0$).],[#include "figs/solidi-fig17.typ"])
 #strong[Problema del calettamento (Scalettamento):] Per garantire che
 l'anello interno del cuscinetto rimanga solidale all'albero durante il
 funzionamento, è fondamentale misurare lo spostamento radiale causato
