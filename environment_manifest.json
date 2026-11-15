@@ -3,10 +3,10 @@
   "environment_name": "ALDOMORO_SI_SPERA",
   "folders": [
     "_ALDOMORO_ elettrotecnica",
-    "_ALDOMORO_ Meccanica dei Fluidi",
     "_ALDOMORO_ fms",
     "_ALDOMORO_ Analisi 2",
     "_ALDOMORO__ECM",
-    "succhiamicazzi"
+    "succhiamicazzi",
+    "Meccanica_dei_Fluidi"
   ]
 }

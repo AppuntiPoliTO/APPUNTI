@@ -1,19 +1,11 @@
 {
   "branches": {
-    "doc/aldomoro-fms": {
-      "folder_name": "_ALDOMORO_ fms",
-      "branch": "doc/aldomoro-fms",
-      "last_commit_oid": "b87937402757da1f4dd137ea9320feed4d1b8f0e",
+    "doc/aldomoro-elettrotecnica": {
+      "folder_name": "_ALDOMORO_ elettrotecnica",
+      "branch": "doc/aldomoro-elettrotecnica",
+      "last_commit_oid": "13bf597f81b78ddfbf31390bd213e34d9d9d3168",
       "pending_push": false,
-      "last_attempt_timestamp": "2026-11-13 22:56:10",
-      "last_error": null
-    },
-    "doc/aldomoro-ecm": {
-      "folder_name": "_ALDOMORO__ECM",
-      "branch": "doc/aldomoro-ecm",
-      "last_commit_oid": "8f3ed0435baec9c352d09a7f4fa8a30745777c88",
-      "pending_push": false,
-      "last_attempt_timestamp": "2026-11-15 20:56:13",
+      "last_attempt_timestamp": "2026-11-15 21:05:50",
       "last_error": null
     },
     "doc/cacaaaaa-f00836a1": {
@@ -24,12 +16,20 @@
       "last_attempt_timestamp": "2026-11-15 21:03:38",
       "last_error": null
     },
-    "doc/aldomoro-analisi-2": {
-      "folder_name": "_ALDOMORO_ Analisi 2",
-      "branch": "doc/aldomoro-analisi-2",
-      "last_commit_oid": "86fd2640b60eab3d21643bb44a77b6d0c51cd0ce",
+    "doc/succhiamicazzi": {
+      "folder_name": "succhiamicazzi",
+      "branch": "doc/succhiamicazzi",
+      "last_commit_oid": "54931d7579444c64c690afe65b82e7b44ec29b09",
       "pending_push": false,
-      "last_attempt_timestamp": "2026-11-13 22:56:12",
+      "last_attempt_timestamp": "2026-11-15 21:05:58",
+      "last_error": null
+    },
+    "doc/aldomoro-fms": {
+      "folder_name": "_ALDOMORO_ fms",
+      "branch": "doc/aldomoro-fms",
+      "last_commit_oid": "b87937402757da1f4dd137ea9320feed4d1b8f0e",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-15 21:05:52",
       "last_error": null
     },
     "doc/aldomoro-meccanica-dei-fluidi": {
@@ -40,20 +40,28 @@
       "last_attempt_timestamp": "2026-11-15 12:56:37",
       "last_error": null
     },
-    "doc/aldomoro-elettrotecnica": {
-      "folder_name": "_ALDOMORO_ elettrotecnica",
-      "branch": "doc/aldomoro-elettrotecnica",
-      "last_commit_oid": "13bf597f81b78ddfbf31390bd213e34d9d9d3168",
+    "doc/aldomoro-analisi-2": {
+      "folder_name": "_ALDOMORO_ Analisi 2",
+      "branch": "doc/aldomoro-analisi-2",
+      "last_commit_oid": "86fd2640b60eab3d21643bb44a77b6d0c51cd0ce",
       "pending_push": false,
-      "last_attempt_timestamp": "2026-11-14 09:21:57",
+      "last_attempt_timestamp": "2026-11-15 21:05:54",
       "last_error": null
     },
-    "doc/succhiamicazzi": {
-      "folder_name": "succhiamicazzi",
-      "branch": "doc/succhiamicazzi",
-      "last_commit_oid": "54931d7579444c64c690afe65b82e7b44ec29b09",
+    "doc/aldomoro-ecm": {
+      "folder_name": "_ALDOMORO__ECM",
+      "branch": "doc/aldomoro-ecm",
+      "last_commit_oid": "8f3ed0435baec9c352d09a7f4fa8a30745777c88",
       "pending_push": false,
-      "last_attempt_timestamp": "2026-11-13 22:56:16",
+      "last_attempt_timestamp": "2026-11-15 21:05:56",
+      "last_error": null
+    },
+    "doc/meccanica-dei-fluidi-ffb61bca": {
+      "folder_name": "Meccanica_dei_Fluidi",
+      "branch": "doc/meccanica-dei-fluidi-ffb61bca",
+      "last_commit_oid": "6e463949a9a947c5f54785021cd7a9fe73f97100",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-15 21:06:00",
       "last_error": null
     }
   }
