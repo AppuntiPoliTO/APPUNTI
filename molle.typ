@@ -1123,7 +1123,7 @@ Le molle Belleville senza intagli trovano impiego come elementi singoli o impila
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Il calcolo delle tensioni nelle molle a tazza è complesso e fa riferimento alla teoria dei gusci e dei solidi assialsimmetrici, anche se nella pratica si ricorre frequentemente a soluzioni numeriche, specialmente in presenza di intagli. La distribuzione delle tensioni nella sezione troncoconica resistente è fortemente non lineare.
+  align: (left + horizon, center + horizon),[Il calcolo delle tensioni nelle molle a tazza è complesso e fa riferimento alla teoria dei gusci e dei solidi assialsimmetrici, anche se nella pratica si ricorre frequentemente a soluzioni numeriche, specialmente in presenza di intagli. La distribuzione delle tensioni nella sezione troncoconica resistente è fortemente non lineare. La tensione maggiormente sollecitante è la tensione circonferenziale ($sigma_c$), la cui espressione analitica è complessa e dipende dai diametri $D$ e $d$, dallo spessore $t$, dalla freccia $f$, dal modulo di Young $E$ e dal coefficiente di Poisson $nu$.
 
 ],[#canvas(length: 0.8cm, {
   import draw: *
@@ -1145,7 +1145,7 @@ Le molle Belleville senza intagli trovano impiego come elementi singoli o impila
   content((-3.08, 0.45), [$sigma_c +$], anchor: "east")
   content((-1.32, -1.0), [$sigma_c -$], anchor: "west")
 })])
-La tensione maggiormente sollecitante è la tensione circonferenziale ($sigma_c$), la cui espressione analitica è complessa e dipende dai diametri $D$ e $d$, dallo spessore $t$, dalla freccia $f$, dal modulo di Young $E$ e dal coefficiente di Poisson $nu$. Isolando idealmente un settore della molla caratterizzato dai vertici $"I-II-III-IV"$ sulla sezione trasversale, il lato $"I-IV"$ risulta compresso con il valore massimo della tensione nel punto $I$, mentre dal punto $II$ al punto $"III"$ non si riscontra una sensibile variazione del valore della tensione di trazione. Sull'elemento infinitesimale agiscono forze circonferenziali di azione e reazione scambiate con la parte rimanente del solido.
+ Isolando idealmente un settore della molla caratterizzato dai vertici $"I-II-III-IV"$ sulla sezione trasversale, il lato $"I-IV"$ risulta compresso con il valore massimo della tensione nel punto $I$, mentre dal punto $II$ al punto $"III"$ non si riscontra una sensibile variazione del valore della tensione di trazione. Sull'elemento infinitesimale agiscono forze circonferenziali di azione e reazione scambiate con la parte rimanente del solido.
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
