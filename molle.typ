@@ -1331,10 +1331,10 @@ La rigidezza risulta così molto inferiore e consente di ottenere un disinnesto 
 === Molle a elica di torsione
 #grid(
   columns: (1fr, 1fr),
-  column-gutter: 1em,
+  column-gutter: 2em,
   align: (left + horizon, center + horizon),[Esistono molle, diffuse ad esempio nelle apparecchiature domestiche e negli elettrodomestici, che hanno una configurazione simile a quella delle molle ad elica cilindrica ma lavorano macroscopicamente a torsione per contenere l'angolo relativo $phi.alt$ tra due leve o perni di estremità caricati nel piano. È opportuno chiarire che, a livello locale nella sezione trasversale del filo, queste molle lavorano a #strong[flessione] e non a torsione (in modo analogo e duale alle molle elicoidali di trazione/compressione, che lavorano macroscopicamente a sforzo assiale ma localmente a torsione).
 
-],[#canvas(length: 1cm, {
+],[#canvas(length: 1.1cm, {
   import draw: *
 
   line((0.86, 2.60), (0.94, 2.60), (1.09, 1.40), (1.01, 1.40), close: true, fill: white, stroke: 0.8pt)
