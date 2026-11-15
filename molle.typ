@@ -3726,10 +3726,7 @@ dove $h_0$ è lo spessore all'incastro (sezione centrale della balestra) e $L$ �
 })])
 
 La soluzione a profilo parabolico permette di avere in ogni sezione trasversale la stessa tensione massima di flessione presente nella sezione centrale di incastro, ottimizzando l'impiego del materiale lungo la linea d'asse. Pur richiedendo processi tecnologici più complessi e precisi rispetto alla sagomatura in pianta per ottenere la variazione quadratica di spessore, trova effettiva applicazione pratica sia in configurazione #strong[monolama] (spessore decrescente dal centro verso gli occhielli) sia in configurazione #strong[bilama]. Oggi tale geometria risulta particolarmente agevole da realizzare mediante l'impiego di #strong[materiali compositi], nei quali il processo di stratificazione consente naturalmente di variare lo spessore secondo il profilo parabolico desiderato.
-== Lezione 09.5: Molle – Altre tipologie e assorbimento degli urti
-
-=== Teoria
-
+== Molle – Altre tipologie e assorbimento degli urti
 ==== Panoramica delle tipologie di molle
 #grid(
   columns: (1fr, 1fr),
