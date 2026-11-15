@@ -1054,9 +1054,9 @@ Il legame tra il numero di spire efficaci $i$, il numero di spire totali $n$ (co
 #canvas(length: 1cm, {
   import draw: *
 
-  // =======================================================
+  // ==========================================
   // RIEMPIMENTI (grigio chiaro come nell'illustrazione)
-  // =======================================================
+  // ==========================================
   // Viste dall'alto - corone circolari
   circle((0.00, 0.00), radius: 0.75, fill: black.transparentize(85%), stroke: none)
   circle((0.00, 0.00), radius: 0.55, fill: white, stroke: none)
@@ -1119,9 +1119,9 @@ Il legame tra il numero di spire efficaci $i$, il numero di spire totali $n$ (co
   line((6.55, -2.66), (7.85, -2.48), (7.85, -2.68), (6.55, -2.86), close: true, fill: black.transparentize(86%), stroke: none)
   line((6.55, -3.02), (7.85, -2.84), (7.85, -3.04), (6.55, -3.22), close: true, fill: black.transparentize(86%), stroke: none)
 
-  // =======================================================
+  // ==========================================
   // VISTE DALL'ALTO (RIGA SUPERIORE, y = 0)
-  // =======================================================
+  // ==========================================
   // 1. Estremita semplice
   circle((0.00, 0.00), radius: 0.75, stroke: 1.2pt)
   circle((0.00, 0.00), radius: 0.55, stroke: 1.2pt)
@@ -1144,9 +1144,9 @@ Il legame tra il numero di spire efficaci $i$, il numero di spire totali $n$ (co
   arc((6.60, 0.16), start: -10deg, stop: 170deg, radius: (0.10, 0.08), anchor: "origin", stroke: 1pt)
   arc((7.48, 0.57), start: 115deg, stop: 245deg, radius: (0.12, 0.10), anchor: "origin", stroke: 1pt)
 
-  // =======================================================
+  // ==========================================
   // VISTE LATERALI - COLONNA 1: ESTREMITA SEMPLICE (x_c = 0.00)
-  // =======================================================
+  // ==========================================
   // Mezza spira superiore (con sezione di taglio al centro)
   arc((-0.65, -1.44), start: 90deg, stop: 270deg, radius: 0.10, anchor: "origin", stroke: 1.2pt)
   line((-0.65, -1.34), (-0.07, -1.26), (-0.04, -1.46), (-0.65, -1.54), stroke: 1.2pt)
@@ -1194,9 +1194,9 @@ Il legame tra il numero di spire efficaci $i$, il numero di spire totali $n$ (co
   arc((0.65, -3.06), start: -90deg, stop: 90deg, radius: 0.10, anchor: "origin", stroke: 1.2pt)
   line((0.65, -2.96), (0.04, -3.04), (0.07, -3.24), (0.65, -3.16), stroke: 1.2pt)
 
-  // =======================================================
+  // ==========================================
   // VISTE LATERALI - COLONNA 2: ESTREMITA SEMPLICE E MOLATA (x_c = 2.40)
-  // =======================================================
+  // ==========================================
   // Estremita superiore molata piana
   line((1.75, -1.40), (3.05, -1.40), stroke: 1.2pt)
   arc((1.75, -1.46), start: 90deg, stop: 270deg, radius: 0.06, anchor: "origin", stroke: 1.2pt)
@@ -1251,9 +1251,9 @@ Il legame tra il numero di spire efficaci $i$, il numero di spire totali $n$ (co
   line((2.18, -3.22), (3.05, -3.10), stroke: 1.2pt)
   line((2.47, -3.12), (2.76, -3.16), stroke: 1pt)
 
-  // =======================================================
+  // ==========================================
   // VISTE LATERALI - COLONNA 3: ESTREMITA TRONCATA (x_c = 4.80)
-  // =======================================================
+  // ==========================================
   // Mezza spira superiore piegata orizzontalmente
   arc((4.15, -1.32), start: 90deg, stop: 270deg, radius: 0.10, anchor: "origin", stroke: 1.2pt)
   line((4.15, -1.22), (4.80, -1.22), (4.80, -1.42), (4.15, -1.42), stroke: 1.2pt)
@@ -1308,9 +1308,9 @@ Il legame tra il numero di spire efficaci $i$, il numero di spire totali $n$ (co
   arc((5.45, -3.30), start: -90deg, stop: 90deg, radius: 0.10, anchor: "origin", stroke: 1.2pt)
   line((5.45, -3.20), (4.80, -3.20), (4.80, -3.40), (5.45, -3.40), stroke: 1.2pt)
 
-  // =======================================================
+  // ==========================================
   // VISTE LATERALI - COLONNA 4: ESTREMITA TRONCATA E MOLATA (x_c = 7.20)
-  // =======================================================
+  // ==========================================
   // Estremita superiore piegata e molata a cuneo completo
   line((6.55, -1.32), (7.95, -1.32), stroke: 1.2pt)
   arc((6.55, -1.39), start: 90deg, stop: 270deg, radius: 0.07, anchor: "origin", stroke: 1.2pt)
@@ -1511,7 +1511,7 @@ $ tau_("amm") = 0.9 frac(R_(p 0.2), sqrt(3)) $
 In questa espressione compaiono due coefficienti distinti:
 1. Il fattore $0.9$ introduce un modesto ma significativo margine di sicurezza per coprire le incertezze sul comportamento effettivo del materiale, poiché le tabelle normative forniscono i parametri per tipologia di acciaio senza declinarli puntualmente in base alla scala del diametro del filo.
 2. Il divisore $sqrt(3)$ rende omogenea la tensione normale $R_(p 0.2)$ con una tensione tangenziale secondo il criterio di cedimento di Von Mises per materiali duttili ($sigma_("id") = sqrt(sigma^2 + 3 tau^2)$), in cui $sqrt(3)$ costituisce proprio il fattore moltiplicativo del termine tangenziale.
-==== Acciaio per molle
+=== Acciaio per molle
 #grid(
   columns: (1fr, 1.2fr),
   column-gutter: -0em,
@@ -1692,7 +1692,7 @@ La resistenza a fatica dipende in modo decisivo dal processo di produzione e dai
 L'impatto di ciascun pallino provoca una deformazione plastica localissima (microcratere) che genera un campo di #strong[tensioni residue di compressione] sulla superficie del filo. Poiché sulla sezione circolare del filo soggetto a torsione la tensione tangenziale è distribuita linearmente con massimo alla superficie esterna, le tensioni residue di compressione fanno sì che la sollecitazione applicata debba prima compensare tale stato residuo prima di raggiungere valori di trazione/taglio critici. Sul diagramma di resistenza a fatica a vita infinita ($tau_(m i n)$ in ascissa, $tau_(m a x)$ in ordinata, per oltre $2 dot.op 10^6$ cicli), l'effetto della pallinatura si manifesta in un netto innalzamento del limite di resistenza.
 
 
-==== Verifica a fatica secondo le normative DIN
+=== Verifica a fatica secondo le normative DIN
 La verifica a fatica secondo normativa tedesca confronta l'escursione nominale della tensione tangenziale nel ciclo ($Delta tau_("nom")$), legata all'escursione di forza $Delta F = F_(m a x) - F_(m i n)$, con un'escursione ammissibile $Delta tau_("amm")$.
 
 Per le #strong[molle formate a freddo (DIN 17223)]:
@@ -2460,7 +2460,7 @@ Sussiste un'analogia elettromeccanica con la resistenza elettrica $R$, associand
 #canvas(length: 1cm, {
   import draw: *
 
-  // ================= VISTA FRONTALE (x = 0) =================
+  // ============= VISTA FRONTALE (x = 0) =============
   // Estremita inferiore posteriore (cuneo alla base)
   line((-1.07, 0.000), (0.35, 0.080), (-1.07, 0.200), close: true, fill: white, stroke: none)
   line((-1.07, 0.000), (0.35, 0.080), stroke: 1.0pt)
@@ -2530,7 +2530,7 @@ Sussiste un'analogia elettromeccanica con la resistenza elettrica $R$, associand
   line((-1.20, -0.45), (1.20, -0.45), mark: (start: ">", end: ">"), stroke: 0.6pt)
   content((0.00, -0.52), [$D$], anchor: "north")
 
-  // ================= VISTA LATERALE (x = 4.20) =================
+  // ============= VISTA LATERALE (x = 4.20) =============
   // Estremita inferiore posteriore
   line((3.13, 0.000), (4.55, 0.080), (3.13, 0.200), close: true, fill: white, stroke: none)
   line((3.13, 0.000), (4.55, 0.080), stroke: 1.0pt)
@@ -2646,7 +2646,7 @@ $ F = frac(G dot.op d dot.op f, 8 dot.op c^3 dot.op i) + F_0 $
 #canvas(length: 1cm, {
   import draw: *
 
-  // ================= MOLLA CILINDRICA (x = 0) =================
+  // ============= MOLLA CILINDRICA (x = 0) =============
   // Estremita inferiore molata (cuneo posteriore)
   line((-1.06, 0.000), (1.20, 0.000), (-1.06, 0.277), close: true, fill: white, stroke: none)
   line((-1.06, 0.000), (1.20, 0.000), stroke: 1.0pt)
@@ -2737,7 +2737,7 @@ $ F = frac(G dot.op d dot.op f, 8 dot.op c^3 dot.op i) + F_0 $
   line((0.00, 4.25), (0.00, 3.52), mark: (end: ">"), stroke: 0.8pt)
   line((0.00, -0.85), (0.00, -0.06), mark: (end: ">"), stroke: 0.8pt)
 
-  // ================= MOLLA CONICA (x = 4.24) =================
+  // ============= MOLLA CONICA (x = 4.24) =============
   // Estremita inferiore molata (cuneo posteriore, punta a sinistra x = 2.073)
   line((2.073, 0.000), (6.238, 0.000), (6.238, 0.240), close: true, fill: white, stroke: none)
   line((2.073, 0.000), (6.238, 0.000), stroke: 1.0pt)
@@ -3727,13 +3727,13 @@ dove $h_0$ è lo spessore all'incastro (sezione centrale della balestra) e $L$ �
 
 La soluzione a profilo parabolico permette di avere in ogni sezione trasversale la stessa tensione massima di flessione presente nella sezione centrale di incastro, ottimizzando l'impiego del materiale lungo la linea d'asse. Pur richiedendo processi tecnologici più complessi e precisi rispetto alla sagomatura in pianta per ottenere la variazione quadratica di spessore, trova effettiva applicazione pratica sia in configurazione #strong[monolama] (spessore decrescente dal centro verso gli occhielli) sia in configurazione #strong[bilama]. Oggi tale geometria risulta particolarmente agevole da realizzare mediante l'impiego di #strong[materiali compositi], nei quali il processo di stratificazione consente naturalmente di variare lo spessore secondo il profilo parabolico desiderato.
 == Molle – Altre tipologie e assorbimento degli urti
-==== Panoramica delle tipologie di molle
+=== Panoramica delle tipologie di molle
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nella pratica della costruzione degli elementi delle macchine si impiegano diverse architetture di molle oltre a quelle elicoidali tradizionali, tra cui molle elicoidali di compressione, di estensione, coniche, a serpentina, di torsione, a balestra (laminate), a disco o Belleville e molle ricavate di macchina.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: panoramica fotografica delle diverse tipologie di molle con relative denominazioni in inglese: Helical Compression Spring, Helical Extension Spring, Conical Spring, Serpentine Spring, Torsion Spring, Laminated or Leaf Spring, Disc or Belleville Spring, Machined Spring]])
 
-==== Uso delle molle per l'assorbimento degli urti
+=== Uso delle molle per l'assorbimento degli urti
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -3764,7 +3764,7 @@ Non è necessario passare attraverso il calcolo della velocità d'impatto e dell
 
 $ F = k dot.op f $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema della caduta di una massa m sotto l'azione dell'accelerazione di gravità g da un'altezza h fino all'appoggio sulla molla e successiva compressione di freccia f fino alla posizione finale con velocità nulla (v=0)]])
 
-==== Molle Belleville (a disco conico, a tazza)
+=== Molle Belleville (a disco conico, a tazza)
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -3787,7 +3787,7 @@ Come già accade per le molle ad elica troncoconica o conica, la geometria confe
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Unendo più molle Belleville a pacchi o a colonne mediante un perno guida centrale è possibile ottenere le caratteristiche elastiche desiderate, combinando disposizioni in serie e in parallelo a seconda che le facce delle molle adiacenti siano a contatto nello stesso verso oppure speculari rispetto al piano medio.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: due disegni in sezione di complessi di molle Belleville montati su perno centrale; a sinistra una colonna di molle tutte in serie (speculari), a destra una combinazione mista di pacchi di molle in parallelo disposti in serie tra loro]])
 
-==== Tensioni nelle molle Belleville e molle con intagli radiali
+=== Tensioni nelle molle Belleville e molle con intagli radiali
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -3800,7 +3800,7 @@ La tensione maggiormente sollecitante è la tensione circonferenziale ($sigma_c$
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Praticando degli intagli radiali parziali sulla superficie troncoconica si riduce la capacità di cerchiamento e di contenimento laterale reciproco tra gli elementi del materiale. Poiché le tensioni circonferenziali sono quelle predominanti, tale alleggerimento fa sì che le porzioni sporgenti lavorino essenzialmente a flessione senza richiamo elastico circonferenziale, conferendo alla molla una maggiore elasticità e una curva caratteristica molto meno pronunciata. Nella curva caratteristica sperimentale riportata per una molla a tazza con intagli, si osserva che con un incremento moderato di forza si ottiene uno spostamento significativo: in particolare, al passaggio della freccia da $2 "mm"$ a $7,5 "mm"$, la forza subisce una variazione molto ridotta (mantenendosi prossima a $600 "N"$).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: a sinistra, vista in sezione e in pianta circolare di una molla a tazza con intagli radiali distribuiti lungo la circonferenza interna; a destra, curva caratteristica sperimentale forza (in N, da 0 a 800) – freccia (in mm, da 0 a 10) con tratto quasi piatto tra 2 e 7,5 mm attorno a 600 N]])
 
-==== Molla per frizione
+=== Molla per frizione
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -3808,7 +3808,7 @@ La tensione maggiormente sollecitante è la tensione circonferenziale ($sigma_c$
 
 La rigidezza risulta così molto inferiore e consente di ottenere un disinnesto rapido e agevole. Questa soluzione ha sostituito le molle elicoidali negli innesti a frizione degli autoveicoli, rendendo l'architettura più robusta e semplificando le operazioni di montaggio.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: vista prospettica di una molla per frizione troncoconica con lunghi intagli radiali che partono dal foro centrale e terminano in fori arrotondati in prossimità del bordo esterno, formando una serie di lamine flessibili]])
 
-==== Molle a elica di torsione
+=== Molle a elica di torsione
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -3831,7 +3831,7 @@ L'angolo di rotazione relativo $phi.alt$ tra le due estremità è direttamente p
 
 $ phi.alt = frac(M, E dot.op J) dot.op L quad "con" quad L = n pi D $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di una molla a elica di torsione cilindrica con i due bracci laterali caricati dalle forze F\_1 (a distanza a dall'asse) e F\_2 (a distanza b dall'asse) e indicazione dell'angolo di rotazione phi tra le leve]])
 
-==== Molle ad anelli a forza normale
+=== Molle ad anelli a forza normale
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
