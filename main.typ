@@ -77,55 +77,7 @@ Il *momento statico* è una grandezza geometrica fondamentale del primo ordine c
     / Risultante ($P$): somma integrale delle forze elementari parallele, applicata a distanza $a$ dall'asse, di modulo $|P| = integral_A dif P = g rho A$.
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  // 1. Riempimento elemento infinitesimo dA
-  rect((0.83, 0.26), (1.83, 0.86), fill: rgb(198, 217, 241), stroke: none)
-
-  // Contorno di dA (lati verticali continui, orizzontali tratteggiati come nello schizzo)
-  line((0.83, 0.26), (0.83, 0.86), stroke: 0.7pt)
-  line((1.83, 0.26), (1.83, 0.86), stroke: 0.7pt)
-  line((0.83, 0.86), (1.83, 0.86), stroke: (dash: "dashed", thickness: 0.7pt))
-  line((0.83, 0.26), (1.83, 0.26), stroke: (dash: "dashed", thickness: 0.7pt))
-
-  // 2. Contorno chiuso della superficie A (4 Bezier C1)
-  bezier((-2.77, 0.29), (-0.31, 2.14), (-2.77, 1.55), (-1.60, 2.14), stroke: 1.4pt)
-  bezier((-0.31, 2.14), (3.06, 0.14), (1.60, 2.14), (3.06, 1.25), stroke: 1.4pt)
-  bezier((3.06, 0.14), (-1.00, -1.80), (3.06, -1.20), (1.10, -1.80), stroke: 1.4pt)
-  bezier((-1.00, -1.80), (-2.77, 0.29), (-2.20, -1.80), (-2.77, -0.90), stroke: 1.4pt)
-
-  // 3. Assi e linee di riferimento
-  // Retta d'azione tratteggiata sopra P
-  line((0, 0.20), (0, 3.20), stroke: (dash: "dashed", thickness: 1.3pt))
-
-  // Asse di riferimento verticale destro tratteggiato
-  line((4.46, -3.30), (4.46, 3.20), stroke: (dash: "dashed", thickness: 1.3pt))
-
-  // Linea di riferimento verticale sotto dP per la quota z
-  line((1.40, -0.90), (1.40, -2.60), stroke: 0.6pt)
-
-  // 4. Vettori e quote
-  // Vettore forza risultante P
-  line((0, 0), (0, -3.20), mark: (end: ">", size: 0.3), stroke: 1.6pt)
-
-  // Vettore forza elementare dP
-  line((1.33, 0.56), (1.33, -0.25), mark: (end: ">", size: 0.2), stroke: 1.2pt)
-
-  // Quota a
-  line((0.12, 2.80), (4.34, 2.80), mark: (start: ">", end: ">", size: 0.18), stroke: 0.7pt)
-
-  // Quota z
-  line((1.50, -1.95), (4.34, -1.95), mark: (start: ">", end: ">", size: 0.18), stroke: 0.7pt)
-
-  // 5. Etichette (tutte con text(size: 7pt))
-  content((-2.50, 1.85), text(size: 12pt)[$A$], anchor: "east")
-  content((2.23, 3.00), text(size: 12pt)[$a$], anchor: "south")
-  content((1.92, 0.65), text(size: 12pt, fill: rgb(45, 105, 155))[$d A$], anchor: "west")
-  content((1.33, -0.55), text(size: 12pt)[$d P$], anchor: "center")
-  content((-0.30, -3.05), text(size: 12pt)[$P$], anchor: "east")
-  content((2.92, -2.15), text(size: 10pt)[$z$], anchor: "north")
-})
+    #include "figs/main-fig01.typ"
   ]
 )
 
@@ -163,38 +115,7 @@ Dalle relazioni precedenti emerge immediatamente che il momento statico calcolat
     
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  // 1. Contorno chiuso della superficie A (4 Bezier C1)
-  bezier((0.00, 2.90), (2.00, -0.80), (1.25, 2.90), (2.00, 0.85), stroke: 1.5pt)
-  bezier((2.00, -0.80), (0.05, -2.97), (2.00, -2.15), (1.25, -2.97), stroke: 1.5pt)
-  bezier((0.05, -2.97), (-1.87, -0.57), (-1.25, -2.97), (-1.87, -2.05), stroke: 1.5pt)
-  bezier((-1.87, -0.57), (0.00, 2.90), (-1.87, 1.20), (-1.15, 2.90), stroke: 1.5pt)
-
-  // 2. Rette baricentriche tratteggiate
-  line((0, -0.25), (0, 2.65), stroke: (dash: "dashed", thickness: 0.9pt))
-  line((-3.05, 0), (0.15, 0), stroke: (dash: "dashed", thickness: 0.9pt))
-
-  // 3. Vettori P e P'
-  line((0, -0.80), (0, -3.70), mark: (end: ">", size: 0.35), stroke: 1.6pt)
-  line((0.55, -0.03), (3.75, -0.03), mark: (end: ">", size: 0.35), stroke: 1.6pt)
-
-  // 4. Terna di riferimento (x, y, z)
-  line((3.13, -3.00), (3.13, -1.97), mark: (end: ">", size: 0.14), stroke: 0.6pt)
-  line((3.13, -3.00), (2.10, -3.00), mark: (end: ">", size: 0.14), stroke: 0.6pt)
-  line((3.13, -3.00), (3.93, -3.63), mark: (end: ">", size: 0.14), stroke: 0.6pt)
-
-  // 5. Etichette (tutte con text(size: 7pt))
-  content((-1.75, 1.95), text(size: 13pt, fill: rgb(75, 90, 110))[$A$], anchor: "east")
-  content((-0.30, 0.25), text(size: 13pt)[G], anchor: "south-east")
-  content((3.40, 0.40), text(size: 13pt, fill: rgb(75, 90, 110))[$P'$], anchor: "south")
-  content((-0.45, -3.35), text(size: 13pt, fill: rgb(75, 90, 110))[$P$], anchor: "east")
-
-  content((3.28, -2.10), text(size: 9pt, fill: rgb(60, 70, 85))[$y$], anchor: "west")
-  content((2.20, -3.18), text(size: 9pt, fill: rgb(60, 70, 85))[$z$], anchor: "north")
-  content((3.65, -3.55), text(size: 9pt, fill: rgb(60, 70, 85))[$x$], anchor: "north-east")
-})
+    #include "figs/main-fig02.typ"
   ]
 )
 
@@ -238,51 +159,7 @@ Consideriamo un sistema di riferimento cartesiano $z y$ con origine nel baricent
     $ |S_r| = A dot d_G $
   ],
   [
-    #canvas(length: 1.2cm, {
-      import draw: *
-
-      // Contorno chiuso della sezione A
-      bezier((-2.4, 0.2), (-0.2, 1.8), (-2.4, 1.3), (-1.3, 1.8), stroke: 1.3pt)
-      bezier((-0.2, 1.8), (2.2, 0.1), (1.2, 1.8), (2.2, 1.1), stroke: 1.3pt)
-      bezier((2.2, 0.1), (-0.7, -1.5), (2.2, -1.0), (0.9, -1.5), stroke: 1.3pt)
-      bezier((-0.7, -1.5), (-2.4, 0.2), (-1.8, -1.5), (-2.4, -0.8), stroke: 1.3pt)
-
-      // Assi baricentrici z (sinistra) e y (alto) con origine in G(0,0)
-      line((0.5, 0), (-3.2, 0), mark: (end: ">", size: 0.2), stroke: 0.8pt)
-      line((0, -1.8), (0, 2.6), mark: (end: ">", size: 0.2), stroke: 0.8pt)
-      content((-3.1, -0.3), text(size: 9pt)[$z$])
-      content((0.3, 2.5), text(size: 9pt)[$y$])
-      content((0.3, -0.3), text(size: 9pt)[$G$])
-
-      // Elemento infinitesimo dA in (-1.2, 0.6)
-      rect((-1.45, 0.45), (-0.95, 0.75), fill: rgb(198, 217, 241), stroke: 0.6pt)
-      content((-1.55, 0.85), text(size: 9pt, fill: rgb(45, 105, 155))[$dif A$])
-
-      // Proiezioni z e y di dA
-      line((-1.2, 0), (-1.2, 0.45), stroke: (dash: "dashed", thickness: 0.5pt))
-      line((0, 0.6), (-0.95, 0.6), stroke: (dash: "dashed", thickness: 0.5pt))
-
-      // Retta baricentrica parallela a r (inclinata di alpha = 25 gradi)
-      line((-2.5, -1.16), (2.2, 1.03), stroke: 0.7pt + gray)
-
-      // Retta parallela passante per dA (-1.2, 0.6)
-      line((-2.8, -0.15), (1.5, 1.86), stroke: 0.7pt + gray)
-
-      // Retta r a distanza d_G sotto G
-      line((-1.6, -2.65), (3.1, -0.46), stroke: 1.1pt + gray)
-      content((2.4, -1.1), text(size: 9pt)[$r$])
-
-      // Quote d_G e Delta d (lungo la normale a r)
-      line((-2.1, -0.98), (-1.35, -2.53), mark: (start: ">", end: ">", size: 0.15), stroke: 0.6pt)
-      content((-2.1, -1.9), text(size: 8pt)[$d_G$])
-
-      line((-2.1, -0.98), (-2.48, -0.19), mark: (start: ">", end: ">", size: 0.15), stroke: 0.6pt)
-      content((-2.75, -0.55), text(size: 8pt)[$Delta d$])
-
-      // Arco angolo alpha
-      arc((-0.8, 0), start: 180deg, stop: 205deg, radius: 0.8, stroke: 0.6pt)
-      content((-1.05, -0.22), text(size: 8pt)[$alpha$])
-    })
+    #include "figs/main-fig03.typ"
   ]
 )
 #v(1em)
@@ -307,73 +184,7 @@ Consideriamo un sistema di riferimento cartesiano $z y$ con origine nel baricent
     ]
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  // 1. Riempimento e contorno della striscia elementare azzurra
-  rect((-1.56, 3.09), (0, 3.69), fill: rgb(195, 214, 238), stroke: 0.5pt + rgb(70, 80, 95))
-
-  // 2. Linee di riferimento sottili per le quote
-  // Riferimenti per dy (a sinistra)
-  line((-3.85, 3.69), (-1.56, 3.69), stroke: 0.5pt)
-  line((-3.85, 3.09), (-1.56, 3.09), stroke: 0.5pt)
-
-  // Riferimento verticale per z (sotto la striscia)
-  line((-1.56, 3.09), (-1.56, 2.45), stroke: 0.5pt)
-
-  // Riferimenti per b (in basso)
-  line((-3.77, 0), (-3.77, -1.00), stroke: 0.5pt)
-  line((0, 0), (0, -1.00), stroke: 0.5pt)
-
-  // Riferimenti per y e h (a destra)
-  line((0, 3.09), (0.65, 3.09), stroke: 0.5pt)
-  line((0, 6.29), (1.45, 6.29), stroke: 0.5pt)
-  line((0, 0), (1.45, 0), stroke: 0.5pt)
-
-  // 3. Assi principali z e y
-  line((0, 0), (0, 7.25), mark: (end: ">", size: 0.22), stroke: 0.6pt)
-  line((0, 0), (-4.45, 0), mark: (end: ">", size: 0.22), stroke: 0.6pt)
-
-  // 4. Contorno del triangolo rettangolo (spesso)
-  line((0, 0), (-3.77, 0), (0, 6.29), close: true, stroke: 1.4pt)
-
-  // 5. Baricentro G e assi baricentrici (z_G, y_G)
-  circle((-1.14, 1.80), radius: 0.03, fill: black, stroke: none)
-  line((-1.14, 1.80), (-1.14, 2.40), mark: (end: ">", size: 0.12), stroke: 0.5pt)
-  line((-1.14, 1.80), (-1.68, 1.80), mark: (end: ">", size: 0.12), stroke: 0.5pt)
-
-  // 6. Frecce delle quote
-  // Quota dy
-  line((-3.68, 4.45), (-3.68, 3.69), mark: (end: ">", size: 0.20), stroke: 0.5pt)
-  line((-3.68, 2.33), (-3.68, 3.09), mark: (end: ">", size: 0.20), stroke: 0.5pt)
-
-  // Quota z (con pallino sull'asse y)
-  circle((0, 2.55), radius: 0.07, fill: black, stroke: none)
-  line((0, 2.55), (-1.56, 2.55), mark: (end: ">", size: 0.20), stroke: 0.6pt)
-
-  // Quota y (con pallino sulla base)
-  circle((0.52, 0), radius: 0.07, fill: black, stroke: none)
-  line((0.52, 0), (0.52, 3.09), mark: (end: ">", size: 0.20), stroke: 0.6pt)
-
-  // Quota h
-  line((1.30, 0), (1.30, 6.29), mark: (start: ">", end: ">", size: 0.20), stroke: 0.6pt)
-
-  // Quota b
-  line((-3.77, -0.82), (0, -0.82), mark: (start: ">", end: ">", size: 0.20), stroke: 0.6pt)
-
-  // 7. Etichette (tutte con text(size: 7pt))
-  content((-0.25, 7.15), text(size: 7pt)[$y$], anchor: "east")
-  content((-4.30, 0.30), text(size: 7pt)[$z$], anchor: "south")
-  content((-1.88, -0.70), text(size: 7pt)[$b$], anchor: "south")
-  content((1.48, 3.15), text(size: 7pt)[$h$], anchor: "west")
-  content((0.65, 1.55), text(size: 7pt)[$y$], anchor: "west")
-  content((-0.78, 2.65), text(size: 7pt)[$z$], anchor: "south")
-  content((-3.95, 3.39), text(size: 7pt, fill: rgb(45, 105, 155))[$d y$], anchor: "east")
-
-  content((-1.20, 1.58), text(size: 7pt, fill: rgb(80, 90, 105))[$G$], anchor: "north")
-  content((-1.00, 2.15), text(size: 7pt)[$y_("G")$], anchor: "west")
-  content((-1.72, 1.75), text(size: 7pt)[$z_("G")$], anchor: "east")
-})
+    #include "figs/main-fig04.typ"
   ]
 )
 _(Nota: dividendo per l'area $A = (b h)/2$, si ricava l'ordinata del baricentro $y_C = S_z / A = h / 3$)._
@@ -396,63 +207,7 @@ _(Nota: dividendo per l'area $A = (b h)/2$, si ricava l'ordinata del baricentro 
     ]
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  // 1. Riempimento e bordi orizzontali della striscia elementare azzurra
-  rect((-3.88, 4.16), (0, 4.75), fill: rgb(195, 214, 238), stroke: none)
-  line((-3.88, 4.75), (0, 4.75), stroke: 1.2pt + rgb(35, 75, 120))
-  line((-3.88, 4.16), (0, 4.16), stroke: 1.2pt + rgb(35, 75, 120))
-
-  // 2. Linee di riferimento sottili per le quote
-  // Riferimenti per dy (a sinistra)
-  line((-4.70, 4.75), (-3.88, 4.75), stroke: 0.5pt)
-  line((-4.70, 4.16), (-3.88, 4.16), stroke: 0.5pt)
-  line((-4.58, 4.16), (-4.58, 4.75), stroke: 0.5pt)
-
-  // Riferimenti per b (in basso)
-  line((-3.88, 0), (-3.88, -0.95), stroke: 0.5pt)
-  line((0, 0), (0, -0.95), stroke: 0.5pt)
-
-  // Riferimenti per h (a destra)
-  line((0, 5.62), (1.25, 5.62), stroke: 0.5pt)
-  line((0, 0), (1.25, 0), stroke: 0.5pt)
-
-  // 3. Assi principali z e y
-  line((0, 0), (0, 6.95), mark: (end: ">", size: 0.22), stroke: 0.6pt)
-  line((0, 0), (-5.45, 0), mark: (end: ">", size: 0.22), stroke: 0.6pt)
-
-  // 4. Contorno del rettangolo principale (spesso)
-  rect((-3.88, 0), (0, 5.62), stroke: 1.4pt)
-
-  // 5. Baricentro G e assi baricentrici (z_G, y_G)
-  circle((-1.94, 2.81), radius: 0.04, fill: black, stroke: none)
-  line((-1.94, 2.81), (-1.94, 3.88), mark: (end: ">", size: 0.14), stroke: 0.5pt)
-  line((-1.94, 2.81), (-3.05, 2.81), mark: (end: ">", size: 0.14), stroke: 0.5pt)
-
-  // 6. Frecce delle quote
-  // Quota dy
-  line((-4.58, 5.45), (-4.58, 4.75), mark: (end: ">", size: 0.15), stroke: 0.5pt)
-  line((-4.58, 3.46), (-4.58, 4.16), mark: (end: ">", size: 0.15), stroke: 0.5pt)
-
-  // Quota h
-  line((1.10, 0), (1.10, 5.62), mark: (start: ">", end: ">", size: 0.20), stroke: 0.6pt)
-
-  // Quota b
-  line((-3.88, -0.82), (0, -0.82), mark: (start: ">", end: ">", size: 0.20), stroke: 0.6pt)
-
-  // 7. Etichette (tutte con text(size: 7pt))
-  content((0.40, 6.70), text(size: 7pt)[$y$], anchor: "west")
-  content((-5.10, 0.25), text(size: 7pt)[$z$], anchor: "south")
-  content((0.20, -0.15), text(size: 7pt)[$O$], anchor: "north-west")
-  content((-1.94, -0.70), text(size: 7pt)[$b$], anchor: "south")
-  content((1.28, 2.81), text(size: 7pt)[$h$], anchor: "west")
-  content((-4.78, 4.45), text(size: 7pt, fill: rgb(45, 105, 155))[$d y$], anchor: "east")
-
-  content((-2.15, 2.55), text(size: 7pt)[$G$], anchor: "north")
-  content((-2.08, 3.65), text(size: 7pt)[$y_("G")$], anchor: "east")
-  content((-2.95, 2.95), text(size: 7pt)[$z_("G")$], anchor: "south")
-})
+    #include "figs/main-fig05.typ"
   ]
 )
 #v(1em)
@@ -472,24 +227,7 @@ _(Nota: dividendo per l'area $A = (b h)/2$, si ricava l'ordinata del baricentro 
     ]
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  // 1. Contorno del cerchio
-  circle((0, 0), radius: 2.47, stroke: 1.4pt)
-
-  // 2. Linee di riferimento verticali
-  line((0, 0), (0, 3.60), stroke: 0.7pt)
-  line((4.75, -3.00), (4.75, 3.60), stroke: 0.9pt)
-
-  // 3. Vettore raggio r e quota d
-  line((0, 0), (2.05, -1.38), mark: (end: ">", size: 0.22), stroke: 1.4pt)
-  line((0, 2.55), (4.75, 2.55), mark: (start: ">", end: ">", size: 0.22), stroke: 1.1pt)
-
-  // 4. Etichette (tutte con text(size: 7pt))
-  content((2.38, 2.75), text(size: 7pt)[$d$], anchor: "south")
-  content((0.10, -1.35), text(size: 7pt)[$r$], anchor: "north")
-})
+    #include "figs/main-fig06.typ"
   ]
 )
 #v(1em)
@@ -520,58 +258,7 @@ Noto il momento statico $S_1$ rispetto all'asse $y_1$, vogliamo calcolare il mom
     $ |S_2| = A dot d_G $
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  rect((0.69, 0.50), (1.53, 1.03), fill: rgb(198, 217, 241), stroke: none)
-  line((0.69, 0.50), (0.69, 1.03), stroke: 0.6pt)
-  line((1.53, 0.50), (1.53, 1.03), stroke: 0.6pt)
-  line((0.69, 1.03), (1.53, 1.03), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0.69, 0.50), (1.53, 0.50), stroke: (dash: "dashed", thickness: 0.6pt))
-
-  // 2. Contorno chiuso della superficie A (4 Bezier C1)
-  bezier((-2.34, 0.28), (-0.25, 1.97), (-2.34, 1.40), (-1.35, 1.97), stroke: 1.4pt)
-  bezier((-0.25, 1.97), (2.56, 0.19), (1.35, 1.97), (2.56, 1.15), stroke: 1.4pt)
-  bezier((2.56, 0.19), (-0.85, -1.44), (2.56, -0.95), (0.95, -1.44), stroke: 1.4pt)
-  bezier((-0.85, -1.44), (-2.34, 0.28), (-1.85, -1.44), (-2.34, -0.75), stroke: 1.4pt)
-
-  // 3. Assi tratteggiati e linea di riferimento
-  // Retta d'azione di P
-  line((0, 0.15), (0, 3.75), stroke: (dash: "dashed", thickness: 1.2pt))
-
-  // Asse y_1
-  line((3.72, -2.85), (3.72, 3.00), stroke: (dash: "dashed", thickness: 1.2pt))
-
-  // Asse y_2
-  line((4.59, -2.85), (4.59, 3.75), stroke: (dash: "dashed", thickness: 1.2pt))
-
-  // Linea di riferimento verticale dal centro di dA
-  line((1.11, 0.70), (1.11, -1.35), stroke: 0.6pt)
-
-  // 4. Vettore P e quote orizzontali
-  // Vettore forza risultante P
-  line((0, 0), (0, -2.55), mark: (end: ">", size: 0.30), stroke: 1.6pt)
-
-  // Quota b_2 = b_1 + d
-  line((0.10, 3.40), (4.49, 3.40), mark: (start: ">", end: ">", size: 0.16), stroke: 0.6pt)
-
-  // Quota b_1
-  line((0.10, 2.40), (3.62, 2.40), mark: (start: ">", end: ">", size: 0.16), stroke: 0.6pt)
-  // Quota z_1
-  line((1.20, -1.05), (3.62, -1.05), mark: (start: ">", end: ">", size: 0.16), stroke: 0.6pt)
-  // Quota d
-  line((3.80, -1.05), (4.51, -1.05), mark: (start: ">", end: ">", size: 0.14), stroke: 0.6pt)
-  // 5. Etichette (tutte con text(size: 7pt))
-  content((-2.10, 1.55), text(size: 7pt, fill: rgb(90, 95, 105))[$A$], anchor: "east")
-  content((2.30, 3.52), text(size: 7pt)[$b_2 = b_1 + d$], anchor: "south")
-  content((1.86, 2.52), text(size: 7pt)[$b_1$], anchor: "south")
-  content((1.62, 0.82), text(size: 7pt, fill: rgb(45, 105, 155))[$d A$], anchor: "west")
-  content((-0.28, -2.40), text(size: 7pt)[$P$], anchor: "east")
-  content((2.41, -1.20), text(size: 7pt)[$z_1$], anchor: "north")
-  content((4.15, -1.20), text(size: 7pt)[$d$], anchor: "north")
-  content((3.72, -3.02), text(size: 7pt, fill: rgb(70, 75, 85))[$y_1$], anchor: "north")
-  content((4.59, -3.02), text(size: 7pt, fill: rgb(70, 75, 85))[$y_2$], anchor: "north")
-})
+    #include "figs/main-fig07.typ"
   ]
 )
 #v(1em)
@@ -608,45 +295,7 @@ $ z_C = S_y / A = (sum_(i=1)^n A_i dot z_(C i)) / (sum_(i=1)^n A_i) wide "e" wid
     3. *Momenti statici e area totale:* i momenti statici della sezione a L sono la somma dei momenti statici delle due aree ($S_y = S_(y 1) + S_(y 2)$ e $S_z = S_(z 1) + S_(z 2)$).
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  // Riempimento e contorno della sezione a L
-  line((0, 0), (-3, 0), (-3, 1), (-1.5, 1), (-1.5, 3), (0, 3), close: true, fill: rgb(195, 214, 238), stroke: 1.4pt)
-
-  // Separazione interna tratteggiata tra A1 e A2
-  line((-1.5, 1), (0, 1), stroke: (dash: "dashed", thickness: 1pt))
-
-  // Assi cartesiani z e y
-  line((0, 0), (-4.2, 0), mark: (end: ">"), stroke: 0.8pt)
-  line((0, 0), (0, 4.2), mark: (end: ">"), stroke: 0.8pt)
-  content((-4.2, -0.35), text(size: 7pt)[$z$])
-  content((0.35, 4.1), text(size: 7pt)[$y$])
-
-  // Etichette delle aree
-  content((-1.5, 0.5), text(size: 7pt)[$A_1$])
-  content((-0.75, 2.0), text(size: 7pt)[$A_2$])
-
-  // Quote orizzontali superiori (15 e 15)
-  line((-3, 3.1), (-3, 3.7), stroke: 0.5pt)
-  line((-1.5, 3.1), (-1.5, 3.7), stroke: 0.5pt)
-  line((-3, 3.5), (-1.5, 3.5), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((-1.5, 3.5), (0, 3.5), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  content((-2.25, 3.8), text(size: 7pt)[$15$])
-  content((-0.75, 3.8), text(size: 7pt)[$15$])
-
-  // Quota orizzontale inferiore (30)
-  line((-3, -0.55), (0, -0.55), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  content((-1.5, -0.3), text(size: 7pt)[$30$])
-
-  // Quote verticali a sinistra (10 e 20)
-  line((-3.1, 1), (-3.6, 1), stroke: 0.5pt)
-  line((-3.1, 3), (-3.6, 3), stroke: 0.5pt)
-  line((-3.4, 0), (-3.4, 1), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((-3.4, 1), (-3.4, 3), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  content((-3.75, 0.5), text(size: 7pt)[$10$])
-  content((-3.75, 2.0), text(size: 7pt)[$20$])
-})
+    #include "figs/main-fig08.typ"
   ]
 )
 
@@ -682,40 +331,7 @@ $ z_C = S_y / A = 6750 / 600 = 11,25 #"mm" wide "e" wide y_C = S_z / A = 7500 / 
     $ I > 0 $
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  // 1. Riempimento elemento infinitesimo dA
-  rect((0.83, 0.26), (1.83, 0.86), fill: rgb(198, 217, 241), stroke: none)
-
-  // Contorno di dA (lati verticali continui, orizzontali tratteggiati come nello schizzo)
-  line((0.83, 0.26), (0.83, 0.86), stroke: 0.7pt)
-  line((1.83, 0.26), (1.83, 0.86), stroke: 0.7pt)
-  line((0.83, 0.86), (1.83, 0.86), stroke: (dash: "dashed", thickness: 0.7pt))
-  line((0.83, 0.26), (1.83, 0.26), stroke: (dash: "dashed", thickness: 0.7pt))
-
-  // 2. Contorno chiuso della superficie A (4 Bezier C1)
-  bezier((-2.77, 0.29), (-0.31, 2.14), (-2.77, 1.55), (-1.60, 2.14), stroke: 1.4pt)
-  bezier((-0.31, 2.14), (3.06, 0.14), (1.60, 2.14), (3.06, 1.25), stroke: 1.4pt)
-  bezier((3.06, 0.14), (-1.00, -1.80), (3.06, -1.20), (1.10, -1.80), stroke: 1.4pt)
-  bezier((-1.00, -1.80), (-2.77, 0.29), (-2.20, -1.80), (-2.77, -0.90), stroke: 1.4pt)
-
-  // Asse di riferimento verticale destro tratteggiato
-  line((4.46, -3.30), (4.46, 3.20), stroke: (dash: "dashed", thickness: 1.3pt))
-
-  // Linea di riferimento verticale sotto dP per la quota z
-  line((1.40, -0.90), (1.40, -2.60), stroke: 0.6pt)
-
-  // Quota z
-  line((1.50, -1.95), (4.34, -1.95), mark: (start: ">", end: ">", size: 0.18), stroke: 0.7pt)
-
-  // 5. Etichette (tutte con text(size: 7pt))
-  content((-2.50, 1.85), text(size: 12pt)[$A$], anchor: "east")
-  content((1.92, 0.65), text(size: 12pt, fill: rgb(45, 105, 155))[$d A$], anchor: "west")
-  content((1.33, -0.55), text(size: 12pt)[$d P$], anchor: "center")
-  content((-0.30, -3.05), text(size: 12pt)[$P$], anchor: "east")
-  content((2.92, -2.15), text(size: 10pt)[$z$], anchor: "north")
-})
+    #include "figs/main-fig09.typ"
   ]
 )
 #v(1em)
@@ -750,34 +366,7 @@ $ I_(y z) = integral_A y z dif A wide (I_(y z) > 0, < 0) $
     - *Unità di misura:* ha dimensione fisica $[L^4]$ (nel SI $#"m"^4$, nella pratica tecnica $#"mm"^4$).
   ],
   [
-    #canvas(length: 0.9cm, {
-      import draw: *
-      // Contorno chiuso della superficie A
-      bezier((-2.5, 0.3), (-0.3, 1.9), (-2.5, 1.4), (-1.5, 1.9), stroke: 1.4pt)
-      bezier((-0.3, 1.9), (2.4, 0.2), (1.3, 1.9), (2.4, 1.1), stroke: 1.4pt)
-      bezier((2.4, 0.2), (-0.8, -1.5), (2.4, -0.9), (0.9, -1.5), stroke: 1.4pt)
-      bezier((-0.8, -1.5), (-2.5, 0.3), (-1.9, -1.5), (-2.5, -0.7), stroke: 1.4pt)
-
-      // Elemento dA
-      rect((0.5, 0.3), (1.3, 0.8), fill: rgb(198, 217, 241), stroke: (dash: "dashed", thickness: 0.7pt))
-      content((1.35, 0.65), text(size: 9pt, fill: rgb(45, 105, 155))[$dif A$], anchor: "west")
-      content((-2.3, 1.6), text(size: 10pt)[$A$], anchor: "east")
-
-      // Assi z (orizzontale inferiore) e y (verticale destro)
-      line((3.2, -2.2), (3.2, 2.5), stroke: 1.1pt)
-      line((-1.0, -2.2), (3.6, -2.2), stroke: 1.1pt)
-      content((2.95, 2.3), text(size: 9pt)[$y$], anchor: "east")
-      content((-0.8, -1.95), text(size: 9pt)[$z$], anchor: "south")
-
-      // Quote z e y
-      line((0.9, 0.55), (0.9, -2.2), stroke: 0.6pt)
-      line((0.9, -1.9), (3.2, -1.9), mark: (start: ">", end: ">", size: 0.15), stroke: 0.6pt)
-      content((2.05, -2.1), text(size: 9pt)[$z$], anchor: "north")
-
-      line((0.9, 0.55), (3.2, 0.55), stroke: 0.6pt)
-      line((2.8, -2.2), (2.8, 0.55), mark: (start: ">", end: ">", size: 0.15), stroke: 0.6pt)
-      content((2.65, -0.8), text(size: 9pt)[$y$], anchor: "east")
-    })
+    #include "figs/main-fig10.typ"
   ]
 )
 
@@ -801,48 +390,7 @@ $ I_(y z) = integral_A y z dif A wide (I_(y z) > 0, < 0) $
           &= integral_A z^2 dif A + integral_A y^2 dif A = I_y + I_z $
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  // 1. Riempimento e contorno dell'elemento infinitesimo (rettangolo azzurro)
-  rect((-1.93, 0.90), (-0.90, 1.50), fill: rgb(198, 217, 241), stroke: none)
-  line((-1.93, 0.90), (-1.93, 1.50), (-0.90, 1.50), (-0.90, 0.90), (-1.20, 0.90), stroke: 0.6pt)
-  line((-1.93, 0.90), (-1.62, 0.90), stroke: 0.6pt)
-
-  // 2. Contorno chiuso della superficie (4 Bezier C1)
-  bezier((-3.40, 0.20), (-0.20, 2.17), (-3.40, 1.55), (-1.80, 2.17), stroke: 1.5pt)
-  bezier((-0.20, 2.17), (2.73, 0.20), (1.45, 2.17), (2.73, 1.40), stroke: 1.5pt)
-  bezier((2.73, 0.20), (0.10, -1.73), (2.73, -1.15), (1.50, -1.73), stroke: 1.5pt)
-  bezier((0.10, -1.73), (-3.40, 0.20), (-1.85, -1.73), (-3.40, -1.05), stroke: 1.5pt)
-
-  // 3. Assi y, z, a
-  line((0, -0.40), (0, 3.55), mark: (end: ">", size: 0.22), stroke: 0.7pt)
-  line((0.65, 0), (-4.80, 0), mark: (end: ">", size: 0.22), stroke: 0.7pt)
-  line((0, 0), (-4.70, 1.90), mark: (end: ">", size: 0.22), stroke: 0.6pt)
-
-  // 4. Segmenti r, d, punto P e arco alpha
-  // Segmento r (da G a V)
-  line((0, 0), (-1.42, 1.22), stroke: 0.6pt)
-
-  // Segmento d (da V perpendicolare all'asse a in H)
-  line((-1.42, 1.22), (-1.64, 0.66), stroke: 0.6pt)
-
-  // Pallino nero per il punto P
-  circle((-1.50, 1.26), radius: 0.08, fill: black, stroke: none)
-
-  // Arco per l'angolo alpha (centro (0,0), raggio 2.38, da 158deg a 180deg)
-  arc((0, 0), start: 158deg, stop: 180deg, radius: 2.38, anchor: "origin", mark: (start: ">", end: ">", size: 0.12), stroke: 0.5pt)
-
-  // 5. Etichette (tutte con text(size: 7pt))
-  content((0.28, 3.10), text(size: 7pt)[$y$], anchor: "west")
-  content((-4.25, -0.22), text(size: 7pt)[$z$], anchor: "north")
-  content((-3.95, 1.85), text(size: 7pt)[$a$], anchor: "south")
-  content((-2.52, 0.55), text(size: 7pt)[$alpha$], anchor: "east")
-  content((-1.32, 1.32), text(size: 7pt)[P], anchor: "south")
-  content((-1.38, 0.82), text(size: 7pt, fill: rgb(70, 75, 85))[$d$], anchor: "west")
-  content((-0.42, 0.75), text(size: 7pt)[$r$], anchor: "south-west")
-  content((0.25, 0.45), text(size: 7pt)[$G$], anchor: "west")
-})
+    #include "figs/main-fig11.typ"
   ]
 )
 // [DA SLIDE]
@@ -910,64 +458,10 @@ $ I_p = I_z + I_y = (pi D^4) / 32 $
     column-gutter: 1em,
     align: (center + horizon, center + horizon),
     [
-      #canvas(length: 0.85cm, {
-        import draw: *
-        // Rettangolo base b, altezza h
-        rect((-2.6, 0), (0, 3.4), stroke: 1.4pt)
-        // Striscia orizzontale dy (rossa)
-        rect((-2.6, 2.1), (0, 2.45), fill: rgb(235, 65, 55, 180), stroke: 0.6pt)
-        // Striscia verticale dz (verde)
-        rect((-0.95, 0), (-0.55, 3.4), fill: rgb(45, 165, 85, 180), stroke: 0.6pt)
-
-        // Assi z e y centrati in O
-        line((0.4, 0), (-3.6, 0), mark: (end: ">"), stroke: 0.8pt)
-        line((0, -0.4), (0, 4.2), mark: (end: ">"), stroke: 0.8pt)
-        content((-3.5, 0.25), text(size: 8pt)[$z$])
-        content((0.3, 4.0), text(size: 8pt)[$y$])
-        content((0.3, -0.3), text(size: 8pt)[$O$])
-
-        // Baricentro G e assi baricentrici
-        circle((-1.3, 1.7), radius: 0.06, fill: black)
-        line((-1.3, 1.7), (-2.1, 1.7), mark: (end: ">", size: 0.14), stroke: 0.6pt)
-        line((-1.3, 1.7), (-1.3, 2.5), mark: (end: ">", size: 0.14), stroke: 0.6pt)
-        content((-1.45, 1.4), text(size: 8pt)[$G$])
-        content((-2.1, 1.9), text(size: 7pt)[$z_0$])
-        content((-1.05, 2.4), text(size: 7pt)[$y_0$])
-
-        // Quote b, h, dy, dz
-        line((-2.6, -0.5), (0, -0.5), mark: (start: ">", end: ">", size: 0.14), stroke: 0.6pt)
-        content((-1.3, -0.75), text(size: 8pt)[$b$])
-        line((0.6, 0), (0.6, 3.4), mark: (start: ">", end: ">", size: 0.14), stroke: 0.6pt)
-        content((0.85, 1.7), text(size: 8pt)[$h$])
-        content((-3.0, 2.27), text(size: 8pt, fill: rgb(180, 30, 30))[$dif y$])
-        content((-0.75, 3.75), text(size: 8pt, fill: rgb(30, 130, 60))[$dif z$])
-      })
+      #include "figs/main-fig12.typ"
     ],
     [
-      #canvas(length: 0.85cm, {
-        import draw: *
-        // Cerchio esterno di raggio R
-        circle((0, 0), radius: 2.0, stroke: 1.4pt)
-        // Corona circolare elementare tra r e r + dr
-        circle((0, 0), radius: 1.35, fill: rgb(198, 217, 241), stroke: 0.6pt)
-        circle((0, 0), radius: 1.05, fill: white, stroke: 0.6pt)
-
-        // Assi z e y centrati nel polo P
-        line((2.5, 0), (-2.6, 0), mark: (end: ">"), stroke: 0.8pt)
-        line((0, -2.4), (0, 2.6), mark: (end: ">"), stroke: 0.8pt)
-        content((-2.5, -0.3), text(size: 8pt)[$z$])
-        content((0.3, 2.45), text(size: 8pt)[$y$])
-        content((0.25, -0.28), text(size: 8pt)[$P$])
-
-        // Raggi r, r + dr e R
-        line((0, 0), (-0.95, 0.45), mark: (end: ">", size: 0.13), stroke: 0.6pt)
-        content((-0.35, 0.45), text(size: 8pt)[$r$])
-        line((0, 0), (-2.1, 0.75), stroke: 0.5pt)
-        content((-2.2, 1.05), text(size: 8pt)[$r + dif r$])
-        line((-2.0, 0), (-2.0, -2.1), stroke: 0.5pt)
-        line((-2.0, -1.9), (0, -1.9), mark: (start: ">", end: ">", size: 0.14), stroke: 0.6pt)
-        content((-1.0, -1.65), text(size: 8pt)[$R$])
-      })
+      #include "figs/main-fig13.typ"
     ]
   )
 ]
@@ -994,48 +488,7 @@ $ I_p = I_z + I_y = pi / 32 (D^4 - d^4) $
           &= I_1 + A d^2 + 2 S_1 d $
   ],
   [
-    #canvas(length: 1cm, {
-  import draw: *
-
-  // 1. Riempimento e contorno dell'elemento infinitesimo dA
-  rect((0.73, 0.31), (1.67, 0.85), fill: rgb(198, 217, 241), stroke: none)
-  line((0.73, 0.31), (0.73, 0.85), stroke: 0.7pt)
-  line((1.67, 0.31), (1.67, 0.85), stroke: 0.7pt)
-  line((0.73, 0.85), (1.67, 0.85), stroke: (dash: "dashed", thickness: 0.7pt))
-  line((0.73, 0.31), (1.67, 0.31), stroke: (dash: "dashed", thickness: 0.7pt))
-
-  // 2. Contorno chiuso della superficie A (4 Bezier C1)
-  bezier((-2.76, 0.18), (-0.45, 2.13), (-2.76, 1.48), (-1.65, 2.13), stroke: 1.6pt)
-  bezier((-0.45, 2.13), (2.87, 0.18), (1.45, 2.13), (2.87, 1.30), stroke: 1.6pt)
-  bezier((2.87, 0.18), (-0.95, -1.82), (2.87, -1.15), (1.05, -1.82), stroke: 1.6pt)
-  bezier((-0.95, -1.82), (-2.76, 0.18), (-2.15, -1.82), (-2.76, -0.95), stroke: 1.6pt)
-
-  // 3. Tre rette parallele inclinate (23.9 gradi)
-  // Retta 1 (superiore)
-  line((-4.63, -0.41), (3.23, 3.07), stroke: 0.7pt + rgb(70, 70, 75))
-  // Retta 2 (intermedia)
-  line((-4.21, -0.97), (3.23, 2.33), stroke: 0.7pt + rgb(70, 70, 75))
-  // Retta 3 (inferiore, passa per dA)
-  line((-1.46, -0.65), (1.74, 0.77), stroke: 0.7pt + rgb(70, 70, 75))
-
-  // 4. Quote ortogonali alle rette (doppia freccia)
-  // Quota d (tra Retta 2 e Retta 1)
-  line((-3.71, -0.75), (-3.99, -0.13), mark: (start: ">", end: ">", size: 0.18), stroke: 0.5pt)
-
-  // Quota a_2 (tra Retta 3 e Retta 1)
-  line((-1.14, -0.51), (-1.75, 0.86), mark: (start: ">", end: ">", size: 0.18), stroke: 0.5pt)
-
-  // Quota a_1 (tra Retta 3 e Retta 2)
-  line((0.14, 0.06), (-0.19, 0.81), mark: (start: ">", end: ">", size: 0.18), stroke: 0.5pt)
-
-  // 5. Etichette (tutte con text(size: 7pt))
-  content((-2.55, 1.85), text(size: 7pt, fill: rgb(50, 50, 55))[$A$], anchor: "east")
-  content((-4.05, -0.55), text(size: 7pt, fill: rgb(50, 50, 55))[$d$], anchor: "east")
-  content((-0.15, 0.35), text(size: 7pt, fill: rgb(45, 60, 75))[$a_1$], anchor: "east")
-  content((-1.30, -0.30), text(size: 7pt, fill: rgb(45, 60, 75))[$a_2 =$], anchor: "east")
-  content((-0.75, -0.95), text(size: 7pt, fill: rgb(45, 60, 75))[$= a_1 + d$], anchor: "center")
-  content((1.78, 0.80), text(size: 7pt, fill: rgb(45, 105, 155))[$d A$], anchor: "west")
-})
+    #include "figs/main-fig14.typ"
   ]
 )
 #v(1em)
@@ -1098,82 +551,10 @@ $ I_zeta = I_z cos^2 alpha_1 + I_y sin^2 alpha_1 + 2 I_(y z) sin alpha_1 cos alp
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [
-    #canvas(length: 0.85cm, {
-      import draw: *
-      // Contorno chiuso della superficie A
-      bezier((-3.0, 0.2), (-0.2, 2.0), (-3.0, 1.4), (-1.6, 2.0), stroke: 1.4pt)
-      bezier((-0.2, 2.0), (2.5, 0.2), (1.3, 2.0), (2.5, 1.2), stroke: 1.4pt)
-      bezier((2.5, 0.2), (0.1, -1.5), (2.5, -1.0), (1.3, -1.5), stroke: 1.4pt)
-      bezier((0.1, -1.5), (-3.0, 0.2), (-1.6, -1.5), (-3.0, -0.9), stroke: 1.4pt)
-      content((2.3, 1.8), text(size: 9pt)[$A$])
-
-      // Assi originari z e y centrati in O
-      line((0.5, 0), (-3.8, 0), mark: (end: ">"), stroke: 0.8pt)
-      line((0, -0.4), (0, 2.8), mark: (end: ">"), stroke: 0.8pt)
-      content((-3.7, 0.25), text(size: 8pt)[$z$])
-      content((0.25, 2.65), text(size: 8pt)[$y$])
-      content((0.25, -0.25), text(size: 8pt)[$O$])
-
-      // Assi ruotati a e b (ruotati di alpha = 25 deg come in slide 18)
-      line((0.5, 0.23), (-3.5, -1.63), mark: (end: ">"), stroke: 0.8pt + rgb(45, 105, 155))
-      line((0.18, -0.4), (-1.2, 2.55), mark: (end: ">"), stroke: 0.8pt + rgb(45, 105, 155))
-      content((-3.3, -1.85), text(size: 8pt, fill: rgb(45, 105, 155))[$a$])
-      content((-1.45, 2.5), text(size: 8pt, fill: rgb(45, 105, 155))[$b$])
-
-      // Elemento dA nel quadrante (z>0, y>0)
-      rect((-1.6, 0.6), (-1.0, 1.0), fill: rgb(198, 217, 241), stroke: 0.6pt)
-      content((-1.7, 0.85), text(size: 8pt, fill: rgb(45, 105, 155))[$dif A$], anchor: "east")
-
-      // Proiezioni su z, y (tratteggiate) e su a, b (continue)
-      line((-1.3, 0.8), (-1.3, 0), stroke: (dash: "dashed", thickness: 0.5pt))
-      line((-1.3, 0.8), (0, 0.8), stroke: (dash: "dashed", thickness: 0.5pt))
-      line((-1.3, 0.8), (-0.84, -0.39), stroke: 0.5pt + rgb(45, 105, 155))
-      line((-1.3, 0.8), (-0.55, 1.15), stroke: 0.5pt + rgb(45, 105, 155))
-
-      // Arco angolo alpha
-      arc((0, 0), start: 180deg, stop: 205deg, radius: 1.7, anchor: "origin", stroke: 0.6pt)
-      content((-1.95, -0.42), text(size: 8pt)[$alpha$])
-    })
+    #include "figs/main-fig15.typ"
   ],
   [
-    #canvas(length: 0.85cm, {
-      import draw: *
-      // Grafico di I_a in funzione di alpha (Slide 14)
-      line((0, 0), (5.8, 0), mark: (end: ">"), stroke: 0.8pt)
-      line((0, 0), (0, 3.6), mark: (end: ">"), stroke: 0.8pt)
-      content((5.8, -0.35), text(size: 8pt)[$alpha$])
-      content((-0.35, 3.4), text(size: 8pt)[$I_a$])
-
-      // Linea media
-      line((0, 1.7), (5.2, 1.7), stroke: 0.5pt + luma(120))
-
-      // Curva sinusoidale di periodo pi: minimo in alpha_1 = 0.9, massimo in alpha_2 = 2.9
-      bezier((0.1, 1.4), (0.9, 0.85), (0.3, 1.0), (0.6, 0.85), stroke: 1.2pt)
-      bezier((0.9, 0.85), (1.9, 1.7), (1.3, 0.85), (1.6, 1.25), stroke: 1.2pt)
-      bezier((1.9, 1.7), (2.9, 2.55), (2.2, 2.15), (2.5, 2.55), stroke: 1.2pt)
-      bezier((2.9, 2.55), (3.9, 1.7), (3.3, 2.55), (3.6, 2.15), stroke: 1.2pt)
-      bezier((3.9, 1.7), (4.6, 1.05), (4.2, 1.25), (4.4, 1.1), stroke: 1.2pt)
-
-      // Tangenti orizzontali di minimo e massimo
-      line((0.4, 0.85), (1.4, 0.85), stroke: 0.6pt)
-      line((2.4, 2.55), (3.4, 2.55), stroke: 0.6pt)
-
-      // Proiezioni verticali per alpha_1, pi/2, alpha_2, pi
-      line((0.9, 0), (0.9, 0.85), stroke: 0.6pt)
-      line((2.1, 0), (2.1, 1.98), stroke: 0.6pt)
-      line((2.9, 0), (2.9, 2.55), stroke: 0.6pt)
-      line((4.1, 0), (4.1, 1.4), stroke: 0.6pt)
-
-      // Etichette
-      content((0.15, -0.35), text(size: 8pt)[$0$])
-      content((0.9, -0.35), text(size: 8pt)[$alpha_1$])
-      content((2.0, -0.35), text(size: 8pt)[$pi / 2$])
-      content((2.9, -0.35), text(size: 8pt)[$alpha_2$])
-      content((4.1, -0.35), text(size: 8pt)[$pi$])
-
-      content((0.65, 1.15), text(size: 8pt)[$I_(alpha_1)$])
-      content((2.9, 2.85), text(size: 8pt)[$I_(alpha_2)$])
-    })
+    #include "figs/main-fig16.typ"
   ]
 )
 
@@ -1222,55 +603,7 @@ $ I_zeta = I_z cos^2 alpha_1 + I_y sin^2 alpha_1 + 2 I_(y z) sin alpha_1 cos alp
     - La costruzione grafica a partire dai punti noti $(I_z, -I_(y z))$ e $(I_y, I_(y z))$ permette di determinare rapidamente $I_zeta, I_eta$ e l'angolo di rotazione $alpha$ degli assi principali $zeta, eta$.
   ],
   [
-    #canvas(length: 1.1cm, {
-      import draw: *
-      // Assi
-      line((0, 0), (6.5, 0), mark: (end: ">"), name: "x")
-      content((6.5, -0.4), $I_i$)
-      line((0.5, 2.8), (0.5, -2.8), mark: (end: ">"), name: "y")
-      content((0.9, -2.7), $I_(i j)$)
-
-      // Cerchio di Mohr (centro in (3.5, 0), raggio 2.1)
-      let cx = 3.5
-      let R = 2.1
-      circle((cx, 0), radius: R, stroke: 1.2pt)
-      circle((cx, 0), radius: 0.07, fill: black)
-
-      // Punti P e Q (angolo 50 gradi)
-      let px = cx + R * calc.cos(50deg)
-      let py = R * calc.sin(50deg)
-      let qx = cx - R * calc.cos(50deg)
-      let qy = -R * calc.sin(50deg)
-
-      // Linee tratteggiate di proiezione
-      line((0.5, py), (px, py), stroke: (dash: "dashed", thickness: 0.6pt))
-      line((px, 0), (px, py), stroke: (dash: "dashed", thickness: 0.6pt))
-      line((0.5, qy), (qx, qy), stroke: (dash: "dashed", thickness: 0.6pt))
-      line((qx, 0), (qx, qy), stroke: (dash: "dashed", thickness: 0.6pt))
-
-      // Diametro PQ
-      line((qx, qy), (px, py), stroke: 0.8pt)
-
-      // Rette direzioni principali (passanti per P e per I_min / I_max)
-      line((cx - R, 0), (px, py), stroke: (dash: "dotted", thickness: 0.8pt))
-      line((cx + R, 0), (px, py), stroke: (dash: "dotted", thickness: 0.8pt))
-
-      // Punti notevoli
-      circle((px, py), radius: 0.1, fill: black)
-      content((px + 0.35, py + 0.25), $P$)
-      circle((qx, qy), radius: 0.1, fill: black)
-      content((qx - 0.35, qy - 0.3), $Q$)
-      circle((cx - R, 0), radius: 0.09, fill: black)
-      circle((cx + R, 0), radius: 0.09, fill: black)
-
-      // Etichette
-      content((0.0, py), $-I_(y z)$)
-      content((0.0, qy), $I_(y z)$)
-      content((px, -0.35), $I_z$)
-      content((qx + 0.25, -0.35), $I_y$)
-      content((cx - R - 0.3, 0.35), $I_"min" (I_eta)$)
-      content((cx + R + 0.9, 0.35), $I_"MAX" (I_zeta)$)
-    })
+    #include "figs/main-fig17.typ"
   ]
 )
 // [DA SLIDE]
@@ -1290,58 +623,7 @@ $ I_zeta = I_z cos^2 alpha_1 + I_y sin^2 alpha_1 + 2 I_(y z) sin alpha_1 cos alp
       3. *Individuazione grafica di $alpha$ e degli assi $zeta, eta$:* come illustrato in figura, tracciando la retta tratteggiata che congiunge il punto $P(I_z, -I_(y z))$ con il punto di minimo $(I_eta, 0)$, si individua direttamente la direzione principale *$zeta$*, la quale risulta inclinata dell'angolo *$alpha$* rispetto all'asse delle ascisse (poiché l'angolo al centro è $2 alpha$, l'angolo alla circonferenza sotteso dallo stesso arco vale esattamente la metà, cioè $alpha$). La retta ortogonale passante per $P$ e per $(I_zeta, 0)$ individua invece la direzione principale *$eta$*.
     ],
     [
-      #canvas(length: 0.95cm, {
-        import draw: *
-        // Assi I_i e I_ij
-        line((0, 0), (6.4, 0), mark: (end: ">"), stroke: 0.8pt)
-        content((6.3, -0.4), text(size: 8pt)[$I_i$])
-        line((0.5, 2.7), (0.5, -2.7), mark: (end: ">"), stroke: 0.8pt)
-        content((0.9, -2.6), text(size: 8pt)[$I_(i j)$])
-
-        let cx = 3.4
-        let R = 2.0
-        circle((cx, 0), radius: R, stroke: 1.3pt)
-        circle((cx, 0), radius: 0.07, fill: black)
-
-        let px = cx + R * calc.cos(54deg)
-        let py = R * calc.sin(54deg)
-        let qx = cx - R * calc.cos(54deg)
-        let qy = -R * calc.sin(54deg)
-
-        // Proiezioni continue come in slide 22
-        line((0.5, py), (px, py), stroke: 0.6pt)
-        line((px, 0), (px, py), stroke: 0.6pt)
-        line((0.5, qy), (qx, qy), stroke: 0.6pt)
-        line((qx, 0), (qx, qy), stroke: 0.6pt)
-
-        // Diametro PQ
-        line((qx, qy), (px, py), stroke: 0.7pt)
-
-        // Rette tratteggiate per le direzioni principali zeta e eta (Slide 22)
-        // Retta zeta: passa per (cx - R, 0) e (px, py)
-        line((cx - R - 1.1, -0.58), (px + 1.3, py + 0.68), stroke: (dash: "dotted", thickness: 0.8pt), mark: (end: ">"))
-        content((px + 1.25, py + 0.35), text(size: 9pt)[$zeta$])
-
-        // Retta eta: passa per (cx + R, 0) e (px, py)
-        line((cx + R + 0.7, -1.35), (px - 0.75, py + 1.45), stroke: (dash: "dotted", thickness: 0.8pt), mark: (end: ">"))
-        content((px - 0.5, py + 1.4), text(size: 9pt)[$eta$])
-
-        // Arco per l'angolo alpha tra l'asse I_i e la retta zeta
-        arc((cx - R, 0), start: 0deg, stop: 27deg, radius: 1.4, anchor: "origin", mark: (end: ">", size: 0.14), stroke: 0.6pt)
-        content((cx - R + 1.65, 0.38), text(size: 9pt)[$alpha$])
-
-        // Punti di intersezione I_eta e I_zeta
-        circle((cx - R, 0), radius: 0.08, fill: black)
-        circle((cx + R, 0), radius: 0.08, fill: black)
-
-        // Etichette
-        content((0.0, py), text(size: 8pt)[$-I_(y z)$])
-        content((0.05, qy), text(size: 8pt)[$I_(y z)$])
-        content((px, -0.35), text(size: 8pt)[$I_z$])
-        content((qx + 0.25, -0.35), text(size: 8pt)[$I_y$])
-        content((cx - R - 0.25, 0.38), text(size: 9pt)[$I_eta$])
-        content((cx + R + 0.3, 0.38), text(size: 9pt)[$I_zeta$])
-      })
+      #include "figs/main-fig18.typ"
     ]
   )
 ]
@@ -1397,50 +679,7 @@ Il sistema principale d'inerzia $(zeta, eta)$ è quindi ruotato di $36,99^circ$ 
     
   ],
   [
-    #canvas(length: 0.95cm, {
-      import draw: *
-      // Sezione a L (origine dello schizzo nello spigolo inferiore destro (0,0))
-      line((0, 0), (-3, 0), (-3, 1), (-1.5, 1), (-1.5, 3), (0, 3), close: true, fill: rgb(195, 214, 238), stroke: 1.4pt)
-      line((-1.5, 1), (0, 1), stroke: (dash: "dashed", thickness: 1pt))
-
-      // Baricentri locali (+)
-      content((-1.5, 0.5), text(size: 8pt)[$+$])
-      content((-2.1, 0.5), text(size: 8pt)[$A_1$])
-      content((-0.75, 2.0), text(size: 8pt)[$+$])
-      content((-0.75, 2.45), text(size: 8pt)[$A_2$])
-
-      // Baricentro globale G in (-1.125, 1.25)
-      let gx = -1.125
-      let gy = 1.25
-      circle((gx, gy), radius: 0.14, fill: white, stroke: 0.8pt)
-      arc((gx, gy), start: 90deg, stop: 180deg, radius: 0.14, mode: "PIE", fill: black)
-      arc((gx, gy), start: 270deg, stop: 360deg, radius: 0.14, mode: "PIE", fill: black)
-
-      // Assi baricentrici z_G e y_G
-      line((gx, gy), (-3.8, gy), mark: (end: ">"), stroke: 0.8pt)
-      line((gx, gy), (gx, 3.6), mark: (end: ">"), stroke: 0.8pt)
-      content((-3.7, gy + 0.3), text(size: 8pt)[$z_G$])
-      content((gx + 0.35, 3.45), text(size: 8pt)[$y_G$])
-
-      // Assi principali d'inerzia zeta e eta (ruotati di 36.99 deg in senso orario rispetto a z_G, y_G)
-      line((gx + 0.6, gy - 0.45), (gx - 2.6, gy + 1.96), mark: (end: ">"), stroke: 1.3pt + rgb(210, 30, 30))
-      line((gx - 0.55, gy - 0.73), (gx + 1.85, gy + 2.45), mark: (end: ">"), stroke: 1.3pt + rgb(210, 30, 30))
-      content((gx - 2.35, gy + 2.15), text(size: 9pt, fill: rgb(210, 30, 30))[$zeta$])
-      content((gx + 2.05, gy + 2.25), text(size: 9pt, fill: rgb(210, 30, 30))[$eta$])
-
-      // Arco per alpha_1 tra z_G e zeta
-      arc((gx, gy), start: 180deg, stop: 143deg, radius: 1.1, anchor: "origin", mark: (end: ">", size: 0.14), stroke: 1.1pt + rgb(210, 30, 30))
-      content((gx - 1.35, gy + 0.42), text(size: 8pt, fill: rgb(210, 30, 30))[$alpha_1$])
-
-      // Quote baricentro 11,25 e 12,5
-      line((gx, 0), (gx, -0.95), stroke: 0.5pt)
-      line((0, 0), (0, -0.95), stroke: 0.5pt)
-      line((gx, -0.8), (0, -0.8), mark: (start: ">", end: ">", size: 0.12), stroke: 0.6pt)
-      content((gx / 2, -0.58), text(size: 7pt)[$11,25$])
-
-      line((-3.5, 0), (-3.5, gy), mark: (start: ">", end: ">", size: 0.12), stroke: 0.6pt)
-      content((-3.95, gy / 2), text(size: 7pt)[$12,5$])
-    })
+    #include "figs/main-fig19.typ"
   ]
 )
 Osservazione sui segni nel trasporto di $I_(y z C)$:
