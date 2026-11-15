@@ -2588,7 +2588,7 @@ Sussiste un'analogia elettromeccanica con la resistenza elettrica $R$, associand
 
   // Raggi r2 e r4
   line((3.72, 1.69), (3.988, 1.465), mark: (end: ">"), stroke: 0.6pt)
-  content((3.76, 1.88), [$r_2$], anchor: "west")
+  content((3.7, 1.88), [$r_2$], anchor: "west")
   line((3.72, 1.69), (3.978, 1.137), mark: (end: ">"), stroke: 0.6pt)
   content((3.48, 1.50), [$r_4$], anchor: "east")
 
