@@ -1334,6 +1334,7 @@ La rigidezza risulta così molto inferiore e consente di ottenere un disinnesto 
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Esistono molle, diffuse ad esempio nelle apparecchiature domestiche e negli elettrodomestici, che hanno una configurazione simile a quella delle molle ad elica cilindrica ma lavorano macroscopicamente a torsione per contenere l'angolo relativo $phi.alt$ tra due leve o perni di estremità caricati nel piano. È opportuno chiarire che, a livello locale nella sezione trasversale del filo, queste molle lavorano a #strong[flessione] e non a torsione (in modo analogo e duale alle molle elicoidali di trazione/compressione, che lavorano macroscopicamente a sforzo assiale ma localmente a torsione).
 
+],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di una molla a elica di torsione cilindrica con i due bracci laterali caricati dalle forze F\_1 (a distanza a dall'asse) e F\_2 (a distanza b dall'asse) e indicazione dell'angolo di rotazione phi tra le leve]])
 Durante il montaggio tali molle possono inflettersi lateralmente; per limitare l'inflessione si inserisce un perno in corrispondenza dell'asse. Tra la molla e il perno deve tuttavia sussistere un gioco radiale, perché all'aumentare della forza applicata la molla si avvolge e il diametro interno diminuisce.
 
 Trascurando gli attriti e la flessibilità dei bracci, per l'equilibrio il momento flettente agente sulla spira è determinato dalle forze applicate alle estremità e dai rispettivi bracci di leva $a$ e $b$:
@@ -1349,8 +1350,7 @@ La tensione normale di flessione $sigma$ si calcola in modo proporzionale a quel
 
 L'angolo di rotazione relativo $phi.alt$ tra le due estremità è direttamente proporzionale al momento flettente e alla lunghezza complessiva $L$ del filo (pari al prodotto del numero di spire $n$ per la circonferenza della singola spira), e inversamente proporzionale alla rigidezza flessionale $E dot.op J$ della sezione trasversale:
 
-$ phi.alt = frac(M, E dot.op J) dot.op L quad "con" quad L = n pi D $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di una molla a elica di torsione cilindrica con i due bracci laterali caricati dalle forze F\_1 (a distanza a dall'asse) e F\_2 (a distanza b dall'asse) e indicazione dell'angolo di rotazione phi tra le leve]])
-
+$ phi.alt = frac(M, E dot.op J) dot.op L quad "con" quad L = n pi D $
 === Molle ad anelli a forza normale
 #grid(
   columns: (1fr, 1fr),
