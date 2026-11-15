@@ -1,0 +1,19 @@
+// Figura estratta da Cap3_MEC_handouts_appunti.typ (riga 173) con LocalTypst
+#import "@preview/cetz:0.5.3": canvas, draw
+#import "@preview/zap:0.6.0"
+#import zap: *
+#import zap.cetz.draw: bezier, arc, content
+
+#let line(..args) = if args.pos().len() == 0 { std.line(..args) } else { zap.cetz.draw.line(..args) }
+
+#canvas({
+  import draw: *
+  line((0, -1.5), (0, 1.8), mark: (end: "stealth", fill: black))
+  line((-0.3, 0), (4.2, 0), mark: (end: "stealth", fill: black))
+  content((4.1, -0.3), $t$)
+  content((-0.3, 1.7), $a(t)$)
+  bezier((0, 1.1), (1.5, -1.1), (0.6, 1.1), (0.9, -1.1), stroke: 1.2pt + black)
+  bezier((1.5, -1.1), (3.0, 1.1), (2.1, -1.1), (2.4, 1.1), stroke: 1.2pt + black)
+  line((0, 0.5), (3.0, 0.5), mark: (start: "stealth", end: "stealth", fill: black), stroke: 0.7pt)
+  content((1.5, 0.8), $T$)
+})

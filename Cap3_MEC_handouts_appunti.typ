@@ -146,41 +146,13 @@ Di seguito sono riportati tre esempi di forme d'onda periodiche alternate di per
     column-gutter: 1em,
     align: center + horizon,
     [
-      #canvas({
-        import draw: *
-        line((0, -1.5), (0, 1.8), mark: (end: "stealth", fill: black))
-        line((-0.3, 0), (4.2, 0), mark: (end: "stealth", fill: black))
-        content((4.1, -0.3), $t$)
-        content((-0.3, 1.7), $a(t)$)
-        line((0, 0), (0.8, 1.1), (2.4, -1.1), (3.2, 0), (3.6, 0.55), stroke: 1.2pt + black)
-        line((0, 1.3), (3.2, 1.3), mark: (start: "stealth", end: "stealth", fill: black), stroke: 0.7pt)
-        content((1.6, 1.55), $T$)
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig01.typ"
     ],
     [
-      #canvas({
-        import draw: *
-        line((0, -1.5), (0, 1.8), mark: (end: "stealth", fill: black))
-        line((-0.3, 0), (4.2, 0), mark: (end: "stealth", fill: black))
-        content((4.1, -0.3), $t$)
-        content((-0.3, 1.7), $a(t)$)
-        line((0, 1.0), (1.3, 1.0), (1.3, -1.0), (2.6, -1.0), (2.6, 1.0), (3.6, 1.0), (3.6, -1.0), (3.9, -1.0), stroke: 1.2pt + black)
-        line((0, -1.3), (2.6, -1.3), mark: (start: "stealth", end: "stealth", fill: black), stroke: 0.7pt)
-        content((1.3, -1.6), $T$)
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig02.typ"
     ],
     [
-      #canvas({
-        import draw: *
-        line((0, -1.5), (0, 1.8), mark: (end: "stealth", fill: black))
-        line((-0.3, 0), (4.2, 0), mark: (end: "stealth", fill: black))
-        content((4.1, -0.3), $t$)
-        content((-0.3, 1.7), $a(t)$)
-        bezier((0, 1.1), (1.5, -1.1), (0.6, 1.1), (0.9, -1.1), stroke: 1.2pt + black)
-        bezier((1.5, -1.1), (3.0, 1.1), (2.1, -1.1), (2.4, 1.1), stroke: 1.2pt + black)
-        line((0, 0.5), (3.0, 0.5), mark: (start: "stealth", end: "stealth", fill: black), stroke: 0.7pt)
-        content((1.5, 0.8), $T$)
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig03.typ"
     ]
   )
 ]
@@ -213,68 +185,7 @@ $ a_m = 1 / T integral_(t_0)^(t_0 + T) a(t) "d"t = 1 / T [ integral_(t_0)^(t_0 +
 L'andamento temporale di $a(t)$ in funzione dell'argomento angolare $omega t in [0, 2 pi]$ per tre differenti valori della fase iniziale ($varphi = 0$, $varphi = pi/2$, $varphi = -pi/2$) è rappresentato nel grafico seguente:
 
 #align(center)[
-  #canvas({
-    import draw: *
-    // Riquadro e griglia
-    rect((0, -3), (8, 3), stroke: 0.6pt + black)
-    for y in (-2, -1, 0, 1, 2) {
-      line((0, y), (8, y), stroke: (paint: gray.lighten(50%), thickness: 0.4pt))
-      content((-0.35, y), $#y$)
-    }
-    content((-0.35, 3), $3$)
-    content((-0.35, -3), $-3$)
-    content((-0.8, 0), $a(t)$)
-
-    for x in (2, 4, 6) {
-      line((x, -3), (x, 3), stroke: (paint: gray.lighten(50%), thickness: 0.4pt))
-    }
-    content((0, -3.4), $0$)
-    content((2, -3.4), $pi / 2$)
-    content((4, -3.4), $pi$)
-    content((6, -3.4), $(3 pi) / 2$)
-    content((8, -3.4), $2 pi$)
-    content((4, -4.0), [angolo ($"rad"$)])
-
-    // Asse zero evidenziato
-    line((0, 0), (8, 0), stroke: 0.6pt + black)
-
-    // Curva phi = 0: 3 * sin(x)
-    bezier((0, 0), (2, 3), (0.8, 1.5), (1.3, 3), stroke: 1.5pt + rgb("#007256"))
-    bezier((2, 3), (4, 0), (2.7, 3), (3.2, 1.5), stroke: 1.5pt + rgb("#007256"))
-    bezier((4, 0), (6, -3), (4.8, -1.5), (5.3, -3), stroke: 1.5pt + rgb("#007256"))
-    bezier((6, -3), (8, 0), (6.7, -3), (7.2, -1.5), stroke: 1.5pt + rgb("#007256"))
-
-    // Curva phi = pi/2 (anticipo): curva traslata a sinistra
-    bezier((0, 2.6), (0.67, 3), (0.2, 2.9), (0.4, 3), stroke: 1.2pt + rgb("#d95319"))
-    bezier((0.67, 3), (2.67, 0), (1.37, 3), (1.87, 1.5), stroke: 1.2pt + rgb("#d95319"))
-    bezier((2.67, 0), (4.67, -3), (3.47, -1.5), (3.97, -3), stroke: 1.2pt + rgb("#d95319"))
-    bezier((4.67, -3), (6.67, 0), (5.37, -3), (5.87, -1.5), stroke: 1.2pt + rgb("#d95319"))
-    bezier((6.67, 0), (8, 2.6), (7.2, 1.1), (7.7, 2.2), stroke: 1.2pt + rgb("#d95319"))
-
-    // Curva phi = -pi/2 (ritardo): curva traslata a destra
-    bezier((0, -2.6), (1.33, 0), (0.3, -2.2), (0.8, -1.1), stroke: 1.2pt + rgb("#edb120"))
-    bezier((1.33, 0), (3.33, 3), (2.13, 1.5), (2.63, 3), stroke: 1.2pt + rgb("#edb120"))
-    bezier((3.33, 3), (5.33, 0), (4.03, 3), (4.53, 1.5), stroke: 1.2pt + rgb("#edb120"))
-    bezier((5.33, 0), (7.33, -3), (6.13, -1.5), (6.63, -3), stroke: 1.2pt + rgb("#edb120"))
-    bezier((7.33, -3), (8, -2.6), (7.6, -3), (7.8, -2.9), stroke: 1.2pt + rgb("#edb120"))
-
-    // Freccia ampiezza A_hat
-    line((2, 0), (2, 3), mark: (end: "stealth", fill: red), stroke: 1.5pt + red)
-    content((2, 3.4), text(fill: red)[$hat(A)$])
-
-    // Freccia periodo T
-    line((0, -0.4), (8, -0.4), mark: (start: "stealth", end: "stealth", fill: black), stroke: 0.9pt)
-    content((2.3, -0.8), $T$)
-
-    // Legenda
-    rect((5.8, 1.3), (7.7, 2.8), fill: white, stroke: 0.5pt + black)
-    line((6.0, 2.5), (6.5, 2.5), stroke: 1.5pt + rgb("#007256"))
-    content((7.1, 2.5), $varphi = 0$)
-    line((6.0, 2.0), (6.5, 2.0), stroke: 1.2pt + rgb("#d95319"))
-    content((7.1, 2.0), $varphi = pi / 2$)
-    line((6.0, 1.5), (6.5, 1.5), stroke: 1.2pt + rgb("#edb120"))
-    content((7.1, 1.5), $varphi = -pi / 2$)
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig04.typ"
 ]
 
 === Valore efficace di una funzione sinusoidale
@@ -302,25 +213,10 @@ Le leggi di Kirchhoff e le equazioni costitutive devono essere soddisfatte istan
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"))
-      resistor("r1", (0, 0), (3.5, 0), n: "o-o", label: (content: $R$, anchor: "south", distance: 6pt), i: (content: $i(t)$, anchor: "south", invert: true, distance: 15pt))
-      bezier((3.3, -0.3), (0.2, -0.3), (1.75, -1.2), mark: (end: "stealth", fill: red), stroke: red + 1pt)
-      content((1.75, -1.1), text(fill: red)[$v(t) = R i(t)$])
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig05.typ"
   ],
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      node("n0", (0, 0))
-      wire((-1.5, 1.5), (0, 0), i: (content: $i_3(t) med thin$, anchor: "south-west"))
-      wire((1.8, 1.0), (0, 0), i: (content: $i_2(t)$, anchor: "north-west"))
-      wire((1.2, -1.5), (0, 0), i: (content: $i_1(t)$, anchor: "south-west"))
-      wire((0, 0), (-1.5, -1.2), i: (content: $ med thin med thin i_4(t)$, anchor: "north-west"))
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig06.typ"
     $ i_1(t) + i_2(t) + i_3(t) - i_4(t) = 0 $
   ]
 )
@@ -355,45 +251,7 @@ Si osservi che il valore efficace della somma di due sinusoidi *non* è uguale a
 ]
 
 #align(center)[
-  #canvas({
-    import draw: *
-    rect((0, -2), (6.28, 2), stroke: 0.6pt + black)
-    for y in (-1.5, -1, -0.5, 0, 0.5, 1, 1.5) {
-      line((0, y), (6.28, y), stroke: (paint: gray.lighten(60%), thickness: 0.4pt))
-    }
-    for y in (-2, -1, 0, 1, 2) {
-      content((-0.4, y), $#y$)
-    }
-    for x in (1, 2, 3, 4, 5, 6) {
-      line((x, -2), (x, 2), stroke: (paint: gray.lighten(60%), thickness: 0.4pt))
-      content((x, -2.35), $#x$)
-    }
-    content((0, -2.35), $0$)
-    content((3.14, -2.85), [angolo ($"rad"$)])
-    line((0, 0), (6.28, 0), stroke: 0.6pt + black)
-
-    // s(t) = sqrt(2) sin(x) (rosso)
-    bezier((0, 0), (1.57, 1.41), (0.6, 0.7), (1.0, 1.41), stroke: 1.2pt + red)
-    bezier((1.57, 1.41), (3.14, 0), (2.14, 1.41), (2.54, 0.7), stroke: 1.2pt + red)
-    bezier((3.14, 0), (4.71, -1.41), (3.74, -0.7), (4.14, -1.41), stroke: 1.2pt + red)
-    bezier((4.71, -1.41), (6.28, 0), (5.31, -1.41), (5.71, -0.7), stroke: 1.2pt + red)
-    content((3.4, 0.4), text(fill: red)[$s(t)$])
-
-    // c(t) = sqrt(2) cos(x) (verde/nero)
-    bezier((0, 1.41), (1.57, 0), (0.57, 1.41), (0.97, 0.7), stroke: 1.2pt + rgb("#00a000"))
-    bezier((1.57, 0), (3.14, -1.41), (2.17, -0.7), (2.57, -1.41), stroke: 1.2pt + rgb("#00a000"))
-    bezier((3.14, -1.41), (4.71, 0), (3.71, -1.41), (4.11, -0.7), stroke: 1.2pt + rgb("#00a000"))
-    bezier((4.71, 0), (6.28, 1.41), (5.31, 0.7), (5.71, 1.41), stroke: 1.2pt + rgb("#00a000"))
-    content((1.2, -0.6), text(fill: rgb("#00a000"))[$c(t)$])
-
-    // s(t) + c(t) = 2 sin(x + pi/4) (blu)
-    bezier((0, 1.41), (0.785, 2.0), (0.25, 1.8), (0.5, 2.0), stroke: 1.4pt + blue)
-    bezier((0.785, 2.0), (2.356, 0), (1.35, 2.0), (1.75, 1.0), stroke: 1.4pt + blue)
-    bezier((2.356, 0), (3.927, -2.0), (2.95, -1.0), (3.35, -2.0), stroke: 1.4pt + blue)
-    bezier((3.927, -2.0), (5.498, 0), (4.5, -2.0), (4.9, -1.0), stroke: 1.4pt + blue)
-    bezier((5.498, 0), (6.28, 1.41), (5.8, 0.5), (6.05, 1.0), stroke: 1.4pt + blue)
-    content((2.6, 1.65), text(fill: blue)[$s(t) + c(t)$])
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig07.typ"
 ]
 
 === Derivata temporale di una funzione sinusoidale
@@ -440,35 +298,7 @@ Il metodo simbolico stabilisce una corrispondenza biunivoca fra le grandezze sin
       dove $z = |macron(z)| = sqrt(a^2 + b^2)$ rappresenta il _modulo_ del numero complesso e $theta = angle macron(z)$ ne rappresenta l'_argomento_ (o anomalia).
   ],
   [
-    #canvas({
-      import draw: *
-      // Assi Re e Im
-      line((-0.8, 0), (4.2, 0), mark: (end: "stealth", fill: black), stroke: 0.8pt)
-      line((0, -0.6), (0, 3.6), mark: (end: "stealth", fill: black), stroke: 0.8pt)
-      content((4.0, -0.4), sans("Re", size: 11pt))
-      content((-0.45, 3.4), sans("Im", size: 11pt))
-
-      // Proiezioni tratteggiate
-      line((0, 2.3), (3.0, 2.3), stroke: (paint: red, dash: "dashed", thickness: 0.8pt))
-      line((3.0, 0), (3.0, 2.3), stroke: (paint: red, dash: "dashed", thickness: 0.8pt))
-      content((3.0, -0.35), $a$)
-      content((-0.3, 2.3), $b$)
-
-      // Vettore z
-      line((0, 0), (3.0, 2.3), stroke: 1.8pt + red)
-      circle((3.0, 2.3), radius: 0.08, fill: black, stroke: red + 1pt)
-      content((3.3, 2.65), $macron(z)$)
-      content((1.3, 1.5), $|macron(z)|$)
-
-      // Versore immaginario j
-      line((0, 0), (0, 0.9), mark: (end: "stealth", fill: red), stroke: 2.5pt + red)
-      content((-0.35, 0.5), $j$)
-      content((-1.1, 1.4), $j = sqrt(-1)$)
-
-      // Arco angolo theta
-      arc((1.1, 0), start: 0deg, stop: 37.5deg, radius: 1.1, mark: (end: "stealth", fill: black), stroke: 0.8pt)
-      content((2.1, 0.45), $theta = angle macron(z)$)
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig08.typ"
   ]
 )
 
@@ -518,29 +348,7 @@ $ cases(
 ) $
 
 #align(center)[
-  #canvas({
-    import draw: *
-    // Assi
-    line((-0.8, 0), (4.5, 0), mark: (end: "stealth", fill: black))
-    content((4.5, -0.35), $"Re"$)
-    line((0, -0.8), (0, 3.2), mark: (end: "stealth", fill: black))
-    content((-0.4, 3.0), $"Im"$)
-
-    // Vettore rotante z(t)
-    let ang = 32deg
-    let r = 3.0
-    line((0, 0), (r * calc.cos(ang), r * calc.sin(ang)), stroke: (paint: red, thickness: 1.5pt))
-    circle((r * calc.cos(ang), r * calc.sin(ang)), radius: 0.07, fill: red, stroke: red)
-    content((r * calc.cos(ang) + 0.6, r * calc.sin(ang) + 0.25), text(fill: red)[$macron(z)(t)$])
-
-    // Arco angolo wt + phi
-    arc((1.2, 0), start: 0deg, stop: ang, radius: 1.2, stroke: (paint: rgb("#006633"), thickness: 1pt))
-    content((2.3, 0.55), text(fill: rgb("#006633"))[$omega t + phi$])
-
-    // Freccia di rotazione omega
-    arc((1.5 * calc.cos(15deg), 1.5 * calc.sin(15deg)), start: 15deg, stop: 65deg, radius: 1.5, stroke: (paint: rgb("#006633"), thickness: 1.2pt), mark: (end: "stealth", fill: rgb("#006633")))
-    content((1.4, 2.0), text(fill: rgb("#006633"))[$omega$])
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig09.typ"
 ]
 
 Esiste quindi una corrispondenza biunivoca tra il vettore rotante $macron(z)(t)$ e la funzione sinusoidale $f(t) = hat(F) sin(omega t + phi)$, ottenuta applicando l'operatore parte immaginaria:
@@ -572,21 +380,7 @@ $ (dif macron(z)(t)) / (dif t) = (dif) / (dif t) [hat(F) e^(j (omega t + phi))] 
     $ (dif macron(z)(t)) / (dif t) = omega e^(j pi / 2) hat(F) e^(j (omega t + phi)) = omega hat(F) e^(j (omega t + phi + pi / 2)) $
   ],
   [
-    #canvas({
-      import draw: *
-      line((-0.8, 0), (2.2, 0), mark: (end: "stealth", fill: black))
-      content((2.2, -0.35), $"Re"$)
-      line((0, -0.8), (0, 2.2), mark: (end: "stealth", fill: black))
-      content((-0.45, 2.1), $"Im"$)
-
-      // Vettore c = j sull'asse immaginario
-      line((0, 0), (0, 1.3), stroke: (paint: red, thickness: 2pt), mark: (end: "stealth", fill: red))
-      content((-0.4, 1.2), text(fill: red)[$macron(c) = j$])
-
-      // Angolo retto pi/2
-      line((0.25, 0), (0.25, 0.25), (0, 0.25), stroke: (paint: rgb("#006633"), thickness: 1pt))
-      content((0.65, 0.5), text(fill: rgb("#006633"))[$pi / 2$])
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig10.typ"
   ]
 )
 
@@ -610,32 +404,7 @@ $ macron(z)(t) = hat(F) e^(j (omega t + phi)) = sqrt(2) F e^(j (omega t + phi)) 
     - la quantità complessa $macron(F) = F e^(j phi)$ *non dipende dal tempo $t$* e racchiude tutta l'informazione caratteristica della sinusoide: il valore efficace $F$ (modulo) e la fase iniziale $phi$ (argomento).
   ],
   [
-    #canvas({
-      import draw: *
-      line((-0.6, 0), (3.8, 0), mark: (end: "stealth", fill: black))
-      content((3.8, -0.35), $"Re"$)
-      line((0, -0.6), (0, 2.8), mark: (end: "stealth", fill: black))
-      content((-0.45, 2.7), $"Im"$)
-
-      let a1 = 18deg
-      let r1 = 2.6
-      let a2 = 48deg
-      let r2 = 2.2
-
-      // Vettore z1(t)
-      line((0, 0), (r1 * calc.cos(a1), r1 * calc.sin(a1)), stroke: (paint: rgb("#006633"), thickness: 1.4pt))
-      circle((r1 * calc.cos(a1), r1 * calc.sin(a1)), radius: 0.05, fill: rgb("#006633"))
-      content((r1 * calc.cos(a1) + 0.5, r1 * calc.sin(a1) + 0.15), text(fill: rgb("#006633"))[$macron(z)_1(t)$])
-      arc((1.6, 0), start: 0deg, stop: a1, radius: 1.6, stroke: (paint: rgb("#006633")))
-      content((2.4, 0.3), text(fill: rgb("#006633"), size: 9pt)[$omega t + phi_1$])
-
-      // Vettore z2(t)
-      line((0, 0), (r2 * calc.cos(a2), r2 * calc.sin(a2)), stroke: (paint: red, thickness: 1.4pt))
-      circle((r2 * calc.cos(a2), r2 * calc.sin(a2)), radius: 0.05, fill: red)
-      content((r2 * calc.cos(a2) + 0.45, r2 * calc.sin(a2) + 0.2), text(fill: red)[$macron(z)_2(t)$])
-      arc((0.8, 0), start: 0deg, stop: a2, radius: 0.8, stroke: (paint: red))
-      content((0.7, 1.6), text(fill: red, size: 9pt)[$omega t + phi_2$])
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig11.typ"
   ]
 )
 
@@ -647,22 +416,7 @@ L'uso dei fasori consente di studiare i vettori rotanti come se fossero "fotogra
 ]
 
 #align(center)[
-  #canvas({
-    import draw: *
-    line((-0.8, 0), (3.5, 0), mark: (end: "stealth", fill: black))
-    content((3.2, -0.4), sans($"Re"$, size: 12pt))
-    line((0, -0.6), (0, 2.5), mark: (end: "stealth", fill: black))
-    content((-0.45, 2.2), sans($"Im"$, size: 12pt))
-
-    let ang = 33deg
-    let r = 2.6
-    line((0, 0), (r * calc.cos(ang), r * calc.sin(ang)), stroke: (paint: red, thickness: 2pt), mark: (end: "stealth", fill: red))
-    content((r * calc.cos(ang) + 0.35, r * calc.sin(ang) + 0.1), text(size: 13pt)[$macron(F)$])
-    content((1.0, 1.15), text(size: 12pt)[$F$])
-
-    arc((1.1, 0), start: 0deg, stop: ang, radius: 1.1, stroke: (paint: black, thickness: 1pt), mark: (end: "stealth", fill: black))
-    content((1.4, 0.35), text(size: 12pt)[$phi$])
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig12.typ"
 ]
 
 === Fasore e Regola di Derivazione
@@ -680,40 +434,7 @@ Il fasore $macron(F)'$ associato alla derivata $(dif f(t)) / (dif t)$ si ottiene
 $ macron(F)' = j omega macron(F) = j omega F e^(j phi) = omega F e^(j (phi + pi / 2)) $
 
 #align(center)[
-  #canvas({
-    import draw: *
-    line((-1.8, 0), (3.2, 0), mark: (end: "stealth", fill: black))
-    content((2.9, -0.4), sans($"Re"$, size: 12pt))
-    line((0, -0.6), (0, 2.8), mark: (end: "stealth", fill: black))
-    content((-0.45, 2.5), sans($"Im"$, size: 12pt))
-
-    let ang = 30deg
-    let rF = 2.2
-    let rFp = 2.6
-    let angp = ang + 90deg
-
-    // Fasore F
-    line((0, 0), (rF * calc.cos(ang), rF * calc.sin(ang)), stroke: (paint: red, thickness: 2pt), mark: (end: "stealth", fill: red))
-    content((rF * calc.cos(ang) + 0.35, rF * calc.sin(ang) + 0.1), text(size: 12pt)[$macron(F)$])
-
-    // Fasore F' = j omega F (ruotato di 90 gradi)
-    line((0, 0), (rFp * calc.cos(angp), rFp * calc.sin(angp)), stroke: (paint: red, thickness: 2pt), mark: (end: "stealth", fill: red))
-    content((rFp * calc.cos(angp) - 0.35, rFp * calc.sin(angp) - 0.3), text(size: 12pt)[$macron(F)'$])
-
-    // Angolo retto tra F e F'
-    let s = 0.28
-    let p1 = (s * calc.cos(ang), s * calc.sin(ang))
-    let p2 = (s * calc.cos(ang) + s * calc.cos(angp), s * calc.sin(ang) + s * calc.sin(angp))
-    let p3 = (s * calc.cos(angp), s * calc.sin(angp))
-    line(p1, p2, p3, stroke: (paint: red, thickness: 0.8pt))
-
-    // Archi angoli
-    arc((1.1, 0), start: 0deg, stop: ang, radius: 1.1, stroke: (paint: black, thickness: 0.9pt), mark: (end: "stealth", fill: black))
-    content((1.35, 0.3), text(size: 11pt)[$phi$])
-
-    arc((0.7, 0), start: 0deg, stop: angp, radius: 0.7, stroke: (paint: black, thickness: 0.9pt), mark: (end: "stealth", fill: black))
-    content((0.75, 1.15), text(size: 11pt)[$phi + pi / 2$])
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig13.typ"
 ]
 
 === Esempi di Trasformazione tra Dominio del Tempo e Dominio dei Fasori
@@ -741,28 +462,7 @@ Dato il fasore di tensione $macron(C) = -3 + j 7 "V"$, si vogliono determinare i
     $ c(t) = sqrt(2) C sin(omega t + phi_C) = sqrt(2) dot 7.62 sin(omega t + 1.976) "V" $
   ],
   [
-    #canvas({
-      import draw: *
-      line((-1.8, 0), (2.2, 0), mark: (end: "stealth", fill: black))
-      content((2.2, -0.35), $"Re"$)
-      line((0, -1.8), (0, 2.4), mark: (end: "stealth", fill: black))
-      content((0.45, 2.2), $"Im"$)
-
-      // Fasore vero nel II quadrante (-0.9, 2.1)
-      line((0, 0), (-0.9, 2.1), stroke: (paint: red, thickness: 1.5pt), mark: (end: "stealth", fill: red))
-      content((-1.3, 2.1), text(fill: red)[$macron(C)$])
-      line((-0.9, 0), (-0.9, 2.1), stroke: (paint: red, dash: "dashed"))
-      line((0, 2.1), (-0.9, 2.1), stroke: (paint: red, dash: "dashed"))
-
-      // Fasore errato nel IV quadrante (0.7, -1.6)
-      line((0, 0), (0.7, -1.6), stroke: (paint: red, dash: "dotted", thickness: 1.2pt), mark: (end: "stealth", fill: red))
-
-      // Angoli
-      arc((0.45, 0), start: 0deg, stop: 113.2deg, radius: 0.45, stroke: (paint: red))
-      content((0.8, 0.8), text(fill: red, size: 9pt)[$-1.166 + pi$])
-      arc((0.35, 0), start: 0deg, stop: -66.8deg, radius: 0.35, stroke: (paint: red))
-      content((1.1, -0.45), text(fill: red, size: 8pt)[$-1.166 "rad"$])
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig14.typ"
   ]
 )
 
@@ -777,51 +477,7 @@ Consideriamo ad esempio un nodo a cui afferiscono tre correnti $i_1(t)$, $i_2(t)
 $ i_1(t) + i_2(t) - i_3(t) = 0 quad arrow.l.r.double quad macron(I)_1 + macron(I)_2 - macron(I)_3 = 0 quad arrow.l.r.double quad macron(I)_3 = macron(I)_1 + macron(I)_2 $
 
 #align(center)[
-  #canvas({
-    import draw: *
-    // --- Nodo nel dominio del tempo (sinistra) ---
-    circle((-4.5, 1.0), radius: 0.08, fill: black)
-    line((-5.5, 2.0), (-4.58, 1.08), stroke: (paint: red, thickness: 1.3pt), mark: (end: "stealth", fill: red))
-    content((-5.5, 2.3), text(fill: red)[$i_1(t)$])
-    line((-4.6, -0.2), (-4.51, 0.9), stroke: (paint: red, thickness: 1.3pt), mark: (end: "stealth", fill: red))
-    content((-4.0, 0.2), text(fill: red)[$i_2(t)$])
-    line((-4.42, 1.05), (-3.3, 1.6), stroke: (paint: red, thickness: 1.3pt), mark: (end: "stealth", fill: red))
-    content((-2.9, 1.6), text(fill: red)[$i_3(t)$])
-
-    // --- Diagramma fasoriale (centro) ---
-    line((-1.5, 0), (2.0, 0), mark: (end: "stealth", fill: black))
-    content((2.35, 0), $"Re"$)
-    line((-1.0, -0.4), (-1.0, 2.4), mark: (end: "stealth", fill: black))
-    content((-1.35, 2.3), $"Im"$)
-
-    // Origine del piano complesso a (-1.0, 0)
-    let ox = -1.0
-    let oy = 0.0
-    // I1 = (1.1, 0.45)
-    line((ox, oy), (ox + 1.1, oy + 0.45), stroke: (paint: rgb("#008000"), thickness: 1.5pt), mark: (end: "stealth", fill: rgb("#008000")))
-    content((ox + 1.3, oy + 0.3), text(fill: rgb("#008000"))[$macron(I)_1$])
-
-    // I2 = (0.8, 0.7)
-    line((ox, oy), (ox + 0.8, oy + 0.7), stroke: (paint: rgb("#cc6600"), thickness: 1.5pt), mark: (end: "stealth", fill: rgb("#cc6600")))
-    content((ox + 0.55, oy + 0.95), text(fill: rgb("#cc6600"))[$macron(I)_2$])
-
-    // Traslazione punta-coda di I2
-    line((ox + 1.1, oy + 0.45), (ox + 1.9, oy + 1.15), stroke: (paint: rgb("#cc6600"), dash: "dashed", thickness: 1.2pt), mark: (end: "stealth", fill: rgb("#cc6600")))
-    content((ox + 1.95, oy + 0.85), text(fill: rgb("#cc6600"))[$macron(I)_2$])
-
-    // Risultante I3 = I1 + I2 = (1.9, 1.15)
-    line((ox, oy), (ox + 1.9, oy + 1.15), stroke: (paint: blue, thickness: 1.6pt), mark: (end: "stealth", fill: blue))
-    content((ox + 1.9, oy + 1.55), text(fill: blue)[$macron(I)_3 = macron(I)_1 + macron(I)_2$])
-
-    // --- Nodo nel dominio dei fasori (destra) ---
-    circle((4.5, 1.0), radius: 0.08, fill: black)
-    line((3.4, 1.7), (4.4, 1.06), stroke: (paint: red, thickness: 1.3pt), mark: (end: "stealth", fill: red))
-    content((3.4, 1.1), text(fill: red)[$macron(I)_1$])
-    line((4.5, -0.2), (4.5, 0.9), stroke: (paint: red, thickness: 1.3pt), mark: (end: "stealth", fill: red))
-    content((5.0, 0.2), text(fill: red)[$macron(I)_2$])
-    line((4.58, 1.06), (5.6, 1.8), stroke: (paint: red, thickness: 1.3pt), mark: (end: "stealth", fill: red))
-    content((5.8, 1.3), text(fill: red)[$macron(I)_3$])
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig15.typ"
 ]
 
 #nota[
@@ -839,21 +495,7 @@ Si consideri un resistore lineare tempo-invariante (LTI) di resistenza $R$, gove
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"))
-
-      resistor("r", (0, 3), (0, 0), n: "o-o", label: (content: $R$, anchor: "west", distance: 8pt))
-
-      // Freccia corrente i(t) dall'alto
-      line((0, 3.6), (0, 3.15), stroke: (paint: red, thickness: 1.3pt), mark: (end: "stealth", fill: red))
-      content((0.65, 3.4), text(fill: red)[$i(t)$])
-
-      // Freccia curva tensione v(t)
-      bezier((-0.35, 0.1), (-0.35, 2.9), (-0.75, 1.5), stroke: (paint: blue, thickness: 1.2pt), mark: (end: "stealth", fill: blue))
-      content((-1.05, 1.5), text(fill: blue)[$v(t)$])
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig16.typ"
   ],
   [
     Nel dominio del tempo la legge di Ohm stabilisce la proporzionalità diretta tra tensione e corrente:
@@ -877,73 +519,10 @@ Poiché in un resistore risulta $phi_V = phi_I$ (lo sfasamento tra tensione e co
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
   [
-    #canvas({
-      import draw: *
-      // Diagramma fasoriale del resistore
-      line((-0.6, 0), (3.6, 0), mark: (end: "stealth", fill: black))
-      content((3.4, -0.4), $italic("Re")$)
-      line((0, -0.6), (0, 2.6), mark: (end: "stealth", fill: black))
-      content((-0.45, 2.4), $italic("Im")$)
-
-      let ang = 34deg
-      let rV = 2.0
-      let rI = 3.1
-
-      // Fasore I
-      line((0, 0), (rI * calc.cos(ang), rI * calc.sin(ang)), stroke: (paint: black, thickness: 1.5pt), mark: (end: "stealth", fill: black))
-      content((rI * calc.cos(ang) - 0.35, rI * calc.sin(ang) + 0.3), text(size: 12pt)[$macron(I)$])
-
-      // Fasore V (collineare)
-      line((0, 0), (rV * calc.cos(ang), rV * calc.sin(ang)), stroke: (paint: black, thickness: 1.5pt), mark: (end: "stealth", fill: black))
-      content((rV * calc.cos(ang) - 0.35, rV * calc.sin(ang) + 0.25), text(size: 12pt)[$macron(V)$])
-
-      // Arco angolo phi_I = phi_V
-      arc((1.15, 0), start: 0deg, stop: ang, radius: 1.15, stroke: (paint: black, thickness: 0.8pt), mark: (end: "stealth", fill: black))
-      content((2.15, 0.45), text(size: 11pt)[$phi_I = phi_V$])
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig17.typ"
   ],
   [
-    #canvas({
-      import draw: *
-      // Grafico temporale v(t) e i(t) in fase
-      let w = 4.8
-      let h = 2.0
-
-      // Griglia verticale per T/4, T/2, 3T/4, T
-      for k in (1, 2, 3) {
-        let xk = k * w / 4
-        line((xk, -h), (xk, h), stroke: (paint: gray.lighten(40%), thickness: 0.5pt))
-      }
-
-      // Riquadro e asse temporale centrale
-      rect((0, -h), (w, h), stroke: (paint: black, thickness: 0.7pt))
-      line((0, 0), (w, 0), stroke: (paint: black, thickness: 0.7pt))
-
-      // Etichette asse tempi
-      content((0, -h - 0.35), $0$)
-      content((w / 4, -h - 0.35), $T / 4$)
-      content((w / 2, -h - 0.35), $T / 2$)
-      content((3 * w / 4, -h - 0.35), $3 T / 4$)
-      content((w, -h - 0.35), $T$)
-
-      // Campionamento sinusoidi in fase (phi = 25deg)
-      let phi0 = 25deg
-      let pts-v = ()
-      let pts-i = ()
-      let N = 60
-      for n in range(0, N + 1) {
-        let x = n * w / N
-        let theta = 360deg * (n / N) + phi0
-        pts-v.push((x, 1.55 * calc.sin(theta)))
-        pts-i.push((x, 1.2 * calc.sin(theta)))
-      }
-
-      line(..pts-v, stroke: (paint: black, dash: "dashed", thickness: 1.2pt))
-      line(..pts-i, stroke: (paint: black, dash: "dotted", thickness: 1.2pt))
-
-      content((0.65, 1.75), $v(t)$)
-      content((0.75, 0.85), $i(t)$)
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig18.typ"
   ]
 )
 
@@ -962,20 +541,7 @@ $ v(t) = sqrt(2) V cos(omega t + phi_V) arrow.l.r.double macron(V) = V e^(j phi_
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      capacitor("c", (0, 3), (0, 0), n: "o-o", label: (content: $med thin C$, anchor: "west", distance: 8pt))
-
-      // Freccia corrente i(t)
-      line((0, 3.8), (0, 3.2), stroke: red + 1pt, mark: (end: "stealth", fill: red))
-      content((0.6, 3.5), text(fill: red)[$i(t)$])
-
-      // Freccia tensione v(t)
-      bezier((-0.5, 0.2), (-0.5, 2.8), (-0.9, 1.5), stroke: blue + 1pt, mark: (end: "stealth", fill: blue))
-      content((-1.2, 1.5), text(fill: blue)[$v(t)$])
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig19.typ"
   ],
   [
     Applicando l'equazione costitutiva nel dominio del tempo $i(t) = C ("d"v(t))/("d"t)$ e sfruttando la regola di derivazione nel dominio dei fasori, si ottiene:
@@ -1010,79 +576,10 @@ Di seguito sono riportati il diagramma fasoriale nel piano complesso di Gauss e 
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      // Assi Re e Im
-      line((-1.5, 0), (3.2, 0), mark: (end: "stealth", fill: black))
-      content((3.1, -0.4), $"Re"$)
-      line((0, -0.5), (0, 3.2), mark: (end: "stealth", fill: black))
-      content((-0.5, 3.0), $"Im"$)
-
-      // Fasore V (30 gradi)
-      line((0, 0), (2.2, 1.27), stroke: 1.2pt + blue, mark: (end: "stealth", fill: blue))
-      content((2.6, 1.35), text(fill: blue)[$macron(V)$])
-
-      // Fasore I (120 gradi = 30 + 90)
-      line((0, 0), (-1.0, 1.73), stroke: 1.2pt + red, mark: (end: "stealth", fill: red))
-      content((-1.35, 1.85), text(fill: red)[$macron(I)$])
-
-      // Simbolo di angolo retto tra V e I
-      line((0.35, 0.2), (0.15, 0.55), stroke: 0.8pt + green.darken(30%))
-      line((0.15, 0.55), (-0.2, 0.35), stroke: 0.8pt + green.darken(30%))
-
-      // Arco phi_V
-      arc((0.9, 0), start: 0deg, stop: 30deg, radius: 0.9, mark: (end: "stealth", fill: black, scale: 0.7))
-      content((1.35, 0.35), $phi_V$)
-
-      // Arco phi_I
-      arc((0.6, 0), start: 0deg, stop: 120deg, radius: 0.6, mark: (end: "stealth", fill: black, scale: 0.7))
-      content((1.1, 1.9), [$phi_I = phi_V + pi / 2$])
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig20.typ"
   ],
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      // Riquadro e griglia del grafico temporale
-      rect((0, -2), (4.8, 2), stroke: 0.6pt + black)
-      line((0, 0), (4.8, 0), stroke: 0.6pt + black)
-
-      for x in (1.2, 2.4, 3.6) {
-        line((x, -2), (x, 2), stroke: (paint: gray.lighten(30%), thickness: 0.5pt))
-        line((x, -2.1), (x, -2), stroke: 0.6pt + black)
-        line((x, 2), (x, 2.1), stroke: 0.6pt + black)
-      }
-      for y in (-1.5, -1.0, -0.5, 0.5, 1.0, 1.5) {
-        line((0, y), (4.8, y), stroke: (paint: gray.lighten(30%), thickness: 0.5pt))
-      }
-
-      content((0, -2.35), $0$)
-      content((1.2, -2.35), $T / 4$)
-      content((2.4, -2.35), $T / 2$)
-      content((3.6, -2.35), $3 T / 4$)
-      content((4.8, -2.35), $T$)
-
-      // Curva v(t) tratteggiata
-      let pts-v = range(0, 61).map(k => {
-        let x = k * 4.8 / 60
-        let angle = (x / 4.8) * 2 * calc.pi - 2.1
-        (x, 1.5 * calc.cos(angle))
-      })
-      line(..pts-v, stroke: (paint: black, thickness: 1.1pt, dash: "dashed"))
-      content((2.6, 1.15), $ v(t)$)
-
-      // Curva i(t) puntinata (in anticipo di pi/2)
-      let pts-i = range(0, 61).map(k => {
-        let x = k * 4.8 / 60
-        let angle = (x / 4.8) * 2 * calc.pi - 2.1 + calc.pi / 2
-        (x, 1.25 * calc.cos(angle))
-      })
-      line(..pts-i, stroke: (paint: black, thickness: 1.1pt, dash: "dotted"))
-      content((1.5, 0.8), $i(t)$)
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig21.typ"
   ]
 )
 
@@ -1097,20 +594,7 @@ $ i(t) = sqrt(2) I cos(omega t + phi_I) arrow.l.r.double macron(I) = I e^(j phi_
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      inductor("l", (0, 3), (0, 0), variant: "ieee", n: "o-o", label: (content: $L$, anchor: "west", distance: 8pt))
-
-      // Freccia corrente i(t)
-      line((0, 3.8), (0, 3.2), stroke: red + 1pt, mark: (end: "stealth", fill: red))
-      content((0.6, 3.5), text(fill: red)[$i(t)$])
-
-      // Freccia tensione v(t)
-      bezier((-0.5, 0.2), (-0.5, 2.8), (-0.9, 1.5), stroke: blue + 1pt, mark: (end: "stealth", fill: blue))
-      content((-1.2, 1.5), text(fill: blue)[$v(t)$])
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig22.typ"
   ],
   [
     Applicando l'equazione costitutiva dell'induttore $v(t) = L ("d"i(t))/("d"t)$ e passando al dominio dei fasori tramite la regola di derivazione, il fasore della tensione ai capi di $L$ risulta:
@@ -1141,79 +625,10 @@ Di seguito sono rappresentati il diagramma fasoriale nel piano di Gauss e l'anda
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      // Assi Re e Im
-      line((-1.5, 0), (3.2, 0), mark: (end: "stealth", fill: black))
-      content((3.1, -0.4), $"Re"$)
-      line((0, -0.5), (0, 3.2), mark: (end: "stealth", fill: black))
-      content((-0.5, 3.0), $"Im"$)
-
-      // Fasore I (30 gradi)
-      line((0, 0), (2.2, 1.27), stroke: 1.2pt + red, mark: (end: "stealth", fill: red))
-      content((2.6, 1.35), text(fill: red)[$macron(I)$])
-
-      // Fasore V (120 gradi = 30 + 90)
-      line((0, 0), (-1.0, 1.73), stroke: 1.2pt + blue, mark: (end: "stealth", fill: blue))
-      content((-1.35, 1.85), text(fill: blue)[$macron(V)$])
-
-      // Simbolo di angolo retto tra I e V
-      line((0.35, 0.2), (0.15, 0.55), stroke: 0.8pt + green.darken(30%))
-      line((0.15, 0.55), (-0.2, 0.35), stroke: 0.8pt + green.darken(30%))
-
-      // Arco phi_I
-      arc((0.9, 0), start: 0deg, stop: 30deg, radius: 0.9, mark: (end: "stealth", fill: black, scale: 0.7))
-      content((1.35, 0.35), $phi_I$)
-
-      // Arco phi_V
-      arc((0.6, 0), start: 0deg, stop: 120deg, radius: 0.6, mark: (end: "stealth", fill: black, scale: 0.7))
-      content((1.1, 1.9), [$phi_V = phi_I + pi / 2$])
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig23.typ"
   ],
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      // Riquadro e griglia del grafico temporale
-      rect((0, -2), (4.8, 2), stroke: 0.6pt + black)
-      line((0, 0), (4.8, 0), stroke: 0.6pt + black)
-
-      for x in (1.2, 2.4, 3.6) {
-        line((x, -2), (x, 2), stroke: (paint: gray.lighten(30%), thickness: 0.5pt))
-        line((x, -2.1), (x, -2), stroke: 0.6pt + black)
-        line((x, 2), (x, 2.1), stroke: 0.6pt + black)
-      }
-      for y in (-1.5, -1.0, -0.5, 0.5, 1.0, 1.5) {
-        line((0, y), (4.8, y), stroke: (paint: gray.lighten(30%), thickness: 0.5pt))
-      }
-
-      content((0, -2.35), $0$)
-      content((1.2, -2.35), $T / 4$)
-      content((2.4, -2.35), $T / 2$)
-      content((3.6, -2.35), $3 T / 4$)
-      content((4.8, -2.35), $T$)
-
-      // Curva i(t) puntinata
-      let pts-i = range(0, 61).map(k => {
-        let x = k * 4.8 / 60
-        let angle = (x / 4.8) * 2 * calc.pi - 1.05
-        (x, 1.25 * calc.cos(angle))
-      })
-      line(..pts-i, stroke: (paint: black, thickness: 1.1pt, dash: "dotted"))
-      content((1.8, 0.9), $i(t)$)
-
-      // Curva v(t) tratteggiata (in anticipo di pi/2 rispetto a i(t))
-      let pts-v = range(0, 61).map(k => {
-        let x = k * 4.8 / 60
-        let angle = (x / 4.8) * 2 * calc.pi - 1.05 + calc.pi / 2
-        (x, 1.5 * calc.cos(angle))
-      })
-      line(..pts-v, stroke: (paint: black, thickness: 1.1pt, dash: "dashed"))
-      content((1.8, -1.0), $v(t)$)
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig24.typ"
   ]
 )
 
@@ -1249,20 +664,7 @@ Osservando le equazioni costitutive fasoriali di resistore, induttore e condensa
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      resistor("z", (0, 0), (3, 0), variant: "iec", n: "o-o", label: (content: $macron(Z)$, anchor: "north", distance: 6pt))
-
-      // Freccia corrente I
-      line((-1.0, 0), (-0.25, 0), mark: (end: "stealth", fill: black))
-      content((-0.6, 0.45), $macron(I)$)
-
-      // Freccia tensione V
-      bezier((2.7, 0.5), (0.3, 0.5), (1.5, 1.1), mark: (end: "stealth", fill: black))
-      content((1.5, 1.25), $macron(V)$)
-    })
+    #include "figs/Cap3_MEC_handouts_appunti-fig25.typ"
   ],
   [
     $ macron(V) = macron(Z) macron(I) $
@@ -1323,31 +725,7 @@ Grazie alla natura puramente algebrica delle leggi di Kirchhoff per i fasori e d
 Si considerino due impedenze $macron(Z)_1$ e $macron(Z)_2$ collegate in serie tra i morsetti $"A"$ e $"B"$, quindi attraversate dalla medesima corrente fasoriale $macron(I)$:
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-
-    resistor("z1", (0, 0), (3, 0), variant: "iec", n: "*-*", label: (content: $macron(Z)_1$, anchor: "north", distance: 6pt))
-    resistor("z2", (3, 0), (6, 0), variant: "iec", n: "-*", label: (content: $macron(Z)_2$, anchor: "north", distance: 6pt))
-
-    content((0, 0.45), sans("A", weight: "bold"))
-    content((6, 0.45), sans("B", weight: "bold"))
-
-    // Freccia corrente I
-    line((-1.0, 0), (-0.25, 0), stroke: red + 1pt, mark: (end: "stealth", fill: red))
-    content((-0.6, -0.45), text(fill: red)[$macron(I)$])
-
-    // Tensioni V1 e V2
-    line((2.5, -0.6), (0.5, -0.6), stroke: green.darken(30%) + 1pt, mark: (end: "stealth", fill: green.darken(30%)))
-    content((1.5, -1.05), text(fill: green.darken(30%))[$macron(V)_1$])
-
-    line((5.5, -0.6), (3.5, -0.6), stroke: green.darken(30%) + 1pt, mark: (end: "stealth", fill: green.darken(30%)))
-    content((4.5, -1.05), text(fill: green.darken(30%))[$macron(V)_2$])
-
-    // Tensione totale V
-    bezier((5.6, 0.7), (0.4, 0.7), (3.0, 1.5), stroke: green.darken(30%) + 1pt, mark: (end: "stealth", fill: green.darken(30%)))
-    content((3.0, 1.6), text(fill: green.darken(30%))[$macron(V)$])
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig26.typ"
 ]
 
 Applicando la legge di Ohm simbolica a ciascun bipolo si ha:
@@ -1382,42 +760,10 @@ Si consideri il collegamento in serie di un resistore di resistenza $R$ e di un 
     column-gutter: 2em,
     align: center + horizon,
     [
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-        set-style(resistor: (variant: "ieee"))
-
-        wire((0, 0), (1, 0))
-        resistor("r", (1, 0), (3.5, 0), label: (content: $R$, anchor: "north", distance: 8pt))
-        inductor("l", (3.5, 0), (6, 0), label: (content: $L$, anchor: "north", distance: 8pt))
-        wire((6, 0), (6.8, 0))
-
-        // Riquadri rossi indicativi delle impedenze come nell'annotazione
-        rect((1.4, -0.45), (3.1, 0.45), stroke: (paint: red, thickness: 0.8pt, dash: "dashed"))
-        content((2.25, -0.75), text(fill: red)[$macron(Z)_R$])
-
-        rect((3.9, -0.45), (5.6, 0.45), stroke: (paint: red, thickness: 0.8pt, dash: "dashed"))
-        content((4.75, -0.75), text(fill: red)[$macron(Z)_L$])
-
-        node("in", (0, 0), fill: false)
-        node("out", (6.8, 0), fill: false)
-
-        line((-0.9, 0), (-0.2, 0), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-        content((-0.55, 0.45), text(fill: red)[$macron(I)$])
-
-        bezier((6.5, -0.35), (0.3, -0.35), (3.4, -1.7), stroke: blue + 1pt, mark: (end: "stealth", fill: blue))
-        content((3.4, -1.55), text(fill: blue)[$macron(V)$])
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig27.typ"
     ],
     [
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-        set-style(resistor: (variant: "ieee"))
-
-        resistor("r", (0, 0), (2.8, 0), n: "*-*", label: (content: $R$, anchor: "north", distance: 8pt))
-        inductor("l", (2.8, 0), (5.6, 0), n: "*-*", label: (content: $L$, anchor: "north", distance: 8pt))
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig28.typ"
     ]
   )
 ]
@@ -1438,31 +784,7 @@ $ varphi_"eq" = theta = arctan(X_L / R) = arctan((omega L) / R) > 0 $ // VERIFIC
 In modo duale, si consideri il collegamento in serie di un resistore $R$ e di un condensatore di capacità $C$:
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"))
-
-    wire((0, 0), (1, 0))
-    resistor("r", (1, 0), (3.5, 0), label: (content: $R$, anchor: "north", distance: 8pt))
-    capacitor("c", (3.5, 0), (6, 0), label: (content: $C$, anchor: "north", distance: 8pt))
-    wire((6, 0), (6.8, 0))
-
-    rect((1.4, -0.45), (3.1, 0.45), stroke: (paint: red, thickness: 0.8pt, dash: "dashed"))
-    content((2.25, -0.75), text(fill: red)[$macron(Z)_R$])
-
-    rect((4.1, -0.55), (5.4, 0.55), stroke: (paint: red, thickness: 0.8pt, dash: "dashed"))
-    content((4.75, -0.8), text(fill: red)[$macron(Z)_C$])
-
-    node("in", (0, 0), fill: false)
-    node("out", (6.8, 0), fill: false)
-
-    line((-0.9, 0), (-0.2, 0), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-    content((-0.55, 0.45), text(fill: red)[$macron(I)$])
-
-    bezier((6.5, -0.4), (0.3, -0.4), (3.4, -1.75), stroke: blue + 1pt, mark: (end: "stealth", fill: blue))
-    content((3.4, -1.6), text(fill: blue)[$macron(V)$])
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig29.typ"
 ]
 
 Le impedenze dei due componenti valgono:
@@ -1486,53 +808,13 @@ Assumendo per semplicità la tensione ai morsetti con fase iniziale nulla ($varp
     column-gutter: 1.5em,
     align: center + horizon,
     [
-      #canvas({
-        import draw: *
-        // Caso 1: Circuito RL
-        content((-1.2, 2.2), text(fill: rgb("#1b5e20"), weight: "bold")[Caso 1 (Serie $R L$)])
-        line((-0.5, 0), (3.5, 0), mark: (end: "stealth", fill: black))
-        content((3.7, -0.3), $"Re"$)
-        line((0, -1.8), (0, 2.0), mark: (end: "stealth", fill: black))
-        content((-0.4, 2.0), $"Im"$)
-
-        // Vettore V su asse Re
-        line((0, 0), (2.4, 0), stroke: blue + 1.5pt, mark: (end: "stealth", fill: blue))
-        content((2.2, 0.4), text(fill: blue)[$macron(V)$])
-
-        // Vettore I in ritardo
-        line((0, 0), (1.8, -1.1), stroke: red + 1.5pt, mark: (end: "stealth", fill: red))
-        content((2.2, -1.2), text(fill: red)[$macron(I)$])
-
-        // Arco angolo theta
-        arc((1.0, 0), start: 0deg, stop: -31.4deg, radius: 1.0, stroke: red + 0.8pt)
-        content((1.35, -0.35), text(fill: red)[$theta$])
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig30.typ"
 
       $ theta = varphi_V - varphi_I > 0 $
       $ varphi_V = 0 quad ==> quad varphi_I = -theta < 0 $
     ],
     [
-      #canvas({
-        import draw: *
-        // Caso 2: Circuito RC
-        content((-1.2, 2.2), text(fill: rgb("#1b5e20"), weight: "bold")[Caso 2 (Serie $R C$)])
-        line((-0.5, 0), (3.5, 0), mark: (end: "stealth", fill: black))
-        content((3.7, -0.3), $"Re"$)
-        line((0, -1.8), (0, 2.0), mark: (end: "stealth", fill: black))
-        content((-0.4, 2.0), $"Im"$)
-
-        // Vettore V su asse Re
-        line((0, 0), (2.4, 0), stroke: blue + 1.5pt, mark: (end: "stealth", fill: blue))
-        content((2.2, -0.4), text(fill: blue)[$macron(V)$])
-
-        // Vettore I in anticipo
-        line((0, 0), (1.8, 1.1), stroke: red + 1.5pt, mark: (end: "stealth", fill: red))
-        content((2.2, 1.2), text(fill: red)[$macron(I)$])
-
-        // Arco angolo theta
-        arc((1.0, 0), start: 0deg, stop: 31.4deg, radius: 1.0, stroke: red + 0.8pt)
-        content((1.35, 0.35), text(fill: red)[$theta$])
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig31.typ"
 
       $ theta = varphi_V - varphi_I < 0 $
       $ varphi_V = 0 quad ==> quad varphi_I = -theta > 0 $
@@ -1574,37 +856,10 @@ Si consideri il collegamento in parallelo di un resistore $R$ (con conduttanza $
     column-gutter: 2em,
     align: center + horizon,
     [
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-        set-style(resistor: (variant: "ieee"))
-
-        wire((0, 3), (4, 3))
-        wire((0, 0), (4, 0))
-        node("A", (0, 3), fill: false, label: (content: sans("A", weight: "bold"), anchor: "south-east", distance: 5pt))
-        node("B", (0, 0), fill: false, label: (content: sans("B", weight: "bold"), anchor: "north-east", distance: 5pt))
-
-        resistor("r", (1.8, 3), (1.8, 0), label: (content: $med thin R$, anchor: "east", distance: 8pt))
-        capacitor("c", (4, 3), (4, 0), label: (content: $med C$, anchor: "north", distance: 8pt))
-
-        rect((1.35, 0.7), (2.25, 2.3), stroke: (paint: red, thickness: 0.8pt, dash: "dashed"))
-        content((2.65, 1.5), text(fill: red)[$macron(Z)_R$])
-
-        rect((3.5, 0.9), (4.6, 2.1), stroke: (paint: red, thickness: 0.8pt, dash: "dashed"))
-        content((4.65, 0.5), text(fill: red)[$macron(Z)_C$])
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig32.typ"
     ],
     [
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-        set-style(resistor: (variant: "ieee"))
-
-        wire((0, 3), (4, 3))
-        wire((0, 0), (4, 0))
-        resistor("r", (1.8, 3), (1.8, 0), n: "*-*", label: (content: $R$, anchor: "north", distance: 8pt))
-        capacitor("c", (4, 3), (4, 0), n: "*-*", label: (content: $C$, anchor: "north", distance: 8pt))
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig33.typ"
     ]
   )
 ]
@@ -1635,41 +890,10 @@ Qualsiasi rete lineare operante in regime sinusoidale isofrequenziale, vista da 
     column-gutter: 2em,
     align: center + horizon,
     [
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-
-        rect((0, 0), (2.8, 3.2), stroke: 1.2pt)
-        content((1.4, 1.6), sans("Rete\nlineare", weight: "bold"))
-
-        wire((2.8, 2.6), (4.2, 2.6))
-        wire((2.8, 0.6), (4.2, 0.6))
-        node("A", (4.2, 2.6), fill: false, label: (content: sans("A", weight: "bold"), anchor: "south", distance: 6pt))
-        node("B", (4.2, 0.6), fill: false, label: (content: sans("B", weight: "bold"), anchor: "north", distance: 6pt))
-
-        wire((4.2, 2.6), (5.4, 2.6))
-        resistor("u", (5.4, 2.6), (5.4, 0.6), variant: "iec")
-        wire((5.4, 0.6), (4.2, 0.6))
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig34.typ"
     ],
     [
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-
-        vsource("eth", (0, 0.6), (0, 2.6), variant: "iec", stroke: red, label: (content: text(fill: red)[$macron(E)_"TH"$], anchor: "north", distance: 8pt))
-        content((0.4, 2.2), text(fill: red)[#sans("+", weight: "bold")])
-
-        resistor("zth", (0, 2.6), (3.2, 2.6), variant: "iec", stroke: red, label: (content: text(fill: red)[$macron(Z)_"TH"$], anchor: "south", distance: 8pt))
-        wire((0, 0.6), (3.2, 0.6), stroke: red)
-
-        node("A", (3.2, 2.6), fill: false, stroke: red, label: (content: text(fill: red)[#sans("A", weight: "bold")], anchor: "south", distance: 6pt))
-        node("B", (3.2, 0.6), fill: false, stroke: red, label: (content: text(fill: red)[#sans("B", weight: "bold")], anchor: "north", distance: 6pt))
-
-        wire((3.2, 2.6), (4.5, 2.6))
-        resistor("u", (4.5, 2.6), (4.5, 0.6), variant: "iec")
-        wire((4.5, 0.6), (3.2, 0.6))
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig35.typ"
     ]
   )
 ]
@@ -1684,41 +908,7 @@ Per una rete binodale in regime sinusoidale costituita da rami in parallelo tra 
   align: (center + horizon, left + horizon),
   [
     #scale(x: 85%, y: 85%, reflow: true)[
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-
-        wire((0, 4.5), (7.5, 4.5))
-        wire((0, 0), (7.5, 0))
-
-        // Ramo 1: E1 + Z1
-        vsource("e1", (0, 0), (0, 2.2), variant: "iec", label: (content: $macron(E)_1$, anchor: "north", distance: 6pt))
-        content((0.35, 1.9), sans("+", weight: "bold"))
-        line((0.5, 0.6), (0.5, 1.6), stroke: blue + 1pt, mark: (end: "stealth", fill: blue))
-        resistor("z1", (0, 2.2), (0, 4.5), variant: "iec", label: (content: $macron(Z)_1$, anchor: "east", distance: 6pt))
-
-        // Ramo 2: Generatore di corrente I2 + Z2
-        isource("i2", (2.5, 0), (2.5, 2.2), variant: "iec", label: (content: $macron(I)_2 med thin $, anchor: "west", distance: 6pt))
-        line((2.5, 1.8), (2.5, 2.4), stroke: black + 1.2pt, mark: (end: "stealth", fill: black))
-        resistor("z2", (2.5, 2.2), (2.5, 4.5), variant: "iec", label: (content: $macron(Z)_2 med thin med $, anchor: "east", distance: 6pt))
-        node("A1", (2.5, 4.5), fill: true, stroke: red, label: (content: text(fill: red)[#sans("A", weight: "bold")], anchor: "north", distance: 6pt))
-        node("B1", (2.5, 0), fill: true, stroke: red, label: (content: text(fill: red)[#sans("B", weight: "bold")], anchor: "south", distance: 6pt))
-
-        // Freccia V_AB
-        bezier((1.6, 0.3), (2.3, 4.3), (1.3, 2.5), stroke: blue + 1pt, mark: (end: "stealth", fill: blue))
-        content((1.6, 4.8), text(fill: blue)[$macron(V)_(A B)$])
-
-        // Ramo 3: E3 (verso opposto) + Z3
-        vsource("e3", (5.0, 2.2), (5.0, 0), variant: "iec", label: (content: $macron(E)_3$, anchor: "north", distance: 6pt))
-        content((5.35, 0.35), sans("+", weight: "bold"))
-        line((4.5, 1.6), (4.5, 0.6), stroke: blue + 1pt, mark: (end: "stealth", fill: blue))
-        resistor("z3", (5.0, 2.2), (5.0, 4.5), variant: "iec", label: (content: $macron(Z)_3$, anchor: "east", distance: 6pt))
-        node("A2", (5.0, 4.5), fill: true, stroke: red, label: (content: text(fill: red)[#sans("A", weight: "bold")], anchor: "north", distance: 6pt))
-        node("B2", (5.0, 0), fill: true, stroke: red, label: (content: text(fill: red)[#sans("B", weight: "bold")], anchor: "south", distance: 6pt))
-
-        // Ramo 4: Z4
-        resistor("z4", (7.5, 0), (7.5, 4.5), variant: "iec", label: (content: $macron(Z)_4$, anchor: "west", distance: 6pt))
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig36.typ"
     ]
   ],
   [
@@ -1741,18 +931,7 @@ $ macron(V)_3 = macron(V)_1 + macron(V)_2 $
 si rappresenta nel piano complesso come:
 
 #align(center)[
-  #canvas({
-    import draw: *
-    let green-vec = rgb("#2e6b4e")
-    line((0, 0), (2.8, 0.6), stroke: green-vec + 2pt, mark: (end: "stealth", fill: green-vec))
-    content((1.5, -0.3), text(fill: green-vec, size: 13pt)[$macron(V)_1$])
-
-    line((2.8, 0.6), (2.2, 2.8), stroke: green-vec + 2pt, mark: (end: "stealth", fill: green-vec))
-    content((3.0, 1.8), text(fill: green-vec, size: 13pt)[$macron(V)_2$])
-
-    line((0, 0), (2.2, 2.8), stroke: green-vec + 2pt, mark: (end: "stealth", fill: green-vec))
-    content((0.6, 1.7), text(fill: green-vec, size: 13pt)[$macron(V)_3$])
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig37.typ"
 ]
 
 == Analisi del Circuito $R L$ Serie
@@ -1765,45 +944,10 @@ Si consideri un circuito ohmico-induttivo serie alimentato da un generatore idea
     column-gutter: 2em,
     align: center + horizon,
     [
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-        set-style(resistor: (variant: "ieee"))
-
-        vsource("e", (0, 0), (0, 4), variant: "ieee", label: (content: $macron(E)$, anchor: "north", distance: 8pt))
-        content((-0.35, 2.7), sans("+", weight: "bold"))
-
-        wire((0, 4), (3.5, 4))
-        line((0.8, 4.3), (1.8, 4.3), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-        content((1.3, 4.8), text(fill: red)[$macron(I)$])
-
-        resistor("r", (3.5, 4), (3.5, 2), n: "*-*", label: (content: $ med thin med macron(Z)_1 = R$, anchor: "east", distance: 8pt))
-        inductor("l", (3.5, 2), (3.5, 0), n: "-*", label: (content: $med thin med macron(Z)_2 = j omega L$, anchor: "east", distance: 8pt))
-        wire((3.5, 0), (0, 0))
-
-        let green-v = rgb("#2e6b4e")
-        bezier((3.9, 2.2), (3.9, 3.8), (4.1, 3.0), stroke: green-v + 1pt, mark: (end: "stealth", fill: green-v))
-        content((4.6, 3.0), text(fill: green-v)[$macron(V)_R$])
-
-        bezier((3.9, 0.2), (3.9, 1.8), (4.1, 1.0), stroke: green-v + 1pt, mark: (end: "stealth", fill: green-v))
-        content((4.6, 1.0), text(fill: green-v)[$macron(V)_L$])
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig38.typ"
     ],
     [
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-
-        vsource("e", (0, 0), (0, 4), variant: "ieee", label: (content: $macron(E)$, anchor: "north", distance: 8pt))
-        content((0.5, 2.8), sans("+", weight: "bold"))
-
-        wire((0, 4), (3.2, 4))
-        line((1.1, 4.25), (2.1, 4.25), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-        content((1.6, 3.5), text(fill: red)[$macron(I)$])
-
-        resistor("z", (3.2, 4), (3.2, 0), variant: "iec", label: (content: $macron(Z)$, anchor: "north", distance: 8pt))
-        wire((3.2, 0), (0, 0))
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig39.typ"
     ]
   )
 ]
@@ -1841,62 +985,10 @@ $ macron(E) = macron(V)_R + macron(V)_L $
     column-gutter: 2em,
     align: center + horizon,
     [
-      #canvas({
-        import draw: *
-        // Piano di Gauss completo (Slide 57)
-        line((-0.8, 0), (3.8, 0), mark: (end: "stealth", fill: black))
-        content((4.1, -0.2), $"Re"$)
-        line((0, -2.0), (0, 2.2), mark: (end: "stealth", fill: black))
-        content((0.5, 2.1), $"Im"$)
-
-        // E sull'asse Re
-        line((0, 0), (3.0, 0), stroke: blue + 1.5pt, mark: (end: "stealth", fill: blue))
-        content((2.9, -0.45), text(fill: blue)[$macron(E)$])
-
-        // V_R e I nel quarto quadrante
-        line((0, 0), (1.92, -1.44), stroke: blue + 1.5pt, mark: (end: "stealth", fill: blue))
-        content((2.3, -1.5), text(fill: blue)[$macron(V)_R$])
-
-        line((0, 0), (1.3, -0.975), stroke: red + 1.8pt, mark: (end: "stealth", fill: red))
-        content((1.4, -1.45), text(fill: red)[$macron(I)$])
-
-        // V_L dall'origine e traslato punta-coda
-        line((0, 0), (1.08, 1.44), stroke: blue + 1.2pt, mark: (end: "stealth", fill: blue))
-        content((1.2, 1.65), text(fill: blue)[$macron(V)_L$])
-
-        line((1.92, -1.44), (3.0, 0), stroke: blue + 1.5pt, mark: (end: "stealth", fill: blue))
-        content((3.1, 0.45), text(fill: blue)[$macron(V)_L$])
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig40.typ"
     ],
     [
-      #canvas({
-        import draw: *
-        // Triangolo vettoriale RL (Slide 58)
-        let green-v = rgb("#2e6b4e")
-
-        // Vettore E orizzontale
-        line((0, 0), (3.5, 0), stroke: green-v + 2pt, mark: (end: "stealth", fill: green-v))
-        content((2.4, 0.5), text(fill: green-v, size: 13pt)[$macron(E)$])
-
-        // Vettore V_R
-        line((0, 0), (2.24, -1.68), stroke: green-v + 2pt, mark: (end: "stealth", fill: green-v))
-        content((1.1, -1.6), text(fill: green-v, size: 13pt)[$macron(V)_R$])
-
-        // Vettore I sovrapposto a V_R
-        line((0, 0), (1.5, -1.125), stroke: red + 2pt, mark: (end: "stealth", fill: red))
-        content((0.5, -0.95), text(fill: red, size: 13pt)[$macron(I)$])
-
-        // Vettore V_L ortogonale
-        line((2.24, -1.68), (3.5, 0), stroke: green-v + 2pt, mark: (end: "stealth", fill: green-v))
-        content((3.5, -1.0), text(fill: green-v, size: 13pt)[$macron(V)_L$])
-
-        // Simbolo angolo retto
-        line((2.0, -1.5), (2.18, -1.26), (2.42, -1.44), stroke: black + 0.9pt)
-
-        // Arco phi_I
-        arc((0.9, 0), start: 0deg, stop: -36.87deg, radius: 0.9, stroke: black + 1pt, mark: (end: "stealth", fill: black))
-        content((1.25, -0.35), $varphi_I$)
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig41.typ"
     ]
   )
 ]
@@ -1910,29 +1002,7 @@ $ macron(E) = macron(V)_R + macron(V)_L $
 Si consideri ora un circuito ohmico-capacitivo serie alimentato da un generatore ideale di tensione sinusoidale $macron(E) = E e^(j 0) = E$:
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"))
-
-    vsource("e", (0, 0), (0, 4), variant: "ieee", label: (content: $macron(E)$, anchor: "north", distance: 8pt))
-    content((-0.35, 2.7), sans("+", weight: "bold"))
-
-    wire((0, 4), (3.5, 4))
-    line((0.8, 4.3), (1.8, 4.3), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-    content((1.3, 4.8), text(fill: red)[$macron(I)$])
-
-    resistor("r", (3.5, 4), (3.5, 2), n: "*-*", label: (content: $R$, anchor: "south", distance: 8pt))
-    capacitor("c", (3.5, 2), (3.5, 0), n: "-*", label: (content: $-j / (omega C)$, anchor: "south", distance: 8pt))
-    wire((3.5, 0), (0, 0))
-
-    let green-v = rgb("#2e6b4e")
-    bezier((3.9, 2.2), (3.9, 3.8), (4.1, 3.0), stroke: green-v + 1pt, mark: (end: "stealth", fill: green-v))
-    content((4.6, 3.0), text(fill: green-v)[$macron(V)_R$])
-
-    bezier((3.9, 0.2), (3.9, 1.8), (4.1, 1.0), stroke: green-v + 1pt, mark: (end: "stealth", fill: green-v))
-    content((4.6, 1.0), text(fill: green-v)[$macron(V)_C$])
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig42.typ"
 ]
 
 Applicando la LKT alla maglia si ha:
@@ -1959,34 +1029,7 @@ Sommando vettorialmente le due tensioni secondo la LKT si ottiene il fasore del 
 $ macron(E) = macron(V)_R + macron(V)_C $
 
 #align(center)[
-  #canvas({
-    import draw: *
-    // Triangolo vettoriale RC (Slide 60)
-    let green-v = rgb("#2e6b4e")
-
-    // Vettore E orizzontale
-    line((0, 0), (3.5, 0), stroke: green-v + 2pt, mark: (end: "stealth", fill: green-v))
-    content((2.2, -0.55), text(fill: green-v, size: 13pt)[$macron(E)$])
-
-    // Vettore V_R nel primo quadrante
-    line((0, 0), (2.24, 1.68), stroke: green-v + 2pt, mark: (end: "stealth", fill: green-v))
-    content((1.3, 1.9), text(fill: green-v, size: 13pt)[$macron(V)_R$])
-
-    // Vettore I sovrapposto a V_R
-    line((0, 0), (1.5, 1.125), stroke: red + 2pt, mark: (end: "stealth", fill: red))
-    content((0.65, 1.05), text(fill: red, size: 13pt)[$macron(I)$])
-
-    // Vettore V_C ortogonale
-    line((2.24, 1.68), (3.5, 0), stroke: green-v + 2pt, mark: (end: "stealth", fill: green-v))
-    content((3.4, 1.15), text(fill: green-v, size: 13pt)[$macron(V)_C$])
-
-    // Simbolo angolo retto
-    line((2.0, 1.5), (2.18, 1.26), (2.42, 1.44), stroke: black + 0.9pt)
-
-    // Arco phi_I
-    arc((0.9, 0), start: 0deg, stop: 36.87deg, radius: 0.9, stroke: black + 1pt, mark: (end: "stealth", fill: black))
-    content((1.25, 0.3), $varphi_I$)
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig43.typ"
 ]
 
 #nota[
@@ -2030,38 +1073,7 @@ Dall'analisi delle espressioni del modulo $|macron(Z)|$ al variare della pulsazi
 Si consideri un partitore di tensione costituito da due impedenze generiche $macron(Z)_1 = R_1 + j X_1$ e $macron(Z)_2 = R_2 + j X_2$, alimentato in ingresso dalla tensione fasoriale $macron(V)_"in"$ e con l'uscita a vuoto prelevata ai capi di $macron(Z)_2$, indicata con $macron(V)_"out"$.
 
 #align(center)[
-  #zap.circuit({
-    import zap: *
-    import zap.cetz.draw: *
-
-    // Impedenza Z1 (rettangolo IEC)
-    resistor("z1", (0, 3), (3.5, 3), variant: "iec", label: (content: $macron(Z)_1$, anchor: "south", distance: 6pt))
-    // Impedenza Z2 (rettangolo IEC)
-    resistor("z2", (3.5, 3), (3.5, 0), variant: "iec", label: (content: $macron(Z)_2$, anchor: "north", distance: 6pt))
-
-    // Fili di collegamento
-    wire((3.5, 3), (5.5, 3))
-    wire((0, 0), (5.5, 0))
-
-    // Nodo di giunzione centrale
-    node("n1", (3.5, 3))
-
-    // Morsetti di ingresso e uscita (aperti)
-    node("in_p", (0, 3), fill: false)
-    node("in_m", (0, 0), fill: false)
-    node("out_p", (5.5, 3), fill: false)
-    node("out_m", (5.5, 0), fill: false)
-
-    // Indicazioni di tensione Vin
-    content((0, 2.5), sans("+", weight: "bold"))
-    content((0, 1.5), $macron(V)_"in"$)
-    content((0, 0.5), sans("-", weight: "bold"))
-
-    // Indicazioni di tensione Vout
-    content((5.5, 2.5), sans("+", weight: "bold"))
-    content((5.5, 1.5), $macron(V)_"out"$)
-    content((5.5, 0.5), sans("-", weight: "bold"))
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig44.typ"
 ]
 
 Applicando la regola del partitore di tensione, la tensione di uscita a vuoto su $macron(Z)_2$, nota la tensione di ingresso $macron(V)_"in"$, vale:
@@ -2092,38 +1104,7 @@ Per rappresentare graficamente il comportamento del circuito su un ampio interva
 Si consideri il circuito $R C$ mostrato in figura, ottenuto ponendo nel partitore di tensione un resistore in serie ($macron(Z)_1 = R$) e un condensatore in derivazione ($macron(Z)_2 = 1 / (j omega C) = -j / (omega C)$), prelevando in uscita la tensione a vuoto sul condensatore $C$.
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"))
-
-    // Resistore R in serie
-    resistor("r1", (0, 3), (3.5, 3), label: (content: $R$, anchor: "south", distance: 6pt))
-    // Condensatore C in parallelo
-    capacitor("c1", (3.5, 3), (3.5, 0), label: (content: $C$, anchor: "south", distance: 6pt))
-
-    // Fili di collegamento
-    wire((3.5, 3), (5.5, 3))
-    wire((0, 0), (5.5, 0))
-
-    // Nodo di giunzione
-    node("n1", (3.5, 3))
-
-    // Morsetti aperti
-    node("in_p", (0, 3), fill: false)
-    node("in_m", (0, 0), fill: false)
-    node("out_p", (5.5, 3), fill: false)
-    node("out_m", (5.5, 0), fill: false)
-
-    // Tensioni Vin e Vout
-    content((0, 2.5), sans("+", weight: "bold"))
-    content((0, 1.5), $macron(V)_"in"$)
-    content((0, 0.5), sans("-", weight: "bold"))
-
-    content((5.5, 2.5), sans("+", weight: "bold"))
-    content((5.5, 1.5), $macron(V)_"out"$)
-    content((5.5, 0.5), sans("-", weight: "bold"))
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig45.typ"
 ]
 
 Applicando la relazione del partitore di tensione, si ottiene la tensione di uscita a vuoto sul condensatore:
@@ -2182,30 +1163,7 @@ Il comportamento limite del filtro nei tre regimi caratteristici di frequenza ($
 In scala lineare, l'andamento del modulo $|macron(H)|$ in funzione della pulsazione normalizzata $omega / omega_0$ parte dal valore unitario per $omega = 0$, assume il valore $1 / sqrt(2)$ in corrispondenza della pulsazione di taglio $omega / omega_0 = 1$ e tende asintoticamente a zero per $omega -> infinity$:
 
 #align(center)[
-  #canvas({
-    import draw: *
-    // Assi cartesiani
-    line((0, -0.3), (0, 3.2), mark: (end: "stealth", fill: black))
-    line((-0.3, 0), (5.5, 0), mark: (end: "stealth", fill: black))
-
-    content((-0.5, 3.0), $|macron(H)|$)
-    content((5.5, -0.4), $omega / omega_0$)
-
-    // Riferimenti
-    line((-0.1, 2.2), (0.1, 2.2))
-    content((-0.35, 2.2), $1$)
-
-    line((2.0, -0.1), (2.0, 0.1))
-    content((2.0, -0.4), $1$)
-
-    line((0, 1.55), (2.0, 1.55), stroke: (dash: "dashed", paint: gray))
-    line((2.0, 0), (2.0, 1.55), stroke: (dash: "dashed", paint: gray))
-    content((-0.55, 1.55), $1 / sqrt(2)$)
-
-    // Curva del modulo passa-basso
-    bezier((0, 2.2), (2.0, 1.55), (1.0, 2.2), (1.5, 1.9), stroke: 1.5pt + black)
-    bezier((2.0, 1.55), (5.0, 0.15), (2.6, 1.0), (3.5, 0.2), stroke: 1.5pt + black)
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig46.typ"
 ]
 
 
@@ -2218,73 +1176,10 @@ Passando alla rappresentazione semilogaritmica dei *diagrammi di Bode* (modulo $
     column-gutter: 1em,
     align: center + horizon,
     [
-      #canvas({
-        import draw: *
-        // Riquadro grafico Modulo dB: x da 0 a 4 (4 decadi: 10^-2 .. 10^2), y da 0 a 5 (-40 dB .. +10 dB)
-        rect((0, 0), (4.8, 4.0), stroke: 1pt + black)
-        content((2.4, 4.4), $|macron(H)|_"dB"$)
-        content((2.4, -0.8), $omega / omega_0$)
-
-        // Griglia verticale (decadi: x = 0, 1.2, 2.4, 3.6, 4.8)
-        for i in (1, 2, 3) {
-          line((i * 1.2, 0), (i * 1.2, 4.0), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((0, -0.3), $10^(-2)$)
-        content((1.2, -0.3), $10^(-1)$)
-        content((2.4, -0.3), $10^0$)
-        content((3.6, -0.3), $10^1$)
-        content((4.8, -0.3), $10^2$)
-
-        // Griglia orizzontale (dB: -40 -> 0, -30 -> 0.8, -20 -> 1.6, -10 -> 2.4, 0 -> 3.2, 10 -> 4.0)
-        for j in (1, 2, 3, 4) {
-          line((0, j * 0.8), (4.8, j * 0.8), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((-0.4, 0), $-40$)
-        content((-0.4, 0.8), $-30$)
-        content((-0.4, 1.6), $-20$)
-        content((-0.4, 2.4), $-10$)
-        content((-0.4, 3.2), $0$)
-        content((-0.4, 4.0), $10$)
-
-        // Asintoti tratteggiati
-        line((0, 3.2), (2.4, 3.2), stroke: (dash: "dashed", paint: gray))
-        line((2.4, 3.2), (4.8, 0), stroke: (dash: "dashed", paint: gray))
-
-        // Curva reale (-3 dB a x=2.4 -> y = 3.2 - 0.24 = 2.96)
-        line((0, 3.2), (1.2, 3.2), stroke: 1.5pt + rgb("#0d6e38"))
-        bezier((1.2, 3.2), (2.4, 2.96), (1.9, 3.2), (2.2, 3.08), stroke: 1.5pt + rgb("#0d6e38"))
-        bezier((2.4, 2.96), (3.6, 1.6), (2.6, 2.8), (3.1, 2.27), stroke: 1.5pt + rgb("#0d6e38"))
-        line((3.6, 1.6), (4.8, 0), stroke: 1.5pt + rgb("#0d6e38"))
-        circle((2.4, 2.96), radius: 1.5pt, fill: rgb("#0d6e38"), stroke: none)
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig47.typ"
     ],
     [
-      #canvas({
-        import draw: *
-        // Riquadro grafico Fase: x da 0 a 4.8, y da 0 (-pi/2) a 4.0 (0)
-        rect((0, 0), (4.8, 4.0), stroke: 1pt + black)
-        content((2.4, 4.4), $angle macron(H)$)
-        content((2.4, -0.8), $omega / omega_0$)
-
-        for i in (1, 2, 3) {
-          line((i * 1.2, 0), (i * 1.2, 4.0), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((0, -0.3), $10^(-2)$)
-        content((1.2, -0.3), $10^(-1)$)
-        content((2.4, -0.3), $10^0$)
-        content((3.6, -0.3), $10^1$)
-        content((4.8, -0.3), $10^2$)
-
-        line((0, 2.0), (4.8, 2.0), stroke: 0.5pt + gray.lighten(30%))
-        content((-0.4, 4.0), $0$)
-        content((-0.45, 2.0), $-frac(pi, 4)$)
-        content((-0.45, 0), $-frac(pi, 2)$)
-
-        // Curva di fase
-        bezier((0, 3.95), (2.4, 2.0), (1.4, 3.9), (1.9, 2.8), stroke: 1.5pt + rgb("#0d6e38"))
-        bezier((2.4, 2.0), (4.8, 0.05), (2.9, 1.2), (3.4, 0.1), stroke: 1.5pt + rgb("#0d6e38"))
-        circle((2.4, 2.0), radius: 1.5pt, fill: rgb("#0d6e38"), stroke: none)
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig48.typ"
     ]
   )
 ]
@@ -2296,38 +1191,7 @@ Passando alla rappresentazione semilogaritmica dei *diagrammi di Bode* (modulo $
 Scambiando la posizione del resistore e del condensatore si ottiene il circuito $C R$ mostrato in figura, nel quale $macron(Z)_1 = 1 / (j omega C) = -j / (omega C)$ è posta in serie e $macron(Z)_2 = R$ è posta in derivazione. L'uscita a vuoto $macron(V)_"out"$ viene prelevata ai capi del resistore $R$.
 
 #align(center)[
-  #zap.circuit({
-
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"))
-
-    // Condensatore C in serie
-    capacitor("c1", (0, 3), (3.5, 3), label: (content: $C$, anchor: "south", distance: 6pt))
-    // Resistore R in parallelo
-    resistor("r1", (3.5, 3), (3.5, 0), label: (content: $R$, anchor: "north", distance: 6pt))
-
-    // Fili di collegamento
-    wire((3.5, 3), (5.5, 3))
-    wire((0, 0), (5.5, 0))
-
-    // Nodo di giunzione
-    node("n1", (3.5, 3))
-
-    // Morsetti aperti
-    node("in_p", (0, 3), fill: false)
-    node("in_m", (0, 0), fill: false)
-    node("out_p", (5.5, 3), fill: false)
-    node("out_m", (5.5, 0), fill: false)
-
-    // Tensioni Vin e Vout
-    content((0, 2.5), sans("+", weight: "bold"))
-    content((0, 1.5), $macron(V)_"in"$)
-    content((0, 0.5), sans("-", weight: "bold"))
-
-    content((5.5, 2.5), sans("+", weight: "bold"))
-    content((5.5, 1.5), $macron(V)_"out"$)
-    content((5.5, 0.5), sans("-", weight: "bold"))
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig49.typ"
 ]
 
 Applicando il partitore di tensione, la tensione a vuoto sul resistore $R$, nota $macron(V)_"in"$, è data da:
@@ -2383,30 +1247,7 @@ Il comportamento asintotico nei tre regimi di pulsazione è sintetizzato nella t
 L'andamento del modulo $|macron(H)|$ in scala lineare mostra che la risposta è nulla in continua ($omega = 0$), vale $1 / sqrt(2)$ alla pulsazione di taglio $omega = omega_0$ e tende asintoticamente a $1$ per $omega gt.double omega_0$:
 
 #align(center)[
-  #canvas({
-    import draw: *
-    // Assi cartesiani
-    line((0, -0.3), (0, 3.2), mark: (end: "stealth", fill: black))
-    line((-0.3, 0), (5.5, 0), mark: (end: "stealth", fill: black))
-
-    content((-0.5, 3.0), $|macron(H)|$)
-    content((5.5, -0.4), $omega / omega_0$)
-
-    // Asintoto orizzontale a 1
-    line((0, 2.2), (5.0, 2.2), stroke: (dash: "dashed", paint: black))
-    content((-0.35, 2.2), $1$)
-
-    line((2.0, -0.1), (2.0, 0.1))
-    content((2.0, -0.4), $1$)
-
-    line((0, 1.55), (2.0, 1.55), stroke: (dash: "dashed", paint: gray))
-    line((2.0, 0), (2.0, 1.55), stroke: (dash: "dashed", paint: gray))
-    content((-0.55, 1.55), $1 / sqrt(2)$)
-
-    // Curva del modulo passa-alto
-    bezier((0, 0), (2.0, 1.55), (0.8, 0.05), (1.5, 0.9), stroke: 1.5pt + rgb("#d9381e"))
-    bezier((2.0, 1.55), (5.0, 2.15), (2.5, 2.0), (3.5, 2.15), stroke: 1.5pt + rgb("#d9381e"))
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig50.typ"
 ]
 
 I corrispondenti diagrammi di Bode del modulo $|macron(H)|_"dB"$ e della fase $angle macron(H)$ sono riportati di seguito:
@@ -2417,69 +1258,10 @@ I corrispondenti diagrammi di Bode del modulo $|macron(H)|_"dB"$ e della fase $a
     column-gutter: 1em,
     align: center + horizon,
     [
-      #canvas({
-        import draw: *
-        rect((0, 0), (4.8, 4.0), stroke: 1pt + black)
-        content((2.4, 4.4), $|macron(H)|_"dB"$)
-        content((2.4, -0.8), $omega / omega_0$)
-
-        for i in (1, 2, 3) {
-          line((i * 1.2, 0), (i * 1.2, 4.0), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((0, -0.3), $10^(-2)$)
-        content((1.2, -0.3), $10^(-1)$)
-        content((2.4, -0.3), $10^0$)
-        content((3.6, -0.3), $10^1$)
-        content((4.8, -0.3), $10^2$)
-
-        for j in (1, 2, 3, 4) {
-          line((0, j * 0.8), (4.8, j * 0.8), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((-0.4, 0), $-40$)
-        content((-0.4, 0.8), $-30$)
-        content((-0.4, 1.6), $-20$)
-        content((-0.4, 2.4), $-10$)
-        content((-0.4, 3.2), $0$)
-        content((-0.4, 4.0), $10$)
-
-        // Asintoti tratteggiati
-        line((0, 0), (2.4, 3.2), stroke: (dash: "dashed", paint: gray))
-        line((2.4, 3.2), (4.8, 3.2), stroke: (dash: "dashed", paint: gray))
-
-        // Curva reale
-        line((0, 0), (1.2, 1.6), stroke: 1.5pt + rgb("#d9381e"))
-        bezier((1.2, 1.6), (2.4, 2.96), (1.7, 2.27), (2.2, 2.8), stroke: 1.5pt + rgb("#d9381e"))
-        bezier((2.4, 2.96), (3.6, 3.2), (2.6, 3.08), (2.9, 3.2), stroke: 1.5pt + rgb("#d9381e"))
-        line((3.6, 3.2), (4.8, 3.2), stroke: 1.5pt + rgb("#d9381e"))
-        circle((2.4, 2.96), radius: 1.5pt, fill: rgb("#d9381e"), stroke: none)
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig51.typ"
     ],
     [
-      #canvas({
-        import draw: *
-        rect((0, 0), (4.8, 4.0), stroke: 1pt + black)
-        content((2.4, 4.4), $angle macron(H)$)
-        content((2.4, -0.8), $omega / omega_0$)
-
-        for i in (1, 2, 3) {
-          line((i * 1.2, 0), (i * 1.2, 4.0), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((0, -0.3), $10^(-2)$)
-        content((1.2, -0.3), $10^(-1)$)
-        content((2.4, -0.3), $10^0$)
-        content((3.6, -0.3), $10^1$)
-        content((4.8, -0.3), $10^2$)
-
-        line((0, 2.0), (4.8, 2.0), stroke: 0.5pt + gray.lighten(30%))
-        content((-0.4, 4.0), $frac(pi, 2)$)
-        content((-0.4, 2.0), $frac(pi, 4)$)
-        content((-0.4, 0), $0$)
-
-        // Curva di fase passa-alto (da +pi/2 a 0)
-        bezier((0, 3.95), (2.4, 2.0), (1.4, 3.9), (1.9, 2.8), stroke: 1.5pt + rgb("#d9381e"))
-        bezier((2.4, 2.0), (4.8, 0.05), (2.9, 1.2), (3.4, 0.1), stroke: 1.5pt + rgb("#d9381e"))
-        circle((2.4, 2.0), radius: 1.5pt, fill: rgb("#d9381e"), stroke: none)
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig52.typ"
     ]
   )
 ]
@@ -2491,60 +1273,7 @@ I corrispondenti diagrammi di Bode del modulo $|macron(H)|_"dB"$ e della fase $a
 Si consideri ora un circuito costituito dal collegamento in serie di un resistore $R$ ($macron(Z)_1 = R$), un induttore $L$ ($macron(Z)_2 = j omega L$) e un condensatore $C$ ($macron(Z)_3 = -j / (omega C)$), alimentato da una tensione $macron(V)$ e percorso dalla corrente $macron(I)$, come rappresentato nello schema seguente:
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-
-    // Stile IEEE (zig-zag per R e spire tonde per L)
-    set-style(zap: (variant: "ieee"))
-
-    // --- 1. RAMO VERTICALE SERIE: R, L, C ---
-    resistor("r1", (2, 6), (2, 4))
-    inductor("l1", (2, 4), (2, 2))
-    capacitor("c1", (2, 2), (2, 0))
-
-    // Etichette a DESTRA dei componenti (R, L, C)
-    content((2.45, 5.0), anchor: "west", $R$)
-    content((2.45, 3.0), anchor: "west", $L$)
-    content((2.55, 1.0), anchor: "west", $C$)
-
-    // Etichette a SINISTRA dei componenti (Z1, Z2, Z3)
-    content((1.55, 5.0), anchor: "east", $macron(Z)_1$)
-    content((1.55, 3.0), anchor: "east", $macron(Z)_2$)
-    content((1.45, 1.0), anchor: "east", $macron(Z)_3$)
-
-    // --- 2. MORSETTI DI INGRESSO (a sinistra) ---
-    wire((0, 6), (2, 6))
-    wire((0, 0), (2, 0))
-
-    // Freccia della corrente I sul ramo superiore d'ingresso
-    line((0.8, 6), (1.2, 6), mark: (end: "stealth", fill: black, scale: 1.2))
-    content((1.0, 6.25), anchor: "south", $macron(I)$)
-
-    // --- 3. MORSETTI DI USCITA AI CAPI DI R (a destra) ---
-    wire((2, 6), (4.0, 6))
-    wire((2, 4), (4.0, 4))
-
-    // --- 4. NODI DI GIUNZIONE E MORSETTI APERTI ---
-    // Nodi pieni (giunzioni ai capi di R)
-    node("n_top", (2, 6))
-    node("n_mid", (2, 4))
-
-    // Morsetti aperti (fill: false in Zap disegna il pallino con sfondo bianco coprendo il filo)
-    node("in_p", (0, 6), fill: false)
-    node("in_m", (0, 0), fill: false)
-    node("out_p", (4.0, 6), fill: false)
-    node("out_m", (4.0, 4), fill: false)
-
-    // --- 5. FRECCE DI TENSIONE V e VR ---
-    // Tensione totale d'ingresso V
-    line((0, 0.35), (0, 5.65), stroke: 0.7pt, mark: (end: "stealth", fill: black))
-    content((-0.25, 3.0), anchor: "east", $macron(V)$)
-
-    // Tensione d'uscita VR ai capi del resistore
-    line((4.0, 4.35), (4.0, 5.65), stroke: 0.7pt, mark: (end: "stealth", fill: black))
-    content((4.25, 5.0), anchor: "west", $macron(V)_R$)
-  })
+  #include "figs/Cap3_MEC_handouts_appunti-fig53.typ"
 ]
 
 
@@ -2583,48 +1312,10 @@ Gli andamenti qualitativi del modulo dell'impedenza $|macron(Z)|$ e della grande
     column-gutter: 1.5em,
     align: center + horizon,
     [
-      #canvas({
-        import draw: *
-        // Grafico |Z| vs omega
-        line((0, -0.3), (0, 3.5), mark: (end: "stealth", fill: black))
-        line((-0.3, 0), (5.0, 0), mark: (end: "stealth", fill: black))
-
-        content((-0.5, 3.3), $|macron(Z)|$)
-        content((5.0, -0.4), $omega$)
-
-        // Minimo a R per omega = omega_0
-        line((2.3, -0.1), (2.3, 0.1))
-        content((2.3, -0.4), $omega_0$)
-
-        line((0, 0.9), (2.3, 0.9), stroke: (dash: "dashed", paint: rgb("#005bb5")))
-        content((-0.4, 0.9), $R$)
-
-        // Curva a V di |Z|
-        bezier((0.8, 3.2), (2.3, 0.9), (1.3, 1.8), (1.9, 0.9), stroke: 1.5pt + rgb("#005bb5"))
-        bezier((2.3, 0.9), (4.2, 3.2), (2.7, 0.9), (3.4, 2.0), stroke: 1.5pt + rgb("#005bb5"))
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig54.typ"
     ],
     [
-      #canvas({
-        import draw: *
-        // Grafico R|I| = |V_R| vs omega
-        line((0, -0.3), (0, 3.5), mark: (end: "stealth", fill: black))
-        line((-0.3, 0), (5.0, 0), mark: (end: "stealth", fill: black))
-
-        content((-0.6, 3.2), $R |macron(I)|$)
-        content((5.0, -0.4), $omega$)
-
-        line((2.3, -0.1), (2.3, 0.1))
-        content((2.3, -0.4), $omega_0$)
-
-        line((0, 2.6), (2.3, 2.6), stroke: (dash: "dashed", paint: gray))
-        line((2.3, 0), (2.3, 2.6), stroke: (dash: "dashed", paint: gray))
-        content((-0.4, 2.6), $V$)
-
-        // Curva a campana di risonanza
-        bezier((0, 0), (2.3, 2.6), (1.2, 0.05), (1.8, 2.6), stroke: 1.5pt + rgb("#005bb5"))
-        bezier((2.3, 2.6), (4.6, 0.15), (2.8, 2.6), (3.3, 0.25), stroke: 1.5pt + rgb("#005bb5"))
-      })
+      #include "figs/Cap3_MEC_handouts_appunti-fig55.typ"
     ]
   )
 ]
