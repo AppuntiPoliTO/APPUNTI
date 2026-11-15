@@ -1,0 +1,1 @@
+RISPOSTA_GEMINI.typ
