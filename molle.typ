@@ -3744,11 +3744,7 @@ L'energia di deformazione è pari all'area sottesa dalla curva caratteristica fo
 
 $ W = integral F dot.op d f $
 
-Nel caso di comportamento elastico lineare, l'energia immagazzinata corrisponde all'area del triangolo sotteso dalla retta caratteristica e vale:
-
-$ W = frac(1, 2) F f = frac(1, 2) k f^2 $
-
-Più è grande l'area sottesa dalla curva forza–spostamento, più è elevata la capacità della molla di assorbire urti. Confrontando le aree, a parità di energia da contenere, è possibile individuare diverse soluzioni caratterizzate da differenti rapporti tra forza massima e freccia (ad esempio triangoli diversi aventi la stessa area).],[#canvas(length: 2cm, {
+],[#canvas(length: 2cm, {
   import draw: *
 
   // ==========================================
@@ -3837,7 +3833,11 @@ Più è grande l'area sottesa dalla curva forza–spostamento, più è elevata l
   line((3.16, -3.17), (3.16, -3.03), (3.32, -3.10), close: true, fill: black, stroke: none)
   content((3.45, -3.15), [$f$], anchor: "west")
 })])
+Nel caso di comportamento elastico lineare, l'energia immagazzinata corrisponde all'area del triangolo sotteso dalla retta caratteristica e vale:
 
+$ W = frac(1, 2) F f = frac(1, 2) k f^2 $
+
+Più è grande l'area sottesa dalla curva forza–spostamento, più è elevata la capacità della molla di assorbire urti. Confrontando le aree, a parità di energia da contenere, è possibile individuare diverse soluzioni caratterizzate da differenti rapporti tra forza massima e freccia (ad esempio triangoli diversi aventi la stessa area).
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
