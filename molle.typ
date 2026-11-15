@@ -1125,7 +1125,26 @@ Le molle Belleville senza intagli trovano impiego come elementi singoli o impila
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Il calcolo delle tensioni nelle molle a tazza è complesso e fa riferimento alla teoria dei gusci e dei solidi assialsimmetrici, anche se nella pratica si ricorre frequentemente a soluzioni numeriche, specialmente in presenza di intagli. La distribuzione delle tensioni nella sezione troncoconica resistente è fortemente non lineare.
 
-La tensione maggiormente sollecitante è la tensione circonferenziale ($sigma_c$), la cui espressione analitica è complessa e dipende dai diametri $D$ e $d$, dallo spessore $t$, dalla freccia [?], dal modulo di Young $E$ e dal coefficiente di Poisson $nu$. Isolando idealmente un settore della molla caratterizzato dai vertici $"I-II-III-IV"$ sulla sezione trasversale, il lato $"I-IV"$ risulta compresso con il valore massimo della tensione nel punto $I$, mentre dal punto $II$ al punto $"III"$ non si riscontra una sensibile variazione del valore della tensione di trazione. Sull'elemento infinitesimale agiscono forze circonferenziali di azione e reazione scambiate con la parte rimanente del solido.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: a sinistra, settore ideale di una molla a tazza con sezione trasversale identificata dai vertici I, II, III, IV; a destra, vista in pianta dell'anello aperto con indicazione delle tensioni circonferenziali sigma\_c^+ e sigma\_c^- e delle frecce di azione e reazione]])
+La tensione maggiormente sollecitante è la tensione circonferenziale ($sigma_c$), la cui espressione analitica è complessa e dipende dai diametri $D$ e $d$, dallo spessore $t$, dalla freccia [?], dal modulo di Young $E$ e dal coefficiente di Poisson $nu$. Isolando idealmente un settore della molla caratterizzato dai vertici $"I-II-III-IV"$ sulla sezione trasversale, il lato $"I-IV"$ risulta compresso con il valore massimo della tensione nel punto $I$, mentre dal punto $II$ al punto $"III"$ non si riscontra una sensibile variazione del valore della tensione di trazione. Sull'elemento infinitesimale agiscono forze circonferenziali di azione e reazione scambiate con la parte rimanente del solido.],[#canvas(length: 1cm, {
+  import draw: *
+  arc((0, 0), start: 0deg, stop: 180deg, radius: 3.0, anchor: "origin", stroke: 1pt)
+  arc((0, 0), start: 0deg, stop: 180deg, radius: 1.4, anchor: "origin", stroke: 1pt)
+  line((-3.0, 0), (-1.4, 0), stroke: 1pt)
+  line((1.4, 0), (3.0, 0), stroke: 1pt)
+  line((-0.9, 0), (0.9, 0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+  line((0, -0.9), (0, 0.9), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+  bezier((-3.0, 0.85), (-2.1, 0), (-2.7, 0.8), (-2.4, 0.62), stroke: 0.8pt)
+  bezier((-2.1, 0), (-1.4, -1.2), (-1.87, -0.48), (-1.63, -0.95), stroke: 0.8pt)
+  line((-3.0, 0), (-3.0, 0.85), mark: (end: "straight"), stroke: 0.8pt)
+  line((-2.7, 0), (-2.7, 0.75), mark: (end: "straight"), stroke: 0.8pt)
+  line((-2.4, 0), (-2.4, 0.49), mark: (end: "straight"), stroke: 0.8pt)
+  line((-1.93, 0), (-1.93, -0.36), mark: (end: "straight"), stroke: 0.8pt)
+  line((-1.75, 0), (-1.75, -0.69), mark: (end: "straight"), stroke: 0.8pt)
+  line((-1.58, 0), (-1.58, -0.98), mark: (end: "straight"), stroke: 0.8pt)
+  line((-1.4, 0), (-1.4, -1.2), mark: (end: "straight"), stroke: 0.8pt)
+  content((-3.08, 0.45), [$sigma_c +$], anchor: "east")
+  content((-1.32, -1.0), [$sigma_c -$], anchor: "west")
+})])
 
 #grid(
   columns: (1fr, 1fr),
