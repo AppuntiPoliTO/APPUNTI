@@ -1874,12 +1874,6 @@ $ arrow.r.double D_("min") = 97 "mm" $
 - Considerando l'equazione di Navier per le tensioni $sigma$, ricavare l'equazione differenziale della linea elastica.
 - Indipendentemente dai vincoli, dimostrare qual è il grado del polinomio che descrive la linea elastica di una trave caricata con un carico distribuito.
 
-== Teoria 6
-
-- Enunciare il Principio dei Lavori Virtuali (PLV) applicato ai sistemi di travi.
-- Fare un esempio sull'uso del PLV impiegato come condizione di equilibrio (con opportuno disegno).
-- Fare un esempio sull'uso del PLV impiegato come condizione di congruenza (con opportuno disegno).
-- Per il punto precedente, descrivere la procedura per il calcolo di una reazione vincolare iperstatica tramite il PLV.
 
 == Teoria 7
 
