@@ -828,8 +828,39 @@ $ F = k dot.op f $
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Le molle a disco conico o a tazza, comunemente note come molle Belleville, sono costituite da un corpo troncoconico caratterizzato dal diametro esterno $D$, dal diametro interno $d$, dallo spessore $t$ e dall'altezza conica $h$. Caricate nella direzione dell'asse, esse subiscono una flessione della sezione trasversale.
 
-Come già accade per le molle ad elica troncoconica o conica, la geometria conferisce una curva caratteristica non perfettamente lineare: la rigidezza varia con lo spostamento, sebbene spesso venga assunta costante e pari al valore del primo tratto della curva caratteristica. Una singola molla Belleville è molto rigida ed è pertanto indicata quando occorre sviluppare una reazione particolarmente importante in uno spazio assiale molto limitato.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: a sinistra, sezione trasversale quotata di una molla a disco conico con diametro esterno D, diametro interno d, spessore t e altezza h; a destra, diagramma caratteristico adimensionale con F/F\_h in ordinata (da 0 a 1,4) e delta/h in ascissa (da 0 a oltre 0,75) mostrante le curve per i rapporti h/t = 1, h/t = 1,5 e h/t = 2]])
+],[#canvas(length: 1cm, {
+  import draw: *
 
+  line((-1.10, 1.30), (-3.30, 0.00), (-3.44, 0.24), (-1.24, 1.54), close: true, fill: black.transparentize(80%), stroke: none)
+  line((1.10, 1.30), (3.30, 0.00), (3.44, 0.24), (1.24, 1.54), close: true, fill: black.transparentize(80%), stroke: none)
+
+  line((-1.10, 1.30), (-3.30, 0.00), (-3.44, 0.24), (-1.24, 1.54), close: true, stroke: 1pt)
+  line((1.10, 1.30), (3.30, 0.00), (3.44, 0.24), (1.24, 1.54), close: true, stroke: 1pt)
+  line((-3.30, 0.00), (3.30, 0.00), stroke: 1pt)
+  line((-1.10, 1.30), (1.10, 1.30), stroke: 1pt)
+  line((-1.24, 1.54), (1.24, 1.54), stroke: 1pt)
+
+  line((0.00, -0.65), (0.00, 2.25), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+
+  line((-1.10, 1.30), (-1.10, 2.00), stroke: 0.6pt)
+  line((1.10, 1.30), (1.10, 2.00), stroke: 0.6pt)
+  line((-1.10, 1.85), (1.10, 1.85), mark: (start: "straight", end: "straight"), stroke: 0.6pt)
+  content((0.22, 1.92), [$d$], anchor: "south")
+
+  line((-3.30, 0.00), (-3.30, -0.65), stroke: 0.6pt)
+  line((3.30, 0.00), (3.30, -0.65), stroke: 0.6pt)
+  line((-3.30, -0.50), (3.30, -0.50), mark: (start: "straight", end: "straight"), stroke: 0.6pt)
+  content((0.22, -0.43), [$D$], anchor: "south")
+
+  line((0.65, 0.00), (0.65, 1.30), mark: (start: "straight", end: "straight"), stroke: 0.6pt)
+  content((0.73, 0.65), [$h$], anchor: "west")
+
+  line((2.02, 0.35), (2.57, 1.28), stroke: 0.6pt)
+  line((2.57, 1.28), (2.34, 0.89), mark: (end: "straight"), stroke: 0.6pt)
+  line((2.02, 0.35), (2.20, 0.65), mark: (end: "straight"), stroke: 0.6pt)
+  content((2.50, 1.12), [$t$], anchor: "west")
+})])
+Come già accade per le molle ad elica troncoconica o conica, la geometria conferisce una curva caratteristica non perfettamente lineare: la rigidezza varia con lo spostamento, sebbene spesso venga assunta costante e pari al valore del primo tratto della curva caratteristica. Una singola molla Belleville è molto rigida ed è pertanto indicata quando occorre sviluppare una reazione particolarmente importante in uno spazio assiale molto limitato.
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
