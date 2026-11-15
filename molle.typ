@@ -1125,7 +1125,7 @@ Le molle Belleville senza intagli trovano impiego come elementi singoli o impila
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Il calcolo delle tensioni nelle molle a tazza è complesso e fa riferimento alla teoria dei gusci e dei solidi assialsimmetrici, anche se nella pratica si ricorre frequentemente a soluzioni numeriche, specialmente in presenza di intagli. La distribuzione delle tensioni nella sezione troncoconica resistente è fortemente non lineare. La tensione maggiormente sollecitante è la tensione circonferenziale ($sigma_c$), la cui espressione analitica è complessa e dipende dai diametri $D$ e $d$, dallo spessore $t$, dalla freccia $f$, dal modulo di Young $E$ e dal coefficiente di Poisson $nu$.
 
-],[#canvas(length: 0.8cm, {
+],[#canvas(length: 1cm, {
   import draw: *
   arc((0, 0), start: 0deg, stop: 180deg, radius: 3.0, anchor: "origin", stroke: 1pt)
   arc((0, 0), start: 0deg, stop: 180deg, radius: 1.4, anchor: "origin", stroke: 1pt)
