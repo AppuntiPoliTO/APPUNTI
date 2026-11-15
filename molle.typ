@@ -3748,7 +3748,7 @@ Nel caso di comportamento elastico lineare, l'energia immagazzinata corrisponde 
 
 $ W = frac(1, 2) F f = frac(1, 2) k f^2 $
 
-Più è grande l'area sottesa dalla curva forza–spostamento, più è elevata la capacità della molla di assorbire urti. Confrontando le aree, a parità di energia da contenere, è possibile individuare diverse soluzioni caratterizzate da differenti rapporti tra forza massima e freccia (ad esempio triangoli diversi aventi la stessa area).],[#canvas(length: 1cm, {
+Più è grande l'area sottesa dalla curva forza–spostamento, più è elevata la capacità della molla di assorbire urti. Confrontando le aree, a parità di energia da contenere, è possibile individuare diverse soluzioni caratterizzate da differenti rapporti tra forza massima e freccia (ad esempio triangoli diversi aventi la stessa area).],[#canvas(length: 2cm, {
   import draw: *
 
   // ==========================================
