@@ -1743,7 +1743,7 @@ L'area del triangolo $O A B$ compresa tra la curva di carico e quella di scarico
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Grazie all'elevata capacità di dissipare energia, queste molle costituiscono ottimi respingenti e vengono impiegate in presenza di forze impulsive, come nei respingenti delle vetture ferroviarie o nel supporto di grossi ganci soggetti a carico e scarico di pesi elevati. Sotto carico gli anelli tendono ad avvicinarsi fino a poter eventualmente arrivare all'impacchettamento. Oltre alla configurazione cilindrica (con anelli aventi tutti lo stesso diametro), esiste una configurazione a doppia conicità in cui gli anelli hanno dimensioni e diametri decrescenti uno rispetto all'altro, sfruttando così un ulteriore principio di conicità oltre a quello delle superfici laterali di contatto.],[#canvas(length: 1cm, {
+  align: (left + horizon, center + horizon),[Grazie all'elevata capacità di dissipare energia, queste molle costituiscono ottimi respingenti e vengono impiegate in presenza di forze impulsive, come nei respingenti delle vetture ferroviarie o nel supporto di grossi ganci soggetti a carico e scarico di pesi elevati. Sotto carico gli anelli tendono ad avvicinarsi fino a poter eventualmente arrivare all'impacchettamento. ],[#canvas(length: 1cm, {
   import draw: *
 
   line((2.36, 0.72), (2.28, 0.50), (2.36, 0.28), (3.64, 0.28), (3.72, 0.50), (3.64, 0.72), close: true, fill: rgb("#165996"), stroke: none)
@@ -1831,11 +1831,4 @@ L'area del triangolo $O A B$ compresa tra la curva di carico e quella di scarico
   content((7.92, 2.60), [#text(size: 7.5pt)[Load]], anchor: "south")
   content((7.92, 0.05), [#text(size: 7.5pt)[#underline[loaded]]], anchor: "north")
 })])
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: applicazione ferroviaria con fotografia di locomotive dotate di respingenti evidenziati, disegno costruttivo in sezione di un respingente ferroviario a molla ad anelli conica e sezione tecnica quotata di un respingente cilindrico]])
-
-=== Esercizi
-Nessun esercizio presente nelle fonti della lezione.
+Oltre alla configurazione cilindrica (con anelli aventi tutti lo stesso diametro), esiste una configurazione a doppia conicità in cui gli anelli hanno dimensioni e diametri decrescenti uno rispetto all'altro, sfruttando così un ulteriore principio di conicità oltre a quello delle superfici laterali di contatto.
