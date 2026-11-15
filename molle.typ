@@ -868,7 +868,7 @@ Le molle Belleville senza intagli trovano impiego come elementi singoli o impila
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Unendo più molle Belleville a pacchi o a colonne mediante un perno guida centrale è possibile ottenere le caratteristiche elastiche desiderate, combinando disposizioni in serie e in parallelo a seconda che le facce delle molle adiacenti siano a contatto nello stesso verso oppure speculari rispetto al piano medio.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: due disegni in sezione di complessi di molle Belleville montati su perno centrale; a sinistra una colonna di molle tutte in serie (speculari), a destra una combinazione mista di pacchi di molle in parallelo disposti in serie tra loro]])
+  align: (left + horizon, center + horizon),[Unendo più molle Belleville a pacchi o a colonne mediante un perno guida centrale è possibile ottenere le caratteristiche elastiche desiderate, combinando disposizioni in serie e in parallelo a seconda che le facce delle molle adiacenti siano a contatto nello stesso verso oppure speculari rispetto al piano medio.],[])
 
 === Tensioni nelle molle Belleville e molle con intagli radiali
 #grid(
