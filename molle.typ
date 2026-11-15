@@ -1266,12 +1266,12 @@ Le molle Belleville senza intagli trovano impiego come elementi singoli o impila
 
 === Molla per frizione
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1.4fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Estremizzando il concetto degli intagli radiali si ottiene la molla per frizione (molla a diaframma), derivata dalla molla a tazza Belleville ma caratterizzata da intagli molto lunghi che si estendono fin quasi alla circonferenza esterna. In questo modo il tronco di cono non agisce più come un corpo unico con richiamo elastico circonferenziale, ma diventa un insieme di lamine incastrate a un'estremità che lavorano singolarmente ed essialmente a flessione.
 
-La rigidezza risulta così molto inferiore e consente di ottenere un disinnesto rapido e agevole. Questa soluzione ha sostituito le molle elicoidali negli innesti a frizione degli autoveicoli, rendendo l'architettura più robusta e semplificando le operazioni di montaggio.],[
-#canvas(length: 1cm, {
+],[
+#canvas(length: 0.8cm, {
   import draw: *
   circle((0, 0), radius: (3.8, 2.0), stroke: 1pt)
   arc((0, -0.22), start: 180deg, stop: 360deg, radius: (3.8, 2.0), anchor: "origin", stroke: 1pt)
@@ -1327,7 +1327,7 @@ La rigidezza risulta così molto inferiore e consente di ottenere un disinnesto 
   line((0.690, 0.447), (2.950, -0.452), stroke: 1pt)
   line((0.700, 0.467), (2.994, -0.366), stroke: 1pt)
 })])
-
+La rigidezza risulta così molto inferiore e consente di ottenere un disinnesto rapido e agevole. Questa soluzione ha sostituito le molle elicoidali negli innesti a frizione degli autoveicoli, rendendo l'architettura più robusta e semplificando le operazioni di montaggio.
 === Molle a elica di torsione
 #grid(
   columns: (1fr, 1fr),
