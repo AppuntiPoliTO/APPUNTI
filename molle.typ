@@ -3842,7 +3842,7 @@ Più è grande l'area sottesa dalla curva forza–spostamento, più è elevata l
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Un secondo tipo di contenimento riguarda la caduta di un grave su una molla, in cui la sospensione deve assorbire l'impatto al suolo. In questo caso conviene valutare direttamente l'energia potenziale gravitazionale associata alla massa $m$ soggetta all'accelerazione di gravità $g$ (sia sulla Terra sia in ambienti spaziali con diversa costante gravitazionale) e uguagliarla all'energia immagazzinabile dalla molla. Il percorso totale del grave è dato dalla somma dell'altezza di caduta libera $h$ e della freccia $f$ sviluppata dalla molla fino all'arresto del moto ($v = 0$):],[#canvas(length: 1.5cm, {
+  align: (left + horizon, center + horizon),[Un secondo tipo di contenimento riguarda la caduta di un grave su una molla, in cui la sospensione deve assorbire l'impatto al suolo. In questo caso conviene valutare direttamente l'energia potenziale gravitazionale associata alla massa $m$ soggetta all'accelerazione di gravità $g$ (sia sulla Terra sia in ambienti spaziali con diversa costante gravitazionale) e uguagliarla all'energia immagazzinabile dalla molla. Il percorso totale del grave è dato dalla somma dell'altezza di caduta libera $h$ e della freccia $f$ sviluppata dalla molla fino all'arresto del moto ($v = 0$):],[#canvas(length: 1.4cm, {
   import draw: *
 
   // ==========================================
