@@ -100,38 +100,7 @@ Dall'analisi delle espressioni del modulo $|macron(Z)|$ al variare della pulsazi
 Si consideri un partitore di tensione costituito da due impedenze generiche $macron(Z)_1 = R_1 + j X_1$ e $macron(Z)_2 = R_2 + j X_2$, alimentato in ingresso dalla tensione fasoriale $macron(V)_"in"$ e con l'uscita a vuoto prelevata ai capi di $macron(Z)_2$, indicata con $macron(V)_"out"$.
 
 #align(center)[
-  #zap.circuit({
-    import zap: *
-    import zap.cetz.draw: *
-
-    // Impedenza Z1 (rettangolo IEC)
-    resistor("z1", (0, 3), (3.5, 3), variant: "iec", label: (content: $macron(Z)_1$, anchor: "south", distance: 6pt))
-    // Impedenza Z2 (rettangolo IEC)
-    resistor("z2", (3.5, 3), (3.5, 0), variant: "iec", label: (content: $macron(Z)_2$, anchor: "north", distance: 6pt))
-
-    // Fili di collegamento
-    wire((3.5, 3), (5.5, 3))
-    wire((0, 0), (5.5, 0))
-
-    // Nodo di giunzione centrale
-    node("n1", (3.5, 3))
-
-    // Morsetti di ingresso e uscita (aperti)
-    node("in_p", (0, 3), fill: false)
-    node("in_m", (0, 0), fill: false)
-    node("out_p", (5.5, 3), fill: false)
-    node("out_m", (5.5, 0), fill: false)
-
-    // Indicazioni di tensione Vin
-    content((0, 2.5), sans("+", weight: "bold"))
-    content((0, 1.5), $macron(V)_"in"$)
-    content((0, 0.5), sans("-", weight: "bold"))
-
-    // Indicazioni di tensione Vout
-    content((5.5, 2.5), sans("+", weight: "bold"))
-    content((5.5, 1.5), $macron(V)_"out"$)
-    content((5.5, 0.5), sans("-", weight: "bold"))
-  })
+  #include "figs/Cap3_1_MEC_handouts_appunti-fig01.typ"
 ]
 
 Applicando la regola del partitore di tensione, la tensione di uscita a vuoto su $macron(Z)_2$, nota la tensione di ingresso $macron(V)_"in"$, vale:
@@ -162,38 +131,7 @@ Per rappresentare graficamente il comportamento del circuito su un ampio interva
 Si consideri il circuito $R C$ mostrato in figura, ottenuto ponendo nel partitore di tensione un resistore in serie ($macron(Z)_1 = R$) e un condensatore in derivazione ($macron(Z)_2 = 1 / (j omega C) = -j / (omega C)$), prelevando in uscita la tensione a vuoto sul condensatore $C$.
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"))
-
-    // Resistore R in serie
-    resistor("r1", (0, 3), (3.5, 3), label: (content: $R$, anchor: "south", distance: 6pt))
-    // Condensatore C in parallelo
-    capacitor("c1", (3.5, 3), (3.5, 0), label: (content: $C$, anchor: "south", distance: 6pt))
-
-    // Fili di collegamento
-    wire((3.5, 3), (5.5, 3))
-    wire((0, 0), (5.5, 0))
-
-    // Nodo di giunzione
-    node("n1", (3.5, 3))
-
-    // Morsetti aperti
-    node("in_p", (0, 3), fill: false)
-    node("in_m", (0, 0), fill: false)
-    node("out_p", (5.5, 3), fill: false)
-    node("out_m", (5.5, 0), fill: false)
-
-    // Tensioni Vin e Vout
-    content((0, 2.5), sans("+", weight: "bold"))
-    content((0, 1.5), $macron(V)_"in"$)
-    content((0, 0.5), sans("-", weight: "bold"))
-
-    content((5.5, 2.5), sans("+", weight: "bold"))
-    content((5.5, 1.5), $macron(V)_"out"$)
-    content((5.5, 0.5), sans("-", weight: "bold"))
-  })
+  #include "figs/Cap3_1_MEC_handouts_appunti-fig02.typ"
 ]
 
 Applicando la relazione del partitore di tensione, si ottiene la tensione di uscita a vuoto sul condensatore:
@@ -252,30 +190,7 @@ Il comportamento limite del filtro nei tre regimi caratteristici di frequenza ($
 In scala lineare, l'andamento del modulo $|macron(H)|$ in funzione della pulsazione normalizzata $omega / omega_0$ parte dal valore unitario per $omega = 0$, assume il valore $1 / sqrt(2)$ in corrispondenza della pulsazione di taglio $omega / omega_0 = 1$ e tende asintoticamente a zero per $omega -> infinity$:
 
 #align(center)[
-  #canvas({
-    import draw: *
-    // Assi cartesiani
-    line((0, -0.3), (0, 3.2), mark: (end: "stealth", fill: black))
-    line((-0.3, 0), (5.5, 0), mark: (end: "stealth", fill: black))
-
-    content((-0.5, 3.0), $|macron(H)|$)
-    content((5.5, -0.4), $omega / omega_0$)
-
-    // Riferimenti
-    line((-0.1, 2.2), (0.1, 2.2))
-    content((-0.35, 2.2), $1$)
-
-    line((2.0, -0.1), (2.0, 0.1))
-    content((2.0, -0.4), $1$)
-
-    line((0, 1.55), (2.0, 1.55), stroke: (dash: "dashed", paint: gray))
-    line((2.0, 0), (2.0, 1.55), stroke: (dash: "dashed", paint: gray))
-    content((-0.55, 1.55), $1 / sqrt(2)$)
-
-    // Curva del modulo passa-basso
-    bezier((0, 2.2), (2.0, 1.55), (1.0, 2.2), (1.5, 1.9), stroke: 1.5pt + black)
-    bezier((2.0, 1.55), (5.0, 0.15), (2.6, 1.0), (3.5, 0.2), stroke: 1.5pt + black)
-  })
+  #include "figs/Cap3_1_MEC_handouts_appunti-fig03.typ"
 ]
 
 
@@ -288,73 +203,10 @@ Passando alla rappresentazione semilogaritmica dei *diagrammi di Bode* (modulo $
     column-gutter: 1em,
     align: center + horizon,
     [
-      #canvas({
-        import draw: *
-        // Riquadro grafico Modulo dB: x da 0 a 4 (4 decadi: 10^-2 .. 10^2), y da 0 a 5 (-40 dB .. +10 dB)
-        rect((0, 0), (4.8, 4.0), stroke: 1pt + black)
-        content((2.4, 4.4), $|macron(H)|_"dB"$)
-        content((2.4, -0.8), $omega / omega_0$)
-
-        // Griglia verticale (decadi: x = 0, 1.2, 2.4, 3.6, 4.8)
-        for i in (1, 2, 3) {
-          line((i * 1.2, 0), (i * 1.2, 4.0), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((0, -0.3), $10^(-2)$)
-        content((1.2, -0.3), $10^(-1)$)
-        content((2.4, -0.3), $10^0$)
-        content((3.6, -0.3), $10^1$)
-        content((4.8, -0.3), $10^2$)
-
-        // Griglia orizzontale (dB: -40 -> 0, -30 -> 0.8, -20 -> 1.6, -10 -> 2.4, 0 -> 3.2, 10 -> 4.0)
-        for j in (1, 2, 3, 4) {
-          line((0, j * 0.8), (4.8, j * 0.8), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((-0.4, 0), $-40$)
-        content((-0.4, 0.8), $-30$)
-        content((-0.4, 1.6), $-20$)
-        content((-0.4, 2.4), $-10$)
-        content((-0.4, 3.2), $0$)
-        content((-0.4, 4.0), $10$)
-
-        // Asintoti tratteggiati
-        line((0, 3.2), (2.4, 3.2), stroke: (dash: "dashed", paint: gray))
-        line((2.4, 3.2), (4.8, 0), stroke: (dash: "dashed", paint: gray))
-
-        // Curva reale (-3 dB a x=2.4 -> y = 3.2 - 0.24 = 2.96)
-        line((0, 3.2), (1.2, 3.2), stroke: 1.5pt + rgb("#0d6e38"))
-        bezier((1.2, 3.2), (2.4, 2.96), (1.9, 3.2), (2.2, 3.08), stroke: 1.5pt + rgb("#0d6e38"))
-        bezier((2.4, 2.96), (3.6, 1.6), (2.6, 2.8), (3.1, 2.27), stroke: 1.5pt + rgb("#0d6e38"))
-        line((3.6, 1.6), (4.8, 0), stroke: 1.5pt + rgb("#0d6e38"))
-        circle((2.4, 2.96), radius: 1.5pt, fill: rgb("#0d6e38"), stroke: none)
-      })
+      #include "figs/Cap3_1_MEC_handouts_appunti-fig04.typ"
     ],
     [
-      #canvas({
-        import draw: *
-        // Riquadro grafico Fase: x da 0 a 4.8, y da 0 (-pi/2) a 4.0 (0)
-        rect((0, 0), (4.8, 4.0), stroke: 1pt + black)
-        content((2.4, 4.4), $angle macron(H)$)
-        content((2.4, -0.8), $omega / omega_0$)
-
-        for i in (1, 2, 3) {
-          line((i * 1.2, 0), (i * 1.2, 4.0), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((0, -0.3), $10^(-2)$)
-        content((1.2, -0.3), $10^(-1)$)
-        content((2.4, -0.3), $10^0$)
-        content((3.6, -0.3), $10^1$)
-        content((4.8, -0.3), $10^2$)
-
-        line((0, 2.0), (4.8, 2.0), stroke: 0.5pt + gray.lighten(30%))
-        content((-0.4, 4.0), $0$)
-        content((-0.45, 2.0), $-frac(pi, 4)$)
-        content((-0.45, 0), $-frac(pi, 2)$)
-
-        // Curva di fase
-        bezier((0, 3.95), (2.4, 2.0), (1.4, 3.9), (1.9, 2.8), stroke: 1.5pt + rgb("#0d6e38"))
-        bezier((2.4, 2.0), (4.8, 0.05), (2.9, 1.2), (3.4, 0.1), stroke: 1.5pt + rgb("#0d6e38"))
-        circle((2.4, 2.0), radius: 1.5pt, fill: rgb("#0d6e38"), stroke: none)
-      })
+      #include "figs/Cap3_1_MEC_handouts_appunti-fig05.typ"
     ]
   )
 ]
@@ -366,38 +218,7 @@ Passando alla rappresentazione semilogaritmica dei *diagrammi di Bode* (modulo $
 Scambiando la posizione del resistore e del condensatore si ottiene il circuito $C R$ mostrato in figura, nel quale $macron(Z)_1 = 1 / (j omega C) = -j / (omega C)$ è posta in serie e $macron(Z)_2 = R$ è posta in derivazione. L'uscita a vuoto $macron(V)_"out"$ viene prelevata ai capi del resistore $R$.
 
 #align(center)[
-  #zap.circuit({
-
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"))
-
-    // Condensatore C in serie
-    capacitor("c1", (0, 3), (3.5, 3), label: (content: $C$, anchor: "south", distance: 6pt))
-    // Resistore R in parallelo
-    resistor("r1", (3.5, 3), (3.5, 0), label: (content: $R$, anchor: "north", distance: 6pt))
-
-    // Fili di collegamento
-    wire((3.5, 3), (5.5, 3))
-    wire((0, 0), (5.5, 0))
-
-    // Nodo di giunzione
-    node("n1", (3.5, 3))
-
-    // Morsetti aperti
-    node("in_p", (0, 3), fill: false)
-    node("in_m", (0, 0), fill: false)
-    node("out_p", (5.5, 3), fill: false)
-    node("out_m", (5.5, 0), fill: false)
-
-    // Tensioni Vin e Vout
-    content((0, 2.5), sans("+", weight: "bold"))
-    content((0, 1.5), $macron(V)_"in"$)
-    content((0, 0.5), sans("-", weight: "bold"))
-
-    content((5.5, 2.5), sans("+", weight: "bold"))
-    content((5.5, 1.5), $macron(V)_"out"$)
-    content((5.5, 0.5), sans("-", weight: "bold"))
-  })
+  #include "figs/Cap3_1_MEC_handouts_appunti-fig06.typ"
 ]
 
 Applicando il partitore di tensione, la tensione a vuoto sul resistore $R$, nota $macron(V)_"in"$, è data da:
@@ -453,30 +274,7 @@ Il comportamento asintotico nei tre regimi di pulsazione è sintetizzato nella t
 L'andamento del modulo $|macron(H)|$ in scala lineare mostra che la risposta è nulla in continua ($omega = 0$), vale $1 / sqrt(2)$ alla pulsazione di taglio $omega = omega_0$ e tende asintoticamente a $1$ per $omega gt.double omega_0$:
 
 #align(center)[
-  #canvas({
-    import draw: *
-    // Assi cartesiani
-    line((0, -0.3), (0, 3.2), mark: (end: "stealth", fill: black))
-    line((-0.3, 0), (5.5, 0), mark: (end: "stealth", fill: black))
-
-    content((-0.5, 3.0), $|macron(H)|$)
-    content((5.5, -0.4), $omega / omega_0$)
-
-    // Asintoto orizzontale a 1
-    line((0, 2.2), (5.0, 2.2), stroke: (dash: "dashed", paint: black))
-    content((-0.35, 2.2), $1$)
-
-    line((2.0, -0.1), (2.0, 0.1))
-    content((2.0, -0.4), $1$)
-
-    line((0, 1.55), (2.0, 1.55), stroke: (dash: "dashed", paint: gray))
-    line((2.0, 0), (2.0, 1.55), stroke: (dash: "dashed", paint: gray))
-    content((-0.55, 1.55), $1 / sqrt(2)$)
-
-    // Curva del modulo passa-alto
-    bezier((0, 0), (2.0, 1.55), (0.8, 0.05), (1.5, 0.9), stroke: 1.5pt + rgb("#d9381e"))
-    bezier((2.0, 1.55), (5.0, 2.15), (2.5, 2.0), (3.5, 2.15), stroke: 1.5pt + rgb("#d9381e"))
-  })
+  #include "figs/Cap3_1_MEC_handouts_appunti-fig07.typ"
 ]
 
 I corrispondenti diagrammi di Bode del modulo $|macron(H)|_"dB"$ e della fase $angle macron(H)$ sono riportati di seguito:
@@ -487,69 +285,10 @@ I corrispondenti diagrammi di Bode del modulo $|macron(H)|_"dB"$ e della fase $a
     column-gutter: 1em,
     align: center + horizon,
     [
-      #canvas({
-        import draw: *
-        rect((0, 0), (4.8, 4.0), stroke: 1pt + black)
-        content((2.4, 4.4), $|macron(H)|_"dB"$)
-        content((2.4, -0.8), $omega / omega_0$)
-
-        for i in (1, 2, 3) {
-          line((i * 1.2, 0), (i * 1.2, 4.0), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((0, -0.3), $10^(-2)$)
-        content((1.2, -0.3), $10^(-1)$)
-        content((2.4, -0.3), $10^0$)
-        content((3.6, -0.3), $10^1$)
-        content((4.8, -0.3), $10^2$)
-
-        for j in (1, 2, 3, 4) {
-          line((0, j * 0.8), (4.8, j * 0.8), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((-0.4, 0), $-40$)
-        content((-0.4, 0.8), $-30$)
-        content((-0.4, 1.6), $-20$)
-        content((-0.4, 2.4), $-10$)
-        content((-0.4, 3.2), $0$)
-        content((-0.4, 4.0), $10$)
-
-        // Asintoti tratteggiati
-        line((0, 0), (2.4, 3.2), stroke: (dash: "dashed", paint: gray))
-        line((2.4, 3.2), (4.8, 3.2), stroke: (dash: "dashed", paint: gray))
-
-        // Curva reale
-        line((0, 0), (1.2, 1.6), stroke: 1.5pt + rgb("#d9381e"))
-        bezier((1.2, 1.6), (2.4, 2.96), (1.7, 2.27), (2.2, 2.8), stroke: 1.5pt + rgb("#d9381e"))
-        bezier((2.4, 2.96), (3.6, 3.2), (2.6, 3.08), (2.9, 3.2), stroke: 1.5pt + rgb("#d9381e"))
-        line((3.6, 3.2), (4.8, 3.2), stroke: 1.5pt + rgb("#d9381e"))
-        circle((2.4, 2.96), radius: 1.5pt, fill: rgb("#d9381e"), stroke: none)
-      })
+      #include "figs/Cap3_1_MEC_handouts_appunti-fig08.typ"
     ],
     [
-      #canvas({
-        import draw: *
-        rect((0, 0), (4.8, 4.0), stroke: 1pt + black)
-        content((2.4, 4.4), $angle macron(H)$)
-        content((2.4, -0.8), $omega / omega_0$)
-
-        for i in (1, 2, 3) {
-          line((i * 1.2, 0), (i * 1.2, 4.0), stroke: 0.5pt + gray.lighten(30%))
-        }
-        content((0, -0.3), $10^(-2)$)
-        content((1.2, -0.3), $10^(-1)$)
-        content((2.4, -0.3), $10^0$)
-        content((3.6, -0.3), $10^1$)
-        content((4.8, -0.3), $10^2$)
-
-        line((0, 2.0), (4.8, 2.0), stroke: 0.5pt + gray.lighten(30%))
-        content((-0.4, 4.0), $frac(pi, 2)$)
-        content((-0.4, 2.0), $frac(pi, 4)$)
-        content((-0.4, 0), $0$)
-
-        // Curva di fase passa-alto (da +pi/2 a 0)
-        bezier((0, 3.95), (2.4, 2.0), (1.4, 3.9), (1.9, 2.8), stroke: 1.5pt + rgb("#d9381e"))
-        bezier((2.4, 2.0), (4.8, 0.05), (2.9, 1.2), (3.4, 0.1), stroke: 1.5pt + rgb("#d9381e"))
-        circle((2.4, 2.0), radius: 1.5pt, fill: rgb("#d9381e"), stroke: none)
-      })
+      #include "figs/Cap3_1_MEC_handouts_appunti-fig09.typ"
     ]
   )
 ]
@@ -561,60 +300,7 @@ I corrispondenti diagrammi di Bode del modulo $|macron(H)|_"dB"$ e della fase $a
 Si consideri ora un circuito costituito dal collegamento in serie di un resistore $R$ ($macron(Z)_1 = R$), un induttore $L$ ($macron(Z)_2 = j omega L$) e un condensatore $C$ ($macron(Z)_3 = -j / (omega C)$), alimentato da una tensione $macron(V)$ e percorso dalla corrente $macron(I)$, come rappresentato nello schema seguente:
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-
-    // Stile IEEE (zig-zag per R e spire tonde per L)
-    set-style(zap: (variant: "ieee"))
-
-    // --- 1. RAMO VERTICALE SERIE: R, L, C ---
-    resistor("r1", (2, 6), (2, 4))
-    inductor("l1", (2, 4), (2, 2))
-    capacitor("c1", (2, 2), (2, 0))
-
-    // Etichette a DESTRA dei componenti (R, L, C)
-    content((2.45, 5.0), anchor: "west", $R$)
-    content((2.45, 3.0), anchor: "west", $L$)
-    content((2.55, 1.0), anchor: "west", $C$)
-
-    // Etichette a SINISTRA dei componenti (Z1, Z2, Z3)
-    content((1.55, 5.0), anchor: "east", $macron(Z)_1$)
-    content((1.55, 3.0), anchor: "east", $macron(Z)_2$)
-    content((1.45, 1.0), anchor: "east", $macron(Z)_3$)
-
-    // --- 2. MORSETTI DI INGRESSO (a sinistra) ---
-    wire((0, 6), (2, 6))
-    wire((0, 0), (2, 0))
-
-    // Freccia della corrente I sul ramo superiore d'ingresso
-    line((0.8, 6), (1.2, 6), mark: (end: "stealth", fill: black, scale: 1.2))
-    content((1.0, 6.25), anchor: "south", $macron(I)$)
-
-    // --- 3. MORSETTI DI USCITA AI CAPI DI R (a destra) ---
-    wire((2, 6), (4.0, 6))
-    wire((2, 4), (4.0, 4))
-
-    // --- 4. NODI DI GIUNZIONE E MORSETTI APERTI ---
-    // Nodi pieni (giunzioni ai capi di R)
-    node("n_top", (2, 6))
-    node("n_mid", (2, 4))
-
-    // Morsetti aperti (fill: false in Zap disegna il pallino con sfondo bianco coprendo il filo)
-    node("in_p", (0, 6), fill: false)
-    node("in_m", (0, 0), fill: false)
-    node("out_p", (4.0, 6), fill: false)
-    node("out_m", (4.0, 4), fill: false)
-
-    // --- 5. FRECCE DI TENSIONE V e VR ---
-    // Tensione totale d'ingresso V
-    line((0, 0.35), (0, 5.65), stroke: 0.7pt, mark: (end: "stealth", fill: black))
-    content((-0.25, 3.0), anchor: "east", $macron(V)$)
-
-    // Tensione d'uscita VR ai capi del resistore
-    line((4.0, 4.35), (4.0, 5.65), stroke: 0.7pt, mark: (end: "stealth", fill: black))
-    content((4.25, 5.0), anchor: "west", $macron(V)_R$)
-  })
+  #include "figs/Cap3_1_MEC_handouts_appunti-fig10.typ"
 ]
 
 
@@ -653,48 +339,10 @@ Gli andamenti qualitativi del modulo dell'impedenza $|macron(Z)|$ e della grande
     column-gutter: 1.5em,
     align: center + horizon,
     [
-      #canvas({
-        import draw: *
-        // Grafico |Z| vs omega
-        line((0, -0.3), (0, 3.5), mark: (end: "stealth", fill: black))
-        line((-0.3, 0), (5.0, 0), mark: (end: "stealth", fill: black))
-
-        content((-0.5, 3.3), $|macron(Z)|$)
-        content((5.0, -0.4), $omega$)
-
-        // Minimo a R per omega = omega_0
-        line((2.3, -0.1), (2.3, 0.1))
-        content((2.3, -0.4), $omega_0$)
-
-        line((0, 0.9), (2.3, 0.9), stroke: (dash: "dashed", paint: rgb("#005bb5")))
-        content((-0.4, 0.9), $R$)
-
-        // Curva a V di |Z|
-        bezier((0.8, 3.2), (2.3, 0.9), (1.3, 1.8), (1.9, 0.9), stroke: 1.5pt + rgb("#005bb5"))
-        bezier((2.3, 0.9), (4.2, 3.2), (2.7, 0.9), (3.4, 2.0), stroke: 1.5pt + rgb("#005bb5"))
-      })
+      #include "figs/Cap3_1_MEC_handouts_appunti-fig11.typ"
     ],
     [
-      #canvas({
-        import draw: *
-        // Grafico R|I| = |V_R| vs omega
-        line((0, -0.3), (0, 3.5), mark: (end: "stealth", fill: black))
-        line((-0.3, 0), (5.0, 0), mark: (end: "stealth", fill: black))
-
-        content((-0.6, 3.2), $R |macron(I)|$)
-        content((5.0, -0.4), $omega$)
-
-        line((2.3, -0.1), (2.3, 0.1))
-        content((2.3, -0.4), $omega_0$)
-
-        line((0, 2.6), (2.3, 2.6), stroke: (dash: "dashed", paint: gray))
-        line((2.3, 0), (2.3, 2.6), stroke: (dash: "dashed", paint: gray))
-        content((-0.4, 2.6), $V$)
-
-        // Curva a campana di risonanza
-        bezier((0, 0), (2.3, 2.6), (1.2, 0.05), (1.8, 2.6), stroke: 1.5pt + rgb("#005bb5"))
-        bezier((2.3, 2.6), (4.6, 0.15), (2.8, 2.6), (3.3, 0.25), stroke: 1.5pt + rgb("#005bb5"))
-      })
+      #include "figs/Cap3_1_MEC_handouts_appunti-fig12.typ"
     ]
   )
 ]

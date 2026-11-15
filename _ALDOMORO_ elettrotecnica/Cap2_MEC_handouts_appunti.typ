@@ -92,36 +92,7 @@ Il sistema risolutivo di $2 L$ equazioni linearmente indipendenti viene costruit
 L'equazione costitutiva esprime il legame funzionale $V = f(I)$ tra la tensione ai capi di un lato e la corrente che lo attraversa. Tale relazione può essere scritta non solo per un singolo bipolo elementare, ma anche per un *lato composto* (ovvero una combinazione in serie o in parallelo di più bipoli compresa tra due nodi della rete), riducendo così il numero complessivo di incognite.
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(zap: (variant: "iec"))
-
-    // Biforcazioni ai nodi esterni
-    line((-0.4, 0.5), (0, 0))
-    line((-0.4, -0.5), (0, 0))
-    line((6.6, 0), (7.0, 0.5))
-    line((6.6, 0), (7.0, -0.5))
-
-    // 3 bipoli generici in serie
-    resistor("b1", (0, 0), (2.2, 0), n: "o-")
-    resistor("b2", (2.2, 0), (4.4, 0))
-    resistor("b3", (4.4, 0), (6.6, 0), n: "-o")
-
-    // Frecce di corrente sul filo
-    line((0.2, 0), (0.65, 0), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((0.4, 0.35), $I$)
-    line((2.1, 0), (2.5, 0), mark: (end: "stealth", fill: black, scale: 0.7))
-    line((4.3, 0), (4.7, 0), mark: (end: "stealth", fill: black, scale: 0.7))
-
-    // Indicazione di "lato" superiore
-    bezier((0.6, 0.5), (6.0, 0.5), (3.3, 1.1))
-    content((3.3, 1.15), sans("lato"))
-
-    // Freccia di tensione V inferiore
-    bezier((6.2, -0.5), (0.4, -0.5), (3.3, -1.2), mark: (end: "stealth", fill: black))
-    content((3.3, -1.2), $V$)
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig01.typ"
 ]
 
 Analizziamo i principali casi di lato composto in serie:
@@ -136,27 +107,7 @@ Analizziamo i principali casi di lato composto in serie:
     $ V = (R_1 + R_2 + R_3) I $
   ],
   [
-    #zap.circuit({
-      import zap.cetz.draw: *
-      
-      
-      set-style(resistor: (variant: "ieee"))
-
-      line((-0.3, 0.4), (0, 0))
-      line((-0.3, -0.4), (0, 0))
-      line((5.4, 0), (5.7, 0.4))
-      line((5.4, 0), (5.7, -0.4))
-
-      resistor("r1", (0, 0), (1.8, 0), label: (content: $R_1$, anchor: "north", distance: 4pt), n: "o-")
-      resistor("r2", (1.8, 0), (3.6, 0), label: (content: $R_2$, anchor: "north", distance: 4pt))
-      resistor("r3", (3.6, 0), (5.4, 0), label: (content: $R_3$, anchor: "north", distance: 4pt), n: "-o")
-
-      line((0.15, 0), (0.55, 0), mark: (end: "stealth", fill: black, scale: 0.8))
-      content((0.25, 0.45), $I$)
-
-      bezier((5.1, -0.45), (0.3, -0.45), (2.7, -1.1), mark: (end: "stealth", fill: black))
-      content((2.7, -1.1), $V$)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig02.typ"
   ]
 )
 
@@ -172,30 +123,7 @@ Analizziamo i principali casi di lato composto in serie:
     $ V + E_1 + E_2 - E_3 = 0 arrow.r.double V = E_3 - E_1 - E_2 $
   ],
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(zap: (variant: "iec"))
-
-      line((-0.3, 0.4), (0, 0))
-      line((-0.3, -0.4), (0, 0))
-      line((5.4, 0), (5.7, 0.4))
-      line((5.4, 0), (5.7, -0.4))
-
-      vsource("e1", (0, 0), (1.8, 0), label: (content: $E_1$, anchor: "north", distance: 5pt), n: "o-")
-      vsource("e2", (1.8, 0), (3.6, 0), label: (content: $E_2$, anchor: "north", distance: 5pt))
-      vsource("e3", (3.6, 0), (5.4, 0), label: (content: $E_3$, anchor: "north", distance: 5pt), n: "-o")
-
-      content((1.35, -0.45), sans("+", size: 10pt, weight: "bold"))
-      content((3.15, -0.45), sans("+", size: 10pt, weight: "bold"))
-      content((4.05, -0.45), sans("+", size: 10pt, weight: "bold"))
-
-      line((0.15, 0), (0.5, 0), mark: (end: "stealth", fill: black, scale: 0.8))
-      content((0.3, 0.35), $I$)
-
-      bezier((5.1, -0.65), (0.3, -0.65), (2.7, -1.3), mark: (end: "stealth", fill: black))
-      content((2.7, -1.3), $V$)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig03.typ"
   ]
 )
 
@@ -211,26 +139,7 @@ Analizziamo i principali casi di lato composto in serie:
     $ -V - R_k I + E_k = 0 arrow.r.double V = E_k - R_k I $
   ],
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-      line((-0.3, 0.4), (0, 0))
-      line((-0.3, -0.4), (0, 0))
-      line((4.8, 0), (5.1, 0.4))
-      line((4.8, 0), (5.1, -0.4))
-
-      resistor("rk", (0, 0), (2.4, 0), label: (content: $R_k$, anchor: "south", distance: 4pt), n: "o-")
-      vsource("ek", (2.4, 0), (4.8, 0), label: (content: $E_k$, anchor: "north", distance: 5pt), n: "-o")
-
-      content((4.1, 0.35), sans("+", size: 10pt, weight: "bold"))
-      line((0.15, 0), (0.55, 0), mark: (end: "stealth", fill: black, scale: 0.8))
-      content((0.35, 0.35), $I$)
-
-      bezier((0.3, -0.65), (4.5, -0.65), (2.4, -1.3), mark: (end: "stealth", fill: black))
-      content((4.2, -1.2), $V$)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig04.typ"
   ]
 )
 
@@ -248,24 +157,7 @@ In modo formale e standardizzato, per un generico lato attivo $k$-esimo della re
     $ v_k = E_k - R_k i_k $
   ],
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-      vsource("ek", (0, 0), (3.0, 0), label: (content: $E_k$, anchor: "north", distance: 6pt), n: "o-")
-      resistor("rk", (3.0, 0), (6.0, 0), label: (content: $R_k$, anchor: "north", distance: 6pt), n: "-o")
-
-      content((0.85, 0.38), sans("+", size: 12pt, weight: "bold"))
-
-      // Freccia di corrente Ik staccata sopra il filo
-      line((3.3, 0.25), (2.5, 0.25), mark: (end: "stealth", fill: black))
-      content((2.9, 0.65), $I_k$)
-
-      // Freccia di tensione Vk curva sotto
-      bezier((5.7, -0.6), (0.3, -0.6), (3.0, -1.35), mark: (end: "stealth", fill: black))
-      content((3.0, -1.35), $V_k$)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig05.typ"
   ]
 )
 
@@ -282,32 +174,7 @@ In modo formale e standardizzato, per un generico lato attivo $k$-esimo della re
     $ v_k = R_k A_k - R_k i_k $
   ],
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), isource: (variant: "iec"))
-
-      // Terminali esterni e nodi di giunzione
-      wire((0, 0), (1.2, 0), n: "o-*")
-      resistor("rk", (1.2, 0), (4.8, 0), label: (content: $R_k$, anchor: "south", distance: 6pt))
-      wire((4.8, 0), (6.0, 0), n: "*-o")
-
-      // Ramo in parallelo con generatore di corrente Ak
-      wire((1.2, 0), (1.2, 1.8))
-      isource("ak", (1.2, 1.8), (4.8, 1.8))
-      wire((4.8, 1.8), (4.8, 0))
-
-      // Frecce di corrente Ik e Ak sui rami
-      line((0.7, 0), (0.4, 0), mark: (end: "stealth", fill: black, scale: 0.9))
-      content((0.6, 0.38), $I_k$)
-
-      line((1.9, 1.8), (1.6, 1.8), mark: (end: "stealth", fill: black, scale: 0.9))
-      content((1.8, 2.2), $A_k$)
-
-      // Freccia di tensione Vk curva sotto
-      bezier((5.7, -0.6), (0.3, -0.6), (3.0, -1.35), mark: (end: "stealth", fill: black))
-      content((3.0, -1.35), $V_k$)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig06.typ"
   ]
 )
 
@@ -316,60 +183,7 @@ In modo formale e standardizzato, per un generico lato attivo $k$-esimo della re
 Si consideri la rete resistiva mostrata in figura, caratterizzata da $N = 2$ nodi (indicati con #sans("A", weight: "bold") e #sans("B", weight: "bold")) e $L = 3$ lati.
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-    // Nodi principali A e B
-    node("A", (3.2, 4.4), label: (content: sans("A", size: 12pt), anchor: "north", distance: 5pt))
-    node("B", (3.2, 0), label: (content: sans("B", size: 12pt), anchor: "south", distance: 5pt))
-
-    // Fili orizzontali superiori e inferiori
-    wire((0, 4.4), (6.4, 4.4))
-    wire((0, 0), (6.4, 0))
-
-    // Lato 1 (sinistra)
-    vsource("e1", (0, 0), (0, 2.2))
-    resistor("r1", (0, 2.2), (0, 4.4), label: (content: $R_1$, anchor: "south", distance: 6pt))
-    content((-0.6, 1.75), $E_1$)
-    content((-0.25, 1.8), sans("+", size: 11pt, weight: "bold"))
-    line((0.2, 1.7), (0.2, 2.35), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((0.55, 2.0), $I_1$)
-
-    // Lato 3 (centrale)
-    wire((3.2, 0), (3.2, 2.2))
-    resistor("r3", (3.2, 2.2), (3.2, 4.4), label: (content: $R_3$, anchor: "south", distance: 6pt))
-    line((3.0, 2.55), (3.0, 1.9), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((2.65, 2.25), $I_3$)
-
-    // Lato 2 (destra)
-    vsource("e2", (6.4, 0), (6.4, 2.2))
-    resistor("r2", (6.4, 2.2), (6.4, 4.4), label: (content: $R_2$, anchor: "south", distance: 6pt))
-    content((7.15, 1.3), $E_2$)
-    content((6.05, 1.8), sans("+", size: 11pt, weight: "bold"))
-    line((6.6, 1.7), (6.6, 2.35), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((6.95, 2.0), $I_2$)
-
-    // Maglia 1 e Maglia 2 (percorsi tratteggiati)
-    rect((0.85, 0.35), (2.35, 2.9), radius: 0.45, stroke: (dash: "dashed", thickness: 0.6pt))
-    line((1.75, 0.35), (1.35, 0.35), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((1.6, 1.5), sans("MAGLIA 1", size: 9.5pt))
-
-    rect((4.0, 0.35), (5.65, 2.9), radius: 0.45, stroke: (dash: "dashed", thickness: 0.6pt))
-    line((4.95, 0.35), (4.55, 0.35), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((4.82, 1.5), sans("MAGLIA 2", size: 9.5pt))
-
-    // Frecce di tensione V1, V3, V2
-    bezier((-0.9, 0.1), (-0.9, 4.3), (-1.35, 2.2), mark: (end: "stealth", fill: black))
-    content((-1.5, 2.2), $V_1$)
-
-    bezier((2.5, 0.1), (2.5, 4.3), (2.05, 2.2), mark: (end: "stealth", fill: black))
-    content((1.95, 3.6), $V_3$)
-
-    bezier((7.55, 0.1), (7.55, 4.3), (8.0, 2.2), mark: (end: "stealth", fill: black))
-    content((8.2, 2.2), $V_2$)
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig07.typ"
 ]
 
 Il bilancio delle incognite e delle equazioni per questa rete fornisce:
@@ -489,37 +303,7 @@ Passivare un generatore significa annullare il suo effetto sul circuito. Operati
 2. *Generatore ideale di corrente:* imporre una corrente nulla $a(t) = 0$ in un lato equivale a impedire il passaggio di carica per qualsiasi tensione ai capi; il componente viene quindi sostituito da un *circuito aperto*.
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-
-    // --- RIGA 1: Generatore di Tensione ---
-    content((-2.3, 4.2), align(center)[_Generatore_ \ _Ideale di_ \ _Tensione_])
-    vsource("e1", (0, 3.0), (0, 5.4), variant: "iec")
-    content((-0.95, 4.2), text(size: 13pt)[$e(t)$])
-    content((-0.3, 4.85), sans("+", size: 12pt, weight: "bold"))
-
-    // Freccia nera spessa
-    line((1.0, 4.2), (2.2, 4.2), stroke: 7pt + black, mark: (end: "triangle", fill: black, scale: 0.7))
-
-    content((3.3, 4.2), text(size: 13pt)[$e(t) = 0$])
-    wire((4.5, 3.0), (4.5, 5.4))
-    content((5.8, 4.2), align(center)[_Corto_ \ _Circuito_])
-
-    // --- RIGA 2: Generatore di Corrente ---
-    content((-2.3, 1.2), align(center)[_Generatore_ \ _Ideale di_ \ _Corrente_])
-    isource("a1", (0, 0.0), (0, 2.4), variant: "iec")
-    line((0, 1.75), (0, 2.05), mark: (end: "stealth", fill: black, scale: 0.9))
-    content((-0.95, 1.2), text(size: 13pt)[$a(t)$])
-
-    // Freccia nera spessa
-    line((1.0, 1.2), (2.2, 1.2), stroke: 7pt + black, mark: (end: "triangle", fill: black, scale: 0.7))
-
-    content((3.3, 1.2), text(size: 13pt)[$a(t) = 0$])
-    wire((4.5, 0.0), (4.5, 0.55))
-    wire((4.5, 1.85), (4.5, 2.4))
-    content((5.8, 1.2), align(center)[_Circuito_ \ _Aperto_])
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig08.typ"
 ]
 
 #v(0.5em)
@@ -529,62 +313,7 @@ Passivare un generatore significa annullare il suo effetto sul circuito. Operati
 Si consideri la rete lineare binodale seguente, alimentata dai due generatori ideali di tensione $E_1$ ed $E_2$. Si vogliano determinare la corrente $i_3$ e la tensione $V_3$ sul ramo centrale contenente il resistore $R_3$.
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-    // Nodi A e B
-    node("A", (3.5, 3.8), label: (content: sans("A", size: 12pt), anchor: "north", distance: 4pt))
-    node("B", (3.5, 0), label: (content: sans("B", size: 12pt), anchor: "south", distance: 4pt))
-
-    // Ramo sinistro
-    vsource("e1", (0, 0), (0, 1.8))
-    content((-0.75, 1.4), $E_1$)
-    content((-0.35, 1.45), sans("+", weight: "bold"))
-    wire((0, 1.8), (0, 2.2))
-    resistor("r1", (0, 2.2), (0, 3.8), label: (content: $R_1$, anchor: "west", distance: 6pt))
-    line((-0.18, 1.65), (-0.18, 2.15), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((-0.45, 1.85), $I_1$)
-
-    // Ramo centrale
-    wire((3.5, 0), (3.5, 2.2))
-    resistor("r3", (3.5, 2.2), (3.5, 3.8), label: (content: $R_3$, anchor: "west", distance: 6pt))
-    line((3.35, 2.15), (3.35, 1.65), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((3.05, 1.9), $I_3$)
-
-    // Freccia di tensione V3 (da B ad A)
-    bezier((3.0, 0.2), (3.0, 3.6), (2.6, 1.9), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((2.5, 3.2), $V_3$)
-
-    // Ramo destro
-    vsource("e2", (7, 0), (7, 1.8))
-    content((7.8, 1.0), $E_2$)
-    content((6.55, 1.45), sans("+", weight: "bold"))
-    wire((7, 1.8), (7, 2.2))
-    resistor("r2", (7, 2.2), (7, 3.8), label: (content: $R_2$, anchor: "west", distance: 6pt))
-    line((6.82, 1.65), (6.82, 2.15), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((6.45, 1.85), $I_2$)
-
-    // Collegamenti orizzontali
-    wire((0, 3.8), (7, 3.8))
-    wire((0, 0), (7, 0))
-
-    // Maglie
-    rect((0.9, 0.35), (2.5, 2.4), radius: 0.4, stroke: (dash: "densely-dashed", thickness: 0.6pt))
-    line((1.8, 0.35), (1.6, 0.35), mark: (end: "stealth", fill: black, scale: 0.6))
-    content((1.7, 1.35), sans("MAGLIA 1", size: 8.5pt))
-
-    rect((4.2, 0.35), (5.8, 2.4), radius: 0.4, stroke: (dash: "densely-dashed", thickness: 0.6pt))
-    line((5.1, 0.35), (4.9, 0.35), mark: (end: "stealth", fill: black, scale: 0.6))
-    content((5.0, 1.35), sans("MAGLIA 2", size: 8.5pt))
-
-    // Tensioni esterne V1 e V2
-    bezier((-0.9, 0.2), (-0.9, 3.6), (-1.3, 1.9), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((-1.4, 1.9), $V_1$)
-    bezier((7.9, 0.2), (7.9, 3.6), (8.3, 1.9), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((8.45, 1.9), $V_2$)
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig09.typ"
 ]
 
 Per il teorema di sovrapposizione, la corrente $i_3$ e la tensione $V_3$ sono date dalla somma dei contributi ottenuti attivando un generatore alla volta:
@@ -601,106 +330,12 @@ dove:
   [
     *1) Sottocircuito con $E_1$ attivo ($E_2 = 0$)*
     $ V_3^((E_1)) = V_3^((E_1, 0)) $
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-      scale(0.78)
-
-      node("A", (3.5, 3.8), label: (content: sans("A", size: 10pt), anchor: "north", distance: 3pt))
-      node("B", (3.5, 0), label: (content: sans("B", size: 10pt), anchor: "south", distance: 3pt))
-
-      // Ramo 1
-      vsource("e1", (0, 0), (0, 1.8))
-      content((-0.7, 1.0), $E_1$)
-      content((-0.35, 1.5), sans("+", weight: "bold"))
-      wire((0, 1.8), (0, 2.2))
-      resistor("r1", (0, 2.2), (0, 3.8), label: (content: $R_1$, anchor: "south", distance: 5pt))
-      line((0.2, 1.6), (0.2, 2.1), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((0.55, 1.85), $I'_1$)
-      bezier((-0.35, 3.5), (-0.35, 2.3), (-0.65, 2.9), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((-0.9, 2.9), $V'_1$)
-
-      // Ramo 3
-      wire((3.5, 0), (3.5, 1.2))
-      resistor("r3", (3.5, 1.2), (3.5, 2.8))
-      wire((3.5, 2.8), (3.5, 3.8))
-      line((3.7, 3.6), (3.7, 3.0), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((4.1, 3.3), $I'_3$)
-      bezier((3.15, 0.3), (3.15, 3.5), (2.9, 1.9), mark: (end: "stealth", fill: black, scale: 0.7))
-      content((2.7, 3.0), $V'_3$)
-
-      // Ramo 2 (E2 passivato -> corto circuito)
-      wire((7, 0), (7, 2.2))
-      resistor("r2", (7, 2.2), (7, 3.8), label: (content: $R_2$, anchor: "south", distance: 5pt))
-      line((7.2, 1.6), (7.2, 2.1), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((7.6, 1.85), $I'_2$)
-      bezier((6.65, 3.5), (6.65, 2.3), (6.35, 2.9), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((6.05, 2.9), $V'_2$)
-
-      wire((0, 3.8), (7, 3.8))
-      wire((0, 0), (7, 0))
-
-      rect((0.9, 0.35), (2.5, 2.4), radius: 0.35, stroke: (dash: "densely-dashed", thickness: 0.5pt))
-      line((1.5, 2.4), (1.7, 2.4), mark: (end: "stealth", fill: black, scale: 0.5))
-      content((1.7, 1.35), sans("MAGLIA 1", size: 7pt))
-
-      rect((4.2, 0.35), (5.8, 2.4), radius: 0.35, stroke: (dash: "densely-dashed", thickness: 0.5pt))
-      line((4.8, 2.4), (5.0, 2.4), mark: (end: "stealth", fill: black, scale: 0.5))
-      content((5.0, 1.35), sans("MAGLIA 2", size: 7pt))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig10.typ"
   ],
   [
     *2) Sottocircuito con $E_2$ attivo ($E_1 = 0$)*
     $ V_3^((E_2)) = V_3^((0, E_2)) $
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-      scale(0.78)
-
-      node("A", (3.5, 3.8), label: (content: sans("A", size: 10pt), anchor: "north", distance: 3pt))
-      node("B", (3.5, 0), label: (content: sans("B", size: 10pt), anchor: "south", distance: 3pt))
-
-      // Ramo 1 (E1 passivato -> corto circuito)
-      wire((0, 0), (0, 2.2))
-      resistor("r1", (0, 2.2), (0, 3.8), label: (content: $R_1$, anchor: "south", distance: 5pt))
-      line((-0.2, 1.6), (-0.2, 2.1), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((-0.6, 1.85), $I''_1$)
-      bezier((-0.35, 3.5), (-0.35, 2.3), (-0.65, 2.9), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((-0.9, 2.9), $V''_1$)
-
-      // Ramo 3
-      wire((3.5, 0), (3.5, 1.2))
-      resistor("r3", (3.5, 1.2), (3.5, 2.8))
-      wire((3.5, 2.8), (3.5, 3.8))
-      line((3.7, 3.6), (3.7, 3.0), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((4.15, 3.3), $I''_3$)
-      bezier((3.15, 0.3), (3.15, 3.5), (2.9, 1.9), mark: (end: "stealth", fill: black, scale: 0.7))
-      content((2.85, 3.0), $V''_3$)
-
-      // Ramo 2 (E2 attivo)
-      vsource("e2", (7, 0), (7, 1.8))
-      content((7.75, 0.8), $E_2$)
-      content((6.6, 1.5), sans("+", weight: "bold"))
-      wire((7, 1.8), (7, 2.2))
-      resistor("r2", (7, 2.2), (7, 3.8), label: (content: $R_2$, anchor: "south", distance: 5pt))
-      line((7.2, 1.6), (7.2, 2.1), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((7.65, 1.85), $I''_2$)
-      bezier((6.65, 3.5), (6.65, 2.3), (6.35, 2.9), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((6.0, 2.9), $V''_2$)
-
-      wire((0, 3.8), (7, 3.8))
-      wire((0, 0), (7, 0))
-
-      rect((0.9, 0.35), (2.5, 2.4), radius: 0.35, stroke: (dash: "densely-dashed", thickness: 0.5pt))
-      line((1.5, 2.4), (1.7, 2.4), mark: (end: "stealth", fill: black, scale: 0.5))
-      content((1.7, 1.35), sans("MAGLIA 1", size: 7pt))
-
-      rect((4.2, 0.35), (5.8, 2.4), radius: 0.35, stroke: (dash: "densely-dashed", thickness: 0.5pt))
-      line((4.8, 2.4), (5.0, 2.4), mark: (end: "stealth", fill: black, scale: 0.5))
-      content((5.0, 1.35), sans("MAGLIA 2", size: 7pt))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig11.typ"
   ]
 )
 
@@ -709,56 +344,7 @@ Con il solo generatore $E_1$ attivo, i resistori $R_2$ ed $R_3$ risultano connes
 $ R_p = R_2 parallel R_3 = (R_2 dot R_3) / (R_2 + R_3) $
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-    scale(0.85)
-
-    // Schema 1: E1 attivo, R1, R3, R2
-    node("A1", (2.0, 3.2), label: (content: sans("A", size: 10pt), anchor: "north", distance: 4pt))
-    node("B1", (2.0, 0), label: (content: sans("B", size: 10pt), anchor: "south", distance: 4pt))
-    vsource("e1a", (0, 0), (0, 1.6))
-    content((-0.8, 0.8), $E_1$)
-    content((0.35, 1.35), sans("+", weight: "bold"))
-    resistor("r1a", (0, 1.6), (0, 3.2), label: (content: $R_1$, anchor: "west", distance: 4pt))
-    resistor("r3a", (2.0, 0), (2.0, 3.2), label: (content: $R_3 med thin$, anchor: "west", distance: 4pt))
-    resistor("r2a", (3.8, 0), (3.8, 3.2), label: (content: $R_2$, anchor: "west", distance: 4pt))
-    wire((0, 3.2), (3.8, 3.2))
-    wire((0, 0), (3.8, 0))
-    line((1.65, 0.3), (1.65, 2.9), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((1.4, 3.65), $V_3^((E_1))$)
-
-    // Schema 2: Riduzione a Rp
-    node("A2", (7.8, 3.2), label: (content: sans("A", size: 10pt), anchor: "north", distance: 4pt))
-    node("B2", (7.8, 0), label: (content: sans("B", size: 10pt), anchor: "south", distance: 4pt))
-    vsource("e1b", (5.8, 0), (5.8, 1.6))
-    content((5, 0.8), $E_1$)
-    content((6.15, 1.35), sans("+", weight: "bold"))
-    resistor("r1b", (5.8, 1.6), (5.8, 3.2), label: (content: $R_1$, anchor: "west", distance: 4pt))
-    resistor("rpb", (7.8, 0.8), (7.8, 3.2), label: (content: $R_p$, anchor: "south", distance: 5pt))
-    wire((7.8, 0), (7.8, 0.8))
-    line((7.8, 1.1), (7.8, 0.5), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((8.3, 0.7), $I_p$)
-    wire((5.8, 3.2), (7.8, 3.2))
-    wire((5.8, 0), (7.8, 0))
-    line((7.4, 0.3), (7.4, 2.9), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((7.15, 3.65), $V_3^((E_1))$)
-
-    // Schema 3: Riduzione serie Rs = R1 + Rp
-    node("A3", (10.5, 3.2))
-    node("B3", (12.8, 0))
-    vsource("e1c", (10.5, 0), (10.5, 1.8))
-    content((9.7, 0.9), $E_1$)
-    content((10.85, 1.5), sans("+", weight: "bold"))
-    wire((10.5, 1.8), (10.5, 3.2))
-    resistor("rsc", (10.5, 3.2), (12.8, 3.2), label: (content: $R_s$, anchor: "north", distance: 5pt))
-    wire((12.8, 3.2), (12.8, 0))
-    wire((10.5, 0), (12.8, 0))
-    line((12.8, 2.3), (12.8, 1.6), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((13.35, 1.95), $I_p$)
-    bezier((12.2, 2.85), (11.1, 2.85), (11.65, 2.65), mark: (end: "stealth", fill: black, scale: 0.6))
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig12.typ"
 ]
 
 La tensione cercata $V_3^((E_1))$ coincide con la caduta di tensione su $R_p$, ossia $V_3^((E_1)) = R_p I_p$. Riducendo ulteriormente in serie $R_1$ ed $R_p$ nella resistenza $R_s = R_1 + R_p$ e applicando la legge di Kirchhoff delle tensioni (LKT) all'unica maglia rimasta, si ricava:
@@ -771,44 +357,7 @@ Con il solo generatore $E_2$ attivo ($E_1$ sostituito da un corto circuito), i r
 $ R_(p 2) = R_1 parallel R_3 = (R_1 dot R_3) / (R_1 + R_3) $
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-    scale(0.85)
-
-    // Schema 1: E1 passivato, R1, R3, R2, E2
-    node("A1", (2.0, 3.2), label: (content: sans("A", size: 10pt), anchor: "north", distance: 4pt))
-    node("B1", (2.0, 0), label: (content: sans("B", size: 10pt), anchor: "south", distance: 4pt))
-    resistor("r1a", (0, 0), (0, 3.2), label: (content: $R_1$, anchor: "north", distance: 4pt))
-    resistor("r3a", (2.0, 0), (2.0, 3.2), label: (content: $R_3$, anchor: "south", distance: 4pt))
-    vsource("e2a", (4.0, 0), (4.0, 1.6))
-    content((4.8, 0.8), $E_2$)
-    content((4.4, 1.35), sans("+", weight: "bold"))
-    resistor("r2a", (4.0, 1.6), (4.0, 3.2), label: (content: $R_2$, anchor: "south", distance: 4pt))
-    wire((0, 3.2), (4.0, 3.2))
-    wire((0, 0), (4.0, 0))
-    line((1.65, 0.3), (1.65, 2.9), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((1.4, 3.65), $V_3^((E_2))$)
-
-    // Schema 2: Rp2 in serie con R2 ed E2
-    node("A2", (7.0, 3.2), label: (content: sans("A", size: 10pt), anchor: "north", distance: 4pt))
-    node("B2", (7.0, 0), label: (content: sans("B", size: 10pt), anchor: "south", distance: 4pt))
-    resistor("rp2", (7.0, 1.0), (7.0, 3.2), label: (content: $R_(p 2)$, anchor: "north", distance: 10pt))
-    wire((7.0, 0), (7.0, 1.0))
-    line((7.0, 1.2), (7.0, 0.6), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((7.55, 0.85), $I_(p 2)$)
-    line((6.6, 0.3), (6.6, 2.9), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((6.5, 3.65), $V_3^((E_2))$)
-
-    vsource("e2b", (9.2, 0), (9.2, 1.6))
-    content((10.1, 0.8), $E_2$)
-    content((9.55, 1.35), sans("+", weight: "bold"))
-    line((9.7, 0.3), (9.7, 1.4), mark: (end: "stealth", fill: black, scale: 0.6))
-    resistor("r2b", (9.2, 1.6), (9.2, 3.2), label: (content: $R_2$, anchor: "north", distance: 4pt))
-    wire((7.0, 3.2), (9.2, 3.2))
-    wire((7.0, 0), (9.2, 0))
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig13.typ"
 ]
 
 Applicando direttamente il partitore di tensione, si ottiene il secondo contributo:
@@ -848,48 +397,7 @@ Il teorema di Thevenin estende la nozione di equivalenza circuitale a una generi
 - *Carico:* non viene fatta *nessuna ipotesi* sulla natura del carico collegato ai morsetti $A B$ (può essere anche non lineare).
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-
-    // Blocco Rete Lineare a sinistra
-    rect((0, 0), (2.6, 2.4), fill: luma(238), stroke: 0.8pt + black)
-    content((1.3, 1.2), align(center)[#sans("Rete", size: 11pt) \ #sans("Lineare", size: 11pt)])
-
-    wire((2.6, 2.0), (4.0, 2.0))
-    wire((2.6, 0.4), (4.0, 0.4))
-    node("A1", (3.3, 2.0), label: (content: sans("A", size: 11pt), anchor: "south", distance: 3pt))
-    node("B1", (3.3, 0.4), label: (content: sans("B", size: 11pt), anchor: "south", distance: 3pt))
-
-    // Carico
-    wire((4.0, 2.0), (4.0, 1.6))
-    wire((4.0, 0.4), (4.0, 0.8))
-    rect((3.82, 0.8), (4.18, 1.6), fill: luma(238), stroke: 0.8pt + black)
-
-    // Freccia rossa di equivalenza
-    line((5.0, 1.2), (6.1, 1.2), stroke: 5pt + red, mark: (end: "triangle", fill: red, scale: 0.7))
-
-    // Circuito Equivalente di Thevenin a destra
-    vsource("eth", (7.4, 0.2), (7.4, 1.6), variant: "iec")
-    content((7.1, 1.55), sans("+", size: 10pt, weight: "bold"))
-    content((6.55, 0.9), $E_"eq"$)
-    content((6.55, 1.65), text(fill: red.darken(10%), weight: "bold")[$E_"TH"$])
-
-    wire((7.4, 1.6), (7.4, 2.0))
-    wire((7.4, 0.2), (10.8, 0.2))
-    resistor("rth", (7.4, 2.0), (9.6, 2.0), variant: "ieee")
-    content((8.5, 2.45), $R_"eq"$)
-    content((8.5, 3.0), text(fill: red.darken(10%), weight: "bold")[$R_"TH"$])
-
-    wire((9.6, 2.0), (10.8, 2.0))
-    node("A2", (10.1, 2.0), label: (content: sans("A", size: 11pt), anchor: "south", distance: 3pt))
-    node("B2", (10.1, 0.2), label: (content: sans("B", size: 11pt), anchor: "south", distance: 3pt))
-
-    // Carico a destra
-    wire((10.8, 2.0), (10.8, 1.5))
-    wire((10.8, 0.2), (10.8, 0.7))
-    rect((10.62, 0.7), (10.98, 1.5), fill: luma(238), stroke: 0.8pt + black)
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig14.typ"
 ]
 
 === Determinazione Operativa dei Parametri $E_"TH"$ e $R_"TH"$
@@ -902,46 +410,14 @@ Il teorema di Thevenin fornisce le regole operative per calcolare i due parametr
   [
     *Generatore equivalente $E_"eq" = E_"TH"$*
     #v(0.3em)
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      rect((0, 0), (2.6, 2.4), fill: luma(238), stroke: 0.8pt + black)
-      content((1.3, 1.2), align(center)[#sans("Rete", size: 11pt) \ #sans("Lineare", size: 11pt)])
-
-      wire((2.6, 2.0), (3.4, 2.0))
-      wire((2.6, 0.4), (3.4, 0.4))
-      circle((3.45, 2.0), radius: 0.06, fill: white, stroke: 0.8pt + black)
-      circle((3.45, 0.4), radius: 0.06, fill: white, stroke: 0.8pt + black)
-      content((3.4, 2.3), sans("A", size: 11pt))
-      content((3.4, 0.7), sans("B", size: 11pt))
-
-      bezier((3.8, 0.45), (3.8, 1.95), (4.1, 1.2), mark: (end: "stealth", fill: black, scale: 0.7))
-      content((4.5, 1.2), $E_"eq"$)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig15.typ"
     #v(0.2em)
     #align(left)[Il valore del generatore ideale di tensione $E_"eq"$ ($E_"TH"$) è pari alla tensione a vuoto misurata ai morsetti $A B$ lasciati *aperti*.]
   ],
   [
     *Resistore equivalente $R_"eq" = R_"TH"$*
     #v(0.3em)
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      rect((0, 0), (2.6, 2.4), fill: luma(238), stroke: 0.8pt + black)
-      content((1.3, 1.2), align(center)[#sans("Rete", size: 11pt) \ #sans("Lineare", size: 11pt) \ #sans("Passivata", size: 11pt)])
-
-      wire((2.6, 2.0), (3.4, 2.0))
-      wire((2.6, 0.4), (3.4, 0.4))
-      circle((3.45, 2.0), radius: 0.06, fill: white, stroke: 0.8pt + black)
-      circle((3.45, 0.4), radius: 0.06, fill: white, stroke: 0.8pt + black)
-      content((3.4, 2.3), sans("A", size: 11pt))
-      content((3.4, 0.7), sans("B", size: 11pt))
-
-      line((4.2, 1.2), (3.6, 1.2), mark: (end: "stealth", fill: black, scale: 0.7))
-      content((5.1, 1.2), $R_"eq" = R_"TH"$)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig16.typ"
     #v(0.2em)
     #align(left)[La resistenza equivalente $R_"eq"$ ($R_"TH"$) è la resistenza vista dai morsetti $A B$ della rete lineare in cui *tutti i generatori indipendenti sono stati passivati*.]
   ]
@@ -951,49 +427,7 @@ Il teorema di Thevenin fornisce le regole operative per calcolare i due parametr
 Riprendendo la rete binodale precedente, si voglia determinare l'equivalente di Thevenin visto dai morsetti $A$ e $B$ a cui è collegato il resistore di carico $R_3$. Si scollega anzitutto il ramo di carico $R_3$ evidenziando i terminali aperti $A$ e $B$:
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-    scale(0.85)
-
-    // Circuito completo
-    vsource("e1a", (0, 0), (0, 1.5))
-    content((-0.6, 0.8), $E_1quad $)
-    content((0.35, 1.3), sans("+", weight: "bold"))
-    resistor("r1a", (0, 1.5), (0, 3.0), label: (content: $R_1$, anchor: "east", distance: 5pt))
-    resistor("r3a", (2.0, 0), (2.0, 3.0), label: (content: $R_3$, anchor: "south", distance: 4pt))
-    vsource("e2a", (4.0, 0), (4.0, 1.5))
-    content((4.65, 0.8), $quad E_2$)
-    content((4.35, 1.3), sans("+", weight: "bold"))
-    resistor("r2a", (4.0, 1.5), (4.0, 3.0), label: (content: $R_2$, anchor: "south", distance: 5pt))
-    wire((0, 3.0), (4.0, 3.0))
-    wire((0, 0), (4.0, 0))
-    content((2.0, 3.35), sans("A", size: 10pt))
-    content((2.0, -0.35), sans("B", size: 10pt))
-    line((1.65, 0.3), (1.65, 2.7), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((1.2, 1.8), $V_3$)
-
-    // Circuito senza R3 (morsetti A-B aperti)
-    vsource("e1b", (7.0, 0), (7.0, 1.5))
-    content((6.4, 0.8), $E_1quad $)
-    content((7.35, 1.3), sans("+", weight: "bold"))
-    resistor("r1b", (7.0, 1.5), (7.0, 3.0), label: (content: $R_1$, anchor: "east", distance: 5pt))
-    vsource("e2b", (11.0, 0), (11.0, 1.5))
-    content((11.65, 0.8), $quad E_2$)
-    content((11.35, 1.3), sans("+", weight: "bold"))
-    resistor("r2b", (11.0, 1.5), (11.0, 3.0), label: (content: $R_2$, anchor: "south", distance: 5pt))
-    wire((7.0, 3.0), (11.0, 3.0))
-    wire((7.0, 0), (11.0, 0))
-
-    wire((9.0, 3.0), (9.0, 2.3))
-    circle((9.0, 2.23), radius: 0.07, fill: white, stroke: 0.8pt + black)
-    content((9.35, 2.23), sans("A", size: 10pt))
-
-    wire((9.0, 0), (9.0, 0.7))
-    circle((9.0, 0.77), radius: 0.07, fill: white, stroke: 0.8pt + black)
-    content((9.35, 0.77), sans("B", size: 10pt))
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig17.typ"
 ]
 
 1. *Calcolo di $R_"TH"$ (passivando $E_1$ ed $E_2$):*
@@ -1010,85 +444,15 @@ Riprendendo la rete binodale precedente, si voglia determinare l'equivalente di 
   align: center + horizon,
   [
     *Rete passivata ($R_"TH"$)*
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-      scale(0.75)
-
-      resistor("r1", (0, 0), (0, 3.0), label: (content: $R_1$, anchor: "east", distance: 4pt))
-      resistor("r2", (4.0, 0), (4.0, 3.0), label: (content: $R_2$, anchor: "south", distance: 4pt))
-      wire((0, 3.0), (4.0, 3.0))
-      wire((0, 0), (4.0, 0))
-
-      wire((2.0, 3.0), (2.0, 2.3))
-      wire((2.0, 0), (2.0, 0.7))
-      vsource("vp", (2.0, 0.7), (2.0, 2.3), stroke: red.darken(10%))
-      line((2.0, 2.0), (2.0, 2.3), stroke: red.darken(10%), mark: (end: "stealth", fill: red.darken(10%), scale: 0.6))
-      content((2.6, 1.5), text(fill: red.darken(10%))[+$V$])
-      content((2.6, 2.1), text(fill: red.darken(10%))[$I$])
-      content((2.35, 2.55), sans("A", size: 9pt))
-      content((2.35, 0.45), sans("B", size: 9pt))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig18.typ"
   ],
   [
     *Rete attiva a vuoto ($V_(A B)$)*
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-      scale(0.75)
-
-      vsource("e1", (0, 0), (0, 1.5))
-      content((-0.55, 0.75), $E_1quad $)
-      content((0.3, 1.3), sans("+", size: 9pt, weight: "bold"))
-      resistor("r1", (0, 1.5), (0, 3.0), label: (content: $R_1$, anchor: "east", distance: 4pt))
-
-      vsource("e2", (4.0, 0), (4.0, 1.5))
-      content((4.6, 0.75), $quad E_2$)
-      content((4.3, 1.3), sans("+", size: 9pt, weight: "bold"))
-      resistor("r2", (4.0, 1.5), (4.0, 3.0), label: (content: $R_2$, anchor: "south", distance: 4pt))
-
-      wire((0, 3.0), (4.0, 3.0))
-      wire((0, 0), (4.0, 0))
-      wire((2.0, 3.0), (2.0, 2.4))
-      circle((2.0, 2.33), radius: 0.07, fill: white, stroke: 0.8pt + black)
-      content((2.35, 2.33), sans("A", size: 9pt))
-      wire((2.0, 0), (2.0, 0.6))
-      circle((2.0, 0.67), radius: 0.07, fill: white, stroke: 0.8pt + black)
-      content((2.35, 0.67), sans("B", size: 9pt))
-
-      line((1.9, 0.85), (1.9, 2.15), stroke: red.darken(10%), mark: (end: "stealth", fill: red.darken(10%), scale: 0.7))
-      content((2.5, 1.5), text(fill: red.darken(10%))[$V_(A B)$])
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig19.typ"
   ],
   [
     *LKT a vuoto ($E_"TH" = V_(A B)$)*
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-      scale(0.75)
-
-      vsource("eth", (0, 0), (0, 2.2))
-      content((0.35, 1.8), sans("+", size: 9pt, weight: "bold"))
-      line((-0.45, 0.4), (-0.45, 1.8), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((-1.0, 1.1), $E_"TH" quad$)
-      wire((0, 2.2), (0, 3.0))
-      resistor("rth", (0, 3.0), (2.4, 3.0), label: (content: $R_"TH"$, anchor: "north", distance: 5pt))
-      wire((2.4, 3.0), (3.2, 3.0))
-      line((2.4, 3.0), (2.8, 3.0), mark: (end: "stealth", fill: black, scale: 0.6))
-      content((2.6, 3.45), $I = 0$)
-
-      circle((3.27, 3.0), radius: 0.07, fill: white, stroke: 0.8pt + black)
-      content((3.6, 3.2), sans("A", size: 9pt))
-      wire((0, 0), (3.2, 0))
-      circle((3.27, 0), radius: 0.07, fill: white, stroke: 0.8pt + black)
-      content((3.6, -0.2), sans("B", size: 9pt))
-
-      line((3.27, 0.25), (3.27, 2.75), mark: (end: "stealth", fill: black, scale: 0.7))
-      content((3.95, 1.5), $V_(A B)$)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig20.typ"
   ]
 )
 
@@ -1103,49 +467,7 @@ In modo duale a quanto visto per il teorema di Thevenin, anche il teorema di Nor
 La rete lineare viene sostituita dal parallelo tra un generatore ideale di corrente $A_"eq" = A_"NOR"$ e un resistore equivalente $R_"eq" = R_"NOR"$.
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-
-    // Blocco Rete Lineare a sinistra
-    rect((0, 0.2), (2.6, 2.6), fill: luma(238), stroke: 0.8pt + black)
-    content((1.3, 1.4), align(center)[#sans("Rete", size: 11pt) \ #sans("Lineare", size: 11pt)])
-
-    wire((2.6, 2.2), (4.0, 2.2))
-    wire((2.6, 0.6), (4.0, 0.6))
-    node("A1", (3.3, 2.2), label: (content: sans("A", size: 11pt), anchor: "south", distance: 3pt))
-    node("B1", (3.3, 0.6), label: (content: sans("B", size: 11pt), anchor: "south", distance: 3pt))
-
-    wire((4.0, 2.2), (4.0, 1.8))
-    wire((4.0, 0.6), (4.0, 1.0))
-    rect((3.82, 1.0), (4.18, 1.8), fill: luma(238), stroke: 0.8pt + black)
-
-    // Freccia rossa
-    line((4.9, 1.4), (6.0, 1.4), stroke: 5pt + red, mark: (end: "triangle", fill: red, scale: 0.7))
-
-    // Circuito Equivalente di Norton a destra
-    isource("anor", (7.2, 0), (7.2, 2.4), variant: "iec")
-    wire((7.2, 2.4), (7.2, 2.8))
-    line((7.2, 2.1), (7.2, 2.55), mark: (end: "stealth", fill: black, scale: 0.7))
-    content((6.65, 2.3), $A_"NOR"$)
-
-
-    resistor("rnor", (8.8, 0), (8.8, 2.8), variant: "ieee")
-    content((9.45, 1.2), $R_"NOR"$)
-
-
-    wire((7.2, 2.8), (11.2, 2.8))
-    wire((7.2, 0), (11.2, 0))
-    circle((9.8, 2.8), radius: 0.06, fill: white, stroke: 0.8pt + black)
-    circle((9.8, 0), radius: 0.06, fill: white, stroke: 0.8pt + black)
-    content((10.0, 3.15), sans("A", size: 11pt))
-    content((10.0, -0.35), sans("B", size: 11pt))
-
-    // Carico a destra
-    wire((11.2, 2.8), (11.2, 1.8))
-    wire((11.2, 0), (11.2, 1.0))
-    rect((11.02, 1.0), (11.38, 1.8), fill: luma(238), stroke: 0.8pt + black)
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig21.typ"
 ]
 
 === Determinazione Operativa dei Parametri $A_"NOR"$ e $R_"NOR"$
@@ -1157,47 +479,14 @@ La rete lineare viene sostituita dal parallelo tra un generatore ideale di corre
   [
     *Generatore equivalente $A_"eq" = A_"NOR"$*
     #v(0.3em)
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      rect((0, 0), (2.6, 2.4), fill: luma(238), stroke: 0.8pt + black)
-      content((1.3, 1.2), align(center)[#sans("Rete", size: 11pt) \ #sans("Lineare", size: 11pt)])
-
-      wire((2.6, 2.0), (4.0, 2.0))
-      wire((2.6, 0.4), (4.0, 0.4))
-      wire((4.0, 2.0), (4.0, 0.4))
-      circle((3.3, 2.0), radius: 0.06, fill: white, stroke: 0.8pt + black)
-      circle((3.3, 0.4), radius: 0.06, fill: white, stroke: 0.8pt + black)
-      content((3.3, 2.3), sans("A", size: 11pt))
-      content((3.3, 0.7), sans("B", size: 11pt))
-
-      line((4.0, 1.4), (4.0, 1.0), mark: (end: "stealth", fill: black, scale: 0.7))
-      content((4.95, 1.2), $quad A_"eq" = A_"NOR"$)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig22.typ"
     #v(0.2em)
     #align(left)[Il valore del generatore ideale di corrente $A_"eq"$ ($A_"NOR"$) è pari alla corrente di corto circuito misurata ponendo i morsetti $A B$ in *corto circuito*.]
   ],
   [
     *Resistore equivalente $R_"eq" = R_"NOR" equiv R_"TH"$*
     #v(0.3em)
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-
-      rect((0, 0), (2.6, 2.4), fill: luma(238), stroke: 0.8pt + black)
-      content((1.3, 1.2), align(center)[#sans("Rete", size: 11pt) \ #sans("Lineare", size: 11pt) \ #sans("Passivata", size: 11pt)])
-
-      wire((2.6, 2.0), (3.4, 2.0))
-      wire((2.6, 0.4), (3.4, 0.4))
-      circle((3.45, 2.0), radius: 0.06, fill: white, stroke: 0.8pt + black)
-      circle((3.45, 0.4), radius: 0.06, fill: white, stroke: 0.8pt + black)
-      content((3.4, 2.3), sans("A", size: 11pt))
-      content((3.4, 0.7), sans("B", size: 11pt))
-
-      content((5.35, 1.2), $<==R_"eq" = R_"NOR" equiv R_"TH"$)
-      
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig23.typ"
     #v(0.2em)
     #align(left)[La resistenza equivalente $R_"NOR"$ coincide esattamente con la resistenza di Thevenin ($R_"NOR" equiv R_"TH"$), ed è misurata ai morsetti $A B$ della rete lineare con tutti i generatori *passivati*.]
   ]
@@ -1237,66 +526,7 @@ Nell'ambito dei teoremi di rete (accanto al principio di sovrapposizione degli e
 Consideriamo la rete binodale riportata in figura, composta da quattro rami collegati in parallelo tra il nodo superiore $A$ e il nodo inferiore $B$:
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"), isource: (variant: "iec"))
-
-    // Conduttori orizzontali principali (Nodo A in alto, Nodo B in basso)
-    wire((0, 4.8), (9.2, 4.8))
-    wire((0, 0), (9.2, 0))
-
-    // Ramo 1: Generatore di tensione E1 e resistore R1
-    vsource("e1", (0, 0), (0, 2.2), label: (content: $E_1$, anchor: "east", distance: 11pt))
-    content((-0.35, 1.85), sans("+", size: 12pt, weight: "bold"))
-    resistor("r1", (0, 2.2), (0, 4.2), label: (content: $R_1$, anchor: "east", distance: 6pt))
-    wire((0, 4.2), (0, 4.8))
-    // Freccia corrente I1
-    line((-0.2, 4.0), (-0.2, 4.7), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((-0.55, 4.35), $I_1$)
-    // Arco tensione su R1
-    bezier((0.35, 3.8), (0.35, 2.5), (0.7, 3.15), stroke: 0.6pt, mark: (end: "stealth", fill: black, scale: 0.7))
-
-    // Ramo 2: Generatore di tensione E2 e resistore R2
-    node("nB2", (2.5, 0))
-    node("nA2", (2.5, 4.8))
-    vsource("e2", (2.5, 0), (2.5, 2.2), label: (content: $E_2$, anchor: "east", distance: 11pt))
-    content((2.15, 0.25), sans("+", size: 12pt, weight: "bold"))
-    resistor("r2", (2.5, 2.2), (2.5, 4.2), label: (content: $R_2$, anchor: "east", distance: 6pt))
-    wire((2.5, 4.2), (2.5, 4.8))
-    // Freccia corrente I2
-    line((2.3, 4.7), (2.3, 4.0), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((1.95, 4.35), $I_2$)
-    // Arco tensione su R2
-    bezier((2.85, 2.5), (2.85, 3.8), (3.2, 3.15), stroke: 0.6pt, mark: (end: "stealth", fill: black, scale: 0.7))
-
-    // Ramo 3: Generatore di corrente A3 e resistore R3
-    node("nB3", (5.0, 0))
-    node("nA3", (5.0, 4.8))
-    isource("a3", (5.0, 0), (5.0, 2.2), label: (content: $A_3$, anchor: "east", distance: 11pt))
-    line((5.0, 1.8), (5.0, 2.15), mark: (end: "stealth", fill: black, scale: 0.9))
-    resistor("r3", (5.0, 2.2), (5.0, 4.2), label: (content: $R_3$, anchor: "east", distance: 6pt))
-    wire((5.0, 4.2), (5.0, 4.8))
-
-    // Ramo 4: Resistore R4
-    node("nB4", (7.5, 0))
-    node("nA4", (7.5, 4.8))
-    wire((7.5, 0), (7.5, 1.2))
-    resistor("r4", (7.5, 1.2), (7.5, 3.6), label: (content: $R_4$, anchor: "south", distance: 5pt))
-    wire((7.5, 3.6), (7.5, 4.8))
-    // Freccia corrente I4
-    line((7.3, 4.7), (7.3, 4.0), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((6.95, 4.35), $I_4$)
-    // Arco tensione su R4
-    bezier((7.1, 1.7), (7.1, 3.0), (6.75, 2.35), stroke: 0.6pt, mark: (end: "stealth", fill: black, scale: 0.7))
-
-    // Morsetti A e B e tensione V_AB
-    node("A", (9.2, 4.8), label: (content: sans("A", size: 13pt), anchor: "south", distance: 5pt))
-    node("B", (9.2, 0), label: (content: sans("B", size: 13pt), anchor: "south", distance: 5pt))
-    bezier((9.5, 0.3), (9.5, 4.5), (10.1, 2.4), stroke: 0.7pt, mark: (end: "stealth", fill: black, scale: 0.9))
-    content((10.5, 3.6), $V_(A B)$)
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig24.typ"
 ]
 
 Esprimiamo la corrente di ciascun ramo in funzione della tensione $V_(A B)$ applicando la legge di Kirchhoff delle tensioni (LKT) a ogni singolo ramo:
@@ -1315,65 +545,7 @@ Esprimiamo la corrente di ciascun ramo in funzione della tensione $V_(A B)$ appl
 Per visualizzare chiaramente i versi delle tensioni e delle correnti prima di applicare la legge di Kirchhoff delle correnti (LKC) al nodo superiore $A$ (evidenziato in verde), scomponiamo la rete nei suoi quattro rami elementari:
 
 #align(center)[
-  #zap.circuit({
-    
-    import zap.cetz.draw: *
-
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"), isource: (variant: "iec"))
-
-    wire((0, 4.8), (9.2, 4.8))
-    wire((0, 0), (9.2, 0))
-
-    // Ellisse verde attorno al nodo A (supernodo per LKC)
-    bezier((-0.6, 4.8), (8.4, 4.8), (3.9, 5.7), stroke: (paint: rgb("#1b5e20"), thickness: 2pt))
-    bezier((-0.6, 4.8), (8.4, 4.8), (3.9, 4.1), stroke: (paint: rgb("#1b5e20"), thickness: 2pt))
-
-    // Ramo 1 con freccia blu su E1
-    vsource("e1", (0, 0), (0, 2.2), label: (content: $E_1$, anchor: "east", distance: 6pt))
-    content((-0.35, 1.85), sans("+", size: 12pt, weight: "bold"))
-    line((-1.1, 0.3), (-1.1, 2.0), stroke: (paint: blue, thickness: 1.5pt), mark: (end: "stealth", fill: blue))
-    resistor("r1", (0, 2.2), (0, 4.2), label: (content: $R_1$, anchor: "east", distance: 6pt))
-    wire((0, 4.2), (0, 4.8))
-    line((-0.2, 4.0), (-0.2, 4.7), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((-0.55, 4.35), $I_1$)
-    bezier((0.35, 3.8), (0.35, 2.5), (0.7, 3.15), stroke: 0.6pt, mark: (end: "stealth", fill: black, scale: 0.7))
-
-    // Ramo 2 con freccia blu su E2
-    node("nB2", (2.5, 0))
-    node("nA2", (2.5, 4.8))
-    vsource("e2", (2.5, 0), (2.5, 2.2), label: (content: $E_2$, anchor: "east", distance: 6pt))
-    content((2.15, 0.25), sans("+", size: 12pt, weight: "bold"))
-    line((3.1, 2.0), (3.1, 0.3), stroke: (paint: blue, thickness: 1.5pt), mark: (end: "stealth", fill: blue))
-    resistor("r2", (2.5, 2.2), (2.5, 4.2), label: (content: $R_2$, anchor: "east", distance: 6pt))
-    wire((2.5, 4.2), (2.5, 4.8))
-    line((2.3, 4.7), (2.3, 4.0), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((1.95, 4.35), $I_2$)
-    bezier((2.85, 2.5), (2.85, 3.8), (3.2, 3.15), stroke: 0.6pt, mark: (end: "stealth", fill: black, scale: 0.7))
-
-    // Ramo 3
-    node("nB3", (5.0, 0))
-    node("nA3", (5.0, 4.8))
-    isource("a3", (5.0, 0), (5.0, 2.2), label: (content: $A_3$, anchor: "east", distance: 6pt))
-    line((5.0, 1.8), (5.0, 2.15), mark: (end: "stealth", fill: black, scale: 0.9))
-    resistor("r3", (5.0, 2.2), (5.0, 4.2), label: (content: $R_3$, anchor: "east", distance: 6pt))
-    wire((5.0, 4.2), (5.0, 4.8))
-
-    // Ramo 4
-    node("nB4", (7.5, 0))
-    node("nA4", (7.5, 4.8))
-    wire((7.5, 0), (7.5, 1.2))
-    resistor("r4", (7.5, 1.2), (7.5, 3.6), label: (content: $R_4 med thin$, anchor: "west", distance: 6pt))
-    wire((7.5, 3.6), (7.5, 4.8))
-    line((7.3, 4.7), (7.3, 4.0), mark: (end: "stealth", fill: black, scale: 0.8))
-    content((6.95, 4.35), $I_4$)
-    bezier((7.1, 1.7), (7.1, 3.0), (6.75, 2.35), stroke: 0.6pt, mark: (end: "stealth", fill: black, scale: 0.7))
-
-    // Morsetti A e B
-    node("A", (9.2, 4.8), label: (content: sans("A", size: 13pt), anchor: "south", distance: 5pt))
-    node("B", (9.2, 0), label: (content: sans("B", size: 13pt), anchor: "south", distance: 5pt))
-    bezier((9.5, 0.3), (9.5, 4.5), (10.1, 2.4), stroke: 0.7pt, mark: (end: "stealth", fill: black, scale: 0.9))
-    content((10.5, 3.6), $V_(A B)$)
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig25.typ"
 ]
 
 #v(0.5em)
@@ -1385,83 +557,28 @@ Per visualizzare chiaramente i versi delle tensioni e delle correnti prima di ap
   align: (center + horizon, left + horizon),
 
   // Schema Ramo 1
-  zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-    vsource("e1", (0, 0), (0, 1.8), label: (content: $E_1$, anchor: "west", distance: 5pt))
-    content((-0.4, 1.5), sans("+", weight: "bold"))
-    resistor("r1", (0, 1.8), (0, 3.5), label: (content: $R_1$, anchor: "west", distance: 5pt))
-    wire((0, 3.5), (1.4, 3.5), n: "-o")
-    wire((0, 0), (1.4, 0), n: "-o")
-    content((1.4, 3.85), sans("A", weight: "bold"))
-    content((1.4, -0.35), sans("B", weight: "bold"))
-    // Frecce
-    line((-0.6, 0.3), (-0.6, 1.5), stroke: (paint: blue, thickness: 1.2pt), mark: (end: "stealth", fill: blue))
-    line((-0.6, 3.2), (-0.6, 2.1), stroke: (paint: blue, thickness: 1.2pt), mark: (end: "stealth", fill: blue))
-    line((0.2, 3.5), (0.9, 3.5), stroke: (paint: rgb("#1b5e20"), thickness: 1.5pt), mark: (end: "stealth", fill: rgb("#1b5e20")))
-    content((0.5, 3.9), text(fill: rgb("#1b5e20"), $I_1$))
-    bezier((1.6, 0.3), (1.6, 3.2), (1.9, 1.75), stroke: (paint: rgb("#1b5e20"), thickness: 1.2pt), mark: (end: "stealth", fill: rgb("#1b5e20")))
-    content((2.3, 2.5), text(fill: rgb("#1b5e20"), $V_(A B)$))
-    bezier((0.8, 2.2), (0.8, 1.4), (1.2, 1.8), stroke: (paint: orange, thickness: 1.2pt), mark: (end: "stealth", fill: orange))
-  }),
+  include "figs/Cap2_MEC_handouts_appunti-fig26.typ",
   [
     *Ramo 1*:
     $ E_1 - R_1 I_1 - V_(A B) = 0 quad arrow.r.double quad I_1 = (E_1 - V_(A B)) / R_1 $
   ],
 
   // Schema Ramo 2
-  zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-    vsource("e2", (0, 0), (0, 1.8), label: (content: $E_2$, anchor: "west", distance: 5pt))
-    content((0.4, 0.3), sans("+", weight: "bold"))
-    resistor("r2", (0, 1.8), (0, 3.5), label: (content: $R_2$, anchor: "east", distance: 5pt))
-    wire((0, 3.5), (1.4, 3.5), n: "-o")
-    wire((0, 0), (1.4, 0), n: "-o")
-    // Frecce
-    line((-0.8, 1.5), (-0.8, 0.3), stroke: (paint: blue, thickness: 1.2pt), mark: (end: "stealth", fill: blue))
-    line((-0.8, 2.1), (-0.8, 3.2), stroke: (paint: blue, thickness: 1.2pt), mark: (end: "stealth", fill: blue))
-    line((0.9, 3.5), (0.2, 3.5), stroke: (paint: rgb("#1b5e20"), thickness: 1.5pt), mark: (end: "stealth", fill: rgb("#1b5e20")))
-    content((0.5, 3.9), text(fill: rgb("#1b5e20"), $I_2$))
-    bezier((1.6, 0.3), (1.6, 3.2), (1.9, 1.75), stroke: (paint: rgb("#1b5e20"), thickness: 1.2pt), mark: (end: "stealth", fill: rgb("#1b5e20")))
-    content((2.3, 2.5), text(fill: rgb("#1b5e20"), $V_(A B)$))
-    bezier((0.8, 2.2), (0.8, 1.4), (1.2, 1.8), stroke: (paint: orange, thickness: 1.2pt), mark: (end: "stealth", fill: orange))
-  }),
+  include "figs/Cap2_MEC_handouts_appunti-fig27.typ",
   [
     *Ramo 2*:
     $ -E_2 + R_2 I_2 - V_(A B) = 0 quad arrow.r.double quad I_2 = (V_(A B) + E_2) / R_2 $
   ],
 
   // Schema Ramo 3
-  zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), isource: (variant: "iec"))
-    isource("a3", (0, 0), (0, 1.8), n: "o-")
-    line((0, 1.4), (0, 1.9), stroke: (paint: rgb("#1b5e20"), thickness: 1.5pt), mark: (end: "stealth", fill: rgb("#1b5e20")))
-    content((0.6, 1.65), text(fill: rgb("#1b5e20"), $A_3$))
-    resistor("r3", (0, 1.8), (0, 3.5), n: "-o")
-  }),
+  include "figs/Cap2_MEC_handouts_appunti-fig28.typ",
   [
     *Ramo 3*:
     La corrente del terzo ramo è fissata dal generatore ideale di corrente $A_3$ (indipendentemente da $R_3$).
   ],
 
   // Schema Ramo 4
-  zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"))
-    resistor("r4", (0, 0), (0, 3.2), n: "o-o", label: (content: $R_4$, anchor: "west", distance: 5pt))
-    content((0.4, 3.2), sans("A", weight: "bold"))
-    content((0.4, 0), sans("B", weight: "bold"))
-    line((0, 1.0), (0, 0.4), stroke: (paint: rgb("#1b5e20"), thickness: 1.5pt), mark: (end: "stealth", fill: rgb("#1b5e20")))
-    content((0.5, 0.7), text(fill: rgb("#1b5e20"), $I_4$))
-    bezier((1.1, 0.3), (1.1, 2.9), (1.4, 1.6), stroke: (paint: rgb("#1b5e20"), thickness: 1.2pt), mark: (end: "stealth", fill: rgb("#1b5e20")))
-    content((1.8, 2.2), text(fill: rgb("#1b5e20"), $V_(A B)$))
-  }),
+  include "figs/Cap2_MEC_handouts_appunti-fig29.typ",
   [
     *Ramo 4*:
     $ V_(A B) = R_4 I_4 quad arrow.r.double quad I_4 = V_(A B) / R_4 $
@@ -1505,37 +622,7 @@ Come esempio applicativo, determiniamo la tensione a vuoto $V_(A B)$ (tensione e
   columns: (1.2fr, 1.3fr),
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
-  zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-    // Fili orizzontali
-    wire((0, 3.8), (4.4, 3.8))
-    wire((0, 0), (4.4, 0))
-
-    // Ramo sinistro (E1, R1)
-    vsource("e1", (0, 0), (0, 2.0), label: (content: $E_1$, anchor: "east", distance: 6pt))
-    content((0.35, 1.75), sans("+", weight: "bold"))
-    line((0.6, 0.4), (0.6, 1.6), stroke: (paint: blue, thickness: 1.2pt), mark: (end: "stealth", fill: blue))
-    resistor("r1", (0, 2.0), (0, 3.8), label: (content: $R_1$, anchor: "east", distance: 6pt))
-
-    // Ramo destro (E2, R2)
-    vsource("e2", (4.4, 0), (4.4, 2.0), label: (content: $E_2 $, anchor: "west", distance: 6pt))
-    content((4.75, 1.75), sans("+", weight: "bold"))
-    line((3.8, 0.4), (3.8, 1.6), stroke: (paint: blue, thickness: 1.2pt), mark: (end: "stealth", fill: blue))
-    resistor("r2", (4.4, 2.0), (4.4, 3.8), label: (content: $R_2$, anchor: "west", distance: 6pt))
-
-    // Morsetti centrali A e B
-    wire((2.2, 3.8), (2.2, 3.0), n: "-o")
-    content((2.6, 3.0), sans("A", weight: "bold"))
-    wire((2.2, 0), (2.2, 0.8), n: "-o")
-    content((2.6, 0.8), sans("B", weight: "bold"))
-
-    // Freccia rossa V_AB
-    line((2.1, 1.1), (2.1, 2.7), stroke: (paint: red, thickness: 1.3pt), mark: (end: "stealth", fill: red))
-    content((2.7, 1.9), text(fill: red, $V_(A B)$))
-  }),
+  include "figs/Cap2_MEC_handouts_appunti-fig30.typ",
   [
     Poiché entrambi i generatori di tensione $E_1$ ed $E_2$ hanno polarità concorde con il verso scelto per $V_(A B)$ (diretto da $B$ verso $A$), applicando il corollario di Millman si ottiene:
 
@@ -1555,48 +642,8 @@ Collegando il generatore ai morsetti di destra $B$ e $D$ (con i morsetti $A$ e $
   columns: (1fr, 1fr),
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
-  zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-    // Morsetti A e C
-    wire((0, 2.8), (0.8, 2.8), n: "o-")
-    content((-0.35, 2.8), sans("A", weight: "bold"))
-    wire((0, 0), (0.8, 0), n: "o-")
-    content((-0.35, 0), sans("C", weight: "bold"))
-
-    // Maglia resistiva
-    resistor("r4", (0.8, 0), (0.8, 2.8), label: (content: $R_4$, anchor: "east", distance: 5pt))
-    resistor("r1", (0.8, 2.8), (3.2, 2.8), label: (content: $R_1$, anchor: "south", distance: 5pt))
-    resistor("r3", (0.8, 0), (3.2, 0), label: (content: $R_3$, anchor: "north", distance: 5pt))
-    resistor("r2", (3.2, 0), (3.2, 2.8), n: "*-*", label: (content: $R_2$, anchor: "west", distance: 5pt))
-
-    // Morsetti B e D
-    wire((3.2, 2.8), (4.0, 2.8), n: "-o")
-    content((4.0, 3.25), sans("B", weight: "bold"))
-    wire((3.2, 0), (4.0, 0), n: "-o")
-    content((4.0, -0.45), sans("D", weight: "bold"))
-
-    // Generatore di prova rosso tra B e D
-    set-style(zap: (stroke: (paint: red, thickness: 1pt)))
-    wire((4.0, 2.8), (5.2, 2.8))
-    wire((4.0, 0), (5.2, 0))
-    vsource("vp", (5.2, 0), (5.2, 2.8))
-    content((5.65, 2.1), text(fill: red, sans("+", size: 12pt, weight: "bold")))
-  }),
-  zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"))
-
-    wire((0, 0), (0, 2.8))
-    resistor("rs", (0, 2.8), (2.6, 2.8), label: (content: $R_S$, anchor: "north", distance: 5pt))
-    wire((0, 0), (2.6, 0))
-    resistor("r2", (2.6, 0), (2.6, 2.8), label: (content: $R_2$, anchor: "west", distance: 5pt))
-    wire((2.6, 2.8), (3.6, 2.8), n: "-o")
-    wire((2.6, 0), (3.6, 0), n: "-o")
-  })
+  include "figs/Cap2_MEC_handouts_appunti-fig31.typ",
+  include "figs/Cap2_MEC_handouts_appunti-fig32.typ"
 )
 
 La resistenza serie $R_S$ vale:
@@ -1613,65 +660,8 @@ Collegando invece il generatore ai morsetti di sinistra $A$ e $C$ (con i morsett
   columns: (1fr, 1fr),
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
-  zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-    // Generatore di prova rosso tra A e C
-     {
-      set-style(zap: (stroke: (paint: red, thickness: 1pt)))
-      wire((-1.2, 2.8), (0, 2.8))
-      wire((-1.2, 0), (0, 0))
-      vsource("vp", (-1.2, 0), (-1.2, 2.8))
-      content((-0.7, 2.0), text(fill: red, sans("+", size: 12pt, weight: "bold")))
-    }
-
-    // Morsetti A e C
-    wire((0, 2.8), (0.8, 2.8), n: "o-")
-    content((0, 3.25), sans("A", weight: "bold"))
-    wire((0, 0), (0.8, 0), n: "o-")
-    content((0, -0.45), sans("C", weight: "bold"))
-
-    // Maglia resistiva
-    resistor("r4", (0.8, 0), (0.8, 2.8), label: (content: $R_4$, anchor: "west", distance: 5pt))
-    resistor("r1", (0.8, 2.8), (3.2, 2.8), label: (content: $R_1$, anchor: "south", distance: 5pt))
-    resistor("r3", (0.8, 0), (3.2, 0), label: (content: $R_3$, anchor: "north", distance: 5pt))
-    resistor("r2", (3.2, 0), (3.2, 2.8), n: "*-*", label: (content: $R_2$, anchor: "west", distance: 5pt))
-
-    // Morsetti B e D aperti
-    wire((3.2, 2.8), (4.0, 2.8), n: "-o")
-    content((4.0, 3.25), sans("B", weight: "bold"))
-    wire((3.2, 0), (4.0, 0), n: "-o")
-    content((4.0, -0.45), sans("D", weight: "bold"))
-  }),
-  zap.circuit({
-    
-    import zap.cetz.draw: *
-    set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-    // Generatore di prova rosso tra A e C
-    {
-      set-style(zap: (stroke: (paint: red, thickness: 1pt)))
-      wire((-1.2, 2.8), (0, 2.8))
-      wire((-1.2, 0), (0, 0))
-      vsource("vp", (-1.2, 0), (-1.2, 2.8))
-      content((-0.7, 2.0), text(fill: red, sans("+", size: 12pt, weight: "bold")))
-    }
-
-    wire((0, 2.8), (0.8, 2.8), n: "o-")
-    content((0, 3.25), sans("A", weight: "bold"))
-    wire((0, 0), (0.8, 0), n: "o-")
-    content((0, -0.45), sans("C", weight: "bold"))
-
-    resistor("r4", (0.8, 0), (0.8, 2.8), label: (content: $R_4$, anchor: "west", distance: 5pt))
-    line((0.8, 1.1), (0.8, 0.5), stroke: (paint: blue, thickness: 1.2pt), mark: (end: "stealth", fill: blue))
-
-    resistor("rs1", (0.8, 2.8), (3.2, 2.8), label: (content: $R'_S$, anchor: "north", distance: 5pt))
-    wire((3.2, 2.8), (3.2, 0))
-    line((3.0, 1.7), (3.0, 0.9), stroke: (paint: blue, thickness: 1.2pt), mark: (end: "stealth", fill: blue))
-    wire((0.8, 0), (3.2, 0))
-  })
+  include "figs/Cap2_MEC_handouts_appunti-fig33.typ",
+  include "figs/Cap2_MEC_handouts_appunti-fig34.typ"
 )
 
 Ponendo:
@@ -1745,55 +735,7 @@ Teoricamente l'esponenziale $e^(- t / tau)$ si annulla solo per $t -> infinity$;
     )
   ],
   [
-    #canvas({
-      import draw: *
-      
-      // Griglia di sfondo leggera
-      for y in (0.6, 1.2, 1.8, 2.4) {
-        line((0, y), (6.5, y), stroke: (paint: luma(220), thickness: 0.5pt))
-      }
-      
-      // Assi cartesiani
-      line((0, 0), (6.8, 0), mark: (end: "stealth", fill: black), stroke: 0.8pt)
-      content((7.1, 0), $t$)
-      line((0, 0), (0, 3.1), mark: (end: "stealth", fill: black), stroke: 0.8pt)
-      content((0, 3.4), $x$)
-      
-      // Linee tratteggiate per x_0 e x_inf
-      line((0, 0.6), (1.2, 0.6), stroke: (dash: "dashed", thickness: 0.7pt))
-      content((-0.4, 0.6), $x_0$)
-      
-      line((0, 2.4), (6.5, 2.4), stroke: (dash: "dashed", thickness: 0.7pt))
-      content((-0.45, 2.4), $x_infinity$)
-      
-      // Etichette asse tempi (1 unità = 1 tau)
-      content((1.2, -0.3), $tau$)
-      content((2.4, -0.3), $2 tau$)
-      content((3.6, -0.3), $3 tau$)
-      content((4.8, -0.3), $4 tau$)
-      content((6.0, -0.3), $5 tau$)
-      
-      // Tratteggi verticali a 4 tau e 5 tau
-      line((4.8, 0), (4.8, 2.367), stroke: (dash: "dashed", thickness: 0.7pt))
-      content((4.4, 1.2), sans("98%", size: 9pt))
-      
-      line((6.0, 0), (6.0, 2.388), stroke: (dash: "dashed", thickness: 0.7pt))
-      content((6.45, 1.2), sans("99%", size: 9pt))
-      
-      // Curva esponenziale x(t) = x_0 + (x_inf - x_0)*(1 - e^(-t/tau))
-      let pts = ()
-      for i in range(0, 66) {
-        let t_val = i * 0.1
-        let tau_scale = 1.2
-        let y_val = 0.6 + (2.4 - 0.6) * (1.0 - calc.exp(-t_val / tau_scale))
-        pts.push((t_val, y_val))
-      }
-      line(..pts, stroke: (paint: red, thickness: 1.5pt))
-      
-      // Pallini sui punti a 4 tau e 5 tau
-      circle((4.8, 2.367), radius: 1.5pt, fill: black)
-      circle((6.0, 2.388), radius: 1.5pt, fill: black)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig35.typ"
   ]
 )
 
@@ -1813,51 +755,10 @@ Un ingresso variabile nel tempo a gradino può essere realizzato connettendo un 
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      
-      vsource("e", (0, 0), (0, 2.8), variant: "iec", label: (content: $E$, anchor: "north", distance: 6pt))
-      content((-0.25, 2.1), sans("+", weight: "bold"))
-      
-      wire((0, 2.8), (0.8, 2.8))
-      // interruttore che si chiude a t = 0
-      line((0.8, 2.8), (1.9, 3.2), stroke: 0.8pt)
-      bezier((1.2, 3.3), (1.4, 2.65), (1.35, 3.0), mark: (end: "stealth", fill: black), stroke: 0.6pt)
-      content((1.65, 2.25), $t = 0$)
-      
-      wire((1.9, 2.8), (2.7, 2.8))
-      wire((0, 0), (2.7, 0))
-      
-      node("P", (2.7, 2.8), fill: false, label: (content: sans("P"), anchor: "south", distance: 4pt))
-      node("Q", (2.7, 0), fill: false, label: (content: sans("Q"), anchor: "north", distance: 4pt))
-      
-      // Freccia di tensione tra Q e P
-      bezier((2.9, 0.2), (2.9, 2.6), (3.3, 1.4), mark: (end: "stealth", fill: black), stroke: 0.6pt)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig36.typ"
   ],
   [
-    #canvas({
-      import draw: *
-      
-      // Assi
-      line((-1.2, 0), (3.5, 0), mark: (end: "stealth", fill: black), stroke: 0.7pt)
-      content((3.4, -0.35), $t$)
-      line((0, -0.6), (0, 2.6), mark: (end: "stealth", fill: black), stroke: 0.7pt)
-      content((0.55, 2.5), $e(t)$)
-      
-      // Gradino di tensione e(t)
-      line((-1.0, 0), (0, 0), stroke: 1.3pt)
-      line((0, 1.5), (3.2, 1.5), stroke: 1.3pt)
-      content((-0.3, 1.5), $E$)
-      
-      // Indicazione istanti 0^- e 0^+
-      content((0, -0.45), $0$)
-      line((-0.7, -0.2), (-0.15, -0.2), mark: (end: "stealth", fill: black), stroke: 0.7pt)
-      content((-0.5, -0.5), $0^-$)
-      line((0.7, -0.2), (0.15, -0.2), mark: (end: "stealth", fill: black), stroke: 0.7pt)
-      content((0.5, -0.5), $0^+$)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig37.typ"
   ]
 )
 
@@ -1868,89 +769,7 @@ Consideriamo un circuito costituito da un resistore $R$ e da un condensatore $C$
 - L'obiettivo dell'analisi è determinare l'andamento nel tempo della tensione $v = v(t)$ ai morsetti del condensatore $C$.
 
 #align(center)[
-  #zap.circuit({
-    import zap: *
-    import zap.cetz.draw: *
-
-    set-style(resistor: (variant: "ieee"))
-
-    // Coordinate griglia spaziosa
-    let x1 = 0.0   // Ramo 1: Generatore A
-    let x2 = 2.8   // Ramo 2: Interruttore S
-    let x3 = 5.6   // Ramo 3: Resistore R
-    let x4 = 8.2   // Ramo 4: Condensatore C
-    let yB = 0.0   // Quota inferiore
-    let yA = 3.4   // Quota superiore
-
-    // --- Collegamenti orizzontali ---
-    wire((x1, yA), (x4, yA))
-    wire((x1, yB), (x4, yB))
-
-    // --- Nodi di giunzione ---
-    node("n1", (x2, yA))
-    content((x2, yA + 0.25), anchor: "south", sans("B", weight: "bold"))
-
-    node("n2", (x2, yB))
-    content((x2, yB - 0.25), anchor: "north", sans("C", weight: "bold"))
-
-    node("n3", (x3, yA))
-    node("n4", (x3, yB))
-
-    // --- Ramo 1: Generatore di corrente A ---
-    isource("a", (x1, yB), (x1, yA), variant: "iec")
-    content((rel: (-0.65, 0), to: "a.center"), anchor: "east", $A$)
-    // Freccia verso della corrente impressa sul ramo del generatore
-    line((x1, 2.55), (x1, 3.05), mark: (end: "stealth", fill: black, scale: 1.1))
-
-    // --- Ramo 2: Interruttore S che si apre a t = 0 ---
-    wire((x2, yA), (x2, 2.2))
-    // Contatto superiore e leva dell'interruttore
-    line((x2 - 0.08, 2.2), (x2 + 0.42, 2.2), stroke: 0.8pt)
-    line((x2, 1.15), (x2 + 0.35, 2.35), stroke: 0.8pt)
-    wire((x2, 1.15), (x2, yB))
-
-    // Freccia curva di apertura dell'interruttore a t = 0
-    bezier(
-      (x2 + 0.18, 1.95),
-      (x2 + 0.62, 1.45),
-      (x2 + 0.48, 1.82),
-      mark: (end: "stealth", fill: black),
-      stroke: 0.6pt
-    )
-    content((x2 - 0.3, 1.7), anchor: "east", $S$)
-    content((x2 + 0.65, 1.25), anchor: "west", $t = 0$)
-
-    // Corrente i_S
-    line((x2 + 0.22, 3.05), (x2 + 0.22, 2.45), mark: (end: "stealth", fill: black), stroke: 0.6pt)
-    content((x2 + 0.38, 2.75), anchor: "west", $i_S$)
-
-    // --- Ramo 3: Resistore R ---
-    resistor("r", (x3, yA), (x3, yB))
-    content((rel: (-0.45, 0), to: "r.center"), anchor: "east", $R$)
-
-    // Corrente i_R
-    line((x3 + 0.22, 3.05), (x3 + 0.22, 2.45), mark: (end: "stealth", fill: black), stroke: 0.6pt)
-    content((x3 + 0.38, 2.75), anchor: "west", $i_R$)
-
-    // --- Ramo 4: Condensatore C ---
-    capacitor("c", (x4, yA), (x4, yB))
-    // Etichetta C a sinistra per lasciare libero il lato destro per la tensione v
-    content((rel: (-0.5, 0), to: "c.center"), anchor: "east", $C$)
-
-    // Corrente i_C sul ramo orizzontale superiore
-    line((6.5, yA + 0.22), (7.3, yA + 0.22), mark: (end: "stealth", fill: black), stroke: 0.6pt)
-    content((6.9, yA + 0.38), anchor: "south", $i_C$)
-
-    // --- Freccia tensione v (a destra del condensatore) ---
-    bezier(
-      (x4 + 0.45, yB + 0.3),
-      (x4 + 0.45, yA - 0.3),
-      (x4 + 0.9, 1.7),
-      mark: (end: "stealth", fill: black),
-      stroke: 0.6pt
-    )
-    content((x4 + 0.85, 1.7), anchor: "west", $v$)
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig38.typ"
 ]
 
 Lo studio dell'evoluzione temporale si articola nell'analisi di due configurazioni circuitali distinte: una valida per $t < 0$ e una valida per $t > 0$ (esattamente in $t = 0$ lo stato del interruttore non è definito in quanto istante di commutazione).
@@ -1963,69 +782,14 @@ Lo studio dell'evoluzione temporale si articola nell'analisi di due configurazio
     *Configurazione per $t < 0$ (interruttore chiuso)*
     #v(0.5em)
     #scale(x: 85%, y: 85%, reflow: true)[
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-        set-style(resistor: (variant: "ieee"))
-        
-        isource("a", (0, 0), (0, 3), variant: "iec", label: (content: $A$, anchor: "north", distance: 6pt))
-        line((0, 2.0), (0, 2.4), mark: (end: "stealth", fill: black))
-        
-        wire((0, 3), (5.4, 3))
-        wire((0, 0), (5.4, 0))
-        
-        node("n1", (1.8, 3), label: (content: sans("B", weight: "bold"), anchor: "north", distance: 5pt))
-        node("n2", (1.8, 0), label: (content: sans("C", weight: "bold"), anchor: "south", distance: 5pt))
-        node("n3", (3.6, 3))
-        node("n4", (3.6, 0))
-        
-        // Corto circuito
-        wire((1.8, 3), (1.8, 0))
-        line((1.6, 2.7), (1.6, 2.1), mark: (end: "stealth", fill: black), stroke: 0.6pt)
-        content((1.35, 2.4), $i$)
-        bezier((2.0, 0.3), (2.0, 2.7), (2.3, 1.5), mark: (end: "stealth", fill: black), stroke: 0.6pt)
-        content((2.6, 2.3), $v = 0$)
-        
-        resistor("r", (3.6, 3), (3.6, 0), label: (content: $R$, anchor: "east", distance: 6pt))
-        capacitor("c", (5.4, 3), (5.4, 0), label: (content: $C$, anchor: "east", distance: 6pt))
-      })
+      #include "figs/Cap2_MEC_handouts_appunti-fig39.typ"
     ]
   ],
   [
     *Configurazione per $t > 0$ (interruttore aperto)*
     #v(0.5em)
     #scale(x: 85%, y: 85%, reflow: true)[
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-        set-style(resistor: (variant: "ieee"))
-        
-        isource("a", (0, 0), (0, 3), variant: "iec", label: (content: $A$, anchor: "north", distance: 6pt))
-        line((0, 2.0), (0, 2.4), mark: (end: "stealth", fill: black))
-        
-        wire((0, 3), (5.4, 3))
-        wire((0, 0), (5.4, 0))
-        
-        node("n1", (1.8, 3), label: (content: sans("B", weight: "bold"), anchor: "north", distance: 5pt))
-        node("n2", (1.8, 0), label: (content: sans("C", weight: "bold"), anchor: "south", distance: 5pt))
-        node("n3", (3.6, 3))
-        node("n4", (3.6, 0))
-        
-        // Circuito aperto
-        wire((1.8, 3), (1.8, 1.9))
-        wire((1.8, 1.1), (1.8, 0))
-        
-        resistor("r", (3.6, 3), (3.6, 0), label: (content: $R$, anchor: "east", distance: 6pt))
-        line((3.8, 2.75), (3.8, 2.2), mark: (end: "stealth", fill: black), stroke: 0.6pt)
-        content((4.15, 2.45), $i_R$)
-        
-        capacitor("c", (5.4, 3), (5.4, 0), label: (content: $C$, anchor: "south", distance: 6pt))
-        line((4.2, 3.25), (4.8, 3.25), mark: (end: "stealth", fill: black), stroke: 0.6pt)
-        content((4.5, 3.6), $i_C$)
-        
-        bezier((5.75, 0.3), (5.75, 2.7), (6.1, 1.5), mark: (end: "stealth", fill: black), stroke: 0.6pt)
-        content((6.2, 1.5), $v$)
-      })
+      #include "figs/Cap2_MEC_handouts_appunti-fig40.typ"
     ]
   ]
 )
@@ -2120,40 +884,7 @@ L'andamento temporale di $v(t)$ mostra come la tensione cresca esponenzialmente 
     )
   ],
   [
-    #canvas({
-      import draw: *
-      // Griglia di sfondo
-      for x in range(1, 6) {
-        line((x * 1.1, 0), (x * 1.1, 3.3), stroke: (paint: gray.lighten(50%), thickness: 0.5pt, dash: "dotted"))
-      }
-      for y in (0.6, 1.2, 1.8, 2.4, 3.0) {
-        line((0, y), (5.5, y), stroke: (paint: gray.lighten(50%), thickness: 0.5pt, dash: "dotted"))
-      }
-      // Riquadro e assi
-      rect((0, 0), (5.5, 3.3), stroke: 0.8pt + black)
-      line((0, 3.0), (0, 3.8), mark: (end: "stealth", fill: black), stroke: 1pt)
-      content((0.45, 3.7), $v(t)$)
-      content((-0.45, 3.0), $R A$)
-      line((-0.1, 3.0), (0, 3.0))
-
-      // Etichette asse x
-      for x in range(0, 6) {
-        content((x * 1.1, -0.3), str(x))
-        line((x * 1.1, 0), (x * 1.1, 0.1))
-      }
-      content((2.75, -0.75), sans("costanti di tempo ", size: 9pt) + $tau$)
-
-      // Curva esponenziale: v(t) = 0 per t < 0, 3*(1 - e^(-x)) per t >= 0
-      line((-1.2, 0), (0, 0), stroke: (paint: red.darken(10%), thickness: 1.8pt))
-      let pts = ()
-      for k in range(0, 51) {
-        let t_val = k * 5.0 / 50.0
-        let x_pos = t_val * 1.1
-        let y_pos = 3.0 * (1.0 - calc.exp(-t_val))
-        pts.push((x_pos, y_pos))
-      }
-      line(..pts, stroke: (paint: red.darken(10%), thickness: 1.8pt))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig41.typ"
   ]
 )
 
@@ -2173,67 +904,14 @@ $ i_R(t) = v(t) / R = (R A (1 - e^(-t / tau))) / R = A (1 - e^(-t / tau)) $ // V
   align: (center + horizon, center + horizon, center + horizon),
   [
     #scale(x: 85%, y: 85%, reflow: true)[
-      #zap.circuit({
-        
-        import zap.cetz.draw: *
-        set-style(resistor: (variant: "ieee"), isource: (variant: "iec"))
-
-        isource("i1", (0, 0), (0, 3), i: (content: $A$, anchor: "east", distance: 15pt))
-        resistor("r1", (2.2, 3), (2.2, 0), label: (content: $R$, anchor: "west", distance: 6pt), i: (content: $i_R$, anchor: "east", distance: 15pt), n: "*-*")
-        capacitor("c1", (4.4, 3), (4.4, 0), label: (content: $C$, anchor: "north", distance: 6pt), i: (content: $i_C$, anchor: "east", distance: 15pt))
-
-        wire((0, 3), (4.4, 3))
-        wire((0, 0), (4.4, 0))
-
-        // Freccia di tensione v
-        line((1.2, 0.4), (1.2, 2.6), mark: (end: "stealth", fill: blue), stroke: (paint: blue, thickness: 1pt))
-        content((0.9, 1.5), text(fill: blue)[$v$])
-      })
+      #include "figs/Cap2_MEC_handouts_appunti-fig42.typ"
     ]
   ],
   [
-    #canvas({
-      import draw: *
-      line((-0.8, 0), (3.6, 0), mark: (end: "stealth", fill: black))
-      line((0, -0.4), (0, 2.6), mark: (end: "stealth", fill: black))
-      content((3.8, -0.2), $t$)
-      content((0.5, 2.5), $i_C(t)$)
-      content((-0.3, 1.9), text(fill: red.darken(10%))[$A$])
-      content((2.6, -0.35), text(fill: red.darken(10%))[$5 tau$])
-
-      line((-0.8, 0), (0, 0), stroke: (paint: red.darken(10%), thickness: 1.5pt))
-      line((0, 0), (0, 1.9), stroke: (paint: red.darken(10%), thickness: 1.5pt))
-      let pts = ()
-      for k in range(0, 41) {
-        let t_val = k * 5.0 / 40.0
-        let x_pos = t_val * 0.55
-        let y_pos = 1.9 * calc.exp(-t_val)
-        pts.push((x_pos, y_pos))
-      }
-      line(..pts, stroke: (paint: red.darken(10%), thickness: 1.5pt))
-      circle((0, 1.9), radius: 0.06, fill: red.darken(10%), stroke: none)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig43.typ"
   ],
   [
-    #canvas({
-      import draw: *
-      line((-0.8, 0), (3.6, 0), mark: (end: "stealth", fill: black))
-      line((0, -0.4), (0, 2.6), mark: (end: "stealth", fill: black))
-      content((3.8, -0.2), $t$)
-      content((0.5, 2.5), $i_R(t)$)
-      content((-0.3, 1.9), text(fill: red.darken(10%))[$A$])
-      line((0, 1.9), (3.2, 1.9), stroke: (paint: gray, dash: "dashed", thickness: 0.6pt))
-
-      line((-0.8, 0), (0, 0), stroke: (paint: red.darken(10%), thickness: 1.5pt))
-      let pts = ()
-      for k in range(0, 41) {
-        let t_val = k * 5.0 / 40.0
-        let x_pos = t_val * 0.55
-        let y_pos = 1.9 * (1.0 - calc.exp(-t_val))
-        pts.push((x_pos, y_pos))
-      }
-      line(..pts, stroke: (paint: red.darken(10%), thickness: 1.5pt))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig44.typ"
   ]
 )
 
@@ -2252,38 +930,7 @@ Si consideri ora un circuito ohmico-induttivo ($R L$ serie), in cui un induttore
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-      vsource("e1", (0, 0), (0, 3), label: (content: $E$, anchor: "north", distance: 6pt))
-      content((-0.35, 2.2), sans("+", weight: "bold"))
-
-      switch("s1", (0, 3), (2.5, 3), closed: false, label: (content: $S$, anchor: "north", distance: 8pt))
-      content((1.4, 2), $t = 0$)
-
-      node("A", (2.5, 3), fill: true, label: (content: text(fill: red.darken(10%))[#sans("A", weight: "bold")], anchor: "north", distance: 6pt))
-      node("B", (2.5, 0), fill: true, label: (content: text(fill: red.darken(10%))[#sans("B", weight: "bold")], anchor: "south", distance: 6pt))
-
-      resistor("r1", (2.5, 3), (5.5, 3), label: (content: $R$, anchor: "south", distance: 6pt))
-      inductor("l1", (5.5, 3), (5.5, 0), label: (content: $L$, anchor: "east", distance: 6pt))
-      wire((5.5, 0), (0, 0))
-
-      // Corrente i
-      line((5.8, 2.8), (5.8, 2.1), mark: (end: "stealth", fill: black))
-      content((6.1, 2.45), $i$)
-
-      // Frecce tensioni VR, VL e VAB
-      bezier((4.8, 3.4), (3.2, 3.4), (4.0, 3.8), mark: (end: "stealth", fill: black), stroke: 0.7pt)
-      content((4.0, 3.95), $v_R$)
-
-      bezier((5.1, 0.6), (5.1, 2.2), (4.7, 1.4), mark: (end: "stealth", fill: black), stroke: 0.7pt)
-      content((4.4, 1.4), $v_L$)
-
-      line((2.5, 0.4), (2.5, 2.6), mark: (end: "stealth", fill: blue), stroke: (paint: blue, thickness: 1pt))
-      content((2.95, 1.5), text(fill: red.darken(10%))[$V_(A B)$])
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig45.typ"
   ],
   [
     Le relazioni costitutive dei bipoli passivi (adottando la convenzione degli utilizzatori) sono:
@@ -2308,34 +955,7 @@ Per $t > 0$, con l'interruttore $S$ chiuso, scrivendo la Legge di Kirchhoff dell
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-      vsource("e1", (0, 0), (0, 3), label: (content: $E$, anchor: "east", distance: 12pt))
-      content((-0.35, 2.2), sans("+", weight: "bold"))
-      line((-0.8, 0.6), (-0.8, 2.4), mark: (end: "stealth", fill: blue), stroke: (paint: blue, thickness: 1pt))
-
-      switch("s1", (0, 3), (2.5, 3), closed: false, label: (content: $S$, anchor: "north", distance: 8pt))
-      content((1.4, 2), $t = 0$)
-
-      resistor("r1", (2.5, 3), (5.5, 3), label: (content: $R$, anchor: "south", distance: 6pt))
-      inductor("l1", (5.5, 3), (5.5, 0), label: (content: $L$, anchor: "east", distance: 6pt))
-      wire((5.5, 0), (0, 0))
-
-      line((5.8, 2.8), (5.8, 2.1), mark: (end: "stealth", fill: black))
-      content((6.1, 2.45), $i$)
-
-      bezier((4.8, 3.4), (3.2, 3.4), (4.0, 3.8), mark: (end: "stealth", fill: black), stroke: 0.7pt)
-      content((4.0, 3.95), $v_R$)
-
-      bezier((5.1, 0.6), (5.1, 2.2), (4.7, 1.4), mark: (end: "stealth", fill: black), stroke: 0.7pt)
-      content((4.4, 1.4), $v_L$)
-
-      // Orientamento di maglia
-      bezier((2.3, 1.9), (2.3, 0.9), (3.2, 1.4), mark: (end: "stealth", fill: orange.darken(10%)), stroke: (paint: orange.darken(10%), thickness: 1.2pt))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig46.typ"
   ],
   [
     $ E - v_R(t) - v_L(t) = 0 $
@@ -2387,30 +1007,7 @@ $ i(t) = E / R (1 - e^(-t / tau)) quad "per " t >= 0 $
     )
   ],
   [
-    #canvas({
-      import draw: *
-      rect((0, 0), (5.5, 3.3), stroke: 0.8pt + black)
-      line((0, 2.8), (5.5, 2.8), stroke: (paint: black, dash: "dashed", thickness: 0.6pt))
-      content((-0.45, 2.8), $E / R$)
-      content((0.35, 3.0), $i(t)$)
-
-      for x in range(0, 6) {
-        content((x * 1.1, -0.3), str(x))
-        line((x * 1.1, 0), (x * 1.1, 0.1))
-        line((x * 1.1, 3.3), (x * 1.1, 3.2))
-      }
-      content((2.75, -0.7), sans("costanti di tempo", size: 9pt, weight: "bold"))
-
-      line((-1.2, 0), (0, 0), stroke: (paint: black, thickness: 1.8pt))
-      let pts = ()
-      for k in range(0, 51) {
-        let t_val = k * 5.0 / 50.0
-        let x_pos = t_val * 1.1
-        let y_pos = 2.8 * (1.0 - calc.exp(-t_val))
-        pts.push((x_pos, y_pos))
-      }
-      line(..pts, stroke: (paint: black, thickness: 1.8pt))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig47.typ"
   ]
 )
 
@@ -2423,50 +1020,10 @@ $ v_L(t) = L ("d"i(t)) / ("d"t) = L ("d") / ("d"t) [E / R (1 - e^(-t / tau))] = 
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-      vsource("e1", (0, 0), (0, 2.5), label: (content: $E$, anchor: "east", distance: 12pt))
-      content((0.35, 1.9), sans("+", weight: "bold"))
-      resistor("r1", (0, 2.5), (3.8, 2.5), label: (content: $R$, anchor: "south", distance: 6pt))
-      inductor("l1", (3.8, 2.5), (3.8, 0), label: (content: $L$, anchor: "east", distance: 6pt))
-      wire((3.8, 0), (0, 0))
-
-      // Condizioni a t = 0+
-      bezier((2.6, 2.9), (1.2, 2.9), (1.9, 3.3), mark: (end: "stealth", fill: blue), stroke: (paint: blue, thickness: 0.8pt))
-      content((1.9, 3.55), text(fill: blue)[$v_R(0^+) = 0$])
-
-      line((3.8, 2.4), (3.8, 1.9), mark: (end: "stealth", fill: red.darken(10%)), stroke: (paint: red.darken(10%), thickness: 1pt))
-      content((4.6, 2.7), text(fill: red.darken(10%))[$i(0^+) = 0$])
-
-      bezier((4.3, 0.3), (4.3, 2.2), (4.5, 1.25), mark: (end: "stealth", fill: blue), stroke: (paint: blue, thickness: 0.8pt))
-      content((5.5, 1.25), text(fill: blue)[$v_L(0^+) = E$])
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig48.typ"
   ],
   [
-    #canvas({
-      import draw: *
-      line((-0.8, 0), (4.2, 0), mark: (end: "stealth", fill: black))
-      line((0, -0.4), (0, 2.6), mark: (end: "stealth", fill: black))
-      content((4.4, -0.1), $t$)
-      content((0.6, 2.5), $v_L(t)$)
-      content((-0.35, 1.8), text(fill: red.darken(10%))[$E$])
-      content((2.8, -0.35), text(fill: red.darken(10%))[$5 tau$])
-
-      line((-0.8, 0), (0, 0), stroke: (paint: red.darken(10%), thickness: 1.5pt))
-      line((0, 0), (0, 1.8), stroke: (paint: red.darken(10%), thickness: 1.5pt))
-      let pts = ()
-      for k in range(0, 41) {
-        let t_val = k * 5.0 / 40.0
-        let x_pos = t_val * 0.56
-        let y_pos = 1.8 * calc.exp(-t_val)
-        pts.push((x_pos, y_pos))
-      }
-      line(..pts, stroke: (paint: red.darken(10%), thickness: 1.5pt))
-      circle((0, 1.8), radius: 0.06, fill: red.darken(10%), stroke: none)
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig49.typ"
   ]
 )
 
@@ -2488,32 +1045,7 @@ $ v(0) = V_0 quad arrow.r.double quad W_0 = 1 / 2 C V_0^2 $
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"))
-
-      capacitor("c1", (0, 3), (0, 0), label: (content: $C$, anchor: "north", distance: 8pt))
-      content((-0.35, 2.0), sans("+", weight: "bold"))
-      content((-0.35, 1.0), sans("-", weight: "bold"))
-
-      // Corrente iC
-      line((0.35, 2.4), (0.35, 1.7), mark: (end: "stealth", fill: black))
-      content((0.75, 2.05), $i_C$)
-
-      // Freccia v
-      bezier((-0.6, 0.4), (-0.6, 2.6), (-0.9, 1.5), mark: (end: "stealth", fill: black), stroke: 0.7pt)
-      content((-1.15, 1.5), $v$)
-
-      switch("s1", (0, 3), (4, 3), closed: false, label: (content: $S$, anchor: "north", distance: 8pt))
-      content((2.0, 2), $t = 0$)
-
-      resistor("r1", (4, 3), (4, 0), label: (content: $R$, anchor: "west", distance: 8pt))
-      bezier((3.4, 2.5), (3.4, 0.5), (3.1, 1.5), mark: (end: "stealth", fill: black), stroke: 0.7pt)
-      content((2.8, 1.5), $v_R$)
-
-      wire((4, 0), (0, 0))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig50.typ"
   ],
   [
     Alla chiusura del interruttore $S$ in $t = 0$, applicando la LKT alla maglia si ottiene:
@@ -2535,25 +1067,7 @@ Poiché non vi sono sorgenti applicate per $t > 0$, il valore di regime forzato 
 $ v(t) = v_infinity + (v_0 - v_infinity) e^(-t / tau) quad arrow.r.double quad v(t) = V_0 e^(-t / tau) quad "per " t >= 0 $
 
 #align(center)[
-  #canvas({
-    import draw: *
-    line((-1.8, 0), (4.5, 0), mark: (end: "stealth", fill: black))
-    line((0, -0.4), (0, 2.5), mark: (end: "stealth", fill: black))
-    content((4.7, -0.1), $t$)
-    content((0.5, 2.4), $v(t)$)
-    content((-0.4, 1.7), text(fill: red.darken(10%))[$V_0$])
-    content((2.8, -0.35), text(fill: red.darken(10%))[$5 tau$])
-
-    line((-1.6, 1.7), (0, 1.7), stroke: (paint: red.darken(10%), thickness: 1.6pt))
-    let pts = ()
-    for k in range(0, 41) {
-      let t_val = k * 5.0 / 40.0
-      let x_pos = t_val * 0.56
-      let y_pos = 1.7 * calc.exp(-t_val)
-      pts.push((x_pos, y_pos))
-    }
-    line(..pts, stroke: (paint: red.darken(10%), thickness: 1.6pt))
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig51.typ"
 ]
 
 === Bilancio Energetico nella Scarica del Condensatore
@@ -2582,32 +1096,7 @@ Consideriamo infine il processo di carica di un condensatore inizialmente scaric
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "iec"))
-
-      vsource("e1", (0, 0), (0, 3), label: (content: $E$, anchor: "east", distance: 12pt))
-      content((-0.35, 2.2), sans("+", weight: "bold"))
-
-      switch("s1", (0, 3), (2.2, 3), closed: true)
-      content((1.1, 2.3), $t = 0$)
-
-      resistor("r1", (2.2, 3), (5.0, 3), label: (content: $R$, anchor: "south", distance: 6pt), n: "*-*")
-      bezier((4.4, 3.4), (2.8, 3.4), (3.6, 3.7), mark: (end: "stealth", fill: green.darken(30%)), stroke: (paint: green.darken(30%), thickness: 0.8pt))
-      content((3.6, 3.95), text(fill: green.darken(30%))[$v_R$])
-
-      capacitor("c1", (5.0, 3), (5.0, 0), label: (content: $C$, anchor: "south", distance: 6pt))
-      line((5.35, 2.7), (5.35, 2.0), mark: (end: "stealth", fill: red.darken(10%)), stroke: (paint: red.darken(10%), thickness: 0.9pt))
-      content((5.75, 2.35), text(fill: red.darken(10%))[$i_C$])
-
-      bezier((5.45, 0.3), (5.45, 1.9), (5.65, 1.1), mark: (end: "stealth", fill: green.darken(30%)), stroke: (paint: green.darken(30%), thickness: 0.8pt))
-      content((5.9, 1.1), text(fill: green.darken(30%))[$v$])
-
-      wire((5.0, 0), (0, 0))
-
-      bezier((2.2, 1.8), (2.2, 0.8), (2.9, 1.3), mark: (end: "stealth", fill: orange.darken(10%)), stroke: (paint: orange.darken(10%), thickness: 1.2pt))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig52.typ"
   ],
   [
     Per la continuità della tensione sul condensatore:
@@ -2636,46 +1125,10 @@ $ i_C(t) = C ("d"v(t)) / ("d"t) = E / R e^(-t / tau) $
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
   [
-    #canvas({
-      import draw: *
-      line((-0.8, 0), (3.6, 0), mark: (end: "stealth", fill: black))
-      line((0, -0.4), (0, 2.5), mark: (end: "stealth", fill: black))
-      content((3.8, -0.2), $t$)
-      content((0.35, 2.4), $v(t)$)
-      content((-0.35, 1.8), text(fill: red.darken(10%))[$E$])
-      line((0, 1.8), (3.2, 1.8), stroke: (paint: red.darken(10%), dash: "dashed", thickness: 0.7pt))
-
-      line((-0.8, 0), (0, 0), stroke: (paint: red.darken(10%), thickness: 1.5pt))
-      let pts = ()
-      for k in range(0, 41) {
-        let t_val = k * 5.0 / 40.0
-        let x_pos = t_val * 0.55
-        let y_pos = 1.8 * (1.0 - calc.exp(-t_val))
-        pts.push((x_pos, y_pos))
-      }
-      line(..pts, stroke: (paint: red.darken(10%), thickness: 1.5pt))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig53.typ"
   ],
   [
-    #canvas({
-      import draw: *
-      line((-0.8, 0), (3.6, 0), mark: (end: "stealth", fill: black))
-      line((0, -0.4), (0, 2.5), mark: (end: "stealth", fill: black))
-      content((3.8, -0.2), $t$)
-      content((0.45, 2.4), $i_C(t)$)
-      content((0.65, 1.95), text(fill: red.darken(10%))[$E / R$])
-
-      line((-0.8, 0), (0, 0), stroke: (paint: red.darken(10%), thickness: 1.5pt))
-      line((0, 0), (0, 1.8), stroke: (paint: red.darken(10%), thickness: 1.5pt))
-      let pts = ()
-      for k in range(0, 41) {
-        let t_val = k * 5.0 / 40.0
-        let x_pos = t_val * 0.55
-        let y_pos = 1.8 * calc.exp(-t_val)
-        pts.push((x_pos, y_pos))
-      }
-      line(..pts, stroke: (paint: red.darken(10%), thickness: 1.5pt))
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig54.typ"
   ]
 )
 
@@ -2715,52 +1168,10 @@ Un generatore reale di tensione è modellato mediante la connessione in serie di
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "ieee"))
-
-      // Generatore E e resistenza interna R
-      vsource("e", (0, 0), (0, 3), label: (content: $E$, anchor: "east", distance: 6pt))
-      resistor("r", (0, 3), (3.5, 3), label: (content: $R$, anchor: "south", distance: 6pt))
-      wire((0, 0), (3.5, 0))
-
-      // Nodi interni ed esterni A e B
-      node("n1", (0, 3), fill: false)
-      node("n2", (0, 0), fill: false)
-      node("A", (3.5, 3), fill: false, label: (content: sans("A", weight: "bold", size: 10pt), anchor: "north", distance: 5pt))
-      node("B", (3.5, 0), fill: false, label: (content: sans("B", weight: "bold", size: 10pt), anchor: "south", distance: 5pt))
-
-      // Segno + e freccia blu di E
-      content((0.45, 2.3), sans("+", weight: "bold"))
-      line((0.65, 0.8), (0.65, 2.1), stroke: blue + 1.2pt, mark: (end: "stealth", fill: blue))
-
-      // Freccia curva blu su R
-      bezier((2.3, 3.65), (1.1, 3.65), (1.7, 3.95), stroke: blue + 1.2pt, mark: (end: "stealth", fill: blue))
-
-      // Orientamento orario della maglia (arancione)
-      bezier((1.5, 1.8), (1.7, 1.0), (2.2, 2.1), stroke: orange + 1.2pt, mark: (end: "stealth", fill: orange))
-
-      // Tensione V e corrente I ai morsetti A-B (rosso)
-      line((3.5, 0.2), (3.5, 2.75), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-      content((3.9, 1.8), text(fill: red)[$V$])
-      line((3.7, 3), (4.6, 3), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-      content((4.9, 3), text(fill: red)[$I$])
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig55.typ"
   ],
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "iec"))
-
-      // Bipolo generico con convenzione degli utilizzatori
-      resistor("b", (0, 2.6), (0, 0), n: "o-o")
-      line((0, 2.4), (0, 1.9), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-      content((-0.5, 2.2), text(fill: red)[$I$])
-      line((0.55, 0.3), (0.55, 2.2), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-      content((0.95, 1.25), text(fill: red)[$V$])
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig56.typ"
   ]
 )
 
@@ -2779,59 +1190,10 @@ $ E - R I_"cc" = 0 quad arrow.r.double quad I_"cc" = E / R $
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "ieee"))
-
-      vsource("e", (0, 0), (0, 3), label: (content: $E$, anchor: "east", distance: 6pt))
-      resistor("r", (0, 3), (3.2, 3), label: (content: $R$, anchor: "south", distance: 6pt))
-      wire((0, 0), (3.2, 0))
-
-      // Ramo di cortocircuito
-      wire((3.2, 3), (4.3, 3), (4.3, 0), (3.2, 0))
-
-      node("n1", (0, 3), fill: false)
-      node("n2", (0, 0), fill: false)
-      node("A", (3.2, 3), fill: false, label: (content: sans("A", weight: "bold", size: 10pt), anchor: "north", distance: 5pt))
-      node("B", (3.2, 0), fill: false, label: (content: sans("B", weight: "bold", size: 10pt), anchor: "south", distance: 5pt))
-
-      content((0.45, 2.3), sans("+", weight: "bold"))
-      line((0.65, 0.8), (0.65, 2.1), stroke: blue + 1.2pt, mark: (end: "stealth", fill: blue))
-      bezier((2.2, 3.65), (1.0, 3.65), (1.6, 3.95), stroke: blue + 1.2pt, mark: (end: "stealth", fill: blue))
-      bezier((1.4, 1.8), (1.6, 1.0), (2.1, 2.1), stroke: orange + 1.2pt, mark: (end: "stealth", fill: orange))
-
-      line((3.2, 0.2), (3.2, 2.75), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-      content((3.55, 1.9), text(fill: red)[$V$])
-
-      // Corrente di cortocircuito
-      line((4.3, 2.0), (4.3, 1.3), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-      content((5.1, 3.3), sans("cto cto", size: 9pt, weight: "bold"))
-      content((5.25, 1.7), text(fill: red)[$I_"cc", V = 0$])
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig57.typ"
   ],
   [
-    #canvas({
-      import draw: *
-      // Assi cartesiani
-      line((-0.4, 0), (4.2, 0), mark: (end: "stealth", fill: black), stroke: 1.2pt)
-      line((0, -0.6), (0, 3.2), mark: (end: "stealth", fill: black), stroke: 1.2pt)
-      content((4.5, -0.2), $I$)
-      content((-0.35, 3.0), $V$)
-
-      // Retta caratteristica V = E - R I
-      line((-0.4, 2.46), (2.9, -0.35), stroke: orange + 1.5pt)
-
-      // Punti notevoli
-      circle((0, 2.12), radius: 0.08, fill: rgb("#006633"), stroke: none)
-      content((0.35, 2.3), text(fill: rgb("#006633"))[$E$])
-      circle((0.15, 2.2), radius: (0.45, 0.35), stroke: rgb("#006633") + 1pt)
-      line((0.55, 2.55), (0.95, 2.95), stroke: rgb("#006633") + 1pt, mark: (end: "stealth", fill: rgb("#006633")))
-      content((2.1, 3.3), text(fill: rgb("#006633"))[#sans("circuito aperto", size: 9pt)])
-
-      circle((2.5, 0), radius: 0.08, fill: rgb("#006633"), stroke: none)
-      content((2.7, -0.55), text(fill: rgb("#006633"))[$I_"cc" = E / R$])
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig58.typ"
   ]
 )
 
@@ -2861,68 +1223,10 @@ $ R_u I = E - R I quad arrow.r.double quad (R + R_u) I = E quad arrow.r.double q
   column-gutter: 1.5em,
   align: (center + horizon, center + horizon),
   [
-    #zap.circuit({
-      
-      import zap.cetz.draw: *
-      set-style(resistor: (variant: "ieee"), vsource: (variant: "ieee"))
-
-      vsource("e", (0, 0), (0, 3), label: (content: $E$, anchor: "east", distance: 6pt))
-      resistor("r", (0, 3), (3.2, 3), label: (content: $R$, anchor: "north", distance: 4pt))
-      wire((0, 0), (3.2, 0))
-
-      // Carico Ru
-      wire((3.2, 3), (4.6, 3))
-      resistor("ru", (4.6, 3), (4.6, 0), label: (content: $R_u$, anchor: "west", distance: 6pt))
-      wire((4.6, 0), (3.2, 0))
-
-      node("n1", (0, 3), fill: false)
-      node("n2", (0, 0), fill: false)
-      node("A", (3.2, 3), fill: false, label: (content: sans("A", weight: "bold", size: 10pt), anchor: "north", distance: 5pt))
-      node("B", (3.2, 0), fill: false, label: (content: sans("B", weight: "bold", size: 10pt), anchor: "south", distance: 5pt))
-
-      content((0.45, 2.3), sans("+", weight: "bold"))
-      line((0.65, 0.8), (0.65, 2.1), stroke: blue + 1.2pt, mark: (end: "stealth", fill: blue))
-      bezier((2.2, 3.65), (1.0, 3.65), (1.6, 3.95), stroke: blue + 1.2pt, mark: (end: "stealth", fill: blue))
-      bezier((1.4, 1.8), (1.6, 1.0), (2.1, 2.1), stroke: orange + 1.2pt, mark: (end: "stealth", fill: orange))
-
-      // Annotazione resistenza interna
-      circle((1.6, 3.45), radius: 0.35, stroke: red + 1pt)
-      line((1.1, 3.5), (0.2, 4.1), stroke: red + 1pt, mark: (end: "stealth", fill: red))
-      content((0.0, 4.35), text(fill: red)[#sans("R interna", size: 8pt)])
-
-      line((3.2, 0.2), (3.2, 2.75), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-      content((3.55, 1.9), text(fill: red)[$V$])
-      line((3.6, 3), (4.2, 3), stroke: red + 1.2pt, mark: (end: "stealth", fill: red))
-      content((3.9, 3.35), text(fill: red)[$I$])
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig59.typ"
   ],
   [
-    #canvas({
-      import draw: *
-      // Assi cartesiani
-      line((-0.4, 0), (4.2, 0), mark: (end: "stealth", fill: black), stroke: 1.2pt)
-      line((0, -0.6), (0, 3.2), mark: (end: "stealth", fill: black), stroke: 1.2pt)
-      content((4.5, -0.2), $I$)
-      content((-0.35, 3.0), $V$)
-
-      // Retta generatore (arancione) e retta carico V = Ru I (blu)
-      line((-0.4, 2.46), (2.9, -0.35), stroke: orange + 1.5pt)
-      line((0, 0), (2.0, 2.5), stroke: blue + 1.5pt)
-
-      // Punto di lavoro (rosso)
-      let px = 1.01
-      let py = 1.26
-      line((px, 0), (px, py), stroke: (paint: red, thickness: 1pt, dash: "dashed"))
-      line((0, py), (px, py), stroke: (paint: red, thickness: 1pt, dash: "dashed"))
-      circle((px, py), radius: 0.09, fill: red, stroke: none)
-      content((px, -0.35), text(fill: red)[$I$])
-
-      // Punti notevoli generatore
-      circle((0, 2.12), radius: 0.08, fill: rgb("#006633"), stroke: none)
-      content((0.35, 2.3), text(fill: rgb("#006633"))[$E$])
-      circle((2.5, 0), radius: 0.08, fill: rgb("#006633"), stroke: none)
-      content((2.7, -0.55), text(fill: rgb("#006633"))[$I_"cc" = E / R$])
-    })
+    #include "figs/Cap2_MEC_handouts_appunti-fig60.typ"
   ]
 )
 
@@ -2937,26 +1241,7 @@ Al variare della resistenza di carico $R_u$ (mantenendo fissati $E$ ed $R$), si 
 - per $R_u >> R$ (tendente al circuito aperto), la corrente tende a zero e la potenza $P_u$ tende nuovamente a zero.
 
 #align(center)[
-  #canvas({
-    import draw: *
-    // Assi
-    line((-0.3, 0), (4.8, 0), mark: (end: "stealth", fill: black), stroke: 1.2pt)
-    line((0, -0.3), (0, 2.8), mark: (end: "stealth", fill: black), stroke: 1.2pt)
-    content((5.3, -0.15), $R_u$)
-    content((-0.4, 2.6), $P_u$)
-
-    // Curva della potenza P_u(R_u)
-    bezier((0, 0), (1.8, 2.1), (0.8, 1.8), stroke: (paint: red, thickness: 1.4pt, dash: "dashed"))
-    bezier((1.8, 2.1), (3.6, 0.1), (2.5, 2.0), stroke: (paint: red, thickness: 1.4pt, dash: "dashed"))
-
-    // Punto di massimo Ru = R
-    line((1.8, 0), (1.8, 2.1), stroke: (paint: red, thickness: 1pt, dash: "dashed"))
-    circle((0, 0), radius: 0.09, fill: red, stroke: none)
-    circle((3.6, 0), radius: 0.09, fill: red, stroke: none)
-
-    content((1.8, -0.45), text(fill: red)[$R_u = R$])
-    content((3.7, -0.45), $R_u >> R$)
-  })
+  #include "figs/Cap2_MEC_handouts_appunti-fig61.typ"
 ]
 
 Per determinare il valore di $R_u$ che rende massima la potenza trasferita al carico, si calcola la derivata di $P_u$ rispetto a $R_u$ e la si pone uguale a zero:
