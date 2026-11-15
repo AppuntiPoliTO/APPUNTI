@@ -1413,7 +1413,7 @@ L'angolo di rotazione relativo $phi.alt$ tra le due estremità è direttamente p
 $ phi.alt = frac(M, E dot.op J) dot.op L quad "con" quad L = n pi D $
 === Molle ad anelli a forza normale
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1fr, 0.7fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[La molla ad anelli a forza normale è costituita da una serie di anelli interni e da una seconda serie avvolgente di anelli esterni accoppiati tra loro lungo superfici coniche. Gli anelli accoppiati sono di due tipi:
 1. in un tipo la superficie interna è cilindrica e quella esterna consiste di due tronchi di cono;
@@ -1651,8 +1651,7 @@ $ phi.alt = frac(M, E dot.op J) dot.op L quad "con" quad L = n pi D $
   // Bordo esterno anello superiore (Rosso vivo)
   line((8.50, 4.15), (8.50, 6.20), stroke: (paint: rgb(230, 0, 0), thickness: 3.2pt))
 
-  // --- DIDASCALIA ---
-  content((6.55, 1.15), [da A. De Paulis, E. Manfredi, C. di Macchine], anchor: "center")
+
 })])
 
 #grid(
