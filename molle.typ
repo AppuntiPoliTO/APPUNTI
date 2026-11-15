@@ -3842,13 +3842,7 @@ Più è grande l'area sottesa dalla curva forza–spostamento, più è elevata l
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Un secondo tipo di contenimento riguarda la caduta di un grave su una molla, in cui la sospensione deve assorbire l'impatto al suolo. In questo caso conviene valutare direttamente l'energia potenziale gravitazionale associata alla massa $m$ soggetta all'accelerazione di gravità $g$ (sia sulla Terra sia in ambienti spaziali con diversa costante gravitazionale) e uguagliarla all'energia immagazzinabile dalla molla. Il percorso totale del grave è dato dalla somma dell'altezza di caduta libera $h$ e della freccia $f$ sviluppata dalla molla fino all'arresto del moto ($v = 0$):
-
-$ W_p = m dot.op g dot.op (h + f) = W = frac(1, 2) F dot.op f = frac(1, 2) k dot.op f^2 arrow.r.double f $
-
-Non è necessario passare attraverso il calcolo della velocità d'impatto e dell'energia cinetica, poiché l'uguaglianza diretta tra energia potenziale gravitazionale ed energia di deformazione elastica consente di determinare la freccia $f$ e i requisiti di rigidezza $k$, esattamente come nel confronto per aree sulla caratteristica della molla. Nota la freccia, si calcola la forza corrispondente tramite la relazione lineare:
-
-$ F = k dot.op f $],[#canvas(length: 1cm, {
+  align: (left + horizon, center + horizon),[Un secondo tipo di contenimento riguarda la caduta di un grave su una molla, in cui la sospensione deve assorbire l'impatto al suolo. In questo caso conviene valutare direttamente l'energia potenziale gravitazionale associata alla massa $m$ soggetta all'accelerazione di gravità $g$ (sia sulla Terra sia in ambienti spaziali con diversa costante gravitazionale) e uguagliarla all'energia immagazzinabile dalla molla. Il percorso totale del grave è dato dalla somma dell'altezza di caduta libera $h$ e della freccia $f$ sviluppata dalla molla fino all'arresto del moto ($v = 0$):],[#canvas(length: 1.5cm, {
   import draw: *
 
   // ==========================================
@@ -3934,7 +3928,11 @@ $ F = k dot.op f $],[#canvas(length: 1cm, {
   line((-0.50, 1.11), (-0.40, 1.11), (-0.45, 1.24), close: true, fill: black, stroke: none)
   content((-0.68, 1.02), [$f$], anchor: "east")
 })])
+$ W_p = m dot.op g dot.op (h + f) = W = frac(1, 2) F dot.op f = frac(1, 2) k dot.op f^2 arrow.r.double f $
 
+Non è necessario passare attraverso il calcolo della velocità d'impatto e dell'energia cinetica, poiché l'uguaglianza diretta tra energia potenziale gravitazionale ed energia di deformazione elastica consente di determinare la freccia $f$ e i requisiti di rigidezza $k$, esattamente come nel confronto per aree sulla caratteristica della molla. Nota la freccia, si calcola la forza corrispondente tramite la relazione lineare:
+
+$ F = k dot.op f $
 === Molle Belleville (a disco conico, a tazza)
 #grid(
   columns: (1fr, 1fr),
