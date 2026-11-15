@@ -3732,7 +3732,7 @@ Nella pratica della costruzione degli elementi delle macchine si impiegano diver
 
 === Uso delle molle per l'assorbimento degli urti
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1.4fr, 1fr),
   column-gutter: 1em,
   align: (left + top, center + horizon),[Uno degli obiettivi fondamentali dell'impiego delle molle nelle macchine è l'assorbimento degli urti. In un primo caso si considera l'assorbimento dell'energia cinetica posseduta da un corpo in movimento di massa $m$ e velocità di traslazione (velocità d'impatto) $v$:
 
