@@ -3848,7 +3848,7 @@ $ W_p = m dot.op g dot.op (h + f) = W = frac(1, 2) F dot.op f = frac(1, 2) k dot
 
 Non è necessario passare attraverso il calcolo della velocità d'impatto e dell'energia cinetica, poiché l'uguaglianza diretta tra energia potenziale gravitazionale ed energia di deformazione elastica consente di determinare la freccia $f$ e i requisiti di rigidezza $k$, esattamente come nel confronto per aree sulla caratteristica della molla. Nota la freccia, si calcola la forza corrispondente tramite la relazione lineare:
 
-$ F = k dot.op f $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema della caduta di una massa m sotto l'azione dell'accelerazione di gravità g da un'altezza h fino all'appoggio sulla molla e successiva compressione di freccia f fino alla posizione finale con velocità nulla (v=0)]])
+$ F = k dot.op f $],[])
 
 === Molle Belleville (a disco conico, a tazza)
 #grid(
