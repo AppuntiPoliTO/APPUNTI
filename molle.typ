@@ -1652,7 +1652,88 @@ $ phi.alt = frac(M, E dot.op J) dot.op L quad "con" quad L = n pi D $
   line((8.50, 4.15), (8.50, 6.20), stroke: (paint: rgb(230, 0, 0), thickness: 3.2pt))
 })])
 
-Quando agisce una forza assiale di compressione $F$, lo scorrimento relativo tra gli anelli genera un effetto cuneo lungo la conicità delle superfici a contatto (analogo a quello dell'accoppiamento di un codolo troncoconico di un albero nel mozzo) e produce una forte pressione di contatto normale alla superficie. Per la particolare geometria, tale pressione dilata gli anelli esterni (azione cerchiante) e contrae quelli interni. All'aumentare dello spostamento relativo assiale, la pressione di contatto cresce sempre più; il piccolo spostamento assiale tra una coppia di anelli si somma per tutto il numero di anelli presenti, fornendo la freccia complessiva del pacco. Dal punto di vista strutturale, ciascun anello può essere analizzato mediante le formule dei solidi assialsimmetrici, essendo assimilabile a due tronchi di cono sovrapposti specularmente rispetto al piano medio; la tensione più importante che si sviluppa in tutti gli anelli è la tensione circonferenziale.
+#grid(
+  columns: 2,
+  gutter: 1em,
+  [Quando agisce una forza assiale di compressione $F$, lo scorrimento relativo tra gli anelli genera un effetto cuneo lungo la conicità delle superfici a contatto (analogo a quello dell'accoppiamento di un codolo troncoconico di un albero nel mozzo) e produce una forte pressione di contatto normale alla superficie. Per la particolare geometria, tale pressione dilata gli anelli esterni (azione cerchiante) e contrae quelli interni. All'aumentare dello spostamento relativo assiale, la pressione di contatto cresce sempre più; il piccolo spostamento assiale tra una coppia di anelli si somma per tutto il numero di anelli presenti, fornendo la freccia complessiva del pacco. Dal punto di vista strutturale, ciascun anello può essere analizzato mediante le formule dei solidi assialsimmetrici, essendo assimilabile a due tronchi di cono sovrapposti specularmente rispetto al piano medio; la tensione più importante che si sviluppa in tutti gli anelli è la tensione circonferenziale.],
+  [#canvas(length: 0.8cm, {
+  import draw: *
+  line((0.15, 0.25), (0.27, 0.13), stroke: 0.6pt)
+  line((0.29, 0.51), (0.53, 0.27), stroke: 0.6pt)
+  line((0.44, 0.76), (0.80, 0.40), stroke: 0.6pt)
+  line((0.58, 1.02), (1.07, 0.53), stroke: 0.6pt)
+  line((0.73, 1.27), (1.33, 0.67), stroke: 0.6pt)
+  line((0.87, 1.53), (1.60, 0.80), stroke: 0.6pt)
+  line((1.02, 1.78), (1.87, 0.93), stroke: 0.6pt)
+  line((1.16, 2.04), (2.13, 1.07), stroke: 0.6pt)
+  line((1.31, 2.29), (2.40, 1.20), stroke: 0.6pt)
+  line((1.45, 2.55), (2.40, 1.60), stroke: 0.6pt)
+  line((1.60, 2.80), (2.40, 2.00), stroke: 0.6pt)
+  line((1.75, 3.05), (2.40, 2.40), stroke: 0.6pt)
+  line((1.89, 3.31), (2.40, 2.80), stroke: 0.6pt)
+  line((2.04, 3.56), (2.40, 3.20), stroke: 0.6pt)
+  line((2.18, 3.82), (2.40, 3.60), stroke: 0.6pt)
+
+  line((0, 0), (0, 5.0), mark: (end: "straight"), stroke: 0.8pt)
+  line((0, 0), (4.2, 0), mark: (end: "straight"), stroke: 0.8pt)
+
+  line((0, 0), (2.4, 4.2), stroke: 1pt)
+  line((0, 0), (1.3, 2.28), mark: (end: "straight"), stroke: 1pt)
+  line((2.4, 4.2), (2.4, 1.2), stroke: 1pt)
+  line((2.4, 4.2), (2.4, 3.1), mark: (end: "straight"), stroke: 1pt)
+  line((2.4, 1.2), (2.4, 0), stroke: 0.6pt)
+  line((0, 0), (2.4, 1.2), stroke: (dash: "dotted", thickness: 1pt))
+  line((1.15, 0.575), (1.0, 0.5), mark: (end: "straight"), stroke: 1pt)
+  line((0, 0), (2.4, 2.5), stroke: (dash: "dashed", thickness: 0.8pt))
+
+  line((3.68, 6.8), (3.68, 5.7), (3.22, 5.7), stroke: 1.4pt)
+  line((3.22, 5.4), (3.95, 5.4), stroke: 1.4pt)
+  line((3.22, 5.0), (3.90, 5.0), (4.05, 4.4), (4.15, 3.8), (3.95, 2.8), (3.22, 2.8), stroke: 1.4pt)
+  line((3.68, 5.0), (3.68, 2.8), stroke: 1.4pt)
+  line((3.22, 2.5), (3.95, 2.5), (3.95, 2.25), stroke: 1.4pt)
+
+  line((4.25, 6.8), (3.85, 5.45), (3.95, 5.0), (4.35, 4.05), (4.90, 4.05), (4.90, 6.15), (4.65, 6.15), (4.65, 6.8), stroke: 1.4pt)
+  line((4.90, 2.25), (4.90, 3.45), (4.15, 3.45), (3.95, 2.25), stroke: 1.4pt)
+
+  line((3.68, 6.6), (3.95, 6.33), stroke: 0.6pt)
+  line((3.68, 6.2), (3.98, 5.90), stroke: 0.6pt)
+  line((3.68, 5.85), (3.85, 5.70), stroke: 0.6pt)
+
+  line((3.68, 4.8), (3.95, 4.53), stroke: 0.6pt)
+  line((3.68, 4.4), (4.05, 4.03), stroke: 0.6pt)
+  line((3.68, 4.0), (4.12, 3.56), stroke: 0.6pt)
+  line((3.68, 3.6), (4.05, 3.23), stroke: 0.6pt)
+  line((3.68, 3.2), (3.98, 2.90), stroke: 0.6pt)
+
+  line((4.20, 6.40), (4.60, 6.80), stroke: 0.6pt)
+  line((4.08, 5.88), (4.65, 6.45), stroke: 0.6pt)
+  line((3.95, 5.35), (4.75, 6.15), stroke: 0.6pt)
+  line((4.05, 5.05), (4.90, 5.90), stroke: 0.6pt)
+  line((4.15, 4.75), (4.90, 5.50), stroke: 0.6pt)
+  line((4.25, 4.45), (4.90, 5.10), stroke: 0.6pt)
+  line((4.35, 4.15), (4.90, 4.70), stroke: 0.6pt)
+  line((4.65, 4.05), (4.90, 4.30), stroke: 0.6pt)
+
+  line((4.10, 3.15), (4.40, 3.45), stroke: 0.6pt)
+  line((4.02, 2.67), (4.80, 3.45), stroke: 0.6pt)
+  line((3.96, 2.25), (4.90, 3.19), stroke: 0.6pt)
+  line((4.36, 2.25), (4.90, 2.79), stroke: 0.6pt)
+  line((4.76, 2.25), (4.90, 2.39), stroke: 0.6pt)
+
+  line((3.1, 1.2), (3.1, 6.9), stroke: (dash: "dashed", paint: red, thickness: 1.5pt))
+  line((3.1, 1.55), (4.5, 7.0), stroke: (paint: red, thickness: 1.5pt))
+  arc((3.1, 1.55), start: 75.6deg, stop: 90deg, radius: 1.9, anchor: "origin", stroke: (paint: red, thickness: 0.8pt))
+
+  content((-0.15, 4.7), [$F$], anchor: "east")
+  content((-0.15, -0.05), [$O$], anchor: "east")
+  content((3.9, -0.15), [$delta$], anchor: "north")
+  content((2.48, 4.25), [$A$], anchor: "west")
+  content((2.48, 2.5), [$E$], anchor: "west")
+  content((2.48, 1.2), [$B$], anchor: "west")
+  content((2.48, 0.25), [$C$], anchor: "west")
+  content((3.28, 3.65), [#text(fill: red, $alpha$)], anchor: "south")
+})],
+)
 Durante lo strisciamento relativo tra le superfici a contatto si sviluppano anche importanti azioni di attrito, che uniscono all'accumulo elastico una significativa dissipazione di energia. Per questo motivo, una volta compressa lungo il tratto $O A$ del diagramma forza–spostamento, la molla non ritorna immediatamente nella posizione iniziale indeformata al diminuire della forza: i due anelli restano compatti finché la forza $F$ non scende al valore corrispondente al punto $B$ sul diagramma di scarico. Perché gli anelli possano effettivamente rilasciarsi e ritornare nella posizione indeformata al ridursi di $F$, è necessario che l'angolo di inclinazione delle superfici coniche $alpha$ sia maggiore dell'angolo di attrito $phi.alt$ (la cui tangente è pari al coefficiente di attrito tra le superfici):
 
 $ alpha > phi.alt $
