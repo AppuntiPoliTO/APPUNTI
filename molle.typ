@@ -861,15 +861,9 @@ $ F = k dot.op f $
   content((2.50, 1.12), [$t$], anchor: "west")
 })])
 Come già accade per le molle ad elica troncoconica o conica, la geometria conferisce una curva caratteristica non perfettamente lineare: la rigidezza varia con lo spostamento, sebbene spesso venga assunta costante e pari al valore del primo tratto della curva caratteristica. Una singola molla Belleville è molto rigida ed è pertanto indicata quando occorre sviluppare una reazione particolarmente importante in uno spazio assiale molto limitato.
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Per rendere più cedevole il sistema e modularne la rigidezza si possono praticare degli intagli radiali, riducendo così la capacità di contenimento trasversale del materiale e il richiamo elastico, oppure si possono disporre più molle in serie e/o in parallelo. Nel caso di disposizione in parallelo (molle sovrapposte con le facce superiori a contatto nello stesso verso) o in serie (molle speculari rispetto al piano medio), la rigidezza totale risulta rispettivamente dalla somma delle rigidezze o dall'inverso della somma dei reciproci.],[])
+Per rendere più cedevole il sistema e modularne la rigidezza si possono praticare degli intagli radiali, riducendo così la capacità di contenimento trasversale del materiale e il richiamo elastico, oppure si possono disporre più molle in serie e/o in parallelo. Nel caso di disposizione in parallelo (molle sovrapposte con le facce superiori a contatto nello stesso verso) o in serie (molle speculari rispetto al piano medio), la rigidezza totale risulta rispettivamente dalla somma delle rigidezze o dall'inverso della somma dei reciproci.
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Le molle Belleville senza intagli trovano impiego come elementi singoli o impilati, mentre le configurazioni con intagli sono frequentemente usate per ottenere un effetto antisvitamento, antiscorrimento o di blocco della rotazione relativa tra elementi fissati tra loro, esercitando una reazione elastica su un componente sotto tiro.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: tre fotografie applicative e commerciali di molle a tazza lisce singole, impilate in colonna (molle a tazza CB Christian Bauer) e montate su un perno di fissaggio]])
+Le molle Belleville senza intagli trovano impiego come elementi singoli o impilati, mentre le configurazioni con intagli sono frequentemente usate per ottenere un effetto antisvitamento, antiscorrimento o di blocco della rotazione relativa tra elementi fissati tra loro, esercitando una reazione elastica su un componente sotto tiro.
 
 #grid(
   columns: (1fr, 1fr),
