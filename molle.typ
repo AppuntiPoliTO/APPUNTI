@@ -861,7 +861,118 @@ $ F = k dot.op f $
   content((2.50, 1.12), [$t$], anchor: "west")
 })])
 Come già accade per le molle ad elica troncoconica o conica, la geometria conferisce una curva caratteristica non perfettamente lineare: la rigidezza varia con lo spostamento, sebbene spesso venga assunta costante e pari al valore del primo tratto della curva caratteristica. Una singola molla Belleville è molto rigida ed è pertanto indicata quando occorre sviluppare una reazione particolarmente importante in uno spazio assiale molto limitato.
-Per rendere più cedevole il sistema e modularne la rigidezza si possono praticare degli intagli radiali, riducendo così la capacità di contenimento trasversale del materiale e il richiamo elastico, oppure si possono disporre più molle in serie e/o in parallelo. Nel caso di disposizione in parallelo (molle sovrapposte con le facce superiori a contatto nello stesso verso) o in serie (molle speculari rispetto al piano medio), la rigidezza totale risulta rispettivamente dalla somma delle rigidezze o dall'inverso della somma dei reciproci.
+Per rendere più cedevole il sistema e modularne la rigidezza si possono praticare degli intagli radiali, riducendo così la capacità di contenimento trasversale del materiale e il richiamo elastico, oppure si possono disporre più molle in serie e/o in parallelo. #grid(
+  columns: 2,
+  gutter: 1em,
+  [Nel caso di disposizione in parallelo (molle sovrapposte con le facce superiori a contatto nello stesso verso) o in serie (molle speculari rispetto al piano medio), la rigidezza totale risulta rispettivamente dalla somma delle rigidezze o dall'inverso della somma dei reciproci.],
+  [#canvas(length: 1cm, {
+  import draw: *
+
+  line((0.04, 0.30), (0.00, 0.43), (1.30, 0.81), (1.34, 0.68), close: true, stroke: 1pt)
+  line((3.56, 0.30), (3.60, 0.43), (2.30, 0.81), (2.26, 0.68), close: true, stroke: 1pt)
+  line((1.30, 0.81), (2.30, 0.81), stroke: 1pt)
+  line((1.34, 0.68), (2.26, 0.68), stroke: 1pt)
+  line((0.04, 0.30), (3.56, 0.30), stroke: 1pt)
+
+  line((1.17, 0.63), (1.31, 0.77), stroke: 0.5pt)
+  line((1.00, 0.58), (1.20, 0.78), stroke: 0.5pt)
+  line((0.83, 0.53), (1.03, 0.73), stroke: 0.5pt)
+  line((0.66, 0.48), (0.86, 0.68), stroke: 0.5pt)
+  line((0.49, 0.43), (0.69, 0.63), stroke: 0.5pt)
+  line((0.32, 0.38), (0.52, 0.58), stroke: 0.5pt)
+  line((0.15, 0.33), (0.35, 0.53), stroke: 0.5pt)
+  line((0.03, 0.33), (0.18, 0.48), stroke: 0.5pt)
+
+  line((3.48, 0.33), (3.59, 0.44), stroke: 0.5pt)
+  line((3.32, 0.37), (3.43, 0.48), stroke: 0.5pt)
+  line((3.17, 0.42), (3.28, 0.53), stroke: 0.5pt)
+  line((3.01, 0.46), (3.12, 0.57), stroke: 0.5pt)
+  line((2.86, 0.51), (2.97, 0.62), stroke: 0.5pt)
+  line((2.70, 0.55), (2.81, 0.66), stroke: 0.5pt)
+  line((2.55, 0.60), (2.66, 0.71), stroke: 0.5pt)
+  line((2.39, 0.64), (2.50, 0.75), stroke: 0.5pt)
+  line((2.27, 0.72), (2.35, 0.80), stroke: 0.5pt)
+
+  line((0.04, 0.47), (0.00, 0.60), (1.30, 0.98), (1.34, 0.85), close: true, stroke: 1pt)
+  line((3.56, 0.47), (3.60, 0.60), (2.30, 0.98), (2.26, 0.85), close: true, stroke: 1pt)
+  line((1.30, 0.98), (2.30, 0.98), stroke: 1pt)
+  line((1.34, 0.85), (2.26, 0.85), stroke: 1pt)
+
+  line((1.17, 0.80), (1.31, 0.94), stroke: 0.5pt)
+  line((1.00, 0.75), (1.20, 0.95), stroke: 0.5pt)
+  line((0.83, 0.70), (1.03, 0.90), stroke: 0.5pt)
+  line((0.66, 0.65), (0.86, 0.85), stroke: 0.5pt)
+  line((0.49, 0.60), (0.69, 0.80), stroke: 0.5pt)
+  line((0.32, 0.55), (0.52, 0.75), stroke: 0.5pt)
+  line((0.15, 0.50), (0.35, 0.70), stroke: 0.5pt)
+  line((0.03, 0.50), (0.18, 0.65), stroke: 0.5pt)
+
+  line((3.48, 0.50), (3.59, 0.61), stroke: 0.5pt)
+  line((3.32, 0.54), (3.43, 0.65), stroke: 0.5pt)
+  line((3.17, 0.59), (3.28, 0.70), stroke: 0.5pt)
+  line((3.01, 0.63), (3.12, 0.74), stroke: 0.5pt)
+  line((2.86, 0.68), (2.97, 0.79), stroke: 0.5pt)
+  line((2.70, 0.72), (2.81, 0.83), stroke: 0.5pt)
+  line((2.55, 0.77), (2.66, 0.88), stroke: 0.5pt)
+  line((2.39, 0.81), (2.50, 0.92), stroke: 0.5pt)
+  line((2.27, 0.89), (2.35, 0.97), stroke: 0.5pt)
+
+  line((1.80, 0.00), (1.80, 1.35), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+  content((1.80, 1.50), [Molle in parallelo], anchor: "south")
+
+  line((4.64, 0.65), (4.60, 0.78), (5.90, 1.16), (5.94, 1.03), close: true, stroke: 1pt)
+  line((8.16, 0.65), (8.20, 0.78), (6.90, 1.16), (6.86, 1.03), close: true, stroke: 1pt)
+  line((5.90, 1.16), (6.90, 1.16), stroke: 1pt)
+  line((5.94, 1.03), (6.86, 1.03), stroke: 1pt)
+
+  line((5.77, 0.98), (5.91, 1.12), stroke: 0.5pt)
+  line((5.60, 0.93), (5.80, 1.13), stroke: 0.5pt)
+  line((5.43, 0.88), (5.63, 1.08), stroke: 0.5pt)
+  line((5.26, 0.83), (5.46, 1.03), stroke: 0.5pt)
+  line((5.09, 0.78), (5.29, 0.98), stroke: 0.5pt)
+  line((4.92, 0.73), (5.12, 0.93), stroke: 0.5pt)
+  line((4.75, 0.68), (4.95, 0.88), stroke: 0.5pt)
+  line((4.63, 0.68), (4.78, 0.83), stroke: 0.5pt)
+
+  line((8.08, 0.68), (8.19, 0.79), stroke: 0.5pt)
+  line((7.92, 0.72), (8.03, 0.83), stroke: 0.5pt)
+  line((7.77, 0.77), (7.88, 0.88), stroke: 0.5pt)
+  line((7.61, 0.81), (7.72, 0.92), stroke: 0.5pt)
+  line((7.46, 0.86), (7.57, 0.97), stroke: 0.5pt)
+  line((7.30, 0.90), (7.41, 1.01), stroke: 0.5pt)
+  line((7.15, 0.95), (7.26, 1.06), stroke: 0.5pt)
+  line((6.99, 0.99), (7.10, 1.10), stroke: 0.5pt)
+  line((6.87, 1.07), (6.95, 1.15), stroke: 0.5pt)
+
+  line((4.64, 0.65), (4.60, 0.52), (5.90, 0.14), (5.94, 0.27), close: true, stroke: 1pt)
+  line((8.16, 0.65), (8.20, 0.52), (6.90, 0.14), (6.86, 0.27), close: true, stroke: 1pt)
+  line((5.94, 0.27), (6.86, 0.27), stroke: 1pt)
+  line((5.90, 0.14), (6.90, 0.14), stroke: 1pt)
+  line((4.64, 0.65), (8.16, 0.65), stroke: 1pt)
+
+  line((4.61, 0.51), (4.72, 0.62), stroke: 0.5pt)
+  line((4.77, 0.47), (4.88, 0.58), stroke: 0.5pt)
+  line((4.92, 0.42), (5.03, 0.53), stroke: 0.5pt)
+  line((5.08, 0.38), (5.19, 0.49), stroke: 0.5pt)
+  line((5.23, 0.33), (5.34, 0.44), stroke: 0.5pt)
+  line((5.39, 0.29), (5.50, 0.40), stroke: 0.5pt)
+  line((5.54, 0.24), (5.65, 0.35), stroke: 0.5pt)
+  line((5.70, 0.20), (5.81, 0.31), stroke: 0.5pt)
+  line((5.85, 0.15), (5.93, 0.23), stroke: 0.5pt)
+
+  line((6.89, 0.18), (7.03, 0.32), stroke: 0.5pt)
+  line((7.00, 0.17), (7.20, 0.37), stroke: 0.5pt)
+  line((7.17, 0.22), (7.37, 0.42), stroke: 0.5pt)
+  line((7.34, 0.27), (7.54, 0.47), stroke: 0.5pt)
+  line((7.51, 0.32), (7.71, 0.52), stroke: 0.5pt)
+  line((7.68, 0.37), (7.88, 0.57), stroke: 0.5pt)
+  line((7.85, 0.42), (8.05, 0.62), stroke: 0.5pt)
+  line((8.02, 0.47), (8.17, 0.62), stroke: 0.5pt)
+
+  line((6.40, 0.00), (6.40, 1.35), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+  content((6.40, 1.50), [Molle in serie], anchor: "south")
+})],
+)
 
 Le molle Belleville senza intagli trovano impiego come elementi singoli o impilati, mentre le configurazioni con intagli sono frequentemente usate per ottenere un effetto antisvitamento, antiscorrimento o di blocco della rotazione relativa tra elementi fissati tra loro, esercitando una reazione elastica su un componente sotto tiro.
 
