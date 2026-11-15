@@ -3667,7 +3667,7 @@ $ alpha = frac(3, 2 + b_0' / b_0), quad frac(b_0', b_0) = frac(1, n) arrow.r b_0
 $ f = alpha frac(F l^3, 3 E I), quad sigma_(m a x) = frac(F l, b_0 h^2 / 6), quad k = frac(3 E I, alpha l^3) $
 
 dove $n$ indica il numero di foglie. L'errore commesso con questa schematizzazione è in realtà #strong[a favore di sicurezza], poiché il calcolo approssimato porta alla sovrastima sia della freccia (utile per verificare eventuali interferenze con il telaio o il terreno) sia della tensione massima nel materiale.
-
+#pagebreak() 
 === Molla a balestra a profilo parabolico
 #grid(
   columns: (1fr, 1fr),
@@ -3732,7 +3732,7 @@ Nella pratica della costruzione degli elementi delle macchine si impiegano diver
 
 === Uso delle molle per l'assorbimento degli urti
 #grid(
-  columns: (1.4fr, 1fr),
+  columns: (1.2fr, 1fr),
   column-gutter: 1em,
   align: (left + top, center + horizon),[Uno degli obiettivi fondamentali dell'impiego delle molle nelle macchine è l'assorbimento degli urti. In un primo caso si considera l'assorbimento dell'energia cinetica posseduta da un corpo in movimento di massa $m$ e velocità di traslazione (velocità d'impatto) $v$:
 
@@ -3833,6 +3833,7 @@ $ W = integral F dot.op d f $
   line((3.16, -3.17), (3.16, -3.03), (3.32, -3.10), close: true, fill: black, stroke: none)
   content((3.45, -3.15), [$f$], anchor: "west")
 })])
+#pagebreak()
 Nel caso di comportamento elastico lineare, l'energia immagazzinata corrisponde all'area del triangolo sotteso dalla retta caratteristica e vale:
 
 $ W = frac(1, 2) F f = frac(1, 2) k f^2 $
