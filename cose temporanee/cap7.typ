@@ -436,52 +436,7 @@ _Nota: indicando con $Q$ la portata su una larghezza unitaria $b = 1 "m"$, la re
 
 #pagebreak()
 
-#import "@preview/cetz:0.3.4"
 
-#set page(
-  paper: "a4",
-  margin: (x: 2.2cm, y: 2.4cm),
-  numbering: "1",
-)
-
-#set text(
-  font: "New Computer Modern",
-  size: 10.5pt,
-  lang: "it",
-)
-
-#set par(
-  justify: true,
-  leading: 0.65em,
-)
-
-#set heading(numbering: "1.1")
-#show heading.where(level: 1): it => block(below: 1em, above: 1.2em)[
-  #set text(size: 15pt, weight: "bold")
-  #it
-]
-#show heading.where(level: 2): it => block(below: 0.8em, above: 1.3em)[
-  #set text(size: 12.5pt, weight: "bold")
-  #it
-]
-#show heading.where(level: 3): it => block(below: 0.6em, above: 1em)[
-  #set text(size: 11pt, weight: "bold")
-  #it
-]
-
-// Box per note fisiche e osservazioni importanti
-#let nota-box(titolo, corpo) = block(
-  width: 100%,
-  breakable: false,
-  fill: rgb("#f4f7fa"),
-  stroke: (left: 3pt + rgb("#1f5a96")),
-  inset: (x: 12pt, y: 9pt),
-  radius: (right: 3pt),
-  above: 0.9em,
-  below: 0.9em,
-)[
-  *#titolo.* #corpo
-]
 
 = Equazione globale della meccanica dei fluidi
 
