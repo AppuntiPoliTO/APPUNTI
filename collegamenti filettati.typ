@@ -928,7 +928,7 @@ Il momento torcente resistente che occorre vincere durante il serraggio è dovut
   line((4.78, 2.16), (4.32, 1.98), mark: (end: ">"), stroke: (paint: rgb(180, 60, 40), thickness: 0.7pt))
   line((5.15, 2.44), (4.42, 3.35), mark: (end: ">"), stroke: (paint: rgb(180, 60, 40), thickness: 0.7pt))
 })])
-
+#pagebreak()
 ==== Modello del piano inclinato (sola inclinazione dell'elica)
 Per ricavare la relazione analitica tra il momento di serraggio $M_T$ e la forza assiale $F_V$ agente sul fusto della vite, si schematizza in prima battuta il contatto tra i filetti come il moto relativo di un blocco su un piano inclinato di angolo $alpha_m$ (angolo medio dell'elica del filetto), trascurando momentaneamente l'inclinazione laterale del profilo triangolare.
 
