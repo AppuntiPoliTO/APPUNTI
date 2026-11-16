@@ -96,3 +96,4 @@
 #include "capitoli/05-dinamica-dei-fluidi-viscosi-navier-stokes.typ"
 #include "capitoli/06-energia-meccanica-nei-fluidi-viscosi.typ"
 #include "capitoli/cap7.typ"
+#include "capitoli/cap9.typ"
