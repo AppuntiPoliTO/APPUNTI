@@ -1226,6 +1226,8 @@ Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria
   ]
 )
 
+
+
 2. *Conservazione della massa (Equazione di continuità)*:
    Per un fluido incomprimibile in moto stazionario, la portata per unità di larghezza entrante da $S_1$ deve eguagliare la somma delle portate uscenti da $S_2$ e $S_3$:
    $
