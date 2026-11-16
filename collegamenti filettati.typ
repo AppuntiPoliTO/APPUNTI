@@ -699,7 +699,7 @@ Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadra
 
 Il momento torcente resistente che occorre vincere durante il serraggio è dovuto a due contributi:
 1. L'attrito che si sviluppa tra i filetti della vite e quelli della madrevite in scorrimento relativo.
-2. L'attrito che si sviluppa tra la superficie del sottotesta della vite (o del dado, a seconda di quale elemento viene messo in rotazione) e la superficie del pezzo (o di un'eventuale rondella antisvitamento interposta).], [#canvas(length: cm, {
+2. L'attrito che si sviluppa tra la superficie del sottotesta della vite (o del dado, a seconda di quale elemento viene messo in rotazione) e la superficie del pezzo (o di un'eventuale rondella antisvitamento interposta).], [#canvas(length: 0.8cm, {
   import draw: *
 
   // ==========================================
