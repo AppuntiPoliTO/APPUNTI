@@ -5,6 +5,8 @@
 #set par(justify: true)
 #set figure(supplement: [Figura], gap: 0.8em)
 
+#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
+
 // Numerazione: titoli fino al 3° livello, equazioni per capitolo (es. (5.12)); figure senza numero
 #set heading(numbering: "1.1.1")
 #show heading.where(level: 4): set heading(numbering: none)
