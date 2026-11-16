@@ -1037,7 +1037,7 @@ Consideriamo un getto libero di sezione $S_1$, velocità $arrow(u)_1 = (U_1, 0, 
       $
   ],
   [ 
-  #canvas(length: 1cm, {
+  #canvas(length: 1.2cm, {
   import draw: *
 
   line((0.5, 2.88), (4.25, 2.88), (4.6, 3.02), (4.75, 3.3), (4.55, 3.59), (4.05, 3.72), (2.85, 3.72), (2.85, 4.1), (3.9, 4.1), (4.79, 3.87), (5.07, 3.36), (4.88, 2.82), (4.3, 2.5), (4.88, 2.18), (5.07, 1.64), (4.79, 1.13), (3.9, 0.9), (2.85, 0.9), (2.85, 1.28), (4.05, 1.28), (4.55, 1.41), (4.75, 1.7), (4.6, 1.98), (4.25, 2.12), (0.5, 2.12), close: true, fill: blue.transparentize(88%), stroke: none)
@@ -1102,89 +1102,6 @@ Consideriamo un getto libero di sezione $S_1$, velocità $arrow(u)_1 = (U_1, 0, 
   line((0.55, 0.45), (1.45, 0.45), mark: (end: ">"), stroke: 0.75pt)
   content((1.55, 0.45), text(size: 8pt)[$x$], anchor: "west")
 })
-  
-  #v(1em)
-  
-  #canvas(length: 1cm, {
-  import draw: *
-
-  line((4.2, 2.5), (4.8, 2.82), (4.99, 3.36), (4.71, 3.87), (3.9, 4.1), (5.1, 3.89), (5.98, 3.3), (6.3, 2.5), (5.98, 1.7), (5.1, 1.11), (3.9, 0.9), (4.71, 1.13), (4.99, 1.64), (4.8, 2.18), close: true, fill: gray.transparentize(92%), stroke: none)
-
-  line((4.92, 3.61), (5.35, 3.78), stroke: 0.55pt)
-  line((4.96, 3.24), (5.71, 3.54), stroke: 0.55pt)
-  line((4.85, 2.82), (5.99, 3.28), stroke: 0.55pt)
-  line((4.62, 2.35), (6.19, 2.98), stroke: 0.55pt)
-  line((4.86, 2.06), (6.29, 2.64), stroke: 0.55pt)
-  line((4.98, 1.73), (6.27, 2.25), stroke: 0.55pt)
-  line((4.89, 1.32), (6.04, 1.78), stroke: 0.55pt)
-
-  bezier((4.2, 2.5), (3.9, 4.1), (5.25, 2.65), (5.35, 4.1), stroke: 1.1pt)
-  bezier((4.2, 2.5), (3.9, 0.9), (5.25, 2.35), (5.35, 0.9), stroke: 1.1pt)
-  arc((3.9, 2.5), start: -90deg, stop: 90deg, radius: (2.4, 1.6), anchor: "origin", stroke: 1.1pt)
-
-  line((0.55, 2.82), (4.2, 2.82), stroke: 0.85pt + blue)
-  bezier((4.2, 2.82), (4.72, 3.27), (4.5, 2.82), (4.72, 3.02), stroke: 0.85pt + blue)
-  bezier((4.72, 3.27), (4.05, 3.72), (4.72, 3.52), (4.45, 3.72), stroke: 0.85pt + blue)
-  line((4.05, 3.72), (3.3, 3.72), stroke: 0.85pt + blue)
-  line((3.88, 4.1), (3.3, 4.1), stroke: 0.85pt + blue)
-  line((3.9, 3.91), (2.75, 3.91), mark: (end: ">"), stroke: 0.9pt + blue)
-  content((2.6, 3.91), text(size: 8.5pt, fill: blue)[$Q/2, u_2$], anchor: "east")
-
-  line((0.55, 2.18), (4.2, 2.18), stroke: 0.85pt + blue)
-  bezier((4.2, 2.18), (4.72, 1.73), (4.5, 2.18), (4.72, 1.98), stroke: 0.85pt + blue)
-  bezier((4.72, 1.73), (4.05, 1.28), (4.72, 1.48), (4.45, 1.28), stroke: 0.85pt + blue)
-  line((4.05, 1.28), (3.3, 1.28), stroke: 0.85pt + blue)
-  line((3.88, 0.9), (3.3, 0.9), stroke: 0.85pt + blue)
-  line((3.9, 1.09), (2.75, 1.09), mark: (end: ">"), stroke: 0.9pt + blue)
-  content((2.6, 1.09), text(size: 8.5pt, fill: blue)[$Q/2, u_2$], anchor: "east")
-
-  line((0.15, 2.5), (0.95, 2.5), mark: (end: ">"), stroke: 0.9pt + blue)
-  content((1.1, 2.5), text(size: 8.5pt, fill: blue)[$Q$], anchor: "west")
-})
-  
-  
-  #v(1em).
-
-
-  
-    #cetz.canvas(length: 0.78cm, {
-      import cetz.draw: *
-      // Pala curva tipo Pelton (profilo interno ed esterno)
-      bezier((1.8, 1.85), (3.5, 0), (3.1, 1.85), (3.5, 0.8), stroke: 1.8pt + black)
-      bezier((1.8, -1.85), (3.5, 0), (3.1, -1.85), (3.5, -0.8), stroke: 1.8pt + black)
-      bezier((2.1, 2.05), (4.0, 0), (3.5, 2.05), (4.0, 0.9), stroke: 1.2pt + black)
-      bezier((2.1, -2.05), (4.0, 0), (3.5, -2.05), (4.0, -0.9), stroke: 1.2pt + black)
-      line((1.8, 1.85), (2.1, 2.05), stroke: 1.2pt + black)
-      line((1.8, -1.85), (2.1, -2.05), stroke: 1.2pt + black)
-
-      // Getto entrante e divisione
-      line((0, 0.42), (2.3, 0.42), stroke: 1.1pt + rgb("#1f5a96"))
-      line((0, -0.42), (2.3, -0.42), stroke: 1.1pt + rgb("#1f5a96"))
-      bezier((2.3, 0.42), (1.0, 1.45), (3.1, 0.42), (3.0, 1.45), stroke: 1.1pt + rgb("#1f5a96"))
-      bezier((2.3, -0.42), (1.0, -1.45), (3.1, -0.42), (3.0, -1.45), stroke: 1.1pt + rgb("#1f5a96"))
-      line((1.0, 1.85), (1.8, 1.85), stroke: 1.1pt + rgb("#1f5a96"))
-      line((1.0, -1.85), (1.8, -1.85), stroke: 1.1pt + rgb("#1f5a96"))
-
-      // Contorno volume di controllo a sinistra (S1 e due S2)
-      line((0.8, -2.1), (0.8, 2.1), stroke: (paint: rgb("#c0392b"), thickness: 1pt, dash: "dashed"))
-      content((0.45, -0.68), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_1$])
-      content((0.45, 1.25), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_2$])
-      content((0.45, -1.25), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_2$])
-
-      // Frecce velocità U1 (entrante) e U2 (uscenti a sinistra)
-      line((-0.3, 0), (0.65, 0), mark: (end: ">"), stroke: 1.2pt + rgb("#1f5a96"))
-      content((0.1, 0.28), text(size: 8.5pt, fill: rgb("#1f5a96"))[$Q, U_1$])
-
-      line((1.4, 1.65), (0.1, 1.65), mark: (end: ">"), stroke: 1.1pt + rgb("#1f5a96"))
-      content((1.1, 2.15), text(size: 8.5pt, fill: rgb("#1f5a96"))[$Q/2, U_2$])
-
-      line((1.4, -1.65), (0.1, -1.65), mark: (end: ">"), stroke: 1.1pt + rgb("#1f5a96"))
-      content((1.1, -2.18), text(size: 8.5pt, fill: rgb("#1f5a96"))[$Q/2, U_2$])
-
-      // Normali uscenti a sinistra
-      line((0.8, 0.75), (0.15, 0.75), mark: (end: ">"), stroke: 1pt + rgb("#c0392b"))
-      content((0.1, 0.98), text(size: 8pt, fill: rgb("#c0392b"))[$arrow(n)$])
-    })
   ]
 )
 
