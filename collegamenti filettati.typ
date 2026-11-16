@@ -66,10 +66,7 @@ La distinzione terminologica tra le diverse configurazioni costruttive riveste u
 - #strong[Vite (mordente):] si impiega senza dado; la vite attraversa liberamente il primo pezzo (premendone la superficie esterna tramite il proprio sottotesta) e si avvita direttamente nella madrevite ricavata all'interno del secondo blocco, generalmente fisso, che svolge simultaneamente sia la funzione di elemento collegato sia quella del dado.
 - #strong[Prigioniero:] è costituito da un gambo privo di testa e filettato alle due estremità. Un'estremità si avvita nella madrevite ricavata in uno dei pezzi (talvolta fino alla fine della filettatura, richiedendo attenzione a possibili problemi dovuti all'aria intrappolata sul fondo del foro cieco), mentre l'altra estremità fuoriesce per accogliere i pezzi da impilare e viene chiusa mediante un dado. Il prigioniero svolge anche una comoda funzione iniziale di perno di centramento per allineare le parti da accostare.
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: tre viste in sezione della nomenclatura dei collegamenti filettati: in alto a sinistra un bullone (vite passante + dado) che serra due piastre; in basso a sinistra una vite mordente avvitata direttamente nel foro filettato del secondo pezzo; a destra un prigioniero avvitato nel foro cieco filettato inferiore e pronto a ricevere la chiusura superiore]])
+
 
 === Analisi del collegamento e diagramma di interferenza
 Il collegamento filettato applica una forza assiale di chiusura che comprime i pezzi l'uno contro l'altro. Questa compressione deve generare all'interfaccia tra le parti una forza d'attrito sufficiente a contrastare eventuali azioni trasversali esterne, impedendo lo scorrimento relativo dei blocchi: salvo configurazioni particolari, le viti #strong[non devono lavorare a taglio], bensì esclusivamente a trazione.
