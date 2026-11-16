@@ -270,7 +270,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
         bezier((3.75, s * 0.12), (2.72, s * 0.14), (3.45, s * 0.04), (2.95, s * 0.06), mark: (end: "stealth", size: 0.09, fill: col-accent), stroke: 0.8pt + col-accent)
       }
     })
-  ],
+  ]
 
   // 3. Distacco dello strato limite
   [
