@@ -188,7 +188,7 @@ Infine, poiché nei campi a potenziale la vorticità è nulla ($arrow(omega) = a
 
 === Evoluzione reale del campo di moto attorno a una sfera/cilindro al variare di $"Re"$
 
-Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità nello strato limite e il campo di moto effettivo attorno a una sfera (o cilindro) cambia radicalmente al variare del numero di Reynolds $"Re" = u_infinity D slash nu$:
+Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità nello strato limite e il campo di moto effettivo attorno a una sfera (o cilindro) cambia radicalmente al variare del numero di Reynolds $"Re" = U_infinity D slash nu$:
 
 #v(0.2em)
 
@@ -214,7 +214,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
       line((0.2, 0.0), (0.9, 0.0), mark: (end: ">"), stroke: 0.8pt + blue)
       line((0.2, 0.38), (0.9, 0.38), mark: (end: ">"), stroke: 0.8pt + blue)
       line((0.2, 0.76), (0.9, 0.76), mark: (end: ">"), stroke: 0.8pt + blue)
-      content((0.55, 0.94), text(size: 8pt, fill: blue)[$u_infinity$], anchor: "south")
+      content((0.55, 0.94), text(size: 8pt, fill: blue)[$U_infinity$], anchor: "south")
 
       circle((3.1, 0), radius: 0.65, fill: gray.transparentize(75%), stroke: 1.1pt + black)
       line((2.64, -0.46), (3.56, 0.46), mark: (start: ">", end: ">"), stroke: 0.75pt + black)
@@ -243,15 +243,15 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
   // 2. Re ~ 1 - 20
   [#v(1em)
     *2. Regime $"Re" tilde.op 1 div 20$ (ricircolo stazionario):* \
-    l'inerzia del fluido non è più trascurabile. A valle del punto di minima pressione ($p_"min"$) il fluido incontra un gradiente di pressione avverso (da $p_"min"$ verso la zona di recupero a valle) e non riesce a rimanere attaccato alla parete: si formano due vortici stazionari e simmetrici di ricircolo in scia.
+    l'inerzia del fluido non è più trascurabile. A valle del punto di minima pressione ($P_"min"$) il fluido incontra un gradiente di pressione avverso (da $P_"min"$ verso la zona di recupero a valle) e non riesce a rimanere attaccato alla parete: si formano due vortici stazionari e simmetrici di ricircolo in scia.
   ],
   [
     #canvas(length: 1cm, {
       import draw: *
       line((0.1, 0), (5.3, 0), mark: (end: ">"), stroke: (paint: gray, thickness: 0.65pt, dash: "dashed"))
       line((0.35, -1.15), (0.35, 1.35), mark: (end: ">"), stroke: 0.75pt + black)
-      content((5.38, 0), text(size: 8pt)[$x_1$], anchor: "west")
-      content((0.25, 1.32), text(size: 8pt)[$x_2$], anchor: "east")
+      content((5.38, 0), text(size: 8pt)[$x$], anchor: "west")
+      content((0.25, 1.32), text(size: 8pt)[$y$], anchor: "east")
 
       circle((2.1, 0), radius: 0.65, fill: gray.transparentize(75%), stroke: 1.1pt + black)
 
@@ -269,13 +269,13 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
 
       line((1.64, 0.46), (1.22, 0.88), mark: (end: ">"), stroke: 0.85pt + green.darken(25%))
       line((1.64, 0.46), (2.02, 0.84), mark: (end: ">"), stroke: 0.85pt + green.darken(25%))
-      content((1.18, 0.92), text(size: 7.5pt, fill: green.darken(25%))[$xi_2$], anchor: "south-east")
-      content((2.06, 0.88), text(size: 7.5pt, fill: green.darken(25%))[$xi_1$], anchor: "south")
+      content((1.18, 0.92), text(size: 7.5pt, fill: green.darken(25%))[$n$], anchor: "south-east")
+      content((2.06, 0.88), text(size: 7.5pt, fill: green.darken(25%))[$s$], anchor: "south")
 
       circle((1.45, 0), radius: 0.065, fill: red, stroke: none)
       circle((2.1, 0.65), radius: 0.065, fill: red, stroke: none)
-      content((1.38, -0.06), text(size: 7.5pt, fill: red)[$p_"max"$], anchor: "north-east")
-      content((2.1, 0.53), text(size: 7.5pt, fill: red)[$p_"min"$], anchor: "north")
+      content((1.38, -0.06), text(size: 7.5pt, fill: red)[$P_"max"$], anchor: "north-east")
+      content((2.1, 0.53), text(size: 7.5pt, fill: red)[$P_"min"$], anchor: "north")
 
       bezier((2.70, 0.32), (4.05, 0.18), (3.15, 0.48), (3.85, 0.34), stroke: 0.8pt + red)
       bezier((4.05, 0.18), (2.80, 0.12), (4.05, 0.06), (3.35, 0.08), mark: (end: ">"), stroke: 0.8pt + red)
@@ -290,7 +290,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
   // 3. Distacco dello strato limite
   [#v(1em)
     *3. Meccanismo di distacco dello strato limite:* \
-    a monte di $p_"min"$ il gradiente è favorevole ($partial p slash partial xi_1 < 0$) e accelera il fluido; a valle di $p_"min"$ il gradiente diventa avverso ($partial p slash partial xi_1 > 0$), frena gli strati vicini a parete fino all'inversione del profilo di velocità $u_1(xi_2)$ e causa il distacco della vena fluida, impedendo il recupero di pressione e generando una forte *resistenza di forma*.
+    a monte di $P_"min"$ il gradiente è favorevole ($partial P slash partial s < 0$) e accelera il fluido; a valle di $P_"min"$ il gradiente diventa avverso ($partial P slash partial s > 0$), frena gli strati vicini a parete fino all'inversione del profilo di velocità $u(n)$ e causa il distacco della vena fluida, impedendo il recupero di pressione e generando una forte *resistenza di forma*.
   ],
   [
     #canvas(length: 1.4cm, {
@@ -300,10 +300,10 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
 
       line((2.5, 0.35), (2.5, 1.55), stroke: (paint: gray, thickness: 0.55pt, dash: "dashed"))
       circle((2.5, 0.35), radius: 0.065, fill: red, stroke: none)
-      content((2.5, 0.18), text(size: 7.5pt, fill: red)[*$p_"min" (u_"max")$*], anchor: "north")
+      content((2.5, 0.18), text(size: 7.5pt, fill: red)[*$P_"min" (U_"max")$*], anchor: "north")
 
       line((1.23, 0.07), (0.76, 1.07), mark: (end: ">"), stroke: 0.75pt + gray)
-      content((0.70, 1.09), text(size: 7.5pt)[$xi_2$], anchor: "east")
+      content((0.70, 1.09), text(size: 7.5pt)[$n$], anchor: "east")
 
       line((1.11, 0.32), (1.45, 0.48), mark: (end: ">"), stroke: 0.65pt + blue)
       line((0.99, 0.58), (1.49, 0.81), mark: (end: ">"), stroke: 0.65pt + blue)
@@ -311,7 +311,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
       bezier((1.23, 0.07), (1.44, 1.09), (1.57, 0.53), (1.51, 0.83), stroke: 1pt + blue)
 
       line((3.77, 0.07), (4.24, 1.07), mark: (end: ">"), stroke: 0.75pt + gray)
-      content((4.29, 1.09), text(size: 7.5pt)[$xi_2$], anchor: "west")
+      content((4.29, 1.09), text(size: 7.5pt)[$n$], anchor: "west")
 
       line((3.86, 0.27), (3.66, 0.36), mark: (end: ">"), stroke: 0.65pt + red)
       line((4.05, 0.67), (4.32, 0.54), mark: (end: ">"), stroke: 0.65pt + blue)
@@ -319,10 +319,10 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
 
       bezier((3.77, 0.07), (3.95, 0.45), (3.52, 0.28), (3.67, 0.51), stroke: 1pt + red)
       bezier((3.95, 0.45), (4.66, 0.65), (4.20, 0.41), (4.45, 0.66), stroke: 1pt + blue)
-      content((4.72, 0.63), text(size: 8pt, fill: blue)[$u_1$], anchor: "west")
+      content((4.72, 0.63), text(size: 8pt, fill: blue)[$u$], anchor: "west")
 
-      content((1.45, 1.38), text(size: 8pt, fill: green.darken(25%))[$ (partial p) / (partial xi_1) < 0 $], anchor: "south")
-      content((3.55, 1.38), text(size: 8pt, fill: red)[$ (partial p) / (partial xi_1) > 0 $], anchor: "south")
+      content((1.45, 1.38), text(size: 8pt, fill: green.darken(25%))[$ (partial P) / (partial s) < 0 $], anchor: "south")
+      content((3.55, 1.38), text(size: 8pt, fill: red)[$ (partial P) / (partial s) > 0 $], anchor: "south")
     })
   ],
 
@@ -362,7 +362,7 @@ Per comprendere il legame diretto tra vorticità e transizione alla turbolenza, 
 ]
 
 Osserviamo le caratteristiche principali di questa equazione:
-- *Scomparsa del termine di pressione:* poiché il rotore del gradiente di qualsiasi funzione scalare è identicamente nullo ($nabla times (nabla p) = arrow(0)$), la pressione non compare nell'equazione dinamica della vorticità.
+- *Scomparsa del termine di pressione:* poiché il rotore del gradiente di qualsiasi funzione scalare è identicamente nullo ($nabla times (nabla P) = arrow(0)$), la pressione non compare nell'equazione dinamica della vorticità.
 - *Derivata materiale $D arrow(omega) slash D t$:* al primo membro compare la variazione nel tempo della vorticità seguendo la particella fluida nel suo moto (trasporto lagrangiano).
 - *Termine di stiramento e inclinazione vorticosa $(arrow(omega) dot nabla) arrow(u)$:* questo termine (assente nell'equazione della quantità di moto) descrive lo *stiramento degli assi vorticosi* (*vortex stretching*) operato dai gradienti di velocità. Esso produce l'intensificazione dei vortici lungo il loro asse ed è il meccanismo fondamentale che permette a un campo di moto di transitare dal regime laminare a quello turbolento.
 - *Termine di diffusione viscosa $nu Delta arrow(omega)$:* analogamente alla quantità di moto, anche la vorticità diffonde nel fluido per effetto dell'agitazione molecolare (viscosità cinematica $nu$), in particolare propagandosi dalle pareti solide — dove la vorticità viene generata ed è massima — verso il cuore del campo di moto.
