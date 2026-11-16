@@ -393,11 +393,7 @@ Consideriamo una corrente a pelo libero su fondo orizzontale che incontra una pa
   line((0.683, 2.6), (0.95, 2.6), stroke: 0.55pt)
   line((0.817, 3.0), (0.95, 3.0), stroke: 0.55pt)
 
-  // Diagramma delle pressioni a valle
-  line((7.95, 1.0), (8.22, 1.0), (7.95, 1.8), close: true, stroke: 0.8pt)
-  line((7.95, 1.2), (8.15, 1.2), stroke: 0.55pt)
-  line((7.95, 1.4), (8.083, 1.4), stroke: 0.55pt)
-  line((7.95, 1.6), (8.017, 1.6), stroke: 0.55pt)
+  
 
   // Quote h1 e h2
   line((1.75, 1.0), (1.75, 3.4), mark: (start: ">", end: ">"), stroke: 0.7pt)
