@@ -1222,7 +1222,7 @@ Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria
   content((6.45, 5.95), text(size: 8.5pt)[$t$], anchor: "west")
   content((5.00, 2.04), text(size: 8.5pt)[$n$], anchor: "west")
 })
-    })
+
   ]
 )
 
