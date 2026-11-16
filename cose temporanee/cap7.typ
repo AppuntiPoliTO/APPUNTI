@@ -71,7 +71,7 @@ tau_(i j) = 2 mu D_(i j) quad "con" quad D_(i j) = 1/2 ( (partial u_i) / (partia
 $
 
 #block(breakable: false)[
-  Sviluppiamo il termine inerziale a primo membro (derivata materiale). Applicando la regola di derivazione del prodotto e sfruttando l'equazione di continuità in forma generale $partial rho / partial t + partial / (partial x_j) (rho u_j) = 0$ (che per un fluido incomprimibile a densità costante $rho = "cost"$ si riduce a $partial u_j / partial x_j = 0$), si ottiene:
+  Sviluppiamo il termine inerziale a primo membro (derivata materiale). Applicando la regola di derivazione del prodotto e sfruttando l'equazione di continuità in forma generale $partial rho / partial t + partial / (partial x_j) (rho u_j) = 0$ (che per un fluido incomprimibile a densità costante $rho = "cost"$ si riduce a $(partial u_j) / (partial x_j) = 0$), si ottiene:
 
   $
   rho (D u_i) / (D t) &= rho (partial u_i) / (partial t) + rho u_j (partial u_i) / (partial x_j) = \
