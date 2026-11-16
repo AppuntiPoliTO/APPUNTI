@@ -268,7 +268,7 @@ Poiché per mantenere il moto in presenza di attrito deve essere $p_1 > p_2$, la
 
       // Sforzi tau_w (opposti al moto)
       line((3.2, 0.85), (1.6, 0.85), mark: (end: ">"), stroke: 1.1pt + rgb("#c0392b"))
-      content((2.4, 0.55), text(size: 9pt, fill: rgb("#c0392b"))[$sigma_w$])
+      content((2.4, 0.55), text(size: 9pt, fill: rgb("#c0392b"))[$tau_w$])
       line((3.2, -0.85), (1.6, -0.85), mark: (end: ">"), stroke: 1.1pt + rgb("#c0392b"))
       content((2.4, -0.55), text(size: 9pt, fill: rgb("#c0392b"))[$tau_w$])
 
