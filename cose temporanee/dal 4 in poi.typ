@@ -1236,7 +1236,59 @@ $
       $
   ],
   [
-    #image("immagini/3cb734d7-9607-49d0-8970-a51574b61853-16_1061_1933_456_109.jpg", width: 70%)
+    #canvas(length: 1cm, {
+  import draw: *
+
+  line((0.5, 3.5), (3.0, 3.5), (6.2, 1.4), (6.2, 1.56), (3.0, 3.66), (3.0, 4.4), (0.5, 4.4), close: true, fill: gray.transparentize(90%), stroke: none)
+  rect((6.2, 1.2), (6.95, 1.76), fill: gray.transparentize(86%), stroke: 1pt)
+  line((6.95, 1.38), (7.65, 1.3), (7.65, 1.66), (6.95, 1.58), close: true, fill: gray.transparentize(90%), stroke: none)
+  circle((7.65, 1.48), radius: (0.07, 0.18), fill: gray.transparentize(82%), stroke: 0.9pt)
+
+  line((0.5, 3.5), (3.0, 3.5), (6.2, 1.4), stroke: 1pt)
+  line((3.0, 4.65), (3.0, 3.66), (6.2, 1.56), stroke: 1pt)
+  line((0.5, 4.4), (3.0, 4.4), stroke: 0.85pt)
+
+  line((1.15, 4.56), (1.35, 4.56), (1.25, 4.4), close: true, stroke: 0.7pt)
+  line((1.18, 4.31), (1.32, 4.31), stroke: 0.6pt)
+  line((1.21, 4.23), (1.29, 4.23), stroke: 0.6pt)
+  content((0.85, 3.95), text(size: 8.5pt)[$R$], anchor: "center")
+
+  line((3.69, 3.51), (3.55, 3.3), mark: (end: ">"), stroke: 0.65pt)
+  line((3.34, 2.98), (3.48, 3.19), mark: (end: ">"), stroke: 0.65pt)
+  content((3.78, 3.54), text(size: 7.5pt)[$d = 2" m"$ : diametro], anchor: "west")
+
+  content((4.8, 2.7), text(size: 8pt)[Condotta], anchor: "south-west")
+
+  line((2.92, 3.37), (2.67, 3.0), stroke: 0.55pt)
+  line((6.12, 1.27), (5.87, 0.9), stroke: 0.55pt)
+  line((3.85, 2.34), (2.73, 3.08), mark: (end: ">"), stroke: 0.7pt)
+  line((4.81, 1.72), (5.93, 0.98), mark: (end: ">"), stroke: 0.7pt)
+  content((4.33, 2.03), text(size: 8pt)[$L = 1" km"$], anchor: "center")
+  content((3.8, 1.38), text(size: 8pt)[$chi = 0.018$], anchor: "center")
+
+  line((6.95, 1.58), (7.65, 1.66), stroke: 0.95pt)
+  line((6.95, 1.38), (7.65, 1.3), stroke: 0.95pt)
+  content((6.58, 1.88), text(size: 8pt)[Turbina], anchor: "south")
+
+  line((7.38, 1.98), (7.32, 1.66), mark: (end: ">"), stroke: 0.65pt)
+  content((7.65, 2.04), text(size: 7.5pt)[Evacuazione], anchor: "south")
+
+  line((7.65, 1.48), (8.25, 1.48), mark: (end: ">"), stroke: 0.85pt)
+  content((8.33, 1.48), text(size: 7.5pt)[Fuga], anchor: "west")
+
+  bezier((7.65, 1.3), (7.85, 0.92), (7.52, 1.1), (7.68, 0.96), stroke: 0.6pt)
+  content((7.92, 0.9), text(size: 8pt)[$S_E = 20" m"^2$], anchor: "west")
+  content((7.85, 0.38), text(size: 8pt)[$Delta H_E = K rho frac(u_s^2, 2)$], anchor: "west")
+
+  line((3.45, 4.4), (9.4, 4.4), stroke: 0.55pt)
+  line((8.95, 1.48), (9.4, 1.48), stroke: 0.55pt)
+  line((9.25, 3.18), (9.25, 4.4), mark: (end: ">"), stroke: 0.7pt)
+  line((9.25, 2.7), (9.25, 1.48), mark: (end: ">"), stroke: 0.7pt)
+  content((9.25, 2.94), text(size: 8pt)[$Delta z = 300" m"$], anchor: "center")
+
+  content((0.5, 0.72), text(size: 8pt)[Flusso di volume nominale], anchor: "west")
+  content((0.9, 0.34), text(size: 8pt)[di $Q = 20" m"^3/"s"$], anchor: "west")
+})
   ]
 )
 #v(1em)
