@@ -1046,15 +1046,15 @@ $ F_U = F_V tan(alpha_m + phi.alt) $
 Poiché la forza tangenziale $F_U$ agisce mediamente a una distanza dall'asse della vite pari al raggio medio $frac(d_m, 2)$ (dove $d_m$ è il diametro medio della filettatura, corrispondente a $d_2$), il momento torcente di serraggio necessario a vincere la resistenza sui filetti vale:
 
 $ M_T = F_U frac(d_m, 2) = frac(F_V, 2) [ d_m dot.op tan(alpha_m + phi.alt) ] $
-#strong[Svitamento e condizione di svitamento spontaneo:]
-In fase di svitamento, il moto relativo lungo il piano inclinato si inverte (il filetto scende) e di conseguenza la forza di attrito $F_("attrito")$ si ribalta di $180degree$ per opporsi alla discesa. Nel caso generale in cui l'angolo d'attrito è maggiore dell'angolo d'inclinazione dell'elica ($phi.alt > alpha_m$), la risultante $F_(R E S)$ cade dalla parte opposta rispetto alla verticale, formando con $F_V$ l'angolo $(phi.alt - alpha_m)$ e invertendo il verso di $F_U$. Il momento necessario allo svitamento risulta opposto a quello di serraggio:
-
-$ M_("svit") = -F_U frac(d_m, 2) = -frac(F_V, 2) [d_m dot.op tan(phi.alt - alpha_m)] = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt)] $
 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Pertanto, se $phi.alt > alpha_m$, si ha $M_("svit") < 0$: il collegamento non si svita da solo ma richiede l'applicazione di un momento di segno opposto per effettuare lo svitamento comandato.],[#canvas(length: 1cm, {
+  align: (left + horizon, center + horizon),[#strong[Svitamento e condizione di svitamento spontaneo:]
+In fase di svitamento, il moto relativo lungo il piano inclinato si inverte (il filetto scende) e di conseguenza la forza di attrito $F_("attrito")$ si ribalta di $180degree$ per opporsi alla discesa. Nel caso generale in cui l'angolo d'attrito è maggiore dell'angolo d'inclinazione dell'elica ($phi.alt > alpha_m$), la risultante $F_(R E S)$ cade dalla parte opposta rispetto alla verticale, formando con $F_V$ l'angolo $(phi.alt - alpha_m)$ e invertendo il verso di $F_U$. Il momento necessario allo svitamento risulta opposto a quello di serraggio:
+
+$ M_("svit") = -F_U frac(d_m, 2) = -frac(F_V, 2) [d_m dot.op tan(phi.alt - alpha_m)] = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt)] $
+ Pertanto, se $phi.alt > alpha_m$, si ha $M_("svit") < 0$: il collegamento non si svita da solo ma richiede l'applicazione di un momento di segno opposto per effettuare lo svitamento comandato.],[#canvas(length: 1cm, {
   import draw: *
 
   // --- BOTTOM PANEL: BOLTED JOINT ---
