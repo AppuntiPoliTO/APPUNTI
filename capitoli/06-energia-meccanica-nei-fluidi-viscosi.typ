@@ -331,7 +331,7 @@ Il profilo è parabolico: massimo ($u_0$) sull'asse, nullo a parete.
   figure(include "../figs/06-energia-meccanica-nei-fluidi-viscosi-fig05.typ"),
 )
 
-#tappa[Portata.] Si sostituisce nell'integrale della portata il profilo @eq:poiseuille_profilo, scritto come $u(r) = G \/ mu (r^2\/4 - R^2\/4)$, e si integra in $r$:
+#tappa[Portata.] Si sostituisce nell'integrale della portata il profilo , scritto come $u(r) = G \/ mu (r^2\/4 - R^2\/4)$, e si integra in $r$:
 
 $
   Q_v &= 2 pi integral_0^R u(r) r dif r = (pi G R^2)/(2 mu) [r^4/(4 R^2) - r^2/2]_0^R \
