@@ -371,7 +371,7 @@ Consideriamo una corrente a pelo libero su fondo orizzontale che incontra una pa
 
   // Riempimenti (paratoia e diagrammi di pressione)
   line((0.15, 1.0), (0.95, 1.0), (0.95, 3.4), close: true, fill: gray.transparentize(88%), stroke: none)
-  line((7.95, 1.0), (8.22, 1.0), (7.95, 1.8), close: true, fill: gray.transparentize(88%), stroke: none)
+  
   rect((4.80, 2.10), (4.94, 3.80), fill: gray.transparentize(65%), stroke: 1pt)
 
   // Fondo orizzontale, sezione di monte e pelo libero
