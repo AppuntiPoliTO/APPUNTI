@@ -345,7 +345,45 @@ Consideriamo ora una condotta orizzontale la cui sezione varia da $S_1$ a $S_2$ 
     })
   ]
 )
+#figure(
+  align(center)[#canvas(length: 1cm, {
+  import draw: *
 
+  // Riempimento leggero delle sezioni trasversali di ingresso e uscita
+  circle((1.20, 2.00), radius: (0.28, 1.15), fill: gray.transparentize(88%), stroke: none)
+  circle((6.80, 2.00), radius: (0.11, 0.42), fill: gray.transparentize(88%), stroke: none)
+
+  // Profilo della condotta convergente (cilindro + raccordo simmetrico)
+  line((1.20, 3.15), (3.80, 3.15), stroke: 1pt)
+  line((1.20, 0.85), (3.80, 0.85), stroke: 1pt)
+  bezier((3.80, 3.15), (6.80, 2.42), (4.90, 3.15), (5.70, 2.42), stroke: 1pt)
+  bezier((3.80, 0.85), (6.80, 1.58), (4.90, 0.85), (5.70, 1.58), stroke: 1pt)
+
+  // Sezione circolare d'ingresso (interamente visibile)
+  circle((1.20, 2.00), radius: (0.28, 1.15), stroke: 1pt)
+
+  // Sezione circolare d'uscita (arco posteriore tratteggiato, anteriore pieno)
+  arc((6.80, 2.00), start: 90deg, stop: 270deg, radius: (0.11, 0.42), anchor: "origin", stroke: (dash: "dashed", thickness: 0.75pt))
+  arc((6.80, 2.00), start: -90deg, stop: 90deg, radius: (0.11, 0.42), anchor: "origin", stroke: 1pt)
+
+  // Portata Q in ingresso e in uscita
+  line((1.20, 2.00), (1.95, 2.00), mark: (end: ">"), stroke: 1pt)
+  content((2.08, 2.00), text(size: 9pt)[$Q$], anchor: "west")
+
+  line((6.80, 2.00), (7.65, 2.00), mark: (end: ">"), stroke: 1pt)
+  content((7.78, 2.00), text(size: 9pt)[$Q$], anchor: "west")
+
+  // Versori normali uscenti (blu)
+  line((1.20, 2.00), (0.55, 2.00), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
+  content((0.85, 2.12), text(size: 8pt, fill: blue)[$arrow(n)$], anchor: "south")
+
+  line((5.30, 2.785), (5.533, 3.391), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
+  content((5.60, 3.42), text(size: 8pt, fill: blue)[$arrow(n)$], anchor: "south-west")
+
+  line((6.80, 2.22), (7.38, 2.22), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
+  content((7.12, 2.34), text(size: 8pt, fill: blue)[$arrow(n)$], anchor: "south")
+})]
+)
 
 
 Questa relazione mette in luce due aspetti fondamentali:
