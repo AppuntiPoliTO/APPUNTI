@@ -3,7 +3,7 @@
 
 #set page(
   paper: "a4",
-  margin: (x: 2.2cm, y: 2.4cm),
+  margin: (x: 2cm, y: 2cm),
   numbering: "1",
 )
 

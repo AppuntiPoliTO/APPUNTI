@@ -1,5 +1,9 @@
 #import "/template.typ":
-
+#set page(
+  paper: "a4",
+  margin: (x: 2cm, y: 2cm),
+  numbering: "1",
+)
 = Vorticità e campi irrotazionali
 
 == Il vettore vorticità
