@@ -241,7 +241,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
   ],
 
   // 2. Re ~ 1 - 20
-  [
+  [#v(1em)
     *2. Regime $"Re" tilde.op 1 div 20$ (ricircolo stazionario):* \
     l'inerzia del fluido non è più trascurabile. A valle del punto di minima pressione ($p_"min"$) il fluido incontra un gradiente di pressione avverso (da $p_"min"$ verso la zona di recupero a valle) e non riesce a rimanere attaccato alla parete: si formano due vortici stazionari e simmetrici di ricircolo in scia.
   ],
@@ -286,7 +286,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
   ],
 
   // 3. Distacco dello strato limite
-  [
+  [#v(1em)
     *3. Meccanismo di distacco dello strato limite:* \
     a monte di $p_"min"$ il gradiente è favorevole ($partial p slash partial xi_1 < 0$) e accelera il fluido; a valle di $p_"min"$ il gradiente diventa avverso ($partial p slash partial xi_1 > 0$), frena gli strati vicini a parete fino all'inversione del profilo di velocità $u_1(xi_2)$ e causa il distacco della vena fluida, impedendo il recupero di pressione e generando una forte *resistenza di forma*.
   ],
@@ -326,7 +326,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
 
 
   // 4. Re ~ 40 - 50
-  [
+  [#v(2em)
     *4. Regime $"Re" tilde.op 40 div 50$ (instabilità della scia):* \
     la simmetria dei vortici a valle si rompe e la scia diventa instazionaria, dando origine al distacco periodico e alternato di vortici controrotanti (*scia di von Kármán*).
   ],
@@ -350,7 +350,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
 })
   ]
 )
-
+#v(2em)
 == Equazione di Helmholtz e legame con la turbolenza
 
 Per comprendere il legame diretto tra vorticità e transizione alla turbolenza, si ricava l'equazione evolutiva della vorticità applicando l'operatore rotore ($nabla times$) a tutti i termini dell'equazione di Navier-Stokes incomprimibile. Si ottiene così l'*equazione di Helmholtz*:
