@@ -270,7 +270,7 @@ Scomponiamo la superficie di controllo in \ $S = S_1 union S_2 union S_w$ (sezio
 })],
 )
 
-- per $arrow(M) = - integral_S rho u_i u_j n_j dif S$, il flusso attraverso la parete impermeabile $S_w$ è nullo;\
+- per $arrow(M) = - integral_S rho u_i u_j n_j dif S$, il flusso attraverso la parete impermeabile $S_w$ è nullo sia per la condizione di impermeabilità sia perchè la normale è perpendicolare;\
 - lungo $x$, su $S_1$ la velocità è opposta alla normale uscente ($n_(1, x) = -1$) e dà il contributo positivo entrante $M_"in" = rho U_(d, 1)^2 S_1$\
 - su $S_2$ è concorde ($n_(2, x) = +1$) e dà il contributo negativo uscente $-M_"out" = -rho U_(d, 2)^2 S_2$;
 - per $arrow(Pi) = integral_S sigma_(i j) n_j dif S$, l'integrale si spezza nei tre contributi su $S_1$, $S_2$ e $S_w$: $arrow(Pi) = arrow(Pi)_1 + arrow(Pi)_2 + arrow(F)$, dove $arrow(F) = integral_(S_w) sigma_(i j) n_j dif S$ è la forza esercitata dalla parete sul fluido ($ arrow(Pi)_w$). Trascurando su $S_1$ e $S_2$ il termine viscoso rispetto alla pressione ($sigma_(i j) approx -p delta_(i j)$), si ha $Pi_(x, 1) = p_1 S_1$ e $Pi_(x, 2) = -p_2 S_2$.
