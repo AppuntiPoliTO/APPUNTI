@@ -690,16 +690,16 @@ Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadra
 })])
 
 === Forza assiale, momento di serraggio e momento di svitamento
-All'inizio dell'accostamento, i filetti della vite e della madrevite presentano un leggero gioco iniziale; non appena la vite viene messa in tiro dalla coppia torcente applicata con la chiave intorno al proprio asse principale, i fianchi dei filetti vanno a contatto sviluppando una pressione locale che genera trazione nella vite e compressione nei pezzi e nella madrevite.
 
-Il momento torcente resistente che occorre vincere durante il serraggio è dovuto a due contributi:
-1. L'attrito che si sviluppa tra i filetti della vite e quelli della madrevite in scorrimento relativo.
-2. L'attrito che si sviluppa tra la superficie del sottotesta della vite (o del dado, a seconda di quale elemento viene messo in rotazione) e la superficie del pezzo (o di un'eventuale rondella antisvitamento interposta).
 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema dei parametri di una filettatura (diametro maggiore, diametro medio, diametro minore, passo $p$, smusso a $45degree$, gola, cresta, angolo del filetto $2 alpha$) e dettaglio ingrandito dell'interfaccia di contatto tra vite (trazione verso l'alto) e madrevite (compressione verso il basso)]])
+  align: (left + horizon, center + horizon),[All'inizio dell'accostamento, i filetti della vite e della madrevite presentano un leggero gioco iniziale; non appena la vite viene messa in tiro dalla coppia torcente applicata con la chiave intorno al proprio asse principale, i fianchi dei filetti vanno a contatto sviluppando una pressione locale che genera trazione nella vite e compressione nei pezzi e nella madrevite.
+
+Il momento torcente resistente che occorre vincere durante il serraggio è dovuto a due contributi:
+1. L'attrito che si sviluppa tra i filetti della vite e quelli della madrevite in scorrimento relativo.
+2. L'attrito che si sviluppa tra la superficie del sottotesta della vite (o del dado, a seconda di quale elemento viene messo in rotazione) e la superficie del pezzo (o di un'eventuale rondella antisvitamento interposta).], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema dei parametri di una filettatura (diametro maggiore, diametro medio, diametro minore, passo $p$, smusso a $45degree$, gola, cresta, angolo del filetto $2 alpha$) e dettaglio ingrandito dell'interfaccia di contatto tra vite (trazione verso l'alto) e madrevite (compressione verso il basso)]])
 
 ==== Modello del piano inclinato (sola inclinazione dell'elica)
 Per ricavare la relazione analitica tra il momento di serraggio $M_T$ e la forza assiale $F_V$ agente sul fusto della vite, si schematizza in prima battuta il contatto tra i filetti come il moto relativo di un blocco su un piano inclinato di angolo $alpha_m$ (angolo medio dell'elica del filetto), trascurando momentaneamente l'inclinazione laterale del profilo triangolare.
