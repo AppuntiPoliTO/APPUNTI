@@ -1,16 +1,8 @@
 #import "/template.typ": *
 #import "@preview/cetz:0.3.4"
 
-#set page(
-  paper: "a4",
-  margin: (x: 2.2cm, y: 2.4cm),
-  numbering: "1",
-)
-
-#set par(
-  justify: true,
-  leading: 0.65em,
-)
+#set page(paper: "a4", margin: 2cm)
+#set text(lang: "it", size: 11pt)
 
 #set heading(numbering: "1.1")
 #show heading.where(level: 1): it => block(below: 1em, above: 1.2em)[
