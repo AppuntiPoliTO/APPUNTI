@@ -291,38 +291,37 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     a monte di $p_"min"$ il gradiente è favorevole ($partial p slash partial xi_1 < 0$) e accelera il fluido; a valle di $p_"min"$ il gradiente diventa avverso ($partial p slash partial xi_1 > 0$), frena gli strati vicini a parete fino all'inversione del profilo di velocità $u_1(xi_2)$ e causa il distacco della vena fluida, impedendo il recupero di pressione e generando una forte *resistenza di forma*.
   ],
   [
-    #cetz.canvas(length: 0.76cm, {
-      import cetz.draw: *
+    #canvas(length: 1cm, {
+  import draw: *
+  arc((2.5, -2.65), start: 53deg, stop: 127deg, radius: 3.0, anchor: "origin", fill: luma(242), stroke: none)
+  line((0.69, -0.25), (4.31, -0.25), (2.5, -0.25), close: true, fill: luma(242), stroke: none)
+  arc((2.5, -2.65), start: 53deg, stop: 127deg, radius: 3.0, anchor: "origin", stroke: 1.3pt + black)
 
-      // Parete curva del cilindro (zoom sulla calotta superiore) disegnata con bezier esplicita
-      bezier((0.4, -0.35), (2.5, 0.35), (1.1, 0.15), (1.8, 0.35), stroke: 1.4pt + black)
-      bezier((2.5, 0.35), (4.6, -0.35), (3.2, 0.35), (3.9, 0.15), stroke: 1.4pt + black)
+  line((2.5, 0.35), (2.5, 1.55), stroke: (paint: gray, thickness: 0.55pt, dash: "dashed"))
+  circle((2.5, 0.35), radius: 0.07, fill: red, stroke: none)
+  content((2.5, 0.18), text(size: 7.5pt, fill: red)[*$p_"min" (u_"max")$*], anchor: "north")
 
-      // Punto p_min (u_max) al colmo (x = 2.5, y = 0.35)
-      circle((2.5, 0.35), radius: 0.07, fill: col-accent, stroke: none)
-      content((2.5, 0.02), text(size: 7.5pt, fill: col-accent, weight: "bold")[$p_"min" (u_"max")$])
+  line((1.23, 0.07), (0.78, 1.03), mark: (end: ">"), stroke: 0.75pt + gray)
+  content((0.72, 1.05), text(size: 7.5pt)[$xi_2$], anchor: "east")
 
-      // --- 1) Profilo a monte (x = 1.15, y = 0.08): attaccato e pieno ---
-      line((1.15, 0.08), (0.75, 1.08), mark: (end: "stealth", size: 0.1, fill: col-gray), stroke: 0.75pt + col-gray)
-      content((0.55, 1.08), text(size: 7pt)[$xi_2$])
-      bezier((1.15, 0.08), (1.28, 0.95), (1.35, 0.42), (1.32, 0.72), stroke: 0.95pt + col-primary)
-      line((1.03, 0.38), (1.29, 0.48), mark: (end: "stealth", size: 0.08, fill: col-primary), stroke: 0.65pt + col-primary)
-      line((0.91, 0.68), (1.30, 0.83), mark: (end: "stealth", size: 0.08, fill: col-primary), stroke: 0.65pt + col-primary)
+  bezier((1.23, 0.07), (1.36, 0.99), (1.42, 0.38), (1.40, 0.72), stroke: 1pt + blue)
+  line((1.12, 0.31), (1.33, 0.41), mark: (end: ">"), stroke: 0.65pt + blue)
+  line((1.01, 0.55), (1.37, 0.72), mark: (end: ">"), stroke: 0.65pt + blue)
+  line((0.90, 0.78), (1.36, 0.99), mark: (end: ">"), stroke: 0.65pt + blue)
 
-      // --- 2) Profilo a valle (x = 3.85, y = 0.08): separato con reflusso a parete ---
-      line((3.85, 0.08), (4.25, 1.08), mark: (end: "stealth", size: 0.1, fill: col-gray), stroke: 0.75pt + col-gray)
-      content((4.48, 1.08), text(size: 7pt)[$xi_2$])
-      bezier((3.85, 0.08), (4.58, 0.92), (3.62, 0.38), (4.25, 0.68), stroke: 0.95pt + col-accent)
-      // Freccia di reflusso (indietro vicino a parete)
-      line((3.95, 0.33), (3.76, 0.25), mark: (end: "stealth", size: 0.08, fill: col-accent), stroke: 0.65pt + col-accent)
-      // Freccia diretta (in avanti lontano da parete)
-      line((4.12, 0.75), (4.48, 0.89), mark: (end: "stealth", size: 0.08, fill: col-primary), stroke: 0.65pt + col-primary)
-      content((4.72, 0.72), text(size: 7.5pt, fill: col-primary)[$u_1$])
+  line((3.77, 0.07), (4.22, 1.03), mark: (end: ">"), stroke: 0.75pt + gray)
+  content((4.28, 1.05), text(size: 7.5pt)[$xi_2$], anchor: "west")
 
-      // Etichette gradiente di pressione in alto, ben distanziate dai profili
-      content((1.45, 1.42), text(size: 7.5pt, fill: col-green)[$display((partial p) / (partial xi_1)) < 0$])
-      content((3.45, 1.42), text(size: 7.5pt, fill: col-accent)[$display((partial p) / (partial xi_1)) > 0$])
-    })
+  bezier((3.77, 0.07), (4.00, 0.55), (3.58, 0.22), (3.85, 0.42), stroke: 1pt + red)
+  bezier((4.00, 0.55), (4.58, 0.96), (4.18, 0.70), (4.42, 0.88), stroke: 1pt + blue)
+
+  line((3.88, 0.31), (3.69, 0.22), mark: (end: ">"), stroke: 0.65pt + red)
+  line((4.11, 0.79), (4.48, 0.96), mark: (end: ">"), stroke: 0.65pt + blue)
+  content((4.62, 0.85), text(size: 8pt, fill: blue)[$u_1$], anchor: "west")
+
+  content((1.45, 1.42), text(size: 8pt, fill: rgb("#1b8a3d"))[$display((partial p) / (partial xi_1)) < 0$], anchor: "south")
+  content((3.55, 1.42), text(size: 8pt, fill: red)[$display((partial p) / (partial xi_1)) > 0$], anchor: "south")
+})
   ],
 
   // 4. Re ~ 40 - 50
