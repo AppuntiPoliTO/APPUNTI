@@ -593,7 +593,7 @@ $ i = p dot.op n_("giri") $
 
 
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1.2fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Sotto l'azione del serraggio, la vite risulta soggetta a trazione da parte del pezzo (allungandosi di uno spostamento positivo $u_v$ sotto la forza $F_v$), mentre i pezzi collegati risultano compressi dal bullone (accorciandosi di uno spostamento negativo $u_p$ sotto la forza $F_p$). In campo elastico lineare, ciascun componente è caratterizzato dalla propria rigidezza $K_i$ e dal suo reciproco, la deformabilità $delta_i$:
 
