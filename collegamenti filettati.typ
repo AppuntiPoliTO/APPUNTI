@@ -724,9 +724,7 @@ Per riportare l'equilibrio nel sistema di riferimento globale del bullone (direz
 
 $ F_U = F_V tan(alpha_m + phi.alt) $
 
-Poiché la forza tangenziale $F_U$ agisce mediamente a una distanza dall'asse della vite pari al raggio medio $frac(d_m, 2)$ (dove $d_m$ è il diametro medio della filettatura, corrispondente a $d_2$), il momento torcente di serraggio necessario a vincere la resistenza sui filetti vale:
-
-$ M_T = F_U frac(d_m, 2) = frac(F_V, 2) [ d_m dot.op tan(alpha_m + phi.alt) ] $], [#canvas(length: 1cm, {
+], [#canvas(length: 1cm, {
   import draw: *
 
   line((2.396, 8.372), (3.618, 8.816), (3.430, 9.333), (2.208, 8.889), close: true, fill: red.transparentize(78%), stroke: none)
@@ -817,7 +815,9 @@ $ M_T = F_U frac(d_m, 2) = frac(F_V, 2) [ d_m dot.op tan(alpha_m + phi.alt) ] $]
   line((4.05, 4.70), (5.55, 4.70), stroke: 0.5pt)
   line((4.05, 1.80), (5.55, 1.80), stroke: 0.5pt)
 })])
+Poiché la forza tangenziale $F_U$ agisce mediamente a una distanza dall'asse della vite pari al raggio medio $frac(d_m, 2)$ (dove $d_m$ è il diametro medio della filettatura, corrispondente a $d_2$), il momento torcente di serraggio necessario a vincere la resistenza sui filetti vale:
 
+$ M_T = F_U frac(d_m, 2) = frac(F_V, 2) [ d_m dot.op tan(alpha_m + phi.alt) ] $
 #strong[Svitamento e condizione di svitamento spontaneo:]
 In fase di svitamento, il moto relativo lungo il piano inclinato si inverte (il filetto scende) e di conseguenza la forza di attrito $F_("attrito")$ si ribalta di $180degree$ per opporsi alla discesa. Nel caso generale in cui l'angolo d'attrito è maggiore dell'angolo d'inclinazione dell'elica ($phi.alt > alpha_m$), la risultante $F_(R E S)$ cade dalla parte opposta rispetto alla verticale, formando con $F_V$ l'angolo $(phi.alt - alpha_m)$ e invertendo il verso di $F_U$. Il momento necessario allo svitamento risulta opposto a quello di serraggio:
 
