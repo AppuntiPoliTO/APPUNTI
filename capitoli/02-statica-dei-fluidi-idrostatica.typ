@@ -196,11 +196,11 @@ L'utilizzo di un liquido ad alto peso specifico (ad esempio mercurio, $gamma_m >
   import draw: *
 
   // Riempimento fluido di lavoro (gamma)
-  circle((-2.0, 0.0), radius: 0.65, fill: cyan.transparentize(80%), stroke: none)
-  rect((-2.16, 0.60), (-1.84, 1.0), fill: cyan.transparentize(80%), stroke: none)
-  arc((-1.0, 1.0), start: 0deg, stop: 180deg, radius: 1.16, anchor: "origin", mode: "CLOSE", fill: cyan.transparentize(80%), stroke: none)
+  circle((-2.0, 0.0), radius: 0.65, fill: blue.transparentize(80%), stroke: none)
+  rect((-2.16, 0.60), (-1.84, 1.0), fill: blue.transparentize(80%), stroke: none)
+  arc((-1.0, 1.0), start: 0deg, stop: 180deg, radius: 1.16, anchor: "origin", mode: "CLOSE", fill: blue.transparentize(80%), stroke: none)
   arc((-1.0, 1.0), start: 0deg, stop: 180deg, radius: 0.84, anchor: "origin", mode: "CLOSE", fill: white, stroke: none)
-  rect((-0.16, 0.0), (0.16, 1.0), fill: cyan.transparentize(80%), stroke: none)
+  rect((-0.16, 0.0), (0.16, 1.0), fill: blue.transparentize(80%), stroke: none)
 
   // Riempimento fluido manometrico (gamma_m)
   arc((0.8, -1.2), start: 180deg, stop: 360deg, radius: 0.96, anchor: "origin", mode: "CLOSE", fill: gray.transparentize(45%), stroke: none)
