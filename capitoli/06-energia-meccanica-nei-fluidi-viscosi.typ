@@ -249,7 +249,7 @@ essendo $nu = mu \/ rho$ la viscosità cinematica del fluido ($["m"^2\/"s"]$). L
 2. *Regione di transizione ($"Re" approx 1000$--$2000$)*: è una fascia intermedia caratterizzata da una forte dispersione dei dati sperimentali, nella quale la soglia critica non è un numero fisso ma dipende sensibilmente dalle perturbazioni esterne (vibrazioni della condotta, rugosità d'imbocco, oscillazioni residue).
 3. *Regime turbolento ($"Re" gt.tilde 2000$)*: il filamento di colorante si spezza rapidamente rimescolandosi in tutta la sezione attraverso traiettorie vorticose, irregolari e caotiche: il disordine si manifesta anche a *scala macroscopica*. Sul diagramma di $lambda("Re")$ la dipendenza dal numero di Reynolds diventa molto più debole (per condotte lisce vale la correlazione empirica di Blasius, $lambda prop "Re"^(-1\/4)$).
 
-= Moto, dissipazione e perdite di carico in una condotta circolare: moto di Poiseuille
+== Moto, dissipazione e perdite di carico in una condotta circolare: moto di Poiseuille
 
 L'obiettivo del capitolo è ricavare analiticamente il campo di velocità del moto in una condotta circolare e, da questo, portata, sforzi viscosi, dissipazione e coefficiente di perdita di carico $lambda$. È la generalizzazione del moto tra due lastre piane parallele.
 
