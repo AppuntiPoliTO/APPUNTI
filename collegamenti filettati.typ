@@ -62,9 +62,36 @@ Ai fini del calcolo strutturale della sezione resistente della vite, si fa rifer
 
 === Nomenclatura dei collegamenti filettati
 La distinzione terminologica tra le diverse configurazioni costruttive riveste un'importanza fondamentale sia in ambito professionale sia in sede d'esame:
-- #strong[Bullone (vite + dado):] è costituito da una vite che attraversa completamente i pezzi da collegare all'interno di un foro passante libero (il fusto della vite non deve toccare le pareti del foro) e si impegna in un dado, all'interno del quale è ricavata la madrevite. Il contatto si esercita esclusivamente tra il sottotesta della vite e la superficie esterna del primo blocco e tra la superficie interna del dado e la superficie esterna del blocco opposto.
-- #strong[Vite (mordente):] si impiega senza dado; la vite attraversa liberamente il primo pezzo (premendone la superficie esterna tramite il proprio sottotesta) e si avvita direttamente nella madrevite ricavata all'interno del secondo blocco, generalmente fisso, che svolge simultaneamente sia la funzione di elemento collegato sia quella del dado.
-- #strong[Prigioniero:] è costituito da un gambo privo di testa e filettato alle due estremità. Un'estremità si avvita nella madrevite ricavata in uno dei pezzi (talvolta fino alla fine della filettatura, richiedendo attenzione a possibili problemi dovuti all'aria intrappolata sul fondo del foro cieco), mentre l'altra estremità fuoriesce per accogliere i pezzi da impilare e viene chiusa mediante un dado. Il prigioniero svolge anche una comoda funzione iniziale di perno di centramento per allineare le parti da accostare.
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (center + horizon, center + horizon),
+  [
+    - #strong[Bullone (vite + dado):] è costituito da una vite che attraversa completamente i pezzi da collegare all'interno di un foro passante libero (il fusto della vite non deve toccare le pareti del foro) e si impegna in un dado, all'interno del quale è ricavata la madrevite. Il contatto si esercita esclusivamente tra il sottotesta della vite e la superficie esterna del primo blocco e tra la superficie interna del dado e la superficie esterna del blocco opposto.
+  ],
+  [#image("images/fig_collegamenti_filettati_1587.png", width: 100%)]
+)
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (center + horizon, center + horizon),
+  [
+    - #strong[Vite (mordente):] si impiega senza dado; la vite attraversa liberamente il primo pezzo (premendone la superficie esterna tramite il proprio sottotesta) e si avvita direttamente nella madrevite ricavata all'interno del secondo blocco, generalmente fisso, che svolge simultaneamente sia la funzione di elemento collegato sia quella del dado.
+  ],
+  [#image("images/fig_collegamenti_filettati_9409.png", width: 100%)]
+)
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (center + horizon, center + horizon),
+  [
+    - #strong[Prigioniero:] è costituito da un gambo privo di testa e filettato alle due estremità. Un'estremità si avvita nella madrevite ricavata in uno dei pezzi (talvolta fino alla fine della filettatura, richiedendo attenzione a possibili problemi dovuti all'aria intrappolata sul fondo del foro cieco), mentre l'altra estremità fuoriesce per accogliere i pezzi da impilare e viene chiusa mediante un dado. Il prigioniero svolge anche una comoda funzione iniziale di perno di centramento per allineare le parti da accostare.
+  ],
+  [#image("images/fig_collegamenti_filettati_5031.png", width: 100%)]
+)
+
 
 
 
