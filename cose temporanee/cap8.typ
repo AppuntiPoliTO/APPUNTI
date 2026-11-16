@@ -186,7 +186,6 @@ Consideriamo il campo di moto irrotazionale stazionario attorno a un cilindro ci
 
 Infine, poiché nei campi a potenziale la vorticità è nulla ($arrow(omega) = arrow(0)$) e il problema è lineare, non può mai innescarsi la transizione alla turbolenza.
 
-
 === Evoluzione reale del campo di moto attorno a una sfera/cilindro al variare di $"Re"$
 
 Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità nello strato limite e il campo di moto effettivo attorno a una sfera (o cilindro) cambia radicalmente al variare del numero di Reynolds $"Re" = u_infinity D slash nu$:
@@ -353,6 +352,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
   ]
 )
 #v(2em)
+
 == Equazione di Helmholtz e legame con la turbolenza
 
 Per comprendere il legame diretto tra vorticità e transizione alla turbolenza, si ricava l'equazione evolutiva della vorticità applicando l'operatore rotore ($nabla times$) a tutti i termini dell'equazione di Navier-Stokes incomprimibile. Si ottiene così l'*equazione di Helmholtz*:
