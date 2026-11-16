@@ -366,49 +366,69 @@ Consideriamo una corrente a pelo libero su fondo orizzontale che incontra una pa
     - sulle sezioni di ingresso $S_1$ e di uscita $S_2$ la distribuzione delle pressioni relative è *idrostatica*: $p(z) = rho g (h - z) = gamma (h - z)$, con $gamma = rho g$ peso specifico del fluido e pressione relativa nulla al pelo libero ($p_"atm" = 0$).
   ],
   [
-    #cetz.canvas(length: 0.78cm, {
-      import cetz.draw: *
-      // Fondo orizzontale
-      line((-0.5, 0), (5.8, 0), stroke: 1.6pt + black)
-      for x in (-0.3, 0.3, 0.9, 1.5, 2.1, 2.7, 3.3, 3.9, 4.5, 5.1) {
-        line((x, 0), (x - 0.2, -0.25), stroke: 0.6pt + gray)
-      }
+    #move(dx: 15pt)[#canvas(length: 1cm, {
+  import draw: *
 
-      // Pelo libero a monte (h1 = 2.4) e curva sotto paratoia fino a valle (h2 = 0.85)
-      line((0.2, 2.4), (2.7, 2.4), stroke: 1.3pt + rgb("#1f5a96"))
-      bezier((2.7, 1.15), (4.8, 0.85), (3.1, 0.85), (3.8, 0.85), stroke: 1.3pt + rgb("#1f5a96"))
-      line((4.8, 0.85), (5.5, 0.85), stroke: 1.3pt + rgb("#1f5a96"))
+  // Riempimenti (paratoia e diagrammi di pressione)
+  line((0.15, 1.0), (0.95, 1.0), (0.95, 3.4), close: true, fill: gray.transparentize(88%), stroke: none)
+  line((7.95, 1.0), (8.22, 1.0), (7.95, 1.8), close: true, fill: gray.transparentize(88%), stroke: none)
+  rect((4.80, 2.10), (4.94, 3.80), fill: gray.transparentize(65%), stroke: 1pt)
 
-      // Paratoia
-      rect((2.7, 1.15), (2.95, 2.85), fill: gray.lighten(40%), stroke: 1.2pt + black)
-      line((2.7, 1.8), (1.8, 1.8), mark: (end: ">"), stroke: 1.2pt + rgb("#c0392b"))
-      content((1.8, 2.15), text(size: 9pt, fill: rgb("#c0392b"))[$F_x$])
+  // Fondo orizzontale, sezione di monte e pelo libero
+  line((1.50, 1.0), (7.10, 1.0), stroke: 1.1pt)
+  line((1.50, 1.0), (1.50, 3.4), stroke: 0.9pt)
+  line((1.50, 3.4), (4.80, 3.4), stroke: 1pt)
+  bezier((4.94, 2.10), (7.10, 1.80), (5.45, 1.92), (6.30, 1.80), stroke: 1pt)
 
-      // Sezioni S1 e S2
-      line((0.6, 0), (0.6, 2.4), stroke: (paint: rgb("#1f5a96"), thickness: 1.1pt, dash: "dashed"))
-      line((4.9, 0), (4.9, 0.85), stroke: (paint: rgb("#1f5a96"), thickness: 1.1pt, dash: "dashed"))
-      content((0.9, 1.2), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_1$])
-      content((4.55, 0.45), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_2$])
+  // Simbolo pelo libero
+  line((3.88, 3.58), (4.12, 3.58), (4.00, 3.40), close: true, stroke: 0.7pt)
+  line((3.91, 3.31), (4.09, 3.31), stroke: 0.65pt)
+  line((3.95, 3.22), (4.05, 3.22), stroke: 0.65pt)
 
-      // Triangolo idrostatico a monte
-      line((0.6, 2.4), (-0.35, 0), (0.6, 0), close: true, fill: rgb("#1f5a96").lighten(82%), stroke: 0.8pt + rgb("#1f5a96"))
-      line((-0.1, 0.6), (0.55, 0.6), mark: (end: ">"), stroke: 0.7pt + rgb("#1f5a96"))
-      line((0.15, 1.2), (0.55, 1.2), mark: (end: ">"), stroke: 0.7pt + rgb("#1f5a96"))
+  // Diagramma delle pressioni a monte
+  line((0.15, 1.0), (0.95, 1.0), (0.95, 3.4), close: true, stroke: 0.8pt)
+  line((0.283, 1.4), (0.95, 1.4), stroke: 0.55pt)
+  line((0.417, 1.8), (0.95, 1.8), stroke: 0.55pt)
+  line((0.550, 2.2), (0.95, 2.2), stroke: 0.55pt)
+  line((0.683, 2.6), (0.95, 2.6), stroke: 0.55pt)
+  line((0.817, 3.0), (0.95, 3.0), stroke: 0.55pt)
 
-      // Triangolo idrostatico a valle
-      line((4.9, 0.85), (5.5, 0), (4.9, 0), close: true, fill: rgb("#1f5a96").lighten(82%), stroke: 0.8pt + rgb("#1f5a96"))
+  // Diagramma delle pressioni a valle
+  line((7.95, 1.0), (8.22, 1.0), (7.95, 1.8), close: true, stroke: 0.8pt)
+  line((7.95, 1.2), (8.15, 1.2), stroke: 0.55pt)
+  line((7.95, 1.4), (8.083, 1.4), stroke: 0.55pt)
+  line((7.95, 1.6), (8.017, 1.6), stroke: 0.55pt)
 
-      // Quote h1 e h2
-      line((1.4, 0), (1.4, 2.4), mark: (start: "<", end: ">"), stroke: 0.7pt + black)
-      content((1.7, 1.2), text(size: 8.5pt)[$h_1$])
+  // Quote h1 e h2
+  line((1.75, 1.0), (1.75, 3.4), mark: (start: ">", end: ">"), stroke: 0.7pt)
+  content((1.88, 2.20), text(size: 8.5pt)[$h_1$], anchor: "west")
 
-      line((3.9, 0), (3.9, 0.85), mark: (start: "<", end: ">"), stroke: 0.7pt + black)
-      content((3.55, 0.45), text(size: 8.5pt)[$h_2$])
+  line((7.10, 1.0), (7.10, 1.8), mark: (start: ">", end: ">"), stroke: 0.85pt)
+  content((7.24, 1.24), text(size: 8pt)[$h_2$], anchor: "west")
 
-      // Assi x, z
-      line((-0.5, 0), (-0.5, 2.9), mark: (end: ">"), stroke: 0.7pt + black)
-      content((-0.75, 2.85), text(size: 8.5pt)[$z$])
-    })
+  // Direzione velocità, forza sulla paratoia e sforzi sul fondo
+  line((2.00, 3.95), (4.30, 3.95), mark: (end: ">"), stroke: 0.9pt)
+  content((3.15, 4.08), text(size: 8.5pt)[$v$], anchor: "south")
+
+  line((6.05, 2.95), (4.98, 2.95), mark: (end: ">"), stroke: 1.1pt)
+  content((5.52, 3.08), text(size: 8.5pt)[$arrow(F)_x$], anchor: "south")
+
+  line((5.05, 0.72), (3.55, 0.72), mark: (end: ">"), stroke: 0.85pt)
+  content((4.30, 0.56), text(size: 7.5pt)[$arrow(tau) " trascurabili"$], anchor: "north")
+
+  // Versori normali uscenti (blu) e richiamo S_g
+  line((1.50, 1.60), (1.05, 1.60), mark: (end: ">"), stroke: (paint: blue, thickness: 0.85pt))
+  content((1.27, 1.72), text(size: 7.5pt, fill: blue)[$arrow(n)$], anchor: "south")
+
+  line((4.80, 2.48), (5.32, 2.48), mark: (end: ">"), stroke: (paint: blue, thickness: 0.85pt))
+  content((5.38, 2.48), text(size: 7.5pt, fill: blue)[$arrow(n)$], anchor: "west")
+
+  line((7.10, 1.62), (7.55, 1.62), mark: (end: ">"), stroke: (paint: blue, thickness: 0.85pt))
+  content((7.40, 1.72), text(size: 7.5pt, fill: blue)[$arrow(n)$], anchor: "south")
+
+  line((5.42, 3.85), (4.96, 3.45), mark: (end: ">"), stroke: (paint: blue, thickness: 0.65pt))
+  content((5.46, 3.88), text(size: 8pt, fill: blue)[$S_g$], anchor: "west")
+})]
   ]
 )
 
