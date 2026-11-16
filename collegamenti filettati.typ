@@ -20,16 +20,6 @@
 #set heading(numbering: "1.")
 #set par(justify: true)
 
-#align(center)[
-  #text(size: 16pt, weight: "bold")[Appunti: Viti e Bulloni – Fatica e Casi Particolari] \
-  #v(0.3em)
-  #text(size: 10pt, fill: luma(80))[
-    *Corso:* Elementi di Costruzione di Macchine (Prof. E. Brusa) \
-    *Argomento:* Lezione 10 – Collegamenti filettati: verifica a fatica, antisvitamento e casi di carico particolari
-  ]
-]
-
-#line(length: 100%, stroke: 0.5pt + luma(150))
 
 = Verifica a fatica della vite (Normativa VDI 2230)
 
