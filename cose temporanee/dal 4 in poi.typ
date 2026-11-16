@@ -429,7 +429,94 @@ dove $h = z_A - z_B$ è il battente idrostatico sopra il foro.
   content((3.3, 0.15), [Foro $A$])
 })
 
-a
+#figure(
+  align(center)[#canvas(length: 1cm, {
+  import draw: *
+
+  rect((4.9, 2.45), (6.6, 2.57), fill: gray.transparentize(85%), stroke: none)
+  rect((8.0, 2.45), (9.7, 2.57), fill: gray.transparentize(85%), stroke: none)
+
+  line((0.3, 3.2), (0.3, 0.8), (1.62, 0.8), stroke: 1pt)
+  line((1.98, 0.8), (3.3, 0.8), (3.3, 3.2), stroke: 1pt)
+  line((0.3, 2.8), (3.3, 2.8), stroke: 0.9pt)
+
+  line((0.7, 2.0), (0.7, 2.8), mark: (end: ">"), stroke: 0.7pt)
+  line((0.7, 1.6), (0.7, 0.8), mark: (end: ">"), stroke: 0.7pt)
+  content((0.7, 1.8), text(size: 8.5pt)[$Delta$], anchor: "center")
+
+  circle((1.9, 2.8), radius: 0.045, fill: black, stroke: none)
+  content((1.93, 2.9), text(size: 8.5pt)[$A$], anchor: "south-west")
+
+  bezier((1.9, 2.8), (1.8, 0.45), (1.83, 2.0), (1.8, 1.2), stroke: (dash: "dashed", thickness: 0.7pt))
+  bezier((1.62, 0.8), (1.73, 0.45), (1.7, 0.7), (1.73, 0.58), stroke: 0.8pt)
+  line((1.73, 0.45), (1.73, 0.15), stroke: 0.8pt)
+  bezier((1.98, 0.8), (1.87, 0.45), (1.9, 0.7), (1.87, 0.58), stroke: 0.8pt)
+  line((1.87, 0.45), (1.87, 0.15), stroke: 0.8pt)
+  line((1.8, 0.45), (1.8, 0.12), mark: (end: ">"), stroke: 0.7pt)
+
+  circle((1.8, 0.45), radius: 0.04, fill: black, stroke: none)
+  content((1.92, 0.45), text(size: 8.5pt)[$B$], anchor: "west")
+
+  circle((1.8, 0.6), radius: 0.65, stroke: 0.75pt)
+  bezier((2.45, 0.6), (4.35, 2.45), (3.55, 0.6), (3.25, 2.45), mark: (end: ">"), stroke: 0.75pt)
+
+  line((4.95, 2.45), (5.07, 2.57), stroke: 0.5pt)
+  line((5.2, 2.45), (5.32, 2.57), stroke: 0.5pt)
+  line((5.45, 2.45), (5.57, 2.57), stroke: 0.5pt)
+  line((5.7, 2.45), (5.82, 2.57), stroke: 0.5pt)
+  line((5.95, 2.45), (6.07, 2.57), stroke: 0.5pt)
+  line((6.2, 2.45), (6.32, 2.57), stroke: 0.5pt)
+  line((6.45, 2.45), (6.57, 2.57), stroke: 0.5pt)
+
+  line((8.03, 2.45), (8.15, 2.57), stroke: 0.5pt)
+  line((8.28, 2.45), (8.4, 2.57), stroke: 0.5pt)
+  line((8.53, 2.45), (8.65, 2.57), stroke: 0.5pt)
+  line((8.78, 2.45), (8.9, 2.57), stroke: 0.5pt)
+  line((9.03, 2.45), (9.15, 2.57), stroke: 0.5pt)
+  line((9.28, 2.45), (9.4, 2.57), stroke: 0.5pt)
+  line((9.53, 2.45), (9.65, 2.57), stroke: 0.5pt)
+
+  rect((4.9, 2.45), (6.6, 2.57), stroke: 0.9pt)
+  rect((8.0, 2.45), (9.7, 2.57), stroke: 0.9pt)
+
+  line((6.6, 2.7), (6.6, 3.12), stroke: 0.55pt)
+  line((8.0, 2.7), (8.0, 3.12), stroke: 0.55pt)
+  line((7.1, 2.95), (6.6, 2.95), mark: (end: ">"), stroke: 0.7pt)
+  line((7.5, 2.95), (8.0, 2.95), mark: (end: ">"), stroke: 0.7pt)
+  content((7.3, 2.95), text(size: 8.5pt)[$d$], anchor: "center")
+
+  line((5.65, 1.25), (8.2, 1.25), stroke: (dash: "dashed", thickness: 0.55pt))
+  line((5.85, 2.05), (5.85, 2.45), mark: (end: ">"), stroke: 0.7pt)
+  line((5.85, 1.65), (5.85, 1.25), mark: (end: ">"), stroke: 0.7pt)
+  content((5.85, 1.85), text(size: 8.5pt)[$delta tilde d$], anchor: "center")
+
+  bezier((6.6, 2.45), (6.85, 1.25), (6.76, 2.15), (6.85, 1.75), stroke: 1pt)
+  line((6.85, 1.25), (6.85, 0.65), stroke: 1pt)
+  bezier((8.0, 2.45), (7.75, 1.25), (7.84, 2.15), (7.75, 1.75), stroke: 1pt)
+  line((7.75, 1.25), (7.75, 0.65), stroke: 1pt)
+
+  bezier((6.83, 2.45), (7.0, 1.25), (6.94, 2.15), (7.0, 1.75), stroke: 0.65pt)
+  line((7.0, 1.25), (7.0, 0.65), stroke: 0.65pt)
+  bezier((7.07, 2.45), (7.15, 1.25), (7.12, 2.15), (7.15, 1.75), stroke: 0.65pt)
+  line((7.15, 1.25), (7.15, 0.65), stroke: 0.65pt)
+  line((7.3, 2.45), (7.3, 0.65), stroke: 0.65pt)
+  bezier((7.53, 2.45), (7.45, 1.25), (7.48, 2.15), (7.45, 1.75), stroke: 0.65pt)
+  line((7.45, 1.25), (7.45, 0.65), stroke: 0.65pt)
+  bezier((7.77, 2.45), (7.6, 1.25), (7.66, 2.15), (7.6, 1.75), stroke: 0.65pt)
+  line((7.6, 1.25), (7.6, 0.65), stroke: 0.65pt)
+
+  circle((7.3, 1.25), radius: 0.045, fill: black, stroke: none)
+  rect((7.36, 0.96), (7.58, 1.2), fill: white, stroke: none)
+  content((7.47, 1.08), text(size: 8.5pt)[$B$], anchor: "center")
+
+  line((6.2, 0.58), (6.75, 0.8), mark: (end: ">"), stroke: 0.7pt)
+  content((5.55, 0.5), text(size: 8pt)[traiettorie], anchor: "center")
+  content((5.55, 0.22), text(size: 8pt)[parallele], anchor: "center")
+
+  content((8.8, 0.62), text(size: 8pt)[Vena], anchor: "center")
+  content((8.8, 0.34), text(size: 8pt)[contracta], anchor: "center")
+})]
+)
 
 // [DA AUDIO]
 === Calcolo del tempo di svuotamento del serbatoio
