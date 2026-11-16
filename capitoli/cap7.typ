@@ -355,7 +355,7 @@ Consideriamo un getto libero di sezione $S_1$, velocità $arrow(u)_1 = (U_1, 0, 
       $
     - su ciascuna delle due sezioni di uscita $S_2$, sia la velocità $arrow(u)_2 = (-U_2, 0, 0)$ sia la normale uscente $arrow(n)_2 = (-1, 0, 0)$ sono dirette verso sinistra: essendo *concordi*, il prodotto scalare vale $u_j n_j = +U_2 > 0$, ma la componente di velocità lungo $x$ è *negativa* ($u_x = -U_2 < 0$). Sommando le due uscite:
       $
-      M_(2, x) = -2 integral_(S_2) rho (-U_2) (+U_2) dif S_2 = +2 rho U_2^2 S_2 = +rho Q U_2
+      #move(dx: -29pt)[$M_(2, x) = -2 integral_(S_2) rho (-U_2) (+U_2) dif S_2 = +2 rho U_2^2 S_2= +rho Q U_2$]
       $
   ],
   [ 
