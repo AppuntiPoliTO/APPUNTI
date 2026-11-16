@@ -5,17 +5,16 @@
 #set par(justify: true)
 #set figure(supplement: [Figura], gap: 0.8em)
 
-#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
-
 // Numerazione: titoli fino al 3° livello, equazioni per capitolo (es. (5.12)); figure senza numero
 #set heading(numbering: "1.1.1")
 #show heading.where(level: 4): set heading(numbering: none)
+#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
 #set figure(numbering: none)
 
 // Ogni capitolo: pagina nuova, contatori azzerati, titolo con etichetta "Capitolo N"
 #show heading.where(level: 1): it => {
   if it.numbering == none { return it }   // titolo "Indice": niente etichetta né pagina nuova
-  colbreak(weak: true)
+  pagebreak(weak: true)
   counter(math.equation).update(0)
   v(0.8cm)
   block(width: 100%, below: 1.2em, {
@@ -96,5 +95,4 @@
 #include "capitoli/04-dinamica-dei-fluidi-ideali-eulero-e-bernoulli.typ"
 #include "capitoli/05-dinamica-dei-fluidi-viscosi-navier-stokes.typ"
 #include "capitoli/06-energia-meccanica-nei-fluidi-viscosi.typ"
-#include "capitoli/cap7.typ"
-#include "capitoli/cap9.typ"
+#include "capitoli/07-moto-dissipazione-e-perdite-di-carico-in-una-con.typ"

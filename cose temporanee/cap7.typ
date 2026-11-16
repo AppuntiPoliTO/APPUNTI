@@ -3,7 +3,7 @@
 
 #set page(
   paper: "a4",
-  margin: (x: 2cm, y: 2cm),
+  margin: (x: 2.2cm, y: 2.4cm),
   numbering: "1",
 )
 
@@ -215,7 +215,7 @@ Il terzo termine, $arrow(Pi)_w = integral_(S_w) sigma_(i j) n_j dif S_w = arrow(
 === Bilancio per condotta orizzontale a sezione costante
 
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1fr,1fr),
   gutter: 1em,
   [Consideriamo una condotta cilindrica orizzontale ($G_x = 0$) in regime stazionario ($arrow(I) = 0$). L'equazione globale si riduce a:
 
@@ -255,16 +255,6 @@ Scomponiamo la superficie di controllo in \ $S = S_1 union S_2 union S_w$ (sezio
   line((7.35, 2.65), (6.52, 2.65), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 1.05pt))
   content((7.44, 2.75), text(size: 8.5pt, fill: blue.darken(20%))[$p_2$], anchor: "west")
 
-  // Versori normali uscenti su S1, S2 e sulla parete Sw
-  line((1.80, 1.75), (1.05, 1.75), mark: (end: ">"), stroke: (paint: green.darken(35%), thickness: 0.95pt))
-  content((0.97, 1.75), text(size: 8pt, fill: green.darken(35%))[$arrow(n)_1$], anchor: "east")
-
-  line((6.40, 1.75), (7.15, 1.75), mark: (end: ">"), stroke: (paint: green.darken(35%), thickness: 0.95pt))
-  content((7.23, 1.75), text(size: 8pt, fill: green.darken(35%))[$arrow(n)_2$], anchor: "west")
-
-  line((4.10, 3.40), (4.10, 4.08), mark: (end: ">"), stroke: (paint: green.darken(35%), thickness: 0.95pt))
-  content((4.22, 3.80), text(size: 8pt, fill: green.darken(35%))[$arrow(n)_w$], anchor: "west")
-
   // Sforzi tangenziali alla parete tau_w
   line((4.90, 3.12), (3.30, 3.12), mark: (end: ">"), stroke: (paint: red.darken(15%), thickness: 1.05pt))
   content((4.10, 2.98), text(size: 8.5pt, fill: red.darken(15%))[$tau_w$], anchor: "north")
@@ -279,23 +269,16 @@ Scomponiamo la superficie di controllo in \ $S = S_1 union S_2 union S_w$ (sezio
   content((4.10, 0.62), text(size: 8.5pt)[$L$], anchor: "north")
 })],
 )
+- per $arrow(M) = - integral_S rho u_i u_j n_j dif S$, il flusso attraverso la parete impermeabile $S_w$ è nullo; lungo $x$, su $S_1$ la velocità è opposta alla normale uscente ($n_(1, x) = -1$) e dà il contributo positivo entrante $M_"in" = rho U_(d, 1)^2 S_1$, mentre su $S_2$ è concorde ($n_(2, x) = +1$) e dà il contributo negativo uscente $-M_"out" = -rho U_(d, 2)^2 S_2$;
+- per $arrow(Pi) = integral_S sigma_(i j) n_j dif S$, l'integrale si spezza nei tre contributi su $S_1$, $S_2$ e $S_w$: $arrow(Pi) = arrow(Pi)_1 + arrow(Pi)_2 + arrow(F)$, dove $arrow(F) = integral_(S_w) sigma_(i j) n_j dif S$ è la forza esercitata dalla parete sul fluido. Trascurando su $S_1$ e $S_2$ il termine viscoso rispetto alla pressione ($sigma_(i j) approx -p delta_(i j)$), si ha $Pi_(x, 1) = p_1 S_1$ e $Pi_(x, 2) = -p_2 S_2$.
 
-- per $arrow(M) = - integral_S rho u_i u_j n_j dif S$, il flusso attraverso la parete impermeabile $S_w$ è nullo sia per la condizione di impermeabilità sia perchè la normale è perpendicolare;\
+Esplicitando il bilancio lungo $x$:
 
-- su $S_1$ la velocità è opposta alla normale uscente ($n_(1, x) = -1$) e dà il contributo positivo entrante $M_"in" = rho U_(d, 1)^2 S_1$\
-
-- su $S_2$ è concorde ($n_(2, x) = +1$) e dà il contributo negativo uscente $-M_"out" = -rho U_(d, 2)^2 S_2$;
-
-- per $arrow(Pi) = integral_S sigma_(i j) n_j dif S$, l'integrale si spezza nei tre contributi su $S_1$, $S_2$ e $S_w$: $arrow(Pi) = arrow(Pi)_1 + arrow(Pi)_2 + arrow(F)$, dove $arrow(F) = integral_(S_w) sigma_(i j) n_j dif S$ è la forza esercitata dalla parete sul fluido ($ arrow(Pi)_w$). Trascurando su $S_1$ e $S_2$ il termine viscoso rispetto alla pressione ($sigma_(i j) approx -p delta_(i j)$), si ha $Pi_(x, 1) = p_1 S_1$ e $Pi_(x, 2) = -p_2 S_2$.
-
-Prendiamo la nostra equazione lungo $x$ sostituendo i termini appena trovati:
-$ (M_"in" - M_"out") + (Pi_(x, 1) + Pi_(x, 2) + F_x) = 0 $
-
-Isoliamo l'incognita $F_x$ portando il resto a secondo membro:
-$ F_x = -[(M_"in" - M_"out") + (Pi_(x, 1) + Pi_(x, 2))] $
-
-Sostituiamo infine i rispettivi valori dei flussi e delle forze di pressione:
-$ F_x = -[(rho U_(d, 1)^2 S_1 - rho U_(d, 2)^2 S_2) + (p_1 S_1 - p_2 S_2)] $
+$
+(M_"in" - M_"out") + (Pi_(x, 1) + Pi_(x, 2) + F_x) &= 0 \
+F_x &= -[(M_"in" - M_"out") + (Pi_(x, 1) + Pi_(x, 2))] = \
+&= -[(rho U_(d, 1)^2 S_1 - rho U_(d, 2)^2 S_2) + (p_1 S_1 - p_2 S_2)]
+$
 
 Se la sezione della condotta è costante ($S_1 = S_2 = S$), per la conservazione della portata ($Q = U_(d, 1) S_1 = U_(d, 2) S_2$) si ha $U_(d, 1) = U_(d, 2) = U_d$. I flussi convettivi di quantità di moto in ingresso e in uscita sono pertanto identici e si elidono ($M_"in" = M_"out"$), lasciando:
 
@@ -305,17 +288,69 @@ $
 
 Poiché per mantenere il moto in presenza di attrito deve essere $p_1 > p_2$, la forza $F_x$ risulta *negativa*: essa è infatti la forza di resistenza viscosa esercitata dalla parete sul fluido, che si oppone al deflusso.
 
-Per una condotta circolare di raggio $R$ e lunghezza $L$, sulla superficie laterale $S_w = 2 pi R L$ la normale uscente è radiale ($n_x = 0$): nell'integrale $F_x = integral_(S_w) sigma_(x j) n_j dif S$ il contributo della pressione è dunque nullo e sopravvive solo lo sforzo viscoso tangenziale a parete (di modulo $tau_w$, diretto in verso opposto al moto):
-$ F_x = -tau_w S_w $
+#grid(
+  columns: (1.2fr, 0.8fr),
+  column-gutter: 1.2em,
+  align: (left + horizon, center + horizon),
+  [
+    Per una condotta circolare di raggio $R$ e lunghezza $L$, sulla superficie laterale $S_w = 2 pi R L$ la normale uscente è radiale ($n_x = 0$): nell'integrale $F_x = integral_(S_w) sigma_(x j) n_j dif S$ il contributo della pressione è dunque nullo e sopravvive solo lo sforzo viscoso tangenziale a parete (di modulo $tau_w$, diretto in verso opposto al moto), ovvero $F_x = -tau_w S_w$. In condizioni stazionarie:
+    $
+    (p_1 - p_2) S &= tau_w S_w \
+    [p(x_1) - (p(x_1) + (partial p) / (partial x) L)] pi R^2 &= tau_w 2 pi R L
+    $
+    Definendo la caduta di pressione positiva $Delta p = p_1 - p_2 > 0$ (ovvero $-(partial p / partial x) L = Delta p$):
+    $
+    pi R^2 Delta p = tau_w 2 pi R L quad ==> quad tau_w = (Delta p) / (2 L) R
+    $
+  ],
+  [
+    #canvas(length: 1cm, {
+  import draw: *
 
-In condizioni stazionarie, prendiamo l'espressione ottenuta dal bilancio lungo $x$ e la uguagliamo a quella appena trovata:
-$ (p_1 - p_2) S = tau_w S_w $
+  // Riempimento leggero della sezione di ingresso
+  circle((1.80, 2.30), radius: (0.40, 1.10), fill: blue.transparentize(88%), stroke: none)
 
-Sostituiamo $p_1 = p(x_1)$, $p_2 = p(x_1) + (partial p) / (partial x) L$, la sezione $S = pi R^2$ e la superficie laterale $S_w = 2 pi R L$:
-$ [p(x_1) - (p(x_1) + (partial p) / (partial x) L)] pi R^2 = tau_w 2 pi R L $
+  // Asse x (linea tratto-punto)
+  line((1.10, 2.30), (7.40, 2.30), mark: (end: ">"), stroke: (paint: gray, dash: "dash-dotted", thickness: 0.75pt))
+  content((7.55, 2.30), text(size: 8.5pt)[$x$], anchor: "west")
 
-Definiamo infine la caduta di pressione positiva $Delta p = p_1 - p_2 > 0$ (ovvero $-(partial p / partial x) L = Delta p$) e sostituiamola per ricavare lo sforzo a parete:
-$ pi R^2 Delta p = tau_w 2 pi R L quad ==> quad tau_w = (Delta p) / (2 L) R $
+  // Generatrici del cilindro orizzontale
+  line((1.80, 3.40), (6.40, 3.40), stroke: 1.15pt)
+  line((1.80, 1.20), (6.40, 1.20), stroke: 1.15pt)
+
+  // Sezioni circolari in prospettiva S1 ed S2
+  circle((1.80, 2.30), radius: (0.40, 1.10), stroke: (paint: blue.darken(20%), thickness: 1pt))
+  circle((6.40, 2.30), radius: (0.40, 1.10), stroke: (paint: blue.darken(20%), thickness: 1pt))
+  content((1.80, 3.52), text(size: 8.5pt, fill: blue.darken(20%))[$S_1$], anchor: "south")
+  content((6.40, 3.52), text(size: 8.5pt, fill: blue.darken(20%))[$S_2$], anchor: "south")
+
+  // Raggio R
+  line((1.80, 2.30), (1.80, 3.40), mark: (end: ">"), stroke: 0.9pt)
+  content((1.90, 2.82), text(size: 8pt)[$R$], anchor: "west")
+
+  // Pressioni p1 e p2
+  line((0.85, 2.65), (1.68, 2.65), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 1.05pt))
+  content((0.76, 2.75), text(size: 8.5pt, fill: blue.darken(20%))[$p_1$], anchor: "east")
+
+  line((7.35, 2.65), (6.52, 2.65), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 1.05pt))
+  content((7.44, 2.75), text(size: 8.5pt, fill: blue.darken(20%))[$p_2$], anchor: "west")
+
+  // Sforzi tangenziali alla parete tau_w
+  line((4.90, 3.12), (3.30, 3.12), mark: (end: ">"), stroke: (paint: red.darken(15%), thickness: 1.05pt))
+  content((4.10, 2.98), text(size: 8.5pt, fill: red.darken(15%))[$tau_w$], anchor: "north")
+
+  line((4.90, 1.48), (3.30, 1.48), mark: (end: ">"), stroke: (paint: red.darken(15%), thickness: 1.05pt))
+  content((4.10, 1.62), text(size: 8.5pt, fill: red.darken(15%))[$tau_w$], anchor: "south")
+
+  // Quota lunghezza L
+  line((1.80, 1.05), (1.80, 0.55), stroke: (paint: gray.lighten(10%), thickness: 0.6pt))
+  line((6.40, 1.05), (6.40, 0.55), stroke: (paint: gray.lighten(10%), thickness: 0.6pt))
+  line((1.80, 0.78), (6.40, 0.78), mark: (start: ">", end: ">"), stroke: 0.9pt)
+  content((4.10, 0.62), text(size: 8.5pt)[$L$], anchor: "north")
+})
+  ]
+)
+
 #nota-box("Confronto con le equazioni di Navier-Stokes")[
   A differenza dell'approccio differenziale visto nella soluzione di Poiseuille (in cui era necessario risolvere le equazioni di Navier-Stokes per determinare il profilo di velocità e derivarlo a parete), il bilancio globale permette di calcolare lo sforzo viscoso a parete $tau_w$ direttamente dalla caduta di pressione $Delta p$ e dalla geometria, *senza conoscere il dettaglio del campo di velocità interno*.
 ]
@@ -344,7 +379,15 @@ Consideriamo ora una condotta orizzontale la cui sezione varia da $S_1$ a $S_2$ 
     $
     M_"in" - M_"out" + Pi_"in" - Pi_"out" + F_x = 0
     $
-    
+    Indicando con $U_1 = U_(d, 1)$ e $U_2 = U_(d, 2)$ le velocità medie nelle due sezioni:
+    $
+    rho U_1^2 S_1 - rho U_2^2 S_2 + p_1 S_1 - p_2 S_2 + F_x &= 0 \
+    F_x = -(p_1 S_1 - p_2 S_2) - rho (U_1^2 S_1 - U_2^2 S_2) &
+    $
+    Dalla conservazione della portata volumetrica $Q = S_1 U_1 = S_2 U_2$, possiamo esprimere $U_1^2 S_1 = Q U_1 = Q^2 / S_1$ (e analogamente in $S_2$), ottenendo:
+    $
+    F_x = -[(p_1 S_1 - p_2 S_2) + rho Q^2 (1/S_1 - 1/S_2)]
+    $
   ],
   [#canvas(length: 1cm, {
   import draw: *
@@ -389,17 +432,14 @@ Consideriamo ora una condotta orizzontale la cui sezione varia da $S_1$ a $S_2$ 
 })
   ]
 )
-Indicando con $U_1 = U_(d, 1)$ e $U_2 = U_(d, 2)$ le velocità medie nelle due sezioni, riprendiamo l'equazione di bilancio lungo $x$:
-$ rho U_1^2 S_1 - rho U_2^2 S_2 + p_1 S_1 - p_2 S_2 + F_x = 0 $
+#figure(
+ align(center)[] 
+ )
 
-Isoliamo la forza $F_x$ a primo membro e raccogliamo la densità $rho$ tra i termini di quantità di moto:
-$ F_x = -(p_1 S_1 - p_2 S_2) - rho (U_1^2 S_1 - U_2^2 S_2) $
 
-Dalla conservazione della portata volumetrica $Q = S_1 U_1 = S_2 U_2$, possiamo esprimere $U_1^2 S_1 = Q U_1 = Q^2 / S_1$ (e analogamente $U_2^2 S_2 = Q^2 / S_2$). Sostituendo nell'equazione precedente, otteniamo:
-$ F_x = -[(p_1 S_1 - p_2 S_2) + rho Q^2 (1/S_1 - 1/S_2)] $
-
-la forza $F_x$ esercitata dalla parete sul fluido (uguale e opposta alla spinta $-F_x$ che il fluido esercita sulla condotta) è data direttamente dalla differenza tra ciò che entra e ciò che esce dal volume di controllo, sommando la variazione del *flusso microscopico (diffusivo)* di quantità di moto legato agli urti molecolari ($p_1 S_1 - p_2 S_2$) e la variazione del *flusso macroscopico (convettivo)* di quantità di moto \ ($rho Q^2 (1/S_1 - 1/S_2)$).
-
+Questa relazione mette in luce due aspetti fondamentali:
+1. *Interpretazione fisica*: la forza $F_x$ esercitata dalla parete sul fluido (uguale e opposta alla spinta $-F_x$ che il fluido esercita sulla condotta) è data direttamente dalla differenza tra ciò che entra e ciò che esce dal volume di controllo, sommando la variazione del *flusso microscopico (diffusivo)* di quantità di moto legato agli urti molecolari ($p_1 S_1 - p_2 S_2$) e la variazione del *flusso macroscopico (convettivo)* di quantità di moto ($rho Q^2 (1/S_1 - 1/S_2)$).
+2. *Vantaggio sperimentale*: mentre il calcolo teorico locale degli sforzi e delle pressioni lungo una parete curva a sezione variabile è estremamente complesso, questa formula permette di determinare sperimentalmente la spinta globale sulla condotta conoscendo la geometria ($S_1, S_2$) ed effettuando solamente tre misure: le pressioni $p_1$ e $p_2$ (tramite due prese di pressione a monte e a valle) e la portata $Q$.
 
 == Esempio 2: Spinta su una paratoia piana
 
@@ -580,7 +620,7 @@ F_x = -rho U^2 S_1 = -rho Q U = -rho Q^2 / S_1
 $
 
 La spinta esercitata dal getto sulla parete è uguale e opposta, pari a $-F_x = +rho Q U$ (diretta lungo $+x$).
-#pagebreak()
+
 == Esempio 4: Getto contro una pala di turbina (deviazione di $180 degree$)
 
 Consideriamo un getto libero di sezione $S_1$, velocità $arrow(u)_1 = (U_1, 0, 0)$ e portata $Q = U_1 S_1$ che investe una pala curva simmetrica (come la pala di una #link("https://it.wikipedia.org/wiki/Turbina_Pelton", [#underline[turbina Pelton]] )), venendo diviso in due getti simmetrici di sezione $S_2$ e portata $Q/2$ ciascuno, deviati all'indietro con velocità $arrow(u)_2 = (-U_2, 0, 0)$ opposta a quella di ingresso.
@@ -685,20 +725,23 @@ abs(F_x) = rho Q (U_1 + U_2), quad arrow(F) = -abs(F_x) arrow(e)_x
 $
 
 _Se si trascurano gli attriti lungo la pala, per il teorema di Bernoulli si ha $U_2 = U_1 = U$, per cui $abs(F_x) = 2 rho Q U$: deviare il getto di $180 degree$ permette di raddoppiare la spinta rispetto alla parete piana verticale._
-#pagebreak()
+
 == Esempio 5: Getto piano contro una parete inclinata
 
-Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria $b = 1 "m"$ ortogonalmente al foglio) di spessore $h_1$ e velocità $U_1$, che impatta contro una parete piana liscia inclinata di un angolo $theta$ rispetto alla direzione del getto incidente.
+Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria $b = 1 "m"$ ortogonalmente al foglio) di spessore $h_1$ e velocità $U_1$, che impatta contro una parete piana liscia inclinata di un angolo $theta$ rispetto alla direzione del getto incidente. Dopo l'impatto il flusso si divide in due correnti che scorrono lungo la parete in versi opposti, caratterizzate sulle sezioni di uscita $S_2$ e $S_3$ da spessori $h_2, h_3$ e velocità $U_2, U_3$.
 
 #grid(
   columns: (1.1fr, 0.9fr),
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
   [
-     Dopo l'impatto il flusso si divide in due correnti che scorrono lungo la parete in versi opposti, caratterizzate sulle sezioni di uscita $S_2$ e $S_3$ da spessori $h_2, h_3$ e velocità $U_2, U_3$. 
     Fissiamo un sistema di riferimento locale $(t, n)$ solidale alla parete, con l'asse $t$ tangente alla parete (positivo verso la sezione $S_2$) e l'asse $n$ normale alla parete (uscente dal fluido verso la parete).
     Per determinare le incognite ($U_2, U_3, h_2, h_3$ e la forza $arrow(F)$) procediamo in quattro passaggi:
-
+    1. *Determinazione delle velocità (Teorema di Bernoulli)*:
+       Trascurando le differenze di quota e gli sforzi viscosi, ed essendo il getto libero in atmosfera ($p_1 = p_2 = p_3 = p_"atm"$), applicando il teorema di Bernoulli lungo le linee di corrente da $S_1$ a $S_2$ e $S_3$ segue che il modulo della velocità rimane costante:
+       $
+       U_1 = U_2 = U_3 = U
+       $
   ],
   [
     #canvas(length: 1cm, {
@@ -778,35 +821,36 @@ Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria
 
 
 
-Per determinare le caratteristiche del flusso, si parte dalla *determinazione delle velocità tramite il teorema di Bernoulli*. Trascurando le differenze di quota e gli sforzi viscosi, ed essendo il getto libero in atmosfera ($p_1 = p_2 = p_3 = p_"atm"$), l'applicazione del teorema lungo le linee di corrente da $S_1$ verso $S_2$ e $S_3$ mostra che il modulo della velocità rimane costante:
-$
-U_1 = U_2 = U_3 = U
-$
+2. *Conservazione della massa (Equazione di continuità)*:
+   Per un fluido incomprimibile in moto stazionario, la portata per unità di larghezza entrante da $S_1$ deve eguagliare la somma delle portate uscenti da $S_2$ e $S_3$:
+   $
+   U_1 h_1 = U_2 h_2 + U_3 h_3 quad ==> quad h_1 = h_2 + h_3
+   $
 
-Passando alla *conservazione della massa (equazione di continuità)*, per un fluido incomprimibile in moto stazionario la portata per unità di larghezza entrante da $S_1$ deve eguagliare la somma delle portate uscenti da $S_2$ e $S_3$:
-$
-U_1 h_1 = U_2 h_2 + U_3 h_3 quad ==> quad h_1 = h_2 + h_3
-$
+3. *Bilancio di quantità di moto lungo la direzione tangente $t$*:
+   Trascurando gli sforzi viscosi di attrito a parete ($tau_w approx 0$), la parete può esercitare sul fluido unicamente una forza di pressione diretta lungo la normale $n$: pertanto la componente tangenziale della forza è nulla ($F_t = 0$). Essendo nulle anche le pressioni relative su $S_1, S_2, S_3$ ($Pi_t = 0$), l'equazione globale lungo $t$ si riduce a $M_t = -integral_S rho u_t (u_j n_j) dif S = 0$:
+   - su $S_1$: il flusso è entrante ($u_j n_j = -U$) e la componente di velocità lungo $t$ vale $u_t = +U cos theta$, dando il contributo $+rho U^2 h_1 cos theta$;
+   - su $S_2$: il flusso è uscente ($u_j n_j = +U$) e concorde con $t$ ($u_t = +U$), dando il contributo $-rho U^2 h_2$;
+   - su $S_3$: il flusso è uscente ($u_j n_j = +U$) ma diretto in verso opposto a $t$ ($u_t = -U$), per cui $-rho (-U)(+U) h_3 = +rho U^2 h_3$.
+   Sommando i tre contributi lungo $t$:
+   $
+   rho U^2 h_1 cos theta - rho U^2 h_2 + rho U^2 h_3 = 0 quad ==> quad h_2 - h_3 = h_1 cos theta
+   $
+   Mettendo a sistema questa relazione con l'equazione di continuità $h_2 + h_3 = h_1$, si ricavano gli spessori dei due getti uscenti in funzione di $h_1$ e dell'angolo $theta$:
+   $
+   h_2 = h_1 / 2 (1 + cos theta), quad h_3 = h_1 / 2 (1 - cos theta)
+   $
 
-Si considera poi il *bilancio di quantità di moto lungo la direzione tangente $t$*. Trascurando gli sforzi viscosi di attrito a parete ($tau_w approx 0$), la parete può esercitare sul fluido unicamente una forza di pressione diretta lungo la normale $n$, rendendo nulla la componente tangenziale della forza ($F_t = 0$). Poiché sono nulle anche le pressioni relative su $S_1, S_2, S_3$ ($Pi_t = 0$), l'equazione globale lungo $t$ si riduce a $M_t = -integral_S rho u_t (u_j n_j) dif S = 0$. Nel dettaglio, su $S_1$ il flusso è entrante ($u_j n_j = -U$) e la componente di velocità lungo $t$ vale $u_t = +U cos theta$, dando il contributo $+rho U^2 h_1 cos theta$; su $S_2$ il flusso è uscente ($u_j n_j = +U$) e concorde con $t$ ($u_t = +U$), fornendo il contributo $-rho U^2 h_2$; su $S_3$, infine, il flusso è uscente ($u_j n_j = +U$) ma diretto in verso opposto a $t$ ($u_t = -U$), per cui si ottiene $-rho (-U)(+U) h_3 = +rho U^2 h_3$. Sommando i tre contributi lungo $t$ si ricava:
-$
-rho U^2 h_1 cos theta - rho U^2 h_2 + rho U^2 h_3 = 0 quad ==> quad h_2 - h_3 = h_1 cos theta
-$
-Mettendo a sistema questa relazione con l'equazione di continuità $h_2 + h_3 = h_1$, si determinano gli spessori dei due getti uscenti in funzione di $h_1$ e dell'angolo $theta$:
-$
-h_2 = h_1 / 2 (1 + cos theta), quad h_3 = h_1 / 2 (1 - cos theta)
-$
-
-Infine, si esegue il *bilancio di quantità di moto lungo la direzione normale $n$*, proiettando l'equazione globale lungo la normale alla parete ($M_n + F_n = 0$). I flussi uscenti attraverso $S_2$ e $S_3$ sono paralleli alla parete e non possiedono componente normale di velocità ($u_n = 0$), per cui l'unico contributo a $M_n$ proviene dalla sezione di ingresso $S_1$, dove $u_j n_j = -U$ e la componente di velocità lungo $n$ vale $u_n = +U sin theta$:
-$
-M_n = -integral_(S_1) rho (+U sin theta) (-U) dif S_1 = +rho U^2 h_1 sin theta
-$
-Dal bilancio $M_n + F_n = 0$ si ottiene la forza normale per unità di larghezza esercitata dalla parete sul fluido:
-$
-F_n = -rho U^2 h_1 sin theta
-$
-
-_Nota: per $theta = 90 degree$ si ritrova come caso particolare il risultato dell'Esempio 3 per parete verticale: $h_2 = h_3 = h_1 / 2$ e $F_n = -rho U^2 h_1$._
+4. *Bilancio di quantità di moto lungo la direzione normale $n$*:
+   Proiettiamo infine l'equazione globale lungo la normale $n$ alla parete ($M_n + F_n = 0$). I flussi uscenti attraverso $S_2$ e $S_3$ sono paralleli alla parete e non possiedono componente normale di velocità ($u_n = 0$). L'unico contributo a $M_n$ proviene dalla sezione di ingresso $S_1$, dove $u_j n_j = -U$ e la componente di velocità lungo $n$ vale $u_n = +U sin theta$:
+   $
+   M_n = -integral_(S_1) rho (+U sin theta) (-U) dif S_1 = +rho U^2 h_1 sin theta
+   $
+   Dal bilancio $M_n + F_n = 0$ si ottiene la forza normale per unità di larghezza esercitata dalla parete sul fluido:
+   $
+   F_n = -rho U^2 h_1 sin theta
+   $
+   _Nota: per $theta = 90 degree$ si ritrova come caso particolare il risultato dell'Esempio 3 per parete verticale: $h_2 = h_3 = h_1 / 2$ e $F_n = -rho U^2 h_1$._
 
 == Estensione ai flussi esterni: forza su un corpo tozzo
 

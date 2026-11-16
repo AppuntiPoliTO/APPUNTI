@@ -1,6 +1,6 @@
 #import "../template.typ": *
 #show figure: set text(size: 9pt)   // etichette delle figure a 9pt, come nel modello
-#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
+
 = Cinematica dei Fluidi e Bilancio di Massa
 
 == Cinematica dei Fluidi

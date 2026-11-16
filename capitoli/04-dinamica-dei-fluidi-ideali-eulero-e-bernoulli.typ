@@ -1,5 +1,4 @@
 #import "../template.typ": *
-#set math.equation(numbering:"1")
 #import "../figs/fig04.typ": *   // figure del capitolo (rifatte, vedi figs/)
 #show figure: set text(size: 9pt)   // etichette delle figure a 9pt, come nel modello
 
@@ -212,7 +211,7 @@ Si definisce così il trinomio di Bernoulli come densità di energia meccanica (
 
 $ cal(H) = rho u^2 / 2 + p + rho g x_3 $ <eq:def_carico_bernoulli>
 
-ciascun addendo di $cal(H)$ ha le dimensioni di una pressione ($["Pa"] = ["N"\/"m"^2] = ["J"\/"m"^3]$): questa formulazione è tipica dell'aerodinamica, dove si misurano direttamente differenze di pressione. In ambito idraulico (ad esempio nell'idraulica fluviale) si preferisce invece dividere l'intera espressione per il peso specifico $rho g$, definendo il *carico idraulico*:
+Il simbolo $cal(H)$ (o $H$) deriva dal termine inglese _head_ ("testa"), tradotto nella letteratura idraulica italiana come _carico_ (o carico totale). Nella definizione dell'@eq:def_carico_bernoulli, ciascun addendo di $cal(H)$ ha le dimensioni di una pressione ($["Pa"] = ["N"\/"m"^2] = ["J"\/"m"^3]$): questa formulazione è tipica dell'aerodinamica, dove si misurano direttamente differenze di pressione. In ambito idraulico (ad esempio nell'idraulica fluviale) si preferisce invece dividere l'intera espressione per il peso specifico $rho g$, definendo il *carico idraulico*:
 
 $ H_"idr" = cal(H) / (rho g) = u^2 / (2 g) + p / (rho g) + x_3 $
 
@@ -242,8 +241,7 @@ Questo risultato fondamentale costituisce il *Teorema di Bernoulli* lungo una li
 === Applicazione: Genesi della portanza su un profilo alare
 Una prima applicazione del teorema di Bernoulli permette di spiegare, in prima approssimazione, la nascita della forza di *portanza* su un profilo alare investito da una corrente fluida.
 
-#figure(align(center)[#include "../figs/04-dinamica-dei-fluidi-ideali-eulero-e-bernoulli-fig01.typ"
-])
+#figure(fig-profilo())
 
 === Legame tra velocità e pressione attorno al profilo
 1. *Geometria delle linee di corrente*: la forma del profilo alare costringe il campo di moto ad avvilupparsi attorno ad esso producendo un *addensamento* delle linee di corrente nella parte superiore (*dorso*) e un *diradamento* nella parte inferiore (*ventre*).
@@ -294,170 +292,7 @@ $ u_1 = root(2, (2 (p_0 - p_1)) / rho) $
 
 == Fluido ideale
 
-#figure(canvas(length: 1.4cm, {
-  import draw: *
-
-  // --- VISTA 3D (pannello sinistro) ---
-  line((1.95, -1.26), (1.95, -1.45), stroke: (paint: gray.darken(25%), thickness: 0.7pt, dash: "dash-dotted"))
-  line((1.95, 2.12), (1.95, 2.38), stroke: (paint: gray.darken(25%), thickness: 0.7pt, dash: "dash-dotted"))
-
-  // Disco di carta 3D
-  circle((1.95, -0.68), radius: (1.65, 0.53), fill: gray.transparentize(60%), stroke: none)
-  rect((0.30, -0.68), (3.60, -0.60), fill: gray.transparentize(60%), stroke: none)
-  circle((1.95, -0.60), radius: (1.65, 0.53), fill: gray.transparentize(82%), stroke: none)
-  arc((1.95, -0.68), start: 180deg, stop: 360deg, radius: (1.65, 0.53), anchor: "origin", stroke: 0.9pt + black)
-  line((0.30, -0.68), (0.30, -0.60), stroke: 0.9pt + black)
-  line((3.60, -0.68), (3.60, -0.60), stroke: 0.9pt + black)
-  arc((1.95, -0.60), start: 0deg, stop: 19.9deg, radius: (1.65, 0.53), anchor: "origin", stroke: 0.9pt + black)
-  arc((1.95, -0.60), start: 160.1deg, stop: 360deg, radius: (1.65, 0.53), anchor: "origin", stroke: 0.9pt + black)
-
-  // Frecce radiali in uscita in 3D
-  line((3.35, -0.42), (3.90, -0.42), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-  line((0.55, -0.42), (0.00, -0.42), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-  line((1.95, -0.80), (1.95, -1.20), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-  line((2.90, -0.73), (3.33, -0.86), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-  line((1.00, -0.73), (0.57, -0.86), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-
-  // Flangia della bobina 3D
-  circle((1.95, -0.24), radius: (1.65, 0.53), fill: gray.transparentize(70%), stroke: none)
-  rect((0.30, -0.24), (3.60, -0.10), fill: gray.transparentize(70%), stroke: none)
-  circle((1.95, -0.10), radius: (1.65, 0.53), fill: gray.transparentize(84%), stroke: none)
-  arc((1.95, -0.24), start: 180deg, stop: 360deg, radius: (1.65, 0.53), anchor: "origin", stroke: 0.95pt + black)
-  line((0.30, -0.24), (0.30, -0.10), stroke: 0.95pt + black)
-  line((3.60, -0.24), (3.60, -0.10), stroke: 0.95pt + black)
-  arc((1.95, -0.10), start: 0deg, stop: 70.2deg, radius: (1.65, 0.53), anchor: "origin", stroke: 0.95pt + black)
-  arc((1.95, -0.10), start: 109.8deg, stop: 360deg, radius: (1.65, 0.53), anchor: "origin", stroke: 0.95pt + black)
-
-  // Condotto verticale 3D
-  circle((1.95, -0.10), radius: (0.56, 0.18), fill: gray.transparentize(75%), stroke: none)
-  rect((1.39, -0.10), (2.51, 1.55), fill: gray.transparentize(75%), stroke: none)
-  circle((1.95, 1.55), radius: (0.56, 0.18), fill: gray.transparentize(84%), stroke: none)
-  circle((1.95, 1.55), radius: (0.42, 0.135), fill: gray.transparentize(55%), stroke: none)
-  arc((1.95, -0.10), start: 180deg, stop: 360deg, radius: (0.56, 0.18), anchor: "origin", stroke: 0.95pt + black)
-  line((1.39, -0.10), (1.39, 1.55), stroke: 0.95pt + black)
-  line((2.51, -0.10), (2.51, 1.55), stroke: 0.95pt + black)
-  circle((1.95, 1.55), radius: (0.56, 0.18), stroke: 0.95pt + black)
-  circle((1.95, 1.55), radius: (0.42, 0.135), stroke: 0.8pt + black)
-
-  // Frecce del flusso in ingresso 3D
-  line((1.75, 2.05), (1.75, 1.57), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-  line((1.95, 2.05), (1.95, 1.57), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-  line((2.15, 2.05), (2.15, 1.57), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-
-
-  // --- SEZIONE 2D (pannello destro) ---
-  line((7.35, -1.30), (7.35, 2.38), stroke: (paint: gray.darken(25%), thickness: 0.7pt, dash: "dash-dotted"))
-
-  // Riempimento pareti a L
-  line(
-    (6.81, 1.55), (6.81, -0.24), (5.55, -0.24), (5.55, -0.10), (6.67, -0.10), (6.67, 1.55),
-    close: true, fill: gray.transparentize(86%), stroke: none
-  )
-  line(
-    (7.89, 1.55), (7.89, -0.24), (9.15, -0.24), (9.15, -0.10), (8.03, -0.10), (8.03, 1.55),
-    close: true, fill: gray.transparentize(86%), stroke: none
-  )
-
-  // Tratteggio parete sinistra
-  line((6.67, -0.10), (6.81, 0.04), stroke: 0.45pt + gray.darken(25%))
-  line((6.67, 0.06), (6.81, 0.20), stroke: 0.45pt + gray.darken(25%))
-  line((6.67, 0.22), (6.81, 0.36), stroke: 0.45pt + gray.darken(25%))
-  line((6.67, 0.38), (6.81, 0.52), stroke: 0.45pt + gray.darken(25%))
-  line((6.67, 0.54), (6.81, 0.68), stroke: 0.45pt + gray.darken(25%))
-  line((6.67, 0.70), (6.81, 0.84), stroke: 0.45pt + gray.darken(25%))
-  line((6.67, 0.86), (6.81, 1.00), stroke: 0.45pt + gray.darken(25%))
-  line((6.67, 1.02), (6.81, 1.16), stroke: 0.45pt + gray.darken(25%))
-  line((6.67, 1.18), (6.81, 1.32), stroke: 0.45pt + gray.darken(25%))
-  line((6.67, 1.34), (6.81, 1.48), stroke: 0.45pt + gray.darken(25%))
-  line((5.60, -0.24), (5.74, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((5.76, -0.24), (5.90, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((5.92, -0.24), (6.06, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((6.08, -0.24), (6.22, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((6.24, -0.24), (6.38, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((6.40, -0.24), (6.54, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((6.56, -0.24), (6.70, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((6.67, -0.24), (6.81, -0.10), stroke: 0.45pt + gray.darken(25%))
-
-  // Tratteggio parete destra
-  line((7.89, -0.10), (8.03, 0.04), stroke: 0.45pt + gray.darken(25%))
-  line((7.89, 0.06), (8.03, 0.20), stroke: 0.45pt + gray.darken(25%))
-  line((7.89, 0.22), (8.03, 0.36), stroke: 0.45pt + gray.darken(25%))
-  line((7.89, 0.38), (8.03, 0.52), stroke: 0.45pt + gray.darken(25%))
-  line((7.89, 0.54), (8.03, 0.68), stroke: 0.45pt + gray.darken(25%))
-  line((7.89, 0.70), (8.03, 0.84), stroke: 0.45pt + gray.darken(25%))
-  line((7.89, 0.86), (8.03, 1.00), stroke: 0.45pt + gray.darken(25%))
-  line((7.89, 1.02), (8.03, 1.16), stroke: 0.45pt + gray.darken(25%))
-  line((7.89, 1.18), (8.03, 1.32), stroke: 0.45pt + gray.darken(25%))
-  line((7.89, 1.34), (8.03, 1.48), stroke: 0.45pt + gray.darken(25%))
-  line((7.89, -0.24), (8.03, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((8.05, -0.24), (8.19, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((8.21, -0.24), (8.35, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((8.37, -0.24), (8.51, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((8.53, -0.24), (8.67, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((8.69, -0.24), (8.83, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((8.85, -0.24), (8.99, -0.10), stroke: 0.45pt + gray.darken(25%))
-  line((8.99, -0.24), (9.13, -0.10), stroke: 0.45pt + gray.darken(25%))
-
-  // Contorni pareti a L e disco di carta 2D
-  line((6.67, 1.55), (6.67, -0.10), (5.55, -0.10), (5.55, -0.24), (6.81, -0.24), (6.81, 1.55), stroke: 1pt + black)
-  line((7.89, 1.55), (7.89, -0.24), (9.15, -0.24), (9.15, -0.10), (8.03, -0.10), (8.03, 1.55), stroke: 1pt + black)
-  rect((5.55, -0.68), (9.15, -0.60), fill: gray.transparentize(70%), stroke: 1pt + black)
-
-  // Frecce del flusso in ingresso 2D
-  line((6.95, 1.48), (6.95, 1.15), mark: (end: ">"), stroke: 0.9pt + rgb(140, 45, 25))
-  line((7.15, 1.48), (7.15, 1.15), mark: (end: ">"), stroke: 0.9pt + rgb(140, 45, 25))
-  line((7.35, 1.48), (7.35, 1.15), mark: (end: ">"), stroke: 0.9pt + rgb(140, 45, 25))
-  line((7.55, 1.48), (7.55, 1.15), mark: (end: ">"), stroke: 0.9pt + rgb(140, 45, 25))
-  line((7.75, 1.48), (7.75, 1.15), mark: (end: ">"), stroke: 0.9pt + rgb(140, 45, 25))
-
-  // Linee di corrente 2D
-  line((6.95, 1.05), (6.95, -0.14), stroke: 0.95pt + rgb(140, 45, 25))
-  bezier((6.95, -0.14), (6.81, -0.34), (6.95, -0.25), (6.89, -0.34), stroke: 0.95pt + rgb(140, 45, 25))
-  line((6.81, -0.34), (5.08, -0.34), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-
-  line((7.11, 1.05), (7.11, -0.15), stroke: 0.95pt + rgb(140, 45, 25))
-  bezier((7.11, -0.15), (6.81, -0.49), (7.11, -0.34), (6.98, -0.49), stroke: 0.95pt + rgb(140, 45, 25))
-  line((6.81, -0.49), (5.08, -0.49), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-
-  line((7.75, 1.05), (7.75, -0.14), stroke: 0.95pt + rgb(140, 45, 25))
-  bezier((7.75, -0.14), (7.89, -0.34), (7.75, -0.25), (7.81, -0.34), stroke: 0.95pt + rgb(140, 45, 25))
-  line((7.89, -0.34), (9.65, -0.34), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-
-  line((7.59, 1.05), (7.59, -0.15), stroke: 0.95pt + rgb(140, 45, 25))
-  bezier((7.59, -0.15), (7.89, -0.49), (7.59, -0.34), (7.72, -0.49), stroke: 0.95pt + rgb(140, 45, 25))
-  line((7.89, -0.49), (9.65, -0.49), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
-
-  // Linee tratteggiate di efflusso
-  line((5.55, -0.24), (5.08, -0.10), stroke: (dash: "dashed", thickness: 0.6pt, paint: gray.darken(20%)))
-  line((5.55, -0.60), (5.08, -0.74), stroke: (dash: "dashed", thickness: 0.6pt, paint: gray.darken(20%)))
-  line((9.15, -0.24), (9.65, -0.10), stroke: (dash: "dashed", thickness: 0.6pt, paint: gray.darken(20%)))
-  line((9.15, -0.60), (9.65, -0.74), stroke: (dash: "dashed", thickness: 0.6pt, paint: gray.darken(20%)))
-
-  // Quote r1, r2, h
-  line((7.89, 1.55), (7.89, 1.92), stroke: 0.6pt + black)
-  line((7.35, 1.82), (7.89, 1.82), mark: (start: ">", end: ">"), stroke: 0.7pt + black)
-  content((7.62, 1.92), text(size: 7.5pt)[$r_1$], anchor: "south")
-
-  line((9.15, -0.10), (9.15, 2.38), stroke: 0.6pt + black)
-  line((7.35, 2.26), (9.15, 2.26), mark: (start: ">", end: ">"), stroke: 0.7pt + black)
-  content((8.25, 2.34), text(size: 7.5pt)[$r_2$], anchor: "south")
-
-  line((5.55, -0.24), (4.82, -0.24), stroke: 0.6pt + black)
-  line((5.55, -0.60), (4.82, -0.60), stroke: 0.6pt + black)
-  line((4.92, -0.60), (4.92, -0.24), mark: (start: ">", end: ">"), stroke: 0.7pt + black)
-  content((4.80, -0.42), text(size: 7.5pt)[$h$], anchor: "east")
-
-  // Etichette A, B, C, D
-  content((7.47, 0.55), text(size: 7.5pt)[$A$])
-  content((6.72, -1.22), text(size: 7.5pt)[$B$])
-  line((6.78, -1.10), (7.08, -0.44), mark: (end: ">"), stroke: 0.6pt + gray.darken(30%))
-  content((6.05, -1.22), text(size: 7.5pt)[$C$])
-  line((6.12, -1.10), (6.35, -0.49), mark: (end: ">"), stroke: 0.6pt + gray.darken(30%))
-  content((9.75, -1.22), text(size: 7.5pt)[$D$])
-  line((9.68, -1.10), (9.38, -0.49), mark: (end: ">"), stroke: 0.6pt + gray.darken(30%))
-
-
-}))
+#figure(fig-bobina())
 
 Consideriamo lo studio del sistema bobina-disco di carta: si soffia aria in un condotto verticale al di sopra di un disco di carta di superficie $S$. La carta rimane sospesa in equilibrio se la forza peso è bilanciata dalla forza aerodinamica verticale diretta verso l'alto.
 
@@ -583,15 +418,14 @@ $ F = (rho q^2) / (4 pi h^2) { ln Lambda - 1/2 } , quad Lambda = r_2 / r_1 $
     $ ln Lambda > 1/2 quad arrow.r.double quad Lambda = r_2 / r_1 > e^(1/2) approx 1.65 $
     La superficie anulare $S_2$ in depressione deve quindi avere raggio esterno $r_2 > sqrt(e) r_1 approx 1.65 r_1$ per superare la spinta verso il basso esercitata dal getto centrale su $S_1$.
 
-    
+    L'equilibrio del disco è tuttavia *instabile*: poiché $F prop 1\/h^2$ mentre il peso $P = m g$ è indipendente da $h$:
+    - se una perturbazione allontana la carta ($h > h_"eq"$), la forza aerodinamica diminuisce ($F < P$) e la carta cade;
+    - se una perturbazione avvicina la carta alla bobina ($h < h_"eq"$), la forza aumenta ($F > P$) aspirando la carta fino a chiudere il canale.
   ],
   [
     #figure(fig-fh())
   ]
 )
-L'equilibrio del disco è tuttavia *instabile*: poiché $F prop 1\/h^2$ mentre il peso $P = m g$ è indipendente da $h$:
-    - se una perturbazione allontana la carta ($h > h_"eq"$), la forza aerodinamica diminuisce ($F < P$) e la carta cade;
-    - se una perturbazione avvicina la carta alla bobina ($h < h_"eq"$), la forza aumenta ($F > P$) aspirando la carta fino a chiudere il canale.
 
 *Limite del modello di fluido ideale:* per $h arrow.r 0$ la formula prevede una forza divergente ($F arrow.r infinity$), comportamento non fisico dovuto all'aver trascurato gli effetti viscosi, che diventano invece dominanti per spessori d'intercapedine $h$ molto piccoli.
 
@@ -656,159 +490,4 @@ si ottiene in forma vettoriale il *Principio di Archimede*:
 $ arrow(F)_A = - M_f arrow(g) $ <eq:archimede_cap4>
 
 La forza risultante $arrow(F)_A$ esercitata dal fluido in quiete su un corpo immerso di forma arbitraria è dunque *opposta a $arrow(g)$* (diretta verticalmente verso l'alto) e ha intensità pari al peso del fluido spostato dal corpo.
-== Applicazione: Velocità di efflusso da un serbatoio (Formula di Torricelli) e tempo di svuotamento
-Consideriamo un serbatoio contenente acqua fino a un'altezza $h$, dotato di un foro sul fondo o sulla parete inferiore da cui fuoriesce un getto d'acqua. Tracciamo una linea di corrente che parte da un punto $A$ sul pelo libero (a quota $z_A$) e arriva in un punto $B$ all'uscita del foro (a quota $z_B$, appena a valle della sezione contratta dove le linee di corrente del getto tornano parallele).
-Applicando il Teorema di Bernoulli lungo la linea di corrente tra $A$ e $B$:
-$ 1/2 rho u_A^2 + p_A + rho g z_A = 1/2 rho u_B^2 + p_B + rho g z_B $
-Valutiamo i singoli termini:
-- Sul pelo libero $A$ (assumendo la sezione del serbatoio molto più grande di quella del foro) il fluido è pressoché fermo, quindi $u_A approx 0$.
-- Sia il pelo libero in $A$ sia il getto libero in $B$ sono a diretto contatto con l'atmosfera. A rigore, tra la quota $z_A$ e la quota $z_B$ sussiste una variazione idrostatica della pressione atmosferica pari a:
-$ p_B - p_A = rho_"aria" g (z_A - z_B) $
-Tuttavia, poiché la densità dell'aria ($rho_"aria" approx 1 "kg"/"m"^3$) è circa un millesimo della densità dell'acqua ($rho_"acqua" approx 1000 "kg"/"m"^3$), il termine $rho_"aria" g (z_A - z_B)$ è del tutto trascurabile rispetto a $rho g (z_A - z_B)$ e possiamo porre in prima approssimazione $p_A approx p_B = p_"atm"$.
-
-Semplificando le pressioni e dividendo per $rho$, otteniamo la velocità di efflusso (formula di Torricelli):
-$ 1/2 u_B^2 = g (z_A - z_B) ==> u_B = sqrt(2 g (z_A - z_B)) = sqrt(2 g h) $
-dove $h = z_A - z_B$ è il battente idrostatico sopra il foro.
-
-// [DA AUDIO]
-#figure(
-  align(center)[#canvas(length: 1.6cm, {
-  import draw: *
-
-  circle((1.8, 2.75), radius: (1.4, 0.39), fill: gray.transparentize(86%), stroke: none)
-  circle((1.8, 0.85), radius: (1.4, 0.39), fill: gray.transparentize(92%), stroke: none)
-  circle((1.8, 0.85), radius: (0.2, 0.06), fill: gray.transparentize(72%), stroke: none)
-
-  arc((1.8, 0.85), start: 0deg, stop: 180deg, radius: (1.4, 0.39), anchor: "origin", stroke: (dash: "dashed", thickness: 0.7pt))
-  arc((1.8, 0.85), start: 180deg, stop: 360deg, radius: (1.4, 0.39), anchor: "origin", stroke: 1pt)
-  line((0.4, 0.85), (0.4, 3.2), stroke: 1pt)
-  line((3.2, 0.85), (3.2, 3.2), stroke: 1pt)
-  circle((1.8, 3.2), radius: (1.4, 0.39), stroke: 1pt)
-  circle((1.8, 2.75), radius: (1.4, 0.39), stroke: 0.85pt)
-  circle((1.8, 0.85), radius: (0.2, 0.06), stroke: 0.75pt)
-
-  line((0.75, 2.0), (0.75, 2.75), mark: (end: ">"), stroke: 0.7pt)
-  line((0.75, 1.6), (0.75, 0.85), mark: (end: ">"), stroke: 0.7pt)
-  content((0.75, 1.8), text(size: 8.5pt)[$Delta$], anchor: "center")
-
-  circle((1.85, 2.75), radius: 0.045, fill: black, stroke: none)
-  content((1.94, 2.84), text(size: 8.5pt)[$A$], anchor: "south-west")
-
-  bezier((1.85, 2.75), (1.8, 0.45), (1.82, 1.9), (1.8, 1.2), stroke: (dash: "dashed", thickness: 0.7pt))
-  bezier((1.6, 0.85), (1.67, 0.45), (1.65, 0.7), (1.67, 0.58), stroke: 0.8pt)
-  line((1.67, 0.45), (1.67, 0.15), stroke: 0.8pt)
-  bezier((2.0, 0.85), (1.93, 0.45), (1.95, 0.7), (1.93, 0.58), stroke: 0.8pt)
-  line((1.93, 0.45), (1.93, 0.15), stroke: 0.8pt)
-
-  arc((1.8, 0.45), start: 0deg, stop: 180deg, radius: (0.13, 0.04), anchor: "origin", stroke: (dash: "dashed", thickness: 0.5pt))
-  arc((1.8, 0.45), start: 180deg, stop: 360deg, radius: (0.13, 0.04), anchor: "origin", stroke: 0.65pt)
-  arc((1.8, 0.15), start: 0deg, stop: 180deg, radius: (0.13, 0.04), anchor: "origin", stroke: (dash: "dashed", thickness: 0.5pt))
-  arc((1.8, 0.15), start: 180deg, stop: 360deg, radius: (0.13, 0.04), anchor: "origin", stroke: 0.65pt)
-  line((1.8, 0.45), (1.8, 0.08), mark: (end: ">"), stroke: 0.7pt)
-
-  circle((1.8, 0.45), radius: 0.04, fill: black, stroke: none)
-  content((1.98, 0.45), text(size: 8.5pt)[$B$], anchor: "west")
-
-  circle((1.8, 0.62), radius: 0.6, stroke: 0.75pt)
-  bezier((2.4, 0.62), (4.45, 2.6), (3.45, 0.62), (3.35, 2.6), mark: (end: ">"), stroke: 0.75pt)
-
-  line((5.0, 2.27), (8.7, 2.27), (9.6, 2.83), (5.9, 2.83), close: true, fill: gray.transparentize(84%), stroke: none)
-  line((5.0, 2.27), (8.7, 2.27), (8.7, 2.13), (5.0, 2.13), close: true, fill: gray.transparentize(72%), stroke: none)
-  line((8.7, 2.27), (9.6, 2.83), (9.6, 2.69), (8.7, 2.13), close: true, fill: gray.transparentize(77%), stroke: none)
-  circle((7.3, 2.55), radius: (0.7, 0.2), fill: white, stroke: none)
-  circle((7.3, 1.15), radius: (0.45, 0.13), fill: gray.transparentize(88%), stroke: none)
-
-  bezier((6.83, 2.41), (6.9, 2.13), (6.855, 2.316), (6.878, 2.222), stroke: (dash: "dashed", thickness: 0.55pt))
-  bezier((6.9, 2.13), (7.0, 1.15), (6.965, 1.813), (7.0, 1.497), stroke: 0.6pt)
-  line((7.0, 1.15), (7.0, 0.55), stroke: 0.6pt)
-
-  bezier((7.07, 2.41), (7.1, 2.13), (7.082, 2.316), (7.092, 2.222), stroke: (dash: "dashed", thickness: 0.55pt))
-  bezier((7.1, 2.13), (7.15, 1.15), (7.132, 1.813), (7.15, 1.497), stroke: 0.6pt)
-  line((7.15, 1.15), (7.15, 0.55), stroke: 0.6pt)
-
-  line((7.3, 2.41), (7.3, 2.13), stroke: (dash: "dashed", thickness: 0.55pt))
-  line((7.3, 2.13), (7.3, 0.55), stroke: 0.6pt)
-
-  bezier((7.53, 2.41), (7.5, 2.13), (7.518, 2.316), (7.508, 2.222), stroke: (dash: "dashed", thickness: 0.55pt))
-  bezier((7.5, 2.13), (7.45, 1.15), (7.468, 1.813), (7.45, 1.497), stroke: 0.6pt)
-  line((7.45, 1.15), (7.45, 0.55), stroke: 0.6pt)
-
-  bezier((7.77, 2.41), (7.7, 2.13), (7.745, 2.316), (7.722, 2.222), stroke: (dash: "dashed", thickness: 0.55pt))
-  bezier((7.7, 2.13), (7.6, 1.15), (7.635, 1.813), (7.6, 1.497), stroke: 0.6pt)
-  line((7.6, 1.15), (7.6, 0.55), stroke: 0.6pt)
-
-  bezier((6.6, 2.41), (6.7, 2.13), (6.637, 2.316), (6.67, 2.222), stroke: (dash: "dashed", thickness: 0.7pt))
-  bezier((6.7, 2.13), (6.85, 1.15), (6.797, 1.813), (6.85, 1.497), stroke: 1pt)
-  line((6.85, 1.15), (6.85, 0.55), stroke: 1pt)
-
-  bezier((8.0, 2.41), (7.9, 2.13), (7.963, 2.316), (7.93, 2.222), stroke: (dash: "dashed", thickness: 0.7pt))
-  bezier((7.9, 2.13), (7.75, 1.15), (7.803, 1.813), (7.75, 1.497), stroke: 1pt)
-  line((7.75, 1.15), (7.75, 0.55), stroke: 1pt)
-
-  arc((7.3, 1.15), start: 0deg, stop: 180deg, radius: (0.45, 0.13), anchor: "origin", stroke: (dash: "dashed", thickness: 0.65pt))
-  arc((7.3, 1.15), start: 180deg, stop: 360deg, radius: (0.45, 0.13), anchor: "origin", stroke: 0.85pt)
-
-  arc((7.3, 0.55), start: 0deg, stop: 180deg, radius: (0.45, 0.13), anchor: "origin", stroke: (dash: "dashed", thickness: 0.65pt))
-  arc((7.3, 0.55), start: 180deg, stop: 360deg, radius: (0.45, 0.13), anchor: "origin", stroke: 1pt)
-
-  line((5.0, 2.27), (8.7, 2.27), (9.6, 2.83), (5.9, 2.83), close: true, stroke: 0.9pt)
-  line((5.0, 2.27), (5.0, 2.13), (8.7, 2.13), (8.7, 2.27), stroke: 0.9pt)
-  line((8.7, 2.13), (9.6, 2.69), (9.6, 2.83), stroke: 0.9pt)
-  circle((7.3, 2.55), radius: (0.7, 0.2), stroke: 0.9pt)
-  arc((7.3, 2.41), start: 20.5deg, stop: 159.5deg, radius: (0.7, 0.2), anchor: "origin", stroke: 0.75pt)
-
-  line((6.6, 2.62), (6.6, 3.22), stroke: 0.55pt)
-  line((8.0, 2.62), (8.0, 3.22), stroke: 0.55pt)
-  line((7.1, 3.08), (6.6, 3.08), mark: (end: ">"), stroke: 0.7pt)
-  line((7.5, 3.08), (8.0, 3.08), mark: (end: ">"), stroke: 0.7pt)
-  content((7.3, 3.08), text(size: 8.5pt)[$d$], anchor: "center")
-
-  line((4.55, 2.41), (6.56, 2.41), stroke: (dash: "dashed", thickness: 0.5pt))
-  line((4.55, 1.15), (6.8, 1.15), stroke: (dash: "dashed", thickness: 0.5pt))
-  line((4.65, 1.98), (4.65, 2.41), mark: (end: ">"), stroke: 0.7pt)
-  line((4.65, 1.58), (4.65, 1.15), mark: (end: ">"), stroke: 0.7pt)
-  content((4.65, 1.78), text(size: 8.5pt)[$delta tilde d$], anchor: "center")
-
-  circle((7.3, 1.15), radius: 0.045, fill: black, stroke: none)
-  rect((7.36, 0.87), (7.58, 1.09), fill: white, stroke: none)
-  content((7.47, 0.98), text(size: 8.5pt)[$B$], anchor: "center")
-
-  line((6.18, 0.45), (6.78, 0.72), mark: (end: ">"), stroke: 0.7pt)
-  content((5.5, 0.38), text(size: 8pt)[traiettorie], anchor: "center")
-  content((5.5, 0.12), text(size: 8pt)[parallele], anchor: "center")
-
-  content((8.8, 0.55), text(size: 8pt)[Vena], anchor: "center")
-  content((8.8, 0.29), text(size: 8pt)[contracta], anchor: "center")
-})]
-)
-
-
-
-
-
-
-
-
-// [DA AUDIO]
-=== Calcolo del tempo di svuotamento del serbatoio
-Vogliamo ora calcolare il tempo $tau$ necessario a svuotare completamente un serbatoio di sezione trasversale costante $S$, partendo da un'altezza iniziale $h(0) = h_0$, attraverso un foro sul fondo di area $A << S$.
-Poiché il foro è molto piccolo rispetto alla sezione del serbatoio ($A << S$), lo svuotamento avviene lentamente e in ogni istante la velocità di efflusso è data da $u(t) = sqrt(2 g h(t))$, la quale diminuisce nel tempo man mano che il livello $h(t)$ si abbassa.
-
-Applichiamo il principio di conservazione della massa (che per un fluido a densità costante $rho = "cost."$ equivale alla conservazione del volume):
-1. La massa d'acqua $G(t)$ contenuta nel serbatoio all'istante $t$ è pari al prodotto tra densità e volume:
-$ G(t) = rho S h(t) $
-2. La variazione nel tempo della massa contenuta nel serbatoio deve eguagliare l'opposto del flusso di massa uscente dal foro:
-$ (d G) / (d t) = -rho Q $
-dove il segno meno indica che la massa nel serbatoio diminuisce nel tempo e $Q$ è la portata volumetrica (flusso di volume) uscente dal foro di sezione $A$:
-$ Q = A u(t) = A sqrt(2 g h(t)) $
-3. Sostituendo l'espressione di $G(t)$ e di $Q$ nell'equazione di bilancio della massa:
-$ (d) / (d t) (rho S h) = -rho A sqrt(2 g h) $
-Essendo la densità $rho$ e la sezione $S$ costanti, semplificando $rho$ otteniamo il bilancio di volume:
-$ S (d h) / (d t) = -A sqrt(2 g) h^(1/2) ==> (d h) / (d t) = - A / S sqrt(2 g) h^(1/2) $
-4. Separiamo le variabili e integriamo tra l'istante iniziale $t = 0$ (in cui $h = h_0$) e l'istante di completo svuotamento $t = tau$ (in cui $h = 0$):
-$ integral_(h_0)^0 h^(-1/2) dif h = - A / S sqrt(2 g) integral_0^tau dif t $
-$ lr([ 2 h^(1/2) ])_(h_0)^0 = - A / S sqrt(2 g) tau ==> -2 h_0^(1/2) = - A / S sqrt(2 g) tau $
-Ricavando $tau$, si ottiene la formula per il tempo di svuotamento del serbatoio:
-$ tau = (2 h_0^(1/2) S) / (A sqrt(2 g)) = S / A sqrt((2 h_0) / g) $
-
-
+#pagebreak()

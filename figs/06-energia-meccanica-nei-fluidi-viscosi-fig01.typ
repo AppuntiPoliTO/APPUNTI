@@ -2,61 +2,57 @@
 #import "@preview/cetz:0.3.4": canvas, draw
 #import "../template.typ": *
 
-#canvas(length: 1cm, {
-  import draw: *
+#canvas(length: 0.90cm, {
+  let x1 = 0.8
+  let x2 = 7.4
+  let y0 = 0.45
+  let y1 = 2.10
+  let ym = (y0 + y1) / 2
 
-  rect((1.50, 0.45), (7.10, 2.35), fill: c-aux.transparentize(92%), stroke: none)
-  circle((1.50, 1.40), radius: (0.36, 0.95), fill: c-aux.transparentize(86%), stroke: none)
-  arc((1.50, 1.40), start: -90deg, stop: 90deg, radius: (0.36, 0.95), anchor: "origin", stroke: (paint: c-aux, thickness: 0.65pt, dash: "dashed"))
-  arc((1.50, 1.40), start: 90deg, stop: 270deg, radius: (0.36, 0.95), anchor: "origin", stroke: (paint: c-aux, thickness: 0.9pt, dash: "dashed"))
+  // Tubi piezometrici / manometri in S_1 e S_2
+  let xp1 = 2.0
+  let xp2 = 6.2
+  // Colonna 1 (p_1 più alta)
+  draw.rect((xp1 - 0.18, y1), (xp1 + 0.18, y1 + 1.25), fill: c-fluido, stroke: none)
+  draw.line((xp1 - 0.18, y1), (xp1 - 0.18, y1 + 1.5), stroke: 0.8pt + c-geo)
+  draw.line((xp1 + 0.18, y1), (xp1 + 0.18, y1 + 1.5), stroke: 0.8pt + c-geo)
+  draw.line((xp1 - 0.18, y1 + 1.25), (xp1 + 0.18, y1 + 1.25), stroke: 1pt + c-norm)
+  etichetta((xp1, y1 + 1.72), $p_1$, col: c-forza)
 
-  circle((2.75, 2.35), radius: (0.20, 0.076), fill: c-fluido, stroke: none)
-  rect((2.55, 2.35), (2.95, 3.67), fill: c-fluido, stroke: none)
-  circle((2.75, 3.67), radius: (0.20, 0.076), fill: c-fluido, stroke: none)
-  circle((2.75, 3.67), radius: (0.20, 0.076), stroke: 1pt + c-norm)
-  line((2.55, 2.35), (2.55, 4.00), stroke: 0.85pt + c-geo)
-  line((2.95, 2.35), (2.95, 4.00), stroke: 0.85pt + c-geo)
-  arc((2.75, 2.35), start: 0deg, stop: 180deg, radius: (0.20, 0.076), anchor: "origin", stroke: (paint: c-geo, thickness: 0.6pt, dash: "dashed"))
-  arc((2.75, 2.35), start: 180deg, stop: 360deg, radius: (0.20, 0.076), anchor: "origin", stroke: 0.8pt + c-geo)
-  circle((2.75, 4.00), radius: (0.20, 0.076), stroke: 0.85pt + c-geo)
+  // Colonna 2 (p_2 più bassa nella realtà)
+  draw.rect((xp2 - 0.18, y1), (xp2 + 0.18, y1 + 0.58), fill: c-fluido, stroke: none)
+  draw.line((xp2 - 0.18, y1), (xp2 - 0.18, y1 + 1.5), stroke: 0.8pt + c-geo)
+  draw.line((xp2 + 0.18, y1), (xp2 + 0.18, y1 + 1.5), stroke: 0.8pt + c-geo)
+  draw.line((xp2 - 0.18, y1 + 0.58), (xp2 + 0.18, y1 + 0.58), stroke: 1pt + c-norm)
+  etichetta((xp2, y1 + 1.72), $p_2 < p_1$, col: c-forza)
 
-  circle((5.85, 2.35), radius: (0.20, 0.076), fill: c-fluido, stroke: none)
-  rect((5.65, 2.35), (6.05, 2.97), fill: c-fluido, stroke: none)
-  circle((5.85, 2.97), radius: (0.20, 0.076), fill: c-fluido, stroke: none)
-  circle((5.85, 2.97), radius: (0.20, 0.076), stroke: 1pt + c-norm)
-  line((5.65, 2.35), (5.65, 4.00), stroke: 0.85pt + c-geo)
-  line((6.05, 2.35), (6.05, 4.00), stroke: 0.85pt + c-geo)
-  arc((5.85, 2.35), start: 0deg, stop: 180deg, radius: (0.20, 0.076), anchor: "origin", stroke: (paint: c-geo, thickness: 0.6pt, dash: "dashed"))
-  arc((5.85, 2.35), start: 180deg, stop: 360deg, radius: (0.20, 0.076), anchor: "origin", stroke: 0.8pt + c-geo)
-  circle((5.85, 4.00), radius: (0.20, 0.076), stroke: 0.85pt + c-geo)
+  // Livello ideale vs perdita di carico reale
+  draw.line((xp1 + 0.2, y1 + 1.25), (xp2 + 0.55, y1 + 1.25), stroke: (paint: c-aux, thickness: 0.6pt, dash: "dashed"))
+  draw.line((xp2 + 0.2, y1 + 0.58), (xp2 + 0.55, y1 + 0.58), stroke: (paint: c-aux, thickness: 0.6pt, dash: "dashed"))
+  quota((xp2 + 0.42, y1 + 0.58), (xp2 + 0.42, y1 + 1.25), col: c-forza)
+  etichetta((xp2 + 0.92, y1 + 0.92), $Delta cal(H)$, col: c-forza)
 
-  line((2.95, 3.67), (5.65, 3.67), stroke: (paint: c-aux, thickness: 0.65pt, dash: "dashed"))
-  line((6.05, 3.67), (6.55, 3.67), stroke: (paint: c-aux, thickness: 0.65pt, dash: "dashed"))
-  line((6.05, 2.97), (6.55, 2.97), stroke: (paint: c-aux, thickness: 0.65pt, dash: "dashed"))
-  line((6.40, 2.97), (6.40, 3.67), mark: (start: ">", end: ">"), stroke: 0.85pt + c-forza)
+  // Pareti condotta interrotte ai piezometri
+  parete(x1, xp1 - 0.18, y1, sotto: false)
+  parete(xp1 + 0.18, xp2 - 0.18, y1, sotto: false)
+  parete(xp2 + 0.18, x2, y1, sotto: false)
+  parete(x1, x2, y0, sotto: true)
+  etichetta((4.1, y0 - 0.42), $S_w$, col: c-geo)
 
-  line((1.50, 2.35), (2.55, 2.35), stroke: 1.1pt + c-geo)
-  line((2.95, 2.35), (5.65, 2.35), stroke: 1.1pt + c-geo)
-  line((6.05, 2.35), (7.10, 2.35), stroke: 1.1pt + c-geo)
-  line((1.50, 0.45), (7.10, 0.45), stroke: 1.1pt + c-geo)
+  // Sezioni S_1 e S_2
+  sezione-tratteggiata(x1, y0, y1)
+  sezione-tratteggiata(x2, y0, y1)
+  etichetta((x1 + 0.32, y0 + 0.32), $S_1$, col: c-aux)
+  etichetta((x2 - 0.32, y0 + 0.32), $S_2$, col: c-aux)
 
-  circle((7.10, 1.40), radius: (0.36, 0.95), fill: c-aux.transparentize(85%), stroke: none)
-  circle((7.10, 1.40), radius: (0.36, 0.95), stroke: (paint: c-aux, thickness: 0.9pt, dash: "dashed"))
+  // Versori normali e velocità media U_d
+  freccia((x1, ym - 0.32), (x1 - 0.75, ym - 0.32), col: c-norm)
+  etichetta((x1 - 0.42, ym - 0.62), $arrow(n)_1$, col: c-norm)
+  freccia((x2, ym - 0.32), (x2 + 0.75, ym - 0.32), col: c-norm)
+  etichetta((x2 + 0.42, ym - 0.62), $arrow(n)_2$, col: c-norm)
 
-  line((1.50, 1.12), (0.65, 1.12), mark: (end: ">"), stroke: 1pt + c-norm)
-  line((7.10, 1.12), (7.95, 1.12), mark: (end: ">"), stroke: 1pt + c-norm)
-
-  line((0.80, 1.65), (2.05, 1.65), mark: (end: ">"), stroke: 1.1pt + c-vel)
-  line((3.55, 1.40), (5.05, 1.40), mark: (end: ">"), stroke: 1.1pt + c-vel)
-
-  content((2.75, 4.22), text(size: 8.5pt, fill: c-forza)[$p_1$], anchor: "south")
-  content((5.85, 4.22), text(size: 8.5pt, fill: c-forza)[$p_2 < p_1$], anchor: "south")
-  content((6.55, 3.32), text(size: 8.5pt, fill: c-forza)[$Delta cal(H)$], anchor: "west")
-  content((4.30, 0.22), text(size: 8.5pt, fill: c-geo)[$S_w$], anchor: "north")
-  content((1.50, 0.78), text(size: 8pt, fill: c-aux)[$S_1$])
-  content((7.10, 0.78), text(size: 8pt, fill: c-aux)[$S_2$])
-  content((0.92, 0.96), text(size: 8.5pt, fill: c-norm)[$arrow(n)_1$], anchor: "north")
-  content((7.68, 0.96), text(size: 8.5pt, fill: c-norm)[$arrow(n)_2$], anchor: "north")
-  content((0.92, 1.82), text(size: 8.5pt, fill: c-vel)[$U_d$], anchor: "south")
-  content((4.30, 1.60), text(size: 8.5pt, fill: c-vel)[$Q_v = U_d A$], anchor: "south")
+  freccia((x1 - 0.55, ym + 0.25), (x1 + 0.55, ym + 0.25), col: c-vel, sp: 1pt)
+  etichetta((x1, ym + 0.55), $U_d$, col: c-vel)
+  freccia((3.4, ym), (4.8, ym), col: c-vel, sp: 1pt)
+  etichetta((4.1, ym + 0.32), $Q_v = U_d A$, col: c-vel)
 })
