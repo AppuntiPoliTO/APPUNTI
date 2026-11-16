@@ -189,7 +189,7 @@ Infine, poiché nei campi a potenziale la vorticità è nulla ($arrow(omega) = a
 === Evoluzione reale del campo di moto attorno a una sfera/cilindro al variare di $"Re"$
 
 Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità nello strato limite e il campo di moto effettivo attorno a una sfera (o cilindro) cambia radicalmente al variare del numero di Reynolds $"Re" = u_infinity D slash nu$:
-/*
+
 #v(0.2em)
 
 #grid(
