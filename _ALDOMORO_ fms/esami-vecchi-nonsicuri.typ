@@ -25,43 +25,7 @@ $ [sigma] = mat(delim: "[", 50, 0, 50; 0, 200, 0; 50, 0, 120) "MPa" $
   ],
   [
     
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // Spigoli del cubetto elementare
-      line((3.0, 1.5), (3.0, 3.3), stroke: 1pt)
-      line((1.6, 2.0), (1.6, 3.8), stroke: 1pt)
-      line((4.5, 1.8), (4.5, 3.6), stroke: 1pt)
-      line((1.6, 2.0), (3.0, 1.5), (4.5, 1.8), stroke: 1pt)
-      line((1.6, 3.8), (3.0, 3.3), (4.5, 3.6), (3.1, 4.1), close: true, stroke: 1pt)
-
-      // Assi coordinati
-      line((3.0, 3.7), (3.0, 5.1), mark: (end: ">"), stroke: 0.6pt)
-      line((2.3, 2.5), (0.6, 1.9), mark: (end: ">"), stroke: 0.6pt)
-      line((3.7, 2.4), (5.5, 2.0), mark: (end: ">"), stroke: 0.6pt)
-
-      // Vettori di tensione (in blu come nello schema a mano)
-      // sigma_yy
-      line((3.0, 3.7), (3.0, 4.7), mark: (end: ">"), stroke: (paint: blue, thickness: 1pt))
-      // sigma_zz
-      line((2.3, 2.5), (1.1, 2.08), mark: (end: ">"), stroke: (paint: blue, thickness: 1pt))
-      // sigma_xx
-      line((3.7, 2.4), (5.0, 2.11), mark: (end: ">"), stroke: (paint: blue, thickness: 1pt))
-      // tau_xz sulla faccia z (verso lo spigolo centrale)
-      line((2.0, 2.85), (2.9, 2.53), mark: (end: ">"), stroke: (paint: blue, thickness: 1pt))
-      // tau_xz sulla faccia x (verso lo spigolo centrale)
-      line((4.1, 2.7), (3.1, 2.5), mark: (end: ">"), stroke: (paint: blue, thickness: 1pt))
-
-      // Etichette
-      content((2.7, 5.0), text(size: 7pt)[$y$], anchor: "east")
-      content((0.7, 1.6), text(size: 7pt)[$z$], anchor: "north")
-      content((5.4, 1.7), text(size: 7pt)[$x$], anchor: "north")
-      content((3.15, 4.45), text(size: 7pt)[$sigma_(y y)$], anchor: "west")
-      content((1.4, 2.95), text(size: 7pt)[$sigma_(z z)$], anchor: "east")
-      content((4.8, 2.45), text(size: 7pt)[$sigma_(x x)$], anchor: "west")
-      content((2.45, 3.05), text(size: 7pt)[$tau_(x z)$], anchor: "south")
-      content((3.75, 2.95), text(size: 7pt)[$tau_(x z)$], anchor: "south")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig01.typ"
     
   ]
 )
@@ -85,103 +49,7 @@ La struttura piana mostrata in figura è costituita da travi a sezione quadrata 
     + Individuare il punto più sollecitato relativamente al montante verticale $F H$ (nella sezione $F$) e calcolare il relativo coefficiente di sicurezza a snervamento $C S$.
 
 
-#canvas(length: 2.5cm, {
-      import draw: *
-
-      // Struttura principale
-      line((0.8, 0.8), (0.8, 2.1), stroke: 1pt)
-      line((0.8, 1.45), (1.2, 1.45), stroke: 1pt)
-      line((0.8, 2.1), (6.0, 2.1), stroke: 1pt)
-      line((4.7, 0.8), (4.7, 2.1), stroke: 1pt)
-
-      // Cerniera interna in E(3.4, 2.1)
-      circle((3.4, 2.1), radius: 0.08, fill: white, stroke: 1pt)
-
-      // Cerniera a terra in A(0.8, 0.8)
-      circle((0.8, 0.74), radius: 0.06, fill: white, stroke: 1pt)
-      line((0.8, 0.68), (0.68, 0.52), (0.92, 0.52), close: true, stroke: 1pt)
-      line((0.65, 0.52), (0.60, 0.42), stroke: 0.6pt)
-      line((0.73, 0.52), (0.68, 0.42), stroke: 0.6pt)
-      line((0.81, 0.52), (0.76, 0.42), stroke: 0.6pt)
-      line((0.89, 0.52), (0.84, 0.42), stroke: 0.6pt)
-
-      // Cerniera a terra in H(4.7, 0.8)
-      circle((4.7, 0.74), radius: 0.06, fill: white, stroke: 1pt)
-      line((4.7, 0.68), (4.58, 0.52), (4.82, 0.52), close: true, stroke: 1pt)
-      line((4.55, 0.52), (4.50, 0.42), stroke: 0.6pt)
-      line((4.63, 0.52), (4.58, 0.42), stroke: 0.6pt)
-      line((4.71, 0.52), (4.66, 0.42), stroke: 0.6pt)
-      line((4.79, 0.52), (4.74, 0.42), stroke: 0.6pt)
-
-      // Carico distribuito q (in blu)
-      line((0.8, 2.45), (4.7, 2.45), stroke: (paint: blue, thickness: 0.6pt))
-      line((0.8, 2.45), (0.8, 2.12), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((1.45, 2.45), (1.45, 2.12), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((2.1, 2.45), (2.1, 2.12), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((2.75, 2.45), (2.75, 2.12), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((3.4, 2.45), (3.4, 2.18), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((4.05, 2.45), (4.05, 2.12), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((4.7, 2.45), (4.7, 2.12), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-
-      // Forza F in C (in blu)
-      line((1.2, 1.45), (1.75, 1.45), mark: (end: ">"), stroke: (paint: blue, thickness: 1pt))
-
-      // Coppia M in G (in blu)
-      circle((6.0, 2.1), radius: 0.04, fill: black)
-      arc((6.0, 2.1), start: -50deg, stop: 95deg, radius: 0.25, anchor: "origin", mark: (end: ">"), stroke: (paint: blue, thickness: 1pt))
-
-      // Quote geometriche
-      // Quota verticale sinistra L/2
-      line((0.4, 0.8), (0.7, 0.8), stroke: 0.4pt)
-      line((0.4, 1.45), (0.7, 1.45), stroke: 0.4pt)
-      line((0.45, 0.8), (0.45, 1.45), mark: (start: ">", end: ">"), stroke: 0.6pt)
-      // Quota L/4
-      line((1.2, 1.45), (1.2, 1.75), stroke: 0.4pt)
-      line((0.8, 1.7), (1.2, 1.7), mark: (start: ">", end: ">"), stroke: 0.6pt)
-      // Quote superiori 2L, L, L
-      line((0.8, 2.5), (0.8, 2.85), stroke: 0.4pt)
-      line((3.4, 2.5), (3.4, 2.85), stroke: 0.4pt)
-      line((4.7, 2.5), (4.7, 2.85), stroke: 0.4pt)
-      line((6.0, 2.2), (6.0, 2.85), stroke: 0.4pt)
-      line((0.8, 2.75), (3.4, 2.75), mark: (start: ">", end: ">"), stroke: 0.6pt)
-      line((3.4, 2.75), (4.7, 2.75), mark: (start: ">", end: ">"), stroke: 0.6pt)
-      line((4.7, 2.75), (6.0, 2.75), mark: (start: ">", end: ">"), stroke: 0.6pt)
-      // Quota verticale destra L
-      line((4.85, 0.8), (6.3, 0.8), stroke: 0.4pt)
-      line((6.2, 0.8), (6.2, 2.1), mark: (start: ">", end: ">"), stroke: 0.6pt)
-
-      // Dettaglio sezione quadrata a x a
-      rect((6.8, 1.3), (7.3, 1.8), stroke: 0.8pt)
-      line((6.8, 1.45), (6.95, 1.3), stroke: 0.4pt)
-      line((6.8, 1.65), (7.15, 1.3), stroke: 0.4pt)
-      line((6.85, 1.8), (7.3, 1.35), stroke: 0.4pt)
-      line((7.05, 1.8), (7.3, 1.55), stroke: 0.4pt)
-      line((6.8, 1.95), (7.3, 1.95), mark: (start: ">", end: ">"), stroke: 0.5pt)
-      line((6.65, 1.3), (6.65, 1.8), mark: (start: ">", end: ">"), stroke: 0.5pt)
-
-      // Etichette nodi (in rosso come nell'originale)
-      content((0.68, 0.82), text(size: 7pt, fill: red)[A], anchor: "east")
-      content((0.75, 1.45), text(size: 7pt, fill: red)[B], anchor: "east")
-      content((1.2, 1.35), text(size: 7pt, fill: red)[C], anchor: "north")
-      content((0.75, 2.15), text(size: 7pt, fill: red)[D], anchor: "east")
-      content((3.4, 1.95), text(size: 7pt, fill: red)[E], anchor: "north")
-      content((4.8, 2.2), text(size: 7pt, fill: red)[F], anchor: "south-west")
-      content((6.0, 1.95), text(size: 7pt, fill: red)[G], anchor: "north")
-      content((4.55, 0.82), text(size: 7pt, fill: red)[H], anchor: "east")
-
-      // Etichette carichi e quote
-      content((0.68, 2.35), text(size: 7pt, fill: blue)[$q$], anchor: "east")
-      content((1.65, 1.35), text(size: 7pt, fill: blue)[$F$], anchor: "north")
-      content((6.3, 2.25), text(size: 7pt, fill: blue)[$M$], anchor: "west")
-      content((0.38, 1.12), text(size: 7pt)[$L/2$], anchor: "east")
-      content((1.0, 1.75), text(size: 7pt)[$L/4$], anchor: "south")
-      content((2.1, 2.82), text(size: 7pt)[$2 L$], anchor: "south")
-      content((4.05, 2.82), text(size: 7pt)[$L$], anchor: "south")
-      content((5.35, 2.82), text(size: 7pt)[$L$], anchor: "south")
-      content((6.28, 1.45), text(size: 7pt)[$L$], anchor: "west")
-      content((7.05, 2.0), text(size: 7pt)[$a$], anchor: "south")
-      content((6.58, 1.55), text(size: 7pt)[$a$], anchor: "east")
-    })
+#include "figs/esami-vecchi-nonsicuri-fig02.typ"
     
 #grid(
   columns: (1fr, 1fr),
@@ -257,37 +125,7 @@ Si consideri una barra cilindrica a sezione circolare dotata di un intaglio circ
     //    - Intaglio inferiore: arco di cerchio con centro (2.25, 0.7), raggio r = 0.25 cm, da start = 0deg a stop = 180deg.
 
     // FASE 2: COSTRUZIONE
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // Incastro a sinistra
-      line((1.0, 0.4), (1.0, 2.1), stroke: 1pt)
-      line((1.0, 0.55), (0.8, 0.35), stroke: 0.6pt)
-      line((1.0, 0.85), (0.8, 0.65), stroke: 0.6pt)
-      line((1.0, 1.15), (0.8, 0.95), stroke: 0.6pt)
-      line((1.0, 1.45), (0.8, 1.25), stroke: 0.6pt)
-      line((1.0, 1.75), (0.8, 1.55), stroke: 0.6pt)
-      line((1.0, 2.05), (0.8, 1.85), stroke: 0.6pt)
-
-      // Contorno barra con intaglio
-      line((1.0, 1.8), (2.0, 1.8), stroke: 1pt)
-      arc((2.25, 1.8), start: 180deg, stop: 360deg, radius: 0.25, anchor: "origin", stroke: 1pt)
-      line((2.5, 1.8), (3.8, 1.8), (3.8, 0.7), (2.5, 0.7), stroke: 1pt)
-      arc((2.25, 0.7), start: 0deg, stop: 180deg, radius: 0.25, anchor: "origin", stroke: 1pt)
-      line((2.0, 0.7), (1.0, 0.7), stroke: 1pt)
-
-      // Assi x, y
-      line((1.0, 1.25), (1.7, 1.25), mark: (end: ">"), stroke: 0.6pt)
-      line((1.0, 1.8), (1.0, 2.35), mark: (end: ">"), stroke: 0.6pt)
-
-      // Forza F
-      line((3.8, 1.25), (4.8, 1.25), mark: (end: ">"), stroke: 1pt)
-
-      // Etichette
-      content((1.45, 1.18), text(size: 7pt)[$x$], anchor: "north")
-      content((1.12, 2.25), text(size: 7pt)[$y$], anchor: "west")
-      content((4.5, 1.35), text(size: 7pt)[$F$], anchor: "south")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig03.typ"
     // FASE 3: VERIFICA
     // 1. Archi d'intaglio: r=0.25, anchor: "origin", start < stop (180<360 e 0<180).
     // 2. Contorni continui negli estremi degli archi (2.0, 1.8)-(2.5, 1.8) e (2.0, 0.7)-(2.5, 0.7).
@@ -335,53 +173,7 @@ Per determinare le altre due tensioni principali nel piano $x$-$z$, tracciamo il
       sigma_b     &= 24 "MPa"  && arrow.r sigma_3 $
   ],
   [
-    #canvas(length: 1.5cm, {
-      import draw: *
-
-      // Assi cartesiani (sigma, tau)
-      line((0.6, 2.2), (6.0, 2.2), mark: (end: ">"), stroke: 0.8pt)
-      line((1.2, 0.6), (1.2, 4.0), mark: (end: ">"), stroke: 0.8pt)
-
-      // Semicerchio superiore (tratto continuo) e inferiore (tratteggiato)
-      arc((2.90, 2.20), start: 0deg, stop: 180deg, radius: 1.22, anchor: "origin", stroke: (paint: blue.darken(30%), thickness: 1pt))
-      arc((2.90, 2.20), start: 180deg, stop: 360deg, radius: 1.22, anchor: "origin", stroke: (paint: blue.darken(30%), thickness: 0.8pt, dash: "dashed"))
-
-      // Diametro tra (sigma_xx=50, tau_xz=50) -> (2.20, 3.20) e (sigma_zz=120, -50) -> (3.60, 1.20)
-      line((2.20, 3.20), (3.60, 1.20), stroke: 0.6pt)
-
-      // Linee tratteggiate di proiezione
-      line((1.20, 3.20), (2.20, 3.20), stroke: (dash: "dashed", thickness: 0.5pt))
-      line((2.20, 3.20), (2.20, 2.20), stroke: (dash: "dashed", thickness: 0.5pt))
-      line((1.20, 1.20), (3.60, 1.20), stroke: (dash: "dashed", thickness: 0.5pt))
-      line((3.60, 2.20), (3.60, 1.20), stroke: (dash: "dashed", thickness: 0.5pt))
-
-      // Punti notevoli sull'asse sigma
-      circle((1.68, 2.20), radius: 0.05, fill: blue.darken(30%))
-      circle((2.90, 2.20), radius: 0.04, fill: black)
-      circle((4.12, 2.20), radius: 0.05, fill: blue.darken(30%))
-      circle((5.20, 2.20), radius: 0.05, fill: blue.darken(30%))
-
-      // Tacche di riferimento
-      line((1.13, 3.20), (1.27, 3.20), stroke: 0.6pt)
-      line((1.13, 1.20), (1.27, 1.20), stroke: 0.6pt)
-      line((2.20, 2.13), (2.20, 2.27), stroke: 0.6pt)
-      line((3.60, 2.13), (3.60, 2.27), stroke: 0.6pt)
-
-      // Etichette (tutte con text(size: 7pt))
-      content((1.05, 3.9), text(size: 7pt)[$tau thin ["MPa"]$], anchor: "east")
-      content((5.9, 2.05), text(size: 7pt)[$sigma thin ["MPa"]$], anchor: "north")
-      content((1.08, 3.20), text(size: 7pt)[$tau_(x z) = 50$], anchor: "east")
-      content((1.08, 1.20), text(size: 7pt)[$-50$], anchor: "east")
-      content((2.65, 2.65), text(size: 7pt)[$r$], anchor: "south-west")
-      content((1.62, 2.05), text(size: 7pt)[$sigma_b$], anchor: "north")
-      content((2.20, 2.02), text(size: 7pt)[$50$], anchor: "north")
-      content((2.20, 1.65), text(size: 7pt)[$sigma_(x x)$], anchor: "north")
-      content((2.90, 2.05), text(size: 7pt)[$sigma_C$], anchor: "north")
-      content((3.55, 2.05), text(size: 7pt)[$120$], anchor: "north")
-      content((3.75, 1.65), text(size: 7pt)[$sigma_(z z)$], anchor: "north")
-      content((4.18, 2.05), text(size: 7pt)[$sigma_a$], anchor: "north")
-      content((5.20, 2.05), text(size: 7pt)[$sigma_(y y)$], anchor: "north")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig04.typ"
   ]
 )
 #v(1em)
@@ -418,33 +210,7 @@ Possiamo ora rappresentare l'arbelo completo dei tre cerchi di Mohr nel piano $(
     //    Tutte circonferenze esatte (e_max = 0).
 
     // FASE 2: COSTRUZIONE
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // Assi cartesiani
-      line((0.4, 2.2), (6.0, 2.2), mark: (end: ">"), stroke: 0.8pt)
-      line((1.0, 0.3), (1.0, 4.2), mark: (end: ">"), stroke: 0.8pt)
-
-      // I tre cerchi di Mohr
-      circle((3.24, 2.20), radius: 1.76, stroke: (paint: blue.darken(30%), thickness: 1pt))
-      circle((2.70, 2.20), radius: 1.22, stroke: (paint: blue.darken(30%), thickness: 1pt))
-      circle((4.46, 2.20), radius: 0.54, stroke: (paint: blue.darken(30%), thickness: 1pt))
-
-      // Punti delle tensioni principali
-      circle((1.48, 2.20), radius: 0.04, fill: black)
-      circle((3.92, 2.20), radius: 0.04, fill: black)
-      circle((5.00, 2.20), radius: 0.04, fill: black)
-
-      // Etichette
-      content((0.9, 4.1), text(size: 7pt)[$tau thin ["MPa"]$], anchor: "east")
-      content((5.9, 2.05), text(size: 7pt)[$sigma thin ["MPa"]$], anchor: "north")
-      content((1.35, 2.05), text(size: 7pt)[$sigma_3$], anchor: "north")
-      content((1.35, 1.70), text(size: 7pt)[$24$], anchor: "north")
-      content((3.78, 2.05), text(size: 7pt)[$sigma_2$], anchor: "north")
-      content((3.78, 1.70), text(size: 7pt)[$146$], anchor: "north")
-      content((5.15, 2.05), text(size: 7pt)[$sigma_1$], anchor: "north")
-      content((5.15, 1.70), text(size: 7pt)[$200$], anchor: "north")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig05.typ"
     // FASE 3: VERIFICA
     // 1. I tre cerchi sono tangenti esattamente in (1.48, 2.20), (3.92, 2.20) e (5.00, 2.20).
     // 2. Tutte le 8 etichette usano text(size: 7pt)[...].
@@ -523,59 +289,7 @@ Sostituiamo ai vincoli esterni in $A$ e $H$ le rispettive reazioni vincolari ori
     //    - Arco momento M in G(6.0, 2.3): r = 0.25 cm, start = -50deg, stop = 95deg.
 
     // FASE 2: COSTRUZIONE
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // Struttura
-      line((0.8, 1.0), (0.8, 2.3), stroke: 1pt)
-      line((0.8, 1.65), (1.2, 1.65), stroke: 1pt)
-      line((0.8, 2.3), (6.0, 2.3), stroke: 1pt)
-      line((4.7, 1.0), (4.7, 2.3), stroke: 1pt)
-      circle((3.4, 2.3), radius: 0.08, fill: white, stroke: 1pt)
-
-      // Carichi (in blu)
-      line((0.8, 2.65), (4.7, 2.65), stroke: (paint: blue, thickness: 0.6pt))
-      line((0.8, 2.65), (0.8, 2.32), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((1.58, 2.65), (1.58, 2.32), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((2.36, 2.65), (2.36, 2.32), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((3.14, 2.65), (3.14, 2.32), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((3.92, 2.65), (3.92, 2.32), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((4.7, 2.65), (4.7, 2.32), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-      line((1.2, 1.65), (1.75, 1.65), mark: (end: ">"), stroke: (paint: blue, thickness: 1pt))
-      arc((6.0, 2.3), start: -50deg, stop: 95deg, radius: 0.25, anchor: "origin", mark: (end: ">"), stroke: (paint: blue, thickness: 1pt))
-
-      // Reazioni vincolari (in rosso)
-      line((0.8, 0.3), (0.8, 0.98), mark: (end: ">"), stroke: (paint: red, thickness: 1pt))
-      line((0.8, 1.0), (1.5, 1.0), mark: (end: ">"), stroke: (paint: red, thickness: 1pt))
-      line((4.7, 0.3), (4.7, 0.98), mark: (end: ">"), stroke: (paint: red, thickness: 1pt))
-      line((4.7, 1.0), (5.4, 1.0), mark: (end: ">"), stroke: (paint: red, thickness: 1pt))
-
-      // Tracce delle sezioni di calcolo (in verde scuro)
-      line((0.68, 1.32), (0.92, 1.32), stroke: (paint: green.darken(40%), thickness: 0.8pt))
-      line((1.0, 1.53), (1.0, 1.77), stroke: (paint: green.darken(40%), thickness: 0.8pt))
-      line((0.68, 1.98), (0.92, 1.98), stroke: (paint: green.darken(40%), thickness: 0.8pt))
-      line((1.8, 2.18), (1.8, 2.42), stroke: (paint: green.darken(40%), thickness: 0.8pt))
-      line((5.3, 2.18), (5.3, 2.42), stroke: (paint: green.darken(40%), thickness: 0.8pt))
-      line((4.58, 1.65), (4.82, 1.65), stroke: (paint: green.darken(40%), thickness: 0.8pt))
-
-      // Etichette
-      content((0.9, 0.45), text(size: 7pt, fill: red)[$V_A$], anchor: "west")
-      content((1.25, 1.08), text(size: 7pt, fill: red)[$H_A$], anchor: "south")
-      content((4.8, 0.45), text(size: 7pt, fill: red)[$V_H$], anchor: "west")
-      content((5.15, 1.08), text(size: 7pt, fill: red)[$H_H$], anchor: "south")
-      content((0.65, 1.32), text(size: 7pt, fill: green.darken(40%))[$S_1^+$], anchor: "east")
-      content((1.0, 1.48), text(size: 7pt, fill: green.darken(40%))[$S_2^-$], anchor: "north")
-      content((0.65, 1.98), text(size: 7pt, fill: green.darken(40%))[$S_3^+$], anchor: "east")
-      content((1.8, 2.12), text(size: 7pt, fill: green.darken(40%))[$S_4^+$], anchor: "north")
-      content((5.3, 2.12), text(size: 7pt, fill: green.darken(40%))[$S_5^-$], anchor: "north")
-      content((4.88, 1.65), text(size: 7pt, fill: green.darken(40%))[$S_6^-$], anchor: "west")
-      content((0.68, 2.55), text(size: 7pt, fill: blue)[$q$], anchor: "east")
-      content((1.65, 1.55), text(size: 7pt, fill: blue)[$F$], anchor: "north")
-      content((6.3, 2.45), text(size: 7pt, fill: blue)[$M$], anchor: "west")
-      content((0.72, 0.95), text(size: 7pt, fill: red)[A], anchor: "east")
-      content((3.4, 2.15), text(size: 7pt, fill: red)[E], anchor: "north")
-      content((4.62, 0.95), text(size: 7pt, fill: red)[H], anchor: "east")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig06.typ"
     // FASE 3: VERIFICA
     // 1. Arco M: anchor: "origin", start=-50deg < stop=95deg.
     // 2. Tutte le 16 etichette usano text(size: 7pt)[...].
@@ -631,66 +345,7 @@ Analizziamo ciascuno dei sei tratti della struttura introducendo un'ascissa loca
     //      * S_3^+: centro (1.5, 2.3), r = 0.22 cm, start = 90deg, stop = 210deg.
 
     // FASE 2: COSTRUZIONE
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // --- PANNELLO 1: SEZIONE S_1^+ ---
-      line((1.5, 4.8), (1.5, 6.0), stroke: 1.2pt)
-      line((1.5, 4.2), (1.5, 4.78), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.5, 4.8), (2.1, 4.8), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.5, 6.0), (1.5, 6.55), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((1.5, 6.0), (2.05, 6.0), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      arc((1.5, 6.0), start: 90deg, stop: 210deg, radius: 0.24, anchor: "origin", mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((1.7, 4.8), (1.7, 5.25), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-
-      content((1.35, 4.8), text(size: 7pt, fill: red)[A], anchor: "east")
-      content((1.6, 4.35), text(size: 7pt, fill: red)[$V_A$], anchor: "west")
-      content((2.05, 4.72), text(size: 7pt, fill: red)[$H_A$], anchor: "north")
-      content((1.6, 6.45), text(size: 7pt, fill: blue)[$N$], anchor: "west")
-      content((2.0, 5.92), text(size: 7pt, fill: blue)[$T$], anchor: "north")
-      content((1.2, 6.0), text(size: 7pt, fill: blue)[$M_f$], anchor: "east")
-      content((1.8, 5.15), text(size: 7pt, fill: blue)[$x$], anchor: "west")
-      content((3.2, 5.5), text(size: 7pt)[*Sezione $S_1^+$*], anchor: "west")
-
-      // --- PANNELLO 2: SEZIONE S_2^- ---
-      line((1.5, 3.3), (2.7, 3.3), stroke: 1.2pt)
-      line((2.7, 3.3), (3.3, 3.3), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.5, 3.3), (0.95, 3.3), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((1.5, 3.3), (1.5, 3.85), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      arc((1.5, 3.3), start: 20deg, stop: 150deg, radius: 0.24, anchor: "origin", mark: (start: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((2.7, 3.1), (2.25, 3.1), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-
-      content((2.7, 3.42), text(size: 7pt, fill: red)[C], anchor: "south")
-      content((3.2, 3.42), text(size: 7pt, fill: red)[$F$], anchor: "south")
-      content((1.0, 3.22), text(size: 7pt, fill: blue)[$N$], anchor: "north")
-      content((1.4, 3.8), text(size: 7pt, fill: blue)[$T$], anchor: "east")
-      content((1.78, 3.55), text(size: 7pt, fill: blue)[$M_f$], anchor: "south-west")
-      content((2.35, 3.02), text(size: 7pt, fill: blue)[$x$], anchor: "north")
-      content((3.6, 3.3), text(size: 7pt)[*Sezione $S_2^-$*], anchor: "west")
-
-      // --- PANNELLO 3: SEZIONE S_3^+ ---
-      line((1.5, 0.6), (1.5, 2.3), stroke: 1.2pt)
-      line((1.5, 1.45), (2.2, 1.45), stroke: 1.2pt)
-      line((1.5, 0.05), (1.5, 0.58), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.5, 0.6), (2.1, 0.6), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((2.2, 1.45), (2.75, 1.45), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.5, 2.3), (1.5, 2.85), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((1.5, 2.3), (2.05, 2.3), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      arc((1.5, 2.3), start: 90deg, stop: 210deg, radius: 0.24, anchor: "origin", mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((1.7, 1.45), (1.7, 1.9), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-
-      content((1.35, 0.6), text(size: 7pt, fill: red)[A], anchor: "east")
-      content((1.35, 1.45), text(size: 7pt, fill: red)[B], anchor: "east")
-      content((2.2, 1.35), text(size: 7pt, fill: red)[C], anchor: "north")
-      content((1.6, 0.2), text(size: 7pt, fill: red)[$V_A$], anchor: "west")
-      content((2.05, 0.52), text(size: 7pt, fill: red)[$H_A$], anchor: "north")
-      content((2.65, 1.55), text(size: 7pt, fill: red)[$F$], anchor: "south")
-      content((1.6, 2.75), text(size: 7pt, fill: blue)[$N$], anchor: "west")
-      content((2.0, 2.22), text(size: 7pt, fill: blue)[$T$], anchor: "north")
-      content((1.2, 2.3), text(size: 7pt, fill: blue)[$M_f$], anchor: "east")
-      content((1.8, 1.8), text(size: 7pt, fill: blue)[$x$], anchor: "west")
-      content((3.2, 1.8), text(size: 7pt)[*Sezione $S_3^+$*], anchor: "west")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig07.typ"
     // FASE 3: VERIFICA
     // 1. Archi M_f: anchor: "origin", start < stop in tutti e 3 i pannelli.
     // 2. Tutte le 26 etichette usano text(size: 7pt)[...].
@@ -743,72 +398,7 @@ Proseguiamo con l'analisi delle sezioni $S_4^+$, $S_5^-$ e $S_6^-$:
     //    - Archi M_f e M: tutti archi circolari di raggio r = 0.22-0.24 cm con start < stop e anchor: "origin".
 
     // FASE 2: COSTRUZIONE
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // --- PANNELLO 1: SEZIONE S_4^+ ---
-      line((1.0, 4.3), (1.0, 5.7), (2.8, 5.7), stroke: 1.2pt)
-      line((1.0, 5.0), (1.6, 5.0), stroke: 1.2pt)
-      // Carichi e reazioni
-      line((1.0, 3.8), (1.0, 4.28), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.0, 4.3), (1.55, 4.3), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.6, 5.0), (2.1, 5.0), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.0, 6.0), (2.8, 6.0), stroke: (paint: red, thickness: 0.6pt))
-      line((1.0, 6.0), (1.0, 5.72), mark: (end: ">"), stroke: (paint: red, thickness: 0.6pt))
-      line((1.6, 6.0), (1.6, 5.72), mark: (end: ">"), stroke: (paint: red, thickness: 0.6pt))
-      line((2.2, 6.0), (2.2, 5.72), mark: (end: ">"), stroke: (paint: red, thickness: 0.6pt))
-      line((2.8, 6.0), (2.8, 5.72), mark: (end: ">"), stroke: (paint: red, thickness: 0.6pt))
-      // Sollecitazioni interne in S_4^+
-      line((2.8, 5.7), (3.35, 5.7), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((2.8, 5.7), (2.8, 5.15), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      arc((2.8, 5.7), start: -30deg, stop: 110deg, radius: 0.24, anchor: "origin", mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-
-      content((0.88, 4.3), text(size: 7pt, fill: red)[A], anchor: "east")
-      content((0.88, 5.0), text(size: 7pt, fill: red)[B], anchor: "east")
-      content((0.88, 5.7), text(size: 7pt, fill: red)[D], anchor: "east")
-      content((1.1, 3.95), text(size: 7pt, fill: red)[$V_A$], anchor: "west")
-      content((1.5, 4.22), text(size: 7pt, fill: red)[$H_A$], anchor: "north")
-      content((2.05, 5.08), text(size: 7pt, fill: red)[$F$], anchor: "south")
-      content((1.9, 6.08), text(size: 7pt, fill: red)[$q$], anchor: "south")
-      content((3.3, 5.62), text(size: 7pt, fill: blue)[$N$], anchor: "north")
-      content((2.92, 5.25), text(size: 7pt, fill: blue)[$T$], anchor: "west")
-      content((3.08, 5.95), text(size: 7pt, fill: blue)[$M_f$], anchor: "south-west")
-      content((3.8, 5.4), text(size: 7pt)[*Sezione $S_4^+$*], anchor: "west")
-
-      // --- PANNELLO 2: SEZIONE S_5^- ---
-      line((1.2, 3.0), (2.6, 3.0), stroke: 1.2pt)
-      arc((2.6, 3.0), start: -50deg, stop: 95deg, radius: 0.24, anchor: "origin", mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.2, 3.0), (0.65, 3.0), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((1.2, 3.0), (1.2, 3.55), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      arc((1.2, 3.0), start: 20deg, stop: 150deg, radius: 0.24, anchor: "origin", mark: (start: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((2.6, 2.8), (2.15, 2.8), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-
-      content((2.6, 2.88), text(size: 7pt, fill: red)[G], anchor: "north")
-      content((2.92, 3.1), text(size: 7pt, fill: red)[$M$], anchor: "west")
-      content((0.7, 2.92), text(size: 7pt, fill: blue)[$N$], anchor: "north")
-      content((1.1, 3.5), text(size: 7pt, fill: blue)[$T$], anchor: "east")
-      content((1.48, 3.25), text(size: 7pt, fill: blue)[$M_f$], anchor: "south-west")
-      content((2.25, 2.72), text(size: 7pt, fill: blue)[$x$], anchor: "north")
-      content((3.6, 3.0), text(size: 7pt)[*Sezione $S_5^-$*], anchor: "west")
-
-      // --- PANNELLO 3: SEZIONE S_6^- ---
-      line((1.5, 0.6), (1.5, 1.9), stroke: 1.2pt)
-      line((1.5, 0.05), (1.5, 0.58), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.5, 0.6), (2.1, 0.6), mark: (end: ">"), stroke: (paint: red, thickness: 0.9pt))
-      line((1.5, 1.9), (1.5, 2.45), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((1.5, 1.9), (2.05, 1.9), mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      arc((1.5, 1.9), start: 90deg, stop: 210deg, radius: 0.24, anchor: "origin", mark: (end: ">"), stroke: (paint: blue, thickness: 0.9pt))
-      line((1.7, 0.6), (1.7, 1.05), mark: (end: ">"), stroke: (paint: blue, thickness: 0.6pt))
-
-      content((1.35, 0.6), text(size: 7pt, fill: red)[H], anchor: "east")
-      content((1.6, 0.2), text(size: 7pt, fill: red)[$V_H$], anchor: "west")
-      content((2.05, 0.52), text(size: 7pt, fill: red)[$H_H$], anchor: "north")
-      content((1.6, 2.35), text(size: 7pt, fill: blue)[$N$], anchor: "west")
-      content((2.0, 1.82), text(size: 7pt, fill: blue)[$T$], anchor: "north")
-      content((1.2, 1.9), text(size: 7pt, fill: blue)[$M_f$], anchor: "east")
-      content((1.8, 0.95), text(size: 7pt, fill: blue)[$x$], anchor: "west")
-      content((3.6, 1.3), text(size: 7pt)[*Sezione $S_6^-$*], anchor: "west")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig08.typ"
     // FASE 3: VERIFICA
     // 1. Archi M_f e M: anchor: "origin", start < stop in tutti i pannelli.
     // 2. Tutte le 26 etichette usano text(size: 7pt)[...].
@@ -847,53 +437,7 @@ Riportiamo di seguito i diagrammi quotati dello sforzo normale $N$, del taglio $
     // 3. CLASSIFICAZIONE CURVE: Solo segmenti rettilinei (funzioni costanti a tratti).
 
     // FASE 2: COSTRUZIONE
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // Struttura di base
-      line((0.8, 0.8), (0.8, 2.3), stroke: 1pt)
-      line((0.8, 1.55), (1.3, 1.55), stroke: 1pt)
-      line((0.8, 2.3), (6.0, 2.3), stroke: 1pt)
-      line((4.7, 0.8), (4.7, 2.3), stroke: 1pt)
-      circle((3.4, 2.3), radius: 0.07, fill: white, stroke: 1pt)
-
-      // Cerniere in A e H
-      circle((0.8, 0.74), radius: 0.05, fill: white, stroke: 1pt)
-      line((0.8, 0.69), (0.7, 0.55), (0.9, 0.55), close: true, stroke: 0.8pt)
-      circle((4.7, 0.74), radius: 0.05, fill: white, stroke: 1pt)
-      line((4.7, 0.69), (4.6, 0.55), (4.8, 0.55), close: true, stroke: 0.8pt)
-
-      // Diagramma N (in rosso)
-      // Tratto ABD (-1667 N)
-      line((0.8, 0.8), (1.25, 0.8), (1.25, 2.3), (0.8, 2.3), stroke: (paint: red, thickness: 0.9pt))
-      // Tratto BC (+1000 N)
-      line((0.8, 1.80), (1.3, 1.80), (1.3, 1.55), stroke: (paint: red, thickness: 0.9pt))
-      // Tratto DEF (-1833 N)
-      line((0.8, 1.90), (4.7, 1.90), stroke: (paint: red, thickness: 0.9pt))
-      // Tratto HF (-1333 N)
-      line((4.35, 2.3), (4.35, 0.8), (4.7, 0.8), stroke: (paint: red, thickness: 0.9pt))
-      // Croce di nullo su FG
-      line((5.25, 2.22), (5.40, 2.38), stroke: (paint: red, thickness: 0.6pt))
-      line((5.25, 2.38), (5.40, 2.22), stroke: (paint: red, thickness: 0.6pt))
-
-      // Etichette
-      content((3.4, 2.75), text(size: 7pt)[*SFORZO NORMALE $N$*], anchor: "south")
-      content((1.02, 1.15), text(size: 7pt, fill: red)[$minus$], anchor: "center")
-      content((1.32, 1.10), text(size: 7pt, fill: red)[$-1667 "N"$], anchor: "west")
-      content((1.02, 1.68), text(size: 7pt, fill: red)[$+$], anchor: "center")
-      content((1.35, 1.72), text(size: 7pt, fill: red)[$1000 "N"$], anchor: "west")
-      content((2.6, 2.10), text(size: 7pt, fill: red)[$minus$], anchor: "center")
-      content((2.4, 1.82), text(size: 7pt, fill: red)[$-1833 "N"$], anchor: "north")
-      content((4.52, 1.35), text(size: 7pt, fill: red)[$minus$], anchor: "center")
-      content((4.30, 1.20), text(size: 7pt, fill: red)[$-1333 "N"$], anchor: "east")
-      content((0.68, 0.8), text(size: 7pt, fill: red)[A], anchor: "east")
-      content((0.68, 1.55), text(size: 7pt, fill: red)[B], anchor: "east")
-      content((0.68, 2.3), text(size: 7pt, fill: red)[D], anchor: "east")
-      content((3.4, 2.18), text(size: 7pt, fill: red)[E], anchor: "north")
-      content((4.75, 2.42), text(size: 7pt, fill: red)[F], anchor: "south-west")
-      content((6.05, 2.3), text(size: 7pt, fill: red)[G], anchor: "west")
-      content((4.82, 0.85), text(size: 7pt, fill: red)[H], anchor: "west")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig09.typ"
     // FASE 3: VERIFICA
     // 1. Nessuna curva presente, poligoni del diagramma N continui.
     // 2. Tutte le 16 etichette usano text(size: 7pt)[...].
@@ -929,57 +473,7 @@ Riportiamo di seguito i diagrammi quotati dello sforzo normale $N$, del taglio $
     // 3. CLASSIFICAZIONE CURVE: Solo segmenti rettilinei.
 
     // FASE 2: COSTRUZIONE
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // Struttura di base
-      line((0.8, 0.8), (0.8, 2.3), stroke: 1pt)
-      line((0.8, 1.55), (1.3, 1.55), stroke: 1pt)
-      line((0.8, 2.3), (6.0, 2.3), stroke: 1pt)
-      line((4.7, 0.8), (4.7, 2.3), stroke: 1pt)
-      circle((3.4, 2.3), radius: 0.07, fill: white, stroke: 1pt)
-
-      // Cerniere in A e H
-      circle((0.8, 0.74), radius: 0.05, fill: white, stroke: 1pt)
-      line((0.8, 0.69), (0.7, 0.55), (0.9, 0.55), close: true, stroke: 0.8pt)
-      circle((4.7, 0.74), radius: 0.05, fill: white, stroke: 1pt)
-      line((4.7, 0.69), (4.6, 0.55), (4.8, 0.55), close: true, stroke: 0.8pt)
-
-      // Diagramma T (in rosso)
-      // Tratto AB (-833 N)
-      line((0.8, 0.8), (1.10, 0.8), (1.10, 1.55), (0.8, 1.55), stroke: (paint: red, thickness: 0.9pt))
-      // Tratto BD (-1833 N)
-      line((0.8, 1.55), (1.45, 1.55), (1.45, 2.3), stroke: (paint: red, thickness: 0.9pt))
-      // Tratto DEF (+1667 N a -1333 N)
-      line((0.8, 2.3), (0.8, 2.95), (4.7, 1.78), (4.7, 2.3), stroke: (paint: red, thickness: 0.9pt))
-      // Tratto HF (+1833 N)
-      line((4.7, 2.3), (5.35, 2.3), (5.35, 0.8), (4.7, 0.8), stroke: (paint: red, thickness: 0.9pt))
-      // Croci di nullo su BC e FG
-      line((1.05, 1.48), (1.18, 1.62), stroke: (paint: red, thickness: 0.6pt))
-      line((1.05, 1.62), (1.18, 1.48), stroke: (paint: red, thickness: 0.6pt))
-      line((5.25, 2.22), (5.40, 2.38), stroke: (paint: red, thickness: 0.6pt))
-      line((5.25, 2.38), (5.40, 2.22), stroke: (paint: red, thickness: 0.6pt))
-
-      // Etichette
-      content((3.4, 3.15), text(size: 7pt)[*TAGLIO $T$*], anchor: "south")
-      content((0.95, 1.15), text(size: 7pt, fill: red)[$minus$], anchor: "center")
-      content((1.05, 0.68), text(size: 7pt, fill: red)[$-833 "N"$], anchor: "north-west")
-      content((1.12, 1.92), text(size: 7pt, fill: red)[$minus$], anchor: "center")
-      content((1.50, 1.85), text(size: 7pt, fill: red)[$-1833 "N"$], anchor: "west")
-      content((0.72, 2.65), text(size: 7pt, fill: red)[$1667 "N"$], anchor: "east")
-      content((1.45, 2.55), text(size: 7pt, fill: red)[$+$], anchor: "center")
-      content((3.95, 2.12), text(size: 7pt, fill: red)[$minus$], anchor: "center")
-      content((4.65, 2.02), text(size: 7pt, fill: red)[$-1333 "N"$], anchor: "east")
-      content((5.02, 1.50), text(size: 7pt, fill: red)[$+$], anchor: "center")
-      content((5.40, 1.55), text(size: 7pt, fill: red)[$1833 "N"$], anchor: "west")
-      content((0.68, 0.8), text(size: 7pt, fill: red)[A], anchor: "east")
-      content((0.68, 1.55), text(size: 7pt, fill: red)[B], anchor: "east")
-      content((0.68, 2.3), text(size: 7pt, fill: red)[D], anchor: "east")
-      content((3.4, 2.42), text(size: 7pt, fill: red)[E], anchor: "south")
-      content((4.75, 2.42), text(size: 7pt, fill: red)[F], anchor: "south-west")
-      content((6.05, 2.3), text(size: 7pt, fill: red)[G], anchor: "west")
-      content((4.60, 0.85), text(size: 7pt, fill: red)[H], anchor: "east")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig10.typ"
     // FASE 3: VERIFICA
     // 1. Nessuna curva presente, polilinea del diagramma T continua e fedele ai valori calcolati.
     // 2. Tutte le 18 etichette usano text(size: 7pt)[...].
@@ -1029,62 +523,7 @@ Riportiamo di seguito i diagrammi quotati dello sforzo normale $N$, del taglio $
     //      Verifica in t=0.5: B(0.5) = 0.125*P0 + 0.375*C1 + 0.375*C2 + 0.125*P3 = (2.95, 2.26), coincidente con il campione i=3 (scarto 0.00 < 0.1).
 
     // FASE 2: COSTRUZIONE
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // Struttura di base
-      line((1.0, 0.8), (1.0, 2.3), stroke: 1pt)
-      line((1.0, 1.55), (1.5, 1.55), stroke: 1pt)
-      line((1.0, 2.3), (6.2, 2.3), stroke: 1pt)
-      line((4.9, 0.8), (4.9, 2.3), stroke: 1pt)
-      circle((3.6, 2.3), radius: 0.07, fill: white, stroke: 1pt)
-
-      // Cerniere in A e H
-      circle((1.0, 0.74), radius: 0.05, fill: white, stroke: 1pt)
-      line((1.0, 0.69), (0.9, 0.55), (1.1, 0.55), close: true, stroke: 0.8pt)
-      circle((4.9, 0.74), radius: 0.05, fill: white, stroke: 1pt)
-      line((4.9, 0.69), (4.8, 0.55), (5.0, 0.55), close: true, stroke: 0.8pt)
-
-      // Diagramma M (in rosso)
-      // Montante sinistro A-B-D (fibre tese a sinistra: da 0 in A a -417 in B a -1333 in D)
-      line((1.0, 0.8), (0.80, 1.55), (0.35, 2.3), (1.0, 2.3), stroke: (paint: red, thickness: 0.9pt))
-      line((0.80, 1.55), (1.0, 1.55), stroke: (paint: red, thickness: 0.7pt))
-
-      // Traverso D-E-F (parabola da -1333 in D a 0 in E a -833 in F)
-      line((1.0, 2.3), (1.0, 2.95), stroke: (paint: red, thickness: 0.9pt))
-      bezier((1.0, 2.95), (4.9, 2.72), (2.30, 2.02), (3.60, 1.98), stroke: (paint: red, thickness: 0.9pt))
-      line((4.9, 2.72), (4.9, 2.3), stroke: (paint: red, thickness: 0.9pt))
-
-      // Sbalzo F-G (+1000 Nm sotto)
-      line((4.9, 1.85), (5.8, 1.85), (6.2, 2.3), stroke: (paint: red, thickness: 0.9pt))
-
-      // Montante destro H-F (da 0 in H a -1833 Nm a destra in F)
-      line((4.9, 0.8), (5.75, 2.3), (4.9, 2.3), stroke: (paint: red, thickness: 0.9pt))
-
-      // Croce di nullo su BC
-      line((1.20, 1.48), (1.33, 1.62), stroke: (paint: red, thickness: 0.6pt))
-      line((1.20, 1.62), (1.33, 1.48), stroke: (paint: red, thickness: 0.6pt))
-
-      // Etichette
-      content((3.6, 3.25), text(size: 7pt)[*MOMENTO FLETTENTE $M$*], anchor: "south")
-      content((0.92, 2.85), text(size: 7pt, fill: red)[$-1333 "Nm"$], anchor: "east")
-      content((0.75, 2.05), text(size: 7pt, fill: red)[$minus$], anchor: "center")
-      content((1.05, 1.32), text(size: 7pt, fill: red)[$-417 "Nm"$], anchor: "west")
-      content((1.35, 2.52), text(size: 7pt, fill: red)[$minus$], anchor: "center")
-      content((4.45, 2.48), text(size: 7pt, fill: red)[$minus$], anchor: "center")
-      content((4.95, 2.75), text(size: 7pt, fill: red)[$-833 "Nm"$], anchor: "west")
-      content((5.78, 2.42), text(size: 7pt, fill: red)[$-1833 "Nm"$], anchor: "south")
-      content((5.45, 2.08), text(size: 7pt, fill: red)[$+$], anchor: "center")
-      content((6.10, 2.05), text(size: 7pt, fill: red)[$1000 "Nm"$], anchor: "west")
-      content((5.15, 1.65), text(size: 7pt, fill: red)[$minus$], anchor: "center")
-      content((0.88, 0.8), text(size: 7pt, fill: red)[A], anchor: "east")
-      content((1.05, 1.48), text(size: 7pt, fill: red)[B], anchor: "north-west")
-      content((1.5, 1.45), text(size: 7pt, fill: red)[C], anchor: "north")
-      content((3.6, 2.42), text(size: 7pt, fill: red)[E], anchor: "south")
-      content((4.98, 2.40), text(size: 7pt, fill: red)[F], anchor: "south-west")
-      content((6.25, 2.3), text(size: 7pt, fill: red)[G], anchor: "west")
-      content((5.02, 0.85), text(size: 7pt, fill: red)[H], anchor: "west")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig11.typ"
     // FASE 3: VERIFICA
     // 1. Curva parabolica su DEF: 1 singolo bezier giustificato da legge quadratica esatta (cerchio e_max=0.14, ellisse e_max=0.11).
     // 2. Tutte le 18 etichette usano text(size: 7pt)[...].
@@ -1130,43 +569,7 @@ $ N = -1333 "N", quad M = -1833 "N" dot "m" $
     //      arco destro centro (1.95, 0.5), r=0.25, start=0deg, stop=180deg.
 
     // FASE 2: COSTRUZIONE
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // Tronco superiore del montante FH (sezione F in y=1.8)
-      line((1.2, 0.5), (1.2, 1.8), (2.2, 1.8), (2.2, 0.5), stroke: 0.9pt)
-      arc((1.45, 0.5), start: 180deg, stop: 360deg, radius: 0.25, anchor: "origin", stroke: 0.8pt)
-      arc((1.95, 0.5), start: 0deg, stop: 180deg, radius: 0.25, anchor: "origin", stroke: 0.8pt)
-
-      // Punto più sollecitato (spigolo superiore sinistro della sezione F)
-      circle((1.2, 1.8), radius: 0.07, fill: blue.darken(20%), stroke: none)
-      line((1.28, 1.75), (2.5, 1.35), stroke: (paint: blue.darken(20%), thickness: 0.7pt))
-
-      // Diagramma sigma_N (compressione uniforme, in rosso)
-      line((1.2, 2.15), (2.2, 2.15), stroke: (paint: red, thickness: 0.8pt))
-      line((1.2, 2.40), (2.2, 2.40), stroke: (paint: red, thickness: 0.8pt))
-      line((1.2, 2.40), (1.2, 2.17), mark: (end: ">"), stroke: (paint: red, thickness: 0.7pt))
-      line((1.53, 2.40), (1.53, 2.17), mark: (end: ">"), stroke: (paint: red, thickness: 0.7pt))
-      line((1.86, 2.40), (1.86, 2.17), mark: (end: ">"), stroke: (paint: red, thickness: 0.7pt))
-      line((2.2, 2.40), (2.2, 2.17), mark: (end: ">"), stroke: (paint: red, thickness: 0.7pt))
-
-      // Diagramma sigma_F (farfalla lineare, in rosso)
-      line((1.2, 3.15), (2.2, 3.15), stroke: (paint: red, thickness: 0.8pt))
-      line((1.2, 2.75), (2.2, 3.55), stroke: (paint: red, thickness: 0.8pt))
-      line((1.2, 3.15), (1.2, 2.77), mark: (end: ">"), stroke: (paint: red, thickness: 0.7pt))
-      line((1.45, 3.15), (1.45, 2.95), mark: (end: ">"), stroke: (paint: red, thickness: 0.7pt))
-      line((1.95, 3.15), (1.95, 3.35), mark: (end: ">"), stroke: (paint: red, thickness: 0.7pt))
-      line((2.2, 3.15), (2.2, 3.53), mark: (end: ">"), stroke: (paint: red, thickness: 0.7pt))
-
-      // Etichette
-      content((2.4, 3.05), text(size: 7pt, fill: red)[$sigma_F$], anchor: "west")
-      content((1.7, 2.65), text(size: 7pt, fill: red)[$+$], anchor: "center")
-      content((2.4, 2.28), text(size: 7pt, fill: red)[$sigma_N$], anchor: "west")
-      content((2.35, 1.8), text(size: 7pt)[F], anchor: "west")
-      content((2.55, 1.35), text(size: 7pt, fill: blue.darken(20%))[Punto + soll.], anchor: "west")
-      content((2.55, 1.05), text(size: 7pt, fill: blue.darken(20%))[della sezione F], anchor: "west")
-      content((2.55, 0.75), text(size: 7pt, fill: blue.darken(20%))[(compressione)], anchor: "west")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig12.typ"
     // FASE 3: VERIFICA
     // 1. Archi interruzione: start < stop e anchor: "origin".
     // 2. Tutte le 7 etichette usano text(size: 7pt)[...].
@@ -1209,85 +612,7 @@ $ N = -1333 "N", quad M = -1833 "N" dot "m" $
     //    - Cerchio di Mohr nel pannello 3: centro (3.1, 1.0), raggio r = 0.70 cm (circonferenza esatta e_max = 0).
 
     // FASE 2: COSTRUZIONE
-    #canvas(length: 1cm, {
-      import draw: *
-
-      // --- PANNELLO 1: TENSIONI NOMINALI ---
-      line((0.8, 4.6), (0.8, 6.0), stroke: 1pt)
-      line((0.8, 4.75), (0.62, 4.57), stroke: 0.6pt)
-      line((0.8, 5.05), (0.62, 4.87), stroke: 0.6pt)
-      line((0.8, 5.35), (0.62, 5.17), stroke: 0.6pt)
-      line((0.8, 5.65), (0.62, 5.47), stroke: 0.6pt)
-      line((0.8, 5.95), (0.62, 5.77), stroke: 0.6pt)
-
-      line((0.8, 5.8), (1.8, 5.8), stroke: 0.9pt)
-      arc((2.02, 5.8), start: 180deg, stop: 360deg, radius: 0.22, anchor: "origin", stroke: 0.9pt)
-      line((2.24, 5.8), (3.2, 5.8), (3.2, 4.8), (2.24, 4.8), stroke: 0.9pt)
-      arc((2.02, 4.8), start: 0deg, stop: 180deg, radius: 0.22, anchor: "origin", stroke: 0.9pt)
-      line((1.8, 4.8), (0.8, 4.8), stroke: 0.9pt)
-
-      // Diagramma tensioni nominali uniforme nella gola x=2.02
-      line((2.02, 5.02), (2.02, 5.58), stroke: 0.8pt)
-      line((2.45, 5.02), (2.45, 5.58), stroke: 0.8pt)
-      line((2.02, 5.10), (2.45, 5.10), stroke: 0.6pt)
-      line((2.02, 5.23), (2.45, 5.23), stroke: 0.6pt)
-      line((2.02, 5.37), (2.45, 5.37), stroke: 0.6pt)
-      line((2.02, 5.50), (2.45, 5.50), stroke: 0.6pt)
-
-      // Forza F e assi
-      line((3.2, 5.3), (4.0, 5.3), mark: (end: ">"), stroke: 0.9pt)
-      line((0.8, 5.3), (1.35, 5.3), mark: (end: ">"), stroke: 0.6pt)
-
-      content((1.2, 5.22), text(size: 7pt)[$x$], anchor: "north")
-      content((3.8, 5.38), text(size: 7pt)[$F$], anchor: "south")
-      content((2.55, 6.05), text(size: 7pt)[Tensioni nominali], anchor: "south-west")
-      content((2.55, 4.55), text(size: 7pt)[Sezione più sollecitata], anchor: "north-west")
-      line((2.35, 5.58), (2.52, 6.05), stroke: 0.5pt)
-      line((2.02, 5.02), (2.52, 4.55), stroke: 0.5pt)
-
-      // --- PANNELLO 2: TENSIONI REALI ---
-      line((0.8, 2.5), (0.8, 3.9), stroke: 1pt)
-      line((0.8, 2.65), (0.62, 2.47), stroke: 0.6pt)
-      line((0.8, 2.95), (0.62, 2.77), stroke: 0.6pt)
-      line((0.8, 3.25), (0.62, 3.07), stroke: 0.6pt)
-      line((0.8, 3.55), (0.62, 3.37), stroke: 0.6pt)
-      line((0.8, 3.85), (0.62, 3.67), stroke: 0.6pt)
-
-      line((0.8, 3.7), (1.8, 3.7), stroke: 0.9pt)
-      arc((2.02, 3.7), start: 180deg, stop: 360deg, radius: 0.22, anchor: "origin", stroke: 0.9pt)
-      line((2.24, 3.7), (3.2, 3.7), (3.2, 2.7), (2.24, 2.7), stroke: 0.9pt)
-      arc((2.02, 2.7), start: 0deg, stop: 180deg, radius: 0.22, anchor: "origin", stroke: 0.9pt)
-      line((1.8, 2.7), (0.8, 2.7), stroke: 0.9pt)
-
-      // Diagramma tensioni reali con picchi sui bordi dell'intaglio
-      line((2.02, 2.92), (2.02, 3.48), stroke: 0.8pt)
-      line((2.02, 3.48), (2.75, 3.48), stroke: 0.8pt)
-      line((2.02, 2.92), (2.75, 2.92), stroke: 0.8pt)
-      bezier((2.75, 3.48), (2.75, 2.92), (2.22, 3.35), (2.22, 3.05), stroke: 0.8pt)
-      line((2.02, 3.06), (2.40, 3.06), stroke: 0.5pt)
-      line((2.02, 3.20), (2.35, 3.20), stroke: 0.5pt)
-      line((2.02, 3.34), (2.40, 3.34), stroke: 0.5pt)
-
-      line((3.2, 3.2), (4.0, 3.2), mark: (end: ">"), stroke: 0.9pt)
-      line((0.8, 3.2), (1.35, 3.2), mark: (end: ">"), stroke: 0.6pt)
-      line((0.8, 3.7), (0.8, 4.15), mark: (end: ">"), stroke: 0.6pt)
-
-      content((1.2, 3.12), text(size: 7pt)[$x$], anchor: "north")
-      content((0.92, 4.1), text(size: 7pt)[$y$], anchor: "west")
-      content((3.8, 3.28), text(size: 7pt)[$F$], anchor: "south")
-      content((2.85, 2.45), text(size: 7pt)[Tensioni reali], anchor: "west")
-      line((2.65, 2.92), (2.82, 2.45), stroke: 0.5pt)
-
-      // --- PANNELLO 3: CERCHIO DI MOHR ---
-      line((1.9, 1.0), (4.5, 1.0), mark: (end: ">"), stroke: 0.8pt)
-      line((2.4, 0.1), (2.4, 2.0), mark: (end: ">"), stroke: 0.8pt)
-      circle((3.1, 1.0), radius: 0.70, stroke: 0.9pt)
-
-      content((2.28, 1.95), text(size: 7pt)[$tau$], anchor: "east")
-      content((4.45, 0.88), text(size: 7pt)[$sigma$], anchor: "north")
-      content((2.28, 0.88), text(size: 7pt)[$0$], anchor: "north")
-      content((3.85, 0.85), text(size: 7pt)[$sigma_x equiv sigma_1$], anchor: "north")
-    })
+    #include "figs/esami-vecchi-nonsicuri-fig13.typ"
     // FASE 3: VERIFICA
     // 1. Archi d'intaglio: anchor: "origin", start < stop.
     // 2. Curva picchi tensioni reali: 1 bezier concavo giustificato (cerchio e_max=0.13, ellisse e_max=0.10).
