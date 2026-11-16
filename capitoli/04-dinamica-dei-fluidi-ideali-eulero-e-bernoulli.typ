@@ -583,14 +583,15 @@ $ F = (rho q^2) / (4 pi h^2) { ln Lambda - 1/2 } , quad Lambda = r_2 / r_1 $
     $ ln Lambda > 1/2 quad arrow.r.double quad Lambda = r_2 / r_1 > e^(1/2) approx 1.65 $
     La superficie anulare $S_2$ in depressione deve quindi avere raggio esterno $r_2 > sqrt(e) r_1 approx 1.65 r_1$ per superare la spinta verso il basso esercitata dal getto centrale su $S_1$.
 
-    L'equilibrio del disco è tuttavia *instabile*: poiché $F prop 1\/h^2$ mentre il peso $P = m g$ è indipendente da $h$:
-    - se una perturbazione allontana la carta ($h > h_"eq"$), la forza aerodinamica diminuisce ($F < P$) e la carta cade;
-    - se una perturbazione avvicina la carta alla bobina ($h < h_"eq"$), la forza aumenta ($F > P$) aspirando la carta fino a chiudere il canale.
+    
   ],
   [
     #figure(fig-fh())
   ]
 )
+L'equilibrio del disco è tuttavia *instabile*: poiché $F prop 1\/h^2$ mentre il peso $P = m g$ è indipendente da $h$:
+    - se una perturbazione allontana la carta ($h > h_"eq"$), la forza aerodinamica diminuisce ($F < P$) e la carta cade;
+    - se una perturbazione avvicina la carta alla bobina ($h < h_"eq"$), la forza aumenta ($F > P$) aspirando la carta fino a chiudere il canale.
 
 *Limite del modello di fluido ideale:* per $h arrow.r 0$ la formula prevede una forza divergente ($F arrow.r infinity$), comportamento non fisico dovuto all'aver trascurato gli effetti viscosi, che diventano invece dominanti per spessori d'intercapedine $h$ molto piccoli.
 
