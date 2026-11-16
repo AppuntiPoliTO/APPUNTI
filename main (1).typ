@@ -8,7 +8,6 @@
 // Numerazione: titoli fino al 3° livello, equazioni per capitolo (es. (5.12)); figure senza numero
 #set heading(numbering: "1.1.1")
 #show heading.where(level: 4): set heading(numbering: none)
-#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
 #set figure(numbering: none)
 
 // Ogni capitolo: pagina nuova, contatori azzerati, titolo con etichetta "Capitolo N"

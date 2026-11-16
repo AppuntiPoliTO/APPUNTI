@@ -1,6 +1,6 @@
 #import "@preview/cetz:0.3.4": canvas, draw
 
-
+#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
 
 // Simboli e scorciatoie testuali
 #let circ = sym.degree
