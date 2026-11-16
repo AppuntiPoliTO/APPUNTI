@@ -463,7 +463,7 @@ Con $S = pi D^2 \/ 4 = 3","14 dot 10^(-4) "m"^2$ si calcolano, per ciascuna port
 
 $ u_d = dot(m)/(rho S), wide "Re"_D = (rho u_d D)/mu $
 
-Il valore di $"Re"_D$ stabilisce la legge di resistenza da usare: in regime laminare il risultato di Poiseuille (@eq:lambda_poiseuille), in regime turbolento, per tubo liscio, la formula empirica di Blasius:
+Il valore di $"Re"_D$ stabilisce la legge di resistenza da usare: in regime laminare il risultato di Poiseuille (), in regime turbolento, per tubo liscio, la formula empirica di Blasius:
 
 $
   lambda = cases(

@@ -85,7 +85,7 @@ Il profilo è parabolico: massimo ($u_0$) sull'asse, nullo a parete.
   figure(fig-profilo()),
 )
 
-#tappa[Portata.] Si sostituisce nell'integrale della portata il profilo @eq:poiseuille_profilo, scritto come $u(r) = G \/ mu (r^2\/4 - R^2\/4)$, e si integra in $r$:
+#tappa[Portata.] Si sostituisce nell'integrale della portata il profilo , scritto come $u(r) = G \/ mu (r^2\/4 - R^2\/4)$, e si integra in $r$:
 
 $
   Q_v &= 2 pi integral_0^R u(r) r dif r = (pi G R^2)/(2 mu) [r^4/(4 R^2) - r^2/2]_0^R \
@@ -217,7 +217,7 @@ Con $S = pi D^2 \/ 4 = 3","14 dot 10^(-4) "m"^2$ si calcolano, per ciascuna port
 
 $ u_d = dot(m)/(rho S), wide "Re"_D = (rho u_d D)/mu $
 
-Il valore di $"Re"_D$ stabilisce la legge di resistenza da usare: in regime laminare il risultato di Poiseuille (@eq:lambda_poiseuille), in regime turbolento, per tubo liscio, la formula empirica di Blasius:
+Il valore di $"Re"_D$ stabilisce la legge di resistenza da usare: in regime laminare il risultato di Poiseuille (), in regime turbolento, per tubo liscio, la formula empirica di Blasius:
 
 $
   lambda = cases(
