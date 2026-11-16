@@ -315,60 +315,64 @@ Un trasduttore di pressione misura la differenza tra la pressione di ristagno $p
 #canvas(length: 1cm, {
   import draw: *
 
-  // Sezione di ingresso 1
-  line((-1.65, -1.20), (-1.65, 1.15), stroke: 1.2pt + black)
-
-  // Frecce del flusso in ingresso
-  line((-2.05, 0.80), (-1.75, 0.80), mark: (end: ">"), stroke: 1pt + black)
-  line((-2.05, 0.40), (-1.75, 0.40), mark: (end: ">"), stroke: 1pt + black)
-  line((-2.05, -0.02), (-1.75, -0.02), mark: (end: ">"), stroke: 1pt + black)
-  line((-2.05, -0.45), (-1.75, -0.45), mark: (end: ">"), stroke: 1pt + black)
-  line((-2.05, -0.85), (-1.75, -0.85), mark: (end: ">"), stroke: 1pt + black)
-
-  // Corpo del tubo di Pitot
   line(
-    (0.00, 0.30),
-    (0.00, 0.80),
-    (4.50, 0.80),
-    (4.50, 0.00),
-    (5.00, 0.00),
-    (5.00, 0.80),
-    (6.00, 0.80),
-    (6.00, -0.80),
-    (0.00, -0.80),
-    (0.00, -0.25),
-    (3.50, -0.25),
-    (3.50, 0.30),
+    (0.00, 0.22),
+    (0.00, 0.70),
+    (4.25, 0.70),
+    (4.25, 0.00),
+    (4.55, 0.00),
+    (4.55, 0.70),
+    (5.60, 0.70),
+    (5.60, -0.70),
+    (0.00, -0.70),
+    (0.00, -0.22),
+    (3.40, -0.22),
+    (3.40, 0.22),
     close: true,
-    stroke: 1.2pt + black
+    fill: gray.transparentize(80%),
+    stroke: none
   )
 
-  // Dettaglio interno nella presa statica
-  line((4.80, 0.80), (4.80, 0.30), (5.00, 0.30), stroke: 1.2pt + black)
-  line((4.80, 0.80), (5.00, 0.75), stroke: 1.2pt + black)
+  line(
+    (0.00, 0.22),
+    (0.00, 0.70),
+    (4.25, 0.70),
+    (4.25, 0.00),
+    (4.55, 0.00),
+    (4.55, 0.70),
+    (5.60, 0.70),
+    (5.60, -0.70),
+    (0.00, -0.70),
+    (0.00, -0.22),
+    (3.40, -0.22),
+    (3.40, 0.22),
+    close: true,
+    stroke: 1.1pt + black
+  )
 
-  // Linea di corrente centrale (tratteggiata)
-  line((-1.65, 0.00), (3.50, 0.00), stroke: (paint: black, thickness: 1.1pt, dash: "dashed"))
+  line((-2.20, -1.35), (-2.20, 1.35), stroke: 1pt + black)
 
-  // Linea di corrente superiore
-  bezier((-1.65, 0.15), (0.00, 0.72), (-0.80, 0.15), (-0.40, 0.45), stroke: 1.2pt + black)
-  bezier((0.00, 0.72), (1.80, 1.20), (0.40, 0.99), (1.00, 1.20), stroke: 1.2pt + black)
-  line((1.80, 1.20), (6.80, 1.20), stroke: 1.2pt + black)
+  line((-2.85, 0.90), (-2.30, 0.90), mark: (end: ">"), stroke: 0.9pt + black)
+  line((-2.85, 0.45), (-2.30, 0.45), mark: (end: ">"), stroke: 0.9pt + black)
+  line((-2.85, 0.00), (-2.30, 0.00), mark: (end: ">"), stroke: 0.9pt + black)
+  line((-2.85, -0.45), (-2.30, -0.45), mark: (end: ">"), stroke: 0.9pt + black)
+  line((-2.85, -0.90), (-2.30, -0.90), mark: (end: ">"), stroke: 0.9pt + black)
 
-  // Linea di corrente inferiore
-  bezier((-1.65, -0.15), (-0.50, -0.45), (-0.90, -0.15), (-0.65, -0.25), stroke: 1.2pt + black)
-  bezier((-0.50, -0.45), (2.00, -1.18), (-0.35, -0.65), (0.60, -1.18), stroke: 1.2pt + black)
-  line((2.00, -1.18), (7.80, -0.98), stroke: 1.2pt + black)
+  line((-2.20, 0.00), (3.40, 0.00), stroke: (paint: black, thickness: 0.85pt, dash: "dashed"))
 
-  // Punto di ristagno (azzurro)
-  circle((0.05, 0.00), radius: 0.07, fill: rgb(0, 110, 255), stroke: none)
+  bezier((-2.20, 0.16), (0.00, 0.88), (-1.15, 0.16), (-0.50, 0.70), stroke: 1pt + black)
+  bezier((0.00, 0.88), (2.00, 1.20), (0.50, 1.06), (1.10, 1.20), stroke: 1pt + black)
+  line((2.00, 1.20), (6.20, 1.20), mark: (end: ">"), stroke: 1pt + black)
 
-  // Etichetta "1" rossa con sottolineatura
-  content((-1.50, 1.50), text(fill: red, size: 14pt, weight: "bold")[1])
-  line((-1.65, 1.25), (-1.35, 1.25), stroke: 1.2pt + red)
+  bezier((-2.20, -0.16), (0.00, -0.88), (-1.15, -0.16), (-0.50, -0.70), stroke: 1pt + black)
+  bezier((0.00, -0.88), (2.00, -1.20), (0.50, -1.06), (1.10, -1.20), stroke: 1pt + black)
+  line((2.00, -1.20), (6.20, -1.20), mark: (end: ">"), stroke: 1pt + black)
 
-  // Etichetta "0" azzurra
-  content((0.15, -1.60), text(fill: rgb(0, 110, 255), size: 14pt, weight: "bold")[0])
+  circle((0.00, 0.00), radius: 0.08, fill: rgb(0, 110, 255), stroke: none)
+
+  line((-2.35, 1.45), (-2.05, 1.45), stroke: 1pt + red)
+  content((-2.20, 1.68), text(size: 10pt, fill: red)[*1*])
+  content((-0.30, -0.32), text(size: 10pt, fill: rgb(0, 110, 255))[*0*])
 })
 ]
 
