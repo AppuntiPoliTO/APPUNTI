@@ -215,7 +215,7 @@ Il terzo termine, $arrow(Pi)_w = integral_(S_w) sigma_(i j) n_j dif S_w = arrow(
 === Bilancio per condotta orizzontale a sezione costante
 
 #grid(
-  columns: (1fr,1fr),
+  columns: (1fr, 1fr),
   gutter: 1em,
   [Consideriamo una condotta cilindrica orizzontale ($G_x = 0$) in regime stazionario ($arrow(I) = 0$). L'equazione globale si riduce a:
 
@@ -269,16 +269,18 @@ Scomponiamo la superficie di controllo in \ $S = S_1 union S_2 union S_w$ (sezio
   content((4.10, 0.62), text(size: 8.5pt)[$L$], anchor: "north")
 })],
 )
+
 - per $arrow(M) = - integral_S rho u_i u_j n_j dif S$, il flusso attraverso la parete impermeabile $S_w$ è nullo; lungo $x$, su $S_1$ la velocità è opposta alla normale uscente ($n_(1, x) = -1$) e dà il contributo positivo entrante $M_"in" = rho U_(d, 1)^2 S_1$, mentre su $S_2$ è concorde ($n_(2, x) = +1$) e dà il contributo negativo uscente $-M_"out" = -rho U_(d, 2)^2 S_2$;
 - per $arrow(Pi) = integral_S sigma_(i j) n_j dif S$, l'integrale si spezza nei tre contributi su $S_1$, $S_2$ e $S_w$: $arrow(Pi) = arrow(Pi)_1 + arrow(Pi)_2 + arrow(F)$, dove $arrow(F) = integral_(S_w) sigma_(i j) n_j dif S$ è la forza esercitata dalla parete sul fluido. Trascurando su $S_1$ e $S_2$ il termine viscoso rispetto alla pressione ($sigma_(i j) approx -p delta_(i j)$), si ha $Pi_(x, 1) = p_1 S_1$ e $Pi_(x, 2) = -p_2 S_2$.
 
-Esplicitando il bilancio lungo $x$:
+Prendiamo la nostra equazione lungo $x$ sostituendo i termini appena trovati:
+$ (M_"in" - M_"out") + (Pi_(x, 1) + Pi_(x, 2) + F_x) = 0 $
 
-$
-(M_"in" - M_"out") + (Pi_(x, 1) + Pi_(x, 2) + F_x) &= 0 \
-F_x &= -[(M_"in" - M_"out") + (Pi_(x, 1) + Pi_(x, 2))] = \
-&= -[(rho U_(d, 1)^2 S_1 - rho U_(d, 2)^2 S_2) + (p_1 S_1 - p_2 S_2)]
-$
+Isoliamo l'incognita $F_x$ portando il resto a secondo membro:
+$ F_x = -[(M_"in" - M_"out") + (Pi_(x, 1) + Pi_(x, 2))] $
+
+Sostituiamo infine i rispettivi valori dei flussi e delle forze di pressione:
+$ F_x = -[(rho U_(d, 1)^2 S_1 - rho U_(d, 2)^2 S_2) + (p_1 S_1 - p_2 S_2)] $
 
 Se la sezione della condotta è costante ($S_1 = S_2 = S$), per la conservazione della portata ($Q = U_(d, 1) S_1 = U_(d, 2) S_2$) si ha $U_(d, 1) = U_(d, 2) = U_d$. I flussi convettivi di quantità di moto in ingresso e in uscita sono pertanto identici e si elidono ($M_"in" = M_"out"$), lasciando:
 
