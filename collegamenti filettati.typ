@@ -1321,7 +1321,7 @@ dove:
 Infine, assumendo in prima approssimazione per piccoli angoli che $tan(alpha_m + phi.alt') tilde.eq tan alpha_m + tan phi.alt'$ e sostituendo l'espressione di $tan alpha_m$ e $tan phi.alt'$, il momento di serraggio viene espresso nella forma a tre addendi comunemente adottata nella letteratura tecnica e nelle normative (che separa il contributo geometrico del passo, quello dell'attrito sui filetti inclinati e quello dell'attrito al sottotesta):
 
 $ M_T = frac(F_v, 2) (d_m dot.op tan alpha_m + d_m dot.op tan phi.alt' + d_t dot.op tan phi.alt_s) = frac(F_v, 2) (frac(p, pi) + d_m dot.op frac(tan phi.alt, cos alpha) + d_t dot.op tan phi.alt_s) $
-
+/*
 // NOTA: \div convertito con div (modulo sym)
 == Lezione 10 (Parte 2): Viti e bulloni (collegamenti filettati) – Resistenza
 
