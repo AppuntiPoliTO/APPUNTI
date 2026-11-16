@@ -410,7 +410,7 @@ Consideriamo una corrente a pelo libero su fondo orizzontale che incontra una pa
   content((5.52, 3.08), text(size: 8.5pt)[$arrow(F)_x$], anchor: "south")
 
   line((5.05, 0.72), (3.55, 0.72), mark: (end: ">"), stroke: 0.85pt)
-  content((4.30, 0.56), text(size: 7.5pt)[$arrow(tau) " trascurabili"$], anchor: "north")
+  content((4.30, 0.56), text(size: 7.5pt)[$arrow(sigma) " trascurabili"$], anchor: "north")
 
   // Versori normali uscenti (blu) e richiamo S_g
   line((1.50, 1.60), (1.05, 1.60), mark: (end: ">"), stroke: (paint: blue, thickness: 0.85pt))
