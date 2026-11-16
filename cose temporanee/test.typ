@@ -1,4 +1,4 @@
-#import ".../template.typ": *
+#import "/template.typ": *
 
 
 
@@ -91,7 +91,7 @@ In condizioni di *moto stazionario* ($(partial arrow(u)) / (partial t) = 0$), il
 
 Infatti, supponendo il flusso diretto lungo l'asse $x$ e normale alle sezioni di ingresso e uscita:
 - su $S_1$ la velocità $arrow(u)$ è entrante mentre la normale $arrow(n)_1 = (-1, 0, 0)$ è uscente (antiparallele), quindi $u_j n_j = -abs(arrow(u)) = -u$, e il segno meno davanti all'integrale rende positivo il contributo entrante $arrow(M)_"in"$;
-- su $S_2$ la velocità $arrow(u)$ e la normale $arrow(n)_2 = (1, 0, 0)$ sono concordi (uscenti), quindi $u_j n_j = +abs(arrow(u)) = +u$, dando luogo al contributo negativo $-\arrow(M)_"out"$.
+- su $S_2$ la velocità $arrow(u)$ e la normale $arrow(n)_2 = (1, 0, 0)$ sono concordi (uscenti), quindi $u_j n_j = +abs(arrow(u)) = +u$, dando luogo al contributo negativo $-arrow(M)_"out"$.
 
 Lungo la direzione $x$, il modulo del flusso di quantità di moto attraverso una generica sezione piana $S$ si può esprimere in funzione della velocità media di sezione $U_d$:
 
