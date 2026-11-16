@@ -241,7 +241,7 @@ Questo risultato fondamentale costituisce il *Teorema di Bernoulli* lungo una li
 === Applicazione: Genesi della portanza su un profilo alare
 Una prima applicazione del teorema di Bernoulli permette di spiegare, in prima approssimazione, la nascita della forza di *portanza* su un profilo alare investito da una corrente fluida.
 
-#figure(fig-profilo())
+#figure(align(center))
 
 === Legame tra velocità e pressione attorno al profilo
 1. *Geometria delle linee di corrente*: la forma del profilo alare costringe il campo di moto ad avvilupparsi attorno ad esso producendo un *addensamento* delle linee di corrente nella parte superiore (*dorso*) e un *diradamento* nella parte inferiore (*ventre*).
