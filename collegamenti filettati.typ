@@ -1257,7 +1257,7 @@ $ M_("svit") = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt) - d_t dot.op tan 
 === Effetto della forma triangolare o trapezoidale del filetto
 
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1.5fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nei filetti a profilo triangolare e trapezoidale esiste un secondo piano inclinato dovuto all'inclinazione $alpha$ del fianco del filetto rispetto alla direzione radiale (per le filettature metriche, $2 alpha = 60degree arrow.r.double alpha = 30degree$). La forza normale effettiva agente perpendicolarmente al fianco del filetto non è $F_N$, bensì la sua proiezione $frac(F_N, cos alpha)$. Di conseguenza, la forza d'attrito reale vale:
 
@@ -1267,9 +1267,6 @@ da cui si ricava:
 
 $ tan phi.alt = frac(F_("attrito") dot.op cos alpha, F_N) quad arrow.l.r.double quad frac(tan phi.alt, cos alpha) = frac(F_("attrito"), F_N) $
 
-Per mantenere la medesima struttura formale dell'equazione di serraggio, si definisce un #strong[coefficiente d'attrito apparente] (o equivalente) $tan phi.alt'$ (talvolta indicato come $tan phi.alt^*$):
-
-$ tan phi.alt' = frac(tan phi.alt, cos alpha) $
 ], [#canvas(length: 1cm, {
   import draw: *
   line(
@@ -1299,6 +1296,9 @@ $ tan phi.alt' = frac(tan phi.alt, cos alpha) $
   content((3.85, 1.60), text(size: 7.5pt)[angolo], anchor: "west")
   content((3.85, 1.35), text(size: 7.5pt)[del filetto], anchor: "west")
 })])
+Per mantenere la medesima struttura formale dell'equazione di serraggio, si definisce un #strong[coefficiente d'attrito apparente] (o equivalente) $tan phi.alt'$ (talvolta indicato come $tan phi.alt^*$):
+
+$ tan phi.alt' = frac(tan phi.alt, cos alpha) $
 
 === Formulazione generale e approssimazione lineare
 Sostituendo $phi.alt$ con $phi.alt'$, le equazioni complete per il momento di serraggio e di svitamento diventano:
