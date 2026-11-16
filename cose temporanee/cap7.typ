@@ -70,17 +70,30 @@ $
 tau_(i j) = 2 mu D_(i j) quad "con" quad D_(i j) = 1/2 ( (partial u_i) / (partial x_j) + (partial u_j) / (partial x_i) )
 $
 
-#block(breakable: false)[
-  Sviluppiamo il termine inerziale a primo membro (derivata materiale). Applicando la regola di derivazione del prodotto e sfruttando l'equazione di continuità in forma generale $partial rho / partial t + partial / (partial x_j) (rho u_j) = 0$ (che per un fluido incomprimibile a densità costante $rho = "cost"$ si riduce a $(partial u_j) / (partial x_j) = 0$), si ottiene:
 
-  $
-  rho (D u_i) / (D t) &= rho (partial u_i) / (partial t) + rho u_j (partial u_i) / (partial x_j) = \
-  &= partial / (partial t) (rho u_i) - u_i (partial rho) / (partial t) + partial / (partial x_j) (rho u_i u_j) - u_i partial / (partial x_j) (rho u_j) = \
-  &= partial / (partial t) (rho u_i) + partial / (partial x_j) (rho u_i u_j) - u_i underbrace(( (partial rho) / (partial t) + partial / (partial x_j) (rho u_j) ), = 0) \
-  &= partial / (partial t) (rho u_i) + partial / (partial x_j) (rho u_i u_j)
-  $
-]
+ Prendiamo il termine inerziale a primo membro, ovvero la derivata materiale della velocità moltiplicata per la densità:
+$ rho (D u_i) / (D t) = rho (partial u_i) / (partial t) + rho u_j (partial u_i) / (partial x_j) $
 
+Per riscriverlo in forma conservativa, applichiamo la regola di derivazione del prodotto ai due termini. Ricordiamo infatti che:
+$ partial / (partial t) (rho u_i) = rho (partial u_i) / (partial t) + u_i (partial rho) / (partial t) arrow.r.double rho (partial u_i) / (partial t) = partial / (partial t) (rho u_i) - u_i (partial rho) / (partial t) $
+
+E analogamente per il termine convettivo:
+$ partial / (partial x_j) (rho u_i u_j) = rho u_j (partial u_i) / (partial x_j) + u_i partial / (partial x_j) (rho u_j) arrow.r.double rho u_j (partial u_i) / (partial x_j) = partial / (partial x_j) (rho u_i u_j) - u_i partial / (partial x_j) (rho u_j) $
+
+Sostituiamo ora queste due espressioni nella nostra equazione di partenza:
+$ rho (D u_i) / (D t) = partial / (partial t) (rho u_i) - u_i (partial rho) / (partial t) + partial / (partial x_j) (rho u_i u_j) - u_i partial / (partial x_j) (rho u_j) $
+
+Raccogliamo a fattor comune $-u_i$ tra il secondo e il quarto termine a destra dell'uguale:
+$ rho (D u_i) / (D t) = partial / (partial t) (rho u_i) + partial / (partial x_j) (rho u_i u_j) - u_i ( (partial rho) / (partial t) + partial / (partial x_j) (rho u_j) ) $
+
+Sfruttiamo ora l'equazione di continuità in forma generale (che per un fluido incomprimibile a densità costante $rho = "cost"$ si riduce a $(partial u_j) / (partial x_j) = 0$):
+$ (partial rho) / (partial t) + partial / (partial x_j) (rho u_j) = 0 $
+
+Sostituendo questo risultato nell'equazione precedente, il termine tra parentesi si annulla:
+$ rho (D u_i) / (D t) = partial / (partial t) (rho u_i) + partial / (partial x_j) (rho u_i u_j) - u_i underbrace(( (partial rho) / (partial t) + partial / (partial x_j) (rho u_j) ), = 0) $
+
+Otteniamo infine la forma conservativa cercata:
+$ rho (D u_i) / (D t) = partial / (partial t) (rho u_i) + partial / (partial x_j) (rho u_i u_j) $
 Sostituendo nell'equazione del moto, portando tutti i termini a primo membro e integrando su un volume di controllo fisso $V$ delimitato da una superficie chiusa $S$ (con normale esterna uscente $n_j$):
 
 $
