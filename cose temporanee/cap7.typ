@@ -48,7 +48,7 @@ Nello studio del moto laminare in una condotta circolare (moto di Hagen-Poiseuil
 In generale, la forza totale esercitata da un fluido su un corpo (o su una parete solida di superficie $S_w$ e normale $arrow(n)$) è data dall'integrale superficiale del vettore degli sforzi:
 
 $
-arrow(F) = integral_(S_w) bold(sigma) dot arrow(n) dif S_w quad "con" quad T_(i j) = -p delta_(i j) + tau_(i j)
+arrow(F) = integral_(S_w) bold(sigma) dot arrow(n) dif S_w quad "con" quad sigma_(i j) = -p delta_(i j) + tau_(i j)
 $
 
 Tuttavia, il calcolo diretto di questo integrale richiede di conoscere punto per punto la distribuzione della pressione $p$ e dei gradienti di velocità (da cui dipendono gli sforzi viscosi $tau_(i j)$) lungo tutta la parete. Nella maggior parte dei problemi applicativi, risolvere analiticamente le equazioni di Navier-Stokes per ottenere tali informazioni locali è impossibile, e anche per via numerica risulta estremamente oneroso.
@@ -60,8 +60,8 @@ Per aggirare questa difficoltà si ricorre alla *formulazione integrale del bila
 Partiamo dall'equazione di Cauchy (bilancio differenziale della quantità di moto) in presenza del campo gravitazionale:
 
 $
-rho (D u_i) / (D t) &= rho g_i + partial / (partial x_j) T_(i j) \
-T_(i j) &= -p delta_(i j) + tau_(i j)
+rho (D u_i) / (D t) &= rho g_i + partial / (partial x_j) sigma_(i j) \
+sigma_(i j) &= -p delta_(i j) + tau_(i j)
 $
 
 Per un fluido newtoniano incomprimibile, il tensore degli sforzi viscosi è:
@@ -84,13 +84,13 @@ $
 Sostituendo nell'equazione del moto, portando tutti i termini a primo membro e integrando su un volume di controllo fisso $V$ delimitato da una superficie chiusa $S$ (con normale esterna uscente $n_j$):
 
 $
-integral_V partial / (partial t) (rho u_i) dif V + integral_V partial / (partial x_j) (rho u_i u_j) dif V - integral_V partial / (partial x_j) T_(i j) dif V - integral_V rho g_i dif V = 0
+integral_V partial / (partial t) (rho u_i) dif V + integral_V partial / (partial x_j) (rho u_i u_j) dif V - integral_V partial / (partial x_j) sigma_(i j) dif V - integral_V rho g_i dif V = 0
 $
 
 Applicando il teorema della divergenza di Gauss ($integral_V partial / (partial x_j) F_(i j) dif V = integral_S F_(i j) n_j dif S$) ai due termini sotto il segno di derivata spaziale e cambiando di segno l'intera equazione, otteniamo l'equazione globale della meccanica dei fluidi:
 
 $
-underbrace(integral_V rho g_i dif V, arrow(G)) + underbrace(integral_S T_(i j) n_j dif S, arrow(Pi)) + underbrace((- integral_S rho u_i u_j n_j dif S), arrow(M)) + underbrace((- integral_V partial / (partial t) (rho u_i) dif V), arrow(I)) = 0 quad ==> quad arrow(G) + arrow(Pi) + arrow(M) + arrow(I) = 0
+underbrace(integral_V rho g_i dif V, arrow(G)) + underbrace(integral_S sigma_(i j) n_j dif S, arrow(Pi)) + underbrace((- integral_S rho u_i u_j n_j dif S), arrow(M)) + underbrace((- integral_V partial / (partial t) (rho u_i) dif V), arrow(I)) = 0 quad ==> quad arrow(G) + arrow(Pi) + arrow(M) + arrow(I) = 0
 $
 
 I quattro vettori che compongono il bilancio rappresentano:
@@ -184,10 +184,10 @@ $
 arrow(Pi) = arrow(Pi)_1 + arrow(Pi)_2 + arrow(Pi)_w
 $
 
-Sulle sezioni fluide di ingresso $S_1$ e di uscita $S_2$, per flussi con linee di corrente pressoché rettilinee e parallele, i gradienti assiali di velocità sono trascurabili rispetto ai termini di pressione ($tau_(i j) prop partial u_i / partial x_j approx 0$). Pertanto il tensore degli sforzi si riduce alla sola componente isotropa di pressione $T_(i j) approx -p delta_(i j)$:
+Sulle sezioni fluide di ingresso $S_1$ e di uscita $S_2$, per flussi con linee di corrente pressoché rettilinee e parallele, i gradienti assiali di velocità sono trascurabili rispetto ai termini di pressione ($tau_(i j) prop partial u_i / partial x_j approx 0$). Pertanto il tensore degli sforzi si riduce alla sola componente isotropa di pressione $sigma_(i j) approx -p delta_(i j)$:
 
 $
-(Pi_1)_i &= integral_(S_1) T_(i j) n_j dif S_1 approx integral_(S_1) -p delta_(i j) n_j dif S_1 = -integral_(S_1) p n_i dif S_1 \
+(Pi_1)_i &= integral_(S_1) sigma_(i j) n_j dif S_1 approx integral_(S_1) -p delta_(i j) n_j dif S_1 = -integral_(S_1) p n_i dif S_1 \
 (Pi_2)_i &= -integral_(S_2) p n_i dif S_2
 $
 
@@ -197,7 +197,7 @@ $
 Pi_(1, x) = +p_1 S_1 = Pi_"in", quad Pi_(2, x) = -p_2 S_2 = -Pi_"out"
 $
 
-Il terzo termine, $arrow(Pi)_w = integral_(S_w) T_(i j) n_j dif S_w = arrow(F)$, contiene la *forza cercata*.
+Il terzo termine, $arrow(Pi)_w = integral_(S_w) sigma_(i j) n_j dif S_w = arrow(F)$, contiene la *forza cercata*.
 
 #nota-box("Attenzione ai segni e alle normali")[
   Poiché per convenzione la normale $arrow(n)$ su $S_w$ è diretta dal fluido verso l'esterno (cioè *entra* nella parete solida), il termine $arrow(Pi)_w = arrow(F)$ rappresenta la *forza esercitata dalla parete sul fluido*. Per il terzo principio della dinamica, la forza esercitata dal fluido sulla parete è uguale e opposta, ovvero $-arrow(F)$.
