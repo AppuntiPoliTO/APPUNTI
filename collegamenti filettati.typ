@@ -648,7 +648,7 @@ Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadra
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[L'intersezione tra le due rette identifica il punto di funzionamento del collegamento al montaggio:
 - L'ordinata del punto di intersezione fornisce la forza assiale di precarico in equilibrio nella vite e nei pezzi (direttamente correlata al momento di serraggio applicato).
-- La somma dei due spostamenti elastici rispetto alla posizione di equilibrio uguaglia l'interferenza imposta ($u_v + u_p = i$).], [#canvas(length: 1.2cm, {
+- La somma dei due spostamenti elastici rispetto alla posizione di equilibrio uguaglia l'interferenza imposta ($u_v + u_p = i$).], [#canvas(length: 1.1cm, {
   import draw: *
   line((0, 0), (0, -1.7), stroke: 0.55pt)
   line((1.35, -0.85), (1.35, 2.15), stroke: 0.55pt)
@@ -675,7 +675,7 @@ Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadra
   content((-0.18, 2.75), text(size: 8.5pt)[$|F_v|$], anchor: "east")
   content((5.35, -0.25), text(size: 8.5pt)[$u$], anchor: "north")
 
-  content((0.65, 2.18), text(size: 8.5pt)[pezzo], anchor: "south")
+  content((0.65, 2.3), text(size: 8.5pt)[pezzo], anchor: "south")
   content((2.12, 2.5), text(size: 8.5pt)[vite], anchor: "south-west")
 
   content((0.43, 1.32), text(size: 8pt)[$delta_v$], anchor: "center")
