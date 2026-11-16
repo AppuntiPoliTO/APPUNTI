@@ -1491,7 +1491,7 @@ Diametro $d = 2 "cm"$; lunghezza $L = 20 "m"$.
     #image("immagini/3cb734d7-9607-49d0-8970-a51574b61853-19_483_963_2207_26.jpg", width: 70%)
   ]
 )
-
+#pagebreak()
 // pdf 7
 
 = Equazione globale della meccanica dei fluidi
