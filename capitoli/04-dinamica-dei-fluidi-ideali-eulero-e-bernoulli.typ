@@ -243,7 +243,6 @@ Una prima applicazione del teorema di Bernoulli permette di spiegare, in prima a
 
 #figure(align(center)[#canvas(length: 1.4cm, {
   import draw: *
-
   line((2.05, 1.72), (2.29, 1.82), (2.55, 1.85), (3.11, 1.79), (3.69, 1.64), (4.28, 1.44), (4.8, 1.25), (5.95, 2.0), (5.43, 2.19), (4.84, 2.39), (4.26, 2.54), (3.7, 2.6), (3.44, 2.57), (3.2, 2.47), close: true, fill: gray.transparentize(86%), stroke: none)
   line((1.8, 1.25), (1.82, 1.46), (1.92, 1.63), (2.05, 1.72), (2.29, 1.82), (2.55, 1.85), (3.11, 1.79), (3.69, 1.64), (4.28, 1.44), (4.8, 1.25), (3.84, 1.21), (2.85, 1.18), (2.13, 1.17), close: true, fill: gray.transparentize(78%), stroke: none)
 
