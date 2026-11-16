@@ -429,7 +429,30 @@ dove $h = z_A - z_B$ è il battente idrostatico sopra il foro.
   content((3.3, 0.15), [Foro $A$])
 })
 
+#canvas(length: 1cm, {
+  import draw: *
 
+  bezier((2.0, 1.35), (2.75, 1.88), (2.0, 1.68), (2.28, 1.88), stroke: 1.2pt)
+  bezier((2.75, 1.88), (5.0, 1.35), (3.45, 1.88), (4.35, 1.55), stroke: 1.2pt)
+  bezier((2.0, 1.35), (5.0, 1.35), (2.0, 1.2), (3.2, 1.25), stroke: 1.2pt)
+
+  bezier((0.5, 1.28), (5.75, 1.18), (1.75, 2.45), (3.85, 2.28), mark: (end: ">"), stroke: 0.95pt + red)
+  bezier((0.5, 1.62), (5.75, 1.46), (1.75, 2.95), (3.85, 2.74), mark: (end: ">"), stroke: 0.95pt + red)
+  bezier((0.5, 1.96), (5.75, 1.74), (1.75, 3.45), (3.85, 3.2), mark: (end: ">"), stroke: 0.95pt + red)
+
+  bezier((0.5, 1.05), (5.75, 1.08), (2.0, 0.96), (3.8, 0.98), mark: (end: ">"), stroke: 0.95pt + blue)
+  bezier((0.5, 0.85), (5.75, 0.88), (2.0, 0.72), (3.8, 0.74), mark: (end: ">"), stroke: 0.95pt + blue)
+  bezier((0.5, 0.65), (5.75, 0.68), (2.0, 0.48), (3.8, 0.5), mark: (end: ">"), stroke: 0.95pt + blue)
+
+  line((2.99, 1.26), (2.99, 3.25), mark: (end: ">"), stroke: 1.2pt + purple)
+  content((2.86, 3.2), text(size: 8.5pt, fill: purple)[$F_i$], anchor: "east")
+
+  bezier((3.65, 2.94), (5.15, 3.3), (4.2, 3.15), (4.7, 3.28), mark: (end: ">"), stroke: 0.9pt + red)
+  content((5.28, 3.3), text(size: 8.5pt)[$u$ cresce, $p$ diminuisce], anchor: "west")
+
+  bezier((3.65, 0.93), (5.15, 0.35), (4.25, 0.72), (4.7, 0.4), mark: (end: ">"), stroke: 0.9pt + blue)
+  content((5.28, 0.35), text(size: 8.5pt)[$u$ diminuisce, $p$ aumenta], anchor: "west")
+})
 
 #figure(
   align(center)[#canvas(length: 1cm, {
