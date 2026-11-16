@@ -1,4 +1,5 @@
 #import "/template.typ":
+
 = Vorticità e campi irrotazionali
 
 == Il vettore vorticità
