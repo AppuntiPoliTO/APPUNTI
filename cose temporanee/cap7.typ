@@ -48,7 +48,7 @@ Nello studio del moto laminare in una condotta circolare (moto di Hagen-Poiseuil
 In generale, la forza totale esercitata da un fluido su un corpo (o su una parete solida di superficie $S_w$ e normale $arrow(n)$) è data dall'integrale superficiale del vettore degli sforzi:
 
 $
-arrow(F) = integral_(S_w) bold(T) dot arrow(n) dif S_w quad "con" quad T_(i j) = -p delta_(i j) + tau_(i j)
+arrow(F) = integral_(S_w) bold(sigma) dot arrow(n) dif S_w quad "con" quad T_(i j) = -p delta_(i j) + tau_(i j)
 $
 
 Tuttavia, il calcolo diretto di questo integrale richiede di conoscere punto per punto la distribuzione della pressione $p$ e dei gradienti di velocità (da cui dipendono gli sforzi viscosi $tau_(i j)$) lungo tutta la parete. Nella maggior parte dei problemi applicativi, risolvere analiticamente le equazioni di Navier-Stokes per ottenere tali informazioni locali è impossibile, e anche per via numerica risulta estremamente oneroso.
@@ -795,7 +795,7 @@ Questo stesso approccio integrale può essere impiegato per valutare la forza ae
     $
     In galleria del vento, i profili di velocità e pressione nella scia (da cui dipendono entrambi i termini) possono essere misurati sperimentalmente mediante una scansione con un *tubo di Pitot*, evitando così la necessità di effettuare complesse misure locali della distribuzione degli sforzi direttamente sulla superficie del corpo:
     $
-    arrow(F) = integral_(S_w) bold(T) dot arrow(n) dif S_w = integral_(S_w) (-p delta_(i j) n_j + tau_(i j) n_j) dif S_w
+    arrow(F) = integral_(S_w) bold(sigma) dot arrow(n) dif S_w = integral_(S_w) (-p delta_(i j) n_j + tau_(i j) n_j) dif S_w
     $
   ],
   [
