@@ -816,7 +816,7 @@ _Nota: indicando con $Q$ la portata su una larghezza unitaria $b = 1 "m"$, la re
 Passiamo ora al caso di un *getto libero* (d'acqua o d'aria) di sezione $S_1$ (o area $A$), velocità $U$ e portata $Q = U S_1$, che impatta ortogonalmente contro una parete piana verticale.
 
 #grid(
-  columns: (1.2fr, 0.8fr),
+  columns: (1.15fr, 0.85fr),
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
   [
@@ -828,43 +828,118 @@ Passiamo ora al caso di un *getto libero* (d'acqua o d'aria) di sezione $S_1$ (o
     $
     M_("in", x) = rho U^2 S_1 = rho Q U = rho Q^2 / S_1, quad M_("out", x) = 0
     $
-    In regime stazionario ($I_x = 0$) e trascurando la gravità lungo $x$ ($G_x = 0$), il bilancio globale lungo $x$ ($M_("in", x) - M_("out", x) + F_x = 0$) fornisce immediatamente la forza esercitata dalla parete sul fluido:
-    $
-    F_x = -rho U^2 S_1 = -rho Q U = -rho Q^2 / S_1
-    $
   ],
   [
-    #image("immagini/04e73b15-c902-4152-a68f-147f1a1b72b6-09_818_1171_280_44.jpg", width: 85%)
+    #cetz.canvas(length: 0.78cm, {
+      import cetz.draw: *
+      // Parete verticale a destra
+      line((3.6, -2.3), (3.6, 2.3), stroke: 1.8pt + black)
+      for y in (-2.1, -1.6, -1.1, -0.6, -0.1, 0.4, 0.9, 1.4, 1.9) {
+        line((3.6, y), (3.9, y + 0.25), stroke: 0.6pt + gray)
+      }
+
+      // Profili del getto che devia di 90 gradi
+      bezier((0, 0.55), (3.2, 2.1), (2.6, 0.55), (3.2, 0.9), stroke: 1.3pt + rgb("#1f5a96"))
+      bezier((0, -0.55), (3.2, -2.1), (2.6, -0.55), (3.2, -0.9), stroke: 1.3pt + rgb("#1f5a96"))
+      line((3.2, 2.1), (3.6, 2.1), stroke: (paint: rgb("#1f5a96"), thickness: 1pt, dash: "dashed"))
+      line((3.2, -2.1), (3.6, -2.1), stroke: (paint: rgb("#1f5a96"), thickness: 1pt, dash: "dashed"))
+
+      // Sezione di ingresso S1
+      line((0.4, -0.55), (0.4, 0.55), stroke: (paint: rgb("#1f5a96"), thickness: 1.1pt, dash: "dashed"))
+      content((0.65, -0.88), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_1$])
+
+      // Vettori velocità ingresso e uscite
+      line((-0.3, 0), (1.1, 0), mark: (end: ">"), stroke: 1.2pt + rgb("#1f5a96"))
+      content((0.9, 0.28), text(size: 9pt, fill: rgb("#1f5a96"))[$U, Q$])
+      content((1.2, 1.05), text(size: 8.5pt)[$p = 0$])
+
+      line((3.4, 1.35), (3.4, 2.35), mark: (end: ">"), stroke: 1pt + rgb("#1f5a96"))
+      line((3.4, -1.35), (3.4, -2.35), mark: (end: ">"), stroke: 1pt + rgb("#1f5a96"))
+
+      // Forza F_x della parete sul fluido
+      line((4.6, 0), (3.7, 0), mark: (end: ">"), stroke: 1.3pt + rgb("#c0392b"))
+      content((4.65, 0.38), text(size: 9pt, fill: rgb("#c0392b"))[$arrow(F) = (F_x, 0, 0)$])
+
+      // Assi x, y
+      line((0.2, 1.6), (1.1, 1.6), mark: (end: ">"), stroke: 0.7pt + black)
+      content((1.3, 1.6), text(size: 8pt)[$x$])
+      line((0.2, 1.6), (0.2, 2.3), mark: (end: ">"), stroke: 0.7pt + black)
+      content((0.2, 2.5), text(size: 8pt)[$y$])
+    })
   ]
 )
+
+In regime stazionario ($I_x = 0$) e trascurando la gravità lungo $x$ ($G_x = 0$), il bilancio globale lungo $x$ ($M_("in", x) - M_("out", x) + F_x = 0$) fornisce immediatamente la forza esercitata dalla parete sul fluido:
+
+$
+F_x = -rho U^2 S_1 = -rho Q U = -rho Q^2 / S_1
+$
 
 La spinta esercitata dal getto sulla parete è uguale e opposta, pari a $-F_x = +rho Q U$ (diretta lungo $+x$).
 
 == Esempio 4: Getto contro una pala di turbina (deviazione di $180 degree$)
 
-Consideriamo un getto libero di sezione $S_1$, velocità $vec{u}_1 = (U_1, 0, 0)$ e portata $Q = U_1 S_1$ che investe una pala curva simmetrica (come la pala di una turbina Pelton), venendo diviso in due getti simmetrici di sezione $S_2$ e portata $Q/2$ ciascuno, deviati all'indietro con velocità $vec{u}_2 = (-U_2, 0, 0)$ opposta a quella di ingresso.
+Consideriamo un getto libero di sezione $S_1$, velocità $arrow(u)_1 = (U_1, 0, 0)$ e portata $Q = U_1 S_1$ che investe una pala curva simmetrica (come la pala di una turbina Pelton), venendo diviso in due getti simmetrici di sezione $S_2$ e portata $Q/2$ ciascuno, deviati all'indietro con velocità $arrow(u)_2 = (-U_2, 0, 0)$ opposta a quella di ingresso.
 
 #grid(
-  columns: (1.2fr, 0.8fr),
+  columns: (1.15fr, 0.85fr),
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
   [
-    Anche in questo caso $G_x = 0$, $I_x = 0$ e le pressioni relative sulle sezioni libere $S_1$ e $S_2$ sono nulle ($\Pi_1 = \Pi_2 = 0$).
+    Anche in questo caso $G_x = 0$, $I_x = 0$ e le pressioni relative sulle sezioni libere $S_1$ e $S_2$ sono nulle ($Pi_1 = Pi_2 = 0$).
     Occorre prestare particolare attenzione ai segni nel termine convettivo $M_x = -integral_S rho u_x (u_j n_j) dif S$:
-    - sulla sezione di ingresso $S_1$, $vec{u}_1 = (U_1, 0, 0)$ e la normale uscente $vec{n}_1 = (-1, 0, 0)$ sono antiparallele ($u_j n_j = -U_1$), mentre $u_x = +U_1$:
+    - sulla sezione di ingresso $S_1$, $arrow(u)_1 = (U_1, 0, 0)$ e la normale uscente $arrow(n)_1 = (-1, 0, 0)$ sono antiparallele ($u_j n_j = -U_1$), mentre $u_x = +U_1$:
       $
       M_(1, x) = -integral_(S_1) rho (+U_1) (-U_1) dif S_1 = +rho U_1^2 S_1 = +rho Q U_1
       $
-    - su ciascuna delle due sezioni di uscita $S_2$, sia la velocità $vec{u}_2 = (-U_2, 0, 0)$ sia la normale uscente $vec{n}_2 = (-1, 0, 0)$ sono dirette verso sinistra: essendo *concordi*, il prodotto scalare vale $u_j n_j = +U_2 > 0$, ma la componente di velocità lungo $x$ è *negativa* ($u_x = -U_2 < 0$). Pertanto, sommando le due uscite:
+    - su ciascuna delle due sezioni di uscita $S_2$, sia la velocità $arrow(u)_2 = (-U_2, 0, 0)$ sia la normale uscente $arrow(n)_2 = (-1, 0, 0)$ sono dirette verso sinistra: essendo *concordi*, il prodotto scalare vale $u_j n_j = +U_2 > 0$, ma la componente di velocità lungo $x$ è *negativa* ($u_x = -U_2 < 0$). Sommando le due uscite:
       $
-      M_(2, x) = -2 integral_(S_2) rho (-U_2) (+U_2) dif S_2 = +2 rho U_2^2 S_2 = +2 rho Q/2 U_2 = +rho Q U_2
+      M_(2, x) = -2 integral_(S_2) rho (-U_2) (+U_2) dif S_2 = +2 rho U_2^2 S_2 = +rho Q U_2
       $
-    *(Equivalentemente, ponendo $M_("out", x) = -2 rho (Q/2) U_2$ nella scrittura $M_("in", x) - M_("out", x) + F_x = 0$, il doppio segno meno porta i due contributi a sommarsi).*
   ],
   [
-    #image("immagini/04e73b15-c902-4152-a68f-147f1a1b72b6-09_654_916_1451_79.jpg", width: 85%)
+    #cetz.canvas(length: 0.78cm, {
+      import cetz.draw: *
+      // Pala curva tipo Pelton (profilo interno ed esterno)
+      bezier((1.8, 1.85), (3.5, 0), (3.1, 1.85), (3.5, 0.8), stroke: 1.8pt + black)
+      bezier((1.8, -1.85), (3.5, 0), (3.1, -1.85), (3.5, -0.8), stroke: 1.8pt + black)
+      bezier((2.1, 2.05), (4.0, 0), (3.5, 2.05), (4.0, 0.9), stroke: 1.2pt + black)
+      bezier((2.1, -2.05), (4.0, 0), (3.5, -2.05), (4.0, -0.9), stroke: 1.2pt + black)
+      line((1.8, 1.85), (2.1, 2.05), stroke: 1.2pt + black)
+      line((1.8, -1.85), (2.1, -2.05), stroke: 1.2pt + black)
+
+      // Getto entrante e divisione
+      line((0, 0.42), (2.3, 0.42), stroke: 1.1pt + rgb("#1f5a96"))
+      line((0, -0.42), (2.3, -0.42), stroke: 1.1pt + rgb("#1f5a96"))
+      bezier((2.3, 0.42), (1.0, 1.45), (3.1, 0.42), (3.0, 1.45), stroke: 1.1pt + rgb("#1f5a96"))
+      bezier((2.3, -0.42), (1.0, -1.45), (3.1, -0.42), (3.0, -1.45), stroke: 1.1pt + rgb("#1f5a96"))
+      line((1.0, 1.85), (1.8, 1.85), stroke: 1.1pt + rgb("#1f5a96"))
+      line((1.0, -1.85), (1.8, -1.85), stroke: 1.1pt + rgb("#1f5a96"))
+
+      // Contorno volume di controllo a sinistra (S1 e due S2)
+      line((0.8, -2.1), (0.8, 2.1), stroke: (paint: rgb("#c0392b"), thickness: 1pt, dash: "dashed"))
+      content((0.45, -0.68), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_1$])
+      content((0.45, 1.25), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_2$])
+      content((0.45, -1.25), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_2$])
+
+      // Frecce velocità U1 (entrante) e U2 (uscenti a sinistra)
+      line((-0.3, 0), (0.65, 0), mark: (end: ">"), stroke: 1.2pt + rgb("#1f5a96"))
+      content((0.1, 0.28), text(size: 8.5pt, fill: rgb("#1f5a96"))[$Q, U_1$])
+
+      line((1.4, 1.65), (0.1, 1.65), mark: (end: ">"), stroke: 1.1pt + rgb("#1f5a96"))
+      content((1.1, 2.15), text(size: 8.5pt, fill: rgb("#1f5a96"))[$Q/2, U_2$])
+
+      line((1.4, -1.65), (0.1, -1.65), mark: (end: ">"), stroke: 1.1pt + rgb("#1f5a96"))
+      content((1.1, -2.18), text(size: 8.5pt, fill: rgb("#1f5a96"))[$Q/2, U_2$])
+
+      // Normali uscenti a sinistra
+      line((0.8, 0.75), (0.15, 0.75), mark: (end: ">"), stroke: 1pt + rgb("#c0392b"))
+      content((0.1, 0.98), text(size: 8pt, fill: rgb("#c0392b"))[$arrow(n)$])
+    })
   ]
 )
+
+_Nota: equivalentemente, ponendo $M_("out", x) = -2 rho (Q/2) U_2$ nella scrittura $M_("in", x) - M_("out", x) + F_x = 0$, il doppio segno meno porta i due contributi a sommarsi._
 
 Dal bilancio globale lungo $x$ ($M_(1, x) + M_(2, x) + F_x = 0$) si ottiene quindi:
 
@@ -878,20 +953,68 @@ $
 abs(F_x) = rho Q (U_1 + U_2), quad arrow(F) = -abs(F_x) arrow(e)_x
 $
 
-*(Se si trascurano gli attriti lungo la pala, per il teorema di Bernoulli si ha $U_2 = U_1 = U$, per cui $|F_x| = 2 rho Q U$: deviare il getto di $180 degree$ permette di raddoppiare la spinta rispetto alla parete piana verticale).*
+_Se si trascurano gli attriti lungo la pala, per il teorema di Bernoulli si ha $U_2 = U_1 = U$, per cui $abs(F_x) = 2 rho Q U$: deviare il getto di $180 degree$ permette di raddoppiare la spinta rispetto alla parete piana verticale._
 
 == Esempio 5: Getto piano contro una parete inclinata
 
 Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria $b = 1 "m"$ ortogonalmente al foglio) di spessore $h_1$ e velocità $U_1$, che impatta contro una parete piana liscia inclinata di un angolo $theta$ rispetto alla direzione del getto incidente. Dopo l'impatto il flusso si divide in due correnti che scorrono lungo la parete in versi opposti, caratterizzate sulle sezioni di uscita $S_2$ e $S_3$ da spessori $h_2, h_3$ e velocità $U_2, U_3$.
 
-Fissiamo un sistema di riferimento locale $(t, n)$ solidale alla parete, con l'asse $t$ tangente alla parete (positivo verso la sezione $S_2$) e l'asse $n$ normale alla parete (uscente dal fluido verso la parete).
-Per determinare le incognite ($U_2, U_3, h_2, h_3$ e la forza $vec{F}$) procediamo in quattro passaggi:
+#grid(
+  columns: (1.1fr, 0.9fr),
+  column-gutter: 1.2em,
+  align: (left + horizon, center + horizon),
+  [
+    Fissiamo un sistema di riferimento locale $(t, n)$ solidale alla parete, con l'asse $t$ tangente alla parete (positivo verso la sezione $S_2$) e l'asse $n$ normale alla parete (uscente dal fluido verso la parete).
+    Per determinare le incognite ($U_2, U_3, h_2, h_3$ e la forza $arrow(F)$) procediamo in quattro passaggi:
+    1. *Determinazione delle velocità (Teorema di Bernoulli)*:
+       Trascurando le differenze di quota e gli sforzi viscosi, ed essendo il getto libero in atmosfera ($p_1 = p_2 = p_3 = p_"atm"$), applicando il teorema di Bernoulli lungo le linee di corrente da $S_1$ a $S_2$ e $S_3$ segue che il modulo della velocità rimane costante:
+       $
+       U_1 = U_2 = U_3 = U
+       $
+  ],
+  [
+    #cetz.canvas(length: 0.78cm, {
+      import cetz.draw: *
+      // Parete inclinata di angolo theta (es. 55 gradi rispetto all'orizzontale)
+      // Direzione tangente t = (cos 55, sin 55) = (0.574, 0.819), normale n = (0.819, -0.574)
+      line((1.2, -1.8), (4.1, 2.35), stroke: 1.8pt + black)
+      for s in (-1.5, -1.0, -0.5, 0.0, 0.5, 1.0, 1.5, 2.0) {
+        let px = 2.65 + s * 0.574
+        let py = 0.275 + s * 0.819
+        line((px, py), (px + 0.32, py - 0.12), stroke: 0.6pt + gray)
+      }
 
-1. *Determinazione delle velocità (Teorema di Bernoulli)*:
-   Trascurando gli effetti gravitazionali (differenze di quota trascurabili), gli sforzi viscosi e sapendo che il getto è libero in atmosfera ($p_1 = p_2 = p_3 = p_"atm"$), applicando il teorema di Bernoulli lungo due linee di corrente che vanno dalla sezione $S_1$ alle sezioni $S_2$ e $S_3$ si ottiene che la velocità rimane costante in modulo:
-   $
-   U_1 = U_2 = U_3 = U
-   $
+      // Getto orizzontale entrante da sinistra (S1, spessore h1)
+      line((-0.8, 0.45), (2.1, 0.45), stroke: 1.1pt + rgb("#1f5a96"))
+      line((-0.8, -0.45), (1.5, -0.45), stroke: 1.1pt + rgb("#1f5a96"))
+      line((-0.4, -0.45), (-0.4, 0.45), stroke: (paint: rgb("#1f5a96"), thickness: 1.1pt, dash: "dashed"))
+      content((-0.4, -0.78), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_1 (h_1)$])
+      line((-1.1, 0), (-0.05, 0), mark: (end: ">"), stroke: 1.1pt + rgb("#1f5a96"))
+      content((-0.65, 0.25), text(size: 8.5pt, fill: rgb("#1f5a96"))[$U_1$])
+
+      // Rami uscenti lungo la parete verso S2 (alto-destra) e S3 (basso-sinistra)
+      bezier((2.1, 0.45), (3.4, 2.25), (2.7, 0.45), (2.8, 1.4), stroke: 1.1pt + rgb("#1f5a96"))
+      bezier((1.5, -0.45), (0.85, -1.55), (1.7, -0.45), (1.3, -0.9), stroke: 1.1pt + rgb("#1f5a96"))
+
+      // Sezione S2 e S3
+      line((3.3, 2.1), (3.85, 1.72), stroke: (paint: rgb("#1f5a96"), thickness: 1.1pt, dash: "dashed"))
+      content((2.85, 2.15), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_2 (h_2)$])
+      line((0.8, -1.45), (1.15, -1.7), stroke: (paint: rgb("#1f5a96"), thickness: 1.1pt, dash: "dashed"))
+      content((0.35, -1.25), text(size: 8.5pt, fill: rgb("#1f5a96"))[$S_3 (h_3)$])
+
+      // Angolo theta
+      line((1.5, -0.45), (2.8, -0.45), stroke: (paint: gray, thickness: 0.7pt, dash: "dotted"))
+      arc((2.35, -0.45), start: 0deg, stop: 55deg, radius: 0.55, stroke: 0.8pt + black)
+      content((2.55, -0.18), text(size: 8.5pt)[$theta$])
+
+      // Assi locali t e n
+      line((2.9, 0.63), (3.55, 1.56), mark: (end: ">"), stroke: 1pt + rgb("#c0392b"))
+      content((3.75, 1.45), text(size: 8.5pt, fill: rgb("#c0392b"))[$t$])
+      line((2.9, 0.63), (3.75, 0.03), mark: (end: ">"), stroke: 1pt + rgb("#c0392b"))
+      content((3.95, 0.0), text(size: 8.5pt, fill: rgb("#c0392b"))[$n$])
+    })
+  ]
+)
 
 2. *Conservazione della massa (Equazione di continuità)*:
    Per un fluido incomprimibile in moto stazionario, la portata per unità di larghezza entrante da $S_1$ deve eguagliare la somma delle portate uscenti da $S_2$ e $S_3$:
@@ -900,7 +1023,7 @@ Per determinare le incognite ($U_2, U_3, h_2, h_3$ e la forza $vec{F}$) procedia
    $
 
 3. *Bilancio di quantità di moto lungo la direzione tangente $t$*:
-   Trascurando gli sforzi viscosi di attrito a parete ($tau_w approx 0$), la parete può esercitare sul fluido unicamente una forza di pressione diretta lungo la normale $n$: pertanto la componente tangenziale della forza è nulla ($F_t = 0$). Essendo nulle anche le pressioni relative su $S_1, S_2, S_3$ ($\Pi_t = 0$), l'equazione globale lungo $t$ si riduce a $M_t = -integral_S rho u_t (u_j n_j) dif S = 0$:
+   Trascurando gli sforzi viscosi di attrito a parete ($tau_w approx 0$), la parete può esercitare sul fluido unicamente una forza di pressione diretta lungo la normale $n$: pertanto la componente tangenziale della forza è nulla ($F_t = 0$). Essendo nulle anche le pressioni relative su $S_1, S_2, S_3$ ($Pi_t = 0$), l'equazione globale lungo $t$ si riduce a $M_t = -integral_S rho u_t (u_j n_j) dif S = 0$:
    - su $S_1$: il flusso è entrante ($u_j n_j = -U$) e la componente di velocità lungo $t$ vale $u_t = +U cos theta$, dando il contributo $+rho U^2 h_1 cos theta$;
    - su $S_2$: il flusso è uscente ($u_j n_j = +U$) e concorde con $t$ ($u_t = +U$), dando il contributo $-rho U^2 h_2$;
    - su $S_3$: il flusso è uscente ($u_j n_j = +U$) ma diretto in verso opposto a $t$ ($u_t = -U$), per cui $-rho (-U)(+U) h_3 = +rho U^2 h_3$.
@@ -922,14 +1045,14 @@ Per determinare le incognite ($U_2, U_3, h_2, h_3$ e la forza $vec{F}$) procedia
    $
    F_n = -rho U^2 h_1 sin theta
    $
-   *(Per $theta = 90 degree$ si ritrova come caso particolare il risultato dell'Esempio 3 per parete verticale: $h_2 = h_3 = h_1 / 2$ e $F_n = -rho U^2 h_1$).*
+   _Nota: per $theta = 90 degree$ si ritrova come caso particolare il risultato dell'Esempio 3 per parete verticale: $h_2 = h_3 = h_1 / 2$ e $F_n = -rho U^2 h_1$._
 
 == Estensione ai flussi esterni: forza su un corpo tozzo
 
 Questo stesso approccio integrale può essere impiegato per valutare la forza aerodinamica o idrodinamica esercitata sul fluido da un corpo tozzo immerso in una corrente esterna indisturbata di velocità $u_infinity$:
 
 #grid(
-  columns: (1.2fr, 0.8fr),
+  columns: (1.15fr, 0.85fr),
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
   [
@@ -943,8 +1066,35 @@ Questo stesso approccio integrale può essere impiegato per valutare la forza ae
     $
   ],
   [
-    #image("immagini/04e73b15-c902-4152-a68f-147f1a1b72b6-10_738_1950_761_25.jpg", width: 85%)
+    #cetz.canvas(length: 0.78cm, {
+      import cetz.draw: *
+      // Volume di controllo esterno tratteggiato
+      rect((0.5, -1.5), (4.6, 1.5), stroke: (paint: gray, thickness: 0.8pt, dash: "dashed"))
+      content((0.8, 1.25), text(size: 8pt, fill: gray)[$S_1$])
+      content((4.3, 1.25), text(size: 8pt, fill: gray)[$S_2$])
+
+      // Profilo di velocità uniforme a monte (S1)
+      line((0.5, -1.5), (0.5, 1.5), stroke: 1pt + rgb("#1f5a96"))
+      for y in (-1.2, -0.6, 0, 0.6, 1.2) {
+        line((-0.3, y), (0.5, y), mark: (end: ">"), stroke: 0.8pt + rgb("#1f5a96"))
+      }
+      content((0.0, -1.85), text(size: 8pt, fill: rgb("#1f5a96"))[profilo a monte ($u_infinity$)])
+
+      // Corpo tozzo al centro
+      circle((2.4, 0), radius: (0.65, 0.48), fill: gray.lighten(50%), stroke: 1.3pt + black)
+      content((2.4, 0), text(size: 8.5pt)[$arrow(F)_x$])
+      line((2.8, 0.35), (3.15, 0.65), mark: (end: ">"), stroke: 0.8pt + rgb("#c0392b"))
+      content((3.3, 0.55), text(size: 7.5pt, fill: rgb("#c0392b"))[$arrow(n)$])
+
+      // Profilo di velocità con deficit nella scia a valle (S2)
+      line((4.6, -1.5), (4.6, 1.5), stroke: 1pt + rgb("#1f5a96"))
+      bezier((5.4, 1.5), (4.9, 0), (5.4, 0.6), (4.9, 0.35), stroke: 1pt + rgb("#1f5a96"))
+      bezier((5.4, -1.5), (4.9, 0), (5.4, -0.6), (4.9, -0.35), stroke: 1pt + rgb("#1f5a96"))
+      for (y, dx) in ((-1.2, 0.78), (-0.6, 0.65), (0, 0.3), (0.6, 0.65), (1.2, 0.78)) {
+        line((4.6, y), (4.6 + dx, y), mark: (end: ">"), stroke: 0.8pt + rgb("#1f5a96"))
+      }
+      content((4.9, -1.85), text(size: 8pt, fill: rgb("#1f5a96"))[profilo a valle (scia)])
+    })
   ]
 )
-
 
