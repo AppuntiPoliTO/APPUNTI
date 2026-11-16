@@ -68,7 +68,7 @@
 // =====================================================================
 // 3. Sforzo viscoso tau_rz = G r / 2: nullo sull'asse, lineare fino a parete
 // =====================================================================
-#let fig-tau() = canvas(length: 1cm, {
+#let fig-tau() = canvas(length: 1.2cm, {
   import draw: *
   let tw = 1.6                 // |tau_rz| a parete, in scala
   let (x0, x1) = (-3.3, 1.8)
