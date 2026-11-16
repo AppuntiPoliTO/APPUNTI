@@ -214,21 +214,25 @@ Il terzo termine, $arrow(Pi)_w = integral_(S_w) sigma_(i j) n_j dif S_w = arrow(
 
 === Bilancio per condotta orizzontale a sezione costante
 
-Consideriamo una condotta cilindrica orizzontale ($G_x = 0$) in regime stazionario ($I_x = 0$). L'equazione globale lungo $x$ si riduce a:
+Consideriamo una condotta cilindrica orizzontale ($G_x = 0$) in regime stazionario ($arrow(I) = 0$). L'equazione globale si riduce a:
 
 $
 arrow(M) + arrow(Pi) = 0
 $
 
-Esplicitando i contributi lungo $x$, con $M_"in" = M_(x, 1)$ e $M_"out" = M_(x, 2)$:
+Scomponiamo la superficie di controllo in $S = S_1 union S_2 union S_w$ (sezione d'ingresso $S_1$, sezione d'uscita $S_2$ e parete laterale $S_w$):
+- per $arrow(M) = - integral_S rho u_i u_j n_j dif S$, il flusso attraverso la parete impermeabile $S_w$ è nullo; lungo $x$, su $S_1$ la velocità è opposta alla normale uscente ($n_(1, x) = -1$) e dà il contributo positivo entrante $M_"in" = rho U_(d, 1)^2 S_1$, mentre su $S_2$ è concorde ($n_(2, x) = +1$) e dà il contributo negativo uscente $-M_"out" = -rho U_(d, 2)^2 S_2$;
+- per $arrow(Pi) = integral_S sigma_(i j) n_j dif S$, l'integrale si spezza nei tre contributi su $S_1$, $S_2$ e $S_w$: $arrow(Pi) = arrow(Pi)_1 + arrow(Pi)_2 + arrow(F)$, dove $arrow(F) = integral_(S_w) sigma_(i j) n_j dif S$ è la forza esercitata dalla parete sul fluido. Trascurando su $S_1$ e $S_2$ il termine viscoso rispetto alla pressione ($sigma_(i j) approx -p delta_(i j)$), si ha $Pi_(x, 1) = p_1 S_1$ e $Pi_(x, 2) = -p_2 S_2$.
+
+Esplicitando il bilancio lungo $x$:
 
 $
-(M_(x, 1) - M_(x, 2)) + (Pi_(x, 1) - Pi_(x, 2)) + F_x &= 0 \
-F_x &= -[(M_(x, 1) - M_(x, 2)) + (Pi_(x, 1) - Pi_(x, 2))] = \
+(M_"in" - M_"out") + (Pi_(x, 1) + Pi_(x, 2) + F_x) &= 0 \
+F_x &= -[(M_"in" - M_"out") + (Pi_(x, 1) + Pi_(x, 2))] = \
 &= -[(rho U_(d, 1)^2 S_1 - rho U_(d, 2)^2 S_2) + (p_1 S_1 - p_2 S_2)]
 $
 
-Se la sezione della condotta è costante ($S_1 = S_2 = S$), per la conservazione della portata ($Q = U_(d, 1) S_1 = U_(d, 2) S_2$) si ha $U_(d, 1) = U_(d, 2) = U_d$. I flussi convettivi di quantità di moto in ingresso e in uscita sono pertanto identici e si elidono ($M_(x, 1) = M_(x, 2)$), lasciando:
+Se la sezione della condotta è costante ($S_1 = S_2 = S$), per la conservazione della portata ($Q = U_(d, 1) S_1 = U_(d, 2) S_2$) si ha $U_(d, 1) = U_(d, 2) = U_d$. I flussi convettivi di quantità di moto in ingresso e in uscita sono pertanto identici e si elidono ($M_"in" = M_"out"$), lasciando:
 
 $
 F_x = -S (p_1 - p_2)
@@ -241,7 +245,7 @@ Poiché per mantenere il moto in presenza di attrito deve essere $p_1 > p_2$, la
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
   [
-    Per una condotta circolare di raggio $R$ e lunghezza $L$, la forza $F_x$ è l'integrale dello sforzo tangenziale a parete $tau_w$ (inteso in modulo) sulla superficie laterale $S_w = 2 pi R L$, diretto in verso opposto al moto ($F_x = -tau_w S_w$). In condizioni stazionarie:
+    Per una condotta circolare di raggio $R$ e lunghezza $L$, sulla superficie laterale $S_w = 2 pi R L$ la normale uscente è radiale ($n_x = 0$): nell'integrale $F_x = integral_(S_w) sigma_(x j) n_j dif S$ il contributo della pressione è dunque nullo e sopravvive solo lo sforzo viscoso tangenziale a parete (di modulo $tau_w$, diretto in verso opposto al moto), ovvero $F_x = -tau_w S_w$. In condizioni stazionarie:
     $
     (p_1 - p_2) S &= tau_w S_w \
     [p(x_1) - (p(x_1) + (partial p) / (partial x) L)] pi R^2 &= tau_w 2 pi R L
@@ -302,7 +306,6 @@ Ricordando che il diametro è $D = 2 R$ e introducendo il *coefficiente di resis
 $
 psi = ((Delta p) / L) / (1/2 rho U_d^2 / D) quad ==> quad c_f = (Delta p) / L dot R / (rho U_d^2) = (Delta p) / L dot D / (4 dot 1/2 rho U_d^2) = psi / 4
 $
-
 == Esempio 1: Condotta a sezione variabile
 
 Consideriamo ora una condotta orizzontale la cui sezione varia da $S_1$ a $S_2$ (ad esempio un tratto convergente o divergente).
