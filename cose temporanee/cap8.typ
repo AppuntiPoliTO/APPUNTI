@@ -204,30 +204,40 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     le forze viscose dominano su quelle inerziali. Le linee di corrente seguono il profilo del corpo senza distacco e presentano un andamento pressoché simmetrico tra monte e valle (ma il campo è fortemente rotazionale e viscoso, non a potenziale).
   ],
   [
-    #canvas(length: 0.76cm, {
-      import draw: *
-      content((2.9, 1.38), text(size: 7.5pt, weight: "bold")[$"Re" << 1$])
+    #canvas(length: 1cm, {
+  import draw: *
+  content((3.1, 1.55), text(size: 8.5pt)[*$"Re" << 1$*], anchor: "south")
 
-      // Profilo velocità uniforme a monte
-      line((0.2, -0.8), (0.2, 0.8), stroke: 0.7pt + col-gray)
-      for y in (-0.7, -0.35, 0, 0.35, 0.7) {
-        line((0.2, y), (0.85, y), mark: (end: "stealth", size: 0.11, fill: col-primary), stroke: 0.75pt + col-primary)
-      }
-      content((0.52, 1.05), text(size: 7.5pt, fill: col-primary)[$u_infinity$])
+  line((0.2, -0.9), (0.2, 0.9), stroke: 0.7pt + gray)
+  line((0.2, -0.76), (0.9, -0.76), mark: (end: ">"), stroke: 0.8pt + blue)
+  line((0.2, -0.38), (0.9, -0.38), mark: (end: ">"), stroke: 0.8pt + blue)
+  line((0.2, 0.0), (0.9, 0.0), mark: (end: ">"), stroke: 0.8pt + blue)
+  line((0.2, 0.38), (0.9, 0.38), mark: (end: ">"), stroke: 0.8pt + blue)
+  line((0.2, 0.76), (0.9, 0.76), mark: (end: ">"), stroke: 0.8pt + blue)
+  content((0.55, 0.95), text(size: 8pt, fill: blue)[$u_infinity$], anchor: "south")
 
-      // Sfera/cilindro con quota diametro D
-      circle((2.9, 0), radius: 0.62, fill: luma(238), stroke: 1.1pt + black)
-      line((2.48, -0.42), (3.32, 0.42), mark: (start: "stealth", end: "stealth", size: 0.1, fill: black), stroke: 0.7pt + black)
-      content((3.02, -0.18), text(size: 7.5pt)[$D$])
+  circle((3.1, 0), radius: 0.65, fill: luma(238), stroke: 1.1pt + black)
+  line((2.64, -0.46), (3.56, 0.46), mark: (start: ">", end: ">"), stroke: 0.75pt + black)
+  content((3.22, -0.18), text(size: 8pt)[$D$], anchor: "north")
 
-      // Linee di corrente simmetriche
-      for s in (-1, 1) {
-        bezier((1.1, s * 0.24), (2.9, s * 0.78), (2.0, s * 0.24), (2.3, s * 0.78), stroke: 0.85pt + col-primary)
-        bezier((2.9, s * 0.78), (4.7, s * 0.24), (3.5, s * 0.78), (3.8, s * 0.24), stroke: 0.85pt + col-primary)
-        bezier((1.1, s * 0.62), (2.9, s * 1.08), (2.0, s * 0.62), (2.3, s * 1.08), stroke: 0.85pt + col-primary)
-        bezier((2.9, s * 1.08), (4.7, s * 0.62), (3.5, s * 1.08), (3.8, s * 0.62), stroke: 0.85pt + col-primary)
-      }
-    })
+  bezier((1.15, 0.18), (3.1, 0.82), (2.15, 0.18), (2.45, 0.82), stroke: 0.85pt + blue)
+  bezier((3.1, 0.82), (5.05, 0.18), (3.75, 0.82), (4.05, 0.18), mark: (end: ">"), stroke: 0.85pt + blue)
+
+  bezier((1.15, 0.52), (3.1, 1.12), (2.1, 0.52), (2.45, 1.12), stroke: 0.85pt + blue)
+  bezier((3.1, 1.12), (5.05, 0.52), (3.75, 1.12), (4.1, 0.52), mark: (end: ">"), stroke: 0.85pt + blue)
+
+  bezier((1.15, 0.88), (3.1, 1.38), (2.1, 0.88), (2.45, 1.38), stroke: 0.85pt + blue)
+  bezier((3.1, 1.38), (5.05, 0.88), (3.75, 1.38), (4.1, 0.88), mark: (end: ">"), stroke: 0.85pt + blue)
+
+  bezier((1.15, -0.18), (3.1, -0.82), (2.15, -0.18), (2.45, -0.82), stroke: 0.85pt + blue)
+  bezier((3.1, -0.82), (5.05, -0.18), (3.75, -0.82), (4.05, -0.18), mark: (end: ">"), stroke: 0.85pt + blue)
+
+  bezier((1.15, -0.52), (3.1, -1.12), (2.1, -0.52), (2.45, -1.12), stroke: 0.85pt + blue)
+  bezier((3.1, -1.12), (5.05, -0.52), (3.75, -1.12), (4.1, -0.52), mark: (end: ">"), stroke: 0.85pt + blue)
+
+  bezier((1.15, -0.88), (3.1, -1.38), (2.1, -0.88), (2.45, -1.38), stroke: 0.85pt + blue)
+  bezier((3.1, -1.38), (5.05, -0.88), (3.75, -1.38), (4.1, -0.88), mark: (end: ">"), stroke: 0.85pt + blue)
+})
   ],
 
   // 2. Re ~ 1 - 20
@@ -236,41 +246,43 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     l'inerzia del fluido non è più trascurabile. A valle del punto di minima pressione ($p_"min"$) il fluido incontra un gradiente di pressione avverso (da $p_"min"$ verso la zona di recupero a valle) e non riesce a rimanere attaccato alla parete: si formano due vortici stazionari e simmetrici di ricircolo in scia.
   ],
   [
-    #canvas(length: 0.76cm, {
-      import draw: *
-      // Assi cartesiani x1, x2
-      line((0.1, 0), (5.1, 0), mark: (end: "stealth", size: 0.12, fill: col-gray), stroke: (paint: col-gray, thickness: 0.6pt, dash: "dashed"))
-      line((0.35, -0.85), (0.35, 1.05), mark: (end: "stealth", size: 0.12, fill: black), stroke: 0.75pt + black)
-      content((5.3, -0.18), text(size: 7.5pt)[$x_1$])
-      content((0.12, 1.0), text(size: 7.5pt)[$x_2$])
+    #canvas(length: 1cm, {
+  import draw: *
+  line((0.1, 0), (5.3, 0), mark: (end: ">"), stroke: (paint: gray, thickness: 0.65pt, dash: "dashed"))
+  line((0.35, -1.0), (0.35, 1.25), mark: (end: ">"), stroke: 0.75pt + black)
+  content((5.4, 0), text(size: 8pt)[$x_1$], anchor: "west")
+  content((0.25, 1.2), text(size: 8pt)[$x_2$], anchor: "east")
 
-      // Corpo
-      circle((2.1, 0), radius: 0.62, fill: luma(238), stroke: 1.1pt + black)
+  circle((2.1, 0), radius: 0.65, fill: luma(238), stroke: 1.1pt + black)
 
-      // Coordinate curvilinee xi_1 (tangente) e xi_2 (normale) sulla spalla superiore sinistra
-      let px = 2.1 - 0.62 * 0.707
-      let py = 0.62 * 0.707
-      line((px, py), (px - 0.38, py + 0.38), mark: (end: "stealth", size: 0.1, fill: col-green), stroke: 0.75pt + col-green)
-      line((px, py), (px + 0.35, py + 0.35), mark: (end: "stealth", size: 0.1, fill: col-green), stroke: 0.75pt + col-green)
-      content((px - 0.52, py + 0.45), text(size: 7pt, fill: col-green)[$xi_2$])
-      content((px + 0.25, py + 0.52), text(size: 7pt, fill: col-green)[$xi_1$])
+  line((1.64, 0.46), (1.22, 0.88), mark: (end: ">"), stroke: 0.8pt + rgb("#1b8a3d"))
+  line((1.64, 0.46), (2.06, 0.88), mark: (end: ">"), stroke: 0.8pt + rgb("#1b8a3d"))
+  content((1.18, 0.92), text(size: 7.5pt, fill: rgb("#1b8a3d"))[$xi_2$], anchor: "south-east")
+  content((2.10, 0.92), text(size: 7.5pt, fill: rgb("#1b8a3d"))[$xi_1$], anchor: "south-west")
 
-      // Punti p_max e p_min
-      circle((1.48, 0), radius: 0.065, fill: col-accent, stroke: none)
-      circle((2.1, 0.62), radius: 0.065, fill: col-accent, stroke: none)
-      content((1.05, -0.22), text(size: 7.5pt, fill: col-accent)[$p_"max"$])
-      content((2.58, 1.02), text(size: 7.5pt, fill: col-accent)[$p_"min"$])
+  circle((1.45, 0), radius: 0.065, fill: red, stroke: none)
+  circle((2.1, 0.65), radius: 0.065, fill: red, stroke: none)
+  content((1.35, -0.12), text(size: 7.5pt, fill: red)[$p_"max"$], anchor: "north-east")
+  content((2.32, 0.98), text(size: 7.5pt, fill: red)[$p_"min"$], anchor: "south-west")
 
-      // Linee di corrente esterne e due vortici chiusi simmetrici in scia
-      for s in (-1, 1) {
-        bezier((0.65, s * 0.32), (2.1, s * 0.78), (1.4, s * 0.32), (1.7, s * 0.78), stroke: 0.85pt + col-primary)
-        bezier((2.1, s * 0.78), (4.8, s * 0.48), (2.9, s * 0.82), (3.8, s * 0.55), stroke: 0.85pt + col-primary)
+  bezier((0.65, 0.25), (2.1, 0.82), (1.35, 0.25), (1.65, 0.82), stroke: 0.85pt + blue)
+  bezier((2.1, 0.82), (4.95, 0.48), (3.0, 0.85), (3.95, 0.62), mark: (end: ">"), stroke: 0.85pt + blue)
 
-        // Vortice chiuso di ricircolo (superiore e inferiore non sovrapposti)
-        bezier((2.68, s * 0.38), (3.75, s * 0.12), (3.15, s * 0.52), (3.75, s * 0.32), stroke: 0.8pt + col-accent)
-        bezier((3.75, s * 0.12), (2.72, s * 0.14), (3.45, s * 0.04), (2.95, s * 0.06), mark: (end: "stealth", size: 0.09, fill: col-accent), stroke: 0.8pt + col-accent)
-      }
-    })
+  bezier((0.65, 0.58), (2.1, 1.12), (1.35, 0.58), (1.65, 1.12), stroke: 0.85pt + blue)
+  bezier((2.1, 1.12), (4.95, 0.82), (3.0, 1.15), (3.95, 0.92), mark: (end: ">"), stroke: 0.85pt + blue)
+
+  bezier((0.65, -0.25), (2.1, -0.82), (1.35, -0.25), (1.65, -0.82), stroke: 0.85pt + blue)
+  bezier((2.1, -0.82), (4.95, -0.48), (3.0, -0.85), (3.95, -0.62), mark: (end: ">"), stroke: 0.85pt + blue)
+
+  bezier((0.65, -0.58), (2.1, -1.12), (1.35, -0.58), (1.65, -1.12), stroke: 0.85pt + blue)
+  bezier((2.1, -1.12), (4.95, -0.82), (3.0, -1.15), (3.95, -0.92), mark: (end: ">"), stroke: 0.85pt + blue)
+
+  bezier((2.7, 0.36), (3.95, 0.14), (3.2, 0.52), (3.95, 0.34), stroke: 0.8pt + red)
+  bezier((3.95, 0.14), (2.75, 0.14), (3.65, 0.04), (3.05, 0.05), mark: (end: ">"), stroke: 0.8pt + red)
+
+  bezier((2.7, -0.36), (3.95, -0.14), (3.2, -0.52), (3.95, -0.34), stroke: 0.8pt + red)
+  bezier((3.95, -0.14), (2.75, -0.14), (3.65, -0.04), (3.05, -0.05), mark: (end: ">"), stroke: 0.8pt + red)
+})
   ],
 
   // 3. Distacco dello strato limite
