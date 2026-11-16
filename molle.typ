@@ -368,27 +368,14 @@ Un esempio classico di applicazione è la sospensione automobilistica con molla 
 
 Nel collegamento #strong[in parallelo] (ad esempio due molle concentriche poste tra gli stessi piani d'appoggio), le molle subiscono lo stesso spostamento (freccia), mentre la forza totale è la somma delle forze sostenute dalle singole molle:
 
-// NOTA: \implies convertito in arrow.r.double
+
 $ f = f_1 = f_2, quad quad F = F_1 + F_2 $
 
 $ F = k f = (k_1 + k_2) f arrow.r.double k = k_1 + k_2 $ In generale, per $N$ molle in parallelo:
 
-$ k = sum_(i=1)^N k_i $],[// FASE 1 - ANALISI (Figura 1: molle coassiali in parallelo)
-// 1. PANNELLO E SCALA: un pannello, origine O = intersezione tra asse verticale e piano di base (0, 0).
-//    Larghezza piastra = 4.04 cm (x da -2.02 a +2.02), altezza tra base e piastra = 4.41 cm.
-// 2. ELEMENTI:
-//    - Piano di base y = 0, x da -2.20 a +2.25, con 11 tratti di tratteggio obliquo sotto.
-//    - Piastra superiore: x da -2.02 a +2.02, y da 4.41 a 4.86.
-//    - Molla 2 (esterna): raggio filo r2 = 0.27, centri a x = +-1.74, passo P2 = 0.98 (4.5 spire).
-//      Visibili tratti posteriori in discesa da sinistra a destra (coperti al centro da molla 1), tratteggio -60 deg (\).
-//    - Molla 1 (interna): raggio filo r1 = 0.12, centri a x = +-1.12, passo P1 = 0.4642 (9.5 spire).
-//      9 tratti posteriori (discesa) e 10 tratti anteriori (salita), tratteggio +60 deg (/).
-//    - Asse verticale tratto-punto in x = 0 da y = 0 a y = 4.86. Forza F verso (0, 4.86), freccia f a destra, richiami "molla 1" e "molla 2".
-// 3. CLASSIFICAZIONE CURVE: circle e arc (semicerchi), tratti rettilinei con line, piastra con rect. Nessuna bezier.
-
-// FASE 2 - COSTRUZIONE
+$ k = sum_(i=1)^N k_i $],[
 #include "figs/molle-fig17.typ"
-// FASE 3 - VERIFICA: circle e arc (anchor: "origin", start < stop) per sezioni, line per tratti elicoidali/base/asse/F/f, rect per piastra. Nessuna parola vietata.
+
 ])
 
 #v(2em)
@@ -406,19 +393,7 @@ Introducendo la #strong[deformabilità] $delta = frac(1, k)$, si ottiene:
 $ frac(1, k) = frac(1, k_1) + frac(1, k_2) = delta $
  In generale, per $N$ molle in serie:
 
-$ frac(1, k) = sum_(i=1)^N frac(1, k_i), quad quad delta = sum_(i=1)^N delta_i $],[// FASE 1 - ANALISI (Figura 2: molle in serie)
-// 1. PANNELLO E SCALA: un pannello, origine O = intersezione tra asse verticale e piano di base (0, 0).
-//    Larghezza piastre = 4.00 cm (x da -2.00 a +2.00). Piastra intermedia y = 3.26..3.69, piastra superiore y = 6.40..6.83.
-// 2. ELEMENTI:
-//    - Piano di base y = 0, x da -2.20 a +2.25, con 11 tratti di tratteggio obliquo sotto.
-//    - Molla 2 (inferiore): raggio filo r2 = 0.25, centri a x = +-1.63, passo P2 = 0.9314 (3.5 spire).
-//      4 tratti anteriori in discesa da sinistra a destra; tratteggio -60 deg (\).
-//    - Molla 1 (superiore): raggio filo r1 = 0.14, centri a x = +-1.06, passo P1 = 0.4927 (5.5 spire).
-//      6 tratti anteriori in salita da sinistra a destra; tratteggio +60 deg (/).
-//    - Asse verticale tratto-punto in x = 0 da y = 0 a y = 6.83. Forza F verso (0, 6.83), freccia f a destra, richiami "molla 1" e "molla 2".
-// 3. CLASSIFICAZIONE CURVE: circle e arc (semicerchi), tratti rettilinei con line, piastre con rect. Nessuna bezier.
-
-// FASE 2 - COSTRUZIONE
+$ frac(1, k) = sum_(i=1)^N frac(1, k_i), quad quad delta = sum_(i=1)^N delta_i $],[
 #include "figs/molle-fig18.typ"
 ])
 
@@ -436,25 +411,7 @@ Sussiste un'analogia elettromeccanica con la resistenza elettrica $R$, associand
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Per le molle elicoidali di trazione il punto critico è l'anello terminale (gancio di collegamento). Poiché il gancio è ruotato di $90 degree$ rispetto alle spire normali e la forza $F$ è applicata lungo l'asse dell'elica, nelle estremità si instaura uno stato tensionale complesso (modellabile come trave curva) dovuto all'accoppiamento tra forza normale, momento flettente (prodotto dal braccio della forza $F$ rispetto alla sezione critica) ed effetti di intaglio legati ai piccoli raggi di curvatura ($r_1, r_2, r_3, r_4$). La verifica critica si concentra in particolare sulla sezione trasversale esposta al massimo momento flettente (sezione A-A o B-B).],[// FASE 1 - ANALISI (Script 2: molla a trazione con occhiello, viste frontale e laterale)
-// 1. PANNELLI E SCALA:
-//    Due viste affiancate della stessa molla, larghezza totale ~ 7.5 cm, altezza ~ 4.6 cm.
-//    - Vista frontale (sinistra, asse x = 0.00):
-//      Corpo spire accostate: D = 2.40 cm (x in [-1.20, 1.20]), filo d = 0.26 cm (r = 0.13 cm).
-//      5 raccordi a sinistra (L1..L5) e 4 a destra (R1..R4), passo P = 0.26 cm, altezza corpo ~ 1.30 cm.
-//      Occhiello centrato in (0.00, 2.02): raggio interno r1 = 0.66 cm, raggio esterno r3 = 0.92 cm (r3 - r1 = 0.26 = d),
-//      estremita sinistra arrotondata a t = 168 deg. Sezione A-A orizzontale per y = 2.02. Forza F da (0.00, 2.02) verso l'alto.
-//      Quote: D in basso con linee di richiamo verticali, d a sinistra del corpo.
-//    - Vista laterale (destra, asse x = 4.20):
-//      Corpo identico centrato su x = 4.20. Da L5 il filo sale con raccordo a gomito centrato in (3.72, 1.69)
-//      con raggio interno r2 = 0.35 cm ed esterno r4 = 0.61 cm (r4 - r2 = 0.26 = d), fino al tratto verticale
-//      centrato su x = 4.20 con estremita arrotondata a y = 2.94. Sezione B-B inclinata a -38 deg.
-//      Forza F lungo x = 4.20 verso l'alto. Quota D in basso.
-// 2. CLASSIFICAZIONE CURVE:
-//    Tutti i raccordi, l'occhiello e il gomito sono archi circolari esatti (arc); i tratti rettilinei,
-//    le quote, gli assi e i richiami sono line; le punte di F sono triangoli pieni (line close: true). Nessuna bezier.
-
-// FASE 2 - COSTRUZIONE
+  align: (left + horizon, center + horizon),[Per le molle elicoidali di trazione il punto critico è l'anello terminale (gancio di collegamento). Poiché il gancio è ruotato di $90 degree$ rispetto alle spire normali e la forza $F$ è applicata lungo l'asse dell'elica, nelle estremità si instaura uno stato tensionale complesso (modellabile come trave curva) dovuto all'accoppiamento tra forza normale, momento flettente (prodotto dal braccio della forza $F$ rispetto alla sezione critica) ed effetti di intaglio legati ai piccoli raggi di curvatura ($r_1, r_2, r_3, r_4$). La verifica critica si concentra in particolare sulla sezione trasversale esposta al massimo momento flettente (sezione A-A o B-B).],[
 #include "figs/molle-fig19.typ"
 // FASE 3 - VERIFICA: arc (anchor: "origin", start < stop) per raccordi spire, occhiello (r1=0.66, r3=0.92, punta 168..348deg) e gomito (r2=0.35, r4=0.61); line per tratti rettilinei, quote e assi. Nessuna parola vietata.
 ])
