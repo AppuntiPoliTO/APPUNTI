@@ -304,17 +304,18 @@ F_x = -S (p_1 - p_2)
 $
 
 Poiché per mantenere il moto in presenza di attrito deve essere $p_1 > p_2$, la forza $F_x$ risulta *negativa*: essa è infatti la forza di resistenza viscosa esercitata dalla parete sul fluido, che si oppone al deflusso.
-Per una condotta circolare di raggio $R$ e lunghezza $L$, sulla superficie laterale $S_w = 2 pi R L$ la normale uscente è radiale ($n_x = 0$): nell'integrale $F_x = integral_(S_w) sigma_(x j) n_j dif S$ il contributo della pressione è dunque nullo e sopravvive solo lo sforzo viscoso tangenziale a parete (di modulo $tau_w$, diretto in verso opposto al moto), ovvero $F_x = -tau_w S_w$. In condizioni stazionarie:
-    $
-    (p_1 - p_2) S &= tau_w S_w \
-    [p(x_1) - (p(x_1) + (partial p) / (partial x) L)] pi R^2 &= tau_w 2 pi R L
-    $
-    Definendo la caduta di pressione positiva $Delta p = p_1 - p_2 > 0$ (ovvero $-(partial p / partial x) L = Delta p$):
-    $
-    pi R^2 Delta p = tau_w 2 pi R L quad ==> quad tau_w = (Delta p) / (2 L) R
-    $
 
+Per una condotta circolare di raggio $R$ e lunghezza $L$, sulla superficie laterale $S_w = 2 pi R L$ la normale uscente è radiale ($n_x = 0$): nell'integrale $F_x = integral_(S_w) sigma_(x j) n_j dif S$ il contributo della pressione è dunque nullo e sopravvive solo lo sforzo viscoso tangenziale a parete (di modulo $tau_w$, diretto in verso opposto al moto):
+$ F_x = -tau_w S_w $
 
+In condizioni stazionarie, prendiamo l'espressione ottenuta dal bilancio lungo $x$ e la uguagliamo a quella appena trovata:
+$ (p_1 - p_2) S = tau_w S_w $
+
+Sostituiamo $p_1 = p(x_1)$, $p_2 = p(x_1) + (partial p) / (partial x) L$, la sezione $S = pi R^2$ e la superficie laterale $S_w = 2 pi R L$:
+$ [p(x_1) - (p(x_1) + (partial p) / (partial x) L)] pi R^2 = tau_w 2 pi R L $
+
+Definiamo infine la caduta di pressione positiva $Delta p = p_1 - p_2 > 0$ (ovvero $-(partial p / partial x) L = Delta p$) e sostituiamola per ricavare lo sforzo a parete:
+$ pi R^2 Delta p = tau_w 2 pi R L quad ==> quad tau_w = (Delta p) / (2 L) R $
 #nota-box("Confronto con le equazioni di Navier-Stokes")[
   A differenza dell'approccio differenziale visto nella soluzione di Poiseuille (in cui era necessario risolvere le equazioni di Navier-Stokes per determinare il profilo di velocità e derivarlo a parete), il bilancio globale permette di calcolare lo sforzo viscoso a parete $tau_w$ direttamente dalla caduta di pressione $Delta p$ e dalla geometria, *senza conoscere il dettaglio del campo di velocità interno*.
 ]
