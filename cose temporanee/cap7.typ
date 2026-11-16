@@ -256,38 +256,48 @@ Poiché per mantenere il moto in presenza di attrito deve essere $p_1 > p_2$, la
     $
   ],
   [
-    #cetz.canvas(length: 1cm, {
-      import cetz.draw: *
-      // Cilindro
-      line((0, 1.1), (4.6, 1.1), stroke: 1.4pt + black)
-      line((0, -1.1), (4.6, -1.1), stroke: 1.4pt + black)
-      circle((0, 0), radius: (0.35, 1.1), stroke: 1.2pt + rgb("#1f5a96"), fill: rgb("#e8f1fa"))
-      circle((4.6, 0), radius: (0.35, 1.1), stroke: 1.2pt + rgb("#1f5a96"))
+    #canvas(length: 1cm, {
+  import draw: *
 
-      // Asse e raggio R
-      line((-0.6, 0), (5.5, 0), mark: (end: ">"), stroke: (paint: gray, thickness: 0.7pt, dash: "dash-dotted"))
-      content((5.75, 0), text(size: 9pt)[$x$])
-      line((0, 0), (0, 1.1), mark: (end: ">"), stroke: 0.9pt + black)
-      content((0.3, 0.55), text(size: 8.5pt)[$R$])
+  // Riempimento leggero della sezione di ingresso
+  circle((1.80, 2.30), radius: (0.40, 1.10), fill: blue.transparentize(88%), stroke: none)
 
-      // Sforzi tau_w (opposti al moto)
-      line((3.2, 0.85), (1.6, 0.85), mark: (end: ">"), stroke: 1.1pt + rgb("#c0392b"))
-      content((2.4, 0.55), text(size: 9pt, fill: rgb("#c0392b"))[$tau_w$])
-      line((3.2, -0.85), (1.6, -0.85), mark: (end: ">"), stroke: 1.1pt + rgb("#c0392b"))
-      content((2.4, -0.55), text(size: 9pt, fill: rgb("#c0392b"))[$tau_w$])
+  // Asse x (linea tratto-punto)
+  line((1.10, 2.30), (7.40, 2.30), mark: (end: ">"), stroke: (paint: gray, dash: "dash-dotted", thickness: 0.75pt))
+  content((7.55, 2.30), text(size: 8.5pt)[$x$], anchor: "west")
 
-      // Pressioni p1 e p2
-      line((-0.85, 0.4), (-0.1, 0.4), mark: (end: ">"), stroke: 1.1pt + rgb("#1f5a96"))
-      content((-0.9, 0.75), text(size: 9pt, fill: rgb("#1f5a96"))[$p_1$])
-      line((5.45, 0.4), (4.7, 0.4), mark: (end: ">"), stroke: 1.1pt + rgb("#1f5a96"))
-      content((5.5, 0.75), text(size: 9pt, fill: rgb("#1f5a96"))[$p_2$])
+  // Generatrici del cilindro orizzontale
+  line((1.80, 3.40), (6.40, 3.40), stroke: 1.15pt)
+  line((1.80, 1.20), (6.40, 1.20), stroke: 1.15pt)
 
-      // Quota L
-      line((0, -1.6), (4.6, -1.6), mark: (start: "<", end: ">"), stroke: 0.8pt + black)
-      line((0, -1.2), (0, -1.8), stroke: 0.5pt + gray)
-      line((4.6, -1.2), (4.6, -1.8), stroke: 0.5pt + gray)
-      content((2.3, -1.95), text(size: 9pt)[$L$])
-    })
+  // Sezioni circolari in prospettiva
+  circle((1.80, 2.30), radius: (0.40, 1.10), stroke: (paint: blue.darken(20%), thickness: 1pt))
+  circle((6.40, 2.30), radius: (0.40, 1.10), stroke: (paint: blue.darken(20%), thickness: 1pt))
+
+  // Raggio R
+  line((1.80, 2.30), (1.80, 3.40), mark: (end: ">"), stroke: 0.9pt)
+  content((1.90, 2.82), text(size: 8pt)[$R$], anchor: "west")
+
+  // Pressioni p1 e p2
+  line((0.85, 2.65), (1.68, 2.65), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 1.05pt))
+  content((0.76, 2.75), text(size: 8.5pt, fill: blue.darken(20%))[$p_1$], anchor: "east")
+
+  line((7.35, 2.65), (6.52, 2.65), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 1.05pt))
+  content((7.44, 2.75), text(size: 8.5pt, fill: blue.darken(20%))[$p_2$], anchor: "west")
+
+  // Sforzi tangenziali alla parete tau_w
+  line((4.90, 3.12), (3.30, 3.12), mark: (end: ">"), stroke: (paint: red.darken(15%), thickness: 1.05pt))
+  content((4.10, 2.98), text(size: 8.5pt, fill: red.darken(15%))[$tau_w$], anchor: "north")
+
+  line((4.90, 1.48), (3.30, 1.48), mark: (end: ">"), stroke: (paint: red.darken(15%), thickness: 1.05pt))
+  content((4.10, 1.62), text(size: 8.5pt, fill: red.darken(15%))[$tau_w$], anchor: "south")
+
+  // Quota lunghezza L
+  line((1.80, 1.05), (1.80, 0.55), stroke: (paint: gray.lighten(10%), thickness: 0.6pt))
+  line((6.40, 1.05), (6.40, 0.55), stroke: (paint: gray.lighten(10%), thickness: 0.6pt))
+  line((1.80, 0.78), (6.40, 0.78), mark: (start: ">", end: ">"), stroke: 0.9pt)
+  content((4.10, 0.62), text(size: 8.5pt)[$L$], anchor: "north")
+})
   ]
 )
 
