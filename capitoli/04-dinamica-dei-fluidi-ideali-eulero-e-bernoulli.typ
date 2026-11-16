@@ -294,7 +294,7 @@ $ u_1 = root(2, (2 (p_0 - p_1)) / rho) $
 
 == Fluido ideale
 
-#figure(canvas(length: 1cm, {
+#figure(canvas(length: 1.4cm, {
   import draw: *
 
   // --- VISTA 3D (pannello sinistro) ---
@@ -344,7 +344,6 @@ $ u_1 = root(2, (2 (p_0 - p_1)) / rho) $
   line((1.95, 2.05), (1.95, 1.57), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
   line((2.15, 2.05), (2.15, 1.57), mark: (end: ">"), stroke: 0.95pt + rgb(140, 45, 25))
 
-  content((1.95, -1.65), text(size: 8pt)[*Vista 3D*])
 
   // --- SEZIONE 2D (pannello destro) ---
   line((7.35, -1.30), (7.35, 2.38), stroke: (paint: gray.darken(25%), thickness: 0.7pt, dash: "dash-dotted"))
@@ -457,7 +456,7 @@ $ u_1 = root(2, (2 (p_0 - p_1)) / rho) $
   content((9.75, -1.22), text(size: 7.5pt)[$D$])
   line((9.68, -1.10), (9.38, -0.49), mark: (end: ">"), stroke: 0.6pt + gray.darken(30%))
 
-  content((7.35, -1.65), text(size: 8pt)[*Sezione 2D*])
+
 }))
 
 Consideriamo lo studio del sistema bobina-disco di carta: si soffia aria in un condotto verticale al di sopra di un disco di carta di superficie $S$. La carta rimane sospesa in equilibrio se la forza peso è bilanciata dalla forza aerodinamica verticale diretta verso l'alto.
