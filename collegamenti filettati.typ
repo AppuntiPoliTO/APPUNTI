@@ -15,14 +15,14 @@
 )
 #set heading(numbering: "1.")
 == Viti e Bulloni (Collegamenti filettati) – Serraggio
-==== Introduzione ai collegamenti filettati
+=== Introduzione ai collegamenti filettati
 Tra gli elementi di base della costruzione delle macchine rivestono un ruolo fondamentale i collegamenti filettati, rappresentati principalmente da viti, bulloni e prigionieri. La loro utilità progettuale risiede nel fatto che realizzano un collegamento smontabile, ossia una giunzione che può essere aperta e chiusa ripetutamente. Ciò garantisce un facile accesso alle parti interne della macchina, risultando indispensabile per operazioni di diagnosi, verifica delle condizioni di usura o di affaticamento dei componenti e, più in generale, per gli interventi di manutenzione.
 
 Rispetto ad altri metodi di giunzione come i collegamenti saldati, i collegamenti filettati permettono di unire le parti in tempi notevolmente rapidi e senza dover ricorrere a processi tecnologici complessi; inoltre, svitando la vite o il bullone è possibile disgiungere i componenti senza dover distruggere alcun elemento fisso (come accadrebbe dovendo rompere un cordone di saldatura).
 
 Lo studio di questi elementi affronta dapprima il richiamo della geometria e delle forme delle filettature, per poi analizzare le condizioni di serraggio e la relazione tra il momento applicato tramite la chiave e le forze che si sviluppano sulle parti compresse e all'interno del fusto della vite soggetto a trazione. Successivamente, l'analisi delle azioni applicate e delle tensioni nel fusto permette di eseguire il calcolo del collegamento in termini di resistenza statica, resistenza a fatica e verifica funzionale: il serraggio deve infatti generare una pressione di contatto e una forza d'attrito sufficienti a impedire lo scorrimento relativo tra le superfici bloccate sotto l'azione di disturbi o vibrazioni che potrebbero favorire la riapertura della giunzione (richiedendo, se necessario, appositi dispositivi antisvitamento o configurazioni specifiche in presenza di carichi trasversali).
 
-==== Tipologie di viti e normative delle filettature
+=== Tipologie di viti e normative delle filettature
 Nella letteratura tecnica si distinguono due grandi categorie di viti:
 - #strong[Viti di manovra:] sfruttano il principio dell'elica per trasmettere il moto, trasformando la rotazione della vite in uno spostamento traslazionale lungo una guida. Pur condividendo la geometria locale del filetto con le viti di collegamento, il loro dimensionamento è più affine a quello dei cuscinetti, poiché il funzionamento e il danneggiamento sono governati principalmente dallo scorrimento o dal rotolamento (come nelle viti a ricircolo di sfere, in cui l'elica funge da pista per le sfere), coinvolgendo trattamenti superficiali e materiali specifici per queste condizioni d'esercizio.
 - #strong[Viti di collegamento (smontabile):] impiegate per mantenere serrate due o più parti meccaniche insieme.
@@ -45,7 +45,7 @@ Le principali tipologie di filettature normalizzate per i collegamenti (con rife
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nel funzionamento generale di un bullone di collegamento, l'applicazione del momento di serraggio genera una forza di interazione tra le parti serrate, inducendo uno stato di trazione nel fusto della vite e di compressione nei pezzi. In esercizio, su questa configurazione precaricata agiscono le forze esterne di lavoro sulla macchina, e il flusso delle tensioni si trasferisce dal fusto della vite ai filetti del dado o della madrevite. Tale distribuzione del carico sui filetti non è uniforme: il flusso di forza si concentra maggiormente nei primi filetti in presa (tipicamente tra il secondo, il terzo e il quarto filetto della serie), rendendo questa zona la più critica ai fini della resistenza.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: animazione del funzionamento di un bullone in serraggio ed esercizio, con rappresentazione del precarico, del diagramma di equilibrio tra vite e pezzi, del vettore di carico esterno applicato e della concentrazione non uniforme del flusso di tensione sui primi filetti in presa]])
 
-==== Geometria della filettatura metrica ISO a profilo triangolare
+=== Geometria della filettatura metrica ISO a profilo triangolare
 La caratterizzazione geometrica di una filettatura metrica ISO a profilo triangolare si basa sul diametro nominale (esterno) della vite $d$, misurabile direttamente con il calibro in corrispondenza della cresta esterna della filettatura. Nella designazione normalizzata si indica la lettera $"M"$ seguita dal valore del diametro nominale in millimetri: ad esempio, $"M"10$ indica un diametro $d = 10 "mm"$ con passo grosso tabellato $p = 1,5 "mm"$, mentre $"M"10 times 1,25$ specifica un diametro $d = 10 "mm"$ abbinato a un passo fine indicato esplicitamente pari a $p = 1,25 "mm"$.
 
 L'angolo di apertura del profilo triangolare è $2 alpha = 60degree$. In funzione del passo $P$ (indicato anche come $p$) e del diametro nominale $d$, si definiscono le grandezze geometriche del profilo di riferimento, tra cui l'altezza del triangolo generatore $H$, il diametro medio $d_2 = D_2$ (posto a metà tra la superficie di testa e la superficie interna utilizzabile del filetto) e i diametri di fondo gola/nocciolo $d_1 = D_1$ e $d_3$:
@@ -61,7 +61,7 @@ $ d_3 = d - 2 h_3 = d - 1,226 87 P quad quad r = frac(H, 6) = 0,144 34 P $
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Ai fini del calcolo strutturale della sezione resistente della vite, si fa riferimento o al diametro di nocciolo (corrispondente alla gola più profonda con raccordo) oppure a un diametro resistente che, secondo le indicazioni delle normative tedesche, tiene conto anche di una porzione del filetto, poiché il filetto stesso è lateralmente vuoto e non oppone la medesima resistenza di un fusto pieno.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: sezione assiale del profilo triangolare di una filettatura metrica ISO in accoppiamento tra madrevite (superiore) e vite (inferiore), con indicazione del passo $P$, dell'angolo di apertura $60degree$, delle altezze $H$, $H/8$, $H/2$, $H/4$, $H_1$, $h_3$, dei diametri $D$, $D_2$, $D_1$ della madrevite e $d_3$, $d_1$, $d_2$, $d$ della vite, e del riquadro con le relative formule geometriche]])
 
-==== Nomenclatura dei collegamenti filettati
+=== Nomenclatura dei collegamenti filettati
 La distinzione terminologica tra le diverse configurazioni costruttive riveste un'importanza fondamentale sia in ambito professionale sia in sede d'esame:
 - #strong[Bullone (vite + dado):] è costituito da una vite che attraversa completamente i pezzi da collegare all'interno di un foro passante libero (il fusto della vite non deve toccare le pareti del foro) e si impegna in un dado, all'interno del quale è ricavata la madrevite. Il contatto si esercita esclusivamente tra il sottotesta della vite e la superficie esterna del primo blocco e tra la superficie interna del dado e la superficie esterna del blocco opposto.
 - #strong[Vite (mordente):] si impiega senza dado; la vite attraversa liberamente il primo pezzo (premendone la superficie esterna tramite il proprio sottotesta) e si avvita direttamente nella madrevite ricavata all'interno del secondo blocco, generalmente fisso, che svolge simultaneamente sia la funzione di elemento collegato sia quella del dado.
@@ -72,7 +72,7 @@ La distinzione terminologica tra le diverse configurazioni costruttive riveste u
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: tre viste in sezione della nomenclatura dei collegamenti filettati: in alto a sinistra un bullone (vite passante + dado) che serra due piastre; in basso a sinistra una vite mordente avvitata direttamente nel foro filettato del secondo pezzo; a destra un prigioniero avvitato nel foro cieco filettato inferiore e pronto a ricevere la chiusura superiore]])
 
-==== Analisi del collegamento e diagramma di interferenza
+=== Analisi del collegamento e diagramma di interferenza
 Il collegamento filettato applica una forza assiale di chiusura che comprime i pezzi l'uno contro l'altro. Questa compressione deve generare all'interfaccia tra le parti una forza d'attrito sufficiente a contrastare eventuali azioni trasversali esterne, impedendo lo scorrimento relativo dei blocchi: salvo configurazioni particolari, le viti #strong[non devono lavorare a taglio], bensì esclusivamente a trazione.
 
 A differenza del collegamento albero-mozzo, in cui l'interferenza è di natura geometrica (ottenuta tramite tolleranze dimensionali), nel collegamento filettato l'interferenza $i$ tra bullone e pezzo viene realizzata tramite il precarico prodotto dall'avvitamento. Applicando una coppia di serraggio (ad esempio mantenendo fermo il dado e ruotando la testa della vite), l'avanzamento relativo della vite rispetto alla madrevite genera un'interferenza assiale correlata al numero di giri compiuti dopo il primo contatto $n_("giri")$ e al passo $p$ della filettatura:
@@ -106,7 +106,7 @@ L'intersezione tra le due rette identifica il punto di funzionamento del collega
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma di interferenza al montaggio con assi $|F_p|, |F_v|$ in ordinata e $u$ in ascissa; retta della vite uscente dall'origine inclinata di $delta_v$ rispetto all'ordinata, retta del pezzo traslata verso destra inclinata di $delta_p$, punto di intersezione indicato come "Punto di funzionamento del collegamento al montaggio", e proiezione sull'ascissa degli spostamenti $u_v$, $u_p$ la cui somma è pari a $i$]])
 
-==== Forza assiale, momento di serraggio e momento di svitamento
+=== Forza assiale, momento di serraggio e momento di svitamento
 All'inizio dell'accostamento, i filetti della vite e della madrevite presentano un leggero gioco iniziale; non appena la vite viene messa in tiro dalla coppia torcente applicata con la chiave intorno al proprio asse principale, i fianchi dei filetti vanno a contatto sviluppando una pressione locale che genera trazione nella vite e compressione nei pezzi e nella madrevite.
 
 Il momento torcente resistente che occorre vincere durante il serraggio è dovuto a due contributi:
@@ -118,7 +118,7 @@ Il momento torcente resistente che occorre vincere durante il serraggio è dovut
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema dei parametri di una filettatura (diametro maggiore, diametro medio, diametro minore, passo $p$, smusso a $45degree$, gola, cresta, angolo del filetto $2 alpha$) e dettaglio ingrandito dell'interfaccia di contatto tra vite (trazione verso l'alto) e madrevite (compressione verso il basso)]])
 
-===== Modello del piano inclinato (sola inclinazione dell'elica)
+==== Modello del piano inclinato (sola inclinazione dell'elica)
 Per ricavare la relazione analitica tra il momento di serraggio $M_T$ e la forza assiale $F_V$ agente sul fusto della vite, si schematizza in prima battuta il contatto tra i filetti come il moto relativo di un blocco su un piano inclinato di angolo $alpha_m$ (angolo medio dell'elica del filetto), trascurando momentaneamente l'inclinazione laterale del profilo triangolare.
 
 #strong[Avvitamento e serraggio:]
@@ -164,14 +164,14 @@ $ M = F_U frac(d_m, 2) = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt)] > 0 qu
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[In tale condizione, il collegamento tende allo #strong[svitamento spontaneo] (autosvitamento, specialmente in presenza di piccoli disturbi o vibrazioni), e un eventuale momento positivo applicato nel verso di serraggio agirebbe in realtà per frenare lo svitamento spontaneo.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: approfondimento grafico sulla condizione di svitamento con confronto tra "Caso generale" ($phi.alt > alpha_m$, con $F_U$ diretta verso sinistra) e "Caso particolare" ($phi.alt < alpha_m$, con $F_U$ diretta verso destra nello stesso verso del serraggio)]])
 
-===== Attrito al sottotesta
+==== Attrito al sottotesta
 Per tenere conto anche dell'attrito sviluppato sulla superficie di contatto anulare del sottotesta (o del dado) in rotazione rispetto al pezzo o alla rondella, si aggiunge il contributo di un momento resistente di attrito agente su un diametro efficace del sottotesta $d_t$, caratterizzato da un coefficiente di attrito specifico $f_s = tan phi.alt_s$ (generalmente distinto da $f = tan phi.alt$, poiché i materiali di vite e dado/madrevite possono essere uguali tra loro mentre i materiali tra sottotesta e pezzo o rondella sono spesso diversi):
 
 $ M_T = frac(F_V, 2) [d_m dot.op tan(alpha_m + phi.alt) + d_t dot.op tan phi.alt_s] $
 
 $ M_("svit") = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt) - d_t dot.op tan phi.alt_s] $
 
-===== Effetto della forma triangolare o trapezoidale del filetto
+==== Effetto della forma triangolare o trapezoidale del filetto
 Nei filetti a profilo triangolare e trapezoidale esiste un secondo piano inclinato dovuto all'inclinazione $alpha$ del fianco del filetto rispetto alla direzione radiale (per le filettature metriche, $2 alpha = 60degree arrow.r.double alpha = 30degree$). La forza normale effettiva agente perpendicolarmente al fianco del filetto non è $F_N$, bensì la sua proiezione $frac(F_N, cos alpha)$. Di conseguenza, la forza d'attrito reale vale:
 
 $ F_("attrito") = tan phi.alt dot.op frac(F_N, cos alpha) $
@@ -189,7 +189,7 @@ $ tan phi.alt' = frac(tan phi.alt, cos alpha) $
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema dell'inclinazione trasversale del fianco del filetto con angolo di apertura $2 alpha$ e semi-angolo $alpha$, mostrante la scomposizione della forza assiale $F$ nella componente normale al fianco del filetto pari a $F / cos alpha$]])
 
-===== Formulazione generale e approssimazione lineare
+==== Formulazione generale e approssimazione lineare
 Sostituendo $phi.alt$ con $phi.alt'$, le equazioni complete per il momento di serraggio e di svitamento diventano:
 
 $ M_T = frac(F_v, 2) [d_m dot.op tan(alpha_m + phi.alt') + d_t dot.op tan phi.alt_s] $
@@ -216,7 +216,7 @@ $ M_T = frac(F_v, 2) (d_m dot.op tan alpha_m + d_m dot.op tan phi.alt' + d_t dot
 
 === Teoria
 
-==== Sollecitazioni e resistenza del fusto della vite
+=== Sollecitazioni e resistenza del fusto della vite
 
 Nell'analisi delle sollecitazioni agenti sul fusto della vite durante il serraggio (nel tratto compreso fra il sottotesta e la madrevite), occorre considerare la sola quota parte del momento di serraggio che fotografa l'interazione tra i filetti della vite e quelli della madrevite. Scompare pertanto il contributo opposto dall'attrito tra il sottotesta e la superficie del pezzo serrato, in quanto tale dissipazione non si scarica sul fusto della vite. La vite sopporta quindi simultaneamente un carico assiale $F_v$ e un momento torcente $M_T^"*"$ dovuto all'attrito sui filetti, espresso dai primi due addendi della formulazione del momento di serraggio:
 
@@ -252,7 +252,7 @@ $ sigma_(i d) = sigma_a dot.op sqrt(1 + 3 dot.op k^2) arrow.r.double sigma_a = f
 
 Per i valori geometrici e d'attrito tipici della bulloneria, infatti, il termine $sqrt(1 + 3 dot.op k^2)$ si attesta intorno a $1.3$; nella manualistica industriale si utilizza spesso questo fattore correttivo del $30\%$ per correlare rapidamente la tensione assiale sul fusto alla tensione equivalente comprensiva della torsione.
 
-==== Forza assiale limite, momento di serraggio e coefficienti d'attrito
+=== Forza assiale limite, momento di serraggio e coefficienti d'attrito
 
 Il collegamento filettato deve lavorare in campo lineare elastico, poiché un eventuale snervamento (plasticizzazione) impedirebbe di garantire nel tempo l'interferenza, la pressione di contatto e l'attrito attesi tra le parti. La tensione limite di riferimento è pertanto il limite elastico allo $0.2\%$, $R_(p 0.2)$, ridotto tramite un fattore di scala $X$:
 
@@ -276,7 +276,7 @@ Per quanto riguarda il coefficiente d'attrito $f = tan phi.alt$ nell'accoppiamen
 
 Nella valutazione della resistenza del fusto conviene assumere il coefficiente d'attrito minimo dell'intervallo sperimentale: a parità di momento di serraggio applicato, infatti, un attrito inferiore massimizza la forza assiale $F_v$ trasmessa al fusto e quindi la sollecitazione sul materiale. Al contrario, quando si valutano le condizioni funzionali o il rischio di svitamento autonomo in esercizio, occorre riferirsi al valore realistico dell'accoppiamento.
 
-==== Materiali per bulloneria (classi di resistenza)
+=== Materiali per bulloneria (classi di resistenza)
 
 Nella normativa delle viti e dei bulloni i materiali sono identificati mediante classi di resistenza espresse da due numeri separati da un punto, nella forma $x.y$, dove:
 
@@ -286,7 +286,7 @@ Moltiplicando $x$ per $100$ si ottiene il carico unitario di rottura $R_m$ in $"
 
 Le classi normalizzate previste sono: $3.6 - 4.6 - 4.8 - 5.6 - 5.8 - 6.6 - 8.8 - 10.9 - 12.9$, con un incremento progressivo sia della resistenza a rottura (da circa $300 "MPa"$ fino a $1200 "MPa"$) sia del rapporto tra snervamento e rottura. Per lavori di carpenteria nelle costruzioni sono prescritti una classe minima $8.8$ e un diametro minimo $"M 12"$.
 
-==== Resistenza dei filetti e distribuzione del carico sulle spire
+=== Resistenza dei filetti e distribuzione del carico sulle spire
 
 #grid(
   columns: (1fr, 1fr),
@@ -297,7 +297,7 @@ Il carico assiale applicato al collegamento non si ripartisce uniformemente su t
 
 In un dado convenzionale, il primo filetto in presa sopporta circa il $35\%$ del carico, il secondo intorno al $20 div 25\%$, per poi scendere progressivamente fino a circa il $6\%$ sull'ultimo filetto; la zona di massima concentrazione tensionale alla base del dado costituisce quindi il punto critico dell'interazione. Un allungamento del dado comporta solo una modesta riduzione del picco iniziale. È invece molto efficace modificare geometricamente il dado per renderlo più deformabile nella zona iniziale di presa, ricavando una porzione alleggerita troncoconica (con parte piena superiore) alla base del dado stesso: invertendo o riducendo fortemente la compressione locale in tale zona cedevole (che si deforma a trazione/flessione locale sottraendosi al sovraccarico), il carico si ridistribuisce in modo molto più uniforme, abbattendo il picco sul primo filetto a circa il $15\%$ e portando le spire centrali e terminali a contribuire in misura significativa (oltre il $10\%$ sugli ultimi filetti per effetto di bordo).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema costruttivo e confronto grafico della distribuzione percentuale del carico sulle spire della filettatura (da 1 a 7, con indicazione in tedesco "Lastanteil der kraftübertragenden Gewindegänge", "bolzen = stahl", "mutter = stahl"). Sulla destra è raffigurato un dado convenzionale soggetto a compressione con flussi di tensione concentrati alla base e curva di carico che scende dal 35% sul primo filetto al 6% sull'ultimo, con evidenziata la zona critica di rottura. Al centro e a sinistra è raffigurato un dado modificato con scarico troncoconico alla base che rende più deformabile la zona iniziale di presa (mostrando il flusso di tensione nell'elemento collegato, nel dado e nella vite) e appiattisce la curva di distribuzione del carico intorno al 15% sul primo filetto fino a oltre il 10% sull'ultimo]])
 
-==== Effetto dei carichi assiali esterni e diagramma di forzamento
+=== Effetto dei carichi assiali esterni e diagramma di forzamento
 
 #grid(
   columns: (1fr, 1fr),
@@ -330,7 +330,7 @@ Da cui seguono le formule di ripartizione (analoghe a una regola della leva):
 
 $ Delta C_v = C frac(delta_p, delta_v + delta_p), quad quad Delta C_p = C frac(delta_v, delta_v + delta_p) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: dettaglio del diagramma di forzamento (assi $|F_p|, |F_v|$ e $u$) che evidenzia lo spostamento $Delta u$, l'incremento di forza sulla vite $Delta C_v$ (quadrato rosso) e la pendenza della caratteristica della vite associata alla deformabilità $delta_v$]])
 
-==== Stima della deformabilità della vite e dei pezzi serrati
+=== Stima della deformabilità della vite e dei pezzi serrati
 
 #grid(
   columns: (1fr, 1fr),
@@ -374,7 +374,7 @@ $ A_p = frac(pi, 4)(d_(e t)^2 - d_f^2) + frac(pi, 8)(frac(D_p, d_(e t)) - 1)(0.2
 
 $ A_p = frac(pi, 4)[(d_(e t) + 0.1 dot.op L_p^"*")^2 - d_f^2] $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema relativo al Caso c) $D_p / d_(e t) gt.eq 3$ raffigurante una vite di diametro $D$ con dado che serra due piastre molto estese trasversalmente di spessore totale $L_p$ e foro $d_f$, con dettaglio della testa esagonale di diametro esterno $d_(e t)$]])
 
-==== Accorgimenti costruttivi per diminuire il carico sulle viti
+=== Accorgimenti costruttivi per diminuire il carico sulle viti
 
 Dall'espressione $Delta C_v = C frac(delta_p, delta_v + delta_p)$ risulta che, a parità di carico esterno $C$, la quota parte di carico che grava sulla vite diminuisce all'aumentare della deformabilità $delta_v$ della vite stessa (mentre $Delta C_p$ aumenta). Ciò è particolarmente vantaggioso poiché la vite ha sezione minore ed è sollecitata a trazione, risultando più critica (specie a fatica) rispetto alle parti serrate in compressione. Poiché $delta_v = L / (E A)$, per incrementare $delta_v$ si può agire aumentando la lunghezza $L$ a numeratore oppure riducendo la sezione $A$ a denominatore:
 
@@ -406,14 +406,14 @@ Nel diagramma di forzamento, a parità di deformabilità del pezzo $delta_p$, la
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: confronto tra due diagrammi di forzamento ($|F_p|, |F_v|$ vs $u$) a parità di carico $C$ e di deformabilità del pezzo: a sinistra la vite standard con forza iniziale $F_(v, l i m)$; a destra la vite alleggerita con forza iniziale inferiore $F_(v, l i m)$ (alleggerita) e pendenza minore della retta della vite, con conseguente riduzione di $Delta C_v$ e aumento di $Delta C_p$]])
 
-==== Incertezze di montaggio e allentamenti in esercizio
+=== Incertezze di montaggio e allentamenti in esercizio
 
 Il carico iniziale di trazione sulla vite e di compressione sui pezzi serrati è imposto tramite il momento di serraggio $M_T$ riferito alla condizione nominale di equilibrio $F_v = F_p$. In esercizio, tuttavia, il carico residuo di compressione sui pezzi $F_p$ può ridursi significativamente per tre cause:
 - incertezze sulla forza $F_v$ al montaggio e sul momento applicato;
 - allentamento del collegamento dovuto ad assestamenti superficiali indotti da vibrazioni o carichi ciclici;
 - azione del carico esterno ($Delta C_p$).
 
-===== 1. Incertezze sulla forza al montaggio
+==== 1. Incertezze sulla forza al montaggio
 
 Le incertezze al serraggio derivano da due fattori principali:
 - #strong[Incertezza sul coefficiente d'attrito:] soprattutto in presenza di lubrificazione o rivestimenti, il valore reale dell'attrito non è noto con precisione; all'aumentare del coefficiente d'attrito, a parità di momento applicato, diminuisce la forza assiale effettiva sulla vite.
@@ -433,7 +433,7 @@ I valori tipici di $I$ dipendono dalla tecnica e dallo strumento di serraggio ad
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Dal punto di vista strumentale, l'avvitatore (o chiave a scatto) con taratura periodica dispone di una frizione o meccanismo interno che slitta o scatta producendo un segnale tattile e sonoro ("clic") al raggiungimento della coppia preimpostata tramite ghiera/pomello, andando in folle per non trasmettere coppia ulteriore; la sua affidabilità dipende tuttavia dalla corretta calibrazione periodica, soggetta a derive per temperatura, vibrazioni o manomissioni. La chiave dinamometrica vera e propria esegue invece una misura istantanea e diretta della coppia applicata durante il serraggio: nei modelli meccanici a lettura su scala graduata esiste comunque il rischio di errore di lettura da parte dell'operatore, rischio ridotto (sebbene non azzerato) nelle moderne chiavi dinamometriche elettroniche dotate di display digitale. Nell'impiego pratico (come nel serraggio delle viti di piastre di sterzo motociclistiche alla coppia prescritta, ad esempio $17 "Nm"$), il corretto utilizzo di tali utensili risponde alla doppia esigenza di non eccedere la resistenza della vite evitandone la rottura e, al tempo stesso, di non scendere al di sotto del carico minimo necessario a mantenere serrate le parti senza perdita delle viti o slittamenti.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: rassegna fotografica degli utensili di serraggio: in alto a sinistra chiave a cricchetto su componente meccanico e a destra avvitatore pneumatico con taratura periodica (con didascalia "frizione interna che slitta quando si è raggiunto il valore di coppia richiesto"); al centro due chiavi dinamometriche meccaniche con indice a scala graduata; in basso una chiave dinamometrica elettronica con display digitale]])
 
-===== 2. Allentamento del collegamento per assestamento
+==== 2. Allentamento del collegamento per assestamento
 
 Nel tempo, sotto l'azione di forze esterne e vibrazioni (assiali o trasversali/tangenziali), le micro-asperità delle superfici a contatto si schiacciano e si assestano modificando la rugosità. Ciò comporta una perdita di interferenza $Delta i$ (espressa in $mu "m"$) e una conseguente perdita di forza sulla vite $Delta F_v$. I valori di $Delta i$ dipendono dal numero di superfici di interfaccia ($"N° superfici"$), dalla direzione delle forze esterne e dalla rugosità media $R_a$:
 
@@ -453,7 +453,7 @@ Nel tempo, sotto l'azione di forze esterne e vibrazioni (assiali o trasversali/t
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Occorre prestare particolare attenzione al conteggio del numero di superfici ($"N° sup"$), che corrisponde al numero di interfacce di contatto lungo il serraggio e non al numero di corpi serrati: per un singolo corpo bloccato fra sottotesta e dado si hanno $"N° sup" = 2$ (sottotesta e sottodado), mentre per due corpi impilati si hanno $"N° sup" = 3$ (sottotesta, interfaccia tra i due corpi e sottodado); in generale, il numero di superfici supera di un'unità il numero dei corpi serrati. Inoltre, lavorando abitualmente in millimetri, è indispensabile convertire $Delta i$ da micrometri ($mu "m"$) a millimetri ($"mm"$).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schemi tratteggiati per l'identificazione del numero di superfici di interfaccia: a sinistra un solo blocco serrato con "N° sup = 2"; a destra due blocchi impilati con tratteggi opposti con "N° sup = 3"]])
 
-===== Effetto globale di incertezze e allentamento sul diagramma
+==== Effetto globale di incertezze e allentamento sul diagramma
 
 Combinando l'incertezza al montaggio e la perdita di interferenza per assestamento, sul diagramma di forzamento compaiono tre triangoli di interferenza concentrici:
 1. Il triangolo esterno (nominale), con vertice a $F_(v, l i m) = |F_p| = |F_v|$ e interferenza nominale $i$.
@@ -467,7 +467,7 @@ $ frac(Delta F_v, Delta i) = frac(F_v, i) = frac(F_v, F_v (delta_v + delta_p)) a
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Il precarico minimo residuo prima dell'applicazione del carico esterno diventa pertanto $frac(F_(v, l i m), I) - Delta F_v$. Il triangolo esterno più grande viene impiegato per la verifica di resistenza statica della vite (condizione più gravosa per il materiale), mentre il triangolo interno più piccolo viene impiegato per la verifica di funzionalità / carico minimo di serraggio (condizione più sfavorevole per la tenuta e l'aderenza tra le parti).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma di forzamento completo ($|F_p|, |F_v|$ vs $u$) mostrante l'effetto globale di incertezze e allentamento attraverso tre triangoli nidificati: il triangolo esterno con interferenza $i$ e vertice a $F_(v, l i m) = |F_p| = |F_v|$; il triangolo intermedio con vertice a $F_(v, m i n) = F_(v, l i m)/I$; il triangolo interno traslato orizzontalmente di $Delta i$ verso sinistra con vertice abbassato di $Delta F_v$ al livello $F_(v, l i m)/I - Delta F_v$]])
 
-==== Procedura iterativa di progetto dei collegamenti filettati
+=== Procedura iterativa di progetto dei collegamenti filettati
 
 #grid(
   columns: (1fr, 1fr),
@@ -481,7 +481,7 @@ $ A_(m i n) = (3 div 4) frac(C_(m a x), R_(p 0.2)) $
 3. #strong[Verifiche:] esecuzione della verifica statica della vite, della verifica del carico minimo di serraggio e della verifica a fatica della vite.
 4. #strong[Iterazione:] qualora anche una sola delle verifiche non risulti soddisfatta, si apportano modifiche costruttive o dimensionali (sulle deformabilità, sul numero di viti, sul diametro o sulla classe del materiale) e si ripete il calcolo fino al soddisfacimento di tutte le condizioni.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma di flusso della procedura di calcolo dei collegamenti filettati: blocco "Scelte iniziali" (numero viti $C = F_(t o t)/("n° viti")$, classe/tipo materiale, dimensione con formula di prima approssimazione $A_(m i n) = (3 div 4) C_(m a x) / R_(p 0.2)$), seguito dal blocco di "Calcolo di $k - F_(v, l i m) - M_T - delta_v - delta_p - Delta F_v - Delta C_v - Delta C_p$", quindi dal blocco delle tre verifiche (Verifica statica, Verifica del carico minimo di serraggio, Verifica a fatica della vite) e dal rombo decisionale che porta a "Fine" se "Sì" oppure retroaziona tramite il blocco "Cambiamenti..." alle scelte iniziali se "No"]])
 
-==== Verifica statica della vite
+=== Verifica statica della vite
 
 La verifica statica viene condotta nelle condizioni peggiori per la sollecitazione del fusto, ovvero:
 - supponendo applicata la forza limite $F_(v, l i m)$ calcolata al montaggio;
@@ -514,7 +514,7 @@ Qualora la verifica statica non sia soddisfatta, i possibili interventi corretti
 
 Si osserva inoltre che aumentare il diametro della vite non è sempre efficace: sebbene aumenti l'area resistente diminuendo le tensioni a parità di forza, aumenta contemporaneamente la rigidezza della vite con la stessa legge quadratica (riducendo $delta_v$), facendo crescere la quota parte di carico $Delta C_v$ assorbita dalla vite, col rischio che le tensioni risultanti restino elevate o addirittura aumentino.
 
-===== Caso delle viti alleggerite
+==== Caso delle viti alleggerite
 
 L'impiego di viti alleggerite diminuisce la quota parte di carico assorbita dalla vite, ma riduce la sezione resistente di riferimento a quella alleggerita ($d_g$, $A_g$), dove le tensioni restano comunque elevate. Nelle sezioni alleggerite la verifica statica va quindi eseguita calcolando la tensione ideale rispetto al diametro $d_g$:
 
@@ -524,7 +524,7 @@ $ sigma_g = frac(4 dot.op (F_(v, l i m) + Delta C_(m a x, v)), pi dot.op d_g^2),
 
 In pratica, le viti alleggerite non presentano una resistenza statica molto diversa da quella delle viti non alleggerite.
 
-===== Sollecitazioni di flessione per errori di planarità
+==== Sollecitazioni di flessione per errori di planarità
 
 #grid(
   columns: (1fr, 1fr),
@@ -537,7 +537,7 @@ $ sigma_(m a x) = frac(M, J) dot.op frac(D, 2) = E dot.op frac(alpha, L) dot.op 
 
 Considerando ad esempio una vite in acciaio con $E = 2 dot.op 10^5 "MPa"$, un errore di parallelismo di appena $alpha = 0.5 degree = frac(1, 114.6) "rad"$ e un rapporto $frac(D, L) = frac(1, 10)$, si sviluppa una tensione di flessione parassita pari a $sigma tilde.eq 87 "MPa"$, che si somma alle tensioni dovute al serraggio e ai carichi di esercizio. Per contenere questo effetto conviene impiegare viti snelle (rapporto $D/L$ ridotto) e prescrivere tolleranze di planarità sulle superfici di appoggio.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di un tratto di fusto di lunghezza $L$ vincolato tra due superfici di appoggio non parallele inclinate di un angolo $alpha$, che induce l'incurvamento a flessione dell'asse della vite]])
 
-==== Verifica del carico minimo di serraggio
+=== Verifica del carico minimo di serraggio
 
 La verifica di funzionalità assicura che, anche nelle condizioni più sfavorevoli, la forza residua di compressione tra le parti serrate $F_(p, m i n)$ non scenda mai al di sotto di un valore minimo prescritto $F_(p, l i m)$, necessario ad esempio per garantire la tenuta delle guarnizioni o per assicurare per attrito l'assenza di scorrimenti relativi tra i componenti.
 
