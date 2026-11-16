@@ -702,9 +702,9 @@ Il momento torcente resistente che occorre vincere durante il serraggio è dovut
 2. L'attrito che si sviluppa tra la superficie del sottotesta della vite (o del dado, a seconda di quale elemento viene messo in rotazione) e la superficie del pezzo (o di un'eventuale rondella antisvitamento interposta).], [#canvas(length: 0.8cm, {
   import draw: *
 
-  // ==========================================
+  // ===
   // --- PANEL 1: VITE (TOP) ---
-  // ==========================================
+  // ===
   content((4.20, 10.35), text(size: 9.5pt, weight: "bold")[Vite (filettatura esterna)], anchor: "center")
 
   // Screw body fill (follows exact thread teeth so valleys remain white = spazio vuoto)
@@ -818,9 +818,9 @@ Il momento torcente resistente che occorre vincere durante il serraggio è dovut
   line((5.74, 6.36), (5.74, 6.02), (6.10, 6.02), stroke: 0.6pt)
   content((6.16, 6.02), text(size: 7.5pt)[Angolo del filetto $2 alpha$], anchor: "west")
 
-  // ==========================================
+  // ===
   // --- PANEL 2: VITE E MADREVITE (BOTTOM) ---
-  // ==========================================
+  // ===
   content((4.20, 5.28), text(size: 9.5pt, weight: "bold")[Accoppiamento Vite – Madrevite (sezione)], anchor: "center")
 
   // Vite fill
@@ -929,7 +929,7 @@ Il momento torcente resistente che occorre vincere durante il serraggio è dovut
   line((5.15, 2.44), (4.42, 3.35), mark: (end: ">"), stroke: (paint: rgb(180, 60, 40), thickness: 0.7pt))
 })])
 #pagebreak()
-==== Modello del piano inclinato (sola inclinazione dell'elica)
+=== Modello del piano inclinato (sola inclinazione dell'elica)
 Per ricavare la relazione analitica tra il momento di serraggio $M_T$ e la forza assiale $F_V$ agente sul fusto della vite, si schematizza in prima battuta il contatto tra i filetti come il moto relativo di un blocco su un piano inclinato di angolo $alpha_m$ (angolo medio dell'elica del filetto), trascurando momentaneamente l'inclinazione laterale del profilo triangolare.
 
 
@@ -1247,14 +1247,14 @@ $ M = F_U frac(d_m, 2) = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt)] > 0 qu
   content((3.05, 2.25), text(size: 8pt, fill: rgb("#4b3b75"))[$F_("RES")$], anchor: "east")
 })])
 
-==== Attrito al sottotesta
+=== Attrito al sottotesta
 Per tenere conto anche dell'attrito sviluppato sulla superficie di contatto anulare del sottotesta (o del dado) in rotazione rispetto al pezzo o alla rondella, si aggiunge il contributo di un momento resistente di attrito agente su un diametro efficace del sottotesta $d_t$, caratterizzato da un coefficiente di attrito specifico $f_s = tan phi.alt_s$ (generalmente distinto da $f = tan phi.alt$, poiché i materiali di vite e dado/madrevite possono essere uguali tra loro mentre i materiali tra sottotesta e pezzo o rondella sono spesso diversi):
 
 $ M_T = frac(F_V, 2) [d_m dot.op tan(alpha_m + phi.alt) + d_t dot.op tan phi.alt_s] $
 
 $ M_("svit") = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt) - d_t dot.op tan phi.alt_s] $
 
-==== Effetto della forma triangolare o trapezoidale del filetto
+=== Effetto della forma triangolare o trapezoidale del filetto
 Nei filetti a profilo triangolare e trapezoidale esiste un secondo piano inclinato dovuto all'inclinazione $alpha$ del fianco del filetto rispetto alla direzione radiale (per le filettature metriche, $2 alpha = 60degree arrow.r.double alpha = 30degree$). La forza normale effettiva agente perpendicolarmente al fianco del filetto non è $F_N$, bensì la sua proiezione $frac(F_N, cos alpha)$. Di conseguenza, la forza d'attrito reale vale:
 
 $ F_("attrito") = tan phi.alt dot.op frac(F_N, cos alpha) $
@@ -1272,7 +1272,7 @@ $ tan phi.alt' = frac(tan phi.alt, cos alpha) $
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema dell'inclinazione trasversale del fianco del filetto con angolo di apertura $2 alpha$ e semi-angolo $alpha$, mostrante la scomposizione della forza assiale $F$ nella componente normale al fianco del filetto pari a $F / cos alpha$]])
 
-==== Formulazione generale e approssimazione lineare
+=== Formulazione generale e approssimazione lineare
 Sostituendo $phi.alt$ con $phi.alt'$, le equazioni complete per il momento di serraggio e di svitamento diventano:
 
 $ M_T = frac(F_v, 2) [d_m dot.op tan(alpha_m + phi.alt') + d_t dot.op tan phi.alt_s] $
@@ -1496,7 +1496,7 @@ Il carico iniziale di trazione sulla vite e di compressione sui pezzi serrati è
 - allentamento del collegamento dovuto ad assestamenti superficiali indotti da vibrazioni o carichi ciclici;
 - azione del carico esterno ($Delta C_p$).
 
-==== 1. Incertezze sulla forza al montaggio
+=== 1. Incertezze sulla forza al montaggio
 
 Le incertezze al serraggio derivano da due fattori principali:
 - #strong[Incertezza sul coefficiente d'attrito:] soprattutto in presenza di lubrificazione o rivestimenti, il valore reale dell'attrito non è noto con precisione; all'aumentare del coefficiente d'attrito, a parità di momento applicato, diminuisce la forza assiale effettiva sulla vite.
@@ -1516,7 +1516,7 @@ I valori tipici di $I$ dipendono dalla tecnica e dallo strumento di serraggio ad
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Dal punto di vista strumentale, l'avvitatore (o chiave a scatto) con taratura periodica dispone di una frizione o meccanismo interno che slitta o scatta producendo un segnale tattile e sonoro ("clic") al raggiungimento della coppia preimpostata tramite ghiera/pomello, andando in folle per non trasmettere coppia ulteriore; la sua affidabilità dipende tuttavia dalla corretta calibrazione periodica, soggetta a derive per temperatura, vibrazioni o manomissioni. La chiave dinamometrica vera e propria esegue invece una misura istantanea e diretta della coppia applicata durante il serraggio: nei modelli meccanici a lettura su scala graduata esiste comunque il rischio di errore di lettura da parte dell'operatore, rischio ridotto (sebbene non azzerato) nelle moderne chiavi dinamometriche elettroniche dotate di display digitale. Nell'impiego pratico (come nel serraggio delle viti di piastre di sterzo motociclistiche alla coppia prescritta, ad esempio $17 "Nm"$), il corretto utilizzo di tali utensili risponde alla doppia esigenza di non eccedere la resistenza della vite evitandone la rottura e, al tempo stesso, di non scendere al di sotto del carico minimo necessario a mantenere serrate le parti senza perdita delle viti o slittamenti.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: rassegna fotografica degli utensili di serraggio: in alto a sinistra chiave a cricchetto su componente meccanico e a destra avvitatore pneumatico con taratura periodica (con didascalia "frizione interna che slitta quando si è raggiunto il valore di coppia richiesto"); al centro due chiavi dinamometriche meccaniche con indice a scala graduata; in basso una chiave dinamometrica elettronica con display digitale]])
 
-==== 2. Allentamento del collegamento per assestamento
+=== 2. Allentamento del collegamento per assestamento
 
 Nel tempo, sotto l'azione di forze esterne e vibrazioni (assiali o trasversali/tangenziali), le micro-asperità delle superfici a contatto si schiacciano e si assestano modificando la rugosità. Ciò comporta una perdita di interferenza $Delta i$ (espressa in $mu "m"$) e una conseguente perdita di forza sulla vite $Delta F_v$. I valori di $Delta i$ dipendono dal numero di superfici di interfaccia ($"N° superfici"$), dalla direzione delle forze esterne e dalla rugosità media $R_a$:
 
@@ -1536,7 +1536,7 @@ Nel tempo, sotto l'azione di forze esterne e vibrazioni (assiali o trasversali/t
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Occorre prestare particolare attenzione al conteggio del numero di superfici ($"N° sup"$), che corrisponde al numero di interfacce di contatto lungo il serraggio e non al numero di corpi serrati: per un singolo corpo bloccato fra sottotesta e dado si hanno $"N° sup" = 2$ (sottotesta e sottodado), mentre per due corpi impilati si hanno $"N° sup" = 3$ (sottotesta, interfaccia tra i due corpi e sottodado); in generale, il numero di superfici supera di un'unità il numero dei corpi serrati. Inoltre, lavorando abitualmente in millimetri, è indispensabile convertire $Delta i$ da micrometri ($mu "m"$) a millimetri ($"mm"$).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schemi tratteggiati per l'identificazione del numero di superfici di interfaccia: a sinistra un solo blocco serrato con "N° sup = 2"; a destra due blocchi impilati con tratteggi opposti con "N° sup = 3"]])
 
-==== Effetto globale di incertezze e allentamento sul diagramma
+=== Effetto globale di incertezze e allentamento sul diagramma
 
 Combinando l'incertezza al montaggio e la perdita di interferenza per assestamento, sul diagramma di forzamento compaiono tre triangoli di interferenza concentrici:
 1. Il triangolo esterno (nominale), con vertice a $F_(v, l i m) = |F_p| = |F_v|$ e interferenza nominale $i$.
@@ -1597,7 +1597,7 @@ Qualora la verifica statica non sia soddisfatta, i possibili interventi corretti
 
 Si osserva inoltre che aumentare il diametro della vite non è sempre efficace: sebbene aumenti l'area resistente diminuendo le tensioni a parità di forza, aumenta contemporaneamente la rigidezza della vite con la stessa legge quadratica (riducendo $delta_v$), facendo crescere la quota parte di carico $Delta C_v$ assorbita dalla vite, col rischio che le tensioni risultanti restino elevate o addirittura aumentino.
 
-==== Caso delle viti alleggerite
+=== Caso delle viti alleggerite
 
 L'impiego di viti alleggerite diminuisce la quota parte di carico assorbita dalla vite, ma riduce la sezione resistente di riferimento a quella alleggerita ($d_g$, $A_g$), dove le tensioni restano comunque elevate. Nelle sezioni alleggerite la verifica statica va quindi eseguita calcolando la tensione ideale rispetto al diametro $d_g$:
 
@@ -1607,7 +1607,7 @@ $ sigma_g = frac(4 dot.op (F_(v, l i m) + Delta C_(m a x, v)), pi dot.op d_g^2),
 
 In pratica, le viti alleggerite non presentano una resistenza statica molto diversa da quella delle viti non alleggerite.
 
-==== Sollecitazioni di flessione per errori di planarità
+=== Sollecitazioni di flessione per errori di planarità
 
 #grid(
   columns: (1fr, 1fr),
