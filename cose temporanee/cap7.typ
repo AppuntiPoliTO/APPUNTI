@@ -346,6 +346,8 @@ Consideriamo ora una condotta orizzontale la cui sezione varia da $S_1$ a $S_2$ 
   ]
 )
 
+
+
 Questa relazione mette in luce due aspetti fondamentali:
 1. *Interpretazione fisica*: la forza $F_x$ esercitata dalla parete sul fluido (uguale e opposta alla spinta $-F_x$ che il fluido esercita sulla condotta) è data direttamente dalla differenza tra ciò che entra e ciò che esce dal volume di controllo, sommando la variazione del *flusso microscopico (diffusivo)* di quantità di moto legato agli urti molecolari ($p_1 S_1 - p_2 S_2$) e la variazione del *flusso macroscopico (convettivo)* di quantità di moto ($rho Q^2 (1/S_1 - 1/S_2)$).
 2. *Vantaggio sperimentale*: mentre il calcolo teorico locale degli sforzi e delle pressioni lungo una parete curva a sezione variabile è estremamente complesso, questa formula permette di determinare sperimentalmente la spinta globale sulla condotta conoscendo la geometria ($S_1, S_2$) ed effettuando solamente tre misure: le pressioni $p_1$ e $p_2$ (tramite due prese di pressione a monte e a valle) e la portata $Q$.
