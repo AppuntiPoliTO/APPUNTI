@@ -20,7 +20,6 @@ Tra gli elementi di base della costruzione delle macchine rivestono un ruolo fon
 
 Rispetto ad altri metodi di giunzione come i collegamenti saldati, i collegamenti filettati permettono di unire le parti in tempi notevolmente rapidi e senza dover ricorrere a processi tecnologici complessi; inoltre, svitando la vite o il bullone è possibile disgiungere i componenti senza dover distruggere alcun elemento fisso (come accadrebbe dovendo rompere un cordone di saldatura).
 
-Lo studio di questi elementi affronta dapprima il richiamo della geometria e delle forme delle filettature, per poi analizzare le condizioni di serraggio e la relazione tra il momento applicato tramite la chiave e le forze che si sviluppano sulle parti compresse e all'interno del fusto della vite soggetto a trazione. Successivamente, l'analisi delle azioni applicate e delle tensioni nel fusto permette di eseguire il calcolo del collegamento in termini di resistenza statica, resistenza a fatica e verifica funzionale: il serraggio deve infatti generare una pressione di contatto e una forza d'attrito sufficienti a impedire lo scorrimento relativo tra le superfici bloccate sotto l'azione di disturbi o vibrazioni che potrebbero favorire la riapertura della giunzione (richiedendo, se necessario, appositi dispositivi antisvitamento o configurazioni specifiche in presenza di carichi trasversali).
 
 === Tipologie di viti e normative delle filettature
 Nella letteratura tecnica si distinguono due grandi categorie di viti:
