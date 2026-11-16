@@ -256,7 +256,7 @@ L'utilizzo di un liquido ad alto peso specifico (ad esempio mercurio, $gamma_m >
   content((0.80, -1.42), text(size: 8.5pt)[$gamma_m$], anchor: "center")
   content((2.26, 0.425), text(size: 8.5pt)[$Delta$], anchor: "west")
   content((-3.08, 1.30), text(size: 8.5pt)[$h$], anchor: "east")
-  content((-0.78, 2.68), text(size: 6.5pt)[p.c.i.], anchor: "south-east")
+  content((-0.78, 2.78), text(size: 6.5pt)[p.c.i.], anchor: "south-east")
 })]
 )
 
