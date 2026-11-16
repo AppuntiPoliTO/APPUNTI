@@ -291,7 +291,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     a monte di $p_"min"$ il gradiente è favorevole ($partial p slash partial xi_1 < 0$) e accelera il fluido; a valle di $p_"min"$ il gradiente diventa avverso ($partial p slash partial xi_1 > 0$), frena gli strati vicini a parete fino all'inversione del profilo di velocità $u_1(xi_2)$ e causa il distacco della vena fluida, impedendo il recupero di pressione e generando una forte *resistenza di forma*.
   ],
   [
-    #canvas(length: 1cm, {
+    #canvas(length: 1.cm, {
   import draw: *
   arc((2.5, -2.65), start: 53deg, stop: 127deg, radius: 3.0, anchor: "origin", fill: luma(242), stroke: none)
   line((0.69, -0.25), (4.31, -0.25), (2.5, -0.25), close: true, fill: luma(242), stroke: none)
