@@ -1,6 +1,6 @@
 #import "template.typ": *
 
-#set page(paper: "a4", margin: 1.8cm)
+#set page(paper: "a4", margin: 2cm)
 #set text(lang: "it", size: 11pt)
 #set par(justify: true)
 #set figure(supplement: [Figura], gap: 0.8em)
