@@ -26,10 +26,7 @@ Nella letteratura tecnica si distinguono due grandi categorie di viti:
 - #strong[Viti di manovra:] sfruttano il principio dell'elica per trasmettere il moto, trasformando la rotazione della vite in uno spostamento traslazionale lungo una guida. Pur condividendo la geometria locale del filetto con le viti di collegamento, il loro dimensionamento è più affine a quello dei cuscinetti, poiché il funzionamento e il danneggiamento sono governati principalmente dallo scorrimento o dal rotolamento (come nelle viti a ricircolo di sfere, in cui l'elica funge da pista per le sfere), coinvolgendo trattamenti superficiali e materiali specifici per queste condizioni d'esercizio.
 - #strong[Viti di collegamento (smontabile):] impiegate per mantenere serrate due o più parti meccaniche insieme.
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema tratto da animazione di una vite di manovra costituita da un albero telescopico con diversi corpi cilindrici concentrici movimentati assialmente mediante un attuatore centrale a vite]])
+
 
 Le principali tipologie di filettature normalizzate per i collegamenti (con riferimento alle normative storiche e ai relativi aggiornamenti successivi) sono:
 - #strong[Filettature metriche ISO:]
