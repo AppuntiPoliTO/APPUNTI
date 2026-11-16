@@ -1,5 +1,4 @@
-#import "@preview/cetz:0.3.4": canvas, draw
-
+#import "@preview/cetz:0.3.4"
 #set page(
   paper: "a4",
   margin: (x: 1.9cm, y: 1.85cm),
@@ -236,7 +235,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     l'inerzia del fluido non è più trascurabile. A valle del punto di minima pressione ($p_"min"$) il fluido incontra un gradiente di pressione avverso (da $p_"min"$ verso la zona di recupero a valle) e non riesce a rimanere attaccato alla parete: si formano due vortici stazionari e simmetrici di ricircolo in scia.
   ],
   [
-    cetz.canvas(length: 0.76cm, {
+    canvas(length: 0.76cm, {
       import draw: *
       // Assi cartesiani x1, x2
       line((0.1, 0), (5.1, 0), mark: (end: "stealth", size: 0.12, fill: col-gray), stroke: (paint: col-gray, thickness: 0.6pt, dash: "dashed"))
