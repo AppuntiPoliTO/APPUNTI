@@ -1,5 +1,5 @@
 #import "../template.typ": *
-
+#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
 = Dinamica dei Fluidi Viscosi (Navier-Stokes)
 
 == Fluidi viscosi - Newtoniani

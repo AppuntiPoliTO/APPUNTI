@@ -1,7 +1,7 @@
 #import "../template.typ": *
 #import "../figs/fig07.typ": *   // figure del capitolo (vedi figs/)
 #show figure: set text(size: 9pt)
-
+#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
 = Energia meccanica nei fluidi viscosi
 
 == Equazione di bilancio dell'energia meccanica (da Cauchy)
