@@ -781,36 +781,35 @@ Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria
 
 
 
-2. *Conservazione della massa (Equazione di continuità)*:
-   Per un fluido incomprimibile in moto stazionario, la portata per unità di larghezza entrante da $S_1$ deve eguagliare la somma delle portate uscenti da $S_2$ e $S_3$:
-   $
-   U_1 h_1 = U_2 h_2 + U_3 h_3 quad ==> quad h_1 = h_2 + h_3
-   $
+Per determinare le caratteristiche del flusso, si parte dalla *determinazione delle velocità tramite il teorema di Bernoulli*. Trascurando le differenze di quota e gli sforzi viscosi, ed essendo il getto libero in atmosfera ($p_1 = p_2 = p_3 = p_"atm"$), l'applicazione del teorema lungo le linee di corrente da $S_1$ verso $S_2$ e $S_3$ mostra che il modulo della velocità rimane costante:
+$
+U_1 = U_2 = U_3 = U
+$
 
-3. *Bilancio di quantità di moto lungo la direzione tangente $t$*:
-   Trascurando gli sforzi viscosi di attrito a parete ($tau_w approx 0$), la parete può esercitare sul fluido unicamente una forza di pressione diretta lungo la normale $n$: pertanto la componente tangenziale della forza è nulla ($F_t = 0$). Essendo nulle anche le pressioni relative su $S_1, S_2, S_3$ ($Pi_t = 0$), l'equazione globale lungo $t$ si riduce a $M_t = -integral_S rho u_t (u_j n_j) dif S = 0$:
-   - su $S_1$: il flusso è entrante ($u_j n_j = -U$) e la componente di velocità lungo $t$ vale $u_t = +U cos theta$, dando il contributo $+rho U^2 h_1 cos theta$;
-   - su $S_2$: il flusso è uscente ($u_j n_j = +U$) e concorde con $t$ ($u_t = +U$), dando il contributo $-rho U^2 h_2$;
-   - su $S_3$: il flusso è uscente ($u_j n_j = +U$) ma diretto in verso opposto a $t$ ($u_t = -U$), per cui $-rho (-U)(+U) h_3 = +rho U^2 h_3$.
-   Sommando i tre contributi lungo $t$:
-   $
-   rho U^2 h_1 cos theta - rho U^2 h_2 + rho U^2 h_3 = 0 quad ==> quad h_2 - h_3 = h_1 cos theta
-   $
-   Mettendo a sistema questa relazione con l'equazione di continuità $h_2 + h_3 = h_1$, si ricavano gli spessori dei due getti uscenti in funzione di $h_1$ e dell'angolo $theta$:
-   $
-   h_2 = h_1 / 2 (1 + cos theta), quad h_3 = h_1 / 2 (1 - cos theta)
-   $
+Passando alla *conservazione della massa (equazione di continuità)*, per un fluido incomprimibile in moto stazionario la portata per unità di larghezza entrante da $S_1$ deve eguagliare la somma delle portate uscenti da $S_2$ e $S_3$:
+$
+U_1 h_1 = U_2 h_2 + U_3 h_3 quad ==> quad h_1 = h_2 + h_3
+$
 
-4. *Bilancio di quantità di moto lungo la direzione normale $n$*:
-   Proiettiamo infine l'equazione globale lungo la normale $n$ alla parete ($M_n + F_n = 0$). I flussi uscenti attraverso $S_2$ e $S_3$ sono paralleli alla parete e non possiedono componente normale di velocità ($u_n = 0$). L'unico contributo a $M_n$ proviene dalla sezione di ingresso $S_1$, dove $u_j n_j = -U$ e la componente di velocità lungo $n$ vale $u_n = +U sin theta$:
-   $
-   M_n = -integral_(S_1) rho (+U sin theta) (-U) dif S_1 = +rho U^2 h_1 sin theta
-   $
-   Dal bilancio $M_n + F_n = 0$ si ottiene la forza normale per unità di larghezza esercitata dalla parete sul fluido:
-   $
-   F_n = -rho U^2 h_1 sin theta
-   $
-   _Nota: per $theta = 90 degree$ si ritrova come caso particolare il risultato dell'Esempio 3 per parete verticale: $h_2 = h_3 = h_1 / 2$ e $F_n = -rho U^2 h_1$._
+Si considera poi il *bilancio di quantità di moto lungo la direzione tangente $t$*. Trascurando gli sforzi viscosi di attrito a parete ($tau_w approx 0$), la parete può esercitare sul fluido unicamente una forza di pressione diretta lungo la normale $n$, rendendo nulla la componente tangenziale della forza ($F_t = 0$). Poiché sono nulle anche le pressioni relative su $S_1, S_2, S_3$ ($Pi_t = 0$), l'equazione globale lungo $t$ si riduce a $M_t = -integral_S rho u_t (u_j n_j) dif S = 0$. Nel dettaglio, su $S_1$ il flusso è entrante ($u_j n_j = -U$) e la componente di velocità lungo $t$ vale $u_t = +U cos theta$, dando il contributo $+rho U^2 h_1 cos theta$; su $S_2$ il flusso è uscente ($u_j n_j = +U$) e concorde con $t$ ($u_t = +U$), fornendo il contributo $-rho U^2 h_2$; su $S_3$, infine, il flusso è uscente ($u_j n_j = +U$) ma diretto in verso opposto a $t$ ($u_t = -U$), per cui si ottiene $-rho (-U)(+U) h_3 = +rho U^2 h_3$. Sommando i tre contributi lungo $t$ si ricava:
+$
+rho U^2 h_1 cos theta - rho U^2 h_2 + rho U^2 h_3 = 0 quad ==> quad h_2 - h_3 = h_1 cos theta
+$
+Mettendo a sistema questa relazione con l'equazione di continuità $h_2 + h_3 = h_1$, si determinano gli spessori dei due getti uscenti in funzione di $h_1$ e dell'angolo $theta$:
+$
+h_2 = h_1 / 2 (1 + cos theta), quad h_3 = h_1 / 2 (1 - cos theta)
+$
+
+Infine, si esegue il *bilancio di quantità di moto lungo la direzione normale $n$*, proiettando l'equazione globale lungo la normale alla parete ($M_n + F_n = 0$). I flussi uscenti attraverso $S_2$ e $S_3$ sono paralleli alla parete e non possiedono componente normale di velocità ($u_n = 0$), per cui l'unico contributo a $M_n$ proviene dalla sezione di ingresso $S_1$, dove $u_j n_j = -U$ e la componente di velocità lungo $n$ vale $u_n = +U sin theta$:
+$
+M_n = -integral_(S_1) rho (+U sin theta) (-U) dif S_1 = +rho U^2 h_1 sin theta
+$
+Dal bilancio $M_n + F_n = 0$ si ottiene la forza normale per unità di larghezza esercitata dalla parete sul fluido:
+$
+F_n = -rho U^2 h_1 sin theta
+$
+
+_Nota: per $theta = 90 degree$ si ritrova come caso particolare il risultato dell'Esempio 3 per parete verticale: $h_2 = h_3 = h_1 / 2$ e $F_n = -rho U^2 h_1$._
 
 == Estensione ai flussi esterni: forza su un corpo tozzo
 
