@@ -255,6 +255,16 @@ Scomponiamo la superficie di controllo in \ $S = S_1 union S_2 union S_w$ (sezio
   line((7.35, 2.65), (6.52, 2.65), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 1.05pt))
   content((7.44, 2.75), text(size: 8.5pt, fill: blue.darken(20%))[$p_2$], anchor: "west")
 
+  // Versori normali uscenti su S1, S2 e sulla parete Sw
+  line((1.80, 1.75), (1.05, 1.75), mark: (end: ">"), stroke: (paint: green.darken(35%), thickness: 0.95pt))
+  content((0.97, 1.75), text(size: 8pt, fill: green.darken(35%))[$arrow(n)_1$], anchor: "east")
+
+  line((6.40, 1.75), (7.15, 1.75), mark: (end: ">"), stroke: (paint: green.darken(35%), thickness: 0.95pt))
+  content((7.23, 1.75), text(size: 8pt, fill: green.darken(35%))[$arrow(n)_2$], anchor: "west")
+
+  line((4.10, 3.40), (4.10, 4.08), mark: (end: ">"), stroke: (paint: green.darken(35%), thickness: 0.95pt))
+  content((4.22, 3.80), text(size: 8pt, fill: green.darken(35%))[$arrow(n)_w$], anchor: "west")
+
   // Sforzi tangenziali alla parete tau_w
   line((4.90, 3.12), (3.30, 3.12), mark: (end: ">"), stroke: (paint: red.darken(15%), thickness: 1.05pt))
   content((4.10, 2.98), text(size: 8.5pt, fill: red.darken(15%))[$tau_w$], anchor: "north")
