@@ -428,6 +428,49 @@ dove $h = z_A - z_B$ è il battente idrostatico sopra il foro.
   content((1.5, 1.8), [Sezione $S$])
   content((3.3, 0.15), [Foro $A$])
 })
+#canvas(length: 1cm, {
+  import draw: *
+
+  bezier((1.05, 1.43), (6.55, 1.46), (2.55, 1.34), (4.4, 1.36), mark: (end: ">"), stroke: 0.95pt + blue)
+  bezier((1.05, 1.23), (6.55, 1.26), (2.55, 1.1), (4.4, 1.12), mark: (end: ">"), stroke: 0.95pt + blue)
+  bezier((1.05, 1.03), (6.55, 1.06), (2.55, 0.86), (4.4, 0.88), mark: (end: ">"), stroke: 0.95pt + blue)
+
+  line((2.05, 1.72), (2.29, 1.81), (2.55, 1.83), (3.11, 1.77), (3.69, 1.64), (4.28, 1.47), (4.8, 1.3), (6.3, 2.15), (5.78, 2.32), (5.19, 2.49), (4.61, 2.62), (4.05, 2.68), (3.79, 2.66), (3.55, 2.57), close: true, fill: gray.transparentize(85%), stroke: none)
+  line((1.8, 1.3), (1.83, 1.49), (1.93, 1.64), (2.05, 1.72), (2.29, 1.81), (2.55, 1.83), (3.11, 1.77), (3.69, 1.64), (4.28, 1.47), (4.8, 1.3), (3.84, 1.26), (2.85, 1.23), (2.13, 1.22), close: true, fill: gray.transparentize(78%), stroke: none)
+
+  bezier((3.3, 2.15), (3.55, 2.57), (3.3, 2.34), (3.39, 2.48), stroke: (dash: "dashed", thickness: 0.7pt))
+  bezier((3.3, 2.15), (6.3, 2.15), (3.3, 2.0), (4.5, 2.05), stroke: (dash: "dashed", thickness: 0.7pt))
+
+  bezier((2.55, 1.725), (3.3, 2.255), (2.55, 2.055), (2.83, 2.255), stroke: (dash: "dashed", thickness: 0.55pt))
+  bezier((3.3, 2.255), (5.55, 1.725), (4.0, 2.255), (4.9, 1.925), stroke: (dash: "dashed", thickness: 0.55pt))
+
+  bezier((1.8, 1.3), (2.55, 1.83), (1.8, 1.63), (2.08, 1.83), stroke: 1.15pt)
+  bezier((2.55, 1.83), (4.8, 1.3), (3.25, 1.83), (4.15, 1.5), stroke: 1.15pt)
+  bezier((1.8, 1.3), (4.8, 1.3), (1.8, 1.15), (3.0, 1.2), stroke: 1.15pt)
+
+  line((2.05, 1.72), (3.55, 2.57), stroke: 1.1pt)
+  line((4.8, 1.3), (6.3, 2.15), stroke: 1.1pt)
+  bezier((3.55, 2.57), (4.05, 2.68), (3.68, 2.64), (3.84, 2.68), stroke: 1.1pt)
+  bezier((4.05, 2.68), (6.3, 2.15), (4.75, 2.68), (5.65, 2.35), stroke: 1.1pt)
+
+  bezier((1.05, 1.66), (6.55, 1.52), (2.3, 2.83), (4.45, 2.65), mark: (end: ">"), stroke: 0.95pt + red)
+  bezier((1.05, 2.0), (6.55, 1.82), (2.3, 3.33), (4.45, 3.11), mark: (end: ">"), stroke: 0.95pt + red)
+  bezier((1.05, 2.34), (6.55, 2.12), (2.3, 3.83), (4.45, 3.57), mark: (end: ">"), stroke: 0.95pt + red)
+
+  line((3.54, 1.64), (3.54, 3.65), mark: (end: ">"), stroke: 1.2pt + purple)
+  content((3.42, 3.6), text(size: 8.5pt, fill: purple)[$F_i$], anchor: "east")
+
+  bezier((4.25, 3.32), (5.85, 3.72), (4.85, 3.56), (5.38, 3.7), mark: (end: ">"), stroke: 0.9pt + red)
+  content((5.98, 3.72), text(size: 8.5pt)[$u$ cresce, $p$ diminuisce], anchor: "west")
+
+  bezier((4.95, 1.34), (6.05, 0.72), (5.35, 1.08), (5.68, 0.76), mark: (end: ">"), stroke: 0.9pt + blue)
+  content((6.18, 0.72), text(size: 8.5pt)[$u$ diminuisce, $p$ aumenta], anchor: "west")
+})
+
+
+
+
+
 
 #canvas(length: 1cm, {
   import draw: *
