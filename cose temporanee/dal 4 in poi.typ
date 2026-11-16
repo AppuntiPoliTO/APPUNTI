@@ -1750,7 +1750,7 @@ arrow(F) = integral_S bold(T) dot arrow(n) dif S = integral_S (-p delta_(i j) n_
 $
 
 //pdf 8
-
+#pagebreak()
 = Analisi dimensionale
 
 == Teorema $pi$ o di Buckingham
