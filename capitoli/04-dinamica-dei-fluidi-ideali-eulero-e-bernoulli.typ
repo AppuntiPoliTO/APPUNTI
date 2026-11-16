@@ -212,7 +212,7 @@ Si definisce così il trinomio di Bernoulli come densità di energia meccanica (
 
 $ cal(H) = rho u^2 / 2 + p + rho g x_3 $ <eq:def_carico_bernoulli>
 
-Il simbolo $cal(H)$ (o $H$) deriva dal termine inglese _head_ ("testa"), tradotto nella letteratura idraulica italiana come _carico_ (o carico totale). Nella definizione dell'@eq:def_carico_bernoulli, ciascun addendo di $cal(H)$ ha le dimensioni di una pressione ($["Pa"] = ["N"\/"m"^2] = ["J"\/"m"^3]$): questa formulazione è tipica dell'aerodinamica, dove si misurano direttamente differenze di pressione. In ambito idraulico (ad esempio nell'idraulica fluviale) si preferisce invece dividere l'intera espressione per il peso specifico $rho g$, definendo il *carico idraulico*:
+ciascun addendo di $cal(H)$ ha le dimensioni di una pressione ($["Pa"] = ["N"\/"m"^2] = ["J"\/"m"^3]$): questa formulazione è tipica dell'aerodinamica, dove si misurano direttamente differenze di pressione. In ambito idraulico (ad esempio nell'idraulica fluviale) si preferisce invece dividere l'intera espressione per il peso specifico $rho g$, definendo il *carico idraulico*:
 
 $ H_"idr" = cal(H) / (rho g) = u^2 / (2 g) + p / (rho g) + x_3 $
 
