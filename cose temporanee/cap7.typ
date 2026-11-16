@@ -809,6 +809,8 @@ $
 
 _Nota: indicando con $Q$ la portata su una larghezza unitaria $b = 1 "m"$, la relazione si scrive equivalentemente come $F_x = -[1/2 gamma (h_1^2 - h_2^2) + rho Q^2 (1/h_1 - 1/h_2)]$._
 
+#pagebreak()
+
 == Esempio 3: Getto libero contro una parete piana verticale
 
 Passiamo ora al caso di un *getto libero* (d'acqua o d'aria) di sezione $S_1$ (o area $A$), velocità $U$ e portata $Q = U S_1$, che impatta ortogonalmente contro una parete piana verticale.
