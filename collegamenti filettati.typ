@@ -935,7 +935,7 @@ Per ricavare la relazione analitica tra il momento di serraggio $M_T$ e la forza
 
 
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1.2fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[Avvitamento e serraggio:]
 Durante il serraggio, il filetto della vite (il blocco) tende a risalire lungo il piano inclinato della madrevite. Sulla superficie di contatto si sviluppano:
@@ -1184,7 +1184,7 @@ $ M_("svit") = -F_U frac(d_m, 2) = -frac(F_V, 2) [d_m dot.op tan(phi.alt - alpha
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nel caso particolare in cui l'angolo di attrito sia invece inferiore all'angolo dell'elica ($phi.alt < alpha_m$), la risultante $F_(R E S)$ rimane dallo stesso lato della verticale rispetto all'avvitamento e la componente $F_U$ mantiene lo stesso verso del serraggio:
 
-$ M = F_U frac(d_m, 2) = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt)] > 0 quad "se " phi.alt < alpha_m $ In tale condizione, il collegamento tende allo #strong[svitamento spontaneo] (autosvitamento, specialmente in presenza di piccoli disturbi o vibrazioni), e un eventuale momento positivo applicato nel verso di serraggio agirebbe in realtà per frenare lo svitamento spontaneo.],[#canvas(length: 1cm, {
+$ M = F_U frac(d_m, 2) = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt)] > 0 quad "se " phi.alt < alpha_m $ In tale condizione, il collegamento tende allo #strong[svitamento spontaneo] (autosvitamento, specialmente in presenza di piccoli disturbi o vibrazioni), e un eventuale momento positivo applicato nel verso di serraggio agirebbe in realtà per frenare lo svitamento spontaneo.],[#canvas(length: 1.2cm, {
   import draw: *
 
   content((0.0, 7.15), text(size: 8.5pt)[_Caso_ \ _generale_], anchor: "west")
