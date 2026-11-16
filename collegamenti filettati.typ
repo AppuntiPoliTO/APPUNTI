@@ -641,14 +641,14 @@ Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadra
   content((3.35, 2.05), text(size: 8.5pt)[vite+pezzi], anchor: "east")
 })])
 
-L'intersezione tra le due rette identifica il punto di funzionamento del collegamento al montaggio:
-- L'ordinata del punto di intersezione fornisce la forza assiale di precarico in equilibrio nella vite e nei pezzi (direttamente correlata al momento di serraggio applicato).
-- La somma dei due spostamenti elastici rispetto alla posizione di equilibrio uguaglia l'interferenza imposta ($u_v + u_p = i$).
+
 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma di interferenza al montaggio con assi $|F_p|, |F_v|$ in ordinata e $u$ in ascissa; retta della vite uscente dall'origine inclinata di $delta_v$ rispetto all'ordinata, retta del pezzo traslata verso destra inclinata di $delta_p$, punto di intersezione indicato come "Punto di funzionamento del collegamento al montaggio", e proiezione sull'ascissa degli spostamenti $u_v$, $u_p$ la cui somma è pari a $i$]])
+  align: (left + horizon, center + horizon),[L'intersezione tra le due rette identifica il punto di funzionamento del collegamento al montaggio:
+- L'ordinata del punto di intersezione fornisce la forza assiale di precarico in equilibrio nella vite e nei pezzi (direttamente correlata al momento di serraggio applicato).
+- La somma dei due spostamenti elastici rispetto alla posizione di equilibrio uguaglia l'interferenza imposta ($u_v + u_p = i$).], [])
 
 === Forza assiale, momento di serraggio e momento di svitamento
 All'inizio dell'accostamento, i filetti della vite e della madrevite presentano un leggero gioco iniziale; non appena la vite viene messa in tiro dalla coppia torcente applicata con la chiave intorno al proprio asse principale, i fianchi dei filetti vanno a contatto sviluppando una pressione locale che genera trazione nella vite e compressione nei pezzi e nella madrevite.
