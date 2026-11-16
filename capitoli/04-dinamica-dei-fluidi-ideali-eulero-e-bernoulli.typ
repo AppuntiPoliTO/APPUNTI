@@ -672,7 +672,7 @@ dove $h = z_A - z_B$ è il battente idrostatico sopra il foro.
 
 // [DA AUDIO]
 #figure(
-  align(center)[#canvas(length: 1cm, {
+  align(center)[#canvas(length: 1.6cm, {
   import draw: *
 
   circle((1.8, 2.75), radius: (1.4, 0.39), fill: gray.transparentize(86%), stroke: none)
