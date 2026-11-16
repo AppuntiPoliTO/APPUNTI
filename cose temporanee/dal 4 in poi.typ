@@ -429,6 +429,8 @@ dove $h = z_A - z_B$ è il battente idrostatico sopra il foro.
   content((3.3, 0.15), [Foro $A$])
 })
 
+a
+
 // [DA AUDIO]
 === Calcolo del tempo di svuotamento del serbatoio
 Vogliamo ora calcolare il tempo $tau$ necessario a svuotare completamente un serbatoio di sezione trasversale costante $S$, partendo da un'altezza iniziale $h(0) = h_0$, attraverso un foro sul fondo di area $A << S$.
