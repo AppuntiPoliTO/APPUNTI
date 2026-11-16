@@ -590,18 +590,56 @@ $ i = p dot.op n_("giri") $
 
 
 
-Sotto l'azione del serraggio, la vite risulta soggetta a trazione da parte del pezzo (allungandosi di uno spostamento positivo $u_v$ sotto la forza $F_v$), mentre i pezzi collegati risultano compressi dal bullone (accorciandosi di uno spostamento negativo $u_p$ sotto la forza $F_p$). In campo elastico lineare, ciascun componente è caratterizzato dalla propria rigidezza $K_i$ e dal suo reciproco, la deformabilità $delta_i$:
+
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Sotto l'azione del serraggio, la vite risulta soggetta a trazione da parte del pezzo (allungandosi di uno spostamento positivo $u_v$ sotto la forza $F_v$), mentre i pezzi collegati risultano compressi dal bullone (accorciandosi di uno spostamento negativo $u_p$ sotto la forza $F_p$). In campo elastico lineare, ciascun componente è caratterizzato dalla propria rigidezza $K_i$ e dal suo reciproco, la deformabilità $delta_i$:
 
 $ K_v = frac(F_v, u_v), quad quad delta_v = frac(1, K_v) = frac(u_v, F_v) $
 
 $ K_p = frac(F_p, u_p), quad quad delta_p = frac(1, K_p) = frac(u_p, F_p) $
 
-Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadrante (forza e spostamento positivi), mentre quella dei pezzi giace originariamente nel terzo quadrante (forza di compressione e spostamento negativi). Per rendere pratica la costruzione grafica del diagramma di interferenza (o di forzamento), si riportano in ordinata i valori assoluti delle forze $|F_p|$ e $|F_v|$ in modo che entrambe le caratteristiche lavorino nel semipiano superiore; le pendenze rispetto all'asse delle ordinate corrispondono alle deformabilità $delta_v$ e $delta_p$.
+Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadrante (forza e spostamento positivi), mentre quella dei pezzi giace originariamente nel terzo quadrante (forza di compressione e spostamento negativi). Per rendere pratica la costruzione grafica del diagramma di interferenza (o di forzamento), si riportano in ordinata i valori assoluti delle forze $|F_p|$ e $|F_v|$ in modo che entrambe le caratteristiche lavorino nel semipiano superiore; le pendenze rispetto all'asse delle ordinate corrispondono alle deformabilità $delta_v$ e $delta_p$.Se entrambe le rette partissero dall'origine, non vi sarebbe interferenza (pezzi semplicemente accostati senza pressione). Per rappresentare il serraggio di interferenza $i$, si lascia la caratteristica della vite nell'origine e si trasla verso destra la caratteristica del pezzo di una quantità pari a $i$ lungo l'asse delle ascisse $u$.],[#canvas(length: 1cm, {
+  import draw: *
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Se entrambe le rette partissero dall'origine, non vi sarebbe interferenza (pezzi semplicemente accostati senza pressione). Per rappresentare il serraggio di interferenza $i$, si lascia la caratteristica della vite nell'origine e si trasla verso destra la caratteristica del pezzo di una quantità pari a $i$ lungo l'asse delle ascisse $u$.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: costruzione del diagramma di interferenza (di forzamento): in alto, grafici separati delle caratteristiche lineari della vite (nel I quadrante con $F_v, u_v$) e dei pezzi (nel III quadrante con $F_p, u_p$) e loro ribaltamento nel semipiano superiore con $|F_p|$ e $|F_v|$ uscenti dall'origine]])
+  // 1. vite
+  line((5.4, 8.0), (7.6, 8.0), mark: (end: ">"), stroke: 0.75pt)
+  line((5.4, 8.0), (5.4, 10.1), mark: (end: ">"), stroke: 0.75pt)
+  line((5.4, 8.0), (6.81, 9.56), stroke: 1.1pt)
+  arc((5.4, 8.0), start: 0deg, stop: 48deg, radius: 0.7, anchor: "origin", stroke: 0.6pt)
+  arc((5.4, 8.0), start: 48deg, stop: 90deg, radius: 0.85, anchor: "origin", stroke: 0.6pt)
+  arc((5.4, 8.0), start: 48deg, stop: 90deg, radius: 0.97, anchor: "origin", stroke: 0.6pt)
+  content((5.25, 9.95), text(size: 8pt)[$F_v$], anchor: "east")
+  content((7.4, 7.85), text(size: 8pt)[$u_v$], anchor: "north")
+  content((6.95, 9.65), text(size: 8.5pt)[vite], anchor: "west")
+  content((5.15, 8.95), text(size: 8pt)[$delta_v = 1 / K_v = u_v / F_v$], anchor: "east")
+  content((6.35, 8.48), text(size: 8pt)[$K_v = F_v / u_v$], anchor: "west")
+
+  // 2. pezzi
+  line((3.4, 5.3), (6.7, 5.3), mark: (end: ">"), stroke: 0.75pt)
+  line((5.4, 3.6), (5.4, 6.8), mark: (end: ">"), stroke: 0.75pt)
+  line((5.4, 5.3), (3.58, 4.25), stroke: 1.1pt)
+  arc((5.4, 5.3), start: 180deg, stop: 210deg, radius: 0.75, anchor: "origin", stroke: 0.6pt)
+  arc((5.4, 5.3), start: 210deg, stop: 270deg, radius: 0.9, anchor: "origin", stroke: 0.6pt)
+  arc((5.4, 5.3), start: 210deg, stop: 270deg, radius: 1.02, anchor: "origin", stroke: 0.6pt)
+  content((5.25, 6.68), text(size: 8pt)[$F_p$], anchor: "east")
+  content((6.75, 5.12), text(size: 8pt)[$u_p$], anchor: "north")
+  content((4.75, 3.95), text(size: 8.5pt)[pezzi], anchor: "east")
+  content((5.05, 5.95), text(size: 8pt)[$K_p = F_p / u_p$], anchor: "east")
+  content((5.65, 4.45), text(size: 8pt)[$delta_p = 1 / K_p = u_p / F_p$], anchor: "west")
+
+  // 3. vite+pezzi
+  line((3.3, 0.8), (7.5, 0.8), mark: (end: ">"), stroke: 0.75pt)
+  line((5.4, 0.8), (5.4, 2.75), mark: (end: ">"), stroke: 0.75pt)
+  line((5.4, 0.8), (6.74, 2.29), stroke: 1.1pt)
+  line((5.4, 0.8), (3.67, 1.8), stroke: 1.1pt)
+  content((5.25, 2.55), text(size: 8pt)[$|F_p|$], anchor: "east")
+  content((5.25, 2.15), text(size: 8pt)[$|F_v|$], anchor: "east")
+  content((7.2, 0.62), text(size: 8pt)[$u_p, u_v$], anchor: "north")
+  content((3.35, 2.05), text(size: 8.5pt)[vite+pezzi], anchor: "east")
+})])
 
 L'intersezione tra le due rette identifica il punto di funzionamento del collegamento al montaggio:
 - L'ordinata del punto di intersezione fornisce la forza assiale di precarico in equilibrio nella vite e nei pezzi (direttamente correlata al momento di serraggio applicato).
