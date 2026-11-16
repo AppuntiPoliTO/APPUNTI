@@ -1036,7 +1036,48 @@ Consideriamo un getto libero di sezione $S_1$, velocità $arrow(u)_1 = (U_1, 0, 
       M_(2, x) = -2 integral_(S_2) rho (-U_2) (+U_2) dif S_2 = +2 rho U_2^2 S_2 = +rho Q U_2
       $
   ],
-  [
+  [#canvas(length: 1cm, {
+  import draw: *
+
+  line((4.2, 2.5), (4.8, 2.82), (4.99, 3.36), (4.71, 3.87), (3.9, 4.1), (5.1, 3.89), (5.98, 3.3), (6.3, 2.5), (5.98, 1.7), (5.1, 1.11), (3.9, 0.9), (4.71, 1.13), (4.99, 1.64), (4.8, 2.18), close: true, fill: gray.transparentize(92%), stroke: none)
+
+  line((4.92, 3.61), (5.35, 3.78), stroke: 0.55pt)
+  line((4.96, 3.24), (5.71, 3.54), stroke: 0.55pt)
+  line((4.85, 2.82), (5.99, 3.28), stroke: 0.55pt)
+  line((4.62, 2.35), (6.19, 2.98), stroke: 0.55pt)
+  line((4.86, 2.06), (6.29, 2.64), stroke: 0.55pt)
+  line((4.98, 1.73), (6.27, 2.25), stroke: 0.55pt)
+  line((4.89, 1.32), (6.04, 1.78), stroke: 0.55pt)
+
+  bezier((4.2, 2.5), (3.9, 4.1), (5.25, 2.65), (5.35, 4.1), stroke: 1.1pt)
+  bezier((4.2, 2.5), (3.9, 0.9), (5.25, 2.35), (5.35, 0.9), stroke: 1.1pt)
+  arc((3.9, 2.5), start: -90deg, stop: 90deg, radius: (2.4, 1.6), anchor: "origin", stroke: 1.1pt)
+
+  line((0.55, 2.82), (4.2, 2.82), stroke: 0.85pt + blue)
+  bezier((4.2, 2.82), (4.72, 3.27), (4.5, 2.82), (4.72, 3.02), stroke: 0.85pt + blue)
+  bezier((4.72, 3.27), (4.05, 3.72), (4.72, 3.52), (4.45, 3.72), stroke: 0.85pt + blue)
+  line((4.05, 3.72), (3.3, 3.72), stroke: 0.85pt + blue)
+  line((3.88, 4.1), (3.3, 4.1), stroke: 0.85pt + blue)
+  line((3.9, 3.91), (2.75, 3.91), mark: (end: ">"), stroke: 0.9pt + blue)
+  content((2.6, 3.91), text(size: 8.5pt, fill: blue)[$Q/2, u_2$], anchor: "east")
+
+  line((0.55, 2.18), (4.2, 2.18), stroke: 0.85pt + blue)
+  bezier((4.2, 2.18), (4.72, 1.73), (4.5, 2.18), (4.72, 1.98), stroke: 0.85pt + blue)
+  bezier((4.72, 1.73), (4.05, 1.28), (4.72, 1.48), (4.45, 1.28), stroke: 0.85pt + blue)
+  line((4.05, 1.28), (3.3, 1.28), stroke: 0.85pt + blue)
+  line((3.88, 0.9), (3.3, 0.9), stroke: 0.85pt + blue)
+  line((3.9, 1.09), (2.75, 1.09), mark: (end: ">"), stroke: 0.9pt + blue)
+  content((2.6, 1.09), text(size: 8.5pt, fill: blue)[$Q/2, u_2$], anchor: "east")
+
+  line((0.15, 2.5), (0.95, 2.5), mark: (end: ">"), stroke: 0.9pt + blue)
+  content((1.1, 2.5), text(size: 8.5pt, fill: blue)[$Q$], anchor: "west")
+})
+  
+  
+  #v(1em).
+
+
+  
     #cetz.canvas(length: 0.78cm, {
       import cetz.draw: *
       // Pala curva tipo Pelton (profilo interno ed esterno)
