@@ -1087,17 +1087,17 @@ Consideriamo un getto libero di sezione $S_1$, velocità $arrow(u)_1 = (U_1, 0, 
   content((0.78, 2.5), text(size: 8.5pt, fill: blue.darken(15%))[$Q$], anchor: "center")
   content((1.75, 1.96), text(size: 8pt)[$S_1$], anchor: "north")
 
-  content((3.15, 4.22), text(size: 8pt)[$S_2$], anchor: "south")
+  content((3.15, 4.22), text(size: 9pt)[$S_2$], anchor: "south")
   line((3.15, 3.84), (2.25, 3.84), mark: (end: ">"), stroke: 1pt + blue.darken(15%))
   line((3.15, 3.98), (2.55, 3.98), mark: (end: ">"), stroke: 0.9pt + red.darken(10%))
   content((2.55, 4.14), text(size: 8pt, fill: red.darken(10%))[$arrow(n)_2$], anchor: "south")
-  content((2.12, 3.84), text(size: 8pt, fill: blue.darken(15%))[$Q/2, arrow(u)_2$], anchor: "east")
+  content((2.12, 3.84), text(size: 10pt, fill: blue.darken(15%))[$Q/2, arrow(u)_2$], anchor: "east")
 
-  content((3.15, 0.78), text(size: 8pt)[$S_2$], anchor: "north")
+  content((3.15, 0.78), text(size: 9pt)[$S_2$], anchor: "north")
   line((3.15, 1.16), (2.25, 1.16), mark: (end: ">"), stroke: 1pt + blue.darken(15%))
   line((3.15, 1.02), (2.55, 1.02), mark: (end: ">"), stroke: 0.9pt + red.darken(10%))
   content((2.55, 0.86), text(size: 8pt, fill: red.darken(10%))[$arrow(n)_2$], anchor: "north")
-  content((2.12, 1.16), text(size: 8pt, fill: blue.darken(15%))[$Q/2, arrow(u)_2$], anchor: "east")
+  content((2.12, 1.16), text(size: 10pt, fill: blue.darken(15%))[$Q/2, arrow(u)_2$], anchor: "east")
 
   line((0.55, 0.45), (1.45, 0.45), mark: (end: ">"), stroke: 0.75pt)
   content((1.55, 0.45), text(size: 8pt)[$x$], anchor: "west")
