@@ -52,7 +52,8 @@ $ d_3 = d - 2 h_3 = d - 1,226 87 P quad quad r = frac(H, 6) = 0,144 34 P $
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Ai fini del calcolo strutturale della sezione resistente della vite, si fa riferimento o al diametro di nocciolo (corrispondente alla gola più profonda con raccordo) oppure a un diametro resistente che, secondo le indicazioni delle normative tedesche, tiene conto anche di una porzione del filetto, poiché il filetto stesso è lateralmente vuoto e non oppone la medesima resistenza di un fusto pieno.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: sezione assiale del profilo triangolare di una filettatura metrica ISO in accoppiamento tra madrevite (superiore) e vite (inferiore), con indicazione del passo $P$, dell'angolo di apertura $60degree$, delle altezze $H$, $H/8$, $H/2$, $H/4$, $H_1$, $h_3$, dei diametri $D$, $D_2$, $D_1$ della madrevite e $d_3$, $d_1$, $d_2$, $d$ della vite, e del riquadro con le relative formule geometriche]])
+  align: (left + horizon, center + horizon),[Ai fini del calcolo strutturale della sezione resistente della vite, si fa riferimento o al diametro di nocciolo (corrispondente alla gola più profonda con raccordo) oppure a un diametro resistente che, secondo le indicazioni delle normative tedesche, tiene conto anche di una porzione del filetto, poiché il filetto stesso è lateralmente vuoto e non oppone la medesima resistenza di un fusto pieno.],[#image("images/fig_collegamenti_filettati_3594.png", width: 90%)
+])
 
 === Nomenclatura dei collegamenti filettati
 La distinzione terminologica tra le diverse configurazioni costruttive riveste un'importanza fondamentale sia in ambito professionale sia in sede d'esame:
