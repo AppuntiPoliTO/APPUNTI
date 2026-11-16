@@ -317,32 +317,47 @@ Consideriamo ora una condotta orizzontale la cui sezione varia da $S_1$ a $S_2$ 
     F_x = -[(p_1 S_1 - p_2 S_2) + rho Q^2 (1/S_1 - 1/S_2)]
     $
   ],
-  [
-    #cetz.canvas(length: 0.82cm, {
-      import cetz.draw: *
-      // Pareti convergenti morbide
-      bezier((0, 1.35), (4.5, 0.65), (2.0, 1.35), (2.5, 0.65), stroke: 1.6pt + black)
-      bezier((0, -1.35), (4.5, -0.65), (2.0, -1.35), (2.5, -0.65), stroke: 1.6pt + black)
+  [#canvas(length: 1cm, {
+  import draw: *
 
-      // Sezioni S1 e S2
-      line((0.3, -1.35), (0.3, 1.35), stroke: (paint: rgb("#1f5a96"), thickness: 1.2pt, dash: "dashed"))
-      line((4.2, -0.65), (4.2, 0.65), stroke: (paint: rgb("#1f5a96"), thickness: 1.2pt, dash: "dashed"))
-      content((0.65, -1.0), text(size: 9pt, fill: rgb("#1f5a96"))[$S_1$])
-      content((3.85, -0.42), text(size: 9pt, fill: rgb("#1f5a96"))[$S_2$])
+  // Riempimento leggero delle sezioni trasversali di ingresso e uscita
+  circle((1.40, 2.00), radius: (0.28, 1.15), fill: gray.transparentize(88%), stroke: none)
+  circle((6.80, 2.00), radius: (0.11, 0.42), fill: gray.transparentize(88%), stroke: none)
 
-      // Normale su parete curva
-      line((2.3, 1.0), (2.6, 1.85), mark: (end: ">"), stroke: 1.1pt + rgb("#c0392b"))
-      content((3.0, 1.65), text(size: 9pt, fill: rgb("#c0392b"))[$arrow(n)_w$])
+  // Profilo della condotta convergente (cilindro + raccordo simmetrico)
+  line((1.40, 3.15), (3.80, 3.15), stroke: 1.1pt)
+  line((1.40, 0.85), (3.80, 0.85), stroke: 1.1pt)
+  bezier((3.80, 3.15), (6.80, 2.42), (4.90, 3.15), (5.70, 2.42), stroke: 1.1pt)
+  bezier((3.80, 0.85), (6.80, 1.58), (4.90, 0.85), (5.70, 1.58), stroke: 1.1pt)
 
-      // Portata e velocità
-      line((-0.3, 0), (1.1, 0), mark: (end: ">"), stroke: 1.2pt + rgb("#1f5a96"))
-      content((0.9, 0.32), text(size: 9pt, fill: rgb("#1f5a96"))[$U_1, p_1$])
+  // Sezione d'ingresso S1 (interamente visibile)
+  circle((1.40, 2.00), radius: (0.28, 1.15), stroke: (paint: blue.darken(20%), thickness: 0.95pt))
+  content((1.74, 1.06), text(size: 8.5pt, fill: blue.darken(20%))[$S_1$], anchor: "west")
 
-      line((3.7, 0), (5.3, 0), mark: (end: ">"), stroke: 1.2pt + rgb("#1f5a96"))
-      content((4.9, 0.32), text(size: 9pt, fill: rgb("#1f5a96"))[$U_2, p_2$])
+  // Sezione d'uscita S2 (arco posteriore tratteggiato, anteriore pieno)
+  arc((6.80, 2.00), start: 90deg, stop: 270deg, radius: (0.11, 0.42), anchor: "origin", stroke: (paint: blue.darken(20%), dash: "dashed", thickness: 0.75pt))
+  arc((6.80, 2.00), start: -90deg, stop: 90deg, radius: (0.11, 0.42), anchor: "origin", stroke: (paint: blue.darken(20%), thickness: 0.95pt))
+  content((6.62, 1.40), text(size: 8.5pt, fill: blue.darken(20%))[$S_2$], anchor: "north-east")
 
-      content((2.2, -0.15), text(size: 9.5pt, weight: "bold")[$Q$])
-    })
+  // Flusso in ingresso e in uscita (U_1, p_1 ; U_2, p_2) e portata Q
+  line((0.65, 2.00), (2.30, 2.00), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 1pt))
+  content((1.82, 2.12), text(size: 8pt, fill: blue.darken(20%))[$U_1, p_1$], anchor: "south-west")
+
+  line((6.25, 2.00), (7.80, 2.00), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 1pt))
+  content((7.08, 2.12), text(size: 8pt, fill: blue.darken(20%))[$U_2, p_2$], anchor: "south-west")
+
+  content((3.55, 2.00), text(size: 9.5pt)[$Q$], anchor: "center")
+
+  // Versori normali uscenti sulle sezioni (blu) e sulla parete (rosso)
+  line((1.40, 2.55), (0.75, 2.55), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 0.85pt))
+  content((0.95, 2.66), text(size: 8pt, fill: blue.darken(20%))[$arrow(n)$], anchor: "south")
+
+  line((6.80, 1.76), (7.38, 1.76), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 0.85pt))
+  content((7.14, 1.64), text(size: 8pt, fill: blue.darken(20%))[$arrow(n)$], anchor: "north")
+
+  line((5.30, 2.785), (5.551, 3.438), mark: (end: ">"), stroke: (paint: red.darken(15%), thickness: 0.95pt))
+  content((5.63, 3.43), text(size: 8.5pt, fill: red.darken(15%))[$arrow(n)_w$], anchor: "west")
+})
   ]
 )
 #figure(
