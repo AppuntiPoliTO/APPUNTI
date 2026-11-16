@@ -1264,7 +1264,7 @@ Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria
 Questo stesso approccio integrale può essere impiegato per valutare la forza aerodinamica o idrodinamica esercitata sul fluido da un corpo tozzo immerso in una corrente esterna indisturbata di velocità $u_infinity$:
 
 #grid(
-  columns: (1fr, 1.15fr),
+  columns: (1.1fr, 1fr),
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
   [
@@ -1278,7 +1278,7 @@ Questo stesso approccio integrale può essere impiegato per valutare la forza ae
     $
   ],
   [
-    ##canvas(length: 1cm, {
+    #move(dx:25pt)[#canvas(length: 1cm, {
   import draw: *
   line((-4.05, -1.5), (-4.05, 1.5), stroke: 0.9pt)
   line((-3.1, -1.5), (-3.1, 1.5), stroke: 0.9pt)
@@ -1324,7 +1324,7 @@ Questo stesso approccio integrale può essere impiegato per valutare la forza ae
   content((-3.575, -2.18), text(size: 8pt)[profilo a monte], anchor: "north")
   content((2.875, -2.18), text(size: 8pt)[profilo a valle], anchor: "north")
   content((4.50, -0.14), text(size: 8.5pt)[$arrow(i)$], anchor: "north")
-})
+})]
   ]
 )
 
