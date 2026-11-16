@@ -270,9 +270,11 @@ Poiché per mantenere il moto in presenza di attrito deve essere $p_1 > p_2$, la
   line((1.80, 3.40), (6.40, 3.40), stroke: 1.15pt)
   line((1.80, 1.20), (6.40, 1.20), stroke: 1.15pt)
 
-  // Sezioni circolari in prospettiva
+  // Sezioni circolari in prospettiva S1 ed S2
   circle((1.80, 2.30), radius: (0.40, 1.10), stroke: (paint: blue.darken(20%), thickness: 1pt))
   circle((6.40, 2.30), radius: (0.40, 1.10), stroke: (paint: blue.darken(20%), thickness: 1pt))
+  content((1.80, 3.52), text(size: 8.5pt, fill: blue.darken(20%))[$S_1$], anchor: "south")
+  content((6.40, 3.52), text(size: 8.5pt, fill: blue.darken(20%))[$S_2$], anchor: "south")
 
   // Raggio R
   line((1.80, 2.30), (1.80, 3.40), mark: (end: ">"), stroke: 0.9pt)
