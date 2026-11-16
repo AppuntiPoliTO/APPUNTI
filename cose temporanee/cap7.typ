@@ -345,9 +345,7 @@ Consideriamo ora una condotta orizzontale la cui sezione varia da $S_1$ a $S_2$ 
     })
   ]
 )
-#figure(
-  align(center)[]
-)
+
 
 
 Questa relazione mette in luce due aspetti fondamentali:
