@@ -1,4 +1,5 @@
-#import "template.typ""
+#import "/template.typ": *
+#import "@preview/cetz:0.3.4"
 #set page(
   paper: "a4",
   margin: (x: 1.9cm, y: 1.85cm),
