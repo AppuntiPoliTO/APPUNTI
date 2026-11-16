@@ -119,7 +119,7 @@ I quattro vettori che compongono il bilancio rappresentano:
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
   [Consideriamo un flusso interno attraverso un tronco di condotta. Il volume di controllo $V$ è delimitato dalla superficie di ingresso $S_1$, dalla superficie di uscita $S_2$ e dalla superficie solida laterale (parete) $S_w$, per cui $S = S_1 union S_2 union S_w$. La normale $arrow(n)$ è per convenzione sempre diretta verso l'esterno del volume di fluido.],
-  [#cetz.canvas(length: 0.82cm, {
+  [#cetz.canvas(length: 1.1cm, {
       import cetz.draw: *
       // Pareti condotta
       line((0, 1.2), (5, 1.2), stroke: 1.6pt + black)
