@@ -697,11 +697,7 @@ Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria
   [
     Fissiamo un sistema di riferimento locale $(t, n)$ solidale alla parete, con l'asse $t$ tangente alla parete (positivo verso la sezione $S_2$) e l'asse $n$ normale alla parete (uscente dal fluido verso la parete).
     Per determinare le incognite ($U_2, U_3, h_2, h_3$ e la forza $arrow(F)$) procediamo in quattro passaggi:
-    1. *Determinazione delle velocità (Teorema di Bernoulli)*:
-       Trascurando le differenze di quota e gli sforzi viscosi, ed essendo il getto libero in atmosfera ($p_1 = p_2 = p_3 = p_"atm"$), applicando il teorema di Bernoulli lungo le linee di corrente da $S_1$ a $S_2$ e $S_3$ segue che il modulo della velocità rimane costante:
-       $
-       U_1 = U_2 = U_3 = U
-       $
+
   ],
   [
     #canvas(length: 1cm, {
