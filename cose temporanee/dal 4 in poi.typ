@@ -2118,6 +2118,7 @@ $
 )
 #v(1em)
 
+
 // pdf 9
 = Campi irrotazionali
 
@@ -2185,6 +2186,7 @@ potenziale gravitazionale.
     #image("immagini/dd564104-7c88-49b3-8aa7-fc7d01e14c7c-03_342_1090_650_775.jpg", width: 70%)
   ]
 )
+#pagebreak()
 #v(1em)
 
 #grid(
