@@ -236,7 +236,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     l'inerzia del fluido non è più trascurabile. A valle del punto di minima pressione ($p_"min"$) il fluido incontra un gradiente di pressione avverso (da $p_"min"$ verso la zona di recupero a valle) e non riesce a rimanere attaccato alla parete: si formano due vortici stazionari e simmetrici di ricircolo in scia.
   ],
   [
-    canvas(length: 0.76cm, {
+    #canvas(length: 0.76cm, {
       import draw: *
       // Assi cartesiani x1, x2
       line((0.1, 0), (5.1, 0), mark: (end: "stealth", size: 0.12, fill: col-gray), stroke: (paint: col-gray, thickness: 0.6pt, dash: "dashed"))
@@ -271,7 +271,7 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
         bezier((3.75, s * 0.12), (2.72, s * 0.14), (3.45, s * 0.04), (2.95, s * 0.06), mark: (end: "stealth", size: 0.09, fill: col-accent), stroke: 0.8pt + col-accent)
       }
     })
-  ]
+  ],
 
   // 3. Distacco dello strato limite
   [
