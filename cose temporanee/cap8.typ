@@ -330,22 +330,23 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     la simmetria dei vortici a valle si rompe e la scia diventa instazionaria, dando origine al distacco periodico e alternato di vortici controrotanti (*scia di von Kármán*).
   ],
   [
-    #cetz.canvas(length: 0.76cm, {
-      import cetz.draw: *
-      content((1.05, 1.12), text(size: 7.5pt, weight: "bold")[$"Re" tilde.op 40 div 50$])
-      circle((1.05, 0), radius: 0.58, fill: luma(238), stroke: 1.1pt + black)
+    #canvas(length: 1cm, {
+  import draw: *
+  content((1.1, 1.15), text(size: 8.5pt)[*$"Re" tilde.op 40 div 50$*], anchor: "south")
+  circle((1.1, 0), radius: 0.62, fill: luma(238), stroke: 1.1pt + black)
 
-      // Linee di corrente esterne ondulanti
-      bezier((1.05, 0.58), (3.2, 0.58), (1.8, 0.85), (2.5, 0.85), stroke: 0.85pt + col-primary)
-      bezier((3.2, 0.58), (5.0, 0.68), (3.9, 0.35), (4.4, 0.85), stroke: 0.85pt + col-primary)
-      bezier((1.05, -0.58), (3.5, -0.58), (1.9, -0.85), (2.7, -0.85), stroke: 0.85pt + col-primary)
-      bezier((3.5, -0.58), (5.0, -0.48), (4.1, -0.35), (4.6, -0.75), stroke: 0.85pt + col-primary)
+  bezier((0.2, 0.35), (1.1, 0.68), (0.6, 0.35), (0.8, 0.68), stroke: 0.85pt + blue)
+  bezier((1.1, 0.68), (3.25, 0.55), (1.85, 0.92), (2.55, 0.88), stroke: 0.85pt + blue)
+  bezier((3.25, 0.55), (5.2, 0.72), (3.95, 0.25), (4.5, 0.92), mark: (end: ">"), stroke: 0.85pt + blue)
 
-      // Tre vortici alternati completi (usando anchor: "origin" per centrare gli archi!)
-      arc((2.25, 0.22), anchor: "origin", start: 30deg, stop: 325deg, radius: 0.32, mark: (end: "stealth", size: 0.1, fill: col-accent), stroke: 0.9pt + col-accent)
-      arc((3.35, -0.22), anchor: "origin", start: -30deg, stop: -325deg, radius: 0.34, mark: (end: "stealth", size: 0.1, fill: col-primary), stroke: 0.9pt + col-primary)
-      arc((4.45, 0.22), anchor: "origin", start: 30deg, stop: 325deg, radius: 0.36, mark: (end: "stealth", size: 0.1, fill: col-accent), stroke: 0.9pt + col-accent)
-    })
+  bezier((0.2, -0.35), (1.1, -0.68), (0.6, -0.35), (0.8, -0.68), stroke: 0.85pt + blue)
+  bezier((1.1, -0.68), (3.55, -0.55), (1.95, -0.92), (2.75, -0.88), stroke: 0.85pt + blue)
+  bezier((3.55, -0.55), (5.2, -0.52), (4.15, -0.28), (4.65, -0.82), mark: (end: ">"), stroke: 0.85pt + blue)
+
+  arc((2.25, 0.22), start: 35deg, stop: 325deg, radius: (0.38, 0.32), anchor: "origin", mark: ( start: ">"), stroke: 0.9pt + red)
+  arc((3.35, -0.22), start: 35deg, stop: 325deg, radius: (0.40, 0.34), anchor: "origin", mark: (end: ">"), stroke: 0.9pt + blue)
+  arc((4.45, 0.22), start: 35deg, stop: 325deg, radius: (0.42, 0.36), anchor: "origin", mark: (start: ">"), stroke: 0.9pt + red)
+})
   ]
 )
 
