@@ -4,7 +4,7 @@
 #set page(paper: "a4", margin: 2cm)
 #set text(lang: "it", size: 11pt)
 
-#set heading(numbering: "1.1")
+
 #show heading.where(level: 1): it => block(below: 1em, above: 1.2em)[
   #set text(size: 15pt, weight: "bold")
   #it
