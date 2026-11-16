@@ -601,7 +601,7 @@ $ K_v = frac(F_v, u_v), quad quad delta_v = frac(1, K_v) = frac(u_v, F_v) $
 
 $ K_p = frac(F_p, u_p), quad quad delta_p = frac(1, K_p) = frac(u_p, F_p) $
 
-Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadrante (forza e spostamento positivi), mentre quella dei pezzi giace originariamente nel terzo quadrante (forza di compressione e spostamento negativi). ],[#canvas(length: 1.1cm, {
+Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadrante (forza e spostamento positivi), mentre quella dei pezzi giace originariamente nel terzo quadrante (forza di compressione e spostamento negativi). ],[#canvas(length: 1.2cm, {
   import draw: *
 
   // 1. vite
