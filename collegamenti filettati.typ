@@ -357,10 +357,7 @@ A differenza del collegamento albero-mozzo, in cui l'interferenza è di natura g
 
 $ i = p dot.op n_("giri") $
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[], [#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema del collegamento filettato con confronto rispetto alla posizione dei pezzi prima del serraggio (linea di riferimento), indicazione dello spostamento di interferenza $i$, della forza risultante di trazione sulla vite $F_v$ (frecce verdi sulla testa e sul dado) e delle forze risultanti di compressione sui pezzi $F_p$ (frecce verdi all'interfaccia)]])
+
 
 Sotto l'azione del serraggio, la vite risulta soggetta a trazione da parte del pezzo (allungandosi di uno spostamento positivo $u_v$ sotto la forza $F_v$), mentre i pezzi collegati risultano compressi dal bullone (accorciandosi di uno spostamento negativo $u_p$ sotto la forza $F_p$). In campo elastico lineare, ciascun componente è caratterizzato dalla propria rigidezza $K_i$ e dal suo reciproco, la deformabilità $delta_i$:
 
