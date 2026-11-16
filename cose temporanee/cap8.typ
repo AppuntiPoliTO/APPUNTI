@@ -2,19 +2,22 @@
 
 #set page(
   paper: "a4",
-  margin: (x: 2cm, y: 2.2cm),
+  margin: (x: 1.9cm, y: 1.85cm),
   numbering: "1",
 )
 #set text(
   font: "New Computer Modern",
-  size: 10.5pt,
+  size: 10pt,
   lang: "it",
 )
 #set par(
   justify: true,
-  leading: 0.65em,
+  leading: 0.6em,
+  spacing: 0.9em,
 )
 #set heading(numbering: "1.1")
+#show heading: set block(above: 1.1em, below: 0.65em)
+#show math.equation: set block(spacing: 0.7em)
 
 // Palette colori coerente per testo e grafici CeTZ
 #let col-primary = rgb("#1b4f72")
@@ -27,10 +30,11 @@
   width: 100%,
   fill: col-fill,
   stroke: (left: 3pt + col-primary),
-  inset: (x: 10pt, y: 8pt),
+  inset: (x: 10pt, y: 7pt),
   radius: (right: 3pt),
-  above: 0.9em,
-  below: 0.9em,
+  above: 0.75em,
+  below: 0.75em,
+  breakable: false,
   [
     #if title != none [
       #text(weight: "bold", fill: col-primary)[#title] \
@@ -122,12 +126,10 @@ $ (partial arrow(u)) / (partial t) + nabla (1 / 2 u^2 + p / rho + chi) = arrow(0
 
 === Soluzione a potenziale attorno a un cilindro o sfera e Paradosso di D'Alembert
 
-Consideriamo il campo di moto irrotazionale stazionario attorno a un cilindro circolare indefinito (o a una sfera), trascurando le variazioni di quota ($chi$ trascurabile), per cui vale ovunque:
-
-$ 1 / 2 rho u^2 + p = "cost" $
+Consideriamo il campo di moto irrotazionale stazionario attorno a un cilindro circolare indefinito (o a una sfera), trascurando le variazioni di quota ($chi$ trascurabile), per cui vale ovunque $1 slash 2 thin rho u^2 + p = "cost"$:
 
 #grid(
-  columns: (1.15fr, 0.85fr),
+  columns: (1.18fr, 0.82fr),
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
   [
@@ -137,56 +139,57 @@ $ 1 / 2 rho u^2 + p = "cost" $
       - Nella metà a valle ($theta in [pi slash 2, pi]$), per la simmetria del campo a potenziale, il fluido decelera nuovamente senza staccarsi dalla parete, realizzando un *recupero completo di pressione* fino a ritrovare $p = p_"max"$ in $theta = pi$ (curva continua nel grafico a lato; la curva tratteggiata mostra invece la perdita di recupero $Delta p$ nei flussi reali con distacco).
   ],
   [
-    #cetz.canvas(length: 0.82cm, {
+    #cetz.canvas(length: 0.78cm, {
       import cetz.draw: *
 
-      // Schema superiore: cilindro e angolo theta
-      let cy = 4.3
-      circle((2.5, cy), radius: 1.0, fill: luma(235), stroke: 1.2pt + black)
-      line((0.2, cy), (4.8, cy), stroke: (paint: col-gray, thickness: 0.6pt, dash: "dashed"))
-      // Linee di corrente simmetriche
-      bezier((0.3, cy + 0.45), (2.5, cy + 1.25), (1.3, cy + 0.45), (1.7, cy + 1.25), stroke: 0.9pt + col-primary)
-      bezier((2.5, cy + 1.25), (4.7, cy + 0.45), (3.3, cy + 1.25), (3.7, cy + 0.45), stroke: 0.9pt + col-primary)
-      bezier((0.3, cy - 0.45), (2.5, cy - 1.25), (1.3, cy - 0.45), (1.7, cy - 1.25), stroke: 0.9pt + col-primary)
-      bezier((2.5, cy - 1.25), (4.7, cy - 0.45), (3.3, cy - 1.25), (3.7, cy - 0.45), stroke: 0.9pt + col-primary)
+      // --- Schema superiore: cilindro e angolo theta ---
+      let cy = 4.35
+      circle((2.5, cy), radius: 0.95, fill: luma(238), stroke: 1.1pt + black)
+      line((0.1, cy), (4.9, cy), stroke: (paint: col-gray, thickness: 0.6pt, dash: "dashed"))
 
-      // Angolo theta e normale n
-      line((2.5, cy), (1.8, cy + 0.7), stroke: 0.8pt + black)
-      arc((2.05, cy), start: 180deg, stop: 135deg, radius: 0.45, stroke: 0.7pt + black)
-      content((1.85, cy + 0.22), text(size: 8pt)[$theta$])
-      line((3.2, cy + 0.7), (3.65, cy + 1.15), mark: (end: ">", size: 0.15), stroke: 0.9pt + col-accent)
-      content((3.85, cy + 1.1), text(size: 8pt, fill: col-accent)[$hat(n)$])
+      // Linee di corrente simmetriche
+      for s in (-1, 1) {
+        bezier((0.2, cy + s * 0.42), (2.5, cy + s * 1.18), (1.3, cy + s * 0.42), (1.7, cy + s * 1.18), stroke: 0.9pt + col-primary)
+        bezier((2.5, cy + s * 1.18), (4.8, cy + s * 0.42), (3.3, cy + s * 1.18), (3.7, cy + s * 0.42), stroke: 0.9pt + col-primary)
+      }
+
+      // Raggio angolo theta e normale uscente n
+      line((2.5, cy), (1.83, cy + 0.67), stroke: 0.8pt + black)
+      arc((2.5, cy), anchor: "origin", start: 180deg, stop: 135deg, radius: 0.5, stroke: 0.7pt + black)
+      content((1.82, cy + 0.24), text(size: 7.5pt)[$theta$])
+      line((3.17, cy + 0.67), (3.62, cy + 1.12), mark: (end: "stealth", size: 0.14, fill: col-accent), stroke: 0.9pt + col-accent)
+      content((3.85, cy + 1.05), text(size: 8pt, fill: col-accent)[$hat(n)$])
 
       // Punti notevoli
-      circle((1.5, cy), radius: 0.07, fill: col-accent, stroke: none)
-      circle((3.5, cy), radius: 0.07, fill: col-accent, stroke: none)
-      circle((2.5, cy + 1.0), radius: 0.07, fill: col-primary, stroke: none)
-      content((1.05, cy - 0.25), text(size: 7.5pt, fill: col-accent)[$p_"max"$])
-      content((3.95, cy - 0.25), text(size: 7.5pt, fill: col-accent)[$p_"max"$])
-      content((2.5, cy + 1.52), text(size: 7.5pt, fill: col-primary)[$p_"min" (u_"max")$])
+      circle((1.55, cy), radius: 0.07, fill: col-accent, stroke: none)
+      circle((3.45, cy), radius: 0.07, fill: col-accent, stroke: none)
+      circle((2.5, cy + 0.95), radius: 0.07, fill: col-primary, stroke: none)
+      content((1.05, cy - 0.24), text(size: 7.5pt, fill: col-accent)[$p_"max"$])
+      content((3.95, cy - 0.24), text(size: 7.5pt, fill: col-accent)[$p_"max"$])
+      content((2.5, cy + 1.48), text(size: 7.5pt, fill: col-primary)[$p_"min" (u_"max")$])
 
-      // Grafico inferiore: p(theta)
-      line((0.5, 0), (0.5, 2.6), mark: (end: ">", size: 0.15), stroke: 0.9pt + black)
-      line((0.3, 0.8), (4.9, 0.8), mark: (end: ">", size: 0.15), stroke: 0.9pt + black)
-      content((0.2, 2.5), text(size: 8.5pt)[$p$])
-      content((4.95, 0.5), text(size: 8.5pt)[$theta$])
+      // --- Grafico inferiore: p(theta) ---
+      line((0.5, 0.2), (0.5, 2.65), mark: (end: "stealth", size: 0.14, fill: black), stroke: 0.85pt + black)
+      line((0.3, 0.5), (4.95, 0.5), mark: (end: "stealth", size: 0.14, fill: black), stroke: 0.85pt + black)
+      content((0.22, 2.55), text(size: 8pt)[$p$])
+      content((5.0, 0.22), text(size: 8pt)[$theta$])
 
-      // Tacche asse theta
-      line((2.5, 0.72), (2.5, 0.88), stroke: 0.8pt + black)
-      line((4.5, 0.72), (4.5, 0.88), stroke: 0.8pt + black)
-      content((0.3, 0.5), text(size: 8pt)[$0$])
-      content((2.5, 0.42), text(size: 8pt)[$pi slash 2$])
-      content((4.5, 0.5), text(size: 8pt)[$pi$])
+      // Tacche asse theta (ben separate dalla curva)
+      line((2.5, 0.42), (2.5, 0.58), stroke: 0.8pt + black)
+      line((4.5, 0.42), (4.5, 0.58), stroke: 0.8pt + black)
+      content((0.32, 0.22), text(size: 7.5pt)[$0$])
+      content((2.5, 0.18), text(size: 7.5pt)[$pi slash 2$])
+      content((4.5, 0.22), text(size: 7.5pt)[$pi$])
 
-      // Curva a potenziale (simmetrica)
-      bezier((0.5, 2.2), (2.5, 0.2), (1.2, 2.2), (1.8, 0.2), stroke: 1.3pt + col-primary)
-      bezier((2.5, 0.2), (4.5, 2.2), (3.2, 0.2), (3.8, 2.2), stroke: 1.3pt + col-primary)
-      content((2.5, 2.35), text(size: 7.5pt, fill: col-primary, weight: "bold")[Soluzione a potenziale])
+      // Curva a potenziale (simmetrica, minimo in y = 0.72 sopra l'asse)
+      bezier((0.5, 2.15), (2.5, 0.72), (1.2, 2.15), (1.8, 0.72), stroke: 1.25pt + col-primary)
+      bezier((2.5, 0.72), (4.5, 2.15), (3.2, 0.72), (3.8, 2.15), stroke: 1.25pt + col-primary)
+      content((2.5, 2.42), text(size: 7.5pt, fill: col-primary, weight: "bold")[Soluzione a potenziale])
 
       // Curva reale con distacco (mancato recupero Delta p)
-      bezier((2.5, 0.2), (4.5, 1.15), (3.1, 0.2), (3.6, 1.15), stroke: (paint: col-accent, thickness: 1.1pt, dash: "dashed"))
-      line((4.5, 1.15), (4.5, 2.2), mark: (start: ">", end: ">", size: 0.12), stroke: 0.8pt + col-accent)
-      content((4.88, 1.68), text(size: 8pt, fill: col-accent)[$Delta p$])
+      bezier((2.5, 0.72), (4.5, 1.25), (3.1, 0.72), (3.7, 1.25), stroke: (paint: col-accent, thickness: 1.1pt, dash: "dashed"))
+      line((4.5, 1.3), (4.5, 2.1), mark: (start: "stealth", end: "stealth", size: 0.11, fill: col-accent), stroke: 0.8pt + col-accent)
+      content((4.88, 1.7), text(size: 7.5pt, fill: col-accent)[$Delta p$])
     })
   ]
 )
@@ -203,11 +206,11 @@ Infine, poiché nei campi a potenziale la vorticità è nulla ($arrow(omega) = a
 
 Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità nello strato limite e il campo di moto effettivo attorno a una sfera (o cilindro) cambia radicalmente al variare del numero di Reynolds $"Re" = u_infinity D slash nu$:
 
-#v(0.3em)
+#v(0.2em)
 
 #grid(
   columns: (1.15fr, 0.85fr),
-  row-gutter: 1.1em,
+  row-gutter: 0.95em,
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
 
@@ -217,27 +220,28 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     le forze viscose dominano su quelle inerziali. Le linee di corrente seguono il profilo del corpo senza distacco e presentano un andamento pressoché simmetrico tra monte e valle (ma il campo è fortemente rotazionale e viscoso, non a potenziale).
   ],
   [
-    #cetz.canvas(length: 0.78cm, {
+    #cetz.canvas(length: 0.76cm, {
       import cetz.draw: *
-      content((0.8, 1.35), text(size: 8pt, weight: "bold")[$"Re" << 1$])
-      // Profilo velocità a monte
-      line((0.2, -0.9), (0.2, 0.9), stroke: 0.7pt + col-gray)
-      for y in (-0.7, -0.35, 0, 0.35, 0.7) {
-        line((0.2, y), (0.85, y), mark: (end: ">", size: 0.1), stroke: 0.7pt + col-primary)
-      }
-      content((0.55, 1.05), text(size: 7.5pt, fill: col-primary)[$u_infinity$])
+      content((2.9, 1.38), text(size: 7.5pt, weight: "bold")[$"Re" << 1$])
 
-      // Sfera/cilindro
-      circle((2.9, 0), radius: 0.65, fill: luma(235), stroke: 1.1pt + black)
-      line((2.45, -0.45), (3.35, 0.45), mark: (start: ">", end: ">", size: 0.1), stroke: 0.7pt + black)
-      content((2.95, -0.18), text(size: 7.5pt)[$D$])
+      // Profilo velocità uniforme a monte
+      line((0.2, -0.8), (0.2, 0.8), stroke: 0.7pt + col-gray)
+      for y in (-0.7, -0.35, 0, 0.35, 0.7) {
+        line((0.2, y), (0.85, y), mark: (end: "stealth", size: 0.11, fill: col-primary), stroke: 0.75pt + col-primary)
+      }
+      content((0.52, 1.05), text(size: 7.5pt, fill: col-primary)[$u_infinity$])
+
+      // Sfera/cilindro con quota diametro D
+      circle((2.9, 0), radius: 0.62, fill: luma(238), stroke: 1.1pt + black)
+      line((2.48, -0.42), (3.32, 0.42), mark: (start: "stealth", end: "stealth", size: 0.1, fill: black), stroke: 0.7pt + black)
+      content((3.02, -0.18), text(size: 7.5pt)[$D$])
 
       // Linee di corrente simmetriche
       for s in (-1, 1) {
-        bezier((1.1, s * 0.25), (2.9, s * 0.82), (2.0, s * 0.25), (2.3, s * 0.82), stroke: 0.85pt + col-primary)
-        bezier((2.9, s * 0.82), (4.7, s * 0.25), (3.5, s * 0.82), (3.8, s * 0.25), stroke: 0.85pt + col-primary)
-        bezier((1.1, s * 0.65), (2.9, s * 1.15), (2.0, s * 0.65), (2.3, s * 1.15), stroke: 0.85pt + col-primary)
-        bezier((2.9, s * 1.15), (4.7, s * 0.65), (3.5, s * 1.15), (3.8, s * 0.65), stroke: 0.85pt + col-primary)
+        bezier((1.1, s * 0.24), (2.9, s * 0.78), (2.0, s * 0.24), (2.3, s * 0.78), stroke: 0.85pt + col-primary)
+        bezier((2.9, s * 0.78), (4.7, s * 0.24), (3.5, s * 0.78), (3.8, s * 0.24), stroke: 0.85pt + col-primary)
+        bezier((1.1, s * 0.62), (2.9, s * 1.08), (2.0, s * 0.62), (2.3, s * 1.08), stroke: 0.85pt + col-primary)
+        bezier((2.9, s * 1.08), (4.7, s * 0.62), (3.5, s * 1.08), (3.8, s * 0.62), stroke: 0.85pt + col-primary)
       }
     })
   ],
@@ -248,35 +252,39 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     l'inerzia del fluido non è più trascurabile. A valle del punto di minima pressione ($p_"min"$) il fluido incontra un gradiente di pressione avverso (da $p_"min"$ verso la zona di recupero a valle) e non riesce a rimanere attaccato alla parete: si formano due vortici stazionari e simmetrici di ricircolo in scia.
   ],
   [
-    #cetz.canvas(length: 0.78cm, {
+    #cetz.canvas(length: 0.76cm, {
       import cetz.draw: *
-      // Assi x1, x2
-      line((0.2, 0), (5.2, 0), mark: (end: ">", size: 0.12), stroke: (paint: col-gray, thickness: 0.6pt, dash: "dashed"))
-      line((0.4, -0.8), (0.4, 1.1), mark: (end: ">", size: 0.12), stroke: 0.7pt + black)
-      content((5.35, -0.2), text(size: 7.5pt)[$x_1$])
-      content((0.15, 1.05), text(size: 7.5pt)[$x_2$])
+      // Assi cartesiani x1, x2
+      line((0.1, 0), (5.1, 0), mark: (end: "stealth", size: 0.12, fill: col-gray), stroke: (paint: col-gray, thickness: 0.6pt, dash: "dashed"))
+      line((0.35, -0.85), (0.35, 1.05), mark: (end: "stealth", size: 0.12, fill: black), stroke: 0.75pt + black)
+      content((5.3, -0.18), text(size: 7.5pt)[$x_1$])
+      content((0.12, 1.0), text(size: 7.5pt)[$x_2$])
 
       // Corpo
-      circle((2.2, 0), radius: 0.65, fill: luma(235), stroke: 1.1pt + black)
-      // Coordinate curvilinee xi_1, xi_2
-      arc((2.2, 0), start: 145deg, stop: 100deg, radius: 0.8, mark: (end: ">", size: 0.1), stroke: 0.7pt + col-green)
-      line((1.67, 0.37), (1.35, 0.8), mark: (end: ">", size: 0.1), stroke: 0.7pt + col-green)
-      content((2.0, 0.98), text(size: 7pt, fill: col-green)[$xi_1$])
-      content((1.2, 0.85), text(size: 7pt, fill: col-green)[$xi_2$])
+      circle((2.1, 0), radius: 0.62, fill: luma(238), stroke: 1.1pt + black)
+
+      // Coordinate curvilinee xi_1 (tangente) e xi_2 (normale) sulla spalla superiore sinistra
+      let px = 2.1 - 0.62 * 0.707
+      let py = 0.62 * 0.707
+      line((px, py), (px - 0.38, py + 0.38), mark: (end: "stealth", size: 0.1, fill: col-green), stroke: 0.75pt + col-green)
+      line((px, py), (px + 0.35, py + 0.35), mark: (end: "stealth", size: 0.1, fill: col-green), stroke: 0.75pt + col-green)
+      content((px - 0.52, py + 0.45), text(size: 7pt, fill: col-green)[$xi_2$])
+      content((px + 0.25, py + 0.52), text(size: 7pt, fill: col-green)[$xi_1$])
 
       // Punti p_max e p_min
-      circle((1.55, 0), radius: 0.07, fill: col-accent, stroke: none)
-      circle((2.2, 0.65), radius: 0.07, fill: col-accent, stroke: none)
-      content((1.2, -0.35), text(size: 7.5pt, fill: col-accent)[$p_"max"$])
-      content((2.65, 1.05), text(size: 7.5pt, fill: col-accent)[$p_"min"$])
+      circle((1.48, 0), radius: 0.065, fill: col-accent, stroke: none)
+      circle((2.1, 0.62), radius: 0.065, fill: col-accent, stroke: none)
+      content((1.05, -0.22), text(size: 7.5pt, fill: col-accent)[$p_"max"$])
+      content((2.58, 1.02), text(size: 7.5pt, fill: col-accent)[$p_"min"$])
 
-      // Linee di corrente esterne e vortici di ricircolo
+      // Linee di corrente esterne e due vortici chiusi simmetrici in scia
       for s in (-1, 1) {
-        bezier((0.7, s * 0.25), (2.2, s * 0.82), (1.5, s * 0.25), (1.8, s * 0.82), stroke: 0.85pt + col-primary)
-        bezier((2.2, s * 0.82), (4.8, s * 0.45), (3.0, s * 0.85), (3.8, s * 0.55), stroke: 0.85pt + col-primary)
-        // Bolla di ricircolo
-        bezier((2.75, s * 0.35), (3.7, s * 0.08), (3.2, s * 0.55), (3.7, s * 0.35), stroke: 0.8pt + col-accent)
-        bezier((3.7, s * 0.08), (2.85, s * 0.12), (3.5, s * 0.02), (3.1, s * 0.05), mark: (end: ">", size: 0.09), stroke: 0.8pt + col-accent)
+        bezier((0.65, s * 0.32), (2.1, s * 0.78), (1.4, s * 0.32), (1.7, s * 0.78), stroke: 0.85pt + col-primary)
+        bezier((2.1, s * 0.78), (4.8, s * 0.48), (2.9, s * 0.82), (3.8, s * 0.55), stroke: 0.85pt + col-primary)
+
+        // Vortice chiuso di ricircolo (superiore e inferiore non sovrapposti)
+        bezier((2.68, s * 0.38), (3.75, s * 0.12), (3.15, s * 0.52), (3.75, s * 0.32), stroke: 0.8pt + col-accent)
+        bezier((3.75, s * 0.12), (2.72, s * 0.14), (3.45, s * 0.04), (2.95, s * 0.06), mark: (end: "stealth", size: 0.09, fill: col-accent), stroke: 0.8pt + col-accent)
       }
     })
   ],
@@ -287,33 +295,37 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     a monte di $p_"min"$ il gradiente è favorevole ($partial p slash partial xi_1 < 0$) e accelera il fluido; a valle di $p_"min"$ il gradiente diventa avverso ($partial p slash partial xi_1 > 0$), frena gli strati vicini a parete fino all'inversione del profilo di velocità $u_1(xi_2)$ e causa il distacco della vena fluida, impedendo il recupero di pressione e generando una forte *resistenza di forma*.
   ],
   [
-    #cetz.canvas(length: 0.78cm, {
+    #cetz.canvas(length: 0.76cm, {
       import cetz.draw: *
-      // Parete curva del cilindro (zoom)
-      arc((2.2, -1.6), start: 135deg, stop: 40deg, radius: 2.3, stroke: 1.3pt + black)
 
-      // Punto p_min al colmo
-      circle((2.2, 0.7), radius: 0.07, fill: col-accent, stroke: none)
-      content((2.2, 0.4), text(size: 7.5pt, fill: col-accent, weight: "bold")[$p_"min"$ ($u_"max"$)])
+      // Parete curva del cilindro (zoom sulla calotta superiore) disegnata con bezier esplicita
+      bezier((0.4, -0.35), (2.5, 0.35), (1.1, 0.15), (1.8, 0.35), stroke: 1.4pt + black)
+      bezier((2.5, 0.35), (4.6, -0.35), (3.2, 0.35), (3.9, 0.15), stroke: 1.4pt + black)
 
-      // Indicazioni gradiente di pressione
-      content((1.05, 0.95), text(size: 7.5pt, fill: col-green)[$display((partial p) / (partial xi_1)) < 0$])
-      content((3.45, 0.95), text(size: 7.5pt, fill: col-accent)[$display((partial p) / (partial xi_1)) > 0$])
+      // Punto p_min (u_max) al colmo (x = 2.5, y = 0.35)
+      circle((2.5, 0.35), radius: 0.07, fill: col-accent, stroke: none)
+      content((2.5, 0.02), text(size: 7.5pt, fill: col-accent, weight: "bold")[$p_"min" (u_"max")$])
 
-      // Profilo di velocità attaccato (a monte)
-      line((1.1, 0.28), (0.65, 1.05), mark: (end: ">", size: 0.1), stroke: 0.7pt + col-gray)
-      content((0.45, 1.05), text(size: 7pt)[$xi_2$])
-      bezier((1.1, 0.28), (1.15, 0.95), (1.28, 0.55), (1.25, 0.8), stroke: 0.9pt + col-primary)
-      line((0.92, 0.58), (1.22, 0.58), mark: (end: ">", size: 0.08), stroke: 0.65pt + col-primary)
-      line((0.78, 0.82), (1.18, 0.82), mark: (end: ">", size: 0.08), stroke: 0.65pt + col-primary)
+      // --- 1) Profilo a monte (x = 1.15, y = 0.08): attaccato e pieno ---
+      line((1.15, 0.08), (0.75, 1.08), mark: (end: "stealth", size: 0.1, fill: col-gray), stroke: 0.75pt + col-gray)
+      content((0.55, 1.08), text(size: 7pt)[$xi_2$])
+      bezier((1.15, 0.08), (1.28, 0.95), (1.35, 0.42), (1.32, 0.72), stroke: 0.95pt + col-primary)
+      line((1.03, 0.38), (1.29, 0.48), mark: (end: "stealth", size: 0.08, fill: col-primary), stroke: 0.65pt + col-primary)
+      line((0.91, 0.68), (1.30, 0.83), mark: (end: "stealth", size: 0.08, fill: col-primary), stroke: 0.65pt + col-primary)
 
-      // Profilo di velocità separato con inversione (a valle)
-      line((3.3, 0.28), (3.75, 1.05), mark: (end: ">", size: 0.1), stroke: 0.7pt + col-gray)
-      bezier((3.3, 0.28), (3.95, 0.95), (3.15, 0.55), (3.65, 0.75), stroke: 0.9pt + col-accent)
-      // Frecce: reflusso vicino a parete, diretto in alto
-      line((3.42, 0.48), (3.24, 0.38), mark: (end: ">", size: 0.08), stroke: 0.65pt + col-accent)
-      line((3.58, 0.76), (3.85, 0.9), mark: (end: ">", size: 0.08), stroke: 0.65pt + col-primary)
-      content((4.1, 0.65), text(size: 7.5pt, fill: col-primary)[$u_1$])
+      // --- 2) Profilo a valle (x = 3.85, y = 0.08): separato con reflusso a parete ---
+      line((3.85, 0.08), (4.25, 1.08), mark: (end: "stealth", size: 0.1, fill: col-gray), stroke: 0.75pt + col-gray)
+      content((4.48, 1.08), text(size: 7pt)[$xi_2$])
+      bezier((3.85, 0.08), (4.58, 0.92), (3.62, 0.38), (4.25, 0.68), stroke: 0.95pt + col-accent)
+      // Freccia di reflusso (indietro vicino a parete)
+      line((3.95, 0.33), (3.76, 0.25), mark: (end: "stealth", size: 0.08, fill: col-accent), stroke: 0.65pt + col-accent)
+      // Freccia diretta (in avanti lontano da parete)
+      line((4.12, 0.75), (4.48, 0.89), mark: (end: "stealth", size: 0.08, fill: col-primary), stroke: 0.65pt + col-primary)
+      content((4.72, 0.72), text(size: 7.5pt, fill: col-primary)[$u_1$])
+
+      // Etichette gradiente di pressione in alto, ben distanziate dai profili
+      content((1.45, 1.42), text(size: 7.5pt, fill: col-green)[$display((partial p) / (partial xi_1)) < 0$])
+      content((3.45, 1.42), text(size: 7.5pt, fill: col-accent)[$display((partial p) / (partial xi_1)) > 0$])
     })
   ],
 
@@ -323,21 +335,21 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
     la simmetria dei vortici a valle si rompe e la scia diventa instazionaria, dando origine al distacco periodico e alternato di vortici controrotanti (*scia di von Kármán*).
   ],
   [
-    #cetz.canvas(length: 0.78cm, {
+    #cetz.canvas(length: 0.76cm, {
       import cetz.draw: *
-      content((1.1, 1.15), text(size: 8pt, weight: "bold")[$"Re" tilde.op 40 div 50$])
-      circle((1.2, 0), radius: 0.6, fill: luma(235), stroke: 1.1pt + black)
+      content((1.05, 1.12), text(size: 7.5pt, weight: "bold")[$"Re" tilde.op 40 div 50$])
+      circle((1.05, 0), radius: 0.58, fill: luma(238), stroke: 1.1pt + black)
 
-      // Scia oscillante e vortici alternati di von Kármán
-      bezier((1.2, 0.6), (3.0, 0.55), (1.8, 0.75), (2.4, 0.85), stroke: 0.85pt + col-primary)
-      bezier((1.2, -0.6), (3.8, -0.55), (2.0, -0.75), (3.0, -0.85), stroke: 0.85pt + col-primary)
+      // Linee di corrente esterne ondulanti
+      bezier((1.05, 0.58), (3.2, 0.58), (1.8, 0.85), (2.5, 0.85), stroke: 0.85pt + col-primary)
+      bezier((3.2, 0.58), (5.0, 0.68), (3.9, 0.35), (4.4, 0.85), stroke: 0.85pt + col-primary)
+      bezier((1.05, -0.58), (3.5, -0.58), (1.9, -0.85), (2.7, -0.85), stroke: 0.85pt + col-primary)
+      bezier((3.5, -0.58), (5.0, -0.48), (4.1, -0.35), (4.6, -0.75), stroke: 0.85pt + col-primary)
 
-      // Vortice 1 (superiore)
-      arc((2.4, 0.25), start: 20deg, stop: 310deg, radius: 0.32, mark: (end: ">", size: 0.1), stroke: 0.9pt + col-accent)
-      // Vortice 2 (inferiore)
-      arc((3.4, -0.25), start: 340deg, stop: 50deg, radius: 0.35, mark: (end: ">", size: 0.1), stroke: 0.9pt + col-primary)
-      // Vortice 3 (superiore a valle)
-      arc((4.45, 0.25), start: 20deg, stop: 310deg, radius: 0.38, mark: (end: ">", size: 0.1), stroke: 0.9pt + col-accent)
+      // Tre vortici alternati completi (usando anchor: "origin" per centrare gli archi!)
+      arc((2.25, 0.22), anchor: "origin", start: 30deg, stop: 325deg, radius: 0.32, mark: (end: "stealth", size: 0.1, fill: col-accent), stroke: 0.9pt + col-accent)
+      arc((3.35, -0.22), anchor: "origin", start: -30deg, stop: -325deg, radius: 0.34, mark: (end: "stealth", size: 0.1, fill: col-primary), stroke: 0.9pt + col-primary)
+      arc((4.45, 0.22), anchor: "origin", start: 30deg, stop: 325deg, radius: 0.36, mark: (end: "stealth", size: 0.1, fill: col-accent), stroke: 0.9pt + col-accent)
     })
   ]
 )
