@@ -688,13 +688,14 @@ _Se si trascurano gli attriti lungo la pala, per il teorema di Bernoulli si ha $
 #pagebreak()
 == Esempio 5: Getto piano contro una parete inclinata
 
-Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria $b = 1 "m"$ ortogonalmente al foglio) di spessore $h_1$ e velocità $U_1$, che impatta contro una parete piana liscia inclinata di un angolo $theta$ rispetto alla direzione del getto incidente. Dopo l'impatto il flusso si divide in due correnti che scorrono lungo la parete in versi opposti, caratterizzate sulle sezioni di uscita $S_2$ e $S_3$ da spessori $h_2, h_3$ e velocità $U_2, U_3$.
+Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria $b = 1 "m"$ ortogonalmente al foglio) di spessore $h_1$ e velocità $U_1$, che impatta contro una parete piana liscia inclinata di un angolo $theta$ rispetto alla direzione del getto incidente.
 
 #grid(
   columns: (1.1fr, 0.9fr),
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
   [
+     Dopo l'impatto il flusso si divide in due correnti che scorrono lungo la parete in versi opposti, caratterizzate sulle sezioni di uscita $S_2$ e $S_3$ da spessori $h_2, h_3$ e velocità $U_2, U_3$. 
     Fissiamo un sistema di riferimento locale $(t, n)$ solidale alla parete, con l'asse $t$ tangente alla parete (positivo verso la sezione $S_2$) e l'asse $n$ normale alla parete (uscente dal fluido verso la parete).
     Per determinare le incognite ($U_2, U_3, h_2, h_3$ e la forza $arrow(F)$) procediamo in quattro passaggi:
 
