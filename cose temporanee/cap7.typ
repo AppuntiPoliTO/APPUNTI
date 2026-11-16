@@ -580,7 +580,7 @@ F_x = -rho U^2 S_1 = -rho Q U = -rho Q^2 / S_1
 $
 
 La spinta esercitata dal getto sulla parete è uguale e opposta, pari a $-F_x = +rho Q U$ (diretta lungo $+x$).
-
+#pagebreak()
 == Esempio 4: Getto contro una pala di turbina (deviazione di $180 degree$)
 
 Consideriamo un getto libero di sezione $S_1$, velocità $arrow(u)_1 = (U_1, 0, 0)$ e portata $Q = U_1 S_1$ che investe una pala curva simmetrica (come la pala di una #link("https://it.wikipedia.org/wiki/Turbina_Pelton", [#underline[turbina Pelton]] )), venendo diviso in due getti simmetrici di sezione $S_2$ e portata $Q/2$ ciascuno, deviati all'indietro con velocità $arrow(u)_2 = (-U_2, 0, 0)$ opposta a quella di ingresso.
@@ -685,7 +685,7 @@ abs(F_x) = rho Q (U_1 + U_2), quad arrow(F) = -abs(F_x) arrow(e)_x
 $
 
 _Se si trascurano gli attriti lungo la pala, per il teorema di Bernoulli si ha $U_2 = U_1 = U$, per cui $abs(F_x) = 2 rho Q U$: deviare il getto di $180 degree$ permette di raddoppiare la spinta rispetto alla parete piana verticale._
-
+#pagebreak()
 == Esempio 5: Getto piano contro una parete inclinata
 
 Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria $b = 1 "m"$ ortogonalmente al foglio) di spessore $h_1$ e velocità $U_1$, che impatta contro una parete piana liscia inclinata di un angolo $theta$ rispetto alla direzione del getto incidente. Dopo l'impatto il flusso si divide in due correnti che scorrono lungo la parete in versi opposti, caratterizzate sulle sezioni di uscita $S_2$ e $S_3$ da spessori $h_2, h_3$ e velocità $U_2, U_3$.
