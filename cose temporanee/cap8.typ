@@ -13,8 +13,8 @@ $ arrow(omega) = nabla times arrow(u) = mat(delim: "|", hat(i), hat(j), hat(k); 
 
 le cui componenti coincidono (a meno di un fattore $1/2$) con i termini indipendenti di $bold(Omega)$.
 
-- *Significato fisico:* le componenti $(\omega_1, \omega_2, \omega_3)$ misurano la velocità di rotazione locale delle particelle fluide attorno ai tre assi coordinati (rilevabile idealmente inserendo una piccola "crocetta" solida nel fluido: se il campo ha vorticità non nulla, le forze sbilanciate sui bracci la portano a ruotare). Questi moti rotazionali locali sottraggono parte dell'energia cinetica al trasporto medio di massa.
-- *Vorticità e linee di corrente:* un campo con vorticità non nulla non presenta necessariamente linee di corrente curve o chiuse (vortici su grande scala). Ad esempio, nel moto laminare tra due piastre piane o in un condotto, le linee di corrente sono rettilinee e parallele, ma il gradiente trasversale di velocità (es. $(partial u_1) / (partial x_2) eq.not 0$) genera una vorticità $\omega_3 eq.not 0$.
+- *Significato fisico:* le componenti $(omega_1, omega_2, omega_3)$ misurano la velocità di rotazione locale delle particelle fluide attorno ai tre assi coordinati (rilevabile idealmente inserendo una piccola "crocetta" solida nel fluido: se il campo ha vorticità non nulla, le forze sbilanciate sui bracci la portano a ruotare). Questi moti rotazionali locali sottraggono parte dell'energia cinetica al trasporto medio di massa.
+- *Vorticità e linee di corrente:* un campo con vorticità non nulla non presenta necessariamente linee di corrente curve o chiuse (vortici su grande scala). Ad esempio, nel moto laminare tra due piastre piane o in un condotto, le linee di corrente sono rettilinee e parallele, ma il gradiente trasversale di velocità (es. $(partial u_1) / (partial x_2) eq.not 0$) genera una vorticità $omega_3 eq.not 0$.
 
 == Campi di moto irrotazionali (a potenziale)
 
