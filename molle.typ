@@ -45,26 +45,9 @@ dove $F$ e $M$ sono rispettivamente la forza in Newton e il momento in Newton-me
   align: (left + horizon, center + horizon),[L'energia complessiva immagazzinata dalla molla corrisponde all'area sottesa alla curva caratteristica. Nel caso di una caratteristica lineare, tale area è un triangolo, pertanto l'energia potenziale elastica $W$ vale:
 
 $ W = frac(F f, 2) $ A seconda della legge di variazione della rigidezza, la caratteristica può deviare dal comportamento lineare, presentando due tipologie di non linearità:],[
-// FASE 1 - ANALISI (IMMAGINE 5: Grafico Forza-Freccia F(M) vs f(theta) con curve hardening, lineare, softening)
-// 1. PANNELLI E SCALA: 1 pannello, larghezza ~330 px, N = 45 px per 1 cm -> larghezza ~7.3 cm.
-//    Origine O = (0, 0) all'incrocio degli assi (px_O = 62, py_O = 175).
-// 2. COLORI: nero per assi, curve e testi; rosso (presente nell'immagine) per il tratteggio dell'area triangolare.
-// 3. CLASSIFICAZIONE CURVE:
-//    - Retta lineare: segmento da (0, 0) a (2.85, 2.85), chiusura verticale a (2.85, 0).
-//    - Curva hardening (tratteggiata): campioni (0,0), (0.44,0.49), (0.89,1.07), (1.33,1.73), (1.67,2.31), (1.96,2.89), (2.18,3.44).
-//      Test cerchio: cx=-7.659, cy=7.265, r=10.557, e_max = 0.0009 <= 0.08 -> ARCO DI CERCHIO.
-//      Idealizzazione tangente esatta a 45deg in (0,0): centro (-7.50, 7.50), r = 10.607, start = 315deg, stop = 337deg.
-//    - Curva softening (punteggiata): campioni (0,0), (0.50,0.44), (1.00,0.78), (1.50,1.00), (2.00,1.13), (2.50,1.18), (3.05,1.18).
-//      Test cerchio: cx=2.680, cy=-2.394, r=3.593, e_max = 0.005 <= 0.08 -> ARCO DI CERCHIO.
-//      Idealizzazione tangente esatta a 45deg in (0,0): centro (2.65, -2.65), r = 3.748, start = 82deg, stop = 135deg.
 
-// FASE 2 - COSTRUZIONE
 #include "figs/molle-fig01.typ"
-// FASE 3 - VERIFICA:
-// 1. Curve hardening e softening: archi di cerchio (e_max = 0.0009 e 0.005); zero bezier.
-// 2. Verifica origine arco hardening a 315deg: (-7.50 + 10.607*cos(315deg), 7.50 + 10.607*sin(315deg)) = (0.000, 0.000).
-// 3. Verifica origine arco softening a 135deg: (2.65 + 3.748*cos(135deg), -2.65 + 3.748*sin(135deg)) = (0.000, 0.000).
-// 4. Verifica linee rosse contenute esattamente nel triangolo (0,0)-(2.85,2.85)-(2.85,0).
+
 ])
 
 
@@ -110,30 +93,13 @@ Un'applicazione classica della barra di torsione è la barra stabilizzatrice (o 
 
 La barra di torsione viene montata trasversalmente per collegare i due bracci della sospensione. Quando le ruote subiscono spostamenti verticali asimmetrici (una si comprime, l'altra si estende), la barra subisce una torsione. La rigidezza torsionale della barra si oppone a questa differenza di escursione, moderando lo sbilanciamento dei carichi, riducendo l'angolo di rollio e migliorando sensibilmente la stabilità e la sicurezza del veicolo in curva, fungendo anche da elemento di smorzamento per eventuali vibrazioni innescate dalla manovra.
 
-// NOTA: L'errore "unexpected argument" in Typst è causato dalla virgola nei numeri decimali (es. 0,615) dentro frac(a, b), che viene interpretata come separatore di un terzo argomento. Nei numeri decimali dentro funzioni matematiche Typst va usato il punto (0.615) o il numero va racchiuso tra virgolette ("0,615"). Di seguito il codice completo corretto.
+
 
 == Molle ad elica cilindrica
 #grid(
   columns: (1.3fr, 1fr),
   column-gutter: -3em,
-  align: (left + horizon, center + horizon),[Le molle a elica cilindrica sono assimilabili a barre di torsione avvolte a elica su un cilindro ideale. Dal punto di vista geometrico si identificano due elementi fondamentali: una geometria macroscopica determinata dalle dimensioni e dall'ingombro del cilindro ideale, di diametro $D = 2r$ (dove il raggio $r$ individua la distanza tra l'asse centrale del cilindro, lungo il quale agisce la risultante delle forze $F$ applicate ai piattelli o alle estremità, e il centro della sezione trasversale del filo), e una geometria locale legata al filo metallico avvolto, avente sezione trasversale circolare di diametro $d$. L'avvolgimento a elica è caratterizzato da un angolo di inclinazione $alpha$ e da un passo $p$. Quando la molla è a riposo, ovvero scarica e appoggiata su un piano in assenza di azioni esterne, presenta una lunghezza libera indicata con $L_0$.],[// FASE 1 - ANALISI (IMMAGINE 4: Molla elicoidale in sezione longitudinale con quote F, d, p, alpha, r, D=2r, L_0)
-// 1. PANNELLI E SCALA: 1 pannello, N = 45 px per 1 cm -> altezza ~7.7 cm, larghezza ~5.2 cm.
-//    Origine O = (0, 0) al centro del piano inferiore di appoggio (px_O = 100, py_O = 266).
-// 2. PULIZIA: Rimossi i frammenti testuali spuri "la" e "a" tagliati lungo il bordo sinistro dell'immagine originale.
-// 3. GEOMETRIA IDEALIZZATA:
-//    r = 1.00 cm (D = 2r = 2.00 cm), p = 0.85 cm, L_0 = 5*p = 4.25 cm, diametro filo d = 0.42 cm (rho = 0.21 cm).
-//    Colonna sx (x = -1.00): 5 cerchi interi L1..L5 a y = 0.425, 1.275, 2.125, 2.975, 3.825.
-//    Colonna dx (x = +1.00): R0 semicerchio sup a y = 0.00; R1..R4 cerchi interi a y = 0.85, 1.70, 2.55, 3.40;
-//    R5 semicerchio inf a y = 4.25.
-//    Pendenza spire anteriori: dy/dx = 0.425 / 2.00 = 0.2125 -> theta = 12.0deg.
-//    Tangenti superiori (+102deg): dx_t = -0.044, dy_t = +0.205.
-//    Tangenti inferiori (-78deg): dx_t = +0.044, dy_t = -0.205.
-//    Fascia 5 sup tagliata su y = 4.25 a x = -1.044 + 2.00*(4.250-4.030)/0.425 = -0.009.
-//    Linea inferiore estesa (angolo alpha): passa per (-0.009, 0) e tangente sup R0 (+0.956, 0.205) fino a (1.75, 0.374).
-// 4. CLASSIFICAZIONE CURVE:
-//    Tutte le sezioni sono cerchi o semicerchi (r = 0.21); angolo alpha reso con due archi circolari (r = 1.60). Zero bezier.
-
-// FASE 2 - COSTRUZIONE
+  align: (left + horizon, center + horizon),[Le molle a elica cilindrica sono assimilabili a barre di torsione avvolte a elica su un cilindro ideale. Dal punto di vista geometrico si identificano due elementi fondamentali: una geometria macroscopica determinata dalle dimensioni e dall'ingombro del cilindro ideale, di diametro $D = 2r$ (dove il raggio $r$ individua la distanza tra l'asse centrale del cilindro, lungo il quale agisce la risultante delle forze $F$ applicate ai piattelli o alle estremità, e il centro della sezione trasversale del filo), e una geometria locale legata al filo metallico avvolto, avente sezione trasversale circolare di diametro $d$. L'avvolgimento a elica è caratterizzato da un angolo di inclinazione $alpha$ e da un passo $p$. Quando la molla è a riposo, ovvero scarica e appoggiata su un piano in assenza di azioni esterne, presenta una lunghezza libera indicata con $L_0$.],[// FASE 
 #include "figs/molle-fig03.typ"
 ])
 
@@ -166,31 +132,9 @@ $ N = F sin alpha tilde.eq 0 $],[#include "figs/molle-fig05.typ"])
   columns: (1.5fr, 1fr),
   column-gutter: -2em,
   align: (left + horizon, center + horizon),[Poiché l'angolo d'elica $alpha$ è piccolo, si ha $cos alpha tilde.eq 1$ e $sin alpha tilde.eq 0$. Di conseguenza, le azioni di momento flettente $M_f$ e di sforzo normale $N$ risultano pressoché nulle e vengono trascurate, mentre le caratteristiche di sollecitazione dominanti da considerare nel calcolo sono il momento torcente $M_t tilde.eq F r$ e l'azione di taglio $T tilde.eq F$.],[
-// FASE 1 - ANALISI (IMMAGINE 3: Sezione inclinata della spira con forze F, T, momento M_t, raggio r, angolo alpha)
-// 1. PANNELLI E SCALA: 1 pannello, larghezza ~185 px, altezza ~270 px, N = 32 px per 1 cm.
-//    Origine O = (0, 0) sull'asse verticale sul bordo inferiore della spira.
-// 2. GEOMETRIA IDEALIZZATA:
-//    Inclinazione spira alpha = 12deg (sin = 0.2079, cos = 0.9781, tan = 0.2126).
-//    Raggio medio r = 1.55 cm, raggio sezione filo rho = 0.42 cm.
-//    Centro asse spira su x=0: y_mid = 0.42 / cos(12deg) = 0.4294.
-//    Centro sezione sx: (-1.55, 0.4294 + 1.55*0.2126) = (-1.55, 0.759).
-//    Centro sezione dx: (+1.55, 0.4294 - 1.55*0.2126) = (+1.55, 0.100).
-//    Punti tangenza superiori (+78deg): sx=(-1.463, 1.170), dx=(1.637, 0.511).
-//    Punti tangenza inferiori (-102deg): sx=(-1.637, 0.348), dx=(1.463, -0.311).
-//    Controllo passaggio per O=(0,0): 0.348 - 1.637*0.2126 = 0.000.
-// 3. CLASSIFICAZIONE CURVE:
-//    - Due sezioni circolari del filo: cerchi esatti r = 0.42.
-//    - Arco angolo alpha: arco di cerchio centro (0, 0), r = 1.65, start = 258deg, stop = 270deg.
-//    - Freccia cava momento torcente M_t attorno a (1.55, 0.100): due archi circolari concentrici
-//      r_in = 0.56, r_out = 0.74, start = 180deg, stop = 345deg + punta cava poligonale.
 
-// FASE 2 - COSTRUZIONE
 #include "figs/molle-fig06.typ"
-// FASE 3 - VERIFICA:
-// 1. Primitive: line, circle, arc (zero bezier).
-// 2. Verifica somma vettoriale scomposizione F: (-0.356, 1.176 - 2.85) + (0.356, 2.774 - 2.85) = (0, -1.750) = F.
-// 3. Verifica tangente inferiore barra a x=0: 0.348 - 1.637*tan(12deg) = 0.000.
-// 4. Verifica estremi corde tratteggio su cerchio dx: (-0.416)^2 + (-0.056)^2 = 0.1731 + 0.0031 = 0.1762 = 0.42^2 (0.1764).
+
 ])
 
 Dal punto di vista geometrico e progettuale si definiscono i seguenti parametri:
