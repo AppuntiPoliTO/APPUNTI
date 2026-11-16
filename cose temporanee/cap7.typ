@@ -301,13 +301,7 @@ F_x = -S (p_1 - p_2)
 $
 
 Poiché per mantenere il moto in presenza di attrito deve essere $p_1 > p_2$, la forza $F_x$ risulta *negativa*: essa è infatti la forza di resistenza viscosa esercitata dalla parete sul fluido, che si oppone al deflusso.
-
-#grid(
-  columns: (1.2fr, 0.8fr),
-  column-gutter: 1.2em,
-  align: (left + horizon, center + horizon),
-  [
-    Per una condotta circolare di raggio $R$ e lunghezza $L$, sulla superficie laterale $S_w = 2 pi R L$ la normale uscente è radiale ($n_x = 0$): nell'integrale $F_x = integral_(S_w) sigma_(x j) n_j dif S$ il contributo della pressione è dunque nullo e sopravvive solo lo sforzo viscoso tangenziale a parete (di modulo $tau_w$, diretto in verso opposto al moto), ovvero $F_x = -tau_w S_w$. In condizioni stazionarie:
+Per una condotta circolare di raggio $R$ e lunghezza $L$, sulla superficie laterale $S_w = 2 pi R L$ la normale uscente è radiale ($n_x = 0$): nell'integrale $F_x = integral_(S_w) sigma_(x j) n_j dif S$ il contributo della pressione è dunque nullo e sopravvive solo lo sforzo viscoso tangenziale a parete (di modulo $tau_w$, diretto in verso opposto al moto), ovvero $F_x = -tau_w S_w$. In condizioni stazionarie:
     $
     (p_1 - p_2) S &= tau_w S_w \
     [p(x_1) - (p(x_1) + (partial p) / (partial x) L)] pi R^2 &= tau_w 2 pi R L
@@ -316,54 +310,7 @@ Poiché per mantenere il moto in presenza di attrito deve essere $p_1 > p_2$, la
     $
     pi R^2 Delta p = tau_w 2 pi R L quad ==> quad tau_w = (Delta p) / (2 L) R
     $
-  ],
-  [
-    #canvas(length: 1cm, {
-  import draw: *
 
-  // Riempimento leggero della sezione di ingresso
-  circle((1.80, 2.30), radius: (0.40, 1.10), fill: blue.transparentize(88%), stroke: none)
-
-  // Asse x (linea tratto-punto)
-  line((1.10, 2.30), (7.40, 2.30), mark: (end: ">"), stroke: (paint: gray, dash: "dash-dotted", thickness: 0.75pt))
-  content((7.55, 2.30), text(size: 8.5pt)[$x$], anchor: "west")
-
-  // Generatrici del cilindro orizzontale
-  line((1.80, 3.40), (6.40, 3.40), stroke: 1.15pt)
-  line((1.80, 1.20), (6.40, 1.20), stroke: 1.15pt)
-
-  // Sezioni circolari in prospettiva S1 ed S2
-  circle((1.80, 2.30), radius: (0.40, 1.10), stroke: (paint: blue.darken(20%), thickness: 1pt))
-  circle((6.40, 2.30), radius: (0.40, 1.10), stroke: (paint: blue.darken(20%), thickness: 1pt))
-  content((1.80, 3.52), text(size: 8.5pt, fill: blue.darken(20%))[$S_1$], anchor: "south")
-  content((6.40, 3.52), text(size: 8.5pt, fill: blue.darken(20%))[$S_2$], anchor: "south")
-
-  // Raggio R
-  line((1.80, 2.30), (1.80, 3.40), mark: (end: ">"), stroke: 0.9pt)
-  content((1.90, 2.82), text(size: 8pt)[$R$], anchor: "west")
-
-  // Pressioni p1 e p2
-  line((0.85, 2.65), (1.68, 2.65), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 1.05pt))
-  content((0.76, 2.75), text(size: 8.5pt, fill: blue.darken(20%))[$p_1$], anchor: "east")
-
-  line((7.35, 2.65), (6.52, 2.65), mark: (end: ">"), stroke: (paint: blue.darken(20%), thickness: 1.05pt))
-  content((7.44, 2.75), text(size: 8.5pt, fill: blue.darken(20%))[$p_2$], anchor: "west")
-
-  // Sforzi tangenziali alla parete tau_w
-  line((4.90, 3.12), (3.30, 3.12), mark: (end: ">"), stroke: (paint: red.darken(15%), thickness: 1.05pt))
-  content((4.10, 2.98), text(size: 8.5pt, fill: red.darken(15%))[$tau_w$], anchor: "north")
-
-  line((4.90, 1.48), (3.30, 1.48), mark: (end: ">"), stroke: (paint: red.darken(15%), thickness: 1.05pt))
-  content((4.10, 1.62), text(size: 8.5pt, fill: red.darken(15%))[$tau_w$], anchor: "south")
-
-  // Quota lunghezza L
-  line((1.80, 1.05), (1.80, 0.55), stroke: (paint: gray.lighten(10%), thickness: 0.6pt))
-  line((6.40, 1.05), (6.40, 0.55), stroke: (paint: gray.lighten(10%), thickness: 0.6pt))
-  line((1.80, 0.78), (6.40, 0.78), mark: (start: ">", end: ">"), stroke: 0.9pt)
-  content((4.10, 0.62), text(size: 8.5pt)[$L$], anchor: "north")
-})
-  ]
-)
 
 #nota-box("Confronto con le equazioni di Navier-Stokes")[
   A differenza dell'approccio differenziale visto nella soluzione di Poiseuille (in cui era necessario risolvere le equazioni di Navier-Stokes per determinare il profilo di velocità e derivarlo a parete), il bilancio globale permette di calcolare lo sforzo viscoso a parete $tau_w$ direttamente dalla caduta di pressione $Delta p$ e dalla geometria, *senza conoscere il dettaglio del campo di velocità interno*.
