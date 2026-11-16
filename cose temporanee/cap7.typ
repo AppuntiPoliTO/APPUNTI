@@ -1264,7 +1264,7 @@ Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria
 Questo stesso approccio integrale può essere impiegato per valutare la forza aerodinamica o idrodinamica esercitata sul fluido da un corpo tozzo immerso in una corrente esterna indisturbata di velocità $u_infinity$:
 
 #grid(
-  columns: (1.15fr, 0.85fr),
+  columns: (1fr, 1.15fr),
   column-gutter: 1.2em,
   align: (left + horizon, center + horizon),
   [
@@ -1278,35 +1278,53 @@ Questo stesso approccio integrale può essere impiegato per valutare la forza ae
     $
   ],
   [
-    #cetz.canvas(length: 0.78cm, {
-      import cetz.draw: *
-      // Volume di controllo esterno tratteggiato
-      rect((0.5, -1.5), (4.6, 1.5), stroke: (paint: gray, thickness: 0.8pt, dash: "dashed"))
-      content((0.8, 1.25), text(size: 8pt, fill: gray)[$S_1$])
-      content((4.3, 1.25), text(size: 8pt, fill: gray)[$S_2$])
-
-      // Profilo di velocità uniforme a monte (S1)
-      line((0.5, -1.5), (0.5, 1.5), stroke: 1pt + rgb("#1f5a96"))
-      for y in (-1.2, -0.6, 0, 0.6, 1.2) {
-        line((-0.3, y), (0.5, y), mark: (end: ">"), stroke: 0.8pt + rgb("#1f5a96"))
-      }
-      content((0.0, -1.85), text(size: 8pt, fill: rgb("#1f5a96"))[profilo a monte ($u_infinity$)])
-
-      // Corpo tozzo al centro
-      circle((2.4, 0), radius: (0.65, 0.48), fill: gray.lighten(50%), stroke: 1.3pt + black)
-      content((2.4, 0), text(size: 8.5pt)[$arrow(F)_x$])
-      line((2.8, 0.35), (3.15, 0.65), mark: (end: ">"), stroke: 0.8pt + rgb("#c0392b"))
-      content((3.3, 0.55), text(size: 7.5pt, fill: rgb("#c0392b"))[$arrow(n)$])
-
-      // Profilo di velocità con deficit nella scia a valle (S2)
-      line((4.6, -1.5), (4.6, 1.5), stroke: 1pt + rgb("#1f5a96"))
-      bezier((5.4, 1.5), (4.9, 0), (5.4, 0.6), (4.9, 0.35), stroke: 1pt + rgb("#1f5a96"))
-      bezier((5.4, -1.5), (4.9, 0), (5.4, -0.6), (4.9, -0.35), stroke: 1pt + rgb("#1f5a96"))
-      for (y, dx) in ((-1.2, 0.78), (-0.6, 0.65), (0, 0.3), (0.6, 0.65), (1.2, 0.78)) {
-        line((4.6, y), (4.6 + dx, y), mark: (end: ">"), stroke: 0.8pt + rgb("#1f5a96"))
-      }
-      content((4.9, -1.85), text(size: 8pt, fill: rgb("#1f5a96"))[profilo a valle (scia)])
-    })
+    ##canvas(length: 1cm, {
+  import draw: *
+  line((-4.05, -1.5), (-4.05, 1.5), stroke: 0.9pt)
+  line((-3.1, -1.5), (-3.1, 1.5), stroke: 0.9pt)
+  line((-4.05, 1.25), (-3.1, 1.25), mark: (end: ">"), stroke: 0.8pt)
+  line((-4.05, 0.75), (-3.1, 0.75), mark: (end: ">"), stroke: 0.8pt)
+  line((-4.05, 0.25), (-3.1, 0.25), mark: (end: ">"), stroke: 0.8pt)
+  line((-4.05, -0.25), (-3.1, -0.25), mark: (end: ">"), stroke: 0.8pt)
+  line((-4.05, -0.75), (-3.1, -0.75), mark: (end: ">"), stroke: 0.8pt)
+  line((-4.05, -1.25), (-3.1, -1.25), mark: (end: ">"), stroke: 0.8pt)
+  line((-3.1, 1.5), (2.1, 1.5), stroke: (dash: "dashed", thickness: 0.65pt))
+  line((-3.1, -1.5), (2.1, -1.5), stroke: (dash: "dashed", thickness: 0.65pt))
+  bezier((-3.1, 1.10), (-0.30, 1.24), (-1.70, 1.10), (-1.10, 1.24), stroke: (dash: "dashed", thickness: 0.65pt))
+  bezier((-0.30, 1.24), (2.1, 1.12), (0.50, 1.24), (1.30, 1.12), stroke: (dash: "dashed", thickness: 0.65pt))
+  bezier((-3.1, -1.10), (-0.30, -1.24), (-1.70, -1.10), (-1.10, -1.24), stroke: (dash: "dashed", thickness: 0.65pt))
+  bezier((-0.30, -1.24), (2.1, -1.12), (0.50, -1.24), (1.30, -1.12), stroke: (dash: "dashed", thickness: 0.65pt))
+  bezier((-3.1, 0.45), (-0.30, 0.92), (-1.55, 0.45), (-1.05, 0.92), stroke: (dash: "dashed", thickness: 0.65pt))
+  bezier((-0.30, 0.92), (2.1, 0.62), (0.55, 0.92), (1.25, 0.62), stroke: (dash: "dashed", thickness: 0.65pt))
+  bezier((-3.1, -0.45), (-0.30, -0.92), (-1.55, -0.45), (-1.05, -0.92), stroke: (dash: "dashed", thickness: 0.65pt))
+  bezier((-0.30, -0.92), (2.1, -0.62), (0.55, -0.92), (1.25, -0.62), stroke: (dash: "dashed", thickness: 0.65pt))
+  line((-3.1, 0), (-1.68, 0), stroke: (dash: "dashed", thickness: 0.65pt))
+  circle((-0.30, 0), radius: 0.65, stroke: 1.05pt)
+  line((0.05, 0), (-1.55, 0), mark: (end: ">"), stroke: 1.05pt)
+  line((0.212, 0.400), (0.488, 0.616), mark: (end: ">"), stroke: 0.85pt)
+  line((2.40, -1.5), (2.40, 1.5), stroke: 0.9pt)
+  line((3.35, -1.5), (3.35, 1.5), stroke: 0.9pt)
+  bezier((2.72, 0), (3.35, 1.5), (2.72, 0.65), (3.35, 0.85), stroke: 1.0pt)
+  bezier((2.72, 0), (3.35, -1.5), (2.72, -0.65), (3.35, -0.85), stroke: 1.0pt)
+  line((2.40, 1.235), (3.312, 1.235), mark: (end: ">"), stroke: 0.8pt)
+  line((2.40, 0.944), (3.173, 0.944), mark: (end: ">"), stroke: 0.8pt)
+  line((2.40, 0.648), (2.960, 0.648), mark: (end: ">"), stroke: 0.8pt)
+  line((2.40, 0.343), (2.786, 0.343), mark: (end: ">"), stroke: 0.8pt)
+  line((2.40, 0), (2.72, 0), mark: (end: ">"), stroke: 0.8pt)
+  line((2.40, -0.343), (2.786, -0.343), mark: (end: ">"), stroke: 0.8pt)
+  line((2.40, -0.648), (2.960, -0.648), mark: (end: ">"), stroke: 0.8pt)
+  line((2.40, -0.944), (3.173, -0.944), mark: (end: ">"), stroke: 0.8pt)
+  line((2.40, -1.235), (3.312, -1.235), mark: (end: ">"), stroke: 0.8pt)
+  line((-3.575, -2.05), (-3.575, -1.62), mark: (end: ">"), stroke: 0.7pt)
+  line((2.875, -2.05), (2.875, -1.62), mark: (end: ">"), stroke: 0.7pt)
+  line((4.15, 0), (4.85, 0), mark: (end: ">"), stroke: 0.95pt)
+  content((-0.30, -0.30), text(size: 8.5pt)[$F_x$], anchor: "center")
+  content((0.53, 0.61), text(size: 8pt)[$n_j$], anchor: "west")
+  content((0.46, -0.06), text(size: 8pt)[$S$], anchor: "west")
+  content((-3.575, -2.18), text(size: 8pt)[profilo a monte], anchor: "north")
+  content((2.875, -2.18), text(size: 8pt)[profilo a valle], anchor: "north")
+  content((4.50, -0.14), text(size: 8.5pt)[$arrow(i)$], anchor: "north")
+})
   ]
 )
 
