@@ -840,7 +840,7 @@ La spinta esercitata dal getto sulla parete è uguale e opposta, pari a $-F_x = 
 
 == Esempio 4: Getto contro una pala di turbina (deviazione di $180 degree$)
 
-Consideriamo un getto libero di sezione $S_1$, velocità $\vec{u}_1 = (U_1, 0, 0)$ e portata $Q = U_1 S_1$ che investe una pala curva simmetrica (come la pala di una turbina Pelton), venendo diviso in due getti simmetrici di sezione $S_2$ e portata $Q/2$ ciascuno, deviati all'indietro con velocità $\vec{u}_2 = (-U_2, 0, 0)$ opposta a quella di ingresso.
+Consideriamo un getto libero di sezione $S_1$, velocità $vec{u}_1 = (U_1, 0, 0)$ e portata $Q = U_1 S_1$ che investe una pala curva simmetrica (come la pala di una turbina Pelton), venendo diviso in due getti simmetrici di sezione $S_2$ e portata $Q/2$ ciascuno, deviati all'indietro con velocità $vec{u}_2 = (-U_2, 0, 0)$ opposta a quella di ingresso.
 
 #grid(
   columns: (1.2fr, 0.8fr),
@@ -849,11 +849,11 @@ Consideriamo un getto libero di sezione $S_1$, velocità $\vec{u}_1 = (U_1, 0, 0
   [
     Anche in questo caso $G_x = 0$, $I_x = 0$ e le pressioni relative sulle sezioni libere $S_1$ e $S_2$ sono nulle ($\Pi_1 = \Pi_2 = 0$).
     Occorre prestare particolare attenzione ai segni nel termine convettivo $M_x = -integral_S rho u_x (u_j n_j) dif S$:
-    - sulla sezione di ingresso $S_1$, $\vec{u}_1 = (U_1, 0, 0)$ e la normale uscente $\vec{n}_1 = (-1, 0, 0)$ sono antiparallele ($u_j n_j = -U_1$), mentre $u_x = +U_1$:
+    - sulla sezione di ingresso $S_1$, $vec{u}_1 = (U_1, 0, 0)$ e la normale uscente $vec{n}_1 = (-1, 0, 0)$ sono antiparallele ($u_j n_j = -U_1$), mentre $u_x = +U_1$:
       $
       M_(1, x) = -integral_(S_1) rho (+U_1) (-U_1) dif S_1 = +rho U_1^2 S_1 = +rho Q U_1
       $
-    - su ciascuna delle due sezioni di uscita $S_2$, sia la velocità $\vec{u}_2 = (-U_2, 0, 0)$ sia la normale uscente $\vec{n}_2 = (-1, 0, 0)$ sono dirette verso sinistra: essendo *concordi*, il prodotto scalare vale $u_j n_j = +U_2 > 0$, ma la componente di velocità lungo $x$ è *negativa* ($u_x = -U_2 < 0$). Pertanto, sommando le due uscite:
+    - su ciascuna delle due sezioni di uscita $S_2$, sia la velocità $vec{u}_2 = (-U_2, 0, 0)$ sia la normale uscente $vec{n}_2 = (-1, 0, 0)$ sono dirette verso sinistra: essendo *concordi*, il prodotto scalare vale $u_j n_j = +U_2 > 0$, ma la componente di velocità lungo $x$ è *negativa* ($u_x = -U_2 < 0$). Pertanto, sommando le due uscite:
       $
       M_(2, x) = -2 integral_(S_2) rho (-U_2) (+U_2) dif S_2 = +2 rho U_2^2 S_2 = +2 rho Q/2 U_2 = +rho Q U_2
       $
@@ -883,7 +883,7 @@ $
 Consideriamo infine un getto libero piano (bidimensionale, di larghezza unitaria $b = 1 "m"$ ortogonalmente al foglio) di spessore $h_1$ e velocità $U_1$, che impatta contro una parete piana liscia inclinata di un angolo $theta$ rispetto alla direzione del getto incidente. Dopo l'impatto il flusso si divide in due correnti che scorrono lungo la parete in versi opposti, caratterizzate sulle sezioni di uscita $S_2$ e $S_3$ da spessori $h_2, h_3$ e velocità $U_2, U_3$.
 
 Fissiamo un sistema di riferimento locale $(t, n)$ solidale alla parete, con l'asse $t$ tangente alla parete (positivo verso la sezione $S_2$) e l'asse $n$ normale alla parete (uscente dal fluido verso la parete).
-Per determinare le incognite ($U_2, U_3, h_2, h_3$ e la forza $\vec{F}$) procediamo in quattro passaggi:
+Per determinare le incognite ($U_2, U_3, h_2, h_3$ e la forza $vec{F}$) procediamo in quattro passaggi:
 
 1. *Determinazione delle velocità (Teorema di Bernoulli)*:
    Trascurando gli effetti gravitazionali (differenze di quota trascurabili), gli sforzi viscosi e sapendo che il getto è libero in atmosfera ($p_1 = p_2 = p_3 = p_"atm"$), applicando il teorema di Bernoulli lungo due linee di corrente che vanno dalla sezione $S_1$ alle sezioni $S_2$ e $S_3$ si ottiene che la velocità rimane costante in modulo:
