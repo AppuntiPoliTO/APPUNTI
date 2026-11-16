@@ -601,7 +601,7 @@ $ K_v = frac(F_v, u_v), quad quad delta_v = frac(1, K_v) = frac(u_v, F_v) $
 
 $ K_p = frac(F_p, u_p), quad quad delta_p = frac(1, K_p) = frac(u_p, F_p) $
 
-Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadrante (forza e spostamento positivi), mentre quella dei pezzi giace originariamente nel terzo quadrante (forza di compressione e spostamento negativi). ],[#canvas(length: 1.7cm, {
+Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadrante (forza e spostamento positivi), mentre quella dei pezzi giace originariamente nel terzo quadrante (forza di compressione e spostamento negativi). \ Per rendere pratica la costruzione grafica del diagramma di interferenza (o di forzamento), si riportano in ordinata i valori assoluti delle forze $|F_p|$ e $|F_v|$ in modo che entrambe le caratteristiche lavorino nel semipiano superiore; le pendenze rispetto all'asse delle ordinate corrispondono alle deformabilità $delta_v$ e $delta_p$.Se entrambe le rette partissero dall'origine, non vi sarebbe interferenza (pezzi semplicemente accostati senza pressione). Per rappresentare il serraggio di interferenza $i$, si lascia la caratteristica della vite nell'origine e si trasla verso destra la caratteristica del pezzo di una quantità pari a $i$ lungo l'asse delle ascisse $u$. ],[#canvas(length: 1.7cm, {
   import draw: *
 
   // 1. vite
@@ -640,7 +640,7 @@ Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadra
   content((7.2, 0.62), text(size: 8pt)[$u_p, u_v$], anchor: "north")
   content((3.35, 2.05), text(size: 8.5pt)[vite+pezzi], anchor: "east")
 })])
-Per rendere pratica la costruzione grafica del diagramma di interferenza (o di forzamento), si riportano in ordinata i valori assoluti delle forze $|F_p|$ e $|F_v|$ in modo che entrambe le caratteristiche lavorino nel semipiano superiore; le pendenze rispetto all'asse delle ordinate corrispondono alle deformabilità $delta_v$ e $delta_p$.Se entrambe le rette partissero dall'origine, non vi sarebbe interferenza (pezzi semplicemente accostati senza pressione). Per rappresentare il serraggio di interferenza $i$, si lascia la caratteristica della vite nell'origine e si trasla verso destra la caratteristica del pezzo di una quantità pari a $i$ lungo l'asse delle ascisse $u$.
+
 L'intersezione tra le due rette identifica il punto di funzionamento del collegamento al montaggio:
 - L'ordinata del punto di intersezione fornisce la forza assiale di precarico in equilibrio nella vite e nei pezzi (direttamente correlata al momento di serraggio applicato).
 - La somma dei due spostamenti elastici rispetto alla posizione di equilibrio uguaglia l'interferenza imposta ($u_v + u_p = i$).
