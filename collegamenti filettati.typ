@@ -39,7 +39,16 @@ Le principali tipologie di filettature normalizzate per i collegamenti (con rife
 Nel funzionamento generale di un bullone di collegamento, l'applicazione del momento di serraggio genera una forza di interazione tra le parti serrate, inducendo uno stato di trazione nel fusto della vite e di compressione nei pezzi. In esercizio, su questa configurazione precaricata agiscono le forze esterne di lavoro sulla macchina, e il flusso delle tensioni si trasferisce dal fusto della vite ai filetti del dado o della madrevite. Tale distribuzione del carico sui filetti non è uniforme: il flusso di forza si concentra maggiormente nei primi filetti in presa (tipicamente tra il secondo, il terzo e il quarto filetto della serie), rendendo questa zona la più critica ai fini della resistenza.
 
 === Geometria della filettatura metrica ISO a profilo triangolare
-La caratterizzazione geometrica di una filettatura metrica ISO a profilo triangolare si basa sul diametro nominale (esterno) della vite $d$, misurabile direttamente con il calibro in corrispondenza della cresta esterna della filettatura. Nella designazione normalizzata si indica la lettera $"M"$ seguita dal valore del diametro nominale in millimetri: ad esempio, $"M"10$ indica un diametro $d = 10 "mm"$ con passo grosso tabellato $p = 1,5 "mm"$, mentre $"M"10 times 1,25$ specifica un diametro $d = 10 "mm"$ abbinato a un passo fine indicato esplicitamente pari a $p = 1,25 "mm"$.
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (center + horizon, center + horizon),
+  [
+    La caratterizzazione geometrica di una filettatura metrica ISO a profilo triangolare si basa sul diametro nominale (esterno) della vite $d$, misurabile direttamente con il calibro in corrispondenza della cresta esterna della filettatura. Nella designazione normalizzata si indica la lettera $"M"$ seguita dal valore del diametro nominale in millimetri: ad esempio, $"M"10$ indica un diametro $d = 10 "mm"$ con passo grosso tabellato $p = 1,5 "mm"$, mentre $"M"10 times 1,25$ specifica un diametro $d = 10 "mm"$ abbinato a un passo fine indicato esplicitamente pari a $p = 1,25 "mm"$.
+  ],
+  [#image("images/fig_collegamenti_filettati_8953.png", width: 100%)]
+)
+
 
 L'angolo di apertura del profilo triangolare è $2 alpha = 60degree$. In funzione del passo $P$ (indicato anche come $p$) e del diametro nominale $d$, si definiscono le grandezze geometriche del profilo di riferimento, tra cui l'altezza del triangolo generatore $H$, il diametro medio $d_2 = D_2$ (posto a metà tra la superficie di testa e la superficie interna utilizzabile del filetto) e i diametri di fondo gola/nocciolo $d_1 = D_1$ e $d_3$:
 
@@ -49,11 +58,7 @@ $ d_1 = D_1 = d - 2 H_1 = d - 1,082 53 P quad quad d_2 = D_2 = d - frac(3, 4) H 
 
 $ d_3 = d - 2 h_3 = d - 1,226 87 P quad quad r = frac(H, 6) = 0,144 34 P $
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Ai fini del calcolo strutturale della sezione resistente della vite, si fa riferimento o al diametro di nocciolo (corrispondente alla gola più profonda con raccordo) oppure a un diametro resistente che, secondo le indicazioni delle normative tedesche, tiene conto anche di una porzione del filetto, poiché il filetto stesso è lateralmente vuoto e non oppone la medesima resistenza di un fusto pieno.],[#image("images/fig_collegamenti_filettati_3594.png", width: 90%)
-])
+Ai fini del calcolo strutturale della sezione resistente della vite, si fa riferimento o al diametro di nocciolo (corrispondente alla gola più profonda con raccordo) oppure a un diametro resistente che, secondo le indicazioni delle normative tedesche, tiene conto anche di una porzione del filetto, poiché il filetto stesso è lateralmente vuoto e non oppone la medesima resistenza di un fusto pieno.
 
 === Nomenclatura dei collegamenti filettati
 La distinzione terminologica tra le diverse configurazioni costruttive riveste un'importanza fondamentale sia in ambito professionale sia in sede d'esame:
