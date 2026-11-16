@@ -6,9 +6,9 @@
   import draw: *
 
   // Riempimenti (paratoia e diagrammi di pressione)
-  line((0.15, 1.0), (0.95, 1.0), (0.95, 3.4), close: true, fill: gray.transparentize(88%), stroke: none)
+  line((0.15, 1.0), (0.95, 1.0), (0.95, 3.4), close: true, fill: c-aux.transparentize(93%), stroke: none)
   
-  rect((4.80, 2.10), (4.94, 3.80), fill: gray.transparentize(65%), stroke: 1pt)
+  rect((4.80, 2.10), (4.94, 3.80), fill: c-aux.transparentize(81%), stroke: 1pt)
 
   // Fondo orizzontale, sezione di monte e pelo libero
   line((1.50, 1.0), (7.10, 1.0), stroke: 1.1pt)
@@ -49,15 +49,15 @@
   content((4.30, 0.56), text(size: 7.5pt)[$arrow(sigma) " trascurabili"$], anchor: "north")
 
   // Versori normali uscenti (blu) e richiamo S_g
-  line((1.50, 1.60), (1.05, 1.60), mark: (end: ">"), stroke: (paint: blue, thickness: 0.85pt))
-  content((1.27, 1.72), text(size: 7.5pt, fill: blue)[$arrow(n)$], anchor: "south")
+  line((1.50, 1.60), (1.05, 1.60), mark: (end: ">"), stroke: (paint: c-norm, thickness: 0.85pt))
+  content((1.27, 1.72), text(size: 7.5pt, fill: c-norm)[$arrow(n)$], anchor: "south")
 
-  line((4.80, 2.48), (5.32, 2.48), mark: (end: ">"), stroke: (paint: blue, thickness: 0.85pt))
-  content((5.38, 2.48), text(size: 7.5pt, fill: blue)[$arrow(n)$], anchor: "west")
+  line((4.80, 2.48), (5.32, 2.48), mark: (end: ">"), stroke: (paint: c-norm, thickness: 0.85pt))
+  content((5.38, 2.48), text(size: 7.5pt, fill: c-norm)[$arrow(n)$], anchor: "west")
 
-  line((7.10, 1.62), (7.55, 1.62), mark: (end: ">"), stroke: (paint: blue, thickness: 0.85pt))
-  content((7.40, 1.72), text(size: 7.5pt, fill: blue)[$arrow(n)$], anchor: "south")
+  line((7.10, 1.62), (7.55, 1.62), mark: (end: ">"), stroke: (paint: c-norm, thickness: 0.85pt))
+  content((7.40, 1.72), text(size: 7.5pt, fill: c-norm)[$arrow(n)$], anchor: "south")
 
-  line((5.42, 3.85), (4.96, 3.45), mark: (end: ">"), stroke: (paint: blue, thickness: 0.65pt))
-  content((5.46, 3.88), text(size: 8pt, fill: blue)[$S_g$], anchor: "west")
+  line((5.42, 3.85), (4.96, 3.45), mark: (end: ">"), stroke: (paint: c-norm, thickness: 0.65pt))
+  content((5.46, 3.88), text(size: 8pt, fill: c-norm)[$S_g$], anchor: "west")
 })

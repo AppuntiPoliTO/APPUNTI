@@ -2,56 +2,64 @@
 #import "@preview/cetz:0.3.4": canvas, draw
 #import "../template.typ": *
 
-#canvas(length: 0.86cm, {
-  let x1 = 0.8
-  let x2 = 6.6
-  let y0 = 0.55
-  let y1 = 2.95
-  let ym = (y0 + y1) / 2
-  let xm = (x1 + x2) / 2
+#canvas(length: 1cm, {
+  import draw: *
 
-  // Pareti fisse della condotta S_w (interrotta in basso al passaggio dell'albero)
-  parete(x1, x2, y1, sotto: false)
-  parete(x1, xm - 0.18, y0, sotto: true)
-  parete(xm + 0.18, x2, y0, sotto: true)
-  etichetta((2.1, y1 + 0.36), $S_w (arrow(u) = 0)$, col: c-geo)
+  rect((1.60, 1.15), (6.80, 3.65), fill: c-aux.transparentize(92%), stroke: none)
+  circle((1.60, 2.40), radius: (0.45, 1.25), fill: c-aux.transparentize(86%), stroke: none)
+  arc((1.60, 2.40), start: -90deg, stop: 90deg, radius: (0.45, 1.25), anchor: "origin", stroke: (paint: c-aux, thickness: 0.65pt, dash: "dashed"))
+  arc((1.60, 2.40), start: 90deg, stop: 270deg, radius: (0.45, 1.25), anchor: "origin", stroke: (paint: c-aux, thickness: 0.9pt, dash: "dashed"))
 
-  // Sezioni S_1 e S_2
-  sezione-tratteggiata(x1, y0, y1)
-  sezione-tratteggiata(x2, y0, y1)
-  etichetta((x1 + 0.32, y1 - 0.32), $S_1$, col: c-aux)
-  etichetta((x2 - 0.32, y1 - 0.32), $S_2$, col: c-aux)
+  circle((4.20, 2.60), radius: (0.90, 0.324), stroke: (paint: c-aux, thickness: 0.65pt, dash: "dotted"))
 
-  // Versori normali uscenti n_1 e n_2
-  freccia((x1, ym - 0.55), (x1 - 0.7, ym - 0.55), col: c-norm)
-  etichetta((x1 - 0.4, ym - 0.85), $arrow(n)_1$, col: c-norm)
-  freccia((x2, ym - 0.55), (x2 + 0.7, ym - 0.55), col: c-norm)
-  etichetta((x2 + 0.4, ym - 0.85), $arrow(n)_2$, col: c-norm)
+  line((4.40, 2.25), (4.90, 2.38), (4.90, 2.78), (4.40, 2.65), close: true, fill: c-riemp, stroke: 0.85pt + c-geo)
+  line((4.06, 2.27), (3.71, 2.45), (3.71, 2.85), (4.06, 2.67), close: true, fill: c-riemp, stroke: 0.85pt + c-geo)
 
-  // Velocità in ingresso e uscita
-  freccia((x1 - 0.55, ym + 0.15), (x1 + 0.45, ym + 0.15), col: c-vel, sp: 1pt)
-  etichetta((x1 - 0.32, ym + 0.48), $arrow(u)_1$, col: c-vel)
-  freccia((x2 - 0.45, ym + 0.15), (x2 + 0.55, ym + 0.15), col: c-vel, sp: 1pt)
-  etichetta((x2 + 0.32, ym + 0.48), $arrow(u)_2$, col: c-vel)
+  rect((4.11, 1.15), (4.29, 2.16), fill: c-forza.transparentize(78%), stroke: none)
+  line((4.11, 1.15), (4.11, 2.16), stroke: 0.9pt + c-forza)
+  line((4.29, 1.15), (4.29, 2.16), stroke: 0.9pt + c-forza)
 
-  // Girante schematica con pale mobili S_m
-  draw.circle((xm, ym - 0.08), radius: 0.80, stroke: (paint: c-aux, thickness: 0.6pt, dash: "dotted"))
-  for ang in (35deg, 125deg, 215deg, 305deg) {
-    let r-in = 0.22
-    let r-out = 0.73
-    let p1 = (xm + r-in * calc.cos(ang), ym - 0.08 + r-in * calc.sin(ang))
-    let p2 = (xm + r-out * calc.cos(ang + 18deg), ym - 0.08 + r-out * calc.sin(ang + 18deg))
-    draw.line(p1, p2, stroke: 1.5pt + c-geo)
-  }
-  draw.circle((xm, ym - 0.08), radius: 0.22, fill: c-riemp, stroke: 1pt + c-geo)
-  etichetta((xm + 0.85, ym - 0.78), $S_m$, col: c-geo)
+  rect((3.96, 2.16), (4.44, 2.64), fill: c-riemp, stroke: none)
+  circle((4.20, 2.16), radius: (0.24, 0.086), fill: c-riemp, stroke: none)
+  arc((4.20, 2.16), start: 180deg, stop: 360deg, radius: (0.24, 0.086), anchor: "origin", stroke: 0.9pt + c-geo)
+  line((3.96, 2.16), (3.96, 2.64), stroke: 0.9pt + c-geo)
+  line((4.44, 2.16), (4.44, 2.64), stroke: 0.9pt + c-geo)
+  circle((4.20, 2.64), radius: (0.24, 0.086), fill: c-riemp, stroke: 0.9pt + c-geo)
 
-  // Velocità delle pale
-  freccia((xm - 0.32, ym + 0.46), (xm + 0.32, ym + 0.62), col: c-vel, sp: 0.8pt)
-  etichetta((xm + 0.05, ym + 0.88), $arrow(u) = arrow(w) != 0$, col: c-vel)
+  line((4.00, 2.15), (3.50, 2.02), (3.50, 2.42), (4.00, 2.55), close: true, fill: c-riemp, stroke: 0.9pt + c-geo)
+  line((4.34, 2.13), (4.69, 1.95), (4.69, 2.35), (4.34, 2.53), close: true, fill: c-riemp, stroke: 0.9pt + c-geo)
 
-  // Albero e potenza P_m
-  draw.line((xm, ym - 0.30), (xm, -0.05), stroke: 1.5pt + c-forza)
-  freccia((xm - 0.55, 0.08), (xm - 0.10, 0.08), col: c-forza, sp: 0.9pt)
-  etichetta((xm - 0.85, 0.08), $P_m$, col: c-forza)
+  circle((4.20, 1.15), radius: (0.20, 0.072), fill: c-riemp, stroke: 0.75pt + c-geo)
+  line((1.60, 3.65), (6.80, 3.65), stroke: 1.1pt + c-geo)
+  line((1.60, 1.15), (4.00, 1.15), stroke: 1.1pt + c-geo)
+  line((4.40, 1.15), (6.80, 1.15), stroke: 1.1pt + c-geo)
+
+  rect((4.11, 0.20), (4.29, 1.15), fill: c-forza.transparentize(78%), stroke: none)
+  circle((4.20, 0.20), radius: (0.09, 0.032), fill: c-forza.transparentize(78%), stroke: none)
+  line((4.11, 0.20), (4.11, 1.15), stroke: 1pt + c-forza)
+  line((4.29, 0.20), (4.29, 1.15), stroke: 1pt + c-forza)
+  arc((4.20, 0.20), start: 180deg, stop: 360deg, radius: (0.09, 0.032), anchor: "origin", stroke: 1pt + c-forza)
+
+  circle((6.80, 2.40), radius: (0.45, 1.25), fill: c-aux.transparentize(85%), stroke: none)
+  circle((6.80, 2.40), radius: (0.45, 1.25), stroke: (paint: c-aux, thickness: 0.9pt, dash: "dashed"))
+
+  line((1.60, 1.85), (0.70, 1.85), mark: (end: ">"), stroke: 1pt + c-norm)
+  line((6.80, 1.85), (7.70, 1.85), mark: (end: ">"), stroke: 1pt + c-norm)
+
+  line((0.85, 2.55), (2.15, 2.55), mark: (end: ">"), stroke: 1.1pt + c-vel)
+  line((6.25, 2.55), (7.55, 2.55), mark: (end: ">"), stroke: 1.1pt + c-vel)
+
+  line((4.62, 2.95), (3.78, 2.95), mark: (end: ">"), stroke: 0.95pt + c-vel)
+  arc((4.20, 0.60), start: 195deg, stop: 345deg, radius: (0.36, 0.12), anchor: "origin", mark: (end: ">"), stroke: 0.95pt + c-forza)
+
+  content((2.95, 3.82), text(size: 8.5pt, fill: c-geo)[$S_w (arrow(u) = 0)$], anchor: "south")
+  content((1.60, 3.22), text(size: 8pt, fill: c-aux)[$S_1$])
+  content((6.80, 3.22), text(size: 8pt, fill: c-aux)[$S_2$])
+  content((0.95, 1.68), text(size: 8.5pt, fill: c-norm)[$arrow(n)_1$], anchor: "north")
+  content((7.45, 1.68), text(size: 8.5pt, fill: c-norm)[$arrow(n)_2$], anchor: "north")
+  content((1.00, 2.75), text(size: 8.5pt, fill: c-vel)[$arrow(u)_1$], anchor: "south")
+  content((7.45, 2.75), text(size: 8.5pt, fill: c-vel)[$arrow(u)_2$], anchor: "south")
+  content((4.20, 3.12), text(size: 8pt, fill: c-vel)[$arrow(u) = arrow(w) != 0$], anchor: "south")
+  content((4.95, 1.88), text(size: 8.5pt, fill: c-geo)[$S_m$], anchor: "west")
+  content((3.72, 0.60), text(size: 8.5pt, fill: c-forza)[$P_m$], anchor: "east")
 })

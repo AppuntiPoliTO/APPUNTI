@@ -1,36 +1,6 @@
-#import "/template.typ": *
+#import "../template.typ": *
 #import "@preview/cetz:0.3.4"
-
-#set page(paper: "a4", margin: 2cm)
-#set text(lang: "it", size: 11pt)
-
-
-#show heading.where(level: 1): it => block(below: 1em, above: 1.2em)[
-  #set text(size: 15pt, weight: "bold")
-  #it
-]
-#show heading.where(level: 2): it => block(below: 0.8em, above: 1.3em)[
-  #set text(size: 12.5pt, weight: "bold")
-  #it
-]
-#show heading.where(level: 3): it => block(below: 0.6em, above: 1em)[
-  #set text(size: 11pt, weight: "bold")
-  #it
-]
-
-// Box per note fisiche e osservazioni importanti
-#let nota-box(titolo, corpo) = block(
-  width: 100%,
-  breakable: false,
-  fill: rgb("#f4f7fa"),
-  stroke: (left: 3pt + rgb("#1f5a96")),
-  inset: (x: 12pt, y: 9pt),
-  radius: (right: 3pt),
-  above: 0.9em,
-  below: 0.9em,
-)[
-  *#titolo.* #corpo
-]
+#show: conf
 
 = Equazione globale della meccanica dei fluidi
 
@@ -163,8 +133,8 @@ $
 
 Il terzo termine, $arrow(Pi)_w = integral_(S_w) sigma_(i j) n_j dif S_w = arrow(F)$, contiene la *forza cercata*.
 
-#nota-box("Attenzione ai segni e alle normali")[
-  Poiché per convenzione la normale $arrow(n)$ su $S_w$ è diretta dal fluido verso l'esterno (cioè *entra* nella parete solida), il termine $arrow(Pi)_w = arrow(F)$ rappresenta la *forza esercitata dalla parete sul fluido*. Per il terzo principio della dinamica, la forza esercitata dal fluido sulla parete è uguale e opposta, ovvero $-arrow(F)$.
+#nota[
+  *Attenzione ai segni e alle normali.* Poiché per convenzione la normale $arrow(n)$ su $S_w$ è diretta dal fluido verso l'esterno (cioè *entra* nella parete solida), il termine $arrow(Pi)_w = arrow(F)$ rappresenta la *forza esercitata dalla parete sul fluido*. Per il terzo principio della dinamica, la forza esercitata dal fluido sulla parete è uguale e opposta, ovvero $-arrow(F)$.
 ]
 
 === Bilancio per condotta orizzontale a sezione costante
@@ -218,8 +188,8 @@ $ [p(x_1) - (p(x_1) + (partial p) / (partial x) L)] pi R^2 = tau_w 2 pi R L $
 
 Definiamo infine la caduta di pressione positiva $Delta p = p_1 - p_2 > 0$ (ovvero $-(partial p / partial x) L = Delta p$) e sostituiamola per ricavare lo sforzo a parete:
 $ pi R^2 Delta p = tau_w 2 pi R L quad ==> quad tau_w = (Delta p) / (2 L) R $
-#nota-box("Confronto con le equazioni di Navier-Stokes")[
-  A differenza dell'approccio differenziale visto nella soluzione di Poiseuille (in cui era necessario risolvere le equazioni di Navier-Stokes per determinare il profilo di velocità e derivarlo a parete), il bilancio globale permette di calcolare lo sforzo viscoso a parete $tau_w$ direttamente dalla caduta di pressione $Delta p$ e dalla geometria, *senza conoscere il dettaglio del campo di velocità interno*.
+#nota[
+  *Confronto con le equazioni di Navier-Stokes.* A differenza dell'approccio differenziale visto nella soluzione di Poiseuille (in cui era necessario risolvere le equazioni di Navier-Stokes per determinare il profilo di velocità e derivarlo a parete), il bilancio globale permette di calcolare lo sforzo viscoso a parete $tau_w$ direttamente dalla caduta di pressione $Delta p$ e dalla geometria, *senza conoscere il dettaglio del campo di velocità interno*.
 ]
 
 Possiamo inoltre adimensionalizzare il modulo dello sforzo a parete $tau_w$ introducendo il *coefficiente d'attrito* (di Fanning) $c_f$:
