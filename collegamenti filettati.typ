@@ -823,7 +823,40 @@ $ F_(p, l i m) lt.eq F_(p, m i n) = frac(F_(v, l i m), I) - Delta F_v - Delta C_
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Se si giunge a $F_(p, m i n) = 0$, si verifica il distacco completo fra le parti serrate: in tale situazione viene meno la tenuta del collegamento e l'intero carico esterno $C$ viene sopportato esclusivamente dalla vite, condizione da evitare assolutamente sia per la funzionalità sia per l'integrità strutturale della vite stessa. Condizioni comprese tra $F_(p, l i m)$ e $0$ mantengono ancora il contatto fisico tra le superfici, ma con una pressione insufficiente a garantire la tenuta o l'aderenza richieste.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma di forzamento ($|F_p|, |F_v|$ vs $u$) per la verifica del carico minimo di serraggio. Sono rappresentati i tre triangoli nidificati con interferenza teorica $i "teorica"$, spostamento orizzontale $Delta i$ e vertici rispettivamente a $F_(v, l i m)$, $F_(v, l i m)/I$ e $F_(v, l i m)/I - Delta F_v$. Sul triangolo più interno è applicato il carico esterno $C$, evidenziando il punto superiore sulla vite (quadrato rosso) e il punto inferiore sul pezzo (triangolo blu) ribassato di $Delta C_p$ al valore $F_(p, m i n)$, posizionato al di sopra della retta orizzontale di soglia $F_(p, l i m)$]])
+  align: (left + horizon, center + horizon),[Se si giunge a $F_(p, m i n) = 0$, si verifica il distacco completo fra le parti serrate: in tale situazione viene meno la tenuta del collegamento e l'intero carico esterno $C$ viene sopportato esclusivamente dalla vite, condizione da evitare assolutamente sia per la funzionalità sia per l'integrità strutturale della vite stessa. Condizioni comprese tra $F_(p, l i m)$ e $0$ mantengono ancora il contatto fisico tra le superfici, ma con una pressione insufficiente a garantire la tenuta o l'aderenza richieste.],[#canvas(length: 1cm, {
+  import draw: *
+  line((0, 0), (0, 4.4), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 0), (7.0, 0), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 3.24), (3.4, 3.24), stroke: (dash: "dashed", thickness: 0.6pt))
+  line((0, 2.52), (3.4, 2.52), stroke: (dash: "dashed", thickness: 0.6pt))
+  line((0, 1.85), (2.6, 1.85), stroke: (dash: "dashed", thickness: 0.6pt))
+  line((0, 1.35), (2.6, 1.35), stroke: (dash: "dashed", thickness: 0.6pt))
+  line((0, 0.55), (5.2, 0.55), stroke: (paint: blue.lighten(25%), thickness: 0.7pt))
+  line((0, 0), (3.15, 3.78), stroke: 1.1pt)
+  line((1.2, 2.07), (3.5, 0), stroke: 1.1pt)
+  line((1.8, 2.79), (4.9, 0), stroke: 1.1pt)
+  line((2.4, 3.51), (6.3, 0), stroke: 1.1pt)
+  line((2.0, 1.35), (2.0, 2.40), stroke: 1.5pt)
+  rect((1.88, 2.28), (2.12, 2.52), fill: red, stroke: none)
+  line((2.0, 1.50), (1.87, 1.24), (2.13, 1.24), close: true, fill: blue, stroke: none)
+  line((2.45, 1.35), (2.45, 1.85), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((0, 0), (0, -1.45), stroke: 0.55pt)
+  line((3.5, 0), (3.5, -0.95), stroke: 0.55pt)
+  line((4.9, 0), (4.9, -0.95), stroke: 0.55pt)
+  line((6.3, 0), (6.3, -1.45), stroke: 0.55pt)
+  line((3.5, -0.75), (4.9, -0.75), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((0, -1.25), (6.3, -1.25), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  content((-0.15, 4.1), text(size: 8.5pt)[$|F_p|, |F_v|$], anchor: "east")
+  content((-0.15, 3.24), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
+  content((-0.15, 2.52), text(size: 8pt)[$F_(v,"lim") \/ I$], anchor: "east")
+  content((-0.15, 1.85), text(size: 8pt)[$F_(v,"lim") \/ I - Delta F_v$], anchor: "east")
+  content((-0.15, 1.35), text(size: 8pt)[$F_(p,"min")$], anchor: "east")
+  content((-0.15, 0.55), text(size: 8pt)[$F_(p,"lim")$], anchor: "east")
+  content((2.55, 1.60), text(size: 8pt)[$Delta C_p$], anchor: "west")
+  content((4.2, -0.65), text(size: 8pt)[$Delta i$], anchor: "south")
+  content((2.2, -1.15), text(size: 8pt)[$i "teorica"$], anchor: "south")
+  content((6.85, -0.15), text(size: 8.5pt)[$u$], anchor: "north")
+})])
 
 Se la verifica del carico minimo di serraggio non è soddisfatta, i possibili interventi correttivi consistono nel:
 - diminuire le incertezze di montaggio utilizzando chiavi dinamometriche;
