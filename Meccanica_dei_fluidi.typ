@@ -60,6 +60,7 @@
 ]
 
 #set outline(
+  depth: 2,
   title: [Indice],
   indent: 1.5em, 
 )
