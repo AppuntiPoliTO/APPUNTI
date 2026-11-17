@@ -405,7 +405,7 @@ Dall'espressione $Delta C_v = C frac(delta_p, delta_v + delta_p)$ risulta che, a
 1. #grid(
   columns: (1fr, 1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[#strong[Aumento della lunghezza della vite:] si interpone ad esempio un distanziale cilindrico impiegando una vite con gambo completamente filettato. Sebbene l'allungamento incrementi anche la deformabilità $delta_p$ delle parti serrate, dimensionando opportunamente il distanziale è possibile far crescere $delta_v$ in misura maggiore rispetto a $delta_p$. Nel diagramma di forzamento, $F_(v, l i m)$ rimane invariata (dipendendo dal diametro di nocciolo $d_n$), mentre la retta della vite risulta più inclinata verso l'asse delle ascisse; di conseguenza, a parità di $C$, $Delta C_v$ diminuisce e $Delta C_p$ aumenta.],[#include "figs/collegamenti-filettati-fig33.typ"], [#canvas(length: 1cm, {
+  align: (left + horizon, center + horizon),[#strong[Aumento della lunghezza della vite:] si interpone ad esempio un distanziale cilindrico impiegando una vite con gambo completamente filettato. Sebbene l'allungamento incrementi anche la deformabilità $delta_p$ delle parti serrate, dimensionando opportunamente il distanziale è possibile far crescere $delta_v$ in misura maggiore rispetto a $delta_p$. Nel diagramma di forzamento, $F_(v, l i m)$ rimane invariata (dipendendo dal diametro di nocciolo $d_n$), mentre la retta della vite risulta più inclinata verso l'asse delle ascisse; di conseguenza, a parità di $C$, $Delta C_v$ diminuisce e $Delta C_p$ aumenta.],[#include "figs/collegamenti-filettati-fig33.typ"], [#canvas(length: 0cm, {
   import draw: *
   line((0, 0), (9.0, 0), mark: (end: ">"), stroke: 0.75pt)
   line((0, 0), (0, 5.2), mark: (end: ">"), stroke: 0.75pt)
