@@ -163,7 +163,7 @@ Infine, poiché nei campi a potenziale la vorticità è nulla ($arrow(omega) = a
 
 === Evoluzione reale del campo di moto attorno a una sfera/cilindro al variare di $"Re"$
 
-Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità nello strato limite e la configurazione del campo di moto attorno a una sfera (o a un cilindro) cambia radicalmente al variare del numero di Reynolds $"Re" = U_infinity D slash nu$. Osservazioni sperimentali su cilindro in acqua — ottenute rilasciando per elettrolisi microbollicine di idrogeno da fili metallici, le quali in moto stazionario tracciano le linee di corrente — insieme a simulazioni numeriche fluidodinamiche mostrano la seguente evoluzione:
+Nei fluidi viscosi reali, l'aderenza a parete genera vorticità nello strato limite e il campo di moto attorno a una sfera (o a un cilindro) varia radicalmente con il numero di Reynolds $"Re" = U_infinity D slash nu$. Esperimenti in acqua (con microbollicine d'idrogeno traccianti) e simulazioni numeriche mostrano la seguente evoluzione:
 
 #grid(
   columns: (1.15fr, 0.85fr),
@@ -172,42 +172,41 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
   align: (left + horizon, center + horizon),
   [
     *1. Campo di moto per $"Re" << 1$ (e $"Re" tilde.op 1$, regime viscoso):* \
-    le forze viscose dominano su quelle inerziali. Le linee di corrente seguono il profilo del corpo senza distacco e presentano un andamento pressoché simmetrico tra monte e valle, ricordando visivamente il campo a potenziale; fisicamente, tuttavia, i due moti sono opposti perché qui la viscosità svolge un ruolo primario e il campo è fortemente rotazionale.
+    dominano le forze viscose su quelle inerziali. Le linee di corrente seguono il corpo senza distacco e sono pressoché simmetriche tra monte e valle, ricordando visivamente il campo a potenziale; fisicamente però i due moti sono opposti, poiché qui la viscosità è primaria e il campo è fortemente rotazionale.
   ],
   [
     #include "../figs/cap9-fig02.typ"
   ],
   [
     *2. Regime $"Re" tilde.op 2 div 40$ (ricircolo stazionario):* \
-    l'inerzia del fluido non è più trascurabile. A valle del punto di minima pressione ($p_"min"$) il fluido incontra un gradiente di pressione avverso e si separa dalla parete formando due bolle di ricircolazione *controrotanti* in scia (quella superiore ruota in senso *orario*, quella inferiore in senso *antiorario*). La simmetria monte-valle si rompe, ma fino a $"Re" approx 40$ il campo di moto rimane *stazionario* (la velocità in ogni punto non dipende dal tempo) e *laminare*; al crescere di $"Re"$ le bolle si allungano progressivamente fino a raggiungere e superare dimensioni dell'ordine del diametro $D$.
+    l'inerzia non è più trascurabile. A valle di $p_"min"$ il gradiente di pressione avverso provoca il distacco dalla parete, formando in scia due bolle di ricircolazione *controrotanti* (superiore *oraria*, inferiore *antioraria*). La simmetria monte-valle si rompe, ma fino a $"Re" approx 40$ il moto rimane *stazionario* e *laminare*; al crescere di $"Re"$ le bolle si allungano fino a raggiungere e superare dimensioni dell'ordine del diametro $D$.
   ],
   [
     #include "../figs/cap9-fig03.typ"
   ],
   [
     *3. Meccanismo di distacco dello strato limite:* \
-    a monte di $p_"min"$ il gradiente è favorevole ($partial p slash partial s < 0$) e accelera il fluido; a valle di $p_"min"$ il gradiente diventa avverso ($partial p slash partial s > 0$), frena gli strati vicini a parete fino all'inversione del profilo di velocità $u(n)$ e causa il distacco della vena fluida, impedendo il recupero di pressione e generando una forte *resistenza di forma*.
+    a monte di $p_"min"$ il gradiente favorevole ($partial p slash partial s < 0$) accelera il fluido; a valle diventa avverso ($partial p slash partial s > 0$), frena gli strati a parete fino all'inversione del profilo $u(n)$ e causa il distacco della vena fluida, impedendo il recupero di pressione e generando una forte *resistenza di forma*.
   ],
   [
     #include "../figs/cap9-fig04.typ"
   ],
   [
     *4. Regime $"Re" > 40$ ($"Re" tilde.op 40 div 50$, instabilità della scia):* \
-    superata la soglia $"Re" approx 40$, le bolle di ricircolazione allungate diventano instabili e si staccano alternatamente a valle (*scia di von Kármán*). Pur imponendo condizioni al contorno stazionarie, il campo di moto perde autonomamente la stazionarietà e sviluppa un'oscillazione periodica con una *frequenza caratteristica* propria. Questo fenomeno è una manifestazione diretta della *non linearità* del sistema (in analogia a una corda di violoncello: l'archetto viene mosso a frequenza bassissima, $tilde.op 0.1$~Hz, ma la corda entra in vibrazione alla propria frequenza naturale di $440$~Hz).
+    oltre $"Re" approx 40$, le bolle di ricircolo allungate diventano instabili e si staccano alternatamente a valle (*scia di von Kármán*). Pur con condizioni al contorno stazionarie, il campo di moto sviluppa autonomamente un'oscillazione periodica con una propria *frequenza caratteristica*: effetto diretto della *non linearità* del sistema (come una corda di violoncello mossa dall'archetto a $tilde.op 0.1$~Hz che vibra alla propria frequenza naturale di $440$~Hz).
   ],
   [
     #include "../figs/cap9-fig05.typ"
   ],
 )
 
-*5. Regime ad alto $"Re"$ (scia turbolenta):* aumentando ulteriormente il numero di Reynolds, accanto alla frequenza principale compaiono molteplici altre frequenze; oltre ai vortici di grande scala (di dimensione confrontabile con il diametro $D$) si generano numerosi vortici più piccoli, frastagliati e caotici, fino a ottenere un *campo di moto turbolento* nella scia.
+*5. Regime ad alto $"Re"$ (scia turbolenta):* crescendo ulteriormente $"Re"$, alla frequenza principale si affiancano molteplici frequenze; accanto ai vortici di grande scala (dell'ordine di $D$) si formano numerosi vortici più piccoli, frastagliati e caotici, fino a rendere la scia un *campo di moto turbolento*.
 
 #nota-esame[
-  - *Basso $"Re"$ vs campo a potenziale:* per $"Re" <= 1$ la somiglianza delle linee di corrente con la soluzione a potenziale è solo apparente; nel flusso reale la viscosità è determinante e il campo è rotazionale.
-  - *Bolle di ricircolo ($"Re" tilde.op 2 div 40$):* la comparsa delle due bolle controrotanti rompe la simmetria tra monte e valle, ma il campo di moto rimane completamente stazionario e laminare fino a $"Re" approx 40$.
-  - *Transizione nei flussi esterni vs flussi interni:* diversamente dal moto in condotta (transizione dicotomica ed estesa all'intera sezione), attorno a un corpo immerso la transizione alla turbolenza avviene in modo *molto progressivo* al crescere di $"Re"$ e la turbolenza resta *confinata in una parte limitata del dominio* (la scia a valle), mentre lontano dal corpo la corrente esterna rimane regolare.
+  - *Basso $"Re"$ vs campo a potenziale:* per $"Re" <= 1$ la somiglianza delle linee di corrente con il moto a potenziale è solo apparente; nel flusso reale la viscosità è determinante e il campo è rotazionale.
+  - *Bolle di ricircolo ($"Re" tilde.op 2 div 40$):* le due bolle controrotanti rompono la simmetria monte-valle, ma il moto resta stazionario e laminare fino a $"Re" approx 40$.
+  - *Transizione nei flussi esterni vs flussi interni:* diversamente dal moto in condotta (transizione dicotomica su tutta la sezione), attorno a un corpo la transizione avviene in modo *molto progressivo* con $"Re"$ e la turbolenza resta *confinata nella scia*, mentre la corrente esterna rimane regolare.
 ]
-
 == Equazione di Helmholtz e legame con la turbolenza
 
 Per comprendere il legame diretto tra vorticità e transizione alla turbolenza, si ricava l'equazione evolutiva della vorticità applicando l'operatore rotore ($nabla times$) a tutti i termini dell'equazione di Navier-Stokes incomprimibile. Si ottiene così l'*equazione di Helmholtz*:
