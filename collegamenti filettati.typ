@@ -564,7 +564,7 @@ $ A_p = frac(pi, 4) (D_p^2 - d_f^2) $],[#canvas(length: 1cm, {
 $ A_p = frac(pi, 4)(d_(e t)^2 - d_f^2) + frac(pi, 8)(frac(D_p, d_(e t)) - 1)(0.2 dot.op d_(e t) dot.op L_p^"*" + frac(L_p^("*2"), 100)) $],[#canvas(length: 1cm, {
   import draw: *
 
-  content((0.4, 4.15), text(size: 10.5pt, fill: rgb("#2832c2"))[Caso b) $D_p / d_("et") = 1 div 3$], anchor: "west")
+ 
 
   line((2.2506, 2.2), (1.8753, 2.85), (1.1247, 2.85), (0.7494, 2.2), (1.1247, 1.55), (1.8753, 1.55), close: true, stroke: 1.0pt)
   circle((1.5, 2.2), radius: 0.65, stroke: 0.9pt)
