@@ -377,7 +377,7 @@ $ delta_p = frac(1, A_p) sum frac(L_(p i), E_(p i)) quad "(materiali dei pezzi s
 
 Per la stima dell'area equivalente $A_p$, indicando con $D_p$ il diametro esterno del pezzo serrato, $d_f$ il diametro del foro, $d_(e t)$ (o $D_(e t)$) il diametro esterno della testa della vite e $D$ il diametro della vite, si distinguono tre casi in base al rapporto $D_p / d_(e t)$:
 
-1. #grid(
+#grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[Caso a) $D_p / d_(e t) lt.eq 1$:] l'elemento serrato è contenuto all'interno della proiezione della testa ed è quindi compresso uniformemente sull'intera corona circolare:
@@ -556,7 +556,7 @@ $ A_p = frac(pi, 4) (D_p^2 - d_f^2) $],[#canvas(length: 1cm, {
   content((7.55, 0.775), text(size: 8.5pt)[$L_p$], anchor: "west")
 })])
 
-2. #grid(
+ #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[Caso b) $D_p / d_(e t) = 1 div 3$:] la zona interessata dalla compressione si allarga a tronco di cono (cono di pressione), ma le dimensioni trasversali del pezzo non sono sufficienti a contenerlo interamente e il cono risulta troncato dal bordo esterno $D_p$. Definita la lunghezza efficace $L_p^"*" = min(L_p; 8D)$:
@@ -693,7 +693,7 @@ $ A_p = frac(pi, 4)(d_(e t)^2 - d_f^2) + frac(pi, 8)(frac(D_p, d_(e t)) - 1)(0.2
   content((6.20, -0.55), text(size: 9pt)[$D$], anchor: "south")
 })])
 
-3. #grid(
+#grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[Caso c) $D_p / d_(e t) gt.eq 3$:] i pezzi serrati sono molto estesi trasversalmente, per cui il cono di pressione è completamente contenuto all'interno del volume del solido senza raggiungere i bordi laterali. Con $L_p^"*" = min(L_p; 8D)$:
@@ -825,7 +825,134 @@ Dall'espressione $Delta C_v = C frac(delta_p, delta_v + delta_p)$ risulta che, a
 1. #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[#strong[Aumento della lunghezza della vite:] si interpone ad esempio un distanziale cilindrico impiegando una vite con gambo completamente filettato. Sebbene l'allungamento incrementi anche la deformabilità $delta_p$ delle parti serrate, dimensionando opportunamente il distanziale è possibile far crescere $delta_v$ in misura maggiore rispetto a $delta_p$. Nel diagramma di forzamento, $F_(v, l i m)$ rimane invariata (dipendendo dal diametro di nocciolo $d_n$), mentre la retta della vite risulta più inclinata verso l'asse delle ascisse; di conseguenza, a parità di $C$, $Delta C_v$ diminuisce e $Delta C_p$ aumenta.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di collegamento con vite completamente filettata, dado e distanziale cilindrico interposto tra testa della vite e piastre serrate]])
+  align: (left + horizon, center + horizon),[#strong[Aumento della lunghezza della vite:] si interpone ad esempio un distanziale cilindrico impiegando una vite con gambo completamente filettato. Sebbene l'allungamento incrementi anche la deformabilità $delta_p$ delle parti serrate, dimensionando opportunamente il distanziale è possibile far crescere $delta_v$ in misura maggiore rispetto a $delta_p$. Nel diagramma di forzamento, $F_(v, l i m)$ rimane invariata (dipendendo dal diametro di nocciolo $d_n$), mentre la retta della vite risulta più inclinata verso l'asse delle ascisse; di conseguenza, a parità di $C$, $Delta C_v$ diminuisce e $Delta C_p$ aumenta.],[#canvas(length: 1cm, {
+  import draw: *
+
+  line((2.6, 0.0), (2.7, 0.1), stroke: 0.5pt)
+  line((2.4, 0.0), (2.7, 0.3), stroke: 0.5pt)
+  line((2.2, 0.0), (2.7, 0.5), stroke: 0.5pt)
+  line((2.0, 0.0), (2.7, 0.7), stroke: 0.5pt)
+  line((1.8, 0.0), (2.6, 0.8), stroke: 0.5pt)
+  line((1.6, 0.0), (2.4, 0.8), stroke: 0.5pt)
+  line((1.4, 0.0), (2.2, 0.8), stroke: 0.5pt)
+  line((1.2, 0.0), (2.0, 0.8), stroke: 0.5pt)
+  line((1.0, 0.0), (1.8, 0.8), stroke: 0.5pt)
+  line((0.8, 0.0), (1.6, 0.8), stroke: 0.5pt)
+  line((0.7, 0.1), (1.4, 0.8), stroke: 0.5pt)
+  line((0.7, 0.3), (1.2, 0.8), stroke: 0.5pt)
+  line((0.7, 0.5), (1.0, 0.8), stroke: 0.5pt)
+  line((0.7, 0.7), (0.8, 0.8), stroke: 0.5pt)
+
+  line((-0.8, 0.0), (-0.7, 0.1), stroke: 0.5pt)
+  line((-1.0, 0.0), (-0.7, 0.3), stroke: 0.5pt)
+  line((-1.2, 0.0), (-0.7, 0.5), stroke: 0.5pt)
+  line((-1.4, 0.0), (-0.7, 0.7), stroke: 0.5pt)
+  line((-1.6, 0.0), (-0.8, 0.8), stroke: 0.5pt)
+  line((-1.8, 0.0), (-1.0, 0.8), stroke: 0.5pt)
+  line((-2.0, 0.0), (-1.2, 0.8), stroke: 0.5pt)
+  line((-2.2, 0.0), (-1.4, 0.8), stroke: 0.5pt)
+  line((-2.4, 0.0), (-1.6, 0.8), stroke: 0.5pt)
+  line((-2.6, 0.0), (-1.8, 0.8), stroke: 0.5pt)
+  line((-2.7, 0.1), (-2.0, 0.8), stroke: 0.5pt)
+  line((-2.7, 0.3), (-2.2, 0.8), stroke: 0.5pt)
+  line((-2.7, 0.5), (-2.4, 0.8), stroke: 0.5pt)
+  line((-2.7, 0.7), (-2.6, 0.8), stroke: 0.5pt)
+
+  line((0.7, 0.9), (0.8, 0.8), stroke: 0.5pt)
+  line((0.7, 1.1), (1.0, 0.8), stroke: 0.5pt)
+  line((0.7, 1.3), (1.2, 0.8), stroke: 0.5pt)
+  line((0.7, 1.5), (1.4, 0.8), stroke: 0.5pt)
+  line((0.8, 1.6), (1.6, 0.8), stroke: 0.5pt)
+  line((1.0, 1.6), (1.8, 0.8), stroke: 0.5pt)
+  line((1.2, 1.6), (2.0, 0.8), stroke: 0.5pt)
+  line((1.4, 1.6), (2.2, 0.8), stroke: 0.5pt)
+  line((1.6, 1.6), (2.4, 0.8), stroke: 0.5pt)
+  line((1.8, 1.6), (2.6, 0.8), stroke: 0.5pt)
+  line((2.0, 1.6), (2.7, 0.9), stroke: 0.5pt)
+  line((2.2, 1.6), (2.7, 1.1), stroke: 0.5pt)
+  line((2.4, 1.6), (2.7, 1.3), stroke: 0.5pt)
+  line((2.6, 1.6), (2.7, 1.5), stroke: 0.5pt)
+
+  line((-2.7, 0.9), (-2.6, 0.8), stroke: 0.5pt)
+  line((-2.7, 1.1), (-2.4, 0.8), stroke: 0.5pt)
+  line((-2.7, 1.3), (-2.2, 0.8), stroke: 0.5pt)
+  line((-2.7, 1.5), (-2.0, 0.8), stroke: 0.5pt)
+  line((-2.6, 1.6), (-1.8, 0.8), stroke: 0.5pt)
+  line((-2.4, 1.6), (-1.6, 0.8), stroke: 0.5pt)
+  line((-2.2, 1.6), (-1.4, 0.8), stroke: 0.5pt)
+  line((-2.0, 1.6), (-1.2, 0.8), stroke: 0.5pt)
+  line((-1.8, 1.6), (-1.0, 0.8), stroke: 0.5pt)
+  line((-1.6, 1.6), (-0.8, 0.8), stroke: 0.5pt)
+  line((-1.4, 1.6), (-0.7, 0.9), stroke: 0.5pt)
+  line((-1.2, 1.6), (-0.7, 1.1), stroke: 0.5pt)
+  line((-1.0, 1.6), (-0.7, 1.3), stroke: 0.5pt)
+  line((-0.8, 1.6), (-0.7, 1.5), stroke: 0.5pt)
+
+  line((1.4, 1.6), (1.6, 1.8), stroke: 0.5pt)
+  line((1.2, 1.6), (1.6, 2.0), stroke: 0.5pt)
+  line((1.0, 1.6), (1.6, 2.2), stroke: 0.5pt)
+  line((0.8, 1.6), (1.6, 2.4), stroke: 0.5pt)
+  line((0.7, 1.7), (1.6, 2.6), stroke: 0.5pt)
+  line((0.7, 1.9), (1.4, 2.6), stroke: 0.5pt)
+  line((0.7, 2.1), (1.2, 2.6), stroke: 0.5pt)
+  line((0.7, 2.3), (1.0, 2.6), stroke: 0.5pt)
+  line((0.7, 2.5), (0.8, 2.6), stroke: 0.5pt)
+
+  line((-0.8, 1.6), (-0.7, 1.7), stroke: 0.5pt)
+  line((-1.0, 1.6), (-0.7, 1.9), stroke: 0.5pt)
+  line((-1.2, 1.6), (-0.7, 2.1), stroke: 0.5pt)
+  line((-1.4, 1.6), (-0.7, 2.3), stroke: 0.5pt)
+  line((-1.6, 1.6), (-0.7, 2.5), stroke: 0.5pt)
+  line((-1.6, 1.8), (-0.8, 2.6), stroke: 0.5pt)
+  line((-1.6, 2.0), (-1.0, 2.6), stroke: 0.5pt)
+  line((-1.6, 2.2), (-1.2, 2.6), stroke: 0.5pt)
+  line((-1.6, 2.4), (-1.4, 2.6), stroke: 0.5pt)
+
+  rect((-2.7, 0.0), (-0.7, 0.8), stroke: 1pt)
+  rect((0.7, 0.0), (2.7, 0.8), stroke: 1pt)
+  rect((-2.7, 0.8), (-0.7, 1.6), stroke: 1pt)
+  rect((0.7, 0.8), (2.7, 1.6), stroke: 1pt)
+  rect((-1.6, 1.6), (-0.7, 2.6), stroke: 1pt)
+  rect((0.7, 1.6), (1.6, 2.6), stroke: 1pt)
+
+  line((-1.15, 2.6), (1.15, 2.6), stroke: 1pt)
+  line((-1.15, 2.6), (-1.15, 3.2), stroke: 1pt)
+  line((-0.575, 2.6), (-0.575, 3.2), stroke: 1pt)
+  line((0.575, 2.6), (0.575, 3.2), stroke: 1pt)
+  line((1.15, 2.6), (1.15, 3.2), stroke: 1pt)
+  line((-0.8625, 3.3), (0.8625, 3.3), stroke: 1pt)
+  arc((0.0, 1.596875), start: 70.27deg, stop: 109.73deg, radius: 1.703125, anchor: "origin", stroke: 1pt)
+  arc((-0.8625, 2.83671875), start: 51.64deg, stop: 128.36deg, radius: 0.46328125, anchor: "origin", stroke: 1pt)
+  arc((0.8625, 2.83671875), start: 51.64deg, stop: 128.36deg, radius: 0.46328125, anchor: "origin", stroke: 1pt)
+
+  line((-0.4, 2.6), (-0.4, 2.45), stroke: 1pt)
+  line((0.4, 2.6), (0.4, 2.45), stroke: 1pt)
+  line((-0.6, 2.45), (0.6, 2.45), stroke: 1pt)
+  line((-0.6, 2.45), (-0.6, 0.0), stroke: 1pt)
+  line((0.6, 2.45), (0.6, 0.0), stroke: 1pt)
+  line((-0.5, 2.45), (-0.5, 0.0), stroke: 0.7pt)
+  line((0.5, 2.45), (0.5, 0.0), stroke: 0.7pt)
+
+  line((-1.15, -0.6), (-1.15, -0.1), stroke: 1pt)
+  line((-0.575, -0.6), (-0.575, -0.1), stroke: 1pt)
+  line((0.575, -0.6), (0.575, -0.1), stroke: 1pt)
+  line((1.15, -0.6), (1.15, -0.1), stroke: 1pt)
+  line((-0.8625, 0.0), (0.8625, 0.0), stroke: 1pt)
+  line((-0.8625, -0.7), (0.8625, -0.7), stroke: 1pt)
+  arc((0.0, -1.703125), start: 70.27deg, stop: 109.73deg, radius: 1.703125, anchor: "origin", stroke: 1pt)
+  arc((-0.8625, -0.46328125), start: 51.64deg, stop: 128.36deg, radius: 0.46328125, anchor: "origin", stroke: 1pt)
+  arc((0.8625, -0.46328125), start: 51.64deg, stop: 128.36deg, radius: 0.46328125, anchor: "origin", stroke: 1pt)
+  arc((0.0, 1.003125), start: 250.27deg, stop: 289.73deg, radius: 1.703125, anchor: "origin", stroke: 1pt)
+  arc((-0.8625, -0.23671875), start: 231.64deg, stop: 308.36deg, radius: 0.46328125, anchor: "origin", stroke: 1pt)
+  arc((0.8625, -0.23671875), start: 231.64deg, stop: 308.36deg, radius: 0.46328125, anchor: "origin", stroke: 1pt)
+
+  line((-0.6, -0.7), (-0.6, -1.4), (-0.45, -1.55), (0.45, -1.55), (0.6, -1.4), (0.6, -0.7), stroke: 1pt)
+  line((-0.6, -1.4), (0.6, -1.4), stroke: 0.7pt)
+  line((-0.5, -0.7), (-0.5, -1.4), stroke: 0.7pt)
+  line((0.5, -0.7), (0.5, -1.4), stroke: 0.7pt)
+
+  line((0.0, -1.8), (0.0, 3.65), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+})])
 
   #grid(
   columns: (1fr, 1fr),
