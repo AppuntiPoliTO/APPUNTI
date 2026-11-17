@@ -797,7 +797,20 @@ Dall'equazione della linea elastica per una trave di lunghezza $L$ e diametro $D
 
 $ sigma_(m a x) = frac(M, J) dot.op frac(D, 2) = E dot.op frac(alpha, L) dot.op frac(D, 2) $
 
-Considerando ad esempio una vite in acciaio con $E = 2 dot.op 10^5 "MPa"$, un errore di parallelismo di appena $alpha = 0.5 degree = frac(1, 114.6) "rad"$ e un rapporto $frac(D, L) = frac(1, 10)$, si sviluppa una tensione di flessione parassita pari a $sigma tilde.eq 87 "MPa"$, che si somma alle tensioni dovute al serraggio e ai carichi di esercizio. Per contenere questo effetto conviene impiegare viti snelle (rapporto $D/L$ ridotto) e prescrivere tolleranze di planarità sulle superfici di appoggio.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema di un tratto di fusto di lunghezza $L$ vincolato tra due superfici di appoggio non parallele inclinate di un angolo $alpha$, che induce l'incurvamento a flessione dell'asse della vite]])
+Considerando ad esempio una vite in acciaio con $E = 2 dot.op 10^5 "MPa"$, un errore di parallelismo di appena $alpha = 0.5 degree = frac(1, 114.6) "rad"$ e un rapporto $frac(D, L) = frac(1, 10)$, si sviluppa una tensione di flessione parassita pari a $sigma tilde.eq 87 "MPa"$, che si somma alle tensioni dovute al serraggio e ai carichi di esercizio. Per contenere questo effetto conviene impiegare viti snelle (rapporto $D/L$ ridotto) e prescrivere tolleranze di planarità sulle superfici di appoggio.],[#canvas(length: 1cm, {
+  import draw: *
+  line((-2.0, 0), (2.0, 0), (2.0, 1.45), (-2.0, 0.85), close: true, fill: black.transparentize(82%), stroke: none)
+  line((-4.1, 0), (3.5, 0), stroke: 0.6pt)
+  line((-4.1, 1.185), (0.232, 1.185), stroke: 0.6pt)
+  line((2.0, 1.45), (3.5, 1.675), stroke: 0.6pt)
+  line((-2.0, 0), (2.0, 0), (2.0, 1.45), (-2.0, 0.85), close: true, stroke: 1.05pt)
+  line((-2.0, 0.45), (2.0, 0.45), stroke: 0.9pt)
+  arc((-5.65, 0), start: -3.34deg, stop: 17.46deg, radius: 6.0, anchor: "origin", stroke: (dash: "dash-dotted", thickness: 0.75pt))
+  line((-3.2, 0), (-3.2, 1.185), mark: (start: ">", end: ">"), stroke: 0.7pt)
+  arc((-7.667, 0), start: 0deg, stop: 8.531deg, radius: 10.667, anchor: "origin", mark: (start: ">", end: ">"), stroke: 0.7pt)
+  content((-3.4, 0.592), text(size: 8.5pt)[$L$], anchor: "east")
+  content((3.15, 0.80), text(size: 8.5pt)[$alpha$], anchor: "west")
+})])
 
 === Verifica del carico minimo di serraggio
 
