@@ -448,7 +448,7 @@ $ F'_v = |F_v| + Delta C_v, quad quad F'_p = |F_p| - Delta C_p, quad quad C = De
   rect((3.14, 3.27), (3.36, 3.49), fill: red, stroke: none)
   line((3.25, 2.14), (3.12, 1.91), (3.38, 1.91), close: true, fill: rgb("#2040e0"), stroke: none)
 
-  content((-1.0, 5.5), text(size: 10pt, fill: rgb("#2020b0"))[_Diagramma di forzamento_], anchor: "west")
+
 
   content((-0.2, 4.75), text(size: 8.5pt)[$|F_p|$], anchor: "east")
   content((-0.2, 4.2), text(size: 8.5pt)[$|F_v|$], anchor: "east")
@@ -466,9 +466,7 @@ $ F'_v = |F_v| + Delta C_v, quad quad F'_p = |F_p| - Delta C_p, quad quad C = De
   content((2.875, -1.48), text(size: 8.5pt)[$i$], anchor: "south")
   content((7.3, -0.35), text(size: 8.5pt)[$u$], anchor: "north")
 
-  content((5.2, 5.25), text(size: 8.5pt)[$F'_v = |F_v| + Delta C_v$], anchor: "west")
-  content((5.2, 4.6), text(size: 8.5pt)[$F'_p = |F_p| - Delta C_p$], anchor: "west")
-  content((5.2, 3.95), text(size: 8.5pt)[$C = Delta C_v + Delta C_p$], anchor: "west")
+ 
 })])
 
 #grid(
