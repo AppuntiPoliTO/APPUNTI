@@ -2,7 +2,7 @@
 #import "@preview/cetz:0.3.4": canvas, draw
 #import "../template.typ": *
 
-#canvas(length: 1cm, {
+#canvas(length: 1.2cm, {
       import draw: *
       line((0.1, 0), (5.3, 0), mark: (end: ">"), stroke: (paint: c-aux, thickness: 0.65pt, dash: "dashed"))
       line((0.35, -1.15), (0.35, 1.35), mark: (end: ">"), stroke: 0.75pt + black)

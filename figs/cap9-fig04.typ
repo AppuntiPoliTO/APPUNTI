@@ -2,7 +2,7 @@
 #import "@preview/cetz:0.3.4": canvas, draw
 #import "../template.typ": *
 
-#canvas(length: 1.4cm, {
+#canvas(length: 1.6cm, {
       import draw: *
       arc((2.5, -2.65), start: 53deg, stop: 127deg, radius: 3.0, anchor: "origin", fill: c-aux.transparentize(89%), stroke: none)
       arc((2.5, -2.65), start: 53deg, stop: 127deg, radius: 3.0, anchor: "origin", stroke: 1.3pt + black)

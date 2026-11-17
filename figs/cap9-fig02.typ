@@ -2,7 +2,7 @@
 #import "@preview/cetz:0.3.4": canvas, draw
 #import "../template.typ": *
 
-#canvas(length: 1cm, {
+#canvas(length: 1.2cm, {
       import draw: *
       content((3.1, 1.52), text(size: 8.5pt)[*$"Re" << 1$*], anchor: "south")
 

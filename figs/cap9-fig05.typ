@@ -2,7 +2,7 @@
 #import "@preview/cetz:0.3.4": canvas, draw
 #import "../template.typ": *
 
-#canvas(length: 1cm, {
+#canvas(length: 1.4cm, {
       import draw: *
       content((1.1, 1.18), text(size: 8.5pt)[*$"Re" tilde.op 40 div 50$*], anchor: "south")
       circle((1.1, 0), radius: 0.62, fill: c-aux.transparentize(86%), stroke: 1.1pt + black)
