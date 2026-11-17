@@ -740,7 +740,9 @@ $ A_(m i n) = (3 div 4) frac(C_(m a x), R_(p 0.2)) $
   content((-0.55, 0.83), text(size: 8pt)[No], anchor: "south")
   content((0.15, 0.35), text(size: 8pt)[Si], anchor: "west")
 })])
-
+2. #strong[Calcolo dei parametri caratteristici:] determinazione di $k$, $F_(v, l i m)$, $M_T$, $delta_v$, $delta_p$, $Delta F_v$, $Delta C_v$ e $Delta C_p$.
+3. #strong[Verifiche:] esecuzione della verifica statica della vite, della verifica del carico minimo di serraggio e della verifica a fatica della vite.
+4. #strong[Iterazione:] qualora anche una sola delle verifiche non risulti soddisfatta, si apportano modifiche costruttive o dimensionali (sulle deformabilità, sul numero di viti, sul diametro o sulla classe del materiale) e si ripete il calcolo fino al soddisfacimento di tutte le condizioni.
 === Verifica statica della vite
 
 La verifica statica viene condotta nelle condizioni peggiori per la sollecitazione del fusto, ovvero:
