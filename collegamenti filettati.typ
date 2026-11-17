@@ -403,9 +403,47 @@ $ A_p = frac(pi, 4)[(d_(e t) + 0.1 dot.op L_p^"*")^2 - d_f^2] $],[#include "figs
 Dall'espressione $Delta C_v = C frac(delta_p, delta_v + delta_p)$ risulta che, a parità di carico esterno $C$, la quota parte di carico che grava sulla vite diminuisce all'aumentare della deformabilità $delta_v$ della vite stessa (mentre $Delta C_p$ aumenta). Ciò è particolarmente vantaggioso poiché la vite ha sezione minore ed è sollecitata a trazione, risultando più critica (specie a fatica) rispetto alle parti serrate in compressione. Poiché $delta_v = L / (E A)$, per incrementare $delta_v$ si può agire aumentando la lunghezza $L$ a numeratore oppure riducendo la sezione $A$ a denominatore:
 
 1. #grid(
-  columns: (1fr, 1fr),
+  columns: (1fr, 1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[#strong[Aumento della lunghezza della vite:] si interpone ad esempio un distanziale cilindrico impiegando una vite con gambo completamente filettato. Sebbene l'allungamento incrementi anche la deformabilità $delta_p$ delle parti serrate, dimensionando opportunamente il distanziale è possibile far crescere $delta_v$ in misura maggiore rispetto a $delta_p$. Nel diagramma di forzamento, $F_(v, l i m)$ rimane invariata (dipendendo dal diametro di nocciolo $d_n$), mentre la retta della vite risulta più inclinata verso l'asse delle ascisse; di conseguenza, a parità di $C$, $Delta C_v$ diminuisce e $Delta C_p$ aumenta.],[#include "figs/collegamenti-filettati-fig33.typ"])
+  align: (left + horizon, center + horizon),[#strong[Aumento della lunghezza della vite:] si interpone ad esempio un distanziale cilindrico impiegando una vite con gambo completamente filettato. Sebbene l'allungamento incrementi anche la deformabilità $delta_p$ delle parti serrate, dimensionando opportunamente il distanziale è possibile far crescere $delta_v$ in misura maggiore rispetto a $delta_p$. Nel diagramma di forzamento, $F_(v, l i m)$ rimane invariata (dipendendo dal diametro di nocciolo $d_n$), mentre la retta della vite risulta più inclinata verso l'asse delle ascisse; di conseguenza, a parità di $C$, $Delta C_v$ diminuisce e $Delta C_p$ aumenta.],[#include "figs/collegamenti-filettati-fig33.typ"], [#canvas(length: 1cm, {
+  import draw: *
+  line((0, 0), (9.0, 0), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 0), (0, 5.2), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 3.1), (8.7, 3.1), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+  line((0, 0), (2.0, 4.276), stroke: 1.05pt)
+  line((1.0, 4.096), (2.85, 0), stroke: 1.05pt)
+  line((0, 0), (5.8, 3.996), stroke: 1.05pt)
+  line((4.05, 4.096), (5.9, 0), stroke: 1.05pt)
+  line((1.783, 2.363), (1.783, 3.812), stroke: 1.5pt)
+  line((5.0, 1.993), (5.0, 3.445), stroke: 1.5pt)
+  rect((1.683, 3.712), (1.883, 3.912), fill: red, stroke: none)
+  line((1.783, 2.483), (1.673, 2.263), (1.893, 2.263), close: true, fill: blue, stroke: none)
+  rect((4.9, 3.345), (5.1, 3.545), fill: red, stroke: none)
+  line((5.0, 2.113), (4.89, 1.893), (5.11, 1.893), close: true, fill: blue, stroke: none)
+  line((1.783, 3.812), (3.35, 3.812), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((1.783, 2.363), (3.35, 2.363), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((2.35, 3.1), (2.35, 3.812), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((2.35, 2.363), (2.35, 3.1), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((3.2, 2.363), (3.2, 3.812), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((5.0, 3.445), (6.55, 3.445), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((5.0, 1.993), (6.55, 1.993), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((5.55, 3.1), (5.55, 3.445), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((5.55, 1.993), (5.55, 3.1), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((6.4, 1.993), (6.4, 3.445), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  content((-0.15, 4.85), text(size: 8pt)[$|F_p|$], anchor: "east")
+  content((-0.15, 4.42), text(size: 8pt)[$|F_v|$], anchor: "east")
+  content((-0.15, 3.1), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
+  content((8.85, -0.18), text(size: 8.5pt)[$u$], anchor: "north")
+  content((2.43, 3.45), text(size: 7.5pt)[$Delta C_v$], anchor: "west")
+  content((2.43, 2.73), text(size: 7.5pt)[$Delta C_p$], anchor: "west")
+  content((3.3, 2.9), text(size: 8pt)[$C$], anchor: "west")
+  content((5.63, 3.28), text(size: 7.5pt)[$Delta C_v$], anchor: "west")
+  content((5.63, 2.55), text(size: 7.5pt)[$Delta C_p$], anchor: "west")
+  content((6.5, 2.68), text(size: 8pt)[$C$], anchor: "west")
+  content((1.7, 4.75), text(size: 8.5pt)[$F_(v,"lim")$ rimane uguale perché dipende dal \ diametro di nocciolo], anchor: "south-west")
+  content((6.0, 4.2), text(size: 8.5pt)[Vite 'allungata'], anchor: "west")
+  content((6.65, 1.35), text(size: 8.5pt)[$Delta C_v = C delta_p / lr((delta_v + delta_p))$], anchor: "west")
+})])
 
   #grid(
   columns: (1fr, 1fr),
