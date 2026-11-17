@@ -23,9 +23,110 @@
 
 == Richiamo: transizione nei flussi interni ed esperimento di Reynolds
 
-Nel moto stazionario in condotta cilindrica di diametro $D$ (soluzione analitica esatta di Poiseuille dell'equazione di Navier-Stokes), il campo di velocità possiede un'unica componente assiale non nulla $u_x (r)$ (con $u_r = u_theta = 0$), variazione lineare della pressione lungo l'asse $x$ e sforzo tangenziale $tau_(r x)(r)$. Sostituendo tale profilo nelle equazioni di Navier-Stokes si ottiene un'identità ($0 = 0$). Matematicamente, il carattere *laminare* di questa soluzione si riconosce dall'indipendenza dal tempo e dall'annullamento identico delle due componenti trasversali di velocità.
+#grid(
+  columns: 2,
+  gutter: 1em,
+  [Nel moto stazionario in condotta cilindrica di diametro $D$ (soluzione analitica esatta di Poiseuille dell'equazione di Navier-Stokes), il campo di velocità possiede un'unica componente assiale non nulla $u_x (r)$ (con $u_r = u_theta = 0$), variazione lineare della pressione lungo l'asse $x$ e sforzo tangenziale $tau_(r x)(r)$. Sostituendo tale profilo nelle equazioni di Navier-Stokes si ottiene un'identità ($0 = 0$). Matematicamente, il carattere *laminare* di questa soluzione si riconosce dall'indipendenza dal tempo e dall'annullamento identico delle due componenti trasversali di velocità.
 
-Al variare del numero di Reynolds $"Re" = U D slash nu$ (dove $U$ è la velocità media, $D$ il diametro e $nu$ la viscosità cinematica), per valori moderati (ad esempio $"Re" approx 500 div 1500$) la forma del profilo parabolico rimane invariata — semplicemente riscalata sul valore massimo al centro $u_0$ — e il campo di moto assorbe le perturbazioni. Superata una soglia critica, il sistema diventa instabile e tende ad allontanarsi dalla soluzione di equilibrio: compaiono in modo intermittente volumi turbolenti localizzati (*patch*), trasportati convettivamente a valle, al cui interno il profilo laminare è distrutto istantaneamente e insorgono fluttuazioni temporali e trasversali. Aumentando ulteriormente $"Re"$, tali regioni intermittenti si estendono rapidamente fino a rendere turbolento il flusso nell'intera condotta.
+Al variare del numero di Reynolds $"Re" = U D slash nu$ (dove $U$ è la velocità media, $D$ il diametro e $nu$ la viscosità cinematica), per valori moderati (ad esempio $"Re" approx 500 div 1500$) la forma del profilo parabolico rimane invariata — semplicemente riscalata sul valore massimo al centro $u_0$ — e il campo di moto assorbe le perturbazioni. Superata una soglia critica, il sistema diventa instabile e tende ad allontanarsi dalla soluzione di equilibrio: compaiono in modo intermittente volumi turbolenti localizzati (*patch*), trasportati convettivamente a valle, al cui interno il profilo laminare è distrutto istantaneamente e insorgono fluttuazioni temporali e trasversali. Aumentando ulteriormente $"Re"$, tali regioni intermittenti si estendono rapidamente fino a rendere turbolento il flusso nell'intera condotta.],
+  [#canvas(length: 1cm, {
+  import draw: *
+
+  line((-0.3, 0), (8.3, 0), stroke: (dash: "dash-dotted", thickness: 0.7pt, paint: gray.darken(25%)))
+
+  line((4.6, -1.58), (4.6, 1.58), stroke: (dash: "dashed", thickness: 0.6pt, paint: gray.darken(20%)))
+  line((6.0, -1.58), (6.0, 1.58), stroke: (dash: "dashed", thickness: 0.6pt, paint: gray.darken(20%)))
+
+  line((3.2, 0.9), (4.425, 0.9), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, 0.6), (5.3, 0.6), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, 0.3), (5.825, 0.3), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, 0), (6.0, 0), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, -0.3), (5.825, -0.3), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, -0.6), (5.3, -0.6), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, -0.9), (4.425, -0.9), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+
+  bezier((3.2, -1.2), (3.2, 1.2), (6.9333, -0.4), (6.9333, 0.4), stroke: (thickness: 1.1pt, paint: rgb("#8a2b16")))
+
+  line((3.2, 0.9), (1.55, 0.9), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, 0.6), (2.1, 0.6), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, 0.3), (2.65, 0.3), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, -0.3), (2.65, -0.3), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, -0.6), (2.1, -0.6), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, -0.9), (1.55, -0.9), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, 1.2), (1.0, 1.2), mark: (end: ">"), stroke: (thickness: 0.85pt, paint: rgb("#2d6a36")))
+  line((3.2, -1.2), (1.0, -1.2), mark: (end: ">"), stroke: (thickness: 0.85pt, paint: rgb("#2d6a36")))
+
+  line((3.2, 0), (1.0, 1.2), stroke: (thickness: 1.05pt, paint: rgb("#2d6a36")))
+  line((3.2, 0), (1.0, -1.2), stroke: (thickness: 1.05pt, paint: rgb("#2d6a36")))
+
+  line((0.25, 1.2), (0.03, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((0.6, 1.2), (0.38, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((0.95, 1.2), (0.73, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((1.3, 1.2), (1.08, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((1.65, 1.2), (1.43, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((2.0, 1.2), (1.78, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((2.35, 1.2), (2.13, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((2.7, 1.2), (2.48, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((3.05, 1.2), (2.83, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((3.4, 1.2), (3.18, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((3.75, 1.2), (3.53, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((4.1, 1.2), (3.88, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((4.45, 1.2), (4.23, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((4.8, 1.2), (4.58, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((5.15, 1.2), (4.93, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((5.5, 1.2), (5.28, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((5.85, 1.2), (5.63, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((6.2, 1.2), (5.98, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((6.55, 1.2), (6.33, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((6.9, 1.2), (6.68, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((7.25, 1.2), (7.03, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((7.6, 1.2), (7.38, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((7.95, 1.2), (7.73, 1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+
+  line((0.25, -1.2), (0.03, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((0.6, -1.2), (0.38, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((0.95, -1.2), (0.73, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((1.3, -1.2), (1.08, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((1.65, -1.2), (1.43, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((2.0, -1.2), (1.78, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((2.35, -1.2), (2.13, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((2.7, -1.2), (2.48, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((3.05, -1.2), (2.83, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((3.4, -1.2), (3.18, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((3.75, -1.2), (3.53, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((4.1, -1.2), (3.88, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((4.45, -1.2), (4.23, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((4.8, -1.2), (4.58, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((5.15, -1.2), (4.93, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((5.5, -1.2), (5.28, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((5.85, -1.2), (5.63, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((6.2, -1.2), (5.98, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((6.55, -1.2), (6.33, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((6.9, -1.2), (6.68, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((7.25, -1.2), (7.03, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((7.6, -1.2), (7.38, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+  line((7.95, -1.2), (7.73, -1.42), stroke: (thickness: 0.55pt, paint: gray.darken(30%)))
+
+  line((0.0, 1.2), (8.0, 1.2), stroke: 1.1pt)
+  line((0.0, -1.2), (8.0, -1.2), stroke: 1.1pt)
+
+  line((3.2, -1.6), (3.2, 1.9), mark: (end: ">"), stroke: 0.9pt)
+
+  line((6.6, 0.5), (7.6, 0.5), mark: (end: ">"), stroke: (thickness: 0.9pt, paint: rgb("#8a2b16")))
+
+  line((2.28, -0.20), (3.16, -0.03), mark: (end: ">"), stroke: (thickness: 0.5pt, paint: rgb("#2d6a36")))
+
+  content((3.2, 1.98), text(size: 8.5pt)[$r$], anchor: "south")
+  content((8.4, 0), text(size: 8.5pt)[$z$], anchor: "west")
+
+  content((4.6, -1.68), text(size: 8pt, fill: rgb("#8a2b16"))[$u_d = u_0 / 2$], anchor: "north")
+  content((6.0, -1.68), text(size: 8pt, fill: rgb("#8a2b16"))[$u_0$], anchor: "north")
+
+  content((1.0, 1.62), text(size: 8pt, fill: rgb("#2d6a36"))[$tau_("rz")(R) = (G R)/2$], anchor: "south")
+  content((2.25, -0.22), text(size: 8pt, fill: rgb("#2d6a36"))[$tau_("rz") = 0$], anchor: "east")
+  content((7.1, 0.6), text(size: 8pt, fill: rgb("#8a2b16"))[moto], anchor: "south")
+})],
+)
 
 Questa distinzione tra regime laminare e turbolento fu messa in luce storicamente dal celebre *esperimento di Reynolds*: iniettando un filo di colorante al centro di una condotta, in regime laminare il colorante avanza a valle formando filamenti netti e ordinati, mentre in regime turbolento i filamenti si disperdono immediatamente in strutture complesse fino a occupare tutta la sezione. Nei flussi in condotta esiste quindi un numero di Reynolds critico ($"Re"_c approx 2250$) oltre il quale il moto transita bruscamente al regime turbolento: questo comportamento *dicotomico* (o interamente laminare o interamente turbolento) è tipico dei flussi interni, ma non si ritrova nei flussi esterni.
 
