@@ -623,7 +623,7 @@ Il carico iniziale di trazione sulla vite e di compressione sui pezzi serrati è
 - allentamento del collegamento dovuto ad assestamenti superficiali indotti da vibrazioni o carichi ciclici;
 - azione del carico esterno ($Delta C_p$).
 
-=== 1. Incertezze sulla forza al montaggio
+==== Incertezze sulla forza al montaggio
 
 Le incertezze al serraggio derivano da due fattori principali:
 - #strong[Incertezza sul coefficiente d'attrito:] soprattutto in presenza di lubrificazione o rivestimenti, il valore reale dell'attrito non è noto con precisione; all'aumentare del coefficiente d'attrito, a parità di momento applicato, diminuisce la forza assiale effettiva sulla vite.
@@ -640,7 +640,7 @@ I valori tipici di $I$ dipendono dalla tecnica e dallo strumento di serraggio ad
 
 Dal punto di vista strumentale, l'avvitatore (o chiave a scatto) con taratura periodica dispone di una frizione o meccanismo interno che slitta o scatta producendo un segnale tattile e sonoro ("clic") al raggiungimento della coppia preimpostata tramite ghiera/pomello, andando in folle per non trasmettere coppia ulteriore; la sua affidabilità dipende tuttavia dalla corretta calibrazione periodica, soggetta a derive per temperatura, vibrazioni o manomissioni. La chiave dinamometrica vera e propria esegue invece una misura istantanea e diretta della coppia applicata durante il serraggio: nei modelli meccanici a lettura su scala graduata esiste comunque il rischio di errore di lettura da parte dell'operatore, rischio ridotto (sebbene non azzerato) nelle moderne chiavi dinamometriche elettroniche dotate di display digitale. Nell'impiego pratico (come nel serraggio delle viti di piastre di sterzo motociclistiche alla coppia prescritta, ad esempio $17 "Nm"$), il corretto utilizzo di tali utensili risponde alla doppia esigenza di non eccedere la resistenza della vite evitandone la rottura e, al tempo stesso, di non scendere al di sotto del carico minimo necessario a mantenere serrate le parti senza perdita delle viti o slittamenti.
 
-=== 2. Allentamento del collegamento per assestamento
+==== Allentamento del collegamento per assestamento
 
 Nel tempo, sotto l'azione di forze esterne e vibrazioni (assiali o trasversali/tangenziali), le micro-asperità delle superfici a contatto si schiacciano e si assestano modificando la rugosità. Ciò comporta una perdita di interferenza $Delta i$ (espressa in $mu "m"$) e una conseguente perdita di forza sulla vite $Delta F_v$. I valori di $Delta i$ dipendono dal numero di superfici di interfaccia ($"N° superfici"$), dalla direzione delle forze esterne e dalla rugosità media $R_a$:
 
