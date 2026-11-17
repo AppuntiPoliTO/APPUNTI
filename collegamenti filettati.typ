@@ -659,7 +659,7 @@ Occorre prestare particolare attenzione al conteggio del numero di superfici ($"
 
 $ frac(Delta F_v, Delta i) = frac(F_v, i) = frac(F_v, F_v (delta_v + delta_p)) arrow.r.double Delta F_v = frac(Delta i, delta_v + delta_p) $
  
- Il precarico minimo residuo prima dell'applicazione del carico esterno diventa pertanto $frac(F_(v, l i m), I) - Delta F_v$. Il triangolo esterno più grande viene impiegato per la verifica di resistenza statica della vite (condizione più gravosa per il materiale), mentre il triangolo interno più piccolo viene impiegato per la verifica di funzionalità / carico minimo di serraggio (condizione più sfavorevole per la tenuta e l'aderenza tra le parti).],[#canvas(length: 1cm, {
+ ],[#canvas(length: 1cm, {
   import draw: *
   line((0, 0), (0, 5.1), mark: (end: ">"), stroke: 0.8pt)
   line((0, 0), (7.4, 0), mark: (end: ">"), stroke: 0.8pt)
@@ -692,7 +692,7 @@ $ frac(Delta F_v, Delta i) = frac(F_v, i) = frac(F_v, F_v (delta_v + delta_p)) a
   content((3.6, 4.65), text(size: 8pt)[$(Delta F_v) / (Delta i) = F_v / i = F_v / (F_v (delta_v + delta_p))$], anchor: "west")
   content((3.6, 3.65), text(size: 8pt)[$Delta F_v = (Delta i) / ((delta_v + delta_p))$], anchor: "west")
 })])
-
+Il precarico minimo residuo prima dell'applicazione del carico esterno diventa pertanto $frac(F_(v, l i m), I) - Delta F_v$. Il triangolo esterno più grande viene impiegato per la verifica di resistenza statica della vite (condizione più gravosa per il materiale), mentre il triangolo interno più piccolo viene impiegato per la verifica di funzionalità / carico minimo di serraggio (condizione più sfavorevole per la tenuta e l'aderenza tra le parti).
 === Procedura iterativa di progetto dei collegamenti filettati
 
 #grid(
