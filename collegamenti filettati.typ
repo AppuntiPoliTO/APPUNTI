@@ -335,14 +335,14 @@ Se in esercizio si applica un carico assiale esterno $C$ (ad esempio nel sottote
 $ |F'_p| + C = |F'_v| $],[#include "figs/collegamenti-filettati-fig26.typ"])
 
 #grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
+  columns: (1.3fr, 1fr),
+  column-gutter: 4em,
   align: (left + horizon, center + horizon),[Nel diagramma di forzamento (o di interferenza), che riporta sulle ordinate le forze $|F_p|, |F_v|$ e sulle ascisse gli spostamenti $u$ (allungamento $u_v$ della vite e accorciamento $u_p$ delle parti), il punto di equilibrio al serraggio corrisponde all'intersezione tra la caratteristica elastica della vite (retta passante per l'origine) e quella delle parti serrate (retta con pendenza negativa che interseca l'asse $u$ in $u = i$). Applicando il carico $C$, rappresentato da un segmento verticale inserito tra le due caratteristiche elastiche a destra del punto di equilibrio iniziale (corrispondente a un incremento di spostamento $Delta u$), la forza sulla vite aumenta di una quota parte $Delta C_v$ fino a $F'_v$, mentre la forza di compressione sulle parti si riduce di una quota parte $Delta C_p$ fino a $F'_p$:
 
 $ F'_v = |F_v| + Delta C_v, \ F'_p = |F_p| - Delta C_p, \  C = Delta C_v + Delta C_p $],[#include "figs/collegamenti-filettati-fig27.typ"])
 
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1.4fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Esprimendo gli spostamenti in funzione delle forze tramite le deformabilità (cedevolezze) $delta_v$ della vite e $delta_p$ delle parti serrate, si ricavano i fattori di ripartizione del carico esterno:
 
