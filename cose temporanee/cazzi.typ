@@ -7,6 +7,10 @@
   stroke: (left: 2.5pt + rgb("#b45309")),
   [*Nota d'esame.* #body],
 )
+#set page(paper: "a4", margin: 2cm)
+#set text(lang: "it", size: 11pt)
+#set par(justify: true)
+#set figure(supplement: [Figura], gap: 0.8em)
 
 == Richiamo: transizione nei flussi interni ed esperimento di Reynolds
 
