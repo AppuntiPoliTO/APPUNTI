@@ -403,9 +403,10 @@ $ A_p = frac(pi, 4)[(d_(e t) + 0.1 dot.op L_p^"*")^2 - d_f^2] $],[#include "figs
 Dall'espressione $Delta C_v = C frac(delta_p, delta_v + delta_p)$ risulta che, a parità di carico esterno $C$, la quota parte di carico che grava sulla vite diminuisce all'aumentare della deformabilità $delta_v$ della vite stessa (mentre $Delta C_p$ aumenta). Ciò è particolarmente vantaggioso poiché la vite ha sezione minore ed è sollecitata a trazione, risultando più critica (specie a fatica) rispetto alle parti serrate in compressione. Poiché $delta_v = L / (E A)$, per incrementare $delta_v$ si può agire aumentando la lunghezza $L$ a numeratore oppure riducendo la sezione $A$ a denominatore:
 
 1. #grid(
-  columns: (1fr, 1fr, 1fr),
+  columns: (1fr, 1fr),
+  rows: 2,
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[#strong[Aumento della lunghezza della vite:] si interpone ad esempio un distanziale cilindrico impiegando una vite con gambo completamente filettato. Sebbene l'allungamento incrementi anche la deformabilità $delta_p$ delle parti serrate, dimensionando opportunamente il distanziale è possibile far crescere $delta_v$ in misura maggiore rispetto a $delta_p$. Nel diagramma di forzamento, $F_(v, l i m)$ rimane invariata (dipendendo dal diametro di nocciolo $d_n$), mentre la retta della vite risulta più inclinata verso l'asse delle ascisse; di conseguenza, a parità di $C$, $Delta C_v$ diminuisce e $Delta C_p$ aumenta.],[#include "figs/collegamenti-filettati-fig33.typ"], [#canvas(length: 0cm, {
+  align: (left + horizon, center + horizon),[#strong[Aumento della lunghezza della vite:] si interpone ad esempio un distanziale cilindrico impiegando una vite con gambo completamente filettato. Sebbene l'allungamento incrementi anche la deformabilità $delta_p$ delle parti serrate, dimensionando opportunamente il distanziale è possibile far crescere $delta_v$ in misura maggiore rispetto a $delta_p$. ],[#include "figs/collegamenti-filettati-fig33.typ"],[Nel diagramma di forzamento, $F_(v, l i m)$ rimane invariata (dipendendo dal diametro di nocciolo $d_n$), mentre la retta della vite risulta più inclinata verso l'asse delle ascisse; di conseguenza, a parità di $C$, $Delta C_v$ diminuisce e $Delta C_p$ aumenta.],[#canvas(length: 0.9cm, {
   import draw: *
   line((0, 0), (9.0, 0), mark: (end: ">"), stroke: 0.75pt)
   line((0, 0), (0, 5.2), mark: (end: ">"), stroke: 0.75pt)
@@ -445,10 +446,7 @@ Dall'espressione $Delta C_v = C frac(delta_p, delta_v + delta_p)$ risulta che, a
   content((6.65, 1.35), text(size: 8.5pt)[$Delta C_v = C delta_p / lr((delta_v + delta_p))$], anchor: "west")
 })])
 
-  #grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: confronto tra due diagrammi di forzamento ($|F_p|, |F_v|$ vs $u$) a parità di $F_(v, l i m)$ e di carico esterno $C$: a sinistra la configurazione standard, a destra la configurazione con "Vite 'allungata'" caratterizzata da una retta della vite con pendenza minore (deformabilità $delta_v$ maggiore), dove $Delta C_v$ (quadrato rosso) risulta ridotto e $Delta C_p$ (triangolo blu) risulta aumentato]])
+
 
 2. #grid(
   columns: (1fr, 1fr),
