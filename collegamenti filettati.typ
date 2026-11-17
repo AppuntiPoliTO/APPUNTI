@@ -320,7 +320,377 @@ Le classi normalizzate previste sono: $3.6 - 4.6 - 4.8 - 5.6 - 5.8 - 6.6 - 8.8 -
 Il carico assiale applicato al collegamento non si ripartisce uniformemente su tutte le spire in presa, ma decresce rapidamente a partire dai primi filetti: i primi $5 div 6$ filetti (spire) sostengono circa il $90\%$ del carico complessivo. Non ha quindi utilità aumentare eccessivamente l'altezza della madrevite per incrementare la capacità portante, poiché il trasferimento del carico si esaurisce nei primi $5 div 6$ filetti.
 
 In un dado convenzionale, il primo filetto in presa sopporta circa il $35\%$ del carico, il secondo intorno al $20 div 25\%$, per poi scendere progressivamente fino a circa il $6\%$ sull'ultimo filetto; la zona di massima concentrazione tensionale alla base del dado costituisce quindi il punto critico dell'interazione. Un allungamento del dado comporta solo una modesta riduzione del picco iniziale. È invece molto efficace modificare geometricamente il dado per renderlo più deformabile nella zona iniziale di presa, ricavando una porzione alleggerita troncoconica (con parte piena superiore) alla base del dado stesso: invertendo o riducendo fortemente la compressione locale in tale zona cedevole (che si deforma a trazione/flessione locale sottraendosi al sovraccarico), il carico si ridistribuisce in modo molto più uniforme, abbattendo il picco sul primo filetto a circa il $15\%$ e portando le spire centrali e terminali a contribuire in misura significativa (oltre il $10\%$ sugli ultimi filetti per effetto di bordo).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema costruttivo e confronto grafico della distribuzione percentuale del carico sulle spire della filettatura (da 1 a 7, con indicazione in tedesco "Lastanteil der kraftübertragenden Gewindegänge", "bolzen = stahl", "mutter = stahl"). Sulla destra è raffigurato un dado convenzionale soggetto a compressione con flussi di tensione concentrati alla base e curva di carico che scende dal 35% sul primo filetto al 6% sull'ultimo, con evidenziata la zona critica di rottura. Al centro e a sinistra è raffigurato un dado modificato con scarico troncoconico alla base che rende più deformabile la zona iniziale di presa (mostrando il flusso di tensione nell'elemento collegato, nel dado e nella vite) e appiattisce la curva di distribuzione del carico intorno al 15% sul primo filetto fino a oltre il 10% sull'ultimo]])
+#canvas(length: 1cm, {
+  import draw: *
 
+  // =========================================================================
+  // PANNELLO 1 (IN ALTO): FLUSSO DELLE LINEE DI FORZA TRA VITE E DADO A GOLE
+  // =========================================================================
+
+  // Elemento collegato (superiore)
+  rect((3.1, 4.9), (6.5, 5.75), fill: luma(248), stroke: 1pt + black)
+  content((4.8, 5.45), text(size: 8.5pt)[Elemento collegato], anchor: "center")
+
+  // Corpo della Vite (sinistra)
+  line(
+    (0.5, 0.2), (3.1, 0.2),
+    (3.1, 0.5), (2.5, 0.85), (2.5, 1.15), (3.1, 1.5),
+    (3.1, 1.7), (2.5, 2.05), (2.5, 2.35), (3.1, 2.7),
+    (3.1, 2.9), (2.5, 3.25), (2.5, 3.55), (3.1, 3.9),
+    (3.1, 4.1), (2.5, 4.45), (2.5, 4.75), (3.1, 5.1),
+    (3.1, 5.35),
+    (2.7, 5.42), (2.3, 5.30), (1.9, 5.40), (1.5, 5.30), (1.0, 5.38), (0.5, 5.32),
+    close: true,
+    fill: luma(246),
+    stroke: 1pt + black
+  )
+
+  // Corpo del Dado con gola di scarico (destra, ombreggiato)
+  line(
+    (3.18, 4.45), (3.65, 4.45), (4.05, 1.95),
+    (4.12, 1.80), (4.22, 1.80), (4.30, 1.95),
+    (4.30, 4.90), (5.55, 4.90),
+    (5.68, 4.82), (5.72, 4.70),
+    (5.72, 0.85), (5.68, 0.73), (5.55, 0.65),
+    (2.58, 0.65), (2.58, 0.82),
+    (3.18, 1.17), (3.18, 1.47),
+    (2.58, 1.82), (2.58, 2.02),
+    (3.18, 2.37), (3.18, 2.67),
+    (2.58, 3.02), (2.58, 3.22),
+    (3.18, 3.57), (3.18, 3.87),
+    (2.58, 4.22), (2.58, 4.42),
+    close: true,
+    fill: luma(195),
+    stroke: 1pt + black
+  )
+
+  // Linee di flusso della forza (3 percorsi continui con frecce d'ingresso e uscita)
+  // Frecce di ingresso dall'elemento collegato nel dado
+  line((4.60, 5.20), (4.60, 4.82), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+  line((4.90, 5.20), (4.90, 4.82), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+  line((5.20, 5.20), (5.20, 4.82), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+
+  // Percorso 1 (interno -> filetto superiore)
+  line((4.60, 4.88), (4.60, 2.10), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((4.60, 2.10), (3.85, 2.15), (4.60, 1.40), (4.00, 1.45), stroke: 1.25pt + rgb("#1f4e78"))
+  line((3.85, 2.15), (3.48, 3.85), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((3.48, 3.85), (3.00, 3.92), (3.38, 4.25), (3.12, 4.22), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((3.00, 3.92), (2.25, 4.10), (2.82, 3.50), (2.25, 3.50), stroke: 1.25pt + rgb("#1f4e78"))
+  line((2.25, 4.10), (2.25, 5.68), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+
+  // Percorso 2 (medio -> filetto centrale)
+  line((4.90, 4.88), (4.90, 2.00), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((4.90, 2.00), (3.62, 2.05), (4.90, 1.05), (3.80, 1.15), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((3.62, 2.05), (3.00, 2.68), (3.42, 2.75), (3.15, 2.95), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((3.00, 2.68), (1.75, 2.95), (2.75, 2.15), (1.75, 2.15), stroke: 1.25pt + rgb("#1f4e78"))
+  line((1.75, 2.95), (1.75, 5.68), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+
+  // Percorso 3 (esterno -> filetto inferiore)
+  line((5.20, 4.88), (5.20, 1.90), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((5.20, 1.90), (3.45, 1.65), (5.20, 0.70), (3.85, 0.85), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((3.45, 1.65), (3.00, 1.48), (3.25, 1.88), (3.12, 1.75), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((3.00, 1.48), (1.25, 1.85), (2.65, 0.75), (1.25, 0.75), stroke: 1.25pt + rgb("#1f4e78"))
+  line((1.25, 1.85), (1.25, 5.68), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+
+  // Etichette Vite e Dado con cartiglio pulito
+  rect((1.05, 0.42), (1.95, 0.82), fill: white, stroke: 0.4pt + luma(160))
+  content((1.50, 0.62), text(size: 8.5pt)[*Vite*], anchor: "center")
+
+  rect((4.05, 0.85), (4.95, 1.25), fill: white, stroke: 0.4pt + luma(140))
+  content((4.50, 1.05), text(size: 8.5pt)[*Dado*], anchor: "center")
+
+
+  // =========================================================================
+  // PANNELLO 2 (AL CENTRO): DADO STANDARD (ACCIAIO / ACCIAIO) E GRAFICO
+  // =========================================================================
+
+  // Titolo di sezione / Materiali
+  content((3.9, -0.45), text(size: 9pt)[*a) Dado standard* (Vite: acciaio — Dado: acciaio)], anchor: "center")
+
+  // --- Grafico distribuzione del carico (sinistra) ---
+  // Cornice della griglia: x da 2.2 (40%) a 5.0 (0%), 0.7 cm ogni 10%
+  // Filetti 1..6: y = -3.6, -3.3, -3.0, -2.7, -2.4, -2.1
+  rect((2.2, -3.6), (5.0, -2.1), fill: luma(250), stroke: 0.9pt + black)
+
+  // Linee verticali della griglia (30%, 20%, 10%)
+  line((2.9, -3.6), (2.9, -2.1), stroke: 0.5pt + luma(120))
+  line((3.6, -3.6), (3.6, -2.1), stroke: 0.5pt + luma(120))
+  line((4.3, -3.6), (4.3, -2.1), stroke: 0.5pt + luma(120))
+
+  // Linee orizzontali della griglia e raccordo ai filetti (filetti 1..6)
+  line((2.2, -3.6), (6.1, -3.6), stroke: 0.55pt + luma(90))
+  line((2.2, -3.3), (6.1, -3.3), stroke: 0.55pt + luma(90))
+  line((2.2, -3.0), (6.1, -3.0), stroke: 0.55pt + luma(90))
+  line((2.2, -2.7), (6.1, -2.7), stroke: 0.55pt + luma(90))
+  line((2.2, -2.4), (6.1, -2.4), stroke: 0.55pt + luma(90))
+  line((2.2, -2.1), (6.1, -2.1), stroke: 0.55pt + luma(90))
+
+  // Curva di distribuzione del carico (35% al filetto 1 -> 6% al filetto 6)
+  bezier(
+    (2.55, -3.6), (4.58, -2.1),
+    (3.65, -3.25), (4.42, -2.65),
+    stroke: 1.3pt + rgb("#1f4e78")
+  )
+
+  // Punti sperimentali / nodi sui filetti 1..6
+  circle((2.55, -3.6), radius: 0.065, fill: black, stroke: none)
+  circle((3.28, -3.3), radius: 0.065, fill: black, stroke: none)
+  circle((3.82, -3.0), radius: 0.065, fill: black, stroke: none)
+  circle((4.18, -2.7), radius: 0.065, fill: black, stroke: none)
+  circle((4.43, -2.4), radius: 0.065, fill: black, stroke: none)
+  circle((4.58, -2.1), radius: 0.065, fill: black, stroke: none)
+
+  // Annotazioni rosse 35% e 6% con frecce verticali
+  content((2.55, -1.15), text(size: 8.5pt, fill: red)[*35%*], anchor: "south")
+  line((2.55, -1.20), (2.55, -3.48), stroke: 0.9pt + red, mark: (end: ">"))
+
+  content((4.58, -1.15), text(size: 8.5pt, fill: red)[*6%*], anchor: "south")
+  line((4.58, -1.20), (4.58, -1.98), stroke: 0.9pt + red, mark: (end: ">"))
+
+  // Etichette asse X (40, 30, 20, 10, 0 %)
+  content((2.2, -3.72), text(size: 7.5pt)[40], anchor: "north")
+  content((2.9, -3.72), text(size: 7.5pt)[30], anchor: "north")
+  content((3.6, -3.72), text(size: 7.5pt)[20], anchor: "north")
+  content((4.3, -3.72), text(size: 7.5pt)[10], anchor: "north")
+  content((5.0, -3.72), text(size: 7.5pt)[0], anchor: "north")
+  content((1.90, -3.72), text(size: 7.5pt)[*%*], anchor: "north")
+
+  // Titolo asse X (tradotto in italiano, ben distanziato)
+  content((3.6, -4.25), text(size: 7.5pt)[Quota di carico sui filetti], anchor: "north")
+  content((3.6, -4.60), text(size: 7.5pt)[in presa (%)], anchor: "north")
+
+  // Titolo asse Y (tradotto in italiano, a sinistra senza sovrapposizioni)
+  content((1.85, -2.65), text(size: 7.5pt)[Filetto], anchor: "east")
+  content((1.85, -3.00), text(size: 7.5pt)[in presa], anchor: "east")
+
+  // --- Elemento fisico: Sezione Dado standard + Vite + Base (destra) ---
+  // Piastra di base (Elemento collegato inferiore) con tratteggio di sezione
+  line(
+    (5.1, -4.55), (6.1, -4.55), (6.1, -5.45), (6.7, -5.45), (6.7, -3.95), (5.1, -3.95),
+    close: true,
+    fill: luma(242),
+    stroke: none
+  )
+  line((5.1, -3.95), (6.7, -3.95), stroke: 1pt + black)
+  line((6.7, -3.95), (6.7, -5.45), stroke: 1pt + black)
+  line((5.1, -4.55), (6.1, -4.55), stroke: 0.8pt + black)
+  line((6.1, -4.55), (6.1, -5.45), stroke: 0.8pt + black)
+
+  // Tratteggio a 45° della piastra di base
+  line((5.15, -4.35), (5.55, -3.95), stroke: 0.5pt + luma(80))
+  line((5.30, -4.55), (5.90, -3.95), stroke: 0.5pt + luma(80))
+  line((5.65, -4.55), (6.25, -3.95), stroke: 0.5pt + luma(80))
+  line((6.00, -4.55), (6.60, -3.95), stroke: 0.5pt + luma(80))
+  line((6.10, -4.80), (6.70, -4.20), stroke: 0.5pt + luma(80))
+  line((6.10, -5.15), (6.70, -4.55), stroke: 0.5pt + luma(80))
+  line((6.15, -5.45), (6.70, -4.90), stroke: 0.5pt + luma(80))
+
+  // Sezione del Dado standard (con smusso esterno e 6 filetti in presa)
+  line(
+    (5.60, -3.82), (5.78, -3.95), (6.75, -3.95),
+    (6.95, -3.75), (6.75, -3.60), (6.95, -3.45),
+    (6.75, -3.30), (6.95, -3.15), (6.75, -3.00),
+    (6.95, -2.85), (6.75, -2.70), (6.95, -2.55),
+    (6.75, -2.40), (6.95, -2.25), (6.75, -2.10),
+    (6.95, -1.95), (6.95, -1.90),
+    (5.85, -1.90), (5.60, -2.05),
+    close: true,
+    fill: luma(205),
+    stroke: 1pt + black
+  )
+
+  // Numeri dei filetti (1..6) su sfondo chiaro dentro il dado
+  rect((6.12, -3.72), (6.38, -1.98), fill: luma(238), stroke: none)
+  content((6.25, -3.60), text(size: 6.8pt)[*1*], anchor: "center")
+  content((6.25, -3.30), text(size: 6.8pt)[*2*], anchor: "center")
+  content((6.25, -3.00), text(size: 6.8pt)[*3*], anchor: "center")
+  content((6.25, -2.70), text(size: 6.8pt)[*4*], anchor: "center")
+  content((6.25, -2.40), text(size: 6.8pt)[*5*], anchor: "center")
+  content((6.25, -2.10), text(size: 6.8pt)[*6*], anchor: "center")
+
+  // Corpo della Vite (destra, con creste e fondi di filetto e asse di simmetria)
+  line(
+    (6.95, -1.45), (7.95, -1.45), (7.95, -5.15), (7.00, -5.15), (7.00, -3.85),
+    (6.95, -3.75), (6.75, -3.60), (6.95, -3.45),
+    (6.75, -3.30), (6.95, -3.15), (6.75, -3.00),
+    (6.95, -2.85), (6.75, -2.70), (6.95, -2.55),
+    (6.75, -2.40), (6.95, -2.25), (6.75, -2.10),
+    (6.95, -1.95), (6.75, -1.80), (6.95, -1.65),
+    close: true,
+    fill: luma(248),
+    stroke: 1pt + black
+  )
+
+  // Linee dei filetti sulla vite (leggermente inclinate)
+  line((6.75, -3.60), (7.95, -3.52), stroke: 0.75pt + black)
+  line((6.95, -3.45), (7.95, -3.38), stroke: 0.5pt + luma(80))
+  line((6.75, -3.30), (7.95, -3.22), stroke: 0.75pt + black)
+  line((6.95, -3.15), (7.95, -3.08), stroke: 0.5pt + luma(80))
+  line((6.75, -3.00), (7.95, -2.92), stroke: 0.75pt + black)
+  line((6.95, -2.85), (7.95, -2.78), stroke: 0.5pt + luma(80))
+  line((6.75, -2.70), (7.95, -2.62), stroke: 0.75pt + black)
+  line((6.95, -2.55), (7.95, -2.48), stroke: 0.5pt + luma(80))
+  line((6.75, -2.40), (7.95, -2.32), stroke: 0.75pt + black)
+  line((6.95, -2.25), (7.95, -2.18), stroke: 0.5pt + luma(80))
+  line((6.75, -2.10), (7.95, -2.02), stroke: 0.75pt + black)
+  line((6.95, -1.95), (7.95, -1.88), stroke: 0.5pt + luma(80))
+  line((6.75, -1.80), (7.95, -1.72), stroke: 0.75pt + black)
+  line((6.95, -1.65), (7.95, -1.58), stroke: 0.5pt + luma(80))
+  line((7.00, -3.85), (7.95, -3.85), stroke: 0.6pt + black)
+
+  // Asse di simmetria verticale della vite
+  line((7.95, -1.25), (7.95, -5.45), stroke: (dash: "dash-dotted", thickness: 0.7pt, paint: black))
+
+
+  // =========================================================================
+  // PANNELLO 3 (IN BASSO): DADO CON GOLA DI SCARICO (TRAZIONE) E GRAFICO
+  // =========================================================================
+
+  // Titolo di sezione
+  content((3.9, -6.15), text(size: 9pt)[*b) Dado con gola di scarico* (distribuzione uniforme del carico)], anchor: "center")
+
+  // --- Grafico distribuzione del carico (sinistra) ---
+  // Filetti 1..9: y da -9.8 (filetto 1) a -7.4 (filetto 9), passo 0.3 cm
+  rect((2.2, -9.8), (5.0, -7.4), fill: luma(250), stroke: 0.9pt + black)
+
+  // Linee verticali della griglia (30%, 20%, 10%)
+  line((2.9, -9.8), (2.9, -7.4), stroke: 0.5pt + luma(120))
+  line((3.6, -9.8), (3.6, -7.4), stroke: 0.5pt + luma(120))
+  line((4.3, -9.8), (4.3, -7.4), stroke: 0.5pt + luma(120))
+
+  // Linee orizzontali della griglia e raccordo ai filetti (1..3 e 4..9)
+  line((2.2, -9.8), (5.5, -9.8), stroke: 0.55pt + luma(90))
+  line((2.2, -9.5), (5.5, -9.5), stroke: 0.55pt + luma(90))
+  line((2.2, -9.2), (5.5, -9.2), stroke: 0.55pt + luma(90))
+  line((2.2, -8.9), (6.1, -8.9), stroke: 0.55pt + luma(90))
+  line((2.2, -8.6), (6.1, -8.6), stroke: 0.55pt + luma(90))
+  line((2.2, -8.3), (6.1, -8.3), stroke: 0.55pt + luma(90))
+  line((2.2, -8.0), (6.1, -8.0), stroke: 0.55pt + luma(90))
+  line((2.2, -7.7), (6.1, -7.7), stroke: 0.55pt + luma(90))
+  line((2.2, -7.4), (6.1, -7.4), stroke: 0.55pt + luma(90))
+
+  // Numeri dei filetti 1, 2, 3 nella zona intermedia prima della gola
+  content((5.25, -9.8), text(size: 6.8pt)[*1*], anchor: "center")
+  content((5.25, -9.5), text(size: 6.8pt)[*2*], anchor: "center")
+  content((5.25, -9.2), text(size: 6.8pt)[*3*], anchor: "center")
+  line((5.42, -9.8), (6.45, -9.8), stroke: 0.5pt + luma(90))
+  line((5.42, -9.5), (6.45, -9.5), stroke: 0.5pt + luma(90))
+  line((5.42, -9.2), (6.45, -9.2), stroke: 0.5pt + luma(90))
+
+  // Curva di distribuzione del carico quasi uniforme (~10% - 15%)
+  bezier(
+    (3.92, -9.8), (4.15, -7.4),
+    (4.32, -9.0), (4.35, -8.1),
+    stroke: 1.3pt + rgb("#1f4e78")
+  )
+
+  // Etichette asse X (40, 30, 20, 10, 0 %)
+  content((2.2, -9.92), text(size: 7.5pt)[40], anchor: "north")
+  content((2.9, -9.92), text(size: 7.5pt)[30], anchor: "north")
+  content((3.6, -9.92), text(size: 7.5pt)[20], anchor: "north")
+  content((4.3, -9.92), text(size: 7.5pt)[10], anchor: "north")
+  content((5.0, -9.92), text(size: 7.5pt)[0], anchor: "north")
+  content((1.90, -9.92), text(size: 7.5pt)[*%*], anchor: "north")
+
+  // Titolo asse X (tradotto in italiano)
+  content((3.6, -10.45), text(size: 7.5pt)[Quota di carico sui filetti], anchor: "north")
+  content((3.6, -10.80), text(size: 7.5pt)[in presa (%)], anchor: "north")
+
+  // Titolo asse Y (tradotto in italiano)
+  content((1.85, -8.40), text(size: 7.5pt)[Filetto], anchor: "east")
+  content((1.85, -8.75), text(size: 7.5pt)[in presa], anchor: "east")
+
+  // --- Elemento fisico: Sezione Dado con gola di scarico + Vite + Base (destra) ---
+  // Piastra di base inferiore
+  line(
+    (5.1, -10.75), (6.1, -10.75), (6.1, -11.65), (6.7, -11.65), (6.7, -10.15), (5.1, -10.15),
+    close: true,
+    fill: luma(242),
+    stroke: none
+  )
+  line((5.1, -10.15), (6.7, -10.15), stroke: 1pt + black)
+  line((6.7, -10.15), (6.7, -11.65), stroke: 1pt + black)
+  line((5.1, -10.75), (6.1, -10.75), stroke: 0.8pt + black)
+  line((6.1, -10.75), (6.1, -11.65), stroke: 0.8pt + black)
+
+  // Tratteggio a 45° della piastra di base
+  line((5.15, -10.55), (5.55, -10.15), stroke: 0.5pt + luma(80))
+  line((5.30, -10.75), (5.90, -10.15), stroke: 0.5pt + luma(80))
+  line((5.65, -10.75), (6.25, -10.15), stroke: 0.5pt + luma(80))
+  line((6.00, -10.75), (6.60, -10.15), stroke: 0.5pt + luma(80))
+  line((6.10, -11.00), (6.70, -10.40), stroke: 0.5pt + luma(80))
+  line((6.10, -11.35), (6.70, -10.75), stroke: 0.5pt + luma(80))
+  line((6.15, -11.65), (6.70, -11.10), stroke: 0.5pt + luma(80))
+
+  // Sezione del Dado con gola di scarico (colletto esterno in appoggio + gola interna + 9 filetti)
+  line(
+    (5.55, -10.15), (6.00, -10.15),
+    (6.00, -9.18), (6.06, -9.08), (6.18, -9.08), (6.25, -9.18),
+    (6.50, -9.95), (6.75, -9.95),
+    (6.95, -9.95), (6.75, -9.80), (6.95, -9.65),
+    (6.75, -9.50), (6.95, -9.35), (6.75, -9.20),
+    (6.95, -9.05), (6.75, -8.90), (6.95, -8.75),
+    (6.75, -8.60), (6.95, -8.45), (6.75, -8.30),
+    (6.95, -8.15), (6.75, -8.00), (6.95, -7.85),
+    (6.75, -7.70), (6.95, -7.55), (6.75, -7.40),
+    (6.95, -7.25), (6.95, -7.15),
+    (5.95, -7.15), (5.70, -7.35),
+    (5.70, -9.35), (5.55, -9.45),
+    close: true,
+    fill: luma(205),
+    stroke: 1pt + black
+  )
+
+  // Numeri dei filetti 4..9 dentro la parte superiore del dado
+  rect((6.12, -9.00), (6.38, -7.28), fill: luma(238), stroke: none)
+  content((6.25, -8.90), text(size: 6.8pt)[*4*], anchor: "center")
+  content((6.25, -8.60), text(size: 6.8pt)[*5*], anchor: "center")
+  content((6.25, -8.30), text(size: 6.8pt)[*6*], anchor: "center")
+  content((6.25, -8.00), text(size: 6.8pt)[*7*], anchor: "center")
+  content((6.25, -7.70), text(size: 6.8pt)[*8*], anchor: "center")
+  content((6.25, -7.40), text(size: 6.8pt)[*9*], anchor: "center")
+
+  // Corpo della Vite (destra, con 9 filetti in presa)
+  line(
+    (6.95, -6.75), (7.95, -6.75), (7.95, -11.35), (7.00, -11.35), (7.00, -10.05),
+    (6.95, -9.95), (6.75, -9.80), (6.95, -9.65),
+    (6.75, -9.50), (6.95, -9.35), (6.75, -9.20),
+    (6.95, -9.05), (6.75, -8.90), (6.95, -8.75),
+    (6.75, -8.60), (6.95, -8.45), (6.75, -8.30),
+    (6.95, -8.15), (6.75, -8.00), (6.95, -7.85),
+    (6.75, -7.70), (6.95, -7.55), (6.75, -7.40),
+    (6.95, -7.25), (6.75, -7.10), (6.95, -6.95),
+    close: true,
+    fill: luma(248),
+    stroke: 1pt + black
+  )
+
+  // Linee dei filetti sulla vite (1..9 + superiori)
+  line((6.75, -9.80), (7.95, -9.72), stroke: 0.75pt + black)
+  line((6.95, -9.65), (7.95, -9.58), stroke: 0.5pt + luma(80))
+  line((6.75, -9.50), (7.95, -9.42), stroke: 0.75pt + black)
+  line((6.95, -9.35), (7.95, -9.28), stroke: 0.5pt + luma(80))
+  line((6.75, -9.20), (7.95, -9.12), stroke: 0.75pt + black)
+  line((6.95, -9.05), (7.95, -8.98), stroke: 0.5pt + luma(80))
+  line((6.75, -8.90), (7.95, -8.82), stroke: 0.75pt + black)
+  line((6.95, -8.75), (7.95, -8.68), stroke: 0.5pt + luma(80))
+  line((6.75, -8.60), (7.95, -8.52), stroke: 0.75pt + black)
+  line((6.95, -8.45), (7.95, -8.38), stroke: 0.5pt + luma(80))
+  line((6.75, -8.30), (7.95, -8.22), stroke: 0.75pt + black)
+  line((6.95, -8.15), (7.95, -8.08), stroke: 0.5pt + luma(80))
+  line((6.75, -8.00), (7.95, -7.92), stroke: 0.75pt + black)
+  line((6.95, -7.85), (7.95, -7.78), stroke: 0.5pt + luma(80))
+  line((6.75, -7.70), (7.95, -7.62), stroke: 0.75pt + black)
+  line((6.95, -7.55), (7.95, -7.48), stroke: 0.5pt + luma(80))
+  line((6.75, -7.40), (7.95, -7.32), stroke: 0.75pt + black)
+  line((6.95, -7.25), (7.95, -7.18), stroke: 0.5pt + luma(80))
+  line((6.75, -7.10), (7.95, -7.02), stroke: 0.75pt + black)
+  line((6.95, -6.95), (7.95, -6.88), stroke: 0.5pt + luma(80))
+  line((7.00, -10.05), (7.95, -10.05), stroke: 0.6pt + black)
+
+  // Asse di simmetria verticale della vite
+  line((7.95, -6.55), (7.95, -11.65), stroke: (dash: "dash-dotted", thickness: 0.7pt, paint: black))
+})
 === Effetto dei carichi assiali esterni e diagramma di forzamento
 
 #grid(
