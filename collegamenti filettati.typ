@@ -703,9 +703,7 @@ Il precarico minimo residuo prima dell'applicazione del carico esterno diventa p
 
 $ A_(m i n) = (3 div 4) frac(C_(m a x), R_(p 0.2)) $
 
-2. #strong[Calcolo dei parametri caratteristici:] determinazione di $k$, $F_(v, l i m)$, $M_T$, $delta_v$, $delta_p$, $Delta F_v$, $Delta C_v$ e $Delta C_p$.
-3. #strong[Verifiche:] esecuzione della verifica statica della vite, della verifica del carico minimo di serraggio e della verifica a fatica della vite.
-4. #strong[Iterazione:] qualora anche una sola delle verifiche non risulti soddisfatta, si apportano modifiche costruttive o dimensionali (sulle deformabilità, sul numero di viti, sul diametro o sulla classe del materiale) e si ripete il calcolo fino al soddisfacimento di tutte le condizioni.],[#canvas(length: 1cm, {
+],[#canvas(length: 0.9cm, {
   import draw: *
   rect((-4.8, 4.7), (4.8, 6.7), stroke: 0.85pt)
   rect((0.7, 4.85), (4.65, 6.55), stroke: (dash: "dash-dotted", thickness: 0.6pt))
