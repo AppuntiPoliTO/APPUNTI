@@ -83,14 +83,7 @@ $ (partial arrow(u)) / (partial t) + nabla (1 / 2 u^2 + p / rho + chi) = arrow(0
 ]
 
 #import "/template.typ": *
-#let nota-esame(body) = block(
-  width: 100%,
-  inset: 0.8em,
-  radius: 3pt,
-  fill: rgb("#fffbeb"),
-  stroke: (left: 2.5pt + rgb("#b45309")),
-  [*Nota d'esame.* #body],
-)
+
 #set page(paper: "a4", margin: 2cm)
 #set text(lang: "it", size: 11pt)
 #set par(justify: true)
