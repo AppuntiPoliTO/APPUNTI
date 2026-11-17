@@ -16,9 +16,9 @@
   width: 100%,
   inset: 0.8em,
   radius: 3pt,
-  fill: rgb("#fffbeb"),
-  stroke: (left: 2.5pt + rgb("#b45309")),
-  [*Nota d'esame.* #body],
+  fill: luma(245),
+  stroke: (left: 2.5pt + luma(245)),
+  [*Nota:* #body],
 )
 
 == Richiamo: transizione nei flussi interni ed esperimento di Reynolds
