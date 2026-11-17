@@ -644,17 +644,6 @@ Dal punto di vista strumentale, l'avvitatore (o chiave a scatto) con taratura pe
 
 Nel tempo, sotto l'azione di forze esterne e vibrazioni (assiali o trasversali/tangenziali), le micro-asperità delle superfici a contatto si schiacciano e si assestano modificando la rugosità. Ciò comporta una perdita di interferenza $Delta i$ (espressa in $mu "m"$) e una conseguente perdita di forza sulla vite $Delta F_v$. I valori di $Delta i$ dipendono dal numero di superfici di interfaccia ($"N° superfici"$), dalla direzione delle forze esterne e dalla rugosità media $R_a$:
 
-#table(
-  columns: 5,
-  align: center,
-  [N° superfici], [Forze assiali ($R_a = 1.6 mu "m"$)], [Forze assiali ($R_a = 0.8 mu "m"$)], [Forze tangenziali ($R_a = 1.6 mu "m"$)], [Forze tangenziali ($R_a = 0.8 mu "m"$)],
-  [2], [$13 mu "m"$], [$10 mu "m"$], [$20 mu "m"$], [$13 mu "m"$],
-  [3], [$16 mu "m"$], [$12 mu "m"$], [$28 mu "m"$], [$16 mu "m"$],
-  [4], [$20 mu "m"$], [$14 mu "m"$], [$35 mu "m"$], [$20 mu "m"$],
-  [5], [$25 mu "m"$], [$16 mu "m"$], [$42 mu "m"$], [$25 mu "m"$],
-  [6], [$30 mu "m"$], [$18 mu "m"$], [$50 mu "m"$], [$30 mu "m"$],
-)
-
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
