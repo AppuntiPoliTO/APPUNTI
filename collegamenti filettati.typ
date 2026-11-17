@@ -450,6 +450,7 @@ Dall'espressione $Delta C_v = C frac(delta_p, delta_v + delta_p)$ risulta che, a
 
 2. #grid(
   columns: (1fr, 1fr),
+  rows:2,
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[Impiego di viti con fusto alleggerito:] si riduce il diametro del gambo non filettato a un valore $d_g < d_n$ (area $A_g = pi d_g^2 / 4$). In questo caso la sezione critica non è più quella di nocciolo, bensì la sezione calibrata alleggerita $A_g$, in base alla quale devono essere ricalcolati $k$, la forza assiale limite $F_(v, l i m)$ e il momento di serraggio $M_T$:
 
@@ -459,12 +460,48 @@ $ F_(v, l i m) = sigma_(a, l i m) dot.op A_g = frac(X dot.op R_(p 0.2), sqrt(1 +
 
 $ M_T = frac(F_(v, l i m), 2)(frac(p, pi) + d_m dot.op frac(tan phi.alt, cos alpha) + d_t dot.op tan phi.alt) $
 
-Nel diagramma di forzamento, a parità di deformabilità del pezzo $delta_p$, la retta della vite si inclina maggiormente verso l'asse $u$ e il punto di intersezione iniziale scende a un valore inferiore $F_(v, l i m) " (alleggerita)"$: la modifica agisce dunque sia abbassando la forza assiale limite di serraggio sia riducendo la quota parte $Delta C_v$ che si scarica sulla vite in esercizio.],[])
+],[],[],[#canvas(length: 1cm, {
+  import draw: *
+  line((0, 0), (7.5, 0), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 0), (0, 5.5), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 0), (2.0, 4.33), stroke: 1.1pt)
+  line((1.3, 4.20), (2.7, 0), stroke: 1.1pt)
+  line((0, 0), (5.87, 4.20), stroke: 1.1pt)
+  line((3.65, 4.20), (5.05, 0), stroke: 1.1pt)
+  line((1.8, 2.70), (1.8, 3.90), stroke: 1.4pt)
+  line((4.4, 1.95), (4.4, 3.15), stroke: 1.4pt)
+  rect((1.7, 3.80), (1.9, 4.00), fill: red, stroke: none)
+  line((1.7, 2.58), (1.9, 2.58), (1.8, 2.82), close: true, fill: blue, stroke: none)
+  rect((4.3, 3.05), (4.5, 3.25), fill: red, stroke: none)
+  line((4.3, 1.83), (4.5, 1.83), (4.4, 2.07), close: true, fill: blue, stroke: none)
+  line((1.9, 3.90), (3.45, 3.90), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((0, 3.30), (3.45, 3.30), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((0, 2.90), (7.10, 2.90), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((1.9, 2.70), (3.45, 2.70), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((4.5, 3.15), (6.15, 3.15), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((4.5, 1.95), (6.15, 1.95), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((2.45, 3.30), (2.45, 3.90), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((2.45, 2.70), (2.45, 3.30), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((3.25, 2.70), (3.25, 3.90), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((5.05, 3.60), (5.05, 3.15), mark: (end: ">"), stroke: 0.6pt)
+  line((5.05, 1.95), (5.05, 2.90), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((5.95, 1.95), (5.95, 3.15), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  content((-0.15, 5.20), text(size: 8.5pt)[$|F_p|$], anchor: "east")
+  content((-0.15, 4.65), text(size: 8.5pt)[$|F_v|$], anchor: "east")
+  content((-0.15, 3.48), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
+  content((-0.15, 2.72), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
+  content((-0.15, 2.28), text(size: 7.5pt)[(alleggerita)], anchor: "east")
+  content((7.10, -0.25), text(size: 9pt)[$u$], anchor: "north")
+  content((2.55, 3.60), text(size: 7.5pt)[$Delta C_v$], anchor: "west")
+  content((2.55, 3.00), text(size: 7.5pt)[$Delta C_p$], anchor: "west")
+  content((3.35, 3.30), text(size: 7.5pt)[$C$], anchor: "west")
+  content((5.15, 3.40), text(size: 7.5pt)[$Delta C_v$], anchor: "west")
+  content((5.15, 2.425), text(size: 7.5pt)[$Delta C_p$], anchor: "west")
+  content((6.05, 2.55), text(size: 7.5pt)[$C$], anchor: "west")
+  content((4.52, 2.25), text(size: 7.5pt)[$C$], anchor: "west")
+})])
 
-  #grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: confronto tra due diagrammi di forzamento ($|F_p|, |F_v|$ vs $u$) a parità di carico $C$ e di deformabilità del pezzo: a sinistra la vite standard con forza iniziale $F_(v, l i m)$; a destra la vite alleggerita con forza iniziale inferiore $F_(v, l i m)$ (alleggerita) e pendenza minore della retta della vite, con conseguente riduzione di $Delta C_v$ e aumento di $Delta C_p$]])
+
 
 === Incertezze di montaggio e allentamenti in esercizio
 
