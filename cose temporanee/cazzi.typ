@@ -1,3 +1,4 @@
+#import "/template.typ": *
 #let nota-esame(body) = block(
   width: 100%,
   inset: 0.8em,
