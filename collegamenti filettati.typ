@@ -694,7 +694,7 @@ In un dado convenzionale, il primo filetto in presa sopporta circa il $35\%$ del
 === Effetto dei carichi assiali esterni e diagramma di forzamento
 
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1.2fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[In assenza di carichi assiali esterni, la forza di trazione nella vite $F_v$ e la forza di compressione esercitata sulle parti serrate $F_p$ si trovano in equilibrio:
 
