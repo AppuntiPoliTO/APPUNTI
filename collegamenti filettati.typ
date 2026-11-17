@@ -818,7 +818,7 @@ $ |F'_p| + C = |F'_v| $],[#canvas(length: 1cm, {
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nel diagramma di forzamento (o di interferenza), che riporta sulle ordinate le forze $|F_p|, |F_v|$ e sulle ascisse gli spostamenti $u$ (allungamento $u_v$ della vite e accorciamento $u_p$ delle parti), il punto di equilibrio al serraggio corrisponde all'intersezione tra la caratteristica elastica della vite (retta passante per l'origine) e quella delle parti serrate (retta con pendenza negativa che interseca l'asse $u$ in $u = i$). Applicando il carico $C$, rappresentato da un segmento verticale inserito tra le due caratteristiche elastiche a destra del punto di equilibrio iniziale (corrispondente a un incremento di spostamento $Delta u$), la forza sulla vite aumenta di una quota parte $Delta C_v$ fino a $F'_v$, mentre la forza di compressione sulle parti si riduce di una quota parte $Delta C_p$ fino a $F'_p$:
 
-$ F'_v = |F_v| + Delta C_v, quad quad F'_p = |F_p| - Delta C_p, quad quad C = Delta C_v + Delta C_p $],[#canvas(length: 1cm, {
+$ F'_v = |F_v| + Delta C_v, \ F'_p = |F_p| - Delta C_p, \  C = Delta C_v + Delta C_p $],[#canvas(length: 1cm, {
   import draw: *
   line((0, 0), (0, 5.2), mark: (end: ">"), stroke: 0.75pt)
   line((0, 0), (8.0, 0), mark: (end: ">"), stroke: 0.75pt)
