@@ -272,9 +272,9 @@ $
     [L] = (M L^2 T^(-2))^alpha (M L^(-3))^beta T^gamma = M^(alpha + beta) L^(2 alpha - 3 beta) T^(gamma - 2 alpha)
   $
 ]
-#block(breakable: false, align(center))[
+#block(breakable: false)[
   si ottiene il sistema lineare negli esponenti:
-  $
+  #align(center)[$
     cases(
       alpha + beta = 0,
       2 alpha - 3 beta = 1,
@@ -292,7 +292,7 @@ $
       beta = -1/5,
       gamma = 2/5
     )
-  $
+  $]
 ]
 La legge di espansione del raggio risulta quindi:
 $
