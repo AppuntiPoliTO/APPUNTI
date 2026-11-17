@@ -1,4 +1,7 @@
-#canvas(length: 1cm, {
+// Figura estratta da collegamenti filettati.typ (riga 385) con LocalTypst
+#import "@preview/cetz:0.3.4": canvas, draw
+
+#canvas(length: 0.8cm, {
   import draw: *
 
   // --- DETTAGLIO TESTA ESAGONALE (A SINISTRA, ALLINEATO IN ORIZZONTALE) ---
