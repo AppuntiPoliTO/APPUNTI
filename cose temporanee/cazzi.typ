@@ -272,7 +272,7 @@ $
     [L] = (M L^2 T^(-2))^alpha (M L^(-3))^beta T^gamma = M^(alpha + beta) L^(2 alpha - 3 beta) T^(gamma - 2 alpha)
   $
 ]
-#block(breakable: false)[
+#block(breakable: false, align(center))[
   si ottiene il sistema lineare negli esponenti:
   $
     cases(
