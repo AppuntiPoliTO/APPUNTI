@@ -138,10 +138,10 @@ Passando ai flussi esterni attorno a un corpo circolare (sfera o cilindro indefi
 Consideriamo il campo di moto irrotazionale stazionario attorno a un cilindro circolare indefinito (o a una sfera), trascurando le variazioni di quota ($chi$ trascurabile), per cui vale ovunque $1 slash 2 thin rho u^2 + p = "cost"$:
 
   #grid(
-    columns: (1.28fr, 0.72fr),
+    columns: (1.2fr, 0.82fr),
     column-gutter: 0.9em,
     align: (left + horizon, center + horizon),
-    [- *Simmetria e distribuzione di pressione:* la soluzione a potenziale fornisce linee di corrente simmetriche sia tra parte superiore e inferiore, sia tra monte e valle. Lungo la superficie del corpo, al variare dell'angolo polare $theta in [0, pi]$ (con $theta = 0$ a monte e $theta = pi$ a valle):
+    [*Simmetria e distribuzione di pressione:* la soluzione a potenziale fornisce linee di corrente simmetriche sia tra parte superiore e inferiore, sia tra monte e valle. Lungo la superficie del corpo, al variare dell'angolo polare $theta in [0, pi]$ (con $theta = 0$ a monte e $theta = pi$ a valle):
         - In $theta = 0$ e $theta = pi$ si hanno i *punti di arresto* (o di ristagno): $u = u_"min" = 0$ e, per Bernoulli, la pressione è massima ($p = p_"max"$).
         - Verso i fianchi ($theta = pi slash 2$), le linee di corrente si addensano: il fluido accelera fino a $u = u_"max"$ e la pressione scende al minimo $p = p_"min"$.
         - A valle ($theta in [pi slash 2, pi]$), per simmetria il fluido decelera senza separarsi dalla parete, realizzando un *recupero completo di pressione* fino a $p = p_"max"$ in $theta = pi$ (curva continua nel grafico a lato; la tratteggiata mostra invece la perdita di recupero $Delta p$ nei flussi reali con distacco)..
