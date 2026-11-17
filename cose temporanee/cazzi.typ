@@ -37,24 +37,24 @@ Al variare del numero di Reynolds $"Re" = U D slash nu$ (dove $U$ è la velocit�
   line((4.6, -1.58), (4.6, 1.58), stroke: (dash: "dashed", thickness: 0.6pt, paint: gray.darken(20%)))
   line((6.0, -1.58), (6.0, 1.58), stroke: (dash: "dashed", thickness: 0.6pt, paint: gray.darken(20%)))
 
-  line((3.2, 0.9), (4.425, 0.9), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, 0.6), (5.3, 0.6), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, 0.3), (5.825, 0.3), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, 0), (6.0, 0), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, -0.3), (5.825, -0.3), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, -0.6), (5.3, -0.6), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, -0.9), (4.425, -0.9), mark: (end: ">"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, 0.9), (4.425, 0.9), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, 0.6), (5.3, 0.6), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, 0.3), (5.825, 0.3), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, 0), (6.0, 0), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, -0.3), (5.825, -0.3), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, -0.6), (5.3, -0.6), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, -0.9), (4.425, -0.9), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
 
   bezier((3.2, -1.2), (3.2, 1.2), (6.9333, -0.4), (6.9333, 0.4), stroke: (thickness: 1.1pt, paint: rgb("#8a2b16")))
 
-  line((3.2, 0.9), (1.55, 0.9), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
-  line((3.2, 0.6), (2.1, 0.6), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
-  line((3.2, 0.3), (2.65, 0.3), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
-  line((3.2, -0.3), (2.65, -0.3), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
-  line((3.2, -0.6), (2.1, -0.6), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
-  line((3.2, -0.9), (1.55, -0.9), mark: (end: ">"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
-  line((3.2, 1.2), (1.0, 1.2), mark: (end: ">"), stroke: (thickness: 0.85pt, paint: rgb("#2d6a36")))
-  line((3.2, -1.2), (1.0, -1.2), mark: (end: ">"), stroke: (thickness: 0.85pt, paint: rgb("#2d6a36")))
+  line((3.2, 0.9), (1.55, 0.9), mark: (end: "stealth"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, 0.6), (2.1, 0.6), mark: (end: "stealth"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, 0.3), (2.65, 0.3), mark: (end: "stealth"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, -0.3), (2.65, -0.3), mark: (end: "stealth"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, -0.6), (2.1, -0.6), mark: (end: "stealth"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, -0.9), (1.55, -0.9), mark: (end: "stealth"), stroke: (thickness: 0.75pt, paint: rgb("#2d6a36")))
+  line((3.2, 1.2), (1.0, 1.2), mark: (end: "stealth"), stroke: (thickness: 0.85pt, paint: rgb("#2d6a36")))
+  line((3.2, -1.2), (1.0, -1.2), mark: (end: "stealth"), stroke: (thickness: 0.85pt, paint: rgb("#2d6a36")))
 
   line((3.2, 0), (1.0, 1.2), stroke: (thickness: 1.05pt, paint: rgb("#2d6a36")))
   line((3.2, 0), (1.0, -1.2), stroke: (thickness: 1.05pt, paint: rgb("#2d6a36")))
@@ -110,11 +110,11 @@ Al variare del numero di Reynolds $"Re" = U D slash nu$ (dove $U$ è la velocit�
   line((0.0, 1.2), (8.0, 1.2), stroke: 1.1pt)
   line((0.0, -1.2), (8.0, -1.2), stroke: 1.1pt)
 
-  line((3.2, -1.6), (3.2, 1.9), mark: (end: ">"), stroke: 0.9pt)
+  line((3.2, -1.6), (3.2, 1.9), mark: (end: "stealth"), stroke: 0.9pt)
 
-  line((6.6, 0.5), (7.6, 0.5), mark: (end: ">"), stroke: (thickness: 0.9pt, paint: rgb("#8a2b16")))
+  line((6.6, 0.5), (7.6, 0.5), mark: (end: "stealth"), stroke: (thickness: 0.9pt, paint: rgb("#8a2b16")))
 
-  line((2.28, -0.20), (3.16, -0.03), mark: (end: ">"), stroke: (thickness: 0.5pt, paint: rgb("#2d6a36")))
+  line((2.28, -0.20), (3.16, -0.03), mark: (end: "stealth"), stroke: (thickness: 0.5pt, paint: rgb("#2d6a36")))
 
   content((3.2, 1.98), text(size: 8.5pt)[$r$], anchor: "south")
   content((8.4, 0), text(size: 8.5pt)[$z$], anchor: "west")
@@ -188,13 +188,13 @@ Nei fluidi viscosi reali, la condizione di aderenza a parete genera vorticità n
   ],
   [
     *3. Meccanismo di distacco dello strato limite:* \
-    a monte di $p_"min"$ il gradiente è favorevole ($partial p slash partial s < 0$) e accelera il fluido; a valle di $p_"min"$ il gradiente diventa avverso ($partial p slash partial s > 0$), frena gli strati vicini a parete fino all'inversione del profilo di velocità $u(n)$ e causa il distacco della vena fluida, impedendo il recupero di pressione e generando una forte *resistenza di forma*.
+    a monte di $p_"min"$ il gradiente è favorevole ($partial p slash partial s < 0$) e accelera il fluido; a valle di $p_"min"$ il gradiente diventa avverso ($partial p slash partial s stealth 0$), frena gli strati vicini a parete fino all'inversione del profilo di velocità $u(n)$ e causa il distacco della vena fluida, impedendo il recupero di pressione e generando una forte *resistenza di forma*.
   ],
   [
     #include "../figs/cap9-fig04.typ"
   ],
   [
-    *4. Regime $"Re" > 40$ ($"Re" tilde.op 40 div 50$, instabilità della scia):* \
+    *4. Regime $"Re" stealth 40$ ($"Re" tilde.op 40 div 50$, instabilità della scia):* \
     superata la soglia $"Re" approx 40$, le bolle di ricircolazione allungate diventano instabili e si staccano alternatamente a valle (*scia di von Kármán*). Pur imponendo condizioni al contorno stazionarie, il campo di moto perde autonomamente la stazionarietà e sviluppa un'oscillazione periodica con una *frequenza caratteristica* propria. Questo fenomeno è una manifestazione diretta della *non linearità* del sistema (in analogia a una corda di violoncello: l'archetto viene mosso a frequenza bassissima, $tilde.op 0.1$~Hz, ma la corda entra in vibrazione alla propria frequenza naturale di $440$~Hz).
   ],
   [
@@ -233,7 +233,7 @@ Il *teorema $Pi$* (o *teorema di Buckingham*) è un risultato generale dell'anal
 $
   a = f_1 (a_1, a_2, dots.h, a_n)
 $
-Le grandezze coinvolte fanno capo a $r$ dimensioni fondamentali indipendenti $d_1, d_2, dots.h, d_r$ (quali lunghezza $L$, tempo $T$, massa $M$, temperatura $Theta$, ecc.), esprimibili tramite $r$ dei parametri di controllo (con $n >= r$).
+Le grandezze coinvolte fanno capo a $r$ dimensioni fondamentali indipendenti $d_1, d_2, dots.h, d_r$ (quali lunghezza $L$, tempo $T$, massa $M$, temperatura $Theta$, ecc.), esprimibili tramite $r$ dei parametri di controllo (con $n stealth= r$).
 
 Il teorema $Pi$ stabilisce che la legge fisica può essere riscritta in forma *adimensionale* esprimendo la grandezza osservata adimensionalizzata $Pi$ (costruita combinando $a$ con $r$ parametri di controllo) come funzione di soli $n - r$ gruppi adimensionali indipendenti $Pi_1, Pi_2, dots.h, Pi_(n - r)$ formati a partire dai parametri di controllo:
 $
@@ -360,7 +360,7 @@ Applichiamo il teorema $Pi$ al flusso esterno stazionario attorno a un corpo cir
           #place(top + left, dx: 12.0em, dy: 7.75em)[$hat(i)$]
         ],
         caption: [Definizione della forza di resistenza $F_D$.],
-      ) <fig:drag>
+      ) <fig:dragstealth
     ],
   )
 ]
@@ -419,7 +419,7 @@ Si osservi il ruolo della densità $rho$: esprimendo la viscosità tramite quell
   $
 ]
 
-Il numero di Reynolds misura quindi l'importanza relativa della convezione rispetto alla diffusione viscosa: a densità costante, tutta la dinamica del fluido nasce dalla competizione tra questi due meccanismi. Per $"Re" << 1$ la diffusione domina e il termine convettivo — che è il termine *non lineare* dell'equazione — diventa di secondo ordine; se tale termine è assente o trascurabile (come per geometria nel moto di Poiseuille o a bassissimo $"Re"$), la dinamica è lineare e il campo è necessariamente laminare. Al contrario, per $"Re"$ elevati (es. $"Re" tilde.op 10^5$) il termine convettivo non lineare diventa dominante e conferisce al fluido un'autonomia dinamica rispetto alle condizioni al contorno: pur in presenza di forzanti stazionarie, insorgono prima oscillazioni periodiche autonome (distacco alternato di vortici per $"Re" > 40$) e poi il regime turbolento, caratterizzato dalla capacità del campo di moto di svincolarsi da una risposta univoca e stazionaria alle condizioni al contorno.
+Il numero di Reynolds misura quindi l'importanza relativa della convezione rispetto alla diffusione viscosa: a densità costante, tutta la dinamica del fluido nasce dalla competizione tra questi due meccanismi. Per $"Re" << 1$ la diffusione domina e il termine convettivo — che è il termine *non lineare* dell'equazione — diventa di secondo ordine; se tale termine è assente o trascurabile (come per geometria nel moto di Poiseuille o a bassissimo $"Re"$), la dinamica è lineare e il campo è necessariamente laminare. Al contrario, per $"Re"$ elevati (es. $"Re" tilde.op 10^5$) il termine convettivo non lineare diventa dominante e conferisce al fluido un'autonomia dinamica rispetto alle condizioni al contorno: pur in presenza di forzanti stazionarie, insorgono prima oscillazioni periodiche autonome (distacco alternato di vortici per $"Re" stealth 40$) e poi il regime turbolento, caratterizzato dalla capacità del campo di moto di svincolarsi da una risposta univoca e stazionaria alle condizioni al contorno.
 
 #nota-esame[
   Il termine convettivo $(arrow(u) dot nabla) arrow(u)$ è il termine *non lineare* dell'equazione di Navier-Stokes. Un campo di moto retto da dinamica lineare è necessariamente laminare, ma un campo di moto laminare non ha necessariamente dinamica lineare (ad esempio, nel flusso attorno a un cilindro per $"Re" tilde.op 2 div 40$, le bolle di ricircolo coinvolgono effetti non lineari pur restando stazionarie e laminari).
