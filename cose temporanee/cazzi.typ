@@ -37,13 +37,13 @@ Al variare del numero di Reynolds $"Re" = U D slash nu$ (dove $U$ Ã¨ la velocitÃ
   line((4.6, -1.58), (4.6, 1.58), stroke: (dash: "dashed", thickness: 0.6pt, paint: gray.darken(20%)))
   line((6.0, -1.58), (6.0, 1.58), stroke: (dash: "dashed", thickness: 0.6pt, paint: gray.darken(20%)))
 
-  line((3.2, 0.9), (4.425, 0.9), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, 0.6), (5.3, 0.6), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, 0.3), (5.825, 0.3), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, 0), (6.0, 0), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, -0.3), (5.825, -0.3), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, -0.6), (5.3, -0.6), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
-  line((3.2, -0.9), (4.425, -0.9), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: rgb("#9e4330")))
+  line((3.2, 0.9), (4.425, 0.9), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: c-vel))
+  line((3.2, 0.6), (5.3, 0.6), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: c-vel))
+  line((3.2, 0.3), (5.825, 0.3), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: c-vel))
+  line((3.2, 0), (6.0, 0), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: c-vel))
+  line((3.2, -0.3), (5.825, -0.3), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: c-vel))
+  line((3.2, -0.6), (5.3, -0.6), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: c-vel))
+  line((3.2, -0.9), (4.425, -0.9), mark: (end: "stealth"), stroke: (thickness: 0.8pt, paint: c-vel))
 
   bezier((3.2, -1.2), (3.2, 1.2), (6.9333, -0.4), (6.9333, 0.4), stroke: (thickness: 1.1pt, paint: rgb("#8a2b16")))
 
