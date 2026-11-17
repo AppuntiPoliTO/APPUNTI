@@ -248,7 +248,7 @@ $
 
 == Esempio di Taylor: energia dell'esplosione atomica
 
-Una celebre applicazione storica del teorema $Pi$ è dovuta a G. I. Taylor durante la Seconda Guerra Mondiale. A partire da una serie di fotografie dei primi test atomici statunitensi, corredate ciascuna da una scala geometrica e dall'istante temporale $t$ successivo alla detonazione, era possibile misurare il raggio della palla di fuoco $r_f (t)$ e stimare così l'energia rilasciata dalla bomba (spesso indicata colloquialmente come «potenza», ma dimensionalmente un'energia).
+Una celebre applicazione storica del teorema $Pi$ è dovuta a G. I. Taylor durante la Seconda Guerra Mondiale. A partire da una serie di fotografie dei primi test atomici statunitensi, corredate ciascuna da una scala geometrica e dall'istante temporale $t$ successivo alla detonazione, era possibile misurare il raggio della palla di fuoco $r_f (t)$ e stimare così l'energia rilasciata dalla bomba.
 
 #block(breakable: false)[
   Taylor ipotizzò che il raggio $r_f$ dipendesse esclusivamente dall'energia $E$ liberata dall'esplosione, dalla densità indisturbata dell'aria ambiente $rho_0$ e dal tempo $t$:
