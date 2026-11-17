@@ -460,7 +460,7 @@ $ F_(v, l i m) = sigma_(a, l i m) dot.op A_g = frac(X dot.op R_(p 0.2), sqrt(1 +
 
 $ M_T = frac(F_(v, l i m), 2)(frac(p, pi) + d_m dot.op frac(tan phi.alt, cos alpha) + d_t dot.op tan phi.alt) $
 
-],[],[],[#canvas(length: 1cm, {
+],[],[Nel diagramma di forzamento, a parità di deformabilità del pezzo $delta_p$, la retta della vite si inclina maggiormente verso l'asse $u$ e il punto di intersezione iniziale scende a un valore inferiore $F_(v, l i m) " (alleggerita)"$: la modifica agisce dunque sia abbassando la forza assiale limite di serraggio sia riducendo la quota parte $Delta C_v$ che si scarica sulla vite in esercizio.],[#canvas(length: 1cm, {
   import draw: *
   line((0, 0), (7.5, 0), mark: (end: ">"), stroke: 0.75pt)
   line((0, 0), (0, 5.5), mark: (end: ">"), stroke: 0.75pt)
