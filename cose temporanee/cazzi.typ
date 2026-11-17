@@ -28,7 +28,7 @@
   gutter: 1em,
   [Nel moto stazionario in condotta cilindrica di diametro $D$ (soluzione analitica esatta di Poiseuille dell'equazione di Navier-Stokes), il campo di velocità possiede un'unica componente assiale non nulla $u_x (r)$ (con $u_r = u_theta = 0$), variazione lineare della pressione lungo l'asse $x$ e sforzo tangenziale $tau_(r x)(r)$. Sostituendo tale profilo nelle equazioni di Navier-Stokes si ottiene un'identità ($0 = 0$). Matematicamente, il carattere *laminare* di questa soluzione si riconosce dall'indipendenza dal tempo e dall'annullamento identico delle due componenti trasversali di velocità.
 
-Al variare del numero di Reynolds $"Re" = U D slash nu$ (dove $U$ è la velocità media, $D$ il diametro e $nu$ la viscosità cinematica), per valori moderati (ad esempio $"Re" approx 500 div 1500$) la forma del profilo parabolico rimane invariata — semplicemente riscalata sul valore massimo al centro $u_0$ — e il campo di moto assorbe le perturbazioni. Superata una soglia critica, il sistema diventa instabile e tende ad allontanarsi dalla soluzione di equilibrio: compaiono in modo intermittente volumi turbolenti localizzati (*patch*), trasportati convettivamente a valle, al cui interno il profilo laminare è distrutto istantaneamente e insorgono fluttuazioni temporali e trasversali. Aumentando ulteriormente $"Re"$, tali regioni intermittenti si estendono rapidamente fino a rendere turbolento il flusso nell'intera condotta.],
+],
   [#canvas(length: 1cm, {
   import draw: *
 
@@ -127,6 +127,7 @@ Al variare del numero di Reynolds $"Re" = U D slash nu$ (dove $U$ è la velocit�
   content((7.1, 0.6), text(size: 8pt, fill: rgb("#8a2b16"))[moto], anchor: "south")
 })],
 )
+Al variare del numero di Reynolds $"Re" = U D slash nu$ (dove $U$ è la velocità media, $D$ il diametro e $nu$ la viscosità cinematica), per valori moderati (ad esempio $"Re" approx 500 div 1500$) la forma del profilo parabolico rimane invariata — semplicemente riscalata sul valore massimo al centro $u_0$ — e il campo di moto assorbe le perturbazioni. Superata una soglia critica, il sistema diventa instabile e tende ad allontanarsi dalla soluzione di equilibrio: compaiono in modo intermittente volumi turbolenti localizzati (*patch*), trasportati convettivamente a valle, al cui interno il profilo laminare è distrutto istantaneamente e insorgono fluttuazioni temporali e trasversali. Aumentando ulteriormente $"Re"$, tali regioni intermittenti si estendono rapidamente fino a rendere turbolento il flusso nell'intera condotta.
 
 Questa distinzione tra regime laminare e turbolento fu messa in luce storicamente dal celebre *esperimento di Reynolds*: iniettando un filo di colorante al centro di una condotta, in regime laminare il colorante avanza a valle formando filamenti netti e ordinati, mentre in regime turbolento i filamenti si disperdono immediatamente in strutture complesse fino a occupare tutta la sezione. Nei flussi in condotta esiste quindi un numero di Reynolds critico ($"Re"_c approx 2250$) oltre il quale il moto transita bruscamente al regime turbolento: questo comportamento *dicotomico* (o interamente laminare o interamente turbolento) è tipico dei flussi interni, ma non si ritrova nei flussi esterni.
 
