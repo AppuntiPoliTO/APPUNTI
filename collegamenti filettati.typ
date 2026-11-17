@@ -709,7 +709,58 @@ $ |F'_p| + C = |F'_v| $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*D
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nel diagramma di forzamento (o di interferenza), che riporta sulle ordinate le forze $|F_p|, |F_v|$ e sulle ascisse gli spostamenti $u$ (allungamento $u_v$ della vite e accorciamento $u_p$ delle parti), il punto di equilibrio al serraggio corrisponde all'intersezione tra la caratteristica elastica della vite (retta passante per l'origine) e quella delle parti serrate (retta con pendenza negativa che interseca l'asse $u$ in $u = i$). Applicando il carico $C$, rappresentato da un segmento verticale inserito tra le due caratteristiche elastiche a destra del punto di equilibrio iniziale (corrispondente a un incremento di spostamento $Delta u$), la forza sulla vite aumenta di una quota parte $Delta C_v$ fino a $F'_v$, mentre la forza di compressione sulle parti si riduce di una quota parte $Delta C_p$ fino a $F'_p$:
 
-$ F'_v = |F_v| + Delta C_v, quad quad F'_p = |F_p| - Delta C_p, quad quad C = Delta C_v + Delta C_p $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma di forzamento con assi $|F_p|, |F_v|$ in ordinata e $u$ in ascissa. Sono tracciate la retta crescente della vite ($u_v$) e la retta decrescente del pezzo ($u_p$) la cui somma alla base definisce l'interferenza $i$, con intersezione iniziale a $|F_p| = |F_v|$. A destra dell'intersezione, in corrispondenza dello spostamento $Delta u$, è inserito il segmento verticale di lunghezza $C = Delta C_v + Delta C_p$ tra il punto $F'_v$ sulla caratteristica della vite (quadrato rosso) e il punto $F'_p$ sulla caratteristica del pezzo (triangolo blu)]])
+$ F'_v = |F_v| + Delta C_v, quad quad F'_p = |F_p| - Delta C_p, quad quad C = Delta C_v + Delta C_p $],[#canvas(length: 1cm, {
+  import draw: *
+  line((0, 0), (0, 5.2), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 0), (8.0, 0), mark: (end: ">"), stroke: 0.75pt)
+
+  line((0, 0), (3.6, 3.744), stroke: 1.2pt)
+  line((1.4, 3.48), (5.75, 0), stroke: 1.2pt)
+  line((3.25, 2.0), (3.25, 3.38), stroke: 1.5pt)
+
+  line((0, 3.38), (5.3, 3.38), stroke: (dash: "dashed", thickness: 0.55pt))
+  line((0, 2.6), (4.35, 2.6), stroke: (dash: "dashed", thickness: 0.55pt))
+  line((0, 2.0), (5.3, 2.0), stroke: (dash: "dashed", thickness: 0.55pt))
+
+  line((0, 0), (0, -1.8), stroke: 0.55pt)
+  line((2.5, 3.2), (2.5, -1.15), stroke: 0.55pt)
+  line((3.25, 2.0), (3.25, -0.75), stroke: 0.55pt)
+  line((5.75, 0), (5.75, -1.8), stroke: 0.55pt)
+
+  line((3.9, 2.6), (3.9, 3.38), mark: (start: ">", end: ">"), stroke: 0.65pt)
+  line((3.9, 2.0), (3.9, 2.6), mark: (start: ">", end: ">"), stroke: 0.65pt)
+  line((5.1, 2.0), (5.1, 3.38), mark: (start: ">", end: ">"), stroke: 0.65pt)
+
+  line((2.5, -0.6), (3.25, -0.6), mark: (start: ">", end: ">"), stroke: 0.65pt)
+  line((0, -1.0), (2.5, -1.0), mark: (start: ">", end: ">"), stroke: 0.65pt)
+  line((2.5, -1.0), (5.75, -1.0), mark: (start: ">", end: ">"), stroke: 0.65pt)
+  line((0, -1.6), (5.75, -1.6), mark: (start: ">", end: ">"), stroke: 0.65pt)
+
+  rect((3.14, 3.27), (3.36, 3.49), fill: red, stroke: none)
+  line((3.25, 2.14), (3.12, 1.91), (3.38, 1.91), close: true, fill: rgb("#2040e0"), stroke: none)
+
+  content((-1.0, 5.5), text(size: 10pt, fill: rgb("#2020b0"))[_Diagramma di forzamento_], anchor: "west")
+
+  content((-0.2, 4.75), text(size: 8.5pt)[$|F_p|$], anchor: "east")
+  content((-0.2, 4.2), text(size: 8.5pt)[$|F_v|$], anchor: "east")
+  content((-0.2, 3.38), text(size: 8.5pt)[$F'_v$], anchor: "east")
+  content((-0.2, 2.6), text(size: 8.5pt)[$|F_p| = |F_v|$], anchor: "east")
+  content((-0.2, 2.0), text(size: 8.5pt)[$F'_p$], anchor: "east")
+
+  content((4.02, 2.99), text(size: 8pt)[$Delta C_v$], anchor: "west")
+  content((4.02, 2.3), text(size: 8pt)[$Delta C_p$], anchor: "west")
+  content((5.22, 2.69), text(size: 8.5pt)[$C$], anchor: "west")
+
+  content((2.875, -0.48), text(size: 8pt)[$Delta u$], anchor: "south")
+  content((1.25, -0.88), text(size: 8pt)[$u_v$], anchor: "south")
+  content((4.125, -0.88), text(size: 8pt)[$u_p$], anchor: "south")
+  content((2.875, -1.48), text(size: 8.5pt)[$i$], anchor: "south")
+  content((7.3, -0.35), text(size: 8.5pt)[$u$], anchor: "north")
+
+  content((5.2, 5.25), text(size: 8.5pt)[$F'_v = |F_v| + Delta C_v$], anchor: "west")
+  content((5.2, 4.6), text(size: 8.5pt)[$F'_p = |F_p| - Delta C_p$], anchor: "west")
+  content((5.2, 3.95), text(size: 8.5pt)[$C = Delta C_v + Delta C_p$], anchor: "west")
+})])
 
 #grid(
   columns: (1fr, 1fr),
