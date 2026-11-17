@@ -15,14 +15,14 @@
 )
 #set heading(numbering: "1.")
 
-== Viti e Bulloni (Collegamenti filettati) – Serraggio
+= Viti e Bulloni (Collegamenti filettati) – Serraggio
 === Introduzione ai collegamenti filettati
 Tra gli elementi di base della costruzione delle macchine rivestono un ruolo fondamentale i collegamenti filettati, rappresentati principalmente da viti, bulloni e prigionieri. La loro utilità progettuale risiede nel fatto che realizzano un collegamento smontabile, ossia una giunzione che può essere aperta e chiusa ripetutamente. Ciò garantisce un facile accesso alle parti interne della macchina, risultando indispensabile per operazioni di diagnosi, verifica delle condizioni di usura o di affaticamento dei componenti e, più in generale, per gli interventi di manutenzione.
 
 Rispetto ad altri metodi di giunzione come i collegamenti saldati, i collegamenti filettati permettono di unire le parti in tempi notevolmente rapidi e senza dover ricorrere a processi tecnologici complessi; inoltre, svitando la vite o il bullone è possibile disgiungere i componenti senza dover distruggere alcun elemento fisso (come accadrebbe dovendo rompere un cordone di saldatura).
 
 
-=== Tipologie di viti e normative delle filettature
+== Tipologie di viti e normative delle filettature
 Nella letteratura tecnica si distinguono due grandi categorie di viti:
 - #strong[Viti di manovra:] sfruttano il principio dell'elica per trasmettere il moto, trasformando la rotazione della vite in uno spostamento traslazionale lungo una guida. Pur condividendo la geometria locale del filetto con le viti di collegamento, il loro dimensionamento è più affine a quello dei cuscinetti, poiché il funzionamento e il danneggiamento sono governati principalmente dallo scorrimento o dal rotolamento (come nelle viti a ricircolo di sfere, in cui l'elica funge da pista per le sfere), coinvolgendo trattamenti superficiali e materiali specifici per queste condizioni d'esercizio.
 - #strong[Viti di collegamento (smontabile):] impiegate per mantenere serrate due o più parti meccaniche insieme.
@@ -39,7 +39,7 @@ Le principali tipologie di filettature normalizzate per i collegamenti (con rife
 
 Nel funzionamento generale di un bullone di collegamento, l'applicazione del momento di serraggio genera una forza di interazione tra le parti serrate, inducendo uno stato di trazione nel fusto della vite e di compressione nei pezzi. In esercizio, su questa configurazione precaricata agiscono le forze esterne di lavoro sulla macchina, e il flusso delle tensioni si trasferisce dal fusto della vite ai filetti del dado o della madrevite. Tale distribuzione del carico sui filetti non è uniforme: il flusso di forza si concentra maggiormente nei primi filetti in presa (tipicamente tra il secondo, il terzo e il quarto filetto della serie), rendendo questa zona la più critica ai fini della resistenza.
 
-=== Geometria della filettatura metrica ISO a profilo triangolare
+== Geometria della filettatura metrica ISO a profilo triangolare
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
