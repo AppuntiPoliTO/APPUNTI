@@ -313,7 +313,7 @@ In un diagramma logaritmico ($ln r_f$ in funzione di $ln t$), la relazione rappr
 
 == Coefficiente di resistenza aerodinamica
 
-Applichiamo il teorema $Pi$ al flusso esterno stazionario attorno a un corpo circolare (sfera o cilindro indefinito) di diametro $D$, investito da una corrente uniforme di velocità $U_infinity$ diretta lungo il versore $hat(i)$, in un fluido newtoniano incomprimibile di densità $rho$ e viscosità dinamica $mu$. La forza di resistenza aerodinamica (*drag*) è la proiezione della forza totale $arrow(F)$ nella direzione della corrente: $F_D = arrow(F) dot hat(i)$ (@fig:drag).
+Applichiamo il teorema $Pi$ al flusso esterno stazionario attorno a un corpo circolare (sfera o cilindro indefinito) di diametro $D$, investito da una corrente uniforme di velocità $U_infinity$ diretta lungo il versore $hat(i)$, in un fluido newtoniano incomprimibile di densità $rho$ e viscosità dinamica $mu$. La forza di resistenza aerodinamica (*drag*) è la proiezione della forza totale $arrow(F)$ nella direzione della corrente: $F_D = arrow(F) dot hat(i)$.
 
 #block(breakable: false)[
   #grid(
@@ -330,34 +330,27 @@ Applichiamo il teorema $Pi$ al flusso esterno stazionario attorno a un corpo cir
         [U_infinity] = L / T, quad [rho] = M / L^3, quad [mu] = M / (L T), quad [D] = L
       $
     ],
-    [
-      #figure(
-        box(width: 16.5em, height: 9.0em)[
-          #let h-arrow(x, y, len, paint: luma(60), thickness: 0.85pt, head: 0.42em) = {
-            place(top + left, dx: x, dy: y, line(start: (0pt, 0pt), end: (len - head + 0.05em, 0pt), stroke: thickness + paint))
-            place(top + left, dx: x + len - head, dy: y - head * 0.45, polygon(fill: paint, (0pt, 0pt), (head, head * 0.45), (0pt, head * 0.9)))
-          }
-          #place(top + left, dx: 0.6em, dy: 2.0em)[$U_infinity$]
-          #place(top + left, dx: 0.6em, dy: 7.0em)[$rho, mu$]
-          #for y in (3.4em, 4.8em, 6.2em) {
-            h-arrow(0.6em, y, 3.5em, paint: rgb("#991b1b"), thickness: 0.8pt)
-          }
-          #place(top + left, dx: 5.6em, dy: 3.2em, circle(radius: 1.6em, fill: luma(235), stroke: 1pt + black))
-          #place(top + left, dx: 5.6em, dy: 7.2em, line(start: (0pt, 0pt), end: (3.2em, 0pt), stroke: 0.7pt + luma(80)))
-          #place(top + left, dx: 5.6em, dy: 7.0em, line(start: (0pt, 0pt), end: (0pt, 0.4em), stroke: 0.7pt + luma(80)))
-          #place(top + left, dx: 8.8em, dy: 7.0em, line(start: (0pt, 0pt), end: (0pt, 0.4em), stroke: 0.7pt + luma(80)))
-          #place(top + left, dx: 6.85em, dy: 7.55em)[$D$]
-          #place(top + left, dx: 7.2em, dy: 2.31em, line(start: (0pt, 2.49em), end: (5.75em, 0pt), stroke: 1.1pt + black))
-          #place(top + left, dx: 12.71em, dy: 2.20em, polygon(fill: black, (0.49em, 0em), (0.16em, 0.36em), (0pt, 0em)))
-          #place(top + left, dx: 12.45em, dy: 0.75em)[$arrow(F)$]
-          #place(top + left, dx: 13.2em, dy: 2.2em, line(start: (0pt, 0pt), end: (0pt, 2.6em), stroke: (paint: luma(120), thickness: 0.7pt, dash: "dashed")))
-          #h-arrow(7.2em, 4.8em, 6.0em, paint: rgb("#1d4ed8"), thickness: 1.2pt, head: 0.45em)
-          #place(top + left, dx: 10.2em, dy: 5.15em)[$F_D$]
-          #h-arrow(11.3em, 7.4em, 1.9em, paint: luma(50), thickness: 0.85pt, head: 0.36em)
-          #place(top + left, dx: 12.0em, dy: 7.75em)[$hat(i)$]
-        ],
-        caption: [Definizione della forza di resistenza $F_D$.],
-      ) <fig:drag>
+    [#canvas(length: 1cm, {
+  import draw: *
+  circle((3.8, 0.0), radius: 0.9, fill: luma(235), stroke: none)
+  circle((3.8, 0.0), radius: 0.9, stroke: 1pt)
+  line((0.0, 0.8), (2.0, 0.8), mark: (end: ">"), stroke: (paint: rgb("#991b1b"), thickness: 0.85pt))
+  line((0.0, 0.0), (2.0, 0.0), mark: (end: ">"), stroke: (paint: rgb("#991b1b"), thickness: 0.85pt))
+  line((0.0, -0.8), (2.0, -0.8), mark: (end: ">"), stroke: (paint: rgb("#991b1b"), thickness: 0.85pt))
+  line((2.9, -1.35), (4.7, -1.35), stroke: (paint: luma(80), thickness: 0.65pt))
+  line((2.9, -1.48), (2.9, -1.22), stroke: (paint: luma(80), thickness: 0.65pt))
+  line((4.7, -1.48), (4.7, -1.22), stroke: (paint: luma(80), thickness: 0.65pt))
+  line((7.0, 1.45), (7.0, 0.0), stroke: (paint: luma(120), thickness: 0.7pt, dash: "dashed"))
+  line((3.8, 0.0), (7.0, 1.45), mark: (end: ">"), stroke: (paint: black, thickness: 1.1pt))
+  line((3.8, 0.0), (7.0, 0.0), mark: (end: ">"), stroke: (paint: rgb("#1d4ed8"), thickness: 1.2pt))
+  line((5.9, -1.35), (7.0, -1.35), mark: (end: ">"), stroke: (paint: luma(50), thickness: 0.85pt))
+  content((0.0, 1.05), text(size: 10pt)[$U_infinity$], anchor: "south-west")
+  content((0.0, -1.05), text(size: 10pt)[$rho, mu$], anchor: "north-west")
+  content((3.8, -1.5), text(size: 10pt)[$D$], anchor: "north")
+  content((6.85, 1.55), text(size: 10pt)[$arrow(F)$], anchor: "south")
+  content((5.4, -0.15), text(size: 10pt)[$F_D$], anchor: "north")
+  content((6.45, -1.5), text(size: 10pt)[$hat(i)$], anchor: "north")
+})
     ],
   )
 ]
