@@ -448,7 +448,7 @@ dove $arrow(G) = integral rho arrow(g) dif V$ rappresenta la forza peso del volu
 
 #block(breakable: false, width: 100%)[
   #grid(
-    columns: (1.4fr, 0.6fr),
+    columns: (1.3fr, 0.7fr),
     column-gutter: 1.3em,
     align: (left + horizon, center + horizon),
     [
