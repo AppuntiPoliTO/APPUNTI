@@ -402,7 +402,7 @@ $ A_p = frac(pi, 4)[(d_(e t) + 0.1 dot.op L_p^"*")^2 - d_f^2] $],[#include "figs
 
 Dall'espressione $Delta C_v = C frac(delta_p, delta_v + delta_p)$ risulta che, a parità di carico esterno $C$, la quota parte di carico che grava sulla vite diminuisce all'aumentare della deformabilità $delta_v$ della vite stessa (mentre $Delta C_p$ aumenta). Ciò è particolarmente vantaggioso poiché la vite ha sezione minore ed è sollecitata a trazione, risultando più critica (specie a fatica) rispetto alle parti serrate in compressione. Poiché $delta_v = L / (E A)$, per incrementare $delta_v$ si può agire aumentando la lunghezza $L$ a numeratore oppure riducendo la sezione $A$ a denominatore:
 
-1. #grid(
+#grid(
   columns: (1fr, 1fr),
   rows: 2,
   column-gutter: 1em,
@@ -448,7 +448,7 @@ Dall'espressione $Delta C_v = C frac(delta_p, delta_v + delta_p)$ risulta che, a
 
 
 
-2. #grid(
+#grid(
   columns: (1fr, 1fr),
   rows:2,
   column-gutter: 1em,
