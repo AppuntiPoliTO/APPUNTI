@@ -37,7 +37,6 @@ Passando dai flussi interni a quelli esterni attorno a un corpo circolare (una s
 
 Consideriamo il campo di moto irrotazionale stazionario attorno a un cilindro circolare indefinito (o a una sfera), trascurando le variazioni di quota ($chi$ trascurabile), per cui vale ovunque $1 slash 2 thin rho u^2 + p = "cost"$:
 
-#block(breakable: false)[
   #grid(
     columns: (1.28fr, 0.72fr),
     column-gutter: 0.9em,
@@ -52,7 +51,7 @@ Consideriamo il campo di moto irrotazionale stazionario attorno a un cilindro ci
       #include "../figs/cap9-fig01.typ"
     ],
   )
-]
+
 
 #nota[
   *Paradosso di D'Alembert* \
