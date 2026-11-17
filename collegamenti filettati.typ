@@ -324,122 +324,91 @@ In un dado convenzionale, il primo filetto in presa sopporta circa il $35\%$ del
 
   // =========================================================================
   // PANNELLO 1 (IN ALTO): FLUSSO DELLE LINEE DI FORZA TRA VITE E DADO A GOLE
+  // Centrato orizzontalmente rispetto ai pannelli 2 e 3 (asse centrale x = 4.30)
   // =========================================================================
 
   // Elemento collegato (superiore)
-  rect((3.3, 5.15), (6.4, 6.05), fill: luma(248), stroke: 1pt + black)
-  content((4.85, 5.75), text(size: 8.5pt)[Elemento collegato], anchor: "center")
+  rect((4.15, 5.15), (7.25, 6.05), fill: luma(248), stroke: 1pt + black)
+  content((5.70, 5.75), text(size: 8.5pt)[Elemento collegato], anchor: "center")
 
   // Corpo della Vite (sinistra)
-  // I denti della vite sporgono verso DESTRA (da x = 2.50 a x = 3.10):
-  // - Fondi della vite (a sinistra): x = 2.50
-  // - Creste della vite (a destra):  x = 3.10
-  // Dente 1 (basso):   fianco inf (2.50,0.95)->(3.10,1.25), cresta [1.25..1.45], fianco sup (3.10,1.45)->(2.50,1.75)
-  // Dente 2 (medio):   fianco inf (2.50,2.15)->(3.10,2.45), cresta [2.45..2.65], fianco sup (3.10,2.65)->(2.50,2.95)
-  // Dente 3 (alto):    fianco inf (2.50,3.35)->(3.10,3.65), cresta [3.65..3.85], fianco sup (3.10,3.85)->(2.50,4.15)
-  // Dente 4 (fuori):   fianco inf (2.50,4.55)->(3.10,4.85), cresta [4.85..5.05], fianco sup (3.10,5.05)->(2.50,5.35)
   line(
-    (0.50, 0.20), (3.10, 0.20),
-    (2.50, 0.50), (2.50, 0.95),
-    (3.10, 1.25), (3.10, 1.45), (2.50, 1.75),
-    (2.50, 2.15),
-    (3.10, 2.45), (3.10, 2.65), (2.50, 2.95),
-    (2.50, 3.35),
-    (3.10, 3.65), (3.10, 3.85), (2.50, 4.15),
-    (2.50, 4.55),
-    (3.10, 4.85), (3.10, 5.05), (2.50, 5.35),
-    (2.15, 5.42), (1.80, 5.30), (1.45, 5.40), (1.10, 5.30), (0.80, 5.38), (0.50, 5.32),
+    (1.35, 0.20), (3.95, 0.20),
+    (3.35, 0.50), (3.35, 0.95),
+    (3.95, 1.25), (3.95, 1.45), (3.35, 1.75),
+    (3.35, 2.15),
+    (3.95, 2.45), (3.95, 2.65), (3.35, 2.95),
+    (3.35, 3.35),
+    (3.95, 3.65), (3.95, 3.85), (3.35, 4.15),
+    (3.35, 4.55),
+    (3.95, 4.85), (3.95, 5.05), (3.35, 5.35),
+    (3.00, 5.42), (2.65, 5.30), (2.30, 5.40), (1.95, 5.30), (1.65, 5.38), (1.35, 5.32),
     close: true,
     fill: luma(246),
     stroke: 1pt + black
   )
 
   // Corpo del Dado con gola di scarico (destra, ombreggiato)
-  // I denti del dado sporgono verso SINISTRA (da x = 3.16 a x = 2.56) ed entrano nelle cave della vite.
-  // Essendo la vite tirata verso l'alto e il dado trattenuto in alto dall'elemento collegato,
-  // il contatto avviene sui FIANCHI SUPERIORI dei denti della vite (inclinati da (2.50, y_alto) in alto-sx
-  // a (3.10, y_basso) in basso-dx), mentre sotto i denti della vite c'è un leggero gioco:
-  // - Contatto 3 (alto):  segmento (2.53, 4.14) -- (3.13, 3.84)
-  // - Contatto 2 (medio): segmento (2.53, 2.94) -- (3.13, 2.64)
-  // - Contatto 1 (basso): segmento (2.53, 1.74) -- (3.13, 1.44)
   line(
-    (2.53, 4.45), (3.65, 4.45), (4.05, 1.95),
-    (4.12, 1.80), (4.22, 1.80), (4.30, 1.95),
-    (4.30, 5.15), (5.55, 5.15),
-    (5.68, 5.07), (5.72, 4.95),
-    (5.72, 0.80), (5.68, 0.68), (5.55, 0.60),
-    (2.53, 0.60), (2.53, 0.85),
-    (3.16, 1.17), (3.16, 1.44),
-    (2.53, 1.74), (2.53, 2.05),
-    (3.16, 2.37), (3.16, 2.64),
-    (2.53, 2.94), (2.53, 3.25),
-    (3.16, 3.57), (3.16, 3.84),
-    (2.53, 4.14), (2.53, 4.45),
+    (3.38, 4.45), (4.50, 4.45), (4.90, 1.95),
+    (4.97, 1.80), (5.07, 1.80), (5.15, 1.95),
+    (5.15, 5.15), (6.40, 5.15),
+    (6.53, 5.07), (6.57, 4.95),
+    (6.57, 0.80), (6.53, 0.68), (6.40, 0.60),
+    (3.38, 0.60), (3.38, 0.85),
+    (4.01, 1.17), (4.01, 1.44),
+    (3.38, 1.74), (3.38, 2.05),
+    (4.01, 2.37), (4.01, 2.64),
+    (3.38, 2.94), (3.38, 3.25),
+    (4.01, 3.57), (4.01, 3.84),
+    (3.38, 4.14), (3.38, 4.45),
     close: true,
     fill: luma(195),
     stroke: 1pt + black
   )
 
   // Frecce d'ingresso dall'elemento collegato nel colletto esterno del dado
-  line((4.60, 5.48), (4.60, 5.05), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
-  line((4.90, 5.48), (4.90, 5.05), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
-  line((5.20, 5.48), (5.20, 5.05), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+  line((5.45, 5.48), (5.45, 5.05), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+  line((5.75, 5.48), (5.75, 5.05), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+  line((6.05, 5.48), (6.05, 5.05), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
 
   // --- PERCORSO 1 (interno -> dente superiore del dado -> fianco sup. Dente 3 della vite) ---
-  // Scende nel colletto esterno a x = 4.60
-  line((4.60, 5.12), (4.60, 2.10), stroke: 1.25pt + rgb("#1f4e78"))
-  // Inversione a U stretta sotto la gola (y = 1.80)
-  bezier((4.60, 2.10), (3.85, 2.15), (4.60, 1.42), (3.97, 1.42), stroke: 1.25pt + rgb("#1f4e78"))
-  // Risale lungo il labbro interno inclinato del dado fino alla radice del dente superiore
-  line((3.85, 2.15), (3.42, 4.05), stroke: 1.25pt + rgb("#1f4e78"))
-  // Curva dentro il dente superiore del dado (y ~ 4.25) e scende verso sx-basso
-  // attraversando ORTOGONALMENTE il fianco di contatto (2.53,4.14)-(3.13,3.84) nel punto medio (2.83, 3.99)
-  bezier((3.42, 4.05), (2.83, 3.99), (3.32, 4.35), (3.00, 4.25), stroke: 1.25pt + rgb("#1f4e78"))
-  // Entra nel Dente 3 della vite (centro y=3.75), fa la pancia verso il basso e risale a x = 2.15
-  bezier((2.83, 3.99), (2.15, 4.05), (2.63, 3.55), (2.15, 3.55), stroke: 1.25pt + rgb("#1f4e78"))
-  // Risale verticalmente nel corpo della vite ed esce in alto
-  line((2.15, 4.05), (2.15, 5.75), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+  line((5.45, 5.12), (5.45, 2.10), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((5.45, 2.10), (4.70, 2.15), (5.45, 1.42), (4.82, 1.42), stroke: 1.25pt + rgb("#1f4e78"))
+  line((4.70, 2.15), (4.27, 4.05), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((4.27, 4.05), (3.68, 3.99), (4.17, 4.35), (3.85, 4.25), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((3.68, 3.99), (3.00, 4.05), (3.48, 3.55), (3.00, 3.55), stroke: 1.25pt + rgb("#1f4e78"))
+  line((3.00, 4.05), (3.00, 5.75), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
 
   // --- PERCORSO 2 (medio -> dente centrale del dado -> fianco sup. Dente 2 della vite) ---
-  // Scende nel colletto esterno a x = 4.90
-  line((4.90, 5.12), (4.90, 2.00), stroke: 1.25pt + rgb("#1f4e78"))
-  // Inversione a U media sotto la gola
-  bezier((4.90, 2.00), (3.62, 2.05), (4.90, 1.08), (3.80, 1.15), stroke: 1.25pt + rgb("#1f4e78"))
-  // Risale nel labbro interno fino alla radice del dente centrale del dado (y ~ 3.00),
-  // entra nel dente del dado e attraversa ORTOGONALMENTE il fianco (2.53,2.94)-(3.13,2.64) in (2.83, 2.79)
-  bezier((3.62, 2.05), (2.83, 2.79), (3.40, 3.12), (3.03, 3.12), stroke: 1.25pt + rgb("#1f4e78"))
-  // Entra nel Dente 2 della vite (centro y=2.55), fa la pancia verso il basso e si raccorda a x = 1.65
-  bezier((2.83, 2.79), (1.65, 2.90), (2.55, 2.20), (1.65, 2.20), stroke: 1.25pt + rgb("#1f4e78"))
-  // Risale verticalmente nel corpo della vite ed esce in alto
-  line((1.65, 2.90), (1.65, 5.75), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+  line((5.75, 5.12), (5.75, 2.00), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((5.75, 2.00), (4.47, 2.05), (5.75, 1.08), (4.65, 1.15), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((4.47, 2.05), (3.68, 2.79), (4.25, 3.12), (3.88, 3.12), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((3.68, 2.79), (2.50, 2.90), (3.40, 2.20), (2.50, 2.20), stroke: 1.25pt + rgb("#1f4e78"))
+  line((2.50, 2.90), (2.50, 5.75), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
 
   // --- PERCORSO 3 (esterno -> dente inferiore del dado -> fianco sup. Dente 1 della vite) ---
-  // Scende nel colletto esterno a x = 5.20
-  line((5.20, 5.12), (5.20, 1.90), stroke: 1.25pt + rgb("#1f4e78"))
-  // Inversione a U ampia nella base del dado
-  bezier((5.20, 1.90), (3.55, 1.65), (5.20, 0.72), (3.95, 0.85), stroke: 1.25pt + rgb("#1f4e78"))
-  // Entra nel dente inferiore del dado (tra y=1.74 e y=2.05) e attraversa ORTOGONALMENTE
-  // il fianco di contatto (2.53,1.74)-(3.13,1.44) nel punto medio (2.83, 1.59)
-  bezier((3.55, 1.65), (2.83, 1.59), (3.30, 1.98), (3.03, 1.90), stroke: 1.25pt + rgb("#1f4e78"))
-  // Entra nel Dente 1 della vite (centro y=1.35), ampia curva in basso e raccordo a x = 1.15
-  bezier((2.83, 1.59), (1.15, 1.80), (2.48, 0.78), (1.15, 0.78), stroke: 1.25pt + rgb("#1f4e78"))
-  // Risale verticalmente nel corpo della vite ed esce in alto
-  line((1.15, 1.80), (1.15, 5.75), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
+  line((6.05, 5.12), (6.05, 1.90), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((6.05, 1.90), (4.40, 1.65), (6.05, 0.72), (4.80, 0.85), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((4.40, 1.65), (3.68, 1.59), (4.15, 1.98), (3.88, 1.90), stroke: 1.25pt + rgb("#1f4e78"))
+  bezier((3.68, 1.59), (2.00, 1.80), (3.33, 0.78), (2.00, 0.78), stroke: 1.25pt + rgb("#1f4e78"))
+  line((2.00, 1.80), (2.00, 5.75), stroke: 1.25pt + rgb("#1f4e78"), mark: (end: ">"))
 
   // Etichette Vite e Dado con cartiglio pulito
-  rect((1.05, 0.32), (1.95, 0.68), fill: white, stroke: 0.4pt + luma(160))
-  content((1.50, 0.50), text(size: 8.5pt)[*Vite*], anchor: "center")
+  rect((1.90, 0.32), (2.80, 0.68), fill: white, stroke: 0.4pt + luma(160))
+  content((2.35, 0.50), text(size: 8.5pt)[*Vite*], anchor: "center")
 
-  rect((4.05, 0.75), (4.95, 1.12), fill: white, stroke: 0.4pt + luma(140))
-  content((4.50, 0.93), text(size: 8.5pt)[*Dado*], anchor: "center")
+  rect((4.90, 0.75), (5.80, 1.12), fill: white, stroke: 0.4pt + luma(140))
+  content((5.35, 0.93), text(size: 8.5pt)[*Dado*], anchor: "center")
 
 
   // =========================================================================
   // PANNELLO 2 (AL CENTRO): DADO STANDARD (ACCIAIO / ACCIAIO) E GRAFICO
+  // Ingombro laterale totale: da x ~ 0.65 a x = 7.95 (centro geometrico x = 4.30)
   // =========================================================================
 
-  // Titolo di sezione / Materiali
-  content((4.5, -0.45), text(size: 9pt)[*a) Dado standard* (Vite: acciaio — Dado: acciaio)], anchor: "center")
+  // Titolo di sezione / Materiali (centrato a x = 4.30)
+  content((4.30, -0.45), text(size: 9pt)[*a) Dado standard* (Vite: acciaio — Dado: acciaio)], anchor: "center")
 
   // --- Grafico distribuzione del carico (sinistra) ---
   rect((2.2, -3.6), (5.0, -2.1), fill: luma(250), stroke: 0.9pt + black)
@@ -575,10 +544,11 @@ In un dado convenzionale, il primo filetto in presa sopporta circa il $35\%$ del
 
   // =========================================================================
   // PANNELLO 3 (IN BASSO): DADO CON GOLA DI SCARICO (TRAZIONE) E GRAFICO
+  // Ingombro laterale totale: da x ~ 0.65 a x = 7.95 (centro geometrico x = 4.30)
   // =========================================================================
 
-  // Titolo di sezione
-  content((4.5, -6.15), text(size: 9pt)[*b) Dado con gola di scarico* (distribuzione uniforme del carico)], anchor: "center")
+  // Titolo di sezione (centrato a x = 4.30)
+  content((4.30, -6.15), text(size: 9pt)[*b) Dado con gola di scarico* (distribuzione uniforme del carico)], anchor: "center")
 
   // --- Grafico distribuzione del carico (sinistra) ---
   rect((2.2, -9.8), (5.0, -7.4), fill: luma(250), stroke: 0.9pt + black)
