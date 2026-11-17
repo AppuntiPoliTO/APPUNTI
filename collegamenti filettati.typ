@@ -940,7 +940,7 @@ $ Delta C_v = C frac(delta_p, delta_v + delta_p), quad quad Delta C_p = C frac(d
   line((5.05, -1.40), (6.65, -1.40), mark: (start: ">", end: ">"), stroke: 0.65pt)
   line((0.75, -2.15), (6.65, -2.15), mark: (start: ">", end: ">"), stroke: 0.65pt)
 
-  content((-0.05, -1.25), text(size: 8.5pt)[$l_1, A_1$], anchor: "south-east")
+  content((0.4, -1.35), text(size: 8.5pt)[$l_1, A_1$], anchor: "south-east")
   content((3.20, -1.30), text(size: 8.5pt)[$l_2, A_2$], anchor: "south")
   content((5.85, -1.30), text(size: 8.5pt)[$l_3, A_3$], anchor: "south")
   content((3.70, -2.05), text(size: 9pt)[$L_p$], anchor: "south")
