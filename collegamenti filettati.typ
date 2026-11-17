@@ -237,6 +237,7 @@ Infine, assumendo in prima approssimazione per piccoli angoli che $tan(alpha_m +
 $ M_T = frac(F_v, 2) (d_m dot.op tan alpha_m + d_m dot.op tan phi.alt' + d_t dot.op tan phi.alt_s) = frac(F_v, 2) (frac(p, pi) + d_m dot.op frac(tan phi.alt, cos alpha) + d_t dot.op tan phi.alt_s) $
 
 // NOTA: \div convertito con div (modulo sym)
+#pagebreak()
 == Viti e bulloni (collegamenti filettati) – Resistenza
 
 === Sollecitazioni e resistenza del fusto della vite
