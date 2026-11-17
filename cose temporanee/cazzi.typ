@@ -203,7 +203,7 @@ Nei fluidi viscosi reali, l'aderenza a parete genera vorticità nello strato lim
 *5. Regime ad alto $"Re"$ (scia turbolenta):* crescendo ulteriormente $"Re"$, alla frequenza principale si affiancano molteplici frequenze; accanto ai vortici di grande scala (dell'ordine di $D$) si formano numerosi vortici più piccoli, frastagliati e caotici, fino a rendere la scia un *campo di moto turbolento*.
 
 #nota-esame[
-  - *Basso $"Re"$ vs campo a potenziale:* per $"Re" <= 1$ la somiglianza delle linee di corrente con il moto a potenziale è solo apparente; nel flusso reale la viscosità è determinante e il campo è rotazionale.
+  - *Basso $"Re"$ NON è un campo a potenziale:* per $"Re" <= 1$ la somiglianza delle linee di corrente con il moto a potenziale è solo apparente; nel flusso reale la viscosità è determinante e il campo è rotazionale.
   - *Bolle di ricircolo ($"Re" tilde.op 2 div 40$):* le due bolle controrotanti rompono la simmetria monte-valle, ma il moto resta stazionario e laminare fino a $"Re" approx 40$.
   - *Transizione nei flussi esterni vs flussi interni:* diversamente dal moto in condotta (transizione dicotomica su tutta la sezione), attorno a un corpo la transizione avviene in modo *molto progressivo* con $"Re"$ e la turbolenza resta *confinata nella scia*, mentre la corrente esterna rimane regolare.
 ]
