@@ -1831,9 +1831,7 @@ Conoscendo l'evoluzione della "palla di fuoco" $r_f (t)$ con le foto, Taylor ha 
     $
   ],
   [
-    #image("immagini/8f76413d-40a2-4d00-94f5-9372a6e5c576-04_511_178_405_170.jpg", width: 70%)
-    #v(0.5em)
-    #image("immagini/8f76413d-40a2-4d00-94f5-9372a6e5c576-04_266_736_503_1265.jpg", width: 70%)
+    
   ]
 )
 #v(1em)
