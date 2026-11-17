@@ -360,7 +360,7 @@ Applichiamo il teorema $Pi$ al flusso esterno stazionario attorno a un corpo cir
           #place(top + left, dx: 12.0em, dy: 7.75em)[$hat(i)$]
         ],
         caption: [Definizione della forza di resistenza $F_D$.],
-      ) <fig:dragstealth
+      ) <fig:drag
     ],
   )
 ]
