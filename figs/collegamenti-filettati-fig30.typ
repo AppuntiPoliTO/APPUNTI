@@ -1,7 +1,7 @@
 // Figura estratta da collegamenti filettati.typ (riga 385) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1cm, {
+#canvas(length: 0.8cm, {
   import draw: *
 
 
