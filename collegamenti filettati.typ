@@ -313,7 +313,7 @@ Le classi normalizzate previste sono: $3.6 - 4.6 - 4.8 - 5.6 - 5.8 - 6.6 - 8.8 -
 === Resistenza dei filetti e distribuzione del carico sulle spire
 
 #grid(
-  columns: (1fr, 1fr),
+  columns: (1.2fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Le filettature unificate sono dimensionate in modo tale che la resistenza del filetto risulti superiore a quella del fusto; inoltre, all'interno dell'accoppiamento vite-madrevite, il filetto si trova sottoposto a un forte stato di compressione che tende a irrigidirlo. La sezione critica in cui si origina il cedimento è invece la sezione trasversale del fusto della vite, sia perché la sezione resistente è ridotta a quella del nocciolo, sia perché la gola del filetto agisce da intaglio producendo un'intensificazione locale delle tensioni. Per questi motivi, di regola i filetti non devono essere verificati.
 
