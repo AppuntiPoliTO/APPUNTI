@@ -894,7 +894,64 @@ Poiché il fusto della vite presenta generalmente tratti a sezione diversa all'i
 
 $ delta_v = frac(u_v, F_v) = frac(L_v, E_v dot.op A_v) = sum frac(l_(i, e f f i c a c e), E_v dot.op A_i) = frac(1, E_v) ( frac(l_1 + 0.4 dot.op d, A_1) + frac(l_2, A_2) + frac(l_3 + 0.4 dot.op d, A_3) ) $
 
-I termini aggiuntivi $0.4 dot.op d$ tengono conto della cedevolezza elastica localizzata nella testa della vite e nella zona impegnata del dado (poiché la deformazione non termina bruscamente in corrispondenza dei piani di sottotesta e sottodado): si estende pertanto idealmente la lunghezza efficace del primo e dell'ultimo tratto di una quantità pari al $40\%$ del diametro, mantenendo le rispettive aree $A_1$ e $A_3$. L'area $A_3$ del tratto filettato è valutata utilizzando il diametro medio $d_m$ ("area media"). La formula va adattata alla specifica geometria della vite impiegata.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema longitudinale di una vite con dado che serra il pacco di lunghezza $L_p$, con indicazione dei tre tratti assiali: tratto non filettato sottotesta di lunghezza $l_1$ e area $A_1$, tratto centrale alleggerito di lunghezza $l_2$ e area $A_2$, e tratto filettato fino all'appoggio del dado di lunghezza $l_3$ e area $A_3$]])
+I termini aggiuntivi $0.4 dot.op d$ tengono conto della cedevolezza elastica localizzata nella testa della vite e nella zona impegnata del dado (poiché la deformazione non termina bruscamente in corrispondenza dei piani di sottotesta e sottodado): si estende pertanto idealmente la lunghezza efficace del primo e dell'ultimo tratto di una quantità pari al $40\%$ del diametro, mantenendo le rispettive aree $A_1$ e $A_3$. L'area $A_3$ del tratto filettato è valutata utilizzando il diametro medio $d_m$ ("area media"). La formula va adattata alla specifica geometria della vite impiegata.],[#canvas(length: 1cm, {
+  import draw: *
+  line((0.18, 1.0), (0.75, 1.0), (0.75, -1.0), (0.18, -1.0), stroke: 1.1pt)
+  line((0.06, 0.50), (0.75, 0.50), stroke: 0.85pt)
+  line((0.06, -0.50), (0.75, -0.50), stroke: 0.85pt)
+  bezier((0.18, 1.0), (0.06, 0.50), (0.02, 1.0), (0.00, 0.72), stroke: 1.1pt)
+  bezier((0.06, 0.50), (0.06, -0.50), (-0.02, 0.25), (-0.02, -0.25), stroke: 1.1pt)
+  bezier((0.06, -0.50), (0.18, -1.0), (0.00, -0.72), (0.02, -1.0), stroke: 1.1pt)
+
+  line((0.75, 0.45), (1.35, 0.45), (1.35, -0.45), (0.75, -0.45), stroke: 1.1pt)
+  bezier((1.35, 0.45), (1.65, 0.25), (1.42, 0.28), (1.50, 0.25), stroke: 1.1pt)
+  bezier((1.35, -0.45), (1.65, -0.25), (1.42, -0.28), (1.50, -0.25), stroke: 1.1pt)
+
+  line((1.65, 0.25), (4.75, 0.25), stroke: 1.1pt)
+  line((1.65, -0.25), (4.75, -0.25), stroke: 1.1pt)
+
+  bezier((4.75, 0.25), (5.05, 0.45), (4.90, 0.25), (4.98, 0.28), stroke: 1.1pt)
+  bezier((4.75, -0.25), (5.05, -0.45), (4.90, -0.25), (4.98, -0.28), stroke: 1.1pt)
+  line((5.05, 0.45), (5.05, -0.45), stroke: 1.1pt)
+
+  line((5.05, 0.45), (6.65, 0.45), stroke: 1.1pt)
+  line((5.05, -0.45), (6.65, -0.45), stroke: 1.1pt)
+  line((5.05, 0.37), (6.65, 0.37), stroke: 0.6pt)
+  line((5.05, -0.37), (6.65, -0.37), stroke: 0.6pt)
+
+  line((6.78, 1.0), (7.27, 1.0), stroke: 1.1pt)
+  line((6.78, -1.0), (7.27, -1.0), stroke: 1.1pt)
+  line((6.70, 0.50), (7.35, 0.50), stroke: 0.85pt)
+  line((6.70, -0.50), (7.35, -0.50), stroke: 0.85pt)
+  bezier((6.78, 1.0), (6.70, 0.50), (6.66, 1.0), (6.65, 0.72), stroke: 1.1pt)
+  bezier((6.70, 0.50), (6.70, -0.50), (6.63, 0.25), (6.63, -0.25), stroke: 1.1pt)
+  bezier((6.70, -0.50), (6.78, -1.0), (6.65, -0.72), (6.66, -1.0), stroke: 1.1pt)
+  bezier((7.27, 1.0), (7.35, 0.50), (7.39, 1.0), (7.40, 0.72), stroke: 1.1pt)
+  bezier((7.35, 0.50), (7.35, -0.50), (7.42, 0.25), (7.42, -0.25), stroke: 1.1pt)
+  bezier((7.35, -0.50), (7.27, -1.0), (7.40, -0.72), (7.39, -1.0), stroke: 1.1pt)
+
+  line((7.40, 0.45), (8.15, 0.45), (8.30, 0.32), (8.30, -0.32), (8.15, -0.45), (7.40, -0.45), stroke: 1.1pt)
+  line((8.15, 0.45), (8.15, -0.45), stroke: 0.7pt)
+  line((7.40, 0.37), (8.15, 0.37), stroke: 0.6pt)
+  line((7.40, -0.37), (8.15, -0.37), stroke: 0.6pt)
+
+  line((-0.30, 0), (8.60, 0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+
+  line((0.75, -1.05), (0.75, -2.35), stroke: 0.55pt)
+  line((1.35, -0.50), (1.35, -1.60), stroke: 0.55pt)
+  line((5.05, -0.50), (5.05, -1.60), stroke: 0.55pt)
+  line((6.65, -0.50), (6.65, -2.35), stroke: 0.55pt)
+
+  line((0.05, -1.40), (0.75, -1.40), mark: (end: ">"), stroke: 0.65pt)
+  line((1.35, -1.40), (5.05, -1.40), mark: (start: ">", end: ">"), stroke: 0.65pt)
+  line((5.05, -1.40), (6.65, -1.40), mark: (start: ">", end: ">"), stroke: 0.65pt)
+  line((0.75, -2.15), (6.65, -2.15), mark: (start: ">", end: ">"), stroke: 0.65pt)
+
+  content((-0.05, -1.25), text(size: 8.5pt)[$l_1, A_1$], anchor: "south-east")
+  content((3.20, -1.30), text(size: 8.5pt)[$l_2, A_2$], anchor: "south")
+  content((5.85, -1.30), text(size: 8.5pt)[$l_3, A_3$], anchor: "south")
+  content((3.70, -2.05), text(size: 9pt)[$L_p$], anchor: "south")
+})])
 
 Per quanto riguarda i pezzi serrati, il calcolo esatto richiederebbe la conoscenza della distribuzione reale delle tensioni e deformazioni da schiacciamento. In prima approssimazione ci si riconduce a un cilindro cavo equivalente di area $A_p$ tale da produrre la stessa contrazione assiale del caso reale a parità di carico:
 
