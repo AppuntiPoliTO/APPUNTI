@@ -583,7 +583,7 @@ Se la verifica del carico minimo di serraggio non è soddisfatta, i possibili in
 - aumentare la deformabilità del pezzo (con attenzione, cercando un compromesso tra le esigenze di resistenza della vite e di funzionalità del giunto, valutabile graficamente sul diagramma di interferenza).
 - == Lezione 10: Viti e bulloni (collegamenti filettati) – Fatica e casi particolari
 
-==== Verifica a fatica della vite e diagramma di Haigh
+=== Verifica a fatica della vite e diagramma di Haigh
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -599,7 +599,7 @@ $ sigma_a lt.eq 0.9 sigma_D $
 
 Ad esempio, considerando una vite $M 30$ non rullata soggetta a una tensione media pari al $40\%$ dello snervamento ($sigma_m \/ R_(p 0.2) = 0.4$), si legge sulla curva inferiore un valore di $sigma_D tilde.eq 52.5 div 53 " MPa"$, rispetto al quale la tensione alternata $sigma_a$ deve mantenersi al di sotto del $90\%$.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Diagramma di Haigh per filettature classi 8.8 #sym.div 12.9 (da VDI 2230). Asse orizzontale $sigma_m \/ R_(p 0.2)$ da 0.1 a 0.9; asse verticale sinistro $sigma_D$ (MPa) da 40 a 80 per "Viti non rullate"; asse verticale destro $sigma_D$ (MPa) da 80 a 160 per "Viti rullate". Sono tracciate tre rette decrescenti etichettate dall'alto verso il basso: $M 4 div M 8$, $M 10 div M 16$, $M 18 div M 30$. In basso un riquadro rosso riporta: "La vite si considera verificata se $sigma_a lt.eq 0.9 sigma_D$".]])
 
-==== Determinazione dei cicli di carico sul diagramma di interferenza
+=== Determinazione dei cicli di carico sul diagramma di interferenza
 Per caratterizzare il ciclo di fatica agente sulla vite (elemento più critico rispetto alle parti serrate poiché presenta la sezione resistente più piccola e lavora a trazione anziché a compressione), si individuano le forze massima ($F_(v, m a x)$), minima ($F_(v, m i n)$), media ($F_(v, m)$) e alternata ($F_(v, a)$) direttamente dal diagramma di interferenza, in funzione dell'andamento nel tempo del carico esterno $C(t)$. Le tensioni alternata e media si calcolano quindi dividendo le rispettive forze per l'area resistente della filettatura $A_n$ (area di nocciolo o alla radice del filetto, a seconda della normativa tecnica adottata):
 
 $ sigma_a = frac(F_(v, a), A_n), quad sigma_m = frac(F_(v, m), A_n) $
@@ -640,7 +640,7 @@ $ F_(v, m a x) = F_(v, "lim") + Delta C_(m a x, v), quad F_(v, m i n) = F_(v, "l
 
 $ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Diagramma di interferenza per il Caso c) ($C_(m i n) lt.eq 0 lt.eq C_(m a x)$). Assi: ordinata $|F_p|, |F_v|$, ascissa $u$. Il segmento verticale $C_(m a x)$ si trova a destra del punto di equilibrio $F_(v, "lim")$ (estremo superiore sulla vite pari a $F_(v, m a x)$), mentre il segmento verticale $C_(m i n)$ si trova a sinistra del punto di equilibrio (estremo inferiore sulla vite pari a $F_(v, m i n)$). Sono quotate la salita $Delta C_(m a x, v)$ sopra $F_(v, "lim")$ e la discesa $Delta C_(m i n, v)$ sotto $F_(v, "lim")$. A destra la sinusoide $Delta C_v (t)$ oscilla attorno al livello medio $F_(v, m)$ tra $F_(v, m i n)$ e $F_(v, m a x)$ con semiampiezza $F_(v, a)$.]])
 
-==== Interventi per migliorare la resistenza a fatica
+=== Interventi per migliorare la resistenza a fatica
 Per ridurre l'incidenza del carico affaticante sul collegamento filettato è possibile intervenire attraverso le seguenti soluzioni progettuali:
 
 - utilizzare viti rullate a freddo (non a caldo);
@@ -652,7 +652,7 @@ L'impiego di viti alleggerite risulta particolarmente conveniente a fatica poich
 
 In ambito esclusivamente aeronautico si impiegano inoltre le viti #strong[MJ - ISO 3161 (1977)], caratterizzate da un profilo del filetto modificato per ridurre l'effetto di intaglio locale (prodotte esclusivamente mediante rullatura).
 
-==== Dispositivi antisvitamento e sistema dado-controdado
+=== Dispositivi antisvitamento e sistema dado-controdado
 In condizioni statiche lo svitamento spontaneo della vite è impedito se $alpha_m > phi.alt$; tuttavia, in esercizio, l'azione di sovraccarichi, vibrazioni e scosse può comunque innescare lo svitamento spontaneo.
 
 Esistono diversi dispositivi unificati contro lo svitamento:
@@ -675,7 +675,7 @@ Esistono diversi dispositivi unificati contro lo svitamento:
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nella pratica costruttiva si utilizzano spesso dado e controdado di altezza diversa: poiché il carico viene sopportato prevalentemente dal controdado (che lavora contro il dado esattamente come un dado singolo contro il pezzo, concentrando la pressione sui primi filetti), il controdado deve essere realizzato di altezza maggiore per rendere più uniforme la distribuzione del carico sui filetti. Il dado, invece, beneficia dell'inversione di carico indotta dal controdado e risulta meno sollecitato sui primi filetti, potendo quindi avere altezza minore.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Confronto costruttivo tra altezze di dado e controdado. A sinistra ("NO"): dado più alto/spesso accostato al pezzo e controdado più basso all'estremità. A destra ("SI"): dado più basso accostato al pezzo e controdado più alto all'estremità.]])
 
-==== Casi particolari: carico applicato non sottotesta
+=== Casi particolari: carico applicato non sottotesta
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -708,7 +708,7 @@ $ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, 
 - per la vite, la quota parte di carico assorbita si riduce rispetto al caso (A); pertanto, ai fini della resistenza della vite è sempre cautelativo assumere il carico come applicato al sottotesta (A);
 - per le parti serrate, invece, il carico minimo residuo $F_(p, m i n)$ scende drasticamente, aumentando in modo critico la possibilità di distacco tra le superfici ($F_(p, m i n) = 0$). In tale eventualità viene meno la tenuta o la forza di attrito tra le parti e l'intero carico esterno grava sulla vite, condizione assolutamente da evitare dal punto di vista funzionale.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Diagramma di interferenza comparativo tra configurazione (A) e (B). Assi: ordinata $|F_p|, |F_v|$, ascissa $u$. Dal punto di equilibrio $F_v$ partono due coppie di rette: in tratteggio le caratteristiche di "A: vite" e "A: pezzo", in linea continua le caratteristiche ruotate di "B: vite" (meno pendente) e "B: pezzo" (più pendente). Sono evidenziati due segmenti verticali di uguale lunghezza $C$: quello giallo relativo a "C (carico qui al sottotesta)" e quello rosso traslato più in basso relativo a "C (carico qui NON al sottotesta)", che mostra la riduzione di carico sulla vite ma l'abbassamento del punto inferiore sul pezzo verso $u = 0$.]])
 
-==== Casi particolari: elemento elastico tra i pezzi (flange con guarnizione)
+=== Casi particolari: elemento elastico tra i pezzi (flange con guarnizione)
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -721,7 +721,7 @@ $ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, 
 
 Sul diagramma di interferenza questo comportamento si traduce in una caratteristica poligonale (bilineare) per la parte: a partire dal punto di equilibrio $F_(v, "lim")$ verso destra si ha un primo tratto molto ripido (regime di contatto metallo-metallo), seguito da un cambio di pendenza oltre il quale la curva prosegue con inclinazione molto dolce (regime governato dalla sola guarnizione in seguito al distacco dei metalli). In esercizio è fondamentale dimensionare il collegamento affinché il carico esterno non porti il sistema oltre il punto di cambio di pendenza, evitando il distacco delle flange metalliche che causerebbe eccessiva cedevolezza e perdita di tenuta.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Rimedio per flangia bullonata con guarnizione e relativo diagramma di interferenza composito. In alto: sezione di una flangia bullonata con bullone passante e guarnizione (in verde) alloggiata in una cava interna, con le due superfici metalliche delle flange a contatto. In basso: diagramma di interferenza con assi $|F_p|, |F_v|$ e $i$; dal punto di equilibrio $F_(v, "lim")$ la caratteristica del pezzo scende inizialmente con pendenza elevata fino al livello indicato da $F_e$ e poi prosegue con pendenza molto ridotta fino all'asse $i$, mentre una freccia verticale a destra del gomito indica il carico $F_p$.]])
 
-==== Viti con carico trasversale
+=== Viti con carico trasversale
 Le viti non devono lavorare direttamente a taglio poiché, qualora si verifichi un movimento relativo tra i pezzi serrati, oltre alla sollecitazione di taglio insorge anche un'elevata sollecitazione di flessione sul fusto. Quando i collegamenti bullonati sono impiegati per prevenire movimenti reciproci trasversali dovuti a una forza tagliante $F_T$, si ricorre a tre possibili soluzioni costruttive:
 
 1. #strong[Viti passanti (collegamento ad attrito):]
