@@ -657,7 +657,7 @@ $ frac(Delta F_v, Delta i) = frac(F_v, i) = frac(F_v, F_v (delta_v + delta_p)) a
 
 #grid(
   columns: (1fr, 1fr),
-  column-gutter: 1em,
+  column-gutter: 2em,
   align: (left + horizon, center + horizon),[Il precarico minimo residuo prima dell'applicazione del carico esterno diventa pertanto $frac(F_(v, l i m), I) - Delta F_v$. Il triangolo esterno più grande viene impiegato per la verifica di resistenza statica della vite (condizione più gravosa per il materiale), mentre il triangolo interno più piccolo viene impiegato per la verifica di funzionalità / carico minimo di serraggio (condizione più sfavorevole per la tenuta e l'aderenza tra le parti).],[#canvas(length: 1cm, {
   import draw: *
   line((0, 0), (0, 5.1), mark: (end: ">"), stroke: 0.8pt)
