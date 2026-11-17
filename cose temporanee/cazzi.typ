@@ -191,7 +191,7 @@ Nei fluidi viscosi reali, l'aderenza a parete genera vorticità nello strato lim
   [
     #include "../figs/cap9-fig04.typ"
   ],
-  [
+  block(breakable: false)[
     *4. Regime $"Re" > 40$ ($"Re" tilde.op 40 div 50$, instabilità della scia):* \
     oltre $"Re" approx 40$, le bolle di ricircolo allungate diventano instabili e si staccano alternatamente a valle (*scia di von Kármán*). Pur con condizioni al contorno stazionarie, il campo di moto sviluppa autonomamente un'oscillazione periodica con una propria *frequenza caratteristica*: effetto diretto della *non linearità* del sistema (come una corda di violoncello mossa dall'archetto a $tilde.op 0.1$~Hz che vibra alla propria frequenza naturale di $440$~Hz).
   ],
