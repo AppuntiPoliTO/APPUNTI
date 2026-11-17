@@ -26,9 +26,7 @@
 #grid(
   columns: 2,
   gutter: 1em,
-  [Nel moto stazionario in condotta cilindrica di diametro $D$ (soluzione analitica esatta di Poiseuille dell'equazione di Navier-Stokes), il campo di velocità possiede un'unica componente assiale non nulla $u_x (r)$ (con $u_r = u_theta = 0$), variazione lineare della pressione lungo l'asse $x$ e sforzo tangenziale $tau_(r x)(r)$. Sostituendo tale profilo nelle equazioni di Navier-Stokes si ottiene un'identità ($0 = 0$). Matematicamente, il carattere *laminare* di questa soluzione si riconosce dall'indipendenza dal tempo e dall'annullamento identico delle due componenti trasversali di velocità.
-
-],
+  [Nel moto stazionario in condotta cilindrica di diametro $D$ (soluzione analitica esatta di Poiseuille dell'equazione di Navier-Stokes), il campo di velocità possiede un'unica componente assiale $u_x (r)$ (con $u_r = u_theta = 0$), pressione lineare lungo $x$ e sforzo tangenziale $tau_(r x)(r)$. Il carattere *laminare* della soluzione si riconosce matematicamente dalla stazionarietà e dall'annullamento identico delle componenti trasversali.],
   [#canvas(length: 1cm, {
   import draw: *
 
@@ -127,11 +125,11 @@
   content((7.1, 0.6), text(size: 8pt, fill: rgb("#8a2b16"))[moto], anchor: "south")
 })],
 )
-Al variare del numero di Reynolds $"Re" = U D slash nu$ (dove $U$ è la velocità media, $D$ il diametro e $nu$ la viscosità cinematica), per valori moderati (ad esempio $"Re" approx 500 div 1500$) la forma del profilo parabolico rimane invariata — semplicemente riscalata sul valore massimo al centro $u_0$ — e il campo di moto assorbe le perturbazioni. Superata una soglia critica, il sistema diventa instabile e tende ad allontanarsi dalla soluzione di equilibrio: compaiono in modo intermittente volumi turbolenti localizzati (*patch*), trasportati convettivamente a valle, al cui interno il profilo laminare è distrutto istantaneamente e insorgono fluttuazioni temporali e trasversali. Aumentando ulteriormente $"Re"$, tali regioni intermittenti si estendono rapidamente fino a rendere turbolento il flusso nell'intera condotta.
+Al variare del numero di Reynolds $"Re" = U D slash nu$ (con $U$ velocità media e $nu$ viscosità cinematica), per valori moderati ($"Re" approx 500 div 1500$) il profilo parabolico mantiene la propria forma — riscalata sul valore massimo al centro $u_0$ — e il moto assorbe le perturbazioni. Superata una soglia critica, il flusso diventa instabile: compaiono in modo intermittente volumi turbolenti localizzati (*patch*), trasportati a valle, in cui il profilo laminare è distrutto da fluttuazioni temporali e trasversali. Al crescere di $"Re"$, tali regioni si estendono rapidamente fino a rendere turbolento l'intero flusso in condotta.
 
-Questa distinzione tra regime laminare e turbolento fu messa in luce storicamente dal celebre *esperimento di Reynolds*: iniettando un filo di colorante al centro di una condotta, in regime laminare il colorante avanza a valle formando filamenti netti e ordinati, mentre in regime turbolento i filamenti si disperdono immediatamente in strutture complesse fino a occupare tutta la sezione. Nei flussi in condotta esiste quindi un numero di Reynolds critico ($"Re"_c approx 2250$) oltre il quale il moto transita bruscamente al regime turbolento: questo comportamento *dicotomico* (o interamente laminare o interamente turbolento) è tipico dei flussi interni, ma non si ritrova nei flussi esterni.
+Questa distinzione fu evidenziata dallo storico *esperimento di Reynolds*: iniettando un filo di colorante al centro della condotta, esso avanza in filamenti netti e ordinati in regime laminare, mentre in regime turbolento si disperde subito fino a occupare tutta la sezione. Nei flussi in condotta esiste quindi un numero di Reynolds critico ($"Re"_c approx 2250$) oltre il quale il moto transita bruscamente al regime turbolento: questo comportamento *dicotomico* (o interamente laminare o interamente turbolento) caratterizza i flussi interni, ma non si ritrova nei flussi esterni.
 
-Passando dai flussi interni a quelli esterni attorno a un corpo circolare (una sfera oppure un cilindro indefinito lungo la propria direzione assiale) investito da una corrente uniforme e stazionaria $U_infinity$, l'analisi non si concentra più sul coefficiente di perdite di carico (che per condotta circolare laminare vale $f = 64 slash "Re"$), bensì sulle forze scambiate tra fluido e corpo e sul coefficiente di resistenza aerodinamica.
+Passando ai flussi esterni attorno a un corpo circolare (sfera o cilindro indefinito) investito da una corrente uniforme stazionaria $U_infinity$, l'analisi non riguarda più il coefficiente di perdite di carico (che in condotta circolare laminare vale $f = 64 slash "Re"$), bensì le forze scambiate tra fluido e corpo e il coefficiente di resistenza aerodinamica.
 
 == Flussi esterni, Paradosso di D'Alembert e regimi di Reynolds
 
