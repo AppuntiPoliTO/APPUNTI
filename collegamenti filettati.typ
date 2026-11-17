@@ -644,10 +644,7 @@ Dal punto di vista strumentale, l'avvitatore (o chiave a scatto) con taratura pe
 
 Nel tempo, sotto l'azione di forze esterne e vibrazioni (assiali o trasversali/tangenziali), le micro-asperità delle superfici a contatto si schiacciano e si assestano modificando la rugosità. Ciò comporta una perdita di interferenza $Delta i$ (espressa in $mu "m"$) e una conseguente perdita di forza sulla vite $Delta F_v$. I valori di $Delta i$ dipendono dal numero di superfici di interfaccia ($"N° superfici"$), dalla direzione delle forze esterne e dalla rugosità media $R_a$:
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Occorre prestare particolare attenzione al conteggio del numero di superfici ($"N° sup"$), che corrisponde al numero di interfacce di contatto lungo il serraggio e non al numero di corpi serrati: per un singolo corpo bloccato fra sottotesta e dado si hanno $"N° sup" = 2$ (sottotesta e sottodado), mentre per due corpi impilati si hanno $"N° sup" = 3$ (sottotesta, interfaccia tra i due corpi e sottodado); in generale, il numero di superfici supera di un'unità il numero dei corpi serrati. Inoltre, lavorando abitualmente in millimetri, è indispensabile convertire $Delta i$ da micrometri ($mu "m"$) a millimetri ($"mm"$).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schemi tratteggiati per l'identificazione del numero di superfici di interfaccia: a sinistra un solo blocco serrato con "N° sup = 2"; a destra due blocchi impilati con tratteggi opposti con "N° sup = 3"]])
+Occorre prestare particolare attenzione al conteggio del numero di superfici ($"N° sup"$), che corrisponde al numero di interfacce di contatto lungo il serraggio e non al numero di corpi serrati: per un singolo corpo bloccato fra sottotesta e dado si hanno $"N° sup" = 2$ (sottotesta e sottodado), mentre per due corpi impilati si hanno $"N° sup" = 3$ (sottotesta, interfaccia tra i due corpi e sottodado); in generale, il numero di superfici supera di un'unità il numero dei corpi serrati. Inoltre, lavorando abitualmente in millimetri, è indispensabile convertire $Delta i$ da micrometri ($mu "m"$) a millimetri ($"mm"$).
 
 === Effetto globale di incertezze e allentamento sul diagramma
 
@@ -661,7 +658,39 @@ $ frac(Delta F_v, Delta i) = frac(F_v, i) = frac(F_v, F_v (delta_v + delta_p)) a
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Il precarico minimo residuo prima dell'applicazione del carico esterno diventa pertanto $frac(F_(v, l i m), I) - Delta F_v$. Il triangolo esterno più grande viene impiegato per la verifica di resistenza statica della vite (condizione più gravosa per il materiale), mentre il triangolo interno più piccolo viene impiegato per la verifica di funzionalità / carico minimo di serraggio (condizione più sfavorevole per la tenuta e l'aderenza tra le parti).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: diagramma di forzamento completo ($|F_p|, |F_v|$ vs $u$) mostrante l'effetto globale di incertezze e allentamento attraverso tre triangoli nidificati: il triangolo esterno con interferenza $i$ e vertice a $F_(v, l i m) = |F_p| = |F_v|$; il triangolo intermedio con vertice a $F_(v, m i n) = F_(v, l i m)/I$; il triangolo interno traslato orizzontalmente di $Delta i$ verso sinistra con vertice abbassato di $Delta F_v$ al livello $F_(v, l i m)/I - Delta F_v$]])
+  align: (left + horizon, center + horizon),[Il precarico minimo residuo prima dell'applicazione del carico esterno diventa pertanto $frac(F_(v, l i m), I) - Delta F_v$. Il triangolo esterno più grande viene impiegato per la verifica di resistenza statica della vite (condizione più gravosa per il materiale), mentre il triangolo interno più piccolo viene impiegato per la verifica di funzionalità / carico minimo di serraggio (condizione più sfavorevole per la tenuta e l'aderenza tra le parti).],[#canvas(length: 1cm, {
+  import draw: *
+  line((0, 0), (0, 5.1), mark: (end: ">"), stroke: 0.8pt)
+  line((0, 0), (7.4, 0), mark: (end: ">"), stroke: 0.8pt)
+
+  line((0, 0), (2.95, 3.54), stroke: 1.1pt)
+  line((0.55, 2.56), (3.75, 0), stroke: 1.1pt)
+  line((1.15, 3.28), (5.25, 0), stroke: 1.1pt)
+  line((2.5, 3.4), (6.75, 0), stroke: 1.1pt)
+
+  line((0, 3.24), (2.7, 3.24), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((0, 2.52), (2.1, 2.52), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((0, 1.8), (3.3, 1.8), stroke: (dash: "dashed", thickness: 0.7pt))
+
+  line((0, 0), (0, -1.65), stroke: 0.6pt)
+  line((3.75, 0), (3.75, -0.95), stroke: 0.6pt)
+  line((5.25, 0), (5.25, -1.65), stroke: 0.6pt)
+  line((3.75, -0.75), (5.25, -0.75), mark: (start: ">", end: ">"), stroke: 0.7pt)
+  line((0, -1.45), (5.25, -1.45), mark: (start: ">", end: ">"), stroke: 0.7pt)
+
+  content((-0.15, 4.7), text(size: 8.5pt)[$|F_p|, |F_v|$], anchor: "east")
+  content((-0.15, 3.85), text(size: 8pt)[$F_(v,"lim") = |F_p| = |F_v|$], anchor: "east")
+  content((-0.15, 2.55), text(size: 8pt)[$F_(v,"min") = F_(v,"lim") / I$], anchor: "east")
+  content((-0.15, 1.55), text(size: 8pt)[$F_(v,"lim") / I - Delta F_v$], anchor: "east")
+  content((0.1, 2.16), text(size: 8pt)[$Delta F_v$], anchor: "west")
+
+  content((6.95, -0.25), text(size: 8.5pt)[$u$], anchor: "north")
+  content((4.5, -0.6), text(size: 8.5pt)[$Delta i$], anchor: "south")
+  content((2.625, -1.3), text(size: 8.5pt)[$i$], anchor: "south")
+
+  content((3.6, 4.65), text(size: 8pt)[$(Delta F_v) / (Delta i) = F_v / i = F_v / (F_v (delta_v + delta_p))$], anchor: "west")
+  content((3.6, 3.65), text(size: 8pt)[$Delta F_v = (Delta i) / ((delta_v + delta_p))$], anchor: "west")
+})])
 
 === Procedura iterativa di progetto dei collegamenti filettati
 
