@@ -147,7 +147,7 @@ I vantaggi principali sono:
 - l'individuazione di parametri adimensionali $Pi_i$ dotati di preciso significato fisico;
 - l'indipendenza della legge dalla scelta arbitraria delle unità di misura.
 
-#nota-esame[
+#nota[
   Il teorema $Pi$ individua i gruppi adimensionali ma non fornisce alcuna informazione a priori sulla forma della relazione funzionale $f_2$: quest'ultima deve essere determinata e verificata mediante prove sperimentali o simulazioni.
 ]
 
