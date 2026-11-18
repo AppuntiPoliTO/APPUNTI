@@ -1166,11 +1166,63 @@ $ n = frac(L_b, L_p) < 1, quad (1 - n) = frac(L_a + L_c, L_p) $
 
 $ delta_v = frac(L_v, E_v dot.op A_v), quad delta_p = frac(L_p, E_p dot.op A_p) $
 
-Nel caso di carico non al sottotesta (B), l'applicazione del carico esterno $C$ comprime la sola zona centrale $L_b$, mentre le due porzioni esterne $L_a$ e $L_c$ vengono scaricate e si comportano in serie con la vite. Di conseguenza la deformabilità equivalente del pezzo diminuisce, mentre quella equivalente della vite aumenta:
+],[#canvas(length: 1cm, {
+  import draw: *
+  line((-1.5, 1.6), (1.5, 1.6), stroke: 1pt)
+  line((-1.5, -1.6), (1.5, -1.6), stroke: 1pt)
+  line((-1.5, 1.6), (-1.5, 1.3), stroke: 0.8pt)
+  line((-1.5, -1.3), (-1.5, -1.6), stroke: 0.8pt)
+  line((1.5, 1.6), (1.5, 1.3), stroke: 0.8pt)
+  line((1.5, -1.3), (1.5, -1.6), stroke: 0.8pt)
+  line((-1.5, 1.3), (-1.22, 1.2), (-1.78, 1.0), (-1.22, 0.8), (-1.78, 0.6), (-1.22, 0.4), (-1.78, 0.2), (-1.22, 0.0), (-1.78, -0.2), (-1.22, -0.4), (-1.78, -0.6), (-1.22, -0.8), (-1.78, -1.0), (-1.22, -1.2), (-1.5, -1.3), stroke: (thickness: 1.1pt, join: "round"))
+  line((1.5, 1.3), (1.78, 1.2), (1.22, 1.0), (1.78, 0.8), (1.22, 0.6), (1.78, 0.4), (1.22, 0.2), (1.78, 0.0), (1.22, -0.2), (1.78, -0.4), (1.22, -0.6), (1.78, -0.8), (1.22, -1.0), (1.78, -1.2), (1.5, -1.3), stroke: (thickness: 1.1pt, join: "round"))
+  circle((-1.5, 1.3), radius: 0.06, fill: rgb("#00c896"), stroke: 0.6pt)
+  circle((-1.5, -1.3), radius: 0.06, fill: rgb("#00c896"), stroke: 0.6pt)
+  circle((1.5, 1.3), radius: 0.06, fill: rgb("#00c896"), stroke: 0.6pt)
+  circle((1.5, -1.3), radius: 0.06, fill: rgb("#00c896"), stroke: 0.6pt)
+  line((0, 0.7), (0, 1.6), mark: (end: ">", fill: black), stroke: 1.5pt)
+  line((0, -0.7), (0, -1.6), mark: (end: ">", fill: black), stroke: 1.5pt)
+  content((-0.2, 1.15), text(size: 9pt)[$C$], anchor: "east")
+  content((-0.2, -1.15), text(size: 9pt)[$C$], anchor: "east")
+  line((1.5, 1.6), (2.7, 1.6), stroke: 0.5pt)
+  line((1.5, -1.6), (2.7, -1.6), stroke: 0.5pt)
+  line((2.4, -1.6), (2.4, 1.6), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
+  content((2.6, 0), text(size: 9pt)[$L_p = L_v$], anchor: "west")
+})])
+#grid(
+  columns: 2,
+  gutter: 1em,
+  [Nel caso di carico non al sottotesta (B), l'applicazione del carico esterno $C$ comprime la sola zona centrale $L_b$, mentre le due porzioni esterne $L_a$ e $L_c$ vengono scaricate e si comportano in serie con la vite. Di conseguenza la deformabilità equivalente del pezzo diminuisce, mentre quella equivalente della vite aumenta:
 
 $ delta_p^* equiv delta_p^b = frac(L_b, E_p dot.op A_p) = frac(n dot.op L_p, E_p dot.op A_p) < delta_p $
 
-$ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, E_p dot.op A_p) = delta_v + (1 - n) delta_p > delta_v $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schemi delle molle sotto carico $C$ per i casi (A) e (B). In alto (A): due molle affiancate con carico $C$ applicato alle estremità ($L_p = L_v$). In basso (B): tre molle per il pezzo ($delta_p^a$, $delta_p^b$, $delta_p^c$) affiancate a $delta_v$, con il carico $C$ applicato ai nodi che racchiudono la sola molla centrale $delta_p^b$.]])
+$ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, E_p dot.op A_p) = delta_v + (1 - n) delta_p > delta_v $],
+  [#canvas(length: 1cm, {
+  import draw: *
+  line((3.0, 4.2), (3.0, 4.5), (4.6, 4.5), (4.6, 4.2), stroke: 0.75pt)
+  line((3.0, 0.6), (3.0, 0.3), (4.6, 0.3), (4.6, 0.6), stroke: 0.75pt)
+  line((0.5, 3.0), (3.0, 3.0), stroke: 0.75pt)
+  line((0.5, 1.8), (3.0, 1.8), stroke: 0.75pt)
+  line((1.0, 3.0), (1.0, 4.0), mark: (end: ">"), stroke: 1.4pt)
+  line((1.0, 1.8), (1.0, 0.8), mark: (end: ">"), stroke: 1.4pt)
+  line((3.0, 4.2), (3.25, 4.1), (2.75, 3.9), (3.25, 3.7), (2.75, 3.5), (3.25, 3.3), (2.75, 3.1), (3.0, 3.0), stroke: (thickness: 1.1pt, join: "round"))
+  line((3.0, 3.0), (3.25, 2.9), (2.75, 2.7), (3.25, 2.5), (2.75, 2.3), (3.25, 2.1), (2.75, 1.9), (3.0, 1.8), stroke: (thickness: 1.1pt, join: "round"))
+  line((3.0, 1.8), (3.25, 1.7), (2.75, 1.5), (3.25, 1.3), (2.75, 1.1), (3.25, 0.9), (2.75, 0.7), (3.0, 0.6), stroke: (thickness: 1.1pt, join: "round"))
+  line((4.6, 4.2), (4.85, 4.05), (4.35, 3.75), (4.85, 3.45), (4.35, 3.15), (4.85, 2.85), (4.35, 2.55), (4.85, 2.25), (4.35, 1.95), (4.85, 1.65), (4.35, 1.35), (4.85, 1.05), (4.35, 0.75), (4.6, 0.6), stroke: (thickness: 1.1pt, join: "round"))
+  circle((3.0, 4.2), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
+  circle((3.0, 3.0), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
+  circle((3.0, 1.8), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
+  circle((3.0, 0.6), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
+  circle((4.6, 4.2), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
+  circle((4.6, 0.6), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
+  content((0.8, 3.55), text(size: 9pt)[$C$], anchor: "east")
+  content((0.8, 1.25), text(size: 9pt)[$C$], anchor: "east")
+  content((2.55, 3.6), text(size: 9pt)[$delta_p^a$], anchor: "east")
+  content((2.55, 2.4), text(size: 9pt)[$delta_p^b$], anchor: "east")
+  content((2.55, 1.2), text(size: 9pt)[$delta_p^c$], anchor: "east")
+  content((5.05, 2.4), text(size: 9pt)[$delta_v$], anchor: "west")
+})],
+)
 
 #grid(
   columns: (1fr, 1fr),
