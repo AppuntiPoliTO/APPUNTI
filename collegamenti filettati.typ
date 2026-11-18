@@ -1671,9 +1671,9 @@ dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superfic
   #grid(
     columns: (1fr, 1fr),
     column-gutter: 1em,
-    align: (left + horizon, center + horizon),[Per proteggere la sezione della vite dall'azione di taglio si interpone una bussola cilindrica cava che sopporta lo sforzo trasversale al posto del gambo della vite. Anche la bussola viene calcolata come un chiodo cavo (con riferimento al materiale della bussola), verificando il taglio sulla sezione resistente anulare di diametro esterno $d_e$ e diametro interno $d_i$ e la pressione specifica sulla lunghezza di appoggio $L_p$:
+    align: (left + top, center + horizon),[Per proteggere la sezione della vite dall'azione di taglio si interpone una bussola cilindrica cava che sopporta lo sforzo trasversale al posto del gambo della vite. Anche la bussola viene calcolata come un chiodo cavo (con riferimento al materiale della bussola), verificando il taglio sulla sezione resistente anulare di diametro esterno $d_e$ e diametro interno $d_i$ e la pressione specifica sulla lunghezza di appoggio $L_p$:
 
-$ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi dot.op (d_e - d_i)^2 ) lt.eq tau_("amm"), \ qutau_("amm") = 0.4 div 0.6 R_(p 0.2) $
+$ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi dot.op (d_e - d_i)^2 ) lt.eq tau_("amm"), \ quad tau_("amm") = 0.4 div 0.6 R_(p 0.2) $
 
 $ sigma = frac(F_T, d_e dot.op L_p dot.op n) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m $],[#canvas(length: 1cm, {
   import draw: *
