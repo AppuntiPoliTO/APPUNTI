@@ -1429,7 +1429,7 @@ $ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, 
   content((5.42, 0.57), text(size: 8.5pt)[$F_e$], anchor: "west")
   content((8.15, 0.12), text(size: 8.5pt)[$i$], anchor: "north")
 })])
-
+Sul diagramma di interferenza questo comportamento si traduce in una caratteristica poligonale (bilineare) per la parte: a partire dal punto di equilibrio $F_(v, "lim")$ verso destra si ha un primo tratto molto ripido (regime di contatto metallo-metallo), seguito da un cambio di pendenza oltre il quale la curva prosegue con inclinazione molto dolce (regime governato dalla sola guarnizione in seguito al distacco dei metalli). In esercizio è fondamentale dimensionare il collegamento affinché il carico esterno non porti il sistema oltre il punto di cambio di pendenza, evitando il distacco delle flange metalliche che causerebbe eccessiva cedevolezza e perdita di tenuta.
 === Viti con carico trasversale
 Le viti non devono lavorare direttamente a taglio poiché, qualora si verifichi un movimento relativo tra i pezzi serrati, oltre alla sollecitazione di taglio insorge anche un'elevata sollecitazione di flessione sul fusto. Quando i collegamenti bullonati sono impiegati per prevenire movimenti reciproci trasversali dovuti a una forza tagliante $F_T$, si ricorre a tre possibili soluzioni costruttive:
 
