@@ -569,15 +569,11 @@ Se la verifica del carico minimo di serraggio non è soddisfatta, i possibili in
   column-gutter: 2em,
   align: (left + horizon, center + horizon),[La verifica a fatica delle viti nelle normative tecniche (in particolare nella normativa tedesca VDI 2230) si basa sull'utilizzo di un diagramma di Haigh specifico per filettature di classi $8.8 div 12.9$, costruito per classi di resistenza dei materiali e per fasce dimensionali di vite piuttosto che per singoli materiali.
 
-Sul diagramma sono riportate in ascissa le tensioni medie adimensionalizzate rispetto al limite di snervamento ($sigma_m \/ R_(p 0.2)$, con estensione fino a $0.9$ nel diagramma considerato, sebbene per dimensioni minori possa spingersi anche oltre) e in ordinata la tensione alternata ammissibile a fatica $sigma_D$ espressa in MPa. Il grafico presenta due scale verticali distinte: la scala di sinistra ($40 div 80 " MPa"$) si riferisce alle viti non rullate, mentre la scala di destra ($80 div 160 " MPa"$) si riferisce alle viti sottoposte a rullatura a freddo, trattamento meccanico superficiale che raddoppia il valore di resistenza in MPa.
+Sul diagramma sono riportate in ascissa le tensioni medie adimensionalizzate rispetto al limite di snervamento ($sigma_m \/ R_(p 0.2)$, con estensione fino a $0.9$ nel diagramma considerato, sebbene per dimensioni minori possa spingersi anche oltre) e in ordinata la tensione alternata ammissibile a fatica $sigma_D$ espressa in MPa.
 
-Le diverse rette decrescenti presenti sul diagramma rappresentano l'effetto scala legato alle dimensioni del fusto e al diametro nominale della filettatura, suddivise in tre fasce: $M 4 div M 8$ (valori più elevati), $M 10 div M 16$ (valori intermedi) e $M 18 div M 30$ (valori più bassi). Pur essendo rappresentato un diagramma in termini di tensioni normali assiali, la componente di torsione risulta comunque inclusa attraverso il parametro $K$ che consente di esprimere la tensione equivalente direttamente in funzione della tensione assiale $sigma$. In questo contesto $sigma_a$ indica la tensione assiale alternata.
 
-La condizione di verifica a fatica richiede che la tensione alternata di esercizio non superi il $90\%$ del limite $sigma_D$ individuato sulla curva corrispondente alla propria dimensione e tensione media:
 
-$ sigma_a lt.eq 0.9 sigma_D $
-
-Ad esempio, considerando una vite $M 30$ non rullata soggetta a una tensione media pari al $40\%$ dello snervamento ($sigma_m \/ R_(p 0.2) = 0.4$), si legge sulla curva inferiore un valore di $sigma_D tilde.eq 52.5 div 53 " MPa"$, rispetto al quale la tensione alternata $sigma_a$ deve mantenersi al di sotto del $90\%$.],[#canvas(length: 0.9cm, {
+],[#canvas(length: 0.9cm, {
   import draw: *
 
   line((0.5, 0), (0.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
@@ -654,7 +650,13 @@ Ad esempio, considerando una vite $M 30$ non rullata soggetta a una tensione med
 
   content((4.0, 4.35), text(size: 9pt)[Diagramma di Haigh per filettature classi 8.8 ÷ 12.9  (da VDI 2230)], anchor: "south")
 })])
+ Il grafico presenta due scale verticali distinte: la scala di sinistra ($40 div 80 " MPa"$) si riferisce alle viti non rullate, mentre la scala di destra ($80 div 160 " MPa"$) si riferisce alle viti sottoposte a rullatura a freddo, trattamento meccanico superficiale che raddoppia il valore di resistenza in MPa.
+Le diverse rette decrescenti presenti sul diagramma rappresentano l'effetto scala legato alle dimensioni del fusto e al diametro nominale della filettatura, suddivise in tre fasce: $M 4 div M 8$ (valori più elevati), $M 10 div M 16$ (valori intermedi) e $M 18 div M 30$ (valori più bassi). Pur essendo rappresentato un diagramma in termini di tensioni normali assiali, la componente di torsione risulta comunque inclusa attraverso il parametro $K$ che consente di esprimere la tensione equivalente direttamente in funzione della tensione assiale $sigma$. In questo contesto $sigma_a$ indica la tensione assiale alternata.
+La condizione di verifica a fatica richiede che la tensione alternata di esercizio non superi il $90\%$ del limite $sigma_D$ individuato sulla curva corrispondente alla propria dimensione e tensione media:
 
+$ sigma_a lt.eq 0.9 sigma_D $
+
+Ad esempio, considerando una vite $M 30$ non rullata soggetta a una tensione media pari al $40\%$ dello snervamento ($sigma_m \/ R_(p 0.2) = 0.4$), si legge sulla curva inferiore un valore di $sigma_D tilde.eq 52.5 div 53 " MPa"$, rispetto al quale la tensione alternata $sigma_a$ deve mantenersi al di sotto del $90\%$.
 === Determinazione dei cicli di carico sul diagramma di interferenza
 Per caratterizzare il ciclo di fatica agente sulla vite (elemento più critico rispetto alle parti serrate poiché presenta la sezione resistente più piccola e lavora a trazione anziché a compressione), si individuano le forze massima ($F_(v, m a x)$), minima ($F_(v, m i n)$), media ($F_(v, m)$) e alternata ($F_(v, a)$) direttamente dal diagramma di interferenza, in funzione dell'andamento nel tempo del carico esterno $C(t)$. Le tensioni alternata e media si calcolano quindi dividendo le rispettive forze per l'area resistente della filettatura $A_n$ (area di nocciolo o alla radice del filetto, a seconda della normativa tecnica adottata):
 
