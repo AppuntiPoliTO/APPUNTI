@@ -474,14 +474,7 @@ Analisi delle traiettorie alternative del punto di lavoro $P$ verso il limite:
   numbering: "1",
   number-align: bottom + right,
 )
-#let nota(body) = block(
-  fill: luma(245),
-  stroke: (left: 3pt + rgb("#4a4d55")),
-  inset: 10pt,
-  radius: (right: 4pt),
-  width: 100%,
-  body
-)
+
 == Calcolo a Vita Limitata e Fattori Modificanti
 <calcolo-a-vita-limitata-e-fattori-modificanti>
 
