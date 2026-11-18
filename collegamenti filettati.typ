@@ -1270,7 +1270,23 @@ $ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[L'interposizione di un elemento elastico morbido tra le parti serrate, come una guarnizione, provoca un incremento molto elevato della deformabilità complessiva del pezzo $delta_p$. Sul diagramma di interferenza la caratteristica del pezzo assume una pendenza estremamente dolce, comportando che il carico esterno $C$ venga sopportato quasi interamente dalla vite ($Delta C_v tilde.eq C$).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Diagramma di interferenza con elemento elastico tra i pezzi. Assi: ordinata $|F_p|, |F_v|$, ascissa $i$. La retta della vite è molto ripida, mentre la retta del pezzo scende con pendenza molto ridotta dal punto di equilibrio $F_(v, "lim")$ verso destra. Il segmento di carico verticale collocato a destra dell'equilibrio mostra che l'incremento sulla vite $Delta C_v$ è pressoché uguale all'intero carico esterno ($Delta C_v tilde.eq C$).]])
+  align: (left + horizon, center + horizon),[L'interposizione di un elemento elastico morbido tra le parti serrate, come una guarnizione, provoca un incremento molto elevato della deformabilità complessiva del pezzo $delta_p$. Sul diagramma di interferenza la caratteristica del pezzo assume una pendenza estremamente dolce, comportando che il carico esterno $C$ venga sopportato quasi interamente dalla vite ($Delta C_v tilde.eq C$).],[#canvas(length: 1cm, {
+  import draw: *
+  line((0, 0), (0, 3.85), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 0), (8.2, 0), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 2.15), (5.1, 2.15), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+  line((0, 0), (0.68, 3.57), stroke: 1.1pt)
+  line((0.12, 2.325), (6.5, 0), stroke: 1.1pt)
+  line((0.6, 2.15), (0.6, 3.15), stroke: 1.1pt)
+  rect((0.50, 3.05), (0.70, 3.25), fill: red, stroke: none)
+  line((0.6, 2.29), (0.49, 2.06), (0.71, 2.06), close: true, fill: blue, stroke: none)
+  content((-0.18, 3.45), text(size: 8.5pt)[$|F_p|$], anchor: "east")
+  content((-0.18, 2.95), text(size: 8.5pt)[$|F_v|$], anchor: "east")
+  content((-0.18, 2.15), text(size: 8.5pt)[$F_(v,"lim")$], anchor: "east")
+  content((0.88, 2.68), text(size: 8.5pt)[$Delta C_v approx C$], anchor: "west")
+  content((6.1, -0.22), text(size: 9pt)[$i$], anchor: "north")
+  content((4.4, 3.65), text(size: 10pt)[*_Elemento elastico tra i pezzi_*], anchor: "center")
+})])
 
 #grid(
   columns: (1fr, 1fr),
