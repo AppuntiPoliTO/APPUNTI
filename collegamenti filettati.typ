@@ -1553,7 +1553,7 @@ dove $F_T$ è la forza trasversale totale, $C S$ è il coefficiente di sicurezza
 
 $ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi dot.op d^2) lt.eq tau_("amm"), quad tau_("amm") = 0.4 div 0.6 R_(p 0.2) $
 
-$ sigma = frac(F_T, n dot.op d dot.op s) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m [?] $
+$ sigma = frac(F_T, n dot.op d dot.op s) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m $
 
 dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superficie d'appoggio (spessore del pezzo sollecitato).],[#canvas(length: 1cm, {
   import draw: *
@@ -1675,7 +1675,7 @@ dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superfic
 
 $ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi dot.op (d_e - d_i)^2 [?]) lt.eq tau_("amm"), quad tau_("amm") = 0.4 div 0.6 R_(p 0.2) $
 
-$ sigma = frac(F_T, d_e dot.op L_p dot.op n) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m [?] $],[#canvas(length: 1cm, {
+$ sigma = frac(F_T, d_e dot.op L_p dot.op n) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m $],[#canvas(length: 1cm, {
   import draw: *
 
   line((-0.25, 0.50), (0.00, 0.75), stroke: 0.5pt)
