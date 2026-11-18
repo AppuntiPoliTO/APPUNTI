@@ -1436,7 +1436,7 @@ Le viti non devono lavorare direttamente a taglio poiché, qualora si verifichi 
 
 #strong[Viti passanti (collegamento ad attrito):]
   #grid(
-    columns: (1fr, 1fr),
+    columns: (1.3fr, 1fr),
     column-gutter: 1em,
     align: (left + horizon, center + horizon),[Si sfrutta il precarico assiale per generare tra le superfici a contatto delle parti una forza d'attrito $f dot.op F_(p, m i n)$ sufficiente a impedire lo scorrimento relativo. Il carico minimo sul pezzo da garantire sul diagramma di interferenza risulta:
 
@@ -1547,7 +1547,7 @@ dove $F_T$ è la forza trasversale totale, $C S$ è il coefficiente di sicurezza
 
 #strong[Viti con gambo calibrato:]
   #grid(
-    columns: (1fr, 1fr),
+    columns: (1.3fr, 1fr),
     column-gutter: 1em,
     align: (left + horizon, center + horizon),[È una soluzione molto costosa nella quale il gambo della vite viene calibrato nello spessore per estendersi attraverso le superfici interne dei blocchi e fungere da ostacolo meccanico diretto allo scorrimento. Le viti calibrate vengono calcolate come i chiodi, verificando il taglio e la pressione specifica di contatto riferiti al materiale della vite:
 
@@ -1669,11 +1669,11 @@ dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superfic
 
 #strong[Inserzione di bussole:]
   #grid(
-    columns: (1fr, 1fr),
+    columns: (1.3fr, 1fr),
     column-gutter: 1em,
     align: (left + top, center + horizon),[Per proteggere la sezione della vite dall'azione di taglio si interpone una bussola cilindrica cava che sopporta lo sforzo trasversale al posto del gambo della vite. Anche la bussola viene calcolata come un chiodo cavo (con riferimento al materiale della bussola), verificando il taglio sulla sezione resistente anulare di diametro esterno $d_e$ e diametro interno $d_i$ e la pressione specifica sulla lunghezza di appoggio $L_p$:
 
-$ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi dot.op (d_e - d_i)^2 ) lt.eq tau_("amm"), \ quad tau_("amm") = 0.4 div 0.6 R_(p 0.2) $
+$ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi dot.op (d_e - d_i)^2 ) lt.eq tau_("amm"),  quad tau_("amm") = 0.4 div 0.6 R_(p 0.2) $
 
 $ sigma = frac(F_T, d_e dot.op L_p dot.op n) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m $],[#canvas(length: 1cm, {
   import draw: *
