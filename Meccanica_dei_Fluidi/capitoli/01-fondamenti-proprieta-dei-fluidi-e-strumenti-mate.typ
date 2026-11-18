@@ -1,5 +1,5 @@
 #import "../template.typ": *
-#show: conf
+#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
 = Fondamenti, Proprietà dei Fluidi e Strumenti Matematici
 
 == Fenomenologia e Forze Aerodinamiche

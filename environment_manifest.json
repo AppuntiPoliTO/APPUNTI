@@ -8,6 +8,11 @@
       "name": "_ALDOMORO_ Meccanica dei Fluidi"
     },
     {
+      "at": 1795003262,
+      "deleted": true,
+      "name": "_ALDOMORO__ECM"
+    },
+    {
       "at": 1794904627,
       "deleted": true,
       "name": "cacaaaaa"
@@ -22,7 +27,7 @@
     "_ALDOMORO_ elettrotecnica",
     "_ALDOMORO_ fms",
     "_ALDOMORO_ Analisi 2",
-    "_ALDOMORO__ECM",
-    "Meccanica_dei_Fluidi"
+    "Meccanica_dei_Fluidi",
+    "_ALDOMORO__ECM_2"
   ]
 }
