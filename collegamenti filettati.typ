@@ -1190,7 +1190,7 @@ $ delta_v = frac(L_v, E_v dot.op A_v), quad delta_p = frac(L_p, E_p dot.op A_p) 
   content((2.6, 0), text(size: 9pt)[$L_p = L_v$], anchor: "west")
 })])
 #grid(
-  columns: 2,
+  columns: (1fr, 1fr),
   gutter: 1em,
   [Nel caso di carico non al sottotesta (B), l'applicazione del carico esterno $C$ comprime la sola zona centrale $L_b$, mentre le due porzioni esterne $L_a$ e $L_c$ vengono scaricate e si comportano in serie con la vite. Di conseguenza la deformabilità equivalente del pezzo diminuisce, mentre quella equivalente della vite aumenta:
 
@@ -1230,8 +1230,42 @@ $ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, 
   align: (left + horizon, center + horizon),[Sul diagramma di interferenza questo equivale a una rotazione delle due rette caratteristiche attorno al punto di equilibrio $F_v$: la caratteristica della vite ruota diventando meno ripida (vite più deformabile) e la caratteristica del pezzo ruota diventando più ripida (pezzo più rigido). Il segmento del carico esterno $C$ trasla quindi verso il basso lungo il diagramma:
 
 - per la vite, la quota parte di carico assorbita si riduce rispetto al caso (A); pertanto, ai fini della resistenza della vite è sempre cautelativo assumere il carico come applicato al sottotesta (A);
-- per le parti serrate, invece, il carico minimo residuo $F_(p, m i n)$ scende drasticamente, aumentando in modo critico la possibilità di distacco tra le superfici ($F_(p, m i n) = 0$). In tale eventualità viene meno la tenuta o la forza di attrito tra le parti e l'intero carico esterno grava sulla vite, condizione assolutamente da evitare dal punto di vista funzionale.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Diagramma di interferenza comparativo tra configurazione (A) e (B). Assi: ordinata $|F_p|, |F_v|$, ascissa $u$. Dal punto di equilibrio $F_v$ partono due coppie di rette: in tratteggio le caratteristiche di "A: vite" e "A: pezzo", in linea continua le caratteristiche ruotate di "B: vite" (meno pendente) e "B: pezzo" (più pendente). Sono evidenziati due segmenti verticali di uguale lunghezza $C$: quello giallo relativo a "C (carico qui al sottotesta)" e quello rosso traslato più in basso relativo a "C (carico qui NON al sottotesta)", che mostra la riduzione di carico sulla vite ma l'abbassamento del punto inferiore sul pezzo verso $u = 0$.]])
-
+],[#canvas(length: 1cm, {
+  import draw: *
+  line((0, 0), (0, 4.5), mark: (end: ">"), stroke: 0.8pt)
+  line((0, 0), (7.5, 0), mark: (end: ">"), stroke: 0.8pt)
+  line((0, 2.4), (4.78, 2.4), stroke: (paint: gray, dash: "dash-dotted", thickness: 0.6pt))
+  line((0, 0), (3.2, 2.4), stroke: 1.1pt)
+  line((3.2, 2.4), (5.0, 3.75), stroke: (dash: "dashed", thickness: 1.1pt))
+  line((3.2, 2.4), (6.2, 0), stroke: (dash: "dashed", thickness: 1.1pt))
+  line((3.2, 2.4), (6.2, 3.05), stroke: 1.2pt)
+  line((2.75, 3.0), (5.0, 0), stroke: 1.2pt)
+  line((5.0, 0), (5.0, 0.96), stroke: (paint: black, thickness: 1.8pt))
+  line((5.0, 0.96), (5.0, 3.75), stroke: (paint: rgb("#00a88f"), thickness: 1.8pt))
+  line((4.35, 2.79), (5.0, 2.79), stroke: (paint: red, thickness: 0.6pt))
+  line((4.35, 0), (5.0, 0), stroke: (paint: red, thickness: 0.6pt))
+  line((4.78, 0), (4.78, 2.79), stroke: (paint: red, dash: "dashed", thickness: 1.1pt))
+  line((5.0, 3.75), (5.65, 3.75), stroke: (paint: rgb("#e6a800"), thickness: 0.6pt))
+  line((5.0, 0.96), (5.65, 0.96), stroke: (paint: rgb("#e6a800"), thickness: 0.6pt))
+  line((5.22, 0.96), (5.22, 3.75), stroke: (paint: rgb("#e6a800"), dash: "dashed", thickness: 1.1pt))
+  rect((4.9, 3.65), (5.1, 3.85), fill: red, stroke: none)
+  rect((4.9, 2.69), (5.1, 2.89), fill: red, stroke: none)
+  line((4.88, 0.84), (5.12, 0.84), (5.0, 1.08), close: true, fill: blue, stroke: none)
+  line((4.88, -0.12), (5.12, -0.12), (5.0, 0.12), close: true, fill: blue, stroke: none)
+  bezier((5.85, 3.85), (5.26, 3.15), (5.75, 3.35), (5.5, 3.2), mark: (end: ">"), stroke: 0.65pt)
+  bezier((1.95, 2.45), (4.72, 1.65), (2.75, 1.15), (3.55, 0.45), mark: (end: ">"), stroke: 0.65pt)
+  content((-0.2, 4.35), text(size: 8.5pt)[$|F_p|$], anchor: "east")
+  content((-0.2, 3.9), text(size: 8.5pt)[$|F_v|$], anchor: "east")
+  content((-0.2, 2.4), text(size: 8.5pt)[$F_v$], anchor: "east")
+  content((6.8, -0.3), text(size: 9pt)[$u$], anchor: "north")
+  content((3.95, 3.35), text(size: 8.5pt)[A: vite], anchor: "south-east")
+  content((6.35, 3.05), text(size: 8.5pt)[B: vite], anchor: "west")
+  content((5.85, 0.55), text(size: 8.5pt)[A: pezzo], anchor: "west")
+  content((4.45, 0.32), text(size: 8.5pt)[B: pezzo], anchor: "east")
+  content((5.85, 4.15), text(size: 8pt)[_C (carico qui al_\ _sottotesta)_], anchor: "west")
+  content((1.3, 2.95), text(size: 8pt)[_C (carico qui_\ _NON al_\ _sottotesta)_], anchor: "center")
+})])
+- per le parti serrate, invece, il carico minimo residuo $F_(p, m i n)$ scende drasticamente, aumentando in modo critico la possibilità di distacco tra le superfici ($F_(p, m i n) = 0$). In tale eventualità viene meno la tenuta o la forza di attrito tra le parti e l'intero carico esterno grava sulla vite, condizione assolutamente da evitare dal punto di vista funzionale.
 === Casi particolari: elemento elastico tra i pezzi (flange con guarnizione)
 #grid(
   columns: (1fr, 1fr),
