@@ -43,7 +43,7 @@ La formulazione del contatto hertziano si basa su una serie di precise assunzion
    A livello locale, la geometria delle due superfici può essere modellata tramite due apparenti ellissoidi, identificando per ciascuno due curvature sui rispettivi piani principali. Si definisce un sistema di riferimento locale in cui il punto di primo contatto $O$ è l'origine; l'asse $z$ rappresenta la direzione normale alle superfici (lungo la quale si sviluppa la pressione), mentre il piano $x y$ è il piano di tangenza su cui andrà a formarsi l'impronta di contatto.
   ],
   [
-    #include "figs/hertz-fig01.typ"
+    #include "figs/hertz/hertz-fig01.typ"
   ]
 )
 
@@ -63,10 +63,10 @@ Da qui l'introduzione del termine $1/2$ nelle formule. Inoltre, nei pedici delle
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [
-    #box((include "figs/hertz-fig02.typ")) 
+    #box((include "figs/hertz/hertz-fig02.typ")) 
   ],
   move(dy: -8pt)[
-  #include "figs/hertz-fig03.typ"
+  #include "figs/hertz/hertz-fig03.typ"
   ]
 )
 Per la superficie 1, indichiamo con $alpha_x$ e $alpha_y$ rispettivamente la curvatura massima e minima, definite perciò curvature principali per un intorno infinitesimo del punto O:
@@ -85,10 +85,10 @@ $ alpha_y = 1 / 2 1 / R_(1 y) quad quad ==> quad quad "curvatura minima" $
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [
-    #box((include "figs/hertz-fig04.typ"))
+    #box((include "figs/hertz/hertz-fig04.typ"))
   ],
   move(dy: -13pt)[
-    #include "figs/hertz-fig05.typ"
+    #include "figs/hertz/hertz-fig05.typ"
   ]
 )
 Analogamente, per la superficie 2 definiamo le curvature $beta_x$ e $beta_y$:
@@ -110,7 +110,7 @@ Nel valutare la geometria relativa dei due corpi, la teoria adotta una specifica
       beta_x &= + 1/2 1/R_(2 x) $
   ],
   [
-    #include "figs/hertz-fig06.typ"
+    #include "figs/hertz/hertz-fig06.typ"
   ]
 )
 
@@ -127,7 +127,7 @@ Nel valutare la geometria relativa dei due corpi, la teoria adotta una specifica
     $ alpha_x &= + 1/2 1/R_(1 x) $
     $ beta_x = - 1/2 1/R_(2 x) $
   ],
-  [ #include "figs/hertz-fig07.typ"
+  [ #include "figs/hertz/hertz-fig07.typ"
   ]
 )
 #v(1em)
@@ -140,7 +140,7 @@ Nel valutare la geometria relativa dei due corpi, la teoria adotta una specifica
  Nella realtà, quando i corpi sono premuti uno contro l’altro non c’è compenetrazione, ma si genera una superficie di contatto che la teoria di Hertz dimostra essere ancora un’ellisse chiamata ellisse di contatto.
   ],
    move(dx: 13pt)[
-    #include "figs/hertz-fig08.typ"
+    #include "figs/hertz/hertz-fig08.typ"
   ]
 )
 #v(1em)
@@ -161,7 +161,7 @@ Applicando un carico normale, il contatto evolve: parte inizialmente come un sin
     ) $
   ],
   [
-    #include "figs/hertz-fig09.typ"
+    #include "figs/hertz/hertz-fig09.typ"
   ]
 )
 #v(1em)
@@ -170,7 +170,7 @@ Il parametro dimensionale $f$ agisce come termine di scala dell'intera impronta:
 $ f = root(3, (3 F) / (4 (alpha_x + alpha_y + beta_x + beta_y)) ( (1 - nu_alpha^2)/E_alpha + (1 - nu_beta^2)/E_beta )) $
 #v(2em)
 #align(center)[
-#include "figs/hertz-fig10.typ"]
+#include "figs/hertz/hertz-fig10.typ"]
 // TODO: inserire figura della slide 1 del PDF, 'Coefficienti a* e b* in funzione di cos(tau)'
 // didascalia suggerita: Grafici per la determinazione dei coefficienti a* e b* per l'ellisse di contatto in funzione del parametro ausiliario cos(tau).
 // #align(center, image("fig_slide_1_a.png", width: 70%))
@@ -196,7 +196,7 @@ A causa della perfetta simmetria sferica, le curvature nei due piani principali 
     Essendo le curvature identiche per asse, il numeratore del parametro di Hertz si annulla, imponendo $cos(tau) = 0$. Questo fa sì che i coefficienti $a^*$ e $b^*$ assumano entrambi valore unitario:
     $ a^* = b^* = 1 quad arrow.r.long quad a = b = f $ 
   ],
-  [#include "figs/hertz-fig11.typ"
+  [#include "figs/hertz/hertz-fig11.typ"
   ]
 )
 #v(1em)
@@ -212,10 +212,10 @@ Nel contatto tra due cilindri appoggiati con assi paralleli, l'impronta si svilu
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [
-     #include "figs/hertz-fig12.typ"
+     #include "figs/hertz/hertz-fig12.typ"
   ],
   [
-   #include "figs/hertz-fig13.typ"
+   #include "figs/hertz/hertz-fig13.typ"
   ]
 )
 Poiché la curvatura assiale dei cilindri è nulla (raggio infinito), questa condizione impone $cos(tau) = 1$. Di conseguenza, $a^*$ diverge all'infinito e $b^*$ tende a zero. Fisicamente, l'ellisse degenera in un rettangolo di larghezza $2b$ e lunghezza assiale pari a $L$.

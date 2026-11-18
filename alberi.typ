@@ -41,7 +41,7 @@ Dal punto di vista costruttivo e morfologico, lungo lo sviluppo assiale la sezio
 
 #align(center)[
 
-#include "figs/alberi-fig01.typ"
+#include "figs/alberi/alberi-fig01.typ"
 
 ]
 #v(1em)
@@ -52,7 +52,7 @@ Per limitare pesi e ingombri, la linea di trasmissione opera ad elevata velocit�
 A differenza dell'elemento strutturale isolato (la semplice *trave* della meccanica strutturale), nella costruzione di macchine si analizza un *sistema meccanico*: un insieme di sottosistemi e componenti collegati e assemblabili costruttivamente per svolgere una precisa funzione, tipicamente la *trasmissione e il controllo del moto e della potenza* da una sorgente a un utilizzatore.
 
 #align(center)[
-  #include "figs/alberi-fig02.typ"
+  #include "figs/alberi/alberi-fig02.typ"
 ]
 
 Lo schema funzionale di una linea di trasmissione tipo comprende:
@@ -96,7 +96,7 @@ Ai fini della statica elementare, gli alberi sono schematizzati come travi e i c
   - *Appoggio semplice (cerniera o carrello ideali):* un singolo cuscinetto che consente piccole rotazioni relative dell'asse nel piano di flessione impone abbassamento trasversale nullo ma rotazione angolare della linea elastica libera ($phi_A, phi_B != 0$).
   - *Incastro:* un supporto molto esteso assialmente (bronzina lunga) o una coppia di cuscinetti opportunamente distanziati che contrastano l'inclinazione dell'asse reagiscono anche con una coppia flettente, approssimando un *incastro* (rotazione impedita, $phi = 0$) che irrigidisce notevolmente la struttura e modifica i diagrammi del momento flettente.
 
-#figure(include "figs/alberi-fig03.typ")
+#figure(include "figs/alberi/alberi-fig03.typ")
 
 == Dimensionamento preliminare e processo iterativo
 Con riferimento allo schema statico con organo (es. ingranaggio) calettato all'estremità a sbalzo $C$, la forza trasversale $F$ scambiata tra i denti genera un diagramma del momento flettente $M_f$ lineare (triangolare) con massimo sul supporto intermedio $B$. Contemporaneamente, la coppia torcente $M_t$ introdotta in $C$ percorre l'albero fino all'estremità opposta $A$ collegata all'utenza (o al motore), generando un diagramma di momento torcente costante su tutta la lunghezza attiva tra ingresso e uscita di potenza.

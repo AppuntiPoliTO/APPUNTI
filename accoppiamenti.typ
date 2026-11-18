@@ -30,7 +30,7 @@ La naturale estensione dell'analisi dei collegamenti albero-mozzo prevede lo stu
 $ D_m = frac(d_1 + d_2, 2) $
 $ tan alpha = frac(d_1 - d_2, 2 L) $
 dove $L$ è la lunghezza dell'accoppiamento nella direzione assiale.],[
-#image("images/accoppiamento conico.png",width:80%)]
+#image("images/accoppiamenti/accoppiamento conico.png",width:80%)]
 )
 
 #grid(
@@ -41,7 +41,7 @@ $ F_N = p dot.op A_l = p pi D_m L $
 L'azione di pressione genera una forza di attrito in direzione tangenziale (lungo la generatrice del cono). La forza totale risultante $F$ è legata alla forza normale tramite l'angolo di attrito $phi$, dove il coefficiente di attrito $f$ è pari a $tan phi$:
 $ F = frac(F_N, cos phi) $
 ],[
-#image("images/forze mozzo.png")
+#image("images/accoppiamenti/forze mozzo.png")
 ])
 
 Questa forza totale $F$ può essere scomposta in un sistema di riferimento globale solidale all'asse dell'albero, ottenendo una componente radiale $F_r$ e una componente assiale $F_a$. Le due componenti derivano dalla proiezione tramite l'angolo totale $(alpha + phi)$, che somma l'inclinazione geometrica e l'effetto dell'attrito:
@@ -63,7 +63,7 @@ $ M_t lt.eq (pi dot.op D_m dot.op L) dot.op mu dot.op p_("amm") dot.op frac(D_m,
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[#strong[Mozzo realizzato in due metà (Semigusci)] \ Un'alternativa al forzamento diretto consiste nell'utilizzare elementi filettati (viti o bulloni) per generare la pressione di contatto necessaria. Questa soluzione è ampiamente utilizzata per la sua facilità di smontaggio, fondamentale per le operazioni di manutenzione. Un esempio classico è il collegamento della testa di biella nei motori a combustione interna. Il mozzo è diviso in due semigusci che vengono serrati attorno all'albero tramite bulloni.],[#image("images/accoppiamento semigusci.png", width:50%)])
+  align: (left + horizon, center + horizon),[#strong[Mozzo realizzato in due metà (Semigusci)] \ Un'alternativa al forzamento diretto consiste nell'utilizzare elementi filettati (viti o bulloni) per generare la pressione di contatto necessaria. Questa soluzione è ampiamente utilizzata per la sua facilità di smontaggio, fondamentale per le operazioni di manutenzione. Un esempio classico è il collegamento della testa di biella nei motori a combustione interna. Il mozzo è diviso in due semigusci che vengono serrati attorno all'albero tramite bulloni.],[#image("images/accoppiamenti/accoppiamento semigusci.png", width:50%)])
 
 Supponendo una distribuzione uniforme della pressione, il momento torcente trasmissibile corrisponde all'integrale delle forze di attrito tangenziali lungo la circonferenza dell'interfaccia:
 $ M_t = integral_0^(2 pi) d T dot.op r = 2 pi dot.op r^2 dot.op L dot.op f dot.op p arrow.double p = frac(pi dot.op D_c^2 dot.op L dot.op f dot.op p, 2) $
@@ -81,7 +81,7 @@ La forza specifica da applicare al singolo bullone si otterrà dividendo $F_("to
   align: (left + horizon, center + horizon),[#strong[Mozzo con fessura diametrale]\ 
 Per elementi semplici e non soggetti a dinamiche inerziali gravose, si utilizza un mozzo dotato di una fessura diametrale, che lo rende simile a un morsetto elastico. Le due estremità flessibili vengono avvicinate tramite una o più viti. L'equilibrio del sistema si valuta calcolando i momenti rispetto all'apice della fessura. Il momento generato dalla forza totale delle viti $F_("tot viti")$ con braccio $a$ deve equilibrare il momento generato dalla forza di reazione $F$ (dovuta alla pressione sull'albero) con braccio $b$: $ F_("tot viti") dot.op a = F dot.op b $ La forza $F$ genera una pressione tra mozzo e albero pari a:
 $ p = frac(F, D_c dot.op L) $],[
-#image("images/mozzo fessura diametrale.png")
+#image("images/accoppiamenti/mozzo fessura diametrale.png")
 ])
 
 
@@ -101,7 +101,7 @@ I principali vantaggi di questo collegamento sono l'economicità, la facilità d
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Per questi motivi, l'uso delle chiavette è oggi limitato ad applicazioni particolari, con basse velocità di rotazione e momenti torcenti modesti (tali da generare tensioni tangenziali $tau$ nell'albero di circa 20÷30 MPa). La determinazione analitica del momento trasmissibile è complessa. A causa del forzamento radiale introdotto da un corpo discreto, la pressione non è assialsimmetrica. Si verifica un effetto di bordo laterale con incrementi locali di pressione alle estremità della chiavetta, mentre la parte opposta dell'albero viene spinta contro il mozzo. Sotto l'azione del momento torcente, la chiavetta tende a ruotare nella sua sede, modificando ulteriormente la distribuzione del carico.
-],[#image("images/distribuzione chiavette.png")])
+],[#image("images/accoppiamenti/distribuzione chiavette.png")])
 Poiché non si conosce a priori la distribuzione esatta delle forze di attrito, ci si affida a formule empiriche fornite dalla letteratura tecnica e confermate da analisi FEM. Il momento trasmissibile è dato da:
 $ M_T tilde.eq 0.04 dot.op (2.28 dot.op d + h) dot.op b dot.op L dot.op p_("amm") $
 dove $d$ è il diametro dell'albero, $h$ e $b$ sono le dimensioni unificate della chiavetta e $L$ è la sua lunghezza.
@@ -115,7 +115,7 @@ Le linguette a disco (o a mezzaluna) permettono un leggero basculamento per adat
   align: (left + horizon, center + horizon),[Il dimensionamento della linguetta consiste nel calcolo della lunghezza utile $L$. La forza $F$ trasmessa sulla superficie laterale (il fianco) è data dal momento torcente diviso per il raggio dell'albero:
 $ F = frac(2 dot.op M_T, d) $
 La pressione si esercita sulle superfici di contatto laterali di altezza $t_1$ (nell'albero) e $t_2$ (nel mozzo). Generalmente, la sede nell'albero è più profonda per garantire un buon alloggiamento, rendendo $t_2 < t_1$. Poiché la forza $F$ è la medesima, la pressione risulta massima e critica sulla superficie più piccola, ovvero sul fianco del mozzo di altezza $t_2$.],[
-#image("images/calcolo dimensionamento linguetta.png")
+#image("images/accoppiamenti/calcolo dimensionamento linguetta.png")
 ])
 La pressione sui fianchi è pari a:
 $ p = frac(F, t_2 dot.op L) $
@@ -128,7 +128,7 @@ $ L gt.eq frac(2 dot.op M_T, d dot.op t_2 dot.op p_("amm")) $
 #grid(
   columns: (1.7fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Un'alternativa all'impiego delle tradizionali chiavette o linguette consiste nel realizzare i risalti per il collegamento di forma direttamente sulla superficie laterale dell'albero. Questa soluzione, distribuendo gli elementi di accoppiamento sull'intera superficie laterale, mitiga l'effetto di squilibrio dinamico che caratterizza le linguette singole, migliorando sensibilmente il comportamento in rotazione del sistema. Dal punto di vista produttivo, la geometria dello scanalato viene realizzata tramite lavorazioni meccaniche che asportano materiale creando sedi e risalti che permettono l'accoppiamento tra albero e mozzo. Sebbene la forma possa ricordare quella delle ruote dentate, il principio di funzionamento è opposto: non vi è una rotazione relativa imposta dalla trasmissione del moto tra due profili coniugati, bensì i due corpi vengono resi mutuamente solidali per ruotare congiuntamente. I profili scanalati presentano caratteristiche geometriche ben definite: un diametro interno $d$, un diametro esterno massimo $D$ corrispondente al risalto, e una larghezza del risalto $b$. I risalti presentano inoltre dettagli costruttivi essenziali come le gole di scarico alla base e degli smussi nella parte alta per facilitare l'inserimento tra le parti.],[ #image("images/centraggio.png")])
+  align: (left + horizon, center + horizon),[Un'alternativa all'impiego delle tradizionali chiavette o linguette consiste nel realizzare i risalti per il collegamento di forma direttamente sulla superficie laterale dell'albero. Questa soluzione, distribuendo gli elementi di accoppiamento sull'intera superficie laterale, mitiga l'effetto di squilibrio dinamico che caratterizza le linguette singole, migliorando sensibilmente il comportamento in rotazione del sistema. Dal punto di vista produttivo, la geometria dello scanalato viene realizzata tramite lavorazioni meccaniche che asportano materiale creando sedi e risalti che permettono l'accoppiamento tra albero e mozzo. Sebbene la forma possa ricordare quella delle ruote dentate, il principio di funzionamento è opposto: non vi è una rotazione relativa imposta dalla trasmissione del moto tra due profili coniugati, bensì i due corpi vengono resi mutuamente solidali per ruotare congiuntamente. I profili scanalati presentano caratteristiche geometriche ben definite: un diametro interno $d$, un diametro esterno massimo $D$ corrispondente al risalto, e una larghezza del risalto $b$. I risalti presentano inoltre dettagli costruttivi essenziali come le gole di scarico alla base e degli smussi nella parte alta per facilitare l'inserimento tra le parti.],[ #image("images/accoppiamenti/centraggio.png")])
 
 
 === Classificazione e Tipi di Centraggio
@@ -178,7 +178,7 @@ Con $p_("amm") = 75 div 115$ MPa.
 #grid(
   columns: (1.5fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Le spine costituiscono una tipologia di collegamento estremamente semplice ed economica. Consistono in un corpo cilindrico inserito in un foro passante che attraversa diametralmente sia il mozzo che l'albero. Svolgono la funzione di ostacolo meccanico, rendendo solidali le due parti in rotazione. Oltre alla pura trasmissione del moto in sistemi a bassa dinamica (es. bracci meccanici o attrezzature manuali), le spine sono largamente impiegate come #emph[elementi fusibili di protezione]. Il loro dimensionamento è calibrato affinché, in presenza di un momento torcente anomalo ed eccessivo, la spina si tranci di netto. Questa rottura programmata disconnette l'utenza dall'albero motore, salvaguardando i componenti più costosi dell'impianto. Il sistema deve tuttavia essere impiegato in contesti protetti, in quanto la rottura può provocare la proiezione radiale di frammenti metallici.],[#image("images/spine.png",width:70%)])
+  align: (left + horizon, center + horizon),[Le spine costituiscono una tipologia di collegamento estremamente semplice ed economica. Consistono in un corpo cilindrico inserito in un foro passante che attraversa diametralmente sia il mozzo che l'albero. Svolgono la funzione di ostacolo meccanico, rendendo solidali le due parti in rotazione. Oltre alla pura trasmissione del moto in sistemi a bassa dinamica (es. bracci meccanici o attrezzature manuali), le spine sono largamente impiegate come #emph[elementi fusibili di protezione]. Il loro dimensionamento è calibrato affinché, in presenza di un momento torcente anomalo ed eccessivo, la spina si tranci di netto. Questa rottura programmata disconnette l'utenza dall'albero motore, salvaguardando i componenti più costosi dell'impianto. Il sistema deve tuttavia essere impiegato in contesti protetti, in quanto la rottura può provocare la proiezione radiale di frammenti metallici.],[#image("images/accoppiamenti/spine.png",width:70%)])
 
 
 
@@ -198,7 +198,7 @@ Qualora sia necessario accoppiare un albero e un mozzo cilindrici senza eseguire
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[1. Sistema a dischi a stella (Ringspann)]
 Costituito da elementi a forma di molla elastica troncoconica cedevole, sagomata con un profilo a greca sulla circonferenza. Applicando una forza assiale, il disco si inflette e tende ad appiattirsi; diminuendo il diametro interno e aumentando quello esterno, si produce un'azione di impuntamento (forzamento radiale) contro l'albero e il mozzo. L'effetto si moltiplica impacchettando in serie più dischi (fino a un massimo di 16).],[
-#image("images/Ringspann.png", width:50%)
+#image("images/accoppiamenti/Ringspann.png", width:50%)
 ])
 
 #grid(
@@ -206,7 +206,7 @@ Costituito da elementi a forma di molla elastica troncoconica cedevole, sagomata
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[2. Anelli compensatori (Star)]
 Anelli ondulati per stampaggio realizzati in nastro di acciaio temprato per molle, visivamente simili alla forma di un "blister" per medicinali svuotato. Inserendo questo anello in una cava di forzamento tra albero e mozzo, le bugne in rilievo subiscono uno schiacciamento radiale. La rigidezza strutturale dei rilievi genera la pressione di contatto per attrito necessaria alla trasmissione.],[
-#image("images/star.png", width:50%)
+#image("images/accoppiamenti/star.png", width:50%)
 ])
 
 #grid(
@@ -214,14 +214,14 @@ Anelli ondulati per stampaggio realizzati in nastro di acciaio temprato per moll
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[3. Accoppiamento con anelli conici]
 Si basa su una serie di anelli dalla superficie troncoconica divisi in due metà (superiore e inferiore). Un coperchio flangiato esterno, serrato tramite bulloni lungo l'asse, spinge questi elementi sul loro piano inclinato. L'avanzamento assiale si converte in spinta radiale e pressione di forzamento. Il vantaggio risiede nel perfetto controllo del precarico applicando una chiave dinamometrica alle viti. Lo svantaggio principale è che, lungo l'asse, gli anelli più distanti dalle viti di serraggio subiscono una forza assiale progressivamente inferiore, portando a una distribuzione della pressione radiale non uniforme sull'albero.],[
-#image("images/accoppiamenti conici industriali.png")
+#image("images/accoppiamenti/accoppiamenti conici industriali.png")
 ])
 
 #grid(
   columns: (1.4fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[4. Sistema con bussola conica (Taper-lock)]
-Comprende un mozzo e una bussola con un unico piano inclinato conico (generalmente con semi-angolo ampio, es. 55°). Stringendo delle viti laterali (o grani) all'interno di sedi filettate per metà sul mozzo e per metà sulla bussola, si costringe la bussola ad avanzare assialmente chiudendo un intaglio (taglio) longitudinale. Questo movimento genera la stretta radiale.],[#include "figs/accoppiamenti-fig01.typ"
+Comprende un mozzo e una bussola con un unico piano inclinato conico (generalmente con semi-angolo ampio, es. 55°). Stringendo delle viti laterali (o grani) all'interno di sedi filettate per metà sul mozzo e per metà sulla bussola, si costringe la bussola ad avanzare assialmente chiudendo un intaglio (taglio) longitudinale. Questo movimento genera la stretta radiale.],[#include "figs/accoppiamenti/accoppiamenti-fig01.typ"
 ])
 
 #grid(
@@ -229,7 +229,7 @@ Comprende un mozzo e una bussola con un unico piano inclinato conico (generalmen
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[5. Calettatori per attrito autocentranti (Tollok)]
 Questi sistemi compatti e sofisticati racchiudono le superfici coniche di serraggio all'interno del dispositivo stesso. Nessuna conicità deve essere lavorata sull'albero o sul mozzo (che rimangono perfettamente cilindrici). Il Tollok si compone di due o più anelli conici contrapposti uniti da una serie di viti assiali di serraggio. 
-Avvicinando i corpi sul loro piano inclinato interno tramite l'avvitatura, il dispositivo si espande diametralmente vincolando mozzo e albero. In caso di velocità elevate o mozzi lunghi, la testa del calettatore può essere incassata in battuta sul fondo di una sede a campana, in modo tale che, in caso di rottura di una vite, la flangia limiti la proiezione radiale dei detriti tutelando gli operatori.],[#image("images/Tollok.png", width:70%)])
+Avvicinando i corpi sul loro piano inclinato interno tramite l'avvitatura, il dispositivo si espande diametralmente vincolando mozzo e albero. In caso di velocità elevate o mozzi lunghi, la testa del calettatore può essere incassata in battuta sul fondo di una sede a campana, in modo tale che, in caso di rottura di una vite, la flangia limiti la proiezione radiale dei detriti tutelando gli operatori.],[#image("images/accoppiamenti/Tollok.png", width:70%)])
 La procedura di installazione richiede l'inserimento in configurazione "scarica". Il serraggio delle viti deve avvenire rigorosamente lavorando per diametri opposti (fase di accostamento a croce), al fine di portare i corpi in battuta uniformemente senza farli basculare o incastrare obliquamente; solo successivamente si effettua il serraggio in sequenza circonferenziale continua per la calibrazione finale della pressione.
 
 Per il dimensionamento del mozzo al di sopra del Tollok, assimilato a un cilindro cavo di grosso spessore, si verifica che il diametro minimo esterno del mozzo $D M$ rispetti la proporzione:

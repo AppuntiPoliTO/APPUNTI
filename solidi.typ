@@ -26,7 +26,7 @@
   [Un solido assialsimmetrico è generato idealmente dalla rivoluzione di una sezione piana nell'intorno
 di un asse di riferimento, che costituisce quindi un asse di rotazione e
 di simmetria per la figura. L'analisi tensionale dei solidi assialsimmetrici serve a risolvere le problematiche strutturali di oggetti generati dalla rivoluzione di una sezione geometrica piana attorno a un asse di simmetria (es. reattori nucleari, recipienti in pressione, bombole per gas e silos).
-In questi corpi la sezione trasversale non è trascurabile rispetto alla lunghezza dell'elemento. Pertanto, il modello semplificato della trave di De Saint-Venant risulta inapplicabile per calcolare tensioni, deformazioni e spostamenti.],[#include "figs/solidi-fig01.typ"])
+In questi corpi la sezione trasversale non è trascurabile rispetto alla lunghezza dell'elemento. Pertanto, il modello semplificato della trave di De Saint-Venant risulta inapplicabile per calcolare tensioni, deformazioni e spostamenti.],[#include "figs/solidi/solidi-fig01.typ"])
 
 Affinché la trattazione sia rigorosa, imponiamo un triplice vincolo sulle condizioni iniziali del modello:
 1.  *Assialsimmetria geometrica:* Il solido deve avere una geometria caratterizzata da una simmetria assiale, ad esempio un cilindro è un rettangolo rivoluzionato attorno all'asse centrale.
@@ -51,7 +51,7 @@ $ sigma(r,theta , z) = sigma(r) $
   Essendo le facce laterali libere da carichi, la tensione assiale è nulla, instaurando un puro stato di tensione piano (biassiale). Si assume $sigma_z = 0$.
 - *Anelli*: Elementi aventi dimensioni ridotte sia in spessore assiale sia radialmente (anelli sottili).
 
-Come equazioni risolventi vengono usate le equazioni di equilibrio di congruenza ed elasticità del materiale.],[#include "figs/solidi-fig02.typ"])
+Come equazioni risolventi vengono usate le equazioni di equilibrio di congruenza ed elasticità del materiale.],[#include "figs/solidi/solidi-fig02.typ"])
 
 
 #v(1em)
@@ -68,7 +68,7 @@ I recipienti cilindrici in pressione sono solidi assialsimmetrici complessi, il 
 #grid(
   columns: (0.9fr, 1fr),
   column-gutter: 1em,
-  align: (center + horizon, center + horizon),[#include "figs/solidi-fig03.typ"],[#include "figs/solidi-fig04.typ"])
+  align: (center + horizon, center + horizon),[#include "figs/solidi/solidi-fig03.typ"],[#include "figs/solidi/solidi-fig04.typ"])
 Nel caso di un tubo con pressione interna $p_i$, andiamo a determinare
 le tensioni.
 
@@ -112,7 +112,7 @@ $r + u$, con lunghezza circonferenziale finale $l_f = 2 pi\(r + u\)$.
 deformazione circonferenziale è per definizione il rapporto percentuale
 dell'allungamento: \ $ epsilon.alt_c = frac(l_f - l_i, l_i) = frac(2 pi\(r + u\)- 2 pi r, 2 pi r) = u / r $ Da questa si ricava la relazione inversa che permette il calcolo dello
 spostamento radiale, di estremo interesse in progettazione: \ $ u = epsilon.alt_c dot.op r = epsilon.alt_c D/2 $],[
-#include "figs/solidi-fig05.typ"
+#include "figs/solidi/solidi-fig05.typ"
 ]
 ) 
 
@@ -130,7 +130,7 @@ spostamento radiale, di estremo interesse in progettazione: \ $ u = epsilon.alt_
     Poiché in un tubo sottile il diametro medio $D_s$ è approssimabile al diametro interno $D_i$, la tensione assiale risulta pari alla metà della tensione circonferenziale $sigma_c$.
   ],
   [
-#include "figs/solidi-fig06.typ"
+#include "figs/solidi/solidi-fig06.typ"
   ]
 )
 #v(1em)
@@ -170,7 +170,7 @@ $ u_i = D_i / 2 epsilon_c = D_i / 2 \{ p_i / E (1 + nu) [ D_i / (2s) (1 - nu) + 
     
   ],
   move(dx: +17pt)[ 
-#include "figs/solidi-fig07.typ"
+#include "figs/solidi/solidi-fig07.typ"
   ]
 )
 Delle 6 equazioni di equilibrio nello spazio tridimensionale del solido 5 sono soddisfatte per via della simmetria:
@@ -199,7 +199,7 @@ Inoltre per le forze parallele all'asse c notiamo che queste sono identiche a ca
 
   ],
   move(dx: +11pt)[
-#include "figs/solidi-fig08.typ"
+#include "figs/solidi/solidi-fig08.typ"
   ]
 )
 #grid(
@@ -208,7 +208,7 @@ Inoltre per le forze parallele all'asse c notiamo che queste sono identiche a ca
   align: (left + horizon, center + horizon), [La risultante radiale delle forze dovute alla tensione circonferenziale è $sigma_c dot "dr" dot b dot sin((dif theta)/2) $ essendo $sin((dif theta )/2) approx (dif theta)/2$ $arrow.r sigma_c dot d r dot b dot (dif theta)/2.$\ Nel concio elementare un eventuale carico di volume si scrive come $Phi_v dot r dif theta dot b dot d r. $\ Pertanto nell'equazione di equilibrio figurano:\ 
 $sigma_r arrow.r dif/ (dif r)(sigma_r dot r dot dif theta dot b) dif r arrow.r Phi_V  dot r dot dif theta dot b dot dif r \ sigma_c arrow.r - sigma_C dot dif r dot b dot dif theta$ \ Considerando b non dipendente da r e nessun carico volumetrico applicato otteniamo:\ $cancel(b dot dif theta) dif/(dif r)(sigma_r dot r ) cancel(dif r) - sigma_C cancel(dot b dot dif theta dot dif r)= 0 $ \  ],
   
-  move(dx: -7pt)[#include "figs/solidi-fig09.typ"])
+  move(dx: -7pt)[#include "figs/solidi/solidi-fig09.typ"])
 Questa equazione può essere scritta in due forme equivalenti, utili per legare la tensione circonferenziale alla variazione dello sforzo radiale nello spessore:
   $ sigma_c &= dif/(dif r) (sigma_r dot r) quad & (1^a " forma") \ 
   sigma_c &= r (dif sigma_r)/(dif r) + sigma_r quad & (2^a " forma") $
@@ -327,7 +327,7 @@ interno e a quella atmosferica esterna, oppure di alberi e mozzi
 soggetti a forzamento. Nei dischi da turbina, l'interazione con le
 palette (collegate tramite pin) può essere schematizzata come una
 pressione, sebbene di segno opposto qualora generi una trazione verso
-l'esterno.],[#include "figs/solidi-fig10.typ"]
+l'esterno.],[#include "figs/solidi/solidi-fig10.typ"]
 )
 
 Le condizioni al contorno si scrivono come:
@@ -371,7 +371,7 @@ interno, che risulta il punto maggiormente sollecitato.
     Il punto più sollecitato si trova al bordo interno, a contatto con il fluido. Essendo la funzione della sollecitazione decrescente col quadrato del raggio, la differenza tra le tensioni principali è sempre massima al bordo interno $r_i$.
   ],
   [
-    #include "figs/solidi-fig11.typ"
+    #include "figs/solidi/solidi-fig11.typ"
   ]
 )
 #v(1em)
@@ -401,7 +401,7 @@ $ cases(
   minore e una curvatura più accentuata su cui si concentra la tensione.
   ],
   [
-   #include "figs/solidi-fig12.typ"
+   #include "figs/solidi/solidi-fig12.typ"
   ]
 )
 #pagebreak()
@@ -435,7 +435,7 @@ che descrive $sigma_c$. Le intersezioni di quest'ultima con le verticali
 dei due raggi forniscono i valori esatti di $sigma_c$ ai bordi.
 
 Questo metodo permette di calcolare graficamente tutte le tensioni con
-estrema precisione e senza alcun dubbio sulle pendenze.],[#include "figs/solidi-fig13.typ"])
+estrema precisione e senza alcun dubbio sulle pendenze.],[#include "figs/solidi/solidi-fig13.typ"])
 
 
 
@@ -460,7 +460,7 @@ La tensione assiale $sigma_z$ dipende dai vincoli d'installazione:
       sigma_z = (p_i D_i^2)/(D_e^2 - D_i^2) = A = "cost" $ 
   ],
   [
-    #include "figs/solidi-fig14.typ"
+    #include "figs/solidi/solidi-fig14.typ"
   ]
 )
 #v(1em)
@@ -545,12 +545,12 @@ interno di un cuscinetto calettato su un albero, ruotante a velocità
 angolare $omega$ costante. L'azione non è una pressione statica, ma una
 forza centrifuga originata dalla massa del corpo in rotazione.
 
-],[#include "figs/solidi-fig15.typ"
+],[#include "figs/solidi/solidi-fig15.typ"
 ],[Sull'elemento infinitesimo di volume $d V = s B dot.op r d phi.alt$ (con
 spessore radiale $s$ e profondità assiale $B$), agisce una forza
 centrifuga radiale:
 $ d F = d m omega^2 r = rho d V omega^2 r = rho s B omega^2 r^2 d phi.alt $],[
-#include "figs/solidi-fig16.typ"
+#include "figs/solidi/solidi-fig16.typ"
 
 ])
 #grid(
@@ -568,7 +568,7 @@ Dato che lo spessore dell'anello è esiguo, è lecito approssimare
 $r tilde.equiv D_e\/2$, ottenendo un valore costante:
 $ sigma_c^omega tilde.equiv rho omega^2 D_e^2 / 4 = sigma_0 = upright("costante") $
 Le tensioni radiale e assiale per effetto centrifugo sono invece nulle
-($sigma_r^omega = sigma_z^omega = 0$).],[#include "figs/solidi-fig17.typ"])
+($sigma_r^omega = sigma_z^omega = 0$).],[#include "figs/solidi/solidi-fig17.typ"])
 #strong[Problema del calettamento (Scalettamento):] Per garantire che
 l'anello interno del cuscinetto rimanga solidale all'albero durante il
 funzionamento, è fondamentale misurare lo spostamento radiale causato

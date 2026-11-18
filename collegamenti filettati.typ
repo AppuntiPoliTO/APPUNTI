@@ -47,7 +47,7 @@ Nel funzionamento generale di un bullone di collegamento, l'applicazione del mom
   [
     La caratterizzazione geometrica di una filettatura metrica ISO a profilo triangolare si basa sul diametro nominale (esterno) della vite $d$, misurabile direttamente con il calibro in corrispondenza della cresta esterna della filettatura. Nella designazione normalizzata si indica la lettera $"M"$ seguita dal valore del diametro nominale in millimetri: ad esempio, $"M"10$ indica un diametro $d = 10 "mm"$ con passo grosso tabellato $p = 1,5 "mm"$, mentre $"M"10 times 1,25$ specifica un diametro $d = 10 "mm"$ abbinato a un passo fine indicato esplicitamente pari a $p = 1,25 "mm"$.
   ],
-  [#include "figs/collegamenti-filettati-fig13.typ"]
+  [#include "figs/collegamenti-filettati/collegamenti-filettati-fig01.typ"]
 )
 
 
@@ -70,7 +70,7 @@ La distinzione terminologica tra le diverse configurazioni costruttive riveste u
   [
     - #strong[Bullone (vite + dado):] è costituito da una vite che attraversa completamente i pezzi da collegare all'interno di un foro passante libero (il fusto della vite non deve toccare le pareti del foro) e si impegna in un dado, all'interno del quale è ricavata la madrevite. Il contatto si esercita esclusivamente tra il sottotesta della vite e la superficie esterna del primo blocco e tra la superficie interna del dado e la superficie esterna del blocco opposto.
   ],
-  [#include "figs/collegamenti-filettati-fig14.typ"]
+  [#include "figs/collegamenti-filettati/collegamenti-filettati-fig02.typ"]
 )
 
 #grid(
@@ -80,7 +80,7 @@ La distinzione terminologica tra le diverse configurazioni costruttive riveste u
   [
     - #strong[Vite (mordente):] si impiega senza dado; la vite attraversa liberamente il primo pezzo (premendone la superficie esterna tramite il proprio sottotesta) e si avvita direttamente nella madrevite ricavata all'interno del secondo blocco, generalmente fisso, che svolge simultaneamente sia la funzione di elemento collegato sia quella del dado.
   ],
-  [#include "figs/collegamenti-filettati-fig15.typ"]
+  [#include "figs/collegamenti-filettati/collegamenti-filettati-fig03.typ"]
 )
 
 #grid(
@@ -90,7 +90,7 @@ La distinzione terminologica tra le diverse configurazioni costruttive riveste u
   [
     - #strong[Prigioniero:] è costituito da un gambo privo di testa e filettato alle due estremità. Un'estremità si avvita nella madrevite ricavata in uno dei pezzi (talvolta fino alla fine della filettatura, richiedendo attenzione a possibili problemi dovuti all'aria intrappolata sul fondo del foro cieco), mentre l'altra estremità fuoriesce per accogliere i pezzi da impilare e viene chiusa mediante un dado. Il prigioniero svolge anche una comoda funzione iniziale di perno di centramento per allineare le parti da accostare.
   ],
-  [#include "figs/collegamenti-filettati-fig16.typ"]
+  [#include "figs/collegamenti-filettati/collegamenti-filettati-fig04.typ"]
 )
 
 
@@ -103,7 +103,7 @@ La distinzione terminologica tra le diverse configurazioni costruttive riveste u
   [Il collegamento filettato applica una forza assiale di chiusura che comprime i pezzi l'uno contro l'altro. Questa compressione deve generare all'interfaccia tra le parti una forza d'attrito sufficiente a contrastare eventuali azioni trasversali esterne, impedendo lo scorrimento relativo dei blocchi: salvo configurazioni particolari, le viti #strong[non devono lavorare a taglio], bensì esclusivamente a trazione.
 
 A differenza del collegamento albero-mozzo, in cui l'interferenza è di natura geometrica (ottenuta tramite tolleranze dimensionali), nel collegamento filettato l'interferenza $i$ tra bullone e pezzo viene realizzata tramite il precarico prodotto dall'avvitamento. Applicando una coppia di serraggio (ad esempio mantenendo fermo il dado e ruotando la testa della vite), l'avanzamento relativo della vite rispetto alla madrevite genera un'interferenza assiale correlata al numero di giri compiuti dopo il primo contatto $n_("giri")$ e al passo $p$ della filettatura:],
-  [#include "figs/collegamenti-filettati-fig17.typ"],
+  [#include "figs/collegamenti-filettati/collegamenti-filettati-fig05.typ"],
 )
 
 $ i = p dot.op n_("giri") $
@@ -112,7 +112,7 @@ $ i = p dot.op n_("giri") $
 
 
 #align(center)[
-  #include "figs/collegamenti-filettati-fig18.typ"
+  #include "figs/collegamenti-filettati/collegamenti-filettati-fig06.typ"
 ]
 Sotto l'azione del serraggio, la vite risulta soggetta a trazione da parte del pezzo (allungandosi di uno spostamento positivo $u_v$ sotto la forza $F_v$), mentre i pezzi collegati risultano compressi dal bullone (accorciandosi di uno spostamento negativo $u_p$ sotto la forza $F_p$). In campo elastico lineare, ciascun componente è caratterizzato dalla propria rigidezza $K_i$ e dal suo reciproco, la deformabilità $delta_i$:
 
@@ -129,7 +129,7 @@ Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadra
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[L'intersezione tra le due rette identifica il punto di funzionamento del collegamento al montaggio:
 - L'ordinata del punto di intersezione fornisce la forza assiale di precarico in equilibrio nella vite e nei pezzi (direttamente correlata al momento di serraggio applicato).
-- La somma dei due spostamenti elastici rispetto alla posizione di equilibrio uguaglia l'interferenza imposta ($u_v + u_p = i$).], [#include "figs/collegamenti-filettati-fig19.typ"])
+- La somma dei due spostamenti elastici rispetto alla posizione di equilibrio uguaglia l'interferenza imposta ($u_v + u_p = i$).], [#include "figs/collegamenti-filettati/collegamenti-filettati-fig07.typ"])
 
 === Forza assiale, momento di serraggio e momento di svitamento
 
@@ -141,7 +141,7 @@ Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadra
 
 Il momento torcente resistente che occorre vincere durante il serraggio è dovuto a due contributi:
 1. L'attrito che si sviluppa tra i filetti della vite e quelli della madrevite in scorrimento relativo.
-2. L'attrito che si sviluppa tra la superficie del sottotesta della vite (o del dado, a seconda di quale elemento viene messo in rotazione) e la superficie del pezzo (o di un'eventuale rondella antisvitamento interposta).], [#include "figs/collegamenti-filettati-fig20.typ"])
+2. L'attrito che si sviluppa tra la superficie del sottotesta della vite (o del dado, a seconda di quale elemento viene messo in rotazione) e la superficie del pezzo (o di un'eventuale rondella antisvitamento interposta).], [#include "figs/collegamenti-filettati/collegamenti-filettati-fig08.typ"])
 #pagebreak()
 === Modello del piano inclinato (sola inclinazione dell'elica)
 Per ricavare la relazione analitica tra il momento di serraggio $M_T$ e la forza assiale $F_V$ agente sul fusto della vite, si schematizza in prima battuta il contatto tra i filetti come il moto relativo di un blocco su un piano inclinato di angolo $alpha_m$ (angolo medio dell'elica del filetto), trascurando momentaneamente l'inclinazione laterale del profilo triangolare.
@@ -166,7 +166,7 @@ Per riportare l'equilibrio nel sistema di riferimento globale del bullone (direz
 
 $ F_U = F_V tan(alpha_m + phi.alt) $
 
-], [#include "figs/collegamenti-filettati-fig21.typ"])
+], [#include "figs/collegamenti-filettati/collegamenti-filettati-fig09.typ"])
 Poiché la forza tangenziale $F_U$ agisce mediamente a una distanza dall'asse della vite pari al raggio medio $frac(d_m, 2)$ (dove $d_m$ è il diametro medio della filettatura, corrispondente a $d_2$), il momento torcente di serraggio necessario a vincere la resistenza sui filetti vale:
 
 $ M_T = F_U frac(d_m, 2) = frac(F_V, 2) [ d_m dot.op tan(alpha_m + phi.alt) ] $
@@ -178,7 +178,7 @@ $ M_T = F_U frac(d_m, 2) = frac(F_V, 2) [ d_m dot.op tan(alpha_m + phi.alt) ] $
 In fase di svitamento, il moto relativo lungo il piano inclinato si inverte (il filetto scende) e di conseguenza la forza di attrito $F_("attrito")$ si ribalta di $180degree$ per opporsi alla discesa. Nel caso generale in cui l'angolo d'attrito è maggiore dell'angolo d'inclinazione dell'elica ($phi.alt > alpha_m$), la risultante $F_(R E S)$ cade dalla parte opposta rispetto alla verticale, formando con $F_V$ l'angolo $(phi.alt - alpha_m)$ e invertendo il verso di $F_U$. Il momento necessario allo svitamento risulta opposto a quello di serraggio:
 
 $ M_("svit") = -F_U frac(d_m, 2) = -frac(F_V, 2) [d_m dot.op tan(phi.alt - alpha_m)] =\  frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt)] $
- Pertanto, se $phi.alt > alpha_m$, si ha $M_("svit") < 0$: il collegamento non si svita da solo ma richiede l'applicazione di un momento di segno opposto per effettuare lo svitamento comandato.],[#include "figs/collegamenti-filettati-fig22.typ"])
+ Pertanto, se $phi.alt > alpha_m$, si ha $M_("svit") < 0$: il collegamento non si svita da solo ma richiede l'applicazione di un momento di segno opposto per effettuare lo svitamento comandato.],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig10.typ"])
 
 
 
@@ -187,7 +187,7 @@ $ M_("svit") = -F_U frac(d_m, 2) = -frac(F_V, 2) [d_m dot.op tan(phi.alt - alpha
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nel caso particolare in cui l'angolo di attrito sia invece inferiore all'angolo dell'elica ($phi.alt < alpha_m$), la risultante $F_(R E S)$ rimane dallo stesso lato della verticale rispetto all'avvitamento e la componente $F_U$ mantiene lo stesso verso del serraggio:
 
-$ M = F_U frac(d_m, 2) = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt)] > 0 quad "se " phi.alt < alpha_m $ In tale condizione, il collegamento tende allo #strong[svitamento spontaneo] (autosvitamento, specialmente in presenza di piccoli disturbi o vibrazioni), e un eventuale momento positivo applicato nel verso di serraggio agirebbe in realtà per frenare lo svitamento spontaneo.],[#include "figs/collegamenti-filettati-fig23.typ"])
+$ M = F_U frac(d_m, 2) = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt)] > 0 quad "se " phi.alt < alpha_m $ In tale condizione, il collegamento tende allo #strong[svitamento spontaneo] (autosvitamento, specialmente in presenza di piccoli disturbi o vibrazioni), e un eventuale momento positivo applicato nel verso di serraggio agirebbe in realtà per frenare lo svitamento spontaneo.],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig11.typ"])
 
 === Attrito al sottotesta
 Per tenere conto anche dell'attrito sviluppato sulla superficie di contatto anulare del sottotesta (o del dado) in rotazione rispetto al pezzo o alla rondella, si aggiunge il contributo di un momento resistente di attrito agente su un diametro efficace del sottotesta $d_t$, caratterizzato da un coefficiente di attrito specifico $f_s = tan phi.alt_s$ (generalmente distinto da $f = tan phi.alt$, poiché i materiali di vite e dado/madrevite possono essere uguali tra loro mentre i materiali tra sottotesta e pezzo o rondella sono spesso diversi):
@@ -209,7 +209,7 @@ da cui si ricava:
 
 $ tan phi.alt = frac(F_("attrito") dot.op cos alpha, F_N) quad arrow.l.r.double quad frac(tan phi.alt, cos alpha) = frac(F_("attrito"), F_N) $
 
-], [#include "figs/collegamenti-filettati-fig24.typ"])
+], [#include "figs/collegamenti-filettati/collegamenti-filettati-fig12.typ"])
 Per mantenere la medesima struttura formale dell'equazione di serraggio, si definisce un #strong[coefficiente d'attrito apparente] (o equivalente) $tan phi.alt'$ (talvolta indicato come $tan phi.alt^*$):
 
 $ tan phi.alt' = frac(tan phi.alt, cos alpha) $
@@ -319,7 +319,7 @@ Le classi normalizzate previste sono: $3.6 - 4.6 - 4.8 - 5.6 - 5.8 - 6.6 - 8.8 -
 
 Il carico assiale applicato al collegamento non si ripartisce uniformemente su tutte le spire in presa, ma decresce rapidamente a partire dai primi filetti: i primi $5 div 6$ filetti (spire) sostengono circa il $90\%$ del carico complessivo. Non ha quindi utilità aumentare eccessivamente l'altezza della madrevite per incrementare la capacità portante, poiché il trasferimento del carico si esaurisce nei primi $5 div 6$ filetti.
 
-In un dado convenzionale, il primo filetto in presa sopporta circa il $35\%$ del carico, il secondo intorno al $20 div 25\%$, per poi scendere progressivamente fino a circa il $6\%$ sull'ultimo filetto; la zona di massima concentrazione tensionale alla base del dado costituisce quindi il punto critico dell'interazione. Un allungamento del dado comporta solo una modesta riduzione del picco iniziale. È invece molto efficace modificare geometricamente il dado per renderlo più deformabile nella zona iniziale di presa, ricavando una porzione alleggerita troncoconica (con parte piena superiore) alla base del dado stesso: invertendo o riducendo fortemente la compressione locale in tale zona cedevole (che si deforma a trazione/flessione locale sottraendosi al sovraccarico), il carico si ridistribuisce in modo molto più uniforme, abbattendo il picco sul primo filetto a circa il $15\%$ e portando le spire centrali e terminali a contribuire in misura significativa (oltre il $10\%$ sugli ultimi filetti per effetto di bordo).],[#include "figs/collegamenti-filettati-fig25.typ"])
+In un dado convenzionale, il primo filetto in presa sopporta circa il $35\%$ del carico, il secondo intorno al $20 div 25\%$, per poi scendere progressivamente fino a circa il $6\%$ sull'ultimo filetto; la zona di massima concentrazione tensionale alla base del dado costituisce quindi il punto critico dell'interazione. Un allungamento del dado comporta solo una modesta riduzione del picco iniziale. È invece molto efficace modificare geometricamente il dado per renderlo più deformabile nella zona iniziale di presa, ricavando una porzione alleggerita troncoconica (con parte piena superiore) alla base del dado stesso: invertendo o riducendo fortemente la compressione locale in tale zona cedevole (che si deforma a trazione/flessione locale sottraendosi al sovraccarico), il carico si ridistribuisce in modo molto più uniforme, abbattendo il picco sul primo filetto a circa il $15\%$ e portando le spire centrali e terminali a contribuire in misura significativa (oltre il $10\%$ sugli ultimi filetti per effetto di bordo).],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig13.typ"])
 
 === Effetto dei carichi assiali esterni e diagramma di forzamento
 
@@ -332,14 +332,14 @@ $ |F_v| = |F_p| $
 
 Se in esercizio si applica un carico assiale esterno $C$ (ad esempio nel sottotesta del dado o sugli elementi collegati) che tende a divaricare le parti serrate e ad allungare ulteriormente la vite, il sistema raggiunge una nuova condizione di equilibrio mantenendo immutata l'interferenza geometrica complessiva $i = u_v + u_p$:
 
-$ |F'_p| + C = |F'_v| $],[#include "figs/collegamenti-filettati-fig26.typ"])
+$ |F'_p| + C = |F'_v| $],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig14.typ"])
 
 #grid(
   columns: (1.3fr, 1fr),
   column-gutter: 4em,
   align: (left + horizon, center + horizon),[Nel diagramma di forzamento (o di interferenza), che riporta sulle ordinate le forze $|F_p|, |F_v|$ e sulle ascisse gli spostamenti $u$ (allungamento $u_v$ della vite e accorciamento $u_p$ delle parti), il punto di equilibrio al serraggio corrisponde all'intersezione tra la caratteristica elastica della vite (retta passante per l'origine) e quella delle parti serrate (retta con pendenza negativa che interseca l'asse $u$ in $u = i$). Applicando il carico $C$, rappresentato da un segmento verticale inserito tra le due caratteristiche elastiche a destra del punto di equilibrio iniziale (corrispondente a un incremento di spostamento $Delta u$), la forza sulla vite aumenta di una quota parte $Delta C_v$ fino a $F'_v$, mentre la forza di compressione sulle parti si riduce di una quota parte $Delta C_p$ fino a $F'_p$:
 
-$ F'_v = |F_v| + Delta C_v, \ F'_p = |F_p| - Delta C_p, \  C = Delta C_v + Delta C_p $],[#include "figs/collegamenti-filettati-fig27.typ"])
+$ F'_v = |F_v| + Delta C_v, \ F'_p = |F_p| - Delta C_p, \  C = Delta C_v + Delta C_p $],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig15.typ"])
 
 #grid(
   columns: (1.4fr, 1fr),
@@ -352,7 +352,7 @@ $ frac(Delta C_v, C) = frac(Delta u, delta_v) dot.op frac(delta_p dot.op delta_v
 
 Da cui seguono le formule di ripartizione (analoghe a una regola della leva):
 
-$ Delta C_v = C frac(delta_p, delta_v + delta_p), quad quad Delta C_p = C frac(delta_v, delta_v + delta_p) $],[#include "figs/collegamenti-filettati-fig28.typ"])
+$ Delta C_v = C frac(delta_p, delta_v + delta_p), quad quad Delta C_p = C frac(delta_v, delta_v + delta_p) $],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig16.typ"])
 
 === Stima della deformabilità della vite e dei pezzi serrati
 
@@ -360,7 +360,7 @@ $ Delta C_v = C frac(delta_p, delta_v + delta_p), quad quad Delta C_p = C frac(d
   columns: (1.2fr, 1fr),
   column-gutter: 3em,
   align: (left + horizon, center + horizon),[Per determinare analiticamente i fattori di ripartizione occorre calcolare le deformabilità $delta_v$ e $delta_p$. Applicando la teoria della trave caricata a sforzo normale $F_v$, la tensione assiale $sigma = F_v / A$ genera per la legge di Hooke una deformazione $epsilon.alt = sigma / E = F_v / (E A)$. \ Integrando la relazione $epsilon.alt = d u / d x$ lungo la lunghezza $L$ a sezione costante si ottiene lo spostamento $u = F_v L / (E A)$, da cui la deformabilità (reciproco della rigidezza per unità di lunghezza):
-],[#include "figs/collegamenti-filettati-fig29.typ"])
+],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig17.typ"])
 
 $ delta = frac(u, F) = frac(L, E dot.op A) $
 
@@ -382,21 +382,21 @@ Per la stima dell'area equivalente $A_p$, indicando con $D_p$ il diametro estern
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[Caso a) $D_p / d_(e t) lt.eq 1$:] l'elemento serrato è contenuto all'interno della proiezione della testa ed è quindi compresso uniformemente sull'intera corona circolare:
 
-$ A_p = frac(pi, 4) (D_p^2 - d_f^2) $],[#include "figs/collegamenti-filettati-fig30.typ"])
+$ A_p = frac(pi, 4) (D_p^2 - d_f^2) $],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig18.typ"])
 
  #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[Caso b) $D_p / d_(e t) = 1 div 3$:] la zona interessata dalla compressione si allarga a tronco di cono (cono di pressione), ma le dimensioni trasversali del pezzo non sono sufficienti a contenerlo interamente e il cono risulta troncato dal bordo esterno $D_p$. Definita la lunghezza efficace $L_p^"*" = min(L_p; 8D)$:
 
-],[#include "figs/collegamenti-filettati-fig31.typ"])
+],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig19.typ"])
 $ A_p = frac(pi, 4)(d_(e t)^2 - d_f^2) + frac(pi, 8)(frac(D_p, d_(e t)) - 1)(0.2 dot.op d_(e t) dot.op L_p^"*" + frac(L_p^("*2"), 100)) $
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[Caso c) $D_p / d_(e t) gt.eq 3$:] i pezzi serrati sono molto estesi trasversalmente, per cui il cono di pressione è completamente contenuto all'interno del volume del solido senza raggiungere i bordi laterali. Con $L_p^"*" = min(L_p; 8D)$:
 
-$ A_p = frac(pi, 4)[(d_(e t) + 0.1 dot.op L_p^"*")^2 - d_f^2] $],[#include "figs/collegamenti-filettati-fig32.typ"])
+$ A_p = frac(pi, 4)[(d_(e t) + 0.1 dot.op L_p^"*")^2 - d_f^2] $],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig20.typ"])
 
 === Accorgimenti costruttivi per diminuire il carico sulle viti
 
@@ -406,45 +406,7 @@ Dall'espressione $Delta C_v = C frac(delta_p, delta_v + delta_p)$ risulta che, a
   columns: (1fr, 1fr),
   rows: 2,
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[#strong[Aumento della lunghezza della vite:] si interpone ad esempio un distanziale cilindrico impiegando una vite con gambo completamente filettato. Sebbene l'allungamento incrementi anche la deformabilità $delta_p$ delle parti serrate, dimensionando opportunamente il distanziale è possibile far crescere $delta_v$ in misura maggiore rispetto a $delta_p$. ],[#include "figs/collegamenti-filettati-fig33.typ"],[Nel diagramma di forzamento, $F_(v, l i m)$ rimane invariata (dipendendo dal diametro di nocciolo $d_n$), mentre la retta della vite risulta più inclinata verso l'asse delle ascisse; di conseguenza, a parità di $C$, $Delta C_v$ diminuisce e $Delta C_p$ aumenta.],[#canvas(length: 0.9cm, {
-  import draw: *
-  line((0, 0), (9.0, 0), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 0), (0, 5.2), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 3.1), (8.7, 3.1), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  line((0, 0), (2.0, 4.276), stroke: 1.05pt)
-  line((1.0, 4.096), (2.85, 0), stroke: 1.05pt)
-  line((0, 0), (5.8, 3.996), stroke: 1.05pt)
-  line((4.05, 4.096), (5.9, 0), stroke: 1.05pt)
-  line((1.783, 2.363), (1.783, 3.812), stroke: 1.5pt)
-  line((5.0, 1.993), (5.0, 3.445), stroke: 1.5pt)
-  rect((1.683, 3.712), (1.883, 3.912), fill: red, stroke: none)
-  line((1.783, 2.483), (1.673, 2.263), (1.893, 2.263), close: true, fill: blue, stroke: none)
-  rect((4.9, 3.345), (5.1, 3.545), fill: red, stroke: none)
-  line((5.0, 2.113), (4.89, 1.893), (5.11, 1.893), close: true, fill: blue, stroke: none)
-  line((1.783, 3.812), (3.35, 3.812), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((1.783, 2.363), (3.35, 2.363), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((2.35, 3.1), (2.35, 3.812), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((2.35, 2.363), (2.35, 3.1), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((3.2, 2.363), (3.2, 3.812), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((5.0, 3.445), (6.55, 3.445), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((5.0, 1.993), (6.55, 1.993), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((5.55, 3.1), (5.55, 3.445), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((5.55, 1.993), (5.55, 3.1), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((6.4, 1.993), (6.4, 3.445), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  content((-0.15, 4.85), text(size: 8pt)[$|F_p|$], anchor: "east")
-  content((-0.15, 4.42), text(size: 8pt)[$|F_v|$], anchor: "east")
-  content((-0.15, 3.1), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
-  content((8.85, -0.18), text(size: 8.5pt)[$u$], anchor: "north")
-  content((2.43, 3.45), text(size: 7.5pt)[$Delta C_v$], anchor: "west")
-  content((2.43, 2.73), text(size: 7.5pt)[$Delta C_p$], anchor: "west")
-  content((3.3, 2.9), text(size: 8pt)[$C$], anchor: "west")
-  content((5.63, 3.28), text(size: 7.5pt)[$Delta C_v$], anchor: "west")
-  content((5.63, 2.55), text(size: 7.5pt)[$Delta C_p$], anchor: "west")
-  content((6.5, 2.68), text(size: 8pt)[$C$], anchor: "west")
-  content((1.7, 4.75), text(size: 8.5pt)[$F_(v,"lim")$ rimane uguale perché dipende dal \ diametro di nocciolo], anchor: "south-west")
-  content((6.0, 4.2), text(size: 8.5pt)[Vite 'allungata'], anchor: "west")
-  content((6.65, 1.35), text(size: 8.5pt)[$Delta C_v = C delta_p / lr((delta_v + delta_p))$], anchor: "west")
-})])
+  align: (left + horizon, center + horizon),[#strong[Aumento della lunghezza della vite:] si interpone ad esempio un distanziale cilindrico impiegando una vite con gambo completamente filettato. Sebbene l'allungamento incrementi anche la deformabilità $delta_p$ delle parti serrate, dimensionando opportunamente il distanziale è possibile far crescere $delta_v$ in misura maggiore rispetto a $delta_p$. ],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig21.typ"],[Nel diagramma di forzamento, $F_(v, l i m)$ rimane invariata (dipendendo dal diametro di nocciolo $d_n$), mentre la retta della vite risulta più inclinata verso l'asse delle ascisse; di conseguenza, a parità di $C$, $Delta C_v$ diminuisce e $Delta C_p$ aumenta.],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig22.typ"])
 
 
 
@@ -460,159 +422,7 @@ $ F_(v, l i m) = sigma_(a, l i m) dot.op A_g = frac(X dot.op R_(p 0.2), sqrt(1 +
 
 $ M_T = frac(F_(v, l i m), 2)(frac(p, pi) + d_m dot.op frac(tan phi.alt, cos alpha) + d_t dot.op tan phi.alt) $
 
-],[#canvas(length: 1cm, {
-  import draw: *
-
-  // Helper per testa esagonale / dado esagonale (vista standard UNI/ISO a 3 facce)
-  let hex-part(x0, x1, R, chamfer-left: true, chamfer-right: true, fill-col: luma(242)) = {
-    let h = R / 2.0      // semialtezza faccia centrale (e/4)
-    let y-c = 0.866 * R  // semialtezza faccia piana terminale (s/2)
-    let c = 0.13         // profondità smusso
-    let xl = if chamfer-left { x0 + c } else { x0 }
-    let xr = if chamfer-right { x1 - c } else { x1 }
-
-    // Riempimento opaco dell'intera sagoma (copre la filettatura sotto il dado)
-    if chamfer-left and chamfer-right {
-      line(
-        (xl, R), (xr, R), (x1, y-c), (x1, -y-c), (xr, -R),
-        (xl, -R), (x0, -y-c), (x0, y-c),
-        close: true, fill: fill-col, stroke: none
-      )
-    } else if chamfer-left {
-      line(
-        (xl, R), (x1, R), (x1, -R),
-        (xl, -R), (x0, -y-c), (x0, y-c),
-        close: true, fill: fill-col, stroke: none
-      )
-    } else if chamfer-right {
-      line(
-        (x0, R), (xr, R), (x1, y-c), (x1, -y-c), (xr, -R), (x0, -R),
-        close: true, fill: fill-col, stroke: none
-      )
-    } else {
-      rect((x0, -R), (x1, R), fill: fill-col, stroke: none)
-    }
-
-    // Contorni esterni superiori e inferiori
-    line((xl, R), (xr, R), stroke: 1.1pt)
-    line((xl, -R), (xr, -R), stroke: 1.1pt)
-
-    // Lato sinistro (smussi esterni + 3 archi di smusso sulle facce)
-    if chamfer-left {
-      line((xl, R), (x0, y-c), (x0, -y-c), (xl, -R), stroke: 1.1pt)
-      arc((xl, 0.75 * R), start: 90deg, stop: 270deg, radius: (c, 0.25 * R), anchor: "origin", stroke: 0.9pt)
-      arc((xl, 0), start: 90deg, stop: 270deg, radius: (c, h), anchor: "origin", stroke: 0.9pt)
-      arc((xl, -0.75 * R), start: 90deg, stop: 270deg, radius: (c, 0.25 * R), anchor: "origin", stroke: 0.9pt)
-    } else {
-      line((x0, -R), (x0, R), stroke: 1.1pt)
-    }
-
-    // Lato destro
-    if chamfer-right {
-      line((xr, R), (x1, y-c), (x1, -y-c), (xr, -R), stroke: 1.1pt)
-      arc((xr, 0.75 * R), start: -90deg, stop: 90deg, radius: (c, 0.25 * R), anchor: "origin", stroke: 0.9pt)
-      arc((xr, 0), start: -90deg, stop: 90deg, radius: (c, h), anchor: "origin", stroke: 0.9pt)
-      arc((xr, -0.75 * R), start: -90deg, stop: 90deg, radius: (c, 0.25 * R), anchor: "origin", stroke: 0.9pt)
-    } else {
-      line((x1, -R), (x1, R), stroke: 1.1pt)
-    }
-
-    // Spigoli interni tra le 3 facce
-    line((xl, h), (xr, h), stroke: 1.0pt)
-    line((xl, -h), (xr, -h), stroke: 1.0pt)
-  }
-
-  // 1. Gambo e filettatura (disegnati prima, così testa e dado li coprono)
-  // Tratto cilindrico sottotesta (d = 1.00)
-  line((0.72, 0.50), (1.25, 0.50), stroke: 1.1pt)
-  line((0.72, -0.50), (1.25, -0.50), stroke: 1.1pt)
-
-  // Raccordi e gambo ridotto (d_g = 0.64)
-  line((1.45, 0.32), (4.65, 0.32), stroke: 1.1pt)
-  line((1.45, -0.32), (4.65, -0.32), stroke: 1.1pt)
-  arc((1.45, 0.50), start: 180deg, stop: 270deg, radius: (0.20, 0.18), anchor: "origin", stroke: 1.1pt)
-  arc((1.45, -0.50), start: 90deg, stop: 180deg, radius: (0.20, 0.18), anchor: "origin", stroke: 1.1pt)
-  arc((4.65, 0.50), start: 270deg, stop: 360deg, radius: (0.20, 0.18), anchor: "origin", stroke: 1.1pt)
-  arc((4.65, -0.50), start: 0deg, stop: 90deg, radius: (0.20, 0.18), anchor: "origin", stroke: 1.1pt)
-
-  // Tratto filettato (x = 4.85 .. 8.07)
-  line((4.85, -0.50), (4.85, 0.50), stroke: 1.1pt) // fine filettatura
-  line((4.85, 0.50), (7.95, 0.50), stroke: 1.1pt)
-  line((4.85, -0.50), (7.95, -0.50), stroke: 1.1pt)
-  line((4.85, 0.42), (7.95, 0.42), stroke: 0.6pt)  // fondo filetto
-  line((4.85, -0.42), (7.95, -0.42), stroke: 0.6pt)
-  // Smusso terminale vite
-  line((7.95, -0.50), (7.95, 0.50), stroke: 0.7pt)
-  line((7.95, 0.50), (8.07, 0.38), stroke: 1.1pt)
-  line((7.95, -0.50), (8.07, -0.38), stroke: 1.1pt)
-  line((8.07, -0.38), (8.07, 0.38), stroke: 1.1pt)
-
-  // 2. Testa esagonale (sinistra) e Dado esagonale (destra)
-  hex-part(0.00, 0.72, 0.90, chamfer-left: true, chamfer-right: false)
-  hex-part(6.35, 7.15, 0.90, chamfer-left: true, chamfer-right: true)
-
-  // 3. Asse di simmetria
-  line((-0.35, 0), (8.40, 0), stroke: (dash: "dash-dotted", thickness: 0.55pt, paint: luma(90)))
-
-  // 4. Quote dimensionali (d_g e d)
-  line((2.50, 0.80), (2.50, 0.32), mark: (end: "stealth", fill: black, scale: 0.55), stroke: 0.65pt)
-  line((2.50, -0.80), (2.50, -0.32), mark: (end: "stealth", fill: black, scale: 0.55), stroke: 0.65pt)
-  content((2.63, -0.68), text(size: 8.5pt)[$d_g$], anchor: "west")
-
-  line((5.60, 0.50), (5.60, -0.50), mark: (start: "stealth", end: "stealth", fill: black, scale: 0.55), stroke: 0.65pt)
-  content((5.72, 0.22), text(size: 8.5pt)[$d$], anchor: "west")
-
-  // 5. Etichette esplicative
-  let callout(pt, label-pt, txt, anchor: "south") = {
-    line(pt, label-pt, stroke: (thickness: 0.5pt, paint: luma(90)))
-    circle(pt, radius: 0.035, fill: luma(60), stroke: none)
-    content(label-pt, pad(bottom: 2pt, top: 2pt, text(size: 8pt, txt)), anchor: anchor)
-  }
-
-  callout((0.36, 0.90), (0.36, 1.35), [Testa esagonale], anchor: "south")
-  callout((3.05, 0.32), (3.05, 1.35), [Gambo ridotto ($d_g < d_1$)], anchor: "south")
-  callout((5.60, 0.50), (5.60, 1.35), [Tratto filettato], anchor: "south")
-  callout((6.75, -0.90), (6.75, -1.35), [Dado esagonale], anchor: "north")
-})],[Nel diagramma di forzamento, a parità di deformabilità del pezzo $delta_p$, la retta della vite si inclina maggiormente verso l'asse $u$ e il punto di intersezione iniziale scende a un valore inferiore $F_(v, l i m) " (alleggerita)"$: la modifica agisce dunque sia abbassando la forza assiale limite di serraggio sia riducendo la quota parte $Delta C_v$ che si scarica sulla vite in esercizio.],[#canvas(length: 1cm, {
-  import draw: *
-  line((0, 0), (7.5, 0), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 0), (0, 5.5), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 0), (2.0, 4.33), stroke: 1.1pt)
-  line((1.3, 4.20), (2.7, 0), stroke: 1.1pt)
-  line((0, 0), (5.87, 4.20), stroke: 1.1pt)
-  line((3.65, 4.20), (5.05, 0), stroke: 1.1pt)
-  line((1.8, 2.70), (1.8, 3.90), stroke: 1.4pt)
-  line((4.4, 1.95), (4.4, 3.15), stroke: 1.4pt)
-  rect((1.7, 3.80), (1.9, 4.00), fill: red, stroke: none)
-  line((1.7, 2.58), (1.9, 2.58), (1.8, 2.82), close: true, fill: blue, stroke: none)
-  rect((4.3, 3.05), (4.5, 3.25), fill: red, stroke: none)
-  line((4.3, 1.83), (4.5, 1.83), (4.4, 2.07), close: true, fill: blue, stroke: none)
-  line((1.9, 3.90), (3.45, 3.90), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((0, 3.30), (3.45, 3.30), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((0, 2.90), (7.10, 2.90), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((1.9, 2.70), (3.45, 2.70), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((4.5, 3.15), (6.15, 3.15), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((4.5, 1.95), (6.15, 1.95), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((2.45, 3.30), (2.45, 3.90), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((2.45, 2.70), (2.45, 3.30), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((3.25, 2.70), (3.25, 3.90), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((5.05, 3.60), (5.05, 3.15), mark: (end: ">"), stroke: 0.6pt)
-  line((5.05, 1.95), (5.05, 2.90), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((5.95, 1.95), (5.95, 3.15), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  content((-0.15, 5.20), text(size: 8.5pt)[$|F_p|$], anchor: "east")
-  content((-0.15, 4.65), text(size: 8.5pt)[$|F_v|$], anchor: "east")
-  content((-0.15, 3.48), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
-  content((-0.15, 2.72), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
-  content((-0.15, 2.28), text(size: 7.5pt)[(alleggerita)], anchor: "east")
-  content((7.10, -0.25), text(size: 9pt)[$u$], anchor: "north")
-  content((2.55, 3.60), text(size: 7.5pt)[$Delta C_v$], anchor: "west")
-  content((2.55, 3.00), text(size: 7.5pt)[$Delta C_p$], anchor: "west")
-  content((3.35, 3.30), text(size: 7.5pt)[$C$], anchor: "west")
-  content((5.15, 3.40), text(size: 7.5pt)[$Delta C_v$], anchor: "west")
-  content((5.15, 2.425), text(size: 7.5pt)[$Delta C_p$], anchor: "west")
-  content((6.05, 2.55), text(size: 7.5pt)[$C$], anchor: "west")
-  content((4.52, 2.25), text(size: 7.5pt)[$C$], anchor: "west")
-})])
+],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig23.typ"],[Nel diagramma di forzamento, a parità di deformabilità del pezzo $delta_p$, la retta della vite si inclina maggiormente verso l'asse $u$ e il punto di intersezione iniziale scende a un valore inferiore $F_(v, l i m) " (alleggerita)"$: la modifica agisce dunque sia abbassando la forza assiale limite di serraggio sia riducendo la quota parte $Delta C_v$ che si scarica sulla vite in esercizio.],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig24.typ"])
 
 
 
@@ -659,39 +469,7 @@ Occorre prestare particolare attenzione al conteggio del numero di superfici ($"
 
 $ frac(Delta F_v, Delta i) = frac(F_v, i) = frac(F_v, F_v (delta_v + delta_p)) arrow.r.double Delta F_v = frac(Delta i, delta_v + delta_p) $
  
- ],[#canvas(length: 1cm, {
-  import draw: *
-  line((0, 0), (0, 5.1), mark: (end: ">"), stroke: 0.8pt)
-  line((0, 0), (7.4, 0), mark: (end: ">"), stroke: 0.8pt)
-
-  line((0, 0), (2.95, 3.54), stroke: 1.1pt)
-  line((0.55, 2.56), (3.75, 0), stroke: 1.1pt)
-  line((1.15, 3.28), (5.25, 0), stroke: 1.1pt)
-  line((2.5, 3.4), (6.75, 0), stroke: 1.1pt)
-
-  line((0, 3.24), (2.7, 3.24), stroke: (dash: "dashed", thickness: 0.7pt))
-  line((0, 2.52), (2.1, 2.52), stroke: (dash: "dashed", thickness: 0.7pt))
-  line((0, 1.8), (3.3, 1.8), stroke: (dash: "dashed", thickness: 0.7pt))
-
-  line((0, 0), (0, -1.65), stroke: 0.6pt)
-  line((3.75, 0), (3.75, -0.95), stroke: 0.6pt)
-  line((5.25, 0), (5.25, -1.65), stroke: 0.6pt)
-  line((3.75, -0.75), (5.25, -0.75), mark: (start: ">", end: ">"), stroke: 0.7pt)
-  line((0, -1.45), (5.25, -1.45), mark: (start: ">", end: ">"), stroke: 0.7pt)
-
-  content((-0.15, 4.7), text(size: 8.5pt)[$|F_p|, |F_v|$], anchor: "east")
-  content((-0.15, 3.85), text(size: 8pt)[$F_(v,"lim") = |F_p| = |F_v|$], anchor: "east")
-  content((-0.15, 2.55), text(size: 8pt)[$F_(v,"min") = F_(v,"lim") / I$], anchor: "east")
-  content((-0.15, 1.55), text(size: 8pt)[$F_(v,"lim") / I - Delta F_v$], anchor: "east")
-  content((0.1, 2.16), text(size: 8pt)[$Delta F_v$], anchor: "west")
-
-  content((6.95, -0.25), text(size: 8.5pt)[$u$], anchor: "north")
-  content((4.5, -0.6), text(size: 8.5pt)[$Delta i$], anchor: "south")
-  content((2.625, -1.3), text(size: 8.5pt)[$i$], anchor: "south")
-
-  content((3.6, 4.65), text(size: 8pt)[$(Delta F_v) / (Delta i) = F_v / i = F_v / (F_v (delta_v + delta_p))$], anchor: "west")
-  content((3.6, 3.65), text(size: 8pt)[$Delta F_v = (Delta i) / ((delta_v + delta_p))$], anchor: "west")
-})])
+ ],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig25.typ"])
 Il precarico minimo residuo prima dell'applicazione del carico esterno diventa pertanto $frac(F_(v, l i m), I) - Delta F_v$. Il triangolo esterno più grande viene impiegato per la verifica di resistenza statica della vite (condizione più gravosa per il materiale), mentre il triangolo interno più piccolo viene impiegato per la verifica di funzionalità / carico minimo di serraggio (condizione più sfavorevole per la tenuta e l'aderenza tra le parti).
 === Procedura iterativa di progetto dei collegamenti filettati
 
@@ -703,43 +481,7 @@ Il precarico minimo residuo prima dell'applicazione del carico esterno diventa p
 
 $ A_(m i n) = (3 div 4) frac(C_(m a x), R_(p 0.2)) $
 
-],[#canvas(length: 0.9cm, {
-  import draw: *
-  rect((-4.8, 4.7), (4.8, 6.7), stroke: 0.85pt)
-  rect((0.7, 4.85), (4.65, 6.55), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  content((-4.6, 6.35), text(size: 8.5pt)[Scelta iniziali:], anchor: "west")
-  content((-4.6, 5.95), text(size: 8pt)[• numero viti ($C = F_("tot") / "n°viti"$)], anchor: "west")
-  content((-4.6, 5.55), text(size: 8pt)[• classe (materiale), tipo], anchor: "west")
-  content((-4.6, 5.15), text(size: 8pt)[• dimensione], anchor: "west")
-  content((2.675, 6.25), text(size: 8pt)[in prima approssimazione])
-  content((2.675, 5.45), text(size: 8.5pt)[$A_("min") = (3 div 4) (C "max") / R_("p0.2")$])
-
-  rect((-4.2, 4.05), (-1.7, 4.55), stroke: 0.85pt)
-  content((-2.95, 4.3), text(size: 8pt)[Cambiamenti....])
-
-  rect((-3.9, 3.1), (3.9, 3.65), stroke: 0.85pt)
-  content((0, 3.375), text(size: 8pt)[Calcolo di $k - F_(v,"lim") - M_T - delta_v - delta_p - Delta F_v - Delta C_v - Delta C_p$])
-
-  rect((-3.1, 1.3), (3.1, 2.7), stroke: 0.85pt)
-  content((-2.9, 2.35), text(size: 8pt)[• Verifica statica], anchor: "west")
-  content((-2.9, 2.0), text(size: 8pt)[• Verifica del carico minimo di serraggio], anchor: "west")
-  content((-2.9, 1.65), text(size: 8pt)[• Verifica a fatica della vite], anchor: "west")
-
-  line((0, 0.95), (0.25, 0.75), (0, 0.55), (-0.25, 0.75), close: true, stroke: 0.85pt)
-
-  rect((-1.0, -0.45), (1.0, 0.15), radius: 0.3, stroke: 0.85pt)
-  content((0, -0.15), text(size: 8.5pt)[Fine])
-
-  line((0, 4.7), (0, 3.65), mark: (end: ">"), stroke: 0.75pt)
-  line((-1.95, 4.05), (-1.95, 3.65), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 3.1), (0, 2.7), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 1.3), (0, 0.95), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 0.55), (0, 0.15), mark: (end: ">"), stroke: 0.75pt)
-  line((-0.25, 0.75), (-4.8, 0.75), (-4.8, 4.3), (-4.2, 4.3), mark: (end: ">"), stroke: 0.75pt)
-
-  content((-0.55, 0.83), text(size: 8pt)[No], anchor: "south")
-  content((0.15, 0.35), text(size: 8pt)[Si], anchor: "west")
-})])
+],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig26.typ"])
 2. #strong[Calcolo dei parametri caratteristici:] determinazione di $k$, $F_(v, l i m)$, $M_T$, $delta_v$, $delta_p$, $Delta F_v$, $Delta C_v$ e $Delta C_p$.
 3. #strong[Verifiche:] esecuzione della verifica statica della vite, della verifica del carico minimo di serraggio e della verifica a fatica della vite.
 4. #strong[Iterazione:] qualora anche una sola delle verifiche non risulti soddisfatta, si apportano modifiche costruttive o dimensionali (sulle deformabilità, sul numero di viti, sul diametro o sulla classe del materiale) e si ripete il calcolo fino al soddisfacimento di tutte le condizioni.
@@ -797,20 +539,7 @@ Dall'equazione della linea elastica per una trave di lunghezza $L$ e diametro $D
 
 $ sigma_(m a x) = frac(M, J) dot.op frac(D, 2) = E dot.op frac(alpha, L) dot.op frac(D, 2) $
 
-Considerando ad esempio una vite in acciaio con $E = 2 dot.op 10^5 "MPa"$, un errore di parallelismo di appena $alpha = 0.5 degree = frac(1, 114.6) "rad"$ e un rapporto $frac(D, L) = frac(1, 10)$, si sviluppa una tensione di flessione parassita pari a $sigma tilde.eq 87 "MPa"$, che si somma alle tensioni dovute al serraggio e ai carichi di esercizio. Per contenere questo effetto conviene impiegare viti snelle (rapporto $D/L$ ridotto) e prescrivere tolleranze di planarità sulle superfici di appoggio.],[#canvas(length: 1cm, {
-  import draw: *
-  line((-2.0, 0), (2.0, 0), (2.0, 1.45), (-2.0, 0.85), close: true, fill: black.transparentize(82%), stroke: none)
-  line((-4.1, 0), (3.5, 0), stroke: 0.6pt)
-  line((-4.1, 1.185), (0.232, 1.185), stroke: 0.6pt)
-  line((2.0, 1.45), (3.5, 1.675), stroke: 0.6pt)
-  line((-2.0, 0), (2.0, 0), (2.0, 1.45), (-2.0, 0.85), close: true, stroke: 1.05pt)
-  line((-2.0, 0.45), (2.0, 0.45), stroke: 0.9pt)
-  arc((-5.65, 0), start: -3.34deg, stop: 17.46deg, radius: 6.0, anchor: "origin", stroke: (dash: "dash-dotted", thickness: 0.75pt))
-  line((-3.2, 0), (-3.2, 1.185), mark: (start: ">", end: ">"), stroke: 0.7pt)
-  arc((-7.667, 0), start: 0deg, stop: 8.531deg, radius: 10.667, anchor: "origin", mark: (start: ">", end: ">"), stroke: 0.7pt)
-  content((-3.4, 0.592), text(size: 8.5pt)[$L$], anchor: "east")
-  content((3.15, 0.80), text(size: 8.5pt)[$alpha$], anchor: "west")
-})])
+Considerando ad esempio una vite in acciaio con $E = 2 dot.op 10^5 "MPa"$, un errore di parallelismo di appena $alpha = 0.5 degree = frac(1, 114.6) "rad"$ e un rapporto $frac(D, L) = frac(1, 10)$, si sviluppa una tensione di flessione parassita pari a $sigma tilde.eq 87 "MPa"$, che si somma alle tensioni dovute al serraggio e ai carichi di esercizio. Per contenere questo effetto conviene impiegare viti snelle (rapporto $D/L$ ridotto) e prescrivere tolleranze di planarità sulle superfici di appoggio.],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig27.typ"])
 
 === Verifica del carico minimo di serraggio
 
@@ -823,40 +552,7 @@ $ F_(p, l i m) lt.eq F_(p, m i n) = frac(F_(v, l i m), I) - Delta F_v - Delta C_
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Se si giunge a $F_(p, m i n) = 0$, si verifica il distacco completo fra le parti serrate: in tale situazione viene meno la tenuta del collegamento e l'intero carico esterno $C$ viene sopportato esclusivamente dalla vite, condizione da evitare assolutamente sia per la funzionalità sia per l'integrità strutturale della vite stessa. Condizioni comprese tra $F_(p, l i m)$ e $0$ mantengono ancora il contatto fisico tra le superfici, ma con una pressione insufficiente a garantire la tenuta o l'aderenza richieste.],[#canvas(length: 1cm, {
-  import draw: *
-  line((0, 0), (0, 4.4), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 0), (7.0, 0), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 3.24), (3.4, 3.24), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 2.52), (3.4, 2.52), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 1.85), (2.6, 1.85), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 1.35), (2.6, 1.35), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 0.55), (5.2, 0.55), stroke: (paint: blue.lighten(25%), thickness: 0.7pt))
-  line((0, 0), (3.15, 3.78), stroke: 1.1pt)
-  line((1.2, 2.07), (3.5, 0), stroke: 1.1pt)
-  line((1.8, 2.79), (4.9, 0), stroke: 1.1pt)
-  line((2.4, 3.51), (6.3, 0), stroke: 1.1pt)
-  line((2.0, 1.35), (2.0, 2.40), stroke: 1.5pt)
-  rect((1.88, 2.28), (2.12, 2.52), fill: red, stroke: none)
-  line((2.0, 1.50), (1.87, 1.24), (2.13, 1.24), close: true, fill: blue, stroke: none)
-  line((2.45, 1.35), (2.45, 1.85), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((0, 0), (0, -1.45), stroke: 0.55pt)
-  line((3.5, 0), (3.5, -0.95), stroke: 0.55pt)
-  line((4.9, 0), (4.9, -0.95), stroke: 0.55pt)
-  line((6.3, 0), (6.3, -1.45), stroke: 0.55pt)
-  line((3.5, -0.75), (4.9, -0.75), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((0, -1.25), (6.3, -1.25), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  content((-0.15, 4.1), text(size: 8.5pt)[$|F_p|, |F_v|$], anchor: "east")
-  content((-0.15, 3.24), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
-  content((-0.15, 2.52), text(size: 8pt)[$F_(v,"lim") \/ I$], anchor: "east")
-  content((-0.15, 1.85), text(size: 8pt)[$F_(v,"lim") \/ I - Delta F_v$], anchor: "east")
-  content((-0.15, 1.35), text(size: 8pt)[$F_(p,"min")$], anchor: "east")
-  content((-0.15, 0.55), text(size: 8pt)[$F_(p,"lim")$], anchor: "east")
-  content((2.55, 1.60), text(size: 8pt)[$Delta C_p$], anchor: "west")
-  content((4.2, -0.65), text(size: 8pt)[$Delta i$], anchor: "south")
-  content((2.2, -1.15), text(size: 8pt)[$i "teorica"$], anchor: "south")
-  content((6.85, -0.15), text(size: 8.5pt)[$u$], anchor: "north")
-})])
+  align: (left + horizon, center + horizon),[Se si giunge a $F_(p, m i n) = 0$, si verifica il distacco completo fra le parti serrate: in tale situazione viene meno la tenuta del collegamento e l'intero carico esterno $C$ viene sopportato esclusivamente dalla vite, condizione da evitare assolutamente sia per la funzionalità sia per l'integrità strutturale della vite stessa. Condizioni comprese tra $F_(p, l i m)$ e $0$ mantengono ancora il contatto fisico tra le superfici, ma con una pressione insufficiente a garantire la tenuta o l'aderenza richieste.],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig28.typ"])
 
 Se la verifica del carico minimo di serraggio non è soddisfatta, i possibili interventi correttivi consistono nel:
 - diminuire le incertezze di montaggio utilizzando chiavi dinamometriche;
