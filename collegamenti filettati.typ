@@ -577,7 +577,7 @@ La condizione di verifica a fatica richiede che la tensione alternata di eserciz
 
 $ sigma_a lt.eq 0.9 sigma_D $
 
-Ad esempio, considerando una vite $M 30$ non rullata soggetta a una tensione media pari al $40\%$ dello snervamento ($sigma_m \/ R_(p 0.2) = 0.4$), si legge sulla curva inferiore un valore di $sigma_D tilde.eq 52.5 div 53 " MPa"$, rispetto al quale la tensione alternata $sigma_a$ deve mantenersi al di sotto del $90\%$.],[#canvas(length: 1cm, {
+Ad esempio, considerando una vite $M 30$ non rullata soggetta a una tensione media pari al $40\%$ dello snervamento ($sigma_m \/ R_(p 0.2) = 0.4$), si legge sulla curva inferiore un valore di $sigma_D tilde.eq 52.5 div 53 " MPa"$, rispetto al quale la tensione alternata $sigma_a$ deve mantenersi al di sotto del $90\%$.],[#canvas(length: 0.9cm, {
   import draw: *
 
   line((0.5, 0), (0.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
