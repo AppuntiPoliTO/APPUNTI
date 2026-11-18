@@ -540,7 +540,7 @@ Dall'equazione della linea elastica per una trave di lunghezza $L$ e diametro $D
 
 $ sigma_(m a x) = frac(M, J) dot.op frac(D, 2) = E dot.op frac(alpha, L) dot.op frac(D, 2) $
 
-Considerando ad esempio una vite in acciaio con $E = 2 dot.op 10^5 "MPa"$, un errore di parallelismo di appena $alpha = 0.5 degree = frac(1, 114.6) "rad"$ e un rapporto $frac(D, L) = frac(1, 10)$, si sviluppa una tensione di flessione parassita pari a $sigma tilde.eq 87 "MPa"$, che si somma alle tensioni dovute al serraggio e ai carichi di esercizio. Per contenere questo effetto conviene impiegare viti snelle (rapporto $D/L$ ridotto) e prescrivere tolleranze di planarità sulle superfici di appoggio.
+Considerando ad esempio una vite in acciaio con $E = 2 dot.op 10^5 "MPa"$, un errore di parallelismo di appena $alpha = 0.5 degree = frac(1, 114.6) "rad"$ e un rapporto $frac(D, L) = frac(1, 10)$, si sviluppa una tensione di flessione parassita pari a $sigma tilde.eq 87 "MPa"$, che si somma alle tensioni dovute al serraggio e ai carichi di esercizio. Per contenere questo effetto conviene impiegare viti snelle (rapporto $D/L$ ridotto) e prescrivere tolleranze di planarità sulle superfici di appoggio. 
 === Verifica del carico minimo di serraggio
 
 La verifica di funzionalità assicura che, anche nelle condizioni più sfavorevoli, la forza residua di compressione tra le parti serrate $F_(p, m i n)$ non scenda mai al di sotto di un valore minimo prescritto $F_(p, l i m)$, necessario ad esempio per garantire la tenuta delle guarnizioni o per assicurare per attrito l'assenza di scorrimenti relativi tra i componenti.
