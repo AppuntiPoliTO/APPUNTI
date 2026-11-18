@@ -988,7 +988,7 @@ Indicando con $L_p$ lo spessore complessivo delle parti (pari a $L_v$ nella conf
 
 $ n = frac(L_b, L_p) < 1, quad (1 - n) = frac(L_a + L_c, L_p) $
 
-La deformabilità complessiva del pezzo risulta $delta_p = delta_p^a + delta_p^b + delta_p^c$.],[#canvas(length: 1cm, {
+.],[],[La deformabilità complessiva del pezzo risulta $delta_p = delta_p^a + delta_p^b + delta_p^c$],[#canvas(length: 1cm, {
   import draw: *
 
   content((1.7, 3.05), text(size: 9pt)[_prima del montaggio_])
