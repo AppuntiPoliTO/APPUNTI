@@ -1,6 +1,49 @@
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
+// ---------------------------------------------------------------
+// Impostazione comune del documento: usata dal main e da ogni capitolo
+// (`#show: conf`), così ogni capitolo compila anche da solo con lo stesso aspetto.
+// ---------------------------------------------------------------
+#let conf(body) = {
+  set page(paper: "a4", margin: 2cm)
+  set text(lang: "it", size: 11pt)
+  set par(justify: true)
+  set figure(supplement: [Figura], gap: 0.8em)
+
+  // Equazioni numerate per capitolo (es. (5.12)): la numerazione serve ai
+  // riferimenti @eq:..., ma il numero non viene mostrato accanto all'equazione.
+  set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
+  show math.equation.where(block: true): it => {
+    if it.numbering == none { it } else { math.equation(block: true, numbering: none, it.body) }
+  }
+
+  // Numerazione: titoli fino al 3° livello; figure senza numero
+  set heading(numbering: "1.1.1")
+  show heading.where(level: 4): set heading(numbering: none)
+  set figure(numbering: none)
+
+  // Ogni capitolo: pagina nuova, contatori azzerati, titolo con etichetta "Capitolo N"
+  show heading.where(level: 1): it => {
+    if it.numbering == none { return it }   // titolo "Indice": niente etichetta né pagina nuova
+    colbreak(weak: true)
+    counter(math.equation).update(0)
+    v(0.8cm)
+    block(width: 100%, below: 1.2em, {
+      text(size: 9.5pt, fill: luma(110), tracking: 0.08em)[CAPITOLO #context counter(heading).display("1")]
+      v(0.2em)
+      text(size: 18pt, weight: "bold", it.body)
+      v(-0.2em)
+      line(length: 100%, stroke: 0.6pt + luma(150))
+    })
+  }
+  show heading.where(level: 2): set text(size: 13pt)
+  show heading.where(level: 2): set block(above: 1.7em, below: 0.9em)
+  show heading.where(level: 3): set text(size: 11.5pt)
+  show heading.where(level: 3): set block(above: 1.4em, below: 0.8em)
+  show heading.where(level: 4): set text(size: 11pt, style: "italic", weight: "semibold")
+
+  body
+}
 
 // Simboli e scorciatoie testuali
 #let circ = sym.degree
