@@ -1191,7 +1191,7 @@ $ delta_v = frac(L_v, E_v dot.op A_v), quad delta_p = frac(L_p, E_p dot.op A_p) 
 })])
 #grid(
   columns: (1fr, 1fr),
-  gutter: 1em,
+  gutter: 8em,
   [Nel caso di carico non al sottotesta (B), l'applicazione del carico esterno $C$ comprime la sola zona centrale $L_b$, mentre le due porzioni esterne $L_a$ e $L_c$ vengono scaricate e si comportano in serie con la vite. Di conseguenza la deformabilità equivalente del pezzo diminuisce, mentre quella equivalente della vite aumenta:
 
 $ delta_p^* equiv delta_p^b = frac(L_b, E_p dot.op A_p) = frac(n dot.op L_p, E_p dot.op A_p) < delta_p $
