@@ -561,7 +561,7 @@ Se la verifica del carico minimo di serraggio non è soddisfatta, i possibili in
 - utilizzare viti meno deformabili (con cautela, poiché ciò aumenta $Delta C_v$ avvicinando il punto di lavoro alla verifica di resistenza);
 - aumentare il numero di viti (diminuendo $C$);
 - aumentare la deformabilità del pezzo (con attenzione, cercando un compromesso tra le esigenze di resistenza della vite e di funzionalità del giunto, valutabile graficamente sul diagramma di interferenza).
-== Lezione 10: Viti e bulloni (collegamenti filettati) – Fatica e casi particolari
+== Viti e bulloni (collegamenti filettati) – Fatica e casi particolari
 
 === Verifica a fatica della vite e diagramma di Haigh
 #grid(
