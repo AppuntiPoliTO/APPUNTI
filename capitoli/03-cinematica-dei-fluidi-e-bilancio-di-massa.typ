@@ -1,6 +1,6 @@
 #import "../template.typ": *
-#show: conf
 #show figure: set text(size: 9pt)   // etichette delle figure a 9pt, come nel modello
+#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
 = Cinematica dei Fluidi e Bilancio di Massa
 
 == Cinematica dei Fluidi
@@ -174,7 +174,7 @@ L'approssimazione di incomprimibilità è fisicamente accettabile quando il nume
       $ integral_cal(D) nabla dot arrow(u) dif cal(V) = 0 quad arrow.r.double quad integral_cal(S) arrow(u) dot arrow(n) dif cal(S) = 0 $
     ],
     [
-      #figure(image("../figs/condotto.png", width: 100%))
+      #figure(image("/images/condotto.png", width: 100%))
     ]
   )
 

@@ -5,11 +5,11 @@
 #canvas(length: 1cm, {
   import draw: *
 
-  line((0.85, 2.84), (2.3, 2.84), (3.125, 2.952), (3.71, 3.258), (4.066, 3.737), (4.18, 4.35), (4.5, 4.35), (4.5, 0.65), (4.18, 0.65), (4.066, 1.263), (3.71, 1.742), (3.125, 2.048), (2.3, 2.16), (0.85, 2.16), close: true, fill: c-fluido, stroke: none)
+  line((0.85, 2.84), (2.3, 2.84), (3.125, 2.952), (3.71, 3.258), (4.066, 3.737), (4.18, 4.35), (4.5, 4.35), (4.5, 0.65), (4.18, 0.65), (4.066, 1.263), (3.71, 1.742), (3.125, 2.048), (2.3, 2.16), (0.85, 2.16), close: true, fill: blue.transparentize(89%), stroke: none)
 
-  circle((1.2, 2.5), radius: (0.06, 0.34), fill: c-fluido, stroke: none)
+  circle((1.2, 2.5), radius: (0.06, 0.34), fill: blue.transparentize(78%), stroke: none)
   arc((1.2, 2.5), start: 90deg, stop: 270deg, radius: (0.06, 0.34), anchor: "origin", stroke: (dash: "dashed", thickness: 0.55pt))
-  arc((1.2, 2.5), start: 270deg, stop: 450deg, radius: (0.06, 0.34), anchor: "origin", stroke: 0.75pt + c-norm)
+  arc((1.2, 2.5), start: 270deg, stop: 450deg, radius: (0.06, 0.34), anchor: "origin", stroke: 0.75pt + blue.darken(15%))
 
   line((0.85, 2.84), (2.3, 2.84), stroke: 0.95pt)
   bezier((2.3, 2.84), (4.18, 4.35), (3.55, 2.84), (4.18, 3.45), stroke: 0.95pt)
@@ -30,13 +30,13 @@
   line((4.5, 3.75), (4.72, 3.95), stroke: 0.55pt)
   line((4.5, 4.05), (4.72, 4.25), stroke: 0.55pt)
 
-  line((1.2, 2.5), (2.15, 2.5), mark: (end: ">"), stroke: 1pt + c-vel)
-  content((1.72, 2.61), text(size: 7.5pt, fill: c-vel)[$U$], anchor: "south")
+  line((1.2, 2.5), (2.15, 2.5), mark: (end: ">"), stroke: 1pt + blue.darken(15%))
+  content((1.72, 2.61), text(size: 7.5pt, fill: blue.darken(15%))[$U$], anchor: "south")
   content((0.68, 2.5), text(size: 8.5pt)[$Q$], anchor: "east")
   content((1.2, 2.02), text(size: 7.5pt)[$S_1$], anchor: "north")
 
-  bezier((3.85, 2.85), (4.34, 4.05), (4.22, 3.05), (4.34, 3.45), mark: (end: ">"), stroke: 0.85pt + c-vel)
-  bezier((3.85, 2.15), (4.34, 0.95), (4.22, 1.95), (4.34, 1.55), mark: (end: ">"), stroke: 0.85pt + c-vel)
+  bezier((3.85, 2.85), (4.34, 4.05), (4.22, 3.05), (4.34, 3.45), mark: (end: ">"), stroke: 0.85pt + blue.darken(10%))
+  bezier((3.85, 2.15), (4.34, 0.95), (4.22, 1.95), (4.34, 1.55), mark: (end: ">"), stroke: 0.85pt + blue.darken(10%))
 
   content((1.45, 3.18), text(size: 8.5pt)[$p = 0$], anchor: "south")
 
