@@ -665,7 +665,7 @@ $ sigma_a = frac(F_(v, a), A_n), quad sigma_m = frac(F_(v, m), A_n) $
 
 Si distinguono tre casi operativi principali:
 #pagebreak()
-1. #strong[Caso a) – Ciclo all'origine ($0 lt.eq C(t) lt.eq C_(m a x)$):]
+1. #strong[Caso a) – Ciclo all'origine \ ($0 lt.eq C(t) lt.eq C_(m a x)$):]
   #grid(
     columns: (1fr, 1fr),
     column-gutter: 2em,
@@ -712,7 +712,7 @@ $ F_(v, m) = F_(v, "lim") + frac(Delta C_(m a x, v), 2), quad F_(v, a) = frac(De
   content((7.37, 2.35), text(size: 8pt)[$C_"max"$], anchor: "west")
 })])
 
-2. #strong[Caso b) – Ciclo pulsante positivo ($C_(m i n) lt.eq C(t) lt.eq C_(m a x)$ con $C_(m a x) > 0$ e $C_(m i n) > 0$):]
+2. #strong[Caso b) – Ciclo pulsante positivo \ ($C_(m i n) lt.eq C(t) lt.eq C_(m a x)$ con $C_(m a x) > 0$ e $C_(m i n) > 0$):]
   #grid(
     columns: (1fr, 1fr),
     column-gutter: 2em,
@@ -775,7 +775,7 @@ $ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m 
   content((4.95, 0.88), text(size: 8.5pt)[$C_min$], anchor: "west")
 })])
 
-3. #strong[Caso c) – Ciclo con inversione di carico ($C_(m i n) lt.eq C(t) lt.eq C_(m a x)$ con $C_(m a x) > 0$ e $C_(m i n) < 0$, ossia $C_(m i n) lt.eq 0 lt.eq C_(m a x)$):]
+3. #strong[Caso c) – Ciclo con inversione di carico \ ($C_(m i n) lt.eq C(t) lt.eq C_(m a x)$ con $C_(m a x) > 0$ e $C_(m i n) < 0$, ossia $C_(m i n) lt.eq 0 lt.eq C_(m a x)$):]
   #grid(
     columns: (1fr, 1fr),
     column-gutter: 2em,
