@@ -467,71 +467,407 @@ Analisi delle traiettorie alternative del punto di lavoro $P$ verso il limite:
 - Se $sigma_a = "costante"$ (es. innalzamento progressivo della pressione di fondo con vibrazioni costanti): La traiettoria è orizzontale e interseca il confine di sicurezza sul limite destro. Il $C S$ si basa sulle sole ascisse.
 - Se è presente un precarico fisso iniziale (tensioni residue): Il punto di lavoro risulta traslato di una quantità pari alla tensione residua ($sigma_"res"$), riducendo o aumentando il margine a seconda che sia di trazione o compressione.
 
+
 == Calcolo a Vita Limitata e Fattori Modificanti
 <calcolo-a-vita-limitata-e-fattori-modificanti>
 
-In contesti ingegneristici in cui non è richiesta una vita infinita del componente, il diagramma limite di Haigh non viene tracciato utilizzando il limite di fatica asintotico $sigma_D$, bensì ricorrendo alle *ampiezze di sollecitazione tollerabili $sigma_N$*. Questi valori limite, che risultano rigorosamente maggiori di $sigma_D$, vengono estratti direttamente dalle curve S-N di Wöhler per il numero di cicli $N$ target di progetto e valutati per differenti livelli di tensione media.
+Quando non è richiesta una vita infinita, il diagramma di Haigh si costruisce usando le *ampiezze ammissibili $sigma_N$* anziché il limite di fatica $sigma_D$. Questi valori, sempre maggiori di $sigma_D$, si ricavano dalle curve S-N in corrispondenza dei cicli $N$ richiesti, per diverse tensioni medie.
 
-Basandosi sull'equazione di Basquin per i diagrammi logaritmici (log-log), possiamo correlare il numero di cicli a rottura con l'ampiezza di tensione. Se $N_L$ è la vita a rottura per una tensione operativa $sigma_a$, e $N_0$ è la vita di progetto associata alla tensione limite $sigma_(N 0)$, vale la relazione:
-
+L'equazione di Basquin (in scala log-log) lega il numero di cicli a rottura all'ampiezza della tensione. Detti $N_L$ la vita a rottura sotto la tensione di esercizio $sigma_a$ e $N_0$ la vita di progetto associata alla tensione limite $sigma_(N 0)$:
 $ N_L dot sigma_a^k = N_0 dot sigma_(N 0)^k quad ==> quad N_L / N_0 = (sigma_(N 0) / sigma_a)^k $
 
-Definendo il coefficiente di sicurezza a vita limitata come $"CS"_N = N_L / N_0$ e il coefficiente di sicurezza sulle tensioni come $"CS"_sigma = sigma_(N 0) / sigma_a$, otteniamo la relazione fondamentale:
-
+Definendo il coefficiente di sicurezza sulla vita $"CS"_N = N_L / N_0$ e quello sulle tensioni $"CS"_sigma = sigma_(N 0) / sigma_a$, si ottiene:
 $ "CS"_N = "CS"_sigma^k $
-
-dove $k$ è l'esponente derivato dalla pendenza della curva di Wöhler nel tratto a termine.
+dove $k$ è l'esponente legato alla pendenza della curva di Wöhler nel tratto a termine.
 
 === Dal Provino di Laboratorio al Componente Reale
 
-I dati di fatica grezzi provengono da provini ideali, di piccole dimensioni e con superfici lucidate a specchio. Per stimare la reale resistenza a fatica di un componente industriale, è indispensabile declassare il limite teorico $sigma_(D-1)$ tramite l'applicazione di una serie di fattori riduttivi (o _modificanti_). Il limite di fatica corretto del componente, $sigma_(D-1)^C$, si esprime come:
+A differenza del caso statico, nella fatica il comportamento della *provetta* standard di laboratorio (piccola, lucidata a specchio e rappresentativa del solo materiale) differisce molto da quello del *componente reale*. Nel passaggio al prodotto finito intervengono due gruppi di fattori:
+- *fattori legati al componente*: dimensioni ($C_S$), presenza di intagli ($K_f$), finitura superficiale o rugosità ($C_F$) e trattamenti superficiali (meccanici, termici, chimici o rivestimenti);
+- *fattori legati alle condizioni d'uso*: tipo di carico applicato ($C_L$), temperatura di esercizio (elevata o variabile nel tempo) e ambiente corrosivo.
 
+Per stimare il limite di fatica a inversione del componente reale $sigma_(D-1)^C$ dal valore di laboratorio $sigma_(D-1)$, si applica il prodotto dei *fattori modificanti* $C_i$:
 $ sigma_(D-1)^C = sigma_(D-1) dot product C_i quad ==> quad sigma_(D-1)^C = C_L dot C_S dot C_F dot sigma_(D-1) $
 
+Mentre gli effetti di carico ($C_L$), scala ($C_S$) e rugosità ($C_F$) sono ricavabili da tabelle e diagrammi, quelli di temperatura, corrosione e trattamenti richiedono di norma prove specifiche.
+
+#nota[*Nota*: nella verifica strutturale si confronta la tensione massima nel punto critico con la resistenza del componente ($sigma_("max") <= sigma_(D-1)^C$). I coefficienti $C_i$ ($C_L, C_S, C_F$) rappresentano un calo reale della resistenza del materiale e agiscono sul lato destro della disuguaglianza (*resistenza*). Il fattore di intaglio $K_f$, invece, descrive un'amplificazione locale dello sforzo e agisce concettualmente sul lato sinistro (*sollecitazione*), anche quando per comodità di calcolo viene accorpato agli altri fattori.]
+
+=== Effetto del Tipo di Carico ($C_L$)
+
+Le prove sperimentali mostrano che la rottura a fatica non dipende solo dal valore puntuale della tensione massima in superficie, ma dallo sforzo agente in un *volume efficace* di materiale situato nello strato immediatamente sottostante la superficie esterna, detto *zona di processo* (*ZP*). È in questa fascia superficiale che si concentrano i fenomeni di scorrimento e la *nucleazione* del danno, mentre la regione interna del corpo è interessata dalla successiva *propagazione* stabile e instabile della cricca.
+
+#figure(canvas(length: 1.0cm, {
+  import draw: *
+  rect((0.0, 2.3), (3.8, 2.55), fill: gray.lighten(50%), stroke: 0.7pt)
+  rect((0.0, 0.95), (3.8, 1.2), fill: gray.lighten(50%), stroke: 0.7pt)
+  line((0.0, 0.95), (0.0, 2.55), stroke: 1pt)
+  line((3.8, 0.95), (3.8, 2.55), stroke: 1pt)
+  line((-0.3, 1.75), (4.1, 1.75), stroke: (dash: "dash-dotted", thickness: 0.7pt))
+
+  line((2.5, 1.75), (3.2, 2.55), (2.5, 2.55), close: true, fill: red.transparentize(75%), stroke: none)
+  line((2.5, 1.75), (1.8, 0.95), (2.5, 0.95), close: true, fill: red.transparentize(75%), stroke: none)
+  line((2.5, 0.95), (2.5, 2.55), stroke: 0.8pt)
+  line((1.8, 0.95), (3.2, 2.55), stroke: 1pt + blue.darken(20%))
+  line((2.5, 2.37), (3.04, 2.37), stroke: 0.6pt + blue.darken(20%))
+  line((2.5, 2.15), (2.85, 2.15), stroke: 0.6pt + blue.darken(20%))
+  line((2.5, 1.35), (2.15, 1.35), stroke: 0.6pt + blue.darken(20%))
+  line((2.5, 1.13), (1.96, 1.13), stroke: 0.6pt + blue.darken(20%))
+  circle((3.09, 2.425), radius: 0.06, fill: red.darken(10%), stroke: none)
+
+  line((3.2, 2.55), (3.2, 3.35), stroke: 0.6pt)
+  line((3.09, 2.425), (3.09, 2.95), stroke: 0.6pt)
+  line((2.5, 2.55), (2.5, 3.35), stroke: 0.6pt)
+  line((2.2, 3.2), (3.2, 3.2), mark: (end: ">"), stroke: 0.9pt)
+  line((2.2, 2.8), (3.09, 2.8), mark: (end: ">"), stroke: 0.9pt + red.darken(10%))
+  content((2.15, 3.25), text(size: 8pt)[$sigma_f$], anchor: "east")
+  content((2.15, 2.8), text(size: 8pt, fill: red.darken(10%))[$sigma_(a,"eff") ("ZP")$], anchor: "east")
+
+  rect((5.4, 2.3), (9.2, 2.55), fill: gray.lighten(50%), stroke: 0.7pt)
+  rect((5.4, 0.95), (9.2, 1.2), fill: gray.lighten(50%), stroke: 0.7pt)
+  line((5.4, 0.95), (5.4, 2.55), stroke: 1pt)
+  line((9.2, 0.95), (9.2, 2.55), stroke: 1pt)
+  line((5.1, 1.75), (9.5, 1.75), stroke: (dash: "dash-dotted", thickness: 0.7pt))
+
+  rect((7.6, 0.95), (8.3, 2.55), fill: red.transparentize(75%), stroke: none)
+  line((7.6, 0.95), (7.6, 2.55), stroke: 0.8pt)
+  line((8.3, 0.95), (8.3, 2.55), stroke: 1pt + blue.darken(20%))
+  line((7.6, 2.35), (8.3, 2.35), stroke: 0.6pt + blue.darken(20%))
+  line((7.6, 2.15), (8.3, 2.15), stroke: 0.6pt + blue.darken(20%))
+  line((7.6, 1.95), (8.3, 1.95), stroke: 0.6pt + blue.darken(20%))
+  line((7.6, 1.55), (8.3, 1.55), stroke: 0.6pt + blue.darken(20%))
+  line((7.6, 1.35), (8.3, 1.35), stroke: 0.6pt + blue.darken(20%))
+  line((7.6, 1.15), (8.3, 1.15), stroke: 0.6pt + blue.darken(20%))
+  circle((8.3, 2.425), radius: 0.06, fill: red.darken(10%), stroke: none)
+
+  line((8.3, 2.55), (8.3, 3.25), stroke: 0.6pt)
+  line((7.6, 2.55), (7.6, 3.25), stroke: 0.6pt)
+  line((7.2, 3.05), (8.3, 3.05), mark: (end: ">"), stroke: 0.9pt + red.darken(10%))
+  content((7.15, 3.05), text(size: 8pt, fill: red.darken(10%))[$sigma_(a,"eff") ("ZP") = sigma_(t c)$], anchor: "east")
+
+  content((1.9, 0.55), text(size: 8pt)[Flessione], anchor: "center")
+  content((7.3, 0.55), text(size: 8pt)[Trazione-compressione], anchor: "center")
+  content((4.6, 0.25), text(size: 7.5pt)[Zona di processo (ZP)], anchor: "center")
+  line((4.2, 0.45), (3.4, 1.07), mark: (end: ">"), stroke: 0.6pt)
+  line((5.0, 0.45), (5.8, 1.07), mark: (end: ">"), stroke: 0.6pt)
+}), caption: [Confronto tra la distribuzione di tensione lineare in flessione e uniforme in trazione-compressione, con evidenza della tensione efficace $sigma_(a,"eff")$ nella zona di processo (ZP).]) <fig:effetto-carico-zp>
+
+A parità di dimensione trasversale e di tensione massima applicata in superficie (@fig:effetto-carico-zp), lo stato tensionale nella zona di processo dipende dal tipo di sollecitazione:
+- in *flessione* (e in generale nei casi con *gradiente* di tensione, come la torsione), lo sforzo decresce linearmente dalla superficie verso l'asse neutro. L'ampiezza media che governa l'innesco nella zona di processo, detta *tensione alternata efficace* $sigma_(a,"eff") ("ZP")$, è quindi inferiore al valore di picco superficiale $sigma_f$;
+- in *trazione-compressione*, la distribuzione di tensione è *uniforme* su tutta la sezione: ogni punto della zona di processo sopporta costantemente l'intero valore massimo $sigma_(a,"eff") ("ZP") = sigma_(t c)$.
+
+A parità di tensione superficiale, la trazione-compressione sollecita il materiale in modo più severo rispetto alla flessione e presenta quindi un limite di fatica inferiore.
+
+*Modello della tensione efficace e curve S-N.* Se si sottopongono a fatica due provette, una in trazione-compressione e l'altra in flessione con lo stesso valore di ampiezza nominale $sigma_a$ sulla superficie, le curve di Wöhler sperimentali tracciate in funzione di $sigma_a$ mostrano due asintoti distinti (@fig:curve-sn-carico, in alto):
+$ sigma_(D-1)^T = (0.6 div 0.85) dot sigma_(D-1)^f quad ==> quad C_L = 0.6 div 0.85 $
+dove $sigma_(D-1)^T$ (indicato in letteratura anche come $sigma_(D-1)^(t c)$) è il limite di fatica in trazione-compressione e $sigma_(D-1)^f$ è quello in flessione.
+
+#figure(canvas(length: 1cm, {
+  import draw: *
+  line((0.8, 3.6), (0.8, 5.8), mark: (end: ">"), stroke: 0.8pt)
+  line((0.8, 3.6), (4.3, 3.6), mark: (end: ">"), stroke: 0.8pt)
+  content((2.55, 6.0), text(size: 7.5pt)[Curva S-N sperimentale trazione-compr.], anchor: "center")
+  content((0.65, 5.65), text(size: 8pt)[$sigma_a$], anchor: "east")
+  content((4.3, 3.35), text(size: 7.5pt)[$N$], anchor: "north")
+  content((3.2, 3.35), text(size: 7pt)[$N_i$], anchor: "north")
+  content((1.3, 3.35), text(size: 6.5pt)[$10^2$], anchor: "north")
+  content((2.2, 3.35), text(size: 6.5pt)[$10^4$], anchor: "north")
+  content((3.65, 3.35), text(size: 6.5pt)[$10^6$], anchor: "north")
+  line((1.1, 5.4), (3.2, 4.15), stroke: 1.1pt)
+  line((3.2, 4.15), (4.1, 4.15), stroke: 1.1pt)
+  line((0.8, 4.15), (3.2, 4.15), stroke: (dash: "dashed", thickness: 0.6pt))
+  content((0.7, 4.15), text(size: 7.5pt, fill: red.darken(10%))[$sigma_(D-1)^T$], anchor: "east")
+
+  line((5.6, 3.6), (5.6, 5.8), mark: (end: ">"), stroke: 0.8pt)
+  line((5.6, 3.6), (9.1, 3.6), mark: (end: ">"), stroke: 0.8pt)
+  content((7.35, 6.0), text(size: 7.5pt)[Curva S-N sperimentale flessione], anchor: "center")
+  content((5.45, 5.65), text(size: 8pt)[$sigma_a$], anchor: "east")
+  content((9.1, 3.35), text(size: 7.5pt)[$N$], anchor: "north")
+  content((8.0, 3.35), text(size: 7pt)[$N_i$], anchor: "north")
+  content((6.1, 3.35), text(size: 6.5pt)[$10^2$], anchor: "north")
+  content((7.0, 3.35), text(size: 6.5pt)[$10^4$], anchor: "north")
+  content((8.45, 3.35), text(size: 6.5pt)[$10^6$], anchor: "north")
+  line((5.9, 5.55), (8.0, 4.55), stroke: 1.1pt)
+  line((8.0, 4.55), (8.9, 4.55), stroke: 1.1pt)
+  line((5.6, 4.55), (8.0, 4.55), stroke: (dash: "dashed", thickness: 0.6pt))
+  content((5.5, 4.55), text(size: 7.5pt, fill: blue.darken(20%))[$sigma_(D-1)^f$], anchor: "east")
+  line((3.2, 4.15), (8.9, 4.15), stroke: (dash: "dashed", thickness: 0.6pt, paint: red.darken(10%)))
+
+  line((0.8, 0.5), (0.8, 2.7), mark: (end: ">"), stroke: 0.8pt)
+  line((0.8, 0.5), (4.3, 0.5), mark: (end: ">"), stroke: 0.8pt)
+  content((2.55, 2.9), text(size: 7.5pt)[Curva teorica in $sigma_(a,"eff")$ (trazione-compr.)], anchor: "center")
+  content((0.65, 2.55), text(size: 7.5pt)[$sigma_(a,"eff")$], anchor: "east")
+  content((4.3, 0.25), text(size: 7.5pt)[$N$], anchor: "north")
+  content((3.2, 0.25), text(size: 7pt)[$N_i$], anchor: "north")
+  line((1.1, 2.3), (3.2, 1.05), stroke: 1.1pt)
+  line((3.2, 1.05), (4.1, 1.05), stroke: 1.1pt)
+  line((0.8, 1.05), (3.2, 1.05), stroke: (dash: "dashed", thickness: 0.6pt))
+  content((0.7, 1.05), text(size: 7.5pt, fill: red.darken(10%))[$sigma_(D-1)^0$], anchor: "east")
+
+  line((5.6, 0.5), (5.6, 2.7), mark: (end: ">"), stroke: 0.8pt)
+  line((5.6, 0.5), (9.1, 0.5), mark: (end: ">"), stroke: 0.8pt)
+  content((7.35, 2.9), text(size: 7.5pt)[Curva teorica in $sigma_(a,"eff")$ (flessione)], anchor: "center")
+  content((5.45, 2.55), text(size: 7.5pt)[$sigma_(a,"eff")$], anchor: "east")
+  content((9.1, 0.25), text(size: 7.5pt)[$N$], anchor: "north")
+  content((8.0, 0.25), text(size: 7pt)[$N_i$], anchor: "north")
+  line((5.9, 2.3), (8.0, 1.05), stroke: 1.1pt)
+  line((8.0, 1.05), (8.9, 1.05), stroke: 1.1pt)
+  line((3.2, 1.05), (8.0, 1.05), stroke: (dash: "dashed", thickness: 0.6pt, paint: red.darken(10%)))
+  content((5.5, 1.05), text(size: 7.5pt, fill: red.darken(10%))[$sigma_(D-1)^0$], anchor: "east")
+}), caption: [Confronto tra i diagrammi S-N sperimentali espressi in tensione superficiale $sigma_a$ (in alto) e i diagrammi teorici espressi in tensione efficace $sigma_(a,"eff")$ con asintoto comune $sigma_(D-1)^0$ (in basso).]) <fig:curve-sn-carico>
+
+Se si tracciano invece in via teorica i diagrammi S-N in termini di $sigma_(a,"eff")$ (@fig:curve-sn-carico, in basso), il cedimento per fatica (oltre $N_i approx 2 dot 10^6$ cicli) avviene in entrambi i casi quando la tensione efficace che governa il fenomeno raggiunge lo stesso valore limite intrinseco del materiale $sigma_(D-1)^0$:
+- in *trazione-compressione*, non essendoci gradiente, vale $sigma_(a,"eff") = sigma_a$; la condizione teorica di cedimento $sigma_(a,"eff") = sigma_(D-1)^0$ e l'evidenza sperimentale $sigma_a = sigma_(D-1)^T$ forniscono rispettivamente:
+  $ sigma_a = sigma_(D-1)^0 quad (1), wide sigma_a = sigma_(D-1)^T quad (2) quad ==> quad sigma_(D-1)^T = sigma_(D-1)^0 $
+- in *flessione*, la presenza del gradiente riduce la tensione efficace secondo un coefficiente $alpha < 1$, ovvero $sigma_(a,"eff") = alpha dot sigma_a$; la condizione teorica di cedimento $sigma_(a,"eff") = sigma_(D-1)^0$ e quella sperimentale $sigma_a = sigma_(D-1)^f$ diventano:
+  $ alpha dot sigma_a = sigma_(D-1)^0 quad (3), wide sigma_a = sigma_(D-1)^f quad (4) $
+  Dal confronto tra $(3)$ e $(4)$, ricordando che $sigma_(D-1)^0 = sigma_(D-1)^T$, si ottiene:
+  $ sigma_(D-1)^f = sigma_(D-1)^0 / alpha = sigma_(D-1)^T / alpha quad ==> quad sigma_(D-1)^T = alpha dot sigma_(D-1)^f $
+Il parametro $alpha$ coincide dunque con il fattore di carico $C_L$ ($alpha = C_L = 0.6 div 0.85$).
+
+#nota[*Nota d'esame — Valori di calcolo per $C_L$*: assumendo la prova di flessione rotante come riferimento ($C_L approx 1$ nel caso di flessione piana), per la *trazione-compressione* l'intervallo sperimentale nei metalli è $C_L = 0.6 div 0.85$. Nei calcoli progettuali si adotta storicamente il valore medio *$C_L = 0.7$*, mentre alcuni testi di riferimento (come lo *Shigley*) prescrivono il valore più ottimistico *$C_L = 0.85$*.]
+
+*Riduzione indicativa per tipo di carico* (assumendo la flessione rotante pura pari al $100%$):
+- *flessione rotante pura*: $100%$ (condizione standard di riferimento);
+- *flessione alternata piana* (in un solo piano): $95 div 99%$ ($C_L approx 1$);
+- *trazione-compressione alternata pura* (carico assiale): $60 div 85%$ ($C_L = 0.7$ valore medio, oppure $0.85$ secondo Shigley);
+- *torsione alternata pura*: circa $58%$.
+
+=== Effetto delle Dimensioni o Effetto Scala ($C_S$)
+
+L'effetto delle dimensioni è strettamente legato all'effetto del tipo di carico. Se si aumenta il diametro della sezione trasversale mantenendo invariata la tensione massima superficiale $sigma_f$, in trazione-compressione il profilo uniforme resta inalterato; nei casi con *gradiente di tensione* (*flessione* e *torsione*), invece, la retta che descrive la distribuzione lineare nello spessore diminuisce la propria inclinazione e tende ad appiattirsi (@fig:confronto-scala-gradiente). A parità di spessore fisico della zona di processo (ZP), nel componente di grandi dimensioni la tensione efficace $sigma_(a,"eff") ("ZP")$ si avvicina molto di più al valore massimo superficiale $sigma_f$, approssimando al limite la condizione severa della trazione-compressione.
+
+#figure(canvas(length: 1cm, {
+  import draw: *
+  rect((0.5, 3.1), (4.3, 3.35), fill: gray.lighten(50%), stroke: 0.7pt)
+  rect((0.5, 1.95), (4.3, 2.2), fill: gray.lighten(50%), stroke: 0.7pt)
+  line((0.5, 1.95), (0.5, 3.35), stroke: 1pt)
+  line((4.3, 1.95), (4.3, 3.35), stroke: 1pt)
+  line((0.2, 2.65), (4.6, 2.65), stroke: (dash: "dash-dotted", thickness: 0.7pt))
+  line((2.5, 2.65), (3.3, 3.35), (2.5, 3.35), close: true, fill: red.transparentize(75%), stroke: none)
+  line((2.5, 2.65), (1.7, 1.95), (2.5, 1.95), close: true, fill: red.transparentize(75%), stroke: none)
+  line((2.5, 1.95), (2.5, 3.35), stroke: 0.8pt)
+  line((1.7, 1.95), (3.3, 3.35), stroke: 1pt + blue.darken(20%))
+  circle((3.16, 3.225), radius: 0.055, fill: red.darken(10%), stroke: none)
+  line((2.5, 3.35), (2.5, 4.05), stroke: 0.6pt)
+  line((3.3, 3.35), (3.3, 4.05), stroke: 0.6pt)
+  line((3.16, 3.225), (3.16, 3.7), stroke: 0.6pt)
+  line((2.2, 3.9), (3.3, 3.9), mark: (end: ">"), stroke: 0.9pt)
+  line((2.2, 3.55), (3.16, 3.55), mark: (end: ">"), stroke: 0.9pt + red.darken(10%))
+  content((2.15, 3.9), text(size: 7.5pt)[$sigma_f$], anchor: "east")
+  content((2.15, 3.55), text(size: 7.5pt, fill: red.darken(10%))[$sigma_(a,"eff") ("ZP")$], anchor: "east")
+  content((4.8, 2.65), text(size: 7.5pt)[Provino piccolo], anchor: "west")
+
+  rect((0.5, 0.95), (4.3, 1.2), fill: gray.lighten(50%), stroke: 0.7pt)
+  line((0.5, -0.4), (0.5, 1.2), stroke: 1pt)
+  line((4.3, -0.4), (4.3, 1.2), stroke: 1pt)
+  line((0.2, -0.4), (4.6, -0.4), stroke: (dash: "dash-dotted", thickness: 0.7pt))
+  line((2.5, -0.4), (3.3, 1.2), (2.5, 1.2), close: true, fill: red.transparentize(75%), stroke: none)
+  line((2.5, -0.4), (2.5, 1.2), stroke: 0.8pt)
+  line((2.5, -0.4), (3.3, 1.2), stroke: 1pt + blue.darken(20%))
+  circle((3.24, 1.075), radius: 0.055, fill: red.darken(10%), stroke: none)
+  line((2.5, 1.2), (2.5, 1.85), stroke: 0.6pt)
+  line((3.3, 1.2), (3.3, 1.85), stroke: 0.6pt)
+  line((3.24, 1.075), (3.24, 1.5), stroke: 0.6pt)
+  line((2.2, 1.7), (3.3, 1.7), mark: (end: ">"), stroke: 0.9pt)
+  line((2.2, 1.38), (3.24, 1.38), mark: (end: ">"), stroke: 0.9pt + red.darken(10%))
+  content((2.15, 1.7), text(size: 7.5pt)[$sigma_f$], anchor: "east")
+  content((2.15, 1.38), text(size: 7.5pt, fill: red.darken(10%))[$sigma_(a,"eff") ("ZP")$], anchor: "east")
+  content((4.8, 0.4), text(size: 7.5pt)[Componente grande (flessione)], anchor: "west")
+}), caption: [Effetto dell'aumento di scala sul gradiente di tensione in flessione a parità di tensione superficiale $sigma_f$: nel pezzo più grande $sigma_(a,"eff") ("ZP")$ si avvicina al valore massimo.]) <fig:confronto-scala-gradiente>
+
+*Interpretazione geometrica e statistica.* Confrontiamo una provetta standard di piccole dimensioni ($d = 8 div 12 "mm"$) e un albero reale di grande diametro, entrambi soggetti alla stessa tensione alternata massima $sigma_a$ sul lembo esterno (@fig:sezioni-effetto-scala). Individuando la fascia di sezione trasversale compresa tra il picco $sigma_a$ e l'$80%$ di $sigma_a$, si osserva che la porzione di area esposta a questo livello severo di sollecitazione è:
+- *minore* nella provetta di laboratorio ($8 div 12 "mm"$);
+- *progressivamente maggiore* al crescere delle dimensioni della struttura, *sia in termini assoluti sia in termini percentuali* rispetto all'area totale della sezione.
+
+Poiché un'area (e quindi un volume) molto più estesa lavora a tensioni elevate, aumenta statisticamente il numero di difetti superficiali e sottosuperficiali intercettati nella regione critica. La combinazione tra minore gradiente e maggiore probabilità statistica di trovare difetti favorisce una nucleazione più aggressiva e riduce la resistenza a fatica del componente.
+
 #grid(
-  columns: (1fr, 1fr),
+  columns: (0.95fr, 1.05fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),
+  align: (center + horizon, center + horizon),
   [
-    *Fattore $C_S$ (Effetto Dimensionale e di Scala):* \
-    Questo parametro corregge il limite di fatica tenendo conto delle reali dimensioni del componente in presenza di gradienti di tensione (flessione o torsione). All'aumentare del diametro, il gradiente di tensione dalla superficie verso il cuore diviene meno "ripido". Di conseguenza, un volume molto maggiore di materiale si trova sottoposto a livelli tensionali critici. Statisticamente, ciò incrementa la probabilità di intercettare difetti reticolari, riducendo la resistenza. Si noti che per diametri molto grandi, il gradiente si appiattisce convergendo asintoticamente al caso della trazione pura, assestandosi su un valore limite $C_S approx 0.7$.
+    #figure(canvas(length: 1cm, {
+      import draw: *
+      circle((1.8, 3.8), radius: 0.65, fill: gray.lighten(70%), stroke: none)
+      arc((1.8, 3.8), start: 53.13deg, stop: 126.87deg, radius: 0.65, anchor: "origin", fill: red.transparentize(65%), stroke: none)
+      line((1.41, 4.32), (2.19, 4.32), (1.8, 4.32), close: true, fill: gray.lighten(70%), stroke: none)
+      circle((1.8, 3.8), radius: 0.65, stroke: 1pt)
+      line((1.0, 3.8), (2.6, 3.8), stroke: 0.6pt)
+      line((1.8, 3.0), (1.8, 4.6), stroke: 0.6pt)
+      line((1.41, 4.32), (2.19, 4.32), stroke: 0.9pt + blue.darken(20%))
+      line((1.8, 4.45), (3.6, 4.45), stroke: 0.9pt + red.darken(10%))
+      line((1.8, 4.32), (3.24, 4.32), stroke: 0.8pt + blue.darken(20%))
+      line((0.0, 3.15), (1.8, 3.15), stroke: 0.9pt + red.darken(10%))
+      line((0.0, 3.15), (3.6, 4.45), stroke: 1pt + red.darken(10%))
+      content((3.68, 4.48), text(size: 7.5pt)[$sigma_a$], anchor: "south-west")
+      content((3.32, 4.26), text(size: 7pt, fill: blue.darken(20%))[$80% thin sigma_a$], anchor: "north-west")
+
+      circle((1.8, 1.3), radius: 1.35, fill: gray.lighten(70%), stroke: none)
+      arc((1.8, 1.3), start: 53.13deg, stop: 126.87deg, radius: 1.35, anchor: "origin", fill: red.transparentize(65%), stroke: none)
+      line((0.99, 2.38), (2.61, 2.38), (1.8, 2.38), close: true, fill: gray.lighten(70%), stroke: none)
+      circle((1.8, 1.3), radius: 1.35, stroke: 1pt)
+      line((0.3, 1.3), (3.3, 1.3), stroke: 0.6pt)
+      line((1.8, -0.2), (1.8, 2.8), stroke: 0.6pt)
+      line((0.99, 2.38), (2.61, 2.38), stroke: 0.9pt + blue.darken(20%))
+      line((1.8, 2.65), (3.6, 2.65), stroke: 0.9pt + red.darken(10%))
+      line((1.8, 2.38), (3.24, 2.38), stroke: 0.8pt + blue.darken(20%))
+      line((0.45, -0.05), (3.6, 2.65), stroke: 1pt + red.darken(10%))
+      content((3.68, 2.65), text(size: 7.5pt)[$sigma_a$], anchor: "south-west")
+      content((3.32, 2.36), text(size: 7pt, fill: blue.darken(20%))[$80% thin sigma_a$], anchor: "north-west")
+    }), caption: [Confronto della frazione di area sollecitata oltre l'$80% thin sigma_a$ tra provetta ($8 div 12 "mm"$) e albero di grande diametro.]) <fig:sezioni-effetto-scala>
   ],
-  [#include "figs/fatica-fig17.typ"
+  [
+    #figure(canvas(length: 1cm, {
+      import draw: *
+      rect((0.8, 0.6), (5.3, 3.8), stroke: 0.8pt)
+      line((1.3, 0.6), (1.3, 3.8), stroke: 0.4pt + gray)
+      line((1.8, 0.6), (1.8, 3.8), stroke: 0.4pt + gray)
+      line((2.3, 0.6), (2.3, 3.8), stroke: 0.4pt + gray)
+      line((2.8, 0.6), (2.8, 3.8), stroke: 0.4pt + gray)
+      line((3.3, 0.6), (3.3, 3.8), stroke: 0.4pt + gray)
+      line((3.8, 0.6), (3.8, 3.8), stroke: 0.4pt + gray)
+      line((4.3, 0.6), (4.3, 3.8), stroke: 0.4pt + gray)
+      line((4.8, 0.6), (4.8, 3.8), stroke: 0.4pt + gray)
+
+      line((0.8, 1.0), (5.3, 1.0), stroke: 0.4pt + gray)
+      line((0.8, 1.4), (5.3, 1.4), stroke: 1pt + red.darken(10%))
+      line((0.8, 1.8), (5.3, 1.8), stroke: 0.4pt + gray)
+      line((0.8, 2.2), (5.3, 2.2), stroke: 0.4pt + gray)
+      line((0.8, 2.6), (5.3, 2.6), stroke: 0.4pt + gray)
+      line((0.8, 3.0), (5.3, 3.0), stroke: 0.4pt + gray)
+      line((0.8, 3.4), (5.3, 3.4), stroke: 0.4pt + gray)
+
+      bezier((1.05, 3.8), (1.8, 2.55), (1.3, 3.1), (1.55, 2.75), stroke: 1.3pt)
+      bezier((1.8, 2.55), (3.3, 1.8), (2.2, 2.25), (2.75, 1.98), stroke: 1.3pt)
+      bezier((3.3, 1.8), (5.3, 1.43), (4.0, 1.62), (4.7, 1.48), stroke: 1.3pt)
+
+      content((0.7, 3.8), text(size: 6.5pt)[1.00], anchor: "east")
+      content((0.7, 3.4), text(size: 6.5pt)[0.95], anchor: "east")
+      content((0.7, 3.0), text(size: 6.5pt)[0.90], anchor: "east")
+      content((0.7, 2.6), text(size: 6.5pt)[0.85], anchor: "east")
+      content((0.7, 2.2), text(size: 6.5pt)[0.80], anchor: "east")
+      content((0.7, 1.8), text(size: 6.5pt)[0.75], anchor: "east")
+      content((0.7, 1.4), text(size: 6.5pt, fill: red.darken(10%))[0.70], anchor: "east")
+      content((0.7, 1.0), text(size: 6.5pt)[0.65], anchor: "east")
+      content((0.7, 0.6), text(size: 6.5pt)[0.60], anchor: "east")
+      content((0.2, 3.5), text(size: 8pt)[$C_S$], anchor: "east")
+
+      content((1.05, 0.45), text(size: 6.5pt)[10], anchor: "north")
+      content((1.8, 0.45), text(size: 6.5pt)[30], anchor: "north")
+      content((2.3, 0.45), text(size: 6.5pt)[50], anchor: "north")
+      content((2.8, 0.45), text(size: 6.5pt)[70], anchor: "north")
+      content((3.3, 0.45), text(size: 6.5pt)[90], anchor: "north")
+      content((4.05, 0.45), text(size: 6.5pt)[130], anchor: "north")
+      content((4.8, 0.45), text(size: 6.5pt)[170], anchor: "north")
+      content((5.3, 0.45), text(size: 6.5pt)[190], anchor: "north")
+      content((5.55, 0.45), text(size: 7.5pt)[$d$ (mm)], anchor: "north-west")
+
+      rect((1.65, 3.05), (3.85, 3.45), fill: white, stroke: 0.6pt)
+      content((2.75, 3.25), text(size: 7pt)[Flessione e torsione], anchor: "center")
+      rect((1.5, 0.68), (4.65, 1.25), fill: white, stroke: 0.6pt + red.darken(10%))
+      content((3.07, 0.96), text(size: 6.2pt)[Asintoto: valore medio $C_L = 0.7$ \ in trazione-compressione], anchor: "center")
+    }), caption: [Andamento sperimentale del fattore dimensionale $C_S$ in funzione del diametro $d$ per flessione e torsione.]) <fig:grafico-cs>
   ]
 )
 
-#v(1em)
+*Diagramma del coefficiente $C_S$.* Poiché in flessione rotante il coefficiente di carico è unitario ($C_L = 1$), l'effetto del diverso gradiente al crescere delle dimensioni in *flessione e torsione* viene computato tramite il fattore $C_S$ (@fig:grafico-cs):
+- per il diametro standard della provetta normativa ($d approx 8 div 10 "mm"$), vale $C_S = 1$;
+- al crescere del diametro $d$ (oppure di una dimensione lineare caratteristica nel caso di sezioni non circolari, come l'altezza di una sezione rettangolare), $C_S$ decresce progressivamente;
+- per diametri molto grandi ($d -> 190 div 200 "mm"$), l'inclinazione del profilo tensionale in prossimità della superficie diventa quasi verticale e la curva converge all'*asintoto orizzontale $C_S approx 0.7$*, corrispondente al valore medio di $C_L$ nel caso di trazione-compressione. In trazione-compressione pura, non essendoci gradiente, l'effetto scala sul profilo tensionale non si manifesta ($C_S = 1$, essendo la riduzione già interamente contabilizzata da $C_L$).
 
-*Fattore $C_F$ (Finitura Superficiale e Trattamenti)*
+=== Effetto della Finitura e dei Trattamenti Superficiali ($C_F$)
 
-Lo stato superficiale incide drammaticamente sulla vita utile, poiché le cricche di fatica nucleano quasi esclusivamente all'esterno. È fondamentale notare che l'effetto della finitura superficiale dipende dal carico di rottura $R_m$ del materiale: materiali alto-resistenziali (con elevato $R_m$) sono intrinsecamente più fragili e, di conseguenza, subiscono un declassamento molto più severo in presenza di finiture non ottimali o asperità.
+Poiché la nucleazione del danno a fatica ha origine da irregolarità superficiali in microscala, la presenza di asperità lasciate dalle lavorazioni meccaniche o indotte dall'esercizio facilita l'innesco della cricca. Anche partendo da una superficie lucidata a specchio, il carico ciclico produce per scorrimento plastico dei piani cristallini tre morfologie tipiche di danneggiamento superficiale (@fig:meccanismi-superficie):
+- *creste e avvallamenti* (_ridge and groove_), dove il fondo acuto dell'avvallamento agisce come un severo micro-intaglio locale;
+- *ondulazioni* superficiali (_undulations_);
+- *estrusioni e intrusioni a bande di scorrimento* (_slipband extrusion_), assimilabili a fogli di una risma che scorrono fuori dal profilo lasciando micro-vuoti e coalescenze alla base.
 
-L'introduzione controllata di uno *stato di tensione residua di compressione* sulla superficie genera un effetto altamente benefico. Trattamenti idonei allo scopo includono la pallinatura (shot peening), la rullatura a freddo, la cementazione e la nitrurazione.
+#figure(canvas(length: 1cm, {
+  import draw: *
+  line((0.0, 1.2), (1.3, 1.2), (1.6, 1.8), (1.85, 0.65), (2.15, 1.2), (3.4, 1.2), stroke: 1pt)
+  bezier((3.4, 1.2), (4.4, 1.2), (3.7, 1.6), (4.1, 0.8), stroke: 1pt)
+  bezier((4.4, 1.2), (5.4, 1.2), (4.7, 1.6), (5.1, 0.8), stroke: 1pt)
+  line((5.4, 1.2), (6.4, 1.2), (6.8, 1.8), (6.98, 1.68), (6.58, 1.2), (7.8, 1.2), stroke: 1pt)
 
-Il meccanismo fisico protettivo si basa sull'applicazione di un carico locale molto intenso che porta a snervamento plastico (in compressione) lo strato più esterno. Il nucleo sottostante, rimanendo in campo elastico, si oppone all'espansione laterale dello strato deformato. Il risultato pratico è la generazione di un guscio costantemente sollecitato a compressione autobilanciata, che ostacola attivamente l'apertura e la propagazione delle micro-cricche.
+  line((1.15, 0.65), (1.5, 1.15), stroke: 0.5pt + gray.darken(20%))
+  line((1.4, 0.55), (1.7, 0.95), stroke: 0.5pt + gray.darken(20%))
+  line((3.55, 0.65), (3.9, 1.1), stroke: 0.5pt + gray.darken(20%))
+  line((3.8, 0.6), (4.15, 1.05), stroke: 0.5pt + gray.darken(20%))
+  line((6.15, 0.65), (6.5, 1.15), stroke: 0.5pt + gray.darken(20%))
+  line((6.4, 0.6), (6.75, 1.1), stroke: 0.5pt + gray.darken(20%))
 
-_Attenzione alle criticità:_ L'effetto benefico può perdersi o ribaltarsi. Operazioni miste come la formatura a freddo hanno risultati variabili. Processi di formatura e rullatura _a caldo_ generano quasi invariabilmente un effetto negativo, introducendo tensioni residue superficiali di _trazione_ a causa della decarburazione. Al contrario, trattamenti termici come la *tempra* (specialmente a induzione) risultano benefici, poiché la trasformazione martensitica superficiale induce un'espansione volumetrica che genera tensioni residue di compressione. Ulteriori trattamenti chimico-galvanici che declassano la fatica sono la cromatura spessa, la nichelatura e l'anodizzazione.
+  circle((1.85, 0.72), radius: 0.3, stroke: 1.1pt + red.darken(10%))
+  circle((4.15, 0.98), radius: 0.3, stroke: 1.1pt + red.darken(10%))
+  circle((6.62, 1.25), radius: 0.3, stroke: 1.1pt + red.darken(10%))
 
-*Fattore di Carico ($C_L$): Flessione vs. Trazione pura*
+  content((1.75, 2.2), text(size: 7.5pt)[Creste e avvallamenti \ (_ridge and groove_)], anchor: "center")
+  content((4.4, 2.2), text(size: 7.5pt)[Ondulazioni \ (_undulations_)], anchor: "center")
+  content((6.7, 2.2), text(size: 7.5pt)[Estrusione a bande \ (_slipband extrusion_)], anchor: "center")
+}), caption: [Schematizzazione delle micro-irregolarità superficiali che innescano la cricca nei punti critici cerchiati.]) <fig:meccanismi-superficie>
 
-L'esperienza sperimentale dimostra che a scatenare la rottura per fatica non è il mero raggiungimento puntuale della tensione $sigma_max$ in superficie, ma lo sforzo gravante su un *volume efficace* di materiale situato in uno strato sottocutaneo critico.
+*Diagramma del fattore di finitura superficiale $C_F$.* La sensibilità alla rugosità superficiale non dipende solo dalla geometria del profilo (misurata tramite la rugosità media aritmetica $R_a$ in $mu"m"$), ma anche dalle proprietà meccaniche del materiale (@fig:grafico-cf). Come indice indiretto della fragilità si utilizza sull'asse delle ascisse il *carico unitario di rottura statica $R_m$* (in MPa):
+- i materiali con bassa resistenza statica ($R_m approx 200 div 400 "MPa"$) sono più duttili; la plasticizzazione locale all'apice delle asperità attenua le concentrazioni di tensione e il coefficiente $C_F$ resta prossimo a $1$ anche per finiture non perfette;
+- quanto più il materiale presenta *elevata resistenza statica $R_m$* (fino a $1400 "MPa"$, ad esempio negli acciai ad alta resistenza), tanto più esso tende a comportarsi in modo *fragile* a livello microstrutturale: l'assenza di rilassamento plastico rende le asperità estremamente nocive e abbatte drasticamente $C_F$ al crescere della rugosità $R_a$ (fino a $C_F < 0.5$, ovvero un dimezzamento della resistenza per $R_a = 160 thin mu"m"$).
 
-- *Sollecitazione Flessionale:* È caratterizzata da un gradiente di sforzo molto ripido. La "zona di processo" critica interna sopporta una tensione mediata notevolmente inferiore al picco massimo superficiale.
+#figure(canvas(length: 1cm, {
+  import draw: *
+  rect((1.0, 0.8), (7.0, 4.4), stroke: 0.8pt)
+  line((2.0, 0.8), (2.0, 4.4), stroke: 0.4pt + gray)
+  line((3.0, 0.8), (3.0, 4.4), stroke: 0.4pt + gray)
+  line((4.0, 0.8), (4.0, 4.4), stroke: 0.4pt + gray)
+  line((5.0, 0.8), (5.0, 4.4), stroke: 0.4pt + gray)
+  line((6.0, 0.8), (6.0, 4.4), stroke: 0.4pt + gray)
 
-- *Sollecitazione di Trazione pura:* A parità teorica di tensione massima superficiale, la trazione pura impone uno sforzo elevato e omogeneo su un volume di materiale immensamente maggiore rispetto alla flessione.
+  line((1.0, 1.4), (7.0, 1.4), stroke: 0.4pt + gray)
+  line((1.0, 2.0), (7.0, 2.0), stroke: 0.4pt + gray)
+  line((1.0, 2.6), (7.0, 2.6), stroke: 0.4pt + gray)
+  line((1.0, 3.2), (7.0, 3.2), stroke: 0.4pt + gray)
+  line((1.0, 3.8), (7.0, 3.8), stroke: 0.4pt + gray)
 
-Questo stato tensionale omogeneo su ampi volumi agevola drammaticamente l'innesco di difetti statistici. Il valore empirico di sicurezza standard adottato per compensare questo effetto in caso di trazione è un coefficiente correttivo $C_L approx 0.7 div 0.85$. Da qui deriva la relazione operativa per calcolare il limite in trazione-compressione ($sigma_(D-1)^(t c)$) partendo da quello noto per flessione ($sigma_(D-1)^b$):
+  line((1.0, 4.4), (7.0, 4.4), stroke: 1.1pt)
+  bezier((1.0, 4.4), (7.0, 4.12), (3.0, 4.22), (5.0, 4.15), stroke: 1pt)
+  bezier((1.0, 4.4), (7.0, 3.82), (3.0, 4.02), (5.0, 3.88), stroke: 1pt)
+  bezier((1.0, 4.4), (7.0, 3.55), (3.0, 3.85), (5.0, 3.65), stroke: 1pt)
+  bezier((1.0, 4.35), (7.0, 2.95), (3.0, 3.55), (5.0, 3.12), stroke: 1pt)
+  bezier((1.0, 4.3), (7.0, 2.15), (3.0, 3.1), (5.0, 2.45), stroke: 1pt)
+  bezier((1.0, 4.22), (7.0, 1.3), (3.0, 2.75), (5.0, 1.85), stroke: 1pt)
 
-$ sigma_(D-1)^(t c) = alpha dot sigma_(D-1)^b $ 
+  content((0.85, 4.4), text(size: 7pt)[1.0], anchor: "east")
+  content((0.85, 3.8), text(size: 7pt)[0.9], anchor: "east")
+  content((0.85, 3.2), text(size: 7pt)[0.8], anchor: "east")
+  content((0.85, 2.6), text(size: 7pt)[0.7], anchor: "east")
+  content((0.85, 2.0), text(size: 7pt)[0.6], anchor: "east")
+  content((0.85, 1.4), text(size: 7pt)[0.5], anchor: "east")
+  content((0.85, 0.8), text(size: 7pt)[0.4], anchor: "east")
+  content((0.3, 4.0), text(size: 8.5pt)[$C_F$], anchor: "east")
 
-dove $alpha$ coincide numericamente con $C_L$.
+  content((1.0, 0.65), text(size: 7pt)[200], anchor: "north")
+  content((2.0, 0.65), text(size: 7pt)[400], anchor: "north")
+  content((3.0, 0.65), text(size: 7pt)[600], anchor: "north")
+  content((4.0, 0.65), text(size: 7pt)[800], anchor: "north")
+  content((5.0, 0.65), text(size: 7pt)[1000], anchor: "north")
+  content((6.0, 0.65), text(size: 7pt)[1200], anchor: "north")
+  content((7.0, 0.65), text(size: 7pt)[1400], anchor: "north")
+  content((7.35, 0.65), text(size: 7.5pt, fill: red.darken(10%))[$R_m$ (MPa)], anchor: "north-west")
 
-*Scala di Declassamento dei Carichi (Rispetto alla base di flessione rotante = 100%):*
+  content((7.15, 4.4), text(size: 6.5pt)[0.8], anchor: "west")
+  content((7.15, 4.12), text(size: 6.5pt)[1.6], anchor: "west")
+  content((7.15, 3.82), text(size: 6.5pt)[3.2], anchor: "west")
+  content((7.15, 3.55), text(size: 6.5pt)[6.3], anchor: "west")
+  content((7.15, 2.95), text(size: 6.5pt)[10], anchor: "west")
+  content((7.15, 2.15), text(size: 6.5pt)[40], anchor: "west")
+  content((7.15, 1.3), text(size: 6.5pt)[160], anchor: "west")
+  content((7.85, 2.8), text(size: 7.5pt)[Rugosità $R_a$ ($mu$m)], anchor: "west")
+}), caption: [Fattore di finitura superficiale $C_F$ in funzione del carico di rottura statica $R_m$ e della rugosità media $R_a$.]) <fig:grafico-cf>
 
-- Flessione rotante pura: *100%* (Condizione ideale base).
-- Flessione alternata piana (su un solo piano di sollecitazione): *$95 div 99 %$*.
-- Trazione alternata pura (Carico assiale): Severa riduzione a *$70 div 85 %$*.
-- Torsione alternata pura trasversale: *58%*.
+In sede di progetto occorre inoltre prevenire il degrado dello stato superficiale durante l'esercizio (ad esempio per esposizione ad *ambiente corrosivo* o acqua salmastra), adottando finiture adeguate compatibili con i costi di lavorazione e proteggendo la superficie mediante rivestimenti o trattamenti specifici.
+
+*Trattamenti superficiali e tensioni residue.* Per compensare la perdita di resistenza dovuta a scala, intagli o rugosità è molto efficace introdurre nello strato superficiale *tensioni residue di compressione*. Ciò si ottiene con trattamenti meccanici come la *pallinatura* (_shot peening_, ossia il bombardamento ad alta velocità della superficie con sfere molto dure) e la *rullatura a freddo*, oppure con trattamenti termochimici quali *cementazione* e *nitrurazione*.
+
+Il meccanismo fisico si basa su una deformazione plastica localizzata: un carico locale molto intenso porta a snervamento plastico in compressione lo strato più esterno, mentre il nucleo sottostante, che resta in campo elastico, si oppone all'espansione laterale dello strato deformato. Alla rimozione del carico esterno si genera un guscio superficiale costantemente soggetto a compressione autobilanciata, che ostacola attivamente l'apertura e la propagazione delle micro-cricche.
+
+#nota[*Attenzione*: l'effetto utile dei trattamenti può sparire o addirittura invertirsi. La formatura a freddo dà risultati variabili. Formatura e rullatura _a caldo_ peggiorano quasi sempre la resistenza a fatica, perché a causa della decarburazione lasciano in superficie tensioni residue di _trazione_. La *tempra* superficiale (soprattutto a induzione) invece aiuta: la trasformazione martensitica in superficie fa espandere il volume specifico e crea tensioni residue di compressione. Riducono infine la resistenza a fatica i rivestimenti galvanici o elettrochimici come la cromatura spessa, la nichelatura e l'anodizzazione.]
 
 == Effetti Geometrici di Intaglio (Concentrazione delle Tensioni)
 <effetti-geometrici-di-intaglio-concentrazione-delle-tensioni>

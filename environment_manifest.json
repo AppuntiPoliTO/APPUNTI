@@ -1,12 +1,28 @@
 {
   "environment_id": "021d19cf805e",
   "environment_name": "ALDOMORO_SI_SPERA",
+  "folder_events": [
+    {
+      "at": 1794904627,
+      "deleted": true,
+      "name": "_ALDOMORO_ Meccanica dei Fluidi"
+    },
+    {
+      "at": 1794904627,
+      "deleted": true,
+      "name": "cacaaaaa"
+    },
+    {
+      "at": 1794904627,
+      "deleted": true,
+      "name": "succhiamicazzi"
+    }
+  ],
   "folders": [
     "_ALDOMORO_ elettrotecnica",
     "_ALDOMORO_ fms",
     "_ALDOMORO_ Analisi 2",
     "_ALDOMORO__ECM",
-    "succhiamicazzi",
     "Meccanica_dei_Fluidi"
   ]
 }

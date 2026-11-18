@@ -1,2 +1,0 @@
-= _ALDOMORO__ECM
-

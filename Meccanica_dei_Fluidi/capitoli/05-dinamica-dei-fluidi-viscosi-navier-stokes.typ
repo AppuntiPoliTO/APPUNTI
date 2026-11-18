@@ -1,5 +1,5 @@
 #import "../template.typ": *
-
+#show: conf
 = Dinamica dei Fluidi Viscosi (Navier-Stokes)
 
 == Fluidi viscosi - Newtoniani

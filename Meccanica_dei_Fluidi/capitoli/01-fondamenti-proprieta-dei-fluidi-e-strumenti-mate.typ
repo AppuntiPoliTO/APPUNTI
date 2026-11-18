@@ -1,5 +1,5 @@
 #import "../template.typ": *
-
+#show: conf
 = Fondamenti, Proprietà dei Fluidi e Strumenti Matematici
 
 == Fenomenologia e Forze Aerodinamiche

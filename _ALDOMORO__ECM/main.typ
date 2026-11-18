@@ -55,3 +55,4 @@
 #include "accoppiamenti.typ"
 #include "cuscinetti.typ"
 #include "molle.typ"
+#include "collegamenti filettati.typ"

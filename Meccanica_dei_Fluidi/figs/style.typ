@@ -92,3 +92,39 @@
 
 // Polilinea / curva campionata da una funzione parametrica t in [t0, t1]
 #let campiona(f, t0, t1, n: 60) = range(n + 1).map(i => f(t0 + (t1 - t0) * i / n))
+
+// ---------------------------------------------------------------
+// 4-5. Bobina e disco di carta: geometria comune (metà destra + specchio)
+#let bobina-geo(
+  H: 3.0, r1: 0.55, tw: 0.13, r2: 2.25, h: 0.45, pt: 0.07,
+  linee: ((0.2, 0.3), (0.4, 0.7)), getto: 0.75, profilo: true,
+) = {
+  import draw: *
+  let meta = {
+    // condotto verticale: parete interna (sezionata) ed esterna
+    hatch-wall((r1, H), (r1, h), side: 1, step: 0.2, len: 0.09)
+    line((r1 + tw, H), (r1 + tw, h + tw), stroke: sp-geo + c-geo)
+    // flangia della bobina fino a r2, a distanza h dalla carta
+    hatch-wall((r1, h), (r2, h), side: 1, step: 0.2, len: 0.09)
+    line((r1 + tw, h + tw), (r2, h + tw), (r2, h), stroke: sp-geo + c-geo)
+    // linee di corrente: scendono nel condotto, curvano di 90° in B, corrono radiali in C
+    for (x0, f) in linee {
+      let ys = f * h
+      let rc = 0.15 + 0.6 * (r1 - x0)
+      let ytop = H - 0.8
+      line((x0, ytop), (x0, ys + rc), stroke: sp-vec + c-vel)
+      arc((x0, ys + rc), start: 180deg, stop: 270deg, radius: rc, stroke: sp-vec + c-vel)
+      line((x0 + rc, ys), (r2 + getto, ys), stroke: sp-vec + c-vel, mark: punta(c-vel))
+      if profilo { vettore((x0, H - 0.2), (x0, ytop + 0.03), col: c-vel) }
+    }
+    // limiti del getto libero in uscita (D)
+    line((r2, h), (r2 + getto, h + 0.22), stroke: (paint: c-aux, thickness: sp-aux, dash: "dashed"))
+    line((r2, 0), (r2 + getto, -0.18), stroke: (paint: c-aux, thickness: sp-aux, dash: "dashed"))
+  }
+  meta
+  scope({ scale(x: -1); meta })
+  // disco di carta
+  rect((-r2, -pt), (r2, 0), fill: c-riemp, stroke: sp-geo + c-geo)
+  // profilo uniforme in A: freccia anche sull'asse
+  if profilo { vettore((0, H - 0.2), (0, H - 0.77), col: c-vel) }
+}

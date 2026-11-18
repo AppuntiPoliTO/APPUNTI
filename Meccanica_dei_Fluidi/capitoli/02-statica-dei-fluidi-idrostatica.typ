@@ -1,6 +1,6 @@
 #import "../template.typ": *
+#show: conf
 #show figure: set text(size: 9pt)   // etichette delle figure a 9pt, come nel modello
-
 = Statica dei Fluidi (Idrostatica)
 
 == Equazioni indefinite della statica dei fluidi
@@ -176,7 +176,10 @@ Si definisce *Piano dei Carichi Idrostatici (PCI)* il luogo geometrico dei punti
   ]
 )
 
-*Manometro semplice (a U).* Per determinare la pressione, si uguagliano le pressioni sul piano orizzontale passante per il menisco più basso (punto $M$); il ramo aperto ($B'$) è a pressione atmosferica:
+#grid(
+  columns: 2,
+  gutter: 1em,
+  [*Manometro semplice (a U).* Per determinare la pressione, si uguagliano le pressioni sul piano orizzontale passante per il menisco più basso (punto $M$); il ramo aperto ($B'$) è a pressione atmosferica:
 
 $ cases(
   p_(N') = 0 quad "(pressione relativa)",
@@ -188,7 +191,9 @@ Uguagliando le espressioni per $p_A$, si ottiene l'affondamento misurato in colo
 
 $ h = gamma_m/gamma Delta $
 
-L'utilizzo di un liquido ad alto peso specifico (ad esempio mercurio, $gamma_m >> gamma$) permette così di leggere pressioni corrispondenti a valori di $h$ grandi tramite dislivelli $Delta$ piccoli e compatti.
+L'utilizzo di un liquido ad alto peso specifico (ad esempio mercurio, $gamma_m >> gamma$) permette così di leggere pressioni corrispondenti a valori di $h$ grandi tramite dislivelli $Delta$ piccoli e compatti.],
+  [#include "../figs/02-statica-dei-fluidi-idrostatica-fig18.typ"]
+)
 
 #block(breakable: false, width: 100%)[
   #grid(
@@ -443,7 +448,7 @@ dove $arrow(G) = integral rho arrow(g) dif V$ rappresenta la forza peso del volu
 
 #block(breakable: false, width: 100%)[
   #grid(
-    columns: (1.4fr, 0.6fr),
+    columns: (1.3fr, 0.7fr),
     column-gutter: 1.3em,
     align: (left + horizon, center + horizon),
     [
