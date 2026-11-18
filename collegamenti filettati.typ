@@ -1430,10 +1430,11 @@ $ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, 
   content((8.15, 0.12), text(size: 8.5pt)[$i$], anchor: "north")
 })])
 Sul diagramma di interferenza questo comportamento si traduce in una caratteristica poligonale (bilineare) per la parte: a partire dal punto di equilibrio $F_(v, "lim")$ verso destra si ha un primo tratto molto ripido (regime di contatto metallo-metallo), seguito da un cambio di pendenza oltre il quale la curva prosegue con inclinazione molto dolce (regime governato dalla sola guarnizione in seguito al distacco dei metalli). In esercizio è fondamentale dimensionare il collegamento affinché il carico esterno non porti il sistema oltre il punto di cambio di pendenza, evitando il distacco delle flange metalliche che causerebbe eccessiva cedevolezza e perdita di tenuta.
+#pagebreak()
 === Viti con carico trasversale
 Le viti non devono lavorare direttamente a taglio poiché, qualora si verifichi un movimento relativo tra i pezzi serrati, oltre alla sollecitazione di taglio insorge anche un'elevata sollecitazione di flessione sul fusto. Quando i collegamenti bullonati sono impiegati per prevenire movimenti reciproci trasversali dovuti a una forza tagliante $F_T$, si ricorre a tre possibili soluzioni costruttive:
 
-1. #strong[Viti passanti (collegamento ad attrito):]
+#strong[Viti passanti (collegamento ad attrito):]
   #grid(
     columns: (1fr, 1fr),
     column-gutter: 1em,
@@ -1441,9 +1442,110 @@ Le viti non devono lavorare direttamente a taglio poiché, qualora si verifichi 
 
 $ F_(p, m i n) = frac(F_T dot.op C S, f dot.op n dot.op m) $
 
-dove $F_T$ è la forza trasversale totale, $C S$ è il coefficiente di sicurezza ($1.25 div 1.6$), $f$ è il coefficiente di attrito tra le superfici, $n$ è il numero di bulloni e $m$ è il numero di superfici di contatto fra i pezzi (ad esempio $m = 1$).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema di collegamento con vite passante soggetta a carico trasversale $F_T$. Due blocchi serrati da un bullone passante; il blocco superiore è spinto verso il basso dalla forza $F_T$, mentre all'interfaccia verticale fra i due blocchi è indicata la forza di attrito resistente $f dot.op F_(p, m i n)$ diretta verso l'alto; il blocco inferiore è vincolato a terra.]])
+dove $F_T$ è la forza trasversale totale, $C S$ è il coefficiente di sicurezza ($1.25 div 1.6$), $f$ è il coefficiente di attrito tra le superfici, $n$ è il numero di bulloni e $m$ è il numero di superfici di contatto fra i pezzi (ad esempio $m = 1$).],[#canvas(length: 1cm, {
+  import draw: *
 
-2. #strong[Viti con gambo calibrato:]
+  line((-1.8, -2.6), (1.8, -2.6), (1.8, 1.7), (-1.8, 1.7), close: true, fill: luma(248), stroke: none)
+
+  line((-0.2, -2.6), (0.0, -2.4), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-0.5, -2.6), (0.0, -2.1), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-0.8, -2.6), (0.0, -1.8), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.1, -2.6), (0.0, -1.5), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.4, -2.6), (0.0, -1.2), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.7, -2.6), (0.0, -0.9), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, -2.4), (0.0, -0.6), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, -2.1), (0.0, -0.3), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, -1.8), (0.0, 0.0), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, -1.5), (0.0, 0.3), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, -1.2), (0.0, 0.6), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, -0.9), (0.0, 0.9), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, -0.6), (0.0, 1.2), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, -0.3), (0.0, 1.5), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, 0.0), (-0.1, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, 0.3), (-0.4, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, 0.6), (-0.7, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, 0.9), (-1.0, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, 1.2), (-1.3, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((-1.8, 1.5), (-1.6, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+
+  line((1.6, -2.6), (1.8, -2.4), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((1.3, -2.6), (1.8, -2.1), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((1.0, -2.6), (1.8, -1.8), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.7, -2.6), (1.8, -1.5), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.4, -2.6), (1.8, -1.2), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.1, -2.6), (1.8, -0.9), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, -2.4), (1.8, -0.6), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, -2.1), (1.8, -0.3), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, -1.8), (1.8, 0.0), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, -1.5), (1.8, 0.3), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, -1.2), (1.8, 0.6), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, -0.9), (1.8, 0.9), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, -0.6), (1.8, 1.2), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, -0.3), (1.8, 1.5), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, 0.0), (1.7, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, 0.3), (1.4, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, 0.6), (1.1, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, 0.9), (0.8, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, 1.2), (0.5, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+  line((0.0, 1.5), (0.2, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
+
+  line((-1.8, -2.6), (1.8, -2.6), (1.8, 1.7), (-1.8, 1.7), close: true, stroke: 0.8pt)
+  line((0.0, -2.6), (0.0, 1.7), stroke: 1.0pt)
+
+  line((-1.8, -0.55), (1.8, -0.55), (1.8, 0.55), (-1.8, 0.55), close: true, fill: white, stroke: none)
+  line((-1.8, 0.55), (1.8, 0.55), stroke: 0.8pt)
+  line((-1.8, -0.55), (1.8, -0.55), stroke: 0.8pt)
+
+  line((-1.8, -0.48), (3.2, -0.48), (3.3, -0.38), (3.3, 0.38), (3.2, 0.48), (-1.8, 0.48), close: true, fill: white, stroke: 0.9pt)
+  line((0.35, -0.48), (0.35, 0.48), stroke: 0.75pt)
+  line((0.35, 0.38), (1.8, 0.38), stroke: 0.6pt)
+  line((0.35, -0.38), (1.8, -0.38), stroke: 0.6pt)
+  line((0.35, 0.38), (0.15, 0.48), stroke: 0.6pt)
+  line((0.35, -0.38), (0.15, -0.48), stroke: 0.6pt)
+  line((2.7, 0.38), (3.2, 0.38), stroke: 0.6pt)
+  line((2.7, -0.38), (3.2, -0.38), stroke: 0.6pt)
+  line((3.2, -0.48), (3.2, 0.48), stroke: 0.7pt)
+
+  line((-2.66, -0.88), (-2.56, -1.05), (-1.8, -1.05), (-1.8, 1.05), (-2.56, 1.05), (-2.66, 0.88), close: true, fill: white, stroke: none)
+  line((-2.56, 1.05), (-1.8, 1.05), stroke: 1.0pt)
+  line((-2.58, 0.52), (-1.8, 0.52), stroke: 0.9pt)
+  line((-2.58, -0.52), (-1.8, -0.52), stroke: 0.9pt)
+  line((-2.56, -1.05), (-1.8, -1.05), stroke: 1.0pt)
+  line((-1.8, -1.05), (-1.8, 1.05), stroke: 1.0pt)
+  arc((-2.26, 0.785), start: 138deg, stop: 222deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
+  arc((-1.51, 0.0), start: 154deg, stop: 206deg, radius: 1.19, anchor: "origin", stroke: 1.0pt)
+  arc((-2.26, -0.785), start: 138deg, stop: 222deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
+  line((-2.70, -0.785), (-2.70, 0.785), stroke: 0.85pt)
+
+  line((1.90, -1.05), (2.56, -1.05), (2.70, -0.785), (2.70, 0.785), (2.56, 1.05), (1.90, 1.05), (1.80, 0.785), (1.80, -0.785), close: true, fill: white, stroke: none)
+  line((1.90, 1.05), (2.56, 1.05), stroke: 1.0pt)
+  line((1.92, 0.52), (2.58, 0.52), stroke: 0.9pt)
+  line((1.92, -0.52), (2.58, -0.52), stroke: 0.9pt)
+  line((1.90, -1.05), (2.56, -1.05), stroke: 1.0pt)
+  arc((2.20, 0.785), start: 138deg, stop: 222deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
+  arc((2.99, 0.0), start: 154deg, stop: 206deg, radius: 1.19, anchor: "origin", stroke: 1.0pt)
+  arc((2.20, -0.785), start: 138deg, stop: 222deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
+  arc((2.26, 0.785), start: -42deg, stop: 42deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
+  arc((1.51, 0.0), start: -26deg, stop: 26deg, radius: 1.19, anchor: "origin", stroke: 1.0pt)
+  arc((2.26, -0.785), start: -42deg, stop: 42deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
+  line((1.80, -0.785), (1.80, 0.785), stroke: 0.85pt)
+  line((2.70, -0.785), (2.70, 0.785), stroke: 0.85pt)
+
+  line((-2.95, 0.0), (3.55, 0.0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+
+  line((-0.40, 2.55), (-0.40, 1.70), mark: (end: ">"), stroke: 1.3pt)
+  content((-0.55, 2.18), text(size: 8.5pt)[$F_T$], anchor: "east")
+
+  line((-0.20, -2.15), (-0.20, -1.25), mark: (end: ">"), stroke: 1.3pt)
+  line((0.12, -1.96), (1.42, -1.96), (1.42, -1.44), (0.12, -1.44), close: true, fill: white, stroke: none)
+  content((0.77, -1.70), text(size: 8pt)[$f dot F_("p,min")$], anchor: "center")
+
+  line((0.0, -3.12), (0.30, -2.60), (0.60, -3.12), close: true, stroke: 1.1pt)
+  line((0.60, -3.12), (0.90, -2.60), (1.20, -3.12), close: true, stroke: 1.1pt)
+  line((1.20, -3.12), (1.50, -2.60), (1.80, -3.12), close: true, stroke: 1.1pt)
+})])
+
+#strong[Viti con gambo calibrato:]
   #grid(
     columns: (1fr, 1fr),
     column-gutter: 1em,
@@ -1453,9 +1555,119 @@ $ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi
 
 $ sigma = frac(F_T, n dot.op d dot.op s) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m [?] $
 
-dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superficie d'appoggio (spessore del pezzo sollecitato).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema di collegamento con vite a gambo calibrato. Il bullone attraversa due blocchi spinti da forze trasversali opposte $F_T$; la porzione centrale cilindrica senza gioco tra i due blocchi ha diametro quotato $d$ e appoggia sul blocco inferiore per uno spessore quotato $s$.]])
+dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superficie d'appoggio (spessore del pezzo sollecitato).],[#canvas(length: 1cm, {
+  import draw: *
 
-3. #strong[Inserzione di bussole:]
+  rect((-1.5, -1.8), (1.5, 1.8), fill: white, stroke: none)
+  rect((-1.5, 0.52), (1.5, 0.72), fill: gray.transparentize(25%), stroke: 0.8pt)
+  rect((-1.5, -0.72), (1.5, -0.52), fill: gray.transparentize(25%), stroke: 0.8pt)
+
+  line((-0.18, 0.72), (0, 0.9), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-0.43, 0.72), (0, 1.15), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-0.68, 0.72), (0, 1.4), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-0.93, 0.72), (0, 1.65), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.18, 0.72), (-0.1, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.43, 0.72), (-0.35, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.5, 0.9), (-0.6, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.5, 1.15), (-0.85, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.5, 1.4), (-1.1, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.5, 1.65), (-1.35, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+
+  line((1.32, 0.72), (1.5, 0.9), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((1.07, 0.72), (1.5, 1.15), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0.82, 0.72), (1.5, 1.4), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0.57, 0.72), (1.5, 1.65), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0.32, 0.72), (1.4, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0.07, 0.72), (1.15, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0, 0.9), (0.9, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0, 1.15), (0.65, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0, 1.4), (0.4, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0, 1.65), (0.15, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+
+  line((-0.18, -1.8), (0, -1.62), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-0.43, -1.8), (0, -1.37), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-0.68, -1.8), (0, -1.12), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-0.93, -1.8), (0, -0.87), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.18, -1.8), (-0.1, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.43, -1.8), (-0.35, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.5, -1.62), (-0.6, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.5, -1.37), (-0.85, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.5, -1.12), (-1.1, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((-1.5, -0.87), (-1.35, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+
+  line((1.32, -1.8), (1.5, -1.62), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((1.07, -1.8), (1.5, -1.37), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0.82, -1.8), (1.5, -1.12), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0.57, -1.8), (1.5, -0.87), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0.32, -1.8), (1.4, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0.07, -1.8), (1.15, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0, -1.62), (0.9, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0, -1.37), (0.65, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0, -1.12), (0.4, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+  line((0, -0.87), (0.15, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
+
+  rect((-1.5, 0.72), (0, 1.8), stroke: 1pt)
+  rect((0, 0.72), (1.5, 1.8), stroke: 1pt)
+  rect((-1.5, -1.8), (0, -0.72), stroke: 1pt)
+  rect((0, -1.8), (1.5, -0.72), stroke: 1pt)
+
+  rect((-1.5, -0.44), (2.65, 0.44), fill: white, stroke: none)
+  line((-1.5, 0.44), (2.65, 0.44), stroke: 0.9pt)
+  line((-1.5, -0.44), (2.65, -0.44), stroke: 0.9pt)
+  line((0.45, -0.44), (0.45, 0.44), stroke: 0.5pt)
+  line((0.45, 0.36), (2.65, 0.36), stroke: 0.5pt)
+  line((0.45, -0.36), (2.65, -0.36), stroke: 0.5pt)
+  line((2.65, -0.44), (2.65, 0.44), stroke: 0.5pt)
+  line((2.65, 0.44), (2.75, 0.34), (2.75, -0.34), (2.65, -0.44), stroke: 0.9pt)
+
+  rect((-1.82, -0.88), (-1.5, 0.88), fill: white, stroke: none)
+  arc((-1.82, 0), start: 90deg, stop: 270deg, radius: (0.18, 0.44), anchor: "origin", fill: white, stroke: 0.9pt)
+  arc((-1.82, 0.66), start: 90deg, stop: 270deg, radius: (0.18, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
+  arc((-1.82, -0.66), start: 90deg, stop: 270deg, radius: (0.18, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
+  line((-2.0, -0.66), (-2.0, 0.66), stroke: 0.9pt)
+  line((-1.82, 0.88), (-1.5, 0.88), (-1.5, -0.88), (-1.82, -0.88), stroke: 0.9pt)
+  line((-1.82, 0.44), (-1.5, 0.44), stroke: 0.8pt)
+  line((-1.82, -0.44), (-1.5, -0.44), stroke: 0.8pt)
+
+  rect((1.62, -0.88), (2.03, 0.88), fill: white, stroke: none)
+  arc((1.62, 0), start: 90deg, stop: 270deg, radius: (0.12, 0.44), anchor: "origin", fill: white, stroke: 0.9pt)
+  arc((1.62, 0.66), start: 90deg, stop: 270deg, radius: (0.12, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
+  arc((1.62, -0.66), start: 90deg, stop: 270deg, radius: (0.12, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
+  arc((2.03, 0), start: -90deg, stop: 90deg, radius: (0.12, 0.44), anchor: "origin", fill: white, stroke: 0.9pt)
+  arc((2.03, 0.66), start: -90deg, stop: 90deg, radius: (0.12, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
+  arc((2.03, -0.66), start: -90deg, stop: 90deg, radius: (0.12, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
+  line((1.5, -0.66), (1.5, 0.66), stroke: 0.9pt)
+  line((2.15, -0.66), (2.15, 0.66), stroke: 0.9pt)
+  line((1.62, 0.88), (2.03, 0.88), stroke: 0.9pt)
+  line((1.62, -0.88), (2.03, -0.88), stroke: 0.9pt)
+  line((1.62, 0.44), (2.03, 0.44), stroke: 0.8pt)
+  line((1.62, -0.44), (2.03, -0.44), stroke: 0.8pt)
+
+  line((-2.2, 0), (3.0, 0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+
+  line((0, 2.7), (0, 1.82), mark: (end: ">", fill: black), stroke: 1.4pt)
+  content((-0.25, 2.3), text(size: 9pt)[$F_T$], anchor: "east")
+
+  line((0, -2.7), (0, -1.82), mark: (end: ">", fill: black), stroke: 1.4pt)
+  content((0.25, -2.3), text(size: 9pt)[$F_T$], anchor: "west")
+
+  line((-1.5, -1.8), (-1.5, -3.55), stroke: 0.5pt)
+  line((1.5, -1.8), (1.5, -3.55), stroke: 0.5pt)
+  line((-1.5, -3.4), (1.5, -3.4), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
+  content((0, -3.25), text(size: 9pt)[$L_p$], anchor: "south")
+
+  line((-1.5, 0.72), (-3.35, 0.72), stroke: 0.5pt)
+  line((-1.5, -0.72), (-3.35, -0.72), stroke: 0.5pt)
+  line((-3.2, -0.72), (-3.2, 0.72), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
+  content((-3.3, 0), text(size: 9pt)[$d_e$], anchor: "east")
+
+  line((-1.5, 0.52), (-2.55, 0.52), stroke: 0.5pt)
+  line((-1.5, -0.52), (-2.55, -0.52), stroke: 0.5pt)
+  line((-2.4, -0.52), (-2.4, 0.52), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
+  content((-2.5, 0), text(size: 9pt)[$d_i$], anchor: "east")
+})])
+
+#strong[Inserzione di bussole:]
   #grid(
     columns: (1fr, 1fr),
     column-gutter: 1em,
@@ -1463,4 +1675,129 @@ dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superfic
 
 $ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi dot.op (d_e - d_i)^2 [?]) lt.eq tau_("amm"), quad tau_("amm") = 0.4 div 0.6 R_(p 0.2) $
 
-$ sigma = frac(F_T, d_e dot.op L_p dot.op n) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m [?] $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema di collegamento con bussola. Due piastre soggette a forze trasversali opposte $F_T$ sono attraversate da un bullone attorno al cui gambo è inserita una bussola cilindrica cava di diametro esterno $d_e$, diametro interno $d_i$ e lunghezza d'appoggio sulla piastra destra quotata $L_p$.]])
+$ sigma = frac(F_T, d_e dot.op L_p dot.op n) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m [?] $],[#canvas(length: 1cm, {
+  import draw: *
+
+  line((-0.25, 0.50), (0.00, 0.75), stroke: 0.5pt)
+  line((-0.50, 0.50), (0.00, 1.00), stroke: 0.5pt)
+  line((-0.75, 0.50), (0.00, 1.25), stroke: 0.5pt)
+  line((-1.00, 0.50), (0.00, 1.50), stroke: 0.5pt)
+  line((-1.25, 0.50), (-0.05, 1.70), stroke: 0.5pt)
+  line((-1.50, 0.50), (-0.30, 1.70), stroke: 0.5pt)
+  line((-1.70, 0.55), (-0.55, 1.70), stroke: 0.5pt)
+  line((-1.70, 0.80), (-0.80, 1.70), stroke: 0.5pt)
+  line((-1.70, 1.05), (-1.05, 1.70), stroke: 0.5pt)
+  line((-1.70, 1.30), (-1.30, 1.70), stroke: 0.5pt)
+  line((-1.70, 1.55), (-1.55, 1.70), stroke: 0.5pt)
+
+  line((-0.20, -1.70), (0.00, -1.50), stroke: 0.5pt)
+  line((-0.45, -1.70), (0.00, -1.25), stroke: 0.5pt)
+  line((-0.70, -1.70), (0.00, -1.00), stroke: 0.5pt)
+  line((-0.95, -1.70), (0.00, -0.75), stroke: 0.5pt)
+  line((-1.20, -1.70), (0.00, -0.50), stroke: 0.5pt)
+  line((-1.45, -1.70), (-0.25, -0.50), stroke: 0.5pt)
+  line((-1.70, -1.70), (-0.50, -0.50), stroke: 0.5pt)
+  line((-1.70, -1.45), (-0.75, -0.50), stroke: 0.5pt)
+  line((-1.70, -1.20), (-1.00, -0.50), stroke: 0.5pt)
+  line((-1.70, -0.95), (-1.25, -0.50), stroke: 0.5pt)
+  line((-1.70, -0.70), (-1.50, -0.50), stroke: 0.5pt)
+
+  line((1.50, 0.50), (1.70, 0.70), stroke: 0.5pt)
+  line((1.25, 0.50), (1.70, 0.95), stroke: 0.5pt)
+  line((1.00, 0.50), (1.70, 1.20), stroke: 0.5pt)
+  line((0.75, 0.50), (1.70, 1.45), stroke: 0.5pt)
+  line((0.50, 0.50), (1.70, 1.70), stroke: 0.5pt)
+  line((0.25, 0.50), (1.45, 1.70), stroke: 0.5pt)
+  line((0.00, 0.50), (1.20, 1.70), stroke: 0.5pt)
+  line((0.00, 0.75), (0.95, 1.70), stroke: 0.5pt)
+  line((0.00, 1.00), (0.70, 1.70), stroke: 0.5pt)
+  line((0.00, 1.25), (0.45, 1.70), stroke: 0.5pt)
+  line((0.00, 1.50), (0.20, 1.70), stroke: 0.5pt)
+
+  line((1.55, -1.70), (1.70, -1.55), stroke: 0.5pt)
+  line((1.30, -1.70), (1.70, -1.30), stroke: 0.5pt)
+  line((1.05, -1.70), (1.70, -1.05), stroke: 0.5pt)
+  line((0.80, -1.70), (1.70, -0.80), stroke: 0.5pt)
+  line((0.55, -1.70), (1.70, -0.55), stroke: 0.5pt)
+  line((0.30, -1.70), (1.50, -0.50), stroke: 0.5pt)
+  line((0.05, -1.70), (1.25, -0.50), stroke: 0.5pt)
+  line((0.00, -1.50), (1.00, -0.50), stroke: 0.5pt)
+  line((0.00, -1.25), (0.75, -0.50), stroke: 0.5pt)
+  line((0.00, -1.00), (0.50, -0.50), stroke: 0.5pt)
+  line((0.00, -0.75), (0.25, -0.50), stroke: 0.5pt)
+
+  rect((-1.70, 0.50), (0.00, 1.70), stroke: 1pt)
+  rect((-1.70, -1.70), (0.00, -0.50), stroke: 1pt)
+  rect((0.00, 0.50), (1.70, 1.70), stroke: 1pt)
+  rect((0.00, -1.70), (1.70, -0.50), stroke: 1pt)
+
+  arc((-2.42, 0.7125), start: 90deg, stop: 270deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
+  arc((-2.42, 0.00), start: 90deg, stop: 270deg, radius: (0.18, 0.475), anchor: "origin", stroke: 1pt)
+  arc((-2.42, -0.7125), start: 90deg, stop: 270deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
+  line((-2.60, -0.7125), (-2.60, 0.7125), stroke: 1pt)
+  line((-2.42, 0.95), (-1.70, 0.95), stroke: 1pt)
+  line((-2.42, 0.475), (-1.70, 0.475), stroke: 0.8pt)
+  line((-2.42, -0.475), (-1.70, -0.475), stroke: 0.8pt)
+  line((-2.42, -0.95), (-1.70, -0.95), stroke: 1pt)
+  line((-1.70, -0.95), (-1.70, 0.95), stroke: 1pt)
+
+  line((-1.70, 0.40), (-1.55, 0.40), stroke: 1pt)
+  line((-1.70, -0.40), (-1.55, -0.40), stroke: 1pt)
+  line((-1.55, -0.40), (-1.55, 0.40), stroke: 0.7pt)
+  line((-1.55, 0.40), (-1.40, 0.50), stroke: 1pt)
+  line((-1.55, -0.40), (-1.40, -0.50), stroke: 1pt)
+  line((-1.40, -0.50), (-1.40, 0.50), stroke: 0.7pt)
+
+  line((-1.40, 0.50), (0.40, 0.50), stroke: 1pt)
+  line((-1.40, -0.50), (0.40, -0.50), stroke: 1pt)
+  line((0.40, -0.50), (0.40, 0.50), stroke: 0.7pt)
+  line((0.40, 0.50), (0.55, 0.40), stroke: 1pt)
+  line((0.40, -0.50), (0.55, -0.40), stroke: 1pt)
+  line((0.55, -0.40), (0.55, 0.40), stroke: 0.7pt)
+
+  line((0.55, 0.40), (1.70, 0.40), stroke: 1pt)
+  line((0.55, -0.40), (1.70, -0.40), stroke: 1pt)
+  line((0.55, 0.32), (1.70, 0.32), stroke: 0.55pt)
+  line((0.55, -0.32), (1.70, -0.32), stroke: 0.55pt)
+
+  arc((1.88, 0.7125), start: 90deg, stop: 270deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
+  arc((1.88, 0.00), start: 90deg, stop: 270deg, radius: (0.18, 0.475), anchor: "origin", stroke: 1pt)
+  arc((1.88, -0.7125), start: 90deg, stop: 270deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
+  line((1.70, -0.7125), (1.70, 0.7125), stroke: 1pt)
+
+  arc((2.42, 0.7125), start: -90deg, stop: 90deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
+  arc((2.42, 0.00), start: -90deg, stop: 90deg, radius: (0.18, 0.475), anchor: "origin", stroke: 1pt)
+  arc((2.42, -0.7125), start: -90deg, stop: 90deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
+  line((2.60, -0.7125), (2.60, 0.7125), stroke: 1pt)
+
+  line((1.88, 0.95), (2.42, 0.95), stroke: 1pt)
+  line((1.88, 0.475), (2.42, 0.475), stroke: 0.8pt)
+  line((1.88, -0.475), (2.42, -0.475), stroke: 0.8pt)
+  line((1.88, -0.95), (2.42, -0.95), stroke: 1pt)
+
+  line((2.60, 0.40), (3.10, 0.40), stroke: 1pt)
+  line((2.60, -0.40), (3.10, -0.40), stroke: 1pt)
+  line((2.60, 0.32), (3.20, 0.32), stroke: 0.55pt)
+  line((2.60, -0.32), (3.20, -0.32), stroke: 0.55pt)
+  line((3.10, -0.40), (3.10, 0.40), stroke: 0.55pt)
+  line((3.10, 0.40), (3.20, 0.32), stroke: 1pt)
+  line((3.10, -0.40), (3.20, -0.32), stroke: 1pt)
+  line((3.20, -0.32), (3.20, 0.32), stroke: 1pt)
+
+  line((-2.85, 0.00), (3.50, 0.00), stroke: (dash: "dash-dotted", thickness: 0.6pt))
+
+  line((-0.70, -0.50), (-0.70, 0.50), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
+  rect((-0.85, -0.18), (-0.55, 0.18), fill: white, stroke: none)
+  content((-0.70, 0.00), text(size: 8.5pt)[$d$])
+
+  line((-1.40, -0.50), (-1.40, -2.45), stroke: 0.55pt)
+  line((0.40, -0.50), (0.40, -2.45), stroke: 0.55pt)
+  line((-1.40, -2.25), (0.40, -2.25), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
+  content((-0.50, -2.14), text(size: 8.5pt)[$s$], anchor: "south")
+
+  line((-0.30, 2.55), (-0.30, 1.72), mark: (end: ">", fill: black), stroke: 1.5pt)
+  content((-0.48, 2.15), text(size: 9pt)[$F_T$], anchor: "east")
+
+  line((0.30, -2.55), (0.30, -1.72), mark: (end: ">", fill: black), stroke: 1.5pt)
+  content((0.48, -2.15), text(size: 9pt)[$F_T$], anchor: "west")
+})])
