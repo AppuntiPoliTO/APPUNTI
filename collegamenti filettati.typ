@@ -668,7 +668,7 @@ Si distinguono tre casi operativi principali:
 1. #strong[Caso a) – Ciclo all'origine ($0 lt.eq C(t) lt.eq C_(m a x)$):]
   #grid(
     columns: (1fr, 1fr),
-    column-gutter: 1em,
+    column-gutter: 2em,
     align: (left + horizon, center + horizon),[Il carico esterno oscilla tra $0$ e un massimo $C_(m a x)$. Sul diagramma di interferenza la forza minima sulla vite coincide con il precarico iniziale nella condizione di equilibrio $F_(v, "lim")$, mentre la forza massima si ottiene sommando la quota parte di carico massimo spettante alla vite ($Delta C_(m a x, v)$):
 
 $ F_(v, m a x) = F_(v, "lim") + Delta C_(m a x, v), quad F_(v, m i n) = F_(v, "lim") $
@@ -715,7 +715,7 @@ $ F_(v, m) = F_(v, "lim") + frac(Delta C_(m a x, v), 2), quad F_(v, a) = frac(De
 2. #strong[Caso b) – Ciclo pulsante positivo ($C_(m i n) lt.eq C(t) lt.eq C_(m a x)$ con $C_(m a x) > 0$ e $C_(m i n) > 0$):]
   #grid(
     columns: (1fr, 1fr),
-    column-gutter: 1em,
+    column-gutter: 2em,
     align: (left + horizon, center + horizon),[La fluttuazione avviene tra due valori entrambi positivi, senza annullarsi. La condizione minima non coincide più con il punto di equilibrio ma include la quota parte di carico minimo $Delta C_(m i n, v)$:
 
 $ F_(v, m a x) = F_(v, "lim") + Delta C_(m a x, v), quad F_(v, m i n) = F_(v, "lim") + Delta C_(m i n, v) $
@@ -778,7 +778,7 @@ $ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m 
 3. #strong[Caso c) – Ciclo con inversione di carico ($C_(m i n) lt.eq C(t) lt.eq C_(m a x)$ con $C_(m a x) > 0$ e $C_(m i n) < 0$, ossia $C_(m i n) lt.eq 0 lt.eq C_(m a x)$):]
   #grid(
     columns: (1fr, 1fr),
-    column-gutter: 1em,
+    column-gutter: 2em,
     align: (left + horizon, center + horizon),[Il carico esterno inverte il proprio segno durante il ciclo. In corrispondenza di $C_(m a x) > 0$ la vite subisce un sovraccarico al di sopra del livello $F_(v, "lim")$; in corrispondenza di $C_(m i n) < 0$ il segmento di carico si colloca a sinistra del punto di equilibrio, per cui la vite si scarica al di sotto di $F_(v, "lim")$ mentre le parti risultano ulteriormente compresse. La variazione $Delta C_(m i n, v)$ assume quindi segno negativo:
 
 $ Delta C_(m i n, v) = C_(m i n) frac(delta_p, delta_v + delta_p) < 0 $
