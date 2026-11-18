@@ -14,7 +14,7 @@
 // Ogni capitolo: pagina nuova, contatori azzerati, titolo con etichetta "Capitolo N"
 #show heading.where(level: 1): it => {
   if it.numbering == none { return it }   // titolo "Indice": niente etichetta né pagina nuova
-  pagebreak(weak: true)
+  colbreak(weak: true)
   counter(math.equation).update(0)
   v(0.8cm)
   block(width: 100%, below: 1.2em, {
