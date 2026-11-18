@@ -566,7 +566,7 @@ Se la verifica del carico minimo di serraggio non è soddisfatta, i possibili in
 === Verifica a fatica della vite e diagramma di Haigh
 #grid(
   columns: (1fr, 1fr),
-  column-gutter: 1em,
+  column-gutter: 2em,
   align: (left + horizon, center + horizon),[La verifica a fatica delle viti nelle normative tecniche (in particolare nella normativa tedesca VDI 2230) si basa sull'utilizzo di un diagramma di Haigh specifico per filettature di classi $8.8 div 12.9$, costruito per classi di resistenza dei materiali e per fasce dimensionali di vite piuttosto che per singoli materiali.
 
 Sul diagramma sono riportate in ascissa le tensioni medie adimensionalizzate rispetto al limite di snervamento ($sigma_m \/ R_(p 0.2)$, con estensione fino a $0.9$ nel diagramma considerato, sebbene per dimensioni minori possa spingersi anche oltre) e in ordinata la tensione alternata ammissibile a fatica $sigma_D$ espressa in MPa. Il grafico presenta due scale verticali distinte: la scala di sinistra ($40 div 80 " MPa"$) si riferisce alle viti non rullate, mentre la scala di destra ($80 div 160 " MPa"$) si riferisce alle viti sottoposte a rullatura a freddo, trattamento meccanico superficiale che raddoppia il valore di resistenza in MPa.
