@@ -25,7 +25,7 @@
   align: (left + horizon, center + horizon),[Un elemento fondamentale nella trasmissione di potenza e nel supporto degli alberi di trasmissione è il cuscinetto a corpi volventi. A differenza di altri organi di macchine che vengono progettati ad hoc per specifiche applicazioni, i cuscinetti sono prodotti commerciali standardizzati. Vengono realizzati dai costruttori in diverse taglie e architetture, e il progettista li seleziona direttamente da catalogo in base ai parametri di progetto, ai calcoli di durata e alle prestazioni richieste.
 
 ],[
-#image("images/cuscinetti/Albero e cuscinetti.png",width:80%)
+#image("images/Albero e cuscinetti.png",width:80%)
 ])
 Lo scopo principale del cuscinetto è quello di permettere la rotazione relativa di un componente (generalmente un albero, ovvero il rotore) rispetto ad un altro (l'alloggiamento o statore), evitando l'attrito di strisciamento. Nelle bronzine, ad esempio, l'interposizione di un materiale soggetto a frizione genera una notevole dissipazione di energia e un'usura rapida. Nei cuscinetti volventi, invece, il moto relativo avviene tramite il libero rotolamento di appositi corpi volventi all'interno di piste dedicate. Questa condizione offre una resistenza alla rotazione nettamente inferiore, paragonabile concettualmente all'attrito di puro rotolamento che si instaura tra lo pneumatico di un autoveicolo e il manto stradale.
 === Componenti e Geometria
@@ -37,7 +37,7 @@ Lo scopo principale del cuscinetto è quello di permettere la rotazione relativa
 - #strong[Anello esterno:] è generalmente solidale alla parte fissa (l'alloggiamento o statore). La sua superficie interna costituisce la pista esterna.
 - #strong[Corpi volventi:] possono essere sfere, rulli o rullini. Costituiscono una o più corone e hanno il compito di trasmettere le sollecitazioni meccaniche (forze e momenti) rotolando sulle piste.
 ],[
-#image("images/cuscinetti/sezione cuscinetto.png")
+#image("images/sezione cuscinetto.png")
 ])
 - #strong[Gabbia rotante:] è una struttura che ha la funzione fondamentale di mantenere i corpi volventi equidistanziati lungo la direzione circonferenziale. Evita che i corpi volventi entrino in contatto reciproco sfregando tra loro e garantisce che il carico si distribuisca uniformemente, impedendo l'addensamento degli elementi in una singola porzione della circonferenza. La gabbia è solidale al set di corpi volventi e ruota con essi.
 - #strong[Schermi e Guarnizioni:] elementi laterali che servono a trattenere il lubrificante (olio o, più frequentemente, grasso) nella regione di contatto e a proteggere i meccanismi interni dalla contaminazione di sporco e detriti provenienti dall'ambiente di lavoro.
@@ -62,7 +62,7 @@ La scelta del tipo di cuscinetto è dettata da fattori spaziali, dalle velocità
 
 ],[
 
-#include "figs/cuscinetti/cuscinetti-fig01.typ"
+#include "figs/cuscinetti-fig01.typ"
 ])
 Per carichi radiali molto elevati, si utilizzano i #strong[cuscinetti a rulli cilindrici]. In questo caso il contatto è di tipo lineare (lungo una generatrice del cilindro), permettendo di distribuire pressioni molto superiori rispetto al contatto puntuale della sfera. Il comportamento assiale di questi cuscinetti dipende dai bordini degli anelli:
 - Se l'anello esterno possiede i bordini e l'anello interno ne è privo, il cuscinetto permette lo scorrimento assiale relativo. Questo è utilissimo per assecondare le dilatazioni termiche dell'albero senza generare tensioni assiali parassite.
@@ -77,7 +77,7 @@ I #strong[cuscinetti a rulli orientabili a botte] presentano rulli con un profil
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Quando l'azione è unicamente assiale, l'architettura deve essere disposta perpendicolarmente all'asse del rotore. I due anelli sono montati in sequenza lungo la linea d'asse, con i corpi volventi interposti.
-Se si posiziona un anello solidale al rotore e l'altro solidale allo statore, il sistema è in grado di sviluppare una reazione vincolare in un'unica direzione. ],[#include "figs/cuscinetti/cuscinetti-fig02.typ"])
+Se si posiziona un anello solidale al rotore e l'altro solidale allo statore, il sistema è in grado di sviluppare una reazione vincolare in un'unica direzione. ],[#include "figs/cuscinetti-fig02.typ"])
 Per gestire carichi assiali bidirezionali si ricorre a un sistema multiplo a tre anelli: un anello centrale collegato forzatamente all'albero e due anelli laterali (superiore e inferiore) vincolati allo statore. In base al verso di applicazione del carico, l'anello centrale andrà a comprimere la corona di sfere superiore o quella inferiore.
 
 === Cuscinetti per Carichi Combinati (Obliqui)
@@ -85,7 +85,7 @@ Per gestire carichi assiali bidirezionali si ricorre a un sistema multiplo a tre
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Per sopportare carichi cospicui che presentano simultaneamente componenti assiali e radiali, si usano i cuscinetti obliqui. Le piste sono sagomate in modo asimmetrico: su un lato presentano uno spallamento pronunciato, mentre sull'altro risultano più libere. La retta d'azione della forza di contatto tra sfere e piste risulta perciò inclinata rispetto al piano radiale.],[
-#include "figs/cuscinetti/cuscinetti-fig03.typ"
+#include "figs/cuscinetti-fig03.typ"
 ])
 Data la loro geometria, questi cuscinetti reagiscono al carico assiale in un solo verso; un carico opposto comporterebbe lo sfilamento dell'anello privo di bordino di ritegno.
 Per ottenere una reazione bidirezionale e bloccare eventuali momenti di ribaltamento, si ricorre a soluzioni a doppia corona di sfere (integrate nello stesso anello) oppure al montaggio in coppia di due cuscinetti obliqui singoli (configurazioni a "O" o ad "X").
@@ -112,7 +112,7 @@ La durata del cuscinetto, in definite condizioni di funzionamento, è definita e
 #grid(
   columns: (1.2fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + top),[Un'altra forma di danneggiamento deriva da carichi eccessivi che agiscono quando il cuscinetto è fermo o in condizioni di bassissima velocità. Un sovraccarico statico elevato può essere dovuto a urti in esercizio, inceppamenti della linea di trasmissione, impuntamenti, carichi eccessivi allo spunto o semplicemente al peso eccessivo dell'albero in fase di montaggio. L'effetto principale di questo sovraccarico è un'indentazione o improntatura: i corpi volventi vengono premuti contro il materiale della pista causando deformazioni permanenti (plastiche), localizzate o distribuite.],[#include "figs/cuscinetti/cuscinetti-fig04.typ"
+  align: (left + horizon, center + top),[Un'altra forma di danneggiamento deriva da carichi eccessivi che agiscono quando il cuscinetto è fermo o in condizioni di bassissima velocità. Un sovraccarico statico elevato può essere dovuto a urti in esercizio, inceppamenti della linea di trasmissione, impuntamenti, carichi eccessivi allo spunto o semplicemente al peso eccessivo dell'albero in fase di montaggio. L'effetto principale di questo sovraccarico è un'indentazione o improntatura: i corpi volventi vengono premuti contro il materiale della pista causando deformazioni permanenti (plastiche), localizzate o distribuite.],[#include "figs/cuscinetti-fig04.typ"
 ])
 
  Tali deformazioni alterano la regolarità della geometria di rotolamento, provocando vibrazioni, rumorosità, maggiore attrito e una sensibile diminuzione della durata utile del componente.
@@ -124,7 +124,7 @@ Un minimo livello di deformazione è fisicamente inevitabile quando elementi ela
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[L'analisi visiva delle piste permette di diagnosticare l'origine del sovraccarico:
 - Se il sovraccarico è fortemente radiale e insistente in una specifica direzione, l'improntatura sull'anello statorico sarà più ampia e severa nella regione direttamente soggetta alla forza, disperdendosi gradualmente ai lati.
-- Se si applicano carichi eccessivi e opposti lungo un diametro, il cuscinetto patisce un'ovalizzazione. I segni di cedimento e le impronte si concentreranno specularmente sui due lati opposti dello stesso diametro.],[#include "figs/cuscinetti/cuscinetti-fig05.typ"
+- Se si applicano carichi eccessivi e opposti lungo un diametro, il cuscinetto patisce un'ovalizzazione. I segni di cedimento e le impronte si concentreranno specularmente sui due lati opposti dello stesso diametro.],[#include "figs/cuscinetti-fig05.typ"
 ])
 
 === Cedimento per disallineamento e Cuscinetti Orientabili
@@ -134,7 +134,7 @@ Un minimo livello di deformazione è fisicamente inevitabile quando elementi ela
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[È molto frequente, specialmente su rotori lunghi (come nelle turbine idroelettriche), che i piani di appoggio dei supporti non siano perfettamente allineati e orizzontali. In altri casi, la snellezza dell'albero può comportare una linea elastica molto flessa. Questo genera errori di posizionamento, come il disassamento dei supporti o la flessione dell'albero stesso. Sotto l'azione di questi carichi, la rotazione (a flessione) relativa fra l'anello interno e l'anello esterno può superare il limite previsto dalla geometria del cuscinetto. La condizione di contatto si altera drasticamente: l'usura diventa asimmetrica e diagonale rispetto alle piste, si innescano rumorosità, sollecitazioni eccessive e si può arrivare allo "sgabbiamento", situazione in cui il cuscinetto perde spontaneamente la configurazione di assemblaggio.],[
-#image("images/cuscinetti/disassamento e flessione.png")
+#image("images/disassamento e flessione.png")
 ])
 
 Per prevenire questo collasso, si impone una rigorosa verifica della rotazione flessionale degli alberi e, come rimedio costruttivo, l'utilizzo di cuscinetti orientabili, capaci di auto-adattarsi.
@@ -167,7 +167,7 @@ Il concetto per limitare questo danno si estende a tutta la meccanica (es. siste
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[L'analisi del comportamento del cuscinetto comporta l'utilizzo di curve di durata che correlano il carico applicato a un certo numero di cicli, espresso in milioni di cicli (indicato con $L$). Tali curve $S-N-P$ possono essere interpretate in analogia alla curva di Wöhler per lo studio a fatica. Assumendo che tali curve siano rette in una rappresentazione logaritmica (log-log) con inclinazione $p$, la curva presa in considerazione è solitamente la $B_10$, la quale garantisce un livello di affidabilità del 90%.],[
-#include "figs/cuscinetti/cuscinetti-fig06.typ"
+#include "figs/cuscinetti-fig06.typ"
 ])
 
 La relazione teorica è definita dalla Formula base (ISO), che impone la costanza del prodotto tra il numero di cicli e il carico elevato a potenza:
@@ -188,7 +188,7 @@ $ L_(10 h) = frac(10^6, 60 dot.op n) ( frac(C, P) )^p $
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[In applicazioni in cui il cuscinetto non compie rotazioni complete ma oscilla di un angolo $plus.minus gamma$ (in gradi), la durata viene determinata valutando le singole oscillazioni:
-$ L_(10 "osc") = frac(180, 2 gamma) ( frac(C, P) )^p $],[#include "figs/cuscinetti/cuscinetti-fig07.typ"])
+$ L_(10 "osc") = frac(180, 2 gamma) ( frac(C, P) )^p $],[#include "figs/cuscinetti-fig07.typ"])
 
 === Durata di base corretta
 La formula teorica di base non tiene conto delle reali condizioni operative del cuscinetto. Vengono pertanto introdotti dei fattori correttivi per calcolare la durata corretta $L_(n m)$:
@@ -203,7 +203,7 @@ $ a_("SKF") = f( eta_c frac(P_u, P) ; k ) $
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Il corretto comportamento del cuscinetto è fortemente vincolato alla lubrificazione. Si definisce in primo luogo una viscosità cinematica necessaria $nu_1$ (in $m m^2 / s$), dipendente dalla dimensione caratteristica del cuscinetto e dalla sua velocità di rotazione. Nei cuscinetti veloci si limita la viscosità per non generare un eccessivo sviluppo di calore a causa della resistenza viscosa, mentre nei cuscinetti lenti e maggiormente caricati si cerca una viscosità più alta per sostenere i carichi ed evitare la rottura del meato di lubrificante.],[#include "figs/cuscinetti/cuscinetti-fig08.typ"])
+  align: (left + horizon, center + horizon),[Il corretto comportamento del cuscinetto è fortemente vincolato alla lubrificazione. Si definisce in primo luogo una viscosità cinematica necessaria $nu_1$ (in $m m^2 / s$), dipendente dalla dimensione caratteristica del cuscinetto e dalla sua velocità di rotazione. Nei cuscinetti veloci si limita la viscosità per non generare un eccessivo sviluppo di calore a causa della resistenza viscosa, mentre nei cuscinetti lenti e maggiormente caricati si cerca una viscosità più alta per sostenere i carichi ed evitare la rottura del meato di lubrificante.],[#include "figs/cuscinetti-fig08.typ"])
 
 #grid(
   columns: (1fr, 1fr),
@@ -215,7 +215,7 @@ $ k = frac(nu, nu_1) $
 Di norma si seleziona un lubrificante tale per cui si abbia $1 < k < 4$. Il valore di $k$ definisce fisicamente la natura del contatto nel meato:
 - #strong[$k = 0.1$:] Condizione di meato esiguo in cui le asperità superficiali del corpo volvente e della pista entrano diffusamente in contatto solido. Si garantisce un'ottima stabilità e aderenza, ma la dissipazione energetica e l'usura superficiale risultano elevate.
 - #strong[$k = 1$:] Condizione mista in cui le asperità entrano in contatto locale, ma la maggior parte della regione è riempita dal lubrificante che inizia ad esercitare un'azione di sostentamento in pressione.
-- #strong[$k = 4$:] Condizione in cui le asperità sembrano non toccarsi e la pressione è trasferita esclusivamente dal meato fluido (il corpo volvente "flotta" sul letto del lubrificante). Questo riduce drasticamente l'usura e favorisce lo smaltimento del calore, ma introduce componenti non lineari di smorzamento fluido che possono rendere meno prevedibile la dinamica del sistema. In presenza di valori troppo elevati di $k$ si ha separazione completa, eccessivo attrito interno al fluido e forte sviluppo di calore.],[#include "figs/cuscinetti/cuscinetti-fig09.typ"])
+- #strong[$k = 4$:] Condizione in cui le asperità sembrano non toccarsi e la pressione è trasferita esclusivamente dal meato fluido (il corpo volvente "flotta" sul letto del lubrificante). Questo riduce drasticamente l'usura e favorisce lo smaltimento del calore, ma introduce componenti non lineari di smorzamento fluido che possono rendere meno prevedibile la dinamica del sistema. In presenza di valori troppo elevati di $k$ si ha separazione completa, eccessivo attrito interno al fluido e forte sviluppo di calore.],[#include "figs/cuscinetti-fig09.typ"])
 
 
 
@@ -223,7 +223,7 @@ Di norma si seleziona un lubrificante tale per cui si abbia $1 < k < 4$. Il valo
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[L'influenza dell'ambiente e della pulizia del lubrificante è riassunta dal fattore $eta_c$. Per una condizione di massima pulizia (es. laboratorio), questo valore è unitario. Degradando le condizioni ambientali verso contaminazioni più pesanti, il fattore decresce; l'impatto è proporzionalmente più gravoso nei cuscinetti di dimensioni inferiori, dove lo spazio ristretto rende l'azione abrasiva del contaminante più severa. Il calcolo finale del coefficiente $a_("SKF")$ avviene tramite un apposito diagramma in cui le ascisse sono costituite dal parametro $eta_c frac(P_u, P)$, combinando l'effetto della pulizia e del carico rispetto al limite di fatica.],[#include "figs/cuscinetti/cuscinetti-fig10.typ"])
+  align: (left + horizon, center + horizon),[L'influenza dell'ambiente e della pulizia del lubrificante è riassunta dal fattore $eta_c$. Per una condizione di massima pulizia (es. laboratorio), questo valore è unitario. Degradando le condizioni ambientali verso contaminazioni più pesanti, il fattore decresce; l'impatto è proporzionalmente più gravoso nei cuscinetti di dimensioni inferiori, dove lo spazio ristretto rende l'azione abrasiva del contaminante più severa. Il calcolo finale del coefficiente $a_("SKF")$ avviene tramite un apposito diagramma in cui le ascisse sono costituite dal parametro $eta_c frac(P_u, P)$, combinando l'effetto della pulizia e del carico rispetto al limite di fatica.],[#include "figs/cuscinetti-fig10.typ"])
 
 
 
@@ -235,7 +235,7 @@ Di norma si seleziona un lubrificante tale per cui si abbia $1 < k < 4$. Il valo
 
 - #strong[Lubrificazione a grasso:] Particolarmente indicata per mantenere il sistema confinato. Trattiene gli agenti contaminanti e protegge da umidità e acqua. Ha uno spettro di temperature operative limitato tra una minima (LTL, oltre la quale vi è difficoltà di avviamento) e una massima (HTL, oltre la quale perde consistenza). Un eccesso di velocità produce un aumento termico severo del grasso.
 - #strong[Lubrificazione a olio:] Indicata dove le alte velocità o l'ambiente precludono l'uso del grasso, oppure quando le parti adiacenti del carter (es. ingranaggi) richiedono già una lubrificazione ad olio. Si distingue in #emph[bagno d'olio] (immersione parziale dei corpi volventi nella coppa) o #emph[a ricircolo] (pompe e iniettori con filtrazione costante, ideali per asportare calore ad alte velocità per prevenire l'invecchiamento del fluido).],[
-#image("images/cuscinetti/lubrificazione.png")
+#image("images/lubrificazione.png")
 ])
 
 === Carico dinamico equivalente (costante nel tempo)
@@ -245,7 +245,7 @@ Di norma si seleziona un lubrificante tale per cui si abbia $1 < k < 4$. Il valo
   align: (left + horizon, center + horizon),[Quando il cuscinetto è sottoposto a carichi combinati (forza radiale $F_r$ e forza assiale $F_a$), si fa riferimento a un carico dinamico equivalente $P$, tale per cui la risultante sia considerabile costante nel tempo:
 $ P = X dot.op F_r + Y dot.op F_a $
 I coefficienti $X$ e $Y$ sono tabulati a catalogo in funzione del parametro $f_0 dot.op frac(F_a, C_0)$ e del gioco del cuscinetto (dove $C_0$ è il coefficiente di carico statico e $f_0$ è a sua volta un fattore tabulato). 
-Qualora il carico assiale sia trascurabile o al di sotto di un limite definito empiricamente ($F_a / F_r lt.eq e$, con $e = f(f_0 dot.op F_a / C_0)$), il termine assiale viene omesso e si pone direttamente $P = F_r$.],[#include "figs/cuscinetti/cuscinetti-fig11.typ"])
+Qualora il carico assiale sia trascurabile o al di sotto di un limite definito empiricamente ($F_a / F_r lt.eq e$, con $e = f(f_0 dot.op F_a / C_0)$), il termine assiale viene omesso e si pone direttamente $P = F_r$.],[#include "figs/cuscinetti-fig11.typ"])
 
 === Condizioni di lavoro variabili (Regola di Miner)
 #grid(
@@ -254,7 +254,7 @@ Qualora il carico assiale sia trascurabile o al di sotto di un limite definito e
   align: (left + horizon, center + horizon),[Poiché in molti contesti reali il carico di esercizio varia durante la missione operativa del componente, la durata viene valutata tramite un calcolo di accumulo del danno equivalente alla regola di Palmgren-Miner.
 Data una scomposizione del funzionamento utile in intervalli caratterizzati ciascuno da un carico $P_1, P_2, dots.h$ e da una frazione temporale $U_1, U_2, dots.h$, la condizione di cedimento è posta come:
 $ sum frac(U_i, L_(10 m i)) = 1 $
-],[#include "figs/cuscinetti/cuscinetti-fig12.typ"])
+],[#include "figs/cuscinetti-fig12.typ"])
 La durata in milioni di cicli totale risulta quindi pari al reciproco della sommatoria:
 $ L_(10 m) = frac(1, sum frac(U_i, L_(10 m i))) $
 Dove $L_(10 m i)$ sono le durate SKF (corrette tramite i vari fattori) calcolate per ogni singola condizione di carico $P_i$.
@@ -274,7 +274,7 @@ ovvero $C_0 gt.eq s_0 dot.op P_0$.
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Il parametro $s_0$ tiene conto dell'accettabilità di piccole deformazioni permanenti sulle piste e del grado di certezza sul calcolo delle sollecitazioni gravitazionali e inerziali. In scenari in cui la deformazione è tollerata e la certezza di carico è elevata, $s_0$ può assumere valori persino inferiori a 1 (es. $0.4$).],[#image("images/cuscinetti/tabella valori statico.png")])
+  align: (left + horizon, center + horizon),[Il parametro $s_0$ tiene conto dell'accettabilità di piccole deformazioni permanenti sulle piste e del grado di certezza sul calcolo delle sollecitazioni gravitazionali e inerziali. In scenari in cui la deformazione è tollerata e la certezza di carico è elevata, $s_0$ può assumere valori persino inferiori a 1 (es. $0.4$).],[#image("images/tabella valori statico.png")])
 
 === Limitazioni operative: carico minimo, velocità massima e momento di attrito
 Durante la rotazione del cuscinetto deve essere garantita la presenza di un #strong[carico minimo] che vincoli il sistema; la mancanza di carico sufficiente permetterebbe alle forze di inerzia dei corpi volventi e della gabbia di innescare scorrimenti dannosi (strisciamento tra sfere e piste). Empiricamente questo limite è fissato a:
@@ -305,7 +305,7 @@ Le scelte progettuali si dividono tipicamente in due direzioni: vincolare in man
 - Per alberi corti è possibile prevedere un montaggio in opposizione, dove ciascun cuscinetto provvede alla guida assiale in una sola direzione.
 - Gli anelli soggetti a carico rotante devono essere montati con interferenza.
 - I cuscinetti soggetti a carichi con direzione indeterminata devono avere entrambi gli anelli montati con interferenza.],[
-#image("images/cuscinetti/movimento.png")
+#image("images/movimento.png")
 ])
 
 La scelta tra locazione fissa o mobile dipende dall'interfaccia e determina come avviene lo spostamento assiale. Nel caso di movimento interno al cuscinetto, si utilizza ad esempio un cuscinetto a rulli cilindrici in cui l'anello interno è privo di bordini laterali; la variazione geometrica del sistema permette lo scorrimento assiale dei rulli direttamente sulla pista dell'anello. Nel caso di movimento esterno, i corpi volventi (sfere o rulli) sono vincolati tra le piste di entrambi gli anelli, opponendosi a moti relativi interni; l'adattamento è quindi garantito lasciando l'anello esterno libero di scorrere assialmente all'interno della sede statorica (accoppiamento libero).
@@ -317,21 +317,21 @@ L'articolazione dei supporti richiede lo studio di combinazioni specifiche per g
   rows: (8),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[In una prima configurazione classica, l'albero è supportato da un cuscinetto radiale a sfere da un lato e da uno a rulli cilindrici dall'altro. Il cuscinetto a sfere è totalmente bloccato: l'anello esterno è fissato da un coperchio e da un anello elastico, mentre l'interno è bloccato da uno spallamento e da una ghiera filettata. Le sfere si impegnano nelle piste a sezione semicircolare impedendo moti relativi assiali, rendendo il sistema perfettamente vincolato. Il grado di libertà termico è fornito dal cuscinetto a rulli opposto, il cui anello interno è privo di bordini, permettendo lo scorrimento.],[
-#image("images/cuscinetti/prima configurazione.png")
+#image("images/prima configurazione.png")
 ],[In una configurazione più complessa a tre cuscinetti, il contenimento della spinta assiale può essere affidato a un cuscinetto a sfere a quattro punti di contatto, affiancato a un cuscinetto a rulli. Il cuscinetto a quattro punti ha l'anello interno diviso in due parti e funge da cuscinetto obliquo compatto reversibile. Per evitare che collabori all'azione radiale (che deve essere sostenuta interamente dal rullo adiacente), viene lasciato un gioco in direzione radiale. Anche in questo caso, il grado di libertà per la dilatazione dell'intero albero è demandato al cuscinetto a rulli posto all'estremità opposta.],[
-#image("images/cuscinetti/seconda configurazione.png")
+#image("images/seconda configurazione.png")
 ],[Un'altra opzione prevede l'utilizzo di una coppia di cuscinetti obliqui a sfere montati in configurazione a "X" (con le rette d'azione convergenti verso l'asse). Questa soluzione sostituisce la funzione del cuscinetto a quattro punti in forma compatta, garantendo reazioni radiali e assiali in entrambi i versi, mantenendo sempre il grado di libertà assiale sul cuscinetto a rulli opposto.],[
-#image("images/cuscinetti/3 configurazione.png")
+#image("images/3 configurazione.png")
 ],[Infine, se è necessario permettere all'albero di inflettersi liberamente (ad esempio per non usurare ingranaggi sensibili ai disallineamenti), si utilizza un cuscinetto orientabile a rulli. I rulli a botte scorrono sull'arco di circonferenza della pista esterna sferica, permettendo la rotazione della sezione trasversale. Dal lato opposto, viene montato un cuscinetto toroidale (tipo CARB), la cui pista leggermente curva asseconda la rotazione e, non avendo bordini di contenimento, permette un moderato adattamento assiale.],[
-#image("images/cuscinetti/4 configurazione.png")
+#image("images/4 configurazione.png")
 ],[],[
-#image("images/cuscinetti/esterno 1.png")
+#image("images/esterno 1.png")
 ],[],[
-#image("images/cuscinetti/esterno 2.png")
+#image("images/esterno 2.png")
 ],[Nelle configurazioni in opposizione (utilizzate ad esempio per ingranaggi lunghi e massivi che richiedono precisione e orizzontalità), due cuscinetti obliqui a sfere o a rulli conici vengono montati alle estremità dell'albero. Le piste avvolgono i corpi volventi in modo asimmetrico, creando rette d'azione inclinate che si oppongono a spinte assiali opposte, garantendo reazioni al momento di ribaltamento. Il sistema viene precaricato per annullare i giochi.],[
-#image("images/cuscinetti/opposizione.png", width:100%)
+#image("images/opposizione.png", width:100%)
 ],[Nelle configurazioni flottanti, invece, si lascia un grado di libertà a entrambi i cuscinetti per permettere un adattamento bidirezionale senza sovraccaricare la struttura. Questo si ottiene lasciando un certo gioco assiale agli anelli esterni rispetto alla sede statorica, oppure, nel caso dei rulli, utilizzando anelli interni con un bordino solo da un lato. In questo modo si rende reversibile il grado di libertà assiale, suddividendolo tra i due cuscinetti della coppia.],[
-#image("images/cuscinetti/flottanti.png", width:100%)
+#image("images/flottanti.png", width:100%)
 ])
 
 
@@ -346,14 +346,14 @@ L'articolazione dei supporti richiede lo studio di combinazioni specifiche per g
   columns: (1.1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Il bloccaggio assiale degli anelli sfrutta soluzioni costruttive simili al collegamento albero-mozzo. Tra le soluzioni costruttive si annoverano l'anello filettato (ghiera) che spinge sull'anello interno, piastre terminali fissate con viti in testa all'albero, coperchi terminali avvitati allo statore, anelli di ancoraggio (elastici) inseriti in apposite cave, collari di spallamento o bussole distanziali.],[
-#image("images/cuscinetti/bloccaggio 2.png",width:80%)
+#image("images/bloccaggio 2.png",width:80%)
 ])
 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[È cruciale che il bloccaggio assiale tenga conto dei raggi di raccordo. La superficie dell'anello non deve mai interferire con il raccordo dello spallamento dell'albero: ci deve essere sempre un vuoto (passaggio d'aria) per evitare incollamenti e garantire che l'anello vada in battuta perfetta sulla superficie verticale. Se il raccordo dell'albero è troppo ampio rispetto allo smusso del cuscinetto, si interpone un collare distanziale sagomato per fornire una superficie di riscontro piana compatibile.],[
-#image("images/cuscinetti/dettaglio raccordo.png",width:75%)
+#image("images/dettaglio raccordo.png",width:75%)
 ])
 
 
@@ -413,7 +413,7 @@ Esistono limiti stringenti per il riscaldamento, dettati dalle proprietà chimic
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[I cuscinetti obliqui (a sfere o a rulli) sopportano carichi radiali e assiali. A causa della loro forma, un carico radiale genera una forza assiale interna che deve essere equilibrata da un'azione in senso opposto; per questo vengono montati in opposizione. I cuscinetti obliqui possono essere montati in tre disposizioni: in tandem (rette d'azione parallele, sopportano carichi assiali in un solo senso), a 'O' (rette d'azione divergenti verso l'asse di rotazione), o a 'X' (rette d'azione convergenti incrociandosi verso l'asse). La denominazione 'O' o 'X' si riferisce esclusivamente alla geometria delle rette d'azione (la risultante applicata dal corpo volvente sulle piste), mai agli assi geometrici dei corpi volventi.],[
-#image("images/cuscinetti/disposizioni tandem o x.png")
+#image("images/disposizioni tandem o x.png")
 ])
 
 Le coppie di cuscinetti possono essere fornite con gioco o con precarico (inteso come gioco negativo). Per definire il gioco o il precarico assiale iniziale, si utilizzano spesso dei distanziali interposti tra gli anelli. Il precarico si ottiene portando a contatto gli anelli e sfruttando la conicità fino in fondo. 
@@ -432,14 +432,14 @@ A causa dell'inclinazione delle rette d'azione, i centri di pressione del cuscin
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Se si desidera realizzare una cerniera pura (libertà di orientamento totale), si può ricorrere alla combinazione di un cuscinetto assiale (reggispinta) a sede sferica e un cuscinetto radiale orientabile a rulli, facendo coincidere i relativi centri di oscillazione delle due superfici sferiche. Questo permette all'intero assieme di ruotare, garantendo al contempo il supporto dei carichi assiali e radiali.],[
-#image("images/cuscinetti/combo reggispinta.png", width:40%)
+#image("images/combo reggispinta.png", width:40%)
 ])
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[La risposta al momento di ribaltamento dipende fortemente dalla configurazione. Le rette d'azione intersecano l'asse del rotore in punti che fungono da "fuochi" per l'applicazione delle forze di reazione. 
 Nella configurazione a 'O', le rette sono divergenti e la distanza tra i fuochi (braccio $h_2$) è notevole. A parità di momento esterno $M_f$, le forze di reazione $F$ richieste ai corpi volventi per generare la coppia equilibrante sono minori. La configurazione a 'O' resiste quindi molto meglio al momento flettente.
-Nella configurazione a 'X', le rette sono convergenti, il braccio $h_1$ è ridotto ($h_2 > h_1$) e la capacità anti-ribaltamento è minore. Tuttavia, la soluzione risulta più compatta assialmente ed è preferibile se si vuole evitare di sovraccaricare il sistema opponendosi in modo troppo rigido alla flessione.],[#image("images/cuscinetti/confronto x o .png", width:70%)])
+Nella configurazione a 'X', le rette sono convergenti, il braccio $h_1$ è ridotto ($h_2 > h_1$) e la capacità anti-ribaltamento è minore. Tuttavia, la soluzione risulta più compatta assialmente ed è preferibile se si vuole evitare di sovraccaricare il sistema opponendosi in modo troppo rigido alla flessione.],[#image("images/confronto x o .png", width:70%)])
 
 
 

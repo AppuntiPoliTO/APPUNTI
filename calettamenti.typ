@@ -18,7 +18,7 @@
 = *Calettamenti e Collegamenti Mozzo-Albero*
 
 == Calettamento Mozzo-Albero
-#align(image("images/calettamenti/tensioni albero mozzo.png", width:70%), center)
+#align(image("images/tensioni albero mozzo.png", width:70%), center)
 Un'applicazione fondamentale della teoria dei solidi assialsimmetrici è il collegamento *albero-mozzo*, comunemente noto come *calettamento*. L'obiettivo primario di questa soluzione costruttiva è il fissaggio
 solidale di accessori su un albero rotante, come ad esempio anelli interni di cuscinetti, ruote dentate, volani o dischi di turbina. Il metodo si basa sul *forzamento* per pressione tra la superficie interna
 del mozzo e la superficie esterna dell'albero, realizzando un contatto che impedisca lo *scorrimento relativo* e permetta ai due corpi di comportarsi come un'entità unica durante la rotazione. Per realizzare il calettamento, i due elementi vengono forzati l'uno
@@ -35,7 +35,7 @@ rottura per fatica* dei due elementi. Il calettamento viene effettuato industria
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[La relazione tra il momento torcente trasmissibile e la pressione di forzamento si ricava analizzando le forze all'interfaccia. Sulla superficie di contatto agisce una forza normale di forzamento radiale. Considerando un elemento infinitesimo di superficie avente lunghezza pari a un arco $r dot.op d theta$ e profondità assiale $b$ (lunghezza dell'accoppiamento forzato), la forza normale è: $ d N = p dot.op b dot.op r dot.op d theta $ 
-],[#image("images/calettamenti/tr mom torc.png", width:70%)])
+],[#image("images/tr mom torc.png", width:70%)])
 Questa forza normale genera un'azione di attrito di direzione
 tangenziale se $f$ è il coefficiente di attrito tra i materiali la forza è definita come: 
 $ d T = f dot.op d N = f dot.op p dot.op b dot.op r dot.op d theta $  \
@@ -112,7 +112,7 @@ di equilibrio elastico del sistema. La proiezione di questo punto
 sull'asse delle ordinate fornisce la pressione effettiva di forzamento
 $p$. La coordinata associata all'intersezione permette inoltre di
 determinare il diametro di calettamento esatto:
-$ D_c = frac(D_(a e) dot.op D_(m i) dot.op\(delta_a + delta_m\), delta_a dot.op D_(a e) + delta_m dot.op D_(m i)) $],[#image("images/calettamenti/diagramma di interferenza.png", width:100%)])
+$ D_c = frac(D_(a e) dot.op D_(m i) dot.op\(delta_a + delta_m\), delta_a dot.op D_(a e) + delta_m dot.op D_(m i)) $],[#image("images/diagramma di interferenza.png", width:100%)])
 
 === Sistema di Tolleranze e Condizioni Estreme
 #grid(
@@ -127,7 +127,7 @@ dove le lettere maiuscole si riferiscono ai fori (es. H) e quelle
 minuscole agli alberi. Spesso si utilizza un grado di qualità per
 l'albero pari a quello del foro meno uno (es. 16 H8/f7). Poiché la lavorazione produce quote che possono variare all'interno del
 campo di tolleranza, in fase di progetto è indispensabile valutare le
-due condizioni estreme dell'accoppiamento:],[#image("images/calettamenti/diagramma incertezze.png")])
+due condizioni estreme dell'accoppiamento:],[#image("images/diagramma incertezze.png")])
 
 
 

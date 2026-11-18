@@ -78,7 +78,7 @@ Durante la rotazione relativa dei due corpi, la posizione del *punto di contatto
   ],
   move(dx : 10pt)[
 
-#include "figs/ruote-dentate/ruote-dentate-fig01.typ"
+#include "figs/ruote-dentate-fig01.typ"
 
   ]
 )
@@ -118,7 +118,7 @@ Tra le infinite curve matematiche che soddisfano la condizione di coniugazione, 
     / Evolvente di cerchio ($a$-$b$-$c$): curva analitica generata dall'estremità della matita (inizialmente in $a$ sul cerchio di base e passante per la posizione generica $b$) durante lo svolgimento del filo.
   ],
   [
-#include "figs/ruote-dentate/ruote-dentate-fig02.typ"
+#include "figs/ruote-dentate-fig02.typ"
   ]
 )
 
@@ -158,7 +158,7 @@ Nel caso dell'ingranamento tra due ruote dentate, la geometria che governa la ci
   ],
   [
 // FASE 2 - COSTRUZIONE
-#include "figs/ruote-dentate/ruote-dentate-fig03.typ"
+#include "figs/ruote-dentate-fig03.typ"
   ]
 )
 
@@ -202,7 +202,7 @@ Dallo studio dell'accoppiamento ad evolvente di cerchio discendono tre propriet�
   move(dx: 0.4cm)[
 
 // FASE 2 - COSTRUZIONE
-#include "figs/ruote-dentate/ruote-dentate-fig04.typ"
+#include "figs/ruote-dentate-fig04.typ"
 
   ]
 )
@@ -232,12 +232,12 @@ Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel
   align: (center + horizon, left + horizon),
   [
 // FASE 2 - COSTRUZIONE
-#include "figs/ruote-dentate/ruote-dentate-fig05.typ"
+#include "figs/ruote-dentate-fig05.typ"
 
 \
 
 
-#include "figs/ruote-dentate/ruote-dentate-fig06.typ"
+#include "figs/ruote-dentate-fig06.typ"
   ],
   [
     \
@@ -308,7 +308,7 @@ Per mantenere la scala del dente proporzionata alla dimensione della ruota, la *
 #v(0.5em)
 
 
-#align(center)[#include "figs/ruote-dentate/ruote-dentate-fig07.typ"]
+#align(center)[#include "figs/ruote-dentate-fig07.typ"]
 
 === Grandezze del dente normale
     / Addendum ($a = m$): distanza radiale fra la circonferenza di testa e la circonferenza primitiva.
@@ -362,7 +362,7 @@ Il sistema prende il nome di *proporzionamento modulare* proprio perché i coeff
     ]
   ],
   [
-#include "figs/ruote-dentate/ruote-dentate-fig08.typ"
+#include "figs/ruote-dentate-fig08.typ"
   ]
 )
 
@@ -396,7 +396,7 @@ Normalmente, nell'impostare il progetto dell'accoppiamento cinematico tra due ru
 
 
 #align(center)[
-  #image("images/ruote-dentate/4d741021-6053-41b2-a86d-c4ffa4912f8f-10_332_1197_904_433.jpg", width: 80%)
+  #image("images/4d741021-6053-41b2-a86d-c4ffa4912f8f-10_332_1197_904_433.jpg", width: 80%)
 ]
 == Condizioni per il corretto ingranamento
 
@@ -418,7 +418,7 @@ Ricordando inoltre che il diametro primitivo è espresso dal prodotto tra il mod
 #v(1em)
 
 #align(center)[
-  #image("images/ruote-dentate/4d741021-6053-41b2-a86d-c4ffa4912f8f-10_255_1195_2191_392.jpg", width: 80%)
+  #image("images/4d741021-6053-41b2-a86d-c4ffa4912f8f-10_255_1195_2191_392.jpg", width: 80%)
 ]
 === Condizione geometrica di non interferenza
 
@@ -440,7 +440,7 @@ $ a P < T_1 P $
     / Addendum: sporgenza radiale del dente oltre la circonferenza primitiva (tratteggiata) fino alla circonferenza di addendum (a tratto continuo).
   ],
   move(dx: 0.7cm)[
-    #include "figs/ruote-dentate/ruote-dentate-fig09.typ"
+    #include "figs/ruote-dentate-fig09.typ"
   ]
 )
 
@@ -467,7 +467,7 @@ La condizione più gravosa per l'interferenza (ovvero quella che rende il segmen
     $ T_1 P = frac(d_1, 2) sin Phi = frac(m dot z_1, 2) sin Phi $
   ],
   move(dx: 0.7cm)[
-    #include "figs/ruote-dentate/ruote-dentate-fig10.typ"
+    #include "figs/ruote-dentate-fig10.typ"
   ]
 )
 
@@ -518,7 +518,7 @@ Per evitare condizioni di interferenza geometrica alla base del dente durante l'
     ]
   ,
   [
-    #image("images/ruote-dentate/4d741021-6053-41b2-a86d-c4ffa4912f8f-11_578_680_1927_1008.jpg", width: 90%)
+    #image("images/4d741021-6053-41b2-a86d-c4ffa4912f8f-11_578_680_1927_1008.jpg", width: 90%)
   ]
 )
 
@@ -602,7 +602,7 @@ Nelle trasmissioni tra assi incidenti, la forma dei denti di una ruota conica è
   ],
   [
     #figure(
-      image("images/ruote-dentate/4d741021-6053-41b2-a86d-c4ffa4912f8f-13_644_676_527_416.jpg", width: 90%),
+      image("images/4d741021-6053-41b2-a86d-c4ffa4912f8f-13_644_676_527_416.jpg", width: 90%),
       caption: [[libro di testo]],
       supplement: none,
     )
@@ -645,9 +645,9 @@ Anche per le operazioni di dimensionamento delle *ruote cilindriche a dentatura 
       - *Passo assiale ($p_x$)*: distanza misurata lungo la direzione dell'asse di rotazione (segmento $a$-$d$).
   ],
   [
-#include "figs/ruote-dentate/ruote-dentate-fig11.typ"
+#include "figs/ruote-dentate-fig11.typ"
 
-#include "figs/ruote-dentate/ruote-dentate-fig12.typ"
+#include "figs/ruote-dentate-fig12.typ"
 // FASE 3 - VERIFICA
 // 1. Verifica allineamento del fianco sinistro del dente centrale e della linea di quota:
 //    - Fianco: da (-0.70, 0.65) a (-0.34, 1.65) -> pendenza dy/dx = 1.00 / 0.36 = 2.778 (angolo 70.2deg, cioè phi_t = 19.8deg ~ 20deg).
@@ -729,7 +729,7 @@ dove $f$ rappresenta il *numero di filetti* (o principi) della vite e $N$ il num
     
   ],
   [
-#include "figs/ruote-dentate/ruote-dentate-fig13.typ"
+#include "figs/ruote-dentate-fig13.typ"
   ]
 )
 *Criteri pratici di dimensionamento della vite:*
@@ -809,7 +809,7 @@ Nelle ruote cilindriche a denti diritti, l'azione di contatto nel punto di ingra
     / Reazioni dell'albero ($F_(a 2)$, $T_(a 2)$): per garantire l'equilibrio statico e dinamico della ruota $2$, l'albero $a$ esercita sul mozzo una *coppia motrice* (o resistente) $T_(a 2)$ e una *forza di reazione* $F_(a 2)$, a sua volta articolata nelle componenti tangenziale $F_(a 2)^t$ e radiale $F_(a 2)^r$.
   ],
   align(center)[
-#include "figs/ruote-dentate/ruote-dentate-fig14.typ"
+#include "figs/ruote-dentate-fig14.typ"
   ]
 )
 
@@ -842,7 +842,7 @@ Nelle *ruote cilindriche a denti elicoidali*, i denti si sviluppano lungo la lar
   ],
   align(center)[
 // FASE 2 - COSTRUZIONE
-#include "figs/ruote-dentate/ruote-dentate-fig15.typ"
+#include "figs/ruote-dentate-fig15.typ"
   ]
 )
 
@@ -867,7 +867,7 @@ Per quanto riguarda le trasmissioni tra *alberi ad assi sghembi* (tipicamente or
     / Ruote ipoidi: soluzione alternativa a geometria *toroidale/iperboloidica* con denti curvi. Esse consentono un ingranamento molto graduale e silenzioso, riducendo sensibilmente le dimensioni del pignone e l'*ingombro complessivo* della trasmissione, ma richiedono una modellazione matematica complessa che esula da questa trattazione.
   ],
   align(center)[
-    #image("images/ruote-dentate/cb5ee1bc-b806-48b7-aed4-c871d2df87c7-03_372_626_790_993.jpg", width: 95%)
+    #image("images/cb5ee1bc-b806-48b7-aed4-c871d2df87c7-03_372_626_790_993.jpg", width: 95%)
   ]
 )
 
@@ -955,7 +955,7 @@ Compreso a grandi linee l'approccio, più nel dettaglio Lewis individua nell'*in
     / Geometria della sezione critica ($a$, $t$, $l$, $x$, $r_f$): la parabola inscritta risulta tangente ai raccordi di piede del dente (di raggio $r_f$) nei punti indicati con $a$, individuando la sezione critica di spessore $t$ posta a distanza $l$ dal punto di applicazione del carico (con sottotangente geometrica $x$).
   ],
   align(center)[
-#include "figs/ruote-dentate/ruote-dentate-fig16.typ"
+#include "figs/ruote-dentate-fig16.typ"
   ]
 )
 
@@ -979,10 +979,10 @@ Adottando ora la notazione classica in cui l'asse longitudinale della mensola è
   column-gutter: 1.5em,
   align: horizon,
   align(center)[
-#include "figs/ruote-dentate/ruote-dentate-fig17.typ"
+#include "figs/ruote-dentate-fig17.typ"
   ],
   align(center)[
-#include "figs/ruote-dentate/ruote-dentate-fig18.typ"
+#include "figs/ruote-dentate-fig18.typ"
   ]
 )
 

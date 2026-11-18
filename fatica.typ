@@ -467,21 +467,7 @@ Analisi delle traiettorie alternative del punto di lavoro $P$ verso il limite:
 - Se $sigma_a = "costante"$ (es. innalzamento progressivo della pressione di fondo con vibrazioni costanti): La traiettoria è orizzontale e interseca il confine di sicurezza sul limite destro. Il $C S$ si basa sulle sole ascisse.
 - Se è presente un precarico fisso iniziale (tensioni residue): Il punto di lavoro risulta traslato di una quantità pari alla tensione residua ($sigma_"res"$), riducendo o aumentando il margine a seconda che sia di trazione o compressione.
 
-#import "@preview/cetz:0.3.4": canvas, draw
-#set page(
-  paper: "a4",
-  margin: 1.5cm,
-  numbering: "1",
-  number-align: bottom + right,
-)
-#let nota(body) = block(
-  fill: luma(245),
-  stroke: (left: 3pt + rgb("#4a4d55")),
-  inset: 10pt,
-  radius: (right: 4pt),
-  width: 100%,
-  body
-)
+
 == Calcolo a Vita Limitata e Fattori Modificanti
 <calcolo-a-vita-limitata-e-fattori-modificanti>
 
