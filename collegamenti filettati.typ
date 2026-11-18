@@ -829,7 +829,7 @@ $ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m 
   content((7.5, 2.62), text(size: 7.5pt)[$F_("v,m")$], anchor: "west")
   content((6.5, 1.2), text(size: 8pt)[Caso c): $C_("min") <= 0 <= C_("max")$], anchor: "center")
 })])
-
+#pagebreak()
 === Interventi per migliorare la resistenza a fatica
 Per ridurre l'incidenza del carico affaticante sul collegamento filettato è possibile intervenire attraverso le seguenti soluzioni progettuali:
 
