@@ -982,7 +982,7 @@ Nella pratica costruttiva si utilizzano spesso dado e controdado di altezza dive
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Quando il carico esterno non è applicato al sottotesta della vite (configurazione A), bensì a sezioni interne delle parti serrate (configurazione B), la condizione di equilibrio e la ripartizione del carico subiscono una modifica sostanziale.
+  align: (left + horizon, center + top),[Quando il carico esterno non è applicato al sottotesta della vite (configurazione A), bensì a sezioni interne delle parti serrate (configurazione B), la condizione di equilibrio e la ripartizione del carico subiscono una modifica sostanziale.
 
 Indicando con $L_p$ lo spessore complessivo delle parti (pari a $L_v$ nella configurazione A), nella configurazione B il pezzo viene suddiviso dai piani di applicazione del carico in tre porzioni di lunghezza $L_a$, $L_b$ (compresa tra i due punti di applicazione del carico) e $L_c$. Si definisce il rapporto geometrico:
 
