@@ -577,7 +577,83 @@ La condizione di verifica a fatica richiede che la tensione alternata di eserciz
 
 $ sigma_a lt.eq 0.9 sigma_D $
 
-Ad esempio, considerando una vite $M 30$ non rullata soggetta a una tensione media pari al $40\%$ dello snervamento ($sigma_m \/ R_(p 0.2) = 0.4$), si legge sulla curva inferiore un valore di $sigma_D tilde.eq 52.5 div 53 " MPa"$, rispetto al quale la tensione alternata $sigma_a$ deve mantenersi al di sotto del $90\%$.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Diagramma di Haigh per filettature classi 8.8 #sym.div 12.9 (da VDI 2230). Asse orizzontale $sigma_m \/ R_(p 0.2)$ da 0.1 a 0.9; asse verticale sinistro $sigma_D$ (MPa) da 40 a 80 per "Viti non rullate"; asse verticale destro $sigma_D$ (MPa) da 80 a 160 per "Viti rullate". Sono tracciate tre rette decrescenti etichettate dall'alto verso il basso: $M 4 div M 8$, $M 10 div M 16$, $M 18 div M 30$. In basso un riquadro rosso riporta: "La vite si considera verificata se $sigma_a lt.eq 0.9 sigma_D$".]])
+Ad esempio, considerando una vite $M 30$ non rullata soggetta a una tensione media pari al $40\%$ dello snervamento ($sigma_m \/ R_(p 0.2) = 0.4$), si legge sulla curva inferiore un valore di $sigma_D tilde.eq 52.5 div 53 " MPa"$, rispetto al quale la tensione alternata $sigma_a$ deve mantenersi al di sotto del $90\%$.],[#canvas(length: 1cm, {
+  import draw: *
+
+  line((0.5, 0), (0.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((1.0, 0), (1.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((1.5, 0), (1.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((2.0, 0), (2.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((2.5, 0), (2.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((3.0, 0), (3.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((3.5, 0), (3.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((4.0, 0), (4.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((4.5, 0), (4.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((5.0, 0), (5.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((5.5, 0), (5.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((6.0, 0), (6.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((6.5, 0), (6.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((7.0, 0), (7.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((7.5, 0), (7.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+
+  line((0, 0.5), (8, 0.5), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((0, 1.0), (8, 1.0), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((0, 1.5), (8, 1.5), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((0, 2.0), (8, 2.0), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((0, 2.5), (8, 2.5), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((0, 3.0), (8, 3.0), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+  line((0, 3.5), (8, 3.5), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
+
+  rect((0, 0), (8, 4), stroke: 0.9pt)
+
+  line((0, 4), (8, 2), stroke: 1.1pt)
+  line((0, 3), (8, 1), stroke: 1.1pt)
+  line((0, 2), (8, 0), stroke: 1.1pt)
+
+  line((5.716, 3.009), (4.066, 3.421), (3.984, 3.091), (5.634, 2.679), close: true, fill: white, stroke: none)
+  content((4.85, 3.05), text(size: 7.5pt)[M 4 ÷ M 8], angle: -14.04deg)
+
+  line((4.916, 2.209), (3.266, 2.621), (3.184, 2.291), (4.834, 1.879), close: true, fill: white, stroke: none)
+  content((4.05, 2.25), text(size: 7.5pt)[M 10 ÷ M 16], angle: -14.04deg)
+
+  line((3.416, 1.584), (1.766, 1.996), (1.684, 1.666), (3.334, 1.254), close: true, fill: white, stroke: none)
+  content((2.55, 1.625), text(size: 7.5pt)[M 18 ÷ M 30], angle: -14.04deg)
+
+  content((0, -0.12), text(size: 7.5pt)[0.1], anchor: "north")
+  content((1, -0.12), text(size: 7.5pt)[0.2], anchor: "north")
+  content((2, -0.12), text(size: 7.5pt)[0.3], anchor: "north")
+  content((3, -0.12), text(size: 7.5pt)[0.4], anchor: "north")
+  content((4, -0.12), text(size: 7.5pt)[0.5], anchor: "north")
+  content((5, -0.12), text(size: 7.5pt)[0.6], anchor: "north")
+  content((6, -0.12), text(size: 7.5pt)[0.7], anchor: "north")
+  content((7, -0.12), text(size: 7.5pt)[0.8], anchor: "north")
+  content((8, -0.12), text(size: 7.5pt)[0.9], anchor: "north")
+  content((7.5, -0.55), text(size: 8.5pt)[$sigma_m / R_("p0.2")$], anchor: "north")
+
+  content((-0.12, 0), text(size: 7.5pt)[40], anchor: "east")
+  content((-0.12, 1), text(size: 7.5pt)[50], anchor: "east")
+  content((-0.12, 2), text(size: 7.5pt)[60], anchor: "east")
+  content((-0.12, 3), text(size: 7.5pt)[70], anchor: "east")
+  content((-0.12, 4), text(size: 7.5pt)[80], anchor: "east")
+
+  content((-0.95, 3.65), text(size: 8pt)[$sigma_D$])
+  content((-0.95, 3.30), text(size: 7.5pt)[(MPa)])
+  content((-0.95, 2.55), text(size: 7.5pt)[Viti non])
+  content((-0.95, 2.20), text(size: 7.5pt)[rullate])
+
+  content((8.12, 0), text(size: 7.5pt)[80], anchor: "west")
+  content((8.12, 1), text(size: 7.5pt)[100], anchor: "west")
+  content((8.12, 2), text(size: 7.5pt)[120], anchor: "west")
+  content((8.12, 3), text(size: 7.5pt)[140], anchor: "west")
+  content((8.12, 4), text(size: 7.5pt)[160], anchor: "west")
+
+  content((8.95, 3.65), text(size: 8pt)[$sigma_D$])
+  content((8.95, 3.30), text(size: 7.5pt)[(MPa)])
+  content((8.95, 2.55), text(size: 7.5pt)[Viti])
+  content((8.95, 2.20), text(size: 7.5pt)[rullate])
+
+  content((4.0, 4.35), text(size: 9pt)[Diagramma di Haigh per filettature classi 8.8 ÷ 12.9  (da VDI 2230)], anchor: "south")
+})])
 
 === Determinazione dei cicli di carico sul diagramma di interferenza
 Per caratterizzare il ciclo di fatica agente sulla vite (elemento più critico rispetto alle parti serrate poiché presenta la sezione resistente più piccola e lavora a trazione anziché a compressione), si individuano le forze massima ($F_(v, m a x)$), minima ($F_(v, m i n)$), media ($F_(v, m)$) e alternata ($F_(v, a)$) direttamente dal diagramma di interferenza, in funzione dell'andamento nel tempo del carico esterno $C(t)$. Le tensioni alternata e media si calcolano quindi dividendo le rispettive forze per l'area resistente della filettatura $A_n$ (area di nocciolo o alla radice del filetto, a seconda della normativa tecnica adottata):
