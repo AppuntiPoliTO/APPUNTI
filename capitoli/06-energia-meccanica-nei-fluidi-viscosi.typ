@@ -1,7 +1,6 @@
 #import "../template.typ": *
-#import "../figs/fig07.typ": *   // figure del capitolo (vedi figs/)
+#show: conf
 #show figure: set text(size: 9pt)
-#set math.equation(numbering: n => numbering("(1.1)", counter(heading).get().first(), n))
 = Energia meccanica nei fluidi viscosi
 
 == Equazione di bilancio dell'energia meccanica (da Cauchy)
@@ -264,7 +263,7 @@ L'obiettivo del capitolo è ricavare analiticamente il campo di velocità del mo
     - moto completamente sviluppato (lontano dall'imbocco) e assialsimmetrico, in una condotta di raggio $R$;
     - gravità trascurata, oppure inglobata nella pressione ridotta $p + rho g h$ ($h$ quota).
   ],
-  figure(fig-condotta()),
+  figure(include "../figs/06-energia-meccanica-nei-fluidi-viscosi-fig04.typ"),
 )
 
 Con queste ipotesi le equazioni di partenza sono la continuità e le equazioni di Navier--Stokes in forma stazionaria:
@@ -329,10 +328,10 @@ Il profilo è parabolico: massimo ($u_0$) sull'asse, nullo a parete.
       u_d = 1/S underbrace(integral_S arrow(u) dot arrow(n) dif S, Q_v) = 1/(pi R^2) integral_0^R u(r) 2 pi r dif r
     $
   ],
-  figure(fig-profilo()),
+  figure(include "../figs/06-energia-meccanica-nei-fluidi-viscosi-fig05.typ"),
 )
 
-#tappa[Portata.] Si sostituisce nell'integrale della portata il profilo @eq:poiseuille_profilo, scritto come $u(r) = G \/ mu (r^2\/4 - R^2\/4)$, e si integra in $r$:
+#tappa[Portata.] Si sostituisce nell'integrale della portata il profilo , scritto come $u(r) = G \/ mu (r^2\/4 - R^2\/4)$, e si integra in $r$:
 
 $
   Q_v &= 2 pi integral_0^R u(r) r dif r = (pi G R^2)/(2 mu) [r^4/(4 R^2) - r^2/2]_0^R \
@@ -390,7 +389,7 @@ $
     $ tau_w = -(G R)/2 = (4 mu u_d)/R $
     Il risultato si verifica con il bilancio delle forze su un cilindro di fluido di lunghezza $L$, in cui la spinta di pressione equilibra l'attrito a parete: $-G pi R^2 L = tau_w 2 pi R L$.
   ],
-  figure(fig-tau()),
+  figure(include "../figs/06-energia-meccanica-nei-fluidi-viscosi-fig06.typ"),
 )
 
 == Dissipazione e perdite di carico
@@ -464,7 +463,7 @@ Con $S = pi D^2 \/ 4 = 3","14 dot 10^(-4) "m"^2$ si calcolano, per ciascuna port
 
 $ u_d = dot(m)/(rho S), wide "Re"_D = (rho u_d D)/mu $
 
-Il valore di $"Re"_D$ stabilisce la legge di resistenza da usare: in regime laminare il risultato di Poiseuille (@eq:lambda_poiseuille), in regime turbolento, per tubo liscio, la formula empirica di Blasius:
+Il valore di $"Re"_D$ stabilisce la legge di resistenza da usare: in regime laminare il risultato di Poiseuille (), in regime turbolento, per tubo liscio, la formula empirica di Blasius:
 
 $
   lambda = cases(
@@ -498,7 +497,7 @@ Con una portata 20 volte maggiore la caduta di pressione cresce di oltre 150 vol
 
 Un serbatoio (R) alimenta, tramite una condotta forzata (c) di lunghezza $L = 1 "km"$ e diametro $D = 2 "m"$, una turbina (T) seguita da un canale di scarico di sezione $S_E = 20 "m"^2$ e coefficiente di perdita singolare $k = 2$, che sbocca in atmosfera nella sezione E. Il dislivello tra il pelo libero del serbatoio e lo sbocco è $h = z_R - z_E = 300 "m"$; la portata nominale è $Q = 20 "m"^3"/s"$ di acqua ($rho = 10^3 "kg/m"^3$) e il rendimento della turbina è $eta = 0","9$. Si assume il coefficiente di perdita distribuita indipendente da $"Re"$: $lambda = 0","018$.
 
-#figure(fig-impianto())
+#figure(include "../figs/06-energia-meccanica-nei-fluidi-viscosi-fig07.typ")
 
 #tappa[1. Perdite di carico nella condotta.] La velocità media nella condotta si ricava dalla portata e dall'area della sezione, $S_c = pi D^2 \/ 4$:
 
@@ -557,7 +556,7 @@ $
     $
     Nel coefficiente $B$ compare tutta la geometria dell'impianto. La curva $P = Q (A - B Q^2)$ si annulla per $Q = 0$ e per $Q = sqrt(A \/ B)$; tra i due zeri ha un massimo.
   ],
-  figure(fig-potenza()),
+  figure(include "../figs/06-energia-meccanica-nei-fluidi-viscosi-fig08.typ"),
 )
 
 Il massimo si trova annullando la derivata della potenza rispetto alla portata:
