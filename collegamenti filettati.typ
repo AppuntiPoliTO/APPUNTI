@@ -827,7 +827,7 @@ $ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m 
   content((5.95, 4.15), text(size: 8pt)[$Delta C_v (t)$], anchor: "south")
   content((7.5, 3.72), text(size: 7.5pt)[$F_("v,a")$], anchor: "west")
   content((7.5, 2.62), text(size: 7.5pt)[$F_("v,m")$], anchor: "west")
-  content((6.5, 1.2), text(size: 8pt)[Caso c): $C_("min") <= 0 <= C_("max")$], anchor: "center")
+ 
 })])
 #pagebreak()
 === Interventi per migliorare la resistenza a fatica
