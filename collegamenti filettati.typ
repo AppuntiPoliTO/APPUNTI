@@ -787,7 +787,7 @@ Le forze del ciclo mantengono le espressioni generali, tenendo conto del segno n
 
 $ F_(v, m a x) = F_(v, "lim") + Delta C_(m a x, v), quad F_(v, m i n) = F_(v, "lim") + Delta C_(m i n, v) $
 
-$ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Diagramma di interferenza per il Caso c) ($C_(m i n) lt.eq 0 lt.eq C_(m a x)$). Assi: ordinata $|F_p|, |F_v|$, ascissa $u$. Il segmento verticale $C_(m a x)$ si trova a destra del punto di equilibrio $F_(v, "lim")$ (estremo superiore sulla vite pari a $F_(v, m a x)$), mentre il segmento verticale $C_(m i n)$ si trova a sinistra del punto di equilibrio (estremo inferiore sulla vite pari a $F_(v, m i n)$). Sono quotate la salita $Delta C_(m a x, v)$ sopra $F_(v, "lim")$ e la discesa $Delta C_(m i n, v)$ sotto $F_(v, "lim")$. A destra la sinusoide $Delta C_v (t)$ oscilla attorno al livello medio $F_(v, m)$ tra $F_(v, m i n)$ e $F_(v, m a x)$ con semiampiezza $F_(v, a)$.]])
+$ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[])
 
 === Interventi per migliorare la resistenza a fatica
 Per ridurre l'incidenza del carico affaticante sul collegamento filettato è possibile intervenire attraverso le seguenti soluzioni progettuali:
