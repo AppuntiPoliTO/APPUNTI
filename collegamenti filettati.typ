@@ -664,7 +664,7 @@ Per caratterizzare il ciclo di fatica agente sulla vite (elemento più critico r
 $ sigma_a = frac(F_(v, a), A_n), quad sigma_m = frac(F_(v, m), A_n) $
 
 Si distinguono tre casi operativi principali:
-
+#pagebreak()
 1. #strong[Caso a) – Ciclo all'origine ($0 lt.eq C(t) lt.eq C_(m a x)$):]
   #grid(
     columns: (1fr, 1fr),
