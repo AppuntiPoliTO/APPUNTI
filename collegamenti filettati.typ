@@ -977,7 +977,7 @@ Esistono diversi dispositivi unificati contro lo svitamento:
 })])
 
 Nella pratica costruttiva si utilizzano spesso dado e controdado di altezza diversa: poiché il carico viene sopportato prevalentemente dal controdado (che lavora contro il dado esattamente come un dado singolo contro il pezzo, concentrando la pressione sui primi filetti), il controdado deve essere realizzato di altezza maggiore per rendere più uniforme la distribuzione del carico sui filetti. Il dado, invece, beneficia dell'inversione di carico indotta dal controdado e risulta meno sollecitato sui primi filetti, potendo quindi avere altezza minore.
-
+#pagebreak()
 === Casi particolari: carico applicato non sottotesta
 #grid(
   columns: (1fr, 1fr),
