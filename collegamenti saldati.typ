@@ -55,7 +55,7 @@ Nel processo può essere impiegato o meno un #strong[materiale d'apporto], carat
   content((-2.2, 0.5), text(size: 8pt)[materiale base])
   content((2.2, 0.5), text(size: 8pt)[materiale base])
 })])
-
+#pagebreak()
 === Architettura delle tecnologie principali di saldatura
 Una prima classificazione generale distingue tra #strong[saldatura autogena] (in cui il materiale base partecipa alla fusione o subisce un passaggio di stato/giunzione sotto elevata pressione) e #strong[saldatura eterogenea].
 
