@@ -1557,3 +1557,316 @@ Una corretta progettazione dei collegamenti saldati deve rispettare una serie di
 
 - #strong[Centraggio e stabilizzazione]: per elementi di notevole sviluppo verticale o soggetti a momenti ribaltanti (come un perno filettato o un'attrezzatura di supporto su una piastra di base), la semplice saldatura perimetrale in appoggio risulta poco precisa e vulnerabile al ribaltamento sia durante la saldatura sia in esercizio. È preferibile praticare un foro nella parete di base in cui inserire e centrare l'elemento, eseguendo la saldatura anche nella zona centrale inferiore.
 - #strong[Riduzione del numero di cordoni]: occorre evitare per quanto possibile di frazionare un componente in molte lamiere distinte da saldare tra loro, soluzione che richiede attrezzature complesse per il posizionamento e aumenta il rischio di distorsioni geometriche dovute alle tensioni residue. Quando possibile, è preferibile ricavare il corpo principale mediante piegatura di un'unica lamiera e limitare le saldature ai soli fondi.
+
+== Saldature (Collegamenti saldati) – Progettazione e verifica
+
+==== Normativa di riferimento e qualificazione del giunto saldato
+
+La descrizione tecnologica del processo di saldatura è propedeutica alla fase di progettazione e verifica strutturale. Poiché la saldatura è un processo tecnologico eseguito sul momento mediante trasformazione del materiale — a differenza di collegamenti come viti e bulloni, in cui il serraggio determina condizioni di accoppiamento predeterminate da materiale, lubrificazione e geometria — la qualità finale del giunto dipende da diversi elementi critici regolamentati da specifiche normative tecniche:
+
+- #strong[Procedimenti di saldatura e tipi di giunti:] normati dalla UNI 1307.
+- #strong[Qualificazione della tecnologia e del procedimento:] poiché il processo di saldatura (#emph[welding]) può essere realizzato con modalità, strumenti e parametri molto differenti, la normativa americana ASME (associazione degli ingegneri meccanici americana) ne disciplina la qualificazione attraverso la certificazione ASME PQR/WPS.
+- #strong[Qualificazione dell'operatore (saldatura manuale):] essendo l'esecuzione legata all'abilità, alla professionalità e alla competenza del saldatore (in relazione a tecnologie, dimensioni e accessibilità differenti), l'operatore deve essere dotato di uno specifico patentino che certifica i diversi livelli di precisione e qualità raggiungibili, disciplinato sia in ambito europeo sia americano (certificazione ASME WPQ).
+- #strong[Qualificazione del cordone di saldatura:] il cordone deve essere monitorato sia immediatamente dopo l'esecuzione del processo sia periodicamente nel tempo, al fine di individuare difetti o la loro propagazione nella zona adiacente con conseguente rischio di cedimento. Tale verifica avviene mediante #strong[controlli non distruttivi (CND)] — quali raggi X (RX) e/o ultrasuoni (US) — che non alterano le caratteristiche meccaniche, chimiche e fisiche del giunto.
+- #strong[Resistenza statica e a fatica del giunto:] disciplinata dalla normativa europea Eurocodice 3, introdotta nel 1993 e successivamente rielaborata (norme UNI EN 1993 1-8 per la verifica statica e UNI EN 1993 1-9 per la verifica a fatica).
+
+Quando un progetto dipende fortemente da un processo tecnologico, l'analisi analitica e numerica non è da sola sufficiente a garantire il comportamento in esercizio della struttura: occorre qualificare il processo, il manufatto e l'operatore, ipotizzare livelli minimi di difettosità ammissibile (pratica standard in ambito aeronautico, aerospaziale e nucleare), programmare ispezioni periodiche documentate e orientare gli interventi verso una manutenzione il più possibile predittiva anziché correttiva.
+
+==== Difetti nel cordone di saldatura
+
+Al termine di un processo tecnologico complesso è molto difficile ottenere un cordone privo di imperfezioni. Le discontinuità rilevate tramite controlli non distruttivi diventano veri e propri #strong[difetti] quando superano i limiti di accettazione — in termini di tipologia, distribuzione, localizzazione, numerosità, dimensione e gravità — fissati dalle normative tecniche (UNI, ASME, IIW – Istituto Internazionale/Europeo di Saldatura, e Istituto Italiano di Saldatura). L'identificazione e l'accettabilità vengono stabilite confrontando i risultati dei controlli non distruttivi con immagini di riferimento, definizioni e limiti quantitativi normativi.
+
+Un metodo di riferimento molto diffuso (ad esempio nell'industria nucleare) è il #strong[referto radiografico], interpretato da una figura tecnica specializzata nella diagnosi non distruttiva (analoga al radiologo in medicina). Sulla radiografia i difetti appaiono prevalentemente come zone più scure (a minore densità rispetto al materiale circostante) all'interno della traccia più chiara del cordone, ad eccezione delle inclusioni di tungsteno che risultano più chiare e lucenti. I difetti più comuni sono: pori e tarli, inclusioni di scoria e di tungsteno, mancanza di penetrazione e/o mancanza di fusione, e cricche trasversali e longitudinali.
+
+Tali difetti hanno un impatto strutturale molto diverso: mentre pori, tarli, inclusioni e mancanze di penetrazione o fusione costituiscono in prima battuta imperfezioni tecnologiche (che possono comunque favorire successivamente la nucleazione di fratture), le #strong[cricche] sono già veri e propri danneggiamenti strutturali estremamente pericolosi, poiché propagano all'aumentare dei cicli di carico in condizioni dinamiche e affaticanti.
+
+Le principali tipologie di difetti (escluse le cricche) presentano le seguenti caratteristiche:
+
+- #strong[Pori (e soffiature):] dovuti allo sviluppo di vapore acqueo o gas intrappolati nel cordone (ad esempio per l'uso di elettrodi a rivestimento basico non ben essiccati). Sono vuoti congelati nel materiale con densità molto inferiore a quella del metallo del cordone e appaiono sulla radiografia come macchie piccole, tondeggianti e scure (simili a nuvolette). Si distinguono le porosità ($nothing lt.eq 1 "mm"$) dalle soffiature ($nothing gt.eq 1 "mm"$). Le principali origini comprendono: nella saldatura ossiacetilenica, fiamma mal regolata, eccesso di carbonio nel metallo base, acciaio non calmato, dardo troppo lontano o eccesso di acetilene; nella saldatura elettrica manuale, elettrodi umidi o mal conservati, arco troppo lungo, ambiente umido o lembi ossidati; nella saldatura ArgonArc, arco troppo lungo o insufficienza/scarsa purezza del gas inerte; nella saldatura ad arco sommerso e Sigma sono poco probabili (eventualmente dovuti a insufficienza di flusso protettivo).
+- #strong[Tarli (e nidi di tarli):] originati dall'unione di più pori ravvicinati in successione durante il processo e il raffreddamento. Sono inclusioni di gas non tondeggianti, singole o raggruppate, che appaiono sulla radiografia come macchie allungate e scure con bordi lisci (piccoli segmenti o configurazioni a spina di pesce, spesso presenti numerosi nella stessa zona). Sono tipici della saldatura elettrica manuale per cattiva tecnica operativa con elettrodi basici, elettrodi umidi o di cattiva qualità, eccessiva corrente o ambiente umido, mentre risultano poco probabili nella saldatura ossiacetilenica (cattiva tecnica operativa), ArgonArc, arco sommerso e Sigma.
+- #strong[Inclusioni di scoria:] dipendono dalla natura dell'elettrodo, dal suo stato di conservazione e dalla scarsa pulizia della scoria dell'elettrodo nella saldatura manuale. Appaiono come macchie piccole e scure con bordi irregolari dovute alla contaminazione da materiale estraneo. Possono presentarsi anche come #strong[inclusioni di scoria allungate o allineate] (ossidi o sottoprodotti del processo racchiusi nel metallo saldato), visibili come linee scure sensibilmente larghe, irregolari, continue o interrotte e allineate con la saldatura (più localizzate e discrete rispetto ai tarli). Nella saldatura elettrica manuale derivano da scarsa pulizia a fine passata, profilo irregolare delle passate sottostanti, scarsa abilità del saldatore o cattiva preparazione dei lembi; nell'arco sommerso da una passata inferiore con profilo eccessivamente convesso.
+- #strong[Inclusioni di tungsteno:] si verificano esclusivamente nella saldatura TIG (ArgonArc) in seguito al contatto accidentale tra l'elettrodo in tungsteno e il materiale base (cattiva tecnica operativa). Per la diversa natura del materiale appaiono come macchie tondeggianti o irregolari molto chiare, bianchissime e lucenti, di dimensioni variabili, quindi facilmente identificabili.
+- #strong[Mancanza di penetrazione, mancanza di fusione e incollatura:] dovute tipicamente a un'eccessiva velocità di passata e a un incompleto riempimento del vano del cordone (cianfrino), per cui l'adesione non si realizza sull'intera superficie disponibile. La #strong[mancanza di penetrazione] appare come una linea scura longitudinale piuttosto spessa ed evidente al centro del cordone. La #strong[mancanza di fusione] (imperfetta o mancata fusione tra materiale base e metallo d'apporto) appare come una linea scura, finissima (o più marcata a seconda dello spessore del difetto), localizzata fuori centro verso i lembi; le origini includono eccessiva distanza dei lembi, eccessiva velocità di avanzamento, posizione di lavoro (es. sopratesta), potenza del cannello eccessiva (ossiacetilenica), slivellamento dei lembi (elettrica manuale) o insufficiente corrente di saldatura (arco sommerso e Sigma). L'#strong[incollatura] corrisponde analogamente a una superficie non perfettamente adesa tra i bordi, visibile come una sottile linea scura longitudinale di discontinuità.
+- #strong[Cordone incompleto, insellamento e incisione marginale:] un'incompletezza nell'esecuzione del cordone produce zone non coperte o coperte parzialmente con ombre radiografiche regolari dovute alla variazione di densità. L'#strong[insellamento] consiste in un cedimento o avvallamento locale del cordone che modifica la risposta radiografica; l'#strong[incisione marginale] consiste in incisioni laterali lungo i bordi del cordone.
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Quattro schemi comparativi di difetti di saldatura su referto radiografico: inclusioni di scoria, incollatura, mancanza di penetrazione e cordone incompleto. Per ciascun difetto sono riportati: a) sezione trasversale del giunto saldato, b) andamento del profilo di densità (alta/bassa) lungo la sezione, c) immagine radiografica reale con riquadri rossi che evidenziano rispettivamente i punti scuri delle scorie, la linea sottile dell'incollatura, la linea scura spessa della mancanza di penetrazione e l'ombra regolare del cordone incompleto.]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schemi comparativi di insellamento e incisione marginale (ciascuno con a) sezione trasversale, b) profilo di densità alta/bassa, c) referto radiografico con riquadri rossi) e scheda normativa Fig. 93.1 dedicata a porosità e soffiature, contenente sezione schematica del cordone con bolle interne, referto radiografico con macchie scure tondeggianti evidenziate e legenda di definizione, aspetto radiografico e principali origini per i vari procedimenti di saldatura.]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schede normative Fig. 93.2 (tarli e nidi di tarli) e Fig. 93.3 (inclusioni di scoria allungate o allineate). Ciascuna scheda mostra la sezione trasversale schematica del cordone, il corrispondente referto radiografico con riquadro/cerchio rosso sull'anomalia (segmenti allungati a spina di pesce per i tarli e linee scure larghe e irregolari per le scorie) e il testo con definizione, aspetto radiografico e principali origini.]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schede normative Fig. 93.4 (inclusioni di tungsteno) e Fig. 93.5 (mancanza di fusione). Ciascuna scheda mostra la sezione trasversale schematica del cordone, il corrispondente referto radiografico con riquadro rosso sull'anomalia (macchie bianchissime brillanti per il tungsteno e linea scura finissima fuori centro per la mancanza di fusione) e il testo con definizione, aspetto radiografico e principali origini.]])
+
+==== Cricche
+
+Le cricche si distinguono nettamente dagli altri difetti poiché costituiscono già un danneggiamento attivo della struttura, potenzialmente fatale per la sicurezza. Di conseguenza, la presenza di cricche comporta sempre la #strong[non accettazione] del giunto saldato: il cordone va scartato, rimosso e rifatto completamente. Sul referto radiografico le cricche compaiono come tracce corte e scure, trasversali o longitudinali rispetto al cordone. Si distinguono in due categorie principali:
+
+- #strong[Cricche a caldo] (formate oltre i $700 degree "C"$): dovute alla presenza di un bagno di saldatura arricchito di impurezze (principalmente zolfo $S$ e fosforo $P$) causate dall'impiego di elettrodi non puliti. Sono generalmente localizzate verso il centro del cordone.
+- #strong[Cricche a freddo] (a fine raffreddamento o ritardate): dovute alla diversa solubilità dell'idrogeno ($H_2$) nel metallo caldo rispetto a quello freddo, con idrogeno proveniente dai rivestimenti degli elettrodi oppure dai flussi esterni o interni nella saldatura ad arco sommerso o MIG/MAG. Sono localizzate ai bordi del cordone oppure nella zona termicamente alterata del materiale base, ossia sui fianchi appartenenti alle parti congiunte interessate termicamente dal processo.
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[In ambiti particolarmente critici per la sicurezza (#emph[safety critical]) — come l'industria chimica, l'industria nucleare o le strutture offshore delle piattaforme petrolifere nel Mare del Nord, dove il collasso strutturale comporta gravi danni e perdite di vite umane — sono prescritti controlli periodici serrati (con ripetizione a intervalli massimi di circa sei mesi), confrontando le radiografie nel tempo per individuare tempestivamente l'insorgere di nuovi difetti o anomalie.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Tre fotografie di cricche rilevate con tecniche differenti: in alto a sinistra un ingrandimento macrografico/metallografico di una cricca che si propaga nella sezione del giunto; in alto a destra una cricca lungo un cordone d'angolo messa in evidenza da una traccia rossa su fondo bianco tramite liquidi penetranti; in basso una cricca lungo il cordone evidenziata in verde fluorescente mediante particelle ferromagnetiche illuminate con luce di Wood.]])
+
+==== Controlli non distruttivi (CND)
+
+I controlli non distruttivi permettono di ispezionare il cordone di saldatura senza alterarne l'integrità. Tra i principali metodi impiegati industrialmente rientrano gli ultrasuoni, il controllo magnetoscopico, i liquidi penetranti, l'ispezione visiva e la radiografia.
+
+#strong[Controllo con ultrasuoni (US):] si basa sulla propagazione e riflessione di onde sonore (impulsi ultrasonori) all'interno del materiale alla velocità del suono caratteristica del mezzo. Una sonda compatta, dotata di un disco piezoelettrico sotto una piastra di usura e pilotata da elettronica di potenza e da un computer, viene accoppiata alla superficie del pezzo mediante un fluido, gel o olio accoppiante (#emph[couplant]) che assicura il contatto acustico e il passaggio delle onde. Esistono due modalità operative principali: nella modalità #strong[impulso-eco (#emph[pulse-echo])] un unico trasduttore emette l'impulso e riceve l'eco riflesso; su un monitor (intensità sull'asse verticale $Y$, tempo — o profondità calcolata nota la velocità del suono — sull'asse orizzontale $X$), in una zona priva di difetti compaiono soltanto l'impulso di trasmissione e l'eco della superficie opposta (#emph[back wall echo]), mentre una cavità o discontinuità interna riflette anticipatamente tutto o parte dell'impulso generando un eco di difetto (#emph[defect echo], eventualmente seguito da echi di doppia riflessione). Nella modalità #strong[a trasmissione (#emph[through-transmission])] un secondo trasduttore ricevente posto in posizione opportuna rileva l'attenuazione del segnale bloccato dal difetto oppure lo spostamento del punto e del tempo di volo dell'onda riflessa/rifratta, inclusi gli effetti diffrattivi e di interferenza/sovrapposizione delle onde.
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Il controllo a ultrasuoni è particolarmente potente e quantitativo perché consente di indagare il pezzo in profondità e di determinare posizione, qualità e dimensione del difetto, lasciando una registrazione precisa e documentabile nel tempo. Un esempio applicativo di controllo impulso-eco riguarda l'ispezione di un cilindro in acciaio alto $200 "mm"$ con difetti interni artificiali non visibili dall'esterno (un foro a $130 "mm"$ di profondità e un taglio di sega a $87 "mm"$, quest'ultimo capace di generare anche un secondo eco minore di doppia riflessione a $174 "mm"$), la cui profondità viene letta tramite #emph[trigger gates] sullo schermo dopo l'applicazione del gel accoppiante. In ambito ferroviario e tranviario, la tecnica viene applicata periodicamente sugli assili cavi delle ruote: dopo aver applicato olio accoppiante nel foro assiale, una sonda dedicata emette impulsi angolati a $45 degree$; in presenza di una cricca esterna si verifica una doppia riflessione che produce un eco tipico di difetto, da distinguere dagli echi di contorno (#emph[contour echoes]) causati dagli spallamenti geometrici dell'assile.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Raccolta sul controllo con ultrasuoni (US): in alto a sinistra schema del controllo ultrasonoro su un cordone di saldatura con sonda e tracciato degli echi; in alto al centro fotografia di un operatore che muove una sonda su un pezzo collegata allo strumento di misura; in alto a destra schermata oscilloscopica con i picchi degli echi in funzione della profondità; in basso a sinistra schema in sezione di un giunto con trasduttori e raggi ultrasonori numerati da 1 a 6; in basso al centro immagine di scansione ultrasonora e relativo tracciato; in basso a destra schema degli effetti diffrattivi nello spazio e nel tempo con trasduttore trasmettente T, ricevente R, zona morta (Dead Zone), percorsi 1, 2, 3 e grafico temporale dell'onda longitudinale (LW) con picchi 1, 2, 3 e intervallo $Delta t$.]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[#strong[Controllo magnetoscopico (particelle magnetiche):] sfrutta la perturbazione delle linee di flusso di un campo magnetico in presenza di discontinuità. La superficie da esaminare viene cosparsa con un liquido contenente particelle ferromagnetiche in sospensione e sottoposta a un campo magnetico generato da un magnetoscopio (che può applicare il campo anche in due direzioni ortogonali tra loro, con tempi di magnetizzazione controllati, ad esempio tra $0","5$ e $2 "s"$, e successivo smagnetizzatore). In corrispondenza di un difetto, la distorsione delle linee di flusso fa concentrare e orientare le particelle lungo i bordi del difetto stesso. Illuminando la zona con luce ultravioletta (luce di Wood), le particelle fluorescenti/fosforescenti rendono immediatamente visibili la localizzazione, la forma e la tipologia della discontinuità. A differenza degli ultrasuoni, questa tecnica è efficace essenzialmente per difetti superficiali: fornisce una percezione immediata della criticità, ma non permette di determinare con precisione le dimensioni in profondità né di documentarle con elevata accuratezza quantitativa.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Tavola sul controllo magnetoscopico e a correnti indotte: in alto a sinistra fotografia di un albero ispezionato con particelle ferromagnetiche fluorescenti verdi sotto luce di Wood; in alto a destra fotografia di un banco magnetoscopico con bobina toroidale di magnetizzazione; in basso a sinistra schema delle linee di flusso magnetico all'interno di un elemento con deviazione in corrispondenza di difetti superficiali e interni; in basso a destra schema con bobina di eccitazione (Excitation coil), linee di campo magnetico (Magnetic field), correnti parassite (Eddy Current) e bobina ricevente (Receiver coil difference).]])
+
+#strong[Controllo con liquidi penetranti:] sfrutta il fenomeno della capillarità per individuare difetti affioranti in superficie (come piccole cricche) e risulta economico, pratico e rapido, sebbene prevalentemente qualitativo. Il procedimento si articola in cinque fasi:
+
+1. #strong[Preparazione e sgrassatura:] pulizia e lavaggio accurato della superficie.
+2. #strong[Applicazione del penetrante:] stesura di un liquido o vernice di colore molto acceso (tipicamente rosso), rimovibile con acqua, che penetra per capillarità riempiendo completamente il difetto.
+3. #strong[Rimozione dell'eccesso di penetrante:] pulitura superficiale che elimina il velo esterno di liquido senza asportare quello trattenuto per capillarità all'interno della cavità.
+4. #strong[Applicazione del rilevatore (sviluppatore):] spruzzatura di un materiale di colore fortemente contrastante (tipicamente bianco) che richiama parzialmente in superficie il penetrante contenuto nel difetto.
+5. #strong[Ispezione:] rilevazione visiva immediata delle tracce colorate corrispondenti alle spaccature.
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[La tecnica viene utilizzata anche come prova di impermeabilizzazione per rilevare esclusivamente #strong[difetti passanti] (controllo di perdite) in una parete: si applica il penetrante su una superficie e lo sviluppatore sulla superficie opposta, verificando l'eventuale comparsa di tracce dovute al passaggio del liquido.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Sequenza operativa del controllo con liquidi penetranti: in alto tre fotografie dell'applicazione su un albero (stesura del liquido rosso a pennello, pulizia e spruzzatura del rilevatore); al centro cinque schemi in sezione della cricca corrispondenti alle fasi di preparazione/sgrassatura, applicazione del penetrante, rimozione dell'eccesso, applicazione del rilevatore e ispezione; in basso schema del controllo di difetto passante (sviluppatore su una faccia e penetrante sulla faccia opposta della parete) e fotografia di una superficie con tracce rosse di cricche.]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[#strong[Ispezione visiva (diretta o robotizzata) e radiografia (RX / tomografia 3D):] l'ispezione visiva diretta consente di fotografare o filmare difetti superficiali tramite telecamere, droni o sistemi robotizzati dotati di fibre ottiche con illuminazione variabile, introdotti ad esempio all'interno di recipienti in pressione vuoti (in analogia con la laparoscopia medica). La #strong[radiografia (RX)] prevede invece l'emissione di radiazioni attraverso il cordone di saldatura e la raccolta del segnale su una pellicola o schermo posto sul lato opposto, fornendo una documentazione permanente, quantitativa e ad alta definizione, essenziale nei settori ad alta criticità di sicurezza come l'industria nucleare. Poiché la radiografia tradizionale su pellicola fornisce una sola proiezione perpendicolare al cordone senza informazioni sulla profondità, l'integrazione tra CND e robotica ha portato a sistemi mobili di tomografia a raggi X (come il sistema #emph[TomoWeld] per tubazioni in acciaio austenitico e ferritico negli impianti nucleari): un manipolatore esegue prima una scansione panoramica attorno al tubo e poi una scansione laminografica lungo l'asse del tubo, ricostruendo un volume radiografico 3D che permette di rilevare difetti non visibili con tecniche convenzionali e di misurarne esattamente posizione, profondità e dimensioni, tutelando la sicurezza dell'operatore in zone di difficile accesso.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema dell'esame radiografico su un giunto saldato (sorgente superiore che emette un fascio conico di raggi X attraverso la saldatura verso la lastra sottostante) e immagine di una radiografia in scala di grigi con macchie circolari chiare di varie dimensioni.]])
+
+#pagebreak()
+
+==== Verifica statica secondo Eurocodice 3 (UNI EN 1993:2005 1-8)
+
+La norma europea #strong[UNI EN 1993:2005 1-8 (Eurocode 3 – Design of steel structures, Part 1-8: Design of joints)] si applica alle costruzioni in acciaio da carpenteria realizzate con gli acciai strutturali #strong[S235, S275, S355, S420 e S460] (in cui il valore numerico dell'acronimo indica la tensione di snervamento in $"MPa"$). Essa definisce le procedure di verifica statica distinguendo tra #strong[giunti saldati testa a testa] (#emph[butt welds]) e #strong[giunti con cordoni d'angolo] (#emph[fillet welds]); lievi variazioni di simbologia e di approccio tra i diversi casi derivano dalla sintesi delle preesistenti normative nazionali europee.
+
+===== Giunti testa a testa e giunti a T a completa penetrazione
+
+Per i giunti testa a testa a completa penetrazione (#emph[butt welds], sezione 4.7 della norma) non viene fornita una specifica procedura di calcolo per la saldatura: si assume che la resistenza della giunzione sia pari alla minore tra quelle delle parti collegate. La stessa schematizzazione si applica ai #strong[giunti a T a completa penetrazione], nei quali una piastra è saldata perpendicolarmente a una piastra di appoggio (tendenzialmente di pari spessore $s$) mediante un cordone composto da una parte nel cianfrino e una porzione esterna simile a un cordone d'angolo.
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[La geometria è caratterizzata dalla lunghezza del cordone $L$, dallo spessore $s$ (minore degli spessori collegati oppure spessore dell'elemento a completa penetrazione) e dalla larghezza totale $H$ (materiale base più materiale d'apporto). Adottando un sistema di riferimento centrato sullo sviluppo longitudinale del cordone (asse lungo $L$), possono essere presenti tre componenti di tensione attive:
+
+- $sigma_perp$: tensione normale (di trazione e/o compressione) perpendicolare alla sezione longitudinale del cordone (cioè perpendicolare alla linea d'asse);
+- $tau_parallel$: tensione tangenziale nella sezione longitudinale, parallela allo sviluppo del cordone;
+- $sigma_parallel$: tensione normale (di trazione e/o compressione) parallela all'asse del cordone.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Due schemi tridimensionali della geometria e delle tensioni attive: in alto un giunto saldato testa a testa e in basso un giunto a T a completa penetrazione. Su entrambi sono indicate le quote s (spessore), L (lunghezza del cordone), H (larghezza totale) e i vettori delle tensioni $sigma_perp$, $tau_parallel$ e $sigma_parallel$ sulle rispettive facce.]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[La sezione resistente $A_(r e s)$ del cordone coincide con le sezioni trasversali di una piastra continua monolitica nelle due direzioni principali:
+
+- per tensioni derivanti da azioni di trazione normali all'asse del cordone ($sigma_perp$) e per tensioni derivanti da azioni di taglio ($tau_parallel$):
+$ A_(r e s) = L dot.op s quad (1) $
+- per tensioni derivanti da azioni di trazione parallele all'asse del cordone ($sigma_parallel$):
+$ A_(r e s) = H dot.op s quad (2) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema tridimensionale del giunto testa a testa con quote L, s e H e superficie tratteggiata che evidenzia la sezione resistente frontale/trasversale del cordone.]])
+
+Trattandosi normalmente di materiale duttile, si calcola la #strong[tensione ideale] secondo l'ipotesi dell'energia di Von Mises. In presenza di tutte e tre le componenti di tensione (due normali e una tangenziale), la formulazione include il termine misto negativo tra le tensioni normali:
+
+$ sigma_(i d) = sqrt(sigma_perp^2 + sigma_parallel^2 - sigma_perp sigma_parallel + 3 tau_parallel^2) $
+
+Sebbene non esplicitamente specificato nella norma, in analogia con i calcoli di resistenza statica delle parti collegate si verifica:
+
+$ sigma_(i d) lt.eq frac(R, S) $
+
+dove $R$ rappresenta il limite di resistenza del materiale delle parti collegate (limite di snervamento in prima battuta e, in seconda battuta, limite di rottura: entrambe le verifiche risultano di interesse) e $S$ è il coefficiente di sicurezza statico, dell'ordine di grandezza di $1","5$.
+
+===== Giunti con cordoni d'angolo (#emph[fillet welds])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Nei giunti con cordoni d'angolo (sezione 4.5 della norma), le componenti di tensione che agiscono nel cordone sono:
+
+- $sigma$: tensione normale (di trazione e/o compressione) perpendicolare all'asse del cordone, agente sulle due facce ortogonali;
+- $tau$: tensione tangenziale diretta secondo l'asse del cordone;
+- $sigma_parallel$: eventuale tensione normale (di trazione e/o compressione) agente nella sezione trasversale del cordone, che #strong[non deve essere considerata] secondo la normativa (scelta che semplifica il modello evitando ambiguità nell'equilibrio delle azioni esterne e trova riscontro nell'osservazione sperimentale).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema tridimensionale di un giunto a T con cordoni d'angolo di lunghezza nominale l. Sono evidenziate le componenti di tensione $sigma$ sulle due facce ortogonali del cordone, $tau$ lungo l'asse del cordone e $sigma_parallel$ sulla sezione trasversale frontale con l'indicazione "NON CONSIDERARE".]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Osservando l'andamento delle linee di flusso delle tensioni che attraversano la sezione trasversale triangolare del cordone d'angolo, la sezione effettivamente perpendicolare al flusso tensionale è la cosiddetta #strong[sezione di gola]. Essa costituisce la sezione resistente di riferimento sia per le tensioni normali all'asse del cordone sia per quelle di taglio lungo l'asse, nell'ipotesi di tensioni distribuite uniformemente (plasticizzazione):
+
+$ A_(r e s) = L dot.op a $
+
+dove:
+- $a$ è l'#strong[altezza di gola], ovvero l'altezza del triangolo inscritto nella sezione trasversale del cordone;
+- $p$ è il #strong[piede del cordone]; se il piede è simmetrico (triangolo rettangolo isoscele), vale:
+$ a = frac(p, sqrt(2)) $
+- $L$ è la #strong[lunghezza effettiva del cordone]; per tenere conto degli effetti di bordo alle due estremità del cordone di lunghezza nominale $l$, si detrae la dimensione $a$ da entrambi i lati:
+$ L = l - 2a $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Due schemi della sezione di gola di un cordone d'angolo: in alto vista bidimensionale del giunto a T con linee di flusso di tensione che attraversano i cordoni e indicazione della sezione di gola; in basso vista tridimensionale del prisma triangolare del cordone con piede simmetrico p sui due cateti, altezza di gola a, lunghezza effettiva L e piano inclinato tratteggiato della sezione di gola.]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[#strong[Verifica di resistenza statica – 1° metodo (#emph[Directional Method], sezione 4.5.3.2):] la verifica viene condotta nel sistema di riferimento locale solidale alla sezione di gola (sezione critica obliqua). Le componenti di tensione attive sulla sezione di gola sono la tensione normale $sigma_perp^g$, la tensione tangenziale perpendicolare all'asse del cordone $tau_perp^g$ e la tensione tangenziale parallela all'asse del cordone $tau_parallel^g$; la componente normale parallela $sigma_parallel^g$ non si considera.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Schema tridimensionale della sezione di gola di un cordone d'angolo (metodo direzionale) con rappresentazione dei vettori delle tensioni locali: $sigma_perp^g$ normale al piano inclinato di gola, $tau_perp^g$ e $tau_parallel^g$ giacenti nel piano di gola (rispettivamente perpendicolare e parallela all'asse), e $sigma_parallel^g$ sulla faccia trasversale frontale.]])
+
+Devono essere soddisfatte simultaneamente la verifica della tensione equivalente di Von Mises sulla sezione di gola e una condizione limitativa sulla sola componente normale $sigma_perp^g$ (affinché essa non risulti dominante da sola, restando inferiore al $90\%$ del rapporto $f_u \/ gamma_(M 2)$):
+
+$ sqrt((sigma_perp^g)^2 + 3[(tau_perp^g)^2 + (tau_parallel^g)^2]) lt.eq frac(f_u, beta_w gamma_(M 2)) quad "e" quad sigma_perp^g lt.eq frac(0","9 f_u, gamma_(M 2)) $
+
+dove:
+- $f_u$ è il carico di rottura del materiale base;
+- $gamma_(M 2) = 1","25$ è il coefficiente di sicurezza;
+- $beta_w$ è il fattore di correlazione, che esprime il rapporto tra la resistenza del materiale base e quella del materiale d'apporto (correlato alla resistenza e alla tenacità dell'acciaio; vale $1$ per le resistenze più elevate ed è ridotto per quelle inferiori):
+
+#table(
+  columns: 6,
+  align: (left, center, center, center, center, center),
+  [Materiale], [S235], [S275], [S355], [S420], [S460],
+  [$f_u$ (MPa)], [$360$], [$430$], [$510$], [$520$], [$540$],
+  [$beta_w$], [$0","8$], [$0","85$], [$0","9$], [$1$], [$1$],
+)
+
+#strong[Verifica di resistenza statica – 2° metodo (#emph[Simplified Method], sezione 4.5.3.3):] un approccio più moderno e diffuso in ingegneria civile e carpenteria industriale formula la verifica in termini di #strong[forze per unità di lunghezza] ($"N/mm"$), considerando la singola sezione bidimensionale del cordone anziché le tensioni su superficie:
+
+$ F_(w, E d) lt.eq F_(w, R d) $
+
+dove $F_(w, E d)$ è la forza risultante per unità di lunghezza che il cordone deve trasmettere e $F_(w, R d)$ è la forza resistente per unità di lunghezza:
+
+$ F_(w, R d) = f_(v w, d) dot.op a = frac(f_u \/ sqrt(3), beta_w gamma_(M 2)) dot.op a $
+
+con $f_(v w, d)$ resistenza a taglio della saldatura, mentre $gamma_(M 2)$, $beta_w$ e $f_u$ mantengono gli stessi valori del metodo direzionale.
+
+#strong[Vincoli dimensionali:] l'Eurocodice prescrive inoltre i seguenti limiti geometrici per i cordoni d'angolo:
+- spessori $s$ delle parti saldate superiori a $4 "mm"$;
+- altezza di gola $a > 3 "mm"$;
+- lunghezza effettiva $L > 30 "mm"$ e $L > 6 dot.op a$.
+
+#pagebreak()
+
+==== Verifica a fatica secondo Eurocodice 3 (UNI EN 1993:2005 1-9)
+
+La norma #strong[UNI EN 1993:2005 1-9 (Eurocode 3 – Design of steel structures, Part 1-9: Fatigue)] disciplina la verifica a fatica dei giunti saldati, caratterizzati tipicamente da stati di sollecitazione multiassiali e da storie di carico dinamiche ad ampiezza variabile.
+
+Per impostare la verifica è necessario conoscere la storia di carico nel tempo in termini di tensione. Nei giunti saldati non si fa riferimento alla tensione alternata $sigma_a$, bensì al #strong[$Delta$ di tensione] ($Delta sigma$ oppure $Delta tau$), ossia l'escursione tra tensione massima e minima secondo l'accezione classica di Wöhler. Nel caso di oscillazioni ad ampiezza variabile si applica il #strong[metodo di conteggio Rainflow] (nella versione della "vasca da bagno" o "serbatoio") per ricavare lo spettro dei $Delta$ di tensione, e si valuta il danno cumulativo mediante la legge di #strong[Palmgren-Miner].
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[I livelli di resistenza a fatica non dipendono soltanto dal materiale, ma dalla specifica geometria del giunto: la normativa classifica tutte le soluzioni costruttive industriali in apposite tabelle di #strong[categorie di dettaglio] (#emph[detail categories]). Il numero che identifica ciascuna categoria funge contemporaneamente da codice e da valore numerico della sollecitazione ammissibile ad ampiezza costante $Delta sigma_C$ (oppure $Delta tau_C$) in $"MPa"$ corrispondente a $N_C = 2 dot.op 10^6$ cicli. Esistono numerose categorie per sollecitazioni normali $Delta sigma$ e solo due classi per geometrie sollecitate prevalentemente a taglio $Delta tau$ (come saldature circonferenziali di flange bullonate o tubi saldati a piastre).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Estratto di tabelle normative Eurocodice 3-1-9 delle categorie di dettaglio costruttivo per giunti saldati, suddivise nelle colonne Detail category, Constructional detail, Description e Requirements. Sono raffigurati dettagli di categoria 125 (saldature longitudinali continue automatiche testa a testa e a cordone d'angolo), categoria 80 (pioli saldati e saldature circonferenziali a taglio su flange/piastre) e categoria 112 (giunzioni trasversali senza piatto di sostegno, con indicazione dell'effetto scala per spessori $t > 25 "mm"$: $k_s = (25 \/ t)^(0","2)$).]])
+
+===== Calcolo delle tensioni mediante ribaltamento della sezione di gola
+
+Nella verifica a fatica dei cordoni d'angolo, la sezione critica rimane la sezione di gola, ma la normativa preferisce riferire le tensioni al sistema di riferimento globale solidale alle due piastre collegate anziché al sistema locale inclinato della gola. Operativamente, la sezione di gola viene idealmente #strong[ribaltata] (come se fosse incernierata) su uno dei due lati del cordone (orizzontale oppure verticale), scegliendo il lato più conveniente rispetto alla disposizione dei carichi.
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Ribaltando la sezione sul lato orizzontale, la componente verticale risulta normale ($sigma_perp$) e quella orizzontale giacente nel piano risulta tangenziale ($tau_perp$), mentre $tau_parallel$ giace sempre lungo l'asse del cordone; ribaltando invece sul lato verticale, i ruoli di $sigma_perp$ e $tau_perp$ si scambiano. Nonostante questa arbitrarietà nella denominazione delle singole componenti, la tensione equivalente risultante descrive in modo coerente lo stesso stato di tensione:
+
+- tensione equivalente perpendicolare all'asse del cordone:
+$ sigma_(w f) = sqrt(sigma_(perp f)^2 + tau_(perp f)^2) $
+- tensione parallela all'asse del cordone:
+$ tau_(w f) = tau_(parallel f) " [?]" $
+
+Si introduce inoltre il coefficiente moltiplicativo delle tensioni $gamma_(F f) gt.eq 1$, che tiene conto delle incertezze sui carichi.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Due schemi tridimensionali del ribaltamento della sezione di gola di un cordone d'angolo: a sinistra la sezione di gola è ribaltata sul lato orizzontale del cordone (con $sigma_perp$ verticale e $tau_perp$, $tau_parallel$ nel piano orizzontale); a destra è ribaltata sul lato verticale (con $sigma_perp$ orizzontale e $tau_perp$, $tau_parallel$ nel piano verticale).]])
+
+===== Curve $S N$ per particolari sollecitati a $Delta sigma$ e a $Delta tau$
+
+#strong[Particolari sollecitati a $Delta sigma$:] a ogni categoria di dettaglio corrisponde una curva $Delta sigma_R - N$ (in scala bilogaritmica a partire da $N = 10^4$ cicli) governata nei tratti inclinati dall'equazione di Basquin $Delta sigma_R^m dot.op N = "costante"$. A differenza delle curve di Wöhler classiche (che presentano un solo tratto inclinato fino al ginocchio di $2 dot.op 10^6$ cicli seguito dal limite di fatica), data la criticità dei giunti saldati la normativa prevede #strong[tre regioni] (due di vita a tempo determinato e una di vita illimitata):
+
+1. #strong[$10^4 lt.eq N lt.eq N_D = 5 dot.op 10^6$ cicli:] fascio di rette parallele con esponente #strong[$m = 3$] (forte dipendenza dal numero di cicli). Lungo la verticale $N_C = 2 dot.op 10^6$ si legge la categoria del giunto $Delta sigma_C$ (categorie da $36$ a $160 "MPa"$: $36, 40, 46, 50, 56, 63, 71, 80, 90, 100, 112, 125, 140, 160$). Il punto $D$ a $N_D = 5 dot.op 10^6$ costituisce il primo gomito.
+2. #strong[$N_D = 5 dot.op 10^6 lt.eq N lt.eq N_L = 10^8$ cicli:] fascio di rette parallele con pendenza minore di esponente #strong[$m = 5$], che modella la residua diminuzione di resistenza a fatica ad alto numero di cicli fino al punto $L$.
+3. #strong[$N gt.eq N_L = 10^8$ cicli:] fascio di rette orizzontali (asintoto del limite di fatica a vita illimitata).
+
+Applicando la continuità tramite l'equazione di Basquin tra i punti notevoli $C$, $D$ ed $L$, si ricavano i valori di resistenza ai due gomiti:
+
+$ Delta sigma_D = root(3, Delta sigma_C^3 frac(2 dot.op 10^6, 5 dot.op 10^6)) $
+
+$ Delta sigma_L = root(5, Delta sigma_D^5 frac(5 dot.op 10^6, 10^8)) $
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Per tenere conto dell'#strong[effetto dimensioni] (fattore di scala legato allo spessore del giunto), il valore di categoria viene ridotto tramite il coefficiente $k_s$ fornito nelle tabelle dei dettagli (ad esempio $k_s = (25 \/ t)^(0","2)$ per $t > 25 "mm"$):
+
+$ Delta sigma_(C, r e d) = k_s dot.op Delta sigma_C $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Diagramma bilogaritmico delle linee SN per particolari sollecitati a $Delta sigma$ (asse verticale $Delta sigma$ in MPa da 10 a $10^3$, asse orizzontale N da $10^4$ a $10^8$). È rappresentato il fascio di curve per le categorie $Delta sigma_C = 160, 140, 125, 112, 100, 90, 80, 71, 63, 56, 50, 46, 40, 36 "MPa"$ con i tre tratti: rosso con esponente $m = 3$ fino al gomito D ($N = 5 dot.op 10^6$), verde con esponente $m = 5$ fino al gomito L ($N = 10^8$) e blu orizzontale oltre $10^8$. Sono evidenziate le verticali C ($2 dot.op 10^6$), D ($5 dot.op 10^6$) ed L ($10^8$), insieme alle formule di $Delta sigma_D$, $Delta sigma_L$ e $Delta sigma_(C, r e d)$.]])
+
+#strong[Particolari sollecitati a $Delta tau$:] nei casi di sollecitazione prevalentemente tangenziale la normativa fornisce un diagramma dedicato composto da sole #strong[due curve] (definite a $N_C = 2 dot.op 10^6$ cicli):
+- $Delta tau_C = 100 "MPa"$ per materiale base e giunti di testa a completa penetrazione;
+- $Delta tau_C = 80 "MPa"$ per tutti gli altri giunti.
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[L'equazione è $Delta tau_R^m dot.op N = "costante"$ ed è articolata in #strong[due sole regioni]:
+1. #strong[$10^4 lt.eq N lt.eq 10^8$ cicli:] un'unica retta inclinata con esponente #strong[$m = 5$];
+2. #strong[$N gt.eq N_L = 10^8$ cicli:] una retta orizzontale (limite di fatica).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Diagramma bilogaritmico delle linee SN per particolari sollecitati a $Delta tau$ (asse verticale $Delta tau$ in MPa da 10 a $10^3$, asse orizzontale N da $10^4$ a $10^8$). Sono tracciate le due curve di categoria $C = 100 "MPa"$ e $C = 80 "MPa"$ (lette alla verticale $2 dot.op 10^6$, con etichetta 231 sull'asse verticale a $10^4$), entrambe con unica pendenza $m = 5$ fino a $N = 10^8$ e tratto orizzontale L oltre $10^8$; a lato compaiono gli schemi di dettaglio di categoria 80 (flangia bullonata e piastra con perno/tubo saldati).]])
+
+===== Effetto delle tensioni di compressione e tensioni nominali modificate
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Nel materiale base, oppure in giunti saldati sottoposti a trattamenti per eliminare le tensioni residue, la presenza di una componente di compressione che abbassa la tensione media del ciclo sotto lo zero viene tenuta in conto riducendo il peso della parte compressiva nel calcolo del $Delta sigma$ efficace:
+
+$ Delta sigma = |sigma_(m a x)| + 0","6 |sigma_(m i n)| $
+
+Quando in prossimità del dettaglio costruttivo sono presenti #strong[intagli] (brusche variazioni geometriche), le tensioni nominali devono essere moltiplicate per un fattore di concentrazione delle tensioni ricavato da manuali (come i diagrammi di Peterson) o tramite analisi agli elementi finiti. Occorre prestare particolare attenzione alla notazione normativa: tale coefficiente viene indicato con $k_f$ (minuscolo), ma corrisponde concettualmente al fattore di concentrazione geometrico delle tensioni $K_t$ e #strong[non] al fattore di intaglio a fatica $K_f$ (maiuscolo), per ottenere il quale occorrerebbe considerare anche la sensibilità all'intaglio.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: Grafico temporale di un ciclo sinusoidale di tensione con componente media negativa (asse verticale con segni + e -), in cui sono indicati il picco positivo $sigma_(m a x)$, il picco negativo $sigma_(m i n)$ e la formula dell'escursione efficace $Delta sigma = |sigma_(m a x)| + 0","6 |sigma_(m i n)|$.]])
+
+===== Approcci di verifica (#emph[Damage tolerant] vs #emph[Safe life]) e verifica secondo la legge di Miner
+
+Le curve $S N$ vengono corrette dividendo le resistenze per un coefficiente di sicurezza parziale $gamma_(M f)$ (per esempio $Delta sigma_C \/ gamma_(M f)$), il cui valore dipende dal metodo di verifica adottato e dalla gravità delle conseguenze di un eventuale cedimento:
+
+#table(
+  columns: 3,
+  align: (left, center, center),
+  [Metodo di verifica], [Conseguenze lievi ($gamma_(M f)$)], [Conseguenze gravi ($gamma_(M f)$)],
+  [#emph[Damage tolerant]], [$1","00$], [$1","15$],
+  [#emph[Safe life]], [$1","15$], [$1","25$],
+)
+
+I due approcci progettuali differiscono profondamente:
+- #strong[Safe life:] presuppone che la struttura non si danneggi per l'intera durata di missione richiesta, senza necessità di ispezioni periodiche; per scongiurare cedimenti catastrofici improvvisi richiede coefficienti di sicurezza più elevati.
+- #strong[Damage tolerant:] ammette che la struttura possa contenere fin dall'inizio difetti ritenuti tollerabili (per dimensione, posizione e tipologia), ma impone un piano rigoroso di ispezioni periodiche documentate durante l'esercizio per monitorare l'evoluzione del danneggiamento e intervenire con riparazioni (manutenzione predittiva). I coefficienti $gamma_(M f)$ risultano più bassi poiché la sicurezza è garantita verificando che, nell'intervallo tra due ispezioni consecutive (come avviene anche in ambito aeronautico per i velivoli), un eventuale danno non possa propagarsi fino al collasso catastrofico.
+
+Nell'applicazione operativa della #strong[legge di Miner] (#emph[Cycles to failure], Annex A5), il margine di sicurezza risulta ripartito su due fronti: da un lato le escursioni di tensione applicate vengono amplificate tramite $gamma_(F f) gt.eq 1$, dall'altro le resistenze delle curve $S N$ vengono ridotte tramite $gamma_(M f)$:
+
+$ overline(Delta sigma_i) = gamma_(F f) Delta sigma_i quad ("con " gamma_(F f) gt.eq 1) $
+
+$ overline(Delta sigma_c) = frac(Delta sigma_c, gamma_(M f)), quad overline(Delta sigma_D) = frac(Delta sigma_D, gamma_(M f)), quad overline(Delta tau_c) = frac(Delta tau_c, gamma_(M f)) $
+
+La condizione di verifica del danno cumulativo $D_d$ è espressa da:
+
+$ D_d = sum frac(n_(E i), N_(R i)) = sum frac(alpha_i N_(t o t), N_(R i)) lt.eq 1 $
+
+dove $n_(E i)$ è il numero di cicli di esercizio (esprimibile anche come frazione $alpha_i$ del numero totale di cicli $N_(t o t)$) sotto la sollecitazione amplificata $gamma_(F f) Delta sigma_i$ (o $gamma_(F f) Delta tau_i$ `[?]`), e $N_(R i)$ è il numero di cicli a rottura corrispondente a tale livello sulla curva $S N$ ridotta (ricavabile per proporzionalità sui tratti della curva):
+
+- per sollecitazioni normali con $overline(Delta sigma_i) gt.eq overline(Delta sigma_D)$ (tratto con $m = 3$):
+$ N_(R i) = frac(overline(Delta sigma_C)^3 dot.op 2 dot.op 10^6, overline(Delta sigma_i)^3) $
+- per sollecitazioni normali con $overline(Delta sigma_i) < overline(Delta sigma_D)$ (tratto con $m = 5$):
+$ N_(R i) = frac(overline(Delta sigma_D)^5 dot.op 5 dot.op 10^6, overline(Delta sigma_i)^5) $
+- per sollecitazioni tangenziali $Delta tau$ (unica pendenza $m = 5$):
+$ N_(R i) = frac(overline(Delta tau_C)^5 dot.op 2 dot.op 10^6, overline(Delta tau_i)^5) $
+
+Infine, oltre alla verifica statica del giunto e alla verifica a fatica secondo Miner, occorre sempre verificare che le ampiezze delle escursioni tensionali rispettino i seguenti limiti rispetto alla tensione di snervamento $f_y$ del materiale (con il fattore $1 \/ sqrt(3)$ per rendere omogenea la componente tangenziale):
+
+$ Delta sigma lt.eq 1","5 f_y, quad Delta tau lt.eq frac(1","5 f_y, sqrt(3)) $
+
+=== Esercizi
+
+Non sono presenti esercizi svolti in questa lezione.
