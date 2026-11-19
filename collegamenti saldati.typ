@@ -1487,7 +1487,64 @@ Le #strong[tensioni residue] sono tensioni presenti nel giunto al termine del pr
 4. #strong[Giunto a croce con cordoni d'angolo (4)]: costituito da quattro cordoni d'angolo che collegano due piastre ad una piastra passante perpendicolare.
 5. #strong[Giunto a sovrapposizione (5)] (#emph[overlap]): collega due lamiere sovrapposte mediante cordoni d'angolo deposti tra il lembo di una piastra e la faccia dell'altra; presenta una marcata asimmetria.
 6. #strong[Giunto a semplice coprigiunto (6)]: mantiene allineate due piastre mediante una piastra di banda superiore collegata con cordoni d'angolo, rimanendo comunque asimmetrico.
-7. #strong[Giunto a doppio coprigiunto (7)]: impiega due coprigiunti uguali e opposti saldati su entrambi i lati; aumenta lo spessore complessivo ma garantisce simmetria di comportamento e bilanciamento delle masse.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schemi in sezione trasversale di sette tipi di giunti saldati numerati: (1) giunto testa a testa, (2) giunto a T a completa penetrazione, (3) giunto a T con cordone d'angolo, (4) giunto a croce con cordoni d'angolo, (5) giunto a sovrapposizione, (6) giunto a semplice coprigiunto, (7) giunto a doppio coprigiunto]])
+7. #strong[Giunto a doppio coprigiunto (7)]: impiega due coprigiunti uguali e opposti saldati su entrambi i lati; aumenta lo spessore complessivo ma garantisce simmetria di comportamento e bilanciamento delle masse.],[#canvas(length: 1.2cm, {
+  import draw: *
+
+  // (1)
+  rect((0.95, 10.80), (2.75, 11.12), stroke: 0.9pt)
+  line((1.67, 11.12), (2.03, 11.12), (1.85, 10.80), close: true, fill: black, stroke: 0.9pt)
+  content((1.35, 11.33), text(size: 7.5pt)[(1)], anchor: "center")
+
+  // (2)
+  rect((0.95, 8.78), (2.75, 9.10), stroke: 0.9pt)
+  line((1.67, 10.30), (2.03, 10.30), (2.03, 9.26), (1.85, 9.10), (1.67, 9.26), close: true, stroke: 0.9pt)
+  line((1.49, 9.10), (1.81, 9.10), (1.67, 9.26), close: true, fill: black, stroke: 0.9pt)
+  line((1.89, 9.10), (2.21, 9.10), (2.03, 9.26), close: true, fill: black, stroke: 0.9pt)
+  content((1.30, 10.03), text(size: 7.5pt)[(2)], anchor: "center")
+
+  // (3)
+  rect((0.95, 6.76), (2.75, 7.08), stroke: 0.9pt)
+  rect((1.67, 7.08), (2.03, 8.28), stroke: 0.9pt)
+  line((1.49, 7.08), (1.67, 7.08), (1.67, 7.26), close: true, fill: black, stroke: 0.9pt)
+  line((2.03, 7.08), (2.21, 7.08), (2.03, 7.26), close: true, fill: black, stroke: 0.9pt)
+  content((1.30, 8.01), text(size: 7.5pt)[(3)], anchor: "center")
+
+  // (4)
+  rect((0.95, 4.84), (2.75, 5.16), stroke: 0.9pt)
+  rect((1.67, 5.16), (2.03, 6.26), stroke: 0.9pt)
+  rect((1.67, 3.74), (2.03, 4.84), stroke: 0.9pt)
+  line((1.49, 5.16), (1.67, 5.16), (1.67, 5.34), close: true, fill: black, stroke: 0.9pt)
+  line((2.03, 5.16), (2.21, 5.16), (2.03, 5.34), close: true, fill: black, stroke: 0.9pt)
+  line((1.49, 4.84), (1.67, 4.84), (1.67, 4.66), close: true, fill: black, stroke: 0.9pt)
+  line((2.03, 4.84), (2.21, 4.84), (2.03, 4.66), close: true, fill: black, stroke: 0.9pt)
+  content((2.40, 5.90), text(size: 7.5pt)[(4)], anchor: "center")
+
+  // (5)
+  rect((0.45, 2.92), (2.25, 3.24), stroke: 0.9pt)
+  rect((1.45, 2.60), (3.25, 2.92), stroke: 0.9pt)
+  line((2.25, 2.92), (2.43, 2.92), (2.25, 3.10), close: true, fill: black, stroke: 0.9pt)
+  line((1.27, 2.92), (1.45, 2.92), (1.45, 2.74), close: true, fill: black, stroke: 0.9pt)
+  content((2.83, 3.13), text(size: 7.5pt)[(5)], anchor: "center")
+
+  // (6)
+  rect((0.00, 1.46), (1.77, 1.78), stroke: 0.9pt)
+  rect((1.93, 1.46), (3.70, 1.78), stroke: 0.9pt)
+  rect((0.95, 1.78), (2.75, 2.10), stroke: 0.9pt)
+  line((0.73, 1.78), (0.95, 1.78), (0.95, 2.00), close: true, fill: black, stroke: 0.9pt)
+  line((2.75, 1.78), (2.97, 1.78), (2.75, 2.00), close: true, fill: black, stroke: 0.9pt)
+  content((3.30, 2.01), text(size: 7.5pt)[(6)], anchor: "center")
+
+  // (7)
+  rect((0.00, 0.32), (1.77, 0.64), stroke: 0.9pt)
+  rect((1.93, 0.32), (3.70, 0.64), stroke: 0.9pt)
+  rect((0.95, 0.64), (2.75, 0.96), stroke: 0.9pt)
+  rect((0.95, 0.00), (2.75, 0.32), stroke: 0.9pt)
+  line((0.73, 0.64), (0.95, 0.64), (0.95, 0.86), close: true, fill: black, stroke: 0.9pt)
+  line((2.75, 0.64), (2.97, 0.64), (2.75, 0.86), close: true, fill: black, stroke: 0.9pt)
+  line((0.73, 0.32), (0.95, 0.32), (0.95, 0.10), close: true, fill: black, stroke: 0.9pt)
+  line((2.75, 0.32), (2.97, 0.32), (2.75, 0.10), close: true, fill: black, stroke: 0.9pt)
+  content((3.30, 0.87), text(size: 7.5pt)[(7)], anchor: "center")
+})])
 
 === Principali criteri per il progetto di giunti saldati ed esempi costruttivi
 Una corretta progettazione dei collegamenti saldati deve rispettare una serie di criteri geometrici e tecnologici volti a garantire eseguibilità, integrità strutturale e contenimento delle tensioni residue:
