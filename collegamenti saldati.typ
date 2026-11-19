@@ -1867,9 +1867,7 @@ Infine, oltre alla verifica statica del giunto e alla verifica a fatica secondo 
 
 $ Delta sigma lt.eq 1","5 f_y, quad Delta tau lt.eq frac(1","5 f_y, sqrt(3)) $
 
-== Lezione 11.3: Saldature (Collegamenti saldati) – Studio di carichi e tensioni
-
-=== Teoria
+== Saldature (Collegamenti saldati) – Studio di carichi e tensioni
 
 ==== Metodo cinematico per l'analisi delle sollecitazioni nel cordone d'angolo
 Per determinare quali componenti di tensione siano effettivamente sollecitate all'interno dei cordoni di saldatura che collegano due piastre in varie disposizioni relative, si applica un metodo di tipo cinematico. In prima approssimazione, il cordone di saldatura viene concepito come un vincolo che impedisce al pezzo saldato di muoversi sotto l'applicazione dei carichi e dei momenti esterni.
