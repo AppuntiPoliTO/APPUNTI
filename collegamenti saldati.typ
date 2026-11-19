@@ -43,7 +43,18 @@ Nel processo può essere impiegato o meno un #strong[materiale d'apporto], carat
 - saldatura #strong[per fusione];
 - saldatura #strong[a resistenza] (elettrica);
 - saldatura #strong[per pressione];
-- #strong[brasatura], in cui il materiale d'apporto ha un basso punto di fusione tale per cui il materiale base non fonde.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema in sezione di un giunto di testa composto da due elementi di materiale base accostati, separati centralmente da un cianfrino riempito dal cordone di saldatura evidenziato in nero]])
+- #strong[brasatura], in cui il materiale d'apporto ha un basso punto di fusione tale per cui il materiale base non fonde.],[#canvas(length: 1cm, {
+  import draw: *
+  line((-0.8, 1.0), (0.0, 0.0), (0.8, 1.0), close: true, fill: black, stroke: none)
+  arc((0.0, 0.0833), start: 48.89deg, stop: 131.11deg, radius: 1.2167, anchor: "origin", fill: black, stroke: 1pt)
+  circle((0.0, 0.0), radius: 0.05, fill: black, stroke: none)
+  line((-4.0, 0.0), (0.0, 0.0), (-0.8, 1.0), (-4.0, 1.0), close: true, stroke: 1pt)
+  line((0.0, 0.0), (4.0, 0.0), (4.0, 1.0), (0.8, 1.0), close: true, stroke: 1pt)
+  line((-1.0, 1.75), (-0.45, 1.28), mark: (end: ">"), stroke: 0.8pt)
+  content((-1.3, 1.95), text(size: 8.5pt)[cordone di saldatura], anchor: "west")
+  content((-2.2, 0.5), text(size: 8pt)[materiale base])
+  content((2.2, 0.5), text(size: 8pt)[materiale base])
+})])
 
 === Architettura delle tecnologie principali di saldatura
 Una prima classificazione generale distingue tra #strong[saldatura autogena] (in cui il materiale base partecipa alla fusione o subisce un passaggio di stato/giunzione sotto elevata pressione) e #strong[saldatura eterogenea].
