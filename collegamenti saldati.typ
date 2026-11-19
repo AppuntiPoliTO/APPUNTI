@@ -1867,6 +1867,3 @@ Infine, oltre alla verifica statica del giunto e alla verifica a fatica secondo 
 
 $ Delta sigma lt.eq 1","5 f_y, quad Delta tau lt.eq frac(1","5 f_y, sqrt(3)) $
 
-=== Esercizi
-
-Non sono presenti esercizi svolti in questa lezione.
