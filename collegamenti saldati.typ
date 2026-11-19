@@ -786,15 +786,9 @@ Il processo consente di saldare un'ampia gamma di materiali: acciai, acciai inos
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Il principale difetto del procedimento è la #strong[lentezza esecutiva], dovuta alla necessità di un controllo puntuale da parte dell'operatore, che lo rende inadatto a lavorazioni grossolane e rapide.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: a sinistra, schema generale del processo TIG con torcia, elettrodo infusibile, atmosfera protettiva, generatore e pezzi da saldare; a destra, fotografia dell'operazione manuale TIG con torcia e bacchetta d'apporto]])
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema costruttivo in sezione della torcia TIG e della zona di saldatura, con indicazione di: torcia TIG, diffusore, entrata acqua fredda, conduttore elettrico, ingresso gas di protezione, uscita acqua calda, uscita gas di protezione, elettrodo di tungsteno, arco, bacchetta di saldatura, atmosfera protettiva, metallo base e metallo solidificato]])
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Tra le applicazioni tipiche figurano la riparazione di stampi (anche per materie plastiche), il settore automotive e la costruzione di #strong[scambiatori di calore a fascio tubiero], dove la saldatura TIG — spesso eseguita con sistemi automatizzati — permette di fissare ciascun tubo nei fori relativamente piccoli della piastra tubiera garantendo tenuta e precisione senza occludere i condotti. A seconda delle esigenze di tenuta, esistono diversi posizionamenti dei tubi nei fori della piastra, alcuni dei quali prevedono anche la saldatura interna al foro.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: esempio di applicazione della saldatura TIG agli scambiatori di calore, comprendente fotografie del fascio tubiero, della piastra tubiera e della testa di saldatura automatizzata, accompagnate dallo schema in sezione di sei diversi possibili posizionamenti dei tubi nei fori della piastra (indicati dalle lettere a, b, c, d, e, f), con le soluzioni d, e, f evidenziate come configurazioni a migliore tenuta]])
+
+Tra le applicazioni tipiche figurano la riparazione di stampi (anche per materie plastiche), il settore automotive e la costruzione di #strong[scambiatori di calore a fascio tubiero], dove la saldatura TIG — spesso eseguita con sistemi automatizzati — permette di fissare ciascun tubo nei fori relativamente piccoli della piastra tubiera garantendo tenuta e precisione senza occludere i condotti. A seconda delle esigenze di tenuta, esistono diversi posizionamenti dei tubi nei fori della piastra, alcuni dei quali prevedono anche la saldatura interna al foro.
 
 === Terminologia e architettura del giunto saldato
 Il #strong[giunto saldato] è la regione in cui avviene il collegamento dei pezzi mediante saldatura. Nella sua geometria si definiscono i seguenti elementi:
