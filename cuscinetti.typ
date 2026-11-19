@@ -16,7 +16,7 @@
 
 #set heading(numbering: "1.")
 
-= *Cuscinetti a corpi volventi *
+= *Cuscinetti a corpi volventi*
 
 == Introduzione e Funzione dei Cuscinetti
 #grid(

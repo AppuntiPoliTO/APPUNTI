@@ -15,7 +15,7 @@
 )
 #set heading(numbering: "1.")
 
-= Viti e Bulloni (Collegamenti filettati) – Serraggio
+= *Viti e Bulloni (Collegamenti filettati) – Serraggio*
 === Introduzione ai collegamenti filettati
 Tra gli elementi di base della costruzione delle macchine rivestono un ruolo fondamentale i collegamenti filettati, rappresentati principalmente da viti, bulloni e prigionieri. La loro utilità progettuale risiede nel fatto che realizzano un collegamento smontabile, ossia una giunzione che può essere aperta e chiusa ripetutamente. Ciò garantisce un facile accesso alle parti interne della macchina, risultando indispensabile per operazioni di diagnosi, verifica delle condizioni di usura o di affaticamento dei componenti e, più in generale, per gli interventi di manutenzione.
 
