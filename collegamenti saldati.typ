@@ -774,16 +774,12 @@ In funzione della modalità con cui si staccano le gocce di materiale d'apporto,
 
 === Saldatura TIG (Tungsten Inert Gas)
 #grid(
-  columns: 2,
+  columns: (1fr,1.6fr),
   gutter: 1em,
   [La saldatura TIG è un procedimento ad arco in cui il calore è generato da un arco elettrico che scocca tra un #strong[elettrodo infusibile in tungsteno] (che mantiene costanti lunghezza e diametro) e il pezzo da saldare, in atmosfera di gas inerte (Argon). L'arco fonde i lembi del pezzo mentre il materiale da riporto viene aggiunto manualmente dall'esterno mediante una bacchetta separata, avente caratteristiche paragonabili a quelle del materiale base. Per evitare pericolose inclusioni di tungsteno nel giunto, l'elettrodo non deve mai venire a contatto con il pezzo.
 
-Il processo consente di saldare un'ampia gamma di materiali: acciai, acciai inossidabili, acciai temperati, leghe di alluminio, magnesio e titanio. Le sue caratteristiche principali sono:
-- arco molto concentrato e facilmente controllabile;
-- elevata regolarità di fusione, con cordoni di altissima qualità e penetrazione;
-- trasferimento molto preciso del materiale d'apporto;
-- impiego praticamente universale.],
-  [#canvas(length: 1cm, {
+],
+  [#canvas(length: 0.8cm, {
   import draw: *
 
   // =========================================================
@@ -988,11 +984,12 @@ Il processo consente di saldare un'ampia gamma di materiali: acciai, acciai inos
   content((rx, 1.75), text(size: 8pt)[Metallo solidificato], anchor: "west")
 })],
 )
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Il principale difetto del procedimento è la #strong[lentezza esecutiva], dovuta alla necessità di un controllo puntuale da parte dell'operatore, che lo rende inadatto a lavorazioni grossolane e rapide.],[])
+Il processo consente di saldare un'ampia gamma di materiali: acciai, acciai inossidabili, acciai temperati, leghe di alluminio, magnesio e titanio. Le sue caratteristiche principali sono:
+- arco molto concentrato e facilmente controllabile;
+- elevata regolarità di fusione, con cordoni di altissima qualità e penetrazione;
+- trasferimento molto preciso del materiale d'apporto;
+- impiego praticamente universale.
+Il principale difetto del procedimento è la #strong[lentezza esecutiva], dovuta alla necessità di un controllo puntuale da parte dell'operatore, che lo rende inadatto a lavorazioni grossolane e rapide.
 
 
 
