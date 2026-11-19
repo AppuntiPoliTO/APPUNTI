@@ -360,10 +360,7 @@ In base alla composizione del rivestimento, si distinguono due principali tipolo
   gutter: 1em,
   [La saldatura ad arco sommerso è un procedimento autogeno per fusione in cui l'arco elettrico scocca tra un filo elettrodo fusibile, alimentato automaticamente, e il pezzo da saldare. L'arco risulta completamente sommerso e invisibile, poiché la zona di saldatura è ricoperta da un #strong[flusso] granulare (simile a polvere/sabbia) che svolge le medesime funzioni protettive della scoria nella saldatura a elettrodo rivestito, proteggendo il bagno dall'ossidazione dell'aria.
 
-Un impianto ad arco sommerso è costituito dai seguenti elementi:
-- un #strong[generatore di corrente] (analogo a quello per elettrodo rivestito) di elevato amperaggio ($1000 "-" 3000 "A"$);
-- un #strong[traina-filo] che alimenta automaticamente il filo di apporto, di diametro almeno pari a $2 "mm"$;
-- una #strong[tramoggia] contenente il flusso di protezione, che viene depositato anteriormente all'elettrodo tramite un ugello di alimentazione e raccolto/aspirato posteriormente dopo il passaggio, lasciando il cordone pulito.],
+],
   [#canvas(length: 1cm, {
   import draw: *
 
@@ -482,7 +479,10 @@ Un impianto ad arco sommerso è costituito dai seguenti elementi:
   content((-2.30, -2.00), text(size: 8pt)[cordone], anchor: "north-east")
 })],
 )
-
+Un impianto ad arco sommerso è costituito dai seguenti elementi:
+- un #strong[generatore di corrente] (analogo a quello per elettrodo rivestito) di elevato amperaggio ($1000 "-" 3000 "A"$);
+- un #strong[traina-filo] che alimenta automaticamente il filo di apporto, di diametro almeno pari a $2 "mm"$;
+- una #strong[tramoggia] contenente il flusso di protezione, che viene depositato anteriormente all'elettrodo tramite un ugello di alimentazione e raccolto/aspirato posteriormente dopo il passaggio, lasciando il cordone pulito.
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
