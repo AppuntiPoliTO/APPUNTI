@@ -25,12 +25,12 @@ Il cedimento a fatica si verifica in modo silente, senza macro-deformazioni plas
 
 il danneggiamento a fatica progredisce all'interno del materiale senza manifestazioni esterne visibili fino al collasso finale, che risulta repentino, irreversibile e spesso catastrofico per l'intero sistema (come storicamente evidenziato da gravi incidenti in ambito ferroviario e aeronautico).
 
-// [DA SLIDE]
+
 Nello specifico, l'applicazione di *carichi non costanti nel tempo*  e in particolare di sollecitazioni aventi un andamento temporale *ciclico* (o più in generale variabile)  può condurre alla rottura del componente anche quando la tensione massima raggiunta $sigma_"max"$ rimane sensibilmente inferiore:
 - al *carico unitario di snervamento* del materiale, nel caso di comportamento *duttile*;
 - al *carico unitario di rottura* del materiale, nel caso di comportamento *fragile*.
 
-// [DA AUDIO]
+
 Per un materiale metallico *duttile*, il fenomeno della fatica introduce dunque una duplice anomalia rispetto al comportamento statico:
 1. *Abbassamento della soglia di cedimento:* la rottura si verifica per ampiezze di sollecitazione che interessano la regione iniziale *lineare elastica* del diagramma tensione-deformazione ($sigma$-$epsilon$), ben al di sotto della tensione di snervamento statico ($sigma_"max" < sigma_s$).
 2. *Inversione del comportamento meccanico a rottura:* pur essendo il materiale intrinsecamente duttile, sotto carichi affaticanti esso non sviluppa una riserva di plasticizzazione macroscopica e manifesta una *frattura di carattere fragile*.
@@ -38,7 +38,7 @@ Per un materiale metallico *duttile*, il fenomeno della fatica introduce dunque 
 Si parla pertanto di *cedimento per fatica* nel materiale (termine introdotto per analogia con l'affaticamento fisico umano) e, conseguentemente, di *carichi e condizioni affaticanti*.
 
 
-// [DA AUDIO]
+
 === Classificazione temporale dei carichi affaticanti
 
 Dal punto di vista della storia temporale della sollecitazione, i carichi dinamici responsabili della fatica possono essere suddivisi in tre categorie:
@@ -46,7 +46,7 @@ Dal punto di vista della storia temporale della sollecitazione, i carichi dinami
 2. *Carichi periodici ad ampiezza variabile (fatica periodica complessa):* il segnale presenta localmente fluttuazioni irregolari con picchi di ampiezza differente, ma l'intero blocco di sollecitazioni si ripete ciclicamente nel tempo con un periodo caratteristico individuabile. In questo caso è possibile scomporre la storia di carico nella sovrapposizione di più segnali elementari ad ampiezza costante, estendendo i risultati del modello armonico di base (mediante ipotesi di danneggiamento cumulativo).
 3. *Carichi aleatori o caotici :* la sollecitazione varia nel tempo in modo totalmente irregolare e non periodico (la storia tensionale non ripercorre mai il medesimo andamento). La caratterizzazione di tali carichi non può avvalersi di funzioni deterministiche, ma richiede necessariamente metodi statistici e probabilistici.
 
-// [DA SLIDE]
+
 === Condizioni di innesco ed esempio classico della flessione rotante
 
 Per comprendere correttamente quando un organo meccanico è soggetto a fatica, è fondamentale osservare lo stato di sollecitazione dal punto di vista *locale del singolo elemento di materiale* e non soltanto dal punto di vista del sistema di riferimento fisso esterno. Le condizioni che determinano l'instaurarsi della fatica sono infatti due:
@@ -62,7 +62,7 @@ $ sigma(t) = sigma_"max" sin(omega t) $
 
 
 
-// [DA SLIDE]
+
 #figure(
   include "figs/fatica/fatica-fig01.typ",
 )
@@ -71,7 +71,7 @@ La condizione di sollecitazione dell'assale di Wöhler viene riprodotta in labor
 
  *Influenza della frequenza di carico e fatica termomeccanica:* in condizioni di prova corrette, la rottura a fatica di un provino in acciaio richiede tipicamente milioni di cicli (corrispondenti a molte ore di funzionamento) senza che si osservino vibrazioni o alterazioni macroscopiche fino all'istante del cedimento. Se tuttavia la velocità angolare di rotazione viene incrementata eccessivamente (frequenza di applicazione del carico troppo elevata), lo *smorzamento strutturale interno* del materiale genera una dissipazione energetica accelerata che non riesce a essere smaltita verso l'esterno. Ciò produce un forte riscaldamento localizzato nel tratto centrale del provino (fino all'incandescenza visibile), instaurando un forte gradiente termico nel tempo: alla fatica meccanica si sovrappone così un fenomeno di *fatica termica*, che degrada drasticamente le proprietà del materiale e conduce al collasso in pochi secondi.
 
-// [DA SLIDE]
+
   *Influenza degli intagli:* Nella progettazione a fatica è fondamentale considerare che la presenza di variazioni di sezione molto brusche nel componente — denominate *intagli* (quali spallamenti a raggio ridotto, fori, gole o cave) — genera severi picchi locali di tensione e influenza fortemente (riducendola in misura drastica) la resistenza a fatica dei componenti.
  la fatica è per sua natura un fenomeno di innesco *localizzato*, la concentrazione locale delle tensioni prodotta dalla discontinuità geometrica agisce esattamente nella regione superficiale in cui tende a nucleare il danno, accelerandone drasticamente la formazione e la successiva propagazione.
 
@@ -111,13 +111,13 @@ A partire da questi valori estremi, la normativa definisce due parametri derivat
 Possiamo inoltre definire l'escursione tensionale totale (o campo di tensione) come la distanza tra il picco massimo e il minimo:
 $ Delta sigma = sigma_"max" - sigma_"min" = 2 sigma_a $
 
-// [DA AUDIO]
+
  nella letteratura moderna e nelle normative tecniche vigenti si preferisce tuttavia esprimere i calcoli e i diagrammi di resistenza direttamente in funzione della tensione alternata $sigma_a$ (pari alla semiampiezza picco-picco dell'onda armonica) e della tensione media $sigma_m$ (che rappresenta la componente statica o *bias* del segnale).
 
 Un parametro adimensionale fondamentale per classificare la severità del ciclo è il rapporto di tensione $R$, definito come:
 $ R = sigma_"min" / sigma_"max" $
 
-// [DA SLIDE]
+
 Accanto al rapporto di tensione $R$, si definisce anche il *rapporto di ampiezza* $R_a$, dato dal rapporto tra la tensione alternata e la tensione media:
 $ R_a = sigma_a / sigma_m $
 
@@ -127,7 +127,7 @@ $ R_a = frac(sigma_a, sigma_m) = frac(frac(sigma_"max" - sigma_"min", 2), frac(s
 Analogamente, esprimendo $sigma_"min" = sigma_m - sigma_a$ e $sigma_"max" = sigma_m + sigma_a$ nella definizione di $R$ e dividendo numeratore e denominatore per $sigma_m$, si ottiene la relazione inversa:
 $ R = frac(sigma_"min", sigma_"max") = frac(sigma_m - sigma_a, sigma_m + sigma_a) = frac(1 - frac(sigma_a, sigma_m), 1 + frac(sigma_a, sigma_m)) = frac(1 - R_a, 1 + R_a) $
 #pagebreak()
-// [DA AUDIO]
+
 == Classificazione dei cicli di sollecitazione notevoli
 
 In funzione della posizione del ciclo di tensione rispetto all'asse temporale (e dunque dei valori assunti da $sigma_m$, $sigma_"min"$, $sigma_"max"$ e dal rapporto di ciclo $R$), la letteratura tecnica identifica alcune configurazioni notevoli di frequente impiego progettuale e sperimentazione:
@@ -181,7 +181,7 @@ $ sigma_"max" = 0, quad sigma_"min" = -2 sigma_a = 2 sigma_m < 0, quad R = lim_(
  *Fase 1: Nucleazione (o Innesco)* \
   Si innesca sempre a livello superficiale. L'azione dei carichi dinamici produce scorrimenti microscopici che generano ondulazioni, intrusioni ed estrusioni. Queste alterano la regolarità microscopica agendo come micro-intagli, che concentrano le tensioni e fessurano il materiale.
 
-  // [DA SLIDE]
+
   _Meccanismo microstrutturale e paradosso elastico-plastico:_ Sotto l'azione di una sollecitazione ciclica $Delta F$, anche quando la tensione nominale è ampiamente inferiore al limite di snervamento del materiale, alcuni *grani cristallini superficiali favorevolmente orientati* reagiscono generando e muovendo *dislocazioni*. 
 #grid(
   columns: (1fr, 1fr),
@@ -193,7 +193,7 @@ $ sigma_"max" = 0, quad sigma_"min" = -2 sigma_a = 2 sigma_m < 0, quad R = lim_(
   Si tratta quindi di fenomeni di *natura plastica, ma strettamente localizzati* a livello microscopico, tanto che il comportamento globale (macroscopico) del componente rimane *ancora pienamente elastico*. Queste micro-irregolarità geometriche agiscono come severi innalzatori di tensione superficiali, rendendo la superficie incline alla fessurazione (innesco della micro-cricca).
 ],[#figure(
     include "figs/fatica/fatica-fig07.typ")])
-  // [DA AUDIO]
+
   Tale disordine microstrutturale si genera anche qualora la superficie metallica di partenza sia *perfettamente liscia e lappata a specchio* (priva di rugosità o difetti iniziali). Inoltre, l'effetto di concentrazione tensionale non è uniforme lungo il profilo ondulato: mentre sugli *apici* delle estrusioni sporgenti l'innalzamento tensionale è poco sensibile, sul fondo delle *gole* (intrusioni e rientranze a spigolo vivo) si crea un vero e proprio *intaglio occulto* fortemente localizzato, nel quale l'intensificazione delle tensioni supera localmente la resistenza del materiale provocando la micro-fessurazione iniziale.
 
   
@@ -202,7 +202,7 @@ $ sigma_"max" = 0, quad sigma_"min" = -2 sigma_a = 2 sigma_m < 0, quad R = lim_(
   Consiste nel progressivo avanzamento della microfrattura all'interno del materiale. La superficie risultante è tipicamente caratterizzata da due elementi:
   - Presenza di _"linee di spiaggia"_ (beachmarks), segni fisici permanenti che mappano le pause o le variazioni macroscopiche del fronte di scorrimento.
   - Una morfologia liscia, dovuta al continuo "martellamento" tra i lembi della cricca che si aprono e si chiudono durante le inversioni del carico, appiattendo le asperità.
-    // [DA AUDIO]
+
     L'avanzamento e l'avvicinamento ripetuto dei due lembi della frattura produce un *gradiente di levigatezza e lucentezza* lungo la superficie di propagazione: la regione immediatamente adiacente all'innesco, essendosi fessurata per prima, subisce il maggior numero complessivo di cicli di martellamento e appare quindi *estremamente vellutata al tatto e molto lucente*.
   All'apice della cricca si sviluppano altissime tensioni che incrudiscono localmente il materiale (blunting). I cicli successivi devono accumulare maggiore energia per lacerare questa "bolla" resistente, causando continui aggiustamenti nella direzione di propagazione, facendo ruotare localmente la direzione delle tensioni tangenti all'apice, producendo arrotondamenti dell'apice stesso e deviazioni microscopiche del percorso di taglio.
 
@@ -213,10 +213,10 @@ $ sigma_"max" = 0, quad sigma_"min" = -2 sigma_a = 2 sigma_m < 0, quad R = lim_(
 - *Fase 3: Rottura Finale Instabile (Schianto)* \
   Rappresenta il collasso istantaneo. La progressione ciclica erode la sezione resistente fino a renderla troppo esigua per sopportare le sollecitazioni. Superato il limite di tenacità, la propagazione diventa subitanea. Questa superficie si presenta *ruvida, scabrosa e fragile*, poiché distaccandosi istantaneamente non subisce il martellamento tipico della fase precedente.
 
-  // [DA AUDIO]
+
   Poiché in quest'ultima fase la sezione residua è ormai insufficiente e la tensione locale supera il limite di resistenza statica oltre che la tenacità a frattura, i due lembi si separano in un unico istante senza alcuna possibilità di richiudersi: ne consegue che la *linea di frontiera* (demarcazione) tra la regione martellata e la regione scabrosa di rottura finale risulta sempre *estremamente netta*.
 
-  // [DA SLIDE]
+
   Sebbene la rottura finale presenti tipicamente un *aspetto fragile* anche nei materiali duttili (a causa della severa triassialità delle tensioni all'apice della cricca e della rapidità del cedimento che impedisce la strizione globale), in prossimità dei bordi liberi esterni della zona di schianto possono formarsi dei *bordi di scorrimento a taglio* (*shear lips*, inclinati a $45^circ$) o porzioni di rottura finale duttile (per coalescenza di microvuoti) qualora lo stato di tensione piana locale consenta uno scorrimento plastico finale prima del distacco.
 
 *Anatomia completa di una superficie di frattura a fatica:* Osservando macroscopicamente la sezione di un componente ceduto a fatica (ad esempio soggetto a trazione-compressione o flessione), si individuano sei regioni caratteristiche:
