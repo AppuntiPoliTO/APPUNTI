@@ -778,7 +778,7 @@ Rispetto all'arco sommerso, l'assenza del flusso solido da distribuire e recuper
 #grid(
   columns: (1fr,1.6fr),
   gutter: 1em,
-  [La saldatura TIG è un procedimento ad arco in cui il calore è generato da un arco elettrico che scocca tra un #strong[elettrodo infusibile in tungsteno] (che mantiene costanti lunghezza e diametro) e il pezzo da saldare, in atmosfera di gas inerte (Argon). L'arco fonde i lembi del pezzo mentre il materiale da riporto viene aggiunto manualmente dall'esterno mediante una bacchetta separata, avente caratteristiche paragonabili a quelle del materiale base. Per evitare pericolose inclusioni di tungsteno nel giunto, l'elettrodo non deve mai venire a contatto con il pezzo.
+  [La saldatura TIG è un procedimento ad arco in cui il calore è generato da un arco elettrico che scocca tra un #strong[elettrodo infusibile in tungsteno] (che mantiene costanti lunghezza e diametro) e il pezzo da saldare, in atmosfera di gas inerte (Argon). L'arco fonde i lembi del pezzo mentre il materiale da riporto viene aggiunto manualmente dall'esterno mediante una bacchetta separata, avente caratteristiche paragonabili a quelle del materiale base. 
 
 ],
   [#canvas(length: 0.8cm, {
@@ -986,6 +986,7 @@ Rispetto all'arco sommerso, l'assenza del flusso solido da distribuire e recuper
   content((rx, 1.75), text(size: 8pt)[Metallo solidificato], anchor: "west")
 })],
 )
+Per evitare pericolose inclusioni di tungsteno nel giunto, l'elettrodo non deve mai venire a contatto con il pezzo.
 Il processo consente di saldare un'ampia gamma di materiali: acciai, acciai inossidabili, acciai temperati, leghe di alluminio, magnesio e titanio. Le sue caratteristiche principali sono:
 - arco molto concentrato e facilmente controllabile;
 - elevata regolarità di fusione, con cordoni di altissima qualità e penetrazione;
