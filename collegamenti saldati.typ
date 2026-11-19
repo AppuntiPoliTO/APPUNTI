@@ -1091,7 +1091,85 @@ Le #strong[tensioni residue] sono tensioni presenti nel giunto al termine del pr
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[In un giunto saldato si instaura tipicamente uno stato di coazione caratterizzato da:
 - #strong[tensioni residue di trazione] nella zona del cordone di saldatura, con il punto più sollecitato localizzato a centro cordone;
-- #strong[tensioni residue di compressione] nelle zone adiacenti del metallo base.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: due schemi relativi alle tensioni residue nel cordone: a sinistra, vista tridimensionale di un giunto piano di testa con frecce che mostrano tensioni residue di trazione lungo il cordone e tensioni residue di compressione nel metallo base adiacente; a destra, confronto bidimensionale tra la configurazione di dilatazione libera e deformazione delle lamiere con cordone caldo e la configurazione di contrazione libera del cordone e stato di coazione dopo il raffreddamento, con sistema di assi cartesiani $x, y$, componenti di tensione $sigma_x$ e $sigma_y$ e indicazione del punto più sollecitato a centro cordone]])
+- #strong[tensioni residue di compressione] nelle zone adiacenti del metallo base.],[#canvas(length: 0.8cm, {
+  import draw: *
+
+  // Facce del blocco
+  line((-2.50, 1.25), (-0.40, 2.30), (1.85, 1.05), (-0.25, 0.00), close: true, fill: luma(248), stroke: 0.9pt)
+  line((-2.50, 1.25), (-0.25, 0.00), (-0.25, -1.90), (-2.50, -0.65), close: true, fill: luma(242), stroke: 0.9pt)
+  line((-0.25, 0.00), (1.85, 1.05), (1.85, -0.85), (-0.25, -1.90), close: true, fill: white, stroke: 0.9pt)
+
+  // Cordone di saldatura superiore (copre il bordo posteriore)
+  merge-path(close: true, fill: luma(236), stroke: 0.85pt, {
+    bezier((-1.80, 1.60), (-1.10, 1.95), (-1.66, 1.91), (-1.24, 2.12))
+    line((-1.10, 1.95), (1.15, 0.70))
+    bezier((1.15, 0.70), (0.45, 0.35), (1.01, 0.87), (0.59, 0.66))
+    line((0.45, 0.35), (-1.80, 1.60))
+  })
+
+  // Striature del cordone
+  for i in range(1, 12) {
+    let t = i / 12.0
+    let p0 = (-1.80 + t * 2.25, 1.60 - t * 1.25)
+    let p1 = (-1.10 + t * 2.25, 1.95 - t * 1.25)
+    let c0 = (p0.at(0) + 0.14, p0.at(1) + 0.31)
+    let c1 = (p1.at(0) - 0.14, p1.at(1) + 0.17)
+    bezier(p0, p1, c0, c1, stroke: 0.4pt + luma(140))
+  }
+
+  // Sezione trasversale a X del cordone (con sovrametallo superiore e inferiore)
+  merge-path(close: true, fill: luma(230), stroke: 0.85pt, {
+    bezier((0.45, 0.35), (1.15, 0.70), (0.59, 0.66), (1.01, 0.87))
+    line((1.15, 0.70), (0.86, -0.395), (1.15, -1.20))
+    bezier((1.15, -1.20), (0.45, -1.55), (1.01, -1.40), (0.59, -1.61))
+    line((0.45, -1.55), (0.74, -0.455), (0.45, 0.35))
+  })
+
+  // Tratteggio nella sezione del cordone
+  line((0.65, -0.21), (0.87, -0.36), stroke: 0.45pt + luma(120))
+  line((0.55, 0.06), (0.91, -0.19), stroke: 0.45pt + luma(120))
+  line((0.46, 0.33), (0.96, -0.02), stroke: 0.45pt + luma(120))
+  line((0.60, 0.43), (1.00, 0.15), stroke: 0.45pt + luma(120))
+  line((0.77, 0.51), (1.05, 0.32), stroke: 0.45pt + luma(120))
+  line((0.94, 0.59), (1.09, 0.48), stroke: 0.45pt + luma(120))
+  line((0.70, -0.59), (1.01, -0.81), stroke: 0.45pt + luma(120))
+  line((0.66, -0.76), (1.10, -1.07), stroke: 0.45pt + luma(120))
+  line((0.61, -0.93), (1.06, -1.24), stroke: 0.45pt + luma(120))
+  line((0.57, -1.10), (0.90, -1.33), stroke: 0.45pt + luma(120))
+  line((0.52, -1.27), (0.73, -1.41), stroke: 0.45pt + luma(120))
+  line((0.48, -1.44), (0.56, -1.49), stroke: 0.45pt + luma(120))
+
+  // Tensioni di trazione nel cordone (frecce uscenti)
+  line((-0.88, 1.63), (0.25, 1.00), mark: (start: "stealth", end: "stealth", fill: black, scale: 0.85), stroke: 1.2pt)
+
+  line((0.80, -0.06), (0.80, 0.42), mark: (start: "stealth", end: "stealth", fill: black, scale: 0.5), stroke: 0.75pt)
+  line((0.61, 0.085), (0.99, 0.275), mark: (start: "stealth", end: "stealth", fill: black, scale: 0.5), stroke: 0.75pt)
+
+  line((0.80, -1.26), (0.80, -0.78), mark: (start: "stealth", end: "stealth", fill: black, scale: 0.5), stroke: 0.75pt)
+  line((0.61, -1.115), (0.99, -0.925), mark: (start: "stealth", end: "stealth", fill: black, scale: 0.5), stroke: 0.75pt)
+
+  // Tensioni di compressione nel metallo base (frecce entranti)
+  line((-1.70, 1.18), (-1.12, 0.86), mark: (end: "stealth", fill: white, scale: 0.7), stroke: 0.8pt)
+  line((-0.44, 0.48), (-1.02, 0.80), mark: (end: "stealth", fill: white, scale: 0.7), stroke: 0.8pt)
+
+  line((-0.30, 1.88), (0.28, 1.56), mark: (end: "stealth", fill: white, scale: 0.7), stroke: 0.8pt)
+  line((0.96, 1.18), (0.38, 1.50), mark: (end: "stealth", fill: white, scale: 0.7), stroke: 0.8pt)
+
+  for pos in ((0.12, -0.30), (0.12, -1.25), (1.48, 0.40), (1.48, -0.55)) {
+    let (cx, cy) = pos
+    line((cx, cy + 0.22), (cx, cy + 0.03), mark: (end: "stealth", fill: white, scale: 0.45), stroke: 0.65pt)
+    line((cx, cy - 0.22), (cx, cy - 0.03), mark: (end: "stealth", fill: white, scale: 0.45), stroke: 0.65pt)
+    line((cx - 0.18, cy - 0.09), (cx - 0.025, cy - 0.0125), mark: (end: "stealth", fill: white, scale: 0.45), stroke: 0.65pt)
+    line((cx + 0.18, cy + 0.09), (cx + 0.025, cy + 0.0125), mark: (end: "stealth", fill: white, scale: 0.45), stroke: 0.65pt)
+  }
+
+  // Etichette e richiami
+  line((-1.40, 2.55), (-0.95, 1.80), mark: (end: "stealth", fill: red, scale: 0.75), stroke: 0.9pt + red)
+  content((-1.40, 2.62), text(size: 8.5pt)[tensioni residue di trazione nel cordone], anchor: "south")
+
+  line((2.20, 1.50), (0.85, 1.30), mark: (end: "stealth", fill: red, scale: 0.75), stroke: 0.9pt + red)
+  content((2.25, 1.50), text(size: 8.5pt)[tensioni residue di compressione\ nel metallo base], anchor: "west")
+})])
 
 #grid(
   columns: (1fr, 1fr),
