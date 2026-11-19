@@ -355,12 +355,133 @@ In base alla composizione del rivestimento, si distinguono due principali tipolo
 - #strong[Elettrodi basici]: il rivestimento è composto da ossidi di ferro, ferroleghe di manganese ($"Mn"$) e silicio ($"Si"$), silicati e soprattutto carbonati di calcio e magnesio, con l'aggiunta di fluoruro di calcio (fluorite) per facilitarne la fusione. Sono gli unici rivestimenti in grado di sopportare elevate temperature di essiccazione (fino a circa $400 degree "C"$), garantendo la quasi totale eliminazione dell'idrogeno e quindi dell'acqua. Risultano pertanto più versatili e universalmente impiegati nelle saldature strutturali importanti.
 
 === Saldatura ad arco sommerso
-La saldatura ad arco sommerso è un procedimento autogeno per fusione in cui l'arco elettrico scocca tra un filo elettrodo fusibile, alimentato automaticamente, e il pezzo da saldare. L'arco risulta completamente sommerso e invisibile, poiché la zona di saldatura è ricoperta da un #strong[flusso] granulare (simile a polvere/sabbia) che svolge le medesime funzioni protettive della scoria nella saldatura a elettrodo rivestito, proteggendo il bagno dall'ossidazione dell'aria.
+#grid(
+  columns: 2,
+  gutter: 1em,
+  [La saldatura ad arco sommerso è un procedimento autogeno per fusione in cui l'arco elettrico scocca tra un filo elettrodo fusibile, alimentato automaticamente, e il pezzo da saldare. L'arco risulta completamente sommerso e invisibile, poiché la zona di saldatura è ricoperta da un #strong[flusso] granulare (simile a polvere/sabbia) che svolge le medesime funzioni protettive della scoria nella saldatura a elettrodo rivestito, proteggendo il bagno dall'ossidazione dell'aria.
 
 Un impianto ad arco sommerso è costituito dai seguenti elementi:
 - un #strong[generatore di corrente] (analogo a quello per elettrodo rivestito) di elevato amperaggio ($1000 "-" 3000 "A"$);
 - un #strong[traina-filo] che alimenta automaticamente il filo di apporto, di diametro almeno pari a $2 "mm"$;
-- una #strong[tramoggia] contenente il flusso di protezione, che viene depositato anteriormente all'elettrodo tramite un ugello di alimentazione e raccolto/aspirato posteriormente dopo il passaggio, lasciando il cordone pulito.
+- una #strong[tramoggia] contenente il flusso di protezione, che viene depositato anteriormente all'elettrodo tramite un ugello di alimentazione e raccolto/aspirato posteriormente dopo il passaggio, lasciando il cordone pulito.],
+  [#canvas(length: 1cm, {
+  import draw: *
+
+  line((-3.0, 0.09), (0.8, 1.42), (4.2, 0.23), (0.4, -1.1), close: true, fill: white, stroke: none)
+  line((-3.0, 0.09), (0.4, -1.1), (0.4, -1.65), (-3.0, -0.46), close: true, fill: gray.transparentize(90%), stroke: none)
+  line((0.4, -1.1), (4.2, 0.23), (4.2, -0.32), (0.4, -1.65), close: true, fill: gray.transparentize(85%), stroke: none)
+
+  line((-3.0, 0.09), (0.8, 1.42), (4.2, 0.23), (0.4, -1.1), close: true, stroke: 1pt)
+  line((-3.0, 0.09), (-3.0, -0.46), (0.4, -1.65), (4.2, -0.32), (4.2, 0.23), stroke: 1pt)
+  line((0.4, -1.1), (0.4, -1.65), stroke: 1pt)
+
+  line((-2.95, 0.07), (-2.73, -0.55), stroke: 0.45pt)
+  line((-2.67, -0.03), (-2.45, -0.65), stroke: 0.45pt)
+  line((-2.39, -0.12), (-2.17, -0.75), stroke: 0.45pt)
+  line((-2.11, -0.22), (-1.89, -0.85), stroke: 0.45pt)
+  line((-1.83, -0.32), (-1.61, -0.95), stroke: 0.45pt)
+
+  line((-0.90, -0.65), (-0.68, -1.27), stroke: 0.45pt)
+  line((-0.62, -0.74), (-0.40, -1.37), stroke: 0.45pt)
+  line((-0.34, -0.84), (-0.12, -1.47), stroke: 0.45pt)
+  line((-0.06, -0.94), (0.16, -1.57), stroke: 0.45pt)
+  line((0.18, -1.02), (0.40, -1.65), stroke: 0.45pt)
+
+  line((0.65, -1.01), (0.43, -1.64), stroke: 0.45pt)
+  line((0.97, -0.90), (0.75, -1.53), stroke: 0.45pt)
+  line((1.29, -0.79), (1.07, -1.42), stroke: 0.45pt)
+  line((1.61, -0.68), (1.39, -1.30), stroke: 0.45pt)
+  line((1.93, -0.56), (1.71, -1.19), stroke: 0.45pt)
+  line((2.25, -0.45), (2.03, -1.08), stroke: 0.45pt)
+  line((2.57, -0.34), (2.35, -0.97), stroke: 0.45pt)
+  line((2.89, -0.23), (2.67, -0.86), stroke: 0.45pt)
+  line((3.21, -0.12), (2.99, -0.74), stroke: 0.45pt)
+  line((3.53, -0.01), (3.31, -0.63), stroke: 0.45pt)
+  line((3.85, 0.11), (3.63, -0.52), stroke: 0.45pt)
+  line((4.17, 0.22), (3.95, -0.41), stroke: 0.45pt)
+
+  bezier((-1.65, -0.38), (-0.95, -0.63), (-1.65, -0.98), (-0.95, -1.12), fill: gray.transparentize(45%), stroke: 0.9pt)
+  line((-1.52, -0.43), (-1.45, -0.75), stroke: 0.45pt)
+  line((-1.36, -0.48), (-1.28, -0.88), stroke: 0.45pt)
+  line((-1.20, -0.54), (-1.12, -0.84), stroke: 0.45pt)
+
+  line((-1.60, -0.40), (0.05, 0.18), (0.55, 0.00), (-1.00, -0.61), close: true, fill: black.transparentize(25%), stroke: 0.8pt)
+  bezier((-1.60, -0.40), (-1.00, -0.61), (-1.42, -0.36), (-1.18, -0.44), fill: black.transparentize(25%), stroke: 0.8pt)
+
+  bezier((-1.15, 0.56), (1.05, -0.21), (-0.45, 1.15), (0.75, 0.95), fill: gray.transparentize(82%), stroke: none)
+  bezier((1.05, -0.21), (2.48, 0.32), (1.75, -0.15), (2.40, 0.05), fill: gray.transparentize(82%), stroke: none)
+  bezier((2.48, 0.32), (-1.15, 0.56), (2.30, 1.05), (0.20, 1.15), fill: gray.transparentize(82%), stroke: none)
+  line((-1.15, 0.56), (1.05, -0.21), (2.48, 0.32), close: true, fill: gray.transparentize(82%), stroke: none)
+
+  bezier((-1.15, 0.56), (1.05, -0.21), (-0.35, 1.02), (0.65, 0.85), fill: gray.transparentize(65%), stroke: 0.9pt)
+  line((-1.15, 0.56), (0.30, 0.055), (1.05, -0.21), stroke: 0.8pt)
+
+  bezier((1.05, -0.21), (2.48, 0.32), (1.75, -0.15), (2.40, 0.05), stroke: 0.9pt)
+  bezier((2.48, 0.32), (1.29, 0.92), (2.52, 0.65), (1.95, 0.90), stroke: 0.9pt)
+  bezier((0.81, 0.95), (-1.15, 0.56), (0.15, 0.98), (-0.65, 0.78), stroke: 0.9pt)
+
+  circle((1.35, 0.12), radius: 0.02, fill: black, stroke: none)
+  circle((1.62, 0.02), radius: 0.02, fill: black, stroke: none)
+  circle((1.88, 0.15), radius: 0.02, fill: black, stroke: none)
+  circle((2.15, 0.26), radius: 0.02, fill: black, stroke: none)
+  circle((1.48, 0.34), radius: 0.02, fill: black, stroke: none)
+  circle((1.75, 0.42), radius: 0.02, fill: black, stroke: none)
+  circle((2.05, 0.48), radius: 0.02, fill: black, stroke: none)
+  circle((2.28, 0.38), radius: 0.02, fill: black, stroke: none)
+  circle((1.22, 0.48), radius: 0.02, fill: black, stroke: none)
+  circle((1.55, 0.62), radius: 0.02, fill: black, stroke: none)
+  circle((1.85, 0.66), radius: 0.02, fill: black, stroke: none)
+  circle((2.10, 0.60), radius: 0.02, fill: black, stroke: none)
+  circle((1.40, 0.72), radius: 0.02, fill: black, stroke: none)
+  circle((1.68, 0.78), radius: 0.02, fill: black, stroke: none)
+  circle((0.72, 0.65), radius: 0.02, fill: black, stroke: none)
+  circle((0.58, 0.42), radius: 0.02, fill: black, stroke: none)
+
+  line((0.30, 0.06), (0.30, 0.58), stroke: 1.2pt)
+
+  rect((0.19, 0.58), (0.41, 1.28), fill: white, stroke: none)
+  arc((0.30, 0.58), start: 180deg, stop: 360deg, radius: (0.11, 0.04), anchor: "origin", stroke: 0.9pt)
+  line((0.19, 0.58), (0.19, 1.28), stroke: 0.9pt)
+  line((0.41, 0.58), (0.41, 1.28), stroke: 0.9pt)
+
+  rect((0.04, 1.28), (0.56, 2.05), fill: white, stroke: none)
+  arc((0.30, 1.28), start: 180deg, stop: 360deg, radius: (0.26, 0.09), anchor: "origin", stroke: 1pt)
+  line((0.04, 1.28), (0.04, 2.05), stroke: 1pt)
+  line((0.56, 1.28), (0.56, 2.05), stroke: 1pt)
+  circle((0.30, 2.05), radius: (0.26, 0.09), fill: white, stroke: 1pt)
+
+  rect((0.81, 0.80), (1.29, 2.18), fill: white, stroke: none)
+  arc((1.05, 0.80), start: 180deg, stop: 360deg, radius: (0.24, 0.085), anchor: "origin", stroke: 1pt)
+  line((0.81, 0.80), (0.81, 2.18), stroke: 1pt)
+  line((1.29, 0.80), (1.29, 2.18), stroke: 1pt)
+  circle((1.05, 2.18), radius: (0.24, 0.085), fill: white, stroke: 1pt)
+
+  bezier((0.30, 2.05), (-0.35, 2.55), (0.20, 2.35), (-0.05, 2.50), mark: (end: ">"), stroke: 0.8pt)
+  bezier((1.05, 2.18), (1.65, 2.68), (1.15, 2.48), (1.38, 2.62), mark: (end: ">"), stroke: 0.8pt)
+
+  content((-0.42, 2.58), text(size: 8pt)[dispositivo per l'avanzamento del filo], anchor: "east")
+  content((1.72, 2.70), text(size: 8pt)[alla tramoggia], anchor: "west")
+
+  line((2.82, 1.52), (1.85, 0.55), stroke: 0.6pt)
+  circle((1.85, 0.55), radius: 0.03, fill: black, stroke: none)
+  content((2.85, 1.55), text(size: 8pt)[flusso], anchor: "south-west")
+
+  line((3.82, 0.87), (3.10, 0.15), stroke: 0.6pt)
+  circle((3.10, 0.15), radius: 0.03, fill: black, stroke: none)
+  content((3.85, 0.90), text(size: 8pt)[pezzo], anchor: "south-west")
+
+  line((-2.02, 1.32), (0.28, 0.32), stroke: 0.6pt)
+  content((-2.05, 1.35), text(size: 8pt)[filo], anchor: "east")
+
+  line((-0.42, -1.87), (-1.05, -0.46), stroke: 0.6pt)
+  circle((-1.05, -0.46), radius: 0.03, fill: black, stroke: none)
+  content((-0.40, -1.90), text(size: 8pt)[scoria], anchor: "north-west")
+
+  line((-2.27, -1.97), (-1.35, -0.74), stroke: 0.6pt)
+  circle((-1.35, -0.74), radius: 0.03, fill: black, stroke: none)
+  content((-2.30, -2.00), text(size: 8pt)[cordone], anchor: "north-east")
+})],
+)
 
 #grid(
   columns: (1fr, 1fr),
