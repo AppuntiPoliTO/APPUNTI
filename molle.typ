@@ -18,7 +18,8 @@
 
 #set heading(numbering: "1.")
 
-= *Molle - Generalità e Barra di Torsione*
+= *Molle*
+== *Molle - Generalità e Barra di Torsione*
 == Funzioni e Applicazioni delle Molle
 Le molle sono elementi di macchine caratterizzati da un'elevata capacità di deformarsi elasticamente sotto l'azione di un carico e di riassumere la loro conformazione originaria al cessare dell'applicazione del carico stesso. Questa caratteristica fondamentale permette il collegamento tra le parti di un sistema garantendo una sospensione elastica e adattativa. 
 
