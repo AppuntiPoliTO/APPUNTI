@@ -56,3 +56,4 @@
 #include "cuscinetti.typ"
 #include "molle.typ"
 #include "collegamenti filettati.typ"
+#include "collegamenti saldati.typ"
