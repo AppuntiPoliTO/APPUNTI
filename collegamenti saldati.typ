@@ -63,10 +63,7 @@ Le principali tecnologie si articolano come segue:
 - #strong[Saldatura autogena per fusione]:
   - #emph[alla fiamma] (ossiacetilenica, ossidrica, ecc., molto diffusa anche nelle operazioni di manutenzione degli impianti);
   - #emph[ad arco]: con elettrodi rivestiti; con elettrodo infusibile in atmosfera inerte (TIG); ad arco sommerso; a filo continuo (in atmosfera inerte MIG, in atmosfera attiva MAG, oppure senza protezione di gas); a elettrogas; al plasma;
-  - #emph[ad elettroscoria];
-  - #emph[alluminotermica];
-  - #emph[a fascio elettronico];
-  - #emph[a laser].
+  - #emph[ad elettroscoria], #emph[alluminotermica], #emph[a fascio elettronico];, #emph[a laser].
 - #strong[Saldatura autogena per pressione]:
   - #emph[a fuoco] (bollitura);
   - #emph[elettrica]: a resistenza (a punti, a rilievi, a rulli, di testa), a scintillio, a induzione;
