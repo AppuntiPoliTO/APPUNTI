@@ -1867,3 +1867,290 @@ Infine, oltre alla verifica statica del giunto e alla verifica a fatica secondo 
 
 $ Delta sigma lt.eq 1","5 f_y, quad Delta tau lt.eq frac(1","5 f_y, sqrt(3)) $
 
+== Lezione 11.3: Saldature (Collegamenti saldati) – Studio di carichi e tensioni
+
+=== Teoria
+
+==== Metodo cinematico per l'analisi delle sollecitazioni nel cordone d'angolo
+Per determinare quali componenti di tensione siano effettivamente sollecitate all'interno dei cordoni di saldatura che collegano due piastre in varie disposizioni relative, si applica un metodo di tipo cinematico. In prima approssimazione, il cordone di saldatura viene concepito come un vincolo che impedisce al pezzo saldato di muoversi sotto l'applicazione dei carichi e dei momenti esterni.
+
+L'idea di base consiste nell'immaginare quali spostamenti relativi o rotazioni relative produrrebbero le azioni esterne se il cordone di saldatura non fosse presente o cedesse. Poiché il cordone inibisce tali spostamenti relativi, viene negata la corrispondente deformazione; di conseguenza, il vincolo esercita delle azioni che sviluppano componenti di tensione esattamente nella stessa direzione e nello stesso verso dei gradi di libertà vincolati. L'integrale delle forze generate dalle tensioni distribuite all'interno dei cordoni deve quindi equilibrare le azioni applicate dall'esterno.
+
+La procedura generale di calcolo si articola nei seguenti passaggi logici:
+1. Analisi cinematica dei moti relativi (traslazioni e rotazioni) impediti dai cordoni di saldatura.
+2. Determinazione delle reazioni vincolari esercitate dai cordoni sulla piattabanda (e delle corrispondenti forze uguali e contrarie che sollecitano i cordoni) mediante le equazioni di equilibrio con i carichi esterni.
+3. Calcolo delle forze per unità di lunghezza che sollecitano il cordone, distinguendo tra componenti parallele all'asse del cordone ($f_parallel$) e componenti perpendicolari all'asse del cordone ($n_perp$).
+4. Calcolo delle corrispondenti componenti di tensione dividendo per la larghezza $a$ della sezione di gola, tenendo conto del sistema di riferimento prescritto per la verifica a fatica oppure per la verifica statica.
+
+==== Sezioni di riferimento: verifica statica e verifica a fatica
+A seconda del tipo di giunto saldato e del tipo di verifica (statica o a fatica), la normativa prescrive l'utilizzo di sezioni di riferimento differenti, pur descrivendo nella sostanza lo stesso comportamento meccanico.
+
+Nel caso del giunto di testa in ambito statico, le sezioni di riferimento sono semplicemente le sezioni frontali o trasversali rispetto al cordone attraversate dal flusso delle tensioni, la cui individuazione è immediata.
+
+Nel caso del cordone d'angolo, la sezione fisicamente critica attraversata dal massimo flusso delle tensioni è sempre la #strong[sezione di gola], di larghezza $a$, inclinata rispetto alle facce delle piastre collegate. Tuttavia, la scelta del sistema di riferimento differisce tra calcolo statico e calcolo a fatica:
+
+- #strong[Verifica statica (sezione di gola NON ribaltata):] la normativa impone di lavorare direttamente nel sistema di riferimento locale della sezione di gola, senza ribaltarla. Le componenti di tensione determinate sono $sigma_perp^g$, $tau_perp^g$ e $tau_parallel^g$. Questo approccio mantiene l'evidenza fisica della sezione realmente critica ed elimina ogni arbitrarietà nella scelta della superficie di riferimento, ma richiede di proiettare le forze per unità di lunghezza perpendicolari al cordone ($n_perp$) nelle direzioni normale e tangente alla sezione di gola inclinata, generando così due componenti di tensione da una singola azione perpendicolare.
+- #strong[Verifica a fatica (sezione di gola ribaltata):] pur rimanendo la sezione di gola quella critica, la normativa preferisce mantenere il sistema di riferimento globale del giunto anziché quello locale della gola. Per fare ciò, si #strong[ribalta] (ruota) la sezione di gola su una delle due facce di adesione che compongono il cordone (sul supporto oppure sulla piattabanda), ottenendo le componenti di tensione $sigma_perp$, $tau_perp$ e $tau_parallel$. Il ribaltamento rende l'interpretazione geometrica più intuitiva e consente di scegliere la faccia che attribuisce alle componenti di tensione il significato più naturale (ad esempio, $tau$ per il taglio e $sigma$ per la flessione). Cambiando la faccia su cui si ribalta la sezione, una stessa forza per unità di lunghezza perpendicolare $n_perp$ può cambiare nome tra tensione tangenziale $tau_perp$ e tensione normale $sigma_perp$, pur conservando la medesima intensità numerica.
+
+È fondamentale prestare attenzione a non commettere l'errore di #strong[proiettare] la sezione di gola anziché ribaltarla: la dimensione della superficie resistente rimane sempre la larghezza $a$ della sezione di gola (non l'intera faccia di piede del cordone). Se si proiettasse anche la superficie oltre alle forze, si introdurrebbe erroneamente una doppia proiezione. Per le azioni dirette parallelamente all'asse del cordone ($f_parallel$), il valore della tensione tangenziale $tau_parallel$ (e $tau_parallel^g$) non dipende invece dal ribaltamento, poiché la forza giace sempre parallelamente al cordone sia sulle facce ribaltate sia nella sezione di gola inclinata.
+
+==== Considerazioni sulle applicazioni industriali
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[L'impiego delle saldature è estremamente diffuso nella prassi industriale, ma la loro esecuzione rappresenta un processo delicato e complesso, soprattutto in presenza di geometrie articolate o cordoni di dimensioni considerevoli. Di conseguenza, nella pratica industriale le verifiche strutturali previste dalla normativa sono sempre affiancate da specifiche procedure di #strong[qualificazione dei saldatori] (riguardanti la formazione del personale) e di #strong[qualificazione delle saldature] (riguardanti gli aspetti tecnologico-meccanici).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: quattro disegni tecnici esemplificativi di applicazioni industriali saldate: "Giunto trave-colonna che realizza un nodo ad incastro", "Staffa saldata" con quota L e foro, "Saldature in un recipiente a pressione" in vista sezionata, e "Nodo di struttura tubolare saldata" con tubi intersecati]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Ulteriori criticità esecutive emergono nelle strutture di grandi dimensioni, dove è necessario realizzare cordoni di notevole lunghezza o operare in condizioni di accesso molto limitato, come accade tipicamente per le saldature eseguite sui banchi di laminazione negli impianti siderurgici.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: fotografia di un impianto industriale con banchi di laminazione in esercizio con una lastra incandescente, con riquadro in alto a sinistra mostrante un operatore durante la saldatura]])
+
+==== Concentrazione delle tensioni al piede del cordone: tensione nominale, di hot spot ed effettiva
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Il modello analitico basato sul metodo cinematico fornisce soltanto una valutazione approssimativa di tipo macroscopico, ovvero la #strong[tensione nominale] ($sigma_(n o m)$), trascurando un fenomeno fondamentale: in corrispondenza del piede del cordone (#emph[weld toe]) il raggio di curvatura geometrico è talmente ridotto da introdurre un severo effetto di intaglio, che provoca un locale e cospicuo innalzamento delle tensioni.
+
+Osservando la distribuzione delle tensioni in una piastra di spessore $t$ saldata e soggetta a sforzo normale, a grande distanza dal cordone (#emph[nominal stress region]) la distribuzione nello spessore risulta perfettamente uniforme. Avvicinandosi al cordone (#emph[structural stress region]), la presenza della discontinuità geometrica comincia a far risentire i propri effetti e la distribuzione delle tensioni diventa linearmente variabile, intensificandosi verso la superficie saldata. Infine, in prossimità immediata del piede del cordone, l'effetto d'intaglio produce un picco fortemente non lineare (#emph[notch stress]), nettamente superiore al valore nominale.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: sezione trasversale di una piastra di spessore t soggetta a trazione assiale (frecce orizzontali alle estremità) con un elemento verticale saldato mediante due cordoni d'angolo; sono rappresentati i profili di distribuzione della tensione nello spessore in diverse sezioni: uniforme nella "Nominal stress region", crescente nella "Structural stress region", fino al picco al piede del cordone con curve che distinguono "Hot spot stress" (estrapolazione) e "Notch stress (non-linear stress peak)"]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Poiché non è possibile determinare con precisione per via analitica il valore reale del picco locale di tensione al piede del cordone, la letteratura e la normativa tecnica distinguono tre livelli di approccio progressivamente più accurati:
+
+1. #strong[Metodo della tensione nominale ($sigma_(n o m)$):] corrisponde al calcolo analitico classico sviluppato nei modelli elementari. Valuta lo stato tensionale macroscopico senza considerare l'intaglio al piede del cordone (analogamente al modello classico di Lewis [?] per il dente della ruota dentata, che trascura l'effetto d'intaglio alla base). In determinati casi può risultare piuttosto distante dalla reale sollecitazione locale.
+2. #strong[Metodo della tensione di #emph[hot spot] ($Delta sigma_(h s)$):] rappresenta una soluzione intermedia ancora basata su regole guidate dalla normativa tecnica. Si valuta la tensione strutturale (#emph[structural stress]) che si sviluppa nella piastra a specifiche distanze critiche dal piede del cordone e la si estrapola verso il piede stesso (#emph[weld toe / hot spot]) mediante una legge prestabilita (lineare, quadratica, ecc.). La tensione di #emph[hot spot] ottenuta è una grandezza convenzionale, non ancora coincidente con la reale tensione di picco in esercizio, ma già sensibilmente maggiore e più realistica rispetto alla tensione nominale.
+3. #strong[Metodo della tensione effettiva ($Delta sigma_(E f f)$):] consente di giungere alla valutazione puntuale della reale condizione di tensione locale (#emph[effective notch stress]), tenendo conto esplicitamente della geometria locale dell'intaglio. Richiede strumenti più avanzati rispetto ai modelli analitici classici, ovvero prove sperimentali (o coefficienti di concentrazione delle tensioni $K_t$ e $K_f$ come nell'approccio di Peterson per altri intagli) oppure analisi numeriche discretizzate, tipicamente mediante il metodo degli elementi finiti (FEM).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: due schemi affiancati sulla determinazione della tensione di hot spot: a sinistra modello 3D di piastra caricata ("Load") con attacco verticale e cordone d'angolo che mostra "Weld toe 'Hot spot'", "Structural hot spot stress", "Local notch stress", "Structural stress", "Nominal stress" e "Structural stress distribution through thickness"; a destra schema 2D di una piastra di spessore t con "Attachment plate" e "Fillet weld", riportante la curva di "Surface stress", "Membrane stress", "Stress evaluation plane", "Hot spot stress" e "Notch stress" con le distanze di riferimento t/2 e 3t/2 dal piede del cordone]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: confronto grafico tra i tre metodi di valutazione su una piastra saldata di larghezza W con cordone di lunghezza L: in alto "Metodo della tensione nominale" con distribuzione uniforme $sigma_(n o m)$; al centro "Metodo della tensione di 'hot spot'" con estrapolazione $Delta sigma_(h s)$ dai punti a distanza $x_1$ e $x_2$; in basso "Metodo della tensione effettiva" con picco non lineare "Effective notch stress" $Delta sigma_(E f f)$]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[La normativa tecnica dedica ampia attenzione alla definizione della legge di estrapolazione più idonea e dei punti di lettura per il metodo di #emph[hot spot] in funzione della discretizzazione adottata nei modelli numerici (mesh fine o grossolana) e della tipologia di #emph[hot spot] (tipo a, b o c).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schemi normativi di estrapolazione lineare della "Structural hot spot stress" al piede del cordone ("Weld toe 'Hot spot'") sotto carico "Load": in alto vista 3D della distribuzione nello spessore e punti di estrapolazione a 0.4t e 1.0t; in basso quattro schemi di mesh (1, 2, 3, 4) suddivisi in "Relative fine mesh (as shown or finer)" e "Relative coarse mesh (fixed element sizes)" per "Hot-spot type a) and c)" (punti a 0.4t e 1.0t per mesh fine; 0.5t e 1.5t per mesh grossolana) e "Hot-spot type b)" (punti a 4 mm, 8 mm, 12 mm per mesh fine; 5 mm e 15 mm per mesh grossolana)]])
+
+#pagebreak()
+
+=== Esercizi
+
+==== Esercizio 1: Piattabanda con due cordoni paralleli soggetta a trazione assiale
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Una piattabanda è sovrapposta a una piastra di supporto e vincolata lungo i due lati longitudinali mediante $2$ cordoni di saldatura d'angolo paralleli, ciascuno di lunghezza $L$ e sezione di gola $a$. Alla piattabanda è applicata una forza esterna di trazione $P$ in direzione parallela ai cordoni. Determinare le componenti di tensione nei cordoni per il calcolo a fatica e per il calcolo statico.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema assonometrico della piattabanda sovrapposta al supporto verticale con 2 cordoni d'angolo paralleli superiore e inferiore di lunghezza L e forza di trazione P parallela ai cordoni; accanto, schema delle reazioni vincolari F esercitate dai due cordoni sulla piattabanda in verso opposto a P]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[#strong[Svolgimento:]
+Sotto l'azione del carico esterno $P$, se i cordoni non esistessero, la piattabanda tenderebbe a traslare rigidamente rispetto al supporto nella direzione e nel verso di $P$. I due cordoni impediscono tale traslazione esercitando sulla piattabanda due reazioni vincolari uguali $F$, parallele ai cordoni e dirette in verso opposto a $P$. Per il principio di azione e reazione, sui cordoni agiscono le forze $F$ uguali e contrarie alle reazioni vincolari sulla piattabanda, cioè concordi con $P$.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: scomposizione del corpo libero della piattabanda (soggetta al carico esterno P e alle due reazioni vincolari F esercitate dai cordoni) e dei due cordoni sul supporto (su cui agiscono le forze F uguali e contrarie alle reazioni sulla piattabanda)]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Scrivendo l'equilibrio alla traslazione della piattabanda:
+$ 2 F = P arrow.r.double F = frac(P, 2) $
+
+Le forze $F$ agenti sui cordoni si distribuiscono uniformemente lungo tutta la lunghezza $L$ di ciascun cordone, dando origine a una forza per unità di lunghezza $f_parallel$ parallela al cordone:
+$ f_parallel = frac(F, L) = frac(P, 2 L) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: rappresentazione delle forze F sui due cordoni e della corrispondente distribuzione uniforme della forza per unità di lunghezza $f_parallel = F / L$ tramite frecce rosse lungo entrambi i cordoni, insieme allo schema riassuntivo della piattabanda sul supporto]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[- #strong[Calcolo a fatica:] si ribalta la sezione di gola (sul supporto oppure sulla piattabanda) e si divide la forza per unità di lunghezza $f_parallel$ per la larghezza $a$ della sezione di gola:
+  $ tau_parallel = frac(f_parallel, a) = frac(F, L a) = frac(P, 2 L a) $
+  Poiché la forza distribuita è diretta lungo l'asse del cordone, la tensione tangenziale $tau_parallel$ giace sempre nel piano della superficie considerata ed è identica sia che la sezione di gola venga ribaltata sul supporto sia sulla piattabanda.
+- #strong[Calcolo statico:] si lavora sulla sezione di gola NON ribaltata (nel sistema di riferimento locale inclinato della sezione di gola). Anche in questo caso, avendo $f_parallel$ direzione parallela al cordone, essa giace interamente nella sezione di gola e non richiede proiezioni né dipende dal ribaltamento:
+  $ tau_parallel^g = tau_parallel = frac(f_parallel, a) = frac(F, L a) = frac(P, 2 L a) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schemi per il calcolo a fatica e statico dell'Esempio 1 con piattabanda, supporto, carico P e distribuzione $f_parallel$ lungo i due cordoni; dettaglio in sezione trasversale del cordone d'angolo che evidenzia la sezione di gola inclinata (larghezza a) per il calcolo statico rispetto al suo ribaltamento sulle facce orizzontale o verticale per il calcolo a fatica]])
+
+==== Esercizio 2: Piattabanda con due cordoni trasversali soggetta a trazione assiale
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[La medesima piattabanda dell'esercizio precedente, soggetta alla forza assiale di trazione $P$, è vincolata al supporto tramite $2$ cordoni d'angolo disposti trasversalmente alle due estremità verticali (di lunghezza $h$ e larghezza di gola $a$), perpendicolari alla direzione del carico $P$. Determinare le componenti di tensione per il calcolo a fatica e per il calcolo statico.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema assonometrico della piattabanda sul supporto con 2 cordoni d'angolo verticali alle estremità di lunghezza h e carico assiale P; in alto reazioni vincolari F esercitate dal supporto sulla piattabanda in verso opposto a P; in basso distribuzione uniforme della forza per unità di lunghezza $n_perp$ perpendicolare ai due cordoni (frecce rosse)]])
+
+#strong[Svolgimento:]
+Sotto l'azione di $P$, la piattabanda tende a traslare nella direzione del carico; i due cordoni trasversali reagiscono ciascuno con una forza vincolare $F$ in verso opposto a $P$. Dall'equilibrio alla traslazione si ricava:
+$ 2 F = P arrow.r.double F = frac(P, 2) $
+
+Distribuendo tale azione lungo la lunghezza $h$ di ciascun cordone, nasce una forza per unità di lunghezza $n_perp$ perpendicolare (normale) all'asse del cordone:
+$ n_perp = frac(F, h) = frac(P, 2 h) $
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[- #strong[Calcolo a fatica:] le tensioni si ottengono dividendo $n_perp$ per la larghezza $a$ della sezione di gola ribaltata. In questo caso la denominazione della tensione cambia a seconda della superficie su cui viene ribaltata la sezione di gola, pur restando invariato il valore numerico:
+  - Se si ribalta la sezione di gola #strong[sul supporto], la forza $n_perp$ giace parallelamente alla superficie di adesione sul supporto, originando una tensione tangenziale perpendicolare all'asse del cordone:
+    $ tau_perp = frac(n_perp, a) = frac(F, h a) = frac(P, 2 h a) $
+  - Se si ribalta la sezione di gola #strong[sulla piattabanda], la forza $n_perp$ agisce ortogonalmente al fianco della piattabanda, originando una tensione normale perpendicolare:
+    $ sigma_perp = frac(n_perp, a) = frac(F, h a) = frac(P, 2 h a) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: confronto affiancato per il calcolo a fatica dell'Esempio 2: a sinistra sezione di gola ribaltata sul supporto (evidenziata in giallo sul piano del supporto) con $n_perp$ tangente alla sezione ($tau_perp$); a destra sezione di gola ribaltata sulla piattabanda (evidenziata in giallo sul fianco della piattabanda) con $n_perp$ ortogonale alla sezione ($sigma_perp$)]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[- #strong[Calcolo statico:] le tensioni si calcolano sulla sezione di gola NON ribaltata (indicata dal segmento $A B$, inclinato a $45 degree$). Occorre quindi proiettare la forza per unità di lunghezza $n_perp$ nel sistema di riferimento locale della gola, scomponendola nella componente normale alla sezione di gola $n_(perp n)$ e nella componente tangente $n_(perp t)$:
+  $ n_(perp n) = n_perp cos 45 degree, quad quad n_(perp t) = n_perp sin 45 degree $
+  Dividendo per la larghezza di gola $a$ (e ricordando che $cos 45 degree = sin 45 degree = frac(sqrt(2), 2)$) si ottengono due componenti di tensione da una singola azione esterna:
+  $ sigma_perp^g = frac(n_(perp n), a) = frac(n_perp cos 45 degree, a) = frac(F sqrt(2), 2 h a) = frac(P sqrt(2), 4 h a) $
+  $ tau_perp^g = frac(n_(perp t), a) = frac(n_perp sin 45 degree, a) = frac(F sqrt(2), 2 h a) = frac(P sqrt(2), 4 h a) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema per il calcolo statico dell'Esempio 2 con sezione di gola non ribaltata AB indicata sul cordone e dettaglio ingrandito del triangolo della sezione del cordone con la scomposizione vettoriale di $n_perp$ nelle componenti $n_(perp n) = n_perp cos 45 degree$ (ortogonale ad AB) e $n_(perp t) = n_perp sin 45 degree$ (tangente ad AB)]])
+
+==== Esercizio 3: Piattabanda a sbalzo con due cordoni orizzontali soggetta a carico trasversale
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Una piattabanda montata a sbalzo è saldata a un supporto verticale tramite $2$ cordoni d'angolo orizzontali (superiore e inferiore) di lunghezza $L$, distanti tra loro $h$ e con larghezza di gola $a$. All'estremità a sbalzo è applicata una forza verticale $P$ diretta verso il basso, posta a distanza $b$ dal centro dei cordoni. Determinare le componenti di tensione per il calcolo a fatica e per il calcolo statico.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema assonometrico della piattabanda a sbalzo saldata al supporto tramite 2 cordoni orizzontali di lunghezza L a distanza h, con carico verticale P verso il basso a distanza b dal centro dei cordoni; in alto sono indicate le reazioni vincolari verticali $F_1$ (verso l'alto) e la coppia di reazioni orizzontali $F_2$ (verso sinistra in alto, verso destra in basso); in basso le distribuzioni rosse delle forze per unità di lunghezza $n_perp$ (verticali verso il basso) e $f_parallel$ (orizzontali di verso opposto sui due cordoni)]])
+
+#strong[Svolgimento:]
+Con l'analisi cinematica si scompone l'effetto della forza $P$ in due moti relativi nel piano del supporto:
+1. Una #strong[traslazione verticale] verso il basso, contrastata dai due cordoni mediante due reazioni vincolari verticali uguali $F_1$ dirette verso l'alto.
+2. Una #strong[rotazione] attorno al centro di istantanea rotazione del vincolo (individuabile come intersezione delle diagonali che congiungono gli estremi contrapposti dei due cordoni). Poiché i cordoni reagiscono solo con forze, essi contrastano il momento ribaltante $P b$ sviluppando una coppia di forze orizzontali $F_2$ uguali in modulo e di verso opposto lungo i due cordoni (analogamente allo stato tensionale a farfalla della flessione secondo De Saint-Venant).
+
+Dalle equazioni di equilibrio alla traslazione verticale e alla rotazione attorno al centro si ottiene:
+$ 2 F_1 = P arrow.r.double F_1 = frac(P, 2) $
+$ F_2 h = P b arrow.r.double F_2 = frac(P b, h) $
+
+In ciascun cordone nascono quindi due forze per unità di lunghezza, una parallela $f_parallel$ e una perpendicolare $n_perp$:
+$ f_parallel = frac(F_2, L) = frac(P b, h L) $
+$ n_perp = frac(F_1, L) = frac(P, 2 L) $
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[- #strong[Calcolo a fatica:]
+  - Se si ribalta la sezione di gola #strong[sul supporto], sia $n_perp$ sia $f_parallel$ giacciono nel piano di adesione tra cordone e supporto, generando entrambe tensioni tangenziali:
+    $ tau_perp = frac(n_perp, a) = frac(F_1, L a) = frac(P, 2 L a), quad quad tau_parallel = frac(f_parallel, a) = frac(F_2, L a) = frac(P b, h L a) $
+  - Se si ribalta la sezione di gola #strong[sulla piattabanda], $f_parallel$ resta una tensione tangenziale mentre $n_perp$ agisce normalmente al bordo della piattabanda diventando una tensione normale:
+    $ sigma_perp = frac(n_perp, a) = frac(F_1, L a) = frac(P, 2 L a), quad quad tau_parallel = frac(f_parallel, a) = frac(F_2, L a) = frac(P b, h L a) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: confronto per il calcolo a fatica dell'Esempio 3 tra sezione di gola ribaltata sul supporto (area gialla sulla parete verticale del supporto, con $n_perp$ e $f_parallel$) a sinistra e sezione di gola ribaltata sulla piattabanda (area gialla sulla faccia superiore della piattabanda, con $n_perp$ e $f_parallel$) a destra]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[- #strong[Calcolo statico:] sulla sezione di gola NON ribaltata (segmento $A B$), la componente $f_parallel$ non necessita di proiezione perché parallela al cordone, mentre $n_perp$ viene proiettata secondo $n_(perp n) = n_perp cos 45 degree$ e $n_(perp t) = n_perp sin 45 degree$:
+  $ sigma_perp^g = frac(n_(perp n), a) = frac(n_perp cos 45 degree, a) = frac(F_1 sqrt(2), 2 L a) = frac(P sqrt(2), 4 L a) $
+  $ tau_perp^g = frac(n_(perp t), a) = frac(n_perp sin 45 degree, a) = frac(F_1 sqrt(2), 2 L a) = frac(P sqrt(2), 4 L a) $
+  $ tau_parallel^g = frac(f_parallel, a) = frac(F_2, L a) = frac(P b, h L a) quad "[?]" $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema per il calcolo statico dell'Esempio 3 con sezione di gola AB sul cordone soggetto a $n_perp$ e $f_parallel$ e dettaglio della proiezione di $n_perp$ sul piano di gola in $n_(perp n) = n_perp cos 45 degree$ e $n_(perp t) = n_perp sin 45 degree$]])
+
+==== Esercizio 4: Piattabanda a sbalzo con due cordoni verticali soggetta a carico trasversale
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Una piattabanda è saldata a un supporto tramite $2$ cordoni d'angolo verticali di lunghezza $h$, posti alle due estremità a distanza $L$ tra loro e con larghezza di gola $a$. Alla piattabanda è applicata una forza verticale $P$ diretta verso il basso a distanza $b$ dal centro dei due cordoni. Determinare le tensioni nel cordone più sollecitato per il calcolo a fatica e per il calcolo statico.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema assonometrico della piattabanda sul supporto con 2 cordoni verticali di lunghezza h distanti L e carico verticale P a distanza b dal centro dei cordoni; in alto sono mostrate le reazioni vincolari $F_1$ (entrambe verso l'alto) e la coppia $F_2$ (verso il basso sul cordone sinistro, verso l'alto sul cordone destro); in basso è evidenziata con frecce rosse la forza distribuita risultante $f_parallel$ sul cordone di destra]])
+
+#strong[Svolgimento:]
+In termini cinematici, la forza $P$ induce una traslazione verticale verso il basso (equilibrata da due reazioni verticali $F_1$ verso l'alto sui due cordoni) e una rotazione nel piano del supporto attorno al centro dei due cordoni (individuato congiungendo gli estremi opposti dei cordoni). Per equilibrare il momento ribaltante $P b$, i due cordoni verticali sviluppano una coppia di forze verticali $F_2$ di verso opposto (diretta verso il basso sul cordone sinistro e verso l'alto sul cordone destro, per quanto riguarda le reazioni esercitate dal supporto sulla piattabanda).
+
+Le equazioni di equilibrio alla traslazione e alla rotazione forniscono:
+$ 2 F_1 = P arrow.r.double F_1 = frac(P, 2) $
+$ F_2 L = P b arrow.r.double F_2 = frac(P b, L) $
+
+Entrambe le azioni $F_1$ e $F_2$ sono parallele ai cordoni verticali. Tuttavia, mentre sul cordone di sinistra i loro versi sono opposti (si sottraggono), sul #strong[cordone di destra] $F_1$ e $F_2$ hanno la stessa direzione e lo stesso verso, quindi si sommano. Il cordone di destra risulta pertanto il più sollecitato ed è quello su cui si eseguono le verifiche. La forza per unità di lunghezza $f_parallel$ nel cordone di destra vale:
+$ f_parallel = frac(F_2 + F_1, h) = frac(P, 2 h) + frac(P b, L h) $
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[- #strong[Calcolo a fatica:] dividendo $f_parallel$ per $a$ si ottiene:
+  $ tau_parallel = frac(f_parallel, a) = frac(F_2 + F_1, h a) = frac(P, h a) (frac(1, 2) + frac(b, L)) $
+  Poiché l'azione è parallela al cordone, la tensione è la medesima sia che si ribalti la sezione di gola sul supporto sia sulla piattabanda.
+- #strong[Calcolo statico:] sulla sezione di gola NON ribaltata, la tensione tangenziale parallela coincide con quella del calcolo a fatica in quanto non dipende dal ribaltamento:
+  $ tau_parallel^g = frac(f_parallel, a) = frac(F_2 + F_1, h a) = frac(P, h a) (frac(1, 2) + frac(b, L)) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schemi della piattabanda e del supporto per il calcolo a fatica e statico dell'Esempio 4, con indicazione del carico P e della forza distribuita $f_parallel$ diretta verso il basso sul cordone verticale di destra]])
+
+==== Esercizio 5: Piattabanda a sbalzo con un singolo cordone verticale soggetta a carico trasversale
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Una piattabanda è vincolata al supporto tramite $1$ solo cordone d'angolo verticale di lunghezza $h$ e larghezza di gola $a$, ed è caricata da una forza verticale $P$ verso il basso posta a distanza $b$ dal cordone. Determinare la distribuzione delle forze per unità di lunghezza e le tensioni massime nel cordone per il calcolo a fatica e per il calcolo statico.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema assonometrico della piattabanda sul supporto vincolata da 1 solo cordone verticale di lunghezza h, con forza verticale P verso il basso a distanza b; in alto sono indicate le reazioni vincolari F (verticale verso l'alto) e M (momento resistente nel piano del supporto); in basso è mostrato il sistema di riferimento (x, y, z) con origine al centro del cordone, la distribuzione uniforme $f_parallel$ (frecce verdi verso il basso) e la distribuzione lineare a farfalla di $n_perp$ (frecce rosse orizzontali con valore massimo $n_(perp m a x)$ agli estremi)]])
+
+#strong[Svolgimento:]
+In assenza del secondo cordone, il singolo cordone verticale deve assolvere da solo a entrambi i compiti di vincolo: contrastare la traslazione verticale verso il basso con una reazione $F$ e contrastare la rotazione nel piano del supporto attorno a un asse uscente passante per il punto medio del cordone con un momento resistente $M$. Le equazioni di equilibrio forniscono:
+$ F = P $
+$ M = P b $
+
+La reazione $F$ genera una forza per unità di lunghezza uniforme parallela al cordone:
+$ f_parallel = frac(F, h) = frac(P, h) $
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Per equilibrare il momento $M$, il cordone distribuisce lungo la propria lunghezza $h$ (coordinata $y in [-h / 2, h / 2]$ con origine a metà cordone) una forza per unità di lunghezza perpendicolare $n_perp$ con andamento lineare a farfalla, esattamente analogo alla distribuzione delle tensioni di flessione nella sezione di una trave:
+$ n_perp = n_(perp m a x) frac(y, h / 2) $
+
+Per determinare il valore massimo $n_(perp m a x)$ agli estremi del cordone, si impone che l'integrale del momento elementare generato da $n_perp$ lungo il cordone eguagli il momento $M$:
+$ M = integral_(-h / 2)^(h / 2) n_perp y d y = integral_(-h / 2)^(h / 2) n_(perp m a x) frac(y, h / 2) y d y = integral_(-h / 2)^(h / 2) n_(perp m a x) frac(y^2, h / 2) d y $
+$ M = frac(n_(perp m a x), h / 2) [ frac(y^3, 3) ]_(-h / 2)^(h / 2) = frac(2 n_(perp m a x), h) ( frac(h^3, 24) + frac(h^3, 24) ) = n_(perp m a x) ( frac(h^2, 6) ) $
+da cui si ricava:
+$ n_(perp m a x) = frac(6 M, h^2) = frac(6 P b, h^2) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: vista dettagliata del singolo cordone verticale di lunghezza h sul supporto con carico P, terna (x, y, z) e diagramma lineare a farfalla della forza distribuita $n_perp$ con valore massimo $n_(perp m a x)$ all'estremità superiore]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[- #strong[Calcolo a fatica:]
+  - Se si ribalta la sezione di gola #strong[sul supporto], sia $n_perp$ sia $f_parallel$ giacciono nel piano di adesione sul supporto; pertanto la componente dovuta alla flessione viene denominata $tau_perp$:
+    $ tau_(perp m a x) = frac(n_(perp m a x), a) = frac(6 P b, h^2 a), quad quad tau_parallel = frac(f_parallel, a) = frac(F, h a) = frac(P, h a) $
+  - Se si ribalta la sezione di gola #strong[sulla piattabanda] (ribaltamento più intuitivo dal punto di vista fisico, in quanto associa $tau$ al taglio e $sigma$ alla flessione):
+    $ sigma_(perp m a x) = frac(n_(perp m a x), a) = frac(6 P b, h^2 a), quad quad tau_parallel = frac(f_parallel, a) = frac(F, h a) = frac(P, h a) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: confronto per il calcolo a fatica dell'Esempio 5 tra la sezione di gola ribaltata sul supporto (area gialla sulla parete del supporto, a sinistra) e la sezione di gola ribaltata sul bordo/spigolo della piattabanda (area gialla sullo spigolo della piattabanda, a destra), con le distribuzioni $f_parallel$ in verde e $n_perp$ / $n_(perp m a x)$ in rosso]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[- #strong[Calcolo statico:] sulla sezione di gola NON ribaltata (segmento $A B$), la forza $f_parallel$ non si proietta perché parallela al cordone, mentre $n_(perp m a x)$ viene proiettata nelle componenti normale $n_(perp n) = n_(perp m a x) cos 45 degree$ e tangente $n_(perp t) = n_(perp m a x) sin 45 degree$:
+  $ sigma_perp^g = frac(n_(perp n), a) = frac(n_(perp m a x) cos 45 degree, a) = frac(6 M sqrt(2), 2 h^2 a) = frac(3 P b sqrt(2), h^2 a) $
+  $ tau_perp^g = frac(n_(perp t), a) = frac(n_(perp m a x) sin 45 degree, a) = frac(6 M sqrt(2), 2 h^2 a) = frac(3 P b sqrt(2), h^2 a) $
+  $ tau_parallel^g = frac(f_parallel, a) = frac(F, h a) = frac(P, h a) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema per il calcolo statico dell'Esempio 5 con sezione di gola AB sul cordone soggetto a $f_parallel$ e $n_perp$ ($n_(perp m a x)$), accompagnato dal triangolo di proiezione di $n_(perp m a x)$ in $n_(perp n) = n_(perp m a x) cos 45 degree$ e $n_(perp t) = n_(perp m a x) sin 45 degree$]])
+
+==== Esercizio 6: Piattabanda incastrata a mensola con due cordoni orizzontali soggetta a taglio e flessione
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Una piattabanda di altezza $h$ e larghezza $L$ è saldata ortogonalmente a un supporto verticale (comportandosi come una trave a mensola incastrata) mediante $2$ cordoni d'angolo orizzontali posti sulle facce superiore e inferiore, ciascuno di lunghezza $L$ e larghezza di gola $a$. All'estremità libera, a distanza $b$ dal supporto, è applicata una forza verticale $P$ diretta verso il basso. Determinare le componenti di tensione per il calcolo a fatica e per il calcolo statico.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema assonometrico della piattabanda a mensola di altezza h incastrata al supporto tramite 2 cordoni orizzontali superiore e inferiore di lunghezza L, caricata da una forza verticale P a distanza b; in alto le reazioni vincolari esercitate dal supporto sulla piattabanda: due forze verticali $N_1$ verso l'alto e una coppia di forze orizzontali $N_2$ di verso opposto; in basso le corrispondenti forze distribuite sui cordoni $n_(perp 1)$ (verticali verso il basso su entrambi i cordoni) e $n_(perp 2)$ (uscenti sul cordone superiore, entranti su quello inferiore)]])
+
+#strong[Svolgimento:]
+La forza verticale $P$ determina sia una traslazione verticale verso il basso sia un momento flettente $P b$ rispetto all'incastro. I due cordoni reagiscono sviluppando due forze verticali concordi $N_1$ (equilibranti il taglio $P$) e una coppia di forze orizzontali $N_2$ uguali e opposte a distanza $h$ (equilibranti il momento flettente $P b$).
+
+Dall'equilibrio alla traslazione e alla rotazione si ricava:
+$ 2 N_1 = P arrow.r.double N_1 = frac(P, 2) $
+$ N_2 h = P b arrow.r.double N_2 = frac(P b, h) $
+
+In ciascun cordone nascono dunque due forze per unità di lunghezza, entrambe perpendicolari all'asse del cordone: $n_(perp 1)$ (con uguale verso in entrambi i cordoni) e $n_(perp 2)$ (uscente nel cordone superiore ed entrante nel cordone inferiore):
+$ n_(perp 1) = frac(N_1, L) = frac(P, 2 L) $
+$ n_(perp 2) = frac(N_2, L) = frac(P b, h L) $
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[- #strong[Calcolo a fatica:]
+  - Se si ribalta la sezione di gola #strong[sul supporto] (piano verticale dell'incastro), $n_(perp 1)$ giace nel piano del supporto dando origine a $tau_perp$, mentre $n_(perp 2)$ è ortogonale al supporto dando origine a $sigma_perp$:
+    $ tau_perp = frac(n_(perp 1), a) = frac(N_1, L a) = frac(P, 2 L a), quad quad sigma_perp = frac(n_(perp 2), a) = frac(N_2, L a) = frac(P b, h L a) $
+  - Se si ribalta la sezione di gola #strong[sulla piattabanda] (faccia orizzontale della mensola), i ruoli si invertono: $n_(perp 1)$ è ortogonale alla faccia dando $sigma_perp$, mentre $n_(perp 2)$ giace nel piano della faccia dando $tau_perp$:
+    $ sigma_perp = frac(n_(perp 1), a) = frac(N_1, L a) = frac(P, 2 L a), quad quad tau_perp = frac(n_(perp 2), a) = frac(N_2, L a) = frac(P b, h L a) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: confronto per il calcolo a fatica dell'Esempio 6: a sinistra sezione di gola ribaltata sul supporto verticale (evidenziata in giallo), con $n_(perp 1)$ parallela e $n_(perp 2)$ ortogonale al supporto; a destra sezione di gola ribaltata sulla faccia superiore della piattabanda (evidenziata in giallo), con $n_(perp 1)$ ortogonale e $n_(perp 2)$ parallela alla piattabanda]])
+
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[- #strong[Calcolo statico:] sulla sezione di gola NON ribaltata (segmento $A B$) occorre proiettare gli effetti sovrapposti di $n_(perp 1)$ e $n_(perp 2)$. Conviene innanzitutto comporre vettorialmente le due forze per unità di lunghezza ortogonali tra loro nella risultante $n_perp$ e determinarne l'inclinazione:
+  $ n_perp = sqrt(n_(perp 1)^2 + n_(perp 2)^2) $
+  $ tan beta = frac(n_(perp 1), n_(perp 2)) $
+  $ delta = 45 degree - beta $
+  Proiettando la risultante $n_perp$ secondo le direzioni normale e tangente alla sezione di gola (ottenendo $n_(perp n) = n_perp cos delta$ e $n_(perp t) = n_perp sin delta$), si calcolano le componenti di tensione:
+  $ sigma_perp^g = frac(n_(perp n), a) = frac(n_perp cos delta, a) $
+  $ tau_perp^g = frac(n_(perp t), a) = frac(n_perp sin delta, a) $],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema per il calcolo statico dell'Esempio 6 con sezione di gola AB sul cordone superiore soggetto a $n_(perp 1)$ e $n_(perp 2)$, e diagramma vettoriale ingrandito sul triangolo del cordone che mostra la somma vettoriale di $n_(perp 1)$ e $n_(perp 2)$ nella risultante $n_perp$, gli angoli $beta$ e $delta$ e le proiezioni verdi $n_(perp n) = n_perp cos delta$ e $n_(perp t) = n_perp sin delta$ rispetto alla sezione di gola AB]])
+
+==== Esercizio 7: Piattabanda con due cordoni paralleli soggetta a momento flettente concentrato
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),[Una piattabanda è collegata a un supporto verticale tramite $2$ cordoni d'angolo paralleli orizzontali (superiore e inferiore) di lunghezza $L$, distanti tra loro $h$ e con larghezza di gola $a$. Alla piattabanda è applicato esclusivamente un momento concentrato $M_e$ agente nel piano del supporto. Determinare la tensione nei cordoni per il calcolo a fatica e per il calcolo statico.],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: schema assonometrico della piattabanda sovrapposta al supporto con 2 cordoni d'angolo paralleli superiore e inferiore di lunghezza L a distanza h, soggetta a un momento concentrato $M_e$ nel piano del supporto e reagita da una coppia di forze longitudinali F uguali e opposte lungo i due cordoni]])
+
+#strong[Svolgimento:]
+Il momento concentrato $M_e$ tende a produrre una pura rotazione della piattabanda nel piano del supporto. I due cordoni orizzontali contrastano tale rotazione sviluppando una coppia di forze longitudinali (parallele ai cordoni) di intensità $F$ e verso opposto, poste a distanza $h$.
+
+Dall'equilibrio alla rotazione si ricava:
+$ F h = M_e arrow.r.double F = frac(M_e, h) $
+
+- #strong[Calcolo a fatica:] la forza distribuita è parallela all'asse dei cordoni; pertanto la tensione tangenziale parallela non dipende dalla faccia su cui viene ribaltata la sezione di gola:
+  $ tau_parallel = frac(F, L a) = frac(M_e, L a h) $
+- #strong[Calcolo statico:] sulla sezione di gola NON ribaltata, la tensione tangenziale parallela giace nella sezione obliqua di gola e assume la medesima espressione analitica:
+  $ tau_parallel^g = frac(F, L a) = frac(M_e, L a h) $
