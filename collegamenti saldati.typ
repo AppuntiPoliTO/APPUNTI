@@ -632,15 +632,8 @@ Un impianto ad arco sommerso è costituito dai seguenti elementi:
 - un #strong[generatore di corrente] (analogo a quello per elettrodo rivestito) di elevato amperaggio ($1000 "-" 3000 "A"$);
 - un #strong[traina-filo] che alimenta automaticamente il filo di apporto, di diametro almeno pari a $2 "mm"$;
 - una #strong[tramoggia] contenente il flusso di protezione, che viene depositato anteriormente all'elettrodo tramite un ugello di alimentazione e raccolto/aspirato posteriormente dopo il passaggio, lasciando il cordone pulito.
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Trattandosi di un processo automatizzato (in cui il sistema movimenta l'elettrodo senza intervento manuale diretto), garantisce elevata precisione, ma risulta particolarmente lento e spesso richiede più passate successive per riempire cianfrini profondi. È universalmente impiegato nelle #strong[saldature di forti spessori].],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: coppia di schemi dell'impianto di saldatura ad arco sommerso: a sinistra vista assonometrica con filo proveniente dal dispositivo di avanzamento, condotto dalla tramoggia, flusso, pezzo, scoria e cordone; a destra schema complessivo con aspo del filo, tramoggia di flusso, dispositivo per l'avanzamento del filo, recuperatore di flusso, circuito di alimentazione elettrica e gruppo di saldatura sul pezzo]])
+Trattandosi di un processo automatizzato (in cui il sistema movimenta l'elettrodo senza intervento manuale diretto), garantisce elevata precisione, ma risulta particolarmente lento e spesso richiede più passate successive per riempire cianfrini profondi. È universalmente impiegato nelle #strong[saldature di forti spessori]
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: sezione dettagliata e fotografia ravvicinata della testa di saldatura ad arco sommerso, con indicazione di: flusso di alimentazione, tubo di contatto, elettrodo consumabile, arco, bagno di fusione, flusso, flusso fuso, scoria solidificata, flusso di recupero, metallo base e metallo saldato]])
 
 === Saldatura a filo continuo (MIG/MAG)
 Il principio di funzionamento è lo stesso della saldatura ad arco sommerso: un filo continuo viene svolto da una bobina mediante un motore elettrico (alimentatore filo), passa attraverso una guaina fino alla torcia impugnata dall'operatore e scocca l'arco andando in corto circuito sul pezzo da saldare.
