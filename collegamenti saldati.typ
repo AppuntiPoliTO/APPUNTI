@@ -60,16 +60,21 @@ Nel processo può essere impiegato o meno un #strong[materiale d'apporto], carat
 Una prima classificazione generale distingue tra #strong[saldatura autogena] (in cui il materiale base partecipa alla fusione o subisce un passaggio di stato/giunzione sotto elevata pressione) e #strong[saldatura eterogenea].
 
 Le principali tecnologie si articolano come segue:
-- #strong[Saldatura autogena per fusione]:
+#grid(
+  columns: 2,
+  gutter: 1em,
+  [- #strong[Saldatura autogena per fusione]:
   - #emph[alla fiamma] (ossiacetilenica, ossidrica, ecc., molto diffusa anche nelle operazioni di manutenzione degli impianti);
   - #emph[ad arco]: con elettrodi rivestiti; con elettrodo infusibile in atmosfera inerte (TIG); ad arco sommerso; a filo continuo (in atmosfera inerte MIG, in atmosfera attiva MAG, oppure senza protezione di gas); a elettrogas; al plasma;
-  - #emph[ad elettroscoria], #emph[alluminotermica], #emph[a fascio elettronico];, #emph[a laser].
-- #strong[Saldatura autogena per pressione]:
+  - #emph[ad elettroscoria], #emph[alluminotermica], #emph[a fascio elettronico];, #emph[a laser].],
+  [- #strong[Saldatura autogena per pressione]:
   - #emph[a fuoco] (bollitura);
   - #emph[elettrica]: a resistenza (a punti, a rilievi, a rulli, di testa), a scintillio, a induzione;
   - #emph[ad attrito];
   - #emph[a esplosione];
-  - #emph[a ultrasuoni].
+  - #emph[a ultrasuoni].],
+)
+
 - #strong[Saldatura eterogenea]:
   - #emph[brasatura capillare] (alla fiamma, elettrica a resistenza, a induzione);
   - #emph[saldobrasatura] (alla fiamma, all'arco).
