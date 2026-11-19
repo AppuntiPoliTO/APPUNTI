@@ -59,10 +59,7 @@ Nel processo può essere impiegato o meno un #strong[materiale d'apporto], carat
 === Architettura delle tecnologie principali di saldatura
 Una prima classificazione generale distingue tra #strong[saldatura autogena] (in cui il materiale base partecipa alla fusione o subisce un passaggio di stato/giunzione sotto elevata pressione) e #strong[saldatura eterogenea].
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Le principali tecnologie si articolano come segue:
+Le principali tecnologie si articolano come segue:
 - #strong[Saldatura autogena per fusione]:
   - #emph[alla fiamma] (ossiacetilenica, ossidrica, ecc., molto diffusa anche nelle operazioni di manutenzione degli impianti);
   - #emph[ad arco]: con elettrodi rivestiti; con elettrodo infusibile in atmosfera inerte (TIG); ad arco sommerso; a filo continuo (in atmosfera inerte MIG, in atmosfera attiva MAG, oppure senza protezione di gas); a elettrogas; al plasma;
@@ -78,7 +75,7 @@ Una prima classificazione generale distingue tra #strong[saldatura autogena] (in
   - #emph[a ultrasuoni].
 - #strong[Saldatura eterogenea]:
   - #emph[brasatura capillare] (alla fiamma, elettrica a resistenza, a induzione);
-  - #emph[saldobrasatura] (alla fiamma, all'arco).],[#rect(width: 100%, inset: 8pt, stroke: 0.5pt + red)[*DA INSERIRE – IMMAGINE*: tabella sinottica ad albero delle tecnologie principali di saldatura, suddivisa nelle macro-categorie Autogena (a sua volta divisa in "per fusione" e "per pressione" con tutti i rispettivi sotto-procedimenti) ed Eterogenea (Brasatura capillare e Saldobrasatura)]])
+  - #emph[saldobrasatura] (alla fiamma, all'arco).
 
 Nell'analisi di queste tecnologie, due aspetti risultano cruciali per la qualità del giunto: la presenza di una #strong[protezione della zona di saldatura] per impedire l'ingresso di gas atmosferici (causa di difetti interni) e la tendenza del processo e del materiale d'apporto a generare #strong[cricche a caldo o a freddo]. Mentre difetti quali imperfette incollature, porosità o soffiature possono essere parzialmente tollerati se di dimensioni ridotte e sufficientemente distribuiti, le cricche — soprattutto se emergenti — non sono tollerate poiché rappresentano già la nucleazione di un danneggiamento in grado di propagare rapidamente verso la rottura.
 
