@@ -15,7 +15,7 @@
 
 
 #set heading(numbering: "1.")
-== Lezione 11: Saldature (Collegamenti Saldati) – Introduzione e Tecnologie
+== Saldature (Collegamenti Saldati) – Introduzione e Tecnologie
 
 
 === Introduzione generale e quadro normativo
