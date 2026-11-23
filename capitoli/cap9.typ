@@ -387,9 +387,10 @@ $
 ]
 In un diagramma logaritmico ($ln r_f$ in funzione di $ln t$), la relazione rappresenta una *retta* di pendenza nota pari a $2 slash 5$. L'allineamento dei punti fotografici lungo una retta di pendenza $2 slash 5$ conferma la validità delle ipotesi dimensionali; nota la densità dell'aria $rho_0$ (e la costante $R^*$ di ordine unitario), dall'intercetta della retta si ricava l'energia $E$ dell'esplosione.
 
+
 == Coefficiente di resistenza aerodinamica
 
-Applichiamo il teorema $Pi$ al flusso esterno stazionario attorno a un corpo circolare (sfera o cilindro indefinito) di diametro $D$, investito da una corrente uniforme di velocità $U_infinity$ diretta lungo il versore $hat(i)$, in un fluido newtoniano incomprimibile di densità $rho$ e viscosità dinamica $mu$. La forza di resistenza aerodinamica (*drag*) è la proiezione della forza totale $arrow(F)$ nella direzione della corrente: $F_D = arrow(F) dot hat(i)$.
+Applichiamo il teorema $Pi$ al flusso esterno stazionario attorno a un corpo circolare (sfera o cilindro indefinito) di raggio $a$ e diametro $D = 2 a$, investito da una corrente uniforme di velocità $U_infinity$ diretta lungo il versore $hat(i)$, in un fluido newtoniano incomprimibile di densità $rho$ e viscosità dinamica $mu$. La forza di resistenza aerodinamica (*drag*) è la proiezione della forza totale $arrow(F)$ esercitata dal fluido sul corpo nella direzione della corrente: $F_D = arrow(F) dot hat(i)$.
 
 #block(breakable: false)[
   #grid(
@@ -407,46 +408,47 @@ Applichiamo il teorema $Pi$ al flusso esterno stazionario attorno a un corpo cir
       $
     ],
     [#canvas(length: 1cm, {
-  import draw: *
-  circle((3.8, 0.0), radius: 0.9, fill: luma(235), stroke: none)
-  circle((3.8, 0.0), radius: 0.9, stroke: 1pt)
-  line((0.0, 0.8), (2.0, 0.8), mark: (end: ">"), stroke: (paint: rgb("#991b1b"), thickness: 0.85pt))
-  line((0.0, 0.0), (2.0, 0.0), mark: (end: ">"), stroke: (paint: rgb("#991b1b"), thickness: 0.85pt))
-  line((0.0, -0.8), (2.0, -0.8), mark: (end: ">"), stroke: (paint: rgb("#991b1b"), thickness: 0.85pt))
-  line((2.9, -1.35), (4.7, -1.35), stroke: (paint: luma(80), thickness: 0.65pt))
-  line((2.9, -1.48), (2.9, -1.22), stroke: (paint: luma(80), thickness: 0.65pt))
-  line((4.7, -1.48), (4.7, -1.22), stroke: (paint: luma(80), thickness: 0.65pt))
-  line((7.0, 1.45), (7.0, 0.0), stroke: (paint: luma(120), thickness: 0.7pt, dash: "dashed"))
-  line((3.8, 0.0), (7.0, 1.45), mark: (end: ">"), stroke: (paint: black, thickness: 1.1pt))
-  line((3.8, 0.0), (7.0, 0.0), mark: (end: ">"), stroke: (paint: rgb("#1d4ed8"), thickness: 1.2pt))
-  line((5.9, -1.35), (7.0, -1.35), mark: (end: ">"), stroke: (paint: luma(50), thickness: 0.85pt))
-  content((0.0, 1.05), text(size: 10pt)[$U_infinity$], anchor: "south-west")
-  content((0.0, -1.05), text(size: 10pt)[$rho, mu$], anchor: "north-west")
-  content((3.8, -1.5), text(size: 10pt)[$D$], anchor: "north")
-  content((6.85, 1.55), text(size: 10pt)[$arrow(F)$], anchor: "south")
-  content((5.4, -0.15), text(size: 10pt)[$F_D$], anchor: "north")
-  content((6.45, -1.5), text(size: 10pt)[$hat(i)$], anchor: "north")
-})
-    ],
+      import draw: *
+      circle((3.8, 0.0), radius: 0.9, fill: luma(235), stroke: none)
+      circle((3.8, 0.0), radius: 0.9, stroke: 1pt)
+      line((3.8, 0.0), (3.8, 0.9), stroke: (paint: luma(80), thickness: 0.65pt, dash: "dashed"))
+      content((3.7, 0.45), text(size: 9pt)[$a$], anchor: "east")
+      line((0.0, 0.8), (2.0, 0.8), mark: (end: ">"), stroke: (paint: rgb("#991b1b"), thickness: 0.85pt))
+      line((0.0, 0.0), (2.0, 0.0), mark: (end: ">"), stroke: (paint: rgb("#991b1b"), thickness: 0.85pt))
+      line((0.0, -0.8), (2.0, -0.8), mark: (end: ">"), stroke: (paint: rgb("#991b1b"), thickness: 0.85pt))
+      line((2.9, -1.35), (4.7, -1.35), stroke: (paint: luma(80), thickness: 0.65pt))
+      line((2.9, -1.48), (2.9, -1.22), stroke: (paint: luma(80), thickness: 0.65pt))
+      line((4.7, -1.48), (4.7, -1.22), stroke: (paint: luma(80), thickness: 0.65pt))
+      line((7.0, 1.45), (7.0, 0.0), stroke: (paint: luma(120), thickness: 0.7pt, dash: "dashed"))
+      line((3.8, 0.0), (7.0, 1.45), mark: (end: ">"), stroke: (paint: black, thickness: 1.1pt))
+      line((3.8, 0.0), (7.0, 0.0), mark: (end: ">"), stroke: (paint: rgb("#1d4ed8"), thickness: 1.2pt))
+      line((5.9, -1.35), (7.0, -1.35), mark: (end: ">"), stroke: (paint: luma(50), thickness: 0.85pt))
+      content((0.0, 1.05), text(size: 10pt)[$U_infinity$], anchor: "south-west")
+      content((0.0, -1.05), text(size: 10pt)[$rho, mu$], anchor: "north-west")
+      content((3.8, -1.5), text(size: 10pt)[$D = 2 a$], anchor: "north")
+      content((6.85, 1.55), text(size: 10pt)[$arrow(F)$], anchor: "south")
+      content((5.4, -0.15), text(size: 10pt)[$F_D$], anchor: "north")
+      content((6.45, -1.5), text(size: 10pt)[$hat(i)$], anchor: "north")
+    })],
   )
 ]
 
-Poiché $n - r = 4 - 3 = 1$, esiste un solo parametro adimensionale indipendente costruibile con $(U_infinity, rho, mu, D)$. Adimensionalizzando $mu$ tramite $(rho, U_infinity, D)$ si trova $[rho^(-1) U_infinity^(-1) D^(-1) mu] = 1$, il cui reciproco definisce il *numero di Reynolds*:
+Poiché $n - r = 4 - 3 = 1$, esiste un solo parametro adimensionale indipendente costruibile con $(U_infinity, rho, mu, D)$. Adimensionalizzando $mu$ tramite $(rho, U_infinity, D)$ si trova $[rho^(-1) U_infinity^(-1) D^(-1) mu] = 1$, il cui reciproco definisce il *numero di Reynolds* riferito al diametro (a cui si affianca quello riferito al raggio $a$, con $"Re"_D = 2 thin "Re"_a$):
 $
-  "Re" = (rho U_infinity D) / mu = (U_infinity D) / nu, quad "con " nu = mu / rho
+  "Re"_D = (rho U_infinity D) / mu = (U_infinity D) / nu, quad "Re"_a = (rho U_infinity a) / mu = (U_infinity a) / nu, quad "con " nu = mu / rho
 $
 
-#block(sticky: true)[La forza di resistenza può essere adimensionalizzata in due modi equivalenti:]
-- rispetto alla scala inerziale (per una sfera, utilizzando $D^2$ o l'area frontale $A = pi D^2 slash 4$; per un cilindro indefinito si scala la forza per unità di apertura $F'_D$ con $1 slash 2 thin rho U_infinity^2 D$):
+#block(sticky: true)[La forza di resistenza può essere adimensionalizzata secondo due normalizzazioni equivalenti:]
+- rispetto alla *scala inerziale*, adottando per una sfera la convenzione usuale basata sull'area frontale $A_"ref" = pi D^2 slash 4 = pi a^2$ (un coefficiente definito direttamente con $D^2$ al posto di $A_"ref"$ o senza il fattore $1 slash 2$ assume un valore numerico diverso, per cui occorre verificare sempre la definizione adottata; per un cilindro indefinito si scala la forza per unità di apertura $F'_D$ con $1 slash 2 thin rho U_infinity^2 D$):
   $
-    C_D = (F_D) / (1 slash 2 thin rho U_infinity^2 D^2) = C_D ("Re")
+    C_D = F_D / (1 slash 2 thin rho U_infinity^2 A_"ref") = C_D ("Re"_D)
   $
-- rispetto alla scala viscosa (particolarmente espressiva a bassi $"Re"$, con $k = 1 slash 2 thin "Re" thin C_D$):
+- rispetto alla *scala viscosa*, particolarmente espressiva ai bassi numeri di Reynolds; scegliendo il raggio $a$ come lunghezza di riferimento per la sfera:
   $
-    k = (F_D) / (mu U_infinity D) = k("Re")
+    K = F_D / (mu U_infinity a) = K("Re"_a), quad "con " C_D = (2 K) / (pi thin "Re"_a) = (4 K) / (pi thin "Re"_D)
   $
 
-Si osservi il ruolo della densità $rho$: esprimendo la viscosità tramite quella cinematica $nu = mu slash rho$ ($[nu] = L^2 T^(-1)$), per descrivere il campo di velocità adimensionalizzato $arrow(u) slash U_infinity$ (oppure la forza per unità di massa $F_D slash rho$, avente dimensioni $[F_D slash rho] = L^4 T^(-2)$ prive di $M$) intervengono soltanto $n = 3$ parametri di controllo $(U_infinity, D, nu)$ in $r = 2$ dimensioni indipendenti ($L, T$). Da $n - r = 1$ discende nuovamente il solo numero di Reynolds $"Re" = U_infinity D slash nu$: in un fluido newtoniano a densità costante, $rho$ non aggiunge parametri adimensionali indipendenti, ma entra in $F_D$ unicamente come fattore di scala dimensionale.
+Si osservi il ruolo della densità $rho$: esprimendo la viscosità tramite quella cinematica $nu = mu slash rho$ ($[nu] = L^2 T^(-1)$), per descrivere il campo di velocità adimensionalizzato $arrow(u) slash U_infinity$ (oppure la forza divisa per la densità $F_D slash rho$, avente dimensioni $[F_D slash rho] = L^4 T^(-2)$ prive di $M$) intervengono soltanto $n = 3$ parametri di controllo $(U_infinity, D, nu)$ in $r = 2$ dimensioni indipendenti ($L, T$). Da $n - r = 1$ discende nuovamente il solo numero di Reynolds $"Re"_D = U_infinity D slash nu$: in un fluido newtoniano a densità costante, $rho$ non aggiunge parametri adimensionali indipendenti, ma entra in $F_D$ unicamente come fattore di scala dimensionale.
 
 === Limiti di validità: fluidi non newtoniani e numero di Mach
 
@@ -458,35 +460,210 @@ Si osservi il ruolo della densità $rho$: esprimendo la viscosità tramite quell
   $
   Con $n = 5$ e $r = 3$, si hanno $n - r = 2$ parametri adimensionali indipendenti:
   $
-    C_D = C_D ("Re", "Ma"), quad "Ma" = U_infinity / c
+    C_D = C_D ("Re"_D, "Ma"), quad "Ma" = U_infinity / c
   $
   dove $"Ma"$ è il *numero di Mach*. Gli effetti di comprimibilità risultano trascurabili per bassi numeri di Mach, tipicamente $"Ma" lt.eq 0.3$ (in aria fino a velocità di circa $100 div 110$~m/s), regime in cui il flusso può essere trattato come incomprimibile.
 
 == Interpretazione fisica del numero di Reynolds
 
 #block(breakable: false)[
-  Per interpretare fisicamente il numero di Reynolds si esamina l'ordine di grandezza dei termini nell'equazione di Navier-Stokes per fluido incomprimibile (omettendo il termine gravitazionale):
+  Per interpretare fisicamente il numero di Reynolds si esamina l'ordine di grandezza dei termini nell'equazione di Navier-Stokes per fluido incomprimibile (omettendo le forze di volume gravitazionali o assorbendole nella pressione modificata):
   $
-    rho (partial arrow(u)) / (partial t) + underbrace(rho (arrow(u) dot nabla) arrow(u), rho U_infinity^2 slash D) = -nabla p + underbrace(mu Delta arrow(u), mu U_infinity slash D^2)
+    rho (partial arrow(u)) / (partial t) + underbrace(rho (arrow(u) dot nabla) arrow(u), rho U^2 slash L) = -nabla p + underbrace(mu nabla^2 arrow(u), mu U slash L^2)
   $
 ]
 
-#block(sticky: true)[Assumendo $U_infinity$ e $D$ come scale caratteristiche di velocità e lunghezza e $tau tilde.op D slash U_infinity$ come scala temporale convettiva:]
-- il termine instazionario ha ordine $|rho thin partial arrow(u) slash partial t| tilde.op rho U_infinity slash (D slash U_infinity) = rho U_infinity^2 slash D$, uguale a quello del termine convettivo;
-- il termine convettivo (trasporto di quantità di moto per inerzia) ha ordine $|rho (arrow(u) dot nabla) arrow(u)| tilde.op rho U_infinity^2 slash D$;
-- il gradiente di pressione $-nabla p$ non impone qui una scala indipendente (a differenza dei moti in condotta guidati da una caduta di pressione imposta);
-- il termine diffusivo (dissipazione viscosa) ha ordine $|mu Delta arrow(u)| tilde.op mu U_infinity slash D^2$.
+#block(sticky: true)[Indicando con $U$ e $L$ le scale caratteristiche di velocità e lunghezza (ad esempio $U_infinity$ e $D$ oppure $a$) e assumendo inizialmente $t_c = L slash U$ come scala temporale convettiva:]
+- il termine instazionario ha ordine $abs(rho thin partial arrow(u) slash partial t) tilde.op rho U slash (L slash U) = rho U^2 slash L$, uguale a quello del termine convettivo;
+- il termine convettivo (trasporto inerziale di quantità di moto) ha ordine $abs(rho (arrow(u) dot nabla) arrow(u)) tilde.op rho U^2 slash L$;
+- il gradiente di pressione $-nabla p$ non impone qui una scala esterna indipendente (a differenza dei moti in condotta guidati da una caduta di pressione imposta), ma si adatta al regime dinamico dominante;
+- il termine diffusivo (dissipazione viscosa) ha ordine $abs(mu nabla^2 arrow(u)) tilde.op mu U slash L^2$.
 
 #block(breakable: false)[
-  Confrontando l'ordine di grandezza del termine convettivo con quello del termine diffusivo si ottiene:
+  Confrontando l'ordine di grandezza del termine convettivo con quello del termine diffusivo si ottiene il numero di Reynolds associato alla scala $L$:
   $
-    "Re" & = "convezione" / "diffusione" = (rho U_infinity^2 slash D) / (mu U_infinity slash D^2) = (rho U_infinity D) / mu \
-         & = U_infinity / (nu slash D) = "velocità convettiva" / "velocità diffusiva"
+    "Re"_L & = "convezione" / "diffusione" = (rho U^2 slash L) / (mu U slash L^2) = (rho U L) / mu = (U L) / nu \
+           & = U / (nu slash L) = "velocità convettiva" / "velocità diffusiva"
   $
 ]
 
-Il numero di Reynolds misura quindi l'importanza relativa della convezione rispetto alla diffusione viscosa: a densità costante, tutta la dinamica del fluido nasce dalla competizione tra questi due meccanismi. Per $"Re" << 1$ la diffusione domina e il termine convettivo — che è il termine *non lineare* dell'equazione — diventa di secondo ordine; se tale termine è assente o trascurabile (come per geometria nel moto di Poiseuille o a bassissimo $"Re"$), la dinamica è lineare e il campo è necessariamente laminare. Al contrario, per $"Re"$ elevati (es. $"Re" tilde.op 10^5$) il termine convettivo non lineare diventa dominante e conferisce al fluido un'autonomia dinamica rispetto alle condizioni al contorno: pur in presenza di forzanti stazionarie, insorgono prima oscillazioni periodiche autonome (distacco alternato di vortici per $"Re" > 40$) e poi il regime turbolento, caratterizzato dalla capacità del campo di moto di svincolarsi da una risposta univoca e stazionaria alle condizioni al contorno.
+La medesima competizione tra inerzia e viscosità si riflette nelle scale caratteristiche di tempo e di variazione di pressione:
+- *Scale dei tempi:* al tempo caratteristico convettivo $t_c = L slash U$ si affianca il tempo caratteristico diffusivo $t_nu = L^2 slash nu$ (costruito con $[nu] = L^2 T^(-1)$). Il loro rapporto vale:
+  $
+    t_nu / t_c = (L^2 slash nu) / (L slash U) = (U L) / nu = "Re"_L
+  $
+  Per basso Reynolds ($"Re"_L << 1$) è $t_nu << t_c$, ossia la diffusione viscosa attraversa la scala $L$ più rapidamente della convezione; per alto Reynolds ($"Re"_L >> 1$) sulla scala macroscopica la convezione è molto più rapida della diffusione.
+- *Scale delle pressioni:* bilanciando $-nabla p$ con il termine convettivo ($Delta p slash L tilde.op rho U^2 slash L$) si ottiene la *scala di pressione convettiva (o inerziale)* $p_c = rho U^2$; bilanciandolo invece con il termine viscoso ($Delta p slash L tilde.op mu U slash L^2$) si ottiene la *scala di pressione diffusiva (o viscosa)* $p_nu = mu U slash L = rho nu U slash L$. Anche il rapporto tra queste due scale di variazione della pressione coincide con il numero di Reynolds:
+  $
+    p_c / p_nu = (rho U^2) / (mu U slash L) = (rho U L) / mu = "Re"_L
+  $
+
+Il numero di Reynolds misura quindi l'importanza relativa della convezione rispetto alla diffusione viscosa: a densità costante, l'intera dinamica del fluido nasce dalla competizione tra questi due meccanismi. Per $"Re"_L << 1$ la diffusione domina e il termine convettivo — che è il termine *non lineare* dell'equazione — diventa di secondo ordine; se tale termine è assente o trascurabile (come per geometria nel moto di Poiseuille o a bassissimo $"Re"_L$), la dinamica è lineare e il campo è necessariamente laminare. Al contrario, per $"Re"_L$ elevati (es. $"Re"_L tilde.op 10^5$) il termine convettivo non lineare diventa dominante e conferisce al fluido un'autonomia dinamica rispetto alle condizioni al contorno: pur in presenza di forzanti stazionarie, insorgono prima oscillazioni periodiche autonome (distacco alternato di vortici per $"Re"_D > 40$) e poi il regime turbolento, caratterizzato dalla capacità del campo di moto di svincolarsi da una risposta univoca e stazionaria alle condizioni al contorno.
 
 #nota-esame[
-  Il termine convettivo $(arrow(u) dot nabla) arrow(u)$ è il termine *non lineare* dell'equazione di Navier-Stokes. Un campo di moto retto da dinamica lineare è necessariamente laminare, ma un campo di moto laminare non ha necessariamente dinamica lineare (ad esempio, nel flusso attorno a un cilindro per $"Re" tilde.op 2 div 40$, le bolle di ricircolo coinvolgono effetti non lineari pur restando stazionarie e laminari).
+  Il termine convettivo $(arrow(u) dot nabla) arrow(u)$ è il termine *non lineare* dell'equazione di Navier-Stokes. Un campo di moto retto da dinamica lineare è necessariamente laminare, ma un campo di moto laminare non ha necessariamente dinamica lineare (ad esempio, nel flusso attorno a un cilindro per $"Re"_D tilde.op 2 div 40$, le bolle di ricircolo coinvolgono effetti non lineari pur restando stazionarie e laminari).
 ]
+
+== Adimensionalizzazione delle equazioni di Navier-Stokes e regime di Stokes
+
+Per far emergere direttamente dalle equazioni del moto la dipendenza dal numero di Reynolds, riscriviamo il problema del flusso incomprimibile attorno a una sfera (o cilindro circolare) di raggio $a$ in forma adimensionale. L'adimensionalizzazione risponde a due esigenze fondamentali:
+1. *Similitudine dinamica:* nel campo di moto attorno a un corpo non conta la distanza assoluta in metri dalla parete, bensì la distanza relativa alla dimensione del corpo stesso (la medesima distanza fisica può trovarsi nella regione prossima o nel campo lontano a seconda del raggio $a$). Riscalare le variabili permette di unificare problemi geometricamente simili a scale diverse.
+2. *Indipendenza dalle unità di misura:* le unità dimensionali sono convenzioni arbitrarie, mentre le leggi fisiche esprimono relazioni intrinseche tra grandezze adimensionali e parametri di controllo puri.
+
+Ponendo l'origine degli assi al centro della sfera di raggio $a$, il problema differenziale dimensionale (con pressione modificata $p$ che assorbe la gravità) è costituito dalle equazioni di continuità e di Navier-Stokes:
+$
+  nabla dot arrow(u) = 0, quad rho (partial arrow(u)) / (partial t) + rho (arrow(u) dot nabla) arrow(u) = -nabla p + mu nabla^2 arrow(u)
+$
+corredate dalle condizioni al contorno di aderenza sulla superficie sferica $abs(arrow(x)) = a$ e di corrente uniforme indisturbata all'infinito:
+$
+  arrow(u) = arrow(0) quad "per " abs(arrow(x)) = a, quad arrow(u) arrow.r U_infinity hat(i) " e " p arrow.r p_infinity quad "per " abs(arrow(x)) arrow.r infinity
+$
+
+#nota-esame[
+  *Condizione di aderenza vs modello ideale (Bernoulli).* Nel modello di fluido ideale inviscido ($mu = 0$), l'ordine differenziale dell'equazione scende e si può imporre soltanto la condizione di *impermeabilità* ($arrow(u) dot hat(n) = 0$): il fluido può scorrere tangenzialmente alla parete, arrestandosi nei punti di ristagno e raggiungendo la velocità massima sui fianchi del corpo per restringimento dei tubi di flusso (effetto Venturi, analogo all'accelerazione del vento sulla cresta di un rilievo). In un fluido reale viscoso vale invece rigorosamente l'*aderenza* ($arrow(u) = arrow(0)$ sulla parete): l'argomento di Bernoulli conserva solo un valore qualitativo nel campo esterno, poiché il massimo di velocità non si realizza più a contatto con la parete ma a una certa distanza da essa.
+]
+
+=== Scelta delle scale caratteristiche ed equazioni a basso Reynolds
+
+Le coordinate spaziali e la velocità si adimensionalizzano in modo univoco rispetto al raggio $a$ e alla velocità indisturbata $U_infinity$:
+$
+  arrow(x) = a thin tilde(arrow(x)) quad (x_i = a thin tilde(x)_i), quad arrow(u) = U_infinity tilde(arrow(u)) quad (u_i = U_infinity tilde(u)_i)
+$
+dove il simbolo tilde contraddistingue le variabili adimensionali. Sostituendo nell'equazione di continuità in notazione indiciale si ottiene:
+$
+  (partial u_i) / (partial x_i) = U_infinity / a (partial tilde(u)_i) / (partial tilde(x)_i) = 0 quad arrow.r.double quad (partial tilde(u)_i) / (partial tilde(x)_i) = 0 quad (tilde(nabla) dot tilde(arrow(u)) = 0)
+$
+che conserva la medesima forma adimensionale indipendentemente dalla scelta delle scale di tempo e pressione.
+
+Per l'equazione di bilancio della quantità di moto, volendo studiare il *regime a basso numero di Reynolds* (campo dominato dalla diffusione viscosa), adottiamo la scala temporale diffusiva $t_nu = a^2 slash nu$ e la scala di pressione viscosa $p_nu = mu U_infinity slash a$:
+$
+  t = a^2 / nu thin tilde(t), quad p - p_infinity = (mu U_infinity) / a thin tilde(p)
+$
+Riscrivendo l'equazione di Navier-Stokes divisa per $rho$, ovvero $(partial u_i) slash (partial t) + u_j (partial u_i) slash (partial x_j) = -(1 slash rho)(partial p) slash (partial x_i) + nu (partial^2 u_i) slash (partial x_j partial x_j)$, ed esplicitando le costanti dimensionali davanti a ciascun operatore adimensionale:
+- termine instazionario: $(partial u_i) / (partial t) = (U_infinity) / (a^2 slash nu) (partial tilde(u)_i) / (partial tilde(t)) = (nu U_infinity) / a^2 (partial tilde(u)_i) / (partial tilde(t))$;
+- termine convettivo: $u_j (partial u_i) / (partial x_j) = U_infinity^2 / a thin tilde(u)_j (partial tilde(u)_i) / (partial tilde(x)_j)$;
+- termine di pressione: $-1 / rho (partial p) / (partial x_i) = -1 / rho (mu U_infinity) / a^2 (partial tilde(p)) / (partial tilde(x)_i) = -(nu U_infinity) / a^2 (partial tilde(p)) / (partial tilde(x)_i)$;
+- termine viscoso: $nu (partial^2 u_i) / (partial x_j partial x_j) = (nu U_infinity) / a^2 (partial^2 tilde(u)_i) / (partial tilde(x)_j partial tilde(x)_j)$.
+
+ Assemblando i termini si ha:
+$
+  (nu U_infinity) / a^2 (partial tilde(u)_i) / (partial tilde(t)) + U_infinity^2 / a thin tilde(u)_j (partial tilde(u)_i) / (partial tilde(x)_j) = -(nu U_infinity) / a^2 (partial tilde(p)) / (partial tilde(x)_i) + (nu U_infinity) / a^2 (partial^2 tilde(u)_i) / (partial tilde(x)_j partial tilde(x)_j)
+$
+Dividendo l'intera equazione per la scala di accelerazione diffusiva $nu U_infinity slash a^2$ (ossia moltiplicando per $a^2 slash (nu U_infinity)$), il coefficiente del termine convettivo diventa $(U_infinity^2 slash a) dot a^2 slash (nu U_infinity) = U_infinity a slash nu = "Re"_a$. Il sistema adimensionale completo assume quindi la forma:
+$
+  cases(
+    tilde(nabla) dot tilde(arrow(u)) = 0,
+    (partial tilde(arrow(u))) / (partial tilde(t)) + "Re"_a (tilde(arrow(u)) dot tilde(nabla)) tilde(arrow(u)) = -tilde(nabla) tilde(p) + tilde(nabla)^2 tilde(arrow(u))
+  )
+$
+con le rispettive condizioni al contorno adimensionalizzate (dividendo le coordinate per $a$ e la velocità per $U_infinity$):
+$
+  tilde(arrow(u)) = arrow(0) quad "per " abs(tilde(arrow(x))) = 1, quad tilde(arrow(u)) arrow.r hat(i) " e " tilde(p) arrow.r 0 quad "per " abs(tilde(arrow(x))) arrow.r infinity
+$
+(Se si definisse $tilde(p) = p a slash (mu U_infinity)$ senza sottrarre $p_infinity$, cambierebbe solo il valore asintotico $tilde(p) arrow.r p_infinity a slash (mu U_infinity)$, lasciando invariati sia $tilde(nabla) tilde(p)$ sia la risultante delle forze sul corpo chiuso, poiché $integral.cont_S p_infinity hat(n) thin dif S = arrow(0)$.) In questa formulazione la geometria e le condizioni al contorno sono universali: l'unico parametro rimasto nell'intero problema è il numero di Reynolds $"Re"_a$.
+
+=== Limite per $"Re"_a arrow.r 0$: problema di Stokes e forza di resistenza
+
+Passando al limite asintotico $"Re"_a arrow.r 0$, il termine convettivo $"Re"_a (tilde(arrow(u)) dot tilde(nabla)) tilde(arrow(u))$ scompare. Inoltre, venendo meno l'unico termine non lineare, il problema differenziale diventa *lineare*: poiché le condizioni al contorno imposte sono stazionarie, il campo di moto risponde linearmente ad esse senza poter sviluppare instabilità o dipendenze temporali autonome, per cui a regime risulta necessariamente $(partial tilde(arrow(u))) slash (partial tilde(t)) = arrow(0)$. Si ottiene così il *problema di Stokes* stazionario:
+$
+  tilde(nabla) dot tilde(arrow(u)) = 0, quad tilde(nabla) tilde(p) = tilde(nabla)^2 tilde(arrow(u)) quad "(in forma dimensionale: " nabla dot arrow(u) = 0, quad nabla p = mu nabla^2 arrow(u) ")"
+$
+
+#nota-esame[
+  Nel limite $"Re"_a arrow.r 0$ la stazionarietà del campo di moto non richiede un'ipotesi aggiuntiva se le condizioni al contorno sono stazionarie: l'eliminazione del termine convettivo uccide la non linearità dell'equazione, obbligando il sistema lineare a una risposta stazionaria. Inoltre, poiché $"Re"_a$ scompare sia dalle equazioni sia dalle condizioni al contorno, la soluzione adimensionale $(tilde(arrow(u)), tilde(p))$ di Stokes è universale e non dipende più dal numero di Reynolds.
+]
+
+Calcoliamo ora la forza esercitata dal fluido sulla superficie $S$ della sfera. Indicata con $hat(n)$ la normale uscente dal corpo verso il fluido e valutata la pressione al netto di $p_infinity$, la componente $i$-esima della forza è:
+$
+  F_i = integral_S (-(p - p_infinity) n_i + tau_(i j) n_j) thin dif S
+$
+Introducendo le scale viscose per la pressione $(p - p_infinity) = (mu U_infinity slash a) tilde(p)$, per il tensore degli sforzi viscosi $tau_(i j) = mu ((partial u_i) slash (partial x_j) + (partial u_j) slash (partial x_i)) = (mu U_infinity slash a) tilde(tau)_(i j)$ e per l'elemento d'area superficiale $dif S = a^2 thin dif tilde(S)$, si ricava:
+$
+  F_i = integral_(tilde(S)) (-(mu U_infinity) / a thin tilde(p) n_i + (mu U_infinity) / a thin tilde(tau)_(i j) n_j) a^2 thin dif tilde(S) = (mu U_infinity a) integral_(tilde(S)) (-tilde(p) n_i + tilde(tau)_(i j) n_j) thin dif tilde(S)
+$
+Il fattore $F_* = mu U_infinity a$ rappresenta la *scala viscosa della forza*, mentre il rapporto $K_i = F_i slash (mu U_infinity a)$ è il vettore della forza adimensionalizzata. Proiettando lungo la direzione della corrente $hat(i)$ si ottiene la forza di resistenza $F_D = arrow(F) dot hat(i)$ e l'espressione integrale del coefficiente adimensionale $K$:
+$
+  K = F_D / (mu U_infinity a) = integral_(tilde(S)) (-tilde(p) (hat(n) dot hat(i)) + (tilde(bold(tau)) dot hat(n)) dot hat(i)) thin dif tilde(S)
+$
+
+Nel limite di Stokes ($"Re"_a arrow.r 0$) per una sfera di raggio $a$, il problema lineare ammette soluzione analitica esatta per $tilde(arrow(u))(tilde(arrow(x)))$ e $tilde(p)(tilde(arrow(x)))$. Valutando separatamente i due integrali sulla sfera unitaria $abs(tilde(arrow(x))) = 1$ si trova:
+$
+  integral_(tilde(S)) -tilde(p) (hat(n) dot hat(i)) thin dif tilde(S) = 2 pi, quad integral_(tilde(S)) (tilde(bold(tau)) dot hat(n)) dot hat(i) thin dif tilde(S) = 4 pi
+$
+(il primo integrale è positivo malgrado il segno meno perché sulla calotta frontale è $tilde(p) > 0$ con $hat(n) dot hat(i) < 0$, mentre a valle è $tilde(p) < 0$ con $hat(n) dot hat(i) > 0$). Sommando i due contributi risulta $K = 2 pi + 4 pi = 6 pi$, da cui la *legge di Stokes* per la resistenza di una sfera:
+$
+  F_D = 6 pi mu a U_infinity = 3 pi mu D U_infinity
+$
+Per numeri di Reynolds non asintoticamente nulli la legge di Stokes non si estende senza correzioni e occorre scrivere più in generale $F_D = mu U_infinity a thin K("Re"_a)$, con $K("Re"_a) arrow.r 6 pi$ per $"Re"_a arrow.r 0$. Riportando la soluzione di Stokes nella definizione convenzionale del coefficiente di resistenza $C_D$ basato sull'area frontale $A_"ref" = pi a^2$, si ottiene infine:
+$
+  C_D = (6 pi mu a U_infinity) / (1 slash 2 thin rho U_infinity^2 pi a^2) = (12 mu) / (rho U_infinity a) = 12 / "Re"_a = 24 / "Re"_D
+$
+
+#nota-esame[
+  Nella soluzione esatta di Stokes per la sfera ($K = 6 pi$, valida solo per $"Re" arrow.r 0$), la resistenza totale $F_D = 6 pi mu a U_infinity$ proviene per *un terzo* dal contributo di pressione ($2 pi mu a U_infinity$) e per *due terzi* dagli sforzi viscosi tangenziali ($4 pi mu a U_infinity$). Prestare sempre attenzione alla lunghezza scelta nel numero di Reynolds: $C_D = 24 slash "Re"_D$ sul diametro $D = 2 a$, ma $C_D = 12 slash "Re"_a$ sul raggio $a$.
+]
+
+== Caduta di una sfera nel regime di Stokes
+
+Applichiamo il risultato precedente al moto verticale di sedimentazione di una sfera solida isolata di raggio $a$ (diametro $D = 2 a$) e densità $rho_s$, immersa in un fluido newtoniano in quiete di densità $rho$ e viscosità dinamica $mu$.
+
+Supponiamo $rho_s > rho$, cosicché la sfera cada verso il basso fino a raggiungere una condizione stazionaria a *velocità terminale* costante $U_t$. Ponendosi nel sistema di riferimento solidale con la sfera, la superficie del corpo è ferma ($arrow(u) = arrow(0)$ per $abs(arrow(x)) = a$) ed è investita dal basso verso l'alto da una corrente relativa uniforme di velocità indisturbata $U_infinity = U_t$: il problema fluido coincide esattamente con quello già risolto, ruotato lungo la verticale. La scomposizione della pressione nella parte idrostatica e nella pressione modificata permette inoltre di separare nettamente la spinta di Archimede dalla resistenza idrodinamica, evitando di contare due volte il contributo idrostatico.
+
+#block(breakable: false)[
+  #grid(
+    columns: (1.15fr, 0.85fr),
+    column-gutter: 1em,
+    align: (left + horizon, center + horizon),
+    [
+      Alla velocità terminale l'accelerazione della sfera è nulla e le forze verticali si equilibrano. I moduli della forza peso $P$ (diretta verso il basso) e della spinta di Archimede $F_A$ (diretta verso l'alto) valgono:
+      $
+        P = 4 / 3 pi a^3 rho_s g, quad F_A = 4 / 3 pi a^3 rho g
+      $
+      La forza di resistenza $F_D$ si oppone alla caduta (è quindi diretta verso l'alto) e il bilancio verticale impone:
+      $
+        F_D + F_A = P quad arrow.r.double quad F_D = 4 / 3 pi a^3 (rho_s - rho) g
+      $
+    ],
+    [#canvas(length: 1cm, {
+      import draw: *
+      circle((0.0, 0.0), radius: 0.85, fill: luma(235), stroke: 1pt)
+      content((0.0, 0.0), text(size: 10pt)[$rho_s$])
+      line((0.0, -0.35), (0.0, -2.0), mark: (end: ">"), stroke: (paint: black, thickness: 1.1pt))
+      content((0.15, -1.95), text(size: 10pt)[$P$], anchor: "west")
+      line((-0.3, 0.55), (-0.3, 1.75), mark: (end: ">"), stroke: (paint: rgb("#1d4ed8"), thickness: 1.1pt))
+      content((-0.4, 1.7), text(size: 10pt)[$F_A$], anchor: "east")
+      line((0.3, 0.55), (0.3, 2.05), mark: (end: ">"), stroke: (paint: rgb("#1d4ed8"), thickness: 1.1pt))
+      content((0.4, 2.0), text(size: 10pt)[$F_D$], anchor: "west")
+      line((1.55, 0.45), (1.55, -0.95), mark: (end: ">"), stroke: (paint: rgb("#991b1b"), thickness: 0.95pt))
+      content((1.7, -0.85), text(size: 10pt)[$U_t$], anchor: "west")
+    })],
+  )
+]
+
+Esprimendo in generale la resistenza come $F_D = mu U_t a thin K("Re"_a)$, si ricava la relazione implicita (poiché $"Re"_a = rho U_t a slash mu$ dipende a sua volta da $U_t$):
+$
+  U_t = (4 pi a^2 (rho_s - rho) g) / (3 mu K("Re"_a))
+$
+Se il moto avviene nel regime di Stokes ($"Re"_D << 1$), si può porre $K = 6 pi$, ottenendo in forma esplicita la *velocità terminale di Stokes*:
+$
+  U_t = (2 a^2 (rho_s - rho) g) / (9 mu) = (D^2 (rho_s - rho) g) / (18 mu)
+$
+Se la sfera è meno densa del fluido ($rho_s < rho$), il moto stazionario è di risalita verso l'alto e il modulo della velocità terminale si ottiene sostituendo $rho_s - rho$ con $abs(rho_s - rho)$ (con resistenza $F_D$ rivolta verso il basso); per $rho_s = rho$ peso e spinta idrostatica si compensano esattamente ($U_t = 0$). La formula presuppone inoltre una sfera isolata, lontana da pareti o da altre particelle (assenza di effetti di confinamento).
+
+=== Verifica a posteriori e raggio critico di validità
+
+Poiché la legge $K = 6 pi$ è lecita solo per bassissimo numero di Reynolds, una volta calcolata $U_t$ è indispensabile verificare *a posteriori* che sia soddisfatta la condizione:
+$
+  "Re"_D = (rho U_t D) / mu = (2 rho U_t a) / mu << 1
+$
+Qualora la verifica fallisca, occorre adottare la legge di resistenza appropriata al regime effettivo di Reynolds e risolvere implicitamente il bilancio delle forze.
+
+Fissata una soglia pratica di validità per l'approssimazione di Stokes, ad esempio $"Re"_D lt.eq "Re"_"lim" = 0.1$, è possibile determinare direttamente il *raggio massimo* $a_"max"$ della sfera per cui la soluzione di Stokes risulta applicabile. Sostituendo l'espressione di $U_t$ nella definizione di $"Re"_D$ (con $mu = rho nu$):
+$
+  "Re"_D = (2 rho a) / mu dot (2 a^2 abs(rho_s - rho) g) / (9 mu) = (4 rho abs(rho_s - rho) g a^3) / (9 mu^2) = (4 abs(rho_s - rho) g a^3) / (9 rho nu^2) lt.eq "Re"_"lim"
+$
+Risolvendo rispetto al raggio $a$ si ottiene:
+$
+  a lt.eq a_"max" = ((9 thin "Re"_"lim" thin mu^2) / (4 rho abs(rho_s - rho) g))^(1 slash 3) = ((9 thin "Re"_"lim" thin rho nu^2) / (4 abs(rho_s - rho) g))^(1 slash 3)
+$
+A parità di densità del solido $rho_s$, il raggio critico $a_"max"$ dipende fortemente dalle proprietà del fluido tramite il rapporto $mu^2 slash (rho abs(rho_s - rho))$: passando dall'aria ($rho approx 1.2 "kg/m"^3$, $mu approx 1.81 times 10^(-5) "Pa" dot "s"$) all'acqua ($rho approx 1000 "kg/m"^3$) e ancor più a un olio viscoso ($rho approx 900 "kg/m"^3$, viscosità molto maggiore), l'aumento di $mu$ e la riduzione del contrasto di densità $abs(rho_s - rho)$ innalzano sensibilmente il raggio massimo compatibile con il regime di Stokes.
