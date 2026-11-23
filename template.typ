@@ -146,6 +146,9 @@
     etichetta((x0 + W - 0.95, ym - 0.32), $-nabla p$, col: c-forza)
   }
 }
+#let corpo-circolare(centro, raggio: 0.9) = {
+  draw.circle(centro, radius: raggio, fill: luma(238), stroke: 1pt + black)
+}
 
 // ---------------------------------------------------------------
 // Derivazioni (cap. 7): passaggio con spiegazione, tappa
