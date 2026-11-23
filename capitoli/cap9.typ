@@ -447,7 +447,7 @@ Per far emergere direttamente dalle equazioni del moto la dipendenza dal numero 
   canvas(length: 1cm, {
     import draw: *
     for y in (0.75, 0.0, -0.75) {
-      freccia((0.0, y), (1.85, y), col: col-vel, spessore: 0.9pt)
+      freccia((0.0, y), (1.85, y), col: c-vel, spessore: 0.9pt)
     }
     content((0.92, 0.95), text(size: 9.5pt)[$U_infinity hat(i), thin p_infinity$], anchor: "south")
 
