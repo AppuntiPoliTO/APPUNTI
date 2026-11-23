@@ -491,12 +491,6 @@ Il numero di Reynolds misura quindi l'importanza relativa della convezione rispe
   Il termine convettivo $(arrow(u) dot nabla) arrow(u)$ è il termine *non lineare* dell'equazione di Navier-Stokes. Un campo di moto retto da dinamica lineare è necessariamente laminare, ma un campo di moto laminare non ha necessariamente dinamica lineare (ad esempio, nel flusso attorno a un cilindro per $"Re" tilde.op 2 div 40$, le bolle di ricircolo coinvolgono effetti non lineari pur restando stazionarie e laminari).
 ]
 
-#import "@preview/cetz:0.3.4": canvas, draw
-
-#set page(paper: "a4", margin: (x: 2.5cm, y: 2.5cm))
-#set text(lang: "it", size: 10.5pt)
-#set par(justify: true)
-#set heading(numbering: "1.1")
 
 #let nota-esame(body) = block(
   fill: luma(245),
