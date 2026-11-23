@@ -757,7 +757,7 @@ $
   $ <eq:vel-stokes>
 ]
 
-=== Verifica di validità e calcolo del raggio massimo
+*calcolo del raggio massimo*
 
 #block(sticky: true)[
   Poiché la soluzione di Stokes vale per $"Re" arrow.r 0$, assimiliamo operativamente tale condizione asintotica al requisito che il numero di Reynolds sul diametro $D = 2 a$ sia inferiore a $0.1$:
