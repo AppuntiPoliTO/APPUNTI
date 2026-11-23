@@ -457,26 +457,26 @@ Per far emergere direttamente dalle equazioni del moto la dipendenza dal numero 
     content((4.2, -0.06), text(size: 9pt)[$x$], anchor: "north")
     content((3.52, 0.56), text(size: 9pt)[$y$], anchor: "east")
 
-    line((3.6, 0.0), (4.24, -0.64), stroke: (paint: col-quota, thickness: 0.7pt, dash: "dashed"))
+    line((3.6, 0.0), (4.24, -0.64), stroke: (paint: c-geo, thickness: 0.7pt, dash: "dashed"))
     content((3.86, -0.38), text(size: 9.5pt)[$a$], anchor: "north-east")
 
-    freccia((4.24, 0.64), (4.82, 1.22), col: col-quota, spessore: 0.85pt)
+    freccia((4.24, 0.64), (4.82, 1.22), col: c-geo, sp: 0.85pt)
     content((4.88, 1.25), text(size: 9.5pt)[$hat(n)$], anchor: "south-west")
     content((2.82, 0.72), text(size: 9.5pt)[$arrow(u) = arrow(0)$], anchor: "south-east")
 
-    line((2.7, -1.3), (4.5, -1.3), stroke: (paint: col-quota, thickness: 0.7pt))
-    line((2.7, -1.42), (2.7, -1.18), stroke: (paint: col-quota, thickness: 0.7pt))
-    line((4.5, -1.42), (4.5, -1.18), stroke: (paint: col-quota, thickness: 0.7pt))
+    line((2.7, -1.3), (4.5, -1.3), stroke: (paint: c-geo, thickness: 0.7pt))
+    line((2.7, -1.42), (2.7, -1.18), stroke: (paint: c-geo, thickness: 0.7pt))
+    line((4.5, -1.42), (4.5, -1.18), stroke: (paint: c-geo, thickness: 0.7pt))
     content((3.6, -1.47), text(size: 9.5pt)[$D = 2 a$], anchor: "north")
 
-    freccia((4.5, 0.0), (6.35, 0.0), col: col-forza, spessore: 1.15pt)
+    freccia((4.5, 0.0), (6.35, 0.0), col: c-forza, sp: 1.15pt)
     content((5.45, -0.18), text(size: 9.5pt)[$F_D = arrow(F) dot hat(i)$], anchor: "north")
   }),
   caption: [Schema del problema attorno a una sfera (o cilindro) di raggio $a$ investita da una corrente uniforme $U_infinity hat(i)$, con condizione di aderenza a parete e normale uscente $hat(n)$.],
 ) <fig:problema-sfera>
 
 #block(breakable: false)[
-  #nota-esame[
+  #nota[
     *Condizione di aderenza vs modello ideale (Bernoulli).* Usando il teorema di Bernoulli si adotta un modello di fluido ideale inviscido ($mu = 0$), nel quale non può valere l'aderenza ma si impone soltanto la condizione di *impermeabilità* (velocità tangente alla superficie): la velocità si annulla nel punto di ristagno frontale e raggiunge il massimo sui fianchi per restringimento delle linee di corrente (effetto Venturi, analogo al rinforzo del vento sulla cresta di una collina o di una montagna). Nel fluido reale viscoso la velocità a parete è invece rigorosamente nulla per aderenza, e l'analisi con Bernoulli conserva solo un valore grossolano (*spannometrico*): il massimo di velocità continua a esistere, ma si sposta a una certa distanza dalla parete.
   ]
 ]
@@ -564,7 +564,7 @@ $
 $
 
 #block(breakable: false)[
-  #nota-esame[
+  #nota[
     L'annullamento di $partial tilde(arrow(u)) slash partial tilde(t)$ per $"Re"_a arrow.r 0$ non richiede un'ipotesi aggiuntiva di stazionarietà: eliminando il termine convettivo col numero di Reynolds viene uccisa la non linearità dell'equazione, e un sistema lineare sottoposto a condizioni al contorno stazionarie non può sviluppare autonomia temporale ma deve rispondere in modo stazionario. Inoltre, poiché $"Re"_a$ non compare più né nelle equazioni né nelle condizioni al contorno, la soluzione asintotica $(tilde(arrow(u)), tilde(p))$ prescinde dal valore del numero di Reynolds.
   ]
 ]
@@ -606,7 +606,7 @@ $
 ]
 
 #block(breakable: false)[
-  #nota-esame[
+  #nota[
     La soluzione analitica esatta $K = 6 pi$ vale per una *sfera* esclusivamente nel limite asintotico $"Re" arrow.r 0$ (in cui la sola viscosità bilancia la pressione in assenza del termine convettivo) ed è somma del contributo di pressione pari a $2 pi$ ($1 slash 3$ del totale) e del contributo viscoso pari a $4 pi$ ($2 slash 3$ del totale).
   ]
 ]
@@ -621,20 +621,20 @@ Raggiunto il regime stazionario alla velocità di caduta costante $U_t$, un osse
   canvas(length: 1cm, {
     import draw: *
     for x in (-1.85, -1.45) {
-      freccia((x, -0.85), (x, 0.55), col: col-vel, spessore: 0.85pt)
+      freccia((x, -0.85), (x, 0.55), col: c-vel, sp: 0.85pt)
     }
     content((-1.65, -1.02), text(size: 9.5pt)[$U_infinity = U_t$], anchor: "north")
 
     corpo-circolare((0.0, 0.0), raggio: 0.9)
     content((0.0, 0.15), text(size: 9.5pt)[$rho_s, thin a$], anchor: "south")
 
-    freccia((0.0, -0.15), (0.0, -2.25), col: black, spessore: 1.1pt)
+    freccia((0.0, -0.15), (0.0, -2.25), col: black, sp: 1.1pt)
     content((0.18, -2.15), text(size: 9.5pt)[$P$], anchor: "west")
 
-    freccia((-0.32, 0.70), (-0.32, 1.55), col: col-forza, spessore: 1.1pt)
+    freccia((-0.32, 0.70), (-0.32, 1.55), col: c-forza, sp: 1.1pt)
     content((-0.48, 1.48), text(size: 9.5pt)[$F_A$], anchor: "east")
 
-    freccia((0.32, 0.70), (0.32, 1.95), col: col-forza, spessore: 1.1pt)
+    freccia((0.32, 0.70), (0.32, 1.95), col: c-forza, sp: 1.1pt)
     content((0.48, 1.88), text(size: 9.5pt)[$F_D$], anchor: "west")
 
     content((2.0, 0.65), text(size: 9.5pt)[$F_D + F_A = P$], anchor: "west")
