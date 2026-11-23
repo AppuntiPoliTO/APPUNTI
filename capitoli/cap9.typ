@@ -387,6 +387,7 @@ $
 ]
 In un diagramma logaritmico ($ln r_f$ in funzione di $ln t$), la relazione rappresenta una *retta* di pendenza nota pari a $2 slash 5$. L'allineamento dei punti fotografici lungo una retta di pendenza $2 slash 5$ conferma la validità delle ipotesi dimensionali; nota la densità dell'aria $rho_0$ (e la costante $R^*$ di ordine unitario), dall'intercetta della retta si ricava l'energia $E$ dell'esplosione.
 
+#pagebreak()
 == Coefficiente di resistenza aerodinamica
 
 Applichiamo il teorema $Pi$ al flusso esterno stazionario attorno a un corpo circolare (sfera o cilindro indefinito) di diametro $D$, investito da una corrente uniforme di velocità $U_infinity$ diretta lungo il versore $hat(i)$, in un fluido newtoniano incomprimibile di densità $rho$ e viscosità dinamica $mu$. La forza di resistenza aerodinamica (*drag*) è la proiezione della forza totale $arrow(F)$ nella direzione della corrente: $F_D = arrow(F) dot hat(i)$.
@@ -519,7 +520,7 @@ Il numero di Reynolds misura quindi l'importanza relativa della convezione rispe
 #let corpo-circolare(centro, raggio: 0.9) = {
   draw.circle(centro, radius: raggio, fill: luma(238), stroke: 1pt + black)
 }
-
+#pagebreak()
 == Adimensionalizzazione delle equazioni di Navier-Stokes e regime di Stokes
 
 Per far emergere direttamente dalle equazioni del moto la dipendenza dal numero di Reynolds e riscriverle in forma funzionale al regime dinamico (a bassi o ad alti numeri di Reynolds), formuliamo in variabili adimensionali il problema del flusso incomprimibile attorno a una sfera (o cilindro circolare) di raggio $a$ e diametro $D = 2 a$.
