@@ -452,8 +452,8 @@ Per far emergere direttamente dalle equazioni del moto la dipendenza dal numero 
     content((0.92, 0.95), text(size: 9.5pt)[$U_infinity hat(i), thin p_infinity$], anchor: "south")
 
     corpo-circolare((3.6, 0.0), raggio: 0.9)
-    freccia((3.6, 0.0), (4.18, 0.0), col: col-quota, spessore: 0.65pt)
-    freccia((3.6, 0.0), (3.6, 0.58), col: col-quota, spessore: 0.65pt)
+    freccia((3.6, 0.0), (4.18, 0.0), col: c-geo, sp: 0.65pt)
+    freccia((3.6, 0.0), (3.6, 0.58), col: c-geo, sp: 0.65pt)
     content((4.2, -0.06), text(size: 9pt)[$x$], anchor: "north")
     content((3.52, 0.56), text(size: 9pt)[$y$], anchor: "east")
 
