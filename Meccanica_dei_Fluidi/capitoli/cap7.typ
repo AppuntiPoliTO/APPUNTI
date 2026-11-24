@@ -1,36 +1,6 @@
-#import "/template.typ": *
+#import "../template.typ": *
 #import "@preview/cetz:0.3.4"
-
-#set page(paper: "a4", margin: 2cm)
-#set text(lang: "it", size: 11pt)
-
-
-#show heading.where(level: 1): it => block(below: 1em, above: 1.2em)[
-  #set text(size: 15pt, weight: "bold")
-  #it
-]
-#show heading.where(level: 2): it => block(below: 0.8em, above: 1.3em)[
-  #set text(size: 12.5pt, weight: "bold")
-  #it
-]
-#show heading.where(level: 3): it => block(below: 0.6em, above: 1em)[
-  #set text(size: 11pt, weight: "bold")
-  #it
-]
-
-// Box per note fisiche e osservazioni importanti
-#let nota-box(titolo, corpo) = block(
-  width: 100%,
-  breakable: false,
-  fill: rgb("#f4f7fa"),
-  stroke: (left: 3pt + rgb("#1f5a96")),
-  inset: (x: 12pt, y: 9pt),
-  radius: (right: 3pt),
-  above: 0.9em,
-  below: 0.9em,
-)[
-  *#titolo.* #corpo
-]
+#show: conf
 
 = Equazione globale della meccanica dei fluidi
 
@@ -163,8 +133,8 @@ $
 
 Il terzo termine, $arrow(Pi)_w = integral_(S_w) sigma_(i j) n_j dif S_w = arrow(F)$, contiene la *forza cercata*.
 
-#nota-box("Attenzione ai segni e alle normali")[
-  Poiché per convenzione la normale $arrow(n)$ su $S_w$ è diretta dal fluido verso l'esterno (cioè *entra* nella parete solida), il termine $arrow(Pi)_w = arrow(F)$ rappresenta la *forza esercitata dalla parete sul fluido*. Per il terzo principio della dinamica, la forza esercitata dal fluido sulla parete è uguale e opposta, ovvero $-arrow(F)$.
+#nota[
+  *Attenzione ai segni e alle normali.* Poiché per convenzione la normale $arrow(n)$ su $S_w$ è diretta dal fluido verso l'esterno (cioè *entra* nella parete solida), il termine $arrow(Pi)_w = arrow(F)$ rappresenta la *forza esercitata dalla parete sul fluido*. Per il terzo principio della dinamica, la forza esercitata dal fluido sulla parete è uguale e opposta, ovvero $-arrow(F)$.
 ]
 
 === Bilancio per condotta orizzontale a sezione costante
@@ -218,8 +188,8 @@ $ [p(x_1) - (p(x_1) + (partial p) / (partial x) L)] pi R^2 = tau_w 2 pi R L $
 
 Definiamo infine la caduta di pressione positiva $Delta p = p_1 - p_2 > 0$ (ovvero $-(partial p / partial x) L = Delta p$) e sostituiamola per ricavare lo sforzo a parete:
 $ pi R^2 Delta p = tau_w 2 pi R L quad ==> quad tau_w = (Delta p) / (2 L) R $
-#nota-box("Confronto con le equazioni di Navier-Stokes")[
-  A differenza dell'approccio differenziale visto nella soluzione di Poiseuille (in cui era necessario risolvere le equazioni di Navier-Stokes per determinare il profilo di velocità e derivarlo a parete), il bilancio globale permette di calcolare lo sforzo viscoso a parete $tau_w$ direttamente dalla caduta di pressione $Delta p$ e dalla geometria, *senza conoscere il dettaglio del campo di velocità interno*.
+#nota[
+  *Confronto con le equazioni di Navier-Stokes.* A differenza dell'approccio differenziale visto nella soluzione di Poiseuille (in cui era necessario risolvere le equazioni di Navier-Stokes per determinare il profilo di velocità e derivarlo a parete), il bilancio globale permette di calcolare lo sforzo viscoso a parete $tau_w$ direttamente dalla caduta di pressione $Delta p$ e dalla geometria, *senza conoscere il dettaglio del campo di velocità interno*.
 ]
 
 Possiamo inoltre adimensionalizzare il modulo dello sforzo a parete $tau_w$ introducendo il *coefficiente d'attrito* (di Fanning) $c_f$:
@@ -351,11 +321,11 @@ Consideriamo un getto libero di sezione $S_1$, velocità $arrow(u)_1 = (U_1, 0, 
     Occorre prestare particolare attenzione ai segni nel termine convettivo $M_x = -integral_S rho u_x (u_j n_j) dif S$:
     - sulla sezione di ingresso $S_1$, $arrow(u)_1 = (U_1, 0, 0)$ e la normale uscente $arrow(n)_1 = (-1, 0, 0)$ sono antiparallele ($u_j n_j = -U_1$), mentre $u_x = +U_1$:
       $
-      #move(dx: -29pt)[$M_(1, x) = -integral_(S_1) rho (+U_1) (-U_1) dif S_1 = +rho U_1^2 S_1 = +rho Q U_1$]
+      M_(1, x) = -integral_(S_1) rho (+U_1) (-U_1) dif S_1 = +rho U_1^2 S_1 = +rho Q U_1
       $
     - su ciascuna delle due sezioni di uscita $S_2$, sia la velocità $arrow(u)_2 = (-U_2, 0, 0)$ sia la normale uscente $arrow(n)_2 = (-1, 0, 0)$ sono dirette verso sinistra: essendo *concordi*, il prodotto scalare vale $u_j n_j = +U_2 > 0$, ma la componente di velocità lungo $x$ è *negativa* ($u_x = -U_2 < 0$). Sommando le due uscite:
       $
-      #move(dx: -29pt)[$M_(2, x) = -2 integral_(S_2) rho (-U_2) (+U_2) dif S_2 = +2 rho U_2^2 S_2= +rho Q U_2$]
+      M_(2, x) = -2 integral_(S_2) rho (-U_2) (+U_2) dif S_2 = +2 rho U_2^2 S_2= +rho Q U_2
       $
   ],
   [ 
@@ -453,5 +423,4 @@ Questo stesso approccio integrale può essere impiegato per valutare la forza ae
     #move(dx:25pt)[#include "../figs/cap7-fig08.typ"]
   ]
 )
-
 
