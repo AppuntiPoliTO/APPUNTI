@@ -713,8 +713,8 @@ $
   width: 100%,
   inset: 10pt,
   radius: 4pt,
-  fill: rgb("#fff8e6"),
-  stroke: (left: 3pt + rgb("#d97706")),
+  fill: luma(245),
+  stroke: (left: 3pt + rgb("#808080")),
 )[
   *#titolo.* #body
 ]
