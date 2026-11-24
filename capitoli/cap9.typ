@@ -89,7 +89,7 @@ $ (partial arrow(u)) / (partial t) + nabla (1 / 2 u^2 + p / rho + chi) = arrow(0
 #set par(justify: true)
 #set figure(supplement: [Figura], gap: 0.8em)
 
-#let nota-esame(body) = block(
+#let nota(body) = block(
   width: 100%,
   inset: 0.8em,
   radius: 3pt,
@@ -279,7 +279,7 @@ Nei fluidi viscosi reali, l'aderenza a parete genera vorticità nello strato lim
 
 *5. Regime ad alto $"Re"$ (scia turbolenta):* crescendo ulteriormente $"Re"$, alla frequenza principale si affiancano molteplici frequenze; accanto ai vortici di grande scala (dell'ordine di $D$) si formano numerosi vortici più piccoli, frastagliati e caotici, fino a rendere la scia un *campo di moto turbolento*.
 
-#nota-esame[
+#nota[
   - *Basso $"Re"$ vs campo a potenziale:* per $"Re" <= 1$ la somiglianza delle linee di corrente con il moto a potenziale è solo apparente; nel flusso reale la viscosità è determinante e il campo è rotazionale.
   - *Bolle di ricircolo ($"Re" tilde.op 2 div 40$):* le due bolle controrotanti rompono la simmetria monte-valle, ma il moto resta stazionario e laminare fino a $"Re" approx 40$.
   - *Transizione nei flussi esterni vs flussi interni:* diversamente dal moto in condotta (transizione dicotomica su tutta la sezione), attorno a un corpo la transizione avviene in modo *molto progressivo* con $"Re"$ e la turbolenza resta *confinata nella scia*, mentre la corrente esterna rimane regolare.
@@ -318,7 +318,7 @@ $
 - l'individuazione di parametri adimensionali $Pi_i$ dotati di preciso significato fisico;
 - l'indipendenza della legge dalla scelta arbitraria delle unità di misura.
 
-#nota-esame[
+#nota[
   Il teorema $Pi$ individua i gruppi adimensionali ma non fornisce alcuna informazione a priori sulla forma della relazione funzionale $f_2$: quest'ultima deve essere determinata e verificata mediante prove sperimentali o simulazioni.
 ]
 
@@ -488,12 +488,12 @@ Si osservi il ruolo della densità $rho$: esprimendo la viscosità tramite quell
 
 Il numero di Reynolds misura quindi l'importanza relativa della convezione rispetto alla diffusione viscosa: a densità costante, tutta la dinamica del fluido nasce dalla competizione tra questi due meccanismi. Per $"Re" << 1$ la diffusione domina e il termine convettivo — che è il termine *non lineare* dell'equazione — diventa di secondo ordine; se tale termine è assente o trascurabile (come per geometria nel moto di Poiseuille o a bassissimo $"Re"$), la dinamica è lineare e il campo è necessariamente laminare. Al contrario, per $"Re"$ elevati (es. $"Re" tilde.op 10^5$) il termine convettivo non lineare diventa dominante e conferisce al fluido un'autonomia dinamica rispetto alle condizioni al contorno: pur in presenza di forzanti stazionarie, insorgono prima oscillazioni periodiche autonome (distacco alternato di vortici per $"Re" > 40$) e poi il regime turbolento, caratterizzato dalla capacità del campo di moto di svincolarsi da una risposta univoca e stazionaria alle condizioni al contorno.
 
-#nota-esame[
+#nota[
   Il termine convettivo $(arrow(u) dot nabla) arrow(u)$ è il termine *non lineare* dell'equazione di Navier-Stokes. Un campo di moto retto da dinamica lineare è necessariamente laminare, ma un campo di moto laminare non ha necessariamente dinamica lineare (ad esempio, nel flusso attorno a un cilindro per $"Re" tilde.op 2 div 40$, le bolle di ricircolo coinvolgono effetti non lineari pur restando stazionarie e laminari).
 ]
 
 
-#let nota-esame(body) = block(
+#let nota(body) = block(
   fill: luma(245),
   stroke: (left: 2.5pt + luma(120)),
   inset: (x: 10pt, y: 8pt),
@@ -573,7 +573,7 @@ Per far emergere direttamente dalle equazioni del moto la dipendenza dal numero 
 ) <fig:problema-sfera>
 
 #block(breakable: false)[
-  #nota-esame[
+  #nota[
     *Condizione di aderenza vs modello ideale (Bernoulli).* Usando il teorema di Bernoulli si adotta un modello di fluido ideale inviscido ($mu = 0$), nel quale non può valere l'aderenza ma si impone soltanto la condizione di *impermeabilità* (velocità tangente alla superficie): la velocità si annulla nel punto di ristagno frontale e raggiunge il massimo sui fianchi per restringimento delle linee di corrente (effetto Venturi, analogo al rinforzo del vento sulla cresta di una collina o di una montagna). Nel fluido reale viscoso la velocità a parete è invece rigorosamente nulla per aderenza, e l'analisi con Bernoulli conserva solo un valore grossolano (*spannometrico*): il massimo di velocità continua a esistere, ma si sposta a una certa distanza dalla parete.
   ]
 ]
@@ -661,7 +661,7 @@ $
 $
 
 #block(breakable: false)[
-  #nota-esame[
+  #nota[
     L'annullamento di $partial tilde(arrow(u)) slash partial tilde(t)$ per $"Re"_a arrow.r 0$ non richiede un'ipotesi aggiuntiva di stazionarietà: eliminando il termine convettivo col numero di Reynolds viene uccisa la non linearità dell'equazione, e un sistema lineare sottoposto a condizioni al contorno stazionarie non può sviluppare autonomia temporale ma deve rispondere in modo stazionario. Inoltre, poiché $"Re"_a$ non compare più né nelle equazioni né nelle condizioni al contorno, la soluzione asintotica $(tilde(arrow(u)), tilde(p))$ prescinde dal valore del numero di Reynolds.
   ]
 ]
@@ -703,13 +703,13 @@ $
 ]
 
 #block(breakable: false)[
-  #nota-esame[
+  #nota[
     La soluzione analitica esatta $K = 6 pi$ vale per una *sfera* esclusivamente nel limite asintotico $"Re" arrow.r 0$ (in cui la sola viscosità bilancia la pressione in assenza del termine convettivo) ed è somma del contributo di pressione pari a $2 pi$ ($1 slash 3$ del totale) e del contributo viscoso pari a $4 pi$ ($2 slash 3$ del totale).
   ]
 ]
 
 
-#let nota-esame(titolo: "Nota d'esame", body) = block(
+#let nota(titolo: "Nota d'esame", body) = block(
   width: 100%,
   inset: 10pt,
   radius: 4pt,
@@ -813,7 +813,7 @@ $
 
 All'aumentare di $"Re"_a$, il peso formale del termine diffusivo diminuisce. Per $"Re"_a arrow.r infinity$ la struttura dell'equazione tende formalmente a quella delle equazioni di Eulero per un fluido ideale (non viscoso).
 
-#nota-esame(titolo: "Nota d'esame — Limite singolare e ineliminabilità del termine viscoso")[
+#nota(titolo: "Nota d'esame — Limite singolare e ineliminabilità del termine viscoso")[
   Non è lecito sopprimere semplicemente il termine $1 / "Re"_a (partial^2 tilde(u)_i) / (partial tilde(x)_j^2)$ ponendo $"Re"_a arrow.r infinity$ ovunque. Tale cancellazione abbassa l'ordine differenziale del sistema (passando dalle equazioni di Navier-Stokes a quelle di Eulero) e rende matematicamente impossibile imporre la condizione fisica di aderenza $tilde(u)_i = 0$ sulla superficie solida, trasformando radicalmente la natura fisica del problema. In prossimità della parete si sviluppano infatti fortissimi gradienti di velocità che mantengono gli sforzi viscosi dello stesso ordine dei termini inerziali anche per $"Re"_a >> 1$.
 ]
 
@@ -844,7 +844,7 @@ Il coefficiente $C_D$ è una forza adimensionale che misura l'attitudine di un c
 - *Resistenza di pressione* (o *resistenza di forma*), legata a $-tilde(p) n_1$, che per $"Re"_a >> 1$ fornisce il contributo dominante e dipende in modo marcato dalla geometria del corpo e dall'eventuale distacco della corrente.
 - *Resistenza d'attrito viscoso*, legata a $(1 / "Re"_a) tilde(tau)_(1 j) n_j$.
 
-#nota-esame(titolo: "Nota d'esame — Dipendenza implicita ed esplicita da Re")[
+#nota(titolo: "Nota d'esame — Dipendenza implicita ed esplicita da Re")[
   Nell'espressione integrale di $C_D$, il numero di Reynolds non compare soltanto *esplicitamente* nel fattore $1 / "Re"_a$ davanti agli sforzi tangenziali, ma anche *implicitamente* sia in $tilde(p)$ sia in $tilde(tau)_(i j)$, in quanto campi soluzione delle equazioni di Navier-Stokes adimensionali che dipendono dal parametro $"Re"_a$.
 ]
 
@@ -871,7 +871,7 @@ $
   C_D = (12 nu) / (U_infinity (D / 2)) = (24 nu) / (U_infinity D) = 24 / "Re"_D quad ("per " "Re"_D arrow.r 0)
 $
 
-#nota-esame(titolo: "Nota d'esame — Significato fisico di " + $C_D = 24 / "Re"_D$)[
+#nota(titolo: "Nota d'esame — Significato fisico di " + $C_D = 24 / "Re"_D$)[
   La relazione $C_D = 24 / "Re"_D$ *non* può essere dedotta risolvendo le equazioni adimensionalizzate con scala convettiva, né rappresenta un regime intermedio: essa è esclusivamente la riscrittura nella convenzione convettiva di $C_D$ della soluzione esatta di Stokes ($K = 6 pi$), la quale può essere ricavata solo adottando le scale diffusive nel limite $"Re"_D arrow.r 0$. La scelta di $D$ o $a$ modifica unicamente la costante numerica ($24$ anziché $12$).
 ]
 
