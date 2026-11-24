@@ -813,7 +813,7 @@ $
 
 All'aumentare di $"Re"_a$, il peso formale del termine diffusivo diminuisce. Per $"Re"_a arrow.r infinity$ la struttura dell'equazione tende formalmente a quella delle equazioni di Eulero per un fluido ideale (non viscoso).
 
-#nota(titolo: "Nota d'esame — Limite singolare e ineliminabilità del termine viscoso")[
+#nota(titolo: "Nota — Limite singolare e ineliminabilità del termine viscoso")[
   Non è lecito sopprimere semplicemente il termine $1 / "Re"_a (partial^2 tilde(u)_i) / (partial tilde(x)_j^2)$ ponendo $"Re"_a arrow.r infinity$ ovunque. Tale cancellazione abbassa l'ordine differenziale del sistema (passando dalle equazioni di Navier-Stokes a quelle di Eulero) e rende matematicamente impossibile imporre la condizione fisica di aderenza $tilde(u)_i = 0$ sulla superficie solida, trasformando radicalmente la natura fisica del problema. In prossimità della parete si sviluppano infatti fortissimi gradienti di velocità che mantengono gli sforzi viscosi dello stesso ordine dei termini inerziali anche per $"Re"_a >> 1$.
 ]
 
