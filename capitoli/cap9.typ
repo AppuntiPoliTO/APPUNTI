@@ -707,12 +707,7 @@ $
     La soluzione analitica esatta $K = 6 pi$ vale per una *sfera* esclusivamente nel limite asintotico $"Re" arrow.r 0$ (in cui la sola viscosità bilancia la pressione in assenza del termine convettivo) ed è somma del contributo di pressione pari a $2 pi$ ($1 slash 3$ del totale) e del contributo viscoso pari a $4 pi$ ($2 slash 3$ del totale).
   ]
 ]
-#import "@preview/cetz:0.3.4"
 
-#set page(paper: "a4", margin: 2.2cm)
-#set text(lang: "it", size: 10.5pt)
-#set par(justify: true)
-#set heading(numbering: "1.1")
 
 #let nota-esame(titolo: "Nota d'esame", body) = block(
   width: 100%,
@@ -724,7 +719,7 @@ $
   *#titolo.* #body
 ]
 
-= Formulazione del problema e scale caratteristiche
+ Formulazione del problema e scale caratteristiche
 
 == Equazioni di Navier-Stokes e condizioni al contorno
 
@@ -780,7 +775,7 @@ $
     - (partial tilde(p)) / (partial tilde(x)_i) + (partial^2 tilde(u)_i) / (partial tilde(x)_j^2) = 0
   )
 $
-con $tilde(u)_i = 0$ per $norm(tilde(bold(x))) = 1$, $\tilde(u)_i arrow.r delta_(i 1)$ e $\tilde(p) arrow.r 0$ per $norm(tilde(bold(x))) arrow.r infinity$.
+con $tilde(u)_i = 0$ per $norm(tilde(bold(x))) = 1$, $(u)_i arrow.r delta_(i 1)$ e $(p) arrow.r 0$ per $norm(tilde(bold(x))) arrow.r infinity$.
 
 In questo regime la forza risultante esercitata dal fluido sul corpo scala con gli sforzi viscosi:
 $
