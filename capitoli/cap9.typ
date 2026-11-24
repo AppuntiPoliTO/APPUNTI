@@ -707,7 +707,335 @@ $
     La soluzione analitica esatta $K = 6 pi$ vale per una *sfera* esclusivamente nel limite asintotico $"Re" arrow.r 0$ (in cui la sola viscosità bilancia la pressione in assenza del termine convettivo) ed è somma del contributo di pressione pari a $2 pi$ ($1 slash 3$ del totale) e del contributo viscoso pari a $4 pi$ ($2 slash 3$ del totale).
   ]
 ]
+#import "@preview/cetz:0.3.4"
 
+#set page(paper: "a4", margin: 2.2cm)
+#set text(lang: "it", size: 10.5pt)
+#set par(justify: true)
+#set heading(numbering: "1.1")
+
+#let nota-esame(titolo: "Nota d'esame", body) = block(
+  width: 100%,
+  inset: 10pt,
+  radius: 4pt,
+  fill: rgb("#fff8e6"),
+  stroke: (left: 3pt + rgb("#d97706")),
+)[
+  *#titolo.* #body
+]
+
+= Formulazione del problema e scale caratteristiche
+
+== Equazioni di Navier-Stokes e condizioni al contorno
+
+Si consideri lo sviluppo di una corrente incomprimibile attorno e a valle di un corpo di forma circolare (una sfera o un cilindro circolare di raggio $a$), investito da un campo di moto uniforme di velocità $U_infinity$ diretta lungo l'asse $x_1$. Il fluido ha densità $rho$ e viscosità cinematica $nu = mu / rho$ costanti.
+
+Il problema è regolato dinamicamente dalle equazioni di continuità e di Navier-Stokes per un fluido newtoniano incomprimibile:
+$
+  cases(
+    (partial u_i) / (partial x_i) = 0,
+    (partial u_i) / (partial t) + u_j (partial u_i) / (partial x_j) = - 1 / rho (partial p) / (partial x_i) + nu (partial^2 u_i) / (partial x_j^2)
+  )
+$
+dove $p$ indica la *pressione di scarto* rispetto alla pressione idrostatica di riferimento in quiete (pertanto il contributo gravitazionale è già assorbito nella definizione di $p$).
+
+Le condizioni al contorno associate al problema sono:
+- condizione di aderenza ed impermeabilità sulla superficie del corpo:
+  $ u_i = 0 quad "per" quad norm(bold(x)) = a $
+- condizioni di campo indisturbato a grande distanza dal corpo:
+  $ u_i arrow.r U_infinity delta_(i 1), quad p arrow.r 0 quad "per" quad norm(bold(x)) arrow.r infinity $
+
+== Diffusione molecolare, convezione e scale caratteristiche
+
+L'equazione della quantità di moto contiene due meccanismi fisici distinti e antagonisti:
+- *Diffusione molecolare* (termine viscoso): legata all'agitazione caotica delle molecole su scala microscopica, che trasmette quantità di moto per attrito interno.
+- *Convezione di grande scala* (termine inerziale): associata al trasporto coerente di volumi macroscopici di fluido da parte del campo di moto.
+
+Fissata la scala geometrica caratteristica con il raggio del corpo $a$ e la scala delle velocità con la velocità indisturbata $U_infinity$, il tempo caratteristico con cui un'informazione si propaga nel dominio fluido può essere valutato secondo i due diversi meccanismi:
+$
+  tau_"conv" = a / U_infinity, quad tau_"diff" = a^2 / nu
+$
+Il tempo convettivo $tau_"conv"$ è il tempo impiegato da una particella fluida per percorrere la distanza $a$; il tempo diffusivo $tau_"diff"$ misura invece il tempo necessario affinché la quantità di moto si diffonda per viscosità sulla medesima distanza $a$.
+
+A seconda delle scale del problema, $tau_"conv"$ e $tau_"diff"$ possono differire di molti ordini di grandezza oppure risultare comparabili:
+- *Scale macroscopiche ordinarie*: in aria ($nu approx 1.5 times 10^(-5) "m"^2 slash "s"$), per un corpo con $a = 1 "m"$ investito da una corrente a $U_infinity = 1 "m/s"$, si ottiene $tau_"conv" = 1 "s"$ contro $tau_"diff" approx 10^5 "s"$ (circa $28$ ore, dell'ordine del centinaio di ore). Il trasporto convettivo è estremamente più rapido della diffusione molecolare.
+- *Microscale*: riducendo la dimensione a $a = 1 "mm" = 10^(-3) "m"$ (per cui $a^2 = 10^(-6) "m"^2$) e considerando velocità dell'ordine di $U_infinity = 1 "mm/s" = 10^(-3) "m/s"$, si ha $tau_"conv" = 1 "s"$ e $tau_"diff" approx 0.07 "s"$. A queste scale (ad esempio in tubi capillari o attorno a microparticelle) i fenomeni diffusivi risultano più rapidi ed efficaci di quelli convettivi.
+
+In modo del tutto equivalente è possibile definire a posteriori una *velocità caratteristica diffusiva*:
+$
+  U_"diff" = a / tau_"diff" = nu / a
+$
+Il rapporto tra la velocità convettiva $U_"conv" = U_infinity$ e la velocità diffusiva $U_"diff"$ (così come il rapporto inverso dei rispettivi tempi caratteristici) definisce il *numero di Reynolds* basato sul raggio:
+$
+  "Re"_a = U_"conv" / U_"diff" = tau_"diff" / tau_"conv" = (U_infinity a) / nu
+$
+Il numero di Reynolds sintetizza quindi il peso relativo tra effetti inerziali (convettivi) ed effetti viscosi (diffusivi).
+
+== Richiamo al regime viscoso di Stokes ($"Re"_a << 1$)
+
+Adimensionalizzando le equazioni di Navier-Stokes con la scala dei tempi diffusiva $tau_"diff" = a^2 / nu$ e la scala delle pressioni viscosa $p_"diff" = mu U_infinity / a$, il numero di Reynolds moltiplica i termini inerziali. Nel limite $"Re"_a arrow.r 0$ il campo di moto rimane stazionario e i termini convettivi decadono, riducendo il sistema al problema lineare di Stokes:
+$
+  cases(
+    (partial tilde(u)_i) / (partial tilde(x)_i) = 0,
+    - (partial tilde(p)) / (partial tilde(x)_i) + (partial^2 tilde(u)_i) / (partial tilde(x)_j^2) = 0
+  )
+$
+con $tilde(u)_i = 0$ per $norm(tilde(bold(x))) = 1$, $\tilde(u)_i arrow.r delta_(i 1)$ e $\tilde(p) arrow.r 0$ per $norm(tilde(bold(x))) arrow.r infinity$.
+
+In questo regime la forza risultante esercitata dal fluido sul corpo scala con gli sforzi viscosi:
+$
+  F_i = mu U_infinity a integral_(tilde(S)) (-tilde(p) n_i + tilde(tau)_(i j) n_j) dif tilde(S)
+$
+Per simmetria la forza di portanza trasversale è nulla, mentre la componente longitudinale (forza di resistenza $F_D$) si esprime come:
+$
+  F_D = mu U_infinity a K
+$
+dove, per una sfera nel limite $"Re"_a arrow.r 0$, la soluzione analitica esatta di Stokes fornisce la costante $K = 6 pi$, da cui $F_D = 6 pi mu a U_infinity$.
+
+= Regimi ad alto numero di Reynolds ($"Re"_a >> 1$)
+
+== Adimensionalizzazione con scale convettive e limite singolare
+
+Per studiare il comportamento delle equazioni quando $"Re"_a$ è grande, la formulazione basata su scale diffusive risulta inadeguata poiché presenta un parametro $"Re"_a arrow.r infinity$ davanti ai termini convettivi. Si adotta quindi l'adimensionalizzazione con la scala dei tempi convettiva e la scala inerziale (dinamica) delle pressioni:
+$
+  x_i = a tilde(x)_i, quad u_i = U_infinity tilde(u)_i, quad t = a / U_infinity tilde(t), quad p = rho U_infinity^2 tilde(p)
+$
+
+Sostituendo tali relazioni nei singoli termini dell'equazione di Navier-Stokes si ottiene:
+$
+  (partial u_i) / (partial t) = U_infinity^2 / a (partial tilde(u)_i) / (partial tilde(t)), quad
+  u_j (partial u_i) / (partial x_j) = U_infinity^2 / a tilde(u)_j (partial tilde(u)_i) / (partial tilde(x)_j), quad
+  - 1 / rho (partial p) / (partial x_i) = - U_infinity^2 / a (partial tilde(p)) / (partial tilde(x)_i), quad
+  nu (partial^2 u_i) / (partial x_j^2) = (nu U_infinity) / a^2 (partial^2 tilde(u)_i) / (partial tilde(x)_j^2)
+$
+Dividendo l'intera equazione per il fattore inerziale $U_infinity^2 / a$, il coefficiente del termine diffusivo diviene $nu / (U_infinity a) = 1 / "Re"_a$. Il sistema adimensionale assume pertanto la forma:
+$
+  cases(
+    (partial tilde(u)_i) / (partial tilde(t)) + tilde(u)_j (partial tilde(u)_i) / (partial tilde(x)_j) = - (partial tilde(p)) / (partial tilde(x)_i) + 1 / "Re"_a (partial^2 tilde(u)_i) / (partial tilde(x)_j^2),
+    (partial tilde(u)_i) / (partial tilde(x)_i) = 0
+  )
+$
+
+All'aumentare di $"Re"_a$, il peso formale del termine diffusivo diminuisce. Per $"Re"_a arrow.r infinity$ la struttura dell'equazione tende formalmente a quella delle equazioni di Eulero per un fluido ideale (non viscoso).
+
+#nota-esame(titolo: "Nota d'esame — Limite singolare e ineliminabilità del termine viscoso")[
+  Non è lecito sopprimere semplicemente il termine $1 / "Re"_a (partial^2 tilde(u)_i) / (partial tilde(x)_j^2)$ ponendo $"Re"_a arrow.r infinity$ ovunque. Tale cancellazione abbassa l'ordine differenziale del sistema (passando dalle equazioni di Navier-Stokes a quelle di Eulero) e rende matematicamente impossibile imporre la condizione fisica di aderenza $tilde(u)_i = 0$ sulla superficie solida, trasformando radicalmente la natura fisica del problema. In prossimità della parete si sviluppano infatti fortissimi gradienti di velocità che mantengono gli sforzi viscosi dello stesso ordine dei termini inerziali anche per $"Re"_a >> 1$.
+]
+
+== Forza aerodinamica e coefficiente di resistenza $C_D$
+
+Valutiamo la forza esercitata dal fluido sul corpo usando le scale convettive. Il tensore degli sforzi viscosi per un fluido incomprimibile è:
+$
+  tau_(i j) = 2 mu D_(i j) = mu ((partial u_i) / (partial x_j) + (partial u_j) / (partial x_i)) = (mu U_infinity) / a tilde(tau)_(i j)
+$
+mentre l'elemento d'area superficiale scala come $dif S = a^2 dif tilde(S)$ e la pressione come $p = rho U_infinity^2 tilde(p)$. Sostituendo nella definizione integrale della forza:
+$
+  F_i & = integral_S (-p n_i + tau_(i j) n_j) dif S \
+      & = a^2 integral_(tilde(S)) (-rho U_infinity^2 tilde(p) n_i + (mu U_infinity) / a tilde(tau)_(i j) n_j) dif tilde(S) \
+      & = rho U_infinity^2 a^2 integral_(tilde(S)) (-tilde(p) n_i + mu / (rho U_infinity a) tilde(tau)_(i j) n_j) dif tilde(S) \
+      & = rho U_infinity^2 a^2 integral_(tilde(S)) (-tilde(p) n_i + 1 / "Re"_a tilde(tau)_(i j) n_j) dif tilde(S)
+$
+
+Per una sfera di raggio $a$, in aerodinamica si introduce per convenzione la pressione dinamica $1/2 rho U_infinity^2$ e l'area frontale di riferimento $A_"ref" = pi a^2$. Scomponendo la forza nella componente longitudinale di resistenza $F_D$ (drag) e trasversale di portanza (nulla per simmetria media), $F_i = (F_D, 0, 0)$, si definisce il *coefficiente di resistenza* $C_D$ (talvolta indicato con $C_x$):
+$
+  F_D = 1/2 rho U_infinity^2 (pi a^2) C_D
+$
+Confrontando le due espressioni lungo la direzione della corrente ($i = 1$), risulta:
+$
+  C_D = 2 / pi integral_(tilde(S)) (-tilde(p) n_1 + 1 / "Re"_a tilde(tau)_(1 j) n_j) dif tilde(S)
+$
+
+Il coefficiente $C_D$ è una forza adimensionale che misura l'attitudine di un corpo di assegnata forma geometrica ad opporsi alla corrente incidente (in galleria del vento, ad esempio per veicoli o atleti su bilancia aerodinamica, si ricava misurando $F_D$ e dividendola per $1/2 rho U_infinity^2 A_"ref"$). Nell'integrale si distinguono due contributi fisici:
+- *Resistenza di pressione* (o *resistenza di forma*), legata a $-tilde(p) n_1$, che per $"Re"_a >> 1$ fornisce il contributo dominante e dipende in modo marcato dalla geometria del corpo e dall'eventuale distacco della corrente.
+- *Resistenza d'attrito viscoso*, legata a $(1 / "Re"_a) tilde(tau)_(1 j) n_j$.
+
+#nota-esame(titolo: "Nota d'esame — Dipendenza implicita ed esplicita da Re")[
+  Nell'espressione integrale di $C_D$, il numero di Reynolds non compare soltanto *esplicitamente* nel fattore $1 / "Re"_a$ davanti agli sforzi tangenziali, ma anche *implicitamente* sia in $tilde(p)$ sia in $tilde(tau)_(i j)$, in quanto campi soluzione delle equazioni di Navier-Stokes adimensionali che dipendono dal parametro $"Re"_a$.
+]
+
+== Raccordo con il regime di Stokes e curva di resistenza della sfera
+
+Le due espressioni ottenute per la forza di resistenza sulla sfera:
+$
+  F_D = mu U_infinity a K quad ("scala viscosa"), quad F_D = 1/2 rho U_infinity^2 pi a^2 C_D quad ("scala convettiva")
+$
+rappresentano la *medesima grandezza fisica* letta attraverso due scale differenti. Per rappresentare il coefficiente di resistenza su un unico diagramma al variare del numero di Reynolds (dalle microscale fino a $"Re" approx 10^6 - 10^7$, tipici di ciclisti o autoveicoli), si traduce il risultato esatto di Stokes ($K = 6 pi$ per $"Re" arrow.r 0$) nella definizione di $C_D$.
+
+Uguagliando le due espressioni per $"Re" arrow.r 0$ e ricordando che $mu = rho nu$:
+$
+  6 pi mu U_infinity a = 1/2 rho U_infinity^2 pi a^2 C_D
+  ==> 6 rho nu U_infinity a = 1/2 rho U_infinity^2 a^2 C_D
+  ==> C_D = (12 nu) / (U_infinity a) = 12 / "Re"_a
+$
+Nella letteratura aerodinamica il numero di Reynolds per la sfera è convenzionalmente riferito al diametro $D = 2a$ anziché al raggio:
+$
+  "Re"_D = (U_infinity D) / nu = 2 "Re"_a
+$
+Sostituendo $a = D / 2$ nella relazione precedente si ottiene la celebre legge asintotica:
+$
+  C_D = (12 nu) / (U_infinity (D / 2)) = (24 nu) / (U_infinity D) = 24 / "Re"_D quad ("per " "Re"_D arrow.r 0)
+$
+
+#nota-esame(titolo: "Nota d'esame — Significato fisico di " + $C_D = 24 / "Re"_D$)[
+  La relazione $C_D = 24 / "Re"_D$ *non* può essere dedotta risolvendo le equazioni adimensionalizzate con scala convettiva, né rappresenta un regime intermedio: essa è esclusivamente la riscrittura nella convenzione convettiva di $C_D$ della soluzione esatta di Stokes ($K = 6 pi$), la quale può essere ricavata solo adottando le scale diffusive nel limite $"Re"_D arrow.r 0$. La scelta di $D$ o $a$ modifica unicamente la costante numerica ($24$ anziché $12$).
+]
+
+#figure(
+  cetz.canvas({
+    import cetz.draw: *
+    // Assi log-log qualitativi
+    line((0, 0), (9.2, 0), mark: (end: ">"), stroke: 0.8pt)
+    line((0, 0), (0, 5.2), mark: (end: ">"), stroke: 0.8pt)
+    content((9.6, 0), $"Re"_D$)
+    content((0, 5.6), $C_D$)
+
+    // Tacche qualitative su Re_D
+    for (x, lbl) in ((1.2, $10^(-2)$), (2.8, $10^0$), (5.2, $10^3$), (7.2, $10^5$)) {
+      line((x, -0.08), (x, 0.08), stroke: 0.6pt)
+      content((x, -0.35), text(size: 8.5pt, lbl))
+    }
+
+    // Asintoto di Stokes 24/Re_D (retta in log-log)
+    line((0.5, 4.7), (3.3, 1.9), stroke: (paint: gray, dash: "dashed", thickness: 0.8pt))
+    content((2.3, 3.8), text(size: 9pt)[$24 / "Re"_D$])
+
+    // Curva sperimentale qualitativa per la sfera
+    bezier((0.5, 4.7), (2.6, 2.65), (1.3, 3.9), (2.0, 3.15), stroke: 1.2pt + blue)
+    bezier((2.6, 2.65), (4.6, 1.75), (3.2, 2.1), (3.9, 1.78), stroke: 1.2pt + blue)
+    bezier((4.6, 1.75), (6.5, 1.72), (5.2, 1.73), (5.9, 1.75), stroke: 1.2pt + blue)
+    // Crisi di resistenza
+    bezier((6.5, 1.72), (7.3, 0.85), (6.85, 1.70), (7.0, 0.85), stroke: 1.2pt + blue)
+    bezier((7.3, 0.85), (8.6, 1.15), (7.6, 0.85), (8.1, 1.12), stroke: 1.2pt + blue)
+
+    // Annotazioni regimi
+    line((2.8, 0), (2.8, 2.5), stroke: (paint: gray.lighten(30%), dash: "dotted"))
+    content((1.4, 0.6), align(center, text(size: 8pt)[Regime di Stokes\ ($K approx 6 pi$)]))
+    content((4.9, 0.6), align(center, text(size: 8pt)[Regime intermedio\ ($C_D$ quasi costante)]))
+    content((7.6, 2.15), align(center, text(size: 8pt)[Crisi di\ resistenza]))
+  }),
+  caption: [Andamento qualitativo in scala bilogaritmica del coefficiente di resistenza $C_D$ di una sfera in funzione di $"Re"_D$.],
+)
+
+Dal confronto con le misure sperimentali al variare di $"Re"_D$ si osserva quanto segue:
+1. *Bassi numeri di Reynolds ($"Re"_D lt.eq 1$)*: la legge teorica $C_D = 24 / "Re"_D$ riproduce con ottima accuratezza i dati sperimentali fino a $"Re"_D approx 1$ (in scala bilogaritmica corrisponde a una retta con pendenza $-1$).
+2. *Alti numeri di Reynolds e autosimilarità*: così come per $"Re"_D arrow.r 0$ il dominio della diffusione rende $K$ indipendente da $"Re"_D$, ci si attende che per $"Re"_D >> 1$ il netto predominio della convezione renda la dinamica autosimile e il coefficiente $C_D$ sostanzialmente costante e indipendente da $"Re"_D$ (come accade in un ampio intervallo $10^3 lt.eq "Re"_D lt.eq 2 times 10^5$).
+3. *Evoluzione ad altissimi $"Re"_D$*: in realtà, anche per $"Re"_D$ dell'ordine di $10^5 - 10^6$, $C_D$ subisce variazioni brusche (la cosiddetta *crisi di resistenza*) prima di assestarsi nuovamente; tale comportamento è governato dalla dinamica dello *strato limite* in prossimità della parete.
+
+= Strato limite e separazione delle scale
+
+== Genesi fisica dello strato limite a parete
+
+Per comprendere perché la viscosità rimanga determinante anche per $"Re" >> 1$, si osservi il campo di moto nelle immediate vicinanze della superficie solida:
+- Sulla parete vige in ogni condizione il vincolo fisico di aderenza ($u_i = 0$), poiché un fluido continuo non può presentare discontinuità di velocità al proprio interno.
+- A parità di geometria e viscosità del fluido, un incremento del numero di Reynolds corrisponde a un aumento della velocità esterna. Per raccordare tale velocità più elevata con il valore nullo a parete senza discontinuità, il profilo di velocità deve sviluppare gradienti normali alla parete sempre più intensi.
+- Poiché gli sforzi viscosi dipendono dal prodotto tra $mu$ e i gradienti spaziali di velocità, anche se $mu$ (o $1 / "Re"$) è piccolissimo, l'aumento dei gradienti a parete compensa la piccolezza del coefficiente viscoso.
+
+Gli effetti diffusivi restano quindi confinati ma non trascurabili entro una sottile pellicola fluida adiacente alla superficie solida, di spessore caratteristico $delta$, denominata *strato limite*: regione prossima ad una parete dove sono concentrati i forti gradienti trasversali di velocità (ed eventualmente di temperatura) e dove gli sforzi viscosi bilanciano i termini inerziali.
+
+== Analisi degli ordini di grandezza ed equazioni di Prandtl
+
+Lo strato limite conduce a una forma approssimata delle equazioni di Navier-Stokes. Consideriamo un moto bidimensionale stazionario ($partial / (partial t) = 0$) su una parete piana fissa, con coordinata longitudinale $x_1$ lungo la parete e coordinata normale $x_2$:
+$
+  bold(u) dot nabla bold(u) = - 1 / rho nabla p + nu nabla^2 bold(u)
+$
+
+#figure(
+  cetz.canvas({
+    import cetz.draw: *
+    // Assi e lastra
+    line((-0.5, 0), (9.5, 0), mark: (end: ">"), stroke: 0.8pt)
+    line((0, -0.3), (0, 3.4), mark: (end: ">"), stroke: 0.8pt)
+    line((0, 0), (8.8, 0), stroke: 1.8pt + black)
+    content((9.8, 0), $x_1$)
+    content((0, 3.7), $x_2$)
+    content((4.4, -0.45), text(size: 8.5pt)[Parete fissa: $u_1 = u_2 = 0$])
+
+    // Corrente esterna
+    for x in (1.2, 4.0, 6.8) {
+      line((x, 2.9), (x + 1.0, 2.9), mark: (end: ">"), stroke: 0.8pt)
+    }
+    content((4.5, 3.25), text(size: 9pt)[$U_infinity$ (o $U_e (x_1)$)])
+
+    // Bordo dello strato limite delta(x_1)
+    bezier((0, 0), (8.5, 2.1), (1.5, 1.1), (5.0, 1.75), stroke: 1.2pt + blue)
+
+    // Profili di velocità interni
+    for (xp, h) in ((2.2, 1.02), (4.8, 1.58), (7.4, 1.98)) {
+      line((xp, 0), (xp, h), stroke: (paint: gray, dash: "dashed", thickness: 0.6pt))
+      bezier((xp, 0), (xp + 0.9, h), (xp + 0.55, h * 0.35), (xp + 0.88, h * 0.75), stroke: 0.9pt + blue.darken(20%))
+      for frac in (0.25, 0.5, 0.75, 1.0) {
+        let y = h * frac
+        let dx = 0.9 * (1 - calc.pow(1 - frac, 2))
+        line((xp, y), (xp + dx, y), mark: (end: ">", scale: 0.6), stroke: 0.65pt + blue.darken(20%))
+      }
+    }
+
+    // Quota delta(x_1)
+    line((8.7, 0), (8.7, 2.1), mark: (start: ">", end: ">", scale: 0.7), stroke: 0.7pt)
+    content((9.35, 1.05), text(size: 9pt)[$delta(x_1)$])
+  }),
+  caption: [Sviluppo qualitativo dello strato limite $delta(x_1)$ su una parete piana investita da una corrente esterna: i profili illustrano il raccordo continuo dalla condizione di aderenza a parete al valore esterno $U_e (x_1)$.],
+)
+
+Indichiamo con $L$ la scala caratteristica longitudinale lungo $x_1$, con $U_e$ la scala della velocità longitudinale esterna allo strato limite e con $delta(x_1)$ lo spessore dello strato limite, il quale cresce con la coordinata longitudinale $x_1$. Nell'ipotesi di *strato limite sottile* vale la *separazione delle scale*:
+$
+  delta(x_1) << L quad ("ossia" quad epsilon = delta / L << 1)
+$
+
+Valutiamo le implicazioni della separazione di scale sulle equazioni del moto per $x_1 tilde.op L$, $x_2 tilde.op delta$ e $u_1 tilde.op U_e$:
+
++ *Equazione di continuità*:
+  $
+    (partial u_1) / (partial x_1) + (partial u_2) / (partial x_2) = 0
+  $
+  Poiché i due addendi devono bilanciarsi in ordine di grandezza (altrimenti il moto sarebbe banale o puramente parallelo), indicando con $V$ l'ordine di grandezza della velocità normale $u_2$ si ottiene:
+  $
+    U_e / L tilde.op V / delta ==> u_2 tilde.op V tilde.op U_e delta / L << U_e
+  $
+  La componente di velocità normale alla parete è quindi molto inferiore alla velocità longitudinale. Nonostante ciò, il trasporto convettivo trasversale $u_2 (partial u_1) / (partial x_2)$ *non* è trascurabile, poiché il piccolo valore di $u_2$ è compensato dal forte gradiente normale $partial / (partial x_2) tilde.op 1 / delta$.
+
++ *Equazione di Navier-Stokes — Componente longitudinale lungo $x_1$*:
+  $
+    u_1 (partial u_1) / (partial x_1) + u_2 (partial u_1) / (partial x_2) = - 1 / rho (partial p) / (partial x_1) + nu ((partial^2 u_1) / (partial x_1^2) + (partial^2 u_1) / (partial x_2^2))
+  $
+  Indicata con $Delta p_x$ la variazione caratteristica di pressione lungo $x_1$, stimiamo l'ordine di grandezza di ciascun termine:
+  $
+    underbrace(U_e^2 / L + (U_e delta / L) U_e / delta, tilde.op U_e^2 / L) tilde.op (Delta p_x) / (rho L) + underbrace(nu U_e / L^2 << nu U_e / delta^2, "termini viscosi")
+  $
+  Poiché $delta << L$, la diffusione longitudinale $nu (partial^2 u_1) / (partial x_1^2) tilde.op nu U_e / L^2$ è di ordine $(delta / L)^2$ rispetto alla diffusione trasversale $nu (partial^2 u_1) / (partial x_2^2) tilde.op nu U_e / delta^2$, ed è pertanto trascurabile. L'equazione longitudinale si semplifica in:
+  $
+    u_1 (partial u_1) / (partial x_1) + u_2 (partial u_1) / (partial x_2) = - 1 / rho (partial p) / (partial x_1) + nu (partial^2 u_1) / (partial x_2^2)
+  $
+  Affinché nello strato limite inerzia, gradiente di pressione e viscosità abbiano il medesimo ordine di grandezza:
+  $
+    U_e^2 / L tilde.op (Delta p_x) / (rho L) tilde.op nu U_e / delta^2
+  $
+  si ricavano due risultati fondamentali:
+  - *Stima dello spessore dello strato limite*: dal bilancio tra termini inerziali e termine viscoso segue:
+    $
+      U_e^2 / L tilde.op nu U_e / delta^2 ==> (delta / L)^2 tilde.op nu / (U_e L) ==> delta / L tilde.op ("Re"_L)^(-1/2) quad "con" quad "Re"_L = (U_e L) / nu
+    $
+    Lo spessore relativo dello strato limite diminuisce dunque all'aumentare del numero di Reynolds come $"Re"_L^(-1/2)$ (confermando a posteriori l'ipotesi $delta << L$ per $"Re"_L >> 1$).
+  - *Variazione longitudinale di pressione*:
+    $
+      (Delta p_x) / (rho L) tilde.op U_e^2 / L ==> Delta p_x tilde.op rho U_e^2
+    $
+    che coincide con la scala inerziale della pressione del flusso esterno.
+
++ *Equazione di Navier-Stokes — Componente normale lungo $x_2$*:
+  $
+    u_1 (partial u_2) / (partial x_1) + u_2 (partial u_2) / (partial x_2) = - 1 / rho (partial p) / (partial x_2) + nu ((partial^2 u_2) / (partial x_1^2) + (partial^2 u_2) / (partial x_2^2))
+  $
+  Indicata con $Delta p_y$ la variazione caratteristica di pressione attraverso lo spessore $delta$ dello strato limite e ricordando che $u_2 tilde.op U_e delta / L$ e $nu / delta^2 tilde.op U_e / L$, valutiamo gli ordini di grandezza:
+  $
+    underbrace(U_e (U_e delta / L) / L + (U_e delta / L) (U_e delta / L) / delta, tilde.op (U_e^2 delta) / L^2) tilde.op (Delta p_y) / (rho delta) + underbrace(nu (U_e delta) / L^3 << nu (U_e delta / L) / delta^2, tilde.op (U_e^2 delta) / L^2)
+  $
+  Uguagliando il termine barico all'ordine di grandezza comune dei termini inerziali e viscoso trasversale si ottiene:
+  $
+    (Delta p_y) / (rho delta) tilde.op (U_e^2 delta) / L^2 ==> Delta p_y tilde.op rho U_e^2 (delta / L)^2 << Delta p_x
+  $
+  Le variazioni trasversali di pressione attraverso lo strato limite sono di ordine $(delta / L)^2 tilde.op "Re"_L^(-1)$ rispetto alle variazioni longitudinali $Delta p_x tilde.op rho U_e^2$, e sono quindi trascurabili: la seconda equazione del
+  
 == Caduta di una sfera nel regime di Stokes
 
 Ruotando idealmente il problema precedente lungo la verticale, consideriamo una sfera solida sufficientemente piccola di raggio $a$ e densità $rho_s$ che scende in caduta libera in un fluido in quiete di densità $rho$ e viscosità dinamica $mu$ .
