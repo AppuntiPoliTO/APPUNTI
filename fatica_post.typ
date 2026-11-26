@@ -1360,8 +1360,7 @@ Il coefficiente di carico $C_L$ (da *load*) rapporta la resistenza a fatica del 
     content((11.40, -1.65), anchor: "south-west", text(size: 8pt, fill: blue)[$sigma_("tc")$])
     content((11.45, -2.65), anchor: "west", text(size: 8pt, fill: red)[$sigma_(a,"eff")("ZP") = sigma_("tc")$])
     content((11.22, -3.78), anchor: "north", text(size: 8pt)[Trazione-compressione: ampiezza uniforme])
-  }),
-  caption: [Confronto tra distribuzione lineare in flessione e distribuzione uniforme in trazione-compressione a pari picco superficiale, con tensione efficace $sigma_(a,"eff")("ZP")$ nello strato d'innesco.],
+  })
 )
 
 In trazione-compressione il profilo è uniforme e l'intera ZP lavora continuativamente al picco nominale, sicché $sigma_(a,"eff")("ZP") = sigma_("tc")$. In flessione (così come in torsione) il gradiente lineare riduce invece la tensione sulle fibre più interne dello strato corticale ($sigma_(a,"eff")("ZP") < sigma_f$), attenuando la sollecitazione efficace e ritardando l'innesco del danno.
@@ -1379,7 +1378,7 @@ Nel dimensionamento preliminare, in assenza di prove specifiche sul materiale, s
 ]
 
 #figure(
-  canvas(length: 1.0cm, {
+  canvas(length: 1.16cm, {
     // BBox: x in [0.0, 16.0] (dx=16.0), y in [0.0, 5.7], length=1.0cm -> larghezza = 16.0 cm <= 17.0 cm
     import draw: *
 
@@ -1454,8 +1453,7 @@ Nel dimensionamento preliminare, in assenza di prove specifiche sul materiale, s
     content((9.67, 2.20), anchor: "east", text(size: 8pt)[$sigma_(D-1)^0$])
     content((12.95, 3.30), anchor: "south", align(center, text(size: 8pt)[Flessione +\ Traz.-compr.]))
     content((12.475, 0.25), anchor: "north", text(size: 8pt)[$N$ (cicli)])
-  }),
-  caption: [Confronto bilogaritmico tra le curve sperimentali distinte in tensione nominale $sigma_a$ (sinistra) e la curva teorica unificata in $sigma_(a,"eff")$ con asintoto comune $sigma_(D-1)^0$ oltre $N_i = 2 dot 10^6$ cicli (destra).],
+  })
 ) <fig-sn>
 
 Tracciando le curve $S$-$N$ sperimentali in funzione della tensione nominale superficiale $sigma_a$ (@fig-sn, a sinistra), i due stati di carico si dispongono su livelli distinti. Riformulando invece i diagrammi in termini di tensione efficace $sigma_(a,"eff")$ (a destra), le curve di flessione e trazione-compressione collassano su un'unica legge con asintoto comune $sigma_(D-1)^0$ oltre il ginocchio $N_i = 2 dot 10^6$ cicli.
@@ -1566,8 +1564,7 @@ In *trazione-compressione*, invece, la distribuzione è già uniforme su tutta l
         content((amp + 0.12, y2_80 - 0.04), anchor: "north-west")[#text(size: 7.5pt, fill: blue)[$80% thin sigma_a$]]
 
         content((0, yc2 - r2 - 0.30), anchor: "north")[#text(size: 8pt, weight: "bold")[Albero grande ($d >> 12 thin "mm"$)]]
-      }),
-      caption: [Confronto tra provetta standard e albero grande a pari tensione superficiale $sigma_a$.],
+      })
     )
   ],
 )
@@ -1657,8 +1654,7 @@ In *trazione-compressione*, invece, la distribuzione è già uniforme su tutta l
           ]
         ]
         line((2.40, 0.61), (2.40, y-asym - 0.02), stroke: 0.6pt + red.transparentize(10%), mark: (end: ">", scale: 0.55))
-      }),
-      caption: [Coefficiente dimensionale $C_S (d)$ e convergenza sull'asintoto $C_L = 0.70$.],
+      })
     )
   ],
   [
