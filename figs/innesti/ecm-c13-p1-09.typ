@@ -1,134 +1,293 @@
 // Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 1cm, {
+#canvas(length: 0.95cm, {
   import draw: *
 
-  line((0.3, 6.8), (4.7, 6.8), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  line((2.5, 5.02), (2.5, 9.0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-
-  circle((2.5, 6.8), radius: 1.65, fill: gray.transparentize(84%), stroke: 0.9pt)
-  circle((2.5, 6.8), radius: 1.40, fill: white, stroke: 0.85pt)
-  rect((2.40, 8.19), (2.60, 8.33), fill: white, stroke: 0.65pt)
-  rect((2.40, 5.27), (2.60, 5.41), fill: white, stroke: 0.65pt)
-  rect((0.97, 6.70), (1.11, 6.90), fill: white, stroke: 0.65pt)
-  rect((3.89, 6.70), (4.03, 6.90), fill: white, stroke: 0.65pt)
-
-  circle((2.5, 6.8), radius: 1.32, stroke: 0.65pt)
-  circle((2.5, 6.8), radius: 0.55, stroke: 0.65pt)
-  circle((2.5, 6.8), radius: 0.25, fill: gray.transparentize(82%), stroke: 0.8pt)
-  rect((2.45, 7.00), (2.55, 7.11), fill: gray.transparentize(65%), stroke: 0.6pt)
-  rect((2.45, 6.49), (2.55, 6.60), fill: gray.transparentize(65%), stroke: 0.6pt)
-  rect((2.19, 6.75), (2.30, 6.85), fill: gray.transparentize(65%), stroke: 0.6pt)
-  rect((2.70, 6.75), (2.81, 6.85), fill: gray.transparentize(65%), stroke: 0.6pt)
-
-  line((4.9, 6.8), (8.5, 6.8), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  rect((4.95, 6.62), (8.25, 6.98), fill: white, stroke: 0.85pt)
-  rect((5.25, 6.76), (5.75, 6.84), fill: gray.transparentize(75%), stroke: 0.55pt)
-  rect((6.20, 6.76), (7.65, 6.84), fill: gray.transparentize(75%), stroke: 0.55pt)
-  bezier((4.95, 6.98), (4.95, 6.62), (4.86, 6.88), (5.04, 6.72), stroke: 0.75pt)
-  bezier((8.25, 6.98), (8.25, 6.62), (8.34, 6.88), (8.16, 6.72), stroke: 0.75pt)
-
-  line((5.15, 6.98), (5.15, 7.55), (5.70, 7.55), (5.70, 8.25), (7.95, 8.25), (7.95, 8.05), (5.95, 8.05), (5.95, 6.98), close: true, fill: gray.transparentize(82%), stroke: 0.85pt)
-  line((5.15, 6.62), (5.15, 6.05), (5.70, 6.05), (5.70, 5.35), (7.95, 5.35), (7.95, 5.55), (5.95, 5.55), (5.95, 6.62), close: true, fill: gray.transparentize(82%), stroke: 0.85pt)
-
-  rect((5.95, 6.98), (7.65, 7.18), fill: gray.transparentize(70%), stroke: 0.75pt)
-  rect((5.95, 6.42), (7.65, 6.62), fill: gray.transparentize(70%), stroke: 0.75pt)
-
-  rect((7.65, 6.98), (7.95, 8.05), fill: gray.transparentize(76%), stroke: 0.85pt)
-  rect((7.65, 5.55), (7.95, 6.62), fill: gray.transparentize(76%), stroke: 0.85pt)
-
-  for x in (6.10, 6.54, 6.98, 7.42) {
-    rect((x, 7.26), (x + 0.10, 8.05), fill: gray.transparentize(75%), stroke: 0.65pt)
-    rect((x, 5.55), (x + 0.10, 6.34), fill: gray.transparentize(75%), stroke: 0.65pt)
+  let hatch-rect(x0, y0, x1, y1, step: 0.24, dir: 1, stroke-col: gray.darken(25%)) = {
+    let w = x1 - x0
+    let h = y1 - y0
+    if dir == 1 {
+      let d = step
+      while d < w + h {
+        let sx = x0 + calc.max(0, d - h)
+        let sy = y0 + calc.min(h, d)
+        let ex = x0 + calc.min(w, d)
+        let ey = y0 + calc.max(0, d - w)
+        line((sx, sy), (ex, ey), stroke: 0.4pt + stroke-col)
+        d += step
+      }
+    } else {
+      let d = step
+      while d < w + h {
+        let sx = x0 + calc.max(0, d - h)
+        let sy = y1 - calc.min(h, d)
+        let ex = x0 + calc.min(w, d)
+        let ey = y1 - calc.max(0, d - w)
+        line((sx, sy), (ex, ey), stroke: 0.4pt + stroke-col)
+        d += step
+      }
+    }
   }
 
-  for x in (6.26, 6.70, 7.14) {
-    rect((x, 7.18), (x + 0.06, 7.95), fill: gray.darken(40%), stroke: 0.5pt)
-    rect((x + 0.06, 7.18), (x + 0.16, 7.95), fill: white, stroke: 0.5pt)
-    rect((x + 0.16, 7.18), (x + 0.22, 7.95), fill: gray.darken(40%), stroke: 0.5pt)
-    rect((x, 5.65), (x + 0.06, 6.42), fill: gray.darken(40%), stroke: 0.5pt)
-    rect((x + 0.06, 5.65), (x + 0.16, 6.42), fill: white, stroke: 0.5pt)
-    rect((x + 0.16, 5.65), (x + 0.22, 6.42), fill: gray.darken(40%), stroke: 0.5pt)
+  // =========================================================================
+  // PARTE SUPERIORE: INNESTO MULTIDISCO GENERICO (VISTA FRONTALE + SEZIONE)
+  // =========================================================================
+  let cy = 7.45
+
+  // --- Vista frontale sinistra ---
+  let cx = 2.75
+  let r-out = 1.65
+  let r-in = 1.46
+  let r-disc = 1.34
+  let r-hub = 0.54
+  let r-sh = 0.28
+
+  circle((cx, cy), radius: r-out, fill: gray.transparentize(84%), stroke: 0.95pt)
+  for a in range(0, 360, step: 15) {
+    let ang = a * 1deg
+    line(
+      (cx + r-in * calc.cos(ang), cy + r-in * calc.sin(ang)),
+      (cx + r-out * calc.cos(ang), cy + r-out * calc.sin(ang)),
+      stroke: 0.35pt + gray.darken(20%),
+    )
+  }
+  circle((cx, cy), radius: r-in, fill: white, stroke: 0.85pt)
+
+  let sw = 0.14
+  let sd = 0.11
+  rect((cx - sw, cy + r-in - 0.02), (cx + sw, cy + r-in + sd), fill: white, stroke: 0.75pt)
+  rect((cx - sw, cy - r-in - sd), (cx + sw, cy - r-in + 0.02), fill: white, stroke: 0.75pt)
+  rect((cx + r-in - 0.02, cy - sw), (cx + r-in + sd, cy + sw), fill: white, stroke: 0.75pt)
+  rect((cx - r-in - sd, cy - sw), (cx - r-in + 0.02, cy + sw), fill: white, stroke: 0.75pt)
+
+  circle((cx, cy), radius: r-disc, stroke: 0.7pt)
+  circle((cx, cy), radius: r-hub, fill: white, stroke: 0.8pt)
+  circle((cx, cy), radius: r-sh, fill: gray.transparentize(78%), stroke: 0.85pt)
+  for d in (-0.16, 0.0, 0.16) {
+    let l = calc.sqrt(calc.max(0, r-sh * r-sh - d * d * 0.5)) * 0.65
+    line((cx + d - l * 0.6, cy - l * 0.6), (cx + d + l * 0.6, cy + l * 0.6), stroke: 0.4pt + gray.darken(25%))
+  }
+  let kw = 0.075
+  rect((cx - kw, cy + r-sh - 0.04), (cx + kw, cy + r-sh + 0.09), fill: gray.transparentize(65%), stroke: 0.65pt)
+  rect((cx - kw, cy - r-sh - 0.09), (cx + kw, cy - r-sh + 0.04), fill: gray.transparentize(65%), stroke: 0.65pt)
+  rect((cx + r-sh - 0.04, cy - kw), (cx + r-sh + 0.09, cy + kw), fill: gray.transparentize(65%), stroke: 0.65pt)
+  rect((cx - r-sh - 0.09, cy - kw), (cx - r-sh + 0.04, cy + kw), fill: gray.transparentize(65%), stroke: 0.65pt)
+
+  line((cx, cy - r-out - 0.45), (cx, cy + r-out + 0.45), stroke: (dash: "dash-dotted", thickness: 0.5pt, paint: luma(80)))
+  line((cx - r-out - 0.45, cy), (cx + r-out + 0.45, cy), stroke: (dash: "dash-dotted", thickness: 0.5pt, paint: luma(80)))
+
+  // --- Sezione assiale destra (DUE ALBERI COASSIALI DISTINTI) ---
+  let ysh = 0.27
+  line((5.35, cy + ysh), (7.15, cy + ysh), (7.15, cy - ysh), (5.35, cy - ysh), stroke: 0.9pt)
+  bezier((5.35, cy + ysh), (5.35, cy), (5.25, cy + 0.14), (5.45, cy + 0.08), stroke: 0.7pt)
+  bezier((5.35, cy), (5.35, cy - ysh), (5.25, cy - 0.10), (5.45, cy - 0.18), stroke: 0.7pt)
+  rect((5.85, cy - 0.06), (6.75, cy + 0.06), fill: white, stroke: 0.65pt)
+
+  line((7.30, cy + ysh), (11.75, cy + ysh), stroke: 0.9pt)
+  line((7.30, cy - ysh), (11.75, cy - ysh), stroke: 0.9pt)
+  line((7.30, cy - ysh), (7.30, cy + ysh), stroke: 0.9pt)
+  bezier((11.75, cy + ysh), (11.75, cy), (11.65, cy + 0.14), (11.85, cy + 0.08), stroke: 0.7pt)
+  bezier((11.75, cy), (11.75, cy - ysh), (11.65, cy - 0.10), (11.85, cy - 0.18), stroke: 0.7pt)
+  rect((7.50, cy - 0.06), (10.35, cy + 0.06), fill: white, stroke: 0.65pt)
+
+  for sgn in (1, -1) {
+    let ya = cy + sgn * ysh
+    let yb = cy + sgn * 0.78
+    let yc = cy + sgn * 1.44
+    let yd = cy + sgn * 1.66
+    let pts = (
+      (5.78, ya), (5.78, yb), (6.75, yb), (6.75, yd),
+      (11.15, yd), (11.15, yc), (7.22, yc), (7.22, ya),
+    )
+    line(..pts, close: true, fill: gray.transparentize(86%), stroke: 0.9pt)
+    let lo1 = calc.min(ya, yb)
+    let hi1 = calc.max(ya, yb)
+    hatch-rect(5.78, lo1, 7.22, hi1, step: 0.25, dir: 1)
+    let lo2 = calc.min(yb, yd)
+    let hi2 = calc.max(yb, yd)
+    hatch-rect(6.75, lo2, 7.22, hi2, step: 0.25, dir: 1)
+    let lo3 = calc.min(yc, yd)
+    let hi3 = calc.max(yc, yd)
+    hatch-rect(7.22, lo3, 11.15, hi3, step: 0.25, dir: 1)
+    line((7.22, cy + sgn * 1.54), (10.55, cy + sgn * 1.54), stroke: 0.65pt)
   }
 
-  line((8.40, 7.65), (7.98, 7.65), mark: (end: ">", fill: black), stroke: 1.0pt)
-  line((8.40, 5.95), (7.98, 5.95), mark: (end: ">", fill: black), stroke: 1.0pt)
-
-  content((1.15, 8.65), text(size: 8.5pt)[_campana_])
-  line((1.15, 8.48), (1.45, 8.05), stroke: 0.55pt)
-  line((1.25, 8.48), (5.70, 7.85), stroke: 0.55pt)
-
-  content((1.35, 4.82), text(size: 8.5pt)[_spingidisco/i_])
-  line((2.55, 4.82), (7.80, 5.82), stroke: 0.55pt)
-  circle((7.80, 5.82), radius: 0.04, fill: black, stroke: none)
-
-  line((1.2, 0.35), (7.6, 0.35), stroke: (dash: "dash-dotted", thickness: 0.65pt))
-
-  rect((2.05, 0.35), (6.35, 0.90), fill: white, stroke: 0.85pt)
-  arc((6.35, 0.625), start: 270deg, stop: 450deg, radius: (0.12, 0.275), anchor: "origin", stroke: 0.85pt)
-
-  line((1.55, 0.90), (1.85, 0.90), (1.85, 3.60), (2.35, 3.60), (2.35, 4.20), (1.55, 4.20), close: true, fill: gray.transparentize(82%), stroke: 0.85pt)
-  line((1.40, 3.90), (2.50, 3.90), stroke: (dash: "dash-dotted", thickness: 0.55pt))
-  rect((1.55, 3.78), (1.85, 4.02), fill: white, stroke: 0.65pt)
-
-  rect((2.05, 0.90), (5.75, 1.25), fill: gray.transparentize(84%), stroke: 0.8pt)
-  rect((2.15, 1.25), (2.98, 3.40), fill: gray.transparentize(88%), stroke: 0.8pt)
-  circle((2.50, 2.75), radius: 0.10, fill: white, stroke: 0.65pt)
-  line((2.20, 2.75), (2.80, 2.75), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-
-  rect((2.98, 3.55), (4.12, 3.80), fill: gray.transparentize(78%), stroke: 0.75pt)
-  for i in range(8) {
-    let x = 3.04 + i * 0.135
-    let fl = if calc.rem(i, 2) == 0 { gray.transparentize(65%) } else { white }
-    rect((x, 1.30), (x + 0.08, 3.55), fill: fl, stroke: 0.55pt)
+  for sgn in (1, -1) {
+    let lo = calc.min(cy + sgn * ysh, cy + sgn * 0.46)
+    let hi = calc.max(cy + sgn * ysh, cy + sgn * 0.46)
+    rect((7.32, lo), (10.05, hi), fill: gray.transparentize(78%), stroke: 0.8pt)
+    hatch-rect(7.32, lo, 10.05, hi, step: 0.22, dir: -1)
+    line((7.32, cy + sgn * 0.37), (10.05, cy + sgn * 0.37), stroke: 0.55pt)
   }
 
-  rect((4.14, 1.25), (5.85, 3.40), fill: gray.transparentize(82%), stroke: 0.85pt)
-
-  rect((4.62, 2.15), (5.42, 2.78), fill: white, stroke: 0.8pt)
-  for k in range(1, 6) {
-    let yy = 2.15 + k * (0.63 / 6)
-    line((4.62, yy), (5.42, yy), stroke: 0.35pt)
+  let x-pack = 7.36
+  for k in range(3) {
+    let xd = x-pack + k * 0.84
+    for sgn in (1, -1) {
+      let y0 = calc.min(cy + sgn * 0.46, cy + sgn * 1.34)
+      let y1 = calc.max(cy + sgn * 0.46, cy + sgn * 1.34)
+      rect((xd, y0), (xd + 0.14, y1), fill: luma(165), stroke: 0.65pt)
+      rect((xd + 0.14, y0), (xd + 0.26, y1), fill: white, stroke: 0.7pt)
+      rect((xd + 0.26, y0), (xd + 0.40, y1), fill: luma(165), stroke: 0.65pt)
+    }
   }
-  for k in range(1, 7) {
-    let xx = 4.62 + k * (0.80 / 7)
-    line((xx, 2.15), (xx, 2.78), stroke: 0.35pt)
+  for k in range(2) {
+    let xd = x-pack + 0.44 + k * 0.84
+    for sgn in (1, -1) {
+      let y0 = calc.min(cy + sgn * 0.58, cy + sgn * 1.54)
+      let y1 = calc.max(cy + sgn * 0.58, cy + sgn * 1.54)
+      rect((xd, y0), (xd + 0.34, y1), fill: gray.transparentize(82%), stroke: 0.8pt)
+      hatch-rect(xd, y0, xd + 0.34, y1, step: 0.20, dir: 1)
+    }
   }
 
-  rect((4.14, 2.98), (5.85, 3.12), fill: white, stroke: 0.65pt)
+  let xsp0 = 9.52
+  let xsp1 = 10.12
+  for sgn in (1, -1) {
+    let y0 = calc.min(cy + sgn * 0.54, cy + sgn * 1.54)
+    let y1 = calc.max(cy + sgn * 0.54, cy + sgn * 1.54)
+    rect((xsp0, y0), (xsp1, y1), fill: gray.transparentize(84%), stroke: 0.9pt)
+    hatch-rect(xsp0, y0, xsp1, y1, step: 0.22, dir: -1)
+  }
 
-  rect((4.14, 1.54), (5.85, 1.92), fill: white, stroke: 0.7pt)
-  rect((4.14, 1.69), (5.55, 1.77), fill: gray.transparentize(72%), stroke: 0.5pt)
-  let x0 = 4.32
-  let dx = 0.16
+  for sgn in (1, -1) {
+    let y0 = calc.min(cy + sgn * 0.56, cy + sgn * 1.44)
+    let y1 = calc.max(cy + sgn * 0.56, cy + sgn * 1.44)
+    rect((10.65, y0), (11.15, y1), fill: gray.transparentize(86%), stroke: 0.85pt)
+    hatch-rect(10.65, y0, 11.15, y1, step: 0.22, dir: 1)
+    rect((10.65, cy + sgn * 0.92 - 0.12), (11.15, cy + sgn * 0.92 + 0.12), fill: white, stroke: 0.6pt)
+    line(
+      (11.55, cy + sgn * 0.92), (10.18, cy + sgn * 0.92),
+      mark: (end: "stealth", fill: black, scale: 0.9),
+      stroke: 1.1pt,
+    )
+  }
+
+  line((5.05, cy), (12.15, cy), stroke: (dash: "dash-dotted", thickness: 0.5pt, paint: luma(80)))
+
+  content((0.95, cy + 2.25), text(size: 9pt, style: "italic")[campana])
+  line((1.55, cy + 2.08), (2.00, cy + 1.45), stroke: 0.55pt + luma(50))
+  line((1.55, cy + 2.08), (6.95, cy + 1.25), stroke: 0.55pt + luma(50))
+
+  content((1.25, cy - 2.20), text(size: 9pt, style: "italic")[spingidisco/i])
+  line((2.35, cy - 2.15), (9.82, cy - 1.15), stroke: 0.55pt + luma(50))
+
+  // =========================================================================
+  // PARTE INFERIORE: INNESTO MULTIDISCO ELETTROMAGNETICO (SEMISEZIONE)
+  // =========================================================================
+  let ay = 0.72
+  let ysh2 = 0.55
+
+  line((1.25, ay), (11.35, ay), stroke: (dash: "dash-dotted", thickness: 0.55pt, paint: luma(80)))
+
+  rect((2.55, ay - ysh2), (10.25, ay + ysh2), fill: white, stroke: 0.95pt)
+  bezier((10.25, ay + ysh2), (10.25, ay - ysh2), (10.65, ay + 0.35), (10.65, ay - 0.35), stroke: 0.9pt)
+  rect((2.35, ay - ysh2 + 0.08), (2.55, ay + ysh2 - 0.08), fill: gray.transparentize(80%), stroke: 0.75pt)
+
+  let yhub = ay + ysh2 + 0.52
+  rect((2.65, ay + ysh2), (9.75, yhub), fill: gray.transparentize(84%), stroke: 0.9pt)
+  hatch-rect(2.65, ay + ysh2, 9.75, yhub, step: 0.26, dir: -1)
+
+  let yfl-top = 4.65
+  let ydr-lo = 3.42
+  let ydr-hi = 3.82
   line(
-    (x0, 1.73),
-    (x0 + 0.5 * dx, 1.88),
-    (x0 + 1.0 * dx, 1.58),
-    (x0 + 1.5 * dx, 1.88),
-    (x0 + 2.0 * dx, 1.58),
-    (x0 + 2.5 * dx, 1.88),
-    (x0 + 3.0 * dx, 1.58),
-    (x0 + 3.5 * dx, 1.88),
-    (x0 + 4.0 * dx, 1.58),
-    (x0 + 4.5 * dx, 1.88),
-    (x0 + 5.0 * dx, 1.58),
-    (x0 + 5.5 * dx, 1.88),
-    (x0 + 6.0 * dx, 1.73),
-    stroke: 0.75pt,
+    (1.65, ay - 0.45), (1.65, yfl-top), (2.45, yfl-top), (2.45, ydr-hi),
+    (6.28, ydr-hi), (6.52, ydr-hi - 0.22), (6.52, ydr-lo),
+    (2.35, ydr-lo), (2.35, ay - 0.45),
+    close: true,
+    fill: gray.transparentize(86%),
+    stroke: 0.95pt,
   )
+  hatch-rect(1.65, ydr-lo, 2.45, yfl-top, step: 0.26, dir: 1)
+  hatch-rect(2.45, ydr-lo, 6.45, ydr-hi, step: 0.26, dir: 1)
+  rect((1.65, 4.10), (2.45, 4.42), fill: white, stroke: 0.75pt)
+  line((1.35, 4.26), (2.80, 4.26), stroke: (dash: "dash-dotted", thickness: 0.5pt, paint: luma(80)))
+  rect((1.65, ay - 0.45), (2.35, ydr-lo), fill: white, stroke: 0.85pt)
 
-  rect((4.45, 3.40), (4.85, 3.88), fill: gray.transparentize(78%), stroke: 0.75pt)
-  rect((5.15, 3.40), (5.55, 3.88), fill: gray.transparentize(78%), stroke: 0.75pt)
-  line((4.65, 3.88), (4.65, 4.10), stroke: 0.65pt)
-  line((5.35, 3.88), (5.35, 4.10), stroke: 0.65pt)
-  content((4.65, 4.30), text(size: 9pt)[*+*])
-  content((5.35, 4.30), text(size: 9pt)[*-*])
+  rect((2.85, yhub), (3.88, ydr-lo), fill: gray.transparentize(88%), stroke: 0.85pt)
+  hatch-rect(2.85, yhub, 3.88, yhub + 0.35, step: 0.20, dir: 1)
+  circle((3.36, 2.66), radius: 0.20, fill: white, stroke: 0.8pt)
+  circle((3.36, 2.66), radius: 0.10, stroke: 0.7pt)
+  line((2.65, 2.66), (4.10, 2.66), stroke: (dash: "dash-dotted", thickness: 0.45pt, paint: luma(80)))
 
-  content((6.85, 2.82), text(size: 8.5pt)[_elettro-_])
-  content((6.85, 2.52), text(size: 8.5pt)[_magnete_])
-  line((6.22, 2.65), (5.42, 2.48), stroke: 0.55pt)
+  let xpk0 = 3.92
+  let dt = 0.23
+  for k in range(9) {
+    let x0 = xpk0 + k * dt
+    let is-outer = calc.rem(k, 2) == 0
+    if is-outer {
+      rect((x0, yhub + 0.12), (x0 + dt - 0.02, ydr-lo + 0.22), fill: gray.transparentize(78%), stroke: 0.7pt)
+    } else {
+      rect((x0, yhub - 0.14), (x0 + dt - 0.02, ydr-lo - 0.08), fill: luma(175), stroke: 0.7pt)
+    }
+  }
+  line((xpk0, ydr-lo + 0.22), (xpk0 + 9 * dt, ydr-lo + 0.22), stroke: 0.65pt)
+  line((xpk0, yhub - 0.14), (xpk0 + 9 * dt, yhub - 0.14), stroke: 0.65pt)
 
-  content((6.75, 1.73), text(size: 8.5pt)[_molle_])
-  line((6.30, 1.73), (5.30, 1.73), stroke: 0.55pt)
+  let xpl0 = xpk0 + 9 * dt + 0.02
+  let xpl1 = xpl0 + 0.34
+  rect((xpl0, yhub), (xpl1, ydr-lo), fill: gray.transparentize(82%), stroke: 0.9pt)
+  hatch-rect(xpl0, yhub, xpl1, ydr-lo, step: 0.20, dir: -1)
+
+  let xel0 = xpl1 + 0.14
+  let xel1 = 9.05
+  rect((xel0, yhub), (xel1, 3.68), fill: gray.transparentize(85%), stroke: 0.95pt)
+  hatch-rect(xel0, yhub, xel1, 3.68, step: 0.26, dir: 1)
+
+  let xb0 = 7.20
+  let xb1 = 8.48
+  let yb0 = 2.38
+  let yb1 = 3.16
+  rect((xb0, yb0), (xb1, yb1), fill: white, stroke: 0.9pt)
+  rect((xb0 + 0.08, yb0 + 0.08), (xb1 - 0.08, yb1 - 0.08), fill: rgb("#f3f4f6"), stroke: 0.75pt)
+  let gx = xb0 + 0.20
+  while gx < xb1 - 0.10 {
+    line((gx, yb0 + 0.08), (gx, yb1 - 0.08), stroke: 0.4pt + luma(90))
+    gx += 0.15
+  }
+  let gy = yb0 + 0.20
+  while gy < yb1 - 0.10 {
+    line((xb0 + 0.08, gy), (xb1 - 0.08, gy), stroke: 0.4pt + luma(90))
+    gy += 0.15
+  }
+
+  let xan0 = 9.18
+  let xan1 = 9.75
+  rect((xan0, yhub), (xan1, 3.62), fill: gray.transparentize(82%), stroke: 0.9pt)
+  hatch-rect(xan0, yhub, xan1, 3.62, step: 0.22, dir: -1)
+
+  let yt-hi = 3.36
+  rect((xpl0 + 0.10, yt-hi - 0.10), (xan1 - 0.12, yt-hi + 0.10), fill: white, stroke: 0.8pt)
+  line((xpl0 - 0.15, yt-hi), (xan1 + 0.25, yt-hi), stroke: (dash: "dash-dotted", thickness: 0.45pt, paint: luma(80)))
+
+  let yt-lo = 2.02
+  rect((6.85, yt-lo - 0.22), (8.45, yt-lo + 0.22), fill: white, stroke: 0.75pt)
+  rect((xpl0 + 0.10, yt-lo - 0.08), (xan1 - 0.12, yt-lo + 0.08), fill: white, stroke: 0.8pt)
+  for k in range(6) {
+    let xm = 7.05 + k * 0.22
+    circle((xm, yt-lo + 0.15), radius: 0.055, fill: luma(110), stroke: 0.5pt)
+    circle((xm, yt-lo - 0.15), radius: 0.055, fill: luma(110), stroke: 0.5pt)
+  }
+  line((xpl0 - 0.15, yt-lo), (xan1 + 0.25, yt-lo), stroke: (dash: "dash-dotted", thickness: 0.45pt, paint: luma(80)))
+
+  rect((6.55, 3.68), (7.45, 4.02), fill: gray.transparentize(78%), stroke: 0.85pt)
+  hatch-rect(6.55, 3.68, 7.45, 4.02, step: 0.18, dir: -1)
+  rect((7.75, 3.68), (8.65, 4.02), fill: gray.transparentize(78%), stroke: 0.85pt)
+  hatch-rect(7.75, 3.68, 8.65, 4.02, step: 0.18, dir: -1)
+  line((6.92, 4.02), (6.92, 4.25), stroke: 0.75pt)
+  line((7.12, 4.02), (7.12, 4.25), stroke: 0.75pt)
+  line((7.02, 4.02), (7.02, 4.42), stroke: (dash: "dash-dotted", thickness: 0.45pt))
+  content((7.02, 4.62), text(size: 11pt, weight: "bold")[+])
+
+  line((8.10, 4.02), (8.10, 4.25), stroke: 0.75pt)
+  line((8.30, 4.02), (8.30, 4.25), stroke: 0.75pt)
+  line((8.20, 4.02), (8.20, 4.42), stroke: (dash: "dash-dotted", thickness: 0.45pt))
+  content((8.20, 4.62), text(size: 11pt, weight: "bold")[$-$])
+
+  content((10.55, 3.22), text(size: 8.5pt, style: "italic")[elettro-\ magnete], anchor: "west")
+  line((10.48, 3.22), (8.25, 2.75), stroke: 0.55pt + luma(50))
+
+  content((10.55, 2.02), text(size: 8.5pt, style: "italic")[molle], anchor: "west")
+  line((10.48, 2.02), (8.15, 1.88), stroke: 0.55pt + luma(50))
 })
