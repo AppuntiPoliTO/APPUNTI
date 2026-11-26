@@ -2,110 +2,157 @@
 #canvas(length: 1cm, {
   import draw: *
 
-  // Housing walls (top and bottom cross-sections)
   line(
-    (-1.85, 0.42), (-1.85, 0.85), (-1.65, 0.85), (-0.35, 1.78),
-    (0.72, 1.78), (0.78, 1.72), (0.90, 1.72), (0.90, 1.50),
-    (0.32, 1.52), (-0.30, 1.48), (-0.85, 1.15), (-1.25, 0.55),
-    (-1.35, 0.0), (-1.55, 0.0), (-1.55, 0.42),
-    close: true, fill: luma(232), stroke: 0.8pt
+    (-2.40, 0.54), (-2.40, 1.18), (-2.05, 1.18), (-2.05, 1.28),
+    (-1.82, 1.28), (-0.95, 2.15), (0.18, 2.15), (0.38, 2.08),
+    (0.86, 2.08), (1.02, 2.15), (1.16, 2.00), (1.16, 1.46),
+    (0.75, 1.72), (0.30, 1.84), (-0.28, 1.74), (-0.84, 1.46),
+    (-1.32, 1.06), (-1.62, 0.56), (-1.70, 0.00), (-2.40, 0.00),
+    close: true, fill: luma(230), stroke: none
   )
   line(
-    (-1.85, -0.42), (-1.85, -0.85), (-1.65, -0.85), (-0.35, -1.78),
-    (0.72, -1.78), (0.78, -1.72), (0.90, -1.72), (0.90, -1.50),
-    (0.32, -1.52), (-0.30, -1.48), (-0.85, -1.15), (-1.25, -0.55),
-    (-1.35, 0.0), (-1.55, 0.0), (-1.55, -0.42),
-    close: true, fill: luma(232), stroke: 0.8pt
+    (-2.40, -0.54), (-2.40, -1.18), (-2.05, -1.18), (-2.05, -1.28),
+    (-1.82, -1.28), (-0.95, -2.15), (0.18, -2.15), (0.38, -2.08),
+    (0.86, -2.08), (1.02, -2.15), (1.16, -2.00), (1.16, -1.46),
+    (0.75, -1.72), (0.30, -1.84), (-0.28, -1.74), (-0.84, -1.46),
+    (-1.32, -1.06), (-1.62, -0.56), (-1.70, 0.00), (-2.40, 0.00),
+    close: true, fill: luma(230), stroke: none
   )
 
-  // Left neck and splined input shaft
   line(
-    (-3.75, 0.55), (-2.45, 0.55), (-2.45, 0.42), (-1.55, 0.42),
-    (-1.55, -0.42), (-2.45, -0.42), (-2.45, -0.55), (-3.75, -0.55),
-    close: true, fill: white, stroke: 0.8pt
-  )
-  line((-3.75, 0.42), (-2.55, 0.42), stroke: 0.55pt)
-  line((-3.75, 0.28), (-2.55, 0.28), stroke: 0.55pt)
-  line((-3.75, 0.14), (-2.55, 0.14), stroke: 0.55pt)
-  line((-3.75, -0.14), (-2.55, -0.14), stroke: 0.55pt)
-  line((-3.75, -0.28), (-2.55, -0.28), stroke: 0.55pt)
-  line((-3.75, -0.42), (-2.55, -0.42), stroke: 0.55pt)
-  line((-2.55, 0.55), (-2.55, -0.55), stroke: 0.6pt)
-
-  // Output shaft (tilted at -30 deg)
-  line(
-    (0.86, -0.01), (2.29, -0.84), (1.87, -1.56), (0.44, -0.74),
-    close: true, fill: white, stroke: 0.8pt
+    (-1.70, 0.00), (-1.62, 0.56), (-1.32, 1.06), (-0.84, 1.46),
+    (-0.28, 1.74), (0.30, 1.84), (0.75, 1.72), (1.16, 1.46),
+    (1.16, -1.46), (0.75, -1.72), (0.30, -1.84), (-0.28, -1.74),
+    (-0.84, -1.46), (-1.32, -1.06), (-1.62, -0.56),
+    close: true, fill: white, stroke: none
   )
 
-  // Inner race (hub)
-  line(
-    (-0.29, 1.00), (0.15, 0.92), (0.49, 0.89), (1.01, 0.25),
-    (0.29, -1.00), (-0.15, -0.92), (-0.49, -0.89), (-1.01, -0.25),
-    close: true, fill: luma(232), stroke: 0.8pt
-  )
+  bezier((-1.32, -1.06), (-1.32, 1.06), (-1.04, -0.52), (-1.04, 0.52), stroke: 0.75pt)
+  bezier((-1.14, -1.22), (-1.14, 1.22), (-0.86, -0.60), (-0.86, 0.60), stroke: (paint: luma(110), thickness: 0.55pt))
+  line((-0.72, 1.52), (-0.72, 0.78), stroke: 0.65pt)
+  line((-0.56, 1.62), (-0.56, 0.86), stroke: 0.65pt)
+  line((-0.72, -1.52), (-0.72, -0.78), stroke: 0.65pt)
+  line((-0.56, -1.62), (-0.56, -0.86), stroke: 0.65pt)
+  line((1.16, -0.55), (1.16, -1.46), stroke: 0.8pt)
+  line((1.02, -0.49), (1.02, -1.38), stroke: 0.65pt)
 
-  // Retaining rings
   line(
-    (0.88, -0.02), (0.94, 0.02), (0.90, 0.08), (0.84, 0.04),
-    close: true, fill: luma(60), stroke: 0.5pt
+    (-0.78, 1.35), (-0.42, 1.51), (-0.08, 1.56),
+    (-0.04, 1.19), (-0.32, 1.14), (-0.58, 1.02),
+    close: true, fill: luma(206), stroke: 0.9pt
   )
   line(
-    (0.42, -0.76), (0.48, -0.72), (0.44, -0.82), (0.38, -0.86),
-    close: true, fill: luma(60), stroke: 0.5pt
-  )
-
-  // Cage segments (tilted at -15 deg)
-  line(
-    (-0.55, 1.15), (-0.02, 1.28), (-0.05, 1.44), (-0.65, 1.30),
-    close: true, fill: luma(210), stroke: 0.75pt
+    (0.72, 1.38), (1.06, 1.16), (1.36, 0.84),
+    (1.04, 0.60), (0.80, 0.86), (0.54, 1.04),
+    close: true, fill: luma(206), stroke: 0.9pt
   )
   line(
-    (0.64, 1.12), (1.06, 0.78), (1.18, 0.90), (0.72, 1.26),
-    close: true, fill: luma(210), stroke: 0.75pt
+    (-1.23, -0.96), (-1.02, -1.18), (-0.72, -1.38),
+    (-0.54, -1.04), (-0.76, -0.90), (-0.93, -0.73),
+    close: true, fill: luma(206), stroke: 0.9pt
   )
   line(
-    (-1.06, -0.78), (-0.64, -1.12), (-0.72, -1.26), (-1.18, -0.90),
-    close: true, fill: luma(210), stroke: 0.75pt
+    (0.08, -1.56), (0.46, -1.50), (0.83, -1.32),
+    (0.63, -1.00), (0.34, -1.13), (0.04, -1.19),
+    close: true, fill: luma(206), stroke: 0.9pt
+  )
+
+  line(
+    (-0.44, 0.74), (-0.25, 1.15), (0.04, 1.08), (0.36, 1.00),
+    (0.74, 0.82), (1.08, 0.50), (0.89, 0.15),
+    close: true, fill: luma(220), stroke: 0.95pt
   )
   line(
-    (0.02, -1.28), (0.55, -1.15), (0.65, -1.30), (0.05, -1.44),
-    close: true, fill: luma(210), stroke: 0.75pt
+    (-0.89, -0.15), (-1.08, -0.50), (-0.74, -0.82), (-0.36, -1.00),
+    (-0.04, -1.08), (0.25, -1.15), (0.44, -0.74),
+    close: true, fill: luma(220), stroke: 0.95pt
   )
 
-  // Balls
-  circle((0.32, 1.21), radius: 0.30, fill: white, stroke: 0.9pt)
-  circle((-0.32, -1.21), radius: 0.30, fill: white, stroke: 0.9pt)
+  line((-0.67, 0.85), (1.18, 0.02), (0.78, -0.89), (-1.07, -0.07), close: true, fill: luma(242), stroke: none)
+  line((1.18, 0.02), (3.03, -0.80), (2.63, -1.72), (0.78, -0.89), close: true, fill: white, stroke: none)
+  line((-0.67, 0.85), (-0.55, 0.92), (3.03, -0.68), stroke: 1.1pt)
+  line((-1.07, -0.07), (-1.02, -0.19), (2.56, -1.78), stroke: 1.1pt)
+  line((-0.67, 0.85), (-1.07, -0.07), stroke: 1.1pt)
+  line((-0.48, 0.78), (0.89, 0.17), stroke: 0.75pt)
+  line((-0.89, -0.13), (0.48, -0.74), stroke: 0.75pt)
+  line((-0.53, 0.86), (0.84, 0.25), stroke: 0.55pt)
+  line((-0.94, -0.05), (0.43, -0.66), stroke: 0.55pt)
+  bezier((1.18, 0.02), (0.78, -0.89), (1.06, -0.32), (0.90, -0.58), stroke: (paint: luma(140), dash: "dashed", thickness: 0.55pt))
+  line((3.03, -0.68), (2.56, -1.78), stroke: (paint: luma(170), thickness: 0.5pt))
 
-  // Geometric centers and construction lines
-  line((0.32, 1.21), (-0.12, 0.00), stroke: (paint: gray, thickness: 0.45pt))
-  line((0.32, 1.21), (0.12, 0.00), stroke: (paint: gray, thickness: 0.45pt))
-  circle((-0.12, 0.00), radius: 0.03, fill: black, stroke: none)
-  circle((0.12, 0.00), radius: 0.03, fill: black, stroke: none)
+  line((0.65, 0.17), (0.78, 0.11), (0.88, 0.33), (0.75, 0.39), close: true, fill: luma(45), stroke: 0.7pt)
+  line((0.20, -0.82), (0.33, -0.88), (0.43, -0.66), (0.30, -0.60), close: true, fill: luma(45), stroke: 0.7pt)
 
-  // Leader lines for A, B, O
-  line((-0.12, 0.00), (1.42, 0.46), stroke: (paint: gray, thickness: 0.45pt))
-  circle((1.55, 0.48), radius: 0.13, fill: white, stroke: (paint: gray, thickness: 0.5pt))
-  content((1.55, 0.48), text(size: 6.5pt)[A])
+  line(
+    (-2.40, 0.54), (-2.40, 1.18), (-2.05, 1.18), (-2.05, 1.28),
+    (-1.82, 1.28), (-0.95, 2.15), (0.18, 2.15), (0.38, 2.08),
+    (0.86, 2.08), (1.02, 2.15), (1.16, 2.00), (1.16, 1.18),
+    stroke: 1.15pt
+  )
+  line(
+    (-2.40, -0.54), (-2.40, -1.18), (-2.05, -1.18), (-2.05, -1.28),
+    (-1.82, -1.28), (-0.95, -2.15), (0.18, -2.15), (0.38, -2.08),
+    (0.86, -2.08), (1.02, -2.15), (1.16, -2.00), (1.16, -1.18),
+    stroke: 1.15pt
+  )
+  line((-2.05, 1.18), (-2.05, -1.18), stroke: 0.8pt)
+  line((-2.40, 0.54), (-2.40, -0.54), stroke: 0.65pt)
 
-  line((0.12, 0.00), (1.52, 0.19), stroke: (paint: gray, thickness: 0.45pt))
-  circle((1.65, 0.20), radius: 0.13, fill: white, stroke: (paint: gray, thickness: 0.5pt))
-  content((1.65, 0.20), text(size: 6.5pt)[B])
+  bezier((-1.70, 0.00), (-0.84, 1.46), (-1.68, 0.65), (-1.36, 1.14), stroke: 1.05pt)
+  bezier((-0.84, 1.46), (0.30, 1.84), (-0.45, 1.68), (-0.05, 1.84), stroke: 1.05pt)
+  bezier((0.30, 1.84), (1.16, 1.46), (0.68, 1.84), (0.98, 1.66), stroke: 1.05pt)
 
-  line((-0.45, -1.25), (-0.90, -1.78), stroke: (paint: gray, thickness: 0.45pt))
-  content((-0.95, -1.85), text(size: 7pt)[$O$], anchor: "north-east")
+  bezier((-1.70, 0.00), (-0.84, -1.46), (-1.68, -0.65), (-1.36, -1.14), stroke: 1.05pt)
+  bezier((-0.84, -1.46), (0.30, -1.84), (-0.45, -1.68), (-0.05, -1.84), stroke: 1.05pt)
+  bezier((0.30, -1.84), (1.16, -1.46), (0.68, -1.84), (0.98, -1.66), stroke: 1.05pt)
 
-  // Reference horizontal axis and angle beta
-  line((0, 0), (2.60, 0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  arc((0, 0), start: 330deg, stop: 360deg, radius: 2.25, anchor: "origin", mark: (start: ">", end: ">"), stroke: 0.65pt)
-  content((2.40, -0.64), text(size: 8.5pt)[$beta$], anchor: "west")
+  line((-4.50, 0.60), (-3.02, 0.60), (-2.90, 0.54), (-2.40, 0.54), stroke: 1.1pt)
+  line((-4.50, -0.60), (-3.02, -0.60), (-2.90, -0.54), (-2.40, -0.54), stroke: 1.1pt)
+  line((-4.50, 0.50), (-2.95, 0.50), (-2.80, 0.44), (-2.95, 0.38), (-4.50, 0.38), stroke: 0.7pt)
+  line((-4.50, 0.28), (-2.95, 0.28), (-2.80, 0.22), (-2.95, 0.16), (-4.50, 0.16), stroke: 0.7pt)
+  line((-4.50, -0.16), (-2.95, -0.16), (-2.80, -0.22), (-2.95, -0.28), (-4.50, -0.28), stroke: 0.7pt)
+  line((-4.50, -0.38), (-2.95, -0.38), (-2.80, -0.44), (-2.95, -0.50), (-4.50, -0.50), stroke: 0.7pt)
+  line((-3.02, 0.60), (-3.02, -0.60), stroke: 0.75pt)
+  line((-4.50, 0.60), (-4.50, -0.60), stroke: 0.8pt)
 
-  // Torque vectors M_1 and M_2 (double arrowheads)
-  line((-3.95, 0), (-0.22, 0), mark: (end: ">"), stroke: (paint: red, thickness: 1.5pt))
-  line((-0.55, 0), (0, 0), mark: (end: ">"), stroke: (paint: red, thickness: 1.5pt))
-  content((-4.05, 0), text(size: 9pt, fill: red)[$M_1$], anchor: "east")
+  circle((0.30, 1.42), radius: 0.43, fill: white, stroke: 1.15pt)
+  circle((-0.30, -1.42), radius: 0.43, fill: white, stroke: 1.15pt)
+  circle((0.30, 1.42), radius: 0.035, fill: black, stroke: none)
+  circle((-0.30, -1.42), radius: 0.035, fill: black, stroke: none)
 
-  line((2.47, -1.43), (0.19, -0.11), mark: (end: ">"), stroke: (paint: red, thickness: 1.5pt))
-  line((0.48, -0.28), (0, 0), mark: (end: ">"), stroke: (paint: red, thickness: 1.5pt))
-  content((2.58, -1.50), text(size: 9pt, fill: red)[$M_2$], anchor: "west")
+  line((-4.75, 0.00), (4.05, 0.00), stroke: (dash: "dash-dotted", thickness: 0.55pt))
+  line((-1.15, 0.51), (3.80, -1.69), stroke: (dash: "dash-dotted", thickness: 0.55pt))
+  line((-0.44, -2.06), (0.48, 2.25), stroke: (dash: "dash-dotted", thickness: 0.55pt))
+  line((-0.14, 1.52), (0.74, 1.32), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+
+  line((0.30, 1.42), (-0.26, 0.11), stroke: (paint: luma(90), thickness: 0.5pt))
+  line((0.30, 1.42), (0.28, 0.00), stroke: (paint: luma(90), thickness: 0.5pt))
+
+  circle((-0.26, 0.11), radius: 0.045, fill: black, stroke: none)
+  circle((0.00, 0.00), radius: 0.045, fill: black, stroke: none)
+  circle((0.28, 0.00), radius: 0.045, fill: black, stroke: none)
+
+  line((-0.26, 0.11), (1.72, 0.25), stroke: (paint: luma(100), thickness: 0.45pt))
+  circle((1.92, 0.25), radius: 0.20, fill: white, stroke: 0.6pt)
+  content((1.92, 0.25), text(size: 7.5pt)[*A*], anchor: "center")
+
+  line((0.28, 0.00), (2.28, -0.14), stroke: (paint: luma(100), thickness: 0.45pt))
+  circle((2.48, -0.14), radius: 0.20, fill: white, stroke: 0.6pt)
+  content((2.48, -0.14), text(size: 7.5pt)[*B*], anchor: "center")
+
+  line((0.00, 0.00), (-1.42, -2.36), (-1.82, -2.36), stroke: (paint: luma(100), thickness: 0.5pt))
+  content((-1.62, -2.30), text(size: 8.5pt)[*O*], anchor: "south")
+
+  arc((0.00, 0.00), start: -24deg, stop: 0deg, radius: 3.65, anchor: "origin", mark: (start: ">", end: ">"), stroke: 0.6pt)
+  content((3.72, -0.68), text(size: 10pt)[$beta$], anchor: "west")
+
+  line((-4.35, 0.00), (-0.06, 0.00), stroke: (paint: rgb(225, 30, 30), thickness: 2.2pt))
+  line((-0.90, 0.00), (-0.50, 0.00), mark: (end: ">", scale: 1.35), stroke: (paint: rgb(225, 30, 30), thickness: 2.2pt))
+  line((-0.45, 0.00), (-0.04, 0.00), mark: (end: ">", scale: 1.35), stroke: (paint: rgb(225, 30, 30), thickness: 2.2pt))
+  content((-4.60, 0.00), text(size: 15pt, fill: rgb(215, 45, 45))[$M_1$], anchor: "east")
+
+  line((4.15, -1.85), (0.06, -0.03), stroke: (paint: rgb(225, 30, 30), thickness: 2.2pt))
+  line((1.10, -0.49), (0.48, -0.21), mark: (end: ">", scale: 1.35), stroke: (paint: rgb(225, 30, 30), thickness: 2.2pt))
+  line((0.60, -0.27), (0.05, -0.02), mark: (end: ">", scale: 1.35), stroke: (paint: rgb(225, 30, 30), thickness: 2.2pt))
+  content((4.32, -1.88), text(size: 15pt, fill: rgb(215, 45, 45))[$M_2$], anchor: "west")
 })

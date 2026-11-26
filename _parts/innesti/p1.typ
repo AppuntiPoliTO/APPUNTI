@@ -787,14 +787,18 @@ Per assicurare un funzionamento regolare e ripetibile sono essenziali:
 
 #v(0.5em)
 
-Poiché il disco frizione è relativamente snello e torsionalmente cedevole — e la coppia erogata dal motore a combustione interna presenta continue fluttuazioni — sulla linea di trasmissione si propagano *vibrazioni torsionali* e strappi. Per assorbirli, il disco non è vincolato rigidamente al mozzo d'uscita ma vi è collegato tramite un *parastrappi* (fino alla soluzione più evoluta del *doppio volano*, introdotta sul mercato da Valeo): la coppia passa prima alla corona d'attrito, poi attraversa un set di *molle elicoidali cilindriche circonferenziali* — spesso abbinate a uno smorzatore ad attrito — e infine raggiunge il mozzo, rendendo l'innesto equivalente a un *giunto elastico torsionalmente cedevole*.
-
 #grid(
-  columns: (1fr, 1fr),
-  column-gutter: 0.8em,
-  align: (center + horizon, center + horizon),
-  [#fig-safe(image("../../images/innesti/ecm-c13-p1-06.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi su disco frizione])],
-  [#fig-safe(image("../../images/innesti/ecm-c13-p1-07.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi in un doppio volano])]
+  columns: (1.1fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),
+  [
+    Poiché il disco frizione è relativamente snello e torsionalmente cedevole — e la coppia erogata dal motore a combustione interna presenta continue fluttuazioni — sulla linea di trasmissione si propagano *vibrazioni torsionali* e strappi. Per assorbirli, il disco non è vincolato rigidamente al mozzo d'uscita ma vi è collegato tramite un *parastrappi* (fino alla soluzione più evoluta del *doppio volano*, introdotta sul mercato da Valeo): la coppia passa prima alla corona d'attrito, poi attraversa un set di *molle elicoidali cilindriche circonferenziali* — spesso abbinate a uno smorzatore ad attrito — e infine raggiunge il mozzo, rendendo l'innesto equivalente a un *giunto elastico torsionalmente cedevole*.
+  ],
+  [
+    #fig-safe(image("../../images/innesti/ecm-c13-p1-06.jpg"), max-h: 3.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi su disco frizione])
+    #v(0.4em)
+    #fig-safe(image("../../images/innesti/ecm-c13-p1-07.jpg"), max-h: 3.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi in un doppio volano])
+  ],
 )
 
 #v(0.5em)
