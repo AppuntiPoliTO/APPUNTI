@@ -34,18 +34,8 @@ Il transitorio critico è la *sincronizzazione*, cioè l'uguagliamento delle vel
   [#fig-safe(include "../../figs/innesti/ecm-c13-p1-01.typ")],
 )
 
-#v(0.6em)
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),
-  [
     L'inserimento è ammesso solo a macchina ferma o a *moto lento*, così che i denti trovino la fase corretta senza urti distruttivi; le superfici inclinate agevolano l'imbocco. Durante il disinserimento sotto carico occorre vincere l'attrito generato dalla pressione sui fianchi: l'inclinazione del profilo può favorire oppure ostacolare l'apertura.
-  ],
-  [#fig-safe(include "../../figs/innesti/ecm-c13-p1-02.typ")],
-)
-
 === Innesti a frizione
 
 Negli *innesti a frizione* la coppia viene trasmessa per *attrito* tra due o più superfici premute da una forza assiale $F$. Le geometrie principali impiegano superfici piane a *corona circolare*, superfici *troncoconiche* (dove l'effetto cuneo amplifica la pressione normale a parità di spinta assiale) oppure superfici cilindriche *a tamburo*.
