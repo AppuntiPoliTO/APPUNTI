@@ -4873,9 +4873,9 @@ Quando $sigma_m$ è costante su tutti i livelli, il cumulativo si traduce in una
   content((7.85, 2.60), text(size: 8pt)[$50$], anchor: "west")
   content((8.10, 3.55), text(size: 8pt)[$150$], anchor: "west")
 
-  content((7.85, -1.95), text(size: 10pt)[$\sigma_m\ (MPa)$], anchor: "west")
+  content((7.85, -1.95), text(size: 10pt)[$sigma_m $], anchor: "west")
 
-  content((8.15, 4.55), text(size: 10pt)[$Log(N)$], anchor: "west")
+  content((8.15, 4.55), text(size: 10pt)[$"Log(N)"$], anchor: "west")
 
   content((8.05, -0.90), text(size: 8pt)[$2.0$], anchor: "west")
   content((8.05, 0.00), text(size: 8pt)[$2.5$], anchor: "west")
