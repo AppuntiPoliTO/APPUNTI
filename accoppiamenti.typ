@@ -57,8 +57,7 @@ $ M_t = (pi dot.op D_m dot.op L) dot.op mu dot.op p dot.op frac(D_m, 2) $
 Affinché il collegamento sia sicuro, la pressione esercitata non deve superare la pressione ammissibile $p_("amm")$ dei materiali a contatto (es. 50÷90 MPa per acciaio su acciaio, 30÷50 MPa per ghisa grigia su acciaio). Pertanto, il momento massimo trasmissibile è:
 $ M_t lt.eq (pi dot.op D_m dot.op L) dot.op mu dot.op p_("amm") dot.op frac(D_m, 2) $
 
-== Collegamenti per serraggio con bulloni
-
+=== Collegamenti per serraggio con bulloni
 
 #grid(
   columns: (1fr, 1fr),
@@ -91,7 +90,7 @@ Sostituendo l'equilibrio dei momenti, occorre verificare che la pressione genera
 $ p = frac(F_("tot viti") dot.op a, D_c dot.op b dot.op L) lt.eq p_("amm") $
 Calibrando la forza di serraggio delle viti, si garantisce una pressione sufficiente per la trasmissione del momento torcente, mantenendosi entro i limiti di resistenza.
 
-=== Chiavette
+==== Chiavette
 Le chiavette prevedono l'interposizione di un terzo corpo tra l'albero e il mozzo per generare un forzamento in direzione radiale. Vengono ricavate delle sedi (cave) in entrambi i corpi. La chiavetta lavora esclusivamente sulle superfici superiore e inferiore (esercitando pressione radiale) e non interagisce con i fianchi del mozzo. Le chiavette presentano una leggera pendenza longitudinale (tipicamente 1:100) che permette di forzarle in sede. Esistono diverse geometrie standardizzate: a sezione rettangolare, con estremità arrotondate (per mitigare l'effetto di intaglio), con nasello (per facilitare l'inserimento a battuta e l'estrazione) o tangenziali (che agiscono in direzione circonferenziale per trasmettere momenti maggiori). 
 I principali vantaggi di questo collegamento sono l'economicità, la facilità di montaggio in officina e la capacità di bloccare assialmente il mozzo. Tuttavia, presentano gravi difetti:
 - Le cave indeboliscono significativamente l'albero, introducendo un severo effetto di intaglio che intensifica le tensioni locali.
@@ -105,7 +104,7 @@ I principali vantaggi di questo collegamento sono l'economicità, la facilità d
 Poiché non si conosce a priori la distribuzione esatta delle forze di attrito, ci si affida a formule empiriche fornite dalla letteratura tecnica e confermate da analisi FEM. Il momento trasmissibile è dato da:
 $ M_T tilde.eq 0.04 dot.op (2.28 dot.op d + h) dot.op b dot.op L dot.op p_("amm") $
 dove $d$ è il diametro dell'albero, $h$ e $b$ sono le dimensioni unificate della chiavetta e $L$ è la sua lunghezza.
-=== Linguette
+==== Linguette
 A differenza delle chiavette, le linguette lavorano esclusivamente sui fianchi. Esse interpongono un ostacolo cinematico che impedisce la rotazione relativa tra albero e mozzo, rendendoli solidali nella trasmissione della coppia, ma lasciando libero lo spostamento assiale del mozzo (collegamenti scorrevoli).
 Le linguette sono unificate in base al diametro dell'albero, che stabilisce le dimensioni trasversali $b times h$. La lunghezza $L$ viene invece calibrata dal progettista in base alle esigenze di trasmissione. Anche le cave per linguette indeboliscono l'albero producendo un effetto di intaglio. In questo caso specifico, i coefficienti di intaglio a fatica $K_f$ non vengono calcolati tramite la sensibilità all'intaglio, ma sono direttamente suggeriti dalla letteratura: $K_f = 1.6 div 2$ per la flessione e $K_f = 1.3 div 1.6$ per la torsione.
 Le linguette a disco (o a mezzaluna) permettono un leggero basculamento per adattarsi alla sede, ma richiedono una cava molto profonda nell'albero. Questo genera un effetto di intaglio estremamente severo, motivo per cui vengono utilizzate solo per trasmettere piccole potenze su alberi abbondantemente sovradimensionati.

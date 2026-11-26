@@ -201,8 +201,7 @@ $ u_(m i)^omega = frac(D_i rho omega^2 D_e^2, 8 E) arrow.r.double Delta i^omega 
 Questo effetto giustifica un potenziale "scalettamento", ovvero
 l'annullamento della pressione di contatto a velocità di rotazione
 critiche.
-== Modalità di Montaggio e Effetto d'Intaglio
-<modalità-di-montaggio-e-effetto-dintaglio>
+=== Modalità di Montaggio e Effetto d'Intaglio<modalità-di-montaggio-e-effetto-dintaglio>
 Il posizionamento del mozzo sull'albero avviene affrontando
 l'interferenza geometrica per via termica o meccanica. Nel
 #strong[montaggio a caldo / a freddo], si interviene riscaldando il
@@ -242,8 +241,7 @@ schiacciamento radiale di questo collare da parte del mozzo lo riporterà
 circa al diametro nominale del corpo dell'albero, rendendo il flusso
 delle tensioni più uniforme.
 #pagebreak()
-=== Procedura di Calcolo
-<procedura-di-calcolo-1>
+==== Procedura di Calcolo<procedura-di-calcolo-1>
 La progettazione per materiali metallici prevede tipicamente
 l'esplorazione di due percorsi operativi: 
 1. #strong[Fissando geometria

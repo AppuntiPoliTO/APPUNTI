@@ -76,8 +76,7 @@ La condizione di sollecitazione dell'assale di Wöhler viene riprodotta in labor
  la fatica è per sua natura un fenomeno di innesco *localizzato*, la concentrazione locale delle tensioni prodotta dalla discontinuità geometrica agisce esattamente nella regione superficiale in cui tende a nucleare il danno, accelerandone drasticamente la formazione e la successiva propagazione.
 
 
-== Ciclo di sollecitazione e parametrizzazione <ciclo-di-sollecitazione-e-parametrizzazione>
-
+=== Ciclo di sollecitazione e parametrizzazione <ciclo-di-sollecitazione-e-parametrizzazione>
 
 Sotto l'ipotesi di sollecitazione periodica, si definisce *ciclo di fatica* il minimo intervallo temporale completo durante il quale la tensione aumenta, diminuisce e ritorna al valore e alla tendenza di partenza. La durata di vita del componente viene espressa tramite il *numero di cicli* $N$ sopportati fino a rottura.
 
@@ -128,8 +127,7 @@ Analogamente, esprimendo $sigma_"min" = sigma_m - sigma_a$ e $sigma_"max" = sigm
 $ R = frac(sigma_"min", sigma_"max") = frac(sigma_m - sigma_a, sigma_m + sigma_a) = frac(1 - frac(sigma_a, sigma_m), 1 + frac(sigma_a, sigma_m)) = frac(1 - R_a, 1 + R_a) $
 #pagebreak()
 
-== Classificazione dei cicli di sollecitazione notevoli
-
+=== Classificazione dei cicli di sollecitazione notevoli
 In funzione della posizione del ciclo di tensione rispetto all'asse temporale (e dunque dei valori assunti da $sigma_m$, $sigma_"min"$, $sigma_"max"$ e dal rapporto di ciclo $R$), la letteratura tecnica identifica alcune configurazioni notevoli di frequente impiego progettuale e sperimentazione:
 
 #grid(
@@ -287,8 +285,8 @@ $ sigma_"max" = 0, quad sigma_"min" = -2 sigma_a = 2 sigma_m < 0, quad R = lim_(
 )
 
 #pagebreak()
-== Confronto Trazione Torsione Statica e Fatica :
-  - *Caso Statico ($F$ costante):* Superato il carico di snervamento su tutta la sezione, il materiale duttile subisce una forte deformazione plastica macroscopica (strizione) e cede per scorrimento lungo i piani di massima tensione tangenziale ($tau_"max" = sigma / 2$), inclinati di *$45^circ$* rispetto all'asse del carico .
+=== Confronto Trazione Torsione Statica e Fatica :
+- *Caso Statico ($F$ costante):* Superato il carico di snervamento su tutta la sezione, il materiale duttile subisce una forte deformazione plastica macroscopica (strizione) e cede per scorrimento lungo i piani di massima tensione tangenziale ($tau_"max" = sigma / 2$), inclinati di *$45^circ$* rispetto all'asse del carico .
   - *Caso a Fatica ($F'(t)$ ciclico):* La tensione nominale resta in campo elastico; la cricca nuclea localmente e si propaga in direzione normale alla tensione principale massima $sigma_"max"$, producendo una *decoesione frontale netta a $90^circ$* rispetto all'asse del carico, *priva di strizione* e con aspetto macroscopico da *rottura fragile*.
 
 - *Sollecitazione di Torsione (Sezioni circolari lisce e intagliate):* Nello stato di pura torsione, i piani trasversali ($90^circ$) e longitudinali ($0^circ$) sono soggetti alla tensione tangenziale massima $tau_"max"$, mentre le tensioni principali di trazione e compressione ($sigma_1 = +tau_"max"$, $sigma_3 = -tau_"max"$) agiscono su piani inclinati a *$plus.minus 45^circ$* rispetto all'asse dell'albero:
@@ -355,8 +353,7 @@ $ sigma_"D-1" &= 0.5 dot R_m quad &"per " R_m < 1400 " MPa" \
   sigma_"D-1" &= 700 " MPa" quad &"per " R_m >= 1400 " MPa" $
 Questi criteri empirici sono tollerabili esclusivamente per stime preliminari, ma inaccettabili per la progettazione esecutiva dove i dati sperimentali esatti sono mandatori.
 
-== Costruzione della Curva S-N ed Equazione di Basquin <costruzione-della-curva-s-n-ed-equazione-di-basquin>
-
+=== Costruzione della Curva S-N ed Equazione di Basquin <costruzione-della-curva-s-n-ed-equazione-di-basquin>
 La costruzione approssimata numerica del diagramma S-N rettifica la curva nella regione di resistenza a termine utilizzando una rappresentazione in *scala log-log*. I due poli di ancoraggio per tracciare questo segmento rettilineo sono mostrati nella figura a fianco.
 
 #grid(
@@ -403,8 +400,7 @@ Le prove dimostrano che la resistenza a fatica precipita se la tensione media di
 
 All'aumentare del valore della tensione media $sigma_m$, la durata a fatica del componente *diminuisce*. Questo effetto è particolarmente critico quando la tensione media è di trazione (*$sigma_m > 0$*); in tal caso, l'ampiezza di sollecitazione alternata ($sigma_a$) tollerabile *decresce in modo molto rapido*, in quanto la trazione media favorisce l'apertura e la propagazione delle cricche. Al contrario, una tensione media di compressione ($sigma_m < 0$) può moderatamente accrescere la resistenza, ostacolando l'apertura dei difetti.
 
-== Diagramma di Haigh e Margini di Sicurezza <diagramma-di-haigh-e-margini-di-sicurezza>
-
+=== Diagramma di Haigh e Margini di Sicurezza <diagramma-di-haigh-e-margini-di-sicurezza>
 Per analizzare l'effetto combinato della tensione alternata e media a parità di numero di cicli (generalmente in area di sicurezza per vita illimitata), si introduce il *Diagramma di Haigh*. Esso riporta in ascissa la tensione media $sigma_m$ e in ordinata la tensione alternata $sigma_a$.
 
 Per semplificare in ottica cautelativa per il progetto, si utilizza la *Retta di Goodman*, che congiunge il limite di fatica puro $sigma_"D-1"$ (sull'asse delle ordinate) con il carico di rottura statica $R_m$ (sull'asse delle ascisse). L'equazione della retta è:
@@ -758,8 +754,7 @@ Ricordando che sperimentalmente il limite torsionale è circa il 60% di quello f
   
 #v(1em)
 
-== Tensione Equivalente
-<tensione-equivalente>
+=== Tensione Equivalente<tensione-equivalente>
 
 Sulla base del criterio di Gough e Pollard e del criterio di Von Mises, definiamo le tensioni equivalenti per il ciclo di fatica:
 

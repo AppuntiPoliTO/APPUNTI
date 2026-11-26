@@ -145,7 +145,7 @@ Nel valutare la geometria relativa dei due corpi, la teoria adotta una specifica
 )
 #v(1em)
 
-== Parametri dell'ellisse di contatto
+=== Parametri dell'ellisse di contatto
 Uno degli obbiettivi della teoria di Hertz è quella di individuare la dimensione effettiva dell'ellisse di contatto, per farlo introduce un parametro ausiliario di riferimento che tiene conto delle curvature nei due piani principali che chiama $cos(tau)$, questo coefficiente è un valore numerico che non può mai essere minore di 0 o maggiore di 1 e non ha niente a che fare con le tensioni tangenziali, il parametro condensa le informazioni delle curvature ed è definito come:
 $ cos(tau) =abs(gamma_x-gamma_y)/((gamma_x+gamma_y))= abs((alpha_x - alpha_y) + (beta_x - beta_y)) / (alpha_x + alpha_y + beta_x + beta_y) $ 
 Applicando un carico normale, il contatto evolve: parte inizialmente come un singolo punto (a carico nullo) e si estende progressivamente deformando in modo elastico le superfici. Sebbene la forma generale dell'impronta sia ellittica, in casi particolari legati alla geometria dei corpi, essa può degenerare in un cerchio o in un rettangolo. \ Le dimensioni dei semiassi $a$ e $b$ dell'ellisse di contatto sono funzione di $cos(tau)$ e si calcolano come:
@@ -176,7 +176,7 @@ $ f = root(3, (3 F) / (4 (alpha_x + alpha_y + beta_x + beta_y)) ( (1 - nu_alpha^
 // #align(center, image("fig_slide_1_a.png", width: 70%))
 
 
-==== Distribuzione delle pressioni
+===== Distribuzione delle pressioni
 La distribuzione della pressione all'interno dell'area ellittica non è uniforme, ma ricalca la geometria di un semi-ellissoide: la pressione è massima al centro dell'impronta (punto di primo accostamento) e si annulla ai bordi. La pressione in un generico punto $(x, y)$ si calcola come:
 $ p(x,y) = p_"max" sqrt(1 - x^2/a^2 - y^2/b^2) $
 
@@ -185,7 +185,7 @@ $ p_"max" = 3/2 F / (pi a b) = 1.5 p_"media" $
 
 Gran parte delle applicazioni pratiche ricade in due casi particolari notevoli: il contatto *sfera-sfera* e il contatto *cilindro-cilindro*. 
 
-== Contatto sfera-sfera
+=== Contatto sfera-sfera
 A causa della perfetta simmetria sferica, le curvature nei due piani principali per ciascun corpo coincidono:\ $alpha_x = alpha_y = 1/d$ e $beta_x = beta_y = 1/D$
 
 #grid(
@@ -204,7 +204,7 @@ A causa della perfetta simmetria sferica, le curvature nei due piani principali 
 L'ellisse degenera in un cerchio perfetto di raggio $a = f$. L'area di contatto diventa pari a $pi a^2$, semplificando la pressione massima in:
 $ p_"max" = (3 F) / (2 pi a^2) quad p_"max" = F / pi a^2 $
 #pagebreak()
-== Contatto cilindro-cilindro
+=== Contatto cilindro-cilindro
 Nel contatto tra due cilindri appoggiati con assi paralleli, l'impronta si sviluppa per la loro intera lunghezza $L$.
 
 #grid(
@@ -232,13 +232,13 @@ $ b = root(2, (4 F) / (pi dot L dot 2(alpha_y + beta_y)) ( (1 - nu_1^2)/E_1 + (1
 
 In questa configurazione, la distribuzione di pressione assume un profilo parabolico esteso lungo la semi-larghezza $b$. La pressione media si calcola come $p_"media" = F / (2 L b)$, e il picco massimo è:
 $ p_"max" = (2 F) / (pi L b) $
-== Analogia con le ruote dentate
+=== Analogia con le ruote dentate
 Le premesse teoriche di Hertz trovano applicazione progettuale fondamentale nella stima della resistenza al "pitting" dei denti degli ingranaggi. La geometria dei fianchi a evolvente di cerchio si assimila con grandissima coerenza al contatto tra due cilindri elastici. 
 
 Utilizzando direttamente la formula per la geometria cilindro-cilindro ($p_"max" = (2 F) / (pi L b)$) e sostituendo il semiasse $b$, associando i termini alle rispettive grandezze ingranaggistiche (il carico alla forza tangenziale, le deviazioni ai fattori dinamici, e la cedevolezza ai fattori materiali), si ricava la formula normalizzata d'usura:
 $ sigma_"max,USURA" = Z_E sqrt( (F K_0 K_v K_s K_H Z_R) / (L dot d_1) ) $ 
 In questa elaborazione si apprezza come l'effetto elastico composito del materiale venga condensato nel fattore strutturale $Z_E$, le grandezze base geometriche distribuiscano la spinta, le deviazioni si racchiudano nelle costanti di correzione $K_i$.
-=== Tensioni sub-superficiali e cedimento
+==== Tensioni sub-superficiali e cedimento
 Un aspetto fondamentale dell'azione di contatto, responsabile del danneggiamento per "butteratura" (o pitting), è l'andamento sub-superficiale delle tensioni. Sebbene le tensioni normali siano massime in superficie, la dilatazione trasversale del materiale compresso è ostacolata dalle zone circostanti, creando un forte vincolo tridimensionale. 
 
 Per questo motivo, il valore massimo della tensione ideale di von Mises ($sigma_id$) non si registra sulla superficie di contatto, ma ad una profondità $z$ misurata dal piano di carico:
@@ -250,7 +250,7 @@ Il cedimento per snervamento avviene sotto la superficie dove la
 $sigma_id$ è massima, quando:\
 $sigma_id = R_(\eH)$. Imponendo la condizione di snervamento nel punto critico sub-superficiale $sigma_{i d} = R_(\eH)$, si calcola che il cedimento inizia a $p_"max" =R_(\eH)/0.60=1.67 R_(\eH)$ per il cilindro e $p_"max" =R_(\eH)/0.62= 1.61 R_(\eH)$ per la sfera.
 //reminder fede mancano 11 minuti alla videolezione
-=== Pressione di riferimento e confronto applicativo
+==== Pressione di riferimento e confronto applicativo
 A fini progettuali si utilizza una _pressione nominale di riferimento_ $p_"rif" = F / A$, calcolata supponendo l'indentazione totale del corpo, dividendo il carico per la macro-area proiettata (per la sfera $pi D^2 / 4$, per il cilindro $L D$). Confrontando le due geometrie a parità di carico:
 - *Cuscinetti a rulli (contatto cilindrico)*: Distribuiscono il carico su un'area rettangolare allungata, mantenendo il rapporto $p_"max" / p_"rif"$ basso. Questo garantisce di sopportare carichi elevati senza snervamento locale.
 - *Cuscinetti a sfere*: Concentrano il carico su un'area molto ristretta, generando picchi di pressione massimi elevati. Tuttavia, l'area di contatto limitata minimizza le forze di attrito, rendendoli insostituibili per rotolamenti ad altissima velocità.
@@ -260,7 +260,7 @@ A fini progettuali si utilizza una _pressione nominale di riferimento_ $p_"rif" 
  
 
 
-==== Fatica da rotolamento (Rolling Contact Fatigue)
+===== Fatica da rotolamento (Rolling Contact Fatigue)
 In condizioni di rotolamento reciproco, l'elemento di volume sub-superficiale non sperimenta solo una compressione. Spostandosi lateralmente lungo la retta d'azione del carico, il materiale subisce azioni tangenziali $tau_(\yz)$ provocate dalla spinta del corpo sovrastante. A causa della rotazione, queste tensioni tangenziali alternano continuamente la loro direzione (pulsazione), innescando complessi fenomeni di fatica locale.
 
 

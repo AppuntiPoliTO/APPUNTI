@@ -36,8 +36,7 @@ Affinché la trattazione sia rigorosa, imponiamo un triplice vincolo sulle condi
 Soddisfatto questo triplice requisito, ne consegue che nessuna grandezza meccanica (tensioni $sigma$, deformazioni $epsilon$, spostamenti $u$) dipenda dall'angolo al centro $theta$. Pertanto, lo stato di tensione dipende esclusivamente dalla sola coordinata radiale $r$:
 $ sigma(r,theta , z) = sigma(r) $
 
-== Classificazione geometrica
-
+=== Classificazione geometrica
 #grid(
   columns: (1.8fr, 1fr),
   column-gutter: 0.1cm,
@@ -56,15 +55,14 @@ Come equazioni risolventi vengono usate le equazioni di equilibrio di congruenza
 
 #v(1em)
 
-== Recipienti cilindrici in pressione
-
+=== Recipienti cilindrici in pressione
 I recipienti cilindrici in pressione sono solidi assialsimmetrici complessi, il cui comportamento meccanico dipende fortemente dalle condizioni di vincolo. Dal punto di vista strutturale, si distinguono per le seguenti caratteristiche:
 - Geometria e componenti: Sono composti da una superficie laterale continua (il mantello) e da chiusure d'estremità (fondi).
 - Condizioni vincolari d'estremità: Un solido cilindrico può avere estremità libere (che consentono la libera deformazione), estremità rigidamente incastrate, oppure, come nel caso dei recipienti in pressione, estremità vincolate tramite la saldatura dei fondi.
 - Analisi teorica: Lo studio del comportamento meccanico dei fondi viene condotto applicando la teoria dei gusci (shell) e delle piastre.
 - Effetti locali: Il collegamento rigido (saldatura) tra il mantello e i fondi rappresenta una discontinuità geometrica e strutturale che genera i cosiddetti effetti di bordo, i quali richiedono un'attenta valutazione in fase di progettazione."
 
-== Tubo sottile con pressione interna (Mariotte)
+=== Tubo sottile con pressione interna (Mariotte)
 #grid(
   columns: (0.9fr, 1fr),
   column-gutter: 1em,
@@ -118,7 +116,7 @@ spostamento radiale, di estremo interesse in progettazione: \ $ u = epsilon.alt_
 
 #let aggiunta(body) = block(fill: rgb("#1760cf"), stroke: (left: 2pt + rgb("#2f6fdb")), inset: 8pt, width: 100%, body)
 
-=== Tubo sottile liberamente dilatabile, munito di fondi
+==== Tubo sottile liberamente dilatabile, munito di fondi
 *1. Tubo sottile con fondi (libero di dilatarsi):* Nei tubi sottili con estremità chiuse (es. recipienti in pressione), la pressione interna $p_i$ genera una forza assiale sulle superfici di base pari a $p_i (pi D_i^2)/4$. Questa forza deve essere equilibrata dalla tensione assiale $sigma_z$ agente sull'area della sezione trasversale del mantello, pari a $pi D_i s$. Dall'equilibrio alla traslazione assiale si ottiene:
 
 #grid(
@@ -230,8 +228,7 @@ $ epsilon_r = dif /(dif r)(epsilon_c dot r) =>
   ) $
 // Titolo
 
-== Equazioni costitutive del materiale
-
+=== Equazioni costitutive del materiale
 #v(0.5em)
 
 // Sottotitolo e nota in alto a destra
@@ -303,7 +300,7 @@ Come esempio si consideri qui il caso del disco con “tensione piana” $=> sig
     $ (sigma_r - sigma_c) = E/(1-nu^2) (1-nu)(epsilon_r - epsilon_c) $
   ]
 )
-=== Soluzione generale equazioni di Lamé
+==== Soluzione generale equazioni di Lamé
 Mettendo a sistema l'equazione di equilibrio e l'equazione di congruenza tramite le equazioni costitutive del materiale (legge di Hooke generalizzata), si ottiene un sistema di equazioni differenziali la cui integrazione fornisce la soluzione di Lamé per le tensioni nel piano:
 $ sigma_r &= A - B/r^2 \ 
   sigma_c &= A + B/r^2 $
@@ -316,7 +313,7 @@ Risolvendo il sistema ai bordi di raggio $r_i = D_i/2$ e $r_e = D_e/2$, si otten
 $ A &= (p_i D_i^2 - p_e D_e^2) / (D_e^2 - D_i^2) \ 
   B &= ((p_i - p_e) D_i^2 D_e^2) / (4 (D_e^2 - D_i^2)) $
 #pagebreak()
-== Tubo spesso con pressione interna ed esterna
+=== Tubo spesso con pressione interna ed esterna
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1.2cm,
@@ -347,8 +344,7 @@ $ sigma_c = p_i frac((D_i / D)^2 + (D_i / D_e)^2, 1 - (D_i / D_e)^2) - p_e frac(
 La variabile indipendente è nascosta nel termine $D$ posto al
 denominatore.
 #pagebreak()
-=== Solo pressione interna
- Le condizioni al contorno sono 
+==== Solo pressione interna Le condizioni al contorno sono 
 $ cases( sigma_r\(r_i\)= - p_i,
  sigma_r\(r_e\)= 0 ) arrow.double A = p_i D_i^2/(D_e^2 - D_i^2) quad sigma_r + sigma_c = 2A = "cost" $ 
 #v(1em)
@@ -376,7 +372,7 @@ interno, che risulta il punto maggiormente sollecitato.
 )
 #v(1em)
 
-=== Solo pressione esterna
+==== Solo pressione esterna
 Un'applicazione notevole per il caso di carico esterno è rappresentata dal mozzo del disco di turbina, ove le forze centrifughe della palettatura applicano una trazione esterna.
 Nel caso di schiacciamento idrostatico esterno (o interferenza), si ha compressione al bordo esterno e scarico nullo all'interno. Le condizioni al contorno diventano:
 $ cases(
@@ -405,7 +401,7 @@ $ cases(
   ]
 )
 #pagebreak()
-== Regola del Biliardo (Metodo Grafico di Strozzi)
+=== Regola del Biliardo (Metodo Grafico di Strozzi)
 Tracciare a mano le iperboli in funzione di $r$ espone al rischio di
 interpretare male la concavità e la convessità, portando a conclusioni
 errate sul punto di massima sollecitazione. Per ovviare a questo
@@ -487,7 +483,7 @@ La tensione assiale $sigma_z$ dipende dai vincoli d'installazione:
   "a sandwich" tra $sigma_r$ e $sigma_c$, le quali definiscono la
   differenza massima.
 
-== Spostamento radiale
+=== Spostamento radiale
 Dall'equazione di congruenza $u = epsilon_c dot r$, integrando le relazioni costitutive di Hooke e inserendo le soluzioni di Lamé per $sigma_r$ e $sigma_c$, ricaviamo lo spostamento radiale:
 $ u &= r/E [sigma_c - nu (sigma_r + sigma_z)] + r alpha Delta T \
   u &= r/E [(A + B/r^2) - nu (A - B/r^2) - nu sigma_z] + r alpha Delta T \
@@ -497,8 +493,7 @@ Nel caso di un serbatoio libero alle estremità ($sigma_z=0$), l'espressione si 
 $ u = r/E [A(1-nu) + B/r^2 (1+nu)] + r alpha Delta T $
 Le costanti $A$ e $B$ si determinano imponendo le condizioni al contorno.
 
-== Caso dell'albero pieno
-<caso-dellalbero-pieno>
+=== Caso dell'albero pieno<caso-dellalbero-pieno>
 Un caso particolare di applicazione delle equazioni di Lamé si verifica
 nello studio del collegamento forzato albero-mozzo, dove l'albero
 interno può essere considerato come un tubo di spessore infinito con
@@ -515,7 +510,7 @@ In queste condizioni, lo spostamento radiale $u$ al bordo dell'albero
 assume una forma analitica compatta:
 $ u = - p_e frac(D, 2 E)\(1 - nu\)+ D / 2 alpha Delta T $
 
-== Tubo spesso: formula di progetto
+=== Tubo spesso: formula di progetto
 Per la verifica di resistenza del materiale si raggruppano le costanti in un parametro adimensionale $beta = D_i / D_e$.
 
 *Caso di Pressione Interna:* Il punto critico si trova in corrispondenza del raggio interno $r_i$, dove le tre tensioni principali risultano:
@@ -533,7 +528,7 @@ $ sigma_"id" = p_i sqrt( ((1+beta^2)/(1-beta^2))^2 + 1 + ((1+beta^2)/(1-beta^2))
 Ponendo come condizione di sicurezza che tale spinta ideale eguagli la tensione ammissibile ($sigma_"id" = sigma_"amm"$), si ricava la pressione massima tollerabile:
 $ p_"amm" = sigma_"amm" (1-beta^2)/(sqrt(3+beta^4)) $
 
-== Anello sottile rotante
+=== Anello sottile rotante
 #grid(
   columns: (1fr, 1fr),
   rows: (2),

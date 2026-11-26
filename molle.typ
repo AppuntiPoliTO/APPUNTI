@@ -19,8 +19,8 @@
 #set heading(numbering: "1.")
 
 = *Molle*
-== *Molle - Generalità e Barra di Torsione*
-== Funzioni e Applicazioni delle Molle
+== Generalità e Barra di Torsione
+=== Funzioni e Applicazioni delle Molle
 Le molle sono elementi di macchine caratterizzati da un'elevata capacità di deformarsi elasticamente sotto l'azione di un carico e di riassumere la loro conformazione originaria al cessare dell'applicazione del carico stesso. Questa caratteristica fondamentale permette il collegamento tra le parti di un sistema garantendo una sospensione elastica e adattativa. 
 
 Affinché la molla possa svolgere correttamente il proprio ruolo, è imperativo che operi esclusivamente in campo elastico: le tensioni applicate non devono mai generare condizioni di plasticizzazione, le quali comprometterebbero la funzionalità del componente e la sua capacità di ritornare all'estensione iniziale in modo ripetitivo.
@@ -31,7 +31,7 @@ Le molle sono in grado di immagazzinare energia sotto forma di energia potenzial
 - #strong[Attuatori e sistemi di automazione:] contengono lo spostamento degli elementi o forniscono una forza di richiamo elastico (es. ritorno di un pistone).
 - #strong[Trasduttori e strumenti di misura:] nei dinamometri, l'estensione della molla sotto l'azione di una forza permette di misurare l'intensità della forza stessa, sfruttando le caratteristiche note dell'elemento elastico.
 
-== Caratteristica della Molla ed Energia Immagazzinata
+=== Caratteristica della Molla ed Energia Immagazzinata
 Il comportamento di una molla è descritto dalla sua curva caratteristica, che rappresenta la relazione tra l'azione applicata (forza o momento) e la deformazione prodotta (spostamento o rotazione). 
 
 Nella maggior parte delle applicazioni industriali si ricerca un comportamento lineare. In questo caso, il parametro fondamentale è la costante elastica o rigidezza $k$, che definisce il fattore di proporzionalità della relazione:
@@ -55,7 +55,7 @@ $ W = frac(F f, 2) $ A seconda della legge di variazione della rigidezza, la car
 - #strong[Softening:] all'aumentare della forza applicata, la rigidezza della molla diminuisce. La molla diventa più cedevole e, a parità di forza, si ottiene una deformazione maggiore rispetto al caso lineare.
 - #strong[Hardening:] all'aumentare della forza, la rigidezza aumenta. Il sistema subisce un irrigidimento progressivo nei confronti delle azioni applicate.
 
-== Il Paradigma della Barra di Torsione
+=== Il Paradigma della Barra di Torsione
 #grid(
   columns: (1.2fr, 1fr),
   column-gutter: 1em,
@@ -80,7 +80,7 @@ Si ricorda che il modulo di elasticità tangenziale $G$ è legato al modulo di Y
 
 $ G = frac(E, 2(1+nu)) $
 
-== Dettagli Costruttivi e Applicazioni della Barra di Torsione
+=== Dettagli Costruttivi e Applicazioni della Barra di Torsione
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -111,7 +111,7 @@ L'evidenza sperimentale del fenomeno di torsione si osserva confrontando tre con
 2. In una molla realizzata con un doppio principio, costituita da due fili avvolti in contrapposizione (un'elica destrorsa e una sinistrorsa), si verifica una compensazione relativa degli effetti di rotazione, determinando una torsione complessiva minore.
 3. In una molla costituita da due eliche in serie separate da una porzione centrale a forma di anello, in cui il primo tratto è avvolto in forma sinistrorsa e il secondo tratto è costituito da un'elica gemella ma di verso opposto, la rotazione determinata dal primo tratto viene compensata dal secondo, annullando di fatto l'angolo di rotazione complessivo.
 
-== Caratteristiche di sollecitazione e parametri geometrici
+=== Caratteristiche di sollecitazione e parametri geometrici
 #grid(
   columns: (1.3fr, 1fr),
   column-gutter: -4em,
@@ -146,7 +146,7 @@ $ c = frac(D, d) $
 Nella progettazione questo rapporto viene mantenuto in un intervallo ottimale $c = 7 div 12$, in analogia concettuale al proporzionamento tra larghezza di fascia e modulo nelle ruote dentate.
 - #strong[Numero di spire efficaci ($i$):] rappresenta il numero di spire che concorrono effettivamente alla deformabilità elastica e alla freccia della molla, escludendo le cosiddette spire morte vincolate agli attacchi. Se le spire alle estremità sono incomplete, ancorate, saldate o costrette, esse non sono libere di subire rotazione per torsione ma fungono solo da elementi di fissaggio; pertanto, il numero di spire efficaci può differire dal numero di anelli contati visivamente sul fianco della molla.
 
-=== Calcolo della tensione massima e della freccia (Coefficiente di Wahl)
+==== Calcolo della tensione massima e della freccia (Coefficiente di Wahl)
 Nella barra di torsione rettilinea di lunghezza $l$, applicando la teoria di De Saint-Venant, la tensione tangenziale massima e la freccia (spostamento trasversale correlato all'angolo di torsione $theta$) sono espresse da:
 $ tau_(m a x) = frac(M_t, W_t) = frac(F r, pi d^3 / 16) $
 $ f = theta r = frac(32 F r^2 l, pi d^4 G) $
@@ -164,7 +164,7 @@ Dal punto di vista fisico e progettuale, il valore del rapporto $c = D/d$ govern
 - Se $c < 7$ (diametro del filo $d$ importante rispetto al diametro dell'elica $D$, ovvero spira stretta e filo grosso), la molla è molto rigida e fortemente sollecitata.
 - Se $c > 12$ (diametro dell'elica $D$ molto ampio rispetto a un filo sottile $d$), la molla è molto flessibile, presenta frecce pronunciate ed è poco utilizzata.
 #pagebreak()
-== Effetto della curvatura, taglio e confronto con l'effetto di intaglio
+=== Effetto della curvatura, taglio e confronto con l'effetto di intaglio
 #grid(
   columns: (1fr, 1fr),
   rows:2,
@@ -186,7 +186,7 @@ $ tau_(m a x, t a g l i o) = 1.23 frac(F, pi d^2 / 4) = frac(0.615, c) frac(F r,
   rows:2,
   align: (left + horizon, center + horizon),[Sebbene l'approccio del coefficiente correttivo sembri analogo a quello del fattore di concentrazione delle tensioni $K_t = frac(sigma_(p e a k), sigma_(n o m i n a l))$ utilizzato per l'effetto di intaglio, i due fenomeni sono concettualmente e fisicamente molto diversi. Nell'effetto di intaglio la variazione brusca di sezione altera il gradiente in modo molto severo ma in una porzione di superficie estremamente localizzata e sottile, rendendo applicabili nei materiali duttili le considerazioni sulla plasticizzazione locale e sulla ridistribuzione delle tensioni (recovering).],[#include "figs/molle/molle-fig09.typ"],[ Nell'effetto di curvatura, invece, lo spostamento dell'asse neutro verso il raggio interno (ad esempio in una molla o in un gancio di un moschettone) altera la forma del gradiente su una porzione di sezione trasversale molto ampia e percentualmente dominante rispetto alla superficie resistente totale. Pertanto, la curvatura è molto dannosa, non consente di fare affidamento sulla ridistribuzione locale delle tensioni e l'intensificazione della tensione tangenziale va sempre inclusa nel calcolo.],[#include "figs/molle/molle-fig10.typ"])
 
-=== Determinazione delle spire efficaci, lunghezza libera e lunghezza a pacco
+==== Determinazione delle spire efficaci, lunghezza libera e lunghezza a pacco
 Nota la rigidezza $k$ della molla, il numero di spire efficaci $i$ che partecipano effettivamente alla deformazione elastica si calcola a partire dall'espressione della freccia:
 $ f = lambda'' frac(8 F c^3 i, G d) = frac(F, k) $
 Scegliendo il rapporto caratteristico nell'intervallo $c = 7 div 12$, si ha $lambda'' = 1$ e quindi:
@@ -215,8 +215,7 @@ Il legame tra il numero di spire efficaci $i$, il numero di spire totali $n$ (co
 #include "figs/molle/molle-fig11.typ"
 ])
 
-=== Gioco residuo sotto carico massimo
-
+==== Gioco residuo sotto carico massimo
 
 #grid(
   columns: (1.4fr, 1fr),
@@ -690,7 +689,7 @@ $ h = sqrt(frac(x, L)) dot.op h_0 $
 dove $h_0$ è lo spessore all'incastro (sezione centrale della balestra) e $L$ è la semilunghezza.],[#include "figs/molle/molle-fig29.typ"])
 
 La soluzione a profilo parabolico permette di avere in ogni sezione trasversale la stessa tensione massima di flessione presente nella sezione centrale di incastro, ottimizzando l'impiego del materiale lungo la linea d'asse. Pur richiedendo processi tecnologici più complessi e precisi rispetto alla sagomatura in pianta per ottenere la variazione quadratica di spessore, trova effettiva applicazione pratica sia in configurazione #strong[monolama] (spessore decrescente dal centro verso gli occhielli) sia in configurazione #strong[bilama]. Oggi tale geometria risulta particolarmente agevole da realizzare mediante l'impiego di #strong[materiali compositi], nei quali il processo di stratificazione consente naturalmente di variare lo spessore secondo il profilo parabolico desiderato.
-== Molle – Altre tipologie e assorbimento degli urti
+== Altre tipologie e assorbimento degli urti
 === Panoramica delle tipologie di molle
 Nella pratica della costruzione degli elementi delle macchine si impiegano diverse architetture di molle oltre a quelle elicoidali tradizionali, tra cui molle elicoidali di compressione, di estensione, coniche, a serpentina, di torsione, a balestra (laminate), a disco o Belleville e molle ricavate di macchina.
 

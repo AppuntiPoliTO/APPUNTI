@@ -15,14 +15,14 @@
 )
 #set heading(numbering: "1.")
 = *Collegamenti filettati*
-== *Viti e Bulloni (Collegamenti filettati) – Serraggio*
+== Serraggio
 === Introduzione ai collegamenti filettati
 Tra gli elementi di base della costruzione delle macchine rivestono un ruolo fondamentale i collegamenti filettati, rappresentati principalmente da viti, bulloni e prigionieri. La loro utilità progettuale risiede nel fatto che realizzano un collegamento smontabile, ossia una giunzione che può essere aperta e chiusa ripetutamente. Ciò garantisce un facile accesso alle parti interne della macchina, risultando indispensabile per operazioni di diagnosi, verifica delle condizioni di usura o di affaticamento dei componenti e, più in generale, per gli interventi di manutenzione.
 
 Rispetto ad altri metodi di giunzione come i collegamenti saldati, i collegamenti filettati permettono di unire le parti in tempi notevolmente rapidi e senza dover ricorrere a processi tecnologici complessi; inoltre, svitando la vite o il bullone è possibile disgiungere i componenti senza dover distruggere alcun elemento fisso (come accadrebbe dovendo rompere un cordone di saldatura).
 
 
-== Tipologie di viti e normative delle filettature
+=== Tipologie di viti e normative delle filettature
 Nella letteratura tecnica si distinguono due grandi categorie di viti:
 - #strong[Viti di manovra:] sfruttano il principio dell'elica per trasmettere il moto, trasformando la rotazione della vite in uno spostamento traslazionale lungo una guida. Pur condividendo la geometria locale del filetto con le viti di collegamento, il loro dimensionamento è più affine a quello dei cuscinetti, poiché il funzionamento e il danneggiamento sono governati principalmente dallo scorrimento o dal rotolamento (come nelle viti a ricircolo di sfere, in cui l'elica funge da pista per le sfere), coinvolgendo trattamenti superficiali e materiali specifici per queste condizioni d'esercizio.
 - #strong[Viti di collegamento (smontabile):] impiegate per mantenere serrate due o più parti meccaniche insieme.
@@ -39,7 +39,7 @@ Le principali tipologie di filettature normalizzate per i collegamenti (con rife
 
 Nel funzionamento generale di un bullone di collegamento, l'applicazione del momento di serraggio genera una forza di interazione tra le parti serrate, inducendo uno stato di trazione nel fusto della vite e di compressione nei pezzi. In esercizio, su questa configurazione precaricata agiscono le forze esterne di lavoro sulla macchina, e il flusso delle tensioni si trasferisce dal fusto della vite ai filetti del dado o della madrevite. Tale distribuzione del carico sui filetti non è uniforme: il flusso di forza si concentra maggiormente nei primi filetti in presa (tipicamente tra il secondo, il terzo e il quarto filetto della serie), rendendo questa zona la più critica ai fini della resistenza.
 
-== Geometria della filettatura metrica ISO a profilo triangolare
+=== Geometria della filettatura metrica ISO a profilo triangolare
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -61,7 +61,7 @@ $ d_3 = d - 2 h_3 = d - 1,226 87 P quad quad r = frac(H, 6) = 0,144 34 P $
 
 Ai fini del calcolo strutturale della sezione resistente della vite, si fa riferimento o al diametro di nocciolo (corrispondente alla gola più profonda con raccordo) oppure a un diametro resistente che, secondo le indicazioni delle normative tedesche, tiene conto anche di una porzione del filetto, poiché il filetto stesso è lateralmente vuoto e non oppone la medesima resistenza di un fusto pieno.
 
-=== Nomenclatura dei collegamenti filettati
+==== Nomenclatura dei collegamenti filettati
 La distinzione terminologica tra le diverse configurazioni costruttive riveste un'importanza fondamentale sia in ambito professionale sia in sede d'esame:
 #grid(
   columns: (1fr, 1fr),
@@ -96,7 +96,7 @@ La distinzione terminologica tra le diverse configurazioni costruttive riveste u
 
 
 
-=== Analisi del collegamento e diagramma di interferenza
+==== Analisi del collegamento e diagramma di interferenza
 #grid(
   columns: 2,
   gutter: 1em,
@@ -131,8 +131,7 @@ Sul piano forza-spostamento, la caratteristica della vite giace nel primo quadra
 - L'ordinata del punto di intersezione fornisce la forza assiale di precarico in equilibrio nella vite e nei pezzi (direttamente correlata al momento di serraggio applicato).
 - La somma dei due spostamenti elastici rispetto alla posizione di equilibrio uguaglia l'interferenza imposta ($u_v + u_p = i$).], [#include "figs/collegamenti-filettati/collegamenti-filettati-fig07.typ"])
 
-=== Forza assiale, momento di serraggio e momento di svitamento
-
+==== Forza assiale, momento di serraggio e momento di svitamento
 
 #grid(
   columns: (1fr, 1fr),
@@ -143,7 +142,7 @@ Il momento torcente resistente che occorre vincere durante il serraggio è dovut
 1. L'attrito che si sviluppa tra i filetti della vite e quelli della madrevite in scorrimento relativo.
 2. L'attrito che si sviluppa tra la superficie del sottotesta della vite (o del dado, a seconda di quale elemento viene messo in rotazione) e la superficie del pezzo (o di un'eventuale rondella antisvitamento interposta).], [#include "figs/collegamenti-filettati/collegamenti-filettati-fig08.typ"])
 #pagebreak()
-=== Modello del piano inclinato (sola inclinazione dell'elica)
+==== Modello del piano inclinato (sola inclinazione dell'elica)
 Per ricavare la relazione analitica tra il momento di serraggio $M_T$ e la forza assiale $F_V$ agente sul fusto della vite, si schematizza in prima battuta il contatto tra i filetti come il moto relativo di un blocco su un piano inclinato di angolo $alpha_m$ (angolo medio dell'elica del filetto), trascurando momentaneamente l'inclinazione laterale del profilo triangolare.
 
 
@@ -189,15 +188,14 @@ $ M_("svit") = -F_U frac(d_m, 2) = -frac(F_V, 2) [d_m dot.op tan(phi.alt - alpha
 
 $ M = F_U frac(d_m, 2) = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt)] > 0 quad "se " phi.alt < alpha_m $ In tale condizione, il collegamento tende allo #strong[svitamento spontaneo] (autosvitamento, specialmente in presenza di piccoli disturbi o vibrazioni), e un eventuale momento positivo applicato nel verso di serraggio agirebbe in realtà per frenare lo svitamento spontaneo.],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig11.typ"])
 
-=== Attrito al sottotesta
+==== Attrito al sottotesta
 Per tenere conto anche dell'attrito sviluppato sulla superficie di contatto anulare del sottotesta (o del dado) in rotazione rispetto al pezzo o alla rondella, si aggiunge il contributo di un momento resistente di attrito agente su un diametro efficace del sottotesta $d_t$, caratterizzato da un coefficiente di attrito specifico $f_s = tan phi.alt_s$ (generalmente distinto da $f = tan phi.alt$, poiché i materiali di vite e dado/madrevite possono essere uguali tra loro mentre i materiali tra sottotesta e pezzo o rondella sono spesso diversi):
 
 $ M_T = frac(F_V, 2) [d_m dot.op tan(alpha_m + phi.alt) + d_t dot.op tan phi.alt_s] $
 
 $ M_("svit") = frac(F_V, 2) [d_m dot.op tan(alpha_m - phi.alt) - d_t dot.op tan phi.alt_s] $
 
-=== Effetto della forma triangolare o trapezoidale del filetto
-
+==== Effetto della forma triangolare o trapezoidale del filetto
 #grid(
   columns: (1.5fr, 1fr),
   column-gutter: 1em,
@@ -214,7 +212,7 @@ Per mantenere la medesima struttura formale dell'equazione di serraggio, si defi
 
 $ tan phi.alt' = frac(tan phi.alt, cos alpha) $
 
-=== Formulazione generale e approssimazione lineare
+==== Formulazione generale e approssimazione lineare
 Sostituendo $phi.alt$ con $phi.alt'$, le equazioni complete per il momento di serraggio e di svitamento diventano:
 
 $ M_T = frac(F_v, 2) [d_m dot.op tan(alpha_m + phi.alt') + d_t dot.op tan phi.alt_s] $
@@ -238,7 +236,7 @@ $ M_T = frac(F_v, 2) (d_m dot.op tan alpha_m + d_m dot.op tan phi.alt' + d_t dot
 
 // NOTA: \div convertito con div (modulo sym)
 #pagebreak()
-== Viti e bulloni (collegamenti filettati) – Resistenza
+== Resistenza
 
 === Sollecitazioni e resistenza del fusto della vite
 
@@ -562,7 +560,7 @@ Se la verifica del carico minimo di serraggio non è soddisfatta, i possibili in
 - aumentare il numero di viti (diminuendo $C$);
 - aumentare la deformabilità del pezzo (con attenzione, cercando un compromesso tra le esigenze di resistenza della vite e di funzionalità del giunto, valutabile graficamente sul diagramma di interferenza).
 #pagebreak()
-== Viti e bulloni (collegamenti filettati) – Fatica e casi particolari
+== Fatica e casi particolari
 
 === Verifica a fatica della vite e diagramma di Haigh
 #grid(
@@ -574,83 +572,7 @@ Sul diagramma sono riportate in ascissa le tensioni medie adimensionalizzate ris
 
 
 
-],[#canvas(length: 0.9cm, {
-  import draw: *
-
-  line((0.5, 0), (0.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((1.0, 0), (1.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((1.5, 0), (1.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((2.0, 0), (2.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((2.5, 0), (2.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((3.0, 0), (3.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((3.5, 0), (3.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((4.0, 0), (4.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((4.5, 0), (4.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((5.0, 0), (5.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((5.5, 0), (5.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((6.0, 0), (6.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((6.5, 0), (6.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((7.0, 0), (7.0, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((7.5, 0), (7.5, 4), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-
-  line((0, 0.5), (8, 0.5), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((0, 1.0), (8, 1.0), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((0, 1.5), (8, 1.5), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((0, 2.0), (8, 2.0), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((0, 2.5), (8, 2.5), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((0, 3.0), (8, 3.0), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-  line((0, 3.5), (8, 3.5), stroke: (dash: "dashed", thickness: 0.45pt, paint: gray))
-
-  rect((0, 0), (8, 4), stroke: 0.9pt)
-
-  line((0, 4), (8, 2), stroke: 1.1pt)
-  line((0, 3), (8, 1), stroke: 1.1pt)
-  line((0, 2), (8, 0), stroke: 1.1pt)
-
-  line((5.716, 3.009), (4.066, 3.421), (3.984, 3.091), (5.634, 2.679), close: true, fill: white, stroke: none)
-  content((4.85, 3.05), text(size: 7.5pt)[M 4 ÷ M 8], angle: -14.04deg)
-
-  line((4.916, 2.209), (3.266, 2.621), (3.184, 2.291), (4.834, 1.879), close: true, fill: white, stroke: none)
-  content((4.05, 2.25), text(size: 7.5pt)[M 10 ÷ M 16], angle: -14.04deg)
-
-  line((3.416, 1.584), (1.766, 1.996), (1.684, 1.666), (3.334, 1.254), close: true, fill: white, stroke: none)
-  content((2.55, 1.625), text(size: 7.5pt)[M 18 ÷ M 30], angle: -14.04deg)
-
-  content((0, -0.12), text(size: 7.5pt)[0.1], anchor: "north")
-  content((1, -0.12), text(size: 7.5pt)[0.2], anchor: "north")
-  content((2, -0.12), text(size: 7.5pt)[0.3], anchor: "north")
-  content((3, -0.12), text(size: 7.5pt)[0.4], anchor: "north")
-  content((4, -0.12), text(size: 7.5pt)[0.5], anchor: "north")
-  content((5, -0.12), text(size: 7.5pt)[0.6], anchor: "north")
-  content((6, -0.12), text(size: 7.5pt)[0.7], anchor: "north")
-  content((7, -0.12), text(size: 7.5pt)[0.8], anchor: "north")
-  content((8, -0.12), text(size: 7.5pt)[0.9], anchor: "north")
-  content((7.5, -0.55), text(size: 8.5pt)[$sigma_m / R_("p0.2")$], anchor: "north")
-
-  content((-0.12, 0), text(size: 7.5pt)[40], anchor: "east")
-  content((-0.12, 1), text(size: 7.5pt)[50], anchor: "east")
-  content((-0.12, 2), text(size: 7.5pt)[60], anchor: "east")
-  content((-0.12, 3), text(size: 7.5pt)[70], anchor: "east")
-  content((-0.12, 4), text(size: 7.5pt)[80], anchor: "east")
-
-  content((-0.95, 3.65), text(size: 8pt)[$sigma_D$])
-  content((-0.95, 3.30), text(size: 7.5pt)[(MPa)])
-  content((-0.95, 2.55), text(size: 7.5pt)[Viti non])
-  content((-0.95, 2.20), text(size: 7.5pt)[rullate])
-
-  content((8.12, 0), text(size: 7.5pt)[80], anchor: "west")
-  content((8.12, 1), text(size: 7.5pt)[100], anchor: "west")
-  content((8.12, 2), text(size: 7.5pt)[120], anchor: "west")
-  content((8.12, 3), text(size: 7.5pt)[140], anchor: "west")
-  content((8.12, 4), text(size: 7.5pt)[160], anchor: "west")
-
-  content((8.95, 3.65), text(size: 8pt)[$sigma_D$])
-  content((8.95, 3.30), text(size: 7.5pt)[(MPa)])
-  content((8.95, 2.55), text(size: 7.5pt)[Viti])
-  content((8.95, 2.20), text(size: 7.5pt)[rullate])
-
-  content((4.0, 4.35), text(size: 9pt)[Diagramma di Haigh per filettature classi 8.8 ÷ 12.9  (da VDI 2230)], anchor: "south")
-})])
+],[#include "figs/collegamenti-filettati-fig01.typ"])
  Il grafico presenta due scale verticali distinte: la scala di sinistra ($40 div 80 " MPa"$) si riferisce alle viti non rullate, mentre la scala di destra ($80 div 160 " MPa"$) si riferisce alle viti sottoposte a rullatura a freddo, trattamento meccanico superficiale che raddoppia il valore di resistenza in MPa.
 Le diverse rette decrescenti presenti sul diagramma rappresentano l'effetto scala legato alle dimensioni del fusto e al diametro nominale della filettatura, suddivise in tre fasce: $M 4 div M 8$ (valori più elevati), $M 10 div M 16$ (valori intermedi) e $M 18 div M 30$ (valori più bassi). Pur essendo rappresentato un diagramma in termini di tensioni normali assiali, la componente di torsione risulta comunque inclusa attraverso il parametro $K$ che consente di esprimere la tensione equivalente direttamente in funzione della tensione assiale $sigma$. In questo contesto $sigma_a$ indica la tensione assiale alternata.
 La condizione di verifica a fatica richiede che la tensione alternata di esercizio non superi il $90\%$ del limite $sigma_D$ individuato sulla curva corrispondente alla propria dimensione e tensione media:
@@ -673,44 +595,7 @@ Si distinguono tre casi operativi principali:
 
 $ F_(v, m a x) = F_(v, "lim") + Delta C_(m a x, v), quad F_(v, m i n) = F_(v, "lim") $
 
-$ F_(v, m) = F_(v, "lim") + frac(Delta C_(m a x, v), 2), quad F_(v, a) = frac(Delta C_(m a x, v), 2) $],[#canvas(length: 1cm, {
-  import draw: *
-  line((0, 0), (7.5, 0), mark: (end: ">"), stroke: 0.8pt)
-  line((0, 0), (0, 4.3), mark: (end: ">"), stroke: 0.8pt)
-
-  line((0, 3.2), (7.4, 3.2), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 2.7), (5.75, 2.7), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 2.2), (6.3, 2.2), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 1.5), (7.4, 1.5), stroke: (dash: "dashed", thickness: 0.6pt))
-
-  line((0, 0), (3.5, 3.5), stroke: 1.1pt)
-  line((1.85, 2.445), (5.343, 0), stroke: 1.1pt)
-  line((3.2, 1.5), (3.2, 3.2), stroke: 1.2pt)
-
-  rect((2.11, 2.11), (2.29, 2.29), fill: red, stroke: none)
-  rect((3.11, 3.11), (3.29, 3.29), fill: red, stroke: none)
-  line((3.09, 1.41), (3.31, 1.41), (3.2, 1.61), close: true, fill: blue, stroke: none)
-
-  bezier((3.45, 2.7), (3.97, 2.7), (3.671, 3.367), (3.749, 3.367), stroke: (paint: navy, thickness: 1.2pt))
-  bezier((3.97, 2.7), (4.49, 2.7), (4.191, 2.033), (4.269, 2.033), stroke: (paint: navy, thickness: 1.2pt))
-  bezier((4.49, 2.7), (5.01, 2.7), (4.711, 3.367), (4.789, 3.367), stroke: (paint: navy, thickness: 1.2pt))
-  bezier((5.01, 2.7), (5.53, 2.7), (5.231, 2.033), (5.309, 2.033), stroke: (paint: navy, thickness: 1.2pt))
-
-  line((0.65, 3.85), (0.65, 3.2), mark: (end: ">"), stroke: 0.7pt)
-  line((0.65, 1.1), (0.65, 2.7), mark: (end: ">"), stroke: 0.7pt)
-  line((4.94, 2.95), (5.5, 3.7), mark: (end: ">"), stroke: 0.7pt)
-  line((6.1, 2.2), (6.1, 3.2), mark: (start: ">", end: ">"), stroke: 0.7pt)
-  line((7.25, 1.5), (7.25, 3.2), mark: (start: ">", end: ">"), stroke: 0.7pt)
-
-  content((-0.15, 4.1), text(size: 8.5pt)[$|F_p|, |F_v|$], anchor: "east")
-  content((7.4, -0.25), text(size: 8.5pt)[$u$], anchor: "north")
-  content((0.78, 3.52), text(size: 8pt)[$F_(v,a)$], anchor: "west")
-  content((0.78, 1.85), text(size: 8pt)[$F_(v,m)$], anchor: "west")
-  content((-0.15, 2.2), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
-  content((5.55, 3.78), text(size: 8.5pt)[$Delta C_v (t)$], anchor: "south")
-  content((6.22, 2.7), text(size: 8pt)[$Delta C_("max",v)$], anchor: "west")
-  content((7.37, 2.35), text(size: 8pt)[$C_"max"$], anchor: "west")
-})])
+$ F_(v, m) = F_(v, "lim") + frac(Delta C_(m a x, v), 2), quad F_(v, a) = frac(Delta C_(m a x, v), 2) $],[#include "figs/collegamenti-filettati-fig02.typ"])
 
 #strong[Caso b) – Ciclo pulsante positivo \ ($C_(m i n) lt.eq C(t) lt.eq C_(m a x)$ con $C_(m a x) > 0$ e $C_(m i n) > 0$):]
   #grid(
@@ -720,60 +605,7 @@ $ F_(v, m) = F_(v, "lim") + frac(Delta C_(m a x, v), 2), quad F_(v, a) = frac(De
 
 $ F_(v, m a x) = F_(v, "lim") + Delta C_(m a x, v), quad F_(v, m i n) = F_(v, "lim") + Delta C_(m i n, v) $
 
-$ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[#canvas(length: 1cm, {
-  import draw: *
-
-  line((0, 0), (0, 4.1), mark: (end: ">"), stroke: 0.8pt)
-  line((0, 0), (8.2, 0), mark: (end: ">"), stroke: 0.8pt)
-
-  line((0, 0), (3.5, 3.5), stroke: 1.1pt)
-  line((1.9, 2.8), (5.4, 0), stroke: 1.1pt)
-
-  line((0, 3.20), (7.4, 3.20), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 2.90), (6.0, 2.90), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 2.60), (6.6, 2.60), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 2.24), (7.4, 2.24), stroke: (dash: "dashed", thickness: 0.6pt))
-
-  line((2.6, 2.24), (2.6, 2.60), stroke: 1.1pt)
-  line((3.2, 1.76), (3.2, 3.20), stroke: 1.1pt)
-
-  rect((2.50, 2.50), (2.70, 2.70), fill: red, stroke: none)
-  rect((3.10, 3.10), (3.30, 3.30), fill: red, stroke: none)
-
-  line((2.49, 2.16), (2.71, 2.16), (2.60, 2.36), close: true, fill: blue.darken(15%), stroke: none)
-  line((3.09, 1.68), (3.31, 1.68), (3.20, 1.88), close: true, fill: blue.darken(15%), stroke: none)
-
-  bezier((3.45, 2.90), (3.725, 3.20), (3.549, 3.070), (3.625, 3.20), stroke: (paint: blue.darken(45%), thickness: 1.2pt))
-  bezier((3.725, 3.20), (4.275, 2.60), (3.925, 3.20), (4.075, 2.60), stroke: (paint: blue.darken(45%), thickness: 1.2pt))
-  bezier((4.275, 2.60), (4.825, 3.20), (4.475, 2.60), (4.625, 3.20), stroke: (paint: blue.darken(45%), thickness: 1.2pt))
-  bezier((4.825, 3.20), (5.375, 2.60), (5.025, 3.20), (5.175, 2.60), stroke: (paint: blue.darken(45%), thickness: 1.2pt))
-  bezier((5.375, 2.60), (5.65, 2.90), (5.475, 2.60), (5.551, 2.730), stroke: (paint: blue.darken(45%), thickness: 1.2pt))
-
-  line((0.60, 3.75), (0.60, 3.20), mark: (end: ">"), stroke: 0.6pt)
-  line((0.60, 1.35), (0.60, 2.90), mark: (end: ">"), stroke: 0.6pt)
-
-  line((7.05, 2.24), (7.05, 3.20), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((6.25, 2.95), (6.25, 2.60), mark: (end: ">"), stroke: 0.6pt)
-  line((6.25, 1.89), (6.25, 2.24), mark: (end: ">"), stroke: 0.6pt)
-
-  line((4.35, 3.65), (4.76, 3.24), mark: (end: ">"), stroke: 0.6pt)
-  line((4.90, 1.50), (3.25, 2.35), mark: (end: ">"), stroke: 0.6pt)
-  line((4.90, 0.90), (2.65, 2.40), mark: (end: ">"), stroke: 0.6pt)
-
-  content((-0.15, 3.95), text(size: 8.5pt)[$|F_p|, |F_v|$], anchor: "east")
-  content((8.10, -0.15), text(size: 8.5pt)[$u$], anchor: "north")
-
-  content((0.72, 3.48), text(size: 8pt)[$F_(v,a)$], anchor: "west")
-  content((0.72, 1.75), text(size: 8pt)[$F_(v,m)$], anchor: "west")
-  content((-0.15, 2.24), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
-
-  content((4.25, 3.70), text(size: 8.5pt)[$Delta C_v(t)$], anchor: "south")
-  content((7.18, 2.72), text(size: 8pt)[$Delta C_(max,v)$], anchor: "west")
-  content((6.35, 2.02), text(size: 8pt)[$Delta C_(min,v)$], anchor: "west")
-
-  content((4.95, 1.48), text(size: 8.5pt)[$C_max$], anchor: "west")
-  content((4.95, 0.88), text(size: 8.5pt)[$C_min$], anchor: "west")
-})])
+$ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[#include "figs/collegamenti-filettati-fig03.typ"])
 
 #strong[Caso c) – Ciclo con inversione di carico \ ($C_(m i n) lt.eq C(t) lt.eq C_(m a x)$ con $C_(m a x) > 0$ e $C_(m i n) < 0$, ossia $C_(m i n) lt.eq 0 lt.eq C_(m a x)$):]
   #grid(
@@ -787,48 +619,7 @@ Le forze del ciclo mantengono le espressioni generali, tenendo conto del segno n
 
 $ F_(v, m a x) = F_(v, "lim") + Delta C_(m a x, v), quad F_(v, m i n) = F_(v, "lim") + Delta C_(m i n, v) $
 
-$ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[#canvas(length: 1cm, {
-  import draw: *
-  line((0, 0), (0, 4.4), mark: (end: ">"), stroke: 0.8pt)
-  line((0, 0), (8.6, 0), mark: (end: ">"), stroke: 0.8pt)
-  line((0, 3.5), (7.8, 3.5), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0.75, 2.85), (4.85, 2.85), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((5.15, 2.85), (7.8, 2.85), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 2.2), (7.8, 2.2), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((0, 0), (3.8, 3.8), stroke: 1.1pt)
-  line((1.4, 3.78), (5.6, 0), stroke: 1.1pt)
-  line((2.2, 2.2), (2.2, 3.06), stroke: 1.3pt)
-  line((3.5, 1.89), (3.5, 3.5), stroke: 1.3pt)
-  rect((2.1, 2.1), (2.3, 2.3), fill: red, stroke: none)
-  rect((3.4, 3.4), (3.6, 3.6), fill: red, stroke: none)
-  line((2.09, 2.96), (2.31, 2.96), (2.2, 3.18), close: true, fill: blue.darken(10%), stroke: none)
-  line((3.39, 1.79), (3.61, 1.79), (3.5, 2.01), close: true, fill: blue.darken(10%), stroke: none)
-  bezier((5.4, 2.85), (5.75, 2.85), (5.545, 3.717), (5.605, 3.717), stroke: (paint: blue.darken(45%), thickness: 1.2pt))
-  bezier((5.75, 2.85), (6.1, 2.85), (5.895, 1.983), (5.955, 1.983), stroke: (paint: blue.darken(45%), thickness: 1.2pt))
-  bezier((6.1, 2.85), (6.45, 2.85), (6.245, 3.717), (6.305, 3.717), stroke: (paint: blue.darken(45%), thickness: 1.2pt))
-  bezier((6.45, 2.85), (6.8, 2.85), (6.595, 1.983), (6.655, 1.983), stroke: (paint: blue.darken(45%), thickness: 1.2pt))
-  line((1.55, 3.3), (1.55, 2.85), mark: (end: ">"), stroke: 0.55pt)
-  line((1.55, 1.75), (1.55, 2.2), mark: (end: ">"), stroke: 0.55pt)
-  line((3.9, 2.85), (3.9, 3.5), mark: (start: ">", end: ">"), stroke: 0.55pt)
-  line((2.45, 1.5), (2.23, 2.55), mark: (end: ">"), stroke: 0.55pt)
-  line((3.25, 1.2), (3.47, 2.35), mark: (end: ">"), stroke: 0.55pt)
-  line((6.0, 4.02), (6.31, 3.28), mark: (end: ">"), stroke: 0.55pt)
-  line((7.35, 3.95), (7.35, 3.5), mark: (end: ">"), stroke: 0.55pt)
-  line((7.35, 2.4), (7.35, 2.85), mark: (end: ">"), stroke: 0.55pt)
-  content((0.3, 4.25), text(size: 8.5pt)[$|F_p| thin |F_v|$], anchor: "west")
-  content((8.55, -0.25), text(size: 8.5pt)[$u$], anchor: "north")
-  content((-0.15, 3.5), text(size: 7.5pt)[$F_("v,max")$], anchor: "east")
-  content((-0.15, 2.85), text(size: 7.5pt)[$F_("v,lim")$], anchor: "east")
-  content((-0.15, 2.2), text(size: 7.5pt)[$F_("v,min")$], anchor: "east")
-  content((1.45, 2.525), text(size: 7.5pt)[$Delta C_("min,v")$], anchor: "east")
-  content((4.05, 3.175), text(size: 7.5pt)[$Delta C_("max,v")$], anchor: "west")
-  content((2.45, 1.45), text(size: 7.5pt)[$C_("min")$], anchor: "north")
-  content((3.25, 1.15), text(size: 7.5pt)[$C_("max")$], anchor: "north")
-  content((5.95, 4.15), text(size: 8pt)[$Delta C_v (t)$], anchor: "south")
-  content((7.5, 3.72), text(size: 7.5pt)[$F_("v,a")$], anchor: "west")
-  content((7.5, 2.62), text(size: 7.5pt)[$F_("v,m")$], anchor: "west")
- 
-})])
+$ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[#include "figs/collegamenti-filettati-fig04.typ"])
 #pagebreak()
 === Interventi per migliorare la resistenza a fatica
 Per ridurre l'incidenza del carico affaticante sul collegamento filettato è possibile intervenire attraverso le seguenti soluzioni progettuali:
@@ -858,123 +649,7 @@ Esistono diversi dispositivi unificati contro lo svitamento:
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 4em,
-  align: (left + horizon, center + horizon),[Una soluzione tradizionale è rappresentata dal sistema #strong[dado-controdado]. Quando il dado è serrato e il controdado viene portato al primo contatto, entrambi presentano i filetti appoggiati sullo stesso fianco rispetto alla vite. Serrando successivamente il controdado contro il dado, il dado viene progressivamente scaricato e compresso verso l'alto, invertendo il fianco di contatto con i filetti della vite. Il tratto di gambo compreso fra dado e controdado si comporta come una molla che ostacola il movimento relativo aumentando le forze d'attrito alle interfacce.],[#canvas(length: 1cm, {
-  import draw: *
-
-  let draw-nuts(dx) = {
-    // --- CONTRODADO (sopra, y: 0.0 .. 1.0) - tratteggio +45°, grigio chiaro ---
-    line((0.2 + dx, 0.0), (0.85 + dx, 0.0), (0.85 + dx, 0.22), (0.67 + dx, 0.34), (0.85 + dx, 0.46), (0.85 + dx, 1.0), (0.2 + dx, 1.0), close: true, fill: luma(242), stroke: none)
-    line((1.75 + dx, 0.0), (2.4 + dx, 0.0), (2.4 + dx, 1.0), (1.75 + dx, 1.0), (1.75 + dx, 0.78), (1.93 + dx, 0.66), (1.75 + dx, 0.54), close: true, fill: luma(242), stroke: none)
-
-    // --- DADO (sotto, y: -1.0 .. 0.0) - tratteggio -45°, grigio più scuro ---
-    line((0.2 + dx, -1.0), (0.85 + dx, -1.0), (0.85 + dx, -0.78), (0.67 + dx, -0.66), (0.85 + dx, -0.54), (0.85 + dx, 0.0), (0.2 + dx, 0.0), close: true, fill: luma(222), stroke: none)
-    line((1.75 + dx, -1.0), (2.4 + dx, -1.0), (2.4 + dx, 0.0), (1.75 + dx, 0.0), (1.75 + dx, -0.22), (1.93 + dx, -0.34), (1.75 + dx, -0.46), close: true, fill: luma(222), stroke: none)
-
-    // Tratteggio Controdado (+45°)
-    line((0.2 + dx, 0.75), (0.45 + dx, 1.0), stroke: 0.45pt + luma(110))
-    line((0.2 + dx, 0.50), (0.70 + dx, 1.0), stroke: 0.45pt + luma(110))
-    line((0.2 + dx, 0.25), (0.85 + dx, 0.90), stroke: 0.45pt + luma(110))
-    line((0.2 + dx, 0.0), (0.85 + dx, 0.65), stroke: 0.45pt + luma(110))
-    line((0.45 + dx, 0.0), (0.74 + dx, 0.29), stroke: 0.45pt + luma(110))
-    line((0.70 + dx, 0.0), (0.85 + dx, 0.15), stroke: 0.45pt + luma(110))
-
-    line((1.75 + dx, 0.80), (1.95 + dx, 1.0), stroke: 0.45pt + luma(110))
-    line((1.89 + dx, 0.69), (2.20 + dx, 1.0), stroke: 0.45pt + luma(110))
-    line((1.75 + dx, 0.30), (2.4 + dx, 0.95), stroke: 0.45pt + luma(110))
-    line((1.75 + dx, 0.05), (2.4 + dx, 0.70), stroke: 0.45pt + luma(110))
-    line((1.95 + dx, 0.0), (2.4 + dx, 0.45), stroke: 0.45pt + luma(110))
-    line((2.20 + dx, 0.0), (2.4 + dx, 0.20), stroke: 0.45pt + luma(110))
-
-    // Tratteggio Dado (-45°, opposto al controdado)
-    line((0.2 + dx, -0.75), (0.45 + dx, -1.0), stroke: 0.45pt + luma(95))
-    line((0.2 + dx, -0.50), (0.70 + dx, -1.0), stroke: 0.45pt + luma(95))
-    line((0.2 + dx, -0.25), (0.85 + dx, -0.90), stroke: 0.45pt + luma(95))
-    line((0.2 + dx, 0.0), (0.784 + dx, -0.584), stroke: 0.45pt + luma(95))
-    line((0.45 + dx, 0.0), (0.85 + dx, -0.40), stroke: 0.45pt + luma(95))
-    line((0.70 + dx, 0.0), (0.85 + dx, -0.15), stroke: 0.45pt + luma(95))
-
-    line((1.75 + dx, -0.75), (2.00 + dx, -1.0), stroke: 0.45pt + luma(95))
-    line((1.75 + dx, -0.50), (2.25 + dx, -1.0), stroke: 0.45pt + luma(95))
-    line((1.876 + dx, -0.376), (2.4 + dx, -0.90), stroke: 0.45pt + luma(95))
-    line((1.75 + dx, 0.0), (2.4 + dx, -0.65), stroke: 0.45pt + luma(95))
-    line((2.00 + dx, 0.0), (2.4 + dx, -0.40), stroke: 0.45pt + luma(95))
-    line((2.25 + dx, 0.0), (2.4 + dx, -0.15), stroke: 0.45pt + luma(95))
-
-    // Contorni dei pezzi
-    line((0.2 + dx, 0.0), (0.85 + dx, 0.0), (0.85 + dx, 0.22), (0.67 + dx, 0.34), (0.85 + dx, 0.46), (0.85 + dx, 1.0), (0.2 + dx, 1.0), close: true, stroke: 0.9pt)
-    line((1.75 + dx, 0.0), (2.4 + dx, 0.0), (2.4 + dx, 1.0), (1.75 + dx, 1.0), (1.75 + dx, 0.78), (1.93 + dx, 0.66), (1.75 + dx, 0.54), close: true, stroke: 0.9pt)
-    line((0.2 + dx, -1.0), (0.85 + dx, -1.0), (0.85 + dx, -0.78), (0.67 + dx, -0.66), (0.85 + dx, -0.54), (0.85 + dx, 0.0), (0.2 + dx, 0.0), close: true, stroke: 0.9pt)
-    line((1.75 + dx, -1.0), (2.4 + dx, -1.0), (2.4 + dx, 0.0), (1.75 + dx, 0.0), (1.75 + dx, -0.22), (1.93 + dx, -0.34), (1.75 + dx, -0.46), close: true, stroke: 0.9pt)
-
-    // Linea di separazione netta tra Controdado e Dado
-    line((0.2 + dx, 0.0), (0.85 + dx, 0.0), stroke: 1.35pt)
-    line((1.75 + dx, 0.0), (2.4 + dx, 0.0), stroke: 1.35pt)
-
-    // Filetti vite (fondo + cresta del filetto) e contatti
-    line((0.85 + dx, 0.22), (1.75 + dx, 0.54), stroke: 0.65pt)
-    line((0.67 + dx, 0.34), (1.93 + dx, 0.66), stroke: 0.55pt)
-    line((0.85 + dx, 0.46), (1.75 + dx, 0.78), stroke: 0.65pt)
-
-    line((0.85 + dx, -0.78), (1.75 + dx, -0.46), stroke: 0.65pt)
-    line((0.67 + dx, -0.66), (1.93 + dx, -0.34), stroke: 0.55pt)
-    line((0.85 + dx, -0.54), (1.75 + dx, -0.22), stroke: 0.65pt)
-
-    line((0.67 + dx, 0.34), (0.85 + dx, 0.22), stroke: 1.5pt)
-    line((1.75 + dx, 0.54), (1.93 + dx, 0.66), stroke: 1.5pt)
-    line((0.67 + dx, -0.66), (0.85 + dx, -0.78), stroke: 1.5pt)
-    line((1.75 + dx, -0.46), (1.93 + dx, -0.34), stroke: 1.5pt)
-
-    // Gambo vite e asse
-    line((0.85 + dx, 1.0), (0.85 + dx, 1.6), stroke: 0.9pt)
-    line((1.75 + dx, 1.0), (1.75 + dx, 1.6), stroke: 0.9pt)
-    line((0.85 + dx, -1.0), (0.85 + dx, -1.5), stroke: 0.9pt)
-    line((1.75 + dx, -1.0), (1.75 + dx, -1.5), stroke: 0.9pt)
-    line((1.3 + dx, -1.75), (1.3 + dx, 1.85), stroke: (dash: "dash-dotted", thickness: 0.65pt))
-  }
-
-  // --- PANNELLO 1 (SINISTRA) ---
-  draw-nuts(0.0)
-  content((1.3, 2.2), text(size: 9pt)[_Schema di funzionamento_], anchor: "center")
-  content((2.6, 0.5), text(size: 8pt)[Controdado], anchor: "west")
-  content((2.6, -0.5), text(size: 8pt)[Dado], anchor: "west")
-
-  // --- PANNELLO 2 (CENTRO) ---
-  draw-nuts(4.3)
-  circle((5.06, -0.68), radius: 0.27, stroke: 1.15pt + red)
-  circle((6.14, -0.36), radius: 0.27, stroke: 1.15pt + red)
-
-  // --- PANNELLO 3 (DESTRA) ---
-  // Filetto Controdado (arancione) e Filetto Dado (blu) con linee orizzontali di separazione
-  line((7.5, 0.0), (7.9, 0.0), (7.9, 0.38), (8.8, 0.38), (8.8, 0.78), (7.5, 0.78), close: true, fill: rgb("#ff6600"), stroke: 0.85pt)
-  line((7.5, 0.38), (7.9, 0.38), stroke: 0.85pt)
-
-  line((7.5, 0.0), (7.9, 0.0), (7.9, -0.38), (8.8, -0.38), (8.8, -0.78), (7.5, -0.78), close: true, fill: rgb("#2432c8"), stroke: 0.85pt)
-  line((7.5, -0.38), (7.9, -0.38), stroke: 0.85pt)
-
-  line((7.5, 0.0), (7.9, 0.0), stroke: 1.35pt)
-
-  // Filetti vite (pezzo a U con linee orizzontali di separazione tra denti e gambo)
-  line(
-    (8.4, 1.12), (9.7, 1.12), (9.7, -1.12), (8.4, -1.12),
-    (8.4, -0.78), (9.35, -0.78), (9.35, 0.78), (8.4, 0.78),
-    close: true, fill: rgb("#00b884"), stroke: 0.85pt,
-  )
-  line((9.35, 0.78), (9.7, 0.78), stroke: 0.85pt)
-  line((9.35, -0.78), (9.7, -0.78), stroke: 0.85pt)
-
-  // Corpo vite a destra
-  line((9.7, 0.78), (10.2, 0.78), (10.2, 0.52), (10.05, 0.35), (10.2, 0.18), (10.05, 0.0), (10.2, -0.18), (10.05, -0.35), (10.2, -0.52), (10.2, -0.78), (9.7, -0.78), stroke: 0.75pt)
-
-  // Frecce e legende
-  line((8.6, 0.78), (8.6, 1.55), mark: (end: ">"), stroke: 1.05pt + red)
-  line((8.6, -0.78), (8.6, -1.55), mark: (end: ">"), stroke: 1.05pt + red)
-  line((10.2, 0.78), (10.2, 1.55), mark: (end: ">"), stroke: 1.05pt + red)
-  line((10.2, -0.78), (10.2, -1.55), mark: (end: ">"), stroke: 1.05pt + red)
-
-  content((8.35, 1.68), text(size: 7.5pt, fill: rgb("#e64a00"))[Filetto Controdado], anchor: "south")
-  content((8.35, -1.42), text(size: 7.5pt, fill: rgb("#2432c8"))[Filetto dado], anchor: "east")
-  content((9.45, -1.42), text(size: 7.5pt, fill: rgb("#00a876"))[Filetti vite], anchor: "center")
-})])
+  align: (left + horizon, center + horizon),[Una soluzione tradizionale è rappresentata dal sistema #strong[dado-controdado]. Quando il dado è serrato e il controdado viene portato al primo contatto, entrambi presentano i filetti appoggiati sullo stesso fianco rispetto alla vite. Serrando successivamente il controdado contro il dado, il dado viene progressivamente scaricato e compresso verso l'alto, invertendo il fianco di contatto con i filetti della vite. Il tratto di gambo compreso fra dado e controdado si comporta come una molla che ostacola il movimento relativo aumentando le forze d'attrito alle interfacce.],[#include "figs/collegamenti-filettati-fig05.typ"])
 
 Nella pratica costruttiva si utilizzano spesso dado e controdado di altezza diversa: poiché il carico viene sopportato prevalentemente dal controdado (che lavora contro il dado esattamente come un dado singolo contro il pezzo, concentrando la pressione sui primi filetti), il controdado deve essere realizzato di altezza maggiore per rendere più uniforme la distribuzione del carico sui filetti. Il dado, invece, beneficia dell'inversione di carico indotta dal controdado e risulta meno sollecitato sui primi filetti, potendo quindi avere altezza minore.
 #pagebreak()
@@ -988,176 +663,7 @@ Indicando con $L_p$ lo spessore complessivo delle parti (pari a $L_v$ nella conf
 
 $ n = frac(L_b, L_p) < 1, quad (1 - n) = frac(L_a + L_c, L_p) $
 
-.],[#canvas(length: 1cm, {
-  import draw: *
-
-  line((-1.5, 0), (-0.28, 0), (-0.28, 0.6), (-1.5, 0.6), close: true, fill: luma(205), stroke: 0.9pt)
-  line((-1.5, -0.6), (-0.28, -0.6), (-0.28, 0), (-1.5, 0), close: true, fill: luma(205), stroke: 0.9pt)
-  line((0.28, 0), (1.5, 0), (1.5, 0.6), (0.28, 0.6), close: true, fill: luma(205), stroke: 0.9pt)
-  line((0.28, -0.6), (1.5, -0.6), (1.5, 0), (0.28, 0), close: true, fill: luma(205), stroke: 0.9pt)
-
-  rect((-1.12, -0.22), (-0.68, 0.22), fill: white, stroke: none)
-  content((-0.9, 0), text(size: 8.5pt)[A])
-
-  line((-0.22, -1.16), (0.22, -1.16), (0.22, 0.6), (-0.22, 0.6), close: true, fill: white, stroke: none)
-  line((-0.22, -1.16), (0.22, -1.16), (0.17, -1.22), (-0.17, -1.22), close: true, fill: white, stroke: 0.9pt)
-  line((-0.22, -1.16), (-0.22, 0.6), stroke: 0.9pt)
-  line((0.22, -1.16), (0.22, 0.6), stroke: 0.9pt)
-  line((-0.17, -1.22), (-0.17, -0.15), stroke: 0.65pt)
-  line((0.17, -1.22), (0.17, -0.15), stroke: 0.65pt)
-
-  line((-0.38, 0.6), (0.38, 0.6), (0.38, 0.84), (0.32, 0.9), (-0.32, 0.9), (-0.38, 0.84), close: true, fill: white, stroke: 0.9pt)
-  line((-0.19, 0.6), (-0.19, 0.9), stroke: 0.75pt)
-  line((0.19, 0.6), (0.19, 0.9), stroke: 0.75pt)
-
-  line((-0.32, -0.6), (0.32, -0.6), (0.38, -0.66), (0.38, -0.86), (0.32, -0.92), (-0.32, -0.92), (-0.38, -0.86), (-0.38, -0.66), close: true, fill: white, stroke: 0.9pt)
-  line((-0.19, -0.6), (-0.19, -0.92), stroke: 0.75pt)
-  line((0.19, -0.6), (0.19, -0.92), stroke: 0.75pt)
-
-  line((0, -1.32), (0, 1.15), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-
-  line((-0.6, 0.6), (-0.6, 1.15), mark: (end: ">", fill: black), stroke: 1.5pt)
-  line((0.6, 0.6), (0.6, 1.15), mark: (end: ">", fill: black), stroke: 1.5pt)
-  line((-0.6, -0.6), (-0.6, -1.15), mark: (end: ">", fill: black), stroke: 1.5pt)
-  line((0.6, -0.6), (0.6, -1.15), mark: (end: ">", fill: black), stroke: 1.5pt)
-
-  line((1.5, 0.6), (2.05, 0.6), stroke: 0.55pt)
-  line((1.5, -0.6), (2.05, -0.6), stroke: 0.55pt)
-  line((1.9, -0.6), (1.9, 0.6), mark: (start: ">", end: ">", fill: black), stroke: 0.7pt)
-  content((2.02, 0), text(size: 8.5pt)[$L_p$], anchor: "west")
-
-  line((3.0, 0.35), (3.55, 0.35), (3.55, 0), (4.22, 0), (4.22, 0.6), (3.0, 0.6), close: true, fill: luma(205), stroke: 0.9pt)
-  line((3.0, -0.6), (4.22, -0.6), (4.22, 0), (3.55, 0), (3.55, -0.35), (3.0, -0.35), close: true, fill: luma(205), stroke: 0.9pt)
-  line((4.78, 0), (5.45, 0), (5.45, 0.35), (6.0, 0.35), (6.0, 0.6), (4.78, 0.6), close: true, fill: luma(205), stroke: 0.9pt)
-  line((4.78, -0.6), (6.0, -0.6), (6.0, -0.35), (5.45, -0.35), (5.45, 0), (4.78, 0), close: true, fill: luma(205), stroke: 0.9pt)
-
-  rect((3.66, -0.22), (4.1, 0.22), fill: white, stroke: none)
-  content((3.88, 0), text(size: 8.5pt)[B])
-
-  line((4.28, -1.16), (4.72, -1.16), (4.72, 0.6), (4.28, 0.6), close: true, fill: white, stroke: none)
-  line((4.28, -1.16), (4.72, -1.16), (4.67, -1.22), (4.33, -1.22), close: true, fill: white, stroke: 0.9pt)
-  line((4.28, -1.16), (4.28, 0.6), stroke: 0.9pt)
-  line((4.72, -1.16), (4.72, 0.6), stroke: 0.9pt)
-  line((4.33, -1.22), (4.33, -0.15), stroke: 0.65pt)
-  line((4.67, -1.22), (4.67, -0.15), stroke: 0.65pt)
-
-  line((4.12, 0.6), (4.88, 0.6), (4.88, 0.84), (4.82, 0.9), (4.18, 0.9), (4.12, 0.84), close: true, fill: white, stroke: 0.9pt)
-  line((4.31, 0.6), (4.31, 0.9), stroke: 0.75pt)
-  line((4.69, 0.6), (4.69, 0.9), stroke: 0.75pt)
-
-  line((4.18, -0.6), (4.82, -0.6), (4.88, -0.66), (4.88, -0.86), (4.82, -0.92), (4.18, -0.92), (4.12, -0.86), (4.12, -0.66), close: true, fill: white, stroke: 0.9pt)
-  line((4.31, -0.6), (4.31, -0.92), stroke: 0.75pt)
-  line((4.69, -0.6), (4.69, -0.92), stroke: 0.75pt)
-
-  line((4.5, -1.32), (4.5, 1.15), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-
-  line((3.275, 0.6), (3.275, 1.15), mark: (end: ">", fill: black), stroke: 1.5pt)
-  line((5.725, 0.6), (5.725, 1.15), mark: (end: ">", fill: black), stroke: 1.5pt)
-  line((3.275, -0.6), (3.275, -1.15), mark: (end: ">", fill: black), stroke: 1.5pt)
-  line((5.725, -0.6), (5.725, -1.15), mark: (end: ">", fill: black), stroke: 1.5pt)
-
-  line((6.0, 0.6), (7.3, 0.6), stroke: 0.55pt)
-  line((6.0, 0.35), (6.5, 0.35), stroke: 0.55pt)
-  line((6.0, -0.35), (6.5, -0.35), stroke: 0.55pt)
-  line((6.0, -0.6), (7.3, -0.6), stroke: 0.55pt)
-
-  line((6.35, 1.05), (6.35, 0.6), mark: (end: ">", fill: black), stroke: 0.7pt)
-  content((6.47, 0.85), text(size: 8.5pt)[$L_a$], anchor: "west")
-
-  line((6.35, -0.35), (6.35, 0.35), mark: (start: ">", end: ">", fill: black), stroke: 0.7pt)
-  content((6.47, 0), text(size: 8.5pt)[$L_b$], anchor: "west")
-
-  line((6.35, -1.05), (6.35, -0.6), mark: (end: ">", fill: black), stroke: 0.7pt)
-  content((6.47, -0.85), text(size: 8.5pt)[$L_c$], anchor: "west")
-
-  line((7.15, -0.6), (7.15, 0.6), mark: (start: ">", end: ">", fill: black), stroke: 0.7pt)
-  content((7.27, 0), text(size: 8.5pt)[$L_p$], anchor: "west")
-})],[La deformabilità complessiva del pezzo risulta $ delta_p = delta_p^a + delta_p^b + delta_p^c $],[#canvas(length: 1cm, {
-  import draw: *
-
-  content((1.7, 3.05), text(size: 9pt)[_prima del montaggio_])
-  content((6.9, 3.05), text(size: 9pt)[_dopo il montaggio_])
-
-  line((0.0, 0.25), (0.0, 0.0), (1.0, 0.0), (1.0, 0.25), stroke: 0.7pt)
-  line((0.0, 2.05), (0.0, 2.25), (0.85, 2.25), stroke: 0.7pt)
-  line((1.0, 1.75), (1.0, 1.95), (0.45, 1.95), stroke: 0.7pt)
-  line((0.55, 2.55), (0.55, 2.25), mark: (end: ">"), stroke: 0.6pt)
-  line((0.55, 1.65), (0.55, 1.95), mark: (end: ">"), stroke: 0.6pt)
-
-  line((0.0, 0.25), (-0.13, 0.314), (0.13, 0.443), (-0.13, 0.571), (0.13, 0.700), (-0.13, 0.829), (0.13, 0.957), (-0.13, 1.086), (0.13, 1.214), (-0.13, 1.343), (0.13, 1.471), (-0.13, 1.600), (0.13, 1.729), (-0.13, 1.857), (0.13, 1.986), (0.0, 2.05), stroke: 1.1pt)
-  line((1.0, 0.25), (0.87, 0.313), (1.13, 0.438), (0.87, 0.563), (1.13, 0.688), (0.87, 0.813), (1.13, 0.938), (0.87, 1.063), (1.13, 1.188), (0.87, 1.313), (1.13, 1.438), (0.87, 1.563), (1.13, 1.688), (1.0, 1.75), stroke: 1.1pt)
-
-  circle((0.0, 0.25), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((0.0, 2.05), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((1.0, 0.25), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((1.0, 1.75), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-
-  content((0.5, 1.05), text(size: 8.5pt)[A])
-  content((-0.22, 1.15), text(size: 8pt)[$delta_p$], anchor: "east")
-  content((1.22, 1.00), text(size: 8pt)[$delta_v$], anchor: "west")
-  content((0.48, 2.45), text(size: 8pt)[$i$], anchor: "east")
-
-  line((2.4, 0.25), (2.4, 0.0), (3.4, 0.0), (3.4, 0.25), stroke: 0.7pt)
-  line((2.4, 2.05), (2.4, 2.25), (3.25, 2.25), stroke: 0.7pt)
-  line((3.4, 1.75), (3.4, 1.95), (2.85, 1.95), stroke: 0.7pt)
-  line((2.95, 2.55), (2.95, 2.25), mark: (end: ">"), stroke: 0.6pt)
-  line((2.95, 1.65), (2.95, 1.95), mark: (end: ">"), stroke: 0.6pt)
-
-  line((2.4, 0.25), (2.27, 0.325), (2.53, 0.475), (2.27, 0.625), (2.53, 0.775), (2.4, 0.85), stroke: 1.1pt)
-  line((2.4, 0.85), (2.27, 0.925), (2.53, 1.075), (2.27, 1.225), (2.53, 1.375), (2.4, 1.45), stroke: 1.1pt)
-  line((2.4, 1.45), (2.27, 1.525), (2.53, 1.675), (2.27, 1.825), (2.53, 1.975), (2.4, 2.05), stroke: 1.1pt)
-  line((3.4, 0.25), (3.27, 0.313), (3.53, 0.438), (3.27, 0.563), (3.53, 0.688), (3.27, 0.813), (3.53, 0.938), (3.27, 1.063), (3.53, 1.188), (3.27, 1.313), (3.53, 1.438), (3.27, 1.563), (3.53, 1.688), (3.4, 1.75), stroke: 1.1pt)
-
-  circle((2.4, 0.25), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((2.4, 0.85), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((2.4, 1.45), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((2.4, 2.05), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((3.4, 0.25), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((3.4, 1.75), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-
-  content((2.9, 1.05), text(size: 8.5pt)[B])
-  content((2.18, 1.75), text(size: 8pt)[$delta_p^a$], anchor: "east")
-  content((2.18, 1.15), text(size: 8pt)[$delta_p^b$], anchor: "east")
-  content((2.18, 0.55), text(size: 8pt)[$delta_p^c$], anchor: "east")
-  content((3.62, 1.00), text(size: 8pt)[$delta_v$], anchor: "west")
-  content((2.88, 2.45), text(size: 8pt)[$i$], anchor: "east")
-
-  line((5.2, 0.25), (5.2, 0.0), (6.2, 0.0), (6.2, 0.25), stroke: 0.7pt)
-  line((5.2, 1.90), (5.2, 2.10), (6.2, 2.10), (6.2, 1.90), stroke: 0.7pt)
-
-  line((5.2, 0.25), (5.07, 0.309), (5.33, 0.427), (5.07, 0.545), (5.33, 0.663), (5.07, 0.780), (5.33, 0.898), (5.07, 1.016), (5.33, 1.134), (5.07, 1.252), (5.33, 1.370), (5.07, 1.488), (5.33, 1.605), (5.07, 1.723), (5.33, 1.841), (5.2, 1.90), stroke: 1.1pt)
-  line((6.2, 0.25), (6.07, 0.319), (6.33, 0.456), (6.07, 0.594), (6.33, 0.731), (6.07, 0.869), (6.33, 1.006), (6.07, 1.144), (6.33, 1.281), (6.07, 1.419), (6.33, 1.556), (6.07, 1.694), (6.33, 1.831), (6.2, 1.90), stroke: 1.1pt)
-
-  circle((5.2, 0.25), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((5.2, 1.90), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((6.2, 0.25), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((6.2, 1.90), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-
-  content((5.7, 1.08), text(size: 8.5pt)[A])
-  content((4.98, 1.08), text(size: 8pt)[$delta_p$], anchor: "east")
-  content((6.42, 1.08), text(size: 8pt)[$delta_v$], anchor: "west")
-
-  line((7.6, 0.25), (7.6, 0.0), (8.6, 0.0), (8.6, 0.25), stroke: 0.7pt)
-  line((7.6, 1.90), (7.6, 2.10), (8.6, 2.10), (8.6, 1.90), stroke: 0.7pt)
-
-  line((7.6, 0.25), (7.47, 0.319), (7.73, 0.456), (7.47, 0.594), (7.73, 0.731), (7.6, 0.80), stroke: 1.1pt)
-  line((7.6, 0.80), (7.47, 0.869), (7.73, 1.006), (7.47, 1.144), (7.73, 1.281), (7.6, 1.35), stroke: 1.1pt)
-  line((7.6, 1.35), (7.47, 1.419), (7.73, 1.556), (7.47, 1.694), (7.73, 1.831), (7.6, 1.90), stroke: 1.1pt)
-  line((8.6, 0.25), (8.47, 0.319), (8.73, 0.456), (8.47, 0.594), (8.73, 0.731), (8.47, 0.869), (8.73, 1.006), (8.47, 1.144), (8.73, 1.281), (8.47, 1.419), (8.73, 1.556), (8.47, 1.694), (8.73, 1.831), (8.6, 1.90), stroke: 1.1pt)
-
-  circle((7.6, 0.25), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((7.6, 0.80), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((7.6, 1.35), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((7.6, 1.90), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((8.6, 0.25), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-  circle((8.6, 1.90), radius: 0.04, fill: rgb("#00a878"), stroke: 0.5pt)
-
-  content((8.1, 1.08), text(size: 8.5pt)[B])
-  content((7.38, 1.625), text(size: 8pt)[$delta_p^a$], anchor: "east")
-  content((7.38, 1.075), text(size: 8pt)[$delta_p^b$], anchor: "east")
-  content((7.38, 0.525), text(size: 8pt)[$delta_p^c$], anchor: "east")
-  content((8.82, 1.08), text(size: 8pt)[$delta_v$], anchor: "west")
-})])
+.],[#include "figs/collegamenti-filettati-fig06.typ"],[La deformabilità complessiva del pezzo risulta $ delta_p = delta_p^a + delta_p^b + delta_p^c $],[#include "figs/collegamenti-filettati-fig07.typ"])
 
 #grid(
   columns: (1fr, 1fr),
@@ -1166,29 +672,7 @@ $ n = frac(L_b, L_p) < 1, quad (1 - n) = frac(L_a + L_c, L_p) $
 
 $ delta_v = frac(L_v, E_v dot.op A_v), quad delta_p = frac(L_p, E_p dot.op A_p) $
 
-],[#canvas(length: 1cm, {
-  import draw: *
-  line((-1.5, 1.6), (1.5, 1.6), stroke: 1pt)
-  line((-1.5, -1.6), (1.5, -1.6), stroke: 1pt)
-  line((-1.5, 1.6), (-1.5, 1.3), stroke: 0.8pt)
-  line((-1.5, -1.3), (-1.5, -1.6), stroke: 0.8pt)
-  line((1.5, 1.6), (1.5, 1.3), stroke: 0.8pt)
-  line((1.5, -1.3), (1.5, -1.6), stroke: 0.8pt)
-  line((-1.5, 1.3), (-1.22, 1.2), (-1.78, 1.0), (-1.22, 0.8), (-1.78, 0.6), (-1.22, 0.4), (-1.78, 0.2), (-1.22, 0.0), (-1.78, -0.2), (-1.22, -0.4), (-1.78, -0.6), (-1.22, -0.8), (-1.78, -1.0), (-1.22, -1.2), (-1.5, -1.3), stroke: (thickness: 1.1pt, join: "round"))
-  line((1.5, 1.3), (1.78, 1.2), (1.22, 1.0), (1.78, 0.8), (1.22, 0.6), (1.78, 0.4), (1.22, 0.2), (1.78, 0.0), (1.22, -0.2), (1.78, -0.4), (1.22, -0.6), (1.78, -0.8), (1.22, -1.0), (1.78, -1.2), (1.5, -1.3), stroke: (thickness: 1.1pt, join: "round"))
-  circle((-1.5, 1.3), radius: 0.06, fill: rgb("#00c896"), stroke: 0.6pt)
-  circle((-1.5, -1.3), radius: 0.06, fill: rgb("#00c896"), stroke: 0.6pt)
-  circle((1.5, 1.3), radius: 0.06, fill: rgb("#00c896"), stroke: 0.6pt)
-  circle((1.5, -1.3), radius: 0.06, fill: rgb("#00c896"), stroke: 0.6pt)
-  line((0, 0.7), (0, 1.6), mark: (end: ">", fill: black), stroke: 1.5pt)
-  line((0, -0.7), (0, -1.6), mark: (end: ">", fill: black), stroke: 1.5pt)
-  content((-0.2, 1.15), text(size: 9pt)[$C$], anchor: "east")
-  content((-0.2, -1.15), text(size: 9pt)[$C$], anchor: "east")
-  line((1.5, 1.6), (2.7, 1.6), stroke: 0.5pt)
-  line((1.5, -1.6), (2.7, -1.6), stroke: 0.5pt)
-  line((2.4, -1.6), (2.4, 1.6), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
-  content((2.6, 0), text(size: 9pt)[$L_p = L_v$], anchor: "west")
-})])
+],[#include "figs/collegamenti-filettati-fig08.typ"])
 #grid(
   columns: (1fr, 1fr),
   gutter: 8em,
@@ -1197,31 +681,7 @@ $ delta_v = frac(L_v, E_v dot.op A_v), quad delta_p = frac(L_p, E_p dot.op A_p) 
 $ delta_p^* equiv delta_p^b = frac(L_b, E_p dot.op A_p) = frac(n dot.op L_p, E_p dot.op A_p) < delta_p $
 
 $ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, E_p dot.op A_p) = delta_v + (1 - n) delta_p > delta_v $],
-  [#canvas(length: 1cm, {
-  import draw: *
-  line((3.0, 4.2), (3.0, 4.5), (4.6, 4.5), (4.6, 4.2), stroke: 0.75pt)
-  line((3.0, 0.6), (3.0, 0.3), (4.6, 0.3), (4.6, 0.6), stroke: 0.75pt)
-  line((0.5, 3.0), (3.0, 3.0), stroke: 0.75pt)
-  line((0.5, 1.8), (3.0, 1.8), stroke: 0.75pt)
-  line((1.0, 3.0), (1.0, 4.0), mark: (end: ">"), stroke: 1.4pt)
-  line((1.0, 1.8), (1.0, 0.8), mark: (end: ">"), stroke: 1.4pt)
-  line((3.0, 4.2), (3.25, 4.1), (2.75, 3.9), (3.25, 3.7), (2.75, 3.5), (3.25, 3.3), (2.75, 3.1), (3.0, 3.0), stroke: (thickness: 1.1pt, join: "round"))
-  line((3.0, 3.0), (3.25, 2.9), (2.75, 2.7), (3.25, 2.5), (2.75, 2.3), (3.25, 2.1), (2.75, 1.9), (3.0, 1.8), stroke: (thickness: 1.1pt, join: "round"))
-  line((3.0, 1.8), (3.25, 1.7), (2.75, 1.5), (3.25, 1.3), (2.75, 1.1), (3.25, 0.9), (2.75, 0.7), (3.0, 0.6), stroke: (thickness: 1.1pt, join: "round"))
-  line((4.6, 4.2), (4.85, 4.05), (4.35, 3.75), (4.85, 3.45), (4.35, 3.15), (4.85, 2.85), (4.35, 2.55), (4.85, 2.25), (4.35, 1.95), (4.85, 1.65), (4.35, 1.35), (4.85, 1.05), (4.35, 0.75), (4.6, 0.6), stroke: (thickness: 1.1pt, join: "round"))
-  circle((3.0, 4.2), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
-  circle((3.0, 3.0), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
-  circle((3.0, 1.8), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
-  circle((3.0, 0.6), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
-  circle((4.6, 4.2), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
-  circle((4.6, 0.6), radius: 0.06, fill: rgb("#00b894"), stroke: 0.6pt)
-  content((0.8, 3.55), text(size: 9pt)[$C$], anchor: "east")
-  content((0.8, 1.25), text(size: 9pt)[$C$], anchor: "east")
-  content((2.55, 3.6), text(size: 9pt)[$delta_p^a$], anchor: "east")
-  content((2.55, 2.4), text(size: 9pt)[$delta_p^b$], anchor: "east")
-  content((2.55, 1.2), text(size: 9pt)[$delta_p^c$], anchor: "east")
-  content((5.05, 2.4), text(size: 9pt)[$delta_v$], anchor: "west")
-})],
+  [#include "figs/collegamenti-filettati-fig09.typ"],
 )
 
 #grid(
@@ -1230,205 +690,20 @@ $ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, 
   align: (left + horizon, center + horizon),[Sul diagramma di interferenza questo equivale a una rotazione delle due rette caratteristiche attorno al punto di equilibrio $F_v$: la caratteristica della vite ruota diventando meno ripida (vite più deformabile) e la caratteristica del pezzo ruota diventando più ripida (pezzo più rigido). Il segmento del carico esterno $C$ trasla quindi verso il basso lungo il diagramma:
 
 - per la vite, la quota parte di carico assorbita si riduce rispetto al caso (A); pertanto, ai fini della resistenza della vite è sempre cautelativo assumere il carico come applicato al sottotesta (A);
-],[#canvas(length: 1cm, {
-  import draw: *
-  line((0, 0), (0, 4.5), mark: (end: ">"), stroke: 0.8pt)
-  line((0, 0), (7.5, 0), mark: (end: ">"), stroke: 0.8pt)
-  line((0, 2.4), (4.78, 2.4), stroke: (paint: gray, dash: "dash-dotted", thickness: 0.6pt))
-  line((0, 0), (3.2, 2.4), stroke: 1.1pt)
-  line((3.2, 2.4), (5.0, 3.75), stroke: (dash: "dashed", thickness: 1.1pt))
-  line((3.2, 2.4), (6.2, 0), stroke: (dash: "dashed", thickness: 1.1pt))
-  line((3.2, 2.4), (6.2, 3.05), stroke: 1.2pt)
-  line((2.75, 3.0), (5.0, 0), stroke: 1.2pt)
-  line((5.0, 0), (5.0, 0.96), stroke: (paint: black, thickness: 1.8pt))
-  line((5.0, 0.96), (5.0, 3.75), stroke: (paint: rgb("#00a88f"), thickness: 1.8pt))
-  line((4.35, 2.79), (5.0, 2.79), stroke: (paint: red, thickness: 0.6pt))
-  line((4.35, 0), (5.0, 0), stroke: (paint: red, thickness: 0.6pt))
-  line((4.78, 0), (4.78, 2.79), stroke: (paint: red, dash: "dashed", thickness: 1.1pt))
-  line((5.0, 3.75), (5.65, 3.75), stroke: (paint: rgb("#e6a800"), thickness: 0.6pt))
-  line((5.0, 0.96), (5.65, 0.96), stroke: (paint: rgb("#e6a800"), thickness: 0.6pt))
-  line((5.22, 0.96), (5.22, 3.75), stroke: (paint: rgb("#e6a800"), dash: "dashed", thickness: 1.1pt))
-  rect((4.9, 3.65), (5.1, 3.85), fill: red, stroke: none)
-  rect((4.9, 2.69), (5.1, 2.89), fill: red, stroke: none)
-  line((4.88, 0.84), (5.12, 0.84), (5.0, 1.08), close: true, fill: blue, stroke: none)
-  line((4.88, -0.12), (5.12, -0.12), (5.0, 0.12), close: true, fill: blue, stroke: none)
-  bezier((5.85, 3.85), (5.26, 3.15), (5.75, 3.35), (5.5, 3.2), mark: (end: ">"), stroke: 0.65pt)
-  bezier((1.95, 2.45), (4.72, 1.65), (2.75, 1.15), (3.55, 0.45), mark: (end: ">"), stroke: 0.65pt)
-  content((-0.2, 4.35), text(size: 8.5pt)[$|F_p|$], anchor: "east")
-  content((-0.2, 3.9), text(size: 8.5pt)[$|F_v|$], anchor: "east")
-  content((-0.2, 2.4), text(size: 8.5pt)[$F_v$], anchor: "east")
-  content((6.8, -0.3), text(size: 9pt)[$u$], anchor: "north")
-  content((3.95, 3.35), text(size: 8.5pt)[A: vite], anchor: "south-east")
-  content((6.35, 3.05), text(size: 8.5pt)[B: vite], anchor: "west")
-  content((5.85, 0.55), text(size: 8.5pt)[A: pezzo], anchor: "west")
-  content((4.45, 0.32), text(size: 8.5pt)[B: pezzo], anchor: "east")
-  content((5.85, 4.15), text(size: 8pt)[_C (carico qui al_\ _sottotesta)_], anchor: "west")
-  content((1.3, 2.95), text(size: 8pt)[_C (carico qui_\ _NON al_\ _sottotesta)_], anchor: "center")
-})])
+],[#include "figs/collegamenti-filettati-fig10.typ"])
 - per le parti serrate, invece, il carico minimo residuo $F_(p, m i n)$ scende drasticamente, aumentando in modo critico la possibilità di distacco tra le superfici ($F_(p, m i n) = 0$). In tale eventualità viene meno la tenuta o la forza di attrito tra le parti e l'intero carico esterno grava sulla vite, condizione assolutamente da evitare dal punto di vista funzionale.
 === Casi particolari: elemento elastico tra i pezzi (flange con guarnizione)
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[L'interposizione di un elemento elastico morbido tra le parti serrate, come una guarnizione, provoca un incremento molto elevato della deformabilità complessiva del pezzo $delta_p$. Sul diagramma di interferenza la caratteristica del pezzo assume una pendenza estremamente dolce, comportando che il carico esterno $C$ venga sopportato quasi interamente dalla vite ($Delta C_v tilde.eq C$).],[#canvas(length: 1cm, {
-  import draw: *
-  line((0, 0), (0, 3.85), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 0), (8.2, 0), mark: (end: ">"), stroke: 0.75pt)
-  line((0, 2.15), (5.1, 2.15), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  line((0, 0), (0.68, 3.57), stroke: 1.1pt)
-  line((0.12, 2.325), (6.5, 0), stroke: 1.1pt)
-  line((0.6, 2.15), (0.6, 3.15), stroke: 1.1pt)
-  rect((0.50, 3.05), (0.70, 3.25), fill: red, stroke: none)
-  line((0.6, 2.29), (0.49, 2.06), (0.71, 2.06), close: true, fill: blue, stroke: none)
-  content((-0.18, 3.45), text(size: 8.5pt)[$|F_p|$], anchor: "east")
-  content((-0.18, 2.95), text(size: 8.5pt)[$|F_v|$], anchor: "east")
-  content((-0.18, 2.15), text(size: 8.5pt)[$F_(v,"lim")$], anchor: "east")
-  content((0.88, 2.68), text(size: 8.5pt)[$Delta C_v approx C$], anchor: "west")
-  content((6.1, -0.22), text(size: 9pt)[$i$], anchor: "north")
-  content((4.4, 3.65), text(size: 10pt)[*_Elemento elastico tra i pezzi_*], anchor: "center")
-})])
+  align: (left + horizon, center + horizon),[L'interposizione di un elemento elastico morbido tra le parti serrate, come una guarnizione, provoca un incremento molto elevato della deformabilità complessiva del pezzo $delta_p$. Sul diagramma di interferenza la caratteristica del pezzo assume una pendenza estremamente dolce, comportando che il carico esterno $C$ venga sopportato quasi interamente dalla vite ($Delta C_v tilde.eq C$).],[#include "figs/collegamenti-filettati-fig11.typ"])
 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nelle applicazioni industriali, quali le flange bullonate per tubazioni o recipienti in pressione contenenti gas o liquidi, si adotta una configurazione che prevede l'alloggiamento della guarnizione in una specifica sede ricavata tra le due flange. Durante la fase iniziale del serraggio la coppia applicata comprime la guarnizione (che dilata trasversalmente riempiendo la sede, evitando tuttavia che sbordi nella luce tra le flange impedendone la chiusura), finché le superfici metalliche delle due flange non giungono a contatto diretto. Da tale istante in poi, la deformabilità dominante del sistema diventa quella dei due metalli a contatto e non più quella della guarnizione.
 
-],[#canvas(length: 1cm, {
-  import draw: *
-
-  // Riempimenti delle flange in sezione
-  line(
-    (0.0, 4.70), (0.0, 5.20), (1.00, 5.20), (1.08, 5.22), (1.13, 5.27),
-    (1.15, 5.35), (1.15, 6.15), (1.55, 6.15), (1.55, 4.70),
-    close: true, fill: luma(220), stroke: none
-  )
-  line(
-    (0.0, 3.95), (1.00, 3.95), (1.08, 3.93), (1.13, 3.88), (1.15, 3.80),
-    (1.15, 3.10), (1.55, 3.10), (1.55, 4.38), (1.22, 4.38), (1.22, 4.50),
-    (0.0, 4.50),
-    close: true, fill: luma(220), stroke: none
-  )
-  line(
-    (2.45, 4.55), (2.45, 6.00), (2.85, 6.00), (2.85, 5.20), (2.87, 5.12),
-    (2.92, 5.07), (3.00, 5.05), (4.00, 5.05), (4.00, 4.55),
-    close: true, fill: luma(220), stroke: none
-  )
-  line(
-    (2.45, 4.38), (2.78, 4.38), (2.78, 4.50), (4.00, 4.50), (4.00, 3.95),
-    (3.00, 3.95), (2.92, 3.93), (2.87, 3.88), (2.85, 3.80), (2.85, 3.10),
-    (2.45, 3.10),
-    close: true, fill: luma(220), stroke: none
-  )
-
-  // Fori bullone (mascherati in bianco)
-  rect((0.51, 4.70), (0.79, 5.20), fill: white, stroke: none)
-  rect((0.51, 3.95), (0.79, 4.50), fill: white, stroke: none)
-  rect((3.22, 3.95), (3.48, 5.05), fill: white, stroke: none)
-
-  // Guarnizioni (sinistra non compressa, destra compressa)
-  rect((1.22, 4.38), (1.55, 4.70), fill: rgb("#00a88f"), stroke: 0.8pt)
-  rect((2.45, 4.38), (2.78, 4.55), fill: rgb("#00a88f"), stroke: 0.8pt)
-
-  // Contorni flange
-  line(
-    (0.0, 4.70), (0.0, 5.20), (1.00, 5.20), (1.08, 5.22), (1.13, 5.27),
-    (1.15, 5.35), (1.15, 6.15), (1.55, 6.15), (1.55, 4.70),
-    close: true, stroke: 0.9pt
-  )
-  line(
-    (0.0, 3.95), (1.00, 3.95), (1.08, 3.93), (1.13, 3.88), (1.15, 3.80),
-    (1.15, 3.10), (1.55, 3.10), (1.55, 4.38), (1.22, 4.38), (1.22, 4.50),
-    (0.0, 4.50),
-    close: true, stroke: 0.9pt
-  )
-  line(
-    (2.45, 4.55), (2.45, 6.00), (2.85, 6.00), (2.85, 5.20), (2.87, 5.12),
-    (2.92, 5.07), (3.00, 5.05), (4.00, 5.05), (4.00, 4.55),
-    close: true, stroke: 0.9pt
-  )
-  line(
-    (2.45, 4.38), (2.78, 4.38), (2.78, 4.50), (4.00, 4.50), (4.00, 3.95),
-    (3.00, 3.95), (2.92, 3.93), (2.87, 3.88), (2.85, 3.80), (2.85, 3.10),
-    (2.45, 3.10),
-    close: true, stroke: 0.9pt
-  )
-
-  // Linee dei fori a sinistra
-  line((0.51, 4.70), (0.51, 5.20), stroke: 0.8pt)
-  line((0.79, 4.70), (0.79, 5.20), stroke: 0.8pt)
-  line((0.51, 3.95), (0.51, 4.50), stroke: 0.8pt)
-  line((0.79, 3.95), (0.79, 4.50), stroke: 0.8pt)
-
-  // Linee di raccordo interno attraverso il foro centrale
-  line((1.55, 6.15), (2.00, 6.15), stroke: 0.8pt)
-  line((2.00, 6.00), (2.45, 6.00), stroke: 0.8pt)
-  line((1.55, 4.70), (2.00, 4.70), stroke: 0.8pt)
-  line((2.00, 4.55), (2.45, 4.55), stroke: 0.8pt)
-  line((1.55, 4.38), (2.45, 4.38), stroke: 0.8pt)
-  line((1.55, 3.10), (2.45, 3.10), stroke: 0.8pt)
-
-  // Asse di simmetria
-  line((2.00, 2.85), (2.00, 6.35), stroke: (dash: "dash-dotted", thickness: 0.65pt))
-
-  // Bullone e dado a destra
-  line(
-    (3.22, 5.05), (3.22, 3.50), (3.26, 3.45), (3.44, 3.45), (3.48, 3.50),
-    (3.48, 5.05),
-    close: true, fill: white, stroke: 0.9pt
-  )
-  line((3.22, 4.25), (3.48, 4.25), stroke: 0.55pt)
-  line((3.22, 3.50), (3.48, 3.50), stroke: 0.55pt)
-  line((3.25, 3.45), (3.25, 4.25), stroke: 0.55pt)
-  line((3.45, 3.45), (3.45, 4.25), stroke: 0.55pt)
-
-  // Testa del bullone
-  rect((3.09, 5.05), (3.61, 5.32), fill: white, stroke: 0.9pt)
-  line((3.22, 5.05), (3.22, 5.32), stroke: 0.7pt)
-  line((3.48, 5.05), (3.48, 5.32), stroke: 0.7pt)
-
-  // Dado
-  rect((3.09, 3.68), (3.61, 3.95), fill: white, stroke: 0.9pt)
-  line((3.22, 3.68), (3.22, 3.95), stroke: 0.7pt)
-  line((3.48, 3.68), (3.48, 3.95), stroke: 0.7pt)
-
-  // Grafico forza - allungamento (in basso a destra)
-  line((4.50, 0.30), (8.55, 0.30), mark: (end: ">"), stroke: 0.8pt)
-  line((4.50, 0.30), (4.50, 2.75), mark: (end: ">"), stroke: 0.8pt)
-
-  // Curve caratteristiche
-  line((4.50, 0.30), (5.40, 2.58), stroke: 1.15pt)
-  line((5.00, 2.25), (5.70, 0.85), stroke: 1.15pt)
-  line((5.70, 0.85), (8.10, 0.30), stroke: 1.15pt)
-
-  // Linee di riferimento sul grafico
-  line((4.45, 1.95), (7.35, 1.95), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-  line((5.15, 0.15), (5.15, 2.55), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((5.70, 0.85), (5.70, 0.30), stroke: 0.6pt)
-  line((5.25, 0.85), (7.35, 0.85), stroke: 0.6pt)
-
-  // Quote F_p e F_e
-  line((6.55, 0.85), (6.55, 1.95), mark: (start: ">", end: ">"), stroke: 0.6pt)
-  line((5.35, 1.15), (5.35, 0.85), mark: (end: ">"), stroke: 0.6pt)
-  line((5.35, 0.05), (5.35, 0.30), mark: (end: ">"), stroke: 0.6pt)
-
-  // Frecce tratteggiate di collegamento
-  line(
-    (1.40, 4.54), (7.75, 4.54), (7.75, 0.50), (7.25, 0.50),
-    mark: (end: ">"), stroke: (paint: blue, dash: "dashed", thickness: 0.9pt)
-  )
-  line(
-    (3.70, 4.25), (3.70, 3.15), (5.55, 3.15), (5.55, 1.20),
-    mark: (end: ">"), stroke: (paint: red, dash: "dashed", thickness: 0.9pt)
-  )
-
-  // Etichette
-  content((4.35, 2.65), text(size: 8.5pt)[$|F_p|$], anchor: "east")
-  content((4.35, 2.30), text(size: 8.5pt)[$|F_v|$], anchor: "east")
-  content((4.40, 1.95), text(size: 8pt)[$F_(v,"lim")$], anchor: "east")
-  content((6.65, 1.40), text(size: 8.5pt)[$F_p$], anchor: "west")
-  content((5.42, 0.57), text(size: 8.5pt)[$F_e$], anchor: "west")
-  content((8.15, 0.12), text(size: 8.5pt)[$i$], anchor: "north")
-})])
+],[#include "figs/collegamenti-filettati-fig12.typ"])
 Sul diagramma di interferenza questo comportamento si traduce in una caratteristica poligonale (bilineare) per la parte: a partire dal punto di equilibrio $F_(v, "lim")$ verso destra si ha un primo tratto molto ripido (regime di contatto metallo-metallo), seguito da un cambio di pendenza oltre il quale la curva prosegue con inclinazione molto dolce (regime governato dalla sola guarnizione in seguito al distacco dei metalli). In esercizio è fondamentale dimensionare il collegamento affinché il carico esterno non porti il sistema oltre il punto di cambio di pendenza, evitando il distacco delle flange metalliche che causerebbe eccessiva cedevolezza e perdita di tenuta.
 #pagebreak()
 === Viti con carico trasversale
@@ -1442,108 +717,7 @@ Le viti non devono lavorare direttamente a taglio poiché, qualora si verifichi 
 
 $ F_(p, m i n) = frac(F_T dot.op C S, f dot.op n dot.op m) $
 
-dove $F_T$ è la forza trasversale totale, $C S$ è il coefficiente di sicurezza ($1.25 div 1.6$), $f$ è il coefficiente di attrito tra le superfici, $n$ è il numero di bulloni e $m$ è il numero di superfici di contatto fra i pezzi (ad esempio $m = 1$).],[#canvas(length: 1cm, {
-  import draw: *
-
-  line((-1.8, -2.6), (1.8, -2.6), (1.8, 1.7), (-1.8, 1.7), close: true, fill: luma(248), stroke: none)
-
-  line((-0.2, -2.6), (0.0, -2.4), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-0.5, -2.6), (0.0, -2.1), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-0.8, -2.6), (0.0, -1.8), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.1, -2.6), (0.0, -1.5), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.4, -2.6), (0.0, -1.2), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.7, -2.6), (0.0, -0.9), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, -2.4), (0.0, -0.6), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, -2.1), (0.0, -0.3), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, -1.8), (0.0, 0.0), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, -1.5), (0.0, 0.3), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, -1.2), (0.0, 0.6), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, -0.9), (0.0, 0.9), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, -0.6), (0.0, 1.2), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, -0.3), (0.0, 1.5), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, 0.0), (-0.1, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, 0.3), (-0.4, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, 0.6), (-0.7, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, 0.9), (-1.0, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, 1.2), (-1.3, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((-1.8, 1.5), (-1.6, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-
-  line((1.6, -2.6), (1.8, -2.4), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((1.3, -2.6), (1.8, -2.1), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((1.0, -2.6), (1.8, -1.8), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.7, -2.6), (1.8, -1.5), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.4, -2.6), (1.8, -1.2), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.1, -2.6), (1.8, -0.9), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, -2.4), (1.8, -0.6), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, -2.1), (1.8, -0.3), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, -1.8), (1.8, 0.0), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, -1.5), (1.8, 0.3), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, -1.2), (1.8, 0.6), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, -0.9), (1.8, 0.9), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, -0.6), (1.8, 1.2), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, -0.3), (1.8, 1.5), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, 0.0), (1.7, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, 0.3), (1.4, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, 0.6), (1.1, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, 0.9), (0.8, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, 1.2), (0.5, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-  line((0.0, 1.5), (0.2, 1.7), stroke: (paint: luma(130), thickness: 0.45pt))
-
-  line((-1.8, -2.6), (1.8, -2.6), (1.8, 1.7), (-1.8, 1.7), close: true, stroke: 0.8pt)
-  line((0.0, -2.6), (0.0, 1.7), stroke: 1.0pt)
-
-  line((-1.8, -0.55), (1.8, -0.55), (1.8, 0.55), (-1.8, 0.55), close: true, fill: white, stroke: none)
-  line((-1.8, 0.55), (1.8, 0.55), stroke: 0.8pt)
-  line((-1.8, -0.55), (1.8, -0.55), stroke: 0.8pt)
-
-  line((-1.8, -0.48), (3.2, -0.48), (3.3, -0.38), (3.3, 0.38), (3.2, 0.48), (-1.8, 0.48), close: true, fill: white, stroke: 0.9pt)
-  line((0.35, -0.48), (0.35, 0.48), stroke: 0.75pt)
-  line((0.35, 0.38), (1.8, 0.38), stroke: 0.6pt)
-  line((0.35, -0.38), (1.8, -0.38), stroke: 0.6pt)
-  line((0.35, 0.38), (0.15, 0.48), stroke: 0.6pt)
-  line((0.35, -0.38), (0.15, -0.48), stroke: 0.6pt)
-  line((2.7, 0.38), (3.2, 0.38), stroke: 0.6pt)
-  line((2.7, -0.38), (3.2, -0.38), stroke: 0.6pt)
-  line((3.2, -0.48), (3.2, 0.48), stroke: 0.7pt)
-
-  line((-2.66, -0.88), (-2.56, -1.05), (-1.8, -1.05), (-1.8, 1.05), (-2.56, 1.05), (-2.66, 0.88), close: true, fill: white, stroke: none)
-  line((-2.56, 1.05), (-1.8, 1.05), stroke: 1.0pt)
-  line((-2.58, 0.52), (-1.8, 0.52), stroke: 0.9pt)
-  line((-2.58, -0.52), (-1.8, -0.52), stroke: 0.9pt)
-  line((-2.56, -1.05), (-1.8, -1.05), stroke: 1.0pt)
-  line((-1.8, -1.05), (-1.8, 1.05), stroke: 1.0pt)
-  arc((-2.26, 0.785), start: 138deg, stop: 222deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
-  arc((-1.51, 0.0), start: 154deg, stop: 206deg, radius: 1.19, anchor: "origin", stroke: 1.0pt)
-  arc((-2.26, -0.785), start: 138deg, stop: 222deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
-  line((-2.70, -0.785), (-2.70, 0.785), stroke: 0.85pt)
-
-  line((1.90, -1.05), (2.56, -1.05), (2.70, -0.785), (2.70, 0.785), (2.56, 1.05), (1.90, 1.05), (1.80, 0.785), (1.80, -0.785), close: true, fill: white, stroke: none)
-  line((1.90, 1.05), (2.56, 1.05), stroke: 1.0pt)
-  line((1.92, 0.52), (2.58, 0.52), stroke: 0.9pt)
-  line((1.92, -0.52), (2.58, -0.52), stroke: 0.9pt)
-  line((1.90, -1.05), (2.56, -1.05), stroke: 1.0pt)
-  arc((2.20, 0.785), start: 138deg, stop: 222deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
-  arc((2.99, 0.0), start: 154deg, stop: 206deg, radius: 1.19, anchor: "origin", stroke: 1.0pt)
-  arc((2.20, -0.785), start: 138deg, stop: 222deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
-  arc((2.26, 0.785), start: -42deg, stop: 42deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
-  arc((1.51, 0.0), start: -26deg, stop: 26deg, radius: 1.19, anchor: "origin", stroke: 1.0pt)
-  arc((2.26, -0.785), start: -42deg, stop: 42deg, radius: 0.40, anchor: "origin", stroke: 1.0pt)
-  line((1.80, -0.785), (1.80, 0.785), stroke: 0.85pt)
-  line((2.70, -0.785), (2.70, 0.785), stroke: 0.85pt)
-
-  line((-2.95, 0.0), (3.55, 0.0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-
-  line((-0.40, 2.55), (-0.40, 1.70), mark: (end: ">"), stroke: 1.3pt)
-  content((-0.55, 2.18), text(size: 8.5pt)[$F_T$], anchor: "east")
-
-  line((-0.20, -2.15), (-0.20, -1.25), mark: (end: ">"), stroke: 1.3pt)
-  line((0.12, -1.96), (1.42, -1.96), (1.42, -1.44), (0.12, -1.44), close: true, fill: white, stroke: none)
-  content((0.77, -1.70), text(size: 8pt)[$f dot F_("p,min")$], anchor: "center")
-
-  line((0.0, -3.12), (0.30, -2.60), (0.60, -3.12), close: true, stroke: 1.1pt)
-  line((0.60, -3.12), (0.90, -2.60), (1.20, -3.12), close: true, stroke: 1.1pt)
-  line((1.20, -3.12), (1.50, -2.60), (1.80, -3.12), close: true, stroke: 1.1pt)
-})])
+dove $F_T$ è la forza trasversale totale, $C S$ è il coefficiente di sicurezza ($1.25 div 1.6$), $f$ è il coefficiente di attrito tra le superfici, $n$ è il numero di bulloni e $m$ è il numero di superfici di contatto fra i pezzi (ad esempio $m = 1$).],[#include "figs/collegamenti-filettati-fig13.typ"])
 
 #strong[Viti con gambo calibrato:]
   #grid(
@@ -1555,117 +729,7 @@ $ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi
 
 $ sigma = frac(F_T, n dot.op d dot.op s) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m $
 
-dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superficie d'appoggio (spessore del pezzo sollecitato).],[#canvas(length: 1cm, {
-  import draw: *
-
-  rect((-1.5, -1.8), (1.5, 1.8), fill: white, stroke: none)
-  rect((-1.5, 0.52), (1.5, 0.72), fill: gray.transparentize(25%), stroke: 0.8pt)
-  rect((-1.5, -0.72), (1.5, -0.52), fill: gray.transparentize(25%), stroke: 0.8pt)
-
-  line((-0.18, 0.72), (0, 0.9), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-0.43, 0.72), (0, 1.15), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-0.68, 0.72), (0, 1.4), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-0.93, 0.72), (0, 1.65), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.18, 0.72), (-0.1, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.43, 0.72), (-0.35, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.5, 0.9), (-0.6, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.5, 1.15), (-0.85, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.5, 1.4), (-1.1, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.5, 1.65), (-1.35, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-
-  line((1.32, 0.72), (1.5, 0.9), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((1.07, 0.72), (1.5, 1.15), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0.82, 0.72), (1.5, 1.4), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0.57, 0.72), (1.5, 1.65), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0.32, 0.72), (1.4, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0.07, 0.72), (1.15, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0, 0.9), (0.9, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0, 1.15), (0.65, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0, 1.4), (0.4, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0, 1.65), (0.15, 1.8), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-
-  line((-0.18, -1.8), (0, -1.62), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-0.43, -1.8), (0, -1.37), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-0.68, -1.8), (0, -1.12), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-0.93, -1.8), (0, -0.87), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.18, -1.8), (-0.1, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.43, -1.8), (-0.35, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.5, -1.62), (-0.6, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.5, -1.37), (-0.85, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.5, -1.12), (-1.1, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((-1.5, -0.87), (-1.35, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-
-  line((1.32, -1.8), (1.5, -1.62), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((1.07, -1.8), (1.5, -1.37), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0.82, -1.8), (1.5, -1.12), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0.57, -1.8), (1.5, -0.87), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0.32, -1.8), (1.4, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0.07, -1.8), (1.15, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0, -1.62), (0.9, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0, -1.37), (0.65, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0, -1.12), (0.4, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-  line((0, -0.87), (0.15, -0.72), stroke: (paint: black.lighten(30%), thickness: 0.45pt))
-
-  rect((-1.5, 0.72), (0, 1.8), stroke: 1pt)
-  rect((0, 0.72), (1.5, 1.8), stroke: 1pt)
-  rect((-1.5, -1.8), (0, -0.72), stroke: 1pt)
-  rect((0, -1.8), (1.5, -0.72), stroke: 1pt)
-
-  rect((-1.5, -0.44), (2.65, 0.44), fill: white, stroke: none)
-  line((-1.5, 0.44), (2.65, 0.44), stroke: 0.9pt)
-  line((-1.5, -0.44), (2.65, -0.44), stroke: 0.9pt)
-  line((0.45, -0.44), (0.45, 0.44), stroke: 0.5pt)
-  line((0.45, 0.36), (2.65, 0.36), stroke: 0.5pt)
-  line((0.45, -0.36), (2.65, -0.36), stroke: 0.5pt)
-  line((2.65, -0.44), (2.65, 0.44), stroke: 0.5pt)
-  line((2.65, 0.44), (2.75, 0.34), (2.75, -0.34), (2.65, -0.44), stroke: 0.9pt)
-
-  rect((-1.82, -0.88), (-1.5, 0.88), fill: white, stroke: none)
-  arc((-1.82, 0), start: 90deg, stop: 270deg, radius: (0.18, 0.44), anchor: "origin", fill: white, stroke: 0.9pt)
-  arc((-1.82, 0.66), start: 90deg, stop: 270deg, radius: (0.18, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
-  arc((-1.82, -0.66), start: 90deg, stop: 270deg, radius: (0.18, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
-  line((-2.0, -0.66), (-2.0, 0.66), stroke: 0.9pt)
-  line((-1.82, 0.88), (-1.5, 0.88), (-1.5, -0.88), (-1.82, -0.88), stroke: 0.9pt)
-  line((-1.82, 0.44), (-1.5, 0.44), stroke: 0.8pt)
-  line((-1.82, -0.44), (-1.5, -0.44), stroke: 0.8pt)
-
-  rect((1.62, -0.88), (2.03, 0.88), fill: white, stroke: none)
-  arc((1.62, 0), start: 90deg, stop: 270deg, radius: (0.12, 0.44), anchor: "origin", fill: white, stroke: 0.9pt)
-  arc((1.62, 0.66), start: 90deg, stop: 270deg, radius: (0.12, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
-  arc((1.62, -0.66), start: 90deg, stop: 270deg, radius: (0.12, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
-  arc((2.03, 0), start: -90deg, stop: 90deg, radius: (0.12, 0.44), anchor: "origin", fill: white, stroke: 0.9pt)
-  arc((2.03, 0.66), start: -90deg, stop: 90deg, radius: (0.12, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
-  arc((2.03, -0.66), start: -90deg, stop: 90deg, radius: (0.12, 0.22), anchor: "origin", fill: white, stroke: 0.9pt)
-  line((1.5, -0.66), (1.5, 0.66), stroke: 0.9pt)
-  line((2.15, -0.66), (2.15, 0.66), stroke: 0.9pt)
-  line((1.62, 0.88), (2.03, 0.88), stroke: 0.9pt)
-  line((1.62, -0.88), (2.03, -0.88), stroke: 0.9pt)
-  line((1.62, 0.44), (2.03, 0.44), stroke: 0.8pt)
-  line((1.62, -0.44), (2.03, -0.44), stroke: 0.8pt)
-
-  line((-2.2, 0), (3.0, 0), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-
-  line((0, 2.7), (0, 1.82), mark: (end: ">", fill: black), stroke: 1.4pt)
-  content((-0.25, 2.3), text(size: 9pt)[$F_T$], anchor: "east")
-
-  line((0, -2.7), (0, -1.82), mark: (end: ">", fill: black), stroke: 1.4pt)
-  content((0.25, -2.3), text(size: 9pt)[$F_T$], anchor: "west")
-
-  line((-1.5, -1.8), (-1.5, -3.55), stroke: 0.5pt)
-  line((1.5, -1.8), (1.5, -3.55), stroke: 0.5pt)
-  line((-1.5, -3.4), (1.5, -3.4), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
-  content((0, -3.25), text(size: 9pt)[$L_p$], anchor: "south")
-
-  line((-1.5, 0.72), (-3.35, 0.72), stroke: 0.5pt)
-  line((-1.5, -0.72), (-3.35, -0.72), stroke: 0.5pt)
-  line((-3.2, -0.72), (-3.2, 0.72), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
-  content((-3.3, 0), text(size: 9pt)[$d_e$], anchor: "east")
-
-  line((-1.5, 0.52), (-2.55, 0.52), stroke: 0.5pt)
-  line((-1.5, -0.52), (-2.55, -0.52), stroke: 0.5pt)
-  line((-2.4, -0.52), (-2.4, 0.52), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
-  content((-2.5, 0), text(size: 9pt)[$d_i$], anchor: "east")
-})])
+dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superficie d'appoggio (spessore del pezzo sollecitato).],[#include "figs/collegamenti-filettati-fig14.typ"])
 
 #strong[Inserzione di bussole:]
   #grid(
@@ -1675,129 +739,4 @@ dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superfic
 
 $ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi dot.op (d_e - d_i)^2 ) lt.eq tau_("amm"),  quad tau_("amm") = 0.4 div 0.6 R_(p 0.2) $
 
-$ sigma = frac(F_T, d_e dot.op L_p dot.op n) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m $],[#canvas(length: 1cm, {
-  import draw: *
-
-  line((-0.25, 0.50), (0.00, 0.75), stroke: 0.5pt)
-  line((-0.50, 0.50), (0.00, 1.00), stroke: 0.5pt)
-  line((-0.75, 0.50), (0.00, 1.25), stroke: 0.5pt)
-  line((-1.00, 0.50), (0.00, 1.50), stroke: 0.5pt)
-  line((-1.25, 0.50), (-0.05, 1.70), stroke: 0.5pt)
-  line((-1.50, 0.50), (-0.30, 1.70), stroke: 0.5pt)
-  line((-1.70, 0.55), (-0.55, 1.70), stroke: 0.5pt)
-  line((-1.70, 0.80), (-0.80, 1.70), stroke: 0.5pt)
-  line((-1.70, 1.05), (-1.05, 1.70), stroke: 0.5pt)
-  line((-1.70, 1.30), (-1.30, 1.70), stroke: 0.5pt)
-  line((-1.70, 1.55), (-1.55, 1.70), stroke: 0.5pt)
-
-  line((-0.20, -1.70), (0.00, -1.50), stroke: 0.5pt)
-  line((-0.45, -1.70), (0.00, -1.25), stroke: 0.5pt)
-  line((-0.70, -1.70), (0.00, -1.00), stroke: 0.5pt)
-  line((-0.95, -1.70), (0.00, -0.75), stroke: 0.5pt)
-  line((-1.20, -1.70), (0.00, -0.50), stroke: 0.5pt)
-  line((-1.45, -1.70), (-0.25, -0.50), stroke: 0.5pt)
-  line((-1.70, -1.70), (-0.50, -0.50), stroke: 0.5pt)
-  line((-1.70, -1.45), (-0.75, -0.50), stroke: 0.5pt)
-  line((-1.70, -1.20), (-1.00, -0.50), stroke: 0.5pt)
-  line((-1.70, -0.95), (-1.25, -0.50), stroke: 0.5pt)
-  line((-1.70, -0.70), (-1.50, -0.50), stroke: 0.5pt)
-
-  line((1.50, 0.50), (1.70, 0.70), stroke: 0.5pt)
-  line((1.25, 0.50), (1.70, 0.95), stroke: 0.5pt)
-  line((1.00, 0.50), (1.70, 1.20), stroke: 0.5pt)
-  line((0.75, 0.50), (1.70, 1.45), stroke: 0.5pt)
-  line((0.50, 0.50), (1.70, 1.70), stroke: 0.5pt)
-  line((0.25, 0.50), (1.45, 1.70), stroke: 0.5pt)
-  line((0.00, 0.50), (1.20, 1.70), stroke: 0.5pt)
-  line((0.00, 0.75), (0.95, 1.70), stroke: 0.5pt)
-  line((0.00, 1.00), (0.70, 1.70), stroke: 0.5pt)
-  line((0.00, 1.25), (0.45, 1.70), stroke: 0.5pt)
-  line((0.00, 1.50), (0.20, 1.70), stroke: 0.5pt)
-
-  line((1.55, -1.70), (1.70, -1.55), stroke: 0.5pt)
-  line((1.30, -1.70), (1.70, -1.30), stroke: 0.5pt)
-  line((1.05, -1.70), (1.70, -1.05), stroke: 0.5pt)
-  line((0.80, -1.70), (1.70, -0.80), stroke: 0.5pt)
-  line((0.55, -1.70), (1.70, -0.55), stroke: 0.5pt)
-  line((0.30, -1.70), (1.50, -0.50), stroke: 0.5pt)
-  line((0.05, -1.70), (1.25, -0.50), stroke: 0.5pt)
-  line((0.00, -1.50), (1.00, -0.50), stroke: 0.5pt)
-  line((0.00, -1.25), (0.75, -0.50), stroke: 0.5pt)
-  line((0.00, -1.00), (0.50, -0.50), stroke: 0.5pt)
-  line((0.00, -0.75), (0.25, -0.50), stroke: 0.5pt)
-
-  rect((-1.70, 0.50), (0.00, 1.70), stroke: 1pt)
-  rect((-1.70, -1.70), (0.00, -0.50), stroke: 1pt)
-  rect((0.00, 0.50), (1.70, 1.70), stroke: 1pt)
-  rect((0.00, -1.70), (1.70, -0.50), stroke: 1pt)
-
-  arc((-2.42, 0.7125), start: 90deg, stop: 270deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
-  arc((-2.42, 0.00), start: 90deg, stop: 270deg, radius: (0.18, 0.475), anchor: "origin", stroke: 1pt)
-  arc((-2.42, -0.7125), start: 90deg, stop: 270deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
-  line((-2.60, -0.7125), (-2.60, 0.7125), stroke: 1pt)
-  line((-2.42, 0.95), (-1.70, 0.95), stroke: 1pt)
-  line((-2.42, 0.475), (-1.70, 0.475), stroke: 0.8pt)
-  line((-2.42, -0.475), (-1.70, -0.475), stroke: 0.8pt)
-  line((-2.42, -0.95), (-1.70, -0.95), stroke: 1pt)
-  line((-1.70, -0.95), (-1.70, 0.95), stroke: 1pt)
-
-  line((-1.70, 0.40), (-1.55, 0.40), stroke: 1pt)
-  line((-1.70, -0.40), (-1.55, -0.40), stroke: 1pt)
-  line((-1.55, -0.40), (-1.55, 0.40), stroke: 0.7pt)
-  line((-1.55, 0.40), (-1.40, 0.50), stroke: 1pt)
-  line((-1.55, -0.40), (-1.40, -0.50), stroke: 1pt)
-  line((-1.40, -0.50), (-1.40, 0.50), stroke: 0.7pt)
-
-  line((-1.40, 0.50), (0.40, 0.50), stroke: 1pt)
-  line((-1.40, -0.50), (0.40, -0.50), stroke: 1pt)
-  line((0.40, -0.50), (0.40, 0.50), stroke: 0.7pt)
-  line((0.40, 0.50), (0.55, 0.40), stroke: 1pt)
-  line((0.40, -0.50), (0.55, -0.40), stroke: 1pt)
-  line((0.55, -0.40), (0.55, 0.40), stroke: 0.7pt)
-
-  line((0.55, 0.40), (1.70, 0.40), stroke: 1pt)
-  line((0.55, -0.40), (1.70, -0.40), stroke: 1pt)
-  line((0.55, 0.32), (1.70, 0.32), stroke: 0.55pt)
-  line((0.55, -0.32), (1.70, -0.32), stroke: 0.55pt)
-
-  arc((1.88, 0.7125), start: 90deg, stop: 270deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
-  arc((1.88, 0.00), start: 90deg, stop: 270deg, radius: (0.18, 0.475), anchor: "origin", stroke: 1pt)
-  arc((1.88, -0.7125), start: 90deg, stop: 270deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
-  line((1.70, -0.7125), (1.70, 0.7125), stroke: 1pt)
-
-  arc((2.42, 0.7125), start: -90deg, stop: 90deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
-  arc((2.42, 0.00), start: -90deg, stop: 90deg, radius: (0.18, 0.475), anchor: "origin", stroke: 1pt)
-  arc((2.42, -0.7125), start: -90deg, stop: 90deg, radius: (0.18, 0.2375), anchor: "origin", stroke: 1pt)
-  line((2.60, -0.7125), (2.60, 0.7125), stroke: 1pt)
-
-  line((1.88, 0.95), (2.42, 0.95), stroke: 1pt)
-  line((1.88, 0.475), (2.42, 0.475), stroke: 0.8pt)
-  line((1.88, -0.475), (2.42, -0.475), stroke: 0.8pt)
-  line((1.88, -0.95), (2.42, -0.95), stroke: 1pt)
-
-  line((2.60, 0.40), (3.10, 0.40), stroke: 1pt)
-  line((2.60, -0.40), (3.10, -0.40), stroke: 1pt)
-  line((2.60, 0.32), (3.20, 0.32), stroke: 0.55pt)
-  line((2.60, -0.32), (3.20, -0.32), stroke: 0.55pt)
-  line((3.10, -0.40), (3.10, 0.40), stroke: 0.55pt)
-  line((3.10, 0.40), (3.20, 0.32), stroke: 1pt)
-  line((3.10, -0.40), (3.20, -0.32), stroke: 1pt)
-  line((3.20, -0.32), (3.20, 0.32), stroke: 1pt)
-
-  line((-2.85, 0.00), (3.50, 0.00), stroke: (dash: "dash-dotted", thickness: 0.6pt))
-
-  line((-0.70, -0.50), (-0.70, 0.50), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
-  rect((-0.85, -0.18), (-0.55, 0.18), fill: white, stroke: none)
-  content((-0.70, 0.00), text(size: 8.5pt)[$d$])
-
-  line((-1.40, -0.50), (-1.40, -2.45), stroke: 0.55pt)
-  line((0.40, -0.50), (0.40, -2.45), stroke: 0.55pt)
-  line((-1.40, -2.25), (0.40, -2.25), mark: (start: ">", end: ">", fill: black), stroke: 0.6pt)
-  content((-0.50, -2.14), text(size: 8.5pt)[$s$], anchor: "south")
-
-  line((-0.30, 2.55), (-0.30, 1.72), mark: (end: ">", fill: black), stroke: 1.5pt)
-  content((-0.48, 2.15), text(size: 9pt)[$F_T$], anchor: "east")
-
-  line((0.30, -2.55), (0.30, -1.72), mark: (end: ">", fill: black), stroke: 1.5pt)
-  content((0.48, -2.15), text(size: 9pt)[$F_T$], anchor: "west")
-})])
+$ sigma = frac(F_T, d_e dot.op L_p dot.op n) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m $],[#include "figs/collegamenti-filettati-fig15.typ"])

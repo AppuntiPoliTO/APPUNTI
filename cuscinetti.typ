@@ -47,14 +47,14 @@ Le superfici di contatto tra piste e corpi volventi possiedono curvature specifi
 Il processo di assemblaggio di un classico cuscinetto radiale a sfere sfrutta la deformabilità elastica dei materiali. Inizialmente, l'anello interno viene posizionato concentricamente all'interno dell'anello esterno. I corpi volventi vengono inseriti uno ad uno nello spazio compreso tra le due piste e raggruppati da un solo lato della circonferenza. 
 Per inserire le ultime sfere e chiudere il sistema, si applica una forza che deforma e ovalizza moderatamente l'anello esterno, senza oltrepassare il limite elastico del materiale. Questa deformazione crea il gioco necessario per permettere all'anello interno di sfilare leggermente e accogliere i corpi restanti. Successivamente, le sfere vengono distribuite in modo uniforme lungo l'intera circonferenza. Infine, le due semiparti della gabbia vengono accostate dai lati opposti e vincolate tra loro (ad esempio tramite rivettatura), imprigionando le sfere e fissandone la distanza relativa.
 
-== Criteri di Scelta e Tipologie di Carico
+=== Criteri di Scelta e Tipologie di Carico
 La scelta del tipo di cuscinetto è dettata da fattori spaziali, dalle velocità massime di rotazione e, soprattutto, dalla direzione del carico applicato. I carichi si dividono in:
 - #strong[Radiale:] forza diretta perpendicolarmente all'asse di rotazione.
 - #strong[Assiale:] forza diretta parallelamente all'asse di rotazione.
 - #strong[Combinato:] azione simultanea di forze radiali e assiali.
 - #strong[Momenti flettenti:] sollecitazioni che tendono a far ruotare e disassare l'anello interno rispetto a quello esterno (ribaltamento).
 
-=== Cuscinetti per Carichi Radiali
+==== Cuscinetti per Carichi Radiali
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -72,7 +72,7 @@ I #strong[cuscinetti a rullini] impiegano corpi volventi cilindrici di piccolo d
 
 I #strong[cuscinetti a rulli orientabili a botte] presentano rulli con un profilo leggermente bombato e una pista dell'anello esterno sferica. Questa geometria garantisce un'elevata capacità di carico radiale (grazie all'estesa linea di contatto) e permette un autoadattamento in presenza di momenti flettenti o errori di allineamento dell'albero, consentendo all'anello interno di basculare senza sovraccaricare i bordi dei rulli.
 #pagebreak()
-=== Cuscinetti per Carichi Assiali
+==== Cuscinetti per Carichi Assiali
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -80,7 +80,7 @@ I #strong[cuscinetti a rulli orientabili a botte] presentano rulli con un profil
 Se si posiziona un anello solidale al rotore e l'altro solidale allo statore, il sistema è in grado di sviluppare una reazione vincolare in un'unica direzione. ],[#include "figs/cuscinetti/cuscinetti-fig02.typ"])
 Per gestire carichi assiali bidirezionali si ricorre a un sistema multiplo a tre anelli: un anello centrale collegato forzatamente all'albero e due anelli laterali (superiore e inferiore) vincolati allo statore. In base al verso di applicazione del carico, l'anello centrale andrà a comprimere la corona di sfere superiore o quella inferiore.
 
-=== Cuscinetti per Carichi Combinati (Obliqui)
+==== Cuscinetti per Carichi Combinati (Obliqui)
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
@@ -89,12 +89,12 @@ Per gestire carichi assiali bidirezionali si ricorre a un sistema multiplo a tre
 ])
 Data la loro geometria, questi cuscinetti reagiscono al carico assiale in un solo verso; un carico opposto comporterebbe lo sfilamento dell'anello privo di bordino di ritegno.
 Per ottenere una reazione bidirezionale e bloccare eventuali momenti di ribaltamento, si ricorre a soluzioni a doppia corona di sfere (integrate nello stesso anello) oppure al montaggio in coppia di due cuscinetti obliqui singoli (configurazioni a "O" o ad "X").
-=== Montaggio e Precarico
+==== Montaggio e Precarico
 I cuscinetti obliqui lavorano al meglio quando sottoposti a un precarico assiale. Questo precarico forza gli anelli a chiudersi sui corpi volventi, annullando i giochi interni, distribuendo uniformemente le tensioni sulle superfici di contatto e garantendo la massima precisione meccanica della retta di azione inclinata.
 Durante l'accoppiamento dei cuscinetti, il calibramento del precarico viene effettuato serrando oppurtunatamente delle ghiere filettate, le quali spingono in direzione assiale. 
 Esiste una regola aurea nel montaggio (e smontaggio) dei cuscinetti: la forza di piantaggio (tramite martello e distanziali o presse) deve essere applicata esclusivamente sull'anello che va accoppiato con interferenza. Ad esempio, se si monta il cuscinetto nell'alloggiamento, si batte sull'anello esterno; se si pianta sull'albero, si batte sull'anello interno. Scaricare la forza di montaggio passando attraverso i corpi volventi genera la punzonatura delle piste, innescando precocemente fenomeni di fatica e rottura.
 
-== Cuscinetti a Corpi Volventi - Danneggiamento
+== Danneggiamento
 Per effettuare il calcolo di durata dei cuscinetti a corpi volventi è fondamentale analizzare le forme di cedimento e danneggiamento a cui vanno incontro durante l'esercizio. Comprendere queste fenomenologie permette di calcolare la durata in funzione dei carichi dinamici e di verificare il coefficiente di sicurezza statico.
 === Cedimento per fatica
 Il cedimento principale e più tipico nei cuscinetti è il cedimento per fatica (Rolling Contact Fatigue). I corpi volventi e le piste, durante il funzionamento, sono soggetti a tensioni di contatto fortemente variabili nel tempo, poiché i punti di contatto cambiano costantemente al variare della posizione degli elementi.
@@ -161,7 +161,7 @@ Per prevenire la #emph[fretting corrosion] è essenziale stabilire quale tra gli
 
 Il concetto per limitare questo danno si estende a tutta la meccanica (es. sistemi di connettori in microelettronica): qualora sia presente un'azione vibratoria o dinamica all'interfaccia, è necessario rendere sufficientemente flessibile l'elemento di vincolo in sé, affinché il sistema deformato segua le traslazioni o rotazioni senza originare scorrimento (attrito radente locale) all'interfaccia di contatto vera e propria.
 
-== Cuscinetti a Corpi Volventi - Calcoli e prestazioni in esercizio
+== Calcoli e prestazioni in esercizio
 === Calcolo della durata dei cuscinetti: Formula base (ISO)
 #grid(
   columns: (1fr, 1fr),
@@ -287,7 +287,7 @@ La #strong[velocità di rotazione massima] è invece imposta dalle temperature o
 In fase di dimensionamento dell'attuazione motrice, è indispensabile stimare la resistenza all'avviamento. Utilizzando come approssimazione il caso di carico modesto ($P < 0.1 C$), si calcola il #strong[momento di attrito]:
 $ M_("attrito") = 0.5 mu F d $
 Dove $mu$ varia tra $0.0015$ e $0.0050$ in base alla geometria del componente, $F$ è il carico dinamico equivalente e $d$ è il diametro del foro interno. Tale momento, sommato a quello dissipato da eventuali guarnizioni striscianti, si somma alla coppia inerziale che l'utenza e la motrice devono superare per avviare l'albero dallo stato di quiete.
-== Lezione 08: Cuscinetti a Corpi Volventi - Criteri di Montaggio
+== Criteri di Montaggio
 
 === Teoria
 

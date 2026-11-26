@@ -90,8 +90,7 @@ Durante la rotazione relativa dei due corpi, la posizione del *punto di contatto
 
 #v(1em)
 
-== Il profilo ad evolvente di cerchio
-
+=== Il profilo ad evolvente di cerchio
 Tra le infinite curve matematiche che soddisfano la condizione di coniugazione, il *profilo ad evolvente di cerchio* è quello universalmente adottato nelle costruzioni meccaniche poiché consente di ottenere un'*unica retta d'azione fissa nello spazio*, lungo la quale si trovano tutti i punti di contatto istantaneo tra le due ruote.
 
 *Limiti di un profilo coniugato generico* \
@@ -101,8 +100,7 @@ Tra le infinite curve matematiche che soddisfano la condizione di coniugazione, 
     Con l'evolvente di cerchio la retta d'azione (che interseca sempre in $P$ la congiungente dei centri $O$ e $O'$) resta *fissa ed invariabile nel tempo*, coincidendo con la tangente comune ai due cerchi di base: il punto di contatto si muove semplicemente avanti e indietro lungo tale segmento mentre scorre sul fianco del dente. La forza scambiata mantiene così una *direzione costante*, rendendo ben determinate le componenti tangenziali, radiali ed assiali. Inoltre, l'evolvente è descritta da una funzione matematica semplice e analiticamente nota, che agevola i calcoli e il tracciamento geometrico.
 
 
-== Generazione geometrica e cinematica dell'evolvente
-
+=== Generazione geometrica e cinematica dell'evolvente
  il profilo ad evolvente può essere interpretato fisicamente come la traccia lasciata su un'ala cartacea $B$ (solidale al contorno di un cilindro di base ideale $A$) quando il cilindro ruota, da una punta scrivente mantenuta in posizione $b$ a distanza fissa dal punto di tangenza $e$ (come se appartenesse a un tratto rigido che si svolge dal cilindro).
 
 #grid(
@@ -110,8 +108,7 @@ Tra le infinite curve matematiche che soddisfano la condizione di coniugazione, 
   column-gutter: 1.5em,
   align: (left + horizon, center + horizon),
   [
-==== Elementi del tracciamento
-    
+===== Elementi del tracciamento    
     / Cilindro (o cerchio) di base ($A$): disco ideale di centro $O$ attorno al quale si avvolge il filo generatore.
     / Piano solidale ($B$): settore anulare solidale al disco $A$ su cui viene tracciata la curva del fianco del dente.
     / Filo inestensibile ($f$-$e$-$d$): avvolto sul disco nel tratto $f$-$e$ e mantenuto perfettamente teso, rettilineo e tangente al cerchio di base nel punto $e$.
@@ -134,8 +131,7 @@ Si noti che l'evolvente di cerchio così generata *non è un arco di circonferen
   + Un *contatto continuo e regolare* nel tempo, privo di urti o saltellamenti.
   + Un *rapporto di trasmissione rigorosamente costante* tra le velocità angolari delle due ruote, che si mantiene tale *anche in presenza di piccole variazioni dell'interasse* (distanza tra i centri $O$ e $O'$) dovute a tolleranze di montaggio o inflessioni degli alberi.
 
-=== Accoppiamento cinematico tra due ruote ad evolvente
-
+==== Accoppiamento cinematico tra due ruote ad evolvente
 Nel caso dell'ingranamento tra due ruote dentate, la geometria che governa la cinematica della trasmissione si fonda sull'interazione di tre elementi geometrici fondamentali:
 
 / Circonferenze primitive (tratteggiate): rappresentano il comportamento di due cilindri ideali premuti l'uno contro l'altro con un punto di contatto permanente in $P$. Ruotando senza strisciamento, essi esprimono in $P$ una velocità periferica comune puramente tangenziale (priva di componenti radiali); il rapporto tra i loro raggi determina il *rapporto delle velocità angolari* tra le due ruote.
@@ -172,8 +168,7 @@ Nel caso dell'ingranamento tra due ruote dentate, la geometria che governa la ci
 
 #v(1em)
 
-==== Relazioni cinematiche e geometriche fondamentali
-
+===== Relazioni cinematiche e geometriche fondamentali
 Dallo studio dell'accoppiamento ad evolvente di cerchio discendono tre proprietà analitiche fondamentali:
 
 #set enum(numbering: "a)")
@@ -191,8 +186,7 @@ Dallo studio dell'accoppiamento ad evolvente di cerchio discendono tre propriet�
   column-gutter: 1.5em,
   align: (left + horizon, center + horizon),
   [
-==== Parametri geometrici
-    
+===== Parametri geometrici    
     / Centro di rotazione ($O$): asse fisso della ruota dentata.
     / Punto primitivo ($P$): punto di tangenza sulla circonferenza primitiva, per il quale passano sia la tangente orizzontale sia la linea di pressione.
     / Raggio primitivo ($r$): raggio della circonferenza primitiva (tratteggiata).
@@ -220,8 +214,7 @@ Dallo studio dell'accoppiamento ad evolvente di cerchio discendono tre propriet�
 
 //da qui revisiona
 
-== Geometria e proprietà delle ruote dentate
-
+=== Geometria e proprietà delle ruote dentate
 Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel vano compreso tra due denti consecutivi della ruota coniugata. È quindi indispensabile attribuire al dente un'*estensione radiale finita e calibrata* affinché il punto di contatto possa scorrere liberamente sul fianco per tutta la durata dell'angolo di rotazione previsto, il quale risulta suddiviso in *angolo di accesso* (prima del centro di istantanea rotazione $P$) e *angolo di recesso* (dopo $P$). Tale proporzionamento deve evitare sia condizioni di *interferenza o incastro* geometrico, sia condizioni eccessivamente lasche che impedirebbero di mantenere la continuità del contatto lungo il *segmento di ingranamento* $a$-$b$.
 
 #v(0.5em)
@@ -241,7 +234,7 @@ Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel
   ],
   [
     \
-=== Le quattro circonferenze caratteristiche
+==== Le quattro circonferenze caratteristiche
     Procedendo dall'interno verso l'esterno della ruota dentata, la geometria radiale del dente è scandita da quattro circonferenze fondamentali:
 
     #v(0.5em)
@@ -266,17 +259,16 @@ Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel
       / Punto primitivo ($P$): punto di tangenza tra le circonferenze primitive.
       / Estremi di contatto ($a, b$): punti di inizio ($a$) e fine ($b$) dell'ingranamento lungo la *linea di pressione*
 
-=== Parametri di proporzionamento: Passo e Modulo
-
+==== Parametri di proporzionamento: Passo e Modulo
 Indicato con $z$ (oppure $N$) il *numero di denti* complessivo della ruota e con $D = 2 r$ il *diametro primitivo*, si definiscono due grandezze fondamentali per la progettazione e l'unificazione degli ingranaggi:
 
 #v(0.5em)
-==== Passo primitivo ($p$)
+===== Passo primitivo ($p$)
     In una schiera circolare di denti, è la *distanza curvilinea* misurata lungo la circonferenza primitiva di riferimento tra due punti omologhi appartenenti a due denti consecutivi. 
     
     Dividendo lo sviluppo totale della circonferenza primitiva ($2 pi r = pi D$) per il numero totale di denti $z$ che equipaggia la corona, si ottiene la porzione di circonferenza destinata a ciascun dente (_pieno_ + _vano_):
     $ p = frac(2 pi r, z) = frac(pi D, z) $
-=== Modulo ($m$)
+==== Modulo ($m$)
     Poiché il passo $p$ contiene il numero irrazionale $pi$, per disporre di un *parametro razionale* comodo nei calcoli e nelle tabelle di unificazione si definisce il *modulo* $m$ come il rapporto tra il passo primitivo $p$ e $pi$. 
     
     Esso risulta quindi pari al rapporto diretto tra il diametro primitivo $D$ e il numero dei denti $z$:
@@ -301,8 +293,7 @@ Indicato con $z$ (oppure $N$) il *numero di denti* complessivo della ruota e con
 ]
 
 
-== Caratteristiche secondo il proporzionamento modulare
-
+=== Caratteristiche secondo il proporzionamento modulare
 Per mantenere la scala del dente proporzionata alla dimensione della ruota, la *normativa tecnica* stabilisce requisiti geometrici standardizzati relativi sia allo *sviluppo radiale* (altezza complessiva del dente) sia allo *sviluppo circonferenziale* misurato lungo la circonferenza primitiva (passo, spessore e vano).
 
 #v(0.5em)
@@ -310,7 +301,7 @@ Per mantenere la scala del dente proporzionata alla dimensione della ruota, la *
 
 #align(center)[#include "figs/ruote-dentate/ruote-dentate-fig07.typ"]
 
-=== Grandezze del dente normale
+==== Grandezze del dente normale
     / Addendum ($a = m$): distanza radiale fra la circonferenza di testa e la circonferenza primitiva.
     / Dedendum ($d = 1.25 m$): distanza radiale fra la circonferenza primitiva e quella di fondo (di piede).
     / Altezza totale ($h = a + d = 2.25 m$): sviluppo radiale complessivo del dente.
@@ -320,8 +311,7 @@ Per mantenere la scala del dente proporzionata alla dimensione della ruota, la *
     / Passo ($p = s + e$): distanza curvilinea tra due denti omologhi consecutivi.
 #v(0.5em)
 
-=== Significato fisico e giustificazione normativa
-
+==== Significato fisico e giustificazione normativa
 Il sistema prende il nome di *proporzionamento modulare* proprio perché i coefficienti moltiplicativi applicati al modulo $m$ per ricavare le quote radiali sono predefiniti dalla normativa tecnica ($1$ per l'addendum e $1.25$ per il dedendum), determinando univocamente l'altezza totale $h = a + d = 2.25 m$. Nel dettaglio:
 
 #v(0.5em)
@@ -374,19 +364,18 @@ Il sistema prende il nome di *proporzionamento modulare* proprio perché i coeff
 
 #v(1em)
 
-== Requisiti cinematici per la progettazione delle ruote dentate
-
+=== Requisiti cinematici per la progettazione delle ruote dentate
 Normalmente, nell'impostare il progetto dell'accoppiamento cinematico tra due ruote dentate, si fissano a priori due parametri fondamentali: l'*interasse* tra i centri delle due ruote (che per ruote esterne corrisponde alla semisomma dei diametri primitivi) e la legge di trasformazione delle velocità, espressa tramite il *rapporto di trasmissione* o il *rapporto d'ingranamento*.
 
 #v(0.5em)
-=== Rapporto di trasmissione ($tau$)
+==== Rapporto di trasmissione ($tau$)
     In termini analitici, il *rapporto di trasmissione* $tau$ (il cui simbolo si sovrappone purtroppo nella letteratura a quello della tensione tangenziale in meccanica dei solidi) esprime il rapporto tra la velocità angolare $omega_("OUT")$ della *ruota condotta* (ricevente, che invia potenza verso l'utenza) e la velocità angolare $omega_("IN")$ della *ruota motrice* (che imprime il movimento, collegata alla sorgente di coppia). Esso risulta inversamente proporzionale al rapporto del numero dei denti:
     $ tau = plus.minus frac(omega_("OUT"), omega_("IN")) = plus.minus frac(z_("IN"), z_("OUT")) $
     
     Il *segno algebrico* traduce formalmente il significato fisico del verso di rotazione:
     - *Ruote esterne ($tau < 0$)*: il rapporto è convenzionalmente *negativo* perché le velocità angolari sono discordi in verso (se il pignone ruota in senso antiorario, la ruota deve necessariamente ruotare in senso orario per compatibilità cinematica nell'ingranamento).
     - *Ruote interne ($tau > 0$)*: il rapporto è *positivo* poiché le due ruote ruotano con verso concorde (stesso segno).
-=== Rapporto d'ingranamento ($i$)
+==== Rapporto d'ingranamento ($i$)
     Il cosiddetto *rapporto d'ingranamento*, indicato con la lettera minuscola $i$, mette in relazione le grandezze cinematiche e geometriche del *pignone* e della *ruota* indipendentemente da quale sia l'elemento motore o condotto:
     $ i = frac(omega_("pignone"), omega_("ruota")) = frac(z_("ruota"), z_("pignone")) >= 1 $
     
@@ -398,18 +387,17 @@ Normalmente, nell'impostare il progetto dell'accoppiamento cinematico tra due ru
 #align(center)[
   #image("images/ruote-dentate/4d741021-6053-41b2-a86d-c4ffa4912f8f-10_332_1197_904_433.jpg", width: 80%)
 ]
-== Condizioni per il corretto ingranamento
-
+=== Condizioni per il corretto ingranamento
 I primi due requisiti progettuali (fissazione dell'interasse e del rapporto di trasmissione) chiariscono univocamente la relazione geometrica tra i *diametri primitivi* delle due ruote coniugate: fissato il diametro di una ruota, l'altro risulta automaticamente definito. Dal punto di vista costruttivo, il primo diametro viene scelto in funzione del *diametro dell'albero* sul quale dovrà essere calettata la ruota. 
 
 Ricordando inoltre che il diametro primitivo è espresso dal prodotto tra il modulo e il numero dei denti ($D = m z$) e che il modulo stesso è strettamente correlato al passo primitivo tramite la relazione $m = p / pi$, emerge un vincolo cinematico e geometrico fondamentale per l'accoppiamento: per evitare fenomeni di interferenza tra i denti e consentire un corretto ingranamento, è necessario che il *passo primitivo* sia identico sulle due ruote, e pertanto che esse abbiano *lo stesso modulo*.
 
 #v(0.5em)
-=== Condizione di congruenza ($p_1 = p_2, m_1 = m_2$)
+==== Condizione di congruenza ($p_1 = p_2, m_1 = m_2$)
     Anche qualora le due ruote abbiano dimensioni globali differenti, l'uguaglianza del passo primitivo ($p_1 = p_2$) e conseguentemente del modulo ($m_1 = m_2$) è una condizione indispensabile per scongiurare due anomalie cinematiche opposte:
     - *Vano eccessivamente largo:* il dente si inserirebbe con lasco eccessivo, perdendo la *continuità di contatto* e la regolarità di funzionamento proprie dei profili coniugati.
     - *Vano eccessivamente stretto:* il dente andrebbe a *incastrarsi* geometricamente tra i fianchi di due denti successivi della ruota coniugata, impedendo la rotazione.
-=== Gioco circonferenziale ($g$) e partizione del passo
+==== Gioco circonferenziale ($g$) e partizione del passo
     Misurando gli spessori curvilinei lungo la medesima circonferenza primitiva (ad esempio quella del pignone), la somma dello spessore del dente del pignone ($s_1$), dello spessore del dente della ruota ($s_2$, che si inserisce nel vano del pignone) e di un eventuale piccolissimo *gioco circonferenziale* ($g$) deve eguagliare esattamente il passo $p$ della dentatura:
     $ p = s_1 + s_2 + g $
     
@@ -420,8 +408,7 @@ Ricordando inoltre che il diametro primitivo è espresso dal prodotto tra il mod
 #align(center)[
   #image("images/ruote-dentate/4d741021-6053-41b2-a86d-c4ffa4912f8f-10_255_1195_2191_392.jpg", width: 80%)
 ]
-=== Condizione geometrica di non interferenza
-
+==== Condizione geometrica di non interferenza
 Poiché i denti del pignone e della ruota condotta sono troncati in testa in corrispondenza delle rispettive circonferenze di *addendum* (o di testa), le intersezioni $a$ e $b$ di tali circonferenze con la retta d'azione delimitano il *segmento effettivo di contatto* $a$-$b$, lungo il quale il punto di contatto si muove attraversando il punto primitivo $P$.
 
 Affinché l'ingranamento avvenga regolarmente *senza interferenza*, il segmento effettivo di contatto $a$-$b$ deve essere interamente contenuto all'interno del *segmento teorico massimo* $T_1$-$T_2$. Analizzando la condizione sul lato del pignone $1$, occorre che il punto di inizio contatto $a$ non oltrepassi (e non coincida con) il punto limite di tangenza $T_1$, ovvero che la distanza $T_1 P$ sia strettamente maggiore di $a P$:
@@ -433,8 +420,7 @@ $ a P < T_1 P $
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-==== Punti notevoli sulla retta d'azione
-    
+===== Punti notevoli sulla retta d'azione    
     / Punti limite teorici ($T_1, T_2$): punti di tangenza dei due cerchi di base con la retta d'azione, nei quali i raggi di base risultano perpendicolari alla retta d'azione stessa.
     / Estremi del contatto reale ($a, b$): intersezioni delle circonferenze di addendum (della ruota condotta $2$ e del pignone $1$) con la retta di pressione.
     / Addendum: sporgenza radiale del dente oltre la circonferenza primitiva (tratteggiata) fino alla circonferenza di addendum (a tratto continuo).
@@ -448,8 +434,7 @@ $ a P < T_1 P $
 
 
 
-=== Caso limite (Pignone + Dentiera) e calcolo di $z_(1, "min")$
-
+==== Caso limite (Pignone + Dentiera) e calcolo di $z_(1, "min")$
 La condizione più gravosa per l'interferenza (ovvero quella che rende il segmento $a P$ il più grande possibile) si verifica quando il pignone $1$ ingrana con una ruota $2$ di raggio infinito ($r_2 arrow infinity$), cioè con una *dentiera* (cremagliera rettilinea che trasla con velocità $v_2$). In questo caso limite la circonferenza di addendum della ruota $2$ degenera in una retta orizzontale posta a quota pari all'addendum unificato $m$ rispetto alla tangente primitiva.
 
 #grid(
@@ -457,8 +442,7 @@ La condizione più gravosa per l'interferenza (ovvero quella che rende il segmen
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-==== Relazioni trigonometriche
-    
+===== Relazioni trigonometriche    
     Dallo schema geometrico pignone-dentiera si ricavano i segmenti $a P$ e $T_1 P$ in funzione dei parametri di progetto ($m, Phi, z_1$):
     
     / Segmento $a P$: ipotenusa del triangolo rettangolo avente come cateto verticale l'addendum della dentiera (segmento blu $a H = m$) e come angolo opposto $Phi$:
@@ -490,13 +474,12 @@ $ z_1 > frac(2, sin^2 20^degree) approx 17.1 quad arrow.r.double quad z_(1, "min
 ]
 
 #v(1em)
-== Modulo e numero di denti minimo
-
+=== Modulo e numero di denti minimo
 Per evitare condizioni di interferenza geometrica alla base del dente durante l'ingranamento di *ruote cilindriche a denti diritti*, il *numero di denti minimo* del pignone ($Z_("pignone")$) può essere determinato direttamente per mezzo di formule pratiche messe a punto nella letteratura tecnica (ad es. nel testo di _Giovannozzi_, di cui non è richiesta la memorizzazione ma la comprensione applicativa), oppure tramite appositi abachi grafici.
 
 #v(0.5em)
 
-=== Determinazione analitica e grafica
+==== Determinazione analitica e grafica
     La relazione analitica che fornisce il numero minimo di denti del pignone in assenza di interferenza è:
     $
       Z_("pignone") &= frac(2, (1 + 2 k) sin^2 alpha) (k + sqrt(k^2 + (1 + 2 k) sin^2 alpha)) \
@@ -524,8 +507,7 @@ Per evitare condizioni di interferenza geometrica alla base del dente durante l'
 
 #v(1.5em)
 
-=== Unificazione e standardizzazione dei moduli
-
+==== Unificazione e standardizzazione dei moduli
 I *moduli* $m$ sono definiti dalle normative tecniche internazionali come numeri razionali, tendenzialmente interi per le taglie medie e grandi. 
 
 Benché in astratto si possa pensare di scegliere qualsiasi valore continuo per il modulo $m$ (e conseguentemente per il passo $p = pi m$, che devono essere identici sulle due ruote coniugate), le normative vincolano il progettista a selezionare in prima istanza i valori della serie *preferita* e, solo qualora questi non siano sufficienti a soddisfare i vincoli d'interasse, i valori della serie *di uso comune*. Tale limitazione risponde alla fondamentale esigenza industriale di evitare una proliferazione incontrollabile di forme, dimensioni e *utensili di taglio*, favorendo la standardizzazione dei componenti meccanici e consentendo ai costruttori di costituire magazzini per serie unificate di ruote dentate.
@@ -551,17 +533,16 @@ $ lambda = frac(b, m) in [9, 14] quad ("tipicamente" b approx 10 m) $
 
 #v(1em)
 
-=== Modulo, numero di denti e larghezza di fascia: il calcolo a resistenza
-
+==== Modulo, numero di denti e larghezza di fascia: il calcolo a resistenza
 I tre parametri fondamentali (*modulo* $m$, *larghezza di fascia* $b$ e *numero dei denti* $z$) possono essere fissati definitivamente, nel rispetto dei limiti cinematici e normativi precedenti, solo introducendo il *calcolo a resistenza strutturale del dente*. Tali verifiche richiedono lo studio preliminare della distribuzione dei carichi scambiati tra le ruote (in funzione del tipo di dentatura) per contrastare i due principali meccanismi di cedimento a cui è soggetto il dente:
 
 #v(0.5em)
-=== Flessione a fatica al piede del dente
+==== Flessione a fatica al piede del dente
     La forza scambiata lungo la retta d'azione durante l'ingranamento agisce ciclicamente sul fianco del dente, comportandosi come un carico impulsivo/periodico. 
     
     Ciò genera una *sollecitazione di flessione dinamica* (ciclo pulsante o alternato all'origine) nel piano frontale della ruota, che affatica criticamente la *sezione di incastro alla base del dente* (regione del raccordo di piede), potendo condurre alla rottura di schianto o per propagazione di cricca a fatica.
 
-===  Usura per contatto superficiale (_pitting_)
+====  Usura per contatto superficiale (_pitting_)
     La pressione hertziana esercitata localmente sull'area di contatto tra i fianchi coniugati genera uno stato tensionale triassiale con *tensioni tangenziali massime sub-superficiali* (localizzate a una certa profondità al di sotto della superficie del pezzo). 
     
     La ripetizione ciclica del contatto innesca la nucleazione di cricche sub-superficiali fino al distacco di micro-porzioni di materiale, producendo il fenomeno del *pitting* (butteratura superficiale del fianco del dente, assimilabile alla formazione di micro-crateri).
@@ -575,10 +556,8 @@ I tre parametri fondamentali (*modulo* $m$, *larghezza di fascia* $b$ e *numero 
   + *Miglioramento del materiale:* se anche l'aumento del modulo non è praticabile (ad esempio per stringenti vincoli d'ingombro o sul numero minimo di denti), si modifica il *materiale* o il *trattamento termico superficiale* (es. cementazione, nitrurazione), scegliendone uno con caratteristiche di resistenza limite a fatica flessionale e hertziana più elevate.
 ]
 
-== Ruote coniche, con dentatura elicoidale e vite senza fine
-
-=== Ruote coniche
-
+=== Ruote coniche, con dentatura elicoidale e vite senza fine
+==== Ruote coniche
 Nelle trasmissioni tra assi incidenti, la forma dei denti di una ruota conica è assimilata a quella di una *ruota cilindrica a denti diritti equivalente*, avente raggio pari alla generatrice del *cono complementare* ($r_b$).
 
 #grid(
@@ -618,8 +597,7 @@ Nelle trasmissioni tra assi incidenti, la forma dei denti di una ruota conica è
 
 #v(1em)
 
-=== Ruote cilindriche con dentatura elicoidale
-
+==== Ruote cilindriche con dentatura elicoidale
 Anche per le operazioni di dimensionamento delle *ruote cilindriche a dentatura elicoidale*, la geometria viene interpretata riconducendosi a quella di una *ruota a dentatura diritta equivalente*. A tal fine, noto l'*angolo dell'elica* $Psi$ (oppure $beta$), è necessario mettere in relazione le *grandezze normali* ($n$), misurabili nel piano normale all'elica, con quelle *trasversali* ($t$), giacenti nel piano frontale della ruota.
 
 #grid(
@@ -688,7 +666,7 @@ $ z' = z_("vero") / (cos^3 Psi) = z_("vero") / (cos^3 beta) $
 
 #v(1em)
 
-=== Cinematica dell'ingranamento e azioni di contatto
+==== Cinematica dell'ingranamento e azioni di contatto
 Anche per le dentature elicoidali il *profilo a evolvente* rimane ampiamente utilizzato, ma la geometria dell'elica impone condizioni cinematiche e statiche specifiche rispetto al caso dei denti diritti:
     
     / Condizione di ingranamento: si ottiene esclusivamente se pignone e ruota hanno *elica opposta* (destrorsa e sinistrorsa rispettivamente, o viceversa), *mai concorde*.
@@ -698,16 +676,14 @@ Anche per le dentature elicoidali il *profilo a evolvente* rimane ampiamente uti
 
 #v(0.8em)
 
-=== Confronto con i denti diritti: rumorosità e pressione locale
-
+==== Confronto con i denti diritti: rumorosità e pressione locale
 A differenza delle ruote a denti diritti, nelle quali l'intera linea di contatto entra in presa simultaneamente, nelle ruote elicoidali i fianchi coniugati _si adagiano progressivamente_ l'uno sull'altro, interessando in ogni istante solo una porzione limitata della superficie del dente: \
       Poiché la forza viene scaricata su una regione istantanea di contatto più ristretta, si genera una *concentrazione locale di pressione e sollecitazione* di cui occorre tenere conto nel dimensionamento, unitamente alla presenza della *componente di spinta assiale* lungo l'asse del rotore.
 
 
 
 
-=== Accoppiamento vite senza fine - ruota elicoidale
-
+==== Accoppiamento vite senza fine - ruota elicoidale
 Nell'accoppiamento tra una *vite senza fine* e una *ruota elicoidale* (impiegato tipicamente per trasmettere il moto tra assi sghembi ortogonali), la *condizione di ingranamento* impone che l'angolo di avvolgimento dell'elica della vite sia *complementare* all'angolo d'elica della ruota. Questo meccanismo consente di realizzare un'*altissima riduzione di velocità* in un singolo stadio, con rapporti di trasmissione compresi tra $1/10$ e $1/500$:
 
 $ tau = f / N $
@@ -789,14 +765,12 @@ La geometria delle ruote dentate viene classificata in primo luogo in funzione d
 
 #v(1em)
 
-== Determinazione dei carichi agenti sulle ruote dentate e sugli alberi
-
+=== Determinazione dei carichi agenti sulle ruote dentate e sugli alberi
 Per analizzare le azioni mutue scambiate tra gli elementi della trasmissione, si adotta la seguente convenzione di nomenclatura (valida anche permutando i pedici per indicare le reazioni uguali e contrarie):
 / Forza tra ruote ($F_(i j)$): forza che dalla ruota $i$ agisce sulla ruota $j$ (con $i, j = 1, 2, 3, dots.h$).
 / Forza albero-ruota ($F_(x j)$): forza che dall'albero $x$ (con $x = a, b, c, dots.h$) agisce sulla ruota $j$.
 
-=== Ruote cilindriche a denti diritti
-
+==== Ruote cilindriche a denti diritti
 Nelle ruote cilindriche a denti diritti, l'azione di contatto nel punto di ingranamento si scompone in due componenti principali sul piano trasversale:
 
 #grid(
@@ -822,11 +796,9 @@ Nelle ruote cilindriche a denti diritti, l'azione di contatto nel punto di ingra
 
 #v(1em)
 
-=== Ruote coniche
-
+==== Ruote coniche
 Le *ruote coniche* vengono adottate quando gli assi degli alberi sono *incidenti* (comunemente disposti a $90^circ$). Poiché le superfici primitive di riferimento possiedono una *geometria troncoconica* convergente nel punto di intersezione degli assi, la dentatura (realizzabile a *denti diritti* oppure a *denti elicoidali/spirali*) si scambia un'azione di contatto distribuita lungo la generatrice del tronco di cono. A causa dell'inclinazione di tale superficie rispetto all'asse di rotazione, oltre alle componenti tangenziali e radiali *si aggiunge un carico assiale sull'albero*, generando così uno stato di sollecitazione composto che include anche sforzo normale di trazione o compressione.
-=== Ruote cilindriche a denti elicoidali e trasmissioni per assi sghembi
-
+==== Ruote cilindriche a denti elicoidali e trasmissioni per assi sghembi
 La presenza di una *componente assiale* di carico sull'albero si manifesta analogamente nelle dentature elicoidali di ruote cilindriche (impiegate per collegare alberi ad *assi paralleli*) e nell'ingranamento vite senza fine - ruota.
 
 Nelle *ruote cilindriche a denti elicoidali*, i denti si sviluppano lungo la larghezza di fascia della ruota seguendo un tratto di elica, risultando quindi obliqui rispetto all'asse di rotazione $z$. Poiché il fianco del dente è inclinato, la risultante $W$ della forza normale scambiata per pressione nel contatto presenta un'inclinazione spaziale tridimensionale diversa rispetto al caso a denti diritti:
@@ -873,8 +845,7 @@ Per quanto riguarda le trasmissioni tra *alberi ad assi sghembi* (tipicamente or
 
 #v(1em)
 
-=== Grandezze fondamentali per la verifica e il dimensionamento
-
+==== Grandezze fondamentali per la verifica e il dimensionamento
 In ognuno dei casi esaminati, lo scopo della verifica strutturale e del dimensionamento delle ruote e degli alberi è quello di valutare gli effetti globali della trasmissione in termini di tre grandezze fisiche fondamentali:
 
 / Trasmissione del moto ($tau = omega_("OUT") / omega_("IN")$): in ogni ingranamento esiste un preciso *rapporto di trasmissione* $tau$ tra le velocità angolari di uscita e di ingresso. La velocità angolare di ciascuna ruota è *inversamente correlata* alla sua dimensione radiale: se le due ruote hanno uguali dimensioni, ruotano alla medesima velocità angolare ($tau = 1$); se hanno dimensioni diverse, a parità di velocità periferica nella zona di contatto, la ruota di diametro minore (*pignone*), avendo una circonferenza più corta, compie più giri nell'unità di tempo rispetto alla ruota di diametro maggiore, consentendo così di *ridurre o moltiplicare* la velocità angolare tra i due alberi.
@@ -890,8 +861,7 @@ In ognuno dei casi esaminati, lo scopo della verifica strutturale e del dimensio
 
 #v(1em)
 
-== Cinematica dell'ingranamento e azione coniugata dei profili
-
+=== Cinematica dell'ingranamento e azione coniugata dei profili
 Affinché la trasmissione del moto tra due ruote dentate avvenga correttamente, è indispensabile garantire la *continuità del contatto* durante l'intera rotazione relativa, evitando istanti di perdita di presa (stasi o _"blackout"_ nella trasmissione di potenza) e discontinuità cinematiche che produrrebbero urti e saltellamenti. Durante la rotazione, il punto di contatto scorre lungo il fianco dei denti in presa e non deve abbandonare una coppia di denti finché la coppia di denti successiva non sia già entrata in contatto.
 
 Questa condizione si realizza se i fianchi dei denti (che non possono avere semplice forma rettilinea o a parallelepipedo) sono disegnati secondo *profili coniugati*. Due profili in rotazione relativa attorno ai rispettivi centri fissi $A$ e $B$ si dicono coniugati se soddisfano le seguenti proprietà geometriche e cinematiche:
@@ -907,8 +877,7 @@ Questa condizione si realizza se i fianchi dei denti (che non possono avere semp
 ]
 
 
-== Progettazione di ingranaggi cilindrici a denti diritti
-// [DA AUDIO]
+=== Progettazione di ingranaggi cilindrici a denti diritti// [DA AUDIO]
 Nelle ruote cilindriche a denti diritti la linea longitudinale di sviluppo del profilo del dente è parallela all'asse di rotazione della ruota e dell'albero. Questa configurazione è impiegata per velocità periferiche e potenze non eccessivamente elevate. Durante l'ingranamento, il contatto tra due denti affacciati avviene simultaneamente lungo un'intera retta di contatto parallela agli assi, poiché tutta la larghezza del fianco si interfaccia istantaneamente con il fianco coniugato.
 
 
@@ -923,12 +892,11 @@ Il problema dell'analisi delle tensioni nel dente è tutt'altro che banale perch
 #v(1em)
 
 // [DA AUDIO]
-=== Produzione per generazione mediante utensile creatore
+==== Produzione per generazione mediante utensile creatore
 Le ruote dentate cilindriche vengono comunemente realizzate per asportazione di truciolo a partire da un corpo cilindrico grezzo pieno (privo di denti) mediante un utensile denominato *creatore* (in inglese *rack*). Il creatore ha la forma di una dentiera rettilinea dotata di profili taglienti coniugati a quelli dei denti da ottenere. L'utensile compie un moto di lavoro rettilineo alternativo di taglio lungo la direzione assiale della lunghezza del dente; contemporaneamente, il cilindro grezzo ruota e trasla gradualmente rispetto al creatore in modo da esporre porzioni successive della superficie laterale e tagliare in successione tutti i vani tra i denti.
 #v(1em)
 
-== L'interpretazione approssimativa della teoria della trave
-
+=== L'interpretazione approssimativa della teoria della trave
 Il più classico approccio che introduce il problema del calcolo a flessione dei denti delle ruote dentate, riportato da molti testi, è quello sviluppato da *W. Lewis* _(NB: rispetto al libro di testo, per una più intuitiva comprensione sono stati adattati alcuni simboli)_. In primissima battuta, Lewis schematizza il dente come una *trave a mensola incastrata* alla circonferenza di fondo della ruota, di lunghezza $l$, introducendo tre ipotesi cautelative fondamentali (*caso peggiore*):
 1. il carico è applicato nel *punto di contatto più lontano* dalla radice del dente (in corrispondenza della testa);
 2. la sollecitazione di flessione nel piano della figura è determinata unicamente dalla *componente tangenziale* $F_t$ della forza di spinta;
@@ -942,8 +910,7 @@ essendo il momento d'inerzia della sezione rettangolare di base pari a $I_(x x) 
 
 #v(0.5em)
 
-=== Individuazione della sezione critica mediante la parabola di uniforme resistenza
-
+==== Individuazione della sezione critica mediante la parabola di uniforme resistenza
 Compreso a grandi linee l'approccio, più nel dettaglio Lewis individua nell'*intersezione della retta d'azione con l'asse di simmetria* del dente il punto di riferimento per l'applicazione della forza tangenziale $F_t$. Successivamente, cerca la sezione trasversale del dente maggiormente caricata per definire la posizione critica denominata $a$ in figura, confrontando la reale geometria del dente con quella di una *trave di uniforme resistenza*, ovvero un solido in cui la sezione varia dall'incastro all'estremo libero in modo tale che in ogni sezione la tensione di flessione massima risulti costante.
 
 #grid(
@@ -988,8 +955,7 @@ Adottando ora la notazione classica in cui l'asse longitudinale della mensola è
 
 #v(0.5em)
 
-=== Parametrizzazione rispetto al modulo e fattore di forma di Lewis
-
+==== Parametrizzazione rispetto al modulo e fattore di forma di Lewis
 6. Poiché le dimensioni lineari del dente sono direttamente proporzionali al modulo (ovvero $h = K_1 dot m$ e $l_0 = K_2 dot m$), esplicitando nella formula della tensione massima il *modulo normale* $m_n$ si ottiene:
 
 $ sigma_(x x, max) = (6 dot F dot l_0) / (b dot h^2) = (6 dot F dot l_0 / m_n^2) / (b dot (h / m_n)^2) = F / (b dot m_n) dot y_(L w) = F / (b dot m_n dot Y) $
@@ -1064,8 +1030,7 @@ La tensione massima viene così correlata direttamente al modulo del dente $m_n$
 
 #v(1em)
 
-== Approccio normativo al calcolo delle ruote dentate
-
+=== Approccio normativo al calcolo delle ruote dentate
 Le normative tecniche internazionali e nazionali — come l'*AGMA* (_American Gear Manufacturers Association_), l'*ISO* e l'*UNI* — prediligono un calcolo unificato di verifica e dimensionamento delle ruote dentate basato su due criteri di cedimento distinti _(unità di misura nel Sistema S.I., con lunghezze espresse in $"mm"$)_.
 
 Confrontando le tensioni massime di lavoro con le rispettive resistenze a fatica del materiale, è possibile ricavare in fase di progetto valori compatibili del *modulo trasversale* $m_t$ (o normale $m$) e del *diametro primitivo del pignone* $d_1$:
@@ -1089,12 +1054,10 @@ Confrontando le tensioni massime di lavoro con le rispettive resistenze a fatica
   ]
 )
 
-== Descrizione dei coefficienti correttivi
-
+=== Descrizione dei coefficienti correttivi
 I coefficienti introdotti nelle formulazioni normative consentono di affinare il modello teorico ideale tenendo conto delle reali condizioni operative, geometriche, metallurgiche e statistiche della trasmissione. Per una più chiara lettura fisica e progettuale, essi possono essere suddivisi in base alla loro funzione specifica.
 
-=== Fattori correttivi della sollecitazione di lavoro e geometrici
-
+==== Fattori correttivi della sollecitazione di lavoro e geometrici
 / Fattore di sovraccarico ($K_0$): considera l'esistenza di condizioni di *sovraccarico esterno* legate alla potenza trasmessa, picchi di coppia, condizioni limite di esercizio e fattori di servizio della macchina motrice e operatrice, oltre all'esigenza di tener conto dell'intero carico effettivamente trasmesso.
 / Fattore dinamico ($K_v$): tiene conto del fatto che l'effetto del carico sul dente varia in funzione della *velocità periferica*, dell'insorgere di *vibrazioni*, squilibri dinamici, errori di lavorazione o usura del profilo e fenomeni di attrito interno.
 / Fattore dimensionale ($K_s$): analogamente all'*effetto scala* nella verifica a fatica classica, valuta le dimensioni assolute del dente e dell'ingranaggio per considerare la maggiore probabilità statistica di trovare difettosità intrinseche nel materiale all'aumentare del volume sollecitato.
@@ -1104,8 +1067,7 @@ I coefficienti introdotti nelle formulazioni normative consentono di affinare il
 
 #v(0.5em)
 
-=== Fattori legati al contatto hertziano e alla resistenza ammissibile
-
+==== Fattori legati al contatto hertziano e alla resistenza ammissibile
 *Parametri della verifica a usura (Pitting)* \
     _(Nota: gli aspetti contrassegnati con $*$ sono oggetto di un ciclo di lezioni dedicato alla teoria del contatto)._
     
@@ -1126,8 +1088,7 @@ _Per i dettagli operativi sulla determinazione numerica dei singoli coefficienti
 
 #v(1em)
 
-== Schema di progettazione di una coppia di ingranaggi
-
+=== Schema di progettazione di una coppia di ingranaggi
 #block[
   *Dati di ingresso (Specifiche di progetto):* \
   Dalle specifiche progettuali sono noti: la *potenza* $P$ e la *velocità angolare* $omega_1$ imposte al pignone, il *rapporto di trasmissione* $tau$ che si deve assicurare alla ruota condotta, l'*interasse* di riferimento e una *scelta preliminare dei materiali* (da cui dipendono le tensioni ammissibili $sigma_(F P)$ e $sigma_(H P)$).

@@ -17,7 +17,7 @@
 #set heading(numbering: "1.")
 = *Alberi di Trasmissione*
 
-== Alberi: dimensionamento e verifica
+== Dimensionamento e verifica
 <alberi-dimensionamento-e-verifica>
 
 Lo studio degli elementi costruttivi delle macchine si apre con l'*albero di trasmissione* per una duplice motivazione metodologica:
@@ -48,7 +48,7 @@ Dal punto di vista costruttivo e morfologico, lungo lo sviluppo assiale la sezio
 
 Per limitare pesi e ingombri, la linea di trasmissione opera ad elevata velocità angolare: essendo la potenza il prodotto tra coppia e velocità angolare, l'alta velocità abbatte la coppia torcente trasmessa, consentendo alberi più snelli e leggeri. Tale esigenza è stringente nei veicoli terrestri, navali e aeronautici, dove una linea pesante richiederebbe ulteriore potenza solo per essere trasportata. L'architettura di trasmissione può quindi prevedere una prima trasformazione cinematica già *a monte* dell'albero (dal motore verso la linea) per *innalzare la velocità angolare* e ridurre la coppia sull'albero lungo, e una seconda *a valle* (in prossimità dell'utenza finale, come il differenziale automobilistico o il riduttore finale) per *abbattere la velocità e moltiplicare la coppia* erogata alle ruote o all'elica: l'albero di trasmissione può così ruotare a una velocità angolare diversa sia da quella del motore sia da quella dell'utenza. Lungo la linea si inseriscono anche giunti e innesti a frizione con funzione di "elemento fusibile", che in caso di sovraccarico grave cedono preservando l'integrità del motore.
 
-== Il concetto di sistema meccanico e la linea di trasmissione
+=== Il concetto di sistema meccanico e la linea di trasmissione
 A differenza dell'elemento strutturale isolato (la semplice *trave* della meccanica strutturale), nella costruzione di macchine si analizza un *sistema meccanico*: un insieme di sottosistemi e componenti collegati e assemblabili costruttivamente per svolgere una precisa funzione, tipicamente la *trasmissione e il controllo del moto e della potenza* da una sorgente a un utilizzatore.
 
 #align(center)[
@@ -74,7 +74,7 @@ La sintesi progettuale del sistema richiede di:
 4. prevenire *problemi di funzionamento* (interferenze, vibrazioni, usura, surriscaldamento);
 5. curare la *compatibilità geometrica e funzionale* e garantire la *reale possibilità di assemblaggio e smontaggio* delle parti.
 
-=== Modalità di trasmissione del moto e architettura costruttiva
+==== Modalità di trasmissione del moto e architettura costruttiva
 Il trasferimento di potenza tra componenti avviene secondo due modalità cinematiche, con precisi compromessi progettuali tra rigidezza, precisione cinematica e costo:
 - *Trasmissione del moto (rotatorio $arrow.r$ rotatorio):* dipende dalla disposizione degli assi e dalle esigenze di compattezza e variazione di velocità:
   - *Alberi coassiali (mediante giunti):* i *giunti articolati (es. cardanici)*, a differenza di quelli rigidi, trasmettono la coppia consentendo un *moto relativo controllato* (angolare o assiale) tra gli alberi.
@@ -87,7 +87,7 @@ L'inserimento costruttivo dell'albero nella macchina (es. in un riduttore a ingr
 - *Interfaccia con i supporti (cuscinetti volventi vs bronzine):* il vincolo rotazionale albero-telaio usa cuscinetti a strisciamento (*bronzine*) o *cuscinetti volventi* (composti da *anello interno* rotante solidale all'albero, *anello esterno* fisso nella cassa statorica e *corpi volventi* interposti), scelti in base a velocità di rotazione, entità dei carichi e durata richiesta.
 - *Parte statorica (cassa e tenute):* l'involucro fisso è progettato in moduli connessi da *collegamenti smontabili filettati* (viti e bulloni) per consentire il montaggio degli alberi, includendo *coperchi* ed elementi di tenuta per delimitare la regione di lavoro (trattenere i lubrificanti ed evitare contaminazioni esterne).
 
-=== Schematizzazione dei vincoli
+==== Schematizzazione dei vincoli
 Ai fini della statica elementare, gli alberi sono schematizzati come travi e i cuscinetti come vincoli ideali per gestire reazioni, dilatazione termica e grado di vincolo angolare:
 - *Scorrimento assiale (Cerniera vs Carrello):* la distinzione non dipende necessariamente dal tipo di cuscinetto (che può essere il medesimo cuscinetto radiale a una corona di sfere in entrambi i supporti $A$ e $B$), ma da *come sono vincolati assialmente gli anelli interno ed esterno* nel montaggio:
   - *Cerniera (supporto $A$):* un cuscinetto è bloccato assialmente per fornire rigidezza e scaricare le spinte. L'anello interno è bloccato assialmente sul rotore da ambo i lati (es. tra distanziale ed elemento di chiusura o spallamento), e l'anello esterno è bloccato nella sede statorica (tra uno spallamento della cassa e un coperchio imbullonato). Avendo le piste dei cuscinetti radiali a sfere profilo toroidale (semicircolare), il contatto sfera-pista sviluppa una modesta reazione assiale in ambo i versi pur consentendo una lieve rotazione angolare relativa nel piano di flessione: impedisce traslazioni radiale e assiale lasciando libera la rotazione.
@@ -98,7 +98,7 @@ Ai fini della statica elementare, gli alberi sono schematizzati come travi e i c
 
 #figure(include "figs/alberi/alberi-fig03.typ")
 
-== Dimensionamento preliminare e processo iterativo
+=== Dimensionamento preliminare e processo iterativo
 Con riferimento allo schema statico con organo (es. ingranaggio) calettato all'estremità a sbalzo $C$, la forza trasversale $F$ scambiata tra i denti genera un diagramma del momento flettente $M_f$ lineare (triangolare) con massimo sul supporto intermedio $B$. Contemporaneamente, la coppia torcente $M_t$ introdotta in $C$ percorre l'albero fino all'estremità opposta $A$ collegata all'utenza (o al motore), generando un diagramma di momento torcente costante su tutta la lunghezza attiva tra ingresso e uscita di potenza.
 
 Delineato lo schema delle forze, si calcolano i momenti flettenti nei due piani ortogonali ottenendo il momento flettente totale risultante $M_f = sqrt(M_x^2 + M_y^2)$. Per alberi in acciaio duttile, il predimensionamento adotta il criterio di Tresca (massima tensione tangenziale):
@@ -117,7 +117,7 @@ Aspetti normativi e metodologici del progetto diretto:
 - *Tensione limite vs tensione ammissibile ($sigma_"amm"$):* la *tensione limite* è la proprietà intrinseca del materiale (es. $R_m$ o $R_(p 0.2)$), mentre la *tensione ammissibile* ($sigma_"amm" = sigma_"lim" / (C S)$, es. $R_m / (C S)$) include già il coefficiente di sicurezza. Se una norma o tabella fornisce direttamente $sigma_"amm"$, non si deve dividere ulteriormente per $C S$, ma solo imporre $sigma_(i d) <= sigma_"amm"$.
 - *Applicazione per tratti ed effetto degli intagli:* la formula di $D_"min"$ si applica alla sezione più sollecitata di ciascun tratto a diametro costante. Poiché l'alloggiamento degli accessori impone variazioni di sezione (spallamenti a raggio stretto, cave per chiavette/linguette, filettature) che agiscono da intagli, i fattori di concentrazione delle tensioni ($K_t$, $K_f$) possono spostare la sezione critica: una sezione intagliata, pur soggetta a momenti nominali $M_f$ e $M_t$ *inferiori* rispetto al picco dei diagrammi, può sviluppare tensioni locali amplificate molto più gravose, governando il dimensionamento. La riverifica a fatica va quindi estesa sistematicamente a tutte le discontinuità geometriche.
 
-=== Disegno della struttura e calcoli di verifica per il dimensionamento finale
+==== Disegno della struttura e calcoli di verifica per il dimensionamento finale
 Stimati i diametri preliminari $D_"min"$, si esegue il *disegno costruttivo dell'albero* definendo variazioni di sezione, *raggi di raccordo* e *finiture superficiali*, intrecciando il progetto con i componenti accessori:
 - *Vincoli da catalogo cuscinetti:* condizionano il *diametro dei perni* (coincidente coi diametri interni normalizzati a catalogo, es. multipli di $5 "mm"$) e l'altezza e il *raggio di raccordo degli spallamenti* (il raggio sul fondo dello spallamento deve essere inferiore allo smusso dell'anello interno a catalogo per garantire il corretto appoggio assiale contro la parete verticale).
 - *Compatibilità con gli organi di trasmissione:* le geometrie dei mozzi di ruote dentate, pulegge e volani sono definite in compatibilità con le sedi dell'albero.
