@@ -3,10 +3,10 @@
 #canvas(length: 1cm, {
   import draw: *
 
-  content((2.6, 5.15), text(size: 7.5pt)[Più rigido, ma richiede registrazione], anchor: "west")
-  content((2.6, 4.78), text(size: 7.5pt)[sull’anello interno solitamente bloccato], anchor: "west")
-  content((10.35, 5.15), text(size: 7.5pt)[Meno rigido, ma richiede], anchor: "west")
-  content((10.35, 4.78), text(size: 7.5pt)[registrazione sull’anello esterno], anchor: "west")
+  content((2.6, 5.15), text(size: 10pt)[Più rigido, ma richiede registrazione], anchor: "west")
+  content((2.6, 4.78), text(size: 10pt)[sull’anello interno solitamente bloccato], anchor: "west")
+  content((10.35, 5.15), text(size: 10pt)[Meno rigido, ma richiede], anchor: "west")
+  content((10.35, 4.78), text(size: 10pt)[registrazione sull’anello esterno], anchor: "west")
   rect((0.4, -1.75), (2.4, 1.75), fill: rgb("#dcdfe2"), stroke: 0.75pt)
   line((0.4, 1.75), (1.4, 1.75), (1.4, 1.538), (1.081, 1.538), (1.034, 1.567), (0.983, 1.587), (0.929, 1.597), (0.874, 1.598), (0.82, 1.588), (0.769, 1.568), (0.722, 1.54), (0.681, 1.503), (0.647, 1.46), (0.4, 1.46), close: true, fill: rgb("#5c92c4"), stroke: 0.75pt)
   line((0.4, 1.062), (0.719, 1.062), (0.766, 1.033), (0.817, 1.013), (0.871, 1.003), (0.926, 1.002), (0.98, 1.012), (1.031, 1.032), (1.078, 1.06), (1.119, 1.097), (1.153, 1.14), (1.4, 1.141), (1.4, 0.81), (0.4, 0.81), close: true, fill: rgb("#5c92c4"), stroke: 0.75pt)
