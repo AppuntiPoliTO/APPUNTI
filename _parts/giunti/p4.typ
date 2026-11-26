@@ -118,7 +118,7 @@ Anche a $M_1$ e $Omega_1$ costanti, sia $Omega_2$ sia $M_2$ oscillano periodicam
 
     $ F_1 = frac(M_1, h) , quad F_2 = frac(M_1, h) cos beta , quad Q = frac(M_1, h) sin beta $
   ],
-  [
+  [// far capire cosa cazzo è h sistemare le proporzioni e far capire dove si trova beta meglio 
     #fig-safe(include "../../figs/giunti/ecm-c12-p4-06.typ", max-h: 5.2cm)
   ],
 )
