@@ -6,11 +6,11 @@
 
 === Materiali per innesti a frizione
 
-La scelta dei materiali bilancia un coefficiente d'attrito elevato e stabile con resistenza all'usura e allo shock termico durante lo strisciamento:
+La scelta dei materiali bilancia un coefficiente d'attrito elevato e stabile — ben superiore ai valori ordinari ($< 0.1$) tipici ad esempio dei collegamenti filettati — con resistenza all'usura e allo shock termico durante lo strisciamento:
 - *Guarnizioni organiche a secco.* La superficie resistente all'usura è in acciaio o ghisa (in alternativa ceramica; l'amianto è bandito per la cancerogenicità delle polveri), mentre l'altra reca una guarnizione polimerica caricata con particelle metalliche (*ferodo*) per favorire la conduzione termica. L'attrito cinetico a secco raggiunge $f_c = 0.3$–$0.4$, con pressione ammissibile $p <= 1" MPa"$ e velocità di strisciamento $v <= 40" m/s"$. L'usura accelera oltre la temperatura critica di $150 degree"C"$ e il degrado diventa irreversibile sopra $300 degree"C"$.
 - *Materiali sinterizzati per carichi termici elevati.* Per dissipazioni gravose si eliminano le guarnizioni usando dischi sinterizzati ferro-bronzo contro acciaio: tollerano temperature limite di $400$–$600 degree"C"$ e pressioni fino a $p <= 2" MPa"$, con attrito inferiore ($f_c = 0.15$–$0.3$) e velocità massima ridotta ($v <= 25" m/s"$).
 
-I coefficienti d'attrito variano in funzione di pressione $p$, velocità di strisciamento $v$ e temperatura $T$:
+I coefficienti d'attrito variano in funzione di pressione (sollecitazione) $p$, velocità di strisciamento $v$ e temperatura $T$; in particolare, superata la temperatura critica, il decadimento delle prestazioni è brusco per la guarnizione organica (curva 1) e più graduale per il materiale sinterizzato (curva 2):
 
 #grid(
   columns: (1fr, 1fr, 1fr),
@@ -32,7 +32,7 @@ I coefficienti d'attrito variano in funzione di pressione $p$, velocità di stri
 
 === Innesti di sicurezza (limitatori di coppia)
 
-Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la coppia trasmessa supera un valore limite preimpostato, proteggendo la trasmissione da sovraccarichi accidentali:
+Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la coppia trasmessa supera un valore limite preimpostato, proteggendo la trasmissione da sovraccarichi accidentali; i primi due schemi illustrano veri innesti autoadattativi a ripristino automatico (senza rottura di parti), mentre il terzo mostra a confronto un giunto rigido a frattura prestabilita:
 
 #fig-safe(image("../../images/innesti/ecm-c13-p2-limitatori.jpg"), max-h: 4.4cm)
 
@@ -49,14 +49,14 @@ Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la 
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    Negli *innesti centrifughi* l'inserimento dipende dalla velocità di rotazione dell'albero motore. A basso regime le molle di richiamo trattengono i ceppi distaccati dal tamburo; superata la velocità critica di taratura, la *forza centrifuga* vince il precarico elastico e preme le guarnizioni contro la superficie interna del tamburo, avviando gradualmente l'utilizzatore.
+    Negli *innesti centrifughi* il comando proviene dalla velocità di rotazione dell'albero motore. A basso regime o al minimo le molle di richiamo trattengono i ceppi distaccati dal tamburo; superata la velocità critica di taratura, la *forza centrifuga* vince il precarico elastico e preme le guarnizioni contro la superficie interna del tamburo, trasmettendo gradualmente il moto all'utilizzatore (soluzione tipica di motorscooter e ciclomotori).
   ],
   [#fig-safe(include "../../figs/innesti/ecm-c13-p2-05.typ", max-h: 4.3cm)],
 )
 
 ==== Innesto di sopravanzo ad arpionismo (ruota libera)
 
-Negli *innesti di sopravanzo* (*ruote libere*) il collegamento dipende dal segno della velocità relativa tra motore e utilizzatore. Nel tipo ad *arpionismo*, il mozzo porta *nottolini* incernierati spinti verso l'esterno da molle: in un verso i nottolini si impegnano nei denti interni del tamburo trasmettendo coppia; nel verso opposto rientrano nelle sedi strisciando a vuoto (soluzione impiegata nei rotori degli elicotteri per l'autorotazione). L'angolo di inclinazione $alpha$ dei denti interni deve orientare la risultante delle forze di contatto verso il fondo del vano, evitando espulsioni accidentali sotto carico.
+Negli *innesti di sopravanzo* (*ruote libere*) il comando dipende dalla differenza (e dal segno) delle velocità di rotazione tra organo motore e condotto. A differenza dell'innesto centrifugo — in cui le molle mantengono il dispositivo *aperto* a riposo — nelle ruote libere le molle mantengono gli elementi *in presa* e l'inversione del moto relativo (o il superamento di velocità del condotto) li disinnesta. Nel tipo ad *arpionismo*, il mozzo porta *nottolini* incernierati spinti verso l'esterno da molle: quando la velocità relativa ha il verso indicato dalla *linea rossa* in figura, i nottolini si impegnano stabilmente nei denti interni del tamburo trasmettendo coppia; nel verso opposto rientrano nelle sedi saltellando e strisciando a vuoto sui denti (soluzione impiegata, come le ruote libere ad attrito, nei rotori degli elicotteri per consentire l'autorotazione). L'angolo di inclinazione $alpha$ dei denti interni deve essere scelto in modo che le forze agenti sui nottolini ne favoriscano l'entrata in presa completa verso il fondo del vano, evitando espulsioni sotto carico.
 
 #grid(
   columns: (1fr, 0.85fr),
@@ -87,7 +87,7 @@ Negli *innesti di sopravanzo* (*ruote libere*) il collegamento dipende dal segno
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    I *giunti idraulici* trasferiscono potenza senza contatto solido tramite un fluido tra due giranti affacciate: la girante motrice (*pompa*) accelera il fluido verso la palettatura della girante condotta (*turbina*). La coppia dipende non linearmente dalla velocità relativa; il sincronismo perfetto non è mai raggiungibile e lo *slittamento residuo* dissipa potenza anche a regime. Anche interponendo un diaframma permane una minima coppia di trascinamento.
+    I *giunti idraulici* trasferiscono potenza senza contatto solido tramite un fluido tra due giranti affacciate (in analogia a due ventilatori posti di fronte): la girante motrice (*pompa*) accelera il fluido verso la palettatura della girante condotta (*turbina*). La coppia dipende non linearmente dalla velocità relativa; il sincronismo perfetto non è mai raggiungibile e lo *slittamento residuo* dissipa potenza anche a regime. Anche interponendo un diaframma per interrompere il flusso permane una minima coppia di trascinamento.
   ],
   [#fig-safe(image("../../images/innesti/ecm-c13-p2-04.jpg"), max-h: 4.2cm)],
 )
@@ -99,7 +99,7 @@ Negli *innesti di sopravanzo* (*ruote libere*) il collegamento dipende dal segno
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    Esistono innesti azionati o accoppiati tramite fenomeni *elettromagnetici*: a *isteresi magnetica*, a *correnti parassite* (elemento condotto passivo accoppiato senza contatto a un elemento motore attivo) oppure a *flusso magnetico attraverso i dischi* (figura a lato). Per una data corrente di eccitazione dell'elettromagnete, la coppia di innesto risulta sostanzialmente costante.
+    Esistono innesti azionati o accoppiati tramite fenomeni *elettromagnetici*: a *isteresi magnetica*, a *correnti parassite* (elemento condotto passivo accoppiato senza contatto a un elemento motore attivo) oppure a *flusso magnetico attraverso i dischi* (figura a lato). Per una data corrente di eccitazione dell'elettromagnete, la coppia di innesto risulta sostanzialmente costante; i fenomeni di isteresi magnetica e correnti indotte comportano tuttavia anche dissipazione e *isteresi termica* da tenere sotto controllo.
   ],
   [#fig-safe(image("../../images/innesti/ecm-c13-p2-elettromec.jpg"), max-h: 4.4cm)],
 )
@@ -111,7 +111,7 @@ Negli *innesti di sopravanzo* (*ruote libere*) il collegamento dipende dal segno
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    Rotore motore e rotore condotto sono separati da un'intercapedine contenente *polveri ferromagnetiche* (o *fluidi magnetoreologici* / *elettroreologici*). A campo nullo la polvere non è strutturata e genera solo un lieve *trascinamento residuo* (*residual drag*). Eccitando la bobina, le particelle si allineano lungo le linee di flusso in catene capaci di trasmettere sforzi di taglio $tau$: la risposta è quasi istantanea, la coppia è proporzionale all'eccitazione (facile controllo in catena chiusa) e il dimensionamento è governato dallo smaltimento termico.
+    Rotore motore e rotore condotto sono separati da un'intercapedine contenente *polveri ferromagnetiche* (o *fluidi magnetoreologici* / *elettroreologici*, che variano la propria viscosità sotto campo magnetico o elettrico e possono lavorare anche come freni). A campo nullo la polvere non è strutturata ma, a differenza di altri innesti elettromagnetici, mantiene un minimo contatto con lieve *trascinamento residuo* (*residual drag*). Eccitando la bobina, le particelle si allineano lungo le linee di flusso in catene capaci di trasmettere sforzi di taglio $tau$: la risposta è quasi istantanea e la coppia è pressoché lineare con tensione/corrente di eccitazione (ideale per controllo continuo in catena chiusa e sistemi meccatronici *safety critical*). Dato lo slittamento parziale o continuo, il dimensionamento è governato dallo smaltimento termico (spesso migliorato con carcasse in alluminio o raffreddamento forzato ad aria).
   ],
   [#fig-safe(image("../../images/innesti/ecm-c13-p2-particelle.jpg"), max-h: 4.5cm)],
 )

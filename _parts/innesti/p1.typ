@@ -19,7 +19,7 @@ Il transitorio critico è la *sincronizzazione*, cioè l'uguagliamento delle vel
 - *Inserimento troppo lento:* ritarda la messa a regime e, negli innesti dissipativi, protrae lo strisciamento convertendo energia meccanica in calore, con deformazioni locali e degrado dei materiali.
 
 #nota[
-  *Requisiti termici di progetto.* Oltre a prontezza, gradualità e invarianza delle prestazioni nel tempo (controllo di usura e giochi), il progetto termico dipende dal ciclo di lavoro: negli *inserimenti prolungati* (es. frenatura in discesa) occorre massimizzare la *trasmissione di calore verso l'ambiente*; negli *inserimenti saltuari* ad alta energia seguiti da fasi di raffreddamento (es. freni aeronautici) è prioritaria un'elevata *capacità termica* per contenere la temperatura di picco.
+  *Funzioni secondarie e requisiti termici di progetto.* Oltre a durata, prontezza, gradualità d'inserimento e invarianza delle prestazioni nel tempo (controllo puntuale di usura e giochi), gli innesti possono regolare il flusso di energia, introdurre *elasticità o smorzamento* nella trasmissione oppure *dissipare energia* in calore. La dissipazione è particolarmente esasperata nei *freni*, che riprendono molte architetture degli innesti a frizione per convertire rapidamente energia cinetica in calore. Il progetto termico dipende quindi dal ciclo di lavoro: negli *inserimenti prolungati* (es. frenatura in discesa) occorre massimizzare la *trasmissione di calore verso l'ambiente*; negli *inserimenti saltuari* ad alta energia seguiti da fasi di raffreddamento (es. freni aeronautici) è prioritaria un'elevata *capacità termica* per contenere la temperatura di picco.
 ]
 
 === Innesto a denti
@@ -52,10 +52,17 @@ Negli *innesti a frizione* la coppia viene trasmessa per *attrito* tra due o pi�
 
 #fig-safe(include "../../figs/innesti/ecm-c13-p1-03.typ", max-h: 3.4cm)
 
-La spinta $F$ può essere generata da leve meccaniche, attuatori idraulici o elettromagnetici, oppure da un organo elastico precaricato (*molla a diaframma* con intagli radiali fungenti da leve, oppure molle elicoidali) antagonista al comando di disinnesto. Un funzionamento corretto richiede:
-- *Centratura assiale e rigidezza dei supporti*, per garantire una pressione di contatto uniforme.
+La spinta $F$ può essere generata da leve meccaniche, attuatori idraulici o elettromagnetici, oppure da un organo elastico opportunamente registrato antagonista al comando di disinnesto. Nelle frizioni automobilistiche si impiega tipicamente una *molla a diaframma* — derivata dalla molla a tazza troncoconica e intagliata radialmente in lamine trapezoidali per aumentarne la flessibilità — vincolata su una circonferenza di fulcro: premendone la parte centrale tramite il comando di disinnesto (es. circuito idraulico del pedale), il bordo esterno arretra allontanando lo spingidisco e interrompendo la trasmissione; al rilascio la molla riapplica il precarico di chiusura.
+
+I valori del *coefficiente d'attrito* (sia statico sia cinetico) dipendono da cinque fattori principali: *materiali* accoppiati, *natura dell'ambiente* (umidità, contaminazione), *pressione di contatto*, *velocità di slittamento* e *temperatura*. Il ciclo operativo attraversa tre fasi distinte:
+1. *Inserimento:* le superfici slittano reciprocamente, si riscaldano e si usurano.
+2. *Sincronismo:* cessato lo strisciamento, l'innesto si comporta come un *giunto torsionalmente più o meno rigido*.
+3. *Disinserimento:* si verifica un nuovo slittamento; in posizione aperta occorre limitare o *azzerare la coppia d'attrito parassita a vuoto*, che altrimenti provoca perdite di potenza, riscaldamento e usura continua.
+
+Per un funzionamento corretto sono essenziali:
+- *Centratura assiale e rigidezza dei supporti*, per garantire una pressione di contatto uniforme senza rotazioni relative delle superfici.
 - *Solchi radiali tra le guarnizioni*, per evacuare i detriti d'usura e le sostanze estranee.
-- *Azzeramento della coppia parassita a vuoto* in posizione aperta, che altrimenti provoca perdite di potenza, riscaldamento e usura continua.
+- *Superfici di contatto anulari* con rapporto tra raggio esterno ed interno scelto in modo da massimizzare l'*efficacia* dell'innesto, ossia il rapporto tra coppia d'attrito sviluppata e forza assiale $F$ di accostamento.
 
 ==== Innesto monodisco
 
@@ -83,27 +90,30 @@ La spinta $F$ può essere generata da leve meccaniche, attuatori idraulici o ele
 
 #v(0.5em)
 
-Per filtrare gli strappi e le *vibrazioni torsionali*, il disco o il volano integrano un *parastrappi* (fino alla soluzione a *doppio volano*). Molle elicoidali circonferenziali — spesso abbinate a uno smorzatore ad attrito — rendono l'innesto simile a un giunto elastico torsionalmente cedevole: nel doppio volano la massa secondaria agisce da *smorzatore dinamico*, sdoppiando la risonanza principale in due picchi laterali di ampiezza fortemente ridotta.
+Per assorbire le brusche variazioni di coppia e filtrare le *vibrazioni torsionali*, il disco è collegato all'albero tramite un *parastrappi* (fino alla soluzione a *doppio volano*). Le molle elicoidali circonferenziali — spesso abbinate a uno smorzatore ad attrito — rendono l'innesto simile a un *giunto elastico torsionalmente cedevole*. Nel doppio volano la massa secondaria agisce da *smorzatore dinamico*: in analogia al sistema traslazionale a due masse collegate da molla e smorzatore, la massa secondaria oscilla in *controfase* rispetto a quella principale, opponendo una forza inerziale che sposta la frequenza critica e sdoppia la risonanza principale in due picchi laterali di ampiezza fortemente ridotta.
 
 #grid(
   columns: (1fr, 1fr, 0.55fr),
   column-gutter: 0.8em,
   align: (center + horizon, center + horizon, center + horizon),
-  [#fig-safe(image("../../images/innesti/ecm-c13-p1-06.jpg"), max-h: 4.5cm)],
-  [#fig-safe(image("../../images/innesti/ecm-c13-p1-07.jpg"), max-h: 4.5cm)],
-  [#fig-safe(include "../../figs/innesti/ecm-c13-p1-08.typ", max-h: 4.5cm)],
+  [#fig-safe(image("../../images/innesti/ecm-c13-p1-06.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi su disco frizione])],
+  [#fig-safe(image("../../images/innesti/ecm-c13-p1-07.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi in un doppio volano])],
+  [#fig-safe(include "../../figs/innesti/ecm-c13-p1-08.typ", max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Sezione disco monodisco])],
 )
+
+#v(0.4em)
+#fig-safe(include "../../figs/innesti/ecm-c13-p1-smorzatore.typ", max-h: 3.9cm, caption: text(size: 8.5pt, fill: luma(80))[Principio dello smorzatore dinamico (analogia traslazionale → doppio volano torsionale).])
 
 ==== Innesto multidisco
 
-Per trasmettere coppie elevate senza accrescere eccessivamente il diametro del disco (che diventerebbe ingombrante e flessibile), si affiancano più superfici in un *pacco dischi* (tipicamente non oltre 12 dischi). I dischi condotti (rivestiti in fibra di carbonio, bronzo sinterizzato o grafite) scorrono su un *mozzo scanalato centrato sui fianchi*, alternati a dischi conduttori in acciaio vincolati alla campana esterna.
+Per trasmettere coppie elevate a parità di ingombro senza accrescere eccessivamente il diametro del disco (che diventerebbe ingombrante e flessibile), si affiancano più superfici in un *pacco dischi* (in genere non oltre 12 dischi). I dischi condotti (rivestiti in fibra di carbonio, bronzo sinterizzato o grafite) sono montati su un *mozzo scanalato scorrevole sotto carico, centrato sui fianchi*, alternati a dischi conduttori in acciaio vincolati alla campana esterna. In ambito motociclistico il pacco è tipicamente serrato da molle elicoidali agenti su una piastra e aperto da un'asta spingidisco contrapposta.
 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    Alternando dischi piani e dischi predeformati a *onda sinusoidale* si migliorano gradualità d'innesto e distacco a vuoto. La compattezza riduce però lo smaltimento termico verso l'esterno causando *surriscaldamento locale* nei tipi a secco; il limite si supera nei modelli a immersione o a circolazione d'olio. L'attuazione può avvenire con *elettromagnete* in chiusura e molle di richiamo in apertura.
+    Alternando dischi piani e dischi predeformati a *onda sinusoidale* si migliorano gradualità d'innesto e distacco a vuoto. La compattezza riduce però lo smaltimento termico verso l'esterno causando *surriscaldamento locale* nei tipi a secco; il limite si supera nei modelli a immersione o a circolazione d'olio. L'attuazione può avvenire con comandi manuali, pneumatici, idraulici oppure con *elettromagnete* in chiusura e molle di richiamo in apertura.
   ],
   [#fig-safe(include "../../figs/innesti/ecm-c13-p1-09.typ")],
 )
@@ -115,7 +125,7 @@ Per trasmettere coppie elevate senza accrescere eccessivamente il diametro del d
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    Nel *comando meccanico a leva*, una slitta azionata dall'esterno scorre assialmente facendo ruotare una leva fulcrata lungo un profilo raccordato. Il piede della leva preme sullo spingidisco comprimendo il pacco dischi; arretrando la slitta, la leva rientra nella sede esterna liberando i dischi.
+    Nel *comando meccanico a leva* (sezioni $A$–$A$ e $B$–$B$), una forcella esterna impegna la gola di una slitta facendola scorrere assialmente lungo l'albero. L'estremità di una leva fulcrata risale il profilo curvilineo raccordato della slitta, ruotando attorno al perno e premendo con il proprio piede sullo spingidisco fino a serrare il pacco dischi; arretrando la slitta, la leva rientra nella sede liberando i dischi.
   ],
   [#fig-safe(include "../../figs/innesti/ecm-c13-p1-10.typ")],
 )
