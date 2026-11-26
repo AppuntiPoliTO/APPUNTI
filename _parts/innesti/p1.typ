@@ -30,8 +30,6 @@ Il transitorio più delicato del progetto è la *sincronizzazione*, ossia la fas
   align: (left + horizon, center + horizon),
   [
     L'*innesto a denti* è la soluzione più semplice basata sull'*accoppiamento di forma*: alle estremità dei due alberi coassiali sono montate due flange frontali dotate di profili a denti perfettamente coniugati. Azionando una *leva* incernierata che impegna la gola di un *collare*, si sposta assialmente la flangia scorrevole portando a contatto i fianchi dei denti: la coppia e la rotazione si trasferiscono per puro *ostacolo meccanico*, senza alcun slittamento a regime.
-
-    Poiché l'imbocco richiede che i denti si presentino in fase favorevole durante la traslazione assiale, l'inserimento è consentito solo a macchina ferma o a *moto lento* (altrimenti gli urti tra le teste dei denti risultano distruttivi); superfici frontali inclinate agevolano l'innesto. Il disinserimento può avvenire anche in esercizio, ma sotto carico la pressione sui fianchi genera un attrito non trascurabile che la leva deve vincere per separare i profili: l'inclinazione del fianco può favorire oppure ostacolare l'apertura.
   ],
   [#import "@preview/cetz:0.3.4": canvas, draw
 #canvas(length: 1cm, {
@@ -233,16 +231,15 @@ Il transitorio più delicato del progetto è la *sincronizzazione*, ossia la fas
 ],
 )
 
+Poiché l'imbocco richiede che i denti si presentino in fase favorevole durante la traslazione assiale, l'inserimento è consentito solo a macchina ferma o a *moto lento* (altrimenti gli urti tra le teste dei denti risultano distruttivi); superfici frontali inclinate agevolano l'innesto. Il disinserimento può avvenire anche in esercizio, ma sotto carico la pressione sui fianchi genera un attrito non trascurabile che la leva deve vincere per separare i profili: l'inclinazione del fianco può favorire oppure ostacolare l'apertura.
 
-
- 
 === Innesti a frizione
 
 Negli *innesti a frizione* la coppia è trasmessa per *attrito* tra due o più superfici rivestite di materiale ad alto coefficiente d'attrito e premute da una spinta assiale $F$: la pressione di contatto generata dalla forza normale sviluppa forze tangenziali circonferenziali capaci di trasferire il momento torcente tra i due alberi. Le architetture fondamentali impiegano superfici piane a *corona circolare* (sinistra e centro-sinistra), superfici *troncoconiche* (centro-destra, in cui l'inclinazione del cono sfrutta l'effetto cuneo amplificando la pressione normale a parità di spinta assiale $F$) oppure superfici cilindriche *a tamburo* con ganasce radiali espansibili o centrifughe (destra).
 
 #align(center)[
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 1.14cm, {
+#canvas(length: 1.17cm, {
   import draw: *
 
   line((0, 0), (14.4, 0), stroke: (dash: "dash-dotted", thickness: 0.5pt))
@@ -809,7 +806,7 @@ Poiché il disco frizione è relativamente snello e torsionalmente cedevole — 
 - *Trasposizione torsionale al doppio volano:* nel dispositivo reale l'unico cambiamento riguarda la natura del moto, da traslazionale a *torsionale*. La massa secondaria $m_2$ è rappresentata dal secondo disco del volano e il collegamento $(k_2, c_2)$ dalle molle elicoidali circonferenziali (e dall'attrito interno): all'insorgere di una vibrazione torsionale, anziché trasmetterla rigidamente, il disco secondario ruota sfasato rispetto al primario comprimendo le molle e smorzando efficacemente le oscillazioni lungo la trasmissione.
 
 #align(center)[
-  #fig-safe(include "../../figs/innesti/ecm-c13-p1-smorzatore.typ", max-h: 5.0cm, caption: text(size: 8.5pt, fill: luma(80))[Modello traslazionale a 2 masse e confronto delle curve di risposta in frequenza (FRF): sistema a 1 massa vs smorzatore dinamico / doppio volano.])
+  #fig-safe(include "../../figs/innesti/ecm-c13-p1-smorzatore.typ", max-h: 5.5cm, caption: text(size: 8.5pt, fill: luma(80))[Modello traslazionale a 2 masse e confronto delle curve di risposta in frequenza (FRF): sistema a 1 massa vs smorzatore dinamico / doppio volano.])
 ]
 
 ==== Innesto multidisco
@@ -826,8 +823,8 @@ Alternando dischi piani a dischi leggermente predeformati a *onda sinusoidale* s
 
 #v(0.5em)
 
-Una soluzione classica, largamente impiegata sui veicoli terrestri, è l'innesto multidisco a *comando meccanico a leva* (sezioni $A$–$A$ e $B$–$B$ in figura): nel mozzo scanalato sono ricavate tre tasche radiali a 120° (visibili in $B$–$B$) che alloggiano altrettante *leve* incernierate su un perno di fulcro. Una forcella esterna (non rappresentata) impegna la gola circonferenziale della *slitta* facendola scorrere assialmente lungo l'albero verso il pacco dischi (verso sinistra in $A$–$A$): l'estremità destra della leva scivola lungo il *profilo curvilineo raccordato* della slitta e si abbassa infossandosi all'interno della propria sede. Ruotando attorno al fulcro, il piede curvo sinistro della leva viene portato a contatto e premuto contro lo *spingidisco* mobile, serrando l'intero pacco dischi contro l'anello di battuta imbullonato a destra; facendo arretrare la slitta, la leva rientra in posizione di riposo liberando lo spingidisco e aprendo l'innesto.
+Una soluzione classica, largamente impiegata sui veicoli terrestri, è l'innesto multidisco a *comando meccanico a leva* (sezioni #box[$A$–$A$] e #box[$B$–$B$] in figura): nel mozzo scanalato sono ricavate tre tasche radiali a 120° (visibili in #box[$B$–$B$]) che alloggiano altrettante *leve* incernierate su un perno di fulcro. Una forcella esterna (non rappresentata) impegna la gola circonferenziale della *slitta* facendola scorrere assialmente lungo l'albero verso il pacco dischi (verso sinistra in #box[$A$–$A$]): l'estremità destra della leva scivola lungo il *profilo curvilineo raccordato* della slitta e si abbassa infossandosi all'interno della propria sede. Ruotando attorno al fulcro, il piede curvo sinistro della leva viene portato a contatto e premuto contro lo *spingidisco* mobile, serrando l'intero pacco dischi contro l'anello di battuta imbullonato a destra; facendo arretrare la slitta, la leva rientra in posizione di riposo liberando lo spingidisco e aprendo l'innesto.
 
 #align(center)[
-  #fig-safe(include "../../figs/innesti/ecm-c13-p1-10.typ", max-h: 7.4cm, caption: text(size: 8.5pt, fill: luma(80))[Innesto a frizione multidisco a comando meccanico a leva: sezione trasversale $B$–$B$ e sezione assiale $A$–$A$.])
+  #fig-safe(include "../../figs/innesti/ecm-c13-p1-10.typ", max-h: 7.4cm, caption: text(size: 8.5pt, fill: luma(80))[Innesto a frizione multidisco a comando meccanico a leva: sezione trasversale #box[$B$–$B$] e sezione assiale #box[$A$–$A$].])
 ]
