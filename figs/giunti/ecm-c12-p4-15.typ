@@ -29,8 +29,8 @@
   rect((5.32, 1.65), (5.44, 2.55), fill: yellow.transparentize(35%), stroke: none)
 
   circle((5.95, 1.92), radius: 0.27, fill: lime.transparentize(25%), stroke: none)
-  circle((6.88, 1.92), radius: 0.27, fill: lime.transparentize(25%), stroke: none)
-  arc((7.80, 1.92), start: 90deg, stop: 270deg, radius: 0.27, anchor: "origin", fill: lime.transparentize(25%), stroke: none)
+  circle((6.87, 1.92), radius: 0.27, fill: lime.transparentize(25%), stroke: none)
+  arc((7.79, 1.92), start: 90deg, stop: 270deg, radius: 0.27, anchor: "origin", fill: lime.transparentize(25%), stroke: none)
 
   line((0.10, 1.35), (0.45, 1.00), stroke: 0.45pt)
   line((0.35, 1.35), (0.70, 1.00), stroke: 0.45pt)
@@ -100,13 +100,13 @@
   line((5.85, 2.18), (6.21, 1.82), stroke: 0.45pt)
   line((5.70, 1.88), (5.96, 1.65), stroke: 0.45pt)
 
-  line((6.66, 2.08), (7.04, 1.70), stroke: 0.45pt)
-  line((6.78, 2.18), (7.14, 1.82), stroke: 0.45pt)
-  line((6.63, 1.88), (6.89, 1.65), stroke: 0.45pt)
+  line((6.65, 2.08), (7.03, 1.70), stroke: 0.45pt)
+  line((6.77, 2.18), (7.13, 1.82), stroke: 0.45pt)
+  line((6.62, 1.88), (6.88, 1.65), stroke: 0.45pt)
 
-  line((7.56, 2.04), (7.80, 1.80), stroke: 0.45pt)
-  line((7.65, 2.15), (7.80, 2.00), stroke: 0.45pt)
-  line((7.56, 1.84), (7.76, 1.66), stroke: 0.45pt)
+  line((7.55, 2.04), (7.79, 1.80), stroke: 0.45pt)
+  line((7.64, 2.15), (7.79, 2.00), stroke: 0.45pt)
+  line((7.55, 1.84), (7.75, 1.66), stroke: 0.45pt)
 
   line((0, -1.85), (0, 1.85), stroke: 1pt)
   line((0, 1.85), (2.65, 1.85), stroke: 1pt)
@@ -169,13 +169,13 @@
   line((7.55, 1.48), (8.40, 1.48), stroke: 0.6pt)
 
   circle((5.95, 1.92), radius: 0.27, stroke: 0.9pt)
-  circle((6.88, 1.92), radius: 0.27, stroke: 0.9pt)
-  arc((7.80, 1.92), start: 90deg, stop: 270deg, radius: 0.27, anchor: "origin", stroke: 0.9pt)
+  circle((6.87, 1.92), radius: 0.27, stroke: 0.9pt)
+  arc((7.79, 1.92), start: 90deg, stop: 270deg, radius: 0.27, anchor: "origin", stroke: 0.9pt)
 
-  line((6.22, 1.92), (6.17, 1.60), stroke: 0.75pt)
-  line((6.61, 1.92), (6.56, 1.60), stroke: 0.75pt)
-  line((7.15, 1.92), (7.10, 1.60), stroke: 0.75pt)
-  line((7.53, 1.92), (7.48, 1.60), stroke: 0.75pt)
+  line((6.22, 1.92), (6.18, 1.60), stroke: 0.75pt)
+  line((6.60, 1.92), (6.56, 1.60), stroke: 0.75pt)
+  line((7.14, 1.92), (7.10, 1.60), stroke: 0.75pt)
+  line((7.52, 1.92), (7.48, 1.60), stroke: 0.75pt)
 
   line((7.80, 1.55), (7.80, 2.35), (8.40, 2.35), stroke: 1pt)
   circle((8.10, 1.98), radius: 0.13, stroke: 0.85pt)
@@ -221,23 +221,25 @@
   line((3.42, -1.42), (3.65, -1.42), stroke: 0.6pt)
   line((5.43, -1.42), (5.58, -1.42), stroke: 0.6pt)
 
-  line((5.95, 0), (6.15, -1.92), stroke: 0.95pt)
-  arc((6.42, -1.92), start: 180deg, stop: 360deg, radius: 0.27, anchor: "origin", stroke: 0.95pt)
-  line((6.69, -1.92), (6.49, 0), stroke: 0.95pt)
+  line((5.95, -0.35), (6.142, -1.888), stroke: 0.95pt)
+  arc((6.41, -1.92), start: 173.2deg, stop: 353.2deg, radius: 0.27, anchor: "origin", stroke: 0.95pt)
+  line((6.678, -1.952), (6.452, 0), stroke: 0.95pt)
 
-  line((6.85, 0), (7.05, -1.92), stroke: 0.95pt)
-  arc((7.32, -1.92), start: 180deg, stop: 360deg, radius: 0.27, anchor: "origin", stroke: 0.95pt)
-  line((7.59, -1.92), (7.39, 0), stroke: 0.95pt)
+  line((6.828, 0), (7.062, -1.888), stroke: 0.95pt)
+  arc((7.33, -1.92), start: 173.2deg, stop: 353.2deg, radius: 0.27, anchor: "origin", stroke: 0.95pt)
+  line((7.598, -1.952), (7.372, 0), stroke: 0.95pt)
 
-  line((6.55, -0.60), (6.91, -0.60), stroke: 0.75pt)
-  line((6.59, -1.00), (6.95, -1.00), stroke: 0.75pt)
-  line((6.66, -1.60), (7.02, -1.60), stroke: 0.75pt)
+  line((7.748, 0), (7.80, -0.43), stroke: 0.95pt)
 
-  line((7.45, -0.60), (7.80, -0.60), stroke: 0.75pt)
-  line((7.49, -1.00), (7.80, -1.00), stroke: 0.75pt)
+  line((5.95, -1.60), (6.10, -1.60), stroke: 0.75pt)
+
+  line((6.52, -0.58), (6.90, -0.58), stroke: 0.75pt)
+  line((6.57, -0.98), (6.95, -0.98), stroke: 0.75pt)
+  line((6.64, -1.60), (7.02, -1.60), stroke: 0.75pt)
+
+  line((7.44, -0.58), (7.80, -0.58), stroke: 0.75pt)
+  line((7.49, -0.98), (7.80, -0.98), stroke: 0.75pt)
   line((7.56, -1.60), (7.80, -1.60), stroke: 0.75pt)
-
-  line((5.95, -1.72), (6.13, -1.72), stroke: 0.75pt)
 
   line((7.80, 0), (7.80, -2.35), (8.40, -2.35), stroke: 1pt)
   circle((8.10, -1.35), radius: (0.13, 0.08), stroke: 0.85pt)
