@@ -1,3 +1,4 @@
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 #canvas(length: 1cm, {
   import draw: *
@@ -19,7 +20,7 @@
   rect((0.5, 0), (1.85, 2.4), stroke: 1pt)
 
   circle((1.175, 1.2), radius: (0.26, 0.26), fill: white.transparentize(10%), stroke: none)
-  content((1.175, 1.2), text(size: 10pt, fill: red)[A])
+  content((1.175, 1.2), text(size: 10pt, weight: "bold", fill: red)[A])
 
   rect((3.1125, 0), (4.05, 2.4), fill: gray.transparentize(88%), stroke: none)
   line((3.1125, 2.13), (3.3825, 2.4), stroke: 0.45pt + gray.darken(25%))
@@ -37,7 +38,7 @@
   rect((3.1125, 0), (4.05, 2.4), stroke: 1pt)
 
   circle((3.581, 1.2), radius: (0.24, 0.26), fill: white.transparentize(10%), stroke: none)
-  content((3.581, 1.2), text(size: 10pt, fill: red)[B])
+  content((3.581, 1.2), text(size: 10pt, weight: "bold", fill: red)[B])
 
   line((2.18, 0), (2.4189, 0.2389), stroke: 0.55pt + gray.darken(30%))
   line((2.0146, 0.2), (2.4728, 0.6582), stroke: 0.55pt + gray.darken(30%))
@@ -54,6 +55,6 @@
 
   line((-0.2, 0), (5.6, 0), stroke: (dash: "dash-dotted", thickness: 0.75pt))
 
-  line((5.55, 1.9), (4.06, 1.9), mark: (end: ">", fill: black), stroke: 1.25pt)
-  line((5.55, 0.5), (4.06, 0.5), mark: (end: ">", fill: black), stroke: 1.25pt)
+  line((5.55, 1.9), (4.08, 1.9), mark: (end: "stealth", fill: black, scale: 1.0), stroke: 1.2pt)
+  line((5.55, 0.5), (4.08, 0.5), mark: (end: "stealth", fill: black, scale: 1.0), stroke: 1.2pt)
 })
