@@ -35,7 +35,7 @@ I *giunti articolati* collegano due alberi tramite un *cinematismo* di *componen
     Lo scorrimento nelle guide ortogonali rende il giunto *autoadattativo* ai disallineamenti radiali senza sovraccaricare i cuscinetti di supporto. A differenza dello *Steckflex*, il disco è *rigido* e non svolge azione smorzante. Tuttavia, lo spostamento del disco crea un'*eccentricità* ($e$) che genera *forze centrifughe*, precessioni e vibrazioni sui supporti: per questo il giunto di Oldham *non può essere impiegato per alte velocità di rotazione*.
   ],
   [
-    #fig-safe(include "../../figs/giunti/p4-fig04.typ", max-h: 6cm)
+    #fig-safe(include "../../figs/giunti/giunti-fig02.typ", max-h: 6cm)
   ],
 )
 
@@ -65,7 +65,7 @@ I *giunti articolati* collegano due alberi tramite un *cinematismo* di *componen
     $ frac(Omega_2, Omega_1) = frac(cos beta, 1 - sin^2 beta dot sin^2 theta_1) $
   ],
   [
-    #fig-safe(include "../../figs/giunti/p4-fig06.typ", max-h: 4.4cm)
+    #fig-safe(include "../../figs/giunti/giunti-fig03.typ", max-h: 4.4cm)
   ],
 )
 
@@ -84,10 +84,10 @@ Anche a $M_1$ e $Omega_1$ costanti, sia $Omega_2$ sia $M_2$ oscillano periodicam
   column-gutter: 0.8em,
   align: (center + horizon, center + horizon),
   [
-    #fig-safe(include "../../figs/giunti/p4-fig01.typ", max-h: 7.2cm)
+    #fig-safe(include "../../figs/giunti/giunti-fig04.typ", max-h: 7.2cm)
   ],
   [
-    #fig-safe(include "../../figs/giunti/p4-fig05.typ", max-h: 7.2cm)
+    #fig-safe(include "../../figs/giunti/giunti-fig05.typ", max-h: 7.2cm)
   ],
 )
 
@@ -101,7 +101,7 @@ Anche a $M_1$ e $Omega_1$ costanti, sia $Omega_2$ sia $M_2$ oscillano periodicam
     Inserendo sull'albero intermedio un accoppiamento scanalato *telescopico* (es. alberi cardanici agricoli), il doppio giunto agevola il montaggio e compensa anche errori assiali, *dilatazioni termiche* e variazioni di distanza in esercizio.
   ],
   [
-#fig-safe(include "../../figs/giunti/p4-fig02.typ", max-h: 4.4cm)
+#fig-safe(include "../../figs/giunti/giunti-fig06.typ", max-h: 4.4cm)
   ],
 )
 
@@ -393,7 +393,7 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
   column-gutter: 1.2em,
   align: (center + horizon, center + horizon),
   [
-    #fig-safe(include "../../figs/giunti/p4-fig03.typ", max-h: 6.8cm)
+    #fig-safe(include "../../figs/giunti/giunti-fig07.typ", max-h: 6.8cm)
   ],
   [
     #fig-safe(image("../../images/giunti/ecm-c12-p4-rzeppa-3d.jpg"), max-h: 4.1cm)

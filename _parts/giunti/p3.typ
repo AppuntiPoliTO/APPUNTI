@@ -87,7 +87,7 @@ Lo smorzamento delle vibrazioni (fino a circa il *$30\%$* dei carichi impulsivi)
     *Aumento della flessibilità:* interponendo un *elemento intermedio tubolare* (foto a fianco e schema seguente) si trasmette il momento torcente mantenendo bassa rigidezza flessionale e aumentando la capacità di compensare disallineamenti (specie su rotori lunghi). Adottando lamine o mantelli con sezione ad *U* deformabile è possibile moderare anche la rigidezza torsionale.
   ],
   [
-   #fig-safe(include "../../figs/giunti/p3-fig02.typ", max-h: 5.8cm)
+   #fig-safe(include "../../figs/giunti/giunti-fig01.typ", max-h: 5.8cm)
   ],
 )
 

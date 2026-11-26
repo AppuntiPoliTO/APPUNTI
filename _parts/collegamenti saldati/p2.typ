@@ -27,7 +27,7 @@ Per interpretare le tavole comparative riportate di seguito occorre leggere i tr
 - *Cordone incompleto.* Riempimento insufficiente del vano di saldatura rispetto allo spessore delle lamiere; la riduzione diffusa di spessore genera una fascia scura ampia e relativamente regolare lungo il cordone.
 
 #align(center)[
-  #fig-safe(include "../../figs/collegamenti-saldati/p2-fig01.typ", max-h: 9.5cm)
+  #fig-safe(include "../../figs/collegamenti-saldati/collegamenti-saldati-fig12.typ", max-h: 9.5cm)
 ]
 
 #v(0.4em)
@@ -45,7 +45,7 @@ Per interpretare le tavole comparative riportate di seguito occorre leggere i tr
       - _Origini principali:_ elettrodi basici umidi o mal conservati, arco troppo lungo, lembi ossidati o ambiente umido (saldatura elettrica manuale); fiamma mal regolata o eccesso di carbonio/acetilene (ossiacetilenica); arco troppo lungo o gas inerte insufficiente/impuro (TIG / ArgonArc); carenza di flusso protettivo (arco sommerso, poco probabili).
   ],
   [
-    #fig-safe(include "../../figs/collegamenti-saldati/p2-fig02.typ", max-h: 11.5cm)
+    #fig-safe(include "../../figs/collegamenti-saldati/collegamenti-saldati-fig13.typ", max-h: 11.5cm)
   ],
 )
 
@@ -64,7 +64,7 @@ Per interpretare le tavole comparative riportate di seguito occorre leggere i tr
       - _Origini principali:_ scarsa pulizia della scoria a fine passata, profilo irregolare delle passate sottostanti, scarsa abilità del saldatore o cattiva preparazione dei lembi (saldatura manuale); passata inferiore con profilo eccessivamente convesso (arco sommerso).
   ],
   [
-    #fig-safe(include "../../figs/collegamenti-saldati/p2-fig03.typ", max-h: 8.5cm)
+    #fig-safe(include "../../figs/collegamenti-saldati/collegamenti-saldati-fig14.typ", max-h: 8.5cm)
   ],
 )
 
@@ -82,7 +82,7 @@ Per interpretare le tavole comparative riportate di seguito occorre leggere i tr
       - _Origini principali:_ eccessiva distanza o slivellamento dei lembi, eccessiva velocità di avanzamento, posizione di lavoro sfavorevole (es. sopratesta), potenza eccessiva del cannello (ossiacetilenica) o corrente di saldatura insufficiente (arco sommerso/Sigma).
   ],
   [
-    #fig-safe(include "../../figs/collegamenti-saldati/p2-fig04.typ", max-h: 8.5cm)
+    #fig-safe(include "../../figs/collegamenti-saldati/collegamenti-saldati-fig15.typ", max-h: 8.5cm)
   ],
 )
 

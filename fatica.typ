@@ -1553,7 +1553,7 @@ Il coefficiente di carico $C_L$ (da *load*) rapporta la resistenza a fatica del 
   ],
   [
     #figure(
-      image("images/ECM01-4_sem_nucleazione_zp.png", width: 92%),
+      image("images/fatica/ECM01-4_sem_nucleazione_zp.png", width: 92%),
       caption: [Micrografia SEM in sezione di un'estrusione superficiale con micro-cricca nucleata nella zona di processo corticale (scala $5 thin mu"m"$).],
     )
   ],
@@ -2060,7 +2060,7 @@ La nucleazione del danno a fatica nasce sempre da irregolarità superficiali in 
   ],
   [
     #figure(
-      image("images/ECM01-4_topografia_rugosita.png", width: 76%),
+      image("images/fatica/ECM01-4_topografia_rugosita.png", width: 76%),
       caption: [Rilievo microscopico 3D della rugosità con avvallamento acuto d'innesco.],
     )
   ],
@@ -2365,27 +2365,27 @@ Le campagne sperimentali sono raccolte nei diagrammi di R.E. Peterson (*Stress C
     row-gutter: 0.6em,
     align: (center + bottom, center + bottom, center + bottom),
     [
-      #image("images/ECM01-5_peterson_spallamento_trazione.png", width: 100%)
+      #image("images/_doppioni/fatica/ECM01-5_peterson_spallamento_trazione.png", width: 100%)
       #text(size: 7.5pt)[*Spallamento — Trazione*]
     ],
     [
-      #image("images/ECM01-5_peterson_spallamento_flessione.png", width: 100%)
+      #image("images/fatica/ECM01-5_peterson_spallamento_flessione.png", width: 100%)
       #text(size: 7.5pt)[*Spallamento — Flessione*]
     ],
     [
-      #image("images/ECM01-5_peterson_spallamento_torsione.png", width: 100%)
+      #image("images/_doppioni/fatica/ECM01-5_peterson_spallamento_torsione.png", width: 100%)
       #text(size: 7.5pt)[*Spallamento — Torsione*]
     ],
     [
-      #image("images/ECM01-5_peterson_gola_trazione.png", width: 100%)
+      #image("images/fatica/ECM01-5_peterson_gola_trazione.png", width: 100%)
       #text(size: 7.5pt)[*Gola — Trazione*]
     ],
     [
-      #image("images/ECM01-5_peterson_gola_flessione.png", width: 100%)
+      #image("images/fatica/ECM01-5_peterson_gola_flessione.png", width: 100%)
       #text(size: 7.5pt)[*Gola — Flessione*]
     ],
     [
-      #image("images/ECM01-5_peterson_gola_torsione.png", width: 100%)
+      #image("images/fatica/ECM01-5_peterson_gola_torsione.png", width: 100%)
       #text(size: 7.5pt)[*Gola — Torsione*]
     ],
   ),
@@ -2406,19 +2406,19 @@ Questa struttura riflette la *similitudine geometrica*: $K_t$ dipende soltanto d
     row-gutter: 0.6em,
     align: (center + bottom, center + bottom),
     [
-      #image("images/ECM01-5_peterson_lastra_spallamento.png", height: 4.1cm)
+      #image("images/fatica/ECM01-5_peterson_lastra_spallamento.png", height: 4.1cm)
       #text(size: 7.5pt)[*Lastra con spallamento in trazione*]
     ],
     [
-      #image("images/ECM01-5_peterson_lastra_intagli.png", height: 4.1cm)
+      #image("images/fatica/ECM01-5_peterson_lastra_intagli.png", height: 4.1cm)
       #text(size: 7.5pt)[*Lastra con intagli laterali a U in trazione*]
     ],
     [
-      #image("images/ECM01-5_peterson_foro_flessione.png", height: 4.4cm)
+      #image("images/fatica/ECM01-5_peterson_foro_flessione.png", height: 4.4cm)
       #text(size: 7.5pt)[*Lastra forata in flessione fuori piano (parametro $d\/h$)*]
     ],
     [
-      #image("images/ECM01-5_peterson_foro_trazione.png", height: 4.4cm)
+      #image("images/fatica/ECM01-5_peterson_foro_trazione.png", height: 4.4cm)
       #text(size: 7.5pt)[*Lastra forata in trazione (curva unica in $d\/b$)*]
     ],
   ),
@@ -2967,11 +2967,11 @@ Il parametro $A$ decresce con la tensione di snervamento $R_"eH"$ o $R_"p0.2"$. 
     column-gutter: 1em,
     align: (center + bottom, center + bottom),
     [
-      #image("images/ECM01-5_sensibilita_intaglio_q.png", width: 100%)
+      #image("images/_doppioni/fatica/ECM01-5_sensibilita_intaglio_q.png", width: 100%)
       #text(size: 8pt)[(a) Abaco sperimentale della sensibilità $q(r)$]
     ],
     [
-      #image("images/ECM01-5_parametro_neuber_A.png", width: 100%)
+      #image("images/fatica/ECM01-5_parametro_neuber_A.png", width: 100%)
       #text(size: 8pt)[(b) Parametro di Neuber $A(R_"eH", R_"p0.2")$]
     ],
   ),
@@ -5091,7 +5091,7 @@ Quando $sigma_m$ è costante su tutti i livelli, il cumulativo si traduce in una
   ],
   [
     #figure(
-      image("images/ECM01-9_cumulativo_3d.png", width: 92%),
+      image("images/_doppioni/fatica/ECM01-9_cumulativo_3d.png", width: 92%),
       caption: [Cumulativo di sollecitazione tridimensionale $log(N)$ al variare di $sigma_a$ e $sigma_m$.],
     ) <fig:cumulativo-3d>
   ],

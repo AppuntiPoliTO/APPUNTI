@@ -16,7 +16,7 @@
     Nella pratica industriale (nodi trave-colonna ad incastro, recipienti in pressione, staffe saldate, nodi di strutture tubolari e banchi di laminazione di grande estensione), la lunghezza dei cordoni, gli spessori elevati e l'accessibilità ridotta rendono l'esecuzione critica. In tali contesti la sicurezza strutturale richiede sempre l'integrazione tra calcolo progettuale e rigorose procedure di *qualificazione dei saldatori e dei procedimenti di saldatura*.
   ],
   [
-    #fig-safe(include "../../figs/collegamenti-saldati/p3-fig01.typ", max-h: 5.8cm, caption: [Esempi industriali: nodo trave-colonna, recipiente in pressione, staffa e nodo tubolare])
+    #fig-safe(include "../../figs/collegamenti-saldati/collegamenti-saldati-fig16.typ", max-h: 5.8cm, caption: [Esempi industriali: nodo trave-colonna, recipiente in pressione, staffa e nodo tubolare])
   ],
 )
 
