@@ -194,11 +194,7 @@ dove $z$ è il numero di sfere, $k d^2$ è la forza di contatto hertziana sulla 
     $ M_Q = 2 dot M dot sin(beta / 2) $
   ],
   [
-    #align(center)[
-  #include "../../figs/p4-fig01.typ"
-  ]
-
-    #fig-safe(include "../../figs/giunti/ecm-c12-p4-09.typ", max-h: 4.8cm)
+ #fig-safe(include "../../figs/giunti/ecm-c12-p4-09.typ", max-h: 4.8cm)
   ],
 )
 
