@@ -503,7 +503,7 @@ Per un funzionamento corretto sono essenziali:
     Nella configurazione *monodisco*, la flangia motrice (volano) $A$ e lo *spingidisco* $B$ serrano il disco condotto $D$, scorrevole assialmente sul mozzo scanalato e rivestito su entrambe le facce con guarnizioni ad alto attrito. Il pacchetto è racchiuso in una *campana* di guida e ventilazione; le superfici attive di attrito sono *due* ($A$–$D$ e $B$–$D$).
   ],
   [#import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 1cm, {
+#canvas(length: 0.9cm, {
   import draw: *
 
   // ==================== VISTA FRONTALE (SINISTRA) ====================
