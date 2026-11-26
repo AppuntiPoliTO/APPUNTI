@@ -1,5 +1,6 @@
 // Figura estratta da _parts/innesti/p1.typ (riga 493) con LocalTypst
 #import "../comuni/_helpers.typ": fig-safe, img-flag
+#import "@preview/cetz:0.3.4": canvas, draw
 
 #canvas(length: 0.9cm, {
   import draw: *
