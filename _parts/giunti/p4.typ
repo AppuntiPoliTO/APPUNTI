@@ -100,10 +100,7 @@ Anche a $M_1$ e $Omega_1$ costanti, sia $Omega_2$ sia $M_2$ oscillano periodicam
   [
     Inserendo sull'albero intermedio un accoppiamento scanalato *telescopico* (es. alberi cardanici agricoli), il doppio giunto agevola il montaggio e compensa anche errori assiali, *dilatazioni termiche* e variazioni di distanza in esercizio.
   ],
-  [//sistemare questa immagine che è troppo sintetica
-    #align(center)[
-  #image("../../images/fig__parts_giunti_p4_8049.png", width: 75%)
-]
+  [
 #fig-safe(include "../../figs/giunti/p4-fig02.typ", max-h: 4.4cm)
   ],
 )
@@ -146,7 +143,8 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
     - una *cuffia conica in gomma* che protegge il giunto e trattiene il grasso lubrificante.
   ],
   [
-    #fig-safe(image("../../images/giunti/ecm-c12-p4-07.jpg"), max-h: 5.2cm)
+    #align(center)[
+  #image("../../images/fig__parts_giunti_p4_8049.png", width: 75%)]
   ],
 )
 
@@ -159,7 +157,7 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
   [
     *Principio duale rispetto al cuscinetto volvente.* Le piste sono ricavate *longitudinalmente* anziché circonferenzialmente: in direzione assiale le sfere scorrono consentendo l'inclinazione $alpha$ ($beta$) tra gli alberi; in direzione circonferenziale i fianchi delle piste le bloccano lateralmente trasmettendo la coppia per contatto hertziano. Le piste possono avere sezione *circolare*, *ellittica* o ad *arco gotico* (cuspide centrale): i profili ellittico e ad arco gotico realizzano *quattro punti di contatto* caricando una retta d'azione o quella opposta a seconda del verso del moto.
   ],
-  [
+  [//sistemare anche questa con "piste a sezione ellittica"
     #fig-safe(include "../../figs/giunti/ecm-c12-p4-08.typ", max-h: 5.2cm)
   ],
 )
