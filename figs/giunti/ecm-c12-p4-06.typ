@@ -1,94 +1,380 @@
 // Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 1cm, {
+#canvas(length: 0.98cm, {
   import draw: *
 
-  // Assi geometrici principali
-  line((-0.132, -2.354), (5.390, 0.506), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((2.357, -0.245), (10.250, 1.192), stroke: (dash: "dashed", thickness: 0.6pt))
-  arc((4.800, 0.200), start: 190.3deg, stop: 207.4deg, radius: 1.65, anchor: "origin", stroke: 0.65pt)
-  content((3.002, -0.414), text(size: 8pt)[$beta$], anchor: "center")
+  // Proiezione 3D ortografica-obliqua fedele a De Paulis-Manfredi (ECM12-4.pdf)
+  // +x = lungo asse 2 (verso destra-alto leggero)
+  // +y = perpendicolare ad asse 2 nel piano orizzontale (verso alto-sinistra)
+  // +z = verticale verso l'alto
+  let ang_b = 27deg
+  let cb = calc.cos(ang_b)
+  let sb = calc.sin(ang_b)
 
-  // Forcella 1 e Albero 1
-  line((1.316, -0.770), (1.243, -0.808), (1.170, -0.846), (1.097, -0.883), (1.028, -0.919), (0.965, -0.958), (0.917, -0.999), (0.883, -1.046), (0.862, -1.096), (0.855, -1.150), (0.855, -1.392), (0.862, -1.338), (0.883, -1.288), (0.917, -1.242), (0.965, -1.200), (1.028, -1.162), (1.097, -1.126), (1.170, -1.088), (1.243, -1.050), (1.316, -1.012), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((0.635, -1.151), (0.646, -1.221), (0.675, -1.292), (0.721, -1.362), (0.785, -1.430), (0.864, -1.496), (0.957, -1.557), (1.063, -1.614), (1.180, -1.665), (1.306, -1.709), (1.439, -1.746), (1.578, -1.776), (1.719, -1.796), (1.862, -1.808), (2.004, -1.811), (2.141, -1.805), (2.273, -1.789), (2.396, -1.763), (2.508, -1.728), (2.604, -1.687), (2.680, -1.647), (2.753, -1.610), (2.826, -1.572), (2.899, -1.534), (2.899, -1.777), (2.826, -1.814), (2.753, -1.852), (2.680, -1.890), (2.604, -1.929), (2.508, -1.971), (2.396, -2.005), (2.273, -2.031), (2.141, -2.047), (2.004, -2.054), (1.862, -2.051), (1.719, -2.039), (1.578, -2.018), (1.439, -1.989), (1.306, -1.952), (1.180, -1.907), (1.063, -1.856), (0.957, -1.800), (0.864, -1.738), (0.785, -1.673), (0.721, -1.605), (0.675, -1.534), (0.646, -1.464), (0.635, -1.393), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((1.257, -0.922), (1.254, -0.901), (1.245, -0.886), (1.231, -0.879), (1.214, -0.880), (1.196, -0.889), (1.179, -0.906), (1.165, -0.928), (1.156, -0.952), (1.153, -0.976), (1.156, -0.996), (1.165, -1.011), (1.179, -1.019), (1.196, -1.017), (1.214, -1.008), (1.231, -0.992), (1.245, -0.970), (1.254, -0.946), close: true, fill: white, stroke: 0.7pt)
-  line((2.840, -1.686), (2.837, -1.665), (2.827, -1.650), (2.814, -1.643), (2.797, -1.644), (2.779, -1.654), (2.762, -1.670), (2.748, -1.692), (2.739, -1.716), (2.735, -1.740), (2.739, -1.760), (2.748, -1.775), (2.762, -1.783), (2.779, -1.782), (2.797, -1.772), (2.814, -1.756), (2.827, -1.734), (2.837, -1.710), close: true, fill: white, stroke: 0.7pt)
-  line((1.158, -0.694), (1.085, -0.731), (1.012, -0.769), (0.939, -0.807), (0.863, -0.846), (0.783, -0.895), (0.718, -0.953), (0.671, -1.015), (0.644, -1.081), (0.635, -1.151), (0.646, -1.221), (0.675, -1.292), (0.721, -1.362), (0.785, -1.430), (0.864, -1.496), (0.957, -1.557), (1.063, -1.614), (1.180, -1.665), (1.306, -1.709), (1.439, -1.746), (1.578, -1.776), (1.719, -1.796), (1.862, -1.808), (2.004, -1.811), (2.141, -1.805), (2.273, -1.789), (2.396, -1.763), (2.508, -1.728), (2.604, -1.687), (2.680, -1.647), (2.753, -1.610), (2.826, -1.572), (2.899, -1.534), (2.740, -1.458), (2.668, -1.495), (2.595, -1.533), (2.522, -1.571), (2.452, -1.607), (2.378, -1.640), (2.296, -1.665), (2.205, -1.684), (2.105, -1.696), (1.998, -1.701), (1.885, -1.699), (1.769, -1.689), (1.652, -1.672), (1.536, -1.647), (1.423, -1.616), (1.315, -1.578), (1.216, -1.535), (1.125, -1.486), (1.046, -1.434), (0.979, -1.379), (0.926, -1.321), (0.887, -1.263), (0.864, -1.206), (0.855, -1.150), (0.862, -1.096), (0.883, -1.046), (0.917, -0.999), (0.965, -0.958), (1.028, -0.919), (1.097, -0.883), (1.170, -0.846), (1.243, -0.808), (1.316, -0.770), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((1.123, -1.850), (1.139, -1.837), (1.150, -1.816), (1.156, -1.790), (1.155, -1.760), (1.148, -1.729), (1.135, -1.698), (1.117, -1.669), (1.095, -1.645), (1.071, -1.627), (1.047, -1.616), (1.024, -1.614), (1.003, -1.620), (0.037, -2.120), (0.157, -2.350), close: true, fill: white, stroke: none)
-  line((1.123, -1.850), (0.157, -2.350), stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((1.003, -1.620), (0.037, -2.120), stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((1.123, -1.850), (1.139, -1.837), (1.150, -1.816), (1.156, -1.790), (1.155, -1.760), (1.148, -1.729), (1.135, -1.698), (1.117, -1.669), (1.095, -1.645), (1.071, -1.627), (1.047, -1.616), (1.024, -1.614), (1.003, -1.620), stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((0.191, -2.280), (0.186, -2.243), (0.173, -2.205), (0.152, -2.170), (0.126, -2.142), (0.097, -2.122), (0.068, -2.114), (0.042, -2.117), (0.022, -2.132), (0.008, -2.157), (0.004, -2.190), (0.008, -2.227), (0.022, -2.265), (0.042, -2.300), (0.068, -2.328), (0.097, -2.348), (0.126, -2.356), (0.152, -2.353), (0.173, -2.338), (0.186, -2.313), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((0.982, -0.841), (2.852, -1.744), stroke: (paint: red, dash: "dashed", thickness: 0.6pt))
-  line((0.622, -2.249), (0.655, -2.246), (0.685, -2.235), (0.710, -2.214), (0.729, -2.186), (0.743, -2.151), (0.749, -2.111), (0.749, -2.066), (0.742, -2.020), (0.728, -1.972), (0.707, -1.925), (0.682, -1.881), (0.652, -1.841), (0.618, -1.807), (0.583, -1.779), mark: (end: ">"), stroke: 0.8pt)
-  content((0.292, -1.822), text(size: 8pt)[1], anchor: "center")
-  content((0.625, -2.377), text(size: 8pt)[$M_1$], anchor: "center")
-  line((1.126, -0.789), (1.126, -0.131), mark: (end: ">"), stroke: 0.85pt)
-  content((1.026, -0.181), text(size: 8pt)[$F_1$], anchor: "east")
-  line((2.708, -1.796), (2.708, -2.454), mark: (end: ">"), stroke: 0.85pt)
-  content((2.808, -2.404), text(size: 8pt)[$F_1$], anchor: "west")
+  let px_x = 0.98
+  let px_y = 0.14
+  let py_x = -0.46
+  let py_y = 0.56
+  let pz_x = 0.0
+  let pz_y = 1.00
 
-  // Crociera centrale
-  line((3.986, 0.682), (3.974, 0.685), (3.960, 0.683), (3.945, 0.676), (3.931, 0.664), (3.918, 0.649), (3.908, 0.631), (3.900, 0.611), (3.896, 0.592), (3.896, 0.574), (3.899, 0.558), (3.906, 0.546), (3.916, 0.538), (4.650, 0.184), (4.720, 0.328), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.880, -0.822), (4.877, -0.832), (4.869, -0.842), (4.857, -0.850), (4.840, -0.857), (4.821, -0.861), (4.800, -0.862), (4.779, -0.861), (4.760, -0.857), (4.743, -0.850), (4.731, -0.842), (4.723, -0.832), (4.720, -0.822), (4.720, 0.061), (4.880, 0.061), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.574, 0.337), (4.796, 0.452), (5.026, 0.341), (4.804, 0.225), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.574, 0.337), (4.804, 0.225), (4.804, -0.052), (4.574, 0.059), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.804, 0.225), (5.026, 0.341), (5.026, 0.063), (4.804, -0.052), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.880, 0.339), (4.877, 0.328), (4.869, 0.319), (4.857, 0.310), (4.840, 0.304), (4.821, 0.300), (4.800, 0.299), (4.779, 0.300), (4.760, 0.304), (4.743, 0.310), (4.731, 0.319), (4.723, 0.328), (4.720, 0.339), (4.720, 1.222), (4.880, 1.222), close: true, fill: white, stroke: none)
-  line((4.880, 0.339), (4.880, 1.222), stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.720, 0.339), (4.720, 1.222), stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.880, 0.339), (4.877, 0.328), (4.869, 0.319), (4.857, 0.310), (4.840, 0.304), (4.821, 0.300), (4.800, 0.299), (4.779, 0.300), (4.760, 0.304), (4.743, 0.310), (4.731, 0.319), (4.723, 0.328), (4.720, 0.339), stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.856, 1.251), (4.871, 1.241), (4.879, 1.229), (4.879, 1.216), (4.872, 1.204), (4.858, 1.194), (4.838, 1.187), (4.814, 1.183), (4.789, 1.182), (4.765, 1.186), (4.744, 1.193), (4.729, 1.203), (4.721, 1.215), (4.721, 1.227), (4.728, 1.239), (4.742, 1.250), (4.762, 1.257), (4.786, 1.261), (4.811, 1.262), (4.835, 1.258), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.950, 0.216), (4.937, 0.219), (4.924, 0.217), (4.909, 0.210), (4.895, 0.199), (4.882, 0.183), (4.872, 0.165), (4.864, 0.146), (4.860, 0.127), (4.860, 0.108), (4.863, 0.093), (4.870, 0.080), (4.880, 0.072), (5.614, -0.282), (5.684, -0.138), close: true, fill: white, stroke: none)
-  line((4.950, 0.216), (5.684, -0.138), stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.880, 0.072), (5.614, -0.282), stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.950, 0.216), (4.937, 0.219), (4.924, 0.217), (4.909, 0.210), (4.895, 0.199), (4.882, 0.183), (4.872, 0.165), (4.864, 0.146), (4.860, 0.127), (4.860, 0.108), (4.863, 0.093), (4.870, 0.080), (4.880, 0.072), stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((5.704, -0.181), (5.702, -0.161), (5.694, -0.146), (5.681, -0.137), (5.666, -0.135), (5.649, -0.141), (5.632, -0.153), (5.616, -0.171), (5.604, -0.192), (5.596, -0.216), (5.593, -0.239), (5.596, -0.259), (5.604, -0.274), (5.616, -0.283), (5.632, -0.285), (5.649, -0.279), (5.666, -0.267), (5.681, -0.249), (5.694, -0.227), (5.702, -0.204), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((4.037, 0.568), (4.037, -0.107), mark: (end: ">"), stroke: 0.85pt)
-  content((3.957, -0.027), text(size: 8pt)[$F_1$], anchor: "east")
-  line((5.563, -0.168), (5.563, 0.507), mark: (end: ">"), stroke: 0.85pt)
-  content((5.643, 0.427), text(size: 8pt)[$F_1$], anchor: "west")
-  line((4.440, 1.396), (5.735, 0.770), stroke: (paint: red, dash: "dashed", thickness: 0.6pt))
-  line((4.800, 1.222), (5.187, 1.292), mark: (end: ">"), stroke: 0.85pt)
-  line((4.800, 1.222), (5.089, 0.825), mark: (end: ">"), stroke: 0.85pt)
-  line((4.800, 1.222), (5.476, 0.895), mark: (end: ">"), stroke: 0.85pt)
-  line((5.187, 1.292), (5.476, 0.895), stroke: (dash: "dashed", thickness: 0.55pt))
-  line((5.089, 0.825), (5.476, 0.895), stroke: (dash: "dashed", thickness: 0.55pt))
-  arc((4.800, 1.222), start: -53.9deg, stop: -25.8deg, radius: 0.28, anchor: "origin", stroke: 0.6pt)
-  content((5.138, 0.940), text(size: 7.5pt)[$beta$], anchor: "center")
-  content((5.207, 1.372), text(size: 8pt)[$Q$], anchor: "south")
-  content((5.069, 0.765), text(size: 8pt)[$F_2$], anchor: "north")
-  content((5.536, 0.955), text(size: 8pt)[$P$], anchor: "south-west")
-  line((4.800, -0.822), (4.413, -0.892), mark: (end: ">"), stroke: 0.85pt)
-  line((4.800, -0.822), (4.511, -0.425), mark: (end: ">"), stroke: 0.85pt)
-  line((4.800, -0.822), (4.124, -0.495), mark: (end: ">"), stroke: 0.85pt)
-  line((4.413, -0.892), (4.124, -0.495), stroke: (dash: "dashed", thickness: 0.55pt))
-  line((4.511, -0.425), (4.124, -0.495), stroke: (dash: "dashed", thickness: 0.55pt))
-  content((4.393, -0.972), text(size: 8pt)[$Q$], anchor: "north")
-  content((4.531, -0.365), text(size: 8pt)[$F_2$], anchor: "south")
-  content((4.064, -0.535), text(size: 8pt)[$P$], anchor: "east")
+  let P3(x, y, z) = (
+    x * px_x + y * py_x + z * pz_x,
+    x * px_y + y * py_y + z * pz_y,
+  )
 
-  // Forcella 2 e Albero 2
-  line((9.879, 1.256), (9.890, 1.254), (9.901, 1.243), (9.913, 1.224), (9.924, 1.199), (9.933, 1.168), (9.940, 1.135), (9.945, 1.102), (9.947, 1.071), (9.946, 1.043), (9.942, 1.021), (9.935, 1.007), (9.926, 1.001), (8.582, 0.756), (8.535, 1.012), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((7.376, -0.454), (7.376, -0.263), (7.280, -0.132), (7.280, -0.322), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((7.376, -0.263), (7.474, -0.245), (7.573, -0.227), (7.672, -0.209), (7.766, -0.192), (7.859, -0.168), (7.946, -0.132), (8.031, -0.082), (8.113, -0.020), (8.190, 0.055), (8.260, 0.140), (8.323, 0.236), (8.376, 0.339), (8.419, 0.449), (8.450, 0.563), (8.469, 0.679), (8.475, 0.794), (8.469, 0.908), (8.450, 1.017), (8.419, 1.119), (8.376, 1.213), (8.323, 1.298), (8.227, 1.429), (8.280, 1.345), (8.323, 1.251), (8.354, 1.148), (8.373, 1.039), (8.379, 0.926), (8.373, 0.810), (8.354, 0.694), (8.323, 0.580), (8.280, 0.471), (8.227, 0.367), (8.165, 0.272), (8.094, 0.186), (8.017, 0.112), (7.935, 0.049), (7.850, -0.000), (7.763, -0.037), (7.670, -0.061), (7.576, -0.078), (7.477, -0.096), (7.379, -0.114), (7.280, -0.132), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((8.500, 1.428), (8.423, 1.517), (8.335, 1.593), (8.236, 1.652), (8.128, 1.695), (8.013, 1.721), (7.893, 1.727), (7.775, 1.715), (7.672, 1.696), (7.573, 1.678), (7.474, 1.660), (7.376, 1.642), (7.280, 1.774), (7.379, 1.792), (7.477, 1.810), (7.576, 1.828), (7.679, 1.846), (7.797, 1.858), (7.917, 1.852), (8.032, 1.827), (8.140, 1.784), (8.239, 1.724), (8.327, 1.649), (8.404, 1.559), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((7.376, 1.642), (7.376, 1.452), (7.280, 1.583), (7.280, 1.774), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((7.408, -0.183), (7.403, -0.170), (7.408, -0.157), (7.421, -0.146), (7.441, -0.138), (7.465, -0.133), (7.491, -0.133), (7.516, -0.138), (7.536, -0.146), (7.549, -0.157), (7.553, -0.170), (7.549, -0.183), (7.536, -0.194), (7.516, -0.202), (7.491, -0.207), (7.465, -0.207), (7.441, -0.202), (7.421, -0.194), close: true, fill: white, stroke: 0.7pt)
-  line((7.408, 1.722), (7.403, 1.735), (7.408, 1.748), (7.421, 1.759), (7.441, 1.768), (7.465, 1.772), (7.491, 1.772), (7.516, 1.768), (7.536, 1.759), (7.549, 1.748), (7.553, 1.735), (7.549, 1.722), (7.536, 1.711), (7.516, 1.703), (7.491, 1.698), (7.465, 1.698), (7.441, 1.703), (7.421, 1.711), close: true, fill: white, stroke: 0.7pt)
-  line((7.376, -0.454), (7.474, -0.436), (7.573, -0.418), (7.672, -0.400), (7.775, -0.381), (7.893, -0.350), (8.013, -0.300), (8.128, -0.233), (8.236, -0.151), (8.335, -0.055), (8.423, 0.053), (8.500, 0.170), (8.564, 0.295), (8.615, 0.426), (8.652, 0.560), (8.674, 0.696), (8.682, 0.832), (8.674, 0.965), (8.652, 1.093), (8.615, 1.214), (8.564, 1.326), (8.500, 1.428), (8.423, 1.517), (8.335, 1.593), (8.236, 1.652), (8.128, 1.695), (8.013, 1.721), (7.893, 1.727), (7.775, 1.715), (7.672, 1.696), (7.573, 1.678), (7.474, 1.660), (7.376, 1.642), (7.376, 1.452), (7.474, 1.470), (7.573, 1.488), (7.672, 1.505), (7.766, 1.523), (7.859, 1.533), (7.946, 1.528), (8.031, 1.509), (8.113, 1.477), (8.190, 1.430), (8.260, 1.370), (8.323, 1.298), (8.376, 1.213), (8.419, 1.119), (8.450, 1.017), (8.469, 0.908), (8.475, 0.794), (8.469, 0.679), (8.450, 0.563), (8.419, 0.449), (8.376, 0.339), (8.323, 0.236), (8.260, 0.140), (8.190, 0.055), (8.113, -0.020), (8.031, -0.082), (7.946, -0.132), (7.859, -0.168), (7.766, -0.192), (7.672, -0.209), (7.573, -0.227), (7.474, -0.245), (7.376, -0.263), close: true, fill: white, stroke: (paint: black, thickness: 0.85pt, join: "round"))
-  line((7.478, 1.735), (7.218, 2.092), mark: (end: ">"), stroke: 0.85pt)
-  content((7.178, 2.132), text(size: 8pt)[$F_2$], anchor: "south-east")
-  line((7.478, 1.735), (6.867, 1.624), mark: (end: ">"), stroke: 0.85pt)
-  content((6.807, 1.624), text(size: 8pt)[$Q$], anchor: "east")
-  line((7.478, -0.265), (7.738, -0.622), mark: (end: ">"), stroke: 0.85pt)
-  content((7.788, -0.652), text(size: 8pt)[$F_2$], anchor: "north-west")
-  line((7.478, -0.265), (8.089, -0.154), mark: (end: ">"), stroke: 0.85pt)
-  content((8.149, -0.214), text(size: 8pt)[$Q$], anchor: "north-west")
-  line((9.290, 1.238), (9.307, 1.206), (9.323, 1.169), (9.338, 1.126), (9.351, 1.079), (9.361, 1.029), (9.369, 0.980), (9.373, 0.931), (9.375, 0.886), (9.373, 0.845), (9.368, 0.810), (9.360, 0.782), (9.349, 0.763), (9.336, 0.752), (9.321, 0.750), mark: (end: ">"), stroke: 0.8pt)
-  content((9.621, 1.389), text(size: 8pt)[2], anchor: "center")
-  content((9.311, 0.596), text(size: 8pt)[$M_2$], anchor: "center")
+  let e1 = (cb, sb, 0.0)
+  let n1 = (-sb, cb, 0.0)
+  let e2 = (1.0, 0.0, 0.0)
+  let n2 = (0.0, 1.0, 0.0)
 
-  content((4.80, -2.05), text(size: 8.5pt)[$theta_1 = 0$], anchor: "center")
+  let vadd(a, b) = (a.at(0) + b.at(0), a.at(1) + b.at(1), a.at(2) + b.at(2))
+  let vscale(a, s) = (a.at(0) * s, a.at(1) * s, a.at(2) * s)
+  let P(v) = P3(v.at(0), v.at(1), v.at(2))
+
+  // Pill bianco leggero per garantire zero sovrapposizioni tra etichette e linee d'asse
+  let lbl(body) = box(fill: white, inset: (x: 1.5pt, y: 1pt), radius: 1pt, body)
+
+  // Semiluce crociera e forcelle: distanza tra i centri dei vincoli = h = 2 * R
+  let R = 1.05
+
+  let draw-cyl(c0, c1, u, v, r, cap1: true) = {
+    let pts0 = ()
+    let pts1 = ()
+    for i in range(0, 17) {
+      let a = i * 22.5deg
+      let off = vadd(vscale(u, r * calc.cos(a)), vscale(v, r * calc.sin(a)))
+      pts0.push(P(vadd(c0, off)))
+      pts1.push(P(vadd(c1, off)))
+    }
+    let p0 = P(c0)
+    let p1 = P(c1)
+    let dx = p1.at(0) - p0.at(0)
+    let dy = p1.at(1) - p0.at(1)
+    let len = calc.sqrt(dx * dx + dy * dy)
+    let nx = -dy / len
+    let ny = dx / len
+    let imax = 0
+    let imin = 0
+    let vmax = -999.0
+    let vmin = 999.0
+    for i in range(0, 16) {
+      let d = (pts0.at(i).at(0) - p0.at(0)) * nx + (pts0.at(i).at(1) - p0.at(1)) * ny
+      if d > vmax { vmax = d; imax = i }
+      if d < vmin { vmin = d; imin = i }
+    }
+    line(..pts0, close: true, fill: white, stroke: 0.85pt)
+    line(pts0.at(imax), pts1.at(imax), pts1.at(imin), pts0.at(imin), close: true, fill: white, stroke: none)
+    line(pts0.at(imax), pts1.at(imax), stroke: 0.85pt)
+    line(pts0.at(imin), pts1.at(imin), stroke: 0.85pt)
+    if cap1 {
+      line(..pts1, close: true, fill: white, stroke: 0.85pt)
+    }
+  }
+
+  let fmark = (end: ">", fill: black, scale: 0.62)
+  let rmark = (end: ">", fill: rgb("#c81e1e"), scale: 0.62)
+  let dim_mark = (start: ">", end: ">", fill: rgb("#1d4ed8"), scale: 0.52)
+
+  // =========================================================================
+  // 1. ASSI GEOMETRICI PRINCIPALI E ANGOLO BETA
+  // =========================================================================
+  // Asse 1 (tratteggiato, da albero 1 fino a poco oltre il centro crociera)
+  line(P(vscale(e1, -5.85)), P(vscale(e1, 1.05)), stroke: (dash: "dashed", thickness: 0.6pt, paint: luma(80)))
+  // Asse 2 (tratteggiato, da sinistra della crociera fino oltre l'albero 2)
+  line(P(vscale(e2, -3.15)), P(vscale(e2, 5.75)), stroke: (dash: "dashed", thickness: 0.6pt, paint: luma(80)))
+
+  // Arco angolo beta tra Asse 1 e Asse 2 (ampio e pulito in zona libera)
+  let arc_beta_pts = ()
+  for i in range(0, 13) {
+    let a = i * (ang_b / 12)
+    let v = (-1.90 * calc.cos(a), -1.90 * calc.sin(a), 0.0)
+    arc_beta_pts.push(P(v))
+  }
+  line(..arc_beta_pts, stroke: (paint: rgb("#c81e1e"), thickness: 0.85pt), mark: (start: ">", end: ">", fill: rgb("#c81e1e"), scale: 0.45))
+  let beta_mid = P((-2.35 * calc.cos(ang_b / 2), -2.35 * calc.sin(ang_b / 2), 0.0))
+  content(beta_mid, lbl(text(size: 9pt, fill: rgb("#c81e1e"))[$bold(beta)$]))
+
+  // =========================================================================
+  // 2. FORCELLA 1 (orizzontale, centrata a s1 = -3.70 lungo e1)
+  // =========================================================================
+  let s1 = -3.70
+  let c_f1 = vscale(e1, s1)
+  let z_th = 0.22
+  let r_in = R - 0.11
+  let r_out = R + 0.13
+  let arm_len = 0.72
+
+  let f1_outer_top = ()
+  let f1_outer_bot = ()
+  let f1_inner_top = ()
+  let f1_inner_bot = ()
+  f1_outer_top.push(P(vadd(c_f1, vadd(vscale(e1, arm_len), vadd(vscale(n1, r_out), (0, 0, z_th / 2))))))
+  f1_outer_bot.push(P(vadd(c_f1, vadd(vscale(e1, arm_len), vadd(vscale(n1, r_out), (0, 0, -z_th / 2))))))
+  f1_inner_top.push(P(vadd(c_f1, vadd(vscale(e1, arm_len), vadd(vscale(n1, r_in), (0, 0, z_th / 2))))))
+  f1_inner_bot.push(P(vadd(c_f1, vadd(vscale(e1, arm_len), vadd(vscale(n1, r_in), (0, 0, -z_th / 2))))))
+
+  for i in range(0, 19) {
+    let a = i * 10deg
+    let dir = vadd(vscale(n1, calc.cos(a)), vscale(e1, -calc.sin(a)))
+    f1_outer_top.push(P(vadd(c_f1, vadd(vscale(dir, r_out), (0, 0, z_th / 2)))))
+    f1_outer_bot.push(P(vadd(c_f1, vadd(vscale(dir, r_out), (0, 0, -z_th / 2)))))
+    f1_inner_top.push(P(vadd(c_f1, vadd(vscale(dir, r_in), (0, 0, z_th / 2)))))
+    f1_inner_bot.push(P(vadd(c_f1, vadd(vscale(dir, r_in), (0, 0, -z_th / 2)))))
+  }
+  f1_outer_top.push(P(vadd(c_f1, vadd(vscale(e1, arm_len), vadd(vscale(n1, -r_out), (0, 0, z_th / 2))))))
+  f1_outer_bot.push(P(vadd(c_f1, vadd(vscale(e1, arm_len), vadd(vscale(n1, -r_out), (0, 0, -z_th / 2))))))
+  f1_inner_top.push(P(vadd(c_f1, vadd(vscale(e1, arm_len), vadd(vscale(n1, -r_in), (0, 0, z_th / 2))))))
+  f1_inner_bot.push(P(vadd(c_f1, vadd(vscale(e1, arm_len), vadd(vscale(n1, -r_in), (0, 0, -z_th / 2))))))
+
+  line(..f1_outer_top, ..f1_outer_bot.rev(), close: true, fill: white, stroke: 0.85pt)
+  line(..f1_outer_top, ..f1_inner_top.rev(), close: true, fill: white, stroke: 0.85pt)
+  line(f1_inner_top.last(), f1_outer_top.last(), f1_outer_bot.last(), f1_inner_bot.last(), close: true, fill: white, stroke: 0.85pt)
+
+  let hole1_L = vadd(c_f1, vadd(vscale(e1, arm_len - 0.18), vscale(n1, R)))
+  let hole1_R = vadd(c_f1, vadd(vscale(e1, arm_len - 0.18), vscale(n1, -R)))
+  let hL_pts = ()
+  let hR_pts = ()
+  for i in range(0, 13) {
+    let a = i * 30deg
+    let off = vadd(vscale(e1, 0.08 * calc.cos(a)), (0, 0, 0.08 * calc.sin(a)))
+    hL_pts.push(P(vadd(vadd(hole1_L, vscale(n1, -0.05)), off)))
+    hR_pts.push(P(vadd(vadd(hole1_R, vscale(n1, -0.11)), off)))
+  }
+  line(..hL_pts, close: true, fill: white, stroke: 0.7pt)
+  line(..hR_pts, close: true, fill: white, stroke: 0.7pt)
+
+  // Linea rossa tratteggiata tra i fori di forcella 1 (parallela a P!)
+  line(
+    P(vadd(hole1_L, vscale(n1, 0.22))),
+    P(vadd(hole1_R, vscale(n1, -0.22))),
+    stroke: (paint: rgb("#c81e1e"), dash: "dashed", thickness: 0.65pt)
+  )
+
+  // Albero 1
+  let sh1_start = vadd(c_f1, vscale(e1, -r_out + 0.04))
+  let sh1_end = vadd(c_f1, vscale(e1, -r_out - 1.20))
+  draw-cyl(sh1_start, sh1_end, n1, (0, 0, 1), 0.145, cap1: true)
+  content(P(vadd(sh1_end, (0, 0, 0.38))), text(size: 8.5pt)[*1*])
+
+  // Coppia M_1
+  let m1_c = vadd(c_f1, vscale(e1, -r_out - 0.56))
+  let m1_pts = ()
+  for i in range(0, 15) {
+    let a = -125deg + i * 16deg
+    let off = vadd(vscale(n1, 0.27 * calc.cos(a)), (0, 0, 0.27 * calc.sin(a)))
+    m1_pts.push(P(vadd(m1_c, off)))
+  }
+  line(..m1_pts, stroke: 0.85pt, mark: (end: ">", fill: black, scale: 0.55))
+  content(P(vadd(m1_c, (0, 0, -0.48))), text(size: 8.5pt)[$M_1$])
+
+  // Forze F_1 su forcella 1
+  let p_f1L = P(vadd(hole1_L, (0, 0, 0.12)))
+  let p_f1L_tip = P(vadd(hole1_L, (0, 0, 0.90)))
+  line(p_f1L, p_f1L_tip, stroke: 0.95pt, mark: fmark)
+  content((p_f1L_tip.at(0) - 0.14, p_f1L_tip.at(1) - 0.04), text(size: 8.5pt)[$F_1$], anchor: "east")
+
+  let p_f1R = P(vadd(hole1_R, (0, 0, -0.12)))
+  let p_f1R_tip = P(vadd(hole1_R, (0, 0, -0.90)))
+  line(p_f1R, p_f1R_tip, stroke: 0.95pt, mark: fmark)
+  content((p_f1R_tip.at(0) + 0.14, p_f1R_tip.at(1) + 0.04), text(size: 8.5pt)[$F_1$], anchor: "west")
+
+  // Quota h sulla forcella 1 (spostata leggermente verso la crociera, con etichetta fuori dall'asse 1!)
+  let qf1_L = P(vadd(hole1_L, vscale(e1, 0.30)))
+  let qf1_R = P(vadd(hole1_R, vscale(e1, 0.30)))
+  line(P(hole1_L), qf1_L, stroke: (paint: rgb("#1d4ed8"), thickness: 0.45pt, dash: "dotted"))
+  line(P(hole1_R), qf1_R, stroke: (paint: rgb("#1d4ed8"), thickness: 0.45pt, dash: "dotted"))
+  line(qf1_L, qf1_R, stroke: (paint: rgb("#1d4ed8"), thickness: 0.72pt), mark: dim_mark)
+  // Etichetta h posizionata a 72% verso il braccio destro (ben lontana da asse 1 e da beta!)
+  let qf1_lbl = (qf1_L.at(0) * 0.28 + qf1_R.at(0) * 0.72, qf1_L.at(1) * 0.28 + qf1_R.at(1) * 0.72)
+  content((qf1_lbl.at(0) + 0.06, qf1_lbl.at(1) + 0.22), lbl(text(size: 8.5pt, fill: rgb("#1d4ed8"))[$bold(h)$]))
+
+  // =========================================================================
+  // 3. CROCIERA CENTRALE (origine (0, 0, 0))
+  // =========================================================================
+  let r_pin = 0.095
+  let b = 0.17
+  let pin_L = vscale(n1, R)
+  let pin_R = vscale(n1, -R)
+  let pin_T = (0.0, 0.0, R)
+  let pin_B = (0.0, 0.0, -R)
+
+  draw-cyl((0, 0, 0), pin_L, e1, (0, 0, 1), r_pin, cap1: true)
+  draw-cyl((0, 0, 0), pin_B, e1, n1, r_pin, cap1: false)
+  let bot_cap = ()
+  for i in range(0, 17) {
+    let a = i * 22.5deg
+    bot_cap.push(P(vadd(pin_B, vadd(vscale(e1, r_pin * calc.cos(a)), vscale(n1, r_pin * calc.sin(a))))))
+  }
+  line(..bot_cap, close: true, fill: white, stroke: 0.8pt)
+
+  let c_pts(sx, sy, sz) = P(vadd(vscale(e1, sx * b), vadd(vscale(n1, sy * b), (0, 0, sz * b))))
+  line(c_pts(-1, -1, 1), c_pts(1, -1, 1), c_pts(1, 1, 1), c_pts(-1, 1, 1), close: true, fill: white, stroke: 0.85pt)
+  line(c_pts(-1, -1, -1), c_pts(-1, 1, -1), c_pts(-1, 1, 1), c_pts(-1, -1, 1), close: true, fill: white, stroke: 0.85pt)
+  line(c_pts(-1, -1, -1), c_pts(1, -1, -1), c_pts(1, -1, 1), c_pts(-1, -1, 1), close: true, fill: white, stroke: 0.85pt)
+
+  draw-cyl((0, 0, b), pin_T, e1, n1, r_pin, cap1: true)
+  draw-cyl(vscale(n1, -b), pin_R, e1, (0, 0, 1), r_pin, cap1: true)
+
+  // Reazioni F_1 sui perni orizzontali della crociera (etichette in spazio completamente libero!)
+  let cpL = P(pin_L)
+  let cpL_tip = P(vadd(pin_L, (0, 0, -0.82)))
+  line(cpL, cpL_tip, stroke: 0.95pt, mark: fmark)
+  content((cpL_tip.at(0) - 0.14, cpL_tip.at(1) - 0.02), lbl(text(size: 8.5pt)[$F_1$]), anchor: "east")
+
+  let cpR = P(pin_R)
+  let cpR_tip = P(vadd(pin_R, (0, 0, 0.82)))
+  line(cpR, cpR_tip, stroke: 0.95pt, mark: fmark)
+  content((cpR_tip.at(0) + 0.12, cpR_tip.at(1) + 0.06), lbl(text(size: 8.5pt)[$F_1$]), anchor: "west")
+
+  // Quota verticale h sulla crociera (spostata a qh_x = 1.62 in pieno spazio bianco tra crociera e forcella 2!)
+  let qh_x = 1.62
+  let qh_T = P(vadd(pin_T, vscale(e2, qh_x)))
+  let qh_B = P(vadd(pin_B, vscale(e2, qh_x)))
+  line(P(pin_T), qh_T, stroke: (paint: rgb("#1d4ed8"), thickness: 0.45pt, dash: "dotted"))
+  line(P(pin_B), qh_B, stroke: (paint: rgb("#1d4ed8"), thickness: 0.45pt, dash: "dotted"))
+  line(qh_B, qh_T, stroke: (paint: rgb("#1d4ed8"), thickness: 0.75pt), mark: dim_mark)
+  // Etichetta h ben sopra asse 2 (a 70% dell'altezza, zero sovrapposizioni!)
+  let qh_lbl = (qh_B.at(0) * 0.28 + qh_T.at(0) * 0.72, qh_B.at(1) * 0.28 + qh_T.at(1) * 0.72)
+  content((qh_lbl.at(0) + 0.14, qh_lbl.at(1)), lbl(text(size: 8.5pt, fill: rgb("#1d4ed8"))[$bold(h)$]), anchor: "west")
+
+  // === SCOMPOSIZIONE DI P SUL PERNO SUPERIORE (ampia e pulita, zero collisioni!) ===
+  let magP = 1.48
+  let vP_top = vscale(n1, magP)
+  let vF2_top = vscale(n2, magP * cb)
+  let vQ_top = vscale(e2, -magP * sb)
+
+  // Linea rossa tratteggiata di P (parallela alla linea rossa sulla forcella 1)
+  line(
+    P(vadd(pin_T, vscale(n1, -0.32))),
+    P(vadd(pin_T, vscale(n1, magP + 0.35))),
+    stroke: (paint: rgb("#c81e1e"), dash: "dashed", thickness: 0.65pt)
+  )
+  line(P(vadd(pin_T, vF2_top)), P(vadd(pin_T, vP_top)), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(80)))
+  line(P(vadd(pin_T, vQ_top)), P(vadd(pin_T, vP_top)), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(80)))
+  line(P(pin_T), P(vadd(pin_T, vP_top)), stroke: (paint: rgb("#c81e1e"), thickness: 1.05pt), mark: rmark)
+  line(P(pin_T), P(vadd(pin_T, vF2_top)), stroke: 0.9pt, mark: fmark)
+  line(P(pin_T), P(vadd(pin_T, vQ_top)), stroke: 0.9pt, mark: fmark)
+
+  // Arco beta tra F_2 (+n2) e P (+n1) — etichetta ben esterna all'arco tra le punte di P e F_2!
+  let arc_top_pts = ()
+  for i in range(0, 10) {
+    let a = i * (ang_b / 9)
+    let r_a = 0.76
+    let v = (-r_a * calc.sin(a), r_a * calc.cos(a), 0.0)
+    arc_top_pts.push(P(vadd(pin_T, v)))
+  }
+  line(..arc_top_pts, stroke: (paint: rgb("#c81e1e"), thickness: 0.75pt))
+  content(
+    P(vadd(pin_T, (-1.16 * calc.sin(ang_b * 0.52), 1.16 * calc.cos(ang_b * 0.52), 0.08))),
+    lbl(text(size: 8.2pt, fill: rgb("#c81e1e"))[$bold(beta)$])
+  )
+
+  content(P(vadd(pin_T, vadd(vP_top, (-0.20, 0.05, 0.04)))), text(size: 8.5pt, fill: rgb("#c81e1e"))[$bold(P)$], anchor: "east")
+  content(P(vadd(pin_T, vadd(vF2_top, (0.08, 0.14, 0.06)))), text(size: 8.5pt)[$F_2$], anchor: "south-west")
+  content(P(vadd(pin_T, vadd(vQ_top, (-0.18, 0.0, -0.02)))), lbl(text(size: 8.5pt)[$Q$]), anchor: "east")
+
+  // === SCOMPOSIZIONE DI P SUL PERNO INFERIORE ===
+  let vP_bot = vscale(n1, -magP)
+  let vF2_bot = vscale(n2, -magP * cb)
+  let vQ_bot = vscale(e2, magP * sb)
+
+  line(P(vadd(pin_B, vF2_bot)), P(vadd(pin_B, vP_bot)), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(80)))
+  line(P(vadd(pin_B, vQ_bot)), P(vadd(pin_B, vP_bot)), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(80)))
+  line(P(pin_B), P(vadd(pin_B, vP_bot)), stroke: (paint: rgb("#c81e1e"), thickness: 1.05pt), mark: rmark)
+  line(P(pin_B), P(vadd(pin_B, vF2_bot)), stroke: 0.9pt, mark: fmark)
+  line(P(pin_B), P(vadd(pin_B, vQ_bot)), stroke: 0.9pt, mark: fmark)
+
+  content(P(vadd(pin_B, vadd(vP_bot, (0.16, -0.06, -0.04)))), text(size: 8.5pt, fill: rgb("#c81e1e"))[$bold(P)$], anchor: "west")
+  content(P(vadd(pin_B, vadd(vF2_bot, (-0.12, -0.10, -0.08)))), text(size: 8.5pt)[$F_2$], anchor: "north-east")
+  content(P(vadd(pin_B, vadd(vQ_bot, (0.22, -0.04, 0.04)))), lbl(text(size: 8.5pt)[$Q$]), anchor: "west")
+
+  // =========================================================================
+  // 4. FORCELLA 2 (verticale, centrata a s2 = +3.75 lungo e2)
+  // =========================================================================
+  let s2 = 3.75
+  let c_f2 = vscale(e2, s2)
+  let y_th = 0.22
+  let arm2 = 0.72
+
+  let sh2_start = vadd(c_f2, vscale(e2, r_out - 0.04))
+  let sh2_end = vadd(c_f2, vscale(e2, r_out + 1.25))
+  draw-cyl(sh2_start, sh2_end, n2, (0, 0, 1), 0.145, cap1: true)
+  content(P(vadd(sh2_end, (0, 0, 0.38))), text(size: 8.5pt)[*2*])
+
+  let m2_c = vadd(c_f2, vscale(e2, r_out + 0.58))
+  let m2_pts = ()
+  for i in range(0, 15) {
+    let a = 125deg - i * 16deg
+    let off = vadd(vscale(n2, 0.27 * calc.cos(a)), (0, 0, 0.27 * calc.sin(a)))
+    m2_pts.push(P(vadd(m2_c, off)))
+  }
+  line(..m2_pts, stroke: 0.85pt, mark: (end: ">", fill: black, scale: 0.55))
+  content(P(vadd(m2_c, (0, 0, -0.48))), text(size: 8.5pt)[$M_2$])
+
+  let f2_out_F = ()
+  let f2_out_B = ()
+  let f2_in_F = ()
+  let f2_in_B = ()
+  f2_out_F.push(P(vadd(c_f2, vadd(vscale(e2, -arm2), vadd(vscale(n2, -y_th / 2), (0, 0, r_out))))))
+  f2_out_B.push(P(vadd(c_f2, vadd(vscale(e2, -arm2), vadd(vscale(n2, y_th / 2), (0, 0, r_out))))))
+  f2_in_F.push(P(vadd(c_f2, vadd(vscale(e2, -arm2), vadd(vscale(n2, -y_th / 2), (0, 0, r_in))))))
+  f2_in_B.push(P(vadd(c_f2, vadd(vscale(e2, -arm2), vadd(vscale(n2, y_th / 2), (0, 0, r_in))))))
+
+  for i in range(0, 19) {
+    let a = i * 10deg
+    let dir = (calc.sin(a), 0.0, calc.cos(a))
+    f2_out_F.push(P(vadd(c_f2, vadd(vscale(dir, r_out), vscale(n2, -y_th / 2)))))
+    f2_out_B.push(P(vadd(c_f2, vadd(vscale(dir, r_out), vscale(n2, y_th / 2)))))
+    f2_in_F.push(P(vadd(c_f2, vadd(vscale(dir, r_in), vscale(n2, -y_th / 2)))))
+    f2_in_B.push(P(vadd(c_f2, vadd(vscale(dir, r_in), vscale(n2, y_th / 2)))))
+  }
+  f2_out_F.push(P(vadd(c_f2, vadd(vscale(e2, -arm2), vadd(vscale(n2, -y_th / 2), (0, 0, -r_out))))))
+  f2_out_B.push(P(vadd(c_f2, vadd(vscale(e2, -arm2), vadd(vscale(n2, y_th / 2), (0, 0, -r_out))))))
+  f2_in_F.push(P(vadd(c_f2, vadd(vscale(e2, -arm2), vadd(vscale(n2, -y_th / 2), (0, 0, -r_in))))))
+  f2_in_B.push(P(vadd(c_f2, vadd(vscale(e2, -arm2), vadd(vscale(n2, y_th / 2), (0, 0, -r_in))))))
+
+  line(..f2_out_F, ..f2_out_B.rev(), close: true, fill: white, stroke: 0.85pt)
+  line(..f2_in_F, ..f2_in_B.rev(), close: true, fill: white, stroke: 0.85pt)
+  line(..f2_out_F, ..f2_in_F.rev(), close: true, fill: white, stroke: 0.85pt)
+  line(f2_out_F.first(), f2_out_B.first(), f2_in_B.first(), f2_in_F.first(), close: true, fill: white, stroke: 0.85pt)
+  line(f2_out_F.last(), f2_out_B.last(), f2_in_B.last(), f2_in_F.last(), close: true, fill: white, stroke: 0.85pt)
+
+  let hole2_T = vadd(c_f2, vadd(vscale(e2, -arm2 + 0.22), (0, 0, R)))
+  let hole2_B = vadd(c_f2, vadd(vscale(e2, -arm2 + 0.22), (0, 0, -R)))
+  let h2T_pts = ()
+  let h2B_pts = ()
+  for i in range(0, 13) {
+    let a = i * 30deg
+    let off = vadd(vscale(e2, 0.08 * calc.cos(a)), vscale(n2, 0.08 * calc.sin(a)))
+    h2T_pts.push(P(vadd(vadd(hole2_T, (0, 0, 0.13)), off)))
+    h2B_pts.push(P(vadd(vadd(hole2_B, (0, 0, 0.11)), off)))
+  }
+  line(..h2T_pts, close: true, fill: white, stroke: 0.7pt)
+  line(..h2B_pts, close: true, fill: white, stroke: 0.7pt)
+
+  // Forze F_2 e Q su forcella 2
+  let f2_T_start = P(vadd(hole2_T, (0, 0, 0.13)))
+  let f2_T_tip = P(vadd(hole2_T, vadd(vscale(n2, 0.95), (0, 0, 0.13))))
+  line(f2_T_start, f2_T_tip, stroke: 0.95pt, mark: fmark)
+  content((f2_T_tip.at(0) - 0.10, f2_T_tip.at(1) + 0.04), text(size: 8.5pt)[$F_2$], anchor: "east")
+
+  let q_T_start = P(vadd(hole2_T, vscale(e2, -0.22)))
+  let q_T_tip = P(vadd(hole2_T, vscale(e2, -0.95)))
+  line(q_T_start, q_T_tip, stroke: 0.95pt, mark: fmark)
+  content((q_T_tip.at(0) - 0.10, q_T_tip.at(1)), text(size: 8.5pt)[$Q$], anchor: "east")
+
+  let f2_B_start = P(vadd(hole2_B, (0, 0, -0.13)))
+  let f2_B_tip = P(vadd(hole2_B, vadd(vscale(n2, -0.95), (0, 0, -0.13))))
+  line(f2_B_start, f2_B_tip, stroke: 0.95pt, mark: fmark)
+  content((f2_B_tip.at(0) + 0.10, f2_B_tip.at(1) - 0.04), text(size: 8.5pt)[$F_2$], anchor: "west")
+
+  // Q sul braccio inferiore: punta verso destra, etichetta dentro la cavita' libera sopra la freccia!
+  let q_B_start = P(vadd(hole2_B, vscale(e2, -0.22)))
+  let q_B_tip = P(vadd(hole2_B, vscale(e2, 0.62)))
+  line(q_B_start, q_B_tip, stroke: 0.95pt, mark: fmark)
+  content((q_B_tip.at(0) + 0.04, q_B_tip.at(1) + 0.34), lbl(text(size: 8.5pt)[$Q$]), anchor: "south")
+
+  // Posizione di riferimento (centrata bene sotto la crociera, zero collisioni!)
+  content((0.55, -2.55), text(size: 8.5pt)[$theta_1 = 0$])
 })
