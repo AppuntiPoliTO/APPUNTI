@@ -572,7 +572,7 @@ Sul diagramma sono riportate in ascissa le tensioni medie adimensionalizzate ris
 
 
 
-],[#include "figs/collegamenti-filettati-fig01.typ"])
+],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig29.typ"])
  Il grafico presenta due scale verticali distinte: la scala di sinistra ($40 div 80 " MPa"$) si riferisce alle viti non rullate, mentre la scala di destra ($80 div 160 " MPa"$) si riferisce alle viti sottoposte a rullatura a freddo, trattamento meccanico superficiale che raddoppia il valore di resistenza in MPa.
 Le diverse rette decrescenti presenti sul diagramma rappresentano l'effetto scala legato alle dimensioni del fusto e al diametro nominale della filettatura, suddivise in tre fasce: $M 4 div M 8$ (valori più elevati), $M 10 div M 16$ (valori intermedi) e $M 18 div M 30$ (valori più bassi). Pur essendo rappresentato un diagramma in termini di tensioni normali assiali, la componente di torsione risulta comunque inclusa attraverso il parametro $K$ che consente di esprimere la tensione equivalente direttamente in funzione della tensione assiale $sigma$. In questo contesto $sigma_a$ indica la tensione assiale alternata.
 La condizione di verifica a fatica richiede che la tensione alternata di esercizio non superi il $90\%$ del limite $sigma_D$ individuato sulla curva corrispondente alla propria dimensione e tensione media:
@@ -595,7 +595,7 @@ Si distinguono tre casi operativi principali:
 
 $ F_(v, m a x) = F_(v, "lim") + Delta C_(m a x, v), quad F_(v, m i n) = F_(v, "lim") $
 
-$ F_(v, m) = F_(v, "lim") + frac(Delta C_(m a x, v), 2), quad F_(v, a) = frac(Delta C_(m a x, v), 2) $],[#include "figs/collegamenti-filettati-fig02.typ"])
+$ F_(v, m) = F_(v, "lim") + frac(Delta C_(m a x, v), 2), quad F_(v, a) = frac(Delta C_(m a x, v), 2) $],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig30.typ"])
 
 #strong[Caso b) – Ciclo pulsante positivo \ ($C_(m i n) lt.eq C(t) lt.eq C_(m a x)$ con $C_(m a x) > 0$ e $C_(m i n) > 0$):]
   #grid(
@@ -605,7 +605,7 @@ $ F_(v, m) = F_(v, "lim") + frac(Delta C_(m a x, v), 2), quad F_(v, a) = frac(De
 
 $ F_(v, m a x) = F_(v, "lim") + Delta C_(m a x, v), quad F_(v, m i n) = F_(v, "lim") + Delta C_(m i n, v) $
 
-$ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[#include "figs/collegamenti-filettati-fig03.typ"])
+$ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig31.typ"])
 
 #strong[Caso c) – Ciclo con inversione di carico \ ($C_(m i n) lt.eq C(t) lt.eq C_(m a x)$ con $C_(m a x) > 0$ e $C_(m i n) < 0$, ossia $C_(m i n) lt.eq 0 lt.eq C_(m a x)$):]
   #grid(
@@ -619,7 +619,7 @@ Le forze del ciclo mantengono le espressioni generali, tenendo conto del segno n
 
 $ F_(v, m a x) = F_(v, "lim") + Delta C_(m a x, v), quad F_(v, m i n) = F_(v, "lim") + Delta C_(m i n, v) $
 
-$ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[#include "figs/collegamenti-filettati-fig04.typ"])
+$ F_(v, m) = frac(F_(v, m a x) + F_(v, m i n), 2), quad F_(v, a) = frac(F_(v, m a x) - F_(v, m i n), 2) $],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig32.typ"])
 #pagebreak()
 === Interventi per migliorare la resistenza a fatica
 Per ridurre l'incidenza del carico affaticante sul collegamento filettato è possibile intervenire attraverso le seguenti soluzioni progettuali:
@@ -649,7 +649,7 @@ Esistono diversi dispositivi unificati contro lo svitamento:
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 4em,
-  align: (left + horizon, center + horizon),[Una soluzione tradizionale è rappresentata dal sistema #strong[dado-controdado]. Quando il dado è serrato e il controdado viene portato al primo contatto, entrambi presentano i filetti appoggiati sullo stesso fianco rispetto alla vite. Serrando successivamente il controdado contro il dado, il dado viene progressivamente scaricato e compresso verso l'alto, invertendo il fianco di contatto con i filetti della vite. Il tratto di gambo compreso fra dado e controdado si comporta come una molla che ostacola il movimento relativo aumentando le forze d'attrito alle interfacce.],[#include "figs/collegamenti-filettati-fig05.typ"])
+  align: (left + horizon, center + horizon),[Una soluzione tradizionale è rappresentata dal sistema #strong[dado-controdado]. Quando il dado è serrato e il controdado viene portato al primo contatto, entrambi presentano i filetti appoggiati sullo stesso fianco rispetto alla vite. Serrando successivamente il controdado contro il dado, il dado viene progressivamente scaricato e compresso verso l'alto, invertendo il fianco di contatto con i filetti della vite. Il tratto di gambo compreso fra dado e controdado si comporta come una molla che ostacola il movimento relativo aumentando le forze d'attrito alle interfacce.],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig33.typ"])
 
 Nella pratica costruttiva si utilizzano spesso dado e controdado di altezza diversa: poiché il carico viene sopportato prevalentemente dal controdado (che lavora contro il dado esattamente come un dado singolo contro il pezzo, concentrando la pressione sui primi filetti), il controdado deve essere realizzato di altezza maggiore per rendere più uniforme la distribuzione del carico sui filetti. Il dado, invece, beneficia dell'inversione di carico indotta dal controdado e risulta meno sollecitato sui primi filetti, potendo quindi avere altezza minore.
 #pagebreak()
@@ -663,7 +663,7 @@ Indicando con $L_p$ lo spessore complessivo delle parti (pari a $L_v$ nella conf
 
 $ n = frac(L_b, L_p) < 1, quad (1 - n) = frac(L_a + L_c, L_p) $
 
-.],[#include "figs/collegamenti-filettati-fig06.typ"],[La deformabilità complessiva del pezzo risulta $ delta_p = delta_p^a + delta_p^b + delta_p^c $],[#include "figs/collegamenti-filettati-fig07.typ"])
+.],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig34.typ"],[La deformabilità complessiva del pezzo risulta $ delta_p = delta_p^a + delta_p^b + delta_p^c $],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig35.typ"])
 
 #grid(
   columns: (1fr, 1fr),
@@ -672,7 +672,7 @@ $ n = frac(L_b, L_p) < 1, quad (1 - n) = frac(L_a + L_c, L_p) $
 
 $ delta_v = frac(L_v, E_v dot.op A_v), quad delta_p = frac(L_p, E_p dot.op A_p) $
 
-],[#include "figs/collegamenti-filettati-fig08.typ"])
+],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig36.typ"])
 #grid(
   columns: (1fr, 1fr),
   gutter: 8em,
@@ -681,7 +681,7 @@ $ delta_v = frac(L_v, E_v dot.op A_v), quad delta_p = frac(L_p, E_p dot.op A_p) 
 $ delta_p^* equiv delta_p^b = frac(L_b, E_p dot.op A_p) = frac(n dot.op L_p, E_p dot.op A_p) < delta_p $
 
 $ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, E_p dot.op A_p) = delta_v + (1 - n) delta_p > delta_v $],
-  [#include "figs/collegamenti-filettati-fig09.typ"],
+  [#include "figs/collegamenti-filettati/collegamenti-filettati-fig37.typ"],
 )
 
 #grid(
@@ -690,20 +690,20 @@ $ delta_v^* = frac(L_v, E_v dot.op A_v) + frac(L_a, E_p dot.op A_p) + frac(L_c, 
   align: (left + horizon, center + horizon),[Sul diagramma di interferenza questo equivale a una rotazione delle due rette caratteristiche attorno al punto di equilibrio $F_v$: la caratteristica della vite ruota diventando meno ripida (vite più deformabile) e la caratteristica del pezzo ruota diventando più ripida (pezzo più rigido). Il segmento del carico esterno $C$ trasla quindi verso il basso lungo il diagramma:
 
 - per la vite, la quota parte di carico assorbita si riduce rispetto al caso (A); pertanto, ai fini della resistenza della vite è sempre cautelativo assumere il carico come applicato al sottotesta (A);
-],[#include "figs/collegamenti-filettati-fig10.typ"])
+],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig38.typ"])
 - per le parti serrate, invece, il carico minimo residuo $F_(p, m i n)$ scende drasticamente, aumentando in modo critico la possibilità di distacco tra le superfici ($F_(p, m i n) = 0$). In tale eventualità viene meno la tenuta o la forza di attrito tra le parti e l'intero carico esterno grava sulla vite, condizione assolutamente da evitare dal punto di vista funzionale.
 === Casi particolari: elemento elastico tra i pezzi (flange con guarnizione)
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[L'interposizione di un elemento elastico morbido tra le parti serrate, come una guarnizione, provoca un incremento molto elevato della deformabilità complessiva del pezzo $delta_p$. Sul diagramma di interferenza la caratteristica del pezzo assume una pendenza estremamente dolce, comportando che il carico esterno $C$ venga sopportato quasi interamente dalla vite ($Delta C_v tilde.eq C$).],[#include "figs/collegamenti-filettati-fig11.typ"])
+  align: (left + horizon, center + horizon),[L'interposizione di un elemento elastico morbido tra le parti serrate, come una guarnizione, provoca un incremento molto elevato della deformabilità complessiva del pezzo $delta_p$. Sul diagramma di interferenza la caratteristica del pezzo assume una pendenza estremamente dolce, comportando che il carico esterno $C$ venga sopportato quasi interamente dalla vite ($Delta C_v tilde.eq C$).],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig39.typ"])
 
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nelle applicazioni industriali, quali le flange bullonate per tubazioni o recipienti in pressione contenenti gas o liquidi, si adotta una configurazione che prevede l'alloggiamento della guarnizione in una specifica sede ricavata tra le due flange. Durante la fase iniziale del serraggio la coppia applicata comprime la guarnizione (che dilata trasversalmente riempiendo la sede, evitando tuttavia che sbordi nella luce tra le flange impedendone la chiusura), finché le superfici metalliche delle due flange non giungono a contatto diretto. Da tale istante in poi, la deformabilità dominante del sistema diventa quella dei due metalli a contatto e non più quella della guarnizione.
 
-],[#include "figs/collegamenti-filettati-fig12.typ"])
+],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig40.typ"])
 Sul diagramma di interferenza questo comportamento si traduce in una caratteristica poligonale (bilineare) per la parte: a partire dal punto di equilibrio $F_(v, "lim")$ verso destra si ha un primo tratto molto ripido (regime di contatto metallo-metallo), seguito da un cambio di pendenza oltre il quale la curva prosegue con inclinazione molto dolce (regime governato dalla sola guarnizione in seguito al distacco dei metalli). In esercizio è fondamentale dimensionare il collegamento affinché il carico esterno non porti il sistema oltre il punto di cambio di pendenza, evitando il distacco delle flange metalliche che causerebbe eccessiva cedevolezza e perdita di tenuta.
 #pagebreak()
 === Viti con carico trasversale
@@ -717,7 +717,7 @@ Le viti non devono lavorare direttamente a taglio poiché, qualora si verifichi 
 
 $ F_(p, m i n) = frac(F_T dot.op C S, f dot.op n dot.op m) $
 
-dove $F_T$ è la forza trasversale totale, $C S$ è il coefficiente di sicurezza ($1.25 div 1.6$), $f$ è il coefficiente di attrito tra le superfici, $n$ è il numero di bulloni e $m$ è il numero di superfici di contatto fra i pezzi (ad esempio $m = 1$).],[#include "figs/collegamenti-filettati-fig13.typ"])
+dove $F_T$ è la forza trasversale totale, $C S$ è il coefficiente di sicurezza ($1.25 div 1.6$), $f$ è il coefficiente di attrito tra le superfici, $n$ è il numero di bulloni e $m$ è il numero di superfici di contatto fra i pezzi (ad esempio $m = 1$).],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig41.typ"])
 
 #strong[Viti con gambo calibrato:]
   #grid(
@@ -729,7 +729,7 @@ $ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi
 
 $ sigma = frac(F_T, n dot.op d dot.op s) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m $
 
-dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superficie d'appoggio (spessore del pezzo sollecitato).],[#include "figs/collegamenti-filettati-fig14.typ"])
+dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superficie d'appoggio (spessore del pezzo sollecitato).],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig42.typ"])
 
 #strong[Inserzione di bussole:]
   #grid(
@@ -739,4 +739,4 @@ dove $d$ è il diametro del gambo calibrato e $s$ è la lunghezza della superfic
 
 $ tau = frac(F_T, m dot.op n dot.op A) = frac(F_T dot.op 4, m dot.op n dot.op pi dot.op (d_e - d_i)^2 ) lt.eq tau_("amm"),  quad tau_("amm") = 0.4 div 0.6 R_(p 0.2) $
 
-$ sigma = frac(F_T, d_e dot.op L_p dot.op n) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m $],[#include "figs/collegamenti-filettati-fig15.typ"])
+$ sigma = frac(F_T, d_e dot.op L_p dot.op n) lt.eq sigma_("amm"), quad sigma_("amm") = 0.75 div 0.6 R_m $],[#include "figs/collegamenti-filettati/collegamenti-filettati-fig43.typ"])

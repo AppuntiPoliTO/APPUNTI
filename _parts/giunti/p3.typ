@@ -1,4 +1,4 @@
-#import "../../figs/_helpers.typ": fig-safe, img-flag
+#import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
 
 #let nota(body) = block(
   width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,
@@ -34,7 +34,7 @@ Il giunto *BIBBY* (o a nastro a serpentina) collega due mozzi flangiati dentati 
   column-gutter: 1.2em,
   align: (center + horizon, center + horizon),
   [
-    #fig-safe(include "../../figs/ecm-c12-p3-02.typ", max-h: 5.5cm)
+    #fig-safe(include "../../figs/_parts-giunti-p3/ecm-c12-p3-02.typ", max-h: 5.5cm)
   ],
   [
     #fig-safe(image("../../figs/ecm-c12-p3-bibby-3d.jpg", height: 5.5cm), max-h: 5.5cm)
@@ -57,7 +57,7 @@ Il giunto *BIBBY* (o a nastro a serpentina) collega due mozzi flangiati dentati 
     *Trasmissione e comportamento progressivo.* La coppia si trasmette per *flessione e torsione* del nastro con rigidezza non lineare progressiva (*hardening*): a carico normale il nastro flette sull'intera luce libera della cava; a coppie elevate o sotto urto si appoggia progressivamente sui fianchi sagomati dei denti, riducendo la luce libera fino al solo breve tratto tra i due semigiunti e aumentando così la rigidezza.
   ],
   [
-    #fig-safe(include "../../figs/ecm-c12-p3-03.typ", max-h: 5.5cm)
+    #fig-safe(include "../../figs/_parts-giunti-p3/ecm-c12-p3-03.typ", max-h: 5.5cm)
   ],
 )
 
@@ -73,7 +73,7 @@ Lo smorzamento delle vibrazioni (fino a circa il *$30\%$* dei carichi impulsivi)
     Il giunto *Arpex* (a biellette) collega le flange dei due alberi tramite pacchi di *lamine flessibili (biellette)* disposte lungo un poligono chiuso e fissate alternativamente con bulloni; è realizzato in configurazione singola oppure *doppia* con distanziale centrale (giallo in sezione). Le lamine lavorano a *flessione fuori dal piano* (lungo l'asse del rotore), consentendo leggere inflessioni e compensando disallineamenti *angolari*, *radiali* e lievi scorrimenti assiali; nel piano delle flange oppongono invece elevata resistenza a taglio e compressione, rendendo il giunto *torsionalmente rigido*. In sovraccarico estremo cedono le biellette prima dei bulloni.
   ],
   [
-    #fig-safe(include "../../figs/ecm-c12-p3-04.typ", max-h: 5.5cm)
+    #fig-safe(include "../../figs/_parts-giunti-p3/ecm-c12-p3-04.typ", max-h: 5.5cm)
   ],
 )
 
@@ -87,7 +87,7 @@ Lo smorzamento delle vibrazioni (fino a circa il *$30\%$* dei carichi impulsivi)
     *Aumento della flessibilità:* interponendo un *elemento intermedio tubolare* (foto a fianco e schema seguente) si trasmette il momento torcente mantenendo bassa rigidezza flessionale e aumentando la capacità di compensare disallineamenti (specie su rotori lunghi). Adottando lamine o mantelli con sezione ad *U* deformabile è possibile moderare anche la rigidezza torsionale.
   ],
   [
-   #fig-safe(include "../../figs/p3-fig02.typ", max-h: 5.8cm)
+   #fig-safe(include "../../figs/_parts-giunti-p3/p3-fig01.typ", max-h: 5.8cm)
   ],
 )
 
@@ -105,7 +105,7 @@ I giunti ad elastomeri collegano due flange calettate mediante elementi interpos
     Il giunto *NORTON* collega due flange affacciate tramite *pioli cilindrici* rivestiti di *manicotti elastomerici bombati*, sporgenti da un disco e impegnati nei fori del disco opposto. Per garantire *equilibratura dinamica* e simmetria, pioli e fori liberi sono alternati sulle due flange. Il giunto compensa efficacemente *errori di posizionamento assiale* (scorrimento dei manicotti nei fori) e *piccoli errori angolari* (grazie alla *bombatura* dell'elastomero). Pur ricordando un bullone in sezione, il gambo del piolo sotto il manicotto *non è filettato*.
   ],
   [
-    #fig-safe(include "../../figs/ecm-c12-p3-05.typ", max-h: 5.5cm)
+    #fig-safe(include "../../figs/_parts-giunti-p3/ecm-c12-p3-05.typ", max-h: 5.5cm)
   ],
 )
 
@@ -123,7 +123,7 @@ I giunti ad elastomeri collegano due flange calettate mediante elementi interpos
     Nel giunto *Steckflex* le due flange sagomate sono collegate da un *elemento polimerico lobato* interposto (a stella/fiore, in giallo in sezione). Nelle versioni compatte moderne (es. tipo *N-EUPEX*), il nucleo centrale unico è sostituito da singoli blocchetti elastomerici inseriti in cavità periferiche delle flange per ridurre massa rotante e ingombro.
   ],
   [
-    #fig-safe(include "../../figs/ecm-c12-p3-08.typ", max-h: 5.4cm)
+    #fig-safe(include "../../figs/_parts-giunti-p3/ecm-c12-p3-08.typ", max-h: 5.4cm)
   ],
 )
 
@@ -151,7 +151,7 @@ I giunti ad elastomeri collegano due flange calettate mediante elementi interpos
     Nel giunto *Periflex* l'elemento elastico è un vero componente strutturale intermedio: un *collare in gomma telata con sezione ad $Omega$*, *tagliato radialmente* in un punto per consentire montaggio e sostituzione senza spostare assialmente gli alberi. Il collare è pinzato sui due mozzi flangiati (rosa e arancione) mediante *controflange anulari* serrate da viti perimetrali mordenti (es. n° 6 mordenti per lato).
   ],
   [
-    #fig-safe(include "../../figs/ecm-c12-p3-10.typ", max-h: 6.0cm)
+    #fig-safe(include "../../figs/_parts-giunti-p3/ecm-c12-p3-10.typ", max-h: 6.0cm)
   ],
 )
 
