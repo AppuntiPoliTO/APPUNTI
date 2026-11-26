@@ -31,10 +31,11 @@ Il transitorio critico è la *sincronizzazione*, cioè l'uguagliamento delle vel
   [
     L'*innesto a denti* trasferisce la coppia tramite un *accoppiamento di forma* tra due flange frontali dotate di profili coniugati. Una leva agente su un collare spinge assialmente la flangia scorrevole fino a impegnare i fianchi dei denti, realizzando un collegamento rigido privo di slittamento a regime.
   ],
-  [#fig-safe(include "../../figs/innesti/ecm-c13-p1-01.typ")],
+  [
+],
 )
 
-#include "../../figs/p1-fig01.typ"
+
 
     L'inserimento è ammesso solo a macchina ferma o a *moto lento*, così che i denti trovino la fase corretta senza urti distruttivi; le superfici inclinate agevolano l'imbocco. Durante il disinserimento sotto carico occorre vincere l'attrito generato dalla pressione sui fianchi: l'inclinazione del profilo può favorire oppure ostacolare l'apertura.
 === Innesti a frizione
