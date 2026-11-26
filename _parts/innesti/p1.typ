@@ -522,12 +522,11 @@ Per un funzionamento corretto sono essenziali:
 Per assorbire le brusche variazioni di coppia e filtrare le *vibrazioni torsionali*, il disco è collegato all'albero tramite un *parastrappi* (fino alla soluzione a *doppio volano*). Le molle elicoidali circonferenziali — spesso abbinate a uno smorzatore ad attrito — rendono l'innesto simile a un *giunto elastico torsionalmente cedevole*. Nel doppio volano la massa secondaria agisce da *smorzatore dinamico*: in analogia al sistema traslazionale a due masse collegate da molla e smorzatore, la massa secondaria oscilla in *controfase* rispetto a quella principale, opponendo una forza inerziale che sposta la frequenza critica e sdoppia la risonanza principale in due picchi laterali di ampiezza fortemente ridotta.
 
 #grid(
-  columns: (1fr, 1fr, 0.55fr),
+  columns: (1fr, 1fr),
   column-gutter: 0.8em,
-  align: (center + horizon, center + horizon, center + horizon),
+  align: (center + horizon, center + horizon),
   [#fig-safe(image("../../images/innesti/ecm-c13-p1-06.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi su disco frizione])],
-  [#fig-safe(image("../../images/innesti/ecm-c13-p1-07.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi in un doppio volano])],
-  [#fig-safe(include "../../figs/innesti/ecm-c13-p1-08.typ", max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Sezione disco monodisco])],
+  [#fig-safe(image("../../images/innesti/ecm-c13-p1-07.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi in un doppio volano])]
 )
 
 #v(0.4em)
