@@ -869,8 +869,7 @@ Geometricamente il poligono ribalta i confini del diagramma di Haigh a cavallo d
     // Legenda compatta in alto a sinistra
     content((-4.7, 5.2), anchor: "north-west")[#text(size: 7.5pt, fill: blue, weight: "bold")[Ciclo 1: sicuro]]
     content((-4.7, 4.6), anchor: "north-west")[#text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[Ciclo 2: uscente]]
-  }),
-  caption: [Diagramma di Goodman--Smith: costruzione del poligono di sicurezza e verifica grafica di un #text(fill: blue, weight: "bold")[ciclo sicuro] rispetto a un #text(fill: red.transparentize(10%), weight: "bold")[ciclo uscente].],
+  })
 )
 
 In compressione i materiali duttili resistono in genere a tensioni di plasticizzazione e rottura più alte che in trazione. Per semplicità e a favore di sicurezza, si estende però in compressione lo stesso valore $R_"eH"$ della trazione, evitando errori di lettura durante la verifica.
