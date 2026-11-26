@@ -346,62 +346,7 @@ Fissando $sigma_m = "costante"$ si ottiene il *diagramma S–N*, con $log_10 N$ 
 Al crescere di $T$, i legami interatomici si indeboliscono e il materiale diventa più cedevole, come già mostrano le curve statiche di trazione. L'intera curva S–N si abbassa e il limite di fatica $sigma_D$ cala, imponendo campagne termiche dedicate per gli organi destinati a lavorare a caldo.
 
 #figure(
-  canvas(length: 1.05cm, {
-    // BBox: x in [-1.65, 10.1] (dx=11.75), y in [-1.15, 5.85], length=1.05cm -> larghezza = 12.34 cm <= 17.0 cm
-    import draw: *
-
-    // Assi principali
-    line((0, 0), (9.4, 0), stroke: 0.9pt, mark: (end: ">", scale: 0.7))
-    line((0, 0), (0, 5.0), stroke: 0.9pt, mark: (end: ">", scale: 0.7))
-    content((9.52, 0), text(size: 9pt)[$N$], anchor: "west")
-    content((-0.18, 4.92), text(size: 9pt)[$sigma_a$], anchor: "east")
-
-    // Linee di riferimento verticali e orizzontali
-    line((0.6, 0), (0.6, 4.25), stroke: (dash: "dotted", thickness: 0.6pt))
-    line((3.1, 0), (3.1, 4.65), stroke: (dash: "dashed", thickness: 0.65pt))
-    line((5.6, 0), (5.6, 0.12), stroke: 0.7pt)
-    line((6.2, 0), (6.2, 4.65), stroke: (dash: "dashed", thickness: 0.65pt))
-    line((0, 4.25), (0.6, 4.25), stroke: (dash: "dotted", thickness: 0.6pt))
-    line((0, 3.65), (3.1, 3.65), stroke: (dash: "dotted", thickness: 0.6pt))
-    line((0, 1.35), (6.2, 1.35), stroke: (dash: "dashed", thickness: 0.65pt))
-
-    // Curva S-N nei tre regimi (acciai) + ramo inclinato leghe Al
-    bezier((0.6, 4.25), (3.1, 3.65), (1.6, 4.22), (2.4, 3.92), stroke: 1.15pt)
-    bezier((3.1, 3.65), (6.2, 1.35), (4.0, 3.08), (5.05, 1.85), stroke: 1.15pt)
-    line((6.2, 1.35), (8.8, 1.35), stroke: 1.15pt)
-    line((6.2, 1.35), (8.8, 0.95), stroke: (paint: rgb("#1f77b4"), dash: "dashed", thickness: 0.85pt))
-    content((8.90, 0.95), text(size: 7.5pt, fill: rgb("#1f77b4"))[leghe Al], anchor: "west")
-
-    // Punto di ginocchio
-    circle((6.2, 1.35), radius: 0.075, fill: red, stroke: red)
-
-    // Etichette assi e livelli tensionali
-    content((-0.18, 4.25), text(size: 8.5pt)[$R_m$], anchor: "east")
-    content((-0.18, 3.65), text(size: 8pt)[$0.8"–"0.9 thin R_m$], anchor: "east")
-    content((-0.18, 1.35), text(size: 8.5pt)[$sigma_D$], anchor: "east")
-
-    content((0.6, -0.20), text(size: 8.5pt)[$10^0$], anchor: "north")
-    content((3.1, -0.20), text(size: 8.5pt)[$10^3$], anchor: "north")
-    content((5.6, -0.20), text(size: 8.5pt)[$10^6$], anchor: "north")
-
-    // Nota ginocchio
-    line((6.2, -0.05), (6.2, -0.52), stroke: (paint: red, thickness: 0.55pt))
-    content((6.2, -0.60), text(size: 8pt, fill: red)[$N_"ginocchio" approx 2 dot 10^6 " (acciai)," quad 10^7 " (leghe Al)"$], anchor: "north")
-
-    // Delimitazioni e nomi dei regimi
-    line((0.65, 4.65), (3.05, 4.65), stroke: 0.65pt, mark: (start: ">", end: ">", scale: 0.55))
-    content((1.85, 4.80), align(center, text(size: 8pt)[Fatica \ oligociclica]), anchor: "south")
-
-    line((3.15, 5.25), (8.80, 5.25), stroke: 0.65pt, mark: (start: ">", end: ">", scale: 0.55))
-    content((5.98, 5.38), text(size: 8pt, weight: "bold")[Fatica ad alto numero di cicli], anchor: "south")
-
-    content((4.65, 4.65), align(center, text(size: 8pt)[Resistenza \ *a termine*]), anchor: "center")
-    content((7.50, 4.65), align(center, text(size: 8pt)[Resistenza \ *a vita infinita*]), anchor: "center")
-
-    // Riquadro sigma_m e T costanti
-    rect((6.65, 2.30), (9.35, 3.05), stroke: (paint: red, thickness: 0.8pt), fill: white)
-    content((8.00, 2.675), align(center, text(size: 7.8pt, fill: red)[$sigma_m = "costante"$ \ $T = "costante"$]), anchor: "center")
-  }),
+  include "figs/fatica/fatica-fig28.typ",
   caption: [Diagramma S–N (curva di Wöhler per $sigma_m = 0$) con i tre regimi di fatica e il punto di ginocchio.],
 )
 
@@ -420,126 +365,7 @@ Nella regione a termine, invece, il progettista entra in ordinata con la tension
 Le norme definiscono schemi di prova capaci di imporre cicli controllati con macchine semplici ed economiche. La soluzione di riferimento per i cicli alterni simmetrici ($sigma_m = 0$) è la *flessione rotante*, in cui il carico rimane statico mentre ruota il provino.
 
 #figure(
-  canvas(length: 1.05cm, {
-    // BBox: x in [-0.2, 14.3] (dx=14.5), y in [-0.45, 7.95], length=1.05cm -> larghezza = 15.22 cm <= 17.0 cm
-    import draw: *
-
-    // --- FASCIA SUPERIORE: sezione rotante, diagramma sigma e ciclo sinusoidale ---
-    // Sezione circolare
-    circle((3.3, 6.2), radius: 1.1, stroke: 1pt, fill: white)
-    line((1.95, 6.2), (8.35, 6.2), stroke: (dash: "dashed", thickness: 0.6pt))
-    line((3.3, 4.9), (3.3, 7.5), stroke: (dash: "dashed", thickness: 0.6pt))
-    arc((3.3, 6.2), start: 115deg, stop: 225deg, radius: 0.65, anchor: "origin", mark: (end: ">", scale: 0.6), stroke: 0.75pt)
-    content((3.02, 5.90), text(size: 8pt)[$omega$], anchor: "center")
-    circle((2.52, 6.98), radius: 0.08, fill: rgb("#2e7d32"), stroke: 0.6pt)
-    content((2.38, 7.08), text(size: 7.5pt, fill: rgb("#2e7d32"), weight: "bold")[$P_0$], anchor: "south-east")
-
-    // Linee di proiezione dalla sezione alla distribuzione lineare
-    line((3.3, 7.3), (7.25, 7.3), stroke: (dash: "dotted", thickness: 0.6pt))
-    line((3.3, 5.1), (5.35, 5.1), stroke: (dash: "dotted", thickness: 0.6pt))
-
-    // Distribuzione lineare delle tensioni
-    line((6.3, 6.2), (6.3, 7.3), (7.25, 7.3), close: true, fill: black.transparentize(86%), stroke: 0.85pt)
-    line((6.3, 6.2), (6.3, 5.1), (5.35, 5.1), close: true, fill: black.transparentize(86%), stroke: 0.85pt)
-    line((6.3, 4.95), (6.3, 7.45), stroke: 0.75pt)
-    line((5.35, 5.1), (7.25, 7.3), stroke: 1.05pt)
-    content((7.25, 7.42), text(size: 8pt)[$+sigma_"max"$], anchor: "south")
-    content((5.35, 4.98), text(size: 8pt)[$-sigma_"max"$], anchor: "north")
-
-    // Ciclo sinusoidale sigma(t)
-    line((8.9, 4.85), (8.9, 7.70), stroke: 0.85pt, mark: (end: ">", scale: 0.65))
-    line((8.7, 6.20), (13.7, 6.20), stroke: 0.85pt, mark: (end: ">", scale: 0.65))
-    content((8.75, 7.65), text(size: 8.5pt)[$sigma$], anchor: "east")
-    content((13.8, 6.20), text(size: 8.5pt)[$t$], anchor: "west")
-    line((8.9, 7.3), (13.2, 7.3), stroke: (dash: "dotted", thickness: 0.6pt))
-    line((8.9, 5.1), (13.2, 5.1), stroke: (dash: "dotted", thickness: 0.6pt))
-
-    bezier((8.9, 6.2), (9.9, 6.2), (9.23, 7.666), (9.57, 7.666), stroke: (paint: blue, thickness: 1.05pt))
-    bezier((9.9, 6.2), (10.9, 6.2), (10.23, 4.734), (10.57, 4.734), stroke: (paint: blue, thickness: 1.05pt))
-    bezier((10.9, 6.2), (11.9, 6.2), (11.23, 7.666), (11.57, 7.666), stroke: (paint: blue, thickness: 1.05pt))
-    bezier((11.9, 6.2), (12.9, 6.2), (12.23, 4.734), (12.57, 4.734), stroke: (paint: blue, thickness: 1.05pt))
-
-    // --- FASCIA INFERIORE SINISTRA: provetta su 4 appoggi ---
-    line((0.58, 3.25), (6.55, 3.25), stroke: (dash: "dashed", thickness: 0.6pt))
-    arc((0.65, 3.25), start: 110deg, stop: 250deg, radius: (0.16, 0.35), anchor: "origin", mark: (end: ">", scale: 0.55), stroke: 0.75pt)
-    content((0.30, 3.25), text(size: 8pt)[$omega$], anchor: "east")
-
-    // Contorno provetta 4 appoggi
-    line((0.85, 3.42), (1.95, 3.42), (2.30, 3.35), (4.70, 3.35), (5.05, 3.42), (6.15, 3.42),
-         (6.15, 3.08), (5.05, 3.08), (4.70, 3.15), (2.30, 3.15), (1.95, 3.08), (0.85, 3.08),
-         close: true, fill: black.transparentize(88%), stroke: 0.95pt)
-
-    // Cuscinetti (4 appoggi)
-    for bx in (1.15, 1.75, 5.25, 5.85) {
-      rect((bx - 0.14, 3.42), (bx + 0.14, 3.64), fill: white, stroke: 0.7pt)
-      line((bx - 0.14, 3.42), (bx + 0.14, 3.64), stroke: 0.55pt)
-      line((bx - 0.14, 3.64), (bx + 0.14, 3.42), stroke: 0.55pt)
-      rect((bx - 0.14, 2.86), (bx + 0.14, 3.08), fill: white, stroke: 0.7pt)
-      line((bx - 0.14, 2.86), (bx + 0.14, 3.08), stroke: 0.55pt)
-      line((bx - 0.14, 3.08), (bx + 0.14, 2.86), stroke: 0.55pt)
-    }
-    // Vincoli fissi esterni (appoggi 1.15 e 5.85)
-    for gx in (1.15, 5.85) {
-      line((gx - 0.24, 2.86), (gx + 0.24, 2.86), stroke: 0.8pt)
-      line((gx - 0.20, 2.86), (gx - 0.30, 2.74), stroke: 0.55pt)
-      line((gx - 0.05, 2.86), (gx - 0.15, 2.74), stroke: 0.55pt)
-      line((gx + 0.10, 2.86), (gx + 0.00, 2.74), stroke: 0.55pt)
-      line((gx + 0.24, 2.86), (gx + 0.14, 2.74), stroke: 0.55pt)
-    }
-    // Carichi P interni (1.75 e 5.25)
-    for px in (1.75, 5.25) {
-      line((px, 2.86), (px, 2.25), stroke: 0.9pt, mark: (end: ">", scale: 0.65))
-      content((px, 2.18), text(size: 8pt)[$P$], anchor: "north")
-      line((px, 2.00), (px, 1.35), stroke: (dash: "dotted", thickness: 0.55pt))
-    }
-
-    // Diagramma momento flettente M_f (4 appoggi)
-    line((1.15, 1.35), (1.75, 0.50), (5.25, 0.50), (5.85, 1.35), close: true, fill: black.transparentize(82%), stroke: 0.9pt)
-    content((3.50, 0.92), text(size: 8pt)[$M_f = "cost."$], anchor: "center")
-    content((3.50, 0.05), text(size: 8pt, weight: "bold")[Provetta su quattro appoggi], anchor: "north")
-
-    // --- FASCIA INFERIORE DESTRA: provetta a sbalzo ---
-    line((8.38, 3.25), (14.15, 3.25), stroke: (dash: "dashed", thickness: 0.6pt))
-    arc((8.45, 3.25), start: 110deg, stop: 250deg, radius: (0.16, 0.35), anchor: "origin", mark: (end: ">", scale: 0.55), stroke: 0.75pt)
-    content((8.10, 3.25), text(size: 8pt)[$omega$], anchor: "east")
-
-    // Contorno provetta a sbalzo sagomata
-    line((8.65, 3.42), (10.50, 3.42), (11.15, 3.34), (11.80, 3.34), (12.35, 3.40), (13.85, 3.40),
-         (13.85, 3.10), (12.35, 3.10), (11.80, 3.16), (11.15, 3.16), (10.50, 3.08), (8.65, 3.08),
-         close: true, fill: black.transparentize(88%), stroke: 0.95pt)
-
-    // Cuscinetti di incastro (9.05, 10.05) e carico (13.55)
-    for bx in (9.05, 10.05) {
-      rect((bx - 0.14, 3.42), (bx + 0.14, 3.64), fill: white, stroke: 0.7pt)
-      line((bx - 0.14, 3.42), (bx + 0.14, 3.64), stroke: 0.55pt)
-      line((bx - 0.14, 3.64), (bx + 0.14, 3.42), stroke: 0.55pt)
-      rect((bx - 0.14, 2.86), (bx + 0.14, 3.08), fill: white, stroke: 0.7pt)
-      line((bx - 0.14, 2.86), (bx + 0.14, 3.08), stroke: 0.55pt)
-      line((bx - 0.14, 3.08), (bx + 0.14, 2.86), stroke: 0.55pt)
-      line((bx - 0.24, 2.86), (bx + 0.24, 2.86), stroke: 0.8pt)
-      line((bx - 0.20, 2.86), (bx - 0.30, 2.74), stroke: 0.55pt)
-      line((bx - 0.05, 2.86), (bx - 0.15, 2.74), stroke: 0.55pt)
-      line((bx + 0.10, 2.86), (bx + 0.00, 2.74), stroke: 0.55pt)
-      line((bx + 0.24, 2.86), (bx + 0.14, 2.74), stroke: 0.55pt)
-    }
-    rect((13.41, 3.40), (13.69, 3.62), fill: white, stroke: 0.7pt)
-    line((13.41, 3.40), (13.69, 3.62), stroke: 0.55pt)
-    line((13.41, 3.62), (13.69, 3.40), stroke: 0.55pt)
-    rect((13.41, 2.88), (13.69, 3.10), fill: white, stroke: 0.7pt)
-    line((13.41, 2.88), (13.69, 3.10), stroke: 0.55pt)
-    line((13.41, 3.10), (13.69, 2.88), stroke: 0.55pt)
-
-    line((13.55, 2.88), (13.55, 2.25), stroke: 0.9pt, mark: (end: ">", scale: 0.65))
-    content((13.55, 2.18), text(size: 8pt)[$P$], anchor: "north")
-
-    // Diagramma momento flettente triangolare (sbalzo) + proiezione gola
-    line((10.05, 2.65), (10.05, 1.35), stroke: (dash: "dotted", thickness: 0.55pt))
-    line((11.475, 3.16), (11.475, 0.85), stroke: (dash: "dashed", paint: red.transparentize(20%), thickness: 0.55pt))
-    line((13.55, 2.00), (13.55, 1.35), stroke: (dash: "dotted", thickness: 0.55pt))
-    line((9.05, 1.35), (10.05, 0.50), (13.55, 1.35), close: true, fill: black.transparentize(82%), stroke: 0.9pt)
-    content((10.85, 0.98), text(size: 8pt)[$M_f$], anchor: "center")
-    content((11.30, 0.05), text(size: 8pt, weight: "bold")[Provetta a sbalzo], anchor: "north")
-  }),
+  include "figs/fatica/fatica-fig29.typ",
   caption: [Prove in flessione rotante: ciclo sinusoidale di una fibra periferica $P_0$ (in alto) e confronto fra configurazione su quattro appoggi e a sbalzo (in basso).],
 )
 
@@ -562,50 +388,7 @@ Una provetta cilindrica ruota a velocità angolare $omega$ sotto un momento flet
   ],
   [
     #figure(
-      canvas(length: 1.00cm, {
-        // BBox: x in [-0.2, 7.3] (dx=7.5), y in [0.15, 4.35], length=1.00cm -> larghezza = 7.50 cm <= 8.2 cm
-        import draw: *
-
-        // Incastro a sinistra
-        rect((0.15, 2.65), (0.50, 3.85), fill: black.transparentize(82%), stroke: 0.9pt)
-        for hy in (2.75, 2.95, 3.15, 3.35, 3.55, 3.75) {
-          line((0.15, hy), (0.00, hy - 0.14), stroke: 0.6pt)
-        }
-        content((0.32, 3.98), text(size: 7.5pt)[Incastro], anchor: "south")
-
-        // Provetta a sbalzo + posizioni limite tratteggiate
-        line((0.50, 3.25), (4.35, 3.25), stroke: (dash: "dashed", thickness: 0.55pt))
-        bezier((0.50, 3.25), (4.35, 3.70), (2.0, 3.26), (3.3, 3.45), stroke: (dash: "dotted", thickness: 0.65pt, paint: black.transparentize(35%)))
-        bezier((0.50, 3.25), (4.35, 2.80), (2.0, 3.24), (3.3, 3.05), stroke: (dash: "dotted", thickness: 0.65pt, paint: black.transparentize(35%)))
-        rect((0.50, 3.13), (4.35, 3.37), fill: black.transparentize(86%), stroke: 0.95pt)
-        content((2.40, 3.55), text(size: 8pt)[Provetta], anchor: "south")
-
-        // Freccia oscillazione
-        line((4.65, 2.82), (4.65, 3.68), stroke: 0.65pt, mark: (start: ">", end: ">", scale: 0.55))
-
-        // Disco rotante eccentrico e biella
-        circle((4.60, 1.45), radius: 0.65, fill: black.transparentize(92%), stroke: 0.85pt)
-        circle((4.60, 1.45), radius: 0.045, fill: black, stroke: black)
-        line((4.60, 1.45), (4.90, 1.85), stroke: (paint: blue, thickness: 1.0pt))
-
-        // Biella dalla provetta al bottone di manovella
-        line((4.35, 3.25), (4.90, 1.85), stroke: 1.35pt)
-        circle((4.35, 3.25), radius: 0.075, fill: white, stroke: 0.9pt)
-        circle((4.90, 1.85), radius: 0.075, fill: white, stroke: 0.9pt)
-
-        // Rotazione omega (in basso, separata dalla linea di quota)
-        arc((4.60, 1.45), start: -135deg, stop: -45deg, radius: 0.85, anchor: "origin", mark: (end: ">", scale: 0.6), stroke: 0.75pt)
-        content((4.60, 0.42), text(size: 8pt)[$omega$], anchor: "north")
-
-        // Regolazione componente media
-        line((4.60, 1.45), (6.15, 1.45), stroke: (dash: "dotted", thickness: 0.6pt))
-        line((6.15, 0.90), (6.15, 2.00), stroke: 0.7pt, mark: (start: ">", end: ">", scale: 0.6))
-        content((6.15, 2.12), align(center, text(size: 7.5pt)[Regolazione \ comp. media]), anchor: "south")
-
-        // Regolazione componente alternata (punta direttamente al raggio eccentrico)
-        line((3.30, 1.65), (4.68, 1.68), stroke: (paint: blue, thickness: 0.6pt), mark: (end: ">", fill: blue, scale: 0.55))
-        content((3.20, 1.65), align(right, text(size: 7.5pt)[Regolazione \ comp. alternata]), anchor: "east")
-      }),
+      include "figs/fatica/fatica-fig30.typ",
       caption: [Schema cinematico della prova in flessione piana.],
     )
   ],
@@ -639,80 +422,7 @@ Le prove di fatica hanno una dispersione intrinseca elevata, dovuta a micro-eter
   ],
   [
     #figure(
-      canvas(length: 1.42cm, {
-        // BBox: x in [-0.95, 4.35] (dx=5.30), y in [-0.85, 4.05], length=1.42cm -> larghezza = 7.53 cm <= 8.2 cm
-        import draw: *
-
-        // Riquadro assi principali (x = log10(N) - 4, y = (sigma_a - 10)/30)
-        rect((0, 0), (4.0, 3.85), stroke: 0.9pt)
-
-        // Ticks asse X (10^4 .. 10^8)
-        for (xval, lbl) in ((0, $10^4$), (1, $10^5$), (2, $10^6$), (3, $10^7$), (4, $10^8$)) {
-          line((xval, 0), (xval, -0.07), stroke: 0.7pt)
-          line((xval, 3.85), (xval, 3.78), stroke: 0.55pt)
-          content((xval, -0.12), anchor: "north", text(size: 7pt)[#lbl])
-        }
-        content((2.0, -0.40), anchor: "north", text(size: 7.5pt)[$N$])
-
-        // Ticks asse Y (20 .. 120 MPa)
-        for s in (20, 40, 60, 80, 100, 120) {
-          let yval = (s - 10) / 30
-          line((0, yval), (-0.07, yval), stroke: 0.7pt)
-          line((4.0, yval), (3.93, yval), stroke: 0.55pt)
-          content((-0.11, yval), anchor: "east", text(size: 7pt)[#s])
-        }
-        content((-0.68, 1.92), angle: 90deg, anchor: "center", text(size: 7.5pt)[$sigma_a$ (MPa)])
-
-        // Riquadro parametri prova
-        content((3.85, 3.68), anchor: "north-east", text(size: 7pt)[
-          #align(right)[
-            M12 \
-            $sigma_m = 230$ MPa \
-            Weibull-2p
-          ]
-        ])
-
-        // Punti di rottura (x) distribuiti attorno a B50 tra B10 e B90
-        let xpts = (
-          (0.97, 3.33), (1.07, 3.33), (1.15, 3.33), (1.25, 3.33),
-          (1.50, 2.33), (1.62, 2.33), (1.71, 2.33), (1.80, 2.33), (1.91, 2.33),
-          (1.86, 1.67), (1.99, 1.67), (2.11, 1.67), (2.26, 1.67),
-          (2.04, 1.33), (2.18, 1.33), (2.31, 1.33), (2.48, 1.33),
-          (2.20, 1.00), (2.36, 1.00),
-          (2.34, 0.76),
-        )
-        for (px, py) in xpts {
-          let d = 0.045
-          line((px - d, py - d), (px + d, py + d), stroke: 0.75pt)
-          line((px - d, py + d), (px + d, py - d), stroke: 0.75pt)
-        }
-
-        // Run-outs (o) a troncamento N = 10^7
-        let opts = (
-          (3.00, 1.33), (2.88, 1.00), (3.02, 1.00), (3.00, 0.67), (3.00, 0.33),
-        )
-        for (px, py) in opts {
-          circle((px, py), radius: 0.048, fill: white, stroke: 0.75pt + rgb("#1f77b4"))
-        }
-
-        // Curve iso-probabilità Weibull (B90, B50, B10)
-        line((1.18, 3.45), (2.38, 1.55), (4.0, 1.55), stroke: (paint: black.transparentize(35%), thickness: 0.85pt, dash: "dashed"))
-        content((3.42, 1.62), anchor: "south", text(size: 7pt)[$B_90$])
-
-        line((1.05, 3.45), (2.38, 1.15), (4.0, 1.15), stroke: (paint: black, thickness: 1.0pt))
-        content((3.42, 1.22), anchor: "south", text(size: 7pt, weight: "bold")[$B_50$])
-
-        line((0.92, 3.45), (2.38, 0.72), (4.0, 0.72), stroke: (paint: rgb("#1f77b4"), thickness: 1.0pt))
-        content((3.42, 0.79), anchor: "south", text(size: 7pt, fill: rgb("#1f77b4"), weight: "bold")[$B_10$])
-
-        // Legenda inferiore
-        line((0.35 - 0.045, -0.72 - 0.045), (0.35 + 0.045, -0.72 + 0.045), stroke: 0.75pt)
-        line((0.35 - 0.045, -0.72 + 0.045), (0.35 + 0.045, -0.72 - 0.045), stroke: 0.75pt)
-        content((0.48, -0.72), anchor: "west", text(size: 7pt)[rotture])
-
-        circle((1.75, -0.72), radius: 0.048, fill: white, stroke: 0.75pt + rgb("#1f77b4"))
-        content((1.88, -0.72), anchor: "west", text(size: 7pt)[*run-outs* (non rotture)])
-      }),
+      include "figs/fatica/fatica-fig31.typ",
       caption: [Fascia di dispersione S–N e curve iso-probabilità di Weibull $B_90$, $B_50$ e $B_10$.],
     )
   ],
@@ -742,136 +452,7 @@ Per determinare il limite mediano $B_50$ di $sigma_(D-1)$ si usa la procedura se
   ],
   [
     #figure(
-      canvas(length: 0.96cm, {
-        // BBox: x in [-0.10, 9.60] (dx=9.70), y in [0.00, 6.20], length=0.96cm -> larghezza = 9.31 cm <= 10.0 cm
-        import draw: *
-
-        let x_e1 = 0.0
-        let x_e0 = 0.55
-        let x_sig = 1.10
-        let x_p0 = 1.95
-        let pw = 0.50
-        let x_end = x_p0 + 15 * pw // 9.45
-
-        // Griglia principale stair-case (y da 2.75 a 6.05)
-        let rows_y = (6.05, 5.60, 5.15, 4.77, 4.37, 3.97, 3.57, 3.17, 2.75)
-
-        // Campiture righe intestazione e totali
-        rect((0, 5.60), (x_end, 6.05), fill: black.transparentize(92%), stroke: none)
-        rect((0, 4.77), (x_end, 5.60), fill: black.transparentize(95%), stroke: none)
-        rect((0, 2.75), (x_end, 3.17), fill: black.transparentize(92%), stroke: none)
-
-        // Linee orizzontali
-        for yv in rows_y {
-          line((0, yv), (x_end, yv), stroke: 0.65pt)
-        }
-        // Linee verticali principali
-        line((0, 2.75), (0, 6.05), stroke: 0.8pt)
-        line((x_e0, 2.75), (x_e0, 5.15), stroke: 0.6pt)
-        line((x_sig, 2.75), (x_sig, 5.60), stroke: 0.75pt)
-        line((x_p0, 2.75), (x_p0, 5.60), stroke: 0.8pt)
-        line((x_end, 2.75), (x_end, 6.05), stroke: 0.8pt)
-
-        // Linee verticali provini 1..15 (separate per header numeri 1..15 e celle dati)
-        for k in range(1, 15) {
-          let xk = x_p0 + k * pw
-          line((xk, 5.15), (xk, 5.60), stroke: 0.45pt + black.transparentize(30%))
-          line((xk, 3.17), (xk, 4.77), stroke: 0.45pt + black.transparentize(30%))
-        }
-
-        // Testata
-        content((x_end / 2, 5.825), anchor: "center", text(size: 7pt, weight: "bold")[
-          M8 "senza difetti" #h(0.8em) $sigma_m = 400$ MPa #h(0.8em) $d = 10$ MPa #h(0.8em) $N = 5 dot.op 10^6$
-        ])
-        content((x_sig / 2, 5.375), anchor: "center", text(size: 6.8pt, weight: "bold")[esito])
-        content(((x_sig + x_p0) / 2, 5.375), anchor: "center", text(size: 7pt, weight: "bold")[$sigma_a$])
-        content((0.275, 4.96), anchor: "center", text(size: 7pt, fill: rgb("#b02a2a"), weight: "bold")[1])
-        content((0.825, 4.96), anchor: "center", text(size: 7pt, fill: rgb("#1f77b4"), weight: "bold")[0])
-        content(((x_sig + x_p0) / 2, 4.96), anchor: "center", text(size: 6.8pt)[MPa])
-        content(((x_p0 + x_end) / 2, 4.96), anchor: "center", text(size: 6.5pt)[1 = Rotta ; #h(0.5em) 0 = Non rotta])
-
-        for p in range(1, 16) {
-          let xp = x_p0 + (p - 0.5) * pw
-          content((xp, 5.375), anchor: "center", text(size: 6.8pt)[#p])
-        }
-
-        // Livelli di tensione e totali per riga
-        let row_data = (
-          (4.57, "3", "0", "60"),
-          (4.17, "4", "3", "50"),
-          (3.77, "1", "3", "40"),
-          (3.37, "0", "1", "30"),
-        )
-        for (yc, c1, c0, sig) in row_data {
-          content((0.275, yc), anchor: "center", text(size: 7pt)[#c1])
-          content((0.825, yc), anchor: "center", text(size: 7pt)[#c0])
-          content(((x_sig + x_p0) / 2, yc), anchor: "center", text(size: 7pt, weight: "bold")[#sig])
-        }
-
-        // Sequenza stair-case (provino 1..15)
-        let seq = (
-          (1, 4.17, 1), (2, 3.77, 0), (3, 4.17, 1), (4, 3.77, 1), (5, 3.37, 0),
-          (6, 3.77, 0), (7, 4.17, 1), (8, 3.77, 0), (9, 4.17, 0), (10, 4.57, 1),
-          (11, 4.17, 0), (12, 4.57, 1), (13, 4.17, 0), (14, 4.57, 1), (15, 4.17, 1),
-        )
-        let pts = ()
-        for (p, yc, val) in seq {
-          pts.push((x_p0 + (p - 0.5) * pw, yc))
-        }
-        line(..pts, stroke: (paint: black.transparentize(72%), thickness: 0.7pt))
-
-        for (p, yc, val) in seq {
-          let xp = x_p0 + (p - 0.5) * pw
-          let col = if val == 1 { rgb("#b02a2a") } else { rgb("#1f77b4") }
-          content((xp, yc), anchor: "center", text(size: 7pt, fill: col, weight: "bold")[#val])
-        }
-
-        // Riga totali
-        content((0.275, 2.96), anchor: "center", text(size: 7pt, weight: "bold")[8])
-        content((0.825, 2.96), anchor: "center", text(size: 7pt, weight: "bold")[7])
-        content(((x_sig + x_p0) / 2, 2.96), anchor: "center", text(size: 7pt, weight: "bold")[tot])
-        content(((x_p0 + x_end) / 2, 2.96), anchor: "center", text(size: 7pt)[
-          Evento meno frequente: #text(fill: rgb("#1f77b4"), weight: "bold")[Non rotta (0)]
-        ])
-
-        // Blocco inferiore sinistro: sintesi somme
-        rect((0, 0.20), (4.45, 2.25), fill: black.transparentize(96%), stroke: 0.65pt)
-        content((0.22, 1.92), anchor: "west", text(size: 7pt, weight: "bold")[Riepilogo evento meno frequente])
-        content((0.22, 1.48), anchor: "west", text(size: 7pt)[Esiti non rotti: $N = sum n_i = 7$])
-        content((0.22, 1.02), anchor: "west", text(size: 7pt)[Momento primo: $A = sum i n_i = 9$])
-        content((0.22, 0.56), anchor: "west", text(size: 7pt)[Momento secondo: $B = sum i^2 n_i = 15$])
-
-        // Blocco inferiore destro: tabella i, n, i*n, i^2*n
-        let tx = (4.85, 5.80, 6.70, 7.60, 8.50, 9.45)
-        let ty = (2.25, 1.84, 1.43, 1.02, 0.61, 0.20)
-        rect((tx.at(0), ty.at(1)), (tx.at(5), ty.at(0)), fill: black.transparentize(92%), stroke: none)
-        for yv in ty {
-          line((tx.at(0), yv), (tx.at(5), yv), stroke: 0.65pt)
-        }
-        for xv in tx {
-          line((xv, ty.at(5)), (xv, ty.at(0)), stroke: 0.65pt)
-        }
-
-        let headers = ($sigma_a$, $i$, $n$, $i n$, $i^2 n$)
-        for idx in range(5) {
-          let xc = (tx.at(idx) + tx.at(idx + 1)) / 2
-          content((xc, 2.045), anchor: "center", text(size: 7pt, weight: "bold")[#headers.at(idx)])
-        }
-
-        let sum_rows = (
-          ("60", "3", "0", "0", "0"),
-          ("50", "2", "3", "6", "12"),
-          ("40", "1", "3", "3", "3"),
-          ("30", "0", "1", "0", "0"),
-        )
-        for r in range(4) {
-          let yc = (ty.at(r + 1) + ty.at(r + 2)) / 2
-          for c in range(5) {
-            let xc = (tx.at(c) + tx.at(c + 1)) / 2
-            content((xc, yc), anchor: "center", text(size: 7pt)[#sum_rows.at(r).at(c)])
-          }
-        }
-      }),
+      include "figs/fatica/fatica-fig32.typ",
       caption: [Sequenza sperimentale e tabulazione dei momenti statistici nel metodo *stair-case* (Dixon–Mood).],
     )
   ],
@@ -931,118 +512,7 @@ Con i soli tre parametri $sigma_(D-1)$, $R_"p0.2"$ e $R_m$, il diagramma si trac
 
 #figure(
   caption: [Diagramma di Haigh completo in trazione e compressione con retta di Goodman, limiti di snervamento a $plus.minus 45^circ$, triangolo di plasticizzazione e punto di lavoro.],
-  canvas(length: 1.35cm, {
-    // BBox: x in [-4.55, 4.75] (dx=9.30), y in [-0.65, 4.68], length=1.35cm -> larghezza = 12.56 cm <= 17.0 cm
-    import draw: *
-
-    let rm = 4.0
-    let rp = 3.0
-    let sd = 1.6
-    // Intersezione Goodman-snervamento trazione: (2.333, 0.667)
-    let x_gt = 2.333
-    let y_gt = 0.667
-    // Intersezione plateau-snervamento compressione: (-1.40, 1.60)
-    let x_pc = -1.40
-
-    // Triangolo di plasticizzazione (sicuro a fatica, plasticizzato staticamente)
-    line(
-      (x_gt, y_gt), (rm, 0), (rp, 0),
-      close: true,
-      fill: orange.transparentize(82%),
-      stroke: none,
-    )
-
-    // Poligono di sicurezza campito (fatica + snervamento)
-    line(
-      (-rp, 0), (x_pc, sd), (0, sd), (x_gt, y_gt), (rp, 0),
-      close: true,
-      fill: black.transparentize(86%),
-      stroke: 1.2pt,
-    )
-
-    // Assi principali
-    line((-4.45, 0), (4.55, 0), stroke: 0.9pt, mark: (end: ">", fill: black, scale: 0.75))
-    line((0, -0.15), (0, 4.52), stroke: 0.9pt, mark: (end: ">", fill: black, scale: 0.75))
-    content((4.58, -0.12), anchor: "north", text(size: 8.5pt)[$sigma_m$])
-    content((0, 4.58), anchor: "south", text(size: 8.5pt)[$sigma_a$])
-
-    // Inviluppo statico Rm (45 deg esterno)
-    line((-rm, 0), (0, rm), (rm, 0), stroke: (paint: black.transparentize(55%), thickness: 0.65pt, dash: "dotted"))
-
-    // Prosecuzioni rette di snervamento a 45 deg
-    line((x_pc, sd), (0, rp), stroke: (dash: "dashed", thickness: 0.75pt))
-    line((0, rp), (x_gt, y_gt), stroke: (dash: "dashed", thickness: 0.75pt))
-
-    // Prosecuzione retta di Goodman
-    line((x_gt, y_gt), (rm, 0), stroke: (dash: "dashed", thickness: 0.85pt))
-
-    // Parabola di Gerber (17 punti da x=0 a x=rm)
-    let gerber = ()
-    for k in range(0, 17) {
-      let xk = rm * k / 16
-      let yk = sd * (1 - (xk / rm) * (xk / rm))
-      gerber.push((xk, yk))
-    }
-    line(..gerber, stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt, dash: "dashed"))
-
-    // Punti sperimentali indicativi intorno alla parabola di Gerber
-    let exp_pts = ((0.45, 1.56), (0.95, 1.49), (1.68, 1.34), (2.25, 1.06), (2.90, 0.72), (3.45, 0.38))
-    for (px, py) in exp_pts {
-      circle((px, py), radius: 0.045, fill: black, stroke: none)
-    }
-
-    // Raggi a rapporto di ciclo costante (R=0 e R=-inf)
-    line((0, 0), (2.70, 2.70), stroke: (paint: black.transparentize(40%), thickness: 0.65pt, dash: "dashed"))
-    content((2.76, 2.76), anchor: "south-west", text(size: 7.5pt)[$R = 0$])
-
-    line((0, 0), (-2.70, 2.70), stroke: (paint: black.transparentize(40%), thickness: 0.65pt, dash: "dashed"))
-    content((-2.76, 2.76), anchor: "south-east", text(size: 7.5pt)[$R = -infinity$])
-
-    // Punto di lavoro sicuro P e confronto verticale ISO con sigma_D
-    let wx = 1.30
-    let wy = 0.52
-    let wy_lim = sd * (1 - wx / rm) // 1.08
-    line((wx, 0), (wx, wy), (0, wy), stroke: (paint: red.transparentize(20%), thickness: 0.65pt, dash: "dotted"))
-    line((wx, wy), (wx, wy_lim), stroke: (paint: red.transparentize(20%), thickness: 0.65pt, dash: "dashed"))
-    circle((wx, wy_lim), radius: 0.045, fill: white, stroke: 0.75pt + red.transparentize(10%))
-    content((wx + 0.06, wy_lim + 0.03), anchor: "south-west", text(size: 7pt, fill: red.transparentize(10%))[$sigma_D$])
-    circle((wx, wy), radius: 0.06, fill: red.transparentize(10%), stroke: 0.7pt + black)
-    content((wx + 0.09, wy), anchor: "west", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[Lavoro])
-
-    // Etichette assi (senza collisioni)
-    content((-rm, -0.10), anchor: "north", text(size: 7.5pt)[$-R_m$])
-    content((-rp, -0.10), anchor: "north", text(size: 7.5pt)[$-R_"p0.2"$])
-    content((rp, -0.10), anchor: "north", text(size: 7.5pt)[$R_"p0.2"$])
-    content((rm, -0.10), anchor: "north", text(size: 7.5pt)[$R_m$])
-
-    content((-0.12, sd + 0.14), anchor: "south-east", text(size: 7.5pt)[$sigma_(D-1)$])
-    content((0.12, rp + 0.05), anchor: "south-west", text(size: 7.5pt)[$R_"p0.2"$])
-    content((0.12, rm + 0.03), anchor: "south-west", text(size: 7.5pt)[$R_m$])
-
-    // Etichette interne ed esterne con richiami
-    content((-1.08, 0.48), anchor: "center", text(size: 7.2pt, weight: "bold")[Poligono \ sicuro])
-
-    content((2.35, 2.05), anchor: "west", text(size: 7.2pt, fill: rgb("#1f77b4"))[Parabola di Gerber])
-    line((2.30, 2.03), (1.85, 1.28), stroke: (paint: rgb("#1f77b4"), thickness: 0.55pt), mark: (end: ">", fill: rgb("#1f77b4"), scale: 0.55))
-
-    content((3.40, 1.48), anchor: "south", text(size: 7.2pt)[Retta di Goodman])
-    line((3.28, 1.44), (2.72, 0.54), stroke: 0.55pt, mark: (end: ">", fill: black, scale: 0.55))
-
-    content((3.85, 0.92), anchor: "west", text(size: 6.8pt, fill: rgb("#b85d00"))[Plasticizzazione])
-    line((3.80, 0.88), (3.12, 0.20), stroke: (paint: rgb("#b85d00"), thickness: 0.55pt), mark: (end: ">", fill: rgb("#b85d00"), scale: 0.55))
-
-    content((-3.55, 1.45), anchor: "center", text(size: 7pt)[Snervamento \ ($plus.minus 45^circ$)])
-    line((-3.15, 1.20), (-2.30, 0.72), stroke: 0.55pt, mark: (end: ">", fill: black, scale: 0.55))
-
-    // Riquadro N = costante
-    rect((2.55, 3.45), (4.55, 4.30), fill: white, stroke: 0.7pt)
-    content((3.55, 3.875), anchor: "center", text(size: 7pt)[
-      #align(center)[
-        $N = text("costante")$ \
-        ($2 dot.op 10^6$ acciai)
-      ]
-    ])
-  })
+  include "figs/fatica/fatica-fig33.typ"
 )
 
 === Chiusura a snervamento, compressione e rapporti di ciclo
@@ -1081,97 +551,7 @@ Geometricamente il poligono ribalta i confini del diagramma di Haigh a cavallo d
 + *Verifica del ciclo.* Noto il valore di $sigma_m$, lo si proietta sulla bisettrice e si posiziona a cavallo di tale punto il segmento verticale di ampiezza $2 sigma_a$: la sicurezza cade non appena anche uno solo dei due apici esce dal contorno marcato.
 
 #figure(
-  canvas(length: 0.95cm, {
-    import draw: *
-    // BBox: x in [-5.1, 6.8] (dx=11.9), y in [-5.0, 6.4], length=0.95cm -> larghezza = 11.31 cm <= 11.5 cm
-
-    // Poligono di sicurezza campito
-    line(
-      (-4.0, -4.0),
-      (-2.2, -0.4),
-      (0.0, 1.8),
-      (3.3, 4.0),
-      (4.0, 4.0),
-      (3.3, 2.6),
-      (0.0, -1.8),
-      (-2.2, -4.0),
-      close: true,
-      fill: black.transparentize(90%),
-      stroke: none,
-    )
-
-    // Assi principali
-    line((-5.0, 0.0), (6.2, 0.0), stroke: 0.75pt, mark: (end: ">"))
-    line((0.0, -4.8), (0.0, 5.8), stroke: 0.75pt, mark: (end: ">"))
-    content((6.3, 0.0), anchor: "west")[#text(size: 8.5pt)[$sigma_m$]]
-    content((0.0, 5.9), anchor: "south")[#text(size: 8.5pt)[$sigma_"max", sigma_"min"$]]
-
-    // Bisettrice a 45 gradi, arco angolo e prolungamenti costruzione Goodman
-    line((-4.5, -4.5), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.65pt))
-    arc((0.0, 0.0), start: -180deg, stop: -135deg, radius: 1.05, anchor: "origin", stroke: 0.55pt)
-    content((-1.22, -0.44), anchor: "east")[#text(size: 7.5pt)[$45^circ$]]
-
-    line((3.3, 4.0), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.6pt))
-    line((3.3, 2.6), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.6pt))
-    circle((5.4, 5.4), radius: 0.06, fill: black)
-    content((5.55, 5.4), anchor: "west")[#text(size: 8pt)[$(R_m, R_m)$]]
-
-    // Linee di costruzione snervamento e proiezioni
-    line((0.0, 4.0), (3.3, 4.0), stroke: (dash: "dashed", thickness: 0.6pt))
-    line((3.3, 4.0), (3.3, 2.6), stroke: (dash: "dashed", thickness: 0.6pt))
-    line((4.0, 4.0), (4.0, 0.0), stroke: (dash: "dotted", thickness: 0.6pt))
-    line((0.0, -4.0), (-2.2, -4.0), stroke: (dash: "dashed", thickness: 0.6pt))
-    line((-2.2, -4.0), (-2.2, -0.4), stroke: (dash: "dashed", thickness: 0.6pt))
-
-    // Contorno poligono di sicurezza in tratto marcato
-    line(
-      (-4.0, -4.0),
-      (-2.2, -0.4),
-      (0.0, 1.8),
-      (3.3, 4.0),
-      (4.0, 4.0),
-      (3.3, 2.6),
-      (0.0, -1.8),
-      (-2.2, -4.0),
-      close: true,
-      stroke: 1.15pt,
-    )
-
-    // Punti notevoli A, B e quote assi (senza collisioni con linee di costruzione)
-    circle((3.3, 2.6), radius: 0.055, fill: black)
-    content((3.45, 2.45), anchor: "north-west")[#text(size: 8pt)[$A$]]
-    circle((4.0, 4.0), radius: 0.055, fill: black)
-    content((4.55, 3.75), anchor: "west")[#text(size: 8pt)[$B$]]
-    line((4.50, 3.77), (4.08, 3.96), stroke: 0.55pt, mark: (end: ">", scale: 0.5))
-
-    content((-0.15, 4.0), anchor: "east")[#text(size: 8pt)[$R_"eH"$]]
-    content((-0.12, 1.92), anchor: "south-east")[#text(size: 8pt)[$+sigma_(D-1)$]]
-    content((0.15, -1.85), anchor: "west")[#text(size: 8pt)[$-sigma_(D-1)$]]
-    content((0.15, -4.0), anchor: "west")[#text(size: 8pt)[$-R_"eH"$]]
-    content((4.0, -0.15), anchor: "north")[#text(size: 8pt)[$R_"eH"$]]
-
-    // Ciclo 1: sicuro (blu) con indicazioni manubrio
-    line((1.65, 0.90), (1.65, 2.40), stroke: (paint: blue, thickness: 1.4pt))
-    line((1.65, 0.90), (1.65, 0.0), stroke: (dash: "dotted", paint: blue, thickness: 0.6pt))
-    circle((1.65, 2.40), radius: 0.055, fill: blue, stroke: blue)
-    circle((1.65, 1.65), radius: 0.055, fill: white, stroke: (paint: blue, thickness: 0.9pt))
-    circle((1.65, 0.90), radius: 0.055, fill: blue, stroke: blue)
-    content((1.52, 2.34), anchor: "east")[#text(size: 7pt, fill: blue)[$sigma_"max"$]]
-    content((1.52, 0.86), anchor: "east")[#text(size: 7pt, fill: blue)[$sigma_"min"$]]
-    content((1.65, -0.15), anchor: "north")[#text(size: 7.5pt, fill: blue)[$sigma_(m,1)$]]
-
-    // Ciclo 2: uscente (rosso)
-    line((2.65, 1.30), (2.65, 4.00), stroke: (paint: red.transparentize(10%), thickness: 1.4pt))
-    line((2.65, 1.30), (2.65, 0.0), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.6pt))
-    circle((2.65, 4.00), radius: 0.055, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-    circle((2.65, 2.65), radius: 0.055, fill: white, stroke: (paint: red.transparentize(10%), thickness: 0.9pt))
-    circle((2.65, 1.30), radius: 0.055, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-    content((2.65, -0.15), anchor: "north")[#text(size: 7.5pt, fill: red.transparentize(10%))[$sigma_(m,2)$]]
-
-    // Legenda compatta in alto a sinistra
-    content((-4.7, 5.2), anchor: "north-west")[#text(size: 7.5pt, fill: blue, weight: "bold")[Ciclo 1: sicuro]]
-    content((-4.7, 4.6), anchor: "north-west")[#text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[Ciclo 2: uscente]]
-  })
+  include "figs/fatica/fatica-fig34.typ"
 )
 
 In compressione i materiali duttili resistono in genere a tensioni di plasticizzazione e rottura più alte che in trazione. Per semplicità e a favore di sicurezza, si estende però in compressione lo stesso valore $R_"eH"$ della trazione, evitando errori di lettura durante la verifica.
@@ -1191,68 +571,7 @@ Per certificazioni rigorose il poligono si costruisce interpolando più curve S-
   ],
   [
     #figure(
-      canvas(length: 1.12cm, {
-        import draw: *
-        // BBox: x in [-0.95, 5.35] (dx=6.30), y in [-0.65, 4.30], length=1.12cm -> larghezza = 7.06 cm <= 8.2 cm
-
-        let x_of(r) = 2.2 * (r + 1.0) // R in [-1, 1] -> x in [0, 4.4]
-        let sd = 1.35
-        let rp = 2.95
-        let rm = 3.80
-        let r_cut = 0.6825
-        let x_cut = x_of(r_cut) // 3.702
-
-        // Campionamento curva limite da R = -1 a R_cut (regione sicura) e fino a R = 1
-        let safe_curve = ()
-        for k in range(0, 17) {
-          let rk = -1.0 + (r_cut + 1.0) * k / 16
-          let yk = 2.0 / ((1.0 - rk) / sd + (1.0 + rk) / rm)
-          safe_curve.push((x_of(rk), yk))
-        }
-        let ext_curve = ()
-        for k in range(0, 9) {
-          let rk = r_cut + (1.0 - r_cut) * k / 8
-          let yk = 2.0 / ((1.0 - rk) / sd + (1.0 + rk) / rm)
-          ext_curve.push((x_of(rk), yk))
-        }
-
-        // Regione sicura campita
-        let poly = ((0.0, 0.0), ..safe_curve, (4.4, rp), (4.4, 0.0))
-        line(..poly, close: true, fill: black.transparentize(88%), stroke: none)
-
-        // Assi principali
-        line((-0.15, 0.0), (4.95, 0.0), stroke: 0.8pt, mark: (end: ">", scale: 0.7))
-        line((0.0, -0.15), (0.0, 4.05), stroke: 0.8pt, mark: (end: ">", scale: 0.7))
-        content((5.05, 0.0), anchor: "west")[#text(size: 8pt)[$R$]]
-        content((0.0, 4.12), anchor: "south")[#text(size: 8pt)[$sigma_"max"$]]
-
-        // Riferimenti verticali R = 0 e R = 1 e snervamento Rp0.2
-        line((2.2, 0.0), (2.2, 1.992), stroke: (dash: "dotted", thickness: 0.55pt))
-        line((4.4, 0.0), (4.4, rm), stroke: (dash: "dotted", thickness: 0.55pt))
-        line((0.0, rp), (x_cut, rp), stroke: (dash: "dotted", thickness: 0.6pt))
-        line((0.0, rm), (4.4, rm), stroke: (dash: "dotted", thickness: 0.55pt))
-
-        // Ramo tratteggiato fino a Rm e contorno marcato regione sicura
-        line(..ext_curve, stroke: (dash: "dashed", paint: rgb("#1f77b4"), thickness: 0.8pt))
-        line(..safe_curve, (4.4, rp), stroke: 1.15pt)
-        line((4.4, rp), (4.4, 0.0), stroke: 0.85pt)
-
-        // Punti notevoli
-        circle((0.0, sd), radius: 0.055, fill: black)
-        circle((2.2, 1.992), radius: 0.05, fill: black)
-        circle((4.4, rm), radius: 0.055, fill: rgb("#1f77b4"), stroke: rgb("#1f77b4"))
-
-        // Etichette assi
-        content((0.0, -0.15), anchor: "north")[#text(size: 7.5pt)[$-1$]]
-        content((2.2, -0.15), anchor: "north")[#text(size: 7.5pt)[$0$]]
-        content((4.4, -0.15), anchor: "north")[#text(size: 7.5pt)[$+1$]]
-
-        content((-0.12, sd), anchor: "east")[#text(size: 7.5pt)[$sigma_(D-1)$]]
-        content((-0.12, rp), anchor: "east")[#text(size: 7.5pt)[$R_"p0.2"$]]
-        content((-0.12, rm), anchor: "east")[#text(size: 7.5pt)[$R_m$]]
-        content((2.15, 2.12), anchor: "south-east")[#text(size: 7pt)[$sigma_(D 0)$]]
-        content((3.25, 0.85), anchor: "center")[#text(size: 7.2pt, weight: "bold")[Zona sicura]]
-      }),
+      include "figs/fatica/fatica-fig35.typ",
       caption: [Diagramma di Moore--Kommer--Jasper nel piano $(R, sigma_"max")$.],
     )
   ],
@@ -1275,75 +594,7 @@ $ sigma_m = (sigma_"max" + sigma_"min") / 2 , quad sigma_a = (sigma_"max" - sigm
   ],
   [
     #figure(
-      canvas(length: 0.90cm, {
-        import draw: *
-        // BBox: x in [-4.1, 4.8] (dx=8.9), y in [-0.7, 4.5], length=0.90cm -> larghezza = 8.01 cm <= 8.2 cm
-
-        // Poligono di sicurezza campito
-        line(
-          (-2.8, 0.0),
-          (-1.4, 1.4),
-          (1.87, 2.8),
-          (2.8, 2.8),
-          (0.0, 0.0),
-          close: true,
-          fill: black.transparentize(90%),
-          stroke: none,
-        )
-
-        // Assi ortogonali (sigma_min, sigma_max)
-        line((-3.4, 0.0), (4.0, 0.0), stroke: 0.75pt, mark: (end: ">"))
-        line((0.0, -0.4), (0.0, 3.85), stroke: 0.75pt, mark: (end: ">"))
-        content((4.08, 0.0), anchor: "west")[#text(size: 8pt)[$sigma_"min"$]]
-        content((0.0, 3.92), anchor: "south")[#text(size: 8pt)[$sigma_"max"$]]
-
-        // Assi ruotati di 45 gradi (sigma_m e sigma_a) ben distanziati da Rm
-        line((0.0, 0.0), (4.05, 4.05), stroke: (paint: blue, thickness: 0.75pt), mark: (end: ">"))
-        line((0.0, 0.0), (-2.95, 2.95), stroke: (paint: blue, thickness: 0.75pt), mark: (end: ">"))
-        content((4.10, 4.10), anchor: "south-west")[#text(size: 8pt, fill: blue)[$sigma_m$]]
-        content((-3.00, 3.00), anchor: "south-east")[#text(size: 8pt, fill: blue)[$sigma_a$]]
-
-        // Raggi a rapporto R costante e prolungamenti
-        line((0.0, 0.0), (-3.2, 1.6), stroke: (dash: "dashed", thickness: 0.55pt))
-        content((-3.26, 1.6), anchor: "east")[#text(size: 7pt)[$R = -2$]]
-        content((-2.35, 2.15), anchor: "north-east")[#text(size: 7pt, fill: blue)[$R = -1$]]
-        content((0.12, 3.45), anchor: "west")[#text(size: 7pt)[$R = 0$]]
-        content((2.82, 2.52), anchor: "north-west")[#text(size: 7pt, fill: blue)[$R = 1$]]
-
-        // Costruzioni Goodman e snervamento
-        line((1.87, 2.8), (3.5, 3.5), stroke: (dash: "dashed", thickness: 0.6pt))
-        circle((3.5, 3.5), radius: 0.05, fill: black)
-        content((3.36, 3.56), anchor: "south-east")[#text(size: 7.5pt)[$R_m$]]
-        line((0.0, 2.8), (1.87, 2.8), stroke: (dash: "dotted", thickness: 0.6pt))
-        content((0.10, 2.85), anchor: "south-west")[#text(size: 7.5pt)[$R_"p0.2"$]]
-
-        // Contorno poligono di sicurezza
-        line(
-          (-2.8, 0.0),
-          (-1.4, 1.4),
-          (1.87, 2.8),
-          (2.8, 2.8),
-          (0.0, 0.0),
-          close: true,
-          stroke: 1.15pt,
-        )
-
-        // Punto di lavoro P e proiezioni su entrambi i riferimenti
-        let px = 1.45
-        let py = 2.05
-        line((px, py), (px, 0.0), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.65pt))
-        line((px, py), (0.0, py), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.65pt))
-        line((px, py), (1.75, 1.75), stroke: (dash: "dotted", paint: blue, thickness: 0.65pt))
-        line((px, py), (-0.30, 0.30), stroke: (dash: "dotted", paint: blue, thickness: 0.65pt))
-        circle((px, py), radius: 0.065, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-        content((px + 0.08, py + 0.06), anchor: "south-west")[#text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$]]
-
-        // Etichette assi sigma_D-1 senza collisioni
-        line((-1.4, 1.4), (0.0, 1.4), stroke: (dash: "dotted", thickness: 0.5pt))
-        line((-1.4, 1.4), (-1.4, 0.0), stroke: (dash: "dotted", thickness: 0.5pt))
-        content((-1.4, -0.14), anchor: "north")[#text(size: 7.5pt)[$-sigma_(D-1)$]]
-        content((0.08, 1.42), anchor: "south-west")[#text(size: 7.5pt)[$sigma_(D-1)$]]
-      }),
+      include "figs/fatica/fatica-fig36.typ",
       caption: [Diagramma di Rös (curva "master"): assi ortogonali $(sigma_"min", sigma_"max")$, assi ruotati di $45^circ$ $(sigma_m, sigma_a)$ e raggi a $R$ costante.],
     )
   ],
@@ -1386,118 +637,7 @@ Si usa $N sigma_a^k = B$ quando si cerca la vita a fatica dato il carico, e $sig
 $ sigma_a = sigma_F - frac(sigma_F - sigma_D, log N_G - log N_F) (log N - log N_F) , quad log N = log N_F + frac(sigma_F - sigma_a, sigma_F - sigma_D) (log N_G - log N_F) $
 
 #figure(
-  canvas(length: 1.36cm, {
-    import draw: *
-
-    content((2.5, 4.35), anchor: "south")[#text(size: 8.5pt, weight: "bold")[Scala log--log (equazione di Basquin)]]
-
-    // Griglia logaritmica leggera su x (decadi e sottodecadi)
-    for d in (0, 1, 2, 3, 4) {
-      for m in (2, 3, 4, 5, 6, 7, 8, 9) {
-        let xs = d + calc.log(m, base: 10)
-        line((xs, 0.0), (xs, 4.0), stroke: (paint: luma(228), thickness: 0.35pt))
-      }
-      if d > 0 {
-        line((d, 0.0), (d, 4.0), stroke: (paint: luma(195), thickness: 0.5pt))
-      }
-    }
-    // Griglia logaritmica su y
-    for s in (200, 300, 400, 500, 600, 700, 800, 900) {
-      let ys = 4.0 * (calc.log(s, base: 10) - 2.0)
-      line((0.0, ys), (5.0, ys), stroke: (paint: luma(222), thickness: 0.4pt))
-    }
-
-    // Cornice pannello sinistro
-    rect((0.0, 0.0), (5.0, 4.0), stroke: 0.8pt)
-
-    // Etichette asse x (N)
-    for (xi, lbl) in ((0.0, $10^2$), (1.0, $10^3$), (2.0, $10^4$), (3.0, $10^5$), (4.0, $10^6$), (5.0, $10^7$)) {
-      content((xi, -0.15), anchor: "north")[#text(size: 7.5pt)[#lbl]]
-    }
-    content((5.10, 0.12), anchor: "south-west")[#text(size: 8pt)[$N$]]
-
-    // Etichette asse y (sigma_a)
-    for (s, lbl) in ((100, [100]), (200, [200]), (500, [500]), (1000, [1000])) {
-      let ys = 4.0 * (calc.log(s, base: 10) - 2.0)
-      content((-0.12, ys), anchor: "east")[#text(size: 7.5pt)[#lbl]]
-    }
-    content((-0.78, 2.0), angle: 90deg, anchor: "center")[#text(size: 8pt)[$sigma_a$ (MPa)]]
-
-    // Linee di demarcazione N_F = 10^3 (sigma_F = 850 MPa -> y = 3.718) e N_G = 2*10^6 (sigma_D = 300 MPa -> y = 1.908)
-    line((1.0, 0.0), (1.0, 3.718), stroke: (dash: "dashed", thickness: 0.6pt))
-    line((4.301, 0.0), (4.301, 1.908), stroke: (dash: "dashed", thickness: 0.6pt))
-
-    // Curva S-N log-log: oligociclica (tratteggiata), Basquin F-G (blu), infinita (blu)
-    line((0.0, 3.92), (1.0, 3.718), stroke: (dash: "dashed", paint: luma(90), thickness: 0.9pt))
-    line((1.0, 3.718), (4.301, 1.908), (5.0, 1.908), stroke: (paint: blue, thickness: 1.35pt))
-
-    // Triangolo di pendenza sul tratto F-G: x da 2.0 (y=3.170) a 3.5 (y=2.347)
-    line((2.0, 3.170), (2.0, 2.347), (3.5, 2.347), stroke: (paint: blue, thickness: 0.65pt))
-    content((2.65, 2.90), anchor: "south-west")[#text(size: 7.2pt, fill: blue)[$b = -1 \/ k$]]
-
-    // Punti F e G ben distanziati dalla cornice superiore
-    circle((1.0, 3.718), radius: 0.06, fill: blue, stroke: blue)
-    content((1.16, 3.70), anchor: "west")[#text(size: 7.5pt)[$F(10^3, sigma_F)$]]
-    circle((4.301, 1.908), radius: 0.06, fill: blue, stroke: blue)
-    content((4.18, 1.72), anchor: "north-east")[#text(size: 7.5pt)[$G(N_G, sigma_D)$]]
-
-    content((1.20, 0.32), anchor: "south-west")[#text(size: 7.5pt)[$sigma_m = "cost."$]]
-
-    // ========================================================
-    // PANNELLO DESTRO: SCALA SEMI-LOG
-    // x in [7.2, 12.2] -> log10(N) in [2, 7]; y in [0, 4] -> sigma_a lineare in [0, 1000] MPa
-    // ========================================================
-    let x0 = 7.2
-    content((x0 + 2.5, 4.35), anchor: "south")[#text(size: 8.5pt, weight: "bold")[Scala semi--log ($sigma_a$ lineare, $log N$)]]
-
-    // Griglia logaritmica su x
-    for d in (0, 1, 2, 3, 4) {
-      for m in (2, 3, 4, 5, 6, 7, 8, 9) {
-        let xs = x0 + d + calc.log(m, base: 10)
-        line((xs, 0.0), (xs, 4.0), stroke: (paint: luma(228), thickness: 0.35pt))
-      }
-      if d > 0 {
-        line((x0 + d, 0.0), (x0 + d, 4.0), stroke: (paint: luma(195), thickness: 0.5pt))
-      }
-    }
-    // Griglia lineare su y (200, 400, 600, 800 MPa)
-    for s in (200, 400, 600, 800) {
-      let ys = 0.004 * s
-      line((x0, ys), (x0 + 5.0, ys), stroke: (paint: luma(215), thickness: 0.45pt))
-    }
-
-    // Cornice pannello destro
-    rect((x0, 0.0), (x0 + 5.0, 4.0), stroke: 0.8pt)
-
-    // Etichette asse x (N)
-    for (xi, lbl) in ((0.0, $10^2$), (1.0, $10^3$), (2.0, $10^4$), (3.0, $10^5$), (4.0, $10^6$), (5.0, $10^7$)) {
-      content((x0 + xi, -0.15), anchor: "north")[#text(size: 7.5pt)[#lbl]]
-    }
-    content((x0 + 5.10, 0.12), anchor: "south-west")[#text(size: 8pt)[$N$]]
-
-    // Etichette asse y (sigma_a lineare)
-    for (s, lbl) in ((0, [0]), (200, [200]), (400, [400]), (600, [600]), (800, [800]), (1000, [1000])) {
-      let ys = 0.004 * s
-      content((x0 - 0.12, ys), anchor: "east")[#text(size: 7.5pt)[#lbl]]
-    }
-    content((x0 - 0.78, 2.0), angle: 90deg, anchor: "center")[#text(size: 8pt)[$sigma_a$ (MPa)]]
-
-    // Linee di demarcazione N_F e N_G (sigma_F = 850 MPa -> y = 3.40)
-    line((x0 + 1.0, 0.0), (x0 + 1.0, 3.40), stroke: (dash: "dashed", thickness: 0.6pt))
-    line((x0 + 4.301, 0.0), (x0 + 4.301, 1.20), stroke: (dash: "dashed", thickness: 0.6pt))
-
-    // Curva S-N semi-log: oligociclica (tratteggiata), tratto F-G (rosso), infinita (rosso)
-    line((x0, 3.80), (x0 + 1.0, 3.40), stroke: (dash: "dashed", paint: luma(90), thickness: 0.9pt))
-    line((x0 + 1.0, 3.40), (x0 + 4.301, 1.20), (x0 + 5.0, 1.20), stroke: (paint: red.transparentize(10%), thickness: 1.35pt))
-
-    // Punti F e G
-    circle((x0 + 1.0, 3.40), radius: 0.06, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-    content((x0 + 1.16, 3.44), anchor: "west")[#text(size: 7.5pt)[$F(10^3, sigma_F)$]]
-    circle((x0 + 4.301, 1.20), radius: 0.06, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-    content((x0 + 4.18, 1.02), anchor: "north-east")[#text(size: 7.5pt)[$G(N_G, sigma_D)$]]
-
-    content((x0 + 1.20, 0.32), anchor: "south-west")[#text(size: 7.5pt)[$sigma_m = "cost."$]]
-  }),
+  include "figs/fatica/fatica-fig37.typ",
   caption: [Stima analitica della curva S--N nella regione a termine tra $F$ e $G$: confronto tra modello #text(fill: blue, weight: "bold")[log--log (Basquin)] e #text(fill: red.transparentize(10%), weight: "bold")[semi--log].],
 )
 
@@ -1553,7 +693,7 @@ Il coefficiente di carico $C_L$ (da *load*) rapporta la resistenza a fatica del 
   ],
   [
     #figure(
-      image("images/ECM01-4_sem_nucleazione_zp.png", width: 92%),
+      image("images/fatica/ECM01-4_sem_nucleazione_zp.png", width: 92%),
       caption: [Micrografia SEM in sezione di un'estrusione superficiale con micro-cricca nucleata nella zona di processo corticale (scala $5 thin mu"m"$).],
     )
   ],
@@ -1562,106 +702,7 @@ Il coefficiente di carico $C_L$ (da *load*) rapporta la resistenza a fatica del 
 #v(0.5em)
 
 #figure(
-  canvas(length: 1.0cm, {
-    import draw: *
-
-    // --- Pannello superiore sinistro: Flessione ---
-    rect((0.4, 2.35), (4.2, 2.6), fill: black.transparentize(78%), stroke: none)
-    rect((0.4, 1.0), (4.2, 1.25), fill: black.transparentize(78%), stroke: none)
-    line((0.4, 2.35), (4.2, 2.35), stroke: 0.55pt)
-    line((0.4, 1.25), (4.2, 1.25), stroke: 0.55pt)
-    rect((0.4, 1.0), (4.2, 2.6), stroke: 1.1pt)
-    line((0.1, 1.8), (4.5, 1.8), stroke: (dash: "dashed", thickness: 0.65pt))
-
-    // Profilo lineare tensioni flessione (ampiezza superficiale = 1.20 u)
-    line((2.3, 0.9), (2.3, 2.95), stroke: 0.65pt)
-    line((1.1, 1.0), (3.5, 2.6), stroke: 1.0pt + blue)
-    line((2.3, 2.0), (2.6, 2.0), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-    line((2.3, 2.2), (2.9, 2.2), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-    line((2.3, 2.475), (3.31, 2.475), stroke: 0.8pt + red, mark: (end: ">", scale: 0.55, fill: red))
-    line((2.3, 1.6), (2.0, 1.6), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-    line((2.3, 1.4), (1.7, 1.4), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-    line((2.3, 1.125), (1.29, 1.125), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-
-    // Quota sigma_f in alto e riquadro zoom ZP
-    line((3.5, 2.6), (3.5, 3.05), stroke: (dash: "dotted", thickness: 0.6pt))
-    line((2.3, 2.95), (3.5, 2.95), stroke: 0.8pt + blue, mark: (end: ">", scale: 0.6, fill: blue))
-    content((2.9, 3.12), anchor: "south", text(size: 8.5pt, fill: blue)[$sigma_f$])
-    rect((2.2, 2.30), (3.6, 2.66), stroke: 0.7pt + red)
-    circle((3.31, 2.475), radius: 0.06, fill: red, stroke: none)
-    line((3.35, 2.50), (4.35, 3.05), stroke: 0.6pt + red, mark: (end: ">", scale: 0.55, fill: red))
-    content((4.42, 3.05), anchor: "west", text(size: 8pt, fill: red)[$sigma_(a,"eff")("ZP") < sigma_f$])
-    content((2.3, 0.55), anchor: "north", text(size: 8.5pt, weight: "bold")[Flessione])
-
-    // --- Pannello superiore destro: Trazione-compressione ---
-    rect((8.8, 2.35), (12.6, 2.6), fill: black.transparentize(78%), stroke: none)
-    rect((8.8, 1.0), (12.6, 1.25), fill: black.transparentize(78%), stroke: none)
-    line((8.8, 2.35), (12.6, 2.35), stroke: 0.55pt)
-    line((8.8, 1.25), (12.6, 1.25), stroke: 0.55pt)
-    rect((8.8, 1.0), (12.6, 2.6), stroke: 1.1pt)
-    line((8.5, 1.8), (12.9, 1.8), stroke: (dash: "dashed", thickness: 0.65pt))
-
-    // Profilo uniforme trazione-compressione (pari ampiezza superficiale = 1.20 u)
-    line((10.3, 0.9), (10.3, 2.95), stroke: 0.65pt)
-    line((11.5, 1.0), (11.5, 2.6), stroke: 1.0pt + blue)
-    for y_pos in (1.125, 1.4, 1.6, 2.0, 2.2) {
-      line((10.3, y_pos), (11.5, y_pos), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-    }
-    line((10.3, 2.475), (11.5, 2.475), stroke: 0.8pt + red, mark: (end: ">", scale: 0.55, fill: red))
-
-    // Quota sigma_tc in alto e riquadro zoom ZP
-    line((11.5, 2.6), (11.5, 3.05), stroke: (dash: "dotted", thickness: 0.6pt))
-    line((10.3, 2.95), (11.5, 2.95), stroke: 0.8pt + blue, mark: (end: ">", scale: 0.6, fill: blue))
-    content((10.9, 3.12), anchor: "south", text(size: 8.5pt, fill: blue)[$sigma_("tc")$])
-    rect((10.2, 2.30), (11.6, 2.66), stroke: 0.7pt + red)
-    circle((11.5, 2.475), radius: 0.06, fill: red, stroke: none)
-    line((11.55, 2.50), (12.65, 3.05), stroke: 0.6pt + red, mark: (end: ">", scale: 0.55, fill: red))
-    content((12.72, 3.05), anchor: "west", text(size: 8pt, fill: red)[$sigma_(a,"eff")("ZP") = sigma_("tc")$])
-    content((10.7, 0.55), anchor: "north", text(size: 8.5pt, weight: "bold")[Trazione-compressione])
-
-    // Etichetta condivisa Zona di processo (ZP)
-    content((6.5, 0.55), anchor: "north", text(size: 8pt)[Zona di processo (ZP)])
-    line((5.0, 0.42), (3.85, 1.12), stroke: 0.6pt, mark: (end: ">", scale: 0.55))
-    line((8.0, 0.42), (9.15, 1.12), stroke: 0.6pt, mark: (end: ">", scale: 0.55))
-
-    // --- Pannello inferiore: Ingrandimento comparativo ZP a pari picco superficiale (2.20 u) ---
-    rect((1.0, -4.2), (14.5, -0.3), stroke: (paint: red.transparentize(30%), thickness: 0.7pt), radius: 0.08)
-    content((7.75, -0.52), anchor: "north", text(size: 8.5pt, weight: "bold")[Ingrandimento comparativo della zona di processo (ZP) a pari tensione superficiale])
-
-    // Zoom sinistro: Flessione (asse x=2.60, picco x=4.80 -> delta=2.20 u; fondo ZP x=3.70; media x=4.25 -> delta=1.65 u)
-    rect((2.1, -3.55), (6.3, -1.75), fill: black.transparentize(86%), stroke: none)
-    line((2.1, -1.75), (6.3, -1.75), stroke: 1.1pt)
-    line((2.1, -3.55), (6.3, -3.55), stroke: (dash: "dashed", thickness: 0.6pt))
-    line((2.60, -3.7), (2.60, -1.25), stroke: 0.65pt)
-    line((3.70, -3.55), (4.80, -1.75), stroke: 1.0pt + blue)
-    line((2.60, -1.75), (4.80, -1.75), stroke: 1.0pt + blue, mark: (end: ">", scale: 0.6, fill: blue))
-    line((2.60, -2.20), (4.525, -2.20), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-    line((2.60, -2.65), (4.25, -2.65), stroke: 1.0pt + red, mark: (end: ">", scale: 0.6, fill: red))
-    line((2.60, -3.10), (3.975, -3.10), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-    line((2.60, -3.55), (3.70, -3.55), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-    circle((4.25, -2.65), radius: 0.08, fill: red, stroke: none)
-    content((4.90, -1.65), anchor: "south-west", text(size: 8pt, fill: blue)[$sigma_f$])
-    content((4.40, -2.65), anchor: "west", text(size: 8pt, fill: red)[$sigma_(a,"eff")("ZP")$])
-    line((1.78, -3.55), (1.78, -1.75), stroke: 0.6pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.6))
-    content((1.65, -2.65), anchor: "east", text(size: 7.5pt)[ZP])
-    content((4.2, -3.78), anchor: "north", text(size: 8pt)[Flessione: ampiezza media attenuata])
-
-    // Zoom destro: Trazione-compressione (asse x=9.10, picco costante x=11.30 -> delta=2.20 u)
-    rect((8.6, -3.55), (13.85, -1.75), fill: black.transparentize(86%), stroke: none)
-    line((8.6, -1.75), (13.85, -1.75), stroke: 1.1pt)
-    line((8.6, -3.55), (13.85, -3.55), stroke: (dash: "dashed", thickness: 0.6pt))
-    line((9.10, -3.7), (9.10, -1.25), stroke: 0.65pt)
-    line((11.30, -3.55), (11.30, -1.75), stroke: 1.0pt + blue)
-    line((9.10, -1.75), (11.30, -1.75), stroke: 1.0pt + blue, mark: (end: ">", scale: 0.6, fill: blue))
-    for y_z in (-2.20, -3.10, -3.55) {
-      line((9.10, y_z), (11.30, y_z), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-    }
-    line((9.10, -2.65), (11.30, -2.65), stroke: 1.0pt + red, mark: (end: ">", scale: 0.6, fill: red))
-    circle((11.30, -2.65), radius: 0.08, fill: red, stroke: none)
-    content((11.40, -1.65), anchor: "south-west", text(size: 8pt, fill: blue)[$sigma_("tc")$])
-    content((11.45, -2.65), anchor: "west", text(size: 8pt, fill: red)[$sigma_(a,"eff")("ZP") = sigma_("tc")$])
-    content((11.22, -3.78), anchor: "north", text(size: 8pt)[Trazione-compressione: ampiezza uniforme])
-  })
+  include "figs/fatica/fatica-fig38.typ"
 )
 
 In trazione-compressione il profilo è uniforme e l'intera ZP lavora continuativamente al picco nominale, sicché $sigma_(a,"eff")("ZP") = sigma_("tc")$. In flessione (così come in torsione) il gradiente lineare riduce invece la tensione sulle fibre più interne dello strato corticale ($sigma_(a,"eff")("ZP") < sigma_f$), attenuando la sollecitazione efficace e ritardando l'innesco del danno.
@@ -1679,82 +720,7 @@ Nel dimensionamento preliminare, in assenza di prove specifiche sul materiale, s
 ]
 
 #figure(
-  canvas(length: 1.16cm, {
-    // BBox: x in [0.0, 16.0] (dx=16.0), y in [0.0, 5.7], length=1.0cm -> larghezza = 16.0 cm <= 17.0 cm
-    import draw: *
-
-    // --- Pannello sinistro: Curve S-N sperimentali (sigma_a - N) ---
-    content((3.825, 5.15), anchor: "south", text(size: 8.5pt, weight: "bold")[Curve $S$-$N$ sperimentali ($sigma_a$)])
-    rect((1.2, 0.8), (6.45, 4.9), stroke: 0.9pt)
-
-    // Griglia logaritmica decadi 10^2 .. 10^7 (1.05 u/decade)
-    for (i, lbl) in ($10^2$, $10^3$, $10^4$, $10^5$, $10^6$, $10^7$).enumerate() {
-      let x = 1.2 + i * 1.05
-      if i > 0 and i < 5 {
-        line((x, 0.8), (x, 4.9), stroke: (paint: black.transparentize(82%), thickness: 0.45pt))
-      }
-      line((x, 0.8), (x, 0.72), stroke: 0.6pt)
-      content((x, 0.64), anchor: "north", text(size: 7.5pt)[#lbl])
-    }
-    for y_g in (1.5, 2.2, 2.9, 3.6, 4.3) {
-      line((1.2, y_g), (6.45, y_g), stroke: (paint: black.transparentize(86%), thickness: 0.45pt))
-    }
-
-    // Ginocchio N_i = 2*10^6: x = 1.2 + 4.301 * 1.05 = 5.72
-    line((5.72, 0.8), (5.72, 4.9), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(40%)))
-    content((5.66, 4.76), anchor: "north-east", text(size: 7pt)[$N_i = 2 dot 10^6$])
-
-    // Curva Flessione (blu) e Trazione-compressione (rosso) da 10^3 (x=2.25)
-    line((2.25, 4.55), (5.72, 3.15), (6.45, 3.15), stroke: 1.2pt + blue)
-    line((2.25, 3.85), (5.72, 2.20), (6.45, 2.20), stroke: 1.2pt + red)
-    line((1.2, 3.15), (5.72, 3.15), stroke: (dash: "dashed", thickness: 0.65pt, paint: blue))
-    line((1.2, 2.20), (5.72, 2.20), stroke: (dash: "dashed", thickness: 0.65pt, paint: red))
-
-    // Etichette curve e asse Y sinistro
-    content((1.02, 4.82), anchor: "east", text(size: 8.5pt)[$sigma_a$])
-    content((1.02, 3.15), anchor: "east", text(size: 8pt, fill: blue)[$sigma_(D-1)^f$])
-    content((1.02, 2.20), anchor: "east", text(size: 8pt, fill: red)[$sigma_(D-1)^T$])
-    content((3.65, 4.08), anchor: "south-west", text(size: 8pt, fill: blue)[Flessione])
-    content((2.68, 2.68), anchor: "center", box(fill: white, inset: 1.5pt)[#text(size: 7.6pt, fill: red)[Trazione-compressione]])
-    line((3.98, 2.68), (4.63, 2.68), stroke: 0.55pt + red, mark: (end: ">", scale: 0.5, fill: red))
-    content((3.825, 0.25), anchor: "north", text(size: 8pt)[$N$ (cicli)])
-
-    // Scarto C_L tra i due asintoti
-    line((6.45, 3.15), (6.80, 3.15), stroke: (dash: "dotted", thickness: 0.55pt))
-    line((6.45, 2.20), (6.80, 2.20), stroke: (dash: "dotted", thickness: 0.55pt))
-    line((6.70, 2.20), (6.70, 3.15), stroke: 0.7pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.55))
-    content((6.88, 2.675), anchor: "west", text(size: 7.5pt)[$C_L = 0.6 div 0.85$])
-
-    // --- Pannello destro: Curva teorica unica (sigma_{a,eff} - N) ---
-    content((12.475, 5.15), anchor: "south", text(size: 8.5pt, weight: "bold")[Curva teorica unificata ($sigma_(a,"eff")$)])
-    rect((9.85, 0.8), (15.10, 4.9), stroke: 0.9pt)
-
-    for (i, lbl) in ($10^2$, $10^3$, $10^4$, $10^5$, $10^6$, $10^7$).enumerate() {
-      let x = 9.85 + i * 1.05
-      if i > 0 and i < 5 {
-        line((x, 0.8), (x, 4.9), stroke: (paint: black.transparentize(82%), thickness: 0.45pt))
-      }
-      line((x, 0.8), (x, 0.72), stroke: 0.6pt)
-      content((x, 0.64), anchor: "north", text(size: 7.5pt)[#lbl])
-    }
-    for y_g in (1.5, 2.2, 2.9, 3.6, 4.3) {
-      line((9.85, y_g), (15.10, y_g), stroke: (paint: black.transparentize(86%), thickness: 0.45pt))
-    }
-
-    // Ginocchio comune N_i = 2*10^6: x = 9.85 + 4.301 * 1.05 = 14.37
-    line((14.37, 0.8), (14.37, 4.9), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(40%)))
-    content((14.31, 4.76), anchor: "north-east", text(size: 7pt)[$N_i = 2 dot 10^6$])
-
-    // Curva sovrapposta (blu + rosso tratteggiato) da 10^3 (x=10.90)
-    line((10.90, 3.85), (14.37, 2.20), (15.10, 2.20), stroke: 1.3pt + blue)
-    line((10.90, 3.85), (14.37, 2.20), (15.10, 2.20), stroke: (paint: red, thickness: 1.2pt, dash: "dashed"))
-    line((9.85, 2.20), (14.37, 2.20), stroke: (dash: "dashed", thickness: 0.65pt))
-
-    content((9.67, 4.82), anchor: "east", text(size: 8.5pt)[$sigma_(a,"eff")$])
-    content((9.67, 2.20), anchor: "east", text(size: 8pt)[$sigma_(D-1)^0$])
-    content((12.95, 3.30), anchor: "south", align(center, text(size: 8pt)[Flessione +\ Traz.-compr.]))
-    content((12.475, 0.25), anchor: "north", text(size: 8pt)[$N$ (cicli)])
-  })
+  include "figs/fatica/fatica-fig39.typ"
 ) <fig-sn>
 
 Tracciando le curve $S$-$N$ sperimentali in funzione della tensione nominale superficiale $sigma_a$ (@fig-sn, a sinistra), i due stati di carico si dispongono su livelli distinti. Riformulando invece i diagrammi in termini di tensione efficace $sigma_(a,"eff")$ (a destra), le curve di flessione e trazione-compressione collassano su un'unica legge con asintoto comune $sigma_(D-1)^0$ oltre il ginocchio $N_i = 2 dot 10^6$ cicli.
@@ -1790,82 +756,7 @@ In *trazione-compressione*, invece, la distribuzione è già uniforme su tutta l
   ],
   [
     #figure(
-      canvas(length: 1.55cm, {
-        // BBox: x in [-2.05, 2.90] (dx=4.95), y in [-2.20, 3.85], length=1.55cm -> larghezza = 7.67 cm <= 8.2 cm
-        import draw: *
-
-        let r1 = 0.58
-        let yc1 = 2.75
-        let r2 = 1.55
-        let yc2 = 0.0
-        let amp = 1.75
-        let x80 = 0.80 * amp
-
-        // --- Provino piccolo (sopra) ---
-        content((0, yc1 + r1 + 0.30), anchor: "south")[#text(size: 8pt, weight: "bold")[Provetta ($d = 8"–"12 thin "mm"$)]]
-
-        circle((0, yc1), radius: r1, fill: luma(228), stroke: 1pt + black)
-
-        // Calotta superiore campita tra 0.80*sigma_a e sigma_a (theta da 53.13deg a 126.87deg)
-        let cap1 = ()
-        for i in range(0, 25) {
-          let ang = 53.13deg + i * (73.74deg / 24)
-          cap1.push((r1 * calc.cos(ang), yc1 + r1 * calc.sin(ang)))
-        }
-        line(..cap1, close: true, fill: red.transparentize(65%), stroke: (paint: red.transparentize(10%), thickness: 0.75pt))
-
-        // Assi di riferimento e profilo lineare
-        line((-1.90, yc1), (1.90, yc1), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(90)))
-        line((0, yc1 - r1 - 0.15), (0, yc1 + r1 + 0.15), stroke: (dash: "dotted", thickness: 0.55pt, paint: luma(110)))
-
-        // Frecce di picco +/- sigma_a
-        line((0, yc1 + r1), (amp, yc1 + r1), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
-        line((0, yc1 - r1), (-amp, yc1 - r1), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
-
-        // Livello 80% sigma_a e profilo di flessione
-        let y1_80 = yc1 + 0.80 * r1
-        line((-0.85, y1_80), (amp, y1_80), stroke: (paint: blue, thickness: 0.65pt, dash: "dashed"))
-        line((-amp, yc1 - r1), (amp, yc1 + r1), stroke: 1.1pt + blue)
-
-        // Etichette esterne con richiami anti-collisione
-        line((amp + 0.04, yc1 + r1), (amp + 0.16, yc1 + r1 + 0.12), stroke: 0.55pt + black)
-        content((amp + 0.18, yc1 + r1 + 0.12), anchor: "south-west")[#text(size: 7.5pt)[$sigma_a$]]
-
-        line((amp + 0.04, y1_80), (amp + 0.16, y1_80 - 0.14), stroke: 0.55pt + blue)
-        content((amp + 0.18, y1_80 - 0.14), anchor: "north-west")[#text(size: 7.5pt, fill: blue)[$80% thin sigma_a$]]
-
-        // --- Albero grande (sotto) ---
-        circle((0, yc2), radius: r2, fill: luma(228), stroke: 1pt + black)
-
-        let cap2 = ()
-        for i in range(0, 31) {
-          let ang = 53.13deg + i * (73.74deg / 30)
-          cap2.push((r2 * calc.cos(ang), yc2 + r2 * calc.sin(ang)))
-        }
-        line(..cap2, close: true, fill: red.transparentize(65%), stroke: (paint: red.transparentize(10%), thickness: 0.8pt))
-
-        // Assi di riferimento e profilo lineare
-        line((-1.90, yc2), (1.90, yc2), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(90)))
-        line((0, yc2 - r2 - 0.15), (0, yc2 + r2 + 0.15), stroke: (dash: "dotted", thickness: 0.55pt, paint: luma(110)))
-
-        // Frecce di picco +/- sigma_a (identiche in ampiezza al provino)
-        line((0, yc2 + r2), (amp, yc2 + r2), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
-        line((0, yc2 - r2), (-amp, yc2 - r2), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
-
-        // Livello 80% sigma_a, proiezione verticale comune e profilo di flessione
-        let y2_80 = yc2 + 0.80 * r2
-        line((x80, y1_80), (x80, y2_80), stroke: (paint: blue.transparentize(30%), thickness: 0.55pt, dash: "dotted"))
-        line((-1.25, y2_80), (amp, y2_80), stroke: (paint: blue, thickness: 0.65pt, dash: "dashed"))
-        line((-amp, yc2 - r2), (amp, yc2 + r2), stroke: 1.1pt + blue)
-        circle((x80, y1_80), radius: 0.042, fill: blue, stroke: none)
-        circle((x80, y2_80), radius: 0.042, fill: blue, stroke: none)
-
-        // Etichette ben distanziate (delta y = 0.31 unità)
-        content((amp + 0.12, yc2 + r2 + 0.04), anchor: "south-west")[#text(size: 7.5pt)[$sigma_a$]]
-        content((amp + 0.12, y2_80 - 0.04), anchor: "north-west")[#text(size: 7.5pt, fill: blue)[$80% thin sigma_a$]]
-
-        content((0, yc2 - r2 - 0.30), anchor: "north")[#text(size: 8pt, weight: "bold")[Albero grande ($d >> 12 thin "mm"$)]]
-      })
+      include "figs/fatica/fatica-fig40.typ"
     )
   ],
 )
@@ -1883,78 +774,7 @@ In *trazione-compressione*, invece, la distribuzione è già uniforme su tutta l
   column-gutter: 1em,
   align: (center + horizon, left + horizon),
   [
-    #canvas(length: 1.68cm, {
-        // BBox: x in [-0.80, 5.20] (dx=6.00), y in [-0.85, 3.70], length=1.28cm -> larghezza = 7.68 cm <= 8.2 cm
-        import draw: *
-
-        let map-x(d) = (d - 10.0) / 38.0
-        let map-y(cs) = (cs - 0.60) * 8.0
-
-        // Griglia cartesiana (d ogni 10 mm da 10 a 200, C_S ogni 0.05)
-        for i in range(0, 20) {
-          let xg = map-x(10 + i * 10)
-          line((xg, 0), (xg, 3.20), stroke: 0.35pt + luma(205))
-        }
-        for j in range(0, 9) {
-          let yg = map-y(0.60 + j * 0.05)
-          line((0, yg), (5.00, yg), stroke: 0.35pt + luma(205))
-        }
-
-        // Cornice degli assi
-        rect((0, 0), (5.00, 3.20), stroke: 0.85pt + black)
-
-        // Etichette asse Y
-        let y-vals = (0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00)
-        let y-strs = ("0.60", "0.65", "0.70", "0.75", "0.80", "0.85", "0.90", "0.95", "1.00")
-        for idx in range(0, y-vals.len()) {
-          let yy = map-y(y-vals.at(idx))
-          if y-strs.at(idx) == "0.70" {
-            content((-0.08, yy), anchor: "east")[#box(stroke: 0.7pt + red.transparentize(10%), inset: 1.5pt, fill: white)[#text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[0.70]]]
-          } else {
-            content((-0.10, yy), anchor: "east")[#text(size: 7pt)[#y-strs.at(idx)]]
-          }
-        }
-        content((0, 3.35), anchor: "south")[#text(size: 8pt, weight: "bold")[$C_S$]]
-
-        // Etichette asse X (ogni 20 mm da 10 a 190, bordo destro a 200)
-        for k in range(0, 10) {
-          let d = 10 + k * 20
-          content((map-x(d), -0.12), anchor: "north")[#text(size: 7pt)[#d]]
-        }
-        content((2.50, -0.48), anchor: "north")[#text(size: 7.5pt, weight: "bold")[$d$ [mm]]]
-
-        // Asintoto orizzontale C_S = 0.70
-        let y-asym = map-y(0.70)
-        line((0, y-asym), (5.12, y-asym), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
-
-        // Curva sperimentale C_S(d) fedele all'abaco (Slide 9)
-        let curve-data = (
-          (10, 1.000), (15, 0.950), (20, 0.910), (25, 0.883), (30, 0.862),
-          (40, 0.830), (50, 0.806), (60, 0.788), (70, 0.773), (80, 0.761),
-          (90, 0.750), (100, 0.741), (110, 0.733), (120, 0.726), (130, 0.720),
-          (140, 0.715), (150, 0.711), (160, 0.707), (170, 0.704), (180, 0.702),
-          (190, 0.700), (200, 0.700),
-        )
-        let curve-pts = curve-data.map(p => (map-x(p.at(0)), map-y(p.at(1))))
-        line(..curve-pts, stroke: 1.35pt + black)
-
-        // Etichetta curva Flessione e torsione
-        content((2.95, 2.65), anchor: "center")[
-          #box(fill: white, stroke: 0.6pt + black, inset: 2.5pt, radius: 1.5pt)[
-            #text(size: 7pt, weight: "bold")[Flessione e torsione]
-          ]
-        ]
-        line((2.05, 2.55), (map-x(46), map-y(0.816)), stroke: 0.6pt + black, mark: (end: ">", scale: 0.55))
-
-        // Etichetta asintoto C_L = 0.70
-        content((3.10, 0.36), anchor: "center")[
-          #box(fill: white, stroke: 0.6pt + red.transparentize(10%), inset: 2.2pt, radius: 1.5pt)[
-            #set align(center)
-            #text(size: 6.7pt)[Asintoto: valore medio $C_L = 0.70$ \ (trazione-compressione)]
-          ]
-        ]
-        line((2.40, 0.61), (2.40, y-asym - 0.02), stroke: 0.6pt + red.transparentize(10%), mark: (end: ">", scale: 0.55))
-      })
+    #include "figs/fatica/fatica-fig41.typ"
   ],
   [
     *Lettura del diagramma $C_S (d)$.* Fino al diametro normato della provetta ($d = 10 thin "mm"$, o $8"–"12 thin "mm"$ secondo lo standard) vale $C_S = 1$. Oltre questa soglia, la curva per flessione e torsione scende rapidamente raggiungendo $C_S approx 0.81$ a $d = 50 thin "mm"$ e $C_S = 0.75$ a $d = 90 thin "mm"$.
@@ -1986,66 +806,7 @@ La nucleazione del danno a fatica nasce sempre da irregolarità superficiali in 
   ],
   [
     #figure(
-      canvas(length: 0.76cm, {
-        // BBox: x in [0.0, 10.0] (dx=10.0), y in [0.15, 4.35], length=0.76cm -> larghezza = 7.60 cm <= 8.2 cm
-        import draw: *
-
-        // Carico alternato superiore
-        line((3.2, 3.80), (6.8, 3.80), mark: (start: ">", end: ">", scale: 0.65), stroke: (thickness: 0.8pt))
-        content((5.0, 3.98), text(size: 7pt, weight: "bold")[Carico alternato], anchor: "south")
-
-        // Etichette dei tre meccanismi
-        content((1.75, 2.88), align(center, text(size: 6.8pt, weight: "bold")[Creste e\ avvallamenti]), anchor: "south")
-        content((5.00, 2.98), text(size: 6.8pt, weight: "bold")[Ondulazioni], anchor: "south")
-        content((8.25, 2.88), align(center, text(size: 6.8pt, weight: "bold")[Estrusione\ a bande]), anchor: "south")
-
-        // Fondo campito del materiale sottostante
-        rect((0.3, 0.95), (9.7, 2.15), fill: black.transparentize(90%), stroke: none)
-        for ix in range(0, 22) {
-          let x0 = 0.4 + ix * 0.42
-          line((x0, 0.95), (x0 + 0.35, 1.65), stroke: (paint: black.transparentize(68%), thickness: 0.45pt))
-        }
-        line((0.3, 0.95), (9.7, 0.95), stroke: (thickness: 0.65pt))
-
-        // Separatori verticali tra i tre regimi
-        line((3.35, 0.95), (3.35, 2.80), stroke: (paint: black.transparentize(55%), dash: "dotted", thickness: 0.55pt))
-        line((6.70, 0.95), (6.70, 2.80), stroke: (paint: black.transparentize(55%), dash: "dotted", thickness: 0.55pt))
-
-        // 1) Creste e avvallamenti (ridge and groove)
-        line(
-          (0.30, 2.15), (0.70, 2.15), (1.02, 2.58), (1.34, 1.92),
-          (1.68, 2.66), (2.00, 1.88), (2.34, 2.56), (2.66, 2.15), (3.70, 2.15),
-          stroke: (thickness: 1.05pt),
-        )
-
-        // 2) Ondulazioni (undulations) con bezier raccordate (1.333 * A)
-        bezier((3.70, 2.15), (4.35, 2.15), (3.91, 2.483), (4.14, 2.483), stroke: (thickness: 1.05pt))
-        bezier((4.35, 2.15), (5.00, 2.15), (4.56, 1.817), (4.79, 1.817), stroke: (thickness: 1.05pt))
-        bezier((5.00, 2.15), (5.65, 2.15), (5.21, 2.483), (5.44, 2.483), stroke: (thickness: 1.05pt))
-        bezier((5.65, 2.15), (6.30, 2.15), (5.86, 1.817), (6.09, 1.817), stroke: (thickness: 1.05pt))
-
-        // 3) Estrusione a bande di scorrimento (slipband extrusion)
-        line(
-          (6.30, 2.15), (7.30, 2.15), (7.55, 1.92), (8.05, 2.62),
-          (8.18, 2.50), (7.86, 2.06), (8.28, 2.60), (8.40, 2.48),
-          (8.16, 2.15), (9.70, 2.15),
-          stroke: (thickness: 1.05pt),
-        )
-        // Piani di scorrimento e micro-vuoti coalescenti interni
-        line((7.15, 1.35), (7.55, 1.92), stroke: (paint: black.transparentize(35%), dash: "dashed", thickness: 0.55pt))
-        line((7.56, 1.48), (7.86, 2.06), stroke: (paint: black.transparentize(35%), dash: "dashed", thickness: 0.55pt))
-        circle((7.34, 1.62), radius: 0.045, fill: white, stroke: (thickness: 0.6pt))
-        circle((7.25, 1.49), radius: 0.042, fill: white, stroke: (thickness: 0.6pt))
-
-        // Punti critici di innesco
-        circle((2.00, 1.88), radius: 0.16, stroke: (paint: red, thickness: 1.0pt), fill: red.transparentize(80%))
-        circle((4.675, 1.90), radius: 0.16, stroke: (paint: red, thickness: 1.0pt), fill: red.transparentize(80%))
-        circle((7.55, 1.92), radius: 0.16, stroke: (paint: red, thickness: 1.0pt), fill: red.transparentize(80%))
-
-        // Legenda inferiore
-        circle((2.65, 0.45), radius: 0.13, stroke: (paint: red, thickness: 1.0pt), fill: red.transparentize(80%))
-        content((2.92, 0.45), text(size: 6.8pt)[Sito di innesco della micro-cricca], anchor: "west")
-      }),
+      include "figs/fatica/fatica-fig42.typ",
       caption: [Meccanismi microscopici di nucleazione superficiale.],
     )
   ],
@@ -2060,7 +821,7 @@ La nucleazione del danno a fatica nasce sempre da irregolarità superficiali in 
   ],
   [
     #figure(
-      image("images/ECM01-4_topografia_rugosita.png", width: 76%),
+      image("images/fatica/ECM01-4_topografia_rugosita.png", width: 76%),
       caption: [Rilievo microscopico 3D della rugosità con avvallamento acuto d'innesco.],
     )
   ],
@@ -2081,68 +842,7 @@ Il coefficiente $C_F$ non dipende solo dalla rugosità $R_a$, ma è diagrammato 
   ],
   [
     #figure(
-      canvas(length: 0.77cm, {
-        // BBox: x in [0.0, 10.55] (dx=10.55), y in [0.0, 6.45], length=0.77cm -> larghezza = 8.12 cm <= 10.0 cm
-        import draw: *
-
-        let map-x(rm) = 1.35 + ((rm - 200.0) / 100.0) * 0.56
-        let map-y(cf) = 1.00 + ((cf - 0.40) / 0.10) * 0.85
-
-        // Griglia cartesiana fedele a Slide 11: Rm in [200, 1500] (passo 100), CF in [0.4, 1.0] (passo 0.1)
-        for i in range(0, 14) {
-          let x = map-x(200 + i * 100)
-          line((x, 1.00), (x, 6.10), stroke: (paint: luma(195), thickness: 0.45pt))
-        }
-        for j in range(0, 7) {
-          let y = 1.00 + j * 0.85
-          line((1.35, y), (8.63, y), stroke: (paint: luma(195), thickness: 0.45pt))
-        }
-        rect((1.35, 1.00), (8.63, 6.10), stroke: (thickness: 0.9pt))
-
-        // Tacche ed etichette asse Y (CF)
-        let cf_vals = ("0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0")
-        for j in range(0, 7) {
-          let y = 1.00 + j * 0.85
-          content((1.20, y), text(size: 7pt)[#cf_vals.at(j)], anchor: "east")
-        }
-        content((0.35, 3.55), text(size: 8.5pt, weight: "bold")[$C_F$], anchor: "center")
-
-        // Etichette asse X (Rm ogni 200 MPa da 200 a 1400; bordo destro a 1500 MPa)
-        for k in range(0, 7) {
-          let rm = 200 + k * 200
-          content((map-x(rm), 0.82), text(size: 7pt)[#rm], anchor: "north")
-        }
-        content((4.99, 0.25), text(size: 8pt)[$R_m$ (MPa)], anchor: "center")
-
-        // Curve sperimentali CF(Rm, Ra) campionate ogni 100 MPa su [200, 1500]
-        let rms = (200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500)
-        let draw-cf(vals, st) = {
-          let pts = ()
-          for idx in range(0, rms.len()) {
-            pts.push((map-x(rms.at(idx)), map-y(vals.at(idx))))
-          }
-          line(..pts, stroke: st)
-        }
-
-        draw-cf((1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000), (paint: blue, thickness: 1.15pt))
-        draw-cf((1.000, 0.990, 0.980, 0.973, 0.970, 0.967, 0.964, 0.961, 0.958, 0.955, 0.955, 0.955, 0.955, 0.955), (thickness: 0.95pt))
-        draw-cf((1.000, 0.984, 0.968, 0.953, 0.941, 0.932, 0.925, 0.920, 0.917, 0.915, 0.914, 0.913, 0.913, 0.913), (thickness: 0.95pt))
-        draw-cf((0.984, 0.965, 0.945, 0.927, 0.912, 0.901, 0.892, 0.884, 0.878, 0.872, 0.866, 0.863, 0.861, 0.860), (thickness: 0.95pt))
-        draw-cf((0.980, 0.950, 0.920, 0.892, 0.866, 0.843, 0.822, 0.804, 0.788, 0.774, 0.763, 0.755, 0.750, 0.750), (thickness: 0.95pt))
-        draw-cf((0.975, 0.932, 0.888, 0.845, 0.804, 0.768, 0.736, 0.707, 0.682, 0.663, 0.648, 0.637, 0.629, 0.623), (thickness: 0.95pt))
-        draw-cf((0.950, 0.900, 0.850, 0.802, 0.756, 0.716, 0.678, 0.645, 0.613, 0.582, 0.552, 0.525, 0.500, 0.478), (paint: red.transparentize(10%), thickness: 1.15pt))
-
-        // Etichette rugosità Ra sul bordo destro (x = 1500 MPa -> 8.63)
-        content((8.80, map-y(1.000)), text(size: 6.8pt, fill: blue, weight: "bold")[0.8], anchor: "west")
-        content((8.80, map-y(0.955)), text(size: 6.8pt)[1.6], anchor: "west")
-        content((8.80, map-y(0.913)), text(size: 6.8pt)[3.2], anchor: "west")
-        content((8.80, map-y(0.860)), text(size: 6.8pt)[6.3], anchor: "west")
-        content((8.80, map-y(0.750)), text(size: 6.8pt)[10], anchor: "west")
-        content((8.80, map-y(0.623)), text(size: 6.8pt)[40], anchor: "west")
-        content((8.80, map-y(0.478)), text(size: 6.8pt, fill: red.transparentize(10%), weight: "bold")[160], anchor: "west")
-
-        content((10.10, 3.55), text(size: 7.5pt)[Rugosità $R_a$ ($mu"m"$)], angle: 90deg, anchor: "center")
-      }),
+      include "figs/fatica/fatica-fig43.typ",
       caption: [Coefficiente di finitura superficiale $C_F (R_m, R_a)$ per acciai ($R_m$ fino a $1500 thin "MPa"$).],
     )
   ],
@@ -2195,132 +895,7 @@ $ sigma_n = frac(P, pi a^2) , quad tau_n = frac(2 M_t, pi a^3) $
   ],
   [
     #figure(
-      canvas(length: 1.0cm, {
-        // BBox: x in [0.0, 7.8] (dx=7.8), y in [-0.7, 7.5], length=1.0cm -> larghezza = 7.8 cm <= 8.2 cm
-        import draw: *
-
-        // --- (a) Gola cilindrica in trazione ---
-        content((3.90, 7.42), text(size: 8.5pt, weight: "bold")[(a) Gola cilindrica in trazione], anchor: "north")
-
-        // Albero con gola (asse x = 1.65, y0 = 5.0)
-        line((1.65, 3.25), (1.65, 6.75), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(110)))
-        line((0.40, 6.65), (2.90, 6.65), stroke: 1.0pt)
-        line((0.40, 3.35), (2.90, 3.35), stroke: 1.0pt)
-
-        // Contorno sinistro con gola U (centro (0.68, 5.0), rho = 0.22 -> radice x = 0.90)
-        line((0.40, 6.65), (0.40, 5.22), (0.68, 5.22), stroke: 1.0pt)
-        arc((0.68, 5.0), start: 90deg, stop: -90deg, radius: 0.22, anchor: "origin", stroke: 1.0pt)
-        line((0.68, 4.78), (0.40, 4.78), (0.40, 3.35), stroke: 1.0pt)
-
-        // Contorno destro con gola U (centro (2.62, 5.0), rho = 0.22 -> radice x = 2.40)
-        line((2.90, 6.65), (2.90, 5.22), (2.62, 5.22), stroke: 1.0pt)
-        arc((2.62, 5.0), start: 90deg, stop: 270deg, radius: 0.22, anchor: "origin", stroke: 1.0pt)
-        line((2.62, 4.78), (2.90, 4.78), (2.90, 3.35), stroke: 1.0pt)
-
-        // Linee di flusso tensionali interne
-        bezier((0.70, 6.50), (1.07, 5.00), (0.70, 5.65), (1.07, 5.40), stroke: (dash: "dashed", thickness: 0.55pt, paint: rgb("#1f77b4")))
-        bezier((1.07, 5.00), (0.70, 3.50), (1.07, 4.60), (0.70, 4.35), stroke: (dash: "dashed", thickness: 0.55pt, paint: rgb("#1f77b4")))
-        bezier((2.60, 6.50), (2.23, 5.00), (2.60, 5.65), (2.23, 5.40), stroke: (dash: "dashed", thickness: 0.55pt, paint: rgb("#1f77b4")))
-        bezier((2.23, 5.00), (2.60, 3.50), (2.23, 4.60), (2.60, 4.35), stroke: (dash: "dashed", thickness: 0.55pt, paint: rgb("#1f77b4")))
-
-        // Carico P
-        line((1.65, 6.65), (1.65, 7.05), stroke: 0.9pt, mark: (end: ">", scale: 0.6))
-        content((1.85, 6.88), text(size: 8pt)[$P$], anchor: "west")
-        line((1.65, 3.35), (1.65, 2.95), stroke: 0.9pt, mark: (end: ">", scale: 0.6))
-        content((1.85, 3.12), text(size: 8pt)[$P$], anchor: "west")
-
-        // Sezione minima e quote a, rho (freccia rho entrante nel vano aperto della gola)
-        line((0.90, 5.0), (2.40, 5.0), stroke: (dash: "dotted", thickness: 0.6pt))
-        line((2.40, 5.0), (2.40, 4.10), stroke: (dash: "dotted", thickness: 0.5pt))
-        line((1.65, 4.15), (2.40, 4.15), stroke: 0.6pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.5))
-        content((2.03, 4.02), text(size: 7.5pt)[$a$], anchor: "north")
-        line((0.26, 5.00), (0.88, 5.00), stroke: 0.55pt, mark: (end: ">", scale: 0.48))
-        content((0.22, 5.00), text(size: 7.5pt)[$rho$], anchor: "east")
-
-        // Grafico tensioni principali normalizzate (r in [0, a] -> x in [4.0, 6.6])
-        line((4.0, 3.6), (7.10, 3.6), stroke: 0.75pt, mark: (end: ">", scale: 0.55))
-        line((4.0, 3.6), (4.0, 6.5), stroke: 0.75pt, mark: (end: ">", scale: 0.55))
-        content((3.92, 6.52), text(size: 7.5pt)[$sigma / sigma_n$], anchor: "east")
-        content((7.18, 3.60), text(size: 7.5pt)[$r$], anchor: "west")
-
-        // Riferimento r = a e sigma_n = 1
-        line((6.6, 3.6), (6.6, 6.30), stroke: (dash: "dotted", thickness: 0.6pt))
-        content((6.6, 3.42), text(size: 7.5pt)[$a$], anchor: "north")
-        line((4.0, 4.10), (6.6, 4.10), stroke: (dash: "dashed", thickness: 0.6pt, paint: luma(100)))
-
-        // Tacche asse y (scala 0.5 cm/unità)
-        for (val, yy) in (("1", 4.10), ("3", 5.10), ("5", 6.10)) {
-          line((3.94, yy), (4.00, yy), stroke: 0.6pt)
-          content((3.88, yy), text(size: 7pt)[#val], anchor: "east")
-        }
-
-        // Curve sigma_z/sigma_n, sigma_t/sigma_n, sigma_r/sigma_n
-        bezier((4.0, 3.96), (6.6, 6.10), (5.8, 4.00), (6.4, 4.85), stroke: (paint: blue, thickness: 1.1pt))
-        content((6.70, 6.10), text(size: 7.5pt, fill: blue)[$sigma_z / sigma_n$], anchor: "west")
-
-        bezier((4.0, 3.82), (6.6, 4.35), (5.6, 3.86), (6.3, 4.08), stroke: (paint: red.transparentize(10%), thickness: 1.0pt))
-        content((6.70, 4.42), text(size: 7.5pt, fill: red.transparentize(10%))[$sigma_t / sigma_n$], anchor: "west")
-        content((6.70, 4.02), text(size: 7pt, fill: luma(80))[$sigma_n$], anchor: "west")
-
-        bezier((4.0, 3.82), (6.2, 4.12), (4.9, 3.88), (5.7, 4.15), stroke: (paint: black, thickness: 0.9pt))
-        bezier((6.2, 4.12), (6.6, 3.60), (6.45, 4.08), (6.58, 3.78), stroke: (paint: black, thickness: 0.9pt))
-        line((5.25, 3.32), (5.50, 3.93), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
-        content((5.25, 3.28), text(size: 7.5pt)[$sigma_r / sigma_n$], anchor: "north")
-
-        // Separatore
-        line((0.2, 2.68), (7.5, 2.68), stroke: (thickness: 0.4pt, paint: luma(190)))
-
-        // --- (b) Lastra intagliata in flessione ---
-        content((3.90, 2.52), text(size: 8.5pt, weight: "bold")[(b) Lastra intagliata in flessione], anchor: "north")
-
-        // Lastra con intagli semicircolari laterali (asse x = 1.65, y0 = 0.85, rho = 0.35 -> a = 0.65)
-        line((1.65, -0.25), (1.65, 1.95), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(110)))
-        line((0.65, 1.95), (2.65, 1.95), stroke: 1.0pt)
-        line((0.65, -0.25), (2.65, -0.25), stroke: 1.0pt)
-        line((0.65, 1.95), (0.65, 1.20), stroke: 1.0pt)
-        arc((0.65, 0.85), start: 90deg, stop: -90deg, radius: 0.35, anchor: "origin", stroke: 1.0pt)
-        line((0.65, 0.50), (0.65, -0.25), stroke: 1.0pt)
-        line((2.65, 1.95), (2.65, 1.20), stroke: 1.0pt)
-        arc((2.65, 0.85), start: 90deg, stop: 270deg, radius: 0.35, anchor: "origin", stroke: 1.0pt)
-        line((2.65, 0.50), (2.65, -0.25), stroke: 1.0pt)
-
-        // Momenti flettenti M (fibre destre +a tese, fibre sinistre -a compresse)
-        arc((1.65, 1.98), start: 35deg, stop: 145deg, radius: (0.85, 0.24), anchor: "origin", stroke: 0.75pt, mark: (end: ">", scale: 0.5))
-        content((0.88, 2.15), text(size: 7.5pt)[$M$], anchor: "east")
-        arc((1.65, -0.28), start: 325deg, stop: 215deg, radius: (0.85, 0.24), anchor: "origin", stroke: 0.75pt, mark: (end: ">", scale: 0.5))
-        content((0.88, -0.45), text(size: 7.5pt)[$M$], anchor: "east")
-
-        // Sezione minima e quota a
-        line((1.00, 0.85), (2.30, 0.85), stroke: (dash: "dotted", thickness: 0.6pt))
-        line((2.30, 0.85), (2.30, 0.12), stroke: (dash: "dotted", thickness: 0.5pt))
-        line((1.65, 0.16), (2.30, 0.16), stroke: 0.6pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.5))
-        content((1.98, 0.04), text(size: 7.5pt)[$a$], anchor: "north")
-
-        // Profilo a farfalla distorto (x in [4.2, 6.7], centro x = 5.45, base y = 0.85)
-        line((4.2, 0.85), (6.7, 0.85), stroke: 0.75pt)
-        line((4.2, -0.25), (4.2, 1.95), stroke: (dash: "dotted", thickness: 0.55pt))
-        line((5.45, 0.15), (5.45, 1.55), stroke: (dash: "dotted", thickness: 0.55pt))
-        line((6.7, -0.25), (6.7, 1.95), stroke: (dash: "dotted", thickness: 0.55pt))
-
-        // Farfalla nominale lineare
-        line((4.2, 0.20), (6.7, 1.50), stroke: (dash: "dashed", thickness: 0.75pt, paint: luma(80)))
-        content((6.78, 1.48), text(size: 7pt, fill: luma(80))[$sigma_n$], anchor: "west")
-
-        // Profilo reale non lineare
-        bezier((5.45, 0.85), (6.7, 1.92), (6.00, 1.12), (6.50, 1.42), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((5.45, 0.85), (4.2, -0.22), (4.90, 0.58), (4.40, 0.28), stroke: (paint: blue, thickness: 1.1pt))
-        content((6.78, 1.92), text(size: 7.5pt, fill: blue)[$sigma_"max"$], anchor: "west")
-
-        // Frecce tensione nella farfalla
-        line((5.98, 0.85), (5.98, 1.15), stroke: (paint: blue, thickness: 0.55pt), mark: (end: ">", scale: 0.42))
-        line((6.38, 0.85), (6.38, 1.45), stroke: (paint: blue, thickness: 0.55pt), mark: (end: ">", scale: 0.42))
-        line((4.92, 0.85), (4.92, 0.55), stroke: (paint: blue, thickness: 0.55pt), mark: (end: ">", scale: 0.42))
-        line((4.52, 0.85), (4.52, 0.25), stroke: (paint: blue, thickness: 0.55pt), mark: (end: ">", scale: 0.42))
-
-        content((4.10, 0.85), text(size: 7pt)[$-a$], anchor: "east")
-        content((5.36, 0.98), text(size: 7pt)[$0$], anchor: "south-east")
-        content((6.78, 0.85), text(size: 7pt)[$+a$], anchor: "west")
-      }),
+      include "figs/fatica/fatica-fig44.typ",
       caption: [Tensioni principali nella gola cilindrica in trazione e distorsione non lineare della farfalla flessionale.],
     )
   ],
@@ -2363,27 +938,27 @@ Le campagne sperimentali sono raccolte nei diagrammi di R.E. Peterson (*Stress C
     row-gutter: 0.6em,
     align: (center + bottom, center + bottom, center + bottom),
     [
-      #image("images/ECM01-5_peterson_spallamento_trazione.png", width: 100%)
+      #image("images/fatica/ECM01-5_peterson_spallamento_trazione.png", width: 100%)
       #text(size: 7.5pt)[*Spallamento — Trazione*]
     ],
     [
-      #image("images/ECM01-5_peterson_spallamento_flessione.png", width: 100%)
+      #image("images/fatica/ECM01-5_peterson_spallamento_flessione.png", width: 100%)
       #text(size: 7.5pt)[*Spallamento — Flessione*]
     ],
     [
-      #image("images/ECM01-5_peterson_spallamento_torsione.png", width: 100%)
+      #image("images/fatica/ECM01-5_peterson_spallamento_torsione.png", width: 100%)
       #text(size: 7.5pt)[*Spallamento — Torsione*]
     ],
     [
-      #image("images/ECM01-5_peterson_gola_trazione.png", width: 100%)
+      #image("images/fatica/ECM01-5_peterson_gola_trazione.png", width: 100%)
       #text(size: 7.5pt)[*Gola — Trazione*]
     ],
     [
-      #image("images/ECM01-5_peterson_gola_flessione.png", width: 100%)
+      #image("images/fatica/ECM01-5_peterson_gola_flessione.png", width: 100%)
       #text(size: 7.5pt)[*Gola — Flessione*]
     ],
     [
-      #image("images/ECM01-5_peterson_gola_torsione.png", width: 100%)
+      #image("images/fatica/ECM01-5_peterson_gola_torsione.png", width: 100%)
       #text(size: 7.5pt)[*Gola — Torsione*]
     ],
   ),
@@ -2404,19 +979,19 @@ Questa struttura riflette la *similitudine geometrica*: $K_t$ dipende soltanto d
     row-gutter: 0.6em,
     align: (center + bottom, center + bottom),
     [
-      #image("images/ECM01-5_peterson_lastra_spallamento.png", height: 4.1cm)
+      #image("images/fatica/ECM01-5_peterson_lastra_spallamento.png", height: 4.1cm)
       #text(size: 7.5pt)[*Lastra con spallamento in trazione*]
     ],
     [
-      #image("images/ECM01-5_peterson_lastra_intagli.png", height: 4.1cm)
+      #image("images/fatica/ECM01-5_peterson_lastra_intagli.png", height: 4.1cm)
       #text(size: 7.5pt)[*Lastra con intagli laterali a U in trazione*]
     ],
     [
-      #image("images/ECM01-5_peterson_foro_flessione.png", height: 4.4cm)
+      #image("images/fatica/ECM01-5_peterson_foro_flessione.png", height: 4.4cm)
       #text(size: 7.5pt)[*Lastra forata in flessione fuori piano (parametro $d\/h$)*]
     ],
     [
-      #image("images/ECM01-5_peterson_foro_trazione.png", height: 4.4cm)
+      #image("images/fatica/ECM01-5_peterson_foro_trazione.png", height: 4.4cm)
       #text(size: 7.5pt)[*Lastra forata in trazione (curva unica in $d\/b$)*]
     ],
   ),
@@ -2438,70 +1013,7 @@ Questa struttura riflette la *similitudine geometrica*: $K_t$ dipende soltanto d
   ],
   [
     #figure(
-      canvas(length: 1.0cm, {
-        // BBox: x in [-0.6, 6.8] (dx=7.4), y in [-0.1, 6.8], length=1.0cm -> larghezza = 7.4 cm <= 8.2 cm
-        import draw: *
-
-        // Griglia parametrica: x in [0.6, 5.1] -> r/d in [0, 0.3], y in [0.9, 6.1] -> K_t in [1.0, 3.0]
-        for rd in (0.1, 0.2, 0.3) {
-          let xx = 0.6 + (rd / 0.3) * 4.5
-          line((xx, 0.9), (xx, 6.1), stroke: (dash: "dotted", thickness: 0.45pt, paint: black.transparentize(75%)))
-          line((xx, 0.9), (xx, 0.78), stroke: 0.7pt)
-          content((xx, 0.58), text(size: 7.5pt)[#rd], anchor: "center")
-        }
-        content((0.6, 0.58), text(size: 7.5pt)[0], anchor: "center")
-        content((5.62, 0.58), text(size: 8pt)[$r / d$], anchor: "center")
-
-        for kt in (1.0, 1.5, 2.0, 2.5, 3.0) {
-          let yy = 0.9 + (kt - 1.0) * 2.6
-          if kt > 1.0 {
-            line((0.6, yy), (5.1, yy), stroke: (dash: "dotted", thickness: 0.45pt, paint: black.transparentize(75%)))
-          }
-          line((0.6, yy), (0.48, yy), stroke: 0.7pt)
-          content((0.40, yy), text(size: 7.5pt)[#kt], anchor: "east")
-        }
-        content((-0.25, 3.5), text(size: 8pt)[$K_t$], anchor: "east")
-
-        // Assi
-        line((0.6, 0.9), (5.38, 0.9), stroke: 0.9pt, mark: (end: ">", scale: 0.6))
-        line((0.6, 0.9), (0.6, 6.45), stroke: 0.9pt, mark: (end: ">", scale: 0.6))
-
-        // Limite D/d -> 1 (richiamo inferiore senza alcuna collisione con la curva 1.02)
-        line((0.6, 0.9), (5.1, 0.9), stroke: (dash: "dashed", thickness: 0.8pt, paint: blue))
-        line((2.85, 0.36), (2.85, 0.88), stroke: (thickness: 0.55pt, paint: blue), mark: (end: ">", scale: 0.45))
-        content((2.85, 0.30), text(size: 7pt, fill: blue)[Limite $D\/d -> 1$ ($K_t = 1$)], anchor: "north")
-
-        // Asintoto elastico r/d -> 0
-        line((0.98, 6.38), (0.68, 6.08), stroke: (thickness: 0.55pt, paint: red.transparentize(10%)), mark: (end: ">", scale: 0.48))
-        content((1.04, 6.42), text(size: 7pt, fill: red.transparentize(10%))[Singolarità elastica $r\/d -> 0$ ($K_t -> oo$)], anchor: "west")
-
-        // Soglia fisica di snervamento locale (smussamento)
-        line((0.6, 4.95), (2.25, 4.95), stroke: (dash: "dashed", thickness: 0.75pt, paint: rgb("#1f77b4")))
-        content((2.32, 4.98), text(size: 6.8pt, fill: rgb("#1f77b4"))[Limite reale per \ snervamento locale], anchor: "west")
-
-        let curves = (
-          (label: [$D\/d = 2.0$], c: 0.30, p: 0.50, rmin: 0.022, col: red.transparentize(15%)),
-          (label: [$1.5$], c: 0.22, p: 0.48, rmin: 0.015, col: black),
-          (label: [$1.15$], c: 0.13, p: 0.45, rmin: 0.010, col: black),
-          (label: [$1.02$], c: 0.070, p: 0.42, rmin: 0.008, col: black.transparentize(30%)),
-        )
-        for cv in curves {
-          let pts = ()
-          let nsteps = 28
-          for i in range(nsteps + 1) {
-            let rd = cv.rmin + (0.30 - cv.rmin) * (i / nsteps)
-            let kt = 1.0 + cv.c / calc.pow(rd, cv.p)
-            if kt <= 3.0 {
-              let xx = 0.6 + (rd / 0.3) * 4.5
-              let yy = 0.9 + (kt - 1.0) * 2.6
-              pts.push((xx, yy))
-            }
-          }
-          line(..pts, stroke: (thickness: 1.05pt, paint: cv.col))
-          let last = pts.last()
-          content((last.at(0) + 0.12, last.at(1)), text(size: 7pt, fill: cv.col)[#cv.label], anchor: "west")
-        }
-      }),
+      include "figs/fatica/fatica-fig45.typ",
       caption: [Andamento asintotico teorico di $K_t$ per $r\/d -> 0$ e limitazione fisica dovuta allo snervamento locale.],
     )
   ],
@@ -2514,136 +1026,7 @@ Questa struttura riflette la *similitudine geometrica*: $K_t$ dipende soltanto d
 Consideriamo una lastra duttile di larghezza netta $h$ con due intagli semicircolari laterali, sottoposta a una trazione assiale $P$ crescente. Lungo la sezione minima seguiamo tre posizioni rappresentative: il bordo dell'intaglio $A$, la fascia intermedia $B$ e il punto centrale $C$ (il più distante dalle gole).
 
 #figure(
-  canvas(length: 1cm, {
-    // BBox: x in [0.0, 15.6] (dx=15.6), y in [-0.2, 5.6], length=1.0cm -> larghezza = 15.6 cm <= 17.0 cm
-    import draw: *
-
-    // Schema superiore del carico P e larghezza h
-    line((6.1, 5.25), (7.1, 5.25), stroke: 1pt)
-    arc((7.5, 5.25), start: 180deg, stop: 360deg, radius: 0.40, anchor: "origin", stroke: 1pt)
-    line((7.9, 5.25), (8.9, 5.25), stroke: 1pt)
-    line((6.1, 3.85), (7.1, 3.85), stroke: 1pt)
-    arc((7.5, 3.85), start: 0deg, stop: 180deg, radius: 0.40, anchor: "origin", stroke: 1pt)
-    line((7.9, 3.85), (8.9, 3.85), stroke: 1pt)
-    line((6.1, 3.85), (6.1, 5.25), stroke: 1pt)
-    line((8.9, 3.85), (8.9, 5.25), stroke: 1pt)
-    // Frecce P
-    line((6.1, 4.55), (5.2, 4.55), stroke: 1.2pt, mark: (end: ">", scale: 0.7))
-    line((8.9, 4.55), (9.8, 4.55), stroke: 1.2pt, mark: (end: ">", scale: 0.7))
-    content((5.55, 4.88), [#text(size: 8pt, weight: "bold")[$P$]], anchor: "center")
-    content((9.45, 4.88), [#text(size: 8pt, weight: "bold")[$P$]], anchor: "center")
-    // Quota h
-    line((7.5, 4.25), (7.5, 4.85), stroke: 0.55pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.5))
-    content((7.68, 4.55), [#text(size: 8pt)[$h$]], anchor: "west")
-    // Freccia P crescente
-    line((10.5, 4.55), (14.8, 4.55), stroke: (thickness: 0.75pt, paint: blue), mark: (end: ">", scale: 0.6))
-    content((12.65, 4.85), [#text(size: 7.5pt, fill: blue)[Carico assiale $P$ crescente]], anchor: "center")
-
-    // 4 pannelli orizzontali: (a), (b), (c), (d)
-    let x0s = (0.35, 4.25, 8.15, 12.05)
-    let labels = ("(a) Elastico", "(b) Snervamento in A", "(c) Zona B snerva", "(d) Cerniera plastica (C)")
-
-    for idx in range(4) {
-      let x0 = x0s.at(idx)
-      let xsec = x0 + 0.85
-      let xbase = x0 + 1.55
-      let xreh = xbase + 1.15
-
-      // Titolo pannello
-      content((x0 + 1.55, 3.45), [#text(size: 7.5pt, weight: "bold")[#labels.at(idx)]], anchor: "center")
-
-      // Geometria lastra con due intagli semicircolari (altezza sezione netta: y in [0.75, 2.75])
-      line((x0, 3.10), (xsec - 0.35, 3.10), stroke: 0.9pt)
-      arc((xsec, 3.10), start: 180deg, stop: 360deg, radius: 0.35, anchor: "origin", stroke: 0.9pt)
-      line((xsec + 0.35, 3.10), (x0 + 1.35, 3.10), stroke: 0.9pt)
-
-      line((x0, 0.40), (xsec - 0.35, 0.40), stroke: 0.9pt)
-      arc((xsec, 0.40), start: 0deg, stop: 180deg, radius: 0.35, anchor: "origin", stroke: 0.9pt)
-      line((xsec + 0.35, 0.40), (x0 + 1.35, 0.40), stroke: 0.9pt)
-
-      // Linea asse sezione minima
-      line((xsec, 0.75), (xsec, 2.75), stroke: (dash: "dotted", thickness: 0.5pt))
-
-      // Linee di riferimento orizzontali dei bordi netti
-      line((xsec, 2.75), (xreh + 0.15, 2.75), stroke: (dash: "dotted", thickness: 0.45pt, paint: black.transparentize(60%)))
-      line((xsec, 0.75), (xreh + 0.15, 0.75), stroke: (dash: "dotted", thickness: 0.45pt, paint: black.transparentize(60%)))
-
-      // Asse base tensioni (sigma = 0) e soglia R_eH
-      line((xbase, 0.55), (xbase, 2.95), stroke: 0.8pt)
-      line((xreh, 0.55), (xreh, 2.95), stroke: (dash: "dashed", thickness: 0.7pt, paint: red.transparentize(15%)))
-      content((xreh, 0.25), [#text(size: 7pt, fill: red.transparentize(10%))[$R_"eH"$]], anchor: "center")
-
-      // Profili di tensione per i 4 stadi
-      if idx == 0 {
-        // (a) Elastico: orecchie di gatto < R_eH
-        let pts = ()
-        for k in range(25) {
-          let t = k / 24.0
-          let yy = 0.75 + 2.0 * t
-          let dy = calc.abs(t - 0.5) * 2.0
-          let sig = 0.28 + 0.55 * calc.pow(dy, 2.6)
-          pts.push((xbase + sig, yy))
-        }
-        line(..pts, stroke: (thickness: 1.1pt, paint: blue))
-        for fy in (0.75, 1.25, 1.75, 2.25, 2.75) {
-          let dy = calc.abs((fy - 0.75) / 2.0 - 0.5) * 2.0
-          let sig = 0.28 + 0.55 * calc.pow(dy, 2.6)
-          line((xbase, fy), (xbase + sig, fy), stroke: (thickness: 0.55pt, paint: blue.transparentize(30%)), mark: (end: ">", scale: 0.4))
-        }
-        circle((xsec, 2.75), radius: 0.06, fill: red.transparentize(10%), stroke: 0.5pt)
-        content((xsec - 0.20, 2.58), [#text(size: 7.5pt, weight: "bold", fill: red.transparentize(10%))[A]], anchor: "east")
-      } else if idx == 1 {
-        // (b) Primo snervamento in A (tocca esattamente R_eH)
-        let pts = ()
-        for k in range(25) {
-          let t = k / 24.0
-          let yy = 0.75 + 2.0 * t
-          let dy = calc.abs(t - 0.5) * 2.0
-          let sig = 0.46 + 0.69 * calc.pow(dy, 2.4)
-          pts.push((xbase + sig, yy))
-        }
-        line(..pts, stroke: (thickness: 1.1pt, paint: blue))
-        for fy in (0.75, 1.25, 1.75, 2.25, 2.75) {
-          let dy = calc.abs((fy - 0.75) / 2.0 - 0.5) * 2.0
-          let sig = 0.46 + 0.69 * calc.pow(dy, 2.4)
-          line((xbase, fy), (xbase + sig, fy), stroke: (thickness: 0.55pt, paint: blue.transparentize(30%)), mark: (end: ">", scale: 0.4))
-        }
-        circle((xsec, 2.75), radius: 0.055, fill: red.transparentize(10%), stroke: 0.5pt)
-        circle((xsec, 2.32), radius: 0.06, fill: black, stroke: 0.5pt)
-        content((xsec - 0.20, 2.32), [#text(size: 7.5pt, weight: "bold")[B]], anchor: "east")
-      } else if idx == 2 {
-        // (c) Zona intermedia B plasticizzata (plateau a R_eH)
-        rect((xbase, 2.30), (xreh, 2.75), fill: red.transparentize(84%), stroke: none)
-        rect((xbase, 0.75), (xreh, 1.20), fill: red.transparentize(84%), stroke: none)
-        line((xreh, 0.75), (xreh, 1.20), stroke: (thickness: 1.15pt, paint: red.transparentize(10%)))
-        line((xreh, 2.30), (xreh, 2.75), stroke: (thickness: 1.15pt, paint: red.transparentize(10%)))
-        let pts = ()
-        for k in range(17) {
-          let t = k / 16.0
-          let yy = 1.20 + 1.10 * t
-          let dy = calc.abs(t - 0.5) * 2.0
-          let sig = 0.78 + 0.37 * calc.pow(dy, 1.9)
-          pts.push((xbase + sig, yy))
-        }
-        line(..pts, stroke: (thickness: 1.1pt, paint: blue))
-        for fy in (0.75, 1.20, 1.75, 2.30, 2.75) {
-          let sig = if fy >= 2.29 or fy <= 1.21 { 1.15 } else { 0.78 }
-          line((xbase, fy), (xbase + sig, fy), stroke: (thickness: 0.55pt, paint: blue.transparentize(30%)), mark: (end: ">", scale: 0.4))
-        }
-        circle((xsec, 1.75), radius: 0.06, fill: blue, stroke: 0.5pt)
-        content((xsec - 0.20, 1.75), [#text(size: 7.5pt, weight: "bold", fill: blue)[C]], anchor: "east")
-      } else {
-        // (d) Completa plasticizzazione (cerniera plastica)
-        rect((xbase, 0.75), (xreh, 2.75), fill: red.transparentize(84%), stroke: none)
-        line((xreh, 0.75), (xreh, 2.75), stroke: (thickness: 1.2pt, paint: red.transparentize(10%)))
-        for fy in (0.75, 1.25, 1.75, 2.25, 2.75) {
-          line((xbase, fy), (xreh, fy), stroke: (thickness: 0.55pt, paint: red.transparentize(25%)), mark: (end: ">", scale: 0.4))
-        }
-        circle((xsec, 1.75), radius: 0.06, fill: red.transparentize(10%), stroke: 0.5pt)
-        content((xsec - 0.20, 1.75), [#text(size: 7.5pt, weight: "bold", fill: red.transparentize(10%))[C]], anchor: "east")
-      }
-    }
-  }),
+  include "figs/fatica/fatica-fig46.typ",
   caption: [Evoluzione elastoplastica e ridistribuzione delle tensioni sulla sezione minima di una lastra duttile intagliata al crescere di $P$.],
 )
 
@@ -2671,63 +1054,7 @@ Al crescere di $P$, il profilo tensionale evolve attraverso quattro stadi consec
   ],
   [
     #figure(
-      canvas(length: 0.92cm, {
-        // BBox: x in [-0.3, 8.5] (dx=8.8), y in [-0.3, 5.0], length=0.92cm -> larghezza = 8.10 cm <= 8.2 cm
-        import draw: *
-
-        // --- (a) Materiale fragile (A < 5%) ---
-        content((1.10, 4.88), text(size: 7.2pt, weight: "bold")[(a) Fragile], anchor: "north")
-        line((0.35, 0.45), (1.95, 0.45), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-        line((0.35, 0.45), (0.35, 4.15), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-        content((2.02, 0.45), text(size: 7pt)[$varepsilon$], anchor: "west")
-        content((0.26, 4.15), text(size: 7pt)[$sigma$], anchor: "east")
-
-        line((0.35, 0.45), (0.98, 2.95), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
-        bezier((0.98, 2.95), (1.32, 3.55), (1.08, 3.25), (1.20, 3.42), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
-        circle((1.32, 3.55), radius: 0.055, fill: red.transparentize(10%), stroke: 0.5pt)
-        line((0.35, 3.55), (1.32, 3.55), stroke: (dash: "dashed", thickness: 0.5pt, paint: luma(100)))
-        content((0.27, 3.55), text(size: 7pt, fill: red.transparentize(10%))[$R_m$], anchor: "east")
-
-        // --- (b) Duttile con snervamento evidente R_eH ---
-        content((4.00, 4.88), text(size: 7.2pt, weight: "bold")[(b) Duttile ($R_"eH"$)], anchor: "north")
-        line((2.95, 0.45), (5.10, 0.45), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-        line((2.95, 0.45), (2.95, 4.15), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-        content((5.17, 0.45), text(size: 7pt)[$varepsilon$], anchor: "west")
-        content((2.86, 4.15), text(size: 7pt)[$sigma$], anchor: "east")
-
-        line((2.95, 0.45), (3.25, 2.55), stroke: (paint: blue, thickness: 1.1pt))
-        line((3.25, 2.55), (3.35, 2.32), (3.44, 2.40), (3.54, 2.35), (3.65, 2.38), stroke: (paint: blue, thickness: 1.0pt))
-        bezier((3.65, 2.38), (4.42, 3.65), (3.88, 3.25), (4.15, 3.65), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((4.42, 3.65), (4.88, 3.00), (4.62, 3.65), (4.78, 3.35), stroke: (paint: blue, thickness: 1.1pt))
-        circle((4.42, 3.65), radius: 0.055, fill: blue, stroke: 0.5pt)
-
-        line((2.95, 2.55), (3.25, 2.55), stroke: (dash: "dashed", thickness: 0.5pt, paint: luma(100)))
-        content((2.87, 2.55), text(size: 6.8pt, fill: blue)[$R_"eH"$], anchor: "east")
-        line((2.95, 3.65), (4.42, 3.65), stroke: (dash: "dashed", thickness: 0.5pt, paint: luma(100)))
-        content((2.87, 3.65), text(size: 7pt, fill: blue)[$R_m$], anchor: "east")
-
-        // --- (c) Duttile con snervamento convenzionale R_p0.2 ---
-        content((7.10, 4.88), text(size: 7.2pt, weight: "bold")[(c) Duttile ($R_"p0.2"$)], anchor: "north")
-        line((6.05, 0.45), (8.20, 0.45), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-        line((6.05, 0.45), (6.05, 4.15), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-        content((8.27, 0.45), text(size: 7pt)[$varepsilon$], anchor: "west")
-        content((5.96, 4.15), text(size: 7pt)[$sigma$], anchor: "east")
-
-        line((6.05, 0.45), (6.32, 2.15), stroke: (paint: rgb("#1f77b4"), thickness: 1.1pt))
-        bezier((6.32, 2.15), (7.48, 3.65), (6.48, 3.15), (7.05, 3.65), stroke: (paint: rgb("#1f77b4"), thickness: 1.1pt))
-        bezier((7.48, 3.65), (7.95, 3.02), (7.68, 3.65), (7.85, 3.35), stroke: (paint: rgb("#1f77b4"), thickness: 1.1pt))
-        circle((7.48, 3.65), radius: 0.055, fill: rgb("#1f77b4"), stroke: 0.5pt)
-
-        // Retta di scarico parallela allo 0.2% (pendenza 1.70/0.27 = 6.30 -> da (6.35, 0.45) a (6.68, 2.53))
-        line((6.35, 0.45), (6.68, 2.53), stroke: (dash: "dotted", thickness: 0.65pt, paint: black))
-        circle((6.68, 2.53), radius: 0.05, fill: white, stroke: 0.65pt)
-        content((6.42, 0.32), text(size: 6.4pt)[$0.2\%$], anchor: "north")
-
-        line((6.05, 2.53), (6.68, 2.53), stroke: (dash: "dashed", thickness: 0.5pt, paint: luma(100)))
-        content((5.97, 2.53), text(size: 6.6pt, fill: rgb("#1f77b4"))[$R_"p0.2"$], anchor: "east")
-        line((6.05, 3.65), (7.48, 3.65), stroke: (dash: "dashed", thickness: 0.5pt, paint: luma(100)))
-        content((5.97, 3.65), text(size: 7pt, fill: rgb("#1f77b4"))[$R_m$], anchor: "east")
-      }),
+      include "figs/fatica/fatica-fig47.typ",
       caption: [Curve statiche $sigma$–$varepsilon$ per materiali fragili (a) e duttili a snervamento evidente $R_"eH"$ (b) o convenzionale $R_"p0.2"$ (c).],
     )
   ],
@@ -2797,61 +1124,7 @@ Per i materiali duttili l'ipotesi di Von Mises compone le tensioni nella tension
   ],
   [
     #figure(
-      canvas(length: 0.72cm, {
-        // BBox: x in [-0.7, 10.3] (dx=11.0), y in [-0.6, 7.3], length=0.72cm -> larghezza = 7.92 cm <= 8.2 cm
-        import draw: *
-
-        // --- Micro-schema (a) Provino liscio ("u") ---
-        line((0.6, 6.75), (1.0, 6.75), (1.25, 6.60), (3.65, 6.60), (3.9, 6.75), (4.3, 6.75), stroke: 0.9pt)
-        line((0.6, 5.85), (1.0, 5.85), (1.25, 6.00), (3.65, 6.00), (3.9, 5.85), (4.3, 5.85), stroke: 0.9pt)
-        line((0.45, 6.30), (4.45, 6.30), stroke: (dash: "dashed", thickness: 0.5pt))
-        line((2.45, 7.12), (2.45, 6.60), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
-        line((2.45, 5.48), (2.45, 6.00), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
-        content((2.45, 7.18), anchor: "south", text(size: 7.5pt)[$d$])
-        content((2.45, 5.12), anchor: "center", text(size: 7pt)[(a) Provino liscio (u)])
-
-        // --- Micro-schema (b) Provino intagliato ("n") ---
-        line((5.2, 6.85), (6.80, 6.85), stroke: 0.9pt)
-        arc((7.05, 6.85), start: 180deg, stop: 360deg, radius: 0.25, anchor: "origin", stroke: 0.9pt)
-        line((7.30, 6.85), (8.9, 6.85), stroke: 0.9pt)
-        line((5.2, 5.75), (6.80, 5.75), stroke: 0.9pt)
-        arc((7.05, 5.75), start: 0deg, stop: 180deg, radius: 0.25, anchor: "origin", stroke: 0.9pt)
-        line((7.30, 5.75), (8.9, 5.75), stroke: 0.9pt)
-        line((5.05, 6.30), (9.05, 6.30), stroke: (dash: "dashed", thickness: 0.5pt))
-        line((7.05, 7.12), (7.05, 6.60), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
-        line((7.05, 5.48), (7.05, 6.00), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
-        content((7.05, 7.18), anchor: "south", text(size: 7.5pt)[$d$])
-        content((7.05, 5.12), anchor: "center", text(size: 7pt)[(b) Provino intagliato (n)])
-
-        // --- Diagramma log-log S_n vs N ---
-        line((0.6, 0.55), (0.6, 4.40), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
-        line((0.6, 0.55), (7.65, 0.55), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
-
-        // Tacche asse N
-        for (x, lbl) in ((1.2, $10^3$), (2.3, $10^4$), (3.4, $10^5$), (4.5, $10^6$), (5.6, $10^7$)) {
-          line((x, 0.55), (x, 0.70), stroke: 0.6pt)
-          content((x, 0.38), anchor: "north", text(size: 7pt)[#lbl])
-        }
-        content((4.1, -0.25), anchor: "center", text(size: 7.5pt)[Durata $N$ (cicli, scala log)])
-        content((-0.25, 2.45), anchor: "center", std.rotate(-90deg, reflow: true)[#text(size: 7.5pt)[Tensione nominale $S_n$]])
-
-        // Curva provini lisci S_n(u)
-        line((1.2, 3.95), (4.4, 2.55), (6.5, 2.55), stroke: 1.15pt + blue)
-        content((2.9, 3.55), anchor: "south-west", text(size: 7.5pt, fill: blue)[Provini lisci])
-        content((5.55, 2.75), anchor: "south", text(size: 7.5pt, fill: blue)[$S_n (u)$])
-
-        // Curva provini intagliati S_n(n)
-        line((1.2, 3.25), (4.4, 1.55), (6.5, 1.55), stroke: 1.15pt + red.transparentize(10%))
-        content((5.55, 1.35), anchor: "north", text(size: 7.5pt, fill: red.transparentize(10%))[$S_n (n)$])
-        content((1.05, 1.10), anchor: "west", text(size: 7.5pt, fill: red.transparentize(10%))[Provini intagliati])
-        line((2.15, 1.38), (2.45, 2.57), stroke: (paint: red.transparentize(10%), thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: red.transparentize(10%)))
-
-        // Rapporto K_f
-        line((6.5, 2.55), (7.10, 2.55), stroke: (dash: "dotted", thickness: 0.6pt))
-        line((6.5, 1.55), (7.10, 1.55), stroke: (dash: "dotted", thickness: 0.6pt))
-        line((6.85, 1.55), (6.85, 2.55), stroke: 0.75pt, mark: (start: ">", end: ">", scale: 0.5))
-        content((7.15, 2.05), anchor: "west", text(size: 7.5pt)[$K_f = frac(S_n (u), S_n (n))$])
-      }),
+      include "figs/fatica/fatica-fig48.typ",
       caption: [Curve di Wöhler a parità di diametro minimo $d$ e definizione del fattore $K_f$.],
     )
   ],
@@ -2871,65 +1144,7 @@ Per i materiali duttili l'ipotesi di Von Mises compone le tensioni nella tension
   ],
   [
     #figure(
-      canvas(length: 0.72cm, {
-        // BBox: x in [-0.1, 10.6] (dx=10.7), y in [-0.3, 5.6], length=0.72cm -> larghezza = 7.70 cm <= 8.2 cm
-        import draw: *
-
-        // --- Lastra forata in trazione P ---
-        rect((0.45, 1.3), (2.35, 4.7), stroke: 1.0pt)
-        circle((1.4, 3.0), radius: 0.40, fill: white, stroke: 0.9pt)
-        line((1.4, 4.7), (1.4, 5.45), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
-        line((1.4, 1.3), (1.4, 0.55), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
-        content((1.65, 5.20), anchor: "west", text(size: 8pt)[$P$])
-        content((1.65, 0.80), anchor: "west", text(size: 8pt)[$P$])
-
-        // Sezione A-A
-        line((0.12, 3.0), (2.68, 3.0), stroke: (dash: "dashed", thickness: 0.65pt))
-        content((0.12, 3.22), anchor: "south", text(size: 7pt)[A])
-        content((2.68, 3.22), anchor: "south", text(size: 7pt)[A])
-        content((1.4, 0.05), anchor: "center", text(size: 7.5pt)[Sez. A–A])
-
-        // Tensioni schematiche nella lastra (staccate dal bordo esterno)
-        rect((0.45, 3.0), (1.00, 3.42), fill: black.transparentize(86%), stroke: 0.6pt)
-        content((0.72, 3.58), anchor: "south", text(size: 7pt)[$sigma_n$])
-        bezier((1.80, 3.92), (2.28, 3.42), (1.94, 3.55), (2.10, 3.45), stroke: 0.9pt + blue)
-        line((1.80, 3.0), (1.80, 3.92), stroke: 0.6pt + blue)
-        content((2.04, 4.10), anchor: "south", text(size: 7pt, fill: blue)[$sigma_t$])
-
-        // Richiamo verso gli ingrandimenti
-        line((1.80, 3.0), (3.48, 2.80), stroke: (dash: "dotted", thickness: 0.6pt))
-
-        // --- Ingrandimento 1: Caso statico (K_t, con eventuale snervamento) ---
-        circle((4.9, 2.8), radius: 1.42, fill: luma(250), stroke: 0.85pt)
-        arc((3.05, 2.2), start: -26.7deg, stop: 62.6deg, radius: 1.0, anchor: "origin", stroke: 1.05pt)
-        line((4.05, 2.2), (6.19, 2.2), stroke: 0.75pt)
-        line((4.05, 2.2), (4.05, 3.82), stroke: 0.8pt + blue)
-        // Punta elastica piena + tratteggio di eventuale troncamento plastico raccordato esattamente alla curva
-        bezier((4.05, 3.82), (6.05, 2.75), (4.45, 3.12), (5.20, 2.82), stroke: 1.15pt + blue)
-        line((4.05, 3.46), (4.24, 3.46), stroke: (dash: "dashed", paint: blue.transparentize(15%), thickness: 0.8pt))
-        for (x, y) in ((4.24, 3.46), (4.55, 3.16), (4.95, 2.94), (5.35, 2.84), (5.75, 2.78)) {
-          line((x, 2.2), (x, y), stroke: 0.5pt + blue, mark: (end: ">", scale: 0.35, fill: blue))
-        }
-        content((4.9, 4.42), anchor: "south", text(size: 7.5pt, fill: blue, weight: "bold")[Statico ($K_t$)])
-        content((4.9, 1.15), anchor: "north", text(size: 6.8pt)[Picco pieno (o snerv.)])
-
-        // Linea di riferimento del picco statico
-        line((4.05, 3.82), (7.75, 3.82), stroke: (dash: "dotted", paint: black.transparentize(40%), thickness: 0.6pt))
-
-        // --- Ingrandimento 2: Caso ciclico a fatica (K_f) ---
-        circle((8.6, 2.8), radius: 1.42, fill: luma(250), stroke: 0.85pt)
-        arc((6.75, 2.2), start: -26.7deg, stop: 62.6deg, radius: 1.0, anchor: "origin", stroke: 1.05pt)
-        line((7.75, 2.2), (9.89, 2.2), stroke: 0.75pt)
-        line((7.75, 3.22), (7.75, 3.82), stroke: (dash: "dashed", paint: black.transparentize(45%), thickness: 0.65pt))
-        line((7.75, 2.2), (7.75, 3.22), stroke: 0.8pt + red.transparentize(10%))
-        bezier((7.75, 3.82), (9.75, 2.75), (8.15, 3.12), (8.90, 2.82), stroke: (dash: "dashed", paint: black.transparentize(45%), thickness: 0.65pt))
-        bezier((7.75, 3.22), (9.75, 2.75), (8.25, 3.02), (9.00, 2.80), stroke: 1.15pt + red.transparentize(10%))
-        for (x, y) in ((7.90, 3.14), (8.25, 2.99), (8.65, 2.88), (9.05, 2.81), (9.45, 2.77)) {
-          line((x, 2.2), (x, y), stroke: 0.5pt + red.transparentize(10%), mark: (end: ">", scale: 0.35, fill: red.transparentize(10%)))
-        }
-        content((8.6, 4.42), anchor: "south", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[A fatica ($K_f < K_t$)])
-        content((8.6, 1.15), anchor: "north", text(size: 6.8pt)[Picco dinamico smussato])
-      }),
+      include "figs/fatica/fatica-fig49.typ",
       caption: [Confronto al bordo foro tra picco statico ($K_t$, con eventuale snervamento locale) e picco ciclico attenuato ($K_f$).],
     )
   ],
@@ -2965,11 +1180,11 @@ Il parametro $A$ decresce con la tensione di snervamento $R_"eH"$ o $R_"p0.2"$. 
     column-gutter: 1em,
     align: (center + bottom, center + bottom),
     [
-      #image("images/ECM01-5_sensibilita_intaglio_q.png", width: 100%)
+      #image("images/fatica/ECM01-5_sensibilita_intaglio_q.png", width: 100%)
       #text(size: 8pt)[(a) Abaco sperimentale della sensibilità $q(r)$]
     ],
     [
-      #image("images/ECM01-5_parametro_neuber_A.png", width: 100%)
+      #image("images/fatica/ECM01-5_parametro_neuber_A.png", width: 100%)
       #text(size: 8pt)[(b) Parametro di Neuber $A(R_"eH", R_"p0.2")$]
     ],
   ),
@@ -3007,52 +1222,7 @@ $ sigma_(D-1)^C = C_L dot C_S dot C_F dot sigma_(D-1) $
   ],
   [
     #figure(
-      canvas(length: 0.96cm, {
-        // BBox: x in [-0.20, 7.55] (dx=7.75), y in [-0.45, 4.15], length=0.96cm -> larghezza = 7.44 cm <= 8.2 cm
-        import draw: *
-
-        // Assi cartesiani
-        line((0, 0), (7.25, 0), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
-        content((7.25, -0.15), text(size: 7.5pt)[Tempo], anchor: "north-east")
-        line((0, 0), (0, 4.05), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
-        content((0.15, 3.98), text(size: 7.5pt)[Tensione], anchor: "west")
-
-        // Linee guida orizzontali tratteggiate
-        line((0, 3.4), (6.05, 3.4), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
-        line((0, 2.25), (5.45, 2.25), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
-        line((0, 1.1), (6.05, 1.1), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
-
-        // Sinusoide con Bezier (punti di controllo a y0 +/- 1.333 * A)
-        let ym = 2.25
-        let amp = 1.15
-        let w = 1.05
-        let x0 = 0.20
-        let dy = 1.333 * amp
-        bezier((x0, ym), (x0 + w, ym), (x0 + 0.33 * w, ym + dy), (x0 + 0.67 * w, ym + dy), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((x0 + w, ym), (x0 + 2 * w, ym), (x0 + 1.33 * w, ym - dy), (x0 + 1.67 * w, ym - dy), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((x0 + 2 * w, ym), (x0 + 3 * w, ym), (x0 + 2.33 * w, ym + dy), (x0 + 2.67 * w, ym + dy), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((x0 + 3 * w, ym), (x0 + 4 * w, ym), (x0 + 3.33 * w, ym - dy), (x0 + 3.67 * w, ym - dy), stroke: (paint: blue, thickness: 1.1pt))
-
-        // Quote verticali sul ciclo
-        line((0.725, 0), (0.725, 2.25), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-        content((0.84, 1.35), text(size: 7.5pt)[$sigma_m$], anchor: "west")
-
-        line((1.775, 0), (1.775, 1.10), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-        content((1.89, 0.55), text(size: 7.5pt)[$sigma_"min"$], anchor: "west")
-
-        line((2.825, 0), (2.825, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-        content((2.94, 1.65), text(size: 7.5pt)[$sigma_"max"$], anchor: "west")
-
-        // Quote laterali di ampiezza
-        line((4.80, 2.25), (4.80, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-        content((4.92, 2.83), text(size: 7.5pt)[$sigma_a$], anchor: "west")
-
-        line((4.80, 1.10), (4.80, 2.25), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-        content((4.92, 1.68), text(size: 7.5pt)[$sigma_a$], anchor: "west")
-
-        line((5.75, 1.10), (5.75, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-        content((5.87, 2.25), text(size: 7.5pt)[$Delta sigma = 2 sigma_a$], anchor: "west")
-      }),
+      include "figs/fatica/fatica-fig50.typ",
       caption: [Grandezze caratteristiche del ciclo sinusoidale.],
     )
   ]
@@ -3083,62 +1253,7 @@ Il *diagramma di Haigh* raccoglie le condizioni limite a durata fissata ($N = "c
   ],
   [
     #figure(
-      canvas(length: 0.74cm, {
-        // BBox: x in [-4.6, 5.55] (dx=10.15), y in [-0.6, 4.95], length=0.74cm -> larghezza = 7.51 cm <= 8.2 cm
-        import draw: *
-
-        // Assi principali
-        line((-4.6, 0), (5.10, 0), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
-        content((5.20, 0), text(size: 7.5pt)[$sigma_m$], anchor: "west")
-        line((0, 0), (0, 4.85), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
-        content((-0.18, 4.78), text(size: 7.5pt)[$sigma_a$], anchor: "east")
-
-        // Riquadro N = costante
-        rect((-4.45, 3.85), (-2.30, 4.55), stroke: 0.6pt)
-        content((-3.375, 4.20), text(size: 7pt)[$N = "costante"$], anchor: "center")
-
-        // Rette caratteristiche R = -infinito e R = 0 (tratteggio fine come da slide)
-        line((0, 0), (-2.5, 2.5), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(30%)))
-        content((-2.55, 2.55), text(size: 7pt)[$R = -infinity$], anchor: "south-east")
-        line((0, 0), (2.5, 2.5), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(30%)))
-        content((2.55, 2.55), text(size: 7pt)[$R = 0$], anchor: "south-west")
-
-        // Limiti statici Rm (4.2) e Rp0.2 (3.2)
-        line((-4.2, 0), (0, 4.2), (4.2, 0), stroke: (thickness: 0.55pt, paint: black.transparentize(45%)))
-        line((-3.2, 0), (0, 3.2), (3.2, 0), stroke: (thickness: 0.55pt, paint: black.transparentize(45%)))
-
-        // Etichette sugli assi
-        content((-4.2, -0.18), text(size: 7pt)[$R_m$], anchor: "north")
-        content((-3.2, -0.18), text(size: 7pt)[$R_("p0.2")$], anchor: "north")
-        content((3.2, -0.18), text(size: 7pt)[$R_("p0.2")$], anchor: "north")
-        content((4.2, -0.18), text(size: 7pt)[$R_m$], anchor: "north")
-        content((-0.14, 4.22), text(size: 7pt)[$R_m$], anchor: "south-east")
-        content((-0.95, 3.60), text(size: 7pt)[$R_("p0.2")$], anchor: "east")
-        line((-0.90, 3.58), (-0.05, 3.22), stroke: 0.55pt, mark: (end: ">", scale: 0.45, fill: black))
-
-        // Poligono provino (tratteggiato, da sigma_D-1 = 1.9)
-        line((-3.2, 0), (-1.3, 1.9), (0, 1.9), (2.374, 0.826), (3.2, 0), stroke: (dash: "dashed", thickness: 0.75pt))
-        line((2.374, 0.826), (4.2, 0), stroke: (dash: "dotted", thickness: 0.55pt, paint: black.transparentize(45%)))
-        content((0.14, 1.95), text(size: 7pt)[$sigma_(D-1)$], anchor: "south-west")
-
-        // Poligono componente (continuo spesso, da sigma_D-1^C = 1.15)
-        line((-3.2, 0), (-1.609, 1.591), (0, 1.15), (2.823, 0.377), (3.2, 0), stroke: 1.2pt)
-        line((2.823, 0.377), (4.2, 0), stroke: (dash: "dotted", thickness: 0.55pt, paint: black.transparentize(45%)))
-        content((0.12, 1.12), text(size: 6.7pt)[$sigma_(D-1)^C$], anchor: "south-west")
-
-        // Chiusura conservativa tratteggiata blu in compressione
-        line((-2.05, 1.15), (0, 1.15), stroke: (dash: "dashed", thickness: 0.9pt, paint: blue))
-
-        // Punto di lavoro P
-        circle((1.15, 0.45), radius: 0.07, fill: red.transparentize(10%), stroke: none)
-        content((1.28, 0.45), text(size: 7.5pt, weight: "bold")[$P$], anchor: "west")
-
-        // Richiami esterni per Provino e Componente
-        content((2.85, 2.00), text(size: 7pt)[Provino], anchor: "west")
-        line((2.80, 1.96), (1.75, 1.108), stroke: 0.6pt, mark: (end: ">", scale: 0.5, fill: black))
-        content((3.35, 1.15), text(size: 7pt)[Componente], anchor: "west")
-        line((3.30, 1.11), (2.25, 0.534), stroke: 0.6pt, mark: (end: ">", scale: 0.5, fill: black))
-      }),
+      include "figs/fatica/fatica-fig51.typ",
       caption: [Diagramma di Haigh: confronto tra provino e componente.],
     )
   ]
@@ -3168,107 +1283,7 @@ Per verificare un componente a vita illimitata si posiziona $P(sigma_m^P, sigma_
 - *Tensione alternata costante e tensione media crescente.* Si presenta quando la pressione di esercizio subisce una deriva lenta mentre i disturbi vibratori restano invariati. A ordinata $sigma_a^P$ fissa, $P$ scorre in orizzontale verso destra fino a $sigma_m^"lim"$: è l'unico caso valutato sulle ascisse, con $C S = sigma_m^"lim" / sigma_m^P$.
 
 #figure(
-  canvas(length: 0.94cm, {
-    // BBox: x in [-3.0, 11.8] (dx=14.8), y in [-0.9, 7.6], length=0.94cm -> larghezza = 13.91 cm <= 17.0 cm
-    import draw: *
-
-    let haigh-base(ox, oy, titolo) = {
-      content((ox + 0.15, oy + 2.68), anchor: "south", text(size: 8pt, weight: "bold")[#titolo])
-      line((ox - 3.0, oy), (ox + 3.4, oy), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.5, fill: black))
-      content((ox + 3.5, oy), anchor: "west", text(size: 8pt)[$sigma_m$])
-      line((ox, oy), (ox, oy + 2.45), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.5, fill: black))
-      content((ox - 0.12, oy + 2.38), anchor: "east", text(size: 8pt)[$sigma_a$])
-
-      // Poligono a 4 tratti del componente (Goodman verso Rm=3.60 + tagli di Langer a Rp0.2=2.50)
-      line(
-        (ox - 2.50, oy),
-        (ox - 0.836, oy + 1.664),
-        (ox + 1.840, oy + 0.660),
-        (ox + 2.50, oy),
-        close: true,
-        stroke: (paint: black, thickness: 1.0pt),
-        fill: black.transparentize(92%),
-      )
-      content((ox - 2.50, oy - 0.14), anchor: "north", text(size: 7pt)[$R_"p0.2"$])
-      content((ox + 2.50, oy - 0.14), anchor: "north", text(size: 7pt)[$R_"p0.2"$])
-      content((ox + 0.10, oy + 1.38), anchor: "south-west", text(size: 7.5pt)[$sigma_(D-1)^C$])
-    }
-
-    // Pannello (a): sigma_m costante, sigma_a crescente
-    let ox = 0.0
-    let oy = 4.35
-    haigh-base(ox, oy, [a) $sigma_m$ costante, $sigma_a$ crescente])
-    line((ox + 0.75, oy + 0.42), (ox + 0.75, oy + 1.069), stroke: (paint: red.transparentize(10%), dash: "dashed", thickness: 0.85pt), mark: (end: ">", scale: 0.5, fill: red.transparentize(10%)))
-    line((ox, oy + 1.069), (ox + 0.75, oy + 1.069), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    line((ox, oy + 0.42), (ox + 0.75, oy + 0.42), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    line((ox + 0.75, oy), (ox + 0.75, oy + 0.42), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    circle((ox + 0.75, oy + 0.42), radius: 0.065, fill: red.transparentize(10%), stroke: none)
-    content((ox + 0.88, oy + 0.42), anchor: "west", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$])
-    content((ox - 0.10, oy + 1.069), anchor: "east", text(size: 7pt)[$sigma_D^"lim"$])
-    content((ox - 0.10, oy + 0.42), anchor: "east", text(size: 7pt)[$sigma_a^P$])
-    content((ox + 0.75, oy - 0.14), anchor: "north", text(size: 7pt)[$sigma_m^P$])
-    content((ox + 2.20, oy + 1.85), anchor: "center", text(size: 7.5pt)[$C S = frac(sigma_D^"lim", sigma_a^P)$])
-
-    // Pannello (b): sigma_m e sigma_a proporzionali
-    let ox = 7.9
-    let oy = 4.35
-    haigh-base(ox, oy, [b) $sigma_m$ e $sigma_a$ proporzionali])
-    line((ox, oy), (ox + 0.55, oy + 0.42), stroke: (paint: black.transparentize(25%), thickness: 0.7pt))
-    line((ox + 0.55, oy + 0.42), (ox + 1.186, oy + 0.906), stroke: (paint: red.transparentize(10%), dash: "dashed", thickness: 0.85pt), mark: (end: ">", scale: 0.5, fill: red.transparentize(10%)))
-    line((ox, oy + 0.906), (ox + 1.186, oy + 0.906), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    line((ox + 1.186, oy), (ox + 1.186, oy + 0.906), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    line((ox, oy + 0.42), (ox + 0.55, oy + 0.42), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    line((ox + 0.55, oy), (ox + 0.55, oy + 0.42), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    circle((ox + 0.55, oy + 0.42), radius: 0.065, fill: red.transparentize(10%), stroke: none)
-    content((ox + 0.66, oy + 0.34), anchor: "north-west", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$])
-    content((ox - 0.10, oy + 0.906), anchor: "east", text(size: 7pt)[$sigma_D^"lim"$])
-    content((ox - 0.10, oy + 0.42), anchor: "east", text(size: 7pt)[$sigma_a^P$])
-    content((ox + 0.55, oy - 0.14), anchor: "north", text(size: 7pt)[$sigma_m^P$])
-    content((ox + 1.186, oy - 0.14), anchor: "north", text(size: 7pt)[$sigma_m^"lim"$])
-    content((ox + 2.30, oy + 1.85), anchor: "center", text(size: 7.5pt)[$C S = frac(sigma_D^"lim", sigma_a^P) = frac(sigma_m^"lim", sigma_m^P)$])
-
-    // Pannello (c): sigma_m in parte costante e in parte proporzionale
-    let ox = 0.0
-    let oy = 0.0
-    haigh-base(ox, oy, [c) $sigma_m$ in parte cost. e in parte prop.])
-    line((ox + 0.55, oy), (ox + 0.95, oy + 0.36), stroke: (paint: black.transparentize(25%), thickness: 0.7pt))
-    line((ox + 0.95, oy + 0.36), (ox + 1.447, oy + 0.807), stroke: (paint: red.transparentize(10%), dash: "dashed", thickness: 0.85pt), mark: (end: ">", scale: 0.5, fill: red.transparentize(10%)))
-    line((ox, oy + 0.807), (ox + 1.447, oy + 0.807), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    line((ox, oy + 0.36), (ox + 0.95, oy + 0.36), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    line((ox, oy), (ox, oy - 0.42), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.6pt))
-    line((ox + 0.55, oy), (ox + 0.55, oy - 0.78), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.6pt))
-    line((ox + 0.95, oy + 0.36), (ox + 0.95, oy - 0.78), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.6pt))
-    // Quote inferiori con frecce esterne
-    line((ox, oy - 0.32), (ox + 0.55, oy - 0.32), stroke: (paint: black, thickness: 0.6pt))
-    line((ox - 0.28, oy - 0.32), (ox, oy - 0.32), stroke: (paint: black, thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: black))
-    line((ox + 0.83, oy - 0.32), (ox + 0.55, oy - 0.32), stroke: (paint: black, thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: black))
-    content((ox - 0.34, oy - 0.32), anchor: "east", text(size: 7pt)[$sigma_"mc"^P$])
-    line((ox + 0.55, oy - 0.68), (ox + 0.95, oy - 0.68), stroke: (paint: black, thickness: 0.6pt))
-    line((ox + 0.27, oy - 0.68), (ox + 0.55, oy - 0.68), stroke: (paint: black, thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: black))
-    line((ox + 1.23, oy - 0.68), (ox + 0.95, oy - 0.68), stroke: (paint: black, thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: black))
-    content((ox + 1.29, oy - 0.68), anchor: "west", text(size: 7pt)[$sigma_"mp"^P$])
-
-    circle((ox + 0.95, oy + 0.36), radius: 0.065, fill: red.transparentize(10%), stroke: none)
-    content((ox + 0.87, oy + 0.44), anchor: "south-east", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$])
-    content((ox - 0.10, oy + 0.807), anchor: "east", text(size: 7pt)[$sigma_D^"lim"$])
-    content((ox - 0.10, oy + 0.36), anchor: "east", text(size: 7pt)[$sigma_a^P$])
-    content((ox + 2.20, oy + 1.85), anchor: "center", text(size: 7.5pt)[$C S = frac(sigma_D^"lim", sigma_a^P)$])
-
-    // Pannello (d): sigma_a costante, sigma_m crescente
-    let ox = 7.9
-    let oy = 0.0
-    haigh-base(ox, oy, [d) $sigma_a$ costante, $sigma_m$ crescente])
-    line((ox + 0.45, oy + 0.72), (ox + 1.680, oy + 0.72), stroke: (paint: red.transparentize(10%), dash: "dashed", thickness: 0.85pt), mark: (end: ">", scale: 0.5, fill: red.transparentize(10%)))
-    line((ox, oy + 0.72), (ox + 0.45, oy + 0.72), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    line((ox + 0.45, oy), (ox + 0.45, oy + 0.72), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    line((ox + 1.680, oy), (ox + 1.680, oy + 0.72), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-    circle((ox + 0.45, oy + 0.72), radius: 0.065, fill: red.transparentize(10%), stroke: none)
-    content((ox + 0.45, oy + 0.86), anchor: "south", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$])
-    content((ox - 0.10, oy + 0.72), anchor: "east", text(size: 7pt)[$sigma_a^P$])
-    content((ox + 0.45, oy - 0.14), anchor: "north", text(size: 7pt)[$sigma_m^P$])
-    content((ox + 1.680, oy - 0.14), anchor: "north", text(size: 7pt)[$sigma_m^"lim"$])
-    content((ox + 2.20, oy + 1.85), anchor: "center", text(size: 7.5pt)[$C S = frac(sigma_m^"lim", sigma_m^P)$])
-  }),
+  include "figs/fatica/fatica-fig52.typ",
   caption: [Quattro ipotesi di crescita dei carichi (cicli di esplosione) sul diagramma di Haigh e relative definizioni di $C S$.],
 )
 
@@ -3291,48 +1306,7 @@ $ sigma_m = sigma_m^"carichi" + sigma_"res" $
   ],
   [
     #figure(
-      canvas(length: 0.96cm, {
-        // BBox: x in [-3.1, 4.0] (dx=7.1), y in [-1.05, 2.75], length=0.96cm -> larghezza = 6.82 cm <= 8.2 cm
-        import draw: *
-
-        line((-3.1, 0), (3.4, 0), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.5, fill: black))
-        content((3.5, 0), anchor: "west", text(size: 8pt)[$sigma_m$])
-        line((0, 0), (0, 2.55), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.5, fill: black))
-        content((-0.12, 2.48), anchor: "east", text(size: 8pt)[$sigma_a$])
-
-        // Poligono a 4 tratti del componente (Goodman + tagli di Langer a Rp0.2 = 2.70)
-        line(
-          (-2.70, 0),
-          (-0.911, 1.789),
-          (1.990, 0.710),
-          (2.70, 0),
-          close: true,
-          stroke: (paint: black, thickness: 1.05pt),
-          fill: black.transparentize(92%),
-        )
-        content((-2.70, -0.14), anchor: "north", text(size: 7.5pt)[$R_"p0.2"$])
-        content((2.70, -0.14), anchor: "north", text(size: 7.5pt)[$R_"p0.2"$])
-        content((0.12, 1.48), anchor: "south-west", text(size: 7.5pt)[$sigma_(D-1)^C$])
-
-        // Punti P', P, P'' e frecce di traslazione
-        line((-0.39, 0.45), (-1.26, 0.45), stroke: (paint: black.transparentize(40%), thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: black))
-        line((-0.21, 0.45), (0.71, 0.45), stroke: (paint: black.transparentize(40%), thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: black))
-        circle((-1.35, 0.45), radius: 0.065, fill: red.transparentize(10%), stroke: none)
-        circle((-0.30, 0.45), radius: 0.065, fill: red.transparentize(10%), stroke: none)
-        circle((0.80, 0.45), radius: 0.065, fill: red.transparentize(10%), stroke: none)
-        content((-1.47, 0.45), anchor: "east", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P'$])
-        content((-0.30, 0.59), anchor: "south", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$])
-        content((0.92, 0.45), anchor: "west", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P''$])
-
-        // Proiezioni e quote inferiori
-        line((-1.35, 0.45), (-1.35, -0.78), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.6pt))
-        line((-0.30, 0.45), (-0.30, -0.78), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.6pt))
-        line((0.80, 0.45), (0.80, -0.78), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.6pt))
-        line((-0.30, -0.56), (-1.35, -0.56), stroke: (paint: black, thickness: 0.65pt), mark: (end: ">", scale: 0.45, fill: black))
-        line((-0.30, -0.56), (0.80, -0.56), stroke: (paint: black, thickness: 0.65pt), mark: (end: ">", scale: 0.45, fill: black))
-        content((-0.825, -0.68), anchor: "north", text(size: 7.5pt)[$sigma_"res"(-)$])
-        content((0.25, -0.68), anchor: "north", text(size: 7.5pt)[$sigma_"res"(+)$])
-      }),
+      include "figs/fatica/fatica-fig53.typ",
       caption: [Effetto delle tensioni residue sul diagramma di Haigh.],
     )
   ],
@@ -3351,38 +1325,7 @@ $ sigma_m = sigma_m^"carichi" + sigma_"res" $
   ],
   [
     #figure(
-      canvas(length: 1.05cm, {
-        // BBox: x in [-2.55, 3.45] (dx=6.00), y in [-0.45, 3.05], length=1.05cm -> larghezza = 6.30 cm <= 8.2 cm
-        import draw: *
-
-        // Assi cartesiani (sigma_min, sigma_max)
-        line((-2.50, 0), (2.85, 0), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.5, fill: black))
-        content((2.95, 0), anchor: "west", text(size: 8pt)[$sigma_"min"$])
-        line((0, -0.25), (0, 2.95), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.5, fill: black))
-        content((-0.12, 2.88), anchor: "east", text(size: 8pt)[$sigma_"max"$])
-
-        // Assi ausiliari inclinati a +-45 gradi
-        line((0, 0), (2.65, 2.65), stroke: (paint: black.transparentize(20%), thickness: 0.7pt), mark: (end: ">", scale: 0.5, fill: black))
-        content((2.72, 2.72), anchor: "south-west", text(size: 8pt)[$sigma_m$])
-        line((0, 0), (-2.10, 2.10), stroke: (paint: black.transparentize(20%), thickness: 0.7pt), mark: (end: ">", scale: 0.5, fill: black))
-        content((-2.17, 2.17), anchor: "south-east", text(size: 8pt)[$sigma_a$])
-
-        // Livello di snervamento Rp0.2 tratteggiato fino al ginocchio e contorno superiore spesso
-        line((0, 2.30), (1.35, 2.30), stroke: (paint: black, dash: "dashed", thickness: 0.7pt))
-        line((-2.30, 0.20), (1.35, 2.30), (2.30, 2.30), stroke: (paint: black, thickness: 1.2pt))
-        content((0.68, 2.38), anchor: "south", text(size: 7.5pt)[$R_"p0.2"$])
-
-        // Punto P(0.72, 1.02) sopra la bisettrice sigma_m e proiezione verticale fino a sigma_max^lim = 1.937
-        line((0.72, 0), (0.72, 1.02), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-        line((0.72, 1.02), (0.72, 1.937), stroke: (paint: red.transparentize(10%), dash: "dashed", thickness: 0.85pt), mark: (end: ">", scale: 0.5, fill: red.transparentize(10%)))
-        line((0, 1.02), (0.72, 1.02), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-        line((0, 1.937), (0.72, 1.937), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.65pt))
-        circle((0.72, 1.02), radius: 0.065, fill: red.transparentize(10%), stroke: none)
-        content((0.64, 1.08), anchor: "south-east", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$])
-        content((0.72, -0.15), anchor: "north", text(size: 7.5pt)[$sigma_"min"^P$])
-        content((-0.08, 0.98), anchor: "east", text(size: 7.5pt)[$sigma_"max"^P$])
-        content((-0.08, 1.937), anchor: "east", text(size: 7.5pt)[$sigma_"max"^"lim"$])
-      }),
+      include "figs/fatica/fatica-fig54.typ",
       caption: [Diagramma di Ros per verifica a tensione minima costante.],
     )
   ],
@@ -3408,81 +1351,7 @@ La curva SN del componente si stima a partire da quella sperimentale della prove
   ],
   [
     #figure(
-      canvas(length: 0.96cm, {
-        // BBox: x in [-0.80, 6.90] (dx=7.70), y in [-0.50, 4.95], length=0.96cm -> larghezza = 7.39 cm <= 8.2 cm
-        import draw: *
-
-        let x-start = 1.10
-        let y-start = 4.10
-        let x-knee = 4.07
-        let y-prov = 2.15
-        let y-comp = 1.35
-        let x-end = 4.85
-        let x-no = 2.35
-        let y-no = 2.94
-        let y-a = 1.90
-        let x-nl = 3.48
-        let red-col = red.transparentize(10%)
-
-        // Linee guida geometriche (a 10^3 e al ginocchio 2*10^6)
-        line((0, y-start), (x-start, y-start), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(45%)))
-        line((x-start, 0), (x-start, y-start), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(45%)))
-        line((x-knee, 0), (x-knee, y-prov), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(45%)))
-
-        // Assi logaritmici
-        line((0, 0), (5.05, 0), stroke: 0.8pt, mark: (end: ">", scale: 0.5, fill: black))
-        line((0, 0), (0, 4.90), stroke: 0.8pt, mark: (end: ">", scale: 0.5, fill: black))
-
-        // Tacche logaritmiche sull'asse N (decadi 10^2 .. 10^7, passo 0.90)
-        let labels-n = ($10^2$, $10^3$, $10^4$, $10^5$, $10^6$, $10^7$)
-        for d in range(0, 6) {
-          let xd = 0.20 + d * 0.90
-          line((xd, 0), (xd, 0.13), stroke: 0.7pt)
-          content((xd, -0.15), text(size: 7pt)[#labels-n.at(d)], anchor: "north")
-          if d < 5 {
-            for s in (2, 3, 4, 5, 6, 7, 8, 9) {
-              let xs = xd + 0.90 * calc.log(s, base: 10)
-              line((xs, 0), (xs, 0.06), stroke: 0.45pt)
-            }
-          }
-        }
-
-        // Curve SN: provetta (tratteggiata) vs componente (continua)
-        line((x-start, y-start), (x-knee, y-prov), (x-end, y-prov), stroke: (dash: "dashed", thickness: 0.9pt, paint: black.transparentize(30%)))
-        line((x-start, y-start), (x-knee, y-comp), (x-end, y-comp), stroke: 1.15pt)
-        circle((x-start, y-start), radius: 0.045, fill: black)
-
-        // Costruzione verifica a vita limitata (punto P, verifica in tensione e in durata)
-        line((x-no, 0), (x-no, y-a), stroke: (dash: "dashed", thickness: 0.65pt, paint: red-col))
-        line((0, y-a), (x-no, y-a), stroke: (dash: "dashed", thickness: 0.65pt, paint: red-col))
-        line((x-no, y-a), (x-no, y-no), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
-        line((x-no, y-no), (0, y-no), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
-        line((x-no, y-a), (x-nl, y-a), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
-        line((x-nl, y-a), (x-nl, 0), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
-        circle((x-no, y-a), radius: 0.055, fill: red-col, stroke: none)
-
-        // Etichette assi e livelli
-        content((-0.12, 4.82), text(size: 8pt)[$sigma_a$], anchor: "east")
-        content((5.15, 0), text(size: 8pt)[$N$], anchor: "west")
-        content((0.14, y-start + 0.14), text(size: 7.5pt)[$0.9(R_m - sigma_m)$], anchor: "south-west")
-        content((4.85, 4.35), text(size: 7.5pt)[$sigma_m = "cost."$], anchor: "east")
-
-        // Etichette ginocchio e curve
-        content((2.65, 3.25), text(size: 7pt, fill: black.transparentize(25%))[Provetta], anchor: "south-west")
-        content((4.46, 1.18), text(size: 7pt)[Componente], anchor: "north")
-        line((x-knee, 2.55), (x-knee, y-prov + 0.08), stroke: (thickness: 0.55pt, paint: black.transparentize(40%)), mark: (end: ">", scale: 0.45, fill: black.transparentize(40%)))
-        content((x-knee, 2.62), text(size: 7pt)[$2 dot 10^6$], anchor: "south")
-
-        content((x-end + 0.08, y-prov), text(size: 7.5pt)[$sigma_"D,provetta"$], anchor: "west")
-        content((x-end + 0.08, y-comp), text(size: 7.5pt)[$sigma_"D,componente"$], anchor: "west")
-
-        // Etichette verifica a vita limitata (rosso)
-        content((-0.12, y-no), text(size: 7.5pt, fill: red-col)[$sigma_"No"$], anchor: "east")
-        content((-0.12, y-a), text(size: 7.5pt, fill: red-col)[$sigma_a$], anchor: "east")
-        content((x-no + 0.08, 0.22), text(size: 7.5pt, fill: red-col)[$N_o$], anchor: "south-west")
-        content((x-nl + 0.08, 0.22), text(size: 7.5pt, fill: red-col)[$N_L$], anchor: "south-west")
-        content((x-no - 0.08, y-a - 0.10), text(size: 7.5pt, fill: red-col)[$P$], anchor: "north-east")
-      }),
+      include "figs/fatica/fatica-fig55.typ",
       caption: [Curva SN stimata del componente e margini a vita limitata.],
     )
   ],
@@ -3536,75 +1405,7 @@ Le *tensioni residue* ($sigma_"res"$) formano un campo di sforzi auto-equilibrat
   ],
   [
     #figure(
-      canvas(length: 0.75cm, {
-        import draw: *
-        // BBox: x in [0.2, 9.95] (dx=9.75), y in [0.0, 5.8], length=0.75cm -> larghezza = 7.31 cm <= 8.2 cm
-
-        // Pannello sinistro: meccanismo di contenimento (3 stadi)
-        // Stadio 1: carico locale F -> snervamento
-        rect((0.45, 4.15), (3.05, 4.95), fill: black.transparentize(88%), stroke: 0.9pt)
-        line((1.10, 4.95), (1.30, 4.65), (2.20, 4.65), (2.40, 4.95), close: true, fill: black.transparentize(64%), stroke: 0.8pt)
-        line((1.75, 5.65), (1.75, 5.02), stroke: 1.1pt, mark: (end: ">", scale: 0.75))
-        content((1.95, 5.38), anchor: "west", [#text(size: 7.5pt)[$F$]])
-        content((1.75, 3.92), anchor: "north", [#text(size: 6.8pt)[1. Snervamento compressivo]])
-
-        // Stadio 2: espansione laterale
-        rect((1.10, 2.35), (2.40, 2.85), stroke: (dash: "dashed", thickness: 0.6pt))
-        rect((0.80, 2.35), (2.70, 2.85), stroke: (paint: blue, thickness: 0.9pt), fill: blue.transparentize(88%))
-        line((0.80, 2.60), (0.30, 2.60), stroke: (paint: blue, thickness: 0.8pt), mark: (end: ">", scale: 0.65))
-        line((2.70, 2.60), (3.20, 2.60), stroke: (paint: blue, thickness: 0.8pt), mark: (end: ">", scale: 0.65))
-        content((1.75, 2.12), anchor: "north", [#text(size: 6.8pt)[2. Espansione laterale]])
-
-        // Stadio 3: contenimento del cuore elastico
-        rect((0.40, 0.45), (0.90, 1.05), fill: black.transparentize(84%), stroke: 0.8pt)
-        rect((2.60, 0.45), (3.10, 1.05), fill: black.transparentize(84%), stroke: 0.8pt)
-        rect((0.90, 0.50), (2.60, 1.00), fill: blue.transparentize(80%), stroke: (paint: blue, thickness: 0.9pt))
-        line((0.42, 0.75), (0.86, 0.75), stroke: (paint: blue, thickness: 0.85pt), mark: (end: ">", scale: 0.55))
-        line((3.08, 0.75), (2.64, 0.75), stroke: (paint: blue, thickness: 0.85pt), mark: (end: ">", scale: 0.55))
-        content((1.75, 0.25), anchor: "north", [#text(size: 6.8pt)[3. Cuore elastico comprime]])
-
-        // Pannello destro: diagramma di Haigh
-        line((4.35, 1.85), (9.90, 1.85), stroke: 0.8pt, mark: (end: ">", scale: 0.75))
-        content((9.90, 2.04), anchor: "south", [#text(size: 7.5pt)[$sigma_m$]])
-        line((6.85, 1.85), (6.85, 4.55), stroke: 0.8pt, mark: (end: ">", scale: 0.75))
-        content((6.68, 4.50), anchor: "east", [#text(size: 7.5pt)[$sigma_a$]])
-
-        // Tacche limiti statici
-        line((4.90, 1.77), (4.90, 1.93), stroke: 0.7pt)
-        content((4.90, 1.62), anchor: "north", [#text(size: 6.8pt)[$-R_"p0.2"$]])
-        line((8.80, 1.77), (8.80, 1.93), stroke: 0.7pt)
-        content((8.72, 1.62), anchor: "north", [#text(size: 6.8pt)[$R_"p0.2"$]])
-        line((9.60, 1.77), (9.60, 1.93), stroke: 0.7pt)
-        content((9.62, 1.62), anchor: "north", [#text(size: 6.8pt)[$R_m$]])
-
-        // Contorno di Haigh fedele: snervamento sinistro -> picco compressivo -> Goodman -> snervamento destro
-        line((4.90, 1.85), (6.08, 3.03), stroke: 1.1pt)
-        line((6.08, 3.03), (6.85, 2.77), stroke: 1.1pt)
-        line((6.85, 2.77), (8.40, 2.25), stroke: 1.1pt)
-        line((8.40, 2.25), (9.60, 1.85), stroke: (dash: "dashed", thickness: 0.7pt))
-        line((8.40, 2.25), (8.80, 1.85), stroke: 1.1pt)
-
-        circle((6.85, 2.77), radius: 0.05, fill: black)
-        content((6.96, 2.86), anchor: "south-west", [#text(size: 7.2pt)[$sigma_(D-1)^C$]])
-        line((8.35, 3.45), (7.68, 2.52), stroke: 0.55pt, mark: (end: ">", scale: 0.6))
-        content((8.35, 3.50), anchor: "south", [#text(size: 6.8pt)[Retta di Goodman]])
-
-        // Linee di proiezione e punti P', P, P''
-        for xx in (5.90, 6.85, 7.80) {
-          line((xx, 1.85), (xx, 1.00), stroke: (dash: "dotted", thickness: 0.5pt, paint: black.transparentize(45%)))
-        }
-        circle((6.85, 1.85), radius: 0.07, fill: black)
-        content((6.96, 1.98), anchor: "south-west", [#text(size: 7pt)[$P$]])
-        circle((5.90, 1.85), radius: 0.07, fill: blue, stroke: blue)
-        content((5.90, 2.02), anchor: "south", [#text(fill: blue, size: 7pt)[$P'$]])
-        circle((7.80, 1.85), radius: 0.07, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-        content((7.80, 2.02), anchor: "south", [#text(fill: red.transparentize(10%), size: 7pt)[$P''$]])
-
-        line((6.80, 1.12), (5.94, 1.12), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.6))
-        content((6.60, 0.86), anchor: "north-east", [#text(fill: blue, size: 6.8pt)[$sigma_"res" (-)$]])
-        line((6.90, 1.12), (7.76, 1.12), stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (end: ">", scale: 0.6))
-        content((7.10, 0.86), anchor: "north-west", [#text(fill: red.transparentize(10%), size: 6.8pt)[$sigma_"res" (+)$]])
-      }),
+      include "figs/fatica/fatica-fig56.typ",
       caption: [Contenimento elastico superficiale ed effetto di $sigma_"res"$ sul diagramma di Haigh.],
     )
   ],
@@ -3629,87 +1430,7 @@ Con il precarico compressivo $P' P$, la trazione esterna deve prima annullare $s
   ],
   [
     #figure(
-      canvas(length: 0.76cm, {
-        import draw: *
-        // BBox: x in [0.0, 9.8] (dx=9.8), y in [0.4, 6.6], length=0.76cm -> larghezza = 7.45 cm <= 8.2 cm
-
-        // a) Micro-indentazione da pallinatura
-        content((0.1, 6.45), anchor: "west", [#text(size: 7.3pt, weight: "bold")[a) Micro-indentazione superficiale]])
-
-        // Substrato elastico
-        rect((0.5, 3.65), (5.9, 4.42), fill: black.transparentize(90%), stroke: 0.85pt)
-        content((3.2, 4.02), anchor: "center", [#text(size: 6.8pt)[Cuore elastico]])
-
-        // Strato compresso con impronta centrale e bordi rialzati
-        line(
-          (0.5, 4.42), (0.5, 5.02), (2.35, 5.02), (2.60, 5.15),
-          (2.90, 4.83), (3.20, 4.75), (3.50, 4.83), (3.80, 5.15),
-          (4.05, 5.02), (5.9, 5.02), (5.9, 4.42), close: true,
-          fill: blue.transparentize(82%), stroke: (paint: blue, thickness: 0.9pt),
-        )
-
-        // Frecce compressione laterale nello strato corticale
-        line((0.85, 4.72), (1.85, 4.72), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.65))
-        line((5.55, 4.72), (4.55, 4.72), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.65))
-        content((2.10, 4.72), anchor: "west", [#text(fill: blue, size: 6.8pt, weight: "bold")[$-$]])
-        content((4.30, 4.72), anchor: "east", [#text(fill: blue, size: 6.8pt, weight: "bold")[$-$]])
-
-        // Sferetta dura in impatto
-        circle((3.2, 5.55), radius: 0.33, fill: black.transparentize(68%), stroke: 0.9pt)
-        line((3.2, 6.28), (3.2, 5.92), stroke: 1.0pt, mark: (end: ">", scale: 0.7))
-        content((3.38, 6.12), anchor: "west", [#text(size: 7pt)[$v$ (sferetta)]])
-
-        // Richiamo bordo sollevato e quota h_pall
-        line((4.65, 5.52), (3.86, 5.19), stroke: 0.55pt, mark: (end: ">", scale: 0.6))
-        content((4.72, 5.55), anchor: "west", [#text(size: 6.6pt)[Bordo sollevato]])
-        line((6.12, 4.42), (6.12, 5.02), stroke: 0.6pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.42))
-        content((6.30, 4.72), anchor: "west", [#text(size: 6.8pt)[$h_"pall" approx 1 "mm"$]])
-        content((6.30, 4.20), anchor: "west", [#text(fill: blue, size: 6.8pt, weight: "bold")[$sigma_"res" < 0$]])
-
-        // Separatore
-        line((0.1, 3.30), (9.6, 3.30), stroke: (dash: "dotted", thickness: 0.6pt))
-
-        // b) Sistema provino Almen
-        content((0.1, 2.96), anchor: "west", [#text(size: 7.3pt, weight: "bold")[b) Taratura con lamella Almen]])
-
-        // Fase 1: Lamella vincolata sotto getto
-        rect((0.45, 0.55), (3.65, 1.15), fill: black.transparentize(88%), stroke: 0.8pt)
-        content((2.05, 0.85), anchor: "center", [#text(size: 6.5pt)[Afferraggio]])
-        rect((0.70, 1.15), (3.40, 1.40), fill: blue.transparentize(80%), stroke: 0.8pt)
-        rect((0.88, 1.40), (1.12, 1.52), fill: black.transparentize(65%), stroke: 0.6pt)
-        rect((2.98, 1.40), (3.22, 1.52), fill: black.transparentize(65%), stroke: 0.6pt)
-
-        // Ugello e getto di sferette
-        rect((1.82, 2.30), (2.28, 2.65), fill: black.transparentize(78%), stroke: 0.75pt)
-        line((1.90, 2.30), (1.50, 1.45), stroke: (dash: "dashed", thickness: 0.55pt))
-        line((2.20, 2.30), (2.60, 1.45), stroke: (dash: "dashed", thickness: 0.55pt))
-        line((2.05, 2.22), (2.05, 1.52), stroke: 0.7pt, mark: (end: ">", scale: 0.6))
-        content((2.42, 2.48), anchor: "west", [#text(size: 6.6pt)[Getto]])
-
-        // Freccia transizione
-        line((3.90, 1.15), (4.55, 1.15), stroke: 0.8pt, mark: (end: ">", scale: 0.65))
-
-        // Fase 2: Svincolo, incurvamento e misura freccia f
-        rect((4.85, 0.45), (9.35, 0.68), fill: black.transparentize(88%), stroke: 0.75pt)
-        circle((5.35, 0.80), radius: 0.12, fill: black.transparentize(70%), stroke: 0.7pt)
-        circle((8.85, 0.80), radius: 0.12, fill: black.transparentize(70%), stroke: 0.7pt)
-
-        // Corda di riferimento tratteggiata e lamella incurvata (picco intradosso y = 1.46)
-        line((5.15, 0.92), (9.05, 0.92), stroke: (dash: "dotted", thickness: 0.55pt))
-        bezier((5.05, 0.92), (9.15, 0.92), (6.35, 1.64), (7.85, 1.64), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((5.05, 1.12), (9.15, 1.12), (6.35, 1.84), (7.85, 1.84), stroke: (paint: blue, thickness: 1.1pt))
-        line((5.05, 0.92), (5.05, 1.12), stroke: (paint: blue, thickness: 1.0pt))
-        line((9.15, 0.92), (9.15, 1.12), stroke: (paint: blue, thickness: 1.0pt))
-
-        // Comparatore e freccia d'arco f al centro dell'arco (pulita, zero sovrapposizioni)
-        circle((7.10, 2.42), radius: 0.35, fill: white, stroke: 0.8pt)
-        line((7.10, 2.42), (7.32, 2.59), stroke: (paint: red.transparentize(10%), thickness: 0.8pt))
-        line((7.10, 2.07), (7.10, 1.69), stroke: 0.75pt, mark: (end: ">", scale: 0.55))
-        content((7.58, 2.42), anchor: "west", [#text(size: 6.6pt)[Comparatore]])
-
-        line((7.10, 0.94), (7.10, 1.44), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45))
-        content((7.25, 1.18), anchor: "west", [#text(size: 7pt)[$f$]])
-      }),
+      include "figs/fatica/fatica-fig57.typ",
       caption: [Indentazione da pallinatura e misura della freccia d'arco $f$ su provino _Almen_.],
     )
   ],
@@ -3730,57 +1451,7 @@ Brevettata da Föppl (1929) e industrializzata da Almen negli anni Trenta per le
   ],
   [
     #figure(
-      canvas(length: 0.8cm, {
-        import draw: *
-        // BBox: x in [-0.2, 9.9] (dx=10.1), y in [0.1, 4.6], length=0.8cm -> larghezza = 8.08 cm <= 8.2 cm
-
-        // Pannello sinistro: albero rotante tra 3 rulli
-        circle((1.45, 2.3), radius: 0.82, fill: black.transparentize(90%), stroke: 1.0pt)
-        content((1.45, 2.3), anchor: "center", [#text(size: 7.2pt)[Albero]])
-
-        // Rullo superiore (90 deg)
-        circle((1.45, 3.38), radius: 0.26, fill: black.transparentize(78%), stroke: 0.85pt)
-        line((1.45, 4.25), (1.45, 3.68), stroke: (paint: blue, thickness: 1.0pt), mark: (end: ">", scale: 0.75))
-        content((1.63, 4.02), anchor: "west", [#text(fill: blue, size: 7.5pt)[$F$]])
-
-        // Rullo inferiore sinistro (210 deg)
-        circle((0.51, 1.76), radius: 0.26, fill: black.transparentize(78%), stroke: 0.85pt)
-        line((-0.10, 1.40), (0.25, 1.60), stroke: (paint: blue, thickness: 1.0pt), mark: (end: ">", scale: 0.75))
-        content((0.00, 1.15), anchor: "north", [#text(fill: blue, size: 7.5pt)[$F$]])
-
-        // Rullo inferiore destro (330 deg)
-        circle((2.39, 1.76), radius: 0.26, fill: black.transparentize(78%), stroke: 0.85pt)
-        line((3.00, 1.40), (2.65, 1.60), stroke: (paint: blue, thickness: 1.0pt), mark: (end: ">", scale: 0.75))
-        content((2.90, 1.15), anchor: "north", [#text(fill: blue, size: 7.5pt)[$F$]])
-
-        // Freccia rotazione
-        arc((1.45, 2.3), start: 15deg, stop: 60deg, radius: 1.12, anchor: "origin", stroke: 0.7pt, mark: (end: ">", scale: 0.65))
-        content((2.50, 3.15), anchor: "west", [#text(size: 6.8pt)[Rotazione]])
-
-        // Pannello destro: grafico log S-N comparativo
-        rect((5.4, 1.2), (9.8, 4.3), stroke: 0.8pt)
-        content((4.52, 2.75), angle: 90deg, anchor: "center", [#text(size: 7pt)[$sigma_a$ (% $R_m$)]])
-        content((7.6, 0.35), anchor: "north", [#text(size: 7.2pt)[Cicli a rottura, $N$]])
-
-        // Tacche asse X (10^4 .. 10^8)
-        for (pos, lbl) in ((5.4, $10^4$), (6.5, $10^5$), (7.6, $10^6$), (8.7, $10^7$), (9.8, $10^8$)) {
-          line((pos, 1.2), (pos, 1.32), stroke: 0.6pt)
-          content((pos, 0.96), anchor: "north", [#text(size: 6.5pt)[#lbl]])
-        }
-
-        // Tacche asse Y (log10: 10, 20, 30, 50, 100)
-        for (yy, lbl) in ((1.20, "10"), (2.13, "20"), (2.68, "30"), (3.37, "50"), (4.30, "100")) {
-          line((5.4, yy), (5.52, yy), stroke: 0.6pt)
-          content((5.22, yy), anchor: "east", [#text(size: 6.5pt)[#lbl]])
-        }
-
-        // Curve S-N convergenti a ~55% R_m per N = 10^4
-        line((5.4, 3.48), (9.8, 2.72), stroke: (paint: blue, thickness: 1.2pt))
-        content((7.95, 3.25), anchor: "south", [#text(fill: blue, size: 7pt, weight: "bold")[Rullata]])
-
-        line((5.4, 3.48), (9.3, 1.52), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
-        content((7.48, 2.02), anchor: "north-east", [#text(fill: red.transparentize(10%), size: 7pt, weight: "bold")[Non rullata]])
-      }),
+      include "figs/fatica/fatica-fig58.typ",
       caption: [Schema di rullatura a freddo su albero e confronto tra curve $S"-"N$ a vita finita.],
     )
   ],
@@ -3803,60 +1474,7 @@ Spesso il processo coincide con la generazione stessa della forma: è il caso de
   ],
   [
     #figure(
-      canvas(length: 0.82cm, {
-        import draw: *
-        // BBox: x in [0.0, 9.5] (dx=9.5), y in [0.1, 6.5], length=0.82cm -> larghezza = 7.79 cm <= 8.2 cm
-
-        // a) Piegatura a freddo (lamiera + farfalla tensioni residue)
-        content((0.1, 6.28), anchor: "west", [#text(size: 7.3pt, weight: "bold")[a) Piegatura a freddo (dopo lo scarico)]])
-
-        // Mini-schema lamiera piegata a sinistra + cerchio di zoom
-        line((0.60, 5.65), (0.60, 4.45), stroke: 1.3pt)
-        arc((1.10, 4.45), start: 180deg, stop: 270deg, radius: 0.50, anchor: "origin", stroke: 1.3pt)
-        line((1.10, 3.95), (2.10, 3.95), stroke: 1.3pt)
-        circle((0.76, 4.10), radius: 0.30, stroke: (dash: "dashed", thickness: 0.55pt))
-        line((1.06, 4.15), (2.82, 4.65), stroke: (dash: "dotted", thickness: 0.5pt, paint: black.transparentize(45%)))
-
-        // Zoom gomito con distribuzione residua a farfalla nello spessore
-        // Centro di curvatura in (5.35, 5.75): r_ext = 2.55, r_med = 2.15, r_int = 1.75
-        arc((5.35, 5.75), start: 192deg, stop: 256deg, radius: 2.55, anchor: "origin", stroke: 1.0pt)
-        arc((5.35, 5.75), start: 192deg, stop: 256deg, radius: 1.75, anchor: "origin", stroke: 1.0pt)
-        arc((5.35, 5.75), start: 194deg, stop: 254deg, radius: 2.15, anchor: "origin", stroke: (dash: "dashed", thickness: 0.5pt, paint: black.transparentize(50%)))
-
-        // Sezione radiale a theta = 225 deg: P_ext=(3.55,3.95), P_med=(3.83,4.23), P_int=(4.11,4.51)
-        line((3.55, 3.95), (4.11, 4.51), stroke: 0.65pt)
-        line((3.55, 3.95), (3.46, 4.28), (3.83, 4.23), close: true, fill: blue.transparentize(78%), stroke: (paint: blue, thickness: 0.8pt))
-        line((3.83, 4.23), (4.20, 4.18), (4.11, 4.51), close: true, fill: red.transparentize(78%), stroke: (paint: red.transparentize(10%), thickness: 0.8pt))
-
-        content((3.25, 3.82), anchor: "center", [#text(fill: blue, size: 8pt, weight: "bold")[$-$]])
-        content((4.38, 4.62), anchor: "center", [#text(fill: red.transparentize(10%), size: 8pt, weight: "bold")[$+$]])
-
-        // Richiami senza incroci: intradosso (da lato concavo) ed estradosso (da sotto)
-        line((5.35, 5.12), (3.82, 5.02), stroke: 0.6pt, mark: (end: ">", scale: 0.6))
-        content((5.45, 5.12), anchor: "west", [#text(size: 6.9pt)[Fibre interne: #text(fill: red.transparentize(10%), weight: "bold")[$sigma_"res" (+)$]]])
-
-        line((5.35, 3.35), (4.52, 3.35), stroke: 0.6pt, mark: (end: ">", scale: 0.6))
-        content((5.45, 3.35), anchor: "west", [#text(size: 6.9pt)[Fibre esterne: #text(fill: blue, weight: "bold")[$sigma_"res" (-)$]]])
-
-        // Separatore
-        line((0.1, 2.95), (9.3, 2.95), stroke: (dash: "dotted", thickness: 0.6pt))
-
-        // b) Lavorazione a caldo: decarburazione
-        content((0.1, 2.58), anchor: "west", [#text(size: 7.3pt, weight: "bold")[b) Lavorazione a caldo: decarburazione]])
-        rect((0.9, 0.35), (4.9, 1.30), fill: black.transparentize(88%), stroke: 0.9pt)
-        content((2.9, 0.82), anchor: "center", [#text(size: 7pt)[Substrato (vincola il ritiro)]])
-        rect((0.9, 1.30), (4.9, 1.70), fill: red.transparentize(80%), stroke: 0.9pt)
-
-        // Frecce trazione sullo strato superficiale
-        line((0.9, 1.50), (0.25, 1.50), stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (end: ">"))
-        line((4.9, 1.50), (5.55, 1.50), stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (end: ">"))
-        content((5.75, 1.62), anchor: "west", [#text(fill: red.transparentize(10%), size: 7pt, weight: "bold")[$sigma_"res" (+)$]])
-        content((5.75, 1.15), anchor: "west", [#text(size: 6.9pt)[Pelle decarburata]])
-
-        // Reazione decarburazione
-        line((2.5, 1.70), (3.1, 2.15), stroke: 0.8pt, mark: (end: ">"))
-        content((3.25, 2.18), anchor: "west", [#text(size: 7pt)[$"C" + "O"_2 -> "CO"_2$]])
-      }),
+      include "figs/fatica/fatica-fig59.typ",
       caption: [Tensioni residue dopo piegatura a freddo (a) e per decarburazione superficiale a caldo (b).],
     )
   ],
@@ -3880,56 +1498,7 @@ I rivestimenti superficiali rispondono a requisiti estetici o proteggono da *cor
   {
     set par(justify: false)
     set text(hyphenate: false)
-    canvas(length: 1cm, {
-      // BBox: x in [0.0, 16.4] (dx=16.4), y in [0.0, 7.2], length=1cm -> larghezza = 16.4 cm <= 17.0 cm
-      import draw: *
-
-      // Sfondo intestazione e riga alternata
-      rect((0.0, 6.0), (16.4, 7.2), fill: black.transparentize(86%), stroke: none)
-      rect((0.0, 1.95), (16.4, 3.9), fill: black.transparentize(94%), stroke: none)
-
-      // Bordo esterno e griglia tabella
-      rect((0.0, 0.0), (16.4, 7.2), stroke: (paint: black, thickness: 1.0pt))
-      line((0.0, 6.0), (16.4, 6.0), stroke: (paint: black, thickness: 0.9pt))
-      line((0.0, 3.9), (16.4, 3.9), stroke: (paint: black.transparentize(55%), thickness: 0.55pt))
-      line((0.0, 1.95), (16.4, 1.95), stroke: (paint: black.transparentize(55%), thickness: 0.55pt))
-
-      for x in (2.5, 5.6, 8.1, 10.7, 12.6) {
-        line((x, 0.0), (x, 7.2), stroke: (paint: black.transparentize(55%), thickness: 0.55pt))
-      }
-
-      // Intestazioni colonna
-      content((1.25, 6.6), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.5pt, weight: "bold")[Rivestimento])))
-      content((4.05, 6.6), anchor: "center", box(width: 2.7cm, align(center, text(size: 7.5pt, weight: "bold")[Meccanismo / Stato residuo])))
-      content((6.85, 6.6), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.5pt, weight: "bold")[Fatica in aria])))
-      content((9.40, 6.6), anchor: "center", box(width: 2.2cm, align(center, text(size: 7.5pt, weight: "bold")[Fatica in ambiente corrosivo])))
-      content((11.65, 6.6), anchor: "center", box(width: 1.5cm, align(center, text(size: 7.5pt, weight: "bold")[Usura])))
-      content((14.50, 6.6), anchor: "center", box(width: 3.4cm, align(center, text(size: 7.5pt, weight: "bold")[Contromisure e rischi (infragilimento da H)])))
-
-      // Riga 1: Cromatura / Nichelatura
-      content((1.25, 4.95), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[*Cromatura / Nichelatura*])))
-      content((4.05, 4.95), anchor: "center", box(width: 2.7cm, align(center, text(size: 7.2pt)[Riporto galvanico; tensioni residue di trazione ($sigma_"res" > 0$)])))
-      content((6.85, 4.95), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[#text(fill: red.transparentize(10%), weight: "bold")[Riduce] (cresce con $R_m$, durata e spessore)])))
-      content((9.40, 4.95), anchor: "center", box(width: 2.2cm, align(center, text(size: 7.2pt)[#text(fill: blue, weight: "bold")[Aumenta] (scherma il substrato)])))
-      content((11.65, 4.95), anchor: "center", box(width: 1.5cm, align(center, text(size: 7.2pt)[#text(fill: blue, weight: "bold")[Buona]])))
-      content((14.50, 4.95), anchor: "center", box(width: 3.4cm, align(center, text(size: 7.2pt)[Pallinatura o nitrurazione preventivi (Ni più sensibile); rischio infragilimento da H])))
-
-      // Riga 2: Cadmiatura / Zincatura
-      content((1.25, 2.925), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[*Cadmiatura / Zincatura*])))
-      content((4.05, 2.925), anchor: "center", box(width: 2.7cm, align(center, text(size: 7.2pt)[Rivestimento protettivo senza stato residuo rilevante])))
-      content((6.85, 2.925), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[*Neutro* (nessun effetto significativo)])))
-      content((9.40, 2.925), anchor: "center", box(width: 2.2cm, align(center, text(size: 7.2pt)[#text(fill: blue, weight: "bold")[Aumenta] (scherma il metallo base)])))
-      content((11.65, 2.925), anchor: "center", box(width: 1.5cm, align(center, text(size: 7.2pt)[#text(fill: red.transparentize(10%), weight: "bold")[Scarsa]])))
-      content((14.50, 2.925), anchor: "center", box(width: 3.4cm, align(center, text(size: 7.2pt)[Controllo rigoroso del bagno galvanico contro infragilimento da idrogeno (H)])))
-
-      // Riga 3: Anodizzazione
-      content((1.25, 0.975), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[*Anodizzazione* \ (leghe leggere)])))
-      content((4.05, 0.975), anchor: "center", box(width: 2.7cm, align(center, text(size: 7.2pt)[Pellicola d'ossido rigida e fragile])))
-      content((6.85, 0.975), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[#text(fill: red.transparentize(10%), weight: "bold")[Riduce] (20%–30%)])))
-      content((9.40, 0.975), anchor: "center", box(width: 2.2cm, align(center, text(size: 7.2pt)[#text(fill: red.transparentize(10%), weight: "bold")[Peggiora] (sinergia con corrosione)])))
-      content((11.65, 0.975), anchor: "center", box(width: 1.5cm, align(center, text(size: 7.2pt)[Dura ma fragile al carico])))
-      content((14.50, 0.975), anchor: "center", box(width: 3.4cm, align(center, text(size: 7.2pt)[Rischio cricche precoci della pellicola sotto carico ciclico])))
-    })
+    include "figs/fatica/fatica-fig60.typ"
   },
   caption: [Matrice comparativa dei rivestimenti superficiali: stato residuo, risposta a fatica in aria e in corrosione, usura e contromisure.],
 )
@@ -3957,74 +1526,7 @@ Nei processi termici le tensioni residue derivano da *cambiamenti di fase* local
   ],
   [
     #figure(
-      canvas(length: 0.8cm, {
-        // BBox: x in [0.0, 10.0] (dx=10.0), y in [0.3, 8.6], length=0.8cm -> larghezza = 8.00 cm <= 8.2 cm
-        import draw: *
-
-        // --- PANNELLO A: Trattamento superficiale (~1 mm / tempra induzione) ---
-        content((0.2, 8.35), anchor: "west", text(size: 7.3pt, weight: "bold")[A) Trattamento superficiale (\~1 mm / induzione)])
-
-        // Sezione componente
-        rect((0.4, 4.9), (5.4, 6.75), fill: black.transparentize(92%), stroke: (paint: black, thickness: 0.9pt))
-        rect((0.4, 6.75), (5.4, 7.45), fill: blue.transparentize(82%), stroke: (paint: black, thickness: 1.0pt))
-
-        content((2.9, 5.82), anchor: "center", text(size: 7pt)[Cuore tenace indeformato])
-        content((2.9, 7.82), anchor: "center", text(size: 7pt)[Espansione impedita (+0.5%)])
-
-        // Frecce compressione nello strato trattato
-        line((0.7, 7.1), (1.7, 7.1), stroke: (paint: blue, thickness: 1.0pt), mark: (end: ">", scale: 0.7))
-        line((5.1, 7.1), (4.1, 7.1), stroke: (paint: blue, thickness: 1.0pt), mark: (end: ">", scale: 0.7))
-        content((2.9, 7.1), anchor: "center", text(size: 7.2pt, fill: blue, weight: "bold")[$sigma_"res" < 0$])
-
-        // Quota spessore ~1 mm e linea di proiezione interfaccia
-        line((5.55, 6.75), (5.55, 7.45), stroke: (paint: black, thickness: 0.6pt), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.42))
-        content((5.72, 7.1), anchor: "west", text(size: 7pt)[\~1 mm])
-        line((5.4, 6.75), (8.1, 6.75), stroke: (paint: black.transparentize(45%), dash: "dotted", thickness: 0.55pt))
-
-        // Profilo qualitativo auto-equilibrato sigma_res(z)
-        line((7.05, 7.45), (7.10, 6.95), (8.1, 6.75), (8.1, 7.45), close: true, fill: blue.transparentize(84%), stroke: none)
-        line((8.1, 6.75), (8.48, 6.50), (8.25, 5.05), (8.1, 5.05), close: true, fill: red.transparentize(86%), stroke: none)
-        line((8.1, 7.45), (8.1, 4.95), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.65))
-        line((6.8, 7.45), (9.6, 7.45), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.65))
-        line((7.05, 7.45), (7.10, 6.95), (8.1, 6.75), (8.48, 6.50), (8.25, 5.05), stroke: (paint: black, thickness: 1.1pt))
-
-        content((7.3, 7.75), anchor: "center", text(size: 7pt, fill: blue, weight: "bold")[$-$])
-        content((8.7, 7.75), anchor: "center", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[$+$])
-        content((9.45, 7.75), anchor: "center", text(size: 7pt)[$sigma_"res"$])
-        content((8.1, 4.72), anchor: "center", text(size: 7pt)[$z$])
-
-        // Separatore orizzontale
-        line((0.2, 4.35), (9.8, 4.35), stroke: (paint: black.transparentize(65%), dash: "dashed", thickness: 0.55pt))
-
-        // --- PANNELLO B: Gradiente termico locale (saldatura / rettifica) ---
-        content((0.2, 3.95), anchor: "west", text(size: 7.3pt, weight: "bold")[B) Gradiente termico locale (saldatura / rettifica)])
-
-        // Piastra con ZTA centrale
-        rect((0.4, 1.1), (5.4, 2.5), fill: black.transparentize(92%), stroke: (paint: black, thickness: 0.9pt))
-        rect((2.1, 1.1), (3.7, 2.5), fill: red.transparentize(82%), stroke: (paint: red.transparentize(25%), dash: "dashed", thickness: 0.7pt))
-        bezier((2.35, 2.5), (3.45, 2.5), (2.6, 2.95), (3.2, 2.95), stroke: (paint: red.transparentize(15%), thickness: 0.95pt))
-
-        content((2.9, 1.8), anchor: "center", text(size: 7.2pt, weight: "bold")[ZTA])
-        content((1.25, 1.8), anchor: "center", text(size: 7pt, fill: blue)[$sigma_"res" < 0$])
-        content((4.55, 1.8), anchor: "center", text(size: 7pt, fill: blue)[$sigma_"res" < 0$])
-        content((2.9, 3.35), anchor: "center", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[$sigma_"res" > 0$])
-        line((2.9, 3.16), (2.9, 2.82), stroke: (paint: black, thickness: 0.6pt), mark: (end: ">", scale: 0.6))
-        content((2.9, 0.55), anchor: "center", text(size: 7pt)[Raffreddamento differenziale vincolato])
-
-        // Profilo qualitativo sigma_res(x)
-        line((8.1, 0.7), (8.1, 3.1), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.65))
-        line((6.4, 1.6), (9.7, 1.6), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.65))
-
-        bezier((6.5, 1.6), (7.55, 1.6), (6.8, 1.05), (7.3, 1.05), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((7.55, 1.6), (8.65, 1.6), (7.85, 3.05), (8.35, 3.05), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
-        bezier((8.65, 1.6), (9.65, 1.6), (8.9, 1.05), (9.4, 1.05), stroke: (paint: blue, thickness: 1.1pt))
-
-        content((8.1, 3.35), anchor: "center", text(size: 7pt)[$sigma_"res"$])
-        content((9.72, 1.78), anchor: "south-east", text(size: 7pt)[$x$])
-        content((8.48, 2.75), anchor: "west", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[$+$])
-        content((7.05, 0.88), anchor: "center", text(size: 7pt, fill: blue, weight: "bold")[$-$])
-        content((9.15, 0.88), anchor: "center", text(size: 7pt, fill: blue, weight: "bold")[$-$])
-      }),
+      include "figs/fatica/fatica-fig61.typ",
       caption: [Profili auto-equilibrati di $sigma_"res"$ per indurimento superficiale (A) e gradiente termico locale (B).],
     )
   ],
@@ -4058,89 +1560,7 @@ Mentre un corpo libero si dilata senza tensioni, in una struttura vincolata — 
   ],
   [
     #figure(
-      canvas(length: 0.75cm, {
-        // BBox: x in [0.0, 10.6] (dx=10.6), y in [0.1, 5.6], length=0.75cm -> larghezza = 7.95 cm <= 8.2 cm
-        import draw: *
-
-        // --- Pannello sinistro: prova di creep (asse provetta x = 2.45) ---
-        line((1.45, 5.2), (3.45, 5.2), stroke: 1.1pt)
-        for hx in (1.55, 1.80, 2.05, 2.30, 2.55, 2.80, 3.05, 3.30) {
-          line((hx, 5.2), (hx + 0.2, 5.45), stroke: 0.65pt)
-        }
-
-        // Asse di simmetria e afferraggio superiore
-        line((2.45, 1.8), (2.45, 5.2), stroke: (dash: "dashed", thickness: 0.5pt, paint: black.transparentize(55%)))
-        rect((2.25, 4.6), (2.65, 5.2), fill: black.transparentize(86%), stroke: 0.9pt)
-
-        // Provetta a osso di cane
-        line(
-          (2.20, 4.6), (2.20, 4.45), (2.32, 4.3), (2.32, 2.7), (2.20, 2.55), (2.20, 2.4),
-          (2.70, 2.4), (2.70, 2.55), (2.58, 2.7), (2.58, 4.3), (2.70, 4.45), (2.70, 4.6),
-          close: true, fill: black.transparentize(72%), stroke: 1pt,
-        )
-
-        // Afferraggio inferiore e peso costante
-        rect((2.25, 1.8), (2.65, 2.4), fill: black.transparentize(86%), stroke: 0.9pt)
-        rect((1.80, 0.75), (3.10, 1.8), fill: black.transparentize(72%), stroke: 1pt)
-        content((2.45, 1.27), text(size: 7.5pt, weight: "bold")[Peso], anchor: "center")
-        line((2.45, 0.75), (2.45, 0.15), stroke: 1.1pt, mark: (end: ">"))
-        content((2.63, 0.38), text(size: 7.5pt)[$F = "cost"$], anchor: "west")
-
-        // Camera e bobina termica
-        rect(
-          (1.68, 2.75), (3.22, 4.25),
-          fill: red.transparentize(92%),
-          stroke: (paint: red.transparentize(25%), dash: "dashed", thickness: 0.7pt),
-        )
-        for cy in (2.98, 3.33, 3.68, 4.03) {
-          circle((1.90, cy), radius: 0.11, fill: orange.transparentize(45%), stroke: (paint: orange, thickness: 0.7pt))
-          circle((3.00, cy), radius: 0.11, fill: orange.transparentize(45%), stroke: (paint: orange, thickness: 0.7pt))
-        }
-
-        // Richiami e annotazioni pannello sinistro senza collisioni
-        content((1.22, 3.5), align(right, text(size: 7.2pt)[Bobina\ termica]), anchor: "east")
-        line((1.30, 3.5), (1.76, 3.66), stroke: 0.6pt, mark: (end: ">", scale: 0.6))
-        content((3.35, 4.75), text(size: 7.2pt)[Provetta], anchor: "west")
-        line((3.30, 4.72), (2.73, 4.52), stroke: 0.6pt, mark: (end: ">", scale: 0.6))
-        content((3.35, 3.5), text(size: 7.2pt, fill: red.transparentize(10%))[$T = "cost"$], anchor: "west")
-
-        // --- Pannello destro: curva epsilon(t) ---
-        line((4.9, 2.0), (10.2, 2.0), stroke: 0.9pt, mark: (end: ">"))
-        line((4.9, 2.0), (4.9, 5.5), stroke: 0.9pt, mark: (end: ">"))
-        content((4.68, 5.42), text(size: 8pt)[$epsilon$], anchor: "east")
-        content((10.28, 2.0), text(size: 8pt)[$t$], anchor: "west")
-        content((4.78, 2.45), text(size: 7.5pt)[$epsilon_0$], anchor: "east")
-
-        // Curva di creep (elastico, primario, secondario, terziario)
-        line((4.9, 2.0), (4.95, 2.45), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((4.95, 2.45), (5.88, 3.05), (5.1, 2.85), (5.48, 2.95), stroke: (paint: blue, thickness: 1.1pt))
-        line((5.88, 3.05), (7.85, 3.55), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((7.85, 3.55), (9.35, 5.15), (8.45, 3.70), (9.15, 4.35), stroke: (paint: blue, thickness: 1.1pt))
-
-        // Crocetta di rottura
-        line((9.25, 5.05), (9.45, 5.25), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
-        line((9.25, 5.25), (9.45, 5.05), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
-        content((9.10, 5.15), align(right, text(size: 7.2pt, fill: red.transparentize(10%))[Instabilità\ e rottura]), anchor: "east")
-
-        // Guide verticali stadi
-        line((5.88, 2.0), (5.88, 3.05), stroke: (dash: "dotted", thickness: 0.6pt))
-        line((7.85, 2.0), (7.85, 3.55), stroke: (dash: "dotted", thickness: 0.6pt))
-        line((9.35, 2.0), (9.35, 5.15), stroke: (dash: "dotted", thickness: 0.6pt))
-        content((5.40, 2.25), text(size: 7pt)[I], anchor: "center")
-        content((6.86, 2.25), text(size: 7pt)[II], anchor: "center")
-        content((8.60, 2.25), text(size: 7pt)[III], anchor: "center")
-
-        // Barra soglie termiche T / T_f
-        rect((4.9, 0.75), (6.45, 1.05), fill: black.transparentize(90%), stroke: 0.7pt)
-        rect((6.45, 0.75), (8.48, 1.05), fill: orange.transparentize(70%), stroke: 0.7pt)
-        rect((8.48, 0.75), (10.2, 1.05), fill: red.transparentize(65%), stroke: 0.7pt)
-        content((6.45, 1.15), text(size: 7pt)[0.3–0.4 $T_f$], anchor: "south")
-        content((8.48, 1.15), text(size: 7pt)[0.6–0.7 $T_f$], anchor: "south")
-        content((10.2, 1.15), text(size: 7pt)[$T_f$], anchor: "south")
-        content((4.9, 0.63), text(size: 7pt)[$0$], anchor: "north")
-        content((7.46, 0.63), text(size: 7pt)[Attivazione], anchor: "north")
-        content((9.34, 0.63), align(center, text(size: 7pt)[Creep\ dominante]), anchor: "north")
-      }),
+      include "figs/fatica/fatica-fig62.typ",
       caption: [Prova di scorrimento viscoso a carico e temperatura costanti, stadi di _creep_ e soglie omologhe $T \/ T_f$.],
     )
   ],
@@ -4185,72 +1605,7 @@ Passare dal provino al componente richiede sia banchi di prova multiassiali rapp
   ],
   [
     #figure(
-      canvas(length: 1.15cm, {
-        // BBox: x in [-0.6, 6.2] (dx=6.8), y in [-1.05, 5.35], length=1.15cm -> larghezza = 7.82 cm <= 8.2 cm
-        import draw: line, circle, bezier, content
-
-        // Legenda orizzontale in alto
-        line((0.1, 5.20), (0.5, 5.20), stroke: (paint: blue, thickness: 1.1pt))
-        content((0.58, 5.20), anchor: "west", text(size: 7pt)[$sigma(t)$])
-        line((1.50, 5.20), (1.90, 5.20), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-        content((1.98, 5.20), anchor: "west", text(size: 7pt)[$tau(t)$ ($0^circ$ / sfas.)])
-        line((3.80, 5.20), (4.20, 5.20), stroke: (paint: orange, thickness: 0.95pt, dash: "dotted"))
-        content((4.28, 5.20), anchor: "west", text(size: 7pt)[$tau(t)$ ($180^circ$)])
-
-        // Sottografico superiore: Carichi semplici (y0 = 3.35)
-        content((0.18, 4.78), anchor: "west", text(size: 7.5pt, weight: "bold")[Carichi semplici (in fase / controfase)])
-        line((0, 2.35), (0, 4.55), mark: (end: ">", scale: 0.65), stroke: 0.7pt)
-        line((0, 3.35), (5.80, 3.35), mark: (end: ">", scale: 0.65), stroke: 0.7pt)
-        content((-0.10, 4.45), anchor: "east", text(size: 7.5pt)[$sigma, tau$])
-        content((5.85, 3.35), anchor: "west", text(size: 7.5pt)[$t$])
-
-        // sigma(t) superiore (A = 0.80, W = 1.80, 1.333*A = 1.066)
-        bezier((0.0, 3.35), (1.8, 3.35), (0.594, 4.416), (1.206, 4.416), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((1.8, 3.35), (3.6, 3.35), (2.394, 2.284), (3.006, 2.284), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((3.6, 3.35), (5.4, 3.35), (4.194, 4.416), (4.806, 4.416), stroke: (paint: blue, thickness: 1.1pt))
-
-        // tau(t) in fase 0° (A = 0.50, W = 1.80, 1.333*A = 0.667)
-        bezier((0.0, 3.35), (1.8, 3.35), (0.594, 4.017), (1.206, 4.017), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-        bezier((1.8, 3.35), (3.6, 3.35), (2.394, 2.683), (3.006, 2.683), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-        bezier((3.6, 3.35), (5.4, 3.35), (4.194, 4.017), (4.806, 4.017), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-
-        // tau(t) controfase 180° (A = 0.42, W = 1.80, 1.333*A = 0.560)
-        bezier((0.0, 3.35), (1.8, 3.35), (0.594, 2.790), (1.206, 2.790), stroke: (paint: orange, thickness: 0.95pt, dash: "dotted"))
-        bezier((1.8, 3.35), (3.6, 3.35), (2.394, 3.910), (3.006, 3.910), stroke: (paint: orange, thickness: 0.95pt, dash: "dotted"))
-        bezier((3.6, 3.35), (5.4, 3.35), (4.194, 2.790), (4.806, 2.790), stroke: (paint: orange, thickness: 0.95pt, dash: "dotted"))
-
-        // Allineamento picchi/valli simultanei a x = 0.9
-        line((0.9, 2.82), (0.9, 4.30), stroke: (dash: "dotted", thickness: 0.6pt, paint: luma(80)))
-        circle((0.9, 4.15), radius: 0.045, fill: blue, stroke: none)
-        circle((0.9, 3.85), radius: 0.045, fill: red.transparentize(10%), stroke: none)
-        circle((0.9, 2.93), radius: 0.045, fill: orange, stroke: none)
-
-        // Sottografico inferiore: Carichi complessi (y0 = 0.0)
-        content((0.18, 1.62), anchor: "west", text(size: 7.5pt, weight: "bold")[Carichi complessi (sfasati)])
-        line((0, -1.00), (0, 1.25), mark: (end: ">", scale: 0.65), stroke: 0.7pt)
-        line((0, 0.0), (5.80, 0.0), mark: (end: ">", scale: 0.65), stroke: 0.7pt)
-        content((-0.10, 1.15), anchor: "east", text(size: 7.5pt)[$sigma, tau$])
-        content((5.85, 0.0), anchor: "west", text(size: 7.5pt)[$t$])
-
-        // sigma(t) inferiore (A = 0.80, W = 1.80)
-        bezier((0.0, 0.0), (1.8, 0.0), (0.594, 1.066), (1.206, 1.066), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((1.8, 0.0), (3.6, 0.0), (2.394, -1.066), (3.006, -1.066), stroke: (paint: blue, thickness: 1.1pt))
-        bezier((3.6, 0.0), (5.4, 0.0), (4.194, 1.066), (4.806, 1.066), stroke: (paint: blue, thickness: 1.1pt))
-
-        // tau(t) sfasata di Δφ = 72° (dx = 0.72, A = 0.50, W = 1.80)
-        bezier((0.0, -0.480), (0.72, 0.0), (0.242, -0.427), (0.482, -0.267), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-        bezier((0.72, 0.0), (2.52, 0.0), (1.314, 0.667), (1.926, 0.667), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-        bezier((2.52, 0.0), (4.32, 0.0), (3.114, -0.667), (3.726, -0.667), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-        bezier((4.32, 0.0), (5.40, 0.480), (4.676, 0.400), (5.039, 0.560), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-
-        // Linee di proiezione e quota Δφ tra i picchi (x = 0.9 e x = 1.62)
-        line((0.9, 0.0), (0.9, 1.12), stroke: (dash: "dotted", thickness: 0.6pt, paint: luma(80)))
-        line((1.62, 0.0), (1.62, 1.12), stroke: (dash: "dotted", thickness: 0.6pt, paint: luma(80)))
-        circle((0.9, 0.80), radius: 0.045, fill: blue, stroke: none)
-        circle((1.62, 0.50), radius: 0.045, fill: red.transparentize(10%), stroke: none)
-        line((0.9, 0.98), (1.62, 0.98), mark: (start: ">", end: ">", scale: 0.5), stroke: 0.65pt)
-        content((1.26, 1.07), anchor: "south", text(size: 7.5pt)[$Delta phi$])
-      }),
+      include "figs/fatica/fatica-fig63.typ",
       caption: [Stati di tensione multiassiali: carichi in fase ($0^circ$), controfase ($180^circ$) e sfasati ($Delta phi$).],
     )
   ],
@@ -4273,60 +1628,7 @@ La trattazione di base affronta gli *stati multiassiali semplici*: la coincidenz
   ],
   [
     #figure(
-      canvas(length: 1.0cm, {
-        // BBox: x in [-0.9, 6.8] (dx=7.7), y in [-0.85, 4.70], length=1.0cm -> larghezza = 7.70 cm <= 8.2 cm
-        import draw: line, circle, arc, content
-
-        // Griglia leggera (passo 100 MPa = 1.0 unità)
-        for gx in (1, 2, 3, 4, 5, 6) {
-          line((gx, 0), (gx, 4.25), stroke: (paint: black.transparentize(88%), thickness: 0.45pt, dash: "dotted"))
-          line((gx, -0.07), (gx, 0.07), stroke: 0.6pt)
-          content((gx, -0.14), anchor: "north", text(size: 7pt)[#(gx * 100)])
-        }
-        for gy in (1, 2, 3, 4) {
-          line((0, gy), (6.25, gy), stroke: (paint: black.transparentize(88%), thickness: 0.45pt, dash: "dotted"))
-          line((-0.07, gy), (0.07, gy), stroke: 0.6pt)
-          content((-0.14, gy), anchor: "east", text(size: 7pt)[#(gy * 100)])
-        }
-        content((-0.12, -0.14), anchor: "north-east", text(size: 7pt)[0])
-
-        // Campitura regione di sicurezza (interna a C 15)
-        arc((0, 0), start: 0deg, stop: 90deg, radius: (2.5, 1.5), anchor: "origin", mode: "PIE", fill: black.transparentize(88%), stroke: none)
-
-        // Assi cartesiani
-        line((-0.15, 0), (6.55, 0), mark: (end: ">", scale: 0.65), stroke: 0.8pt)
-        line((0, -0.15), (0, 4.55), mark: (end: ">", scale: 0.65), stroke: 0.8pt)
-        content((3.25, -0.52), anchor: "north", text(size: 8pt)[$sigma_a " (MPa)"$])
-        content((0.15, 4.50), anchor: "west", text(size: 8pt)[$tau_a " (MPa)"$])
-
-        // Curve ellittiche limite
-        arc((0, 0), start: 0deg, stop: 90deg, radius: (2.5, 1.5), anchor: "origin", stroke: (paint: blue, thickness: 1.15pt))
-        arc((0, 0), start: 0deg, stop: 90deg, radius: (5.5, 3.3), anchor: "origin", stroke: (paint: red.transparentize(10%), thickness: 1.15pt))
-
-        // Punti sperimentali schematici
-        for pt in ((0.35, 1.52), (0.95, 1.38), (1.55, 1.14), (2.10, 0.85), (2.42, 0.35)) {
-          circle(pt, radius: 0.045, fill: black, stroke: none)
-        }
-        for pt in ((0.50, 3.34), (1.60, 3.10), (2.75, 2.92), (4.15, 2.12), (4.95, 1.38), (5.38, 0.60)) {
-          circle(pt, radius: 0.045, fill: black, stroke: none)
-        }
-
-        // Etichette curve e regione sicura
-        content((0.52, 0.52), anchor: "center", text(size: 6.5pt, fill: luma(55))[Regione \ sicura])
-        line((2.82, 1.25), (1.98, 0.92), mark: (end: ">", scale: 0.5, fill: blue), stroke: (paint: blue, thickness: 0.6pt))
-        content((2.86, 1.25), anchor: "west", text(size: 7pt, fill: blue)[C 15 \ $R_m = 425$ MPa])
-
-        line((4.18, 3.40), (3.78, 2.40), mark: (end: ">", scale: 0.5, fill: red.transparentize(10%)), stroke: (paint: red.transparentize(10%), thickness: 0.6pt))
-        content((4.22, 3.45), anchor: "west", text(size: 7pt, fill: red.transparentize(10%))[30 Ni Cr Mo 12 \ $R_m = 900$ MPa])
-
-        // Punto limite e punto insicuro
-        circle((2.20, 3.02), radius: 0.065, fill: white, stroke: (paint: rgb("#c25e00"), thickness: 1.1pt))
-        line((2.62, 3.55), (2.25, 3.09), mark: (end: ">", scale: 0.5, fill: rgb("#c25e00")), stroke: (paint: rgb("#c25e00"), thickness: 0.6pt))
-        content((2.65, 3.58), anchor: "south", text(size: 6.8pt, fill: rgb("#c25e00"))[Limite])
-
-        circle((5.30, 2.60), radius: 0.06, fill: red.transparentize(10%), stroke: none)
-        content((5.42, 2.60), anchor: "west", text(size: 6.8pt, fill: red.transparentize(10%))[Insicuro])
-      }),
+      include "figs/fatica/fatica-fig64.typ",
       caption: [Curva limite sperimentale di Gough e Pollard nel piano $(sigma_a, tau_a)$.],
     )
   ],
@@ -4390,71 +1692,7 @@ Il fattore di carico $C_L$ va escluso da $sigma_(D-1)^C$: la correzione $0.85$ �
 $ "CS" = frac(overline("LH"), overline("PH")) = frac(sigma_D^"lim", sigma_(a,"eq")) $
 
 #figure(
-  canvas(length: 0.92cm, {
-    // BBox: x in [-1.1, 14.5] (dx=15.6), y in [-1.15, 3.9], length=0.92cm -> larghezza = 14.35 cm <= 17.0 cm
-    import draw: *
-
-    // --- Pannello (a): Calcolo di CS ---
-    line((-0.3, 0), (5.8, 0), stroke: 0.8pt, mark: (end: ">"))
-    line((0, -0.3), (0, 3.7), stroke: 0.8pt, mark: (end: ">"))
-    content((5.8, -0.22), anchor: "north", text(size: 8pt)[$sigma_m$])
-    content((-0.18, 3.7), anchor: "east", text(size: 8pt)[$sigma_a$])
-
-    line((0, 3.0), (5.2, 0), stroke: 1.1pt)
-    circle((0, 3.0), radius: 0.045, fill: black, stroke: none)
-    content((0.15, 3.10), anchor: "south-west", text(size: 8pt)[$sigma_(D-1)^C$])
-    circle((5.2, 0), radius: 0.045, fill: black, stroke: none)
-    content((5.2, -0.22), anchor: "north", text(size: 8pt)[$R_m$])
-
-    line((1.9, 0), (1.9, 1.904), stroke: (paint: blue.darken(15%), thickness: 0.75pt))
-    line((0, 0.95), (1.9, 0.95), stroke: (dash: "dotted", thickness: 0.65pt))
-    line((0, 1.904), (1.9, 1.904), stroke: (dash: "dotted", thickness: 0.65pt))
-
-    circle((1.9, 0), radius: 0.045, fill: black, stroke: none)
-    content((2.00, 0.08), anchor: "south-west", text(size: 7.5pt)[$H$])
-    content((1.9, -0.22), anchor: "north", text(size: 7.5pt)[$sigma_(m,"eq")$])
-
-    circle((1.9, 0.95), radius: 0.06, fill: red, stroke: none)
-    content((2.06, 0.95), anchor: "west", text(fill: red, size: 8pt)[$P$])
-    content((-0.22, 0.95), anchor: "east", text(size: 7.5pt)[$sigma_(a,"eq")$])
-
-    circle((1.9, 1.904), radius: 0.06, fill: blue, stroke: none)
-    content((2.04, 2.04), anchor: "south-west", text(fill: blue, size: 8pt)[$L$])
-    content((-0.22, 1.904), anchor: "east", text(size: 7.5pt)[$sigma_D^"lim"$])
-
-    content((2.6, -0.78), anchor: "north", text(size: 8pt)[*(a)* Calcolo di $"CS"$])
-
-    // --- Pannello (b): Retta limite ridotta ---
-    line((8.1, 0), (13.3, 0), (8.1, 1.85), close: true, fill: black.transparentize(90%), stroke: none)
-
-    line((7.8, 0), (13.9, 0), stroke: 0.8pt, mark: (end: ">"))
-    line((8.1, -0.3), (8.1, 3.7), stroke: 0.8pt, mark: (end: ">"))
-    content((13.9, -0.22), anchor: "north", text(size: 8pt)[$sigma_m$])
-    content((7.92, 3.7), anchor: "east", text(size: 8pt)[$sigma_a$])
-
-    line((8.1, 3.0), (13.3, 0), stroke: (dash: "dashed", thickness: 0.8pt, paint: black.transparentize(35%)))
-    circle((8.1, 3.0), radius: 0.045, fill: black, stroke: none)
-    content((8.25, 3.10), anchor: "south-west", text(size: 8pt)[$sigma_(D-1)^C$])
-
-    line((8.1, 1.85), (13.3, 0), stroke: (paint: blue.darken(15%), thickness: 1.1pt))
-    circle((8.1, 1.85), radius: 0.045, fill: blue.darken(15%), stroke: none)
-    content((7.88, 1.85), anchor: "east", text(size: 7.5pt)[$frac(sigma_(D-1)^C, "CS")$])
-
-    circle((13.3, 0), radius: 0.045, fill: black, stroke: none)
-    content((13.3, -0.22), anchor: "north", text(size: 8pt)[$R_m$])
-
-    line((8.1, 0.95), (10.0, 0.95), stroke: (dash: "dotted", thickness: 0.65pt))
-    line((10.0, 0), (10.0, 0.95), stroke: (dash: "dotted", thickness: 0.65pt))
-    circle((10.0, 0.95), radius: 0.06, fill: red, stroke: none)
-    content((10.14, 0.88), anchor: "west", text(fill: red, size: 8pt)[$P$])
-    content((7.88, 0.95), anchor: "east", text(size: 7.5pt)[$sigma_(a,"eq")$])
-    content((10.0, -0.22), anchor: "north", text(size: 7.5pt)[$sigma_(m,"eq")$])
-
-    line((11.6, 2.2), (10.9, 0.45), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
-    content((11.65, 2.25), anchor: "south", text(size: 7.5pt)[Area sicura per $"CS"$])
-
-    content((10.7, -0.78), anchor: "north", text(size: 8pt)[*(b)* Retta limite ridotta])
-  }),
+  include "figs/fatica/fatica-fig65.typ",
   caption: [Diagramma di Haigh multiassiale: (a) calcolo del coefficiente di sicurezza $"CS"$ a tensione media costante; (b) interpretazione grafica mediante retta limite ridotta.],
 ) <fig:haigh-multi>
 
@@ -4475,90 +1713,7 @@ $ sigma_(C,D-1) = C_F dot sigma_(D-1)^"tc" $
 Per valutare l'influenza delle tensioni medie in fatica multiassiale, *Sines* provò provini cilindrici in quattro combinazioni: (a) $sigma_m + sigma_a$, (b) $sigma_m + tau_a$, (c) $tau_m + tau_a$ e (d) $tau_m + sigma_a$. Nei diagrammi ottenuti, la resistenza cala nettamente al crescere della tensione media normale mentre resta costante con sola torsione media.
 
 #figure(
-  canvas(length: 0.74cm, {
-    // BBox: x in [0.0, 20.0] (dx=20.0), y in [0.0, 9.4], length=0.74cm -> larghezza = 14.80 cm <= 17.0 cm
-    import draw: *
-
-    let draw-cell(ox, oy, label, mode) = {
-      rect(
-        (ox, oy),
-        (ox + 9.5, oy + 4.4),
-        stroke: (paint: black.transparentize(78%), thickness: 0.6pt),
-        radius: 0.15,
-      )
-      content((ox + 0.30, oy + 4.18), anchor: "north-west", [#text(size: 8.5pt, weight: "bold")[#label]])
-
-      // Provino cilindrico 2D a sinistra
-      let yc = oy + 2.55
-      line(
-        (ox + 0.25, yc),
-        (ox + 3.20, yc),
-        stroke: (dash: "dashed", thickness: 0.5pt, paint: black.transparentize(50%)),
-      )
-      line(
-        (ox + 0.45, yc + 0.44), (ox + 0.90, yc + 0.44), (ox + 1.20, yc + 0.27),
-        (ox + 2.25, yc + 0.27), (ox + 2.55, yc + 0.44), (ox + 3.00, yc + 0.44),
-        (ox + 3.00, yc - 0.44), (ox + 2.55, yc - 0.44), (ox + 2.25, yc - 0.27),
-        (ox + 1.20, yc - 0.27), (ox + 0.90, yc - 0.44), (ox + 0.45, yc - 0.44),
-        close: true,
-        fill: black.transparentize(88%),
-        stroke: 0.95pt,
-      )
-
-      // Vettori di carico applicati (blu: tensione media, rosso: alternata)
-      if mode == "a" {
-        line((ox + 3.30, yc + 0.36), (ox + 4.30, yc + 0.36), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.7))
-        content((ox + 3.80, yc + 0.54), anchor: "south", [#text(size: 7.5pt, fill: blue)[$sigma_m$]])
-        line((ox + 3.30, yc - 0.36), (ox + 4.30, yc - 0.36), stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (start: ">", end: ">", scale: 0.7))
-        content((ox + 3.80, yc - 0.54), anchor: "north", [#text(size: 7.5pt, fill: red.transparentize(10%))[$sigma_a$]])
-      } else if mode == "b" {
-        line((ox + 3.30, yc + 0.42), (ox + 4.30, yc + 0.42), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.7))
-        content((ox + 3.80, yc + 0.60), anchor: "south", [#text(size: 7.5pt, fill: blue)[$sigma_m$]])
-        arc((ox + 3.55, yc - 0.42), start: -68deg, stop: 68deg, radius: (0.24, 0.36), anchor: "origin", stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (start: ">", end: ">", scale: 0.48))
-        content((ox + 4.02, yc - 0.42), anchor: "west", [#text(size: 7.5pt, fill: red.transparentize(10%))[$tau_a$]])
-      } else if mode == "c" {
-        arc((ox + 3.55, yc + 0.45), start: -68deg, stop: 68deg, radius: (0.24, 0.36), anchor: "origin", stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.48))
-        content((ox + 4.02, yc + 0.45), anchor: "west", [#text(size: 7.5pt, fill: blue)[$tau_m$]])
-        arc((ox + 3.55, yc - 0.45), start: -68deg, stop: 68deg, radius: (0.24, 0.36), anchor: "origin", stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (start: ">", end: ">", scale: 0.48))
-        content((ox + 4.02, yc - 0.45), anchor: "west", [#text(size: 7.5pt, fill: red.transparentize(10%))[$tau_a$]])
-      } else {
-        arc((ox + 3.55, yc + 0.46), start: -68deg, stop: 68deg, radius: (0.24, 0.36), anchor: "origin", stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.48))
-        content((ox + 4.02, yc + 0.46), anchor: "west", [#text(size: 7.5pt, fill: blue)[$tau_m$]])
-        line((ox + 3.30, yc - 0.42), (ox + 4.30, yc - 0.42), stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (start: ">", end: ">", scale: 0.7))
-        content((ox + 3.80, yc - 0.58), anchor: "north", [#text(size: 7.5pt, fill: red.transparentize(10%))[$sigma_a$]])
-      }
-
-      // Condizione sulle tensioni medie principali
-      let cond = if mode == "a" or mode == "b" {
-        $sigma_(m,1) + sigma_(m,2) != 0$
-      } else {
-        $sigma_(m,1) + sigma_(m,2) = 0$
-      }
-      content((ox + 1.75, oy + 0.72), anchor: "center", [#text(size: 7.5pt)[#cond]])
-
-      // Diagramma qualitativo a destra
-      let ax0 = ox + 5.75
-      let ay0 = oy + 0.95
-      line((ax0 - 0.35, ay0), (ax0 + 3.15, ay0), stroke: 0.75pt, mark: (end: ">", scale: 0.65))
-      line((ax0, ay0 - 0.10), (ax0, ay0 + 2.65), stroke: 0.75pt, mark: (end: ">", scale: 0.65))
-
-      let xlabel = if mode == "a" or mode == "b" { $sigma_m$ } else { $tau_m$ }
-      let ylabel = if mode == "a" or mode == "d" { $sigma_a$ } else { $tau_a$ }
-      content((ax0 + 3.15, ay0 - 0.16), anchor: "north-east", [#text(size: 7.5pt)[#xlabel]])
-      content((ax0 - 0.12, ay0 + 2.55), anchor: "east", [#text(size: 7.5pt)[#ylabel]])
-
-      if mode == "a" or mode == "b" {
-        line((ax0 - 0.25, ay0 + 2.25), (ax0 + 2.60, ay0 + 0.35), stroke: (paint: rgb("#1f77b4"), thickness: 1.15pt))
-      } else {
-        line((ax0 - 0.25, ay0 + 1.55), (ax0 + 2.60, ay0 + 1.55), stroke: (paint: rgb("#1f77b4"), thickness: 1.15pt))
-      }
-    }
-
-    draw-cell(0.0, 5.0, "a)", "a")
-    draw-cell(10.5, 5.0, "b)", "b")
-    draw-cell(0.0, 0.0, "c)", "c")
-    draw-cell(10.5, 0.0, "d)", "d")
-  }),
+  include "figs/fatica/fatica-fig66.typ",
   caption: [Analisi sperimentale di Sines: provini e influenza delle tensioni medie.],
 )
 
@@ -4597,67 +1752,7 @@ Per aggirare il dubbio si calcolavano talvolta due limiti di fatica distinti per
   ],
   [
     #figure(
-      canvas(length: 1.05cm, {
-        // BBox: x in [-0.35, 6.85] (dx=7.20), y in [-0.40, 4.70], length=1.05cm -> larghezza = 7.56 cm <= 8.2 cm
-        import draw: line, rect, circle, bezier, content
-
-        // Telaio fisso inferiore (orizzontale) + tratteggio d'incastro
-        line((1.5, 0.0), (4.5, 0.0), stroke: 1.05pt)
-        for hx in (1.7, 2.1, 2.5, 2.9, 3.3, 3.7, 4.1, 4.45) {
-          line((hx, 0.0), (hx - 0.20, -0.22), stroke: 0.6pt)
-        }
-        content((4.62, -0.05), anchor: "west", text(size: 7pt, fill: luma(50))[Telaio di supporto])
-
-        // Telaio fisso sinistro (verticale) + tratteggio d'incastro
-        line((0.0, 1.65), (0.0, 4.25), stroke: 1.05pt)
-        for hy in (1.85, 2.25, 2.65, 3.05, 3.45, 3.85, 4.20) {
-          line((0.0, hy), (-0.22, hy - 0.20), stroke: 0.6pt)
-        }
-
-        // Collare di carico e sezione alare della pala
-        rect((2.25, 2.55), (3.75, 3.65), radius: 0.08, fill: black.transparentize(90%), stroke: 0.9pt)
-        bezier((2.46, 3.10), (3.60, 3.04), (2.72, 3.48), (3.22, 3.30), stroke: 1.05pt)
-        bezier((2.46, 3.10), (3.60, 3.04), (2.72, 2.82), (3.22, 2.92), stroke: 1.05pt)
-        circle((2.82, 3.12), radius: 0.11, fill: black.transparentize(75%), stroke: 0.65pt)
-
-        // Spostamenti simultanei sui due piani ortogonali
-        line((2.42, 4.02), (3.58, 4.02), mark: (start: ">", end: ">", scale: 0.50, fill: blue), stroke: (paint: blue, thickness: 0.85pt))
-        content((3.00, 4.14), anchor: "south", text(size: 7.5pt, fill: blue)[$Delta x(t)$])
-
-        line((4.10, 2.68), (4.10, 3.52), mark: (start: ">", end: ">", scale: 0.50, fill: red.transparentize(10%)), stroke: (paint: red.transparentize(10%), thickness: 0.85pt))
-        content((4.22, 3.10), anchor: "west", text(size: 7.5pt, fill: red.transparentize(10%))[$Delta y(t)$])
-
-        // Attuatore verticale Fy(t) + cerniere di disaccoppiamento
-        line((2.80, 0.0), (3.00, 0.24), (3.20, 0.0), stroke: 0.8pt)
-        line((3.00, 0.33), (3.00, 0.62), stroke: 0.95pt)
-        rect((2.78, 0.62), (3.22, 1.56), fill: black.transparentize(86%), stroke: 0.95pt)
-        line((2.81, 1.12), (3.19, 1.12), stroke: 1.1pt)
-        line((3.00, 1.12), (3.00, 2.46), stroke: 0.95pt)
-        // Traccia cinematica tratteggiata (rotazione libera senza flessione parassita)
-        line((3.00, 0.24), (3.32, 2.52), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(95)))
-        circle((3.00, 0.24), radius: 0.09, fill: white, stroke: 0.95pt)
-        circle((3.00, 2.55), radius: 0.09, fill: white, stroke: 0.95pt)
-        content((2.64, 1.10), anchor: "east", text(size: 7.5pt, fill: red.transparentize(10%))[$F_y (t)$])
-
-        // Attuatore orizzontale Fx(t) + cerniere di disaccoppiamento
-        line((0.0, 2.90), (0.24, 3.10), (0.0, 3.30), stroke: 0.8pt)
-        line((0.33, 3.10), (0.60, 3.10), stroke: 0.95pt)
-        rect((0.60, 2.88), (1.50, 3.32), fill: black.transparentize(86%), stroke: 0.95pt)
-        line((1.05, 2.91), (1.05, 3.29), stroke: 1.1pt)
-        line((1.05, 3.10), (2.16, 3.10), stroke: 0.95pt)
-        line((0.24, 3.10), (2.22, 3.38), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(95)))
-        circle((0.24, 3.10), radius: 0.09, fill: white, stroke: 0.95pt)
-        circle((2.25, 3.10), radius: 0.09, fill: white, stroke: 0.95pt)
-        content((1.05, 3.46), anchor: "south", text(size: 7.5pt, fill: blue)[$F_x (t)$])
-
-        // Richiami esterni senza collisioni
-        line((4.25, 4.12), (3.76, 3.63), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
-        content((4.32, 4.18), anchor: "west", text(size: 7pt)[Sezione pala \ e collare])
-
-        line((4.22, 1.58), (3.13, 2.48), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
-        line((4.22, 1.32), (3.13, 0.30), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
-        content((4.28, 1.45), anchor: "west", text(size: 7pt)[Cerniere di \ disaccoppiamento])
-      }),
+      include "figs/fatica/fatica-fig67.typ",
       caption: [Schema cinematico di prova biassiale su pala eolica con attuatori ortogonali e cerniere di disaccoppiamento.],
     )
   ],
@@ -4688,77 +1783,7 @@ Per il dimensionamento analitico occorre ricondurre il segnale di tensione regis
   ],
   [
     #figure(
-      canvas(length: 1.0cm, {
-        // BBox: x in [-0.7, 7.3] (dx=8.0), y in [-0.85, 5.25], length=1.0cm -> larghezza = 8.0 cm <= 8.2 cm
-        import draw: line, bezier, content
-
-        // --- Pannello superiore: segnale irregolare periodico ---
-        line((0, 2.95), (0, 5.15), stroke: 0.7pt, mark: (end: ">"))
-        line((-0.1, 3.8), (6.6, 3.8), stroke: 0.7pt, mark: (end: ">"))
-        content((-0.18, 5.05), text(size: 8pt)[$sigma$], anchor: "east")
-        content((6.72, 3.8), text(size: 8pt)[$t$], anchor: "west")
-
-        let wave = (
-          (0.00, 0.15), (0.10, 0.55), (0.20, 0.75), (0.30, 0.25),
-          (0.40, -0.40), (0.52, -0.05), (0.65, 0.45), (0.75, 0.05),
-          (0.85, -0.65), (0.98, -0.15), (1.10, 0.55), (1.22, 0.20),
-          (1.35, -0.25), (1.45, 0.35), (1.55, 0.85), (1.68, 0.10),
-          (1.80, -0.75), (1.92, -0.20), (2.05, 0.35), (2.15, 0.05),
-          (2.25, -0.35), (2.35, 0.15), (2.45, 0.50), (2.60, 0.15),
-        )
-        for x0 in (0.3, 2.9) {
-          let pts = wave.map(p => (x0 + p.at(0), 3.8 + p.at(1)))
-          line(..pts, stroke: (paint: black, thickness: 0.85pt))
-        }
-        let tail = wave.slice(0, 9).map(p => (5.5 + p.at(0), 3.8 + p.at(1)))
-        line(..tail, stroke: (paint: black, thickness: 0.85pt))
-
-        line((0.3, 3.05), (0.3, 5.05), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(35%)))
-        line((2.9, 3.05), (2.9, 5.05), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(35%)))
-        line((0.3, 4.92), (2.9, 4.92), stroke: 0.6pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.6))
-        content((1.6, 5.02), text(size: 7.5pt)[$T$], anchor: "south")
-
-        // --- Pannello inferiore: scomposizione in tre pacchetti con ampiezza e media distinte ---
-        line((0, -0.15), (0, 2.15), stroke: 0.7pt, mark: (end: ">"))
-        line((-0.1, 0.0), (6.6, 0.0), stroke: 0.7pt, mark: (end: ">"))
-        content((-0.18, 2.08), text(size: 8pt)[$sigma$], anchor: "east")
-        content((6.72, 0.0), text(size: 8pt)[$t$], anchor: "west")
-
-        let trains = (
-          (0.20, 3, 0.28, 1.18, 0.66),
-          (2.05, 4, 0.21, 0.88, 0.45),
-          (3.90, 5, 0.17, 0.62, 0.27),
-        )
-        for tr in trains {
-          let xs = tr.at(0)
-          let nc = tr.at(1)
-          let wh = tr.at(2)
-          let ym = tr.at(3)
-          let amp = tr.at(4)
-          let xe = xs + 2 * nc * wh
-          line((xs - 0.05, ym), (xe + 0.05, ym), stroke: (dash: "dashed", thickness: 0.65pt, paint: blue.transparentize(20%)))
-          for i in range(nc) {
-            let xa = xs + 2 * i * wh
-            let xb = xa + wh
-            let xc = xb + wh
-            bezier((xa, ym), (xb, ym), (xa + 0.33 * wh, ym + 1.333 * amp), (xa + 0.67 * wh, ym + 1.333 * amp), stroke: (paint: black, thickness: 0.85pt))
-            bezier((xb, ym), (xc, ym), (xb + 0.33 * wh, ym - 1.333 * amp), (xb + 0.67 * wh, ym - 1.333 * amp), stroke: (paint: black, thickness: 0.85pt))
-          }
-        }
-        content((5.72, 0.62), text(size: 7.2pt, fill: blue)[$sigma_"mi"$], anchor: "west")
-
-        line((1.96, -0.35), (1.96, 1.92), stroke: (dash: "dotted", thickness: 0.5pt, paint: black.transparentize(40%)))
-        line((3.81, -0.35), (3.81, 1.92), stroke: (dash: "dotted", thickness: 0.5pt, paint: black.transparentize(40%)))
-
-        line((0.20, -0.28), (1.88, -0.28), stroke: 0.55pt, mark: (start: ">", end: ">", scale: 0.55))
-        content((1.04, -0.40), text(size: 7pt)[$n_1, sigma_"a1", sigma_"m1"$], anchor: "north")
-
-        line((2.05, -0.28), (3.73, -0.28), stroke: 0.55pt, mark: (start: ">", end: ">", scale: 0.55))
-        content((2.89, -0.40), text(size: 7pt)[$n_2, sigma_"a2", sigma_"m2"$], anchor: "north")
-
-        line((3.90, -0.28), (5.60, -0.28), stroke: 0.55pt, mark: (start: ">", end: ">", scale: 0.55))
-        content((4.75, -0.40), text(size: 7pt)[$n_3, sigma_"a3", sigma_"m3"$], anchor: "north")
-      }),
+      include "figs/fatica/fatica-fig68.typ",
       caption: [Segnale periodico irregolare di periodo $T$ e scomposizione in pacchetti sinusoidali $(n_i, sigma_"ai", sigma_"mi")$.],
     )
   ],
@@ -4784,83 +1809,7 @@ Quando $sigma_m$ resta costante su tutti i blocchi, l'intera storia di carico af
   ],
   [
     #figure(
-      canvas(length: 1.0cm, {
-        // BBox: x in [-1.05, 6.95] (dx=8.0), y in [-0.65, 4.80], length=1.0cm -> larghezza = 8.0 cm <= 8.2 cm
-        import draw: line, circle, content
-
-        line((0, 0), (0, 4.65), stroke: 0.75pt, mark: (end: ">"))
-        line((0, 0), (6.15, 0), stroke: 0.75pt, mark: (end: ">"))
-        content((-0.15, 4.62), text(size: 8pt)[$sigma_a$], anchor: "east")
-        content((6.25, 0.0), text(size: 8pt)[$N$], anchor: "west")
-
-        for d in range(5) {
-          let x0 = d * 1.1
-          for m in (1, 2, 3, 5, 7) {
-            let xg = x0 + 1.1 * calc.log(m, base: 10)
-            if xg <= 5.52 {
-              let p = if m == 1 { black.transparentize(65%) } else { black.transparentize(84%) }
-              let w = if m == 1 { 0.45pt } else { 0.35pt }
-              line((xg, 0), (xg, 4.2), stroke: (paint: p, thickness: w))
-            }
-          }
-        }
-        line((5.5, 0), (5.5, 4.2), stroke: (paint: black.transparentize(65%), thickness: 0.45pt))
-
-        for s in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) {
-          let yg = 4.2 * calc.log(s, base: 10)
-          let p = if s == 1 or s == 10 { black.transparentize(65%) } else { black.transparentize(82%) }
-          let w = if s == 1 or s == 10 { 0.45pt } else { 0.35pt }
-          line((0, yg), (5.5, yg), stroke: (paint: p, thickness: w))
-        }
-
-        content((-0.12, 4.20), text(size: 7pt)[1000], anchor: "east")
-        content((-0.12, 0.00), text(size: 7pt)[100], anchor: "east")
-        for d in range(5) {
-          let xd = d * 1.1
-          let exp = d + 2
-          content((xd, -0.18), text(size: 7pt)[$10^#exp$], anchor: "north")
-        }
-
-        let x-ng = 4.731
-        let y-d = 1.438
-        line((1.1, 4.2), (x-ng, y-d), (5.65, y-d), stroke: (paint: black, thickness: 1.15pt))
-        line((0, y-d), (x-ng, y-d), stroke: (dash: "dashed", thickness: 0.6pt, paint: black.transparentize(35%)))
-        content((-0.12, y-d), text(size: 7pt)[$sigma_D$], anchor: "east")
-        content((3.75, 3.55), text(size: 7.5pt)[$sigma_m = "cost"$], anchor: "west")
-        line((3.72, 3.45), (3.21, 2.65), stroke: (thickness: 0.55pt, paint: black.transparentize(25%)), mark: (end: ">", scale: 0.5))
-
-        // Livello sigma_a2
-        let y2 = 2.945
-        let xn2-mis = 0.55
-        let xn2-rot = 2.75
-        line((0, y2), (xn2-rot, y2), stroke: (dash: "dotted", thickness: 0.7pt, paint: black.transparentize(20%)))
-        line((xn2-mis, y2), (xn2-mis, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: red.transparentize(15%)))
-        line((xn2-rot, y2), (xn2-rot, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: blue.transparentize(15%)))
-        circle((xn2-mis, y2), radius: 0.08, fill: red.transparentize(10%), stroke: none)
-        circle((xn2-rot, y2), radius: 0.08, fill: blue, stroke: none)
-        content((-0.12, y2), text(size: 7pt)[$sigma_"a2"$], anchor: "east")
-        content((xn2-mis, -0.18), text(size: 7pt, fill: red.transparentize(10%))[$n_2$], anchor: "north")
-        content((xn2-rot, -0.18), text(size: 7pt, fill: blue)[$N_2$], anchor: "north")
-
-        // Livello sigma_a1
-        let y1 = 2.108
-        let xn1-mis = 1.65
-        let xn1-rot = 3.85
-        line((0, y1), (xn1-rot, y1), stroke: (dash: "dotted", thickness: 0.7pt, paint: black.transparentize(20%)))
-        line((xn1-mis, y1), (xn1-mis, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: red.transparentize(15%)))
-        line((xn1-rot, y1), (xn1-rot, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: blue.transparentize(15%)))
-        circle((xn1-mis, y1), radius: 0.08, fill: red.transparentize(10%), stroke: none)
-        circle((xn1-rot, y1), radius: 0.08, fill: blue, stroke: none)
-        content((-0.12, y1), text(size: 7pt)[$sigma_"a1"$], anchor: "east")
-        content((xn1-mis, -0.18), text(size: 7pt, fill: red.transparentize(10%))[$n_1$], anchor: "north")
-        content((xn1-rot, -0.18), text(size: 7pt, fill: blue)[$N_1$], anchor: "north")
-
-        // Livello sotto sigma_D
-        let y3 = 0.65
-        line((0, y3), (5.55, y3), stroke: (dash: "dashed", thickness: 0.75pt, paint: black.transparentize(20%)), mark: (end: ">", scale: 0.6))
-        content((-0.12, y3), text(size: 7pt)[$sigma_"a3"$], anchor: "east")
-        content((5.62, y3), text(size: 7pt)[$N -> infinity$], anchor: "west")
-      }),
+      include "figs/fatica/fatica-fig69.typ",
       caption: [Confronto tra cicli di missione $n_i$ e durata a rottura $N_i$ sulla curva #box[$S$–$N$] a $sigma_m = "cost"$.],
     )
   ],
@@ -4927,56 +1876,7 @@ $ sigma_"a,eq"^k N_"TOT" = B arrow.r.double sigma_"a,eq" = root(k, sum_(sigma_"a
   ],
   [
     #figure(
-      canvas(length: 0.94cm, {
-        // BBox: x in [-1.2, 7.3] (dx=8.5), y in [-0.6, 4.9], length=0.94cm -> larghezza = 7.99 cm <= 8.2 cm
-        import draw: *
-
-        // Griglia bilogaritmica di sfondo
-        for gx in (0.2, 1.4, 2.6, 3.8, 5.0, 6.2) {
-          line((gx, 0), (gx, 4.55), stroke: (paint: black.transparentize(88%), thickness: 0.4pt))
-        }
-        for gy in (0.8, 1.6, 2.4, 3.2, 4.0) {
-          line((0, gy), (6.65, gy), stroke: (paint: black.transparentize(88%), thickness: 0.4pt))
-        }
-
-        // Assi principali
-        line((0, 0), (0, 4.7), stroke: 0.9pt, mark: (end: ">"))
-        line((0, 0), (6.95, 0), stroke: 0.9pt, mark: (end: ">"))
-        content((-0.18, 4.65), anchor: "east", text(size: 8.5pt)[$sigma_a$])
-        content((6.95, -0.18), anchor: "north", text(size: 8.5pt)[$N$])
-        content((0.2, -0.18), anchor: "north", text(size: 7.5pt)[$10^2$])
-
-        // Curva di Wohler (Basquin + asintoto)
-        line((0.4, 4.4), (5.6, 1.3), stroke: 1.2pt)
-        line((5.6, 1.3), (6.65, 1.3), stroke: 1.2pt)
-        circle((5.6, 1.3), radius: 0.07, fill: black)
-        content((4.45, 2.95), anchor: "west", text(size: 7.5pt)[$sigma_m = "cost"$])
-        line((4.40, 2.88), (3.86, 2.38), stroke: (thickness: 0.55pt, paint: black.transparentize(25%)), mark: (end: ">", scale: 0.5))
-        content((5.75, 1.50), anchor: "south-west", text(size: 7pt)[Ginocchio])
-
-        // Proiezioni del ginocchio (sigma_D, N_G)
-        line((0, 1.3), (5.6, 1.3), stroke: (dash: "dotted", thickness: 0.65pt))
-        line((5.6, 1.3), (5.6, 0), stroke: (dash: "dotted", thickness: 0.65pt))
-        content((-0.15, 1.3), anchor: "east", text(size: 8pt)[$sigma_D$])
-        content((5.6, -0.18), anchor: "north", text(size: 8pt)[$N_G$])
-
-        // Generico livello (sigma_ai, n_i, N_i)
-        line((0, 1.956), (4.5, 1.956), stroke: (dash: "dotted", thickness: 0.7pt))
-        line((4.5, 1.956), (4.5, 0), stroke: (dash: "dotted", thickness: 0.7pt))
-        line((1.4, 1.956), (1.4, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: red.transparentize(10%)))
-        circle((4.5, 1.956), radius: 0.07, fill: black)
-        circle((1.4, 1.956), radius: 0.085, fill: red.transparentize(10%), stroke: none)
-        content((-0.15, 1.956), anchor: "east", text(size: 8pt)[$sigma_"ai"$])
-        content((1.4, -0.18), anchor: "north", text(size: 8pt, fill: red.transparentize(10%))[$n_i$])
-        content((4.5, -0.18), anchor: "north", text(size: 8pt)[$N_i$])
-
-        // Punto equivalente (sigma_a,eq, N_TOT)
-        line((0, 2.731), (3.2, 2.731), stroke: (dash: "dotted", thickness: 0.85pt, paint: blue))
-        line((3.2, 2.731), (3.2, 0), stroke: (dash: "dotted", thickness: 0.85pt, paint: blue))
-        circle((3.2, 2.731), radius: 0.09, fill: blue, stroke: none)
-        content((-0.15, 2.731), anchor: "east", text(size: 8pt, fill: blue)[$sigma_"a,eq"$])
-        content((3.2, -0.18), anchor: "north", text(size: 8pt, fill: blue)[$N_"TOT"$])
-      }),
+      include "figs/fatica/fatica-fig70.typ",
       caption: [Individuazione grafica di $(sigma_"a,eq", N_"TOT")$ sulla curva #box[$S$–$N$] a $sigma_m = "cost"$.],
     )
   ],
@@ -4999,49 +1899,7 @@ Per descrivere lo spettro di missione nelle specifiche tecniche tra costruttore 
   ],
   [
     #figure(
-      canvas(length: 0.94cm, {
-        // BBox: x in [-1.25, 7.25] (dx=8.5), y in [-0.75, 4.55], length=0.94cm -> larghezza = 7.99 cm <= 8.2 cm
-        import draw: *
-
-        // Assi
-        line((0, 0), (0, 4.4), stroke: 0.9pt, mark: (end: ">"))
-        line((0, 0), (6.7, 0), stroke: 0.9pt, mark: (end: ">"))
-        content((-0.18, 4.28), anchor: "east", text(size: 8.5pt)[$sigma_a$])
-        content((-0.18, 3.80), anchor: "east", text(size: 7pt)[$(Delta sigma)$])
-        content((6.75, -0.18), anchor: "north", text(size: 8.5pt)[$N$])
-
-        // Istogramma a gradini decrescenti (n1..n6) con quote ampiezza blocco n_i
-        let blocks = (
-          (0.00, 1.02, 3.70, [$n_1$]),
-          (1.02, 1.95, 3.18, [$n_2$]),
-          (1.95, 2.83, 2.66, [$n_3$]),
-          (2.83, 3.67, 2.15, [$n_4$]),
-          (3.67, 4.48, 1.65, [$n_5$]),
-          (4.48, 5.25, 1.15, [$n_6$]),
-        )
-        line((0, 0), (0, -0.45), stroke: 0.5pt)
-        for (x0, x1, h, lbl) in blocks {
-          rect((x0, 0), (x1, h), fill: black.transparentize(90%), stroke: 0.85pt)
-          line((x1, 0), (x1, -0.45), stroke: 0.5pt)
-          line((x0 + 0.04, -0.22), (x1 - 0.04, -0.22), stroke: 0.5pt, mark: (start: ">", end: ">", scale: 0.38))
-          content(((x0 + x1) / 2, -0.32), anchor: "north", text(size: 7.2pt)[#lbl])
-        }
-
-        // Inviluppo continuo approssimante, troncamento a sigma_D e coda scartata
-        bezier((0, 3.88), (5.25, 1.15), (1.75, 3.42), (4.10, 2.02), stroke: (paint: blue, thickness: 1.2pt))
-        line((5.25, 1.15), (5.25, 0), stroke: (paint: blue, thickness: 1.2pt))
-        bezier((5.25, 1.15), (6.30, 0.52), (5.60, 0.94), (5.95, 0.72), stroke: (paint: black.transparentize(50%), dash: "dotted", thickness: 0.75pt))
-
-        // Linea del limite di fatica sigma_D
-        line((0, 1.15), (6.35, 1.15), stroke: (dash: "dashed", thickness: 0.7pt, paint: red.transparentize(10%)))
-        content((-0.15, 1.15), anchor: "east", text(size: 8pt, fill: red.transparentize(10%))[$sigma_D$])
-
-        // Etichette di richiamo senza sovrapposizioni
-        content((3.35, 3.52), anchor: "west", text(size: 7.5pt, fill: blue)[Inviluppo continuo])
-        line((3.28, 3.45), (2.62, 2.82), stroke: (paint: blue, thickness: 0.6pt), mark: (end: ">", scale: 0.5))
-        content((5.42, 1.92), anchor: "west", text(size: 7pt, fill: blue)[Troncamento\ a $sigma_D$])
-        line((5.58, 1.56), (5.28, 1.20), stroke: (paint: blue, thickness: 0.6pt), mark: (end: ">", scale: 0.5))
-      }),
+      include "figs/fatica/fatica-fig71.typ",
       caption: [Diagramma delle eccedenze con passi $n_i$ e curva continua troncata a $sigma_D$.],
     )
   ],
@@ -5081,7 +1939,7 @@ Quando $sigma_m$ è costante su tutti i livelli, il cumulativo si traduce in una
   ],
   [
     #figure(
-      image("images/ECM01-9_cumulativo_3d.png", width: 92%),
+      image("images/fatica/ECM01-9_cumulativo_3d.png", width: 92%),
       caption: [Cumulativo di sollecitazione tridimensionale $log(N)$ al variare di $sigma_a$ e $sigma_m$.],
     ) <fig:cumulativo-3d>
   ],
@@ -5090,93 +1948,7 @@ Quando $sigma_m$ è costante su tutti i livelli, il cumulativo si traduce in una
 #v(0.4em)
 
 #figure(
-  canvas(length: 0.94cm, {
-    // BBox: x in [-1.35, 15.35] (dx=16.7), y in [-0.65, 5.15], length=0.94cm -> larghezza = 15.70 cm <= 17.0 cm
-    import draw: *
-
-    // --- Pannello sinistro: Diagramma di Haigh ---
-    content((2.9, 4.95), anchor: "center", text(size: 8.5pt, weight: "bold")[Diagramma di Haigh])
-    line((0, 0), (0, 4.65), stroke: 0.9pt, mark: (end: ">"))
-    line((0, 0), (6.15, 0), stroke: 0.9pt, mark: (end: ">"))
-    content((-0.18, 4.55), anchor: "east", text(size: 8.5pt)[$sigma_a$])
-    content((6.25, 0.0), anchor: "west", text(size: 8.5pt)[$sigma_m$])
-
-    // Retta limite di Goodman da sigma_D-1 (2.85) a R_m (5.70)
-    line((0, 2.85), (5.70, 0), stroke: 1.1pt)
-    content((-0.15, 2.85), anchor: "east", text(size: 8pt)[$sigma_"D-1"$])
-    content((5.70, -0.18), anchor: "north", text(size: 8pt)[$R_m$])
-
-    // Lettura di sigma_D,i (1.95) in corrispondenza di sigma_m,i (1.80)
-    line((1.80, 0), (1.80, 1.95), stroke: (dash: "dotted", thickness: 0.75pt, paint: red.transparentize(10%)))
-    line((1.80, 1.95), (0, 1.95), stroke: (dash: "dotted", thickness: 0.75pt, paint: red.transparentize(10%)), mark: (end: ">", scale: 0.6))
-    circle((1.80, 1.95), radius: 0.065, fill: red.transparentize(10%), stroke: none)
-    content((1.80, -0.18), anchor: "north", text(size: 8pt, fill: red.transparentize(10%))[$sigma_"m,i"$])
-    content((-0.15, 1.95), anchor: "east", text(size: 8pt, fill: red.transparentize(10%))[$sigma_"D,i"$])
-
-    // Punto di lavoro (sigma_m,i, sigma_ai) = (1.80, 2.40) e riduzione a sigma_m = 0 -> sigma_a,eq,0 = 3.508
-    line((5.70, 0), (1.80, 2.40), stroke: (dash: "dashed", thickness: 0.6pt, paint: blue.transparentize(35%)))
-    line((1.80, 2.40), (0, 3.508), stroke: (dash: "dashed", thickness: 0.85pt, paint: blue), mark: (end: ">", scale: 0.6))
-    line((1.80, 1.95), (1.80, 2.40), stroke: (dash: "dotted", thickness: 0.65pt, paint: black.transparentize(35%)))
-    circle((1.80, 2.40), radius: 0.075, fill: blue, stroke: none)
-    circle((0, 3.508), radius: 0.065, fill: blue, stroke: none)
-    content((-0.15, 3.508), anchor: "east", text(size: 8pt, fill: blue)[$sigma_"a,eq,0"$])
-    content((1.98, 2.48), anchor: "south-west", text(size: 7.2pt, fill: blue)[$(sigma_"m,i", sigma_"ai")$])
-    content((1.05, 3.48), anchor: "west", text(size: 7pt, fill: blue)[Riduzione a $sigma_m = 0$])
-
-    // --- Freccia di raccordo Haigh -> Wohler ---
-    line((6.25, 1.95), (7.42, 1.95), stroke: (paint: red.transparentize(10%), thickness: 1.25pt), mark: (end: ">", scale: 0.78))
-    content((6.84, 2.18), anchor: "south", text(size: 7.2pt, fill: red.transparentize(10%))[Raccordo $sigma_"D,i"$])
-
-    // --- Pannello destro: Famiglia di curve S-N ---
-    content((11.75, 4.95), anchor: "center", text(size: 8.5pt, weight: "bold")[Famiglia di curve #box[$S$–$N$]])
-    for gx in (9.9, 11.268, 12.2, 13.2, 14.3) {
-      line((gx, 0), (gx, 4.45), stroke: (paint: black.transparentize(88%), thickness: 0.4pt))
-    }
-    for gy in (0.95, 1.95, 2.85, 3.95) {
-      line((8.5, gy), (14.8, gy), stroke: (paint: black.transparentize(88%), thickness: 0.4pt))
-    }
-
-    line((8.5, 0), (8.5, 4.65), stroke: 0.9pt, mark: (end: ">"))
-    line((8.5, 0), (15.05, 0), stroke: 0.9pt, mark: (end: ">"))
-    content((8.35, 4.55), anchor: "east", text(size: 8.5pt)[$sigma_a$])
-    content((15.10, -0.18), anchor: "north", text(size: 8.5pt)[$N$])
-    content((8.80, -0.18), anchor: "north", text(size: 7.5pt)[$10^2$])
-    content((10.05, -0.18), anchor: "north", text(size: 7.5pt)[$10^4$])
-    content((13.2, -0.18), anchor: "north", text(size: 8pt)[$N_G$])
-
-    // Curva sigma_m = 0 (ginocchio a 2.85)
-    line((8.8, 4.35), (13.2, 2.85), stroke: (paint: black.transparentize(20%), thickness: 0.95pt))
-    line((13.2, 2.85), (14.8, 2.85), stroke: (paint: black.transparentize(20%), thickness: 0.95pt))
-    content((8.35, 2.85), anchor: "east", text(size: 7.5pt)[$sigma_"D-1"$])
-    content((13.35, 3.00), anchor: "south-west", text(size: 7.5pt)[$sigma_m = 0$])
-
-    // Curva sigma_m = sigma_m,i (ginocchio a 1.95)
-    line((8.8, 2.976), (13.2, 1.95), stroke: 1.2pt)
-    line((13.2, 1.95), (14.8, 1.95), stroke: 1.2pt)
-    line((8.5, 1.95), (13.10, 1.95), stroke: (dash: "dashed", thickness: 0.8pt, paint: red.transparentize(10%)), mark: (end: ">", scale: 0.62))
-    circle((13.2, 1.95), radius: 0.075, fill: red.transparentize(10%), stroke: none)
-    content((8.35, 1.95), anchor: "east", text(size: 8pt, fill: red.transparentize(10%))[$sigma_"D,i"$])
-    content((13.35, 2.10), anchor: "south-west", text(size: 7.5pt, fill: red.transparentize(10%))[$sigma_m = sigma_"m,i"$])
-
-    // Lettura concorde di N_i (x = 11.268) dalle due procedure
-    let xni = 11.268
-    line((8.5, 2.40), (xni, 2.40), stroke: (dash: "dotted", thickness: 0.7pt))
-    line((8.5, 3.508), (xni, 3.508), stroke: (dash: "dashed", thickness: 0.75pt, paint: blue))
-    line((xni, 3.508), (xni, 0), stroke: (dash: "dotted", thickness: 0.75pt, paint: blue))
-    circle((xni, 2.40), radius: 0.068, fill: black, stroke: none)
-    circle((xni, 3.508), radius: 0.072, fill: blue, stroke: none)
-    content((8.35, 2.40), anchor: "east", text(size: 7.5pt)[$sigma_"ai"$])
-    content((8.35, 3.508), anchor: "east", text(size: 7.5pt, fill: blue)[$sigma_"a,eq,0"$])
-    content((xni, -0.18), anchor: "north", text(size: 8pt, fill: blue)[$N_i$])
-
-    // Curva sigma_m > sigma_m,i
-    line((8.8, 2.15), (13.2, 0.95), stroke: (paint: black.transparentize(45%), thickness: 0.85pt))
-    line((13.2, 0.95), (14.8, 0.95), stroke: (paint: black.transparentize(45%), thickness: 0.85pt))
-    content((13.35, 0.78), anchor: "north-west", text(size: 7.5pt, fill: black.transparentize(35%))[$sigma_m > sigma_"m,i"$])
-
-    // Proiezione verticale al ginocchio N_G
-    line((13.2, 2.85), (13.2, 0), stroke: (dash: "dotted", thickness: 0.6pt))
-  }),
+  include "figs/fatica/fatica-fig72.typ",
   caption: [Raccordo tra diagramma di Haigh e famiglia di curve #box[$S$–$N$]: equivalenza sulla durata $N_i$ tra lettura multi-curva a $sigma_"D,i"$ e riduzione a $sigma_m = 0$ ($sigma_"a,eq,0"$).],
 ) <fig:haigh-wohler>
 
@@ -5205,58 +1977,7 @@ Per ricondurre una storia di tensione irregolare ma periodica $sigma(t)$ alla li
   ],
   [
     #figure(
-      canvas(length: 1.0cm, {
-        // BBox: x in [-0.65, 7.35] (dx=8.0), y in [0.10, 4.30], length=1.0cm -> larghezza = 8.00 cm <= 8.2 cm
-        import draw: line, rect, circle, content
-
-        let period-pts = (
-          (0.35, 0.55), (0.75, -0.25), (1.10, 0.25), (1.45, -0.55),
-          (1.80, 1.00), (2.15, -0.35), (2.50, 0.45), (2.90, -0.85),
-          (3.35, 0.55), (3.75, -0.25), (4.10, 0.25), (4.45, -0.55),
-          (4.80, 1.00), (5.15, -0.35), (5.50, 0.45), (5.90, -0.85),
-          (6.35, 0.55), (6.75, -0.25),
-        )
-        let amp = 0.62
-
-        // --- Pannello superiore: finestra periodica generica ---
-        let y-top = 3.05
-        rect((0.95, y-top - 0.62), (3.95, y-top + 0.72), fill: black.transparentize(92%), stroke: none)
-        line((0.0, y-top), (7.00, y-top), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-        line((0.0, y-top - 0.72), (0.0, y-top + 0.85), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-        content((-0.12, y-top + 0.83), anchor: "east", text(size: 7.5pt)[$sigma$])
-        content((7.08, y-top), anchor: "west", text(size: 7.5pt)[$t$])
-
-        let top-pts = period-pts.map(p => (p.at(0), y-top + amp * p.at(1)))
-        line(..top-pts, stroke: (paint: black, thickness: 0.95pt))
-
-        line((0.95, y-top - 0.65), (0.95, y-top + 0.82), stroke: (paint: luma(90), thickness: 0.75pt, dash: "dashed"))
-        line((3.95, y-top - 0.65), (3.95, y-top + 0.82), stroke: (paint: luma(90), thickness: 0.75pt, dash: "dashed"))
-        line((0.95, y-top + 0.86), (3.95, y-top + 0.86), mark: (start: ">", end: ">", scale: 0.45), stroke: 0.65pt)
-        content((2.45, y-top + 0.94), anchor: "south", text(size: 7.2pt)[Finestra generica ($T$)])
-
-        // --- Pannello inferiore: finestra traslata "periodico tra max" ---
-        let y-bot = 0.90
-        let y-max = y-bot + amp * 1.00
-        rect((1.80, y-bot - 0.62), (4.80, y-max), fill: rgb("#1f77b4").transparentize(86%), stroke: none)
-        line((0.0, y-bot), (7.00, y-bot), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-        line((0.0, y-bot - 0.72), (0.0, y-bot + 0.85), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-        content((-0.12, y-bot + 0.83), anchor: "east", text(size: 7.5pt)[$sigma$])
-        content((7.08, y-bot), anchor: "west", text(size: 7.5pt)[$t$])
-
-        let bot-pts = period-pts.map(p => (p.at(0), y-bot + amp * p.at(1)))
-        line(..bot-pts, stroke: (paint: black, thickness: 0.95pt))
-
-        line((1.80, y-max), (4.80, y-max), stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt, dash: "dashed"))
-        line((1.80, y-bot - 0.65), (1.80, y-max + 0.16), stroke: (paint: rgb("#1f77b4"), thickness: 1.2pt))
-        line((4.80, y-bot - 0.65), (4.80, y-max + 0.16), stroke: (paint: rgb("#1f77b4"), thickness: 1.2pt))
-        circle((1.80, y-max), radius: 0.055, fill: rgb("#1f77b4"), stroke: none)
-        circle((4.80, y-max), radius: 0.055, fill: rgb("#1f77b4"), stroke: none)
-
-        content((1.66, y-max + 0.04), anchor: "east", text(size: 7.2pt, fill: rgb("#1f77b4"))[$sigma_"max"$])
-        content((4.94, y-max + 0.04), anchor: "west", text(size: 7.2pt, fill: rgb("#1f77b4"))[$sigma_"max"$])
-        line((1.80, y-max + 0.22), (4.80, y-max + 0.22), mark: (start: ">", end: ">", scale: 0.45), stroke: (paint: rgb("#1f77b4"), thickness: 0.75pt))
-        content((3.30, y-max + 0.30), anchor: "south", text(size: 7.2pt, fill: rgb("#1f77b4"), weight: "bold")[Periodico tra max ($T$)])
-      }),
+      include "figs/fatica/fatica-fig73.typ",
       caption: [Traslazione della finestra periodica $T$ tra due massimi assoluti consecutivi $sigma_"max"$.],
     ) <fig:finestra-max>
   ],
@@ -5284,117 +2005,7 @@ Si applichi il metodo del serbatoio alla sequenza di estremi $300 -> 0 -> 200 ->
 - *Cicli 4 e 5 (sottolivelli residui).* Le ultime due valvole svuotano le sacche residue da $100" MPa"$ rispettivamente fino a $0" MPa"$ ($Delta sigma_4 = 100" MPa"$) e fino a $-100" MPa"$ ($Delta sigma_5 = 200" MPa"$), lasciando il profilo completamente asciutto.
 
 #figure(
-  canvas(length: 0.58cm, {
-    // BBox: x in [-1.6, 26.8] (dx=28.4), y in [-3.8, 5.5], length=0.58cm -> larghezza = 16.47 cm <= 17.0 cm
-    import draw: line, circle, content
-
-    let ym(v) = v / 100.0 * 1.35
-    let raw-pts = (
-      (0, 300), (1, 0), (2, 200), (3, -200), (4, 200),
-      (5, -150), (6, 100), (7, 0), (8, 100), (9, -100), (10, 300),
-    )
-
-    // --- Helper di griglia per un pannello ---
-    let draw-grid(x0) = {
-      for v in (-200, -150, -100, -50, 0, 50, 100, 150, 200, 250, 300) {
-        let yy = ym(v)
-        let is-major = calc.rem(v, 100) == 0
-        if is-major {
-          let p-col = if v == 0 { luma(165) } else { luma(215) }
-          line((x0, yy), (x0 + 10, yy), stroke: (paint: p-col, thickness: 0.45pt))
-          content((x0 - 0.18, yy), anchor: "east", text(size: 7pt)[#v])
-        } else {
-          line((x0, yy), (x0 + 10, yy), stroke: (paint: luma(230), thickness: 0.35pt, dash: "dotted"))
-        }
-      }
-      for gx in range(1, 11) {
-        line((x0 + gx, ym(-200)), (x0 + gx, ym(300)), stroke: (paint: luma(222), thickness: 0.35pt, dash: "dotted"))
-      }
-      line((x0, ym(-200)), (x0, ym(348)), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-      line((x0, ym(-200)), (x0 + 10.25, ym(-200)), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-      content((x0 - 0.15, ym(352)), anchor: "east", text(size: 7pt)[$sigma$ (MPa)])
-      content((x0 + 10.05, ym(-212)), anchor: "north", text(size: 7pt)[$t$])
-    }
-
-    // --- Pannello (a): Bacino colmo (300 MPa) e ciclo 1 ---
-    draw-grid(0)
-    let pts-a = raw-pts.map(p => (p.at(0), ym(p.at(1))))
-    line(..pts-a, close: true, fill: rgb("#1f77b4").transparentize(84%), stroke: none)
-    line((0, ym(300)), (10, ym(300)), stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt, dash: "dashed"))
-    line(..pts-a, stroke: (paint: black, thickness: 1.05pt))
-
-    // Valvola 1
-    circle((3, ym(-200)), radius: 0.095, fill: white, stroke: (paint: red.transparentize(10%), thickness: 0.9pt))
-    line((3, ym(-200) - 0.10), (3, ym(-258)), mark: (end: ">", scale: 0.5), stroke: (paint: red.transparentize(10%), thickness: 0.9pt))
-    content((3, ym(-266)), anchor: "north", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[Ciclo 1])
-
-    // Quota Delta sigma_1
-    line((3, ym(-200)), (10.75, ym(-200)), stroke: (paint: luma(120), thickness: 0.5pt, dash: "dotted"))
-    line((10, ym(300)), (10.75, ym(300)), stroke: (paint: luma(120), thickness: 0.5pt, dash: "dotted"))
-    line((10.62, ym(-200)), (10.62, ym(300)), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.5), stroke: 0.65pt)
-    content((10.78, ym(55)), anchor: "west", text(size: 7pt)[$Delta sigma_1$ \ 500])
-
-    content((5.0, ym(368)), anchor: "south", text(size: 7.5pt, weight: "bold")[(a) Bacino colmo e scarico principale])
-
-    // --- Pannello (b): Svuotamento delle sacche residue (cicli 2-5) ---
-    let xb = 13.8
-    draw-grid(xb)
-
-    // Sacca 2 (200 -> 0)
-    line((xb + 0.333, ym(200)), (xb + 1, ym(0)), (xb + 2, ym(200)), close: true, fill: rgb("#1f77b4").transparentize(78%), stroke: none)
-    line((xb + 0.333, ym(200)), (xb + 2, ym(200)), stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt))
-
-    // Sacca 3 (200 -> -150)
-    line((xb + 4, ym(200)), (xb + 5, ym(-150)), (xb + 6, ym(100)), (xb + 7, ym(0)), (xb + 8, ym(100)), (xb + 9, ym(-100)), (xb + 9.75, ym(200)), close: true, fill: rgb("#1f77b4").transparentize(89%), stroke: none)
-    line((xb + 4, ym(200)), (xb + 9.75, ym(200)), stroke: (paint: rgb("#1f77b4"), thickness: 0.8pt, dash: "dashed"))
-
-    // Sacca 4 (100 -> 0) e Sacca 5 (100 -> -100)
-    line((xb + 6, ym(100)), (xb + 7, ym(0)), (xb + 8, ym(100)), close: true, fill: rgb("#1f77b4").transparentize(66%), stroke: none)
-    line((xb + 6, ym(100)), (xb + 8, ym(100)), stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt))
-    line((xb + 8, ym(100)), (xb + 9, ym(-100)), (xb + 9.5, ym(100)), close: true, fill: rgb("#1f77b4").transparentize(66%), stroke: none)
-    line((xb + 8, ym(100)), (xb + 9.5, ym(100)), stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt))
-
-    // Profilo spezzato
-    let pts-b = raw-pts.map(p => (xb + p.at(0), ym(p.at(1))))
-    line(..pts-b, stroke: (paint: black, thickness: 1.05pt))
-
-    // Valvole 2..5 (con valvola 3 portata sotto quota -200 per zero collisioni)
-    for vpair in ((1, 0, "Ciclo 2"), (5, -150, "Ciclo 3"), (7, 0, "Ciclo 4"), (9, -100, "Ciclo 5")) {
-      let vx = xb + vpair.at(0)
-      let vy = ym(vpair.at(1))
-      let lbl = vpair.at(2)
-      circle((vx, vy), radius: 0.09, fill: white, stroke: (paint: red.transparentize(10%), thickness: 0.85pt))
-      if lbl == "Ciclo 3" {
-        line((vx, vy - 0.10), (vx, ym(-258)), mark: (end: ">", scale: 0.5), stroke: (paint: red.transparentize(10%), thickness: 0.85pt))
-        content((vx, ym(-266)), anchor: "north", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[#lbl])
-      } else {
-        line((vx, vy - 0.10), (vx, vy - 0.68), mark: (end: ">", scale: 0.48), stroke: (paint: red.transparentize(10%), thickness: 0.85pt))
-        content((vx, vy - 0.74), anchor: "north", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[#lbl])
-      }
-    }
-
-    // Quota Delta sigma_2 (0..200) centrata sulla sacca 2 senza toccare i versanti
-    line((xb + 1.0, ym(0) + 0.11), (xb + 1.0, ym(200)), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.44), stroke: 0.6pt)
-    content((xb + 0.80, ym(216)), anchor: "south-west", text(size: 7pt)[$Delta sigma_2 = 200$])
-
-    // Quota Delta sigma_4 (0..100) lungo la verticale della valvola 4 senza intersecare il versante
-    line((xb + 7.0, ym(0) + 0.11), (xb + 7.0, ym(100)), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.42), stroke: 0.6pt)
-    content((xb + 7.0, ym(116)), anchor: "south", text(size: 7pt)[$Delta sigma_4 = 100$])
-
-    // Quota interna Delta sigma_5 (-100..100)
-    line((xb + 9.15, ym(-100)), (xb + 10.55, ym(-100)), stroke: (paint: luma(120), thickness: 0.45pt, dash: "dotted"))
-    line((xb + 9.50, ym(100)), (xb + 10.55, ym(100)), stroke: (paint: luma(120), thickness: 0.45pt, dash: "dotted"))
-    line((xb + 10.45, ym(-100)), (xb + 10.45, ym(100)), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.48), stroke: 0.6pt)
-    content((xb + 10.60, ym(0)), anchor: "west", text(size: 7pt)[$Delta sigma_5$ \ 200])
-
-    // Quota esterna Delta sigma_3 (-150..200) senza incroci con quote interne
-    line((xb + 5.15, ym(-150)), (xb + 11.95, ym(-150)), stroke: (paint: luma(120), thickness: 0.45pt, dash: "dotted"))
-    line((xb + 9.75, ym(200)), (xb + 11.95, ym(200)), stroke: (paint: luma(120), thickness: 0.45pt, dash: "dotted"))
-    line((xb + 11.82, ym(-150)), (xb + 11.82, ym(200)), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.48), stroke: 0.6pt)
-    content((xb + 11.96, ym(135)), anchor: "west", text(size: 7pt)[$Delta sigma_3$ \ 350])
-
-    content((xb + 5.0, ym(368)), anchor: "south", text(size: 7.5pt, weight: "bold")[(b) Svuotamento delle sacche residue])
-  }),
+  include "figs/fatica/fatica-fig74.typ",
   caption: [Applicazione del metodo del serbatoio su griglia in MPa: (a) scarico della valle principale a $-200" MPa"$ e (b) drenaggio progressivo delle sacche residue (cicli 2–5).],
 ) <fig:serbatoio>
 
