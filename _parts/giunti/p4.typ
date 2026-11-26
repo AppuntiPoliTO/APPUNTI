@@ -143,8 +143,233 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
     - una *cuffia conica in gomma* che protegge il giunto e trattiene il grasso lubrificante.
   ],
   [
-    #align(center)[
-  #image("../../images/fig__parts_giunti_p4_8049.png", width: 75%)]
+  #import "": 
+    #canvas(length: 1cm, {
+  import draw: *
+
+  // =========================================================================
+  // PARTE SUPERIORE: VISTA ESPLOSA DEL GIUNTO OMOCINETICO (RZEppa / CON PERNO)
+  // =========================================================================
+
+  // --- 1. CAMPANA ESTERNA GIALLA (Sinistra) ---
+  // Codolo posteriore sporgente a sinistra
+  line((-3.85, 2.38), (-3.55, 2.45), (-3.45, 2.08), (-3.75, 2.01), close: true, fill: rgb(180, 165, 20), stroke: (paint: rgb(110, 100, 10), thickness: 0.7pt))
+  circle((-3.8, 2.2), radius: (0.08, 0.19), fill: rgb(150, 138, 15), stroke: (paint: rgb(110, 100, 10), thickness: 0.7pt))
+
+  // Corpo esterno della campana (fascia laterale 3D)
+  bezier((-2.55, 3.68), (-3.15, 3.55), (-2.85, 3.65), (-3.0, 3.6), stroke: none)
+  line((-2.45, 3.67), (-2.95, 3.56), (-3.48, 2.95), (-3.58, 2.2), (-3.32, 1.45), (-2.75, 1.02), (-2.22, 1.13), close: true, fill: rgb(195, 180, 15), stroke: none)
+  arc((-2.58, 2.35), start: 100deg, stop: 260deg, radius: (1.02, 1.32), anchor: "origin", fill: rgb(195, 180, 15), stroke: (paint: rgb(120, 110, 10), thickness: 1pt))
+  line((-2.76, 3.65), (-2.26, 3.57), stroke: (paint: rgb(120, 110, 10), thickness: 1pt))
+  line((-2.76, 1.05), (-2.26, 1.13), stroke: (paint: rgb(120, 110, 10), thickness: 1pt))
+
+  // Bocca frontale della campana
+  circle((-2.25, 2.35), radius: (1.05, 1.32), fill: rgb(230, 215, 35), stroke: (paint: rgb(130, 118, 12), thickness: 1pt))
+  // Cavità interna sferica (scura sul fondo, più chiara al centro)
+  circle((-2.18, 2.35), radius: (0.86, 1.10), fill: rgb(155, 142, 12), stroke: (paint: rgb(115, 105, 10), thickness: 0.8pt))
+  circle((-2.25, 2.35), radius: (0.68, 0.88), fill: rgb(215, 200, 30), stroke: (paint: rgb(140, 128, 15), thickness: 0.6pt))
+
+  // 6 Gole / Piste meridiane interne e sfere gialle alloggiate
+  // Sfera 1 (alta)
+  circle((-2.22, 3.22), radius: (0.18, 0.14), fill: rgb(185, 170, 20), stroke: (paint: rgb(115, 105, 10), thickness: 0.6pt))
+  // Sfera 2 (alta-destra)
+  circle((-1.62, 2.82), radius: 0.21, fill: rgb(245, 232, 65), stroke: (paint: rgb(130, 118, 12), thickness: 0.75pt))
+  circle((-1.56, 2.86), radius: 0.07, fill: rgb(255, 250, 170), stroke: none)
+  // Sfera 3 (bassa-destra)
+  circle((-1.66, 1.88), radius: 0.21, fill: rgb(245, 232, 65), stroke: (paint: rgb(130, 118, 12), thickness: 0.75pt))
+  circle((-1.60, 1.92), radius: 0.07, fill: rgb(255, 250, 170), stroke: none)
+  // Sfera 4 (bassa)
+  circle((-2.28, 1.48), radius: (0.18, 0.14), fill: rgb(185, 170, 20), stroke: (paint: rgb(115, 105, 10), thickness: 0.6pt))
+  // Sfera 5 (bassa-sinistra)
+  circle((-2.78, 1.92), radius: 0.19, fill: rgb(205, 190, 25), stroke: (paint: rgb(120, 110, 10), thickness: 0.7pt))
+  // Sfera 6 (alta-sinistra)
+  circle((-2.75, 2.80), radius: 0.19, fill: rgb(205, 190, 25), stroke: (paint: rgb(120, 110, 10), thickness: 0.7pt))
+
+  // Sede conica centrale interna della campana
+  circle((-2.45, 2.35), radius: (0.34, 0.42), fill: rgb(240, 228, 55), stroke: (paint: rgb(140, 128, 15), thickness: 0.7pt))
+  line((-2.45, 2.77), (-2.88, 2.43), (-2.88, 2.27), (-2.45, 1.93), close: true, fill: rgb(225, 210, 40), stroke: (paint: rgb(140, 128, 15), thickness: 0.7pt))
+  circle((-2.88, 2.35), radius: (0.07, 0.09), fill: rgb(130, 118, 12), stroke: none)
+
+  // --- 2. PERNO DI CENTRAGGIO ROSSO (Sotto-sinistra) ---
+  // Asta cilindrica inclinata da (-1.85, 1.05) a (-0.65, 0.45)
+  line((-1.82, 1.11), (-0.62, 0.51), (-0.68, 0.39), (-1.88, 0.99), close: true, fill: rgb(215, 45, 25), stroke: (paint: rgb(135, 20, 10), thickness: 0.7pt))
+  // Sfera piccola superiore-sinistra
+  circle((-1.85, 1.05), radius: 0.15, fill: rgb(230, 50, 30), stroke: (paint: rgb(135, 20, 10), thickness: 0.75pt))
+  circle((-1.89, 1.09), radius: 0.045, fill: rgb(255, 160, 140), stroke: none)
+  // Sfera centrale intermedia più grande
+  circle((-0.98, 0.62), radius: 0.18, fill: rgb(230, 50, 30), stroke: (paint: rgb(135, 20, 10), thickness: 0.75pt))
+  circle((-1.03, 0.67), radius: 0.055, fill: rgb(255, 160, 140), stroke: none)
+  // Sfera finale inferiore-destra
+  circle((-0.65, 0.45), radius: 0.145, fill: rgb(230, 50, 30), stroke: (paint: rgb(135, 20, 10), thickness: 0.75pt))
+  circle((-0.69, 0.49), radius: 0.04, fill: rgb(255, 160, 140), stroke: none)
+
+  // --- 3. GABBIA SFERICA FORATA BLU (Centro) ---
+  // Centrata in (0.15, 2.22), raggio ~1.12
+  // Archi posteriori della gabbia (blu più scuro)
+  arc((0.15, 2.22), start: 0deg, stop: 360deg, radius: (1.10, 0.52), anchor: "origin", stroke: (paint: rgb(15, 65, 155), thickness: 3.2pt))
+  arc((0.15, 2.22), start: 0deg, stop: 360deg, radius: (0.52, 1.10), anchor: "origin", stroke: (paint: rgb(15, 65, 155), thickness: 3.2pt))
+
+  // Raggi meridiani interni posteriori
+  line((-0.78, 2.75), (1.08, 1.69), stroke: (paint: rgb(15, 65, 155), thickness: 2.8pt))
+  line((-0.78, 1.69), (1.08, 2.75), stroke: (paint: rgb(15, 65, 155), thickness: 2.8pt))
+
+  // Contorno sferico esterno della gabbia e nervature frontali
+  circle((0.15, 2.22), radius: 1.12, stroke: (paint: rgb(20, 95, 210), thickness: 4.5pt))
+  // Meridiani frontali incrociati nel polo anteriore (0.58, 2.02)
+  bezier((-0.55, 3.08), (0.58, 2.02), (-0.10, 2.80), (0.30, 2.38), stroke: (paint: rgb(25, 105, 225), thickness: 4.2pt))
+  bezier((0.58, 2.02), (0.98, 1.48), (0.75, 1.82), (0.88, 1.65), stroke: (paint: rgb(25, 105, 225), thickness: 4.2pt))
+  bezier((-0.95, 2.08), (0.58, 2.02), (-0.45, 2.00), (0.15, 2.00), stroke: (paint: rgb(25, 105, 225), thickness: 4.2pt))
+  bezier((0.58, 2.02), (1.24, 2.32), (0.85, 2.08), (1.10, 2.20), stroke: (paint: rgb(25, 105, 225), thickness: 4.2pt))
+  bezier((0.32, 3.32), (0.58, 2.02), (0.52, 2.95), (0.60, 2.45), stroke: (paint: rgb(25, 105, 225), thickness: 4.2pt))
+  bezier((0.58, 2.02), (0.05, 1.12), (0.52, 1.65), (0.32, 1.32), stroke: (paint: rgb(25, 105, 225), thickness: 4.2pt))
+
+  // Anello equatoriale che unisce le finestre delle sfere
+  circle((0.02, 2.28), radius: (0.88, 0.96), stroke: (paint: rgb(30, 115, 235), thickness: 3.8pt))
+
+  // Finestre circolari/ellittiche per le sfere (bordo blu + interno bianco)
+  circle((-0.58, 2.82), radius: (0.20, 0.27), fill: white, stroke: (paint: rgb(15, 75, 175), thickness: 2.2pt))
+  circle((-0.82, 1.98), radius: (0.16, 0.26), fill: white, stroke: (paint: rgb(15, 75, 175), thickness: 2.2pt))
+  circle((-0.18, 1.32), radius: (0.26, 0.16), fill: white, stroke: (paint: rgb(15, 75, 175), thickness: 2.2pt))
+  circle((0.35, 3.12), radius: (0.26, 0.15), fill: white, stroke: (paint: rgb(15, 75, 175), thickness: 2.2pt))
+  circle((1.05, 2.52), radius: (0.16, 0.25), fill: white, stroke: (paint: rgb(15, 75, 175), thickness: 2.2pt))
+  circle((0.85, 1.55), radius: (0.22, 0.18), fill: white, stroke: (paint: rgb(15, 75, 175), thickness: 2.2pt))
+
+  // Mozzo polare con piccolo foro centrale bianco
+  circle((0.58, 2.02), radius: 0.24, fill: rgb(25, 105, 225), stroke: none)
+  circle((0.58, 2.02), radius: 0.11, fill: white, stroke: (paint: rgb(15, 75, 175), thickness: 1pt))
+
+  // --- 4. MOZZO INTERNO SCANALATO E ALBERO VERDE-GRIGIO (Destra) ---
+  // Albero cilindrico intermedio (da x=2.6 a x=3.6)
+  line((2.55, 2.58), (3.58, 2.75), (3.65, 2.25), (2.62, 2.08), close: true, fill: rgb(165, 195, 170), stroke: (paint: rgb(85, 105, 90), thickness: 0.8pt))
+  line((2.58, 2.48), (3.60, 2.65), stroke: (paint: rgb(210, 230, 215), thickness: 1.5pt))
+
+  // Estremità dell'albero scanalata (spline da x=3.55 a x=4.35)
+  line((3.52, 2.80), (4.28, 2.92), (4.38, 2.78), (4.42, 2.48), (4.35, 2.28), (3.60, 2.16), close: true, fill: rgb(140, 170, 145), stroke: (paint: rgb(75, 95, 80), thickness: 0.85pt))
+  circle((3.56, 2.48), radius: (0.10, 0.32), fill: rgb(155, 185, 160), stroke: (paint: rgb(75, 95, 80), thickness: 0.75pt))
+  // Scanalature longitudinali sull'estremità destra
+  line((3.58, 2.74), (4.32, 2.86), stroke: (paint: rgb(70, 90, 75), thickness: 0.8pt))
+  line((3.62, 2.64), (4.37, 2.76), stroke: (paint: rgb(70, 90, 75), thickness: 0.8pt))
+  line((3.64, 2.52), (4.39, 2.64), stroke: (paint: rgb(70, 90, 75), thickness: 0.8pt))
+  line((3.63, 2.40), (4.38, 2.52), stroke: (paint: rgb(70, 90, 75), thickness: 0.8pt))
+  line((3.60, 2.28), (4.35, 2.40), stroke: (paint: rgb(70, 90, 75), thickness: 0.8pt))
+
+  // Noce / Mozzo sferico scanalato (centrato in (2.25, 2.32))
+  // Base corpo sferico con 6 nervature e 6 piste
+  circle((2.28, 2.32), radius: (0.78, 0.96), fill: rgb(160, 190, 165), stroke: (paint: rgb(80, 100, 85), thickness: 0.9pt))
+
+  // Pista superiore
+  bezier((1.65, 2.95), (2.55, 3.25), (1.95, 3.20), (2.30, 3.28), stroke: (paint: rgb(75, 95, 80), thickness: 0.85pt))
+  // Pista medio-alta (illuminata)
+  line((1.75, 2.72), (2.75, 2.88), (2.98, 2.52), (1.92, 2.36), close: true, fill: rgb(200, 225, 205), stroke: (paint: rgb(80, 100, 85), thickness: 0.8pt))
+  // Pista centrale-bassa (in ombra concava)
+  line((1.92, 2.36), (2.98, 2.52), (2.95, 2.12), (1.90, 1.96), close: true, fill: rgb(130, 160, 138), stroke: (paint: rgb(80, 100, 85), thickness: 0.8pt))
+  // Nervatura centrale sporgente chiara
+  line((1.88, 2.38), (2.98, 2.54), (3.00, 2.42), (1.90, 2.26), close: true, fill: rgb(225, 242, 228), stroke: (paint: rgb(85, 105, 90), thickness: 0.7pt))
+  // Pista inferiore
+  line((1.90, 1.96), (2.95, 2.12), (2.78, 1.62), (1.78, 1.52), close: true, fill: rgb(175, 205, 180), stroke: (paint: rgb(80, 100, 85), thickness: 0.8pt))
+  // Nervatura inferiore sporgente
+  line((1.88, 1.98), (2.95, 2.14), (2.96, 2.02), (1.89, 1.86), close: true, fill: rgb(215, 235, 218), stroke: (paint: rgb(85, 105, 90), thickness: 0.7pt))
+  // Base inferiore in ombra
+  line((1.78, 1.52), (2.78, 1.62), (2.45, 1.36), (1.62, 1.38), close: true, fill: rgb(115, 145, 122), stroke: (paint: rgb(75, 95, 80), thickness: 0.8pt))
+
+  // Faccia anteriore sinistra della noce (con petali radiali e foro centrale per il perno)
+  circle((1.72, 2.22), radius: (0.32, 0.52), fill: rgb(150, 180, 155), stroke: (paint: rgb(80, 100, 85), thickness: 0.8pt))
+  circle((1.58, 2.18), radius: (0.16, 0.28), fill: rgb(175, 205, 180), stroke: (paint: rgb(80, 100, 85), thickness: 0.75pt))
+  circle((1.54, 2.17), radius: (0.06, 0.11), fill: rgb(75, 95, 80), stroke: none)
+
+  // Piccolo cursore a freccia bianca visibile sopra la noce nell'immagine originale
+  line((1.88, 2.58), (1.88, 2.25), (1.96, 2.33), (2.04, 2.18), (2.10, 2.21), (2.02, 2.36), (2.12, 2.38), close: true, fill: white, stroke: (paint: rgb(60, 60, 60), thickness: 0.6pt))
+
+
+  // =========================================================================
+  // PARTE INFERIORE: GIUNTO ASSEMBLATO IN SEZIONE SEMITRASPARENTE
+  // =========================================================================
+
+  // --- 1. ALBERO SINISTRO GIALLO (Solidale alla campana) ---
+  // Estremità sinistra scanalata (da x=-3.75 a x=-2.25)
+  line((-3.75, -1.62), (-2.35, -1.28), (-2.18, -2.02), (-3.58, -2.38), close: true, fill: rgb(185, 172, 35), stroke: (paint: rgb(115, 105, 15), thickness: 0.85pt))
+  circle((-3.66, -2.00), radius: (0.12, 0.38), fill: rgb(160, 148, 25), stroke: (paint: rgb(115, 105, 15), thickness: 0.8pt))
+  // Scanalature sull'estremità sinistra
+  line((-3.70, -1.70), (-2.30, -1.36), stroke: (paint: rgb(115, 105, 15), thickness: 0.75pt))
+  line((-3.67, -1.82), (-2.27, -1.48), stroke: (paint: rgb(235, 225, 95), thickness: 1.1pt))
+  line((-3.65, -1.92), (-2.25, -1.58), stroke: (paint: rgb(115, 105, 15), thickness: 0.75pt))
+  line((-3.62, -2.05), (-2.22, -1.71), stroke: (paint: rgb(115, 105, 15), thickness: 0.75pt))
+  line((-3.60, -2.18), (-2.20, -1.84), stroke: (paint: rgb(105, 95, 12), thickness: 0.85pt))
+  line((-3.58, -2.28), (-2.18, -1.94), stroke: (paint: rgb(105, 95, 12), thickness: 0.85pt))
+
+  // Tratto cilindrico liscio dell'albero sinistro (da x=-2.30 a x=-1.10)
+  line((-2.32, -1.36), (-1.12, -1.06), (-0.96, -1.68), (-2.16, -1.98), close: true, fill: rgb(205, 195, 85).transparentize(20%), stroke: (paint: rgb(130, 120, 30), thickness: 0.8pt))
+  line((-2.28, -1.46), (-1.08, -1.16), stroke: (paint: rgb(245, 240, 150), thickness: 1.5pt))
+
+  // Collo cilindrico di raccordo della campana (da x=-1.15 a x=-0.10)
+  line((-1.15, -0.85), (-0.15, -0.58), (0.08, -1.58), (-0.92, -1.85), close: true, fill: rgb(195, 182, 55).transparentize(35%), stroke: (paint: rgb(130, 120, 30), thickness: 0.8pt))
+  circle((-1.03, -1.35), radius: (0.16, 0.50), fill: rgb(180, 168, 45).transparentize(40%), stroke: (paint: rgb(130, 120, 30), thickness: 0.75pt))
+
+  // Cono interno dorato con punta a sinistra e sede per il perno rosso
+  line((-1.32, -1.42), (-0.82, -1.15), (-0.75, -1.52), close: true, fill: rgb(195, 175, 20).transparentize(25%), stroke: (paint: rgb(140, 125, 15), thickness: 0.65pt))
+  line((-0.82, -1.15), (-0.05, -0.45), (0.15, -1.52), (-0.75, -1.52), close: true, fill: rgb(185, 165, 15).transparentize(30%), stroke: (paint: rgb(140, 125, 15), thickness: 0.65pt))
+
+  // --- 2. ALBERO DESTRO VERDE-GRIGIO (Inclinato verso il basso a destra) ---
+  // Tratto cilindrico liscio che esce dal giunto (da x=2.15 a x=3.25)
+  line((2.15, -0.82), (3.22, -1.10), (3.08, -1.68), (2.00, -1.40), close: true, fill: rgb(165, 195, 170), stroke: (paint: rgb(85, 105, 90), thickness: 0.8pt))
+  line((2.18, -0.92), (3.20, -1.18), stroke: (paint: rgb(215, 235, 220), thickness: 1.4pt))
+
+  // Estremità destra scanalata (da x=3.15 a x=4.45)
+  line((3.22, -1.00), (4.38, -1.28), (4.46, -1.42), (4.38, -1.78), (4.22, -1.92), (3.06, -1.64), close: true, fill: rgb(140, 170, 145), stroke: (paint: rgb(70, 90, 75), thickness: 0.85pt))
+  circle((3.14, -1.32), radius: (0.11, 0.33), fill: rgb(155, 185, 160), stroke: (paint: rgb(75, 95, 80), thickness: 0.75pt))
+  // Scanalature longitudinali sull'albero destro
+  line((3.24, -1.08), (4.42, -1.36), stroke: (paint: rgb(65, 85, 70), thickness: 0.8pt))
+  line((3.22, -1.20), (4.40, -1.48), stroke: (paint: rgb(65, 85, 70), thickness: 0.8pt))
+  line((3.19, -1.32), (4.37, -1.60), stroke: (paint: rgb(65, 85, 70), thickness: 0.8pt))
+  line((3.15, -1.44), (4.33, -1.72), stroke: (paint: rgb(65, 85, 70), thickness: 0.8pt))
+  line((3.11, -1.55), (4.29, -1.83), stroke: (paint: rgb(65, 85, 70), thickness: 0.8pt))
+
+  // --- 3. ELEMENTI INTERNI ASSEMBLATI (Visibili in trasparenza) ---
+  // Mozzo / Noce interna verde-gialla (centrata in (1.12, -0.82))
+  circle((1.12, -0.82), radius: 0.92, fill: rgb(185, 200, 95), stroke: (paint: rgb(105, 120, 50), thickness: 0.85pt))
+  // Nervature della noce interna
+  bezier((0.35, -0.45), (1.75, -0.35), (0.80, -0.20), (1.35, -0.20), stroke: (paint: rgb(115, 130, 55), thickness: 1.2pt))
+  bezier((0.25, -0.85), (1.95, -0.78), (0.80, -0.72), (1.45, -0.72), stroke: (paint: rgb(225, 235, 140), thickness: 2.2pt))
+  bezier((0.25, -0.92), (1.95, -0.85), (0.80, -0.80), (1.45, -0.80), stroke: (paint: rgb(105, 120, 50), thickness: 1pt))
+  bezier((0.40, -1.35), (1.82, -1.28), (0.85, -1.42), (1.40, -1.42), stroke: (paint: rgb(105, 120, 50), thickness: 1.2pt))
+
+  // Perno di centraggio rosso-arancio inserito obliquamente
+  line((-0.65, -1.32), (0.48, -0.58), (0.54, -0.68), (-0.59, -1.42), close: true, fill: rgb(210, 85, 15), stroke: (paint: rgb(140, 45, 5), thickness: 0.7pt))
+  circle((-0.62, -1.37), radius: 0.15, fill: rgb(215, 75, 15), stroke: (paint: rgb(140, 45, 5), thickness: 0.75pt))
+  circle((0.12, -0.88), radius: 0.17, fill: rgb(215, 75, 15), stroke: (paint: rgb(140, 45, 5), thickness: 0.75pt))
+  circle((0.52, -0.62), radius: 0.14, fill: rgb(215, 75, 15), stroke: (paint: rgb(140, 45, 5), thickness: 0.75pt))
+
+  // Gabbia blu-verde scura che avvolge la noce interna
+  circle((1.12, -0.82), radius: 1.05, stroke: (paint: rgb(45, 95, 85), thickness: 4.5pt))
+  // Fasce meridiane della gabbia assemblata
+  bezier((0.10, -0.65), (1.45, -1.05), (0.55, -0.85), (1.05, -0.98), stroke: (paint: rgb(45, 95, 85), thickness: 5.5pt))
+  bezier((0.18, -0.35), (1.42, 0.12), (0.65, -0.02), (1.10, 0.10), stroke: (paint: rgb(45, 95, 85), thickness: 4.5pt))
+  bezier((0.25, -1.35), (1.35, -1.82), (0.65, -1.65), (1.05, -1.78), stroke: (paint: rgb(45, 95, 85), thickness: 4.5pt))
+  arc((1.35, -0.82), start: -80deg, stop: 80deg, radius: (0.42, 1.02), anchor: "origin", stroke: (paint: rgb(45, 95, 85), thickness: 5.5pt))
+
+  // Sfere alloggiate nelle finestre della gabbia (color ambra/arancio-giallo)
+  // Sfera superiore
+  circle((1.42, 0.02), radius: 0.30, fill: rgb(215, 175, 85), stroke: (paint: rgb(95, 85, 45), thickness: 1pt))
+  circle((1.36, 0.08), radius: 0.10, fill: rgb(245, 220, 145), stroke: none)
+  // Sfera centrale in primo piano
+  circle((1.45, -1.02), radius: 0.32, fill: rgb(210, 168, 82), stroke: (paint: rgb(85, 80, 45), thickness: 1.2pt))
+  circle((1.38, -0.95), radius: 0.11, fill: rgb(240, 212, 138), stroke: none)
+  // Sfera inferiore
+  circle((1.18, -1.92), radius: (0.28, 0.18), fill: rgb(175, 125, 55), stroke: (paint: rgb(85, 70, 35), thickness: 0.9pt))
+
+  // --- 4. INVOLUCRO ESTERNO DELLA CAMPANA GIALLA SEMITRASPARENTE ---
+  // Profilo avvolgente della campana (da x=-0.15 a x=2.35)
+  bezier((-0.15, -0.58), (1.35, 0.45), (0.05, 0.25), (0.75, 0.48), stroke: (paint: rgb(155, 142, 35), thickness: 1.1pt))
+  bezier((1.35, 0.45), (2.35, -1.75), (2.15, 0.40), (2.52, -0.85), stroke: (paint: rgb(155, 142, 35), thickness: 1.1pt))
+  bezier((2.35, -1.75), (0.08, -1.58), (2.10, -2.35), (0.45, -2.32), stroke: (paint: rgb(155, 142, 35), thickness: 1.1pt))
+
+  // Riempimento semitrasparente giallo-ambra sopra il gruppo sferico per l'effetto vetro/plastica
+  line((-0.15, -0.58), (0.12, 0.05), (0.65, 0.40), (1.35, 0.45), (1.92, 0.25), (2.28, -0.35), (2.42, -1.05), (2.35, -1.75), (1.85, -2.18), (1.15, -2.25), (0.52, -2.05), (0.08, -1.58), close: true, fill: rgb(205, 188, 45).transparentize(62%), stroke: none)
+
+  // Riflessi e bordi della bocca destra della campana semitrasparente
+  arc((1.95, -0.92), start: -75deg, stop: 78deg, radius: (0.45, 1.15), anchor: "origin", stroke: (paint: rgb(165, 152, 40).transparentize(30%), thickness: 1pt))
+  arc((0.12, -1.08), start: 105deg, stop: 255deg, radius: (0.25, 0.55), anchor: "origin", stroke: (paint: rgb(155, 142, 35).transparentize(25%), thickness: 0.9pt))
+})
   ],
 )
 
