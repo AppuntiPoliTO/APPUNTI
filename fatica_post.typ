@@ -1582,8 +1582,7 @@ In *trazione-compressione*, invece, la distribuzione è già uniforme su tutta l
   column-gutter: 1em,
   align: (center + horizon, left + horizon),
   [
-    #figure(
-      canvas(length: 1.28cm, {
+    #canvas(length: 1.68cm, {
         // BBox: x in [-0.80, 5.20] (dx=6.00), y in [-0.85, 3.70], length=1.28cm -> larghezza = 7.68 cm <= 8.2 cm
         import draw: *
 
@@ -1655,7 +1654,6 @@ In *trazione-compressione*, invece, la distribuzione è già uniforme su tutta l
         ]
         line((2.40, 0.61), (2.40, y-asym - 0.02), stroke: 0.6pt + red.transparentize(10%), mark: (end: ">", scale: 0.55))
       })
-    )
   ],
   [
     *Lettura del diagramma $C_S (d)$.* Fino al diametro normato della provetta ($d = 10 thin "mm"$, o $8"–"12 thin "mm"$ secondo lo standard) vale $C_S = 1$. Oltre questa soglia, la curva per flessione e torsione scende rapidamente raggiungendo $C_S approx 0.81$ a $d = 50 thin "mm"$ e $C_S = 0.75$ a $d = 90 thin "mm"$.
