@@ -1,4 +1,4 @@
-#import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
+#import "../../figs/_helpers.typ": fig-safe, img-flag
 
 == Progettazione e verifica
 === Quadro normativo e certificazioni
@@ -27,7 +27,7 @@ Per interpretare le tavole comparative riportate di seguito occorre leggere i tr
 - *Cordone incompleto.* Riempimento insufficiente del vano di saldatura rispetto allo spessore delle lamiere; la riduzione diffusa di spessore genera una fascia scura ampia e relativamente regolare lungo il cordone.
 
 #align(center)[
-  #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-fig01.typ", max-h: 9.5cm)
+  #fig-safe(include "../../figs/p2-fig01.typ", max-h: 9.5cm)
 ]
 
 #v(0.4em)
@@ -45,7 +45,7 @@ Per interpretare le tavole comparative riportate di seguito occorre leggere i tr
       - _Origini principali:_ elettrodi basici umidi o mal conservati, arco troppo lungo, lembi ossidati o ambiente umido (saldatura elettrica manuale); fiamma mal regolata o eccesso di carbonio/acetilene (ossiacetilenica); arco troppo lungo o gas inerte insufficiente/impuro (TIG / ArgonArc); carenza di flusso protettivo (arco sommerso, poco probabili).
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-fig02.typ", max-h: 11.5cm)
+    #fig-safe(include "../../figs/p2-fig02.typ", max-h: 11.5cm)
   ],
 )
 
@@ -64,7 +64,7 @@ Per interpretare le tavole comparative riportate di seguito occorre leggere i tr
       - _Origini principali:_ scarsa pulizia della scoria a fine passata, profilo irregolare delle passate sottostanti, scarsa abilità del saldatore o cattiva preparazione dei lembi (saldatura manuale); passata inferiore con profilo eccessivamente convesso (arco sommerso).
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-fig03.typ", max-h: 8.5cm)
+    #fig-safe(include "../../figs/p2-fig03.typ", max-h: 8.5cm)
   ],
 )
 
@@ -82,7 +82,7 @@ Per interpretare le tavole comparative riportate di seguito occorre leggere i tr
       - _Origini principali:_ eccessiva distanza o slivellamento dei lembi, eccessiva velocità di avanzamento, posizione di lavoro sfavorevole (es. sopratesta), potenza eccessiva del cannello (ossiacetilenica) o corrente di saldatura insufficiente (arco sommerso/Sigma).
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-fig04.typ", max-h: 8.5cm)
+    #fig-safe(include "../../figs/p2-fig04.typ", max-h: 8.5cm)
   ],
 )
 
@@ -102,10 +102,10 @@ Negli impianti *safety-critical* (industria chimica, nucleare, piattaforme *offs
   column-gutter: 0.8em,
   align: center + top,
   [
-    #fig-safe(image("../../images/_parts-collegamenti-saldati-p2/cricca-macrografia.png"), max-h: 3.4cm, caption: [Cricca in ZTA (macrografia)])
+    #fig-safe(image("../../images/collegamenti-saldati/cricca-macrografia.png"), max-h: 3.4cm, caption: [Cricca in ZTA (macrografia)])
   ],
   [
-    #fig-safe(image("../../images/_parts-collegamenti-saldati-p2/cricca-penetranti.png"), max-h: 3.4cm, caption: [Evidenziazione con \ liquidi penetranti])
+    #fig-safe(image("../../images/collegamenti-saldati/cricca-penetranti.png"), max-h: 3.4cm, caption: [Evidenziazione con \ liquidi penetranti])
   ],
   [
     #fig-safe(
@@ -116,7 +116,7 @@ Negli impianti *safety-critical* (industria chimica, nucleare, piattaforme *offs
         place(
           top + left,
           dx: -1.6cm,
-          image("../../images/_parts-collegamenti-saldati-p2/cricca-magnetoscopia-uv.png", width: 10.01cm, height: 3.4cm),
+          image("../../images/collegamenti-saldati/cricca-magnetoscopia-uv.png", width: 10.01cm, height: 3.4cm),
         ),
       ),
       max-h: 3.4cm,
@@ -135,7 +135,7 @@ Negli impianti *safety-critical* (industria chimica, nucleare, piattaforme *offs
     La radiografia sfrutta l'attenuazione differenziale dei raggi X attraverso il cordone: cavità e scorie a bassa densità lasciano passare più radiazione (zone scure sulla pellicola), mentre inclusioni dense come il tungsteno la attenuano (zone chiare). Accanto all'ispezione visiva diretta o robotizzata — svolta con droni o sonde endoscopiche a fibre ottiche all'interno di recipienti in pressione (*analogia laparoscopica*) — sistemi mobili di tomografia a raggi X (es. *TomoWeld* per tubazioni nucleari) consentono di ricostruire il volume 3D del cordone, misurando con precisione profondità e dimensione delle cricche in zone ad accesso ridotto.
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-rx-principio.typ", max-h: 4.5cm)
+    #fig-safe(include "../../figs/p2-rx-principio.typ", max-h: 4.5cm)
     #v(0.3em)
     #fig-safe(image("../../figs/ecm-c11-p2-03.jpg"), max-h: 2.5cm, caption: [Referto RX reale con inclusioni chiare di tungsteno])
   ],
@@ -150,7 +150,7 @@ Negli impianti *safety-critical* (industria chimica, nucleare, piattaforme *offs
     Un trasduttore piezoelettrico, accoppiato alla superficie tramite un gel o olio (*couplant*), emette impulsi ultrasonori che propagano nel materiale alla velocità del suono e vengono riflessi o rifratti dalle discontinuità. In modalità *pulse-echo*, sullo schermo compaiono l'impulso iniziale e l'eco di fondo (*back wall echo*); un difetto interno genera un'eco anticipata la cui posizione temporale fornisce la profondità, oltre a eventuali *effetti diffrattivi nello spazio e nel tempo* e fenomeni di interferenza d'onda utili a stimare dimensione e orientamento della cricca. Sonde angolate (es. a $45°$ nei fori di assali ferroviari cavi) rilevano cricche esterne distinguendole dalle riflessioni geometriche di spallamento (*contour echoes*).
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/ecm-c11-p2-02.typ") /* Principio del controllo ad ultrasuoni con trasduttore emettitore/ricevente e riflessione sul difetto */
+    #fig-safe(include "../../figs/ecm-c11-p2-02.typ") /* Principio del controllo ad ultrasuoni con trasduttore emettitore/ricevente e riflessione sul difetto */
   ],
 )
 
@@ -167,7 +167,7 @@ Entrambi i metodi rilevano esclusivamente difetti affioranti in superficie (o su
     - *Magnetoscopia.* Si applica un campo magnetico al pezzo cosparso di particelle ferromagnetiche in sospensione. Un difetto trasversale alle linee di flusso le perturba generando un flusso disperso esterno che attira le particelle lungo i bordi della cricca (mentre difetti paralleli al flusso risultano scarsamente perturbanti); l'osservazione sotto *luce di Wood* (UV) rende fluorescente la traccia del difetto.
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-magnetoscopia.typ") /* Perturbazione delle linee di flusso magnetico in presenza di cricche superficiali e sub-superficiali */
+    #fig-safe(include "../../figs/p2-magnetoscopia.typ") /* Perturbazione delle linee di flusso magnetico in presenza di cricche superficiali e sub-superficiali */
   ],
 )
 
@@ -181,7 +181,7 @@ Entrambi i metodi rilevano esclusivamente difetti affioranti in superficie (o su
     - *Liquidi penetranti.* Dopo sgrassatura, si applica un liquido rosso ad alta bagnabilità che penetra nelle cricche per *capillarità*. Rimossa l'eccedenza superficiale, uno spray *sviluppatore* bianco richiama il colorante dal difetto rendendolo visibile. Applicando penetrante e sviluppatore su facce opposte si verifica anche la tenuta a difetti passanti.
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/ecm-c11-p2-04.typ") /* Sequenza operativa del controllo con liquidi penetranti */
+    #fig-safe(include "../../figs/ecm-c11-p2-04.typ") /* Sequenza operativa del controllo con liquidi penetranti */
   ],
 )
 
@@ -203,10 +203,10 @@ Per i giunti testa a testa a completa penetrazione (sez. 4.7), l'Eurocodice non 
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/ecm-c11-p2-05.typ") /* Giunto testa a testa con dimensioni s, H, L e componenti di tensione */
+    #fig-safe(include "../../figs/ecm-c11-p2-05.typ") /* Giunto testa a testa con dimensioni s, H, L e componenti di tensione */
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/ecm-c11-p2-06.typ") /* Giunto a T a completa penetrazione con dimensioni s, H, L e componenti di tensione */
+    #fig-safe(include "../../figs/ecm-c11-p2-06.typ") /* Giunto a T a completa penetrazione con dimensioni s, H, L e componenti di tensione */
   ],
 )
 
@@ -225,7 +225,7 @@ Per i giunti testa a testa a completa penetrazione (sez. 4.7), l'Eurocodice non 
    
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-statica-testa-ares.typ", max-h: 5.5cm)
+    #fig-safe(include "../../figs/p2-statica-testa-ares.typ", max-h: 5.5cm)
   ],
 )
 Dove $L$ è la lunghezza del cordone, $s$ è il *minore degli spessori collegati* (oppure lo spessore dell'elemento a completa penetrazione) e $H$ è la larghezza totale (materiale base + materiale d'apporto). \ 
@@ -245,7 +245,7 @@ $ sigma_"id" = sqrt(sigma_perp^2 + sigma_parallel^2 - sigma_perp sigma_parallel 
     - eventuale $sigma_parallel$ nella sezione trasversale del cordone: *da non considerare* per prescrizione normativa (per evitare ambiguità interpretative rispetto a $tau$ e in coerenza con l'evidenza sperimentale).
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-statica-angolo-globali.typ", max-h: 5.8cm)
+    #fig-safe(include "../../figs/p2-statica-angolo-globali.typ", max-h: 5.8cm)
   ],
 )
 
@@ -259,7 +259,7 @@ $ sigma_"id" = sqrt(sigma_perp^2 + sigma_parallel^2 - sigma_perp sigma_parallel 
     Sia per tensioni normali sia per tensioni tangenziali, la sezione critica di riferimento per il calcolo statico è la *sezione di gola*, ovvero il piano inclinato a $45°$ perpendicolare al flusso di tensione attraverso il cordone, sul quale si assume una distribuzione uniforme delle tensioni (*plasticizzazione*).
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/ecm-c11-p2-07.typ") /* Flusso delle tensioni attraverso i cordoni d'angolo e individuazione della sezione di gola */
+    #fig-safe(include "../../figs/ecm-c11-p2-07.typ") /* Flusso delle tensioni attraverso i cordoni d'angolo e individuazione della sezione di gola */
   ],
 )
 
@@ -275,7 +275,7 @@ $ sigma_"id" = sqrt(sigma_perp^2 + sigma_parallel^2 - sigma_perp sigma_parallel 
     - $L = l - 2 a$ è la *lunghezza effettiva* del cordone, ottenuta sottraendo un tratto $a$ a ciascuna estremità per tenere conto degli effetti di bordo.
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/ecm-c11-p2-08.typ") /* Prisma triangolare del cordone d'angolo con piede p, altezza di gola a e lunghezza efficace */
+    #fig-safe(include "../../figs/ecm-c11-p2-08.typ") /* Prisma triangolare del cordone d'angolo con piede p, altezza di gola a e lunghezza efficace */
   ],
 )
 
@@ -289,7 +289,7 @@ $ sigma_"id" = sqrt(sigma_perp^2 + sigma_parallel^2 - sigma_perp sigma_parallel 
     Nel *1° metodo (Directional Method)*, le tensioni si esprimono nel sistema di riferimento locale della sezione di gola: $sigma_perp^g$ (normale alla sezione di gola), $tau_perp^g$ (tangenziale perpendicolare all'asse) e $tau_parallel^g$ (tangenziale parallela all'asse), mentre $sigma_parallel^g$ *non si considera*. La verifica richiede il soddisfacimento simultaneo del criterio di Von Mises e del limite sulla sola tensione normale (affinché essa non risulti dominante):
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-statica-gola-tensioni.typ", max-h: 5.8cm)
+    #fig-safe(include "../../figs/p2-statica-gola-tensioni.typ", max-h: 5.8cm)
   ],
 )
 
@@ -338,7 +338,7 @@ $ Delta sigma_(C,"red") = k_s dot Delta sigma_C $
 A differenza della verifica statica (in cui si lavora sul piano inclinato della sezione di gola), a fatica la sezione di gola viene *ribaltata convenzionalmente su uno dei due lati globali* del cordone (faccia orizzontale o faccia verticale delle piastre) per operare nel riferimento macroscopico dei carichi esterni.
 
 #align(center)[
-  #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-fatica-ribaltamento.typ", max-h: 5.5cm)
+  #fig-safe(include "../../figs/p2-fatica-ribaltamento.typ", max-h: 5.5cm)
 ]
 
 A seconda della faccia scelta per il ribaltamento, la componente normale $sigma_perp$ e la componente tangenziale trasversale $tau_perp$ si *scambiano di ruolo* (mentre $tau_parallel$ giace sempre lungo l'asse del cordone); tuttavia la tensione equivalente perpendicolare all'asse del cordone risulta invariante rispetto alla scelta del piano di ribaltamento:
@@ -363,7 +363,7 @@ Le curve di Wöhler ($Delta sigma_R^m dot N = "cost"$) per i dettagli saldati pr
       $ Delta sigma_D = root(3, Delta sigma_C^3 frac(2 dot 10^6, 5 dot 10^6)) , quad Delta sigma_L = root(5, Delta sigma_D^5 frac(5 dot 10^6, 10^8)) $
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/ecm-c11-p2-13.typ") /* figura ecm-c11-p2-13, pagina 15: Fascio di curve S-N per particolari sollecitati a Delta sigma con pendenze m=3, m=5 e limi */
+    #fig-safe(include "../../figs/ecm-c11-p2-13.typ") /* figura ecm-c11-p2-13, pagina 15: Fascio di curve S-N per particolari sollecitati a Delta sigma con pendenze m=3, m=5 e limi */
   ],
 )
 
@@ -377,7 +377,7 @@ Le curve di Wöhler ($Delta sigma_R^m dot N = "cost"$) per i dettagli saldati pr
     - *Sollecitazioni tangenziali ($Delta tau$).* A differenza delle tensioni normali, per i dettagli sollecitati a taglio l'Eurocodice prevede solo due categorie di riferimento (sempre definite a $N_C = 2 dot 10^6$ cicli): $Delta tau_C = 100" MPa"$ per materiale base e giunti testa a testa a completa penetrazione, e $Delta tau_C = 80" MPa"$ per tutti gli altri casi (come cordoni d'angolo, flange tubolari o pioli saldati). Inoltre non c'è cambio di pendenza: le curve scendono con un'unica pendenza $m = 5$ da $10^4$ fino al limite di troncatura $N_L = 10^8$ cicli, oltre il quale diventano orizzontali (nessun danno sotto $Delta tau_L$).
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/ecm-c11-p2-14.typ", max-h: 5.0cm) /* figura ecm-c11-p2-14, pagina 15: Curve S-N per particolari sollecitati a Delta tau (categorie 100 MPa e 80 MPa) con pendenz */
+    #fig-safe(include "../../figs/ecm-c11-p2-14.typ", max-h: 5.0cm) /* figura ecm-c11-p2-14, pagina 15: Curve S-N per particolari sollecitati a Delta tau (categorie 100 MPa e 80 MPa) con pendenz */
   ],
 )
 
@@ -394,7 +394,7 @@ Le curve di Wöhler ($Delta sigma_R^m dot N = "cost"$) per i dettagli saldati pr
     
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p2/p2-fatica-compressione.typ", max-h: 5.0cm)
+    #fig-safe(include "../../figs/p2-fatica-compressione.typ", max-h: 5.0cm)
   ],
 )
 - *Tensioni nominali modificate.* In presenza di brusche variazioni geometriche (intagli) in prossimità del dettaglio costruttivo, le tensioni nominali vanno moltiplicate per un fattore di concentrazione geometrico delle tensioni indicato nella norma con $k_f$ (ricavato da manuali o da analisi agli elementi finiti): esso corrisponde al classico $K_t$ e *non va confuso* con il fattore di intaglio a fatica $K_f$.

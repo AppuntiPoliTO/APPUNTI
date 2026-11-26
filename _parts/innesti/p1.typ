@@ -1,4 +1,4 @@
-#import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
+#import "../../figs/_helpers.typ": fig-safe, img-flag
 
 #let nota(body) = block(width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body)
 
@@ -29,7 +29,7 @@ Il transitorio critico è la *sincronizzazione*, cioè l'uguagliamento delle vel
   [
     L'*innesto a denti* trasferisce la coppia tramite un *accoppiamento di forma* tra due flange frontali dotate di profili coniugati. Una leva agente su un collare spinge assialmente la flangia scorrevole fino a impegnare i fianchi dei denti, realizzando un collegamento rigido privo di slittamento a regime.
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p1/ecm-c13-p1-01.typ")],
+  [#fig-safe(include "../../figs/ecm-c13-p1-01.typ")],
 )
 
 #v(0.6em)
@@ -41,14 +41,14 @@ Il transitorio critico è la *sincronizzazione*, cioè l'uguagliamento delle vel
   [
     L'inserimento è ammesso solo a macchina ferma o a *moto lento*, così che i denti trovino la fase corretta senza urti distruttivi; le superfici inclinate agevolano l'imbocco. Durante il disinserimento sotto carico occorre vincere l'attrito generato dalla pressione sui fianchi: l'inclinazione del profilo può favorire oppure ostacolare l'apertura.
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p1/ecm-c13-p1-02.typ")],
+  [#fig-safe(include "../../figs/ecm-c13-p1-02.typ")],
 )
 
 == Innesti a frizione
 
 Negli *innesti a frizione* la coppia viene trasmessa per *attrito* tra due o più superfici premute da una forza assiale $F$. Le geometrie principali impiegano superfici piane a *corona circolare*, superfici *troncoconiche* (dove l'effetto cuneo amplifica la pressione normale a parità di spinta assiale) oppure superfici cilindriche *a tamburo*.
 
-#fig-safe(include "../../figs/_parts-innesti-p1/ecm-c13-p1-03.typ", max-h: 3.4cm)
+#fig-safe(include "../../figs/ecm-c13-p1-03.typ", max-h: 3.4cm)
 
 La spinta $F$ può essere generata da leve meccaniche, attuatori idraulici o elettromagnetici, oppure da un organo elastico precaricato (*molla a diaframma* con intagli radiali fungenti da leve, oppure molle elicoidali) antagonista al comando di disinnesto. Un funzionamento corretto richiede:
 - *Centratura assiale e rigidezza dei supporti*, per garantire una pressione di contatto uniforme.
@@ -64,7 +64,7 @@ La spinta $F$ può essere generata da leve meccaniche, attuatori idraulici o ele
   [
     Nella configurazione *monodisco*, la flangia motrice (volano) $A$ e lo *spingidisco* $B$ serrano il disco condotto $D$, scorrevole assialmente sul mozzo scanalato e rivestito su entrambe le facce con guarnizioni ad alto attrito. Il pacchetto è racchiuso in una *campana* di guida e ventilazione; le superfici attive di attrito sono *due* ($A$–$D$ e $B$–$D$).
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p1/ecm-c13-p1-04.typ")],
+  [#fig-safe(include "../../figs/ecm-c13-p1-04.typ")],
 )
 
 #v(0.6em)
@@ -76,7 +76,7 @@ La spinta $F$ può essere generata da leve meccaniche, attuatori idraulici o ele
   [
     Il disco presenta una modesta *deformazione elastica fuori dal piano*: all'avvicinamento dello spingidisco l'area di contatto cresce progressivamente rendendo l'inserimento graduale, mentre al rilascio il ritorno elastico favorisce il distacco netto. L'ampia superficie esterna rispetto al volume agevola lo smaltimento termico verso l'ambiente.
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p1/ecm-c13-p1-05.typ", max-h: 3.3cm)],
+  [#fig-safe(include "../../figs/ecm-c13-p1-05.typ", max-h: 3.3cm)],
 )
 
 #v(0.5em)
@@ -89,7 +89,7 @@ Per filtrare gli strappi e le *vibrazioni torsionali*, il disco o il volano inte
   align: (center + horizon, center + horizon, center + horizon),
   [#fig-safe(image("../../figs/ecm-c13-p1-06.jpg"), max-h: 4.5cm)],
   [#fig-safe(image("../../figs/ecm-c13-p1-07.jpg"), max-h: 4.5cm)],
-  [#fig-safe(include "../../figs/_parts-innesti-p1/ecm-c13-p1-08.typ", max-h: 4.5cm)],
+  [#fig-safe(include "../../figs/ecm-c13-p1-08.typ", max-h: 4.5cm)],
 )
 
 === Innesto multidisco
@@ -103,7 +103,7 @@ Per trasmettere coppie elevate senza accrescere eccessivamente il diametro del d
   [
     Alternando dischi piani e dischi predeformati a *onda sinusoidale* si migliorano gradualità d'innesto e distacco a vuoto. La compattezza riduce però lo smaltimento termico verso l'esterno causando *surriscaldamento locale* nei tipi a secco; il limite si supera nei modelli a immersione o a circolazione d'olio. L'attuazione può avvenire con *elettromagnete* in chiusura e molle di richiamo in apertura.
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p1/ecm-c13-p1-09.typ")],
+  [#fig-safe(include "../../figs/ecm-c13-p1-09.typ")],
 )
 
 #v(0.6em)
@@ -115,5 +115,5 @@ Per trasmettere coppie elevate senza accrescere eccessivamente il diametro del d
   [
     Nel *comando meccanico a leva*, una slitta azionata dall'esterno scorre assialmente facendo ruotare una leva fulcrata lungo un profilo raccordato. Il piede della leva preme sullo spingidisco comprimendo il pacco dischi; arretrando la slitta, la leva rientra nella sede esterna liberando i dischi.
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p1/ecm-c13-p1-10.typ")],
+  [#fig-safe(include "../../figs/ecm-c13-p1-10.typ")],
 )

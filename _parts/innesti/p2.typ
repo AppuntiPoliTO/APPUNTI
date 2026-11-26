@@ -1,4 +1,4 @@
-#import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
+#import "../../figs/_helpers.typ": fig-safe, img-flag
 
 #let nota(body) = block(width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body)
 
@@ -14,9 +14,9 @@ I coefficienti d'attrito variano in funzione di pressione $p$, velocità di stri
   columns: (1fr, 1fr, 1fr),
   column-gutter: 0.8em,
   align: (center + horizon, center + horizon, center + horizon),
-  [#fig-safe(include "../../figs/_parts-innesti-p2/ecm-c13-p2-01.typ")],
-  [#fig-safe(include "../../figs/_parts-innesti-p2/ecm-c13-p2-02.typ")],
-  [#fig-safe(include "../../figs/_parts-innesti-p2/ecm-c13-p2-03.typ")],
+  [#fig-safe(include "../../figs/ecm-c13-p2-01.typ")],
+  [#fig-safe(include "../../figs/ecm-c13-p2-02.typ")],
+  [#fig-safe(include "../../figs/ecm-c13-p2-03.typ")],
 )
 #align(center, text(size: 8.5pt, fill: luma(80))[
   Curva 1: guarnizione organica (*ferodo*); curva 2: materiale sinterizzato ferro-bronzo. Linea continua: attrito cinetico $f$; linea tratteggiata: attrito statico $f_0$.
@@ -49,7 +49,7 @@ Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la 
   [
     Negli *innesti centrifughi* l'inserimento dipende dalla velocità di rotazione dell'albero motore. A basso regime le molle di richiamo trattengono i ceppi distaccati dal tamburo; superata la velocità critica di taratura, la *forza centrifuga* vince il precarico elastico e preme le guarnizioni contro la superficie interna del tamburo, avviando gradualmente l'utilizzatore.
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p2/ecm-c13-p2-05.typ", max-h: 4.3cm)],
+  [#fig-safe(include "../../figs/ecm-c13-p2-05.typ", max-h: 4.3cm)],
 )
 
 === Innesto di sopravanzo ad arpionismo (ruota libera)
@@ -60,7 +60,7 @@ Negli *innesti di sopravanzo* (*ruote libere*) il collegamento dipende dal segno
   columns: (1fr, 0.85fr),
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
-  [#fig-safe(include "../../figs/_parts-innesti-p2/ecm-c13-p2-06.typ", max-h: 4.6cm)],
+  [#fig-safe(include "../../figs/ecm-c13-p2-06.typ", max-h: 4.6cm)],
   [#fig-safe(image("../../figs/ecm-c13-p2-07.jpg"), max-h: 4.4cm)],
 )
 
@@ -73,7 +73,7 @@ Negli *innesti di sopravanzo* (*ruote libere*) il collegamento dipende dal segno
   [
     Il mozzo presenta rampe eccentriche su cui poggiano *rulli cilindrici* mantenuti in leggero contatto iniziale da piccole molle elicoidali. Nel verso di lavoro (linea continua) i rulli si incuneano tra mozzo e tamburo trasmettendo coppia per attrito senza gioco d'imbocco; nel verso opposto comprimono le molle, lasciando libero il tamburo.
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p2/ecm-c13-p2-08.typ", max-h: 4.3cm)],
+  [#fig-safe(include "../../figs/ecm-c13-p2-08.typ", max-h: 4.3cm)],
 )
 
 == Innesti senza contatto ed elettromeccanici

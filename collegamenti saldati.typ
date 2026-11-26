@@ -46,7 +46,7 @@ Nel processo può essere impiegato o meno un #strong[materiale d'apporto], carat
 - saldatura #strong[per fusione];
 - saldatura #strong[a resistenza] (elettrica);
 - saldatura #strong[per pressione];
-- #strong[brasatura], in cui il materiale d'apporto ha un basso punto di fusione tale per cui il materiale base non fonde.],[#include "figs/collegamenti-saldati/collegamenti-saldati-fig01.typ"])
+- #strong[brasatura], in cui il materiale d'apporto ha un basso punto di fusione tale per cui il materiale base non fonde.],[#include "figs/collegamenti-saldati-fig01.typ"])
 #pagebreak()
 === Architettura delle tecnologie principali di saldatura
 Una prima classificazione generale distingue tra #strong[saldatura autogena] (in cui il materiale base partecipa alla fusione o subisce un passaggio di stato/giunzione sotto elevata pressione) e #strong[saldatura eterogenea].
@@ -79,7 +79,7 @@ La saldatura per fusione ad arco è ampiamente utilizzata nelle costruzioni di c
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Questo procedimento provoca la fusione localizzata del materiale base in corrispondenza del cianfrino, generando nelle regioni immediatamente adiacenti una #strong[zona termicamente alterata (ZTA)] in cui il ciclo termico modifica le proprietà del materiale e altera lo stato di tensione.],[#include "figs/collegamenti-saldati/collegamenti-saldati-fig02.typ"])
+  align: (left + horizon, center + horizon),[Questo procedimento provoca la fusione localizzata del materiale base in corrispondenza del cianfrino, generando nelle regioni immediatamente adiacenti una #strong[zona termicamente alterata (ZTA)] in cui il ciclo termico modifica le proprietà del materiale e altera lo stato di tensione.],[#include "figs/collegamenti-saldati-fig02.typ"])
 
 Le cinque tecnologie di saldatura per fusione ad arco più diffuse sono:
 1. saldatura manuale con elettrodi rivestiti;
@@ -98,7 +98,7 @@ Le cinque tecnologie di saldatura per fusione ad arco più diffuse sono:
 - #strong[protettiva]: impedisce il contatto tra l'ossigeno ($"O"_2$) dell'atmosfera esterna e il bagno di fusione;
 - #strong[disossidante]: assorbe eventuali tracce di $"O"_2$ presenti all'interno del bagno liquido;
 - #strong[scorificante]: assorbe sostanze indesiderate come zolfo e fosforo;
-- #strong[di sostegno]: sostiene il bagno di fusione, risultando particolarmente utile nelle posizioni di saldatura scomode quali quelle ad asse verticale o sopratesta.],[#include "figs/collegamenti-saldati/collegamenti-saldati-fig03.typ"])
+- #strong[di sostegno]: sostiene il bagno di fusione, risultando particolarmente utile nelle posizioni di saldatura scomode quali quelle ad asse verticale o sopratesta.],[#include "figs/collegamenti-saldati-fig03.typ"])
 
 In base alla composizione del rivestimento, si distinguono due principali tipologie di elettrodi, con importanti implicazioni sulla difettosità del giunto:
 - #strong[Elettrodi rutilici]: il rivestimento è costituito prevalentemente da biossido di titanio (o rutilo), che conferisce al bagno di fusione una notevole fluidità e un ottimo aspetto superficiale dopo la solidificazione. Tuttavia, questi rivestimenti sviluppano una notevole quantità di #strong[idrogeno], che tende a infragilire il materiale e a favorire l'apertura e la propagazione di difetti; per questo non possono essere utilizzati quando sussiste il pericolo di cricche a caldo e a freddo. Grazie alla facilità esecutiva, trovano impiego in carpenteria di modesto spessore.
@@ -111,7 +111,7 @@ In base alla composizione del rivestimento, si distinguono due principali tipolo
   [La saldatura ad arco sommerso è un procedimento autogeno per fusione in cui l'arco elettrico scocca tra un filo elettrodo fusibile, alimentato automaticamente, e il pezzo da saldare. L'arco risulta completamente sommerso e invisibile, poiché la zona di saldatura è ricoperta da un #strong[flusso] granulare (simile a polvere/sabbia) che svolge le medesime funzioni protettive della scoria nella saldatura a elettrodo rivestito, proteggendo il bagno dall'ossidazione dell'aria.
 
 ],
-  [#include "figs/collegamenti-saldati/collegamenti-saldati-fig04.typ"],
+  [#include "figs/collegamenti-saldati-fig04.typ"],
 )
 Un impianto ad arco sommerso è costituito dai seguenti elementi:
 - un #strong[generatore di corrente] (analogo a quello per elettrodo rivestito) di elevato amperaggio ($1000 "-" 3000 "A"$);
@@ -128,7 +128,7 @@ Trattandosi di un processo automatizzato (in cui il sistema movimenta l'elettrod
 
 L'unica differenza risiede nel sistema di protezione dall'aria, che non è affidato a un flusso solido ma a un #strong[flusso di gas in pressione] convogliato attraverso un'intercapedine attorno all'elettrodo centrale:
 ],
-  [#include "figs/collegamenti-saldati/collegamenti-saldati-fig05.typ"],
+  [#include "figs/collegamenti-saldati-fig05.typ"],
 )
 - #strong[MIG (Metal Inert Gas)]: utilizza un gas inerte (tipicamente Argon) che non partecipa alla fusione. L'Argon puro si impiega prevalentemente nella saldatura dell'alluminio, del rame e delle sue leghe (come il bronzo).
 - #strong[MAG (Metal Active Gas)]: utilizza un gas attivo (anidride carbonica, $"CO"_2$) oppure miscele di $"Ar" "-" "CO"_2$ contenenti una frazione attiva anche minima, che partecipa alla fusione. Le miscele $"Ar" "-" "CO"_2$ in diverse percentuali si utilizzano per tutti gli altri materiali (ferro, acciaio inossidabile, ecc.).
@@ -143,7 +143,7 @@ Rispetto all'arco sommerso, l'assenza del flusso solido da distribuire e recuper
   [La saldatura TIG è un procedimento ad arco in cui il calore è generato da un arco elettrico che scocca tra un #strong[elettrodo infusibile in tungsteno] (che mantiene costanti lunghezza e diametro) e il pezzo da saldare, in atmosfera di gas inerte (Argon). L'arco fonde i lembi del pezzo mentre il materiale da riporto viene aggiunto manualmente dall'esterno mediante una bacchetta separata, avente caratteristiche paragonabili a quelle del materiale base. 
 
 ],
-  [#include "figs/collegamenti-saldati/collegamenti-saldati-fig06.typ"],
+  [#include "figs/collegamenti-saldati-fig06.typ"],
 )
 Per evitare pericolose inclusioni di tungsteno nel giunto, l'elettrodo non deve mai venire a contatto con il pezzo.
 Il processo consente di saldare un'ampia gamma di materiali: acciai, acciai inossidabili, acciai temperati, leghe di alluminio, magnesio e titanio. Le sue caratteristiche principali sono:
@@ -167,7 +167,7 @@ Il #strong[giunto saldato] è la regione in cui avviene il collegamento dei pezz
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Nel caso dell'acciaio, il cordone di saldatura risulta normalmente più resistente del metallo adiacente a causa dell'#strong[ingrossamento del grano] nella ZTA, che riduce la resistenza dell'acciaio rispetto a una struttura a grano fine.],[#include "figs/collegamenti-saldati/collegamenti-saldati-fig07.typ"])
+  align: (left + horizon, center + horizon),[Nel caso dell'acciaio, il cordone di saldatura risulta normalmente più resistente del metallo adiacente a causa dell'#strong[ingrossamento del grano] nella ZTA, che riduce la resistenza dell'acciaio rispetto a una struttura a grano fine.],[#include "figs/collegamenti-saldati-fig07.typ"])
 
 === Effetti della tecnica di saldatura e controlli non distruttivi
 Nella progettazione di un collegamento saldato occorre tenere conto di tre effetti principali derivanti dal processo:
@@ -185,7 +185,7 @@ Le #strong[tensioni residue] sono tensioni presenti nel giunto al termine del pr
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[In un giunto saldato si instaura tipicamente uno stato di coazione caratterizzato da:
 - #strong[tensioni residue di trazione] nella zona del cordone di saldatura, con il punto più sollecitato localizzato a centro cordone;
-- #strong[tensioni residue di compressione] nelle zone adiacenti del metallo base.],[#include "figs/collegamenti-saldati/collegamenti-saldati-fig08.typ"])
+- #strong[tensioni residue di compressione] nelle zone adiacenti del metallo base.],[#include "figs/collegamenti-saldati-fig08.typ"])
 
 #grid(
   columns: (1fr, 1fr),
@@ -194,7 +194,7 @@ Le #strong[tensioni residue] sono tensioni presenti nel giunto al termine del pr
 - #strong[Azione meccanica]: mantenere le parti di materiale base perfettamente allineate mediante vincoli esterni (morse) fino al completo assestamento del cordone, prevenendo imbarcamenti e disallineamenti (pratica molto diffusa nelle costruzioni navali).
 - #strong[Ordine di ripresa per cordone a X]: nei forti spessori, deporre il cordone mediante passate successive simmetriche rispetto al piano mediano (ad esempio prima passata centrale 1, poi passate 2 e 3 sui lati opposti, quindi 4 e 5 a completamento, ed eventuali ulteriori passate simmetriche) per bilanciare l'introduzione del calore.
 - #strong[Ordine di esecuzione di un cordone lungo]: anziché procedere in modo continuo da un'estremità all'altra (che causerebbe raffreddamenti asimmetrici e tensioni non uniformi), eseguire la saldatura per tratti simmetrici — ad esempio fissando prima il tratto centrale (1), poi i due tratti esterni simmetrici (2 e 3) e completando infine i tratti intermedi mancanti (4 e 5).
-- #strong[Deformazione imposta preventiva (compensazione)]: nei casi in cui l'entità della distorsione sia nota a priori (tipicamente nelle costruzioni navali), si predeforma l'elemento in direzione opposta a quella indotta dalle tensioni residue, in modo che a saldatura completata i due effetti si compensino portando il componente in piano.],[#include "figs/collegamenti-saldati/collegamenti-saldati-fig09.typ"])
+- #strong[Deformazione imposta preventiva (compensazione)]: nei casi in cui l'entità della distorsione sia nota a priori (tipicamente nelle costruzioni navali), si predeforma l'elemento in direzione opposta a quella indotta dalle tensioni residue, in modo che a saldatura completata i due effetti si compensino portando il componente in piano.],[#include "figs/collegamenti-saldati-fig09.typ"])
 
 === Effetto di intaglio nelle saldature
 #grid(
@@ -202,7 +202,7 @@ Le #strong[tensioni residue] sono tensioni presenti nel giunto al termine del pr
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Nelle saldature coesistono due distinti meccanismi di concentrazione delle tensioni:
 - #strong[Intaglio geometrico]: dovuto alla discontinuità geometrica della sezione trasversale al piede del cordone di saldatura (dove si forma uno spigolo rispetto alla faccia della lamiera, sia sul lato superiore sia su quello inferiore) nonché a eventuali fessure interne.
-- #strong[Intaglio metallurgico]: nella zona di transizione tra metallo base e metallo d'apporto (ZTA) si ha una variazione brusca e localizzata delle caratteristiche meccaniche, chimico-fisiche ed elastiche del materiale, che ne accresce la disomogeneità e l'anisotropia. Ciò perturba il flusso delle tensioni generando picchi locali di tensione. Anche qualora il cordone venga molato a filo per eliminare completamente l'intaglio geometrico, l'effetto di intaglio metallurgico permane in quanto legato all'alterazione microstrutturale.],[#include "figs/collegamenti-saldati/collegamenti-saldati-fig10.typ"])
+- #strong[Intaglio metallurgico]: nella zona di transizione tra metallo base e metallo d'apporto (ZTA) si ha una variazione brusca e localizzata delle caratteristiche meccaniche, chimico-fisiche ed elastiche del materiale, che ne accresce la disomogeneità e l'anisotropia. Ciò perturba il flusso delle tensioni generando picchi locali di tensione. Anche qualora il cordone venga molato a filo per eliminare completamente l'intaglio geometrico, l'effetto di intaglio metallurgico permane in quanto legato all'alterazione microstrutturale.],[#include "figs/collegamenti-saldati-fig10.typ"])
 
 === Tipi di giunti saldati
 #grid(
@@ -215,7 +215,7 @@ Le #strong[tensioni residue] sono tensioni presenti nel giunto al termine del pr
 4. #strong[Giunto a croce con cordoni d'angolo (4)]: costituito da quattro cordoni d'angolo che collegano due piastre ad una piastra passante perpendicolare.
 5. #strong[Giunto a sovrapposizione (5)] (#emph[overlap]): collega due lamiere sovrapposte mediante cordoni d'angolo deposti tra il lembo di una piastra e la faccia dell'altra; presenta una marcata asimmetria.
 6. #strong[Giunto a semplice coprigiunto (6)]: mantiene allineate due piastre mediante una piastra di banda superiore collegata con cordoni d'angolo, rimanendo comunque asimmetrico.
-7. #strong[Giunto a doppio coprigiunto (7)]: impiega due coprigiunti uguali e opposti saldati su entrambi i lati; aumenta lo spessore complessivo ma garantisce simmetria di comportamento e bilanciamento delle masse.],[#include "figs/collegamenti-saldati/collegamenti-saldati-fig11.typ"])
+7. #strong[Giunto a doppio coprigiunto (7)]: impiega due coprigiunti uguali e opposti saldati su entrambi i lati; aumenta lo spessore complessivo ma garantisce simmetria di comportamento e bilanciamento delle masse.],[#include "figs/collegamenti-saldati-fig11.typ"])
 
 === Principali criteri per il progetto di giunti saldati ed esempi costruttivi
 Una corretta progettazione dei collegamenti saldati deve rispettare una serie di criteri geometrici e tecnologici volti a garantire eseguibilità, integrità strutturale e contenimento delle tensioni residue:

@@ -1,4 +1,4 @@
-#import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
+#import "../../figs/_helpers.typ": fig-safe, img-flag
 
 #let nota(body) = block(
   width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,
@@ -18,7 +18,7 @@ I *giunti rigidi* collegano due alberi *perfettamente coassiali*, impedendo qual
     Il giunto a manicotto unisce le estremità affacciate dei due alberi mediante un *manicotto cilindrico cavo* (generalmente in ghisa) collegato agli alberi tramite due *chiavette con nasello*. La superficie superiore leggermente obliqua e il nasello sporgente consentono il forzamento in sede e l'estrazione allo smontaggio.
   ],
   [
-    #fig-safe(include "../../figs/_parts-giunti-p2/ecm-c12-p2-01.typ", max-h: 5.2cm)
+    #fig-safe(include "../../figs/ecm-c12-p2-01.typ", max-h: 5.2cm)
   ],
 )
 
@@ -33,7 +33,7 @@ In caso di sovraccarico la chiavetta cede per prima, fungendo da fusibile meccan
 Il giunto a gusci adotta un manicotto cilindrico (interno ed esterno) diviso longitudinalmente in *due semigusci* premuti contro gli alberi da *bulloni trasversali*. Tra i due semigusci deve essere presente un *gioco per il serraggio* ($s$) affinché il tiro dei bulloni generi pressione sull'interfaccia albero–manicotto senza mandare a pacco i piani di separazione.
 
 #align(center)[
-  #fig-safe(include "../../figs/_parts-giunti-p2/ecm-c12-p2-02.typ", max-h: 6.5cm)
+  #fig-safe(include "../../figs/ecm-c12-p2-02.typ", max-h: 6.5cm)
 ]
 
 Accorgimenti costruttivi principali rispetto al giunto a manicotto:
@@ -66,7 +66,7 @@ Accorgimenti costruttivi principali rispetto al giunto a manicotto:
     $ p(phi.alt) = p_0 dot cos^2 phi.alt $
   ],
   [
-    #fig-safe(include "../../figs/_parts-giunti-p2/ecm-c12-p2-04.typ", max-h: 5.0cm)
+    #fig-safe(include "../../figs/ecm-c12-p2-04.typ", max-h: 5.0cm)
   ],
 )
 
@@ -100,7 +100,7 @@ Da $T_b$ si determinano la coppia di serraggio e la verifica a resistenza dei bu
     Il *giunto rigido a dischi* è formato da due dischi con *mozzi* calettati sugli alberi (tramite chiavette o linguette), accostati frontalmente e collegati da $n$ bulloni su una corona circolare di diametro primitivo $d^*$. Il contatto fra le facce è limitato a una *corona circolare esterna* per massimizzare il braccio delle forze d'attrito. Se i mozzi mancano e i dischi sono fucinati o saldati alle estremità dell'albero, il giunto è detto *giunto a flange*.
   ],
   [
-    #fig-safe(include "../../figs/_parts-giunti-p2/ecm-c12-p2-05.typ", max-h: 5.5cm)
+    #fig-safe(include "../../figs/ecm-c12-p2-05.typ", max-h: 5.5cm)
   ],
 )
 
@@ -120,7 +120,7 @@ In caso di sovraccarico i bulloni fungono da *elemento sacrificale*; un bordo o 
     dove $f$ è il coefficiente di attrito tra le superfici (tipicamente *$f = 0.25$* per superfici sgrossate).
   ],
   [
-    #fig-safe(include "../../figs/_parts-giunti-p2/ecm-c12-p2-06.typ", max-h: 5.8cm)
+    #fig-safe(include "../../figs/ecm-c12-p2-06.typ", max-h: 5.8cm)
   ],
 )
 
@@ -134,6 +134,6 @@ In caso di sovraccarico i bulloni fungono da *elemento sacrificale*; un bordo o 
     *Alternativa: bulloni calibrati a taglio.* Impiegando *bulloni a gambo calibrato* (diametro $d$, lunghezza calibrata $s$ a cavallo del piano di separazione) inseriti in *fori alesati*, la coppia è trasmessa direttamente dalle *forze di taglio $F_T$*, mentre la filettatura chiude soltanto il collegamento. È una soluzione *più costosa*, ma trasmette una *coppia più elevata* e richiede la *verifica a taglio* dei bulloni.
   ],
   [
-    #fig-safe(include "../../figs/_parts-giunti-p2/ecm-c12-p2-07.typ", max-h: 4.2cm)
+    #fig-safe(include "../../figs/ecm-c12-p2-07.typ", max-h: 4.2cm)
   ],
 )

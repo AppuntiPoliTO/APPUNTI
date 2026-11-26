@@ -1,5 +1,5 @@
 #import "@preview/cetz:0.3.4": canvas, draw
-#import "figs/comuni/_helpers.typ": fig-safe, img-flag
+#import "figs/_helpers.typ": fig-safe, img-flag
 #set page(paper: "a4", margin: 1.5cm, numbering: "1", number-align: bottom + right)
 #set text(lang: "it", size: 11pt)
 #set par(justify: true)
@@ -46,7 +46,7 @@ Dalle reazioni vincolari globali si ricavano le *forze per unità di lunghezza* 
     $ 2 F = P arrow.r F = frac(P, 2) , quad f_parallel = frac(F, L) = frac(P, 2 L) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-01.typ", max-h: 5.8cm)
+    #fig-safe(include "figs/ecm-c11-p3-01.typ", max-h: 5.8cm)
   ],
 )
 
@@ -57,10 +57,10 @@ Dalle reazioni vincolari globali si ricavano le *forze per unità di lunghezza* 
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-03.typ", max-h: 5.5cm, caption: [Reazioni vincolari $F$ del supporto sulla piattabanda])
+    #fig-safe(include "figs/ecm-c11-p3-03.typ", max-h: 5.5cm, caption: [Reazioni vincolari $F$ del supporto sulla piattabanda])
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-02.typ", max-h: 5.5cm, caption: [Azioni uguali e contrarie $F$ trasmesse sui cordoni])
+    #fig-safe(include "figs/ecm-c11-p3-02.typ", max-h: 5.5cm, caption: [Azioni uguali e contrarie $F$ trasmesse sui cordoni])
   ],
 )
 
@@ -77,7 +77,7 @@ Isolando prima la piattabanda come corpo libero si leggono le reazioni vincolari
     $ tau_parallel = tau_parallel^g = frac(f_parallel, a) = frac(F, L a) = frac(P, 2 L a) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-04.typ", max-h: 5.5cm)
+    #fig-safe(include "figs/ecm-c11-p3-04.typ", max-h: 5.5cm)
   ],
 )
 
@@ -92,7 +92,7 @@ Isolando prima la piattabanda come corpo libero si leggono le reazioni vincolari
     $ n_perp = frac(F, h) = frac(P, 2 h) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/p3-es2-equilibrio.typ", max-h: 5.8cm)
+    #fig-safe(include "figs/p3-es2-equilibrio.typ", max-h: 5.8cm)
   ],
 )
 
@@ -107,12 +107,12 @@ Nel *calcolo a fatica*, la tensione si ottiene dividendo $n_perp$ per $a$: fisic
   [
     - *Ribaltamento sul supporto.* La forza giace nel piano di adesione e genera una tensione tangenziale:
     $ tau_perp = frac(n_perp, a) = frac(F, h a) = frac(P, 2 h a) $
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-06.typ", max-h: 5.6cm)
+    #fig-safe(include "figs/ecm-c11-p3-06.typ", max-h: 5.6cm)
   ],
   [
     - *Ribaltamento sulla piattabanda.* La forza è ortogonale al lembo e genera una tensione normale:
     $ sigma_perp = frac(n_perp, a) = frac(F, h a) = frac(P, 2 h a) $
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-07.typ", max-h: 5.6cm)
+    #fig-safe(include "figs/ecm-c11-p3-07.typ", max-h: 5.6cm)
   ],
 )
 
@@ -128,10 +128,10 @@ $ sigma_perp^g = frac(n_(perp, n), a) = frac(n_perp cos 45°, a) = frac(F sqrt(2
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-08.typ", max-h: 5.5cm)
+    #fig-safe(include "figs/ecm-c11-p3-08.typ", max-h: 5.5cm)
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-09.typ", max-h: 5.0cm)
+    #fig-safe(include "figs/ecm-c11-p3-09.typ", max-h: 5.0cm)
   ],
 )
 
@@ -150,7 +150,7 @@ La piattabanda lavora a sbalzo sotto un carico verticale $P$ applicato a braccio
     $ n_perp = frac(F_1, L) = frac(P, 2 L) , quad f_parallel = frac(F_2, L) = frac(P b, h L) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-10.typ", max-h: 5.8cm)
+    #fig-safe(include "figs/ecm-c11-p3-10.typ", max-h: 5.8cm)
   ],
 )
 
@@ -166,7 +166,7 @@ La piattabanda lavora a sbalzo sotto un carico verticale $P$ applicato a braccio
     Nel *calcolo a fatica*, qualsiasi faccia si scelga per il ribaltamento, la tensione equivalente risulta invariante: sul supporto $n_perp$ diventa taglio trasversale ($tau_perp$), mentre sulla piattabanda diventa trazione/compressione normale ($sigma_perp$); in entrambi i casi $f_parallel$ resta $tau_parallel$.
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-11.typ", max-h: 5.5cm)
+    #fig-safe(include "figs/ecm-c11-p3-11.typ", max-h: 5.5cm)
   ],
 )
 
@@ -181,12 +181,12 @@ Nel *calcolo a fatica* le tensioni si ottengono dividendo per $a$ sulla sezione 
   [
     - *Ribaltamento sul supporto:*
     $ tau_perp = frac(n_perp, a) = frac(P, 2 L a) , quad tau_parallel = frac(f_parallel, a) = frac(P b, h L a) $
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/p3-es3-fatica-supporto.typ", max-h: 5.6cm)
+    #fig-safe(include "figs/p3-es3-fatica-supporto.typ", max-h: 5.6cm)
   ],
   [
     - *Ribaltamento sulla piattabanda:*
     $ sigma_perp = frac(n_perp, a) = frac(P, 2 L a) , quad tau_parallel = frac(f_parallel, a) = frac(P b, h L a) $
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/p3-es3-fatica-piattabanda.typ", max-h: 5.6cm)
+    #fig-safe(include "figs/p3-es3-fatica-piattabanda.typ", max-h: 5.6cm)
   ],
 )
 
@@ -203,7 +203,7 @@ Nel *calcolo a fatica* le tensioni si ottengono dividendo per $a$ sulla sezione 
     $ tau_parallel^g = frac(f_parallel, a) = frac(F_2, L a) = frac(P b, h L a) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-12.typ", max-h: 5.0cm)
+    #fig-safe(include "figs/ecm-c11-p3-12.typ", max-h: 5.0cm)
   ],
 )
 
@@ -219,7 +219,7 @@ Nel *calcolo a fatica* le tensioni si ottengono dividendo per $a$ sulla sezione 
     Poiché entrambi i cordoni sono verticali, *tutte* le reazioni risultano parallele al loro asse: $F_1$ punta verso l'alto su entrambi i cordoni, mentre la coppia $F_2$ (che si oppone alla rotazione oraria di $P$) punta verso l'alto sul *cordone di destra* e verso il basso su quello di sinistra. A destra $F_1$ e $F_2$ *si sommano*, mentre a sinistra sono discordi e si sottraggono.
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/p3-es4-equilibrio.typ", max-h: 6.0cm)
+    #fig-safe(include "figs/p3-es4-equilibrio.typ", max-h: 6.0cm)
   ],
 )
 
@@ -236,7 +236,7 @@ Nel *calcolo a fatica* le tensioni si ottengono dividendo per $a$ sulla sezione 
     $ tau_parallel = tau_parallel^g = frac(f_parallel, a) = frac(F_2 + F_1, h a) = frac(P, h a) (frac(1, 2) + frac(b, L)) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-13.typ", max-h: 5.5cm)
+    #fig-safe(include "figs/ecm-c11-p3-13.typ", max-h: 5.5cm)
   ],
 )
 
@@ -252,7 +252,7 @@ Nel *calcolo a fatica* le tensioni si ottengono dividendo per $a$ sulla sezione 
     Il taglio genera una forza distribuita uniforme lungo l'asse $f_parallel = F / h = P / h$; per contrastare il momento $M$, invece, l'unica possibilità è sviluppare una distribuzione lineare *a farfalla* $n_perp(y)$ ortogonale al cordone (trazione nella metà superiore, compressione in quella inferiore), analoga alla flessione di De Saint-Venant nella trave.
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-14.typ", max-h: 5.8cm)
+    #fig-safe(include "figs/ecm-c11-p3-14.typ", max-h: 5.8cm)
   ],
 )
 
@@ -272,7 +272,7 @@ Nel *calcolo a fatica* le tensioni si ottengono dividendo per $a$ sulla sezione 
     La verifica critica si esegue agli *estremi* ($y = plus.minus h/2$), dove $n_perp$ raggiunge il picco mentre $f_parallel$ è uniforme su tutto il cordone.
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/p3-es5-farfalla.typ", max-h: 6.0cm)
+    #fig-safe(include "figs/p3-es5-farfalla.typ", max-h: 6.0cm)
   ],
 )
 
@@ -287,12 +287,12 @@ Nel *calcolo a fatica* le tensioni massime agli estremi del cordone dipendono da
   [
     - *Ribaltamento sul supporto:*
     $ tau_(perp, "max") = frac(n_(perp, "max"), a) = frac(6 P b, h^2 a) , quad tau_parallel = frac(f_parallel, a) = frac(P, h a) $
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-15.typ", max-h: 5.6cm)
+    #fig-safe(include "figs/ecm-c11-p3-15.typ", max-h: 5.6cm)
   ],
   [
     - *Ribaltamento sulla piattabanda:*
     $ sigma_(perp, "max") = frac(n_(perp, "max"), a) = frac(6 P b, h^2 a) , quad tau_parallel = frac(f_parallel, a) = frac(P, h a) $
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/p3-es5-fatica-piattabanda.typ", max-h: 5.6cm)
+    #fig-safe(include "figs/p3-es5-fatica-piattabanda.typ", max-h: 5.6cm)
   ],
 )
 
@@ -308,7 +308,7 @@ Nel *calcolo a fatica* le tensioni massime agli estremi del cordone dipendono da
     $ tau_perp^g = frac(n_(perp, "max") sin 45°, a) = frac(3 P b sqrt(2), h^2 a) , quad tau_parallel^g = frac(f_parallel, a) = frac(P, h a) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/p3-es5-statica.typ", max-h: 4.8cm)
+    #fig-safe(include "figs/p3-es5-statica.typ", max-h: 4.8cm)
   ],
 )
 
@@ -325,7 +325,7 @@ Nel *calcolo a fatica* le tensioni massime agli estremi del cordone dipendono da
     $ n_(perp 1) = frac(N_1, L) = frac(P, 2 L) , quad n_(perp 2) = frac(N_2, L) = frac(P b, h L) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-16.typ", max-h: 5.8cm)
+    #fig-safe(include "figs/ecm-c11-p3-16.typ", max-h: 5.8cm)
   ],
 )
 
@@ -343,7 +343,7 @@ Nel *calcolo a fatica* le tensioni massime agli estremi del cordone dipendono da
         $ sigma_perp = frac(n_(perp 1), a) = frac(P, 2 L a) , quad tau_perp = frac(n_(perp 2), a) = frac(P b, h L a) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/p3-es6-fatica.typ", max-h: 5.6cm)
+    #fig-safe(include "figs/p3-es6-fatica.typ", max-h: 5.6cm)
   ],
 )
 
@@ -359,7 +359,7 @@ Nel *calcolo a fatica* le tensioni massime agli estremi del cordone dipendono da
     $ sigma_perp^g = frac(n_(perp, n), a) = frac(n_perp cos delta, a) , quad tau_perp^g = frac(n_(perp, t), a) = frac(n_perp sin delta, a) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/ecm-c11-p3-17.typ", max-h: 5.2cm)
+    #fig-safe(include "figs/ecm-c11-p3-17.typ", max-h: 5.2cm)
   ],
 )
 
@@ -376,6 +376,6 @@ Nel *calcolo a fatica* le tensioni massime agli estremi del cordone dipendono da
     $ tau_parallel = tau_parallel^g = frac(F, L a) = frac(M_e, L a h) $
   ],
   [
-    #fig-safe(include "figs/Esempi-di-calcolo-saldature/p3-es7-momento.typ", max-h: 5.6cm)
+    #fig-safe(include "figs/p3-es7-momento.typ", max-h: 5.6cm)
   ],
 )

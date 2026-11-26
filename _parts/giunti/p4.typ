@@ -1,4 +1,4 @@
-#import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
+#import "../../figs/_helpers.typ": fig-safe, img-flag
 
 #let nota(body) = block(
   width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,
@@ -21,7 +21,7 @@ I *giunti articolati* collegano due alberi tramite un *cinematismo* di *componen
     Il *giunto di Oldham* trasmette il moto tra *assi paralleli non coincidenti* (eccentricità $e$). È formato da due mozzi dotati di guide prismatiche diametrali ortogonali e da un *disco centrale rigido* (giallo in sezione) che porta sulle due facce opposte due risalti prismatici a $90 degree$ scorrevoli nelle rispettive guide.
   ],
   [
-    #fig-safe(include "../../figs/p4/ecm-c12-p4-02.typ", max-h: 4.8cm)
+    #fig-safe(include "../../figs/ecm-c12-p4-02.typ", max-h: 4.8cm)
   ],
 )
 
@@ -35,7 +35,7 @@ I *giunti articolati* collegano due alberi tramite un *cinematismo* di *componen
     Lo scorrimento nelle guide ortogonali rende il giunto *autoadattativo* ai disallineamenti radiali senza sovraccaricare i cuscinetti di supporto. A differenza dello *Steckflex*, il disco è *rigido* e non svolge azione smorzante. Tuttavia, lo spostamento del disco crea un'*eccentricità* ($e$) che genera *forze centrifughe*, precessioni e vibrazioni sui supporti: per questo il giunto di Oldham *non può essere impiegato per alte velocità di rotazione*.
   ],
   [
-    #fig-safe(include "../../figs/p4/p4-fig01.typ", max-h: 6cm)
+    #fig-safe(include "../../figs/p4-fig04.typ", max-h: 6cm)
   ],
 )
 
@@ -49,7 +49,7 @@ I *giunti articolati* collegano due alberi tramite un *cinematismo* di *componen
     Il *giunto di Cardano* (o *di Hooke*) è un *quadrilatero articolato spaziale* che collega *due alberi con assi concorrenti* inclinati di un angolo $beta$, anche variabile in esercizio. È composto da due *forcelle* (motrice e condotta, in acciaio stampato per contenere le deformazioni elastiche e mantenere allineate le sedi) articolate attorno agli assi ortogonali $y$ e $z$ di una *crociera* centrale tramite *bronzine* o *cuscinetti a rullini*. Con forcelle standard l'angolo di lavoro non supera *$beta approx 35 degree$* in uso continuativo ($45 degree$ solo per brevi transitori).
   ],
   [
-    #fig-safe(include "../../figs/p4/ecm-c12-p4-03.typ", max-h: 5cm)
+    #fig-safe(include "../../figs/ecm-c12-p4-03.typ", max-h: 5cm)
   ],
 )
 
@@ -65,7 +65,7 @@ I *giunti articolati* collegano due alberi tramite un *cinematismo* di *componen
     $ frac(Omega_2, Omega_1) = frac(cos beta, 1 - sin^2 beta dot sin^2 theta_1) $
   ],
   [
-    #fig-safe(include "../../figs/p4/p4-fig02.typ", max-h: 4.4cm)
+    #fig-safe(include "../../figs/p4-fig06.typ", max-h: 4.4cm)
   ],
 )
 
@@ -84,10 +84,10 @@ Anche a $M_1$ e $Omega_1$ costanti, sia $Omega_2$ sia $M_2$ oscillano periodicam
   column-gutter: 0.8em,
   align: (center + horizon, center + horizon),
   [
-    #fig-safe(include "../../figs/p4/p4-fig03.typ", max-h: 7.2cm)
+    #fig-safe(include "../../figs/p4-fig01.typ", max-h: 7.2cm)
   ],
   [
-    #fig-safe(include "../../figs/p4/p4-fig04.typ", max-h: 7.2cm)
+    #fig-safe(include "../../figs/p4-fig05.typ", max-h: 7.2cm)
   ],
 )
 
@@ -101,7 +101,7 @@ Anche a $M_1$ e $Omega_1$ costanti, sia $Omega_2$ sia $M_2$ oscillano periodicam
     Inserendo sull'albero intermedio un accoppiamento scanalato *telescopico* (es. alberi cardanici agricoli), il doppio giunto agevola il montaggio e compensa anche errori assiali, *dilatazioni termiche* e variazioni di distanza in esercizio.
   ],
   [
-    #fig-safe(include "../../figs/p4/p4-fig05.typ", max-h: 4.4cm)
+    #fig-safe(include "../../figs/p4-fig02.typ", max-h: 4.4cm)
   ],
 )
 
@@ -119,7 +119,7 @@ Anche a $M_1$ e $Omega_1$ costanti, sia $Omega_2$ sia $M_2$ oscillano periodicam
     $ F_1 = frac(M_1, h) , quad F_2 = frac(M_1, h) cos beta , quad Q = frac(M_1, h) sin beta $
   ],
   [
-    #fig-safe(include "../../figs/p4/ecm-c12-p4-06.typ", max-h: 5.2cm)
+    #fig-safe(include "../../figs/ecm-c12-p4-06.typ", max-h: 5.2cm)
   ],
 )
 
@@ -157,7 +157,7 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
     *Principio duale rispetto al cuscinetto volvente.* Le piste sono ricavate *longitudinalmente* anziché circonferenzialmente: in direzione assiale le sfere scorrono consentendo l'inclinazione $alpha$ ($beta$) tra gli alberi; in direzione circonferenziale i fianchi delle piste le bloccano lateralmente trasmettendo la coppia per contatto hertziano. Le piste possono avere sezione *circolare*, *ellittica* o ad *arco gotico* (cuspide centrale): i profili ellittico e ad arco gotico realizzano *quattro punti di contatto* caricando una retta d'azione o quella opposta a seconda del verso del moto.
   ],
   [
-    #fig-safe(include "../../figs/p4/ecm-c12-p4-08.typ", max-h: 5.2cm)
+    #fig-safe(include "../../figs/ecm-c12-p4-08.typ", max-h: 5.2cm)
   ],
 )
 
@@ -168,7 +168,7 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
   column-gutter: 1.2em,
   align: (center + horizon, center + horizon),
   [
-    #fig-safe(include "../../figs/p4/p4-fig06.typ", max-h: 4.8cm)
+    #fig-safe(include "../../figs/p4-fig03.typ", max-h: 4.8cm)
   ],
   [
     #fig-safe(image("../../figs/ecm-c12-p4-rzeppa-3d.jpg"), max-h: 4.1cm)
@@ -193,7 +193,7 @@ dove $z$ è il numero di sfere, $k d^2$ è la forza di contatto hertziana sulla 
     $ M_Q = 2 dot M dot sin(beta / 2) $
   ],
   [
-    #fig-safe(include "../../figs/p4/ecm-c12-p4-09.typ", max-h: 4.8cm)
+    #fig-safe(include "../../figs/ecm-c12-p4-09.typ", max-h: 4.8cm)
   ],
 )
 
@@ -208,10 +208,10 @@ $ overline(M) = M dot tan(beta / 2) $
   column-gutter: 1.2em,
   align: (center + horizon, center + horizon),
   [
-    #fig-safe(include "../../figs/p4/ecm-c12-p4-10.typ", max-h: 4.2cm)
+    #fig-safe(include "../../figs/ecm-c12-p4-10.typ", max-h: 4.2cm)
   ],
   [
-    #fig-safe(include "../../figs/p4/ecm-c12-p4-11.typ", max-h: 4.2cm)
+    #fig-safe(include "../../figs/ecm-c12-p4-11.typ", max-h: 4.2cm)
   ],
 )
 
@@ -239,7 +239,7 @@ $ overline(M) = M dot tan(beta / 2) $
     Il *giunto a tripode* è una soluzione omocinetica *più economica e compatta* dello Rzeppa, impiegata per *angoli di lavoro più piccoli* tra gli assi. *Tre perni* solidali all'albero motore (mozzo scanalato trattenuto da un anello *Seeger*), disposti simmetricamente a *$120 degree$*, sostengono *rulli sferici* montati su cuscinetti a rullini che scorrono entro *tre scanalature cilindriche longitudinali* nella campana dell'albero condotto.
   ],
   [
-    #fig-safe(include "../../figs/p4/ecm-c12-p4-13.typ", max-h: 5.2cm)
+    #fig-safe(include "../../figs/ecm-c12-p4-13.typ", max-h: 5.2cm)
   ],
 )
 
@@ -267,7 +267,7 @@ $ overline(M) = M dot tan(beta / 2) $
     Il *giunto di sicurezza* (limitatore di coppia) impedisce la trasmissione di coppie superiori a un valore di taratura prefissato. Lo schema tipico ricalca una *frizione multidisco*: una *campana a profilo scanalato interno* (gialla in sezione) ospita dischi sottili a dentatura esterna, alternati a dischi a dentatura interna montati su un *albero scanalato* (verde). Una *molla* precaricata da una *ghiera filettata* spinge uno *spingidisco* che compatta il pacco dischi.
   ],
   [
-    #fig-safe(include "../../figs/p4/ecm-c12-p4-15.typ", max-h: 5.4cm)
+    #fig-safe(include "../../figs/ecm-c12-p4-15.typ", max-h: 5.4cm)
   ],
 )
 

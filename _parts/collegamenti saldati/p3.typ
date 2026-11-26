@@ -1,4 +1,4 @@
-#import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
+#import "../../figs/_helpers.typ": fig-safe, img-flag
 
 == Applicazioni industriali e concentrazione delle tensioni
 
@@ -16,7 +16,7 @@
     Nella pratica industriale (nodi trave-colonna ad incastro, recipienti in pressione, staffe saldate, nodi di strutture tubolari e banchi di laminazione di grande estensione), la lunghezza dei cordoni, gli spessori elevati e l'accessibilità ridotta rendono l'esecuzione critica. In tali contesti la sicurezza strutturale richiede sempre l'integrazione tra calcolo progettuale e rigorose procedure di *qualificazione dei saldatori e dei procedimenti di saldatura*.
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p3/p3-fig01.typ", max-h: 5.8cm, caption: [Esempi industriali: nodo trave-colonna, recipiente in pressione, staffa e nodo tubolare])
+    #fig-safe(include "../../figs/p3-fig01.typ", max-h: 5.8cm, caption: [Esempi industriali: nodo trave-colonna, recipiente in pressione, staffa e nodo tubolare])
   ],
 )
 
@@ -32,7 +32,7 @@
     Poiché tale picco reale non è determinabile per via analitica chiusa, la normativa tecnica distingue tre livelli di analisi a raffinatezza crescente:
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p3/ecm-c11-p3-18.typ", max-h: 5.2cm)
+    #fig-safe(include "../../figs/ecm-c11-p3-18.typ", max-h: 5.2cm)
   ],
 )
 
@@ -46,7 +46,7 @@
     - *Metodo della tensione nominale ($sigma_"nom"$).* Valuta la tensione media macroscopica nella sezione resistente tramite equilibrio elementare lontano dall'intaglio, senza modellare la concentrazione locale del cordone. È l'approccio standard usato negli esempi precedenti in abbinamento alle categorie di dettaglio dell'Eurocodice 3.
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p3/p3-tensione-nominale.typ", max-h: 4.5cm)
+    #fig-safe(include "../../figs/p3-tensione-nominale.typ", max-h: 4.5cm)
   ],
 )
 
@@ -60,7 +60,7 @@
     - *Metodo della tensione di hot spot ($Delta sigma_"hss"$).* Rappresenta una via intermedia: si calcola la tensione strutturale nella piastra a distanze prefissate dal piede del cordone (es. punti $R_1, R_2$ oppure $t / 2$ e $3 t / 2$ nello spessore; per estrapolazione superficiale da norma $0.4 t$ e $1.0 t$ con mesh fine, $0.5 t$ e $1.5 t$ con mesh grossolana, oppure $4, 8, 12" mm"$ / $5, 15" mm"$ per hot-spot di tipo b) e la si *estrapola* linearmente o quadraticamente al piede del cordone, ottenendo una tensione convenzionale che coglie la macro-geometria del giunto ma non il picco non lineare locale.
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p3/ecm-c11-p3-20.typ", max-h: 4.5cm)
+    #fig-safe(include "../../figs/ecm-c11-p3-20.typ", max-h: 4.5cm)
   ],
 )
 
@@ -71,10 +71,10 @@
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p3/ecm-c11-p3-21.typ", max-h: 4.8cm)
+    #fig-safe(include "../../figs/ecm-c11-p3-21.typ", max-h: 4.8cm)
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p3/ecm-c11-p3-22.typ", max-h: 4.8cm)
+    #fig-safe(include "../../figs/ecm-c11-p3-22.typ", max-h: 4.8cm)
   ],
 )
 
@@ -88,6 +88,6 @@
     - *Metodo della tensione effettiva ($Delta sigma_"Eff"$).* Ricorre a modelli numerici puntuali agli *elementi finiti (FEM)* con mesh molto fitta al piede del cordone oppure a rilievi sperimentali, al fine di descrivere l'andamento reale della tensione fino al picco locale d'intaglio (*notch stress*).
   ],
   [
-    #fig-safe(include "../../figs/_parts-collegamenti-saldati-p3/ecm-c11-p3-19.typ", max-h: 4.5cm)
+    #fig-safe(include "../../figs/ecm-c11-p3-19.typ", max-h: 4.5cm)
   ],
 )

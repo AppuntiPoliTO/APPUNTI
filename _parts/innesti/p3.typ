@@ -1,4 +1,4 @@
-#import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
+#import "../../figs/_helpers.typ": fig-safe, img-flag
 
 #let nota(body) = block(width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body)
 
@@ -10,7 +10,7 @@ L'innesto trasmette una coppia variabile $M_s (t)$ tra l'organo motore (momento 
 
 Il transitorio di sincronizzazione governa la dinamica della trasmissione e il carico termico sulle superfici d'attrito (nei freni vale lo stesso schema, con decelerazione dell'organo frenato fino all'arresto):
 
-#fig-safe(include "../../figs/_parts-innesti-p3/ecm-c13-p3-01.typ", max-h: 6.4cm)
+#fig-safe(include "../../figs/ecm-c13-p3-01.typ", max-h: 6.4cm)
 
 - *Inserimento e ritardo ($t^*$–$t_0$).* Dal comando in $t^*$, giochi, rigidezze e inerzia dell'attuatore (idraulico più lento dell'elettromagnetico) ritardano l'inizio effettivo del contatto fino a $t_0$.
 - *Inseguimento dell'utilizzatore ($t_0$–$t_2$).* Al crescere della spinta $F$, la coppia d'attrito cinetico supera la coppia a vuoto $M_0$ e, in $t_1$, supera la coppia resistente $M_r$: l'utilizzatore accelera ($omega_u$ sale), mentre la coppia di slittamento si porta a $M_s$ e il motore decelera ($omega_m$ scende) fino al raggiungimento della velocità comune.
@@ -29,7 +29,7 @@ Durante lo strisciamento ($t_0$–$t_2$), la potenza termica generata eguaglia l
     $ F = integral_(r_i)^(r_e) integral_0^phi p(r) thin r thin d phi thin d r $
     $ M_s = integral_(r_i)^(r_e) integral_0^phi f dot p(r) dot r^2 thin d phi thin d r $
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p3/ecm-c13-p3-02.typ", max-h: 5.2cm)],
+  [#fig-safe(include "../../figs/ecm-c13-p3-02.typ", max-h: 5.2cm)],
 )
 
 #v(0.5em)
@@ -52,7 +52,7 @@ $ p(r) = p_"max" dot frac(r_i, r) $
     con raggio medio $r_m = (r_e + r_i) / 2$. Definiti l'efficacia $e = M_s / p_"max"$ e il rapporto geometrico $rho = r_e / r_i$, la condizione di ottimo $(d e) / (d rho) = 0$ fornisce:
     $ rho_0 = sqrt(3) approx 1.7 quad arrow.r.double quad r_m approx 0.78 r_e $
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p3/ecm-c13-p3-03.typ", max-h: 4.8cm)],
+  [#fig-safe(include "../../figs/ecm-c13-p3-03.typ", max-h: 4.8cm)],
 )
 
 #v(0.5em)
@@ -82,7 +82,7 @@ $ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) $
     $ tan alpha = 1 - f $
     (ad esempio, per $f = 0.3$ risulta $alpha approx 35 degree$).
   ],
-  [#fig-safe(include "../../figs/_parts-innesti-p3/ecm-c13-p3-04.typ", max-h: 5.2cm)],
+  [#fig-safe(include "../../figs/ecm-c13-p3-04.typ", max-h: 5.2cm)],
 )
 
 == Cenni sui freni
@@ -131,6 +131,6 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
-  [#fig-safe(include "../../figs/_parts-innesti-p3/ecm-c13-p3-07.typ", max-h: 4.6cm)],
+  [#fig-safe(include "../../figs/ecm-c13-p3-07.typ", max-h: 4.6cm)],
   [#fig-safe(image("../../figs/ecm-c13-p3-08.jpg"), max-h: 4.6cm)],
 )
