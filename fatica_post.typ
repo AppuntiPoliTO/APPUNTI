@@ -1084,14 +1084,9 @@ Si usa $N sigma_a^k = B$ quando si cerca la vita a fatica dato il carico, e $sig
 $ sigma_a = sigma_F - frac(sigma_F - sigma_D, log N_G - log N_F) (log N - log N_F) , quad log N = log N_F + frac(sigma_F - sigma_a, sigma_F - sigma_D) (log N_G - log N_F) $
 
 #figure(
-  canvas(length: 0.96cm, {
+  canvas(length: 1.36cm, {
     import draw: *
-    // BBox: x in [-1.2, 12.8] (dx=14.0), y in [-0.8, 4.7], length=0.96cm -> larghezza = 13.44 cm <= 15.5 cm
 
-    // ========================================================
-    // PANNELLO SINISTRO: SCALA LOG-LOG (BASQUIN)
-    // x in [0, 5] -> log10(N) in [2, 7]; y in [0, 4] -> log10(sigma_a) in [2, 3] (100..1000 MPa)
-    // ========================================================
     content((2.5, 4.35), anchor: "south")[#text(size: 8.5pt, weight: "bold")[Scala log--log (equazione di Basquin)]]
 
     // Griglia logaritmica leggera su x (decadi e sottodecadi)
