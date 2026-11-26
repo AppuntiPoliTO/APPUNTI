@@ -4780,7 +4780,7 @@ Quando $sigma_m$ è costante su tutti i livelli, il cumulativo si traduce in una
   ],
   [
     #figure(
-      #canvas(length: 1cm, {
+      canvas(length: 1cm, {
   import draw: *
 
   line((0.2, 0.2), (6.2, 0.2), stroke: 0.9pt)
@@ -4865,7 +4865,7 @@ Quando $sigma_m$ è costante su tutti i livelli, il cumulativo si traduce in una
   content((5.80, -0.95), text(size: 8pt)[$220$], anchor: "north")
   content((6.60, -0.95), text(size: 8pt)[$260$], anchor: "north")
 
-  content((3.70, -1.75), text(size: 10pt)[$\sigma_a\ (MPa)$], anchor: "north")
+  content((3.70, -1.75), text(size: 10pt)[$sigma_a$], anchor: "north")
 
   content((7.10, -0.25), text(size: 8pt)[$-100$], anchor: "west")
   content((7.35, 0.70), text(size: 8pt)[$-50$], anchor: "west")
