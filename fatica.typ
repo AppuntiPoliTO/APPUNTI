@@ -346,7 +346,7 @@ Fissando $sigma_m = "costante"$ si ottiene il *diagramma S–N*, con $log_10 N$ 
 Al crescere di $T$, i legami interatomici si indeboliscono e il materiale diventa più cedevole, come già mostrano le curve statiche di trazione. L'intera curva S–N si abbassa e il limite di fatica $sigma_D$ cala, imponendo campagne termiche dedicate per gli organi destinati a lavorare a caldo.
 
 #figure(
-  include "figs/fatica/fatica-fig14.typ",
+  include "figs/fatica/fatica-fig28.typ",
   caption: [Diagramma S–N (curva di Wöhler per $sigma_m = 0$) con i tre regimi di fatica e il punto di ginocchio.],
 )
 
@@ -365,7 +365,7 @@ Nella regione a termine, invece, il progettista entra in ordinata con la tension
 Le norme definiscono schemi di prova capaci di imporre cicli controllati con macchine semplici ed economiche. La soluzione di riferimento per i cicli alterni simmetrici ($sigma_m = 0$) è la *flessione rotante*, in cui il carico rimane statico mentre ruota il provino.
 
 #figure(
-  include "figs/fatica/fatica-fig15.typ",
+  include "figs/fatica/fatica-fig29.typ",
   caption: [Prove in flessione rotante: ciclo sinusoidale di una fibra periferica $P_0$ (in alto) e confronto fra configurazione su quattro appoggi e a sbalzo (in basso).],
 )
 
@@ -388,7 +388,7 @@ Una provetta cilindrica ruota a velocità angolare $omega$ sotto un momento flet
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig16.typ",
+      include "figs/fatica/fatica-fig30.typ",
       caption: [Schema cinematico della prova in flessione piana.],
     )
   ],
@@ -422,7 +422,7 @@ Le prove di fatica hanno una dispersione intrinseca elevata, dovuta a micro-eter
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig17.typ",
+      include "figs/fatica/fatica-fig31.typ",
       caption: [Fascia di dispersione S–N e curve iso-probabilità di Weibull $B_90$, $B_50$ e $B_10$.],
     )
   ],
@@ -452,7 +452,7 @@ Per determinare il limite mediano $B_50$ di $sigma_(D-1)$ si usa la procedura se
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig18.typ",
+      include "figs/fatica/fatica-fig32.typ",
       caption: [Sequenza sperimentale e tabulazione dei momenti statistici nel metodo *stair-case* (Dixon–Mood).],
     )
   ],
@@ -512,7 +512,7 @@ Con i soli tre parametri $sigma_(D-1)$, $R_"p0.2"$ e $R_m$, il diagramma si trac
 
 #figure(
   caption: [Diagramma di Haigh completo in trazione e compressione con retta di Goodman, limiti di snervamento a $plus.minus 45^circ$, triangolo di plasticizzazione e punto di lavoro.],
-  include "figs/fatica/fatica-fig19.typ"
+  include "figs/fatica/fatica-fig33.typ"
 )
 
 === Chiusura a snervamento, compressione e rapporti di ciclo
@@ -551,7 +551,7 @@ Geometricamente il poligono ribalta i confini del diagramma di Haigh a cavallo d
 + *Verifica del ciclo.* Noto il valore di $sigma_m$, lo si proietta sulla bisettrice e si posiziona a cavallo di tale punto il segmento verticale di ampiezza $2 sigma_a$: la sicurezza cade non appena anche uno solo dei due apici esce dal contorno marcato.
 
 #figure(
-  include "figs/fatica/fatica-fig20.typ"
+  include "figs/fatica/fatica-fig34.typ"
 )
 
 In compressione i materiali duttili resistono in genere a tensioni di plasticizzazione e rottura più alte che in trazione. Per semplicità e a favore di sicurezza, si estende però in compressione lo stesso valore $R_"eH"$ della trazione, evitando errori di lettura durante la verifica.
@@ -571,7 +571,7 @@ Per certificazioni rigorose il poligono si costruisce interpolando più curve S-
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig21.typ",
+      include "figs/fatica/fatica-fig35.typ",
       caption: [Diagramma di Moore--Kommer--Jasper nel piano $(R, sigma_"max")$.],
     )
   ],
@@ -594,7 +594,7 @@ $ sigma_m = (sigma_"max" + sigma_"min") / 2 , quad sigma_a = (sigma_"max" - sigm
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig22.typ",
+      include "figs/fatica/fatica-fig36.typ",
       caption: [Diagramma di Rös (curva "master"): assi ortogonali $(sigma_"min", sigma_"max")$, assi ruotati di $45^circ$ $(sigma_m, sigma_a)$ e raggi a $R$ costante.],
     )
   ],
@@ -637,7 +637,7 @@ Si usa $N sigma_a^k = B$ quando si cerca la vita a fatica dato il carico, e $sig
 $ sigma_a = sigma_F - frac(sigma_F - sigma_D, log N_G - log N_F) (log N - log N_F) , quad log N = log N_F + frac(sigma_F - sigma_a, sigma_F - sigma_D) (log N_G - log N_F) $
 
 #figure(
-  include "figs/fatica/fatica-fig23.typ",
+  include "figs/fatica/fatica-fig37.typ",
   caption: [Stima analitica della curva S--N nella regione a termine tra $F$ e $G$: confronto tra modello #text(fill: blue, weight: "bold")[log--log (Basquin)] e #text(fill: red.transparentize(10%), weight: "bold")[semi--log].],
 )
 
@@ -702,7 +702,7 @@ Il coefficiente di carico $C_L$ (da *load*) rapporta la resistenza a fatica del 
 #v(0.5em)
 
 #figure(
-  include "figs/fatica/fatica-fig24.typ"
+  include "figs/fatica/fatica-fig38.typ"
 )
 
 In trazione-compressione il profilo è uniforme e l'intera ZP lavora continuativamente al picco nominale, sicché $sigma_(a,"eff")("ZP") = sigma_("tc")$. In flessione (così come in torsione) il gradiente lineare riduce invece la tensione sulle fibre più interne dello strato corticale ($sigma_(a,"eff")("ZP") < sigma_f$), attenuando la sollecitazione efficace e ritardando l'innesco del danno.
@@ -720,7 +720,7 @@ Nel dimensionamento preliminare, in assenza di prove specifiche sul materiale, s
 ]
 
 #figure(
-  include "figs/fatica/fatica-fig25.typ"
+  include "figs/fatica/fatica-fig39.typ"
 ) <fig-sn>
 
 Tracciando le curve $S$-$N$ sperimentali in funzione della tensione nominale superficiale $sigma_a$ (@fig-sn, a sinistra), i due stati di carico si dispongono su livelli distinti. Riformulando invece i diagrammi in termini di tensione efficace $sigma_(a,"eff")$ (a destra), le curve di flessione e trazione-compressione collassano su un'unica legge con asintoto comune $sigma_(D-1)^0$ oltre il ginocchio $N_i = 2 dot 10^6$ cicli.
@@ -756,7 +756,7 @@ In *trazione-compressione*, invece, la distribuzione è già uniforme su tutta l
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig26.typ"
+      include "figs/fatica/fatica-fig40.typ"
     )
   ],
 )
@@ -774,7 +774,7 @@ In *trazione-compressione*, invece, la distribuzione è già uniforme su tutta l
   column-gutter: 1em,
   align: (center + horizon, left + horizon),
   [
-    #include "figs/fatica/fatica-fig27.typ"
+    #include "figs/fatica/fatica-fig41.typ"
   ],
   [
     *Lettura del diagramma $C_S (d)$.* Fino al diametro normato della provetta ($d = 10 thin "mm"$, o $8"–"12 thin "mm"$ secondo lo standard) vale $C_S = 1$. Oltre questa soglia, la curva per flessione e torsione scende rapidamente raggiungendo $C_S approx 0.81$ a $d = 50 thin "mm"$ e $C_S = 0.75$ a $d = 90 thin "mm"$.
@@ -806,7 +806,7 @@ La nucleazione del danno a fatica nasce sempre da irregolarità superficiali in 
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig28.typ",
+      include "figs/fatica/fatica-fig42.typ",
       caption: [Meccanismi microscopici di nucleazione superficiale.],
     )
   ],
@@ -842,7 +842,7 @@ Il coefficiente $C_F$ non dipende solo dalla rugosità $R_a$, ma è diagrammato 
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig29.typ",
+      include "figs/fatica/fatica-fig43.typ",
       caption: [Coefficiente di finitura superficiale $C_F (R_m, R_a)$ per acciai ($R_m$ fino a $1500 thin "MPa"$).],
     )
   ],
@@ -895,7 +895,7 @@ $ sigma_n = frac(P, pi a^2) , quad tau_n = frac(2 M_t, pi a^3) $
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig30.typ",
+      include "figs/fatica/fatica-fig44.typ",
       caption: [Tensioni principali nella gola cilindrica in trazione e distorsione non lineare della farfalla flessionale.],
     )
   ],
@@ -1013,7 +1013,7 @@ Questa struttura riflette la *similitudine geometrica*: $K_t$ dipende soltanto d
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig31.typ",
+      include "figs/fatica/fatica-fig45.typ",
       caption: [Andamento asintotico teorico di $K_t$ per $r\/d -> 0$ e limitazione fisica dovuta allo snervamento locale.],
     )
   ],
@@ -1026,7 +1026,7 @@ Questa struttura riflette la *similitudine geometrica*: $K_t$ dipende soltanto d
 Consideriamo una lastra duttile di larghezza netta $h$ con due intagli semicircolari laterali, sottoposta a una trazione assiale $P$ crescente. Lungo la sezione minima seguiamo tre posizioni rappresentative: il bordo dell'intaglio $A$, la fascia intermedia $B$ e il punto centrale $C$ (il più distante dalle gole).
 
 #figure(
-  include "figs/fatica/fatica-fig32.typ",
+  include "figs/fatica/fatica-fig46.typ",
   caption: [Evoluzione elastoplastica e ridistribuzione delle tensioni sulla sezione minima di una lastra duttile intagliata al crescere di $P$.],
 )
 
@@ -1054,7 +1054,7 @@ Al crescere di $P$, il profilo tensionale evolve attraverso quattro stadi consec
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig33.typ",
+      include "figs/fatica/fatica-fig47.typ",
       caption: [Curve statiche $sigma$–$varepsilon$ per materiali fragili (a) e duttili a snervamento evidente $R_"eH"$ (b) o convenzionale $R_"p0.2"$ (c).],
     )
   ],
@@ -1124,7 +1124,7 @@ Per i materiali duttili l'ipotesi di Von Mises compone le tensioni nella tension
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig34.typ",
+      include "figs/fatica/fatica-fig48.typ",
       caption: [Curve di Wöhler a parità di diametro minimo $d$ e definizione del fattore $K_f$.],
     )
   ],
@@ -1144,7 +1144,7 @@ Per i materiali duttili l'ipotesi di Von Mises compone le tensioni nella tension
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig35.typ",
+      include "figs/fatica/fatica-fig49.typ",
       caption: [Confronto al bordo foro tra picco statico ($K_t$, con eventuale snervamento locale) e picco ciclico attenuato ($K_f$).],
     )
   ],
@@ -1222,7 +1222,7 @@ $ sigma_(D-1)^C = C_L dot C_S dot C_F dot sigma_(D-1) $
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig36.typ",
+      include "figs/fatica/fatica-fig50.typ",
       caption: [Grandezze caratteristiche del ciclo sinusoidale.],
     )
   ]
@@ -1253,7 +1253,7 @@ Il *diagramma di Haigh* raccoglie le condizioni limite a durata fissata ($N = "c
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig37.typ",
+      include "figs/fatica/fatica-fig51.typ",
       caption: [Diagramma di Haigh: confronto tra provino e componente.],
     )
   ]
@@ -1283,7 +1283,7 @@ Per verificare un componente a vita illimitata si posiziona $P(sigma_m^P, sigma_
 - *Tensione alternata costante e tensione media crescente.* Si presenta quando la pressione di esercizio subisce una deriva lenta mentre i disturbi vibratori restano invariati. A ordinata $sigma_a^P$ fissa, $P$ scorre in orizzontale verso destra fino a $sigma_m^"lim"$: è l'unico caso valutato sulle ascisse, con $C S = sigma_m^"lim" / sigma_m^P$.
 
 #figure(
-  include "figs/fatica/fatica-fig38.typ",
+  include "figs/fatica/fatica-fig52.typ",
   caption: [Quattro ipotesi di crescita dei carichi (cicli di esplosione) sul diagramma di Haigh e relative definizioni di $C S$.],
 )
 
@@ -1306,7 +1306,7 @@ $ sigma_m = sigma_m^"carichi" + sigma_"res" $
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig39.typ",
+      include "figs/fatica/fatica-fig53.typ",
       caption: [Effetto delle tensioni residue sul diagramma di Haigh.],
     )
   ],
@@ -1325,7 +1325,7 @@ $ sigma_m = sigma_m^"carichi" + sigma_"res" $
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig40.typ",
+      include "figs/fatica/fatica-fig54.typ",
       caption: [Diagramma di Ros per verifica a tensione minima costante.],
     )
   ],
@@ -1351,7 +1351,7 @@ La curva SN del componente si stima a partire da quella sperimentale della prove
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig41.typ",
+      include "figs/fatica/fatica-fig55.typ",
       caption: [Curva SN stimata del componente e margini a vita limitata.],
     )
   ],
@@ -1405,7 +1405,7 @@ Le *tensioni residue* ($sigma_"res"$) formano un campo di sforzi auto-equilibrat
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig42.typ",
+      include "figs/fatica/fatica-fig56.typ",
       caption: [Contenimento elastico superficiale ed effetto di $sigma_"res"$ sul diagramma di Haigh.],
     )
   ],
@@ -1430,7 +1430,7 @@ Con il precarico compressivo $P' P$, la trazione esterna deve prima annullare $s
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig43.typ",
+      include "figs/fatica/fatica-fig57.typ",
       caption: [Indentazione da pallinatura e misura della freccia d'arco $f$ su provino _Almen_.],
     )
   ],
@@ -1451,7 +1451,7 @@ Brevettata da Föppl (1929) e industrializzata da Almen negli anni Trenta per le
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig44.typ",
+      include "figs/fatica/fatica-fig58.typ",
       caption: [Schema di rullatura a freddo su albero e confronto tra curve $S"-"N$ a vita finita.],
     )
   ],
@@ -1474,7 +1474,7 @@ Spesso il processo coincide con la generazione stessa della forma: è il caso de
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig45.typ",
+      include "figs/fatica/fatica-fig59.typ",
       caption: [Tensioni residue dopo piegatura a freddo (a) e per decarburazione superficiale a caldo (b).],
     )
   ],
@@ -1498,7 +1498,7 @@ I rivestimenti superficiali rispondono a requisiti estetici o proteggono da *cor
   {
     set par(justify: false)
     set text(hyphenate: false)
-    include "figs/fatica/fatica-fig46.typ"
+    include "figs/fatica/fatica-fig60.typ"
   },
   caption: [Matrice comparativa dei rivestimenti superficiali: stato residuo, risposta a fatica in aria e in corrosione, usura e contromisure.],
 )
@@ -1526,7 +1526,7 @@ Nei processi termici le tensioni residue derivano da *cambiamenti di fase* local
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig47.typ",
+      include "figs/fatica/fatica-fig61.typ",
       caption: [Profili auto-equilibrati di $sigma_"res"$ per indurimento superficiale (A) e gradiente termico locale (B).],
     )
   ],
@@ -1560,7 +1560,7 @@ Mentre un corpo libero si dilata senza tensioni, in una struttura vincolata — 
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig48.typ",
+      include "figs/fatica/fatica-fig62.typ",
       caption: [Prova di scorrimento viscoso a carico e temperatura costanti, stadi di _creep_ e soglie omologhe $T \/ T_f$.],
     )
   ],
@@ -1605,7 +1605,7 @@ Passare dal provino al componente richiede sia banchi di prova multiassiali rapp
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig49.typ",
+      include "figs/fatica/fatica-fig63.typ",
       caption: [Stati di tensione multiassiali: carichi in fase ($0^circ$), controfase ($180^circ$) e sfasati ($Delta phi$).],
     )
   ],
@@ -1628,7 +1628,7 @@ La trattazione di base affronta gli *stati multiassiali semplici*: la coincidenz
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig50.typ",
+      include "figs/fatica/fatica-fig64.typ",
       caption: [Curva limite sperimentale di Gough e Pollard nel piano $(sigma_a, tau_a)$.],
     )
   ],
@@ -1692,7 +1692,7 @@ Il fattore di carico $C_L$ va escluso da $sigma_(D-1)^C$: la correzione $0.85$ �
 $ "CS" = frac(overline("LH"), overline("PH")) = frac(sigma_D^"lim", sigma_(a,"eq")) $
 
 #figure(
-  include "figs/fatica/fatica-fig51.typ",
+  include "figs/fatica/fatica-fig65.typ",
   caption: [Diagramma di Haigh multiassiale: (a) calcolo del coefficiente di sicurezza $"CS"$ a tensione media costante; (b) interpretazione grafica mediante retta limite ridotta.],
 ) <fig:haigh-multi>
 
@@ -1713,7 +1713,7 @@ $ sigma_(C,D-1) = C_F dot sigma_(D-1)^"tc" $
 Per valutare l'influenza delle tensioni medie in fatica multiassiale, *Sines* provò provini cilindrici in quattro combinazioni: (a) $sigma_m + sigma_a$, (b) $sigma_m + tau_a$, (c) $tau_m + tau_a$ e (d) $tau_m + sigma_a$. Nei diagrammi ottenuti, la resistenza cala nettamente al crescere della tensione media normale mentre resta costante con sola torsione media.
 
 #figure(
-  include "figs/fatica/fatica-fig52.typ",
+  include "figs/fatica/fatica-fig66.typ",
   caption: [Analisi sperimentale di Sines: provini e influenza delle tensioni medie.],
 )
 
@@ -1752,7 +1752,7 @@ Per aggirare il dubbio si calcolavano talvolta due limiti di fatica distinti per
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig53.typ",
+      include "figs/fatica/fatica-fig67.typ",
       caption: [Schema cinematico di prova biassiale su pala eolica con attuatori ortogonali e cerniere di disaccoppiamento.],
     )
   ],
@@ -1783,7 +1783,7 @@ Per il dimensionamento analitico occorre ricondurre il segnale di tensione regis
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig54.typ",
+      include "figs/fatica/fatica-fig68.typ",
       caption: [Segnale periodico irregolare di periodo $T$ e scomposizione in pacchetti sinusoidali $(n_i, sigma_"ai", sigma_"mi")$.],
     )
   ],
@@ -1809,7 +1809,7 @@ Quando $sigma_m$ resta costante su tutti i blocchi, l'intera storia di carico af
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig55.typ",
+      include "figs/fatica/fatica-fig69.typ",
       caption: [Confronto tra cicli di missione $n_i$ e durata a rottura $N_i$ sulla curva #box[$S$–$N$] a $sigma_m = "cost"$.],
     )
   ],
@@ -1876,7 +1876,7 @@ $ sigma_"a,eq"^k N_"TOT" = B arrow.r.double sigma_"a,eq" = root(k, sum_(sigma_"a
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig56.typ",
+      include "figs/fatica/fatica-fig70.typ",
       caption: [Individuazione grafica di $(sigma_"a,eq", N_"TOT")$ sulla curva #box[$S$–$N$] a $sigma_m = "cost"$.],
     )
   ],
@@ -1899,7 +1899,7 @@ Per descrivere lo spettro di missione nelle specifiche tecniche tra costruttore 
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig57.typ",
+      include "figs/fatica/fatica-fig71.typ",
       caption: [Diagramma delle eccedenze con passi $n_i$ e curva continua troncata a $sigma_D$.],
     )
   ],
@@ -1948,7 +1948,7 @@ Quando $sigma_m$ è costante su tutti i livelli, il cumulativo si traduce in una
 #v(0.4em)
 
 #figure(
-  include "figs/fatica/fatica-fig58.typ",
+  include "figs/fatica/fatica-fig72.typ",
   caption: [Raccordo tra diagramma di Haigh e famiglia di curve #box[$S$–$N$]: equivalenza sulla durata $N_i$ tra lettura multi-curva a $sigma_"D,i"$ e riduzione a $sigma_m = 0$ ($sigma_"a,eq,0"$).],
 ) <fig:haigh-wohler>
 
@@ -1977,7 +1977,7 @@ Per ricondurre una storia di tensione irregolare ma periodica $sigma(t)$ alla li
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig59.typ",
+      include "figs/fatica/fatica-fig73.typ",
       caption: [Traslazione della finestra periodica $T$ tra due massimi assoluti consecutivi $sigma_"max"$.],
     ) <fig:finestra-max>
   ],
@@ -2005,7 +2005,7 @@ Si applichi il metodo del serbatoio alla sequenza di estremi $300 -> 0 -> 200 ->
 - *Cicli 4 e 5 (sottolivelli residui).* Le ultime due valvole svuotano le sacche residue da $100" MPa"$ rispettivamente fino a $0" MPa"$ ($Delta sigma_4 = 100" MPa"$) e fino a $-100" MPa"$ ($Delta sigma_5 = 200" MPa"$), lasciando il profilo completamente asciutto.
 
 #figure(
-  include "figs/fatica/fatica-fig60.typ",
+  include "figs/fatica/fatica-fig74.typ",
   caption: [Applicazione del metodo del serbatoio su griglia in MPa: (a) scarico della valle principale a $-200" MPa"$ e (b) drenaggio progressivo delle sacche residue (cicli 2–5).],
 ) <fig:serbatoio>
 
