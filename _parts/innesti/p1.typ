@@ -34,6 +34,7 @@ Il transitorio critico è la *sincronizzazione*, cioè l'uguagliamento delle vel
   [#fig-safe(include "../../figs/innesti/ecm-c13-p1-01.typ")],
 )
 
+#include "../../figs/p1-fig01.typ"
 
     L'inserimento è ammesso solo a macchina ferma o a *moto lento*, così che i denti trovino la fase corretta senza urti distruttivi; le superfici inclinate agevolano l'imbocco. Durante il disinserimento sotto carico occorre vincere l'attrito generato dalla pressione sui fianchi: l'inclinazione del profilo può favorire oppure ostacolare l'apertura.
 === Innesti a frizione
