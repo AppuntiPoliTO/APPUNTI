@@ -1,0 +1,170 @@
+#import "@preview/cetz:0.3.4": canvas, draw
+#canvas(length: 1cm, {
+  import draw: *
+
+  // Title and engagement arrow
+  content((-4.35, 1.95), text(size: 9pt, fill: blue.darken(15%), style: "italic", weight: "bold")[Innesto a denti], anchor: "west")
+  line((0.25, 1.88), (1.45, 1.88), mark: (end: ">"), stroke: (paint: blue.darken(15%), thickness: 1.5pt))
+
+  // Centerline and left reference plane
+  line((-3.85, 0), (4.60, 0), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((-2.20, -1.78), (-2.20, 1.78), stroke: (dash: "dash-dotted", thickness: 0.5pt))
+  line((-2.20, 1.78), (-2.05, 1.78), stroke: 0.5pt)
+  line((-2.20, -1.78), (-2.05, -1.78), stroke: 0.5pt)
+
+  // Left shaft
+  line((-3.50, 0.72), (-2.00, 0.72), stroke: 1pt)
+  line((-2.00, 0.72), (0.72, 0.72), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((-3.50, -0.72), (0.72, -0.72), stroke: 1pt)
+  bezier((-3.50, 0.72), (-3.62, 0.48), (-3.38, 0.24), (-3.50, 0), stroke: 0.85pt)
+  bezier((-3.50, 0), (-3.38, -0.24), (-3.38, -0.48), (-3.50, -0.72), stroke: 0.85pt)
+  bezier((-3.50, 0), (-3.62, -0.24), (-3.62, -0.48), (-3.50, -0.72), stroke: 0.85pt)
+  line((-3.58, -0.18), (-3.43, -0.33), stroke: 0.45pt)
+  line((-3.59, -0.33), (-3.42, -0.50), stroke: 0.45pt)
+  line((-3.57, -0.49), (-3.44, -0.62), stroke: 0.45pt)
+
+  // Left shaft keyway
+  arc((-2.28, 0), start: 90deg, stop: 270deg, radius: 0.14, anchor: "origin", stroke: 0.75pt)
+  line((-2.28, 0.14), (-2.00, 0.14), stroke: 0.75pt)
+  line((-2.28, -0.14), (-2.00, -0.14), stroke: 0.75pt)
+  line((-2.00, 0.14), (-0.15, 0.14), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((-2.00, -0.14), (-0.15, -0.14), stroke: (dash: "dashed", thickness: 0.7pt))
+  arc((-0.15, 0), start: -90deg, stop: 90deg, radius: 0.14, anchor: "origin", stroke: (dash: "dashed", thickness: 0.7pt))
+
+  // Right shaft
+  line((0.92, 0.72), (2.95, 0.72), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((2.95, 0.72), (4.40, 0.72), stroke: 1pt)
+  line((0.92, -0.72), (4.40, -0.72), stroke: 1pt)
+  bezier((4.40, 0.72), (4.28, 0.48), (4.28, 0.24), (4.40, 0), stroke: 0.85pt)
+  bezier((4.40, 0.72), (4.52, 0.48), (4.52, 0.24), (4.40, 0), stroke: 0.85pt)
+  bezier((4.40, 0), (4.52, -0.24), (4.28, -0.48), (4.40, -0.72), stroke: 0.85pt)
+  line((4.33, 0.52), (4.48, 0.37), stroke: 0.45pt)
+  line((4.32, 0.37), (4.49, 0.20), stroke: 0.45pt)
+  line((4.34, 0.21), (4.47, 0.08), stroke: 0.45pt)
+
+  // Right shaft keyway
+  arc((1.25, 0), start: 90deg, stop: 270deg, radius: 0.14, anchor: "origin", stroke: (dash: "dashed", thickness: 0.7pt))
+  line((1.25, 0.14), (2.75, 0.14), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((1.25, -0.14), (2.75, -0.14), stroke: (dash: "dashed", thickness: 0.7pt))
+  arc((2.75, 0), start: -90deg, stop: 90deg, radius: 0.14, anchor: "origin", stroke: (dash: "dashed", thickness: 0.7pt))
+
+  // Left sliding coupling half (top external)
+  line((-2.00, -0.42), (-2.00, 1.65), stroke: 1pt)
+  line((-2.00, 1.65), (-1.90, 1.75), stroke: 1pt)
+  line((-1.90, 1.75), (-1.55, 1.75), stroke: 1pt)
+  line((-1.55, 1.75), (-1.55, 1.48), stroke: 1pt)
+  line((-1.55, 1.48), (-1.10, 1.48), stroke: 1pt)
+  line((-1.10, 1.48), (-1.10, 1.75), stroke: 1pt)
+  line((-1.10, 1.75), (-0.65, 1.75), stroke: 1pt)
+  line((-0.65, 1.75), (-0.65, 1.32), stroke: 1pt)
+  arc((-0.55, 1.32), start: 180deg, stop: 270deg, radius: 0.10, anchor: "origin", stroke: 1pt)
+  line((-0.55, 1.22), (-0.10, 1.22), stroke: 1pt)
+  arc((-0.10, 1.32), start: 270deg, stop: 360deg, radius: 0.10, anchor: "origin", stroke: 1pt)
+  line((0.00, 1.32), (0.00, 1.50), stroke: 1pt)
+  line((0.00, 1.50), (0.48, 1.50), stroke: 1pt)
+  line((-0.65, 1.32), (-0.65, -0.50), stroke: 0.75pt)
+  line((0.00, 1.32), (0.00, -0.52), stroke: 0.75pt)
+
+  // Top collar ring in groove (hatched)
+  line((-1.50, 1.48), (-1.50, 1.75), (-1.42, 1.83), (-1.23, 1.83), (-1.15, 1.75), (-1.15, 1.48), close: true, stroke: 0.85pt)
+  line((-1.50, 1.63), (-1.30, 1.83), stroke: 0.45pt)
+  line((-1.50, 1.48), (-1.18, 1.80), stroke: 0.45pt)
+  line((-1.36, 1.48), (-1.15, 1.69), stroke: 0.45pt)
+  line((-1.22, 1.48), (-1.15, 1.55), stroke: 0.45pt)
+
+  // Bottom collar ring in groove (hatched)
+  line((-1.50, -1.48), (-1.50, -1.75), (-1.42, -1.83), (-1.23, -1.83), (-1.15, -1.75), (-1.15, -1.48), close: true, stroke: 0.85pt)
+  line((-1.50, -1.69), (-1.36, -1.83), stroke: 0.45pt)
+  line((-1.50, -1.53), (-1.21, -1.82), stroke: 0.45pt)
+  line((-1.40, -1.48), (-1.15, -1.73), stroke: 0.45pt)
+  line((-1.25, -1.48), (-1.15, -1.58), stroke: 0.45pt)
+
+  // Left coupling half (bottom sectioned)
+  line((-2.00, -0.72), (-2.00, -1.65), stroke: 1pt)
+  line((-2.00, -1.65), (-1.90, -1.75), stroke: 1pt)
+  line((-1.90, -1.75), (-1.55, -1.75), stroke: 1pt)
+  line((-1.55, -1.75), (-1.55, -1.48), stroke: 1pt)
+  line((-1.55, -1.48), (-1.10, -1.48), stroke: 1pt)
+  line((-1.10, -1.48), (-1.10, -1.75), stroke: 1pt)
+  line((-1.10, -1.75), (-0.65, -1.75), stroke: 1pt)
+  line((-0.65, -1.75), (-0.65, -1.22), stroke: 1pt)
+  line((-0.65, -1.22), (0.00, -1.22), stroke: 1pt)
+  line((0.00, -1.22), (0.00, -1.50), stroke: 1pt)
+  line((0.00, -1.50), (0.72, -1.50), stroke: 1pt)
+  line((0.72, -1.50), (0.72, -0.72), stroke: 1pt)
+
+  // Hatching for left coupling bottom section
+  line((-2.00, -1.45), (-1.70, -1.75), stroke: 0.45pt)
+  line((-2.00, -1.23), (-1.55, -1.68), stroke: 0.45pt)
+  line((-2.00, -1.01), (-1.53, -1.48), stroke: 0.45pt)
+  line((-2.00, -0.79), (-1.31, -1.48), stroke: 0.45pt)
+  line((-1.85, -0.72), (-1.10, -1.47), stroke: 0.45pt)
+  line((-1.63, -0.72), (-0.65, -1.70), stroke: 0.45pt)
+  line((-1.41, -0.72), (-0.65, -1.48), stroke: 0.45pt)
+  line((-1.19, -0.72), (-0.65, -1.26), stroke: 0.45pt)
+  line((-0.97, -0.72), (-0.47, -1.22), stroke: 0.45pt)
+  line((-0.75, -0.72), (-0.25, -1.22), stroke: 0.45pt)
+  line((-0.53, -0.72), (-0.03, -1.22), stroke: 0.45pt)
+  line((-0.31, -0.72), (0.47, -1.50), stroke: 0.45pt)
+  line((-0.09, -0.72), (0.69, -1.50), stroke: 0.45pt)
+  line((0.13, -0.72), (0.72, -1.31), stroke: 0.45pt)
+  line((0.35, -0.72), (0.72, -1.09), stroke: 0.45pt)
+  line((0.57, -0.72), (0.72, -0.87), stroke: 0.45pt)
+
+  // Center pin / gap detail between coupling halves
+  line((0.72, -0.96), (0.92, -0.96), stroke: 0.75pt)
+  line((0.72, -1.50), (0.92, -1.50), stroke: 0.75pt)
+  line((0.76, -0.96), (0.76, -1.50), stroke: 0.65pt)
+  line((0.88, -0.96), (0.88, -1.50), stroke: 0.65pt)
+  line((0.76, -0.96), (0.88, -1.50), stroke: 0.45pt)
+  line((0.88, -0.96), (0.76, -1.50), stroke: 0.45pt)
+
+  // Right fixed coupling half (top external)
+  line((0.85, 1.50), (1.42, 1.50), stroke: 1pt)
+  arc((1.42, 1.42), start: 0deg, stop: 90deg, radius: 0.08, anchor: "origin", stroke: 1pt)
+  line((1.50, 1.42), (1.50, 1.26), stroke: 1pt)
+  arc((1.58, 1.26), start: 180deg, stop: 270deg, radius: 0.08, anchor: "origin", stroke: 1pt)
+  line((1.58, 1.18), (2.95, 1.18), stroke: 1pt)
+  line((2.95, 1.18), (2.95, -0.60), stroke: 1pt)
+  line((1.50, 1.26), (1.50, -0.58), stroke: 0.75pt)
+
+  // Right coupling half (bottom sectioned)
+  line((0.92, -0.72), (0.92, -1.50), stroke: 1pt)
+  line((0.92, -1.50), (1.42, -1.50), stroke: 1pt)
+  arc((1.42, -1.42), start: 270deg, stop: 360deg, radius: 0.08, anchor: "origin", stroke: 1pt)
+  line((1.50, -1.42), (1.50, -1.18), stroke: 1pt)
+  line((1.50, -1.18), (2.95, -1.18), stroke: 1pt)
+  line((2.95, -1.18), (2.95, -0.72), stroke: 1pt)
+
+  // Hatching for right coupling bottom section
+  line((0.92, -0.87), (1.48, -1.43), stroke: 0.45pt)
+  line((0.99, -0.72), (1.48, -1.21), stroke: 0.45pt)
+  line((1.21, -0.72), (1.67, -1.18), stroke: 0.45pt)
+  line((1.43, -0.72), (1.89, -1.18), stroke: 0.45pt)
+  line((1.65, -0.72), (2.11, -1.18), stroke: 0.45pt)
+  line((1.87, -0.72), (2.33, -1.18), stroke: 0.45pt)
+  line((2.09, -0.72), (2.55, -1.18), stroke: 0.45pt)
+  line((2.31, -0.72), (2.77, -1.18), stroke: 0.45pt)
+  line((2.53, -0.72), (2.95, -1.14), stroke: 0.45pt)
+  line((2.75, -0.72), (2.95, -0.92), stroke: 0.45pt)
+
+  // Jagged break line separating external top and sectioned bottom
+  line((-2.00, -0.42), (-1.45, -0.52), (-1.05, -0.43), (-0.45, -0.56), (-0.05, -0.45), (0.72, -0.55), stroke: 0.85pt)
+  line((0.92, -0.55), (1.55, -0.48), (2.25, -0.60), (2.95, -0.58), stroke: 0.85pt)
+
+  // Hidden tooth root lines
+  arc((0.95, 0.45), start: 112deg, stop: 180deg, radius: (0.60, 0.85), anchor: "origin", stroke: (dash: "dashed", thickness: 0.55pt))
+
+  // Highlighted left jaw profile (red)
+  arc((0.85, 0.50), start: 112deg, stop: 180deg, radius: (0.63, 1.08), anchor: "origin", stroke: (dash: "dashed", paint: red, thickness: 1.2pt))
+  line((0.22, 0.50), (0.22, 0.14), stroke: (dash: "dashed", paint: red, thickness: 1.2pt))
+  line((0.22, 0.14), (0.22, -0.18), stroke: (paint: red, thickness: 1.2pt))
+  line((0.22, -0.18), (0.46, -0.18), stroke: (paint: red, thickness: 1.2pt))
+  line((0.46, -0.18), (0.46, -0.52), stroke: (paint: red, thickness: 1.2pt))
+
+  // Highlighted right jaw profile (green)
+  arc((1.18, 0.50), start: 112deg, stop: 180deg, radius: (0.63, 1.08), anchor: "origin", stroke: (paint: green.darken(25%), thickness: 1.2pt))
+  line((0.55, 0.50), (0.55, -0.12), stroke: (paint: green.darken(25%), thickness: 1.2pt))
+  line((0.55, -0.12), (0.80, -0.12), stroke: (paint: green.darken(25%), thickness: 1.2pt))
+  line((0.80, -0.12), (0.80, -0.54), stroke: (paint: green.darken(25%), thickness: 1.2pt))
+})

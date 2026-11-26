@@ -1,0 +1,33 @@
+// Figura estratta da hertz.typ (riga 730) con LocalTypst
+#import "@preview/cetz:0.3.4": canvas, draw
+
+#canvas(length: 1.2cm, {
+  import draw: *
+  line((0.5, 1.0), (0.5, -0.5), stroke: 0.6pt)
+  line((2.5, 0.0), (2.5, -1.5), stroke: 0.6pt)
+  line((5.5, 1.0), (5.5, -0.5), stroke: 0.6pt)
+  line((0.5, -0.2), (2.5, -1.2), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  line((2.5, -1.2), (5.5, -0.2), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  content((1.2, -1.0), [$2b$])
+  content((4.2, -0.9), [$L$])
+  line((0.5, 1.0), (-0.7, 1.6), stroke: 0.6pt)
+  line((1.5, 2.5), (0.3, 3.1), stroke: 0.6pt)
+  line((-0.2, 1.35), (-0.2, 3.35), mark: (start: ">", end: ">"), stroke: 0.6pt)
+  content((-0.9, 2.35), [$p_"max"$])
+  line((5.5, 1.0), (3.5, 2.0), (0.5, 1.0), stroke: (dash: "dashed", thickness: 1.5pt))
+  line((0.5, 1.0), (2.5, 0.0), (5.5, 1.0), stroke: 1.5pt)
+  bezier((3.5, 2.0), (4.5, 3.5), (3.5, 3.104), (3.948, 3.776), stroke: (dash: "dashed", thickness: 1pt))
+  bezier((4.5, 3.5), (5.5, 1.0), (5.052, 3.224), (5.5, 2.104), stroke: 1pt)
+  line((1.5, 2.5), (4.5, 3.5), stroke: 1pt)
+  bezier((0.5, 1.0), (1.5, 2.5), (0.5, 2.104), (0.948, 2.776), stroke: 1pt)
+  bezier((1.5, 2.5), (2.5, 0.0), (2.052, 2.224), (2.5, 1.104), stroke: 1pt)
+  line((0.7, 2.1), (0.7, 0.9), mark: (end: ">"), stroke: 0.6pt)
+  line((0.9, 2.4), (0.9, 0.8), mark: (end: ">"), stroke: 0.6pt)
+  line((1.1, 2.533), (1.1, 0.7), mark: (end: ">"), stroke: 0.6pt)
+  line((1.3, 2.56), (1.3, 0.6), mark: (end: ">"), stroke: 0.6pt)
+  line((1.5, 2.5), (1.5, 0.5), mark: (end: ">"), stroke: 0.6pt)
+  line((1.7, 2.36), (1.7, 0.4), mark: (end: ">"), stroke: 0.6pt)
+  line((1.9, 2.133), (1.9, 0.3), mark: (end: ">"), stroke: 0.6pt)
+  line((2.1, 1.8), (2.1, 0.2), mark: (end: ">"), stroke: 0.6pt)
+  line((2.3, 1.3), (2.3, 0.1), mark: (end: ">"), stroke: 0.6pt)
+})
