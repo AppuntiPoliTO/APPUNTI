@@ -143,7 +143,7 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
     - una *cuffia conica in gomma* che protegge il giunto e trattiene il grasso lubrificante.
   ],
   [
-  #import "": 
+    #import "@preview/cetz:0.3.4": canvas, draw
     #canvas(length: 1cm, {
   import draw: *
 
