@@ -1,111 +1,116 @@
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 #canvas(length: 1cm, {
   import draw: *
-  line((-4.6, 0.0), (-0.4, 0.0), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((-2.5, -2.1), (-2.5, 2.1), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((-2.5, 0.0), (-4.275, -1.025), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((-2.5, 0.0), (-0.725, -1.025), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  circle((-2.5, 0.0), radius: 1.9, stroke: 1pt)
-  circle((-2.5, 0.0), radius: 1.78, stroke: 0.85pt)
-  arc((-2.5, 0.0), start: -80.4deg, stop: 260.4deg, radius: 0.42, anchor: "origin", stroke: 0.9pt)
-  line((-2.57, -0.414), (-2.57, -0.52), (-2.43, -0.52), (-2.43, -0.414), stroke: 0.9pt)
-  arc((-2.5, 0.0), start: 108deg, stop: 192deg, radius: 0.68, anchor: "origin", stroke: 0.9pt)
-  bezier((-2.29, 0.647), (-2.5, 1.05), (-2.34, 0.906), (-2.39, 1.044), stroke: 0.9pt)
-  bezier((-2.5, 1.05), (-2.71, 0.647), (-2.61, 1.044), (-2.66, 0.906), stroke: 0.9pt)
-  circle((-2.5, 0.88), radius: 0.13, fill: white, stroke: 0.85pt)
-  circle((-2.5, 0.88), radius: 0.075, stroke: 0.85pt)
-  arc((-2.5, 0.0), start: 228deg, stop: 312deg, radius: 0.68, anchor: "origin", stroke: 0.9pt)
-  bezier((-3.165, -0.141), (-3.409, -0.525), (-3.365, -0.315), (-3.459, -0.427), stroke: 0.9pt)
-  bezier((-3.409, -0.525), (-2.955, -0.505), (-3.349, -0.617), (-3.205, -0.591), stroke: 0.9pt)
-  circle((-3.262, -0.44), radius: 0.13, fill: white, stroke: 0.85pt)
-  circle((-3.262, -0.44), radius: 0.075, stroke: 0.85pt)
-  arc((-2.5, 0.0), start: 348deg, stop: 432deg, radius: 0.68, anchor: "origin", stroke: 0.9pt)
-  bezier((-2.045, -0.505), (-1.591, -0.525), (-1.795, -0.591), (-1.651, -0.617), stroke: 0.9pt)
-  bezier((-1.591, -0.525), (-1.835, -0.141), (-1.541, -0.427), (-1.635, -0.315), stroke: 0.9pt)
-  circle((-1.738, -0.44), radius: 0.13, fill: white, stroke: 0.85pt)
-  circle((-1.738, -0.44), radius: 0.075, stroke: 0.85pt)
-  arc((-2.5, 0.0), start: -12deg, stop: 72deg, radius: 1.68, anchor: "origin", stroke: 0.95pt)
-  bezier((-1.981, 1.598), (-1.811, 1.102), (-2.043, 1.408), (-1.969, 1.252), stroke: 0.9pt)
-  bezier((-1.811, 1.102), (-1.167, 0.357), (-1.579, 0.83), (-1.387, 0.592), stroke: 0.9pt)
-  bezier((-1.167, 0.357), (-0.857, -0.349), (-0.964, -0.107), (-0.924, -0.278), stroke: 0.9pt)
-  circle((-1.486, 1.05), radius: 0.085, stroke: 0.85pt)
-  circle((-1.76, 1.282), radius: 0.035, fill: black, stroke: none)
-  arc((-2.5, 0.0), start: -132deg, stop: -48deg, radius: 1.68, anchor: "origin", stroke: 0.95pt)
-  bezier((-1.376, -1.248), (-1.89, -1.148), (-1.51, -1.1), (-1.682, -1.086), stroke: 0.9pt)
-  bezier((-1.89, -1.148), (-2.857, -1.333), (-2.242, -1.213), (-2.544, -1.259), stroke: 0.9pt)
-  bezier((-2.857, -1.333), (-3.624, -1.248), (-3.361, -1.277), (-3.528, -1.226), stroke: 0.9pt)
-  circle((-2.098, -1.403), radius: 0.085, stroke: 0.85pt)
-  circle((-1.76, -1.282), radius: 0.035, fill: black, stroke: none)
-  arc((-2.5, 0.0), start: -252deg, stop: -168deg, radius: 1.68, anchor: "origin", stroke: 0.95pt)
-  bezier((-4.143, -0.349), (-3.799, 0.045), (-3.948, -0.308), (-3.85, -0.166), stroke: 0.9pt)
-  bezier((-3.799, 0.045), (-3.476, 0.976), (-3.679, 0.383), (-3.569, 0.668), stroke: 0.9pt)
-  bezier((-3.476, 0.976), (-3.019, 1.598), (-3.175, 1.384), (-3.047, 1.504), stroke: 0.9pt)
-  circle((-3.917, 0.353), radius: 0.085, stroke: 0.85pt)
-  circle((-3.98, -0.0), radius: 0.035, fill: black, stroke: none)
-  line((-3.406, -0.391), (-3.896, 0.202), stroke: 0.85pt)
-  line((-3.283, -0.289), (-3.773, 0.304), stroke: 0.85pt)
-  circle((-3.917, 0.353), radius: 0.12, stroke: 0.85pt)
-  circle((-2.812, 1.467), radius: 0.04, fill: black, stroke: none)
-  line((-2.812, 1.467), (-1.869, 1.294), stroke: 0.65pt)
-  circle((-2.531, 1.512), radius: 0.032, fill: black, stroke: none)
-  circle((-2.565, 1.325), radius: 0.032, fill: black, stroke: none)
-  circle((-2.408, 1.49), radius: 0.032, fill: black, stroke: none)
-  circle((-2.443, 1.303), radius: 0.032, fill: black, stroke: none)
-  circle((-2.286, 1.467), radius: 0.032, fill: black, stroke: none)
-  circle((-2.32, 1.28), radius: 0.032, fill: black, stroke: none)
-  circle((-2.163, 1.445), radius: 0.032, fill: black, stroke: none)
-  circle((-2.197, 1.258), radius: 0.032, fill: black, stroke: none)
-  circle((-2.04, 1.422), radius: 0.032, fill: black, stroke: none)
-  circle((-2.075, 1.235), radius: 0.032, fill: black, stroke: none)
-  line((-2.531, 1.512), (-2.565, 1.325), stroke: 0.65pt)
-  line((-2.565, 1.325), (-2.408, 1.49), stroke: 0.65pt)
-  line((-2.408, 1.49), (-2.443, 1.303), stroke: 0.65pt)
-  line((-2.443, 1.303), (-2.286, 1.467), stroke: 0.65pt)
-  line((-2.286, 1.467), (-2.32, 1.28), stroke: 0.65pt)
-  line((-2.32, 1.28), (-2.163, 1.445), stroke: 0.65pt)
-  line((-2.163, 1.445), (-2.197, 1.258), stroke: 0.65pt)
-  line((-2.197, 1.258), (-2.04, 1.422), stroke: 0.65pt)
-  line((-2.04, 1.422), (-2.075, 1.235), stroke: 0.65pt)
-  circle((-1.073, -0.464), radius: 0.04, fill: black, stroke: none)
-  line((-1.073, -0.464), (-1.695, -1.194), stroke: 0.65pt)
-  circle((-1.175, -0.73), radius: 0.032, fill: black, stroke: none)
-  circle((-1.319, -0.607), radius: 0.032, fill: black, stroke: none)
-  circle((-1.256, -0.825), radius: 0.032, fill: black, stroke: none)
-  circle((-1.4, -0.702), radius: 0.032, fill: black, stroke: none)
-  circle((-1.337, -0.92), radius: 0.032, fill: black, stroke: none)
-  circle((-1.481, -0.797), radius: 0.032, fill: black, stroke: none)
-  circle((-1.417, -1.015), radius: 0.032, fill: black, stroke: none)
-  circle((-1.562, -0.891), radius: 0.032, fill: black, stroke: none)
-  circle((-1.498, -1.11), radius: 0.032, fill: black, stroke: none)
-  circle((-1.643, -0.986), radius: 0.032, fill: black, stroke: none)
-  line((-1.175, -0.73), (-1.319, -0.607), stroke: 0.65pt)
-  line((-1.319, -0.607), (-1.256, -0.825), stroke: 0.65pt)
-  line((-1.256, -0.825), (-1.4, -0.702), stroke: 0.65pt)
-  line((-1.4, -0.702), (-1.337, -0.92), stroke: 0.65pt)
-  line((-1.337, -0.92), (-1.481, -0.797), stroke: 0.65pt)
-  line((-1.481, -0.797), (-1.417, -1.015), stroke: 0.65pt)
-  line((-1.417, -1.015), (-1.562, -0.891), stroke: 0.65pt)
-  line((-1.562, -0.891), (-1.498, -1.11), stroke: 0.65pt)
-  line((-1.498, -1.11), (-1.643, -0.986), stroke: 0.65pt)
-  circle((-3.615, -1.004), radius: 0.04, fill: black, stroke: none)
-  line((-3.615, -1.004), (-3.936, -0.1), stroke: 0.65pt)
-  circle((-3.794, -0.783), radius: 0.032, fill: black, stroke: none)
-  circle((-3.615, -0.719), radius: 0.032, fill: black, stroke: none)
-  circle((-3.836, -0.665), radius: 0.032, fill: black, stroke: none)
-  circle((-3.657, -0.602), radius: 0.032, fill: black, stroke: none)
-  circle((-3.878, -0.548), radius: 0.032, fill: black, stroke: none)
-  circle((-3.699, -0.484), radius: 0.032, fill: black, stroke: none)
-  circle((-3.92, -0.43), radius: 0.032, fill: black, stroke: none)
-  circle((-3.741, -0.367), radius: 0.032, fill: black, stroke: none)
-  circle((-3.961, -0.313), radius: 0.032, fill: black, stroke: none)
-  circle((-3.782, -0.249), radius: 0.032, fill: black, stroke: none)
-  line((-3.794, -0.783), (-3.615, -0.719), stroke: 0.65pt)
-  line((-3.615, -0.719), (-3.836, -0.665), stroke: 0.65pt)
-  line((-3.836, -0.665), (-3.657, -0.602), stroke: 0.65pt)
-  line((-3.657, -0.602), (-3.878, -0.548), stroke: 0.65pt)
-  line((-3.878, -0.548), (-3.699, -0.484), stroke: 0.65pt)
-  line((-3.699, -0.484), (-3.92, -0.43), stroke: 0.65pt)
-  line((-3.92, -0.43), (-3.741, -0.367), stroke: 0.65pt)
-  line((-3.741, -0.367), (-3.961, -0.313), stroke: 0.65pt)
-  line((-3.961, -0.313), (-3.782, -0.249), stroke: 0.65pt)
+
+  let pt(r, a) = (r * calc.cos(a), r * calc.sin(a))
+
+  let draw-spring(p1, p2, n: 6, amp: 0.13) = {
+    let dx = p2.at(0) - p1.at(0)
+    let dy = p2.at(1) - p1.at(1)
+    let L = calc.sqrt(dx * dx + dy * dy)
+    let ux = dx / L
+    let uy = dy / L
+    let nx = -uy
+    let ny = ux
+    let pts = (p1,)
+    let margin = 0.22
+    let eff = L - 2 * margin
+    let p-start = (p1.at(0) + ux * margin, p1.at(1) + uy * margin)
+    pts.push(p-start)
+    for i in range(n) {
+      let t1 = margin + (i + 0.25) / n * eff
+      let t2 = margin + (i + 0.75) / n * eff
+      pts.push((p1.at(0) + ux * t1 + nx * amp, p1.at(1) + uy * t1 + ny * amp))
+      pts.push((p1.at(0) + ux * t2 - nx * amp, p1.at(1) + uy * t2 - ny * amp))
+    }
+    let p-end = (p1.at(0) + ux * (L - margin), p1.at(1) + uy * (L - margin))
+    pts.push(p-end)
+    pts.push(p2)
+    line(..pts, stroke: 0.75pt)
+  }
+
+  line((-2.55, 0), (2.55, 0), stroke: (dash: "dash-dotted", thickness: 0.45pt))
+  line((0, -2.55), (0, 2.55), stroke: (dash: "dash-dotted", thickness: 0.45pt))
+  line(pt(2.45, 210deg), pt(0, 0), stroke: (dash: "dash-dotted", thickness: 0.45pt))
+  line(pt(2.45, 330deg), pt(0, 0), stroke: (dash: "dash-dotted", thickness: 0.45pt))
+
+  circle((0, 0), radius: 2.28, stroke: 1.0pt)
+  circle((0, 0), radius: 2.13, stroke: 0.8pt)
+
+  for k in range(3) {
+    let base = k * 120deg
+    let a-tail = base - 25deg
+    let a-head = base + 68deg
+    let r-out = 2.02
+    let r-lin = 1.90
+
+    let spts = ()
+    for j in range(17) {
+      let a = a-tail + j * (a-head - a-tail) / 16
+      spts.push(pt(r-out, a))
+    }
+    spts.push(pt(1.58, a-head + 2deg))
+    spts.push(pt(1.30, base + 42deg))
+    spts.push(pt(1.25, base + 15deg))
+    spts.push(pt(1.42, base - 8deg))
+    spts.push(pt(1.78, a-tail - 2deg))
+    line(..spts, close: true, fill: gray.transparentize(88%), stroke: 0.9pt)
+
+    let lpts = ()
+    for j in range(15) {
+      let a = (a-tail + 4deg) + j * (a-head - a-tail - 8deg) / 14
+      lpts.push(pt(r-lin, a))
+    }
+    line(..lpts, stroke: 0.55pt)
+  }
+
+  let hpts = ()
+  for k in range(3) {
+    let a0 = 90deg + k * 120deg
+    hpts.push(pt(0.84, a0 - 30deg))
+    hpts.push(pt(1.18, a0 - 11deg))
+    hpts.push(pt(1.22, a0))
+    hpts.push(pt(1.18, a0 + 11deg))
+    hpts.push(pt(0.84, a0 + 30deg))
+    for j in range(1, 5) {
+      let a = a0 + 30deg + j * 12deg
+      hpts.push(pt(0.84, a))
+    }
+  }
+  line(..hpts, close: true, fill: white, stroke: 0.9pt)
+
+  circle((0, 0), radius: 0.48, fill: white, stroke: 0.85pt)
+  rect((-0.09, -0.58), (0.09, -0.46), fill: white, stroke: 0.7pt)
+
+  for k in range(3) {
+    let a-hub = 90deg + k * 120deg
+    let a-shoe = a-hub + 65deg
+    let p-hub = pt(1.04, a-hub)
+    let p-shoe = pt(1.56, a-shoe)
+
+    let dx = p-shoe.at(0) - p-hub.at(0)
+    let dy = p-shoe.at(1) - p-hub.at(1)
+    let L = calc.sqrt(dx * dx + dy * dy)
+    let nx = -dy / L * 0.14
+    let ny = dx / L * 0.14
+    line(
+      (p-hub.at(0) + nx, p-hub.at(1) + ny),
+      (p-shoe.at(0) + nx, p-shoe.at(1) + ny),
+      (p-shoe.at(0) - nx, p-shoe.at(1) - ny),
+      (p-hub.at(0) - nx, p-hub.at(1) - ny),
+      close: true, fill: white, stroke: 0.75pt,
+    )
+
+    circle(p-hub, radius: 0.17, fill: white, stroke: 0.8pt)
+    circle(p-hub, radius: 0.09, fill: white, stroke: 0.65pt)
+    circle(p-shoe, radius: 0.16, fill: white, stroke: 0.8pt)
+    circle(p-shoe, radius: 0.08, fill: white, stroke: 0.65pt)
+
+    let p-sp1 = pt(1.66, a-hub - 26deg)
+    let p-sp2 = pt(1.68, a-hub + 24deg)
+    draw-spring(p-sp1, p-sp2, n: 6, amp: 0.12)
+    circle(p-sp1, radius: 0.065, fill: black, stroke: none)
+    circle(p-sp2, radius: 0.065, fill: black, stroke: none)
+  }
 })
