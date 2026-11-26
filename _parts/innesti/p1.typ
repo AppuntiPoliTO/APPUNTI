@@ -787,18 +787,14 @@ Per assicurare un funzionamento regolare e ripetibile sono essenziali:
 
 #v(0.5em)
 
+Poiché il disco frizione è relativamente snello e torsionalmente cedevole — e la coppia erogata dal motore a combustione interna presenta continue fluttuazioni — sulla linea di trasmissione si propagano *vibrazioni torsionali* e strappi. Per assorbirli, il disco non è vincolato rigidamente al mozzo d'uscita ma vi è collegato tramite un *parastrappi* (fino alla soluzione più evoluta del *doppio volano*, introdotta sul mercato da Valeo): la coppia passa prima alla corona d'attrito, poi attraversa un set di *molle elicoidali cilindriche circonferenziali* — spesso abbinate a uno smorzatore ad attrito — e infine raggiunge il mozzo, rendendo l'innesto equivalente a un *giunto elastico torsionalmente cedevole*.
+
 #grid(
-  columns: (1.1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),
-  [
-    Poiché il disco frizione è relativamente snello e torsionalmente cedevole — e la coppia erogata dal motore a combustione interna presenta continue fluttuazioni — sulla linea di trasmissione si propagano *vibrazioni torsionali* e strappi. Per assorbirli, il disco non è vincolato rigidamente al mozzo d'uscita ma vi è collegato tramite un *parastrappi* (fino alla soluzione più evoluta del *doppio volano*, introdotta sul mercato da Valeo): la coppia passa prima alla corona d'attrito, poi attraversa un set di *molle elicoidali cilindriche circonferenziali* — spesso abbinate a uno smorzatore ad attrito — e infine raggiunge il mozzo, rendendo l'innesto equivalente a un *giunto elastico torsionalmente cedevole*.
-  ],
-  [
-    #fig-safe(image("../../images/innesti/ecm-c13-p1-06.jpg"), max-h: 3.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi su disco frizione])
-    #v(0.4em)
-    #fig-safe(image("../../images/innesti/ecm-c13-p1-07.jpg"), max-h: 3.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi in un doppio volano])
-  ],
+  columns: (1fr, 1fr),
+  column-gutter: 0.8em,
+  align: (center + horizon, center + horizon),
+  [#fig-safe(image("../../images/innesti/ecm-c13-p1-06.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi su disco frizione])],
+  [#fig-safe(image("../../images/innesti/ecm-c13-p1-07.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi in un doppio volano])]
 )
 
 #v(0.5em)
@@ -819,16 +815,20 @@ Per assicurare un funzionamento regolare e ripetibile sono essenziali:
   - *Trasposizione torsionale al doppio volano:* nel dispositivo reale l'unico cambiamento riguarda la natura del moto, da traslazionale a *torsionale*. La massa secondaria $m_2$ è rappresentata dal secondo disco del volano e il collegamento $(k_2, c_2)$ dalle molle elicoidali circonferenziali (e dall'attrito interno): all'insorgere di una vibrazione torsionale, anziché trasmetterla rigidamente, il disco secondario ruota sfasato rispetto al primario comprimendo le molle e smorzando efficacemente le oscillazioni lungo la trasmissione.
 ==== Innesto multidisco
 
-Quando occorre trasmettere *coppie molto elevate*, un innesto monodisco richiederebbe una corona circolare d'attrito di diametro esterno eccessivo, con forte aumento dell'ingombro radiale e perdita di rigidezza (un disco sottile e molto largo diventa flessibile e difficilmente controllabile). La soluzione consiste nel moltiplicare in parallelo le superfici di attrito affiancando più dischi in un *pacco dischi* (in genere fino a un massimo di 12 dischi), ottenendo grande capacità di coppia in un volume molto compatto — caratteristica ideale in applicazioni a spazio ridotto come quelle *motociclistiche*.
+#grid(
+  columns: (1fr, 1.05fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),
+  [
+    Quando occorre trasmettere *coppie molto elevate*, un innesto monodisco richiederebbe una corona circolare d'attrito di diametro esterno eccessivo, con forte aumento dell'ingombro radiale e perdita di rigidezza (un disco sottile e molto largo diventa flessibile e difficilmente controllabile). La soluzione consiste nel moltiplicare in parallelo le superfici di attrito affiancando più dischi in un *pacco dischi* (in genere fino a un massimo di 12 dischi), ottenendo grande capacità di coppia in un volume molto compatto — caratteristica ideale in applicazioni a spazio ridotto come quelle *motociclistiche*.
 
-Nel pacco, i *dischi condotti* (rivestiti con materiali ad alto attrito quali fibra di carbonio, bronzo sinterizzato o grafite) sono montati su un *mozzo scanalato scorrevole sotto carico, centrato sui fianchi*, e si alternano a *dischi conduttori* in acciaio incastrati nelle cave interne della *campana* esterna. Quando il pacco è serrato i due gruppi ruotano solidali trasferendo potenza; rilasciando la pressione i dischi scorrono e ruotano indipendentemente. In ambito motociclistico il serraggio è affidato tipicamente a quattro molle elicoidali agenti su una piastra spingidisco, mentre il disinnesto avviene tramite un'asta spingidisco contrapposta azionata dalla leva al manubrio.
+    Nel pacco, i *dischi condotti* (rivestiti con materiali ad alto attrito quali fibra di carbonio, bronzo sinterizzato o grafite) sono montati su un *mozzo scanalato scorrevole sotto carico, centrato sui fianchi*, e si alternano a *dischi conduttori* in acciaio incastrati nelle cave interne della *campana* esterna. 
+  ],
+  [#fig-safe(include "../../figs/innesti/ecm-c13-p1-09.typ", max-h: 10cm, caption: text(size: 8.5pt, fill: luma(80))[In alto: schema generale dell'innesto multidisco (vista frontale e sezione assiale). In basso: semisezione di innesto multidisco a comando elettromagnetico con molle di richiamo.])],
+)
+Quando il pacco è serrato i due gruppi ruotano solidali trasferendo potenza; rilasciando la pressione i dischi scorrono e ruotano indipendentemente. In ambito motociclistico il serraggio è affidato tipicamente a quattro molle elicoidali agenti su una piastra spingidisco, mentre il disinnesto avviene tramite un'asta spingidisco contrapposta azionata dalla leva al manubrio.
 
-Alternando dischi piani a dischi leggermente predeformati a *onda sinusoidale* si migliorano la gradualità d'inserimento e il distacco completo a vuoto. Tuttavia, la forte compattezza elimina gli spazi liberi di aerazione tipici del monodisco, ostacolando lo smaltimento termico dai dischi interni: nei multidisco a secco il rischio di *surriscaldamento locale* è quindi elevato e il progetto termico risulta critico; tale limite si supera nei modelli *a bagno d'olio* (a immersione o a circolazione forzata). Oltre ai comandi meccanici, idraulici o pneumatici, l'attuazione può essere *elettromagnetica* (figura in basso): alimentando la bobina (`+` / `−`), l'elettromagnete richiama l'ancora mobile serrando lo spingidisco contro il pacco dischi; interrompendo la corrente, le *molle* di richiamo riportano lo spingidisco in posizione aperta.
-
-#align(center)[
-  #fig-safe(include "../../figs/innesti/ecm-c13-p1-09.typ", max-h: 9.4cm, caption: text(size: 8.5pt, fill: luma(80))[In alto: schema generale dell'innesto multidisco (vista frontale e sezione assiale). In basso: semisezione di innesto multidisco a comando elettromagnetico con molle di richiamo.])
-]
-
+    Alternando dischi piani a dischi leggermente predeformati a *onda sinusoidale* si migliorano la gradualità d'inserimento e il distacco completo a vuoto. Tuttavia, la forte compattezza elimina gli spazi liberi di aerazione tipici del monodisco, ostacolando lo smaltimento termico dai dischi interni: nei multidisco a secco il rischio di *surriscaldamento locale* è quindi elevato e il progetto termico risulta critico; tale limite si supera nei modelli *a bagno d'olio* (a immersione o a circolazione forzata). Oltre ai comandi meccanici, idraulici o pneumatici, l'attuazione può essere *elettromagnetica* (figura in basso): alimentando la bobina (`+` / `−`), l'elettromagnete richiama l'ancora mobile serrando lo spingidisco contro il pacco dischi; interrompendo la corrente, le *molle* di richiamo riportano lo spingidisco in posizione aperta.
 #v(0.5em)
 
 Una soluzione classica, largamente impiegata sui veicoli terrestri, è l'innesto multidisco a *comando meccanico a leva* (sezioni #box[$A$–$A$] e #box[$B$–$B$] in figura): nel mozzo scanalato sono ricavate tre tasche radiali a 120° (visibili in #box[$B$–$B$]) che alloggiano altrettante *leve* incernierate su un perno di fulcro. Una forcella esterna (non rappresentata) impegna la gola circonferenziale della *slitta* facendola scorrere assialmente lungo l'albero verso il pacco dischi (verso sinistra in #box[$A$–$A$]): l'estremità destra della leva scivola lungo il *profilo curvilineo raccordato* della slitta e si abbassa infossandosi all'interno della propria sede. Ruotando attorno al fulcro, il piede curvo sinistro della leva viene portato a contatto e premuto contro lo *spingidisco* mobile, serrando l'intero pacco dischi contro l'anello di battuta imbullonato a destra; facendo arretrare la slitta, la leva rientra in posizione di riposo liberando lo spingidisco e aprendo l'innesto.
