@@ -1,0 +1,436 @@
+Rilevamenti che abbiamo sviluppato nelle sezioni precedenti, siamo ora
+effettivamente in grado di accedere al calcolo della sicurezza a fatica, quindi
+determinare dal punto di vista della progettazione i coefficienti di sicurezza e
+capire se le nostre condizioni di sollecitazione in esercizio li rispettano
+oppure, se facciamo la verifica, calcolare i coefficienti di sicurezza che sono
+stati utilizzati nel progetto confrontando le tensioni massime che di fatto si
+sviluppano in missione con le resistenze che abbiamo a disposizione, possiamo
+rintracciare nei diagrammi di progetto che abbiamo studiato. Vediamo come si fa.
+Allora, innanzitutto abbiamo capito che un primo passaggio fondamentale è che la
+nostra caratterizzazione del comportamento del materiale che noi facciamo in
+laboratorio o con macchine di prova dà una prima informazione che però non è
+esaustiva. Dobbiamo rilevare i limiti di fatica, ma con limiti di fatica anche
+tutte le curve relative delle pieghe, eccetera per quanto riguarda la provetta,
+però poi dobbiamo capire tutti gli aspetti quantitativi, perlomeno che abbiamo
+esaminato nel passaggio dalla provetta al componente e dobbiamo riportare quindi
+il nostro diagramma di riferimento a quello del componente perché deve essere
+declinato, applicato effettivamente al nostro prodotto. Quindi, per esempio,
+l'effetto del carico, l'effetto della scala del sistema, l'effetto della
+finitura superficiale si applicano come coefficienti riduttivi eventualmente
+alla resistenza del materiale caratterizzata sulla provetta e determinano un
+nuovo diagramma dove tendenzialmente il punto di riferimento è più basso, il
+contorno è più ristretto e l'area di sicurezza è più ristretta. Dal punto di
+vista dell'esercizio noi possiamo caratterizzare il ciclo con la sua tensione
+media e la sua tensione alterna e in particolare se è presente un intaglio
+possiamo moltiplicare per il coefficiente di intaglio, diciamo, le due tensioni
+che poi caratterizzano il punto di lavoro e in particolare nel diagramma di
+Haigh dove possiamo confrontare, diciamo, a parità di numero di cicli queste due
+componenti, diciamo, la parte più statica e la parte più dinamica. Domanda. In
+questa slide notate qualcosa di strano che non vi convince e in qualche modo
+potrebbe essere considerato un errore? Vi invito a soffermare la vostra
+attenzione sulla definizione della tensione media in presenza di intaglio e
+della tensione alternata in presenza di intaglio. Se è totalmente intuitivo che
+la tensione alternata è totalmente dinamica e quindi si applica il KF perché
+siamo a fatica potrebbe non esserlo il fatto che nella tensione media, che è una
+componente di fatto assimilabile alla componente statica noi applichiamo il KF
+invece del KT perché in effetti sembrerebbe che stiamo gestendo una problematica
+di comportamento statico con un'interpretazione in campo dinamico. In realtà le
+due componenti non agiscono in maniera separata, ma quello che io applico alla
+provetta da un lato, al componente dall'altro e il l'intero ciclo dove questo è
+il bias e questa è la fluttuazione, però quello che io in effetti applico è la
+somma di queste due tensioni, ovvero se lo andiamo a vedere nel dettaglio la
+nostra definizione del ciclo era questa, la tensione massima è la somma della
+tensione media più la tensione alternata per cui di fatto la resistenza che noi
+stiamo valutando in campo a fatica è praticamente rispetto ad una tensione in
+esercizio che se fosse monoassiale è questa. Se abbiamo un intaglio chiaramente
+ci viene di applicare il KF e lo applichiamo alla tensione massima nel punto più
+sollecitato e quindi in qualche modo diciamo il punto critico che noi esaminiamo
+dal punto di vista o della verifica o della progettazione ma se interpreto
+questo valore massimo come la somma dell'alternata e della media quando poi io
+moltiplico il coefficiente, allora a quel punto io vedo che i due addendi
+vengono moltiplicati per lo stesso coefficiente e in particolare quindi non è
+errato che la componente sigma media in effetti risenta dell'applicazione del KF
+tipico della fatica e non del KT. Quindi apparentemente la formulazione sembra
+dissonante rispetto all'interpretazione fisica, in realtà in questo caso è
+coerente perché viene applicata al massimo dove semplicemente queste sono le due
+componenti che ci permettono di costruire questa tensione massima e questo è
+quello che la normativa conferma. Allora, vediamo come si procede dal punto di
+vista del calcolo del coefficiente di sicurezza. Allora, innanzitutto quello che
+chiamiamo detto e parole può essere rappresentato per diagrammi ovvero il
+diagramma di Haigh che ci sarà particolarmente utile nella determinazione del
+coefficiente di sicurezza originariamente potrebbe essere rappresentato con
+un'area di sicurezza che corrisponde in realtà a questa linea tratteggiata dove
+il punto sull'asse delle ordinate che viene preso in considerazione limite di
+fatica del materiale, quindi su prove applicate ai campioni tipo provetta e in
+particolare l'area è particolarmente estesa. Se noi analizziamo nel dettaglio
+gli effetti associati al componente rispetto alla pura caratteristica del
+materiale di cui è costituito tendenzialmente questo punto si abbassa a questo
+livello per cui quello che succede nella ricostruzione del diagramma è che
+intanto abbiamo una retta di Goodman che parte sempre dal R con M però questa
+volta va a intersecare l'asse delle ordinate nella posizione sigma C di -1. In
+questo caso viene fatta continuare diritta invece che andare in orizzontale.
+Queste sono entrambe interpretazioni che in letteratura noi troviamo. In certe
+normative si insegna a utilizzare una certa pendenza corretta della retta di
+Goodman nella regione centrale che quindi evita di avere un approccio troppo
+conservativo che considererebbe nella zona di compressione la linea orizzontale
+però anche, diciamo, di essere troppo ottimisti magari nel considerare questa
+estensione direttamente il prolungamento di questa retta. Questi diagrammi in
+realtà provengono dal libro del professor Rossetto che è citato all'interno
+della bibliografia e una delle possibili interpretazioni ve la faccio notare
+perché a seconda della normativa poi ci sono dettagli di suggerimento un
+pochettino diversi tra di loro. Quello che è rilevante è che, indipendentemente
+quasi dalla forma che, diciamo, viene applicata dalla normativa che voi state
+seguendo, quello che è noto ma viene indicato totalmente nella normativa è che a
+un certo punto il contorno del, diciamo, diagramma di Haigh applicato al al
+componente è del tutto noto ed è quello, per esempio, in grassetto avendo
+definito qual è l'approccio che si vuole utilizzare per questa retta. Allora, il
+calcolo del coefficiente di sicurezza praticamente in questo caso consiste nel
+confrontare una condizione di lavoro che io adesso ho sovrapposto al cursore
+colorato in realtà è il punto di lavoro con una certa tensione media, una certa
+tensione alternata che poi può essere nominale se la struttura non è intagliata,
+effettiva se la struttura è intagliata però ci accorgiamo subito che c'è
+un'anomalia rispetto al calcolo dei coefficienti di sicurezza che eravamo
+abituati a rilevare, a calcolare in campo statico. In campo statico noi abbiamo
+la tensione d'esercizio, uno snervamento, una rottura, abbiamo due numeri e
+quindi se siamo, diciamo, mal partito che abbiamo più componenti di tensione che
+dobbiamo confrontare insieme passiamo attraverso la definizione di tensione
+equivalente, però di fatto abbiamo sempre alla fine un numero e un numero che mi
+rappresenta la resistenza, lo snervamento in un caso, rottura nell'altro sempre
+parlando di duttilità. Qui non abbiamo un semplice numero, abbiamo una
+rappresentazione bidimensionale in cui il punto, diciamo, si confronta con la
+posizione del contorno della regione di sicurezza per cui se è immediato capire
+che questo punto di lavoro è in regione di sicurezza perché è semplicemente al
+suo interno non è così immediato capire qual è il margine che noi possiamo
+effettivamente considerare. Perché? Perché per poter rilevare il margine
+dobbiamo rilevare in qualche modo una distanza di questo punto dal contorno, ma
+dobbiamo anche capire secondo quale direzione muoverci per misurare questa
+distanza e questo non è affatto una condizione, diciamo, arbitraria
+indipendente, ma ha a che fare con la fisica del problema che ci troviamo
+davanti. Allora, nel seguito cercheremo di fare diverse ipotesi su quelli che si
+chiamano i cicli di esplosione, cioè quando io ho una struttura che è soggetta
+ad un carico affaticante ad un certo punto quello che succede è che la mia
+struttura può incontrare dei carichi che sono variabili e sono in crescita e
+questa crescita delle ampiezze secondo l'una o l'altra componente può
+determinare, diciamo, l'accelerazione verso quello che è il cedimento finale.
+Allora, a seconda che la tensione media cresca mantenendo costante la tensione
+alternata o viceversa sia la componente alternata che cresce rispetto a una
+tensione media che rimane ferma avrò modalità di spostamento all'interno del
+diagramma di proiezione verso il contorno in grassetto che è differente ed è qui
+la distanza potrà essere più piccola, più grande a seconda di come mi muovo.
+Valutiamo queste diverse situazioni con l'introduzione, appunto, della
+definizione di coefficiente di sicurezza su questo diagramma rispetto ai vari
+cicli di esplosione. Per diciamo inciso dobbiamo anche valutare quali sono i
+numeri tipici che noi dovremmo trovare in termini di coefficienti di sicurezza.
+Allora, innanzitutto diciamo questo, che il coefficiente di sicurezza è
+tipicamente introdotto con l'idea che ci sia un margine proprio tra la
+resistenza che rappresenta la condizione di cedimento del materiale e la
+condizione, diciamo, di esercizio più gravosa del sistema, del nostro
+componente. Quindi l'idea è che io raggiungo un certo massimo di sforzo
+applicato nella mia struttura, però a questo livello deve essere ragionevolmente
+lontano da quel margine che mi indurrebbe la condizione di cedimento finale
+secondo una certa tecnica meccanica di danneggiamento. Perché io ho bisogno del
+margine? Ho bisogno del margine per alcuni motivi. Allora, innanzitutto io non
+sono sicuro della caratterizzazione che faccio del materiale, potrei aver
+sottovalutato alcuni aspetti potrei avere una valutazione ottimistica della
+resistenza del materiale o delle sue proprietà per cui esistono incertezze nella
+fase di caratterizzazione del comportamento meccanico del materiale, in questo
+caso specifico a fatica. Posso avere una difficoltà nella determinazione del
+punto di applicazione dei carichi sulla struttura dell'intensità di questi
+carichi o anche della componente che viene effettivamente sollecitata. Io
+immagino magari ci sia solo uno sforzo normale e poi questo carico non è
+perfettamente, scusate, allineato, per esempio, alla linea d'asse dell'albero,
+della mia struttura a travi formi, ma anche una componente diversa che induce
+una flessione di cui io non tengo conto. Allora, in questo senso
+un'indeterminazione del punto di applicazione o un'indeterminazione nelle
+componenti attive o nelle ampiezze di queste azioni evidentemente causa un
+errore poi sul calcolo delle tensioni e delle deformazioni. O anche
+un'incertezza su quello che effettivamente il materiale che mi viene fornito
+apparentemente rispetto a quello nominale che dovrebbero fornirmi. Lì interviene
+il sistema della qualità che dovrebbe accreditare, diciamo, che le
+caratteristiche dichiarate sono corrispondenti al materiale che io sto
+utilizzando, però potrebbe anche esserci un aspetto di incertezza di questo
+tipo. Un'incertezza grande, più o meno grande, dipende soprattutto dai modelli
+che io utilizzo per fare questi calcoli per interpretare i fenomeni. I miei sono
+abbastanza dettagliati, come state vedendo e molto numerosi, ma non sono mai
+perfetti, per cui io potrei sottovalutare con un certo margine di errore
+fenomeni che in certe scale magari sono più importanti su altre dimensioni.
+Allora, questa sovrapposizione giustifica il fatto che in pratica il margine,
+quindi il rapporto tra la tensione che rappresenta la resistenza e la tensione
+in qualche modo rappresentativa dello stato di esercizio deve essere un numero
+un po' maggiore di uno oppure tanto maggiore di uno a seconda, diciamo, del tipo
+di rischio associato al cedimento e quindi in termini di sicurezza, ma anche a
+seconda del livello di incertezza che io attribuisco a tutti questi aspetti che
+io ho citato prima. Paradossalmente se io avessi una normativa molto, molto,
+molto dettagliata ed effettivamente, per esempio ce n'è una a KM tedesca è molto
+dettagliata e molto analitica tante incertezze si risolvono all'interno della
+normativa e per cui quel numero può anche scendere, tanto è vero che loro
+arrivano alla fine a consigliare coefficienti di sicurezza che persino nella
+fatica possono essere tra l'1 e mezzo e due, cioè più confrontabili coi valori
+statici, però in effetti perché introducono tutta una serie di perfezionamenti
+del calcolo dei modelli che sono molto più, diciamo, avanzati di quelli più
+teorici classici che vediamo noi qui insieme. Allora, questo numero tre è
+giustificato dal fatto che se mentre nella parte statica, tutto sommato, il
+confronto tra la caratteristica del materiale, i modelli che utilizzo, le
+sezioni applicate o anche i vincoli applicati è tutto sommato abbastanza
+semplice nella fatica, come vedete, è già più complicato, c'è tutta la
+dipendenza degli effetti, dei processi, quindi in questo senso è opportuno che
+come minimo ci si tenga in questo livello, però questo numero non è, come dire
+obbligatorio in tutti i casi se la normativa tecnica introduce modelli più
+raffinati e quindi può decrementare questo numero. In mancanza d'altro è
+ragionevole pensare che tre o quattro sia effettivamente quello che viene
+utilizzato. Allora, come si procede? Allora, intanto io procedo sul diagramma di
+Haigh perché mi permette di confrontare la componente media e la componente
+alternata. Su uno sul contorno di sicurezza delta tensione riferita al
+componente immagino di fare in questo caso una verifica di sicurezza vita
+limitata, quindi qui c'è esattamente il limite di fatica, fosse nella seconda
+regione della curva di Haigh e qui ci sarebbe il valore che c'è, diciamo, per un
+dato numero di cicli. Allora, quello che io devo dire, allora, come vedete
+intanto che a seconda della normativa io potrei avere la chiusura del poligono
+secondo la linea tratteggiata blu oppure secondo questo spigolo che abbiamo
+detto. Questo lo trovate già nella normativa che voi applicherete. Se il punto è
+all'interno è sicuro, se il punto è esterno è insicuro se il punto è all'interno
+l'idea è quella di proiettare appunto secondo ipotesi di esplosione dei cicli
+differente il punto di lavoro verso il contorno e poi misurare in qualche modo
+secondo certe convenzioni la distanza. Notate che in questa rappresentazione
+della tensione limite di fatica del componente in realtà anche qui c'è una
+particolarità e cioè per permetterci di rappresentare il poligono di sicurezza
+praticamente tutto in un colpo la KF, che è in realtà applicata alla sigma alla
+sigma M viene direttamente portata a secondo membro dell'equazione di confronto
+e in pratica viene messa di numeratore dei coefficienti di correzione. Infatti i
+coefficienti di correzione sono numeri minori di uno tendenzialmente al massimo
+uguale a uno rispetto al limite di fatica del materiale, il KF tendenzialmente è
+un numero maggiore di uno, quindi uno su KF diventa anch'esso motivo di
+riduzione del limite di fatica del materiale rispetto al componente e questo ci
+permette di entrare nel diagramma con la tensione sigma con M, la tensione sigma
+con A diciamo nominale senza bisogno di moltiplicare per il KF. Perché ho messo
+i punti interrogativi? Perché questo è un approccio che sui libri viene anche
+illustrato per semplificare, quindi introdurre tutte le correzioni ad una stessa
+parte della disuguaglianza o dell'uguaglianza e a quel punto, diciamo,
+risolverla. Non è così pratico e vi chiederei perché. Perché secondo voi non è
+pratico dividere per il numero KF piuttosto che avere le tensioni sigma con A e
+sigma con M del punto di lavoro ognuna moltiplicata per il suo KF? Perché
+fondamentalmente dipende se quelle sigma con A e sigma con M sono delle tensioni
+equivalenti oppure uno stato monoassiale. Allora, se lo stato è monoassiale il
+KF è riferito ad una condizione di intaglio specifica, ma anche di carico
+specifica, quindi saranno delle entrambe figlie di una trazione, di una
+flessione, di una torsione, però di fatto quel KF è un numero unico e non c'è
+problema. Se la sigma con A e la sigma con M invece sono tensioni equivalenti di
+uno stato di tensione multiasseale, come vedremo più avanti dove noi, per
+esempio, introduciamo un concetto simile alla tensione ideale equivalente della
+statica, ma riportato nel campo della fatica i kappa con F sono diversi quindi
+non è semplice estrarre un numero dalle tensioni di esercizio unico e portarlo
+qui al denominatore. In quel caso è gioco forza dovremmo mantenere questo KF dal
+lato delle tensioni operative, quindi sarà nascosto nelle coordinate del punto
+di lavoro perché sarà nascosto nelle formule equivalenti della tensione sigma
+con A a quel punto equivalente della sigma con M a quel punto equivalente. Lo
+dico perché questo oggetto di confusioni, di errore però, diciamo, è abbastanza
+chiaro. In questo caso non c'è problema perché stiamo analizzando il caso
+monodimensionale che è il più semplice di tutti e quindi questo KF è
+originariamente di una delle caratteristiche sollecitazioni, quindi tale rimane.
+Bene, allora andiamo a vedere come si producono invece le proiezioni e quindi
+qui c'è questa discussione che abbiamo fatto adesso, cioè che il punto di lavoro
+può rimanere con le nominali se mettiamo il KF nella formula sigma con CD -1
+invece rimane nella definizione di sigma M sigma con A e in quella formula noi
+mettiamo solo il C al numeratore. Prima ipotesi. Abbiamo una condizione di
+carico che sostanzialmente presenta una tensione media costante, ma l'alternata
+per esempio per effetto di una vibrazione tende a incrementare il suo valore.
+L'esempio potrebbe essere quello di avere un recipiente in pressione dove la
+pressione è costante, ma per effetto sismico la parete, il mantello del nostro
+recipiente in pressione incomincia a vibrare e quindi rispetto, diciamo, a
+piccole variazioni abbastanza poco scettibili del sistema in condizioni normali,
+invece col carico sismico l'alternata diventa molto diversa, molto più
+importante. Allora, se questa fosse l'ipotesi questo vuol dire che la coordinata
+in ascissa rimane fissa, mentre la coordinata in ordinata aumenta. Il punto di
+lavoro viene proiettato, quindi immagino che ci sia un aumento sempre più
+intenso della componente alternata e a un certo punto interseca il contorno.
+Quindi la tensione che mi rappresenta la condizione limite per il cedimento a
+fatica partendo da questo punto di lavoro e considerando questo contorno e
+questa sigma con D che viene chiamata limite per intendere che non è limite di
+fatica, ma è la condizione limite, diciamo, di questo ciclo di esplosione per il
+quale io incorrerei nel problema del cedimento. A questo punto questo
+praticamente è la soglia per il cedimento, questa è la condizione di lavoro
+normale. Ha senso che io confronti, diciamo, il rapporto di questi segmenti a
+partire dall'asse delle ascisse, cioè il valore della tensione alternata limite
+rispetto alla tensione alternata che io ho a regime normale in funzionamento
+normale. Infatti il coefficiente di sicurezza che qui viene rappresentato come
+CS è uguale alla resistenza rappresentata dal punto sigma di limite diviso la
+tensione sigma con AP che è la tensione alternata della condizione di lavoro.
+Ovviamente questo deve risultare sicuramente maggiore di uno, ma tendenzialmente
+il requisito della normativa tecnica mi dirà il numero che opportunamente
+secondo questa logica delle incertezze coperte dal coefficiente deve essere
+applicato, quindi non è inconsueto che sia un tre che sia un quattro potrebbe
+essere un po' meno se i metodi di di calcolare in particolare le tensioni di
+lavoro in esercizio sono particolarmente affidati vicini alle condizioni reali.
+Alternativa potrebbe essere che la tensione media e la tensione alternata
+entrambe subiscano una variazione e quindi cambino completamente, diciamo, e
+gradualmente entrambe, però perlomeno mantenendo il loro rapporto costante.
+Allora, in questo senso se il loro rapporto si mantiene costante io posso dal
+punto di lavoro tracciare un segmento che arriva nell'origine poi dall'origine,
+passando per il punto di lavoro, proiettare verso il contorno esterno della
+regione di sicurezza secondo questa retta e quindi il punto di resistenza finale
+per il cedimento diventa sigma di limite in questa posizione, mentre il punto di
+lavoro diventa questo. Ora, da questo punto di vista verrebbe naturale dire che
+io potrei confrontare tra di loro la lunghezza di questi due segmenti, cioè il
+segmento obliquo che ha per vertice la sigma di limite e di quello che ha per
+vertice la sigma con AP. La normativa non è tanto d'accordo nel farci calcolare
+la lunghezza di questi segmenti perché comporta una possibilità di errore.
+Allora, tendenzialmente preferisce che noi leggiamo direttamente e calcoliamo i
+rapporti e sui valori delle coordinate del sistema di riferimento. Quindi, come
+vedete qui il coefficiente di sicurezza viene inteso o come la tensione
+alternata limite su quella di lavoro in esercizio o come la tensione media su
+quelli lavoro in esercizio, quindi vuol dire che stiamo confrontando le altezze
+o stiamo confrontando le basi di questi rettangoli oppure posso calcolare il
+valore limite massimo rispetto alla massima, cioè sommando, praticamente, questi
+termini oppure, diciamo, i valori dei minimi. Però se noi guardiamo il diagramma
+di Haigh chiaramente le prime due definizioni sono più coerenti perché
+utilizzano le coordinate di sistema. Quindi qui c'è questa prima anomalia, cioè
+rispetto all'aspetto intuitivo che noi verrebbe naturale dire misuro le due
+lunghezze e guardo il rapporto tra le lunghezze dei due segmenti, siccome questo
+comporta un calcolo che si potrebbe facilmente sbagliare piuttosto che sbagliare
+in questo senso si utilizza direttamente il rapporto o delle altezze di questi
+rettangoli e delle basi di queste rettangoli. Potrebbe esserci una tensione
+media che in parte si mantiene costante, in parte segue, diciamo,
+proporzionalmente la variazione della tensione alternata che è un caso però
+molto peculiare questo comporta sostanzialmente che dal punto di lavoro si
+tracci praticamente secondo, appunto, della dimensione che rimane, diciamo,
+costante, di quella che rimane proporzionale un segmento che va a intersecare
+l'asse delle ascisse e quel punto da quel punto di intersezione si proietta
+secondo il punto di lavoro si fa vedere il contorno, però come prima la tendenza
+è di dire usiamo la tensione alternata di questo limite, la tensione alternata
+del punto di lavoro e definiamo i coefficienti di sicurezza così. Se guardiamo
+bene, di fatto, per non sbagliarsi, per dare all'operatore un'interpretazione
+univoca in tutti i casi la normativa sta suggerendo in prima battuta di guardare
+le ordinate. Per esempio il rapporto delle ordinate qui va bene, il rapporto
+delle ordinate qui va bene, nel caso della pagina precedente per definizione
+poteva solo essere quello perché ci muovevamo in verticale. Dov'è che questo non
+va bene? Quando io ho una tensione alternata che è stabile e una tensione media
+che per qualche causa aumenta. Questo è il causa, per esempio sempre del sistema
+in pressione quando si ha una deriva della pressione per cui la tensione in
+realtà aumenta per il fatto che io ho mandato più pressione del previsto, mentre
+invece i disturbi vibratori sono sempre gli stessi, quindi in effetti non ho una
+significativa variazione della componente dinamica. In questo caso l'unico
+movimento di proiezione che posso fare secondo l'asse orizzontale quindi in
+questo senso devo partire dal punto di lavoro e vado in parallelo con l'asse
+delle ascisse, identifico una tensione a questo punto mi limite e a questo punto
+solo la possibilità di fare un rapporto tra tensione media di cedimento al
+limite e la tensione media invece di esercizio. Qui viene riportato per
+completezza di informazione un aspetto che è invece un po' diverso che non ha
+proprio a che fare con i coefficienti di sicurezza e cioè il fatto che il punto
+di lavoro dipende sicuramente dal ciclo che viene applicato, ma dipende anche
+dai trattamenti che noi facciamo, come studieremo nel dettaglio. Se noi facciamo
+degli trattamenti meccanici, termici, chimici di varia natura possiamo alterare
+le condizioni di tensione presente nel pezzo e in particolare indurre nel pezzo
+delle tensioni che vengono chiamate residue. Perché sono tensioni residue?
+Allora, normalmente voi avete in mente che quando io ho una struttura applico
+delle azioni dall'esterno e induco uno stato di sollecitazione queste tensioni
+sono figlie della distribuzione delle azioni applicate per cui rimuovendo le
+azioni il corpo elastico, tendenzialmente, torna nello stato di quiete senza
+effetti di tensione e di deformazione a meno che intervenga la plasticità che
+comunque, diciamo, ha una deformazione plastica, non una tensione.
+Invece, se io per esempio utilizzo un trattamento meccanico che induce uno stato
+di tensione all'interno del corpo, ma quando sospendo il processo in realtà
+questo stato di tensione permane, come se fosse congelato all'interno del corpo
+e diciamo dà delle azioni locali, però di fatto non ci sono delle azioni esterne
+che motivino quelle sollecitazioni, sono figlie di un processo, allora in questo
+senso si chiamano residue perché in pratica io all'interno del materiale ho una
+distribuzione di tensioni prima ancora di applicare successivamente delle azioni
+esterne e quindi di queste devo tener conto perché evidentemente quando io poi
+applico le esterne si sovrappongono, però ho delle tensioni locali che già
+preesistevano e quindi questo può determinare il fatto che se il trattamento
+induce tensioni residue di di trazione, il punto di lavoro che magari è il pi
+centrale può spostarsi in pi secondo e in particolare quindi muovendosi lungo
+una direzione parallela all'asse delle ascisse, ma nella direzione delle
+coordinate positive. Se invece io induco uno stato di tensione residuo di
+compressione si muove all'indietro, quindi in pratica va in pi primo. Domanda,
+quale dei due è più conveniente? Tendenzialmente i miei trattamenti se inducono
+uno stato di tensione residuo di compressione facilitano la resistenza del
+materiale del componente perché, come potete vedere qui, se è vero che in quasi
+tutti i casi noi analizziamo i rapporti tra le ordinate il contorno è più
+distante dal punto pi primo che non nel punto pi o peggio ancora che non nel
+punto pi secondo. Questa è una chiave di lettura che tornerà prepotentemente
+nell'analisi degli effetti dei trattamenti tecnologici e dei processi sul
+componente per intensificare o a seguito dei processi per avendo una riduzione
+della resistenza a fatica. Quindi cercheremo trattamenti convenienti che
+inducano le tensioni residue di compressione se vogliamo incrementare la
+resistenza a fatica e questo diagramma ci illustra perché. Domanda, possiamo
+valutare i coefficienti di sicurezza anche su quegli altri diagrammi che abbiamo
+visto che correlano le tensioni medie e la tensione alternata? Ovviamente sì.
+Nella curva Basquin o diagramma di Goodman in pratica questo può essere fatto
+utilizzando anche direttamente le componenti massime in particolare, quindi se
+io il punto di lavoro anziché leggerlo come abbiamo fatto fino adesso lungo
+diciamo i due assi sigma con m e sigma con a e proiettando secondo le direzioni
+che abbiamo visto, li interpreto nel sistema di riferimento della tensione
+massima e minima, posso tranquillamente andare a confrontare una tensione
+massima limite che sarebbe questo punto per esempio quando la tensione massima è
+in diciamo in crescita rispetto a quella che avevo a regime di funzionamento
+ordinario. Quindi se io voglio ragionare in tensioni massime può essere
+conveniente utilizzare la curva Goodman che è uno degli approcci che
+l'aeronautica militare di tutto il mondo utilizza in campo aerospaziale, non
+solo, ma che può applicare in campo aerospaziale. Se andiamo a vedere diciamo la
+stima degli diagrammi SN e dei componenti e su questi andiamo a valutare i
+coefficienti di sicurezza, allora intanto quello che possiamo dire è che la
+curva che corrisponde alla provetta chiaramente tende a essere più alta, la
+curva che corrisponde al componente con la stessa logica che abbiamo visto prima
+di decremento introducendo i coefficienti correttivi si troverà più in basso.
+Notate che questa curva sperimentale, così come avviene spesso nei rapporti
+tecnici, non include la fatica oligociclica perché si pensa che questa debba
+essere meglio descritta in un'analisi di deformazione con un'informazione
+aggiuntiva e non diciamo limitata a un segmento in questa regione, quindi si
+omette, ma si omette volutamente per rimandare ad un rapporto tecnico più
+dettagliato. Questo punto di partenza, notate che è scritto come 0,9 RM meno la
+tensione media, perché normalmente abbiamo detto che questo punto di partenza
+nella curva di Wöhler è 0,9 o 0,8 0,9 ma diciamo 0,9 RM. Però la curva di Wöhler
+normalmente ha la tensione media uguale a zero, mentre invece qui se è una curva
+SN potrebbe esserci una tensione media applicata in prova non uguale a zero e
+quindi in questo senso si deve fare la differenza e partire da questo valore in
+questo punto. Il ginocchio si sa dov'è posizionato per tipo di materiale, quindi
+qui per esempio un acciaio in due in dieci alla sesta, a quel punto se io ho la
+sigma d della provetta, la sigma d meno uno del materiale, applicando i
+coefficienti di correzione ottengo la sigma d con c del componente e quindi con
+questo punto noto, col ginocchio posizionato come numero di cicli e sapendo i
+livelli delle limiti di fatica, diciamo che la ricostruzione almeno per stima
+della curva SN equivalente è possibile. Come si valuta allora il coefficiente di
+sicurezza su questa curva? Allora il coefficiente di sicurezza normalmente
+prende in esame le tensioni, quindi la definizione che risulterebbe più naturale
+è quella che viene riportata da questa formula, cioè il coefficiente di
+sicurezza secondo sigma, secondo uno studio della sollecitazione, corrisponde
+alla tensione della curva che corrisponde al cedimento di fatica secondo un
+certo numero di cicli rispetto alla tensione alternata che effettivamente viene
+applicata. Quindi se io per esempio definisco un certo numero di cicli n con
+zero, la mia sigma con a che corrisponde a questa linea è la condizione di
+esercizio ordinaria. Se io rispetto al numero di cicli vado a leggere la curva a
+tempo determinato nella regione due della della curva di Wöhler o della curva SN
+e vado a vedere qual è il livello sigma n con zero, in pratica il margine che ho
+è rappresentato dal rapporto tra questo valore che rappresenta la resistenza e
+questo valore che rappresenta l'ammissione a parità di numero di cicli, quindi
+per una data durata fissata io confronto livelli di carico e quindi livelli di
+tensione. Questo sarebbe l'approccio classico di coefficienti di sicurezza in
+termini di resistenza. Però in questa curva lo stesso ragionamento può anche
+essere esteso in campo di durata, nel senso che a parità di sollecitazione,
+quindi la sigma con a in missione è fissa, io posso valutare qual è il numero di
+cicli che condurrebbe alla situazione di cedimento secondo questa tensione
+alternata e il numero di cicli che invece viene previsto dell'ammissione, quindi
+in questo caso la n con zero diciamo mi rappresenta il requisito di missione,
+mentre invece la nl mi rappresenta praticamente il numero di cicli per la
+rottura. Se volete nei cuscinetti della lavatrice io potrei dire che nl in
+realtà sono le ore effettive per cui quel cuscinetto durerebbe senza necessità
+di essere sostituito. N con zero magari è il l'effettivo numero di ore per le
+quali se il costruttore indica l'utente di utilizzarlo per avere un certo
+margine sulle incertezze. In questo senso il coefficiente di sicurezza è
+misurato in termini temporali e viene visto come il rapporto dei cicli nei due
+casi, ciclo numero dei cicli corrispondente alla condizione di cedimento
+rispetto al numero di cicli corrispondente alla condizione di esercizio, quindi
+di requisito di di esercizio. Evidentemente poi c'è una correlazione tra i due
+coefficienti di sicurezza se la rappresentazione è semilogaritmica in
+particolare o comunque diciamo utilizzando l'equazione di Basquin, io posso
+rappresentare le due equazioni nelle nei due punti praticamente, confrontare tra
+dei loro i rapporti delle del numero di cicli e delle tensioni e ovviamente mi
+rendo conto che di mezzo c'è la potenza k che è quella tipica diciamo del
+termine di Basquin che diciamo avevamo imparato a utilizzare e che è quello che
+descrive di fatto la pendenza di questa retta in questa zona del grafico, quindi
+i due coefficienti non sono corrispondenti se di mezzo c'è questa potenza,
+quindi i due numeri devono essere ovviamente adattati all'interpretazione di
+questa curva secondo anche il tipo di coordinate che noi introduciamo, se le
+scale sono logaritmiche entrambe oppure una è in senso assoluto e l'altra è in
+senso logaritmico.
+
