@@ -1,92 +1,85 @@
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 #canvas(length: 1cm, {
   import draw: *
-  line((-2.25, 0.0), (2.25, 0.0), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((0.0, -2.2), (0.0, 2.35), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  bezier((1.72, 0.0), (1.983, 0.261), (1.703, 0.149), (2.001, 0.186), stroke: 0.9pt)
-  bezier((1.983, 0.261), (1.661, 0.445), (1.981, 0.339), (1.684, 0.297), stroke: 0.9pt)
-  bezier((1.661, 0.445), (1.848, 0.765), (1.607, 0.585), (1.885, 0.697), stroke: 0.9pt)
-  bezier((1.848, 0.765), (1.49, 0.86), (1.826, 0.84), (1.55, 0.723), stroke: 0.9pt)
-  bezier((1.49, 0.86), (1.587, 1.218), (1.401, 0.981), (1.64, 1.161), stroke: 0.9pt)
-  bezier((1.587, 1.218), (1.216, 1.216), (1.546, 1.284), (1.31, 1.099), stroke: 0.9pt)
-  bezier((1.216, 1.216), (1.218, 1.587), (1.099, 1.31), (1.284, 1.546), stroke: 0.9pt)
-  bezier((1.218, 1.587), (0.86, 1.49), (1.161, 1.64), (0.981, 1.401), stroke: 0.9pt)
-  bezier((0.86, 1.49), (0.765, 1.848), (0.723, 1.55), (0.84, 1.826), stroke: 0.9pt)
-  bezier((0.765, 1.848), (0.445, 1.661), (0.697, 1.885), (0.585, 1.607), stroke: 0.9pt)
-  bezier((0.445, 1.661), (0.261, 1.983), (0.297, 1.684), (0.339, 1.981), stroke: 0.9pt)
-  bezier((0.261, 1.983), (0.0, 1.72), (0.186, 2.001), (0.149, 1.703), stroke: 0.9pt)
-  bezier((0.0, 1.72), (-0.261, 1.983), (-0.149, 1.703), (-0.186, 2.001), stroke: 0.9pt)
-  bezier((-0.261, 1.983), (-0.445, 1.661), (-0.339, 1.981), (-0.297, 1.684), stroke: 0.9pt)
-  bezier((-0.445, 1.661), (-0.765, 1.848), (-0.585, 1.607), (-0.697, 1.885), stroke: 0.9pt)
-  bezier((-0.765, 1.848), (-0.86, 1.49), (-0.84, 1.826), (-0.723, 1.55), stroke: 0.9pt)
-  bezier((-0.86, 1.49), (-1.218, 1.587), (-0.981, 1.401), (-1.161, 1.64), stroke: 0.9pt)
-  bezier((-1.218, 1.587), (-1.216, 1.216), (-1.284, 1.546), (-1.099, 1.31), stroke: 0.9pt)
-  bezier((-1.216, 1.216), (-1.587, 1.218), (-1.31, 1.099), (-1.546, 1.284), stroke: 0.9pt)
-  bezier((-1.587, 1.218), (-1.49, 0.86), (-1.64, 1.161), (-1.401, 0.981), stroke: 0.9pt)
-  bezier((-1.49, 0.86), (-1.848, 0.765), (-1.55, 0.723), (-1.826, 0.84), stroke: 0.9pt)
-  bezier((-1.848, 0.765), (-1.661, 0.445), (-1.885, 0.697), (-1.607, 0.585), stroke: 0.9pt)
-  bezier((-1.661, 0.445), (-1.983, 0.261), (-1.684, 0.297), (-1.981, 0.339), stroke: 0.9pt)
-  bezier((-1.983, 0.261), (-1.72, 0.0), (-2.001, 0.186), (-1.703, 0.149), stroke: 0.9pt)
-  bezier((-1.72, 0.0), (-1.983, -0.261), (-1.703, -0.149), (-2.001, -0.186), stroke: 0.9pt)
-  bezier((-1.983, -0.261), (-1.661, -0.445), (-1.981, -0.339), (-1.684, -0.297), stroke: 0.9pt)
-  bezier((-1.661, -0.445), (-1.848, -0.765), (-1.607, -0.585), (-1.885, -0.697), stroke: 0.9pt)
-  bezier((-1.848, -0.765), (-1.49, -0.86), (-1.826, -0.84), (-1.55, -0.723), stroke: 0.9pt)
-  bezier((-1.49, -0.86), (-1.587, -1.218), (-1.401, -0.981), (-1.64, -1.161), stroke: 0.9pt)
-  bezier((-1.587, -1.218), (-1.216, -1.216), (-1.546, -1.284), (-1.31, -1.099), stroke: 0.9pt)
-  bezier((-1.216, -1.216), (-1.218, -1.587), (-1.099, -1.31), (-1.284, -1.546), stroke: 0.9pt)
-  bezier((-1.218, -1.587), (-0.86, -1.49), (-1.161, -1.64), (-0.981, -1.401), stroke: 0.9pt)
-  bezier((-0.86, -1.49), (-0.765, -1.848), (-0.723, -1.55), (-0.84, -1.826), stroke: 0.9pt)
-  bezier((-0.765, -1.848), (-0.445, -1.661), (-0.697, -1.885), (-0.585, -1.607), stroke: 0.9pt)
-  bezier((-0.445, -1.661), (-0.261, -1.983), (-0.297, -1.684), (-0.339, -1.981), stroke: 0.9pt)
-  bezier((-0.261, -1.983), (-0.0, -1.72), (-0.186, -2.001), (-0.149, -1.703), stroke: 0.9pt)
-  bezier((-0.0, -1.72), (0.261, -1.983), (0.149, -1.703), (0.186, -2.001), stroke: 0.9pt)
-  bezier((0.261, -1.983), (0.445, -1.661), (0.339, -1.981), (0.297, -1.684), stroke: 0.9pt)
-  bezier((0.445, -1.661), (0.765, -1.848), (0.585, -1.607), (0.697, -1.885), stroke: 0.9pt)
-  bezier((0.765, -1.848), (0.86, -1.49), (0.84, -1.826), (0.723, -1.55), stroke: 0.9pt)
-  bezier((0.86, -1.49), (1.218, -1.587), (0.981, -1.401), (1.161, -1.64), stroke: 0.9pt)
-  bezier((1.218, -1.587), (1.216, -1.216), (1.284, -1.546), (1.099, -1.31), stroke: 0.9pt)
-  bezier((1.216, -1.216), (1.587, -1.218), (1.31, -1.099), (1.546, -1.284), stroke: 0.9pt)
-  bezier((1.587, -1.218), (1.49, -0.86), (1.64, -1.161), (1.401, -0.981), stroke: 0.9pt)
-  bezier((1.49, -0.86), (1.848, -0.765), (1.55, -0.723), (1.826, -0.84), stroke: 0.9pt)
-  bezier((1.848, -0.765), (1.661, -0.445), (1.885, -0.697), (1.607, -0.585), stroke: 0.9pt)
-  bezier((1.661, -0.445), (1.983, -0.261), (1.684, -0.297), (1.981, -0.339), stroke: 0.9pt)
-  bezier((1.983, -0.261), (1.72, -0.0), (2.001, -0.186), (1.703, -0.149), stroke: 0.9pt)
-  arc((0.0, 0.0), start: -170.4deg, stop: 170.4deg, radius: 0.42, anchor: "origin", stroke: 0.9pt)
-  line((-0.414, 0.07), (-0.52, 0.07), (-0.52, -0.07), (-0.414, -0.07), stroke: 0.9pt)
-  circle((0.0, 0.0), radius: 0.78, stroke: 0.9pt)
-  circle((0.0, 0.0), radius: 1.12, stroke: 1.1pt)
-  line((0.101, 1.156), (0.12, 1.375), (-0.49, 1.051), stroke: 0.85pt)
-  line((-0.49, 1.051), (-0.583, 1.251), (-0.95, 0.665), stroke: 0.85pt)
-  line((-0.95, 0.665), (-1.13, 0.792), (-1.156, 0.101), stroke: 0.85pt)
-  line((-1.156, 0.101), (-1.375, 0.12), (-1.051, -0.49), stroke: 0.85pt)
-  line((-1.051, -0.49), (-1.251, -0.583), (-0.665, -0.95), stroke: 0.85pt)
-  line((-0.665, -0.95), (-0.792, -1.13), (-0.101, -1.156), stroke: 0.85pt)
-  line((-0.101, -1.156), (-0.12, -1.375), (0.49, -1.051), stroke: 0.85pt)
-  line((0.49, -1.051), (0.583, -1.251), (0.95, -0.665), stroke: 0.85pt)
-  line((0.95, -0.665), (1.13, -0.792), (1.156, -0.101), stroke: 0.85pt)
-  line((1.156, -0.101), (1.375, -0.12), (1.051, 0.49), stroke: 0.85pt)
-  line((1.051, 0.49), (1.251, 0.583), (0.665, 0.95), stroke: 0.85pt)
-  line((0.665, 0.95), (0.792, 1.13), (0.101, 1.156), stroke: 0.85pt)
-  bezier((0.674, 0.894), (0.0, 1.12), (0.313, 0.908), (0.127, 1.032), stroke: 0.75pt)
-  line((0.781, 0.898), (0.115, 1.315), (0.108, 1.235), (0.702, 0.808), fill: white, stroke: 0.9pt)
-  circle((0.792, 0.792), radius: 0.085, fill: white, stroke: 0.9pt)
-  bezier((-1.112, 0.136), (-0.97, -0.56), (-0.942, -0.183), (-0.957, -0.406), stroke: 0.75pt)
-  line((-1.168, 0.227), (-1.196, -0.558), (-1.124, -0.524), (-1.05, 0.204), fill: white, stroke: 0.9pt)
-  circle((-1.082, 0.29), radius: 0.085, fill: white, stroke: 0.9pt)
-  bezier((0.438, -1.031), (0.97, -0.56), (0.63, -0.725), (0.831, -0.626), stroke: 0.75pt)
-  line((0.387, -1.125), (1.081, -0.757), (1.016, -0.711), (0.348, -1.012), fill: white, stroke: 0.9pt)
-  circle((0.29, -1.082), radius: 0.085, fill: white, stroke: 0.9pt)
-  arc((0.0, 0.0), start: 105deg, stop: 145deg, radius: 0.94, anchor: "origin", mark: (start: ">", scale: 0.65), stroke: (dash: "dashed", thickness: 0.65pt))
-  arc((0.0, 0.0), start: -5deg, stop: 25deg, radius: 1.01, anchor: "origin", mark: (end: ">", scale: 0.6), stroke: 0.6pt)
-  arc((0.0, 0.0), start: -15deg, stop: 45deg, radius: 1.50, anchor: "origin", mark: (start: ">", scale: 0.65), stroke: 0.65pt)
-  arc((0.0, 0.0), start: 115deg, stop: 145deg, radius: 1.50, anchor: "origin", mark: (end: ">", scale: 0.65), stroke: 0.65pt)
-  arc((0.0, 0.0), start: -62deg, stop: 38deg, radius: 0.93, anchor: "origin", mark: (end: ">", scale: 0.75), stroke: (paint: red, thickness: 1.2pt))
-  line((0.115, 1.315), (-1.248, 1.811), stroke: (dash: "dash-dotted", thickness: 0.55pt))
-  line((0.115, 1.315), (-0.778, 2.458), stroke: (dash: "dash-dotted", thickness: 0.55pt))
-  arc((0.115, 1.315), start: 128deg, stop: 160deg, radius: 1.22, anchor: "origin", mark: (start: ">", end: ">", scale: 0.55), stroke: 0.6pt)
-  content((-1.001, 2.126), text(size: 8.5pt)[$alpha$])
-  line((1.75, 2.35), (0.56, 1.09), mark: (end: ">", fill: black, scale: 0.65), stroke: 0.75pt)
-  content((1.80, 2.42), text(size: 8pt)[nottolino], anchor: "south")
-  line((2.50, 1.50), (1.28, 0.72), mark: (end: ">", fill: black, scale: 0.65), stroke: 0.75pt)
-  content((2.55, 1.55), text(size: 8pt)[denti interni \ del tamburo], anchor: "south")
+
+  let pt(r, a) = (r * calc.cos(a), r * calc.sin(a))
+
+  line((-2.75, 0), (2.75, 0), stroke: (dash: "dash-dotted", thickness: 0.45pt))
+  line((0, -2.75), (0, 2.75), stroke: (dash: "dash-dotted", thickness: 0.45pt))
+
+  let Nout = 24
+  let opts = ()
+  for i in range(Nout * 10) {
+    let a = i * 360deg / (Nout * 10)
+    let r = 2.22 + 0.22 * calc.cos(Nout * a)
+    opts.push(pt(r, a))
+  }
+  line(..opts, close: true, fill: gray.transparentize(90%), stroke: 0.85pt)
+
+  let Nin = 12
+  let r-root = 1.90
+  let r-tip = 1.54
+  let ipts = ()
+  for i in range(Nin) {
+    let a0 = i * 30deg + 3deg
+    let a-step = a0 + 8deg
+    let a-next = (i + 1) * 30deg + 3deg
+    ipts.push(pt(r-root, a0))
+    ipts.push(pt(r-tip, a-step))
+    ipts.push(pt(r-root, a-next - 1.5deg))
+  }
+  line(..ipts, close: true, fill: white, stroke: 0.85pt)
+
+  circle((0, 0), radius: 1.44, fill: white, stroke: 0.9pt)
+  circle((0, 0), radius: 1.12, stroke: 0.6pt)
+  circle((0, 0), radius: 0.54, stroke: 0.85pt)
+  rect((-0.65, -0.09), (-0.52, 0.09), fill: white, stroke: 0.75pt)
+
+  for k in range(3) {
+    let a-piv = 50deg + k * 120deg
+    let p-piv = pt(1.38, a-piv)
+    let a-tip = a-piv + 41deg
+    let p-tip = pt(1.78, a-tip)
+
+    arc((0, 0), start: a-piv + 4deg, stop: a-piv + 44deg, radius: 1.44, anchor: "origin", stroke: (paint: white, thickness: 1.6pt))
+    bezier(pt(1.36, a-piv + 5deg), pt(1.44, a-piv + 44deg), pt(1.18, a-piv + 20deg), pt(1.26, a-piv + 36deg), stroke: 0.65pt)
+    bezier(pt(1.30, a-piv + 34deg), pt(1.56, a-piv + 23deg), pt(1.36, a-piv + 25deg), pt(1.46, a-piv + 21deg), stroke: 0.6pt)
+
+    let dx = p-tip.at(0) - p-piv.at(0)
+    let dy = p-tip.at(1) - p-piv.at(1)
+    let L = calc.sqrt(dx * dx + dy * dy)
+    let nx = -dy / L * 0.085
+    let ny = dx / L * 0.085
+    line(
+      (p-piv.at(0) + nx, p-piv.at(1) + ny),
+      (p-tip.at(0) + nx * 0.75, p-tip.at(1) + ny * 0.75),
+      (p-tip.at(0) - nx * 0.75, p-tip.at(1) - ny * 0.75),
+      (p-piv.at(0) - nx, p-piv.at(1) - ny),
+      close: true, fill: white, stroke: 0.85pt,
+    )
+    circle(p-piv, radius: 0.14, fill: white, stroke: 0.85pt)
+  }
+
+  arc((0, 0), start: -52deg, stop: 38deg, radius: 1.24, anchor: "origin", mark: (end: ">"), stroke: (paint: red, thickness: 1.4pt))
+  arc((0, 0), start: 145deg, stop: 100deg, radius: 1.24, anchor: "origin", mark: (end: ">"), stroke: (dash: "dashed", thickness: 0.75pt))
+  arc((0, 0), start: 112deg, stop: 148deg, radius: 1.98, anchor: "origin", mark: (end: ">"), stroke: (dash: "dashed", thickness: 0.75pt))
+  arc((0, 0), start: 42deg, stop: 5deg, radius: 1.98, anchor: "origin", mark: (end: ">"), stroke: 0.8pt)
+
+  let p-c = pt(1.76, 91deg)
+  let a1 = 132deg
+  let a2 = 166deg
+  line(p-c, (p-c.at(0) + 1.55 * calc.cos(a1), p-c.at(1) + 1.55 * calc.sin(a1)), stroke: (dash: "dash-dotted", thickness: 0.55pt))
+  line(p-c, (p-c.at(0) + 1.55 * calc.cos(a2), p-c.at(1) + 1.55 * calc.sin(a2)), stroke: (dash: "dash-dotted", thickness: 0.55pt))
+  arc(p-c, start: a1, stop: a2, radius: 1.15, anchor: "origin", stroke: 0.65pt)
+  content((p-c.at(0) + 1.42 * calc.cos(149deg), p-c.at(1) + 1.42 * calc.sin(149deg)), text(size: 9.5pt)[$alpha$])
+
+  let p-not = pt(1.58, 71deg)
+  line((1.95, 2.85), p-not, mark: (end: ">", fill: black), stroke: 0.65pt)
+  content((2.00, 2.95), text(size: 8.5pt)[nottolino], anchor: "west")
+
+  let p-dente = pt(1.76, 25deg)
+  line((2.55, 1.95), p-dente, mark: (end: ">", fill: black), stroke: 0.65pt)
+  content((2.58, 2.15), text(size: 8.5pt)[denti interni], anchor: "west")
+  content((2.58, 1.82), text(size: 8.5pt)[del tamburo], anchor: "west")
 })

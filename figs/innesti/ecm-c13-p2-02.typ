@@ -29,7 +29,7 @@
   content((2.0, -0.15), text(size: 7.5pt)[$8$], anchor: "north")
   content((3.0, -0.15), text(size: 7.5pt)[$12$], anchor: "north")
   content((4.0, -0.15), text(size: 7.5pt)[$16$], anchor: "north")
-  content((5.1, -0.15), text(size: 7.5pt)[`[m/s]`], anchor: "north")
+  content((5.1, -0.15), text(size: 7.5pt)[#"[m/s]"], anchor: "north")
   content((4.4, 0.15), text(size: 8.5pt)[$v$], anchor: "south")
 
   content((4.2, 2.95), text(size: 8pt)[$1$], anchor: "north")
