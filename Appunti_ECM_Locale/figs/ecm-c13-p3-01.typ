@@ -1,0 +1,66 @@
+#import "@preview/cetz:0.3.4": canvas, draw
+#canvas(length: 1cm, {
+  import draw: *
+
+  line((1.28, 0), (1.58, 0), (1.82, 0.037), (2.06, 0.149), (2.3, 0.336), (3.6, 1.55), (1.28, 2.2), close: true, fill: black.transparentize(92%), stroke: none)
+
+  line((1.0, 0), (1.0, 6.95), stroke: (paint: rgb("#e69f00"), thickness: 0.75pt))
+  line((1.28, 0), (1.28, 6.95), stroke: (paint: rgb("#e69f00"), thickness: 0.75pt))
+  line((1.58, 0), (1.58, 6.95), stroke: (paint: rgb("#e69f00"), thickness: 0.75pt))
+  line((3.6, 0), (3.6, 6.95), stroke: (paint: rgb("#e69f00"), thickness: 0.75pt))
+
+  line((0, 6.0), (7.2, 6.0), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 6.0), (0, 6.65), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 6.0), (1.0, 6.0), (1.0, 6.3), (6.0, 6.3), stroke: 1.05pt)
+
+  line((0, 3.2), (7.2, 3.2), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 3.2), (0, 5.65), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 5.3), (3.6, 5.3), stroke: (dash: "dashed", thickness: 0.65pt))
+  line((0, 4.9), (2.3, 4.9), stroke: (dash: "dashed", thickness: 0.65pt))
+  line((0, 3.7), (3.6, 3.7), stroke: (dash: "dashed", thickness: 0.65pt))
+  line((1.58, 3.2), (1.58, 3.7), stroke: (dash: "dashed", thickness: 0.65pt))
+  line((3.6, 3.2), (3.6, 3.7), stroke: (dash: "dashed", thickness: 0.65pt))
+  line((3.48, 4.9), (3.6, 5.3), (3.6, 4.9), stroke: (dash: "dashed", thickness: 0.7pt))
+  line((1.28, 3.2), (2.3, 4.9), (3.6, 4.9), (3.6, 3.7), (6.0, 3.7), stroke: 1.05pt)
+
+  line((0, 0), (7.2, 0), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 0), (0, 2.75), mark: (end: ">"), stroke: 0.75pt)
+  line((0, 2.2), (1.28, 2.2), (3.6, 1.55), (6.0, 1.85), stroke: 1.05pt)
+  line((0, 0), (1.58, 0), stroke: 1.05pt)
+  bezier((1.58, 0), (2.3, 0.336), (1.82, 0), (2.06, 0.112), stroke: 1.05pt)
+  line((2.3, 0.336), (3.6, 1.55), stroke: 1.05pt)
+  line((2.45, 0.476), (2.45, 1.872), mark: (start: ">", end: ">"), stroke: 0.7pt)
+  line((3.0, 1.38), (3.68, 2.05), stroke: 0.55pt)
+
+  content((0.92, 7.05), text(size: 7.5pt, fill: rgb("#cc0000"))[*_inserimento_*], anchor: "east")
+  content((1.14, 7.38), text(size: 7.5pt, fill: rgb("#cc0000"))[*_ritardo_*], anchor: "center")
+  line((1.14, 7.22), (1.14, 6.96), stroke: (paint: rgb("#cc0000"), thickness: 0.45pt))
+  content((2.62, 6.90), text(size: 7.5pt, fill: rgb("#cc0000"))[*_inseguimento_*], anchor: "center")
+  content((2.62, 6.60), text(size: 7.5pt, fill: rgb("#cc0000"))[*_dell'utilizzatore_*], anchor: "center")
+  content((3.70, 7.05), text(size: 7.5pt, fill: rgb("#cc0000"))[*_sincronismo_*], anchor: "west")
+
+  content((-0.1, 6.3), text(size: 8pt)[_on_], anchor: "east")
+  content((-0.1, 6.0), text(size: 8pt)[_off_], anchor: "east")
+  content((1.0, 5.93), text(size: 8pt)[$t^*$], anchor: "north")
+  content((1.28, 5.93), text(size: 8pt)[$t_0$], anchor: "north")
+  content((6.9, 5.93), text(size: 8pt)[$t$], anchor: "north")
+
+  content((-0.1, 5.3), text(size: 8pt)[$M_p$], anchor: "east")
+  content((-0.1, 4.9), text(size: 8pt)[$M_s$], anchor: "east")
+  content((-0.1, 3.7), text(size: 8pt)[$M_r$], anchor: "east")
+  content((1.28, 3.13), text(size: 8pt)[$t_0$], anchor: "north")
+  content((1.58, 3.13), text(size: 8pt)[$t_1$], anchor: "north")
+  content((3.6, 3.13), text(size: 8pt)[$t_2$], anchor: "north")
+  content((6.9, 3.13), text(size: 8pt)[$t$], anchor: "north")
+
+  content((-0.15, 2.5), text(size: 8.5pt)[$omega$], anchor: "east")
+  content((1.85, 2.08), text(size: 8pt)[$omega_m$], anchor: "south")
+  content((2.55, 0.55), text(size: 8pt)[$omega_u$], anchor: "north-west")
+  content((2.38, 1.17), text(size: 8pt)[$omega_r$], anchor: "east")
+  content((3.72, 2.25), text(size: 7.5pt)[_energia_], anchor: "west")
+  content((3.72, 2.02), text(size: 7.5pt)[_dissipata_], anchor: "west")
+  content((1.28, -0.07), text(size: 8pt)[$t_0$], anchor: "north")
+  content((1.58, -0.07), text(size: 8pt)[$t_1$], anchor: "north")
+  content((3.6, -0.07), text(size: 8pt)[$t_2$], anchor: "north")
+  content((6.9, -0.07), text(size: 8pt)[$t$], anchor: "north")
+})
