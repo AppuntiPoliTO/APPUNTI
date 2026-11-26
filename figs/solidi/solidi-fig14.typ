@@ -1,0 +1,30 @@
+// Figura estratta da solidi.typ (riga 1000) con LocalTypst
+#import "@preview/cetz:0.3.4": canvas, draw
+
+#canvas(length: 0.8cm, {
+  import draw: *
+  rect((-1.8, -3), (-0.8, 3), stroke: 1pt)
+  line((0, 3), (6, 3), (6, -3), (0, -3), (0, -2), (5, -2), (5, 2), (0, 2), close: true, stroke: 1pt)
+  line((-2, 0), (6.5, 0), stroke: (dash: "dashed", thickness: 1pt))
+  line((-2.8, 3), (-2.4, 3), stroke: 1pt)
+  line((-2.8, 2), (-2.4, 2), stroke: 1pt)
+  line((-2.8, -2), (-2.4, -2), stroke: 1pt)
+  line((-2.8, -3), (-2.4, -3), stroke: 1pt)
+  line((-2.6, 2), (-2.6, 3), mark: (start: ">", end: ">"), stroke: 1pt)
+  line((-2.6, -2), (-2.6, 2), mark: (start: ">", end: ">"), stroke: 1pt)
+  line((-2.6, -3), (-2.6, -2), mark: (start: ">", end: ">"), stroke: 1pt)
+  content((-3.2, 2.5), [$s$])
+  content((-3.2, 0), [$D_i$])
+  content((-3.2, -2.5), [$s$])
+  line((-0.8, 2.7), (-0.2, 2.7), mark: (end: ">"), stroke: 1pt)
+  line((0, 2.3), (-0.6, 2.3), mark: (end: ">"), stroke: 1pt)
+  line((-0.8, -2.3), (-0.2, -2.3), mark: (end: ">"), stroke: 1pt)
+  line((0, -2.7), (-0.6, -2.7), mark: (end: ">"), stroke: 1pt)
+  content((-0.4, -1.6), [$sigma_z$])
+  line((3.8, 1.5), (5, 1.5), mark: (end: ">"), stroke: 1pt)
+  line((3.8, 0.75), (5, 0.75), mark: (end: ">"), stroke: 1pt)
+  line((3.8, 0), (5, 0), mark: (end: ">"), stroke: 1pt)
+  line((3.8, -0.75), (5, -0.75), mark: (end: ">"), stroke: 1pt)
+  line((3.8, -1.5), (5, -1.5), mark: (end: ">"), stroke: 1pt)
+  content((3.2, 0.75), [$p_i$])
+})
