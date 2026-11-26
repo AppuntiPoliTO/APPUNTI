@@ -3,63 +3,65 @@
 #canvas(length: 1cm, {
   import draw: *
 
-  // ===== PANNELLO SINISTRO: MODELLO A 2 MASSE =====
-  content((1.7, 3.82), text(size: 9pt, weight: "bold")[Modello a 2 masse])
+  // ===== PANNELLO SUPERIORE: MODELLO A 2 MASSE =====
+  let mx = 1.65
+  let my = 4.35
+  content((mx + 1.7, my + 3.82), text(size: 9pt, weight: "bold")[Modello a 2 masse])
 
-  line((0.35, 0.35), (3.05, 0.35), stroke: 1.1pt)
+  line((mx + 0.35, my + 0.35), (mx + 3.05, my + 0.35), stroke: 1.1pt)
   for i in range(9) {
-    let x = 0.52 + i * 0.29
-    line((x, 0.35), (x - 0.16, 0.17), stroke: 0.5pt)
+    let x = mx + 0.52 + i * 0.29
+    line((x, my + 0.35), (x - 0.16, my + 0.17), stroke: 0.5pt)
   }
 
-  let xs1 = 1.12
+  let xs1 = mx + 1.12
   line(
-    (xs1, 0.35), (xs1, 0.55),
-    (xs1 - 0.14, 0.63), (xs1 + 0.14, 0.73),
-    (xs1 - 0.14, 0.83), (xs1 + 0.14, 0.93),
-    (xs1 - 0.14, 1.03), (xs1, 1.10), (xs1, 1.28),
+    (xs1, my + 0.35), (xs1, my + 0.55),
+    (xs1 - 0.14, my + 0.63), (xs1 + 0.14, my + 0.73),
+    (xs1 - 0.14, my + 0.83), (xs1 + 0.14, my + 0.93),
+    (xs1 - 0.14, my + 1.03), (xs1, my + 1.10), (xs1, my + 1.28),
     stroke: 0.8pt,
   )
-  content((0.68, 0.82), text(size: 8.5pt)[$k_1$])
+  content((mx + 0.68, my + 0.82), text(size: 8.5pt)[$k_1$])
 
-  let xd1 = 2.28
-  line((xd1, 0.35), (xd1, 0.65), stroke: 0.8pt)
-  line((xd1 - 0.16, 0.98), (xd1 - 0.16, 0.65), (xd1 + 0.16, 0.65), (xd1 + 0.16, 0.98), stroke: 0.8pt)
-  line((xd1 - 0.11, 0.82), (xd1 + 0.11, 0.82), stroke: 0.95pt)
-  line((xd1, 0.82), (xd1, 1.28), stroke: 0.8pt)
-  content((2.72, 0.82), text(size: 8.5pt)[$c_1$])
+  let xd1 = mx + 2.28
+  line((xd1, my + 0.35), (xd1, my + 0.65), stroke: 0.8pt)
+  line((xd1 - 0.16, my + 0.98), (xd1 - 0.16, my + 0.65), (xd1 + 0.16, my + 0.65), (xd1 + 0.16, my + 0.98), stroke: 0.8pt)
+  line((xd1 - 0.11, my + 0.82), (xd1 + 0.11, my + 0.82), stroke: 0.95pt)
+  line((xd1, my + 0.82), (xd1, my + 1.28), stroke: 0.8pt)
+  content((mx + 2.72, my + 0.82), text(size: 8.5pt)[$c_1$])
 
-  rect((0.82, 1.28), (2.58, 1.98), fill: gray.transparentize(84%), stroke: 0.95pt)
-  content((1.70, 1.63), text(size: 9.5pt)[$m_1$])
+  rect((mx + 0.82, my + 1.28), (mx + 2.58, my + 1.98), fill: gray.transparentize(84%), stroke: 0.95pt)
+  content((mx + 1.70, my + 1.63), text(size: 9.5pt)[$m_1$])
 
   line(
-    (xs1, 1.98), (xs1, 2.13),
-    (xs1 - 0.12, 2.20), (xs1 + 0.12, 2.29),
-    (xs1 - 0.12, 2.38), (xs1 + 0.12, 2.47),
-    (xs1 - 0.12, 2.56), (xs1, 2.63), (xs1, 2.78),
+    (xs1, my + 1.98), (xs1, my + 2.13),
+    (xs1 - 0.12, my + 2.20), (xs1 + 0.12, my + 2.29),
+    (xs1 - 0.12, my + 2.38), (xs1 + 0.12, my + 2.47),
+    (xs1 - 0.12, my + 2.56), (xs1, my + 2.63), (xs1, my + 2.78),
     stroke: 0.8pt,
   )
-  content((0.68, 2.38), text(size: 8.5pt)[$k_2$])
+  content((mx + 0.68, my + 2.38), text(size: 8.5pt)[$k_2$])
 
-  line((xd1, 1.98), (xd1, 2.22), stroke: 0.8pt)
-  line((xd1 - 0.14, 2.52), (xd1 - 0.14, 2.22), (xd1 + 0.14, 2.22), (xd1 + 0.14, 2.52), stroke: 0.8pt)
-  line((xd1 - 0.09, 2.38), (xd1 + 0.09, 2.38), stroke: 0.95pt)
-  line((xd1, 2.38), (xd1, 2.78), stroke: 0.8pt)
-  content((2.72, 2.38), text(size: 8.5pt)[$c_2$])
+  line((xd1, my + 1.98), (xd1, my + 2.22), stroke: 0.8pt)
+  line((xd1 - 0.14, my + 2.52), (xd1 - 0.14, my + 2.22), (xd1 + 0.14, my + 2.22), (xd1 + 0.14, my + 2.52), stroke: 0.8pt)
+  line((xd1 - 0.09, my + 2.38), (xd1 + 0.09, my + 2.38), stroke: 0.95pt)
+  line((xd1, my + 2.38), (xd1, my + 2.78), stroke: 0.8pt)
+  content((mx + 2.72, my + 2.38), text(size: 8.5pt)[$c_2$])
 
-  rect((1.02, 2.78), (2.38, 3.32), fill: rgb("#2563eb").transparentize(84%), stroke: (paint: rgb("#1d4ed8"), thickness: 0.95pt))
-  content((1.70, 3.05), text(size: 9pt, fill: rgb("#1d4ed8"))[$m_2$])
+  rect((mx + 1.02, my + 2.78), (mx + 2.38, my + 3.32), fill: rgb("#2563eb").transparentize(84%), stroke: (paint: rgb("#1d4ed8"), thickness: 0.95pt))
+  content((mx + 1.70, my + 3.05), text(size: 9pt, fill: rgb("#1d4ed8"))[$m_2$])
 
-  line((2.92, 1.38), (2.92, 1.92), mark: (end: "stealth", fill: rgb("#dc2626"), scale: 0.85), stroke: (paint: rgb("#dc2626"), thickness: 1.05pt))
-  content((3.18, 1.64), text(size: 8pt, fill: rgb("#dc2626"))[$x_1$])
+  line((mx + 2.92, my + 1.38), (mx + 2.92, my + 1.92), mark: (end: "stealth", fill: rgb("#dc2626"), scale: 0.85), stroke: (paint: rgb("#dc2626"), thickness: 1.05pt))
+  content((mx + 3.18, my + 1.64), text(size: 8pt, fill: rgb("#dc2626"))[$x_1$])
 
-  line((2.92, 3.30), (2.92, 2.76), mark: (end: "stealth", fill: rgb("#1d4ed8"), scale: 0.85), stroke: (paint: rgb("#1d4ed8"), thickness: 1.05pt))
-  content((3.18, 3.04), text(size: 8pt, fill: rgb("#1d4ed8"))[$x_2$])
+  line((mx + 2.92, my + 3.30), (mx + 2.92, my + 2.76), mark: (end: "stealth", fill: rgb("#1d4ed8"), scale: 0.85), stroke: (paint: rgb("#1d4ed8"), thickness: 1.05pt))
+  content((mx + 3.18, my + 3.04), text(size: 8pt, fill: rgb("#1d4ed8"))[$x_2$])
 
-  content((3.04, 2.38), text(size: 7pt, style: "italic", fill: luma(60))[contro-\ fase], anchor: "west")
+  content((mx + 3.04, my + 2.38), text(size: 7pt, style: "italic", fill: luma(60))[contro-\ fase], anchor: "west")
 
-  // ===== PANNELLO DESTRO: RISPOSTA IN FREQUENZA (FRF) =====
-  let ox = 4.65
+  // ===== PANNELLO INFERIORE: RISPOSTA IN FREQUENZA (FRF) =====
+  let ox = 0.55
   let oy = 0.42
   let sx = 2.65
   content((ox + 2.75, 3.82), text(size: 9pt, weight: "bold")[Risposta in frequenza (FRF)])

@@ -799,15 +799,19 @@ Poiché il disco frizione è relativamente snello e torsionalmente cedevole — 
 
 #v(0.5em)
 
-*Principio dello smorzatore dinamico (modello a 2 masse e risposta in frequenza).* Il funzionamento del doppio volano si comprende immediatamente per analogia con il sistema traslazionale a due masse illustrato di seguito:
-- *Sistema a 1 massa:* una massa principale $m_1$ collegata al telaio fisso mediante una molla $k_1$ e uno smorzatore $c_1$ presenta, al variare della pulsazione forzante $omega$, una risposta in frequenza $|X_1(omega)|$ (curva tratteggiata rossa) dominata da un picco di risonanza pronunciato alla frequenza propria $omega_0$, la cui altezza è limitata soltanto dallo smorzamento interno $c_1$.
-- *Aggiunta della massa secondaria (2 masse):* collegando a $m_1$ una seconda massa più piccola $m_2$ tramite un proprio gruppo molla–smorzatore $(k_2, c_2)$, le due masse inizialmente oscillano insieme ma, in prossimità della risonanza $omega_0$, la massa $m_2$ entra in moto in *controfase* rispetto a $m_1$ (spostamento $x_2$ opposto a $x_1$). La forza inerziale così generata da $m_2$ si oppone direttamente all'oscillazione di $m_1$, contenendone lo spostamento.
-- *Effetto sulla risposta in frequenza (FRF):* nella curva del sistema accoppiato (linea continua blu), il picco singolo in $omega_0$ viene *abbattuto* e sostituito da *due picchi di risonanza laterali* ($omega_1 < omega_0$ e $omega_2 > omega_0$) di ampiezza massima drasticamente inferiore. Lo smorzatore dinamico svolge dunque una doppia azione: *attenua* fortemente il picco vibratorio e *sposta* le frequenze critiche lontano dalla risonanza originaria $omega_0$.
-- *Trasposizione torsionale al doppio volano:* nel dispositivo reale l'unico cambiamento riguarda la natura del moto, da traslazionale a *torsionale*. La massa secondaria $m_2$ è rappresentata dal secondo disco del volano e il collegamento $(k_2, c_2)$ dalle molle elicoidali circonferenziali (e dall'attrito interno): all'insorgere di una vibrazione torsionale, anziché trasmetterla rigidamente, il disco secondario ruota sfasato rispetto al primario comprimendo le molle e smorzando efficacemente le oscillazioni lungo la trasmissione.
-
-#align(center)[
-  #fig-safe(include "../../figs/innesti/ecm-c13-p1-smorzatore.typ", max-h: 5.5cm, caption: text(size: 8.5pt, fill: luma(80))[Modello traslazionale a 2 masse e confronto delle curve di risposta in frequenza (FRF): sistema a 1 massa vs smorzatore dinamico / doppio volano.])
-]
+#grid(
+  columns: (1.25fr, 1fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),
+  [
+    *Principio dello smorzatore dinamico (modello a 2 masse e risposta in frequenza).* Il funzionamento del doppio volano si comprende immediatamente per analogia con il sistema traslazionale a due masse illustrato a lato:
+    - *Sistema a 1 massa:* una massa principale $m_1$ collegata al telaio fisso mediante una molla $k_1$ e uno smorzatore $c_1$ presenta, al variare della pulsazione forzante $omega$, una risposta in frequenza $|X_1(omega)|$ (curva tratteggiata rossa) dominata da un picco di risonanza pronunciato alla frequenza propria $omega_0$, la cui altezza è limitata soltanto dallo smorzamento interno $c_1$.
+    - *Aggiunta della massa secondaria (2 masse):* collegando a $m_1$ una seconda massa più piccola $m_2$ tramite un proprio gruppo molla–smorzatore $(k_2, c_2)$, le due masse inizialmente oscillano insieme ma, in prossimità della risonanza $omega_0$, la massa $m_2$ entra in moto in *controfase* rispetto a $m_1$ (spostamento $x_2$ opposto a $x_1$). La forza inerziale così generata da $m_2$ si oppone direttamente all'oscillazione di $m_1$, contenendone lo spostamento.
+    - *Effetto sulla risposta in frequenza (FRF):* nella curva del sistema accoppiato (linea continua blu), il picco singolo in $omega_0$ viene *abbattuto* e sostituito da *due picchi di risonanza laterali* ($omega_1 < omega_0$ e $omega_2 > omega_0$) di ampiezza massima drasticamente inferiore. Lo smorzatore dinamico svolge dunque una doppia azione: *attenua* fortemente il picco vibratorio e *sposta* le frequenze critiche lontano dalla risonanza originaria $omega_0$.
+    - *Trasposizione torsionale al doppio volano:* nel dispositivo reale l'unico cambiamento riguarda la natura del moto, da traslazionale a *torsionale*. La massa secondaria $m_2$ è rappresentata dal secondo disco del volano e il collegamento $(k_2, c_2)$ dalle molle elicoidali circonferenziali (e dall'attrito interno): all'insorgere di una vibrazione torsionale, anziché trasmetterla rigidamente, il disco secondario ruota sfasato rispetto al primario comprimendo le molle e smorzando efficacemente le oscillazioni lungo la trasmissione.
+  ],
+  [#fig-safe(include "../../figs/innesti/ecm-c13-p1-smorzatore.typ", max-h: 9.2cm, caption: text(size: 8.5pt, fill: luma(80))[Modello traslazionale a 2 masse e confronto delle curve di risposta in frequenza (FRF): sistema a 1 massa vs smorzatore dinamico / doppio volano.])],
+)
 
 ==== Innesto multidisco
 
