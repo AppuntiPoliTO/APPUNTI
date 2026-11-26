@@ -101,7 +101,10 @@ Anche a $M_1$ e $Omega_1$ costanti, sia $Omega_2$ sia $M_2$ oscillano periodicam
     Inserendo sull'albero intermedio un accoppiamento scanalato *telescopico* (es. alberi cardanici agricoli), il doppio giunto agevola il montaggio e compensa anche errori assiali, *dilatazioni termiche* e variazioni di distanza in esercizio.
   ],
   [//sistemare questa immagine che è troppo sintetica
-    #fig-safe(include "../../figs/giunti/p4-fig02.typ", max-h: 4.4cm)
+    #align(center)[
+  #image("../../images/fig__parts_giunti_p4_8049.png", width: 75%)
+]
+#fig-safe(include "../../figs/giunti/p4-fig02.typ", max-h: 4.4cm)
   ],
 )
 
