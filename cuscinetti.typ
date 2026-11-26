@@ -409,12 +409,11 @@ Dove $i_("max")$ è l'interferenza massima in $mu m$ e $s$ è il gioco aggiuntiv
 Esistono limiti stringenti per il riscaldamento, dettati dalle proprietà chimico-fisiche dei lubrificanti più che dai materiali strutturali: i cuscinetti non devono essere riscaldati oltre i 120°C e, se dotati di lubrificazione a vita, non oltre gli 80°C (indicativamente 70-80°C).
 
 === Disposizioni Particolari: Cuscinetti Obliqui e Precarico
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),[I cuscinetti obliqui (a sfere o a rulli) sopportano carichi radiali e assiali. A causa della loro forma, un carico radiale genera una forza assiale interna che deve essere equilibrata da un'azione in senso opposto; per questo vengono montati in opposizione. I cuscinetti obliqui possono essere montati in tre disposizioni: in tandem (rette d'azione parallele, sopportano carichi assiali in un solo senso), a 'O' (rette d'azione divergenti verso l'asse di rotazione), o a 'X' (rette d'azione convergenti incrociandosi verso l'asse). La denominazione 'O' o 'X' si riferisce esclusivamente alla geometria delle rette d'azione (la risultante applicata dal corpo volvente sulle piste), mai agli assi geometrici dei corpi volventi.],[
-#image("images/cuscinetti/disposizioni tandem o x.png")
-])
+
+I cuscinetti obliqui (a sfere o a rulli) sopportano carichi radiali e assiali. A causa della loro forma, un carico radiale genera una forza assiale interna che deve essere equilibrata da un'azione in senso opposto; per questo vengono montati in opposizione. I cuscinetti obliqui possono essere montati in tre disposizioni: in tandem (rette d'azione parallele, sopportano carichi assiali in un solo senso), a 'O' (rette d'azione divergenti verso l'asse di rotazione), o a 'X' (rette d'azione convergenti incrociandosi verso l'asse). La denominazione 'O' o 'X' si riferisce esclusivamente alla geometria delle rette d'azione (la risultante applicata dal corpo volvente sulle piste), mai agli assi geometrici dei corpi volventi.
+
+  align(center)[#include "figs/cuscinetti-fig01.typ"]
+
 
 Le coppie di cuscinetti possono essere fornite con gioco o con precarico (inteso come gioco negativo). Per definire il gioco o il precarico assiale iniziale, si utilizzano spesso dei distanziali interposti tra gli anelli. Il precarico si ottiene portando a contatto gli anelli e sfruttando la conicità fino in fondo. 
 
