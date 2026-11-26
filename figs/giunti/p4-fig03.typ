@@ -1,6 +1,6 @@
 // Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 1.05cm, {
+#canvas(length: 1.35cm, {
   import draw: *
 
   let lx = -2.6
