@@ -1,4 +1,4 @@
-#import "../../figs/_helpers.typ": fig-safe, img-flag
+#import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
 
 #let nota(body) = block(
   width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,
@@ -34,7 +34,7 @@ Si definisce *giunto* un organo meccanico che, in configurazione *smontabile ma 
     + *Limitazione della coppia massima:* interrompere la trasmissione oltre una soglia prefissata (per rottura di un elemento sacrificale o apertura automatica nei giunti di sicurezza).
   ],
   [
-    #fig-safe(include "../../figs/ecm-c12-p1-01.typ", max-h: 6.8cm)
+    #fig-safe(include "../../figs/_parts-giunti-p1/ecm-c12-p1-01.typ", max-h: 6.8cm)
   ],
 )
 
@@ -61,7 +61,7 @@ In base al comportamento meccanico e ai movimenti relativi consentiti, i giunti 
       - *Misti:* combinazione di più gradi di libertà.
   ],
   [
-    #fig-safe(include "../../figs/ecm-c12-p1-02.typ", max-h: 5.5cm)
+    #fig-safe(include "../../figs/_parts-giunti-p1/ecm-c12-p1-02.typ", max-h: 5.5cm)
   ],
 )
 - *Giunti di sicurezza:* limitatori di coppia assemblati e tarati a macchina ferma che, al superamento di una soglia critica (coppia, velocità o inversione di rotazione), si aprono autonomamente per effetto delle sole azioni dinamiche e inerziali senza comando esterno, lasciando l'albero condotto libero di ruotare.
@@ -84,7 +84,7 @@ Per scegliere o dimensionare un giunto non basta la coppia nominale a regime $M_
     - $I_u$: momento d'inerzia di massa dell'utilizzatore e dell'altro semigiunto.
   ],
   [
-    #fig-safe(include "../../figs/ecm-c12-p1-03.typ", max-h: 4.5cm)
+    #fig-safe(include "../../figs/_parts-giunti-p1/ecm-c12-p1-03.typ", max-h: 4.5cm)
   ],
 )
 
