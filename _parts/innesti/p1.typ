@@ -813,6 +813,30 @@ Per assorbire le brusche variazioni di coppia e filtrare le *vibrazioni torsiona
 #v(0.4em)
 #fig-safe(include "../../figs/innesti/ecm-c13-p1-smorzatore.typ", max-h: 3.9cm, caption: text(size: 8.5pt, fill: luma(80))[Principio dello smorzatore dinamico (analogia traslazionale → doppio volano torsionale).])
 
+#v(0.4em)
+
+*Modello dinamico a due masse e analogia torsionale.* Un sistema a singolo grado di libertà (massa principale $m_1$, molla $k_1$ e smorzatore $c_1$) soggetto a una forzante armonica $F(t) = F_0 e^(i omega t)$ possiede un'unica pulsazione propria $omega_0 = sqrt(k_1 / m_1)$: quando la pulsazione eccitante $omega$ si avvicina a $omega_0$, l'ampiezza di oscillazione $|X_1|$ cresce bruscamente in risonanza. Per controllarla si collega a $m_1$ una massa ausiliaria $m_2$ tramite una seconda molla $k_2$ e uno smorzatore $c_2$ in parallelo (*assorbitore* o *smorzatore dinamico*). Nel doppio volano vale la stessa formulazione in coordinate angolari tramite l'analogia traslazionale–torsionale:
+- masse $m_1, m_2$ ↔ momenti d'inerzia polari $I_1, I_2$ (volano primario lato motore e massa secondaria lato frizione);
+- spostamenti $x_1, x_2$ ↔ oscillazioni angolari $theta_1, theta_2$;
+- rigidezze e smorzamenti $k_i, c_i$ ↔ rigidezze e smorzamenti torsionali $k_(t,i), c_(t,i)$ (albero motore e gruppo molle–attrito del parastrappi);
+- forzante $F(t)$ ↔ componente pulsante della coppia motrice $M(t)$.
+
+L'equilibrio dinamico delle due masse fornisce il sistema accoppiato a due gradi di libertà:
+$ cases(
+  m_1 dot.double(x)_1 + (c_1 + c_2) dot(x)_1 - c_2 dot(x)_2 + (k_1 + k_2) x_1 - k_2 x_2 = F(t),
+  m_2 dot.double(x)_2 + c_2 (dot(x)_2 - dot(x)_1) + k_2 (x_2 - x_1) = 0
+) $
+
+*Risposta in frequenza (FRF), antirisonanza e ruolo dello smorzamento.* Cercando la risposta armonica a regime nella forma $x_1(t) = X_1 e^(i omega t)$ e $x_2(t) = X_2 e^(i omega t)$, la seconda equazione lega il moto della massa secondaria a quello della principale:
+$ frac(X_2, X_1) = frac(k_2 + i omega c_2, (k_2 - m_2 omega^2) + i omega c_2) $
+Sostituendo nella prima si ricava la *funzione di risposta in frequenza (FRF)* della massa principale:
+$ H_1(omega) = frac(X_1(omega), F_0) = frac(k_2 - m_2 omega^2 + i omega c_2, (k_1 - m_1 omega^2 + i omega c_1)(k_2 - m_2 omega^2 + i omega c_2) - m_2 omega^2 (k_2 + i omega c_2)) $
+Il diagramma a destra in figura confronta il modulo $|X_1(omega)|$ del sistema a 1 massa (curva rossa tratteggiata, con un singolo picco elevato in $omega approx omega_0$) con quello del sistema a 2 masse smorzato (curva blu continua):
+- *Antirisonanza e moto in controfase ($c_2 = 0$).* Accordando la pulsazione propria della massa secondaria $omega_2 = sqrt(k_2 / m_2)$ su $omega_0$, per $omega = omega_2$ il numeratore $k_2 - m_2 omega^2$ si annulla e idealmente $|X_1| = 0$: la massa $m_2$ oscilla con ampiezza finita $X_2 = -F_0 / k_2$, in *controfase* rispetto alla forzante, così che la reazione elastica $k_2 X_2 = -F_0$ (equilibrata dall'inerzia di $m_2$) annulla istante per istante l'eccitazione agente su $m_1$.
+- *Sdoppiamento della risonanza.* L'aggiunta del secondo grado di libertà introduce tuttavia *due nuove pulsazioni naturali* del sistema accoppiato, una inferiore e una superiore alla frequenza originaria ($omega_(n 1) < omega_0 < omega_(n 2)$): al primo modo le due masse vibrano *in fase*, al secondo *in controfase*. Senza smorzamento ($c_2 = 0$), l'assorbitore protegge solo nell'intorno stretto di $omega_0$ mentre i due nuovi picchi laterali restano molto elevati.
+- *Smorzamento $c_2$ e taratura ottimale.* Poiché la frequenza delle pulsazioni di coppia di un motore varia su un'ampia banda di regimi, si introduce lo smorzamento $c_2$ (attrito nel parastrappi) e si accorda il sistema in base al rapporto di masse $mu = m_2 / m_1$ (criterio di *Den Hartog*, $omega_2 / omega_0 = 1 / (1 + mu)$). La dissipazione legata allo spostamento relativo $x_2 - x_1$ abbatte entrambi i picchi laterali portandoli a un'ampiezza contenuta e bilanciata (curva blu), a fronte di un modesto residuo non nullo nella valle attorno a $omega_0$.
+- *Casi limite di $c_2$.* Esiste un valore *ottimo* di smorzamento: per $c_2 -> 0$ i due picchi in $omega_(n 1)$ e $omega_(n 2)$ tornano a crescere fino a divergere; per $c_2 -> infinity$ le due masse risultano invece bloccate solidalmente tra loro, ricadendo in un sistema a 1 grado di libertà di massa complessiva $m_1 + m_2$ con un unico picco di risonanza elevato, spostato alla pulsazione inferiore $sqrt(k_1 / (m_1 + m_2))$.
+
 ==== Innesto multidisco
 
 Per trasmettere coppie elevate a parità di ingombro senza accrescere eccessivamente il diametro del disco (che diventerebbe ingombrante e flessibile), si affiancano più superfici in un *pacco dischi* (in genere non oltre 12 dischi). I dischi condotti (rivestiti in fibra di carbonio, bronzo sinterizzato o grafite) sono montati su un *mozzo scanalato scorrevole sotto carico, centrato sui fianchi*, alternati a dischi conduttori in acciaio vincolati alla campana esterna. In ambito motociclistico il pacco è tipicamente serrato da molle elicoidali agenti su una piastra e aperto da un'asta spingidisco contrapposta.
