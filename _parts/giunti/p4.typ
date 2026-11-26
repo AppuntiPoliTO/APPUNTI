@@ -169,7 +169,7 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
   column-gutter: 1.2em,
   align: (center + horizon, center + horizon),
   [
-    #fig-safe(include "../../figs/giunti/p4-fig03.typ", max-h: 4.8cm)
+    #fig-safe(include "../../figs/giunti/p4-fig03.typ", max-h: 6.8cm)
   ],
   [
     #fig-safe(image("../../images/giunti/ecm-c12-p4-rzeppa-3d.jpg"), max-h: 4.1cm)
