@@ -57,3 +57,5 @@
 #include "molle.typ"
 #include "collegamenti filettati.typ"
 #include "collegamenti saldati.typ"
+#include "giunti.typ"
+#include "innesti.typ"
