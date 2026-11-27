@@ -174,9 +174,10 @@ I giunti ad elastomeri collegano due flange calettate mediante elementi interpos
     - *assiali fino a $8 "mm"$* (ideale per dilatazioni termiche degli alberi);
     - *radiali fino a $4 "mm"$*;
     - *angolari tra $5 degree$ e $12 degree$*.
-  ],
+  ]
+
   [
-   
+   #image("/images/fig__parts_giunti_p3_2328.png", width: 90%)
 
   ],
 )
