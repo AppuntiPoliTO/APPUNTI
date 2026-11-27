@@ -385,7 +385,8 @@ Normalmente, nell'impostare il progetto dell'accoppiamento cinematico tra due ru
 
 
 #align(center)[
-  #image("images/ruote-dentate/4d741021-6053-41b2-a86d-c4ffa4912f8f-10_332_1197_904_433.jpg", width: 80%)
+  #image("images/fig_ruote_dentate_9437.png", width: 90%)
+
 ]
 === Condizioni per il corretto ingranamento
 I primi due requisiti progettuali (fissazione dell'interasse e del rapporto di trasmissione) chiariscono univocamente la relazione geometrica tra i *diametri primitivi* delle due ruote coniugate: fissato il diametro di una ruota, l'altro risulta automaticamente definito. Dal punto di vista costruttivo, il primo diametro viene scelto in funzione del *diametro dell'albero* sul quale dovrà essere calettata la ruota. 

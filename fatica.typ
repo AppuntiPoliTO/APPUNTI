@@ -792,7 +792,7 @@ La nucleazione del danno a fatica nasce sempre da irregolarità superficiali in 
 
 #grid(
   columns: (1.0fr, 0.94fr),
-  column-gutter: 0.9em,
+  column-gutter: 1.1em,
   align: (left + horizon, center + horizon),
   [
     - *Creste e avvallamenti* (_ridge and groove_): si aprono gole ad apice acuto assimilabili a micro-intagli con forte concentrazione tensionale.
@@ -889,8 +889,7 @@ $ sigma_n = frac(P, pi a^2) , quad tau_n = frac(2 M_t, pi a^3) $
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig91.typ",
-      caption: [Tensioni principali nella gola cilindrica in trazione e distorsione non lineare della farfalla flessionale.],
+      include "figs/fatica/fatica-fig91.typ"
     )
   ],
 )

@@ -1,7 +1,7 @@
 // Figura estratta da fatica.typ (riga 2200) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.0cm, {
+#canvas(length: 1.2cm, {
   // BBox: x in [0.0, 7.8] (dx=7.8), y in [-0.7, 7.5], length=1.0cm -> larghezza = 7.8 cm <= 8.2 cm
   import draw: *
 
@@ -71,7 +71,7 @@
   bezier((4.0, 3.82), (6.2, 4.12), (4.9, 3.88), (5.7, 4.15), stroke: (paint: black, thickness: 0.9pt))
   bezier((6.2, 4.12), (6.6, 3.60), (6.45, 4.08), (6.58, 3.78), stroke: (paint: black, thickness: 0.9pt))
   line((5.25, 3.32), (5.50, 3.93), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
-  content((5.25, 3.28), text(size: 7.5pt)[$sigma_r / sigma_n$], anchor: "north")
+  content((5.25, 3.28), text(size: 11pt)[$sigma_r / sigma_n$], anchor: "north")
 
   // Separatore
   line((0.2, 2.68), (7.5, 2.68), stroke: (thickness: 0.4pt, paint: luma(190)))
