@@ -162,10 +162,15 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
 )
 
 #v(0.4em)
+#grid(
+  columns: 2,
+  gutter: 1em,
+  [#fig-safe(include "../../figs/giunti/giunti-fig07.typ", max-h: 5.2cm)],
+  [#align(center)[
+  #image("../../images/giunti/ecm-c12-p4-rzeppa-3d.jpg")
+]],
+)
 
-#align(center)[
-  #fig-safe(image("../../images/giunti/ecm-c12-p4-rzeppa-3d.jpg"), max-h: 4.5cm)
-]
 
 *Verifica del momento trasmissibile.* La verifica a fatica è *più complessa* di quella dei cuscinetti perché il moto delle sfere *non è di puro rotolamento ma presenta anche strisciamento*. Assumendo che *tutte le sfere partecipino* alla trasmissione, il momento trasmissibile vale:
 
