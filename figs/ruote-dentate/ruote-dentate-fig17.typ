@@ -1,7 +1,7 @@
 // Figura estratta da ruote dentate.typ (riga 2483) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1cm, {
+#canvas(length: 0.8cm, {
   import draw: *
 
   // 1. RIEMPIMENTO DEL DENTE (poligono chiuso con contorno inferiore ondulato come nell'immagine)
