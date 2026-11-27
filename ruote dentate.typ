@@ -235,18 +235,12 @@ Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel
 
     #v(0.5em)
 
-Circonferenza di piede (o di fondo): è la circonferenza più interna (generalmente di raggio inferiore al cerchio di base), in corrispondenza della quale la base del dente si raccorda con la *corona circolare* (corpo principale) della ruota dentata.
+*Circonferenza di piede (o di fondo)*: è la circonferenza più interna (generalmente di raggio inferiore al cerchio di base), in corrispondenza della quale la base del dente si raccorda con la *corona circolare* (corpo principale) della ruota dentata. \ 
+*Circonferenza di base*: è la circonferenza costruttiva che definisce il *sistema cinematico equivalente* cinghia-puleggia da cui si genera geometricamente il *profilo ad evolvente*. \
+*Circonferenza primitiva*: è la circonferenza cinematica di riferimento che rappresenta i due *rulli cilindrici ideali* premuti a contatto tra loro nel punto primitivo $P$. \
+*Circonferenza di testa*: è la circonferenza più esterna, che delimita superiormente il dente definendone il *troncamento* dal lato alto.
 
-Circonferenza di base: è la circonferenza costruttiva che definisce il *sistema cinematico equivalente* cinghia-puleggia da cui si genera geometricamente il *profilo ad evolvente*.
-Circonferenza primitiva: è la circonferenza cinematica di riferimento che rappresenta i due *rulli cilindrici ideali* premuti a contatto tra loro nel punto primitivo $P$.
- Circonferenza di testa: è la circonferenza più esterna, che delimita superiormente il dente definendone il *troncamento* dal lato alto.
 
-    #v(0.8em)
-
-    *Nomenclatura cinematica nel disegno:*
-    / Centri di rotazione ($O_1, O_2$): assi fissi del *pignone* (conduttore) e della *ruota* (condotta).
-    / Punto primitivo ($P$): punto di tangenza tra le circonferenze primitive.
-    / Estremi di contatto ($a, b$): punti di inizio ($a$) e fine ($b$) dell'ingranamento lungo la *linea di pressione*
   ],
   [
   #fit-box(include "figs/ruote-dentate/ruote-dentate-fig05.typ")
@@ -255,6 +249,10 @@ Circonferenza primitiva: è la circonferenza cinematica di riferimento che rappr
   ]
 )
 
+*Nomenclatura cinematica nel disegno:*
+    / Centri di rotazione ($O_1, O_2$): assi fissi del *pignone* (conduttore) e della *ruota* (condotta).
+    / Punto primitivo ($P$): punto di tangenza tra le circonferenze primitive.
+    / Estremi di contatto ($a, b$): punti di inizio ($a$) e fine ($b$) dell'ingranamento lungo la *linea di pressione*
 #v(1em)
 
 ==== Parametri di proporzionamento: Passo e Modulo
