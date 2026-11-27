@@ -46,7 +46,12 @@ I coefficienti d'attrito variano in funzione di pressione (sollecitazione) $p$, 
 
 Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la coppia trasmessa supera un valore limite preimpostato, proteggendo la trasmissione da sovraccarichi accidentali; i primi due schemi illustrano veri innesti autoadattativi a ripristino automatico (senza rottura di parti), mentre il terzo mostra a confronto un giunto rigido a frattura prestabilita:
 
-#fig-safe(image("../../images/innesti/ecm-c13-p2-limitatori.jpg"), max-h: 4.4cm)
+
+#align(center)[
+  #image("/images/fig__parts_innesti_p2_8387.png", width: 75%)
+]
+
+
 
 - *Limitatore a frizione (a sinistra).* Una molla a tazza precaricata serra i dischi d'attrito fino alla coppia nominale; al superamento della soglia i dischi slittano limitando il momento trasmesso, con ripristino automatico al rientro del picco.
 - *Limitatore a sfere o rulli (al centro).* Una molla elicoidale — tarata tramite *ghiera di regolazione* — mantiene i corpi volventi nelle proprie sedi. In sovraccarico le sfere risalgono le piste vincendo il precarico assiale e disaccoppiano gli alberi con riarmo automatico.
