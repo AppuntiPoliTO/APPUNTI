@@ -108,7 +108,7 @@ Negli *innesti di sopravanzo* (*ruote libere*) il comando dipende dalla differen
 ==== Innesti elettromeccanici
 
 #grid(
-  columns: (1.05fr, 0.95fr),
+  columns: (1.10fr, 0.95fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
