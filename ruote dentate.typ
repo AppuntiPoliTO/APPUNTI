@@ -400,6 +400,7 @@ Ricordando inoltre che il diametro primitivo è espresso dal prodotto tra il mod
     Anche qualora le due ruote abbiano dimensioni globali differenti, l'uguaglianza del passo primitivo ($p_1 = p_2$) e conseguentemente del modulo ($m_1 = m_2$) è una condizione indispensabile per scongiurare due anomalie cinematiche opposte:
     - *Vano eccessivamente largo:* il dente si inserirebbe con lasco eccessivo, perdendo la *continuità di contatto* e la regolarità di funzionamento proprie dei profili coniugati.
     - *Vano eccessivamente stretto:* il dente andrebbe a *incastrarsi* geometricamente tra i fianchi di due denti successivi della ruota coniugata, impedendo la rotazione.
+#pagebreak()
 ==== Gioco circonferenziale ($g$) e partizione del passo
     Misurando gli spessori curvilinei lungo la medesima circonferenza primitiva (ad esempio quella del pignone), la somma dello spessore del dente del pignone ($s_1$), dello spessore del dente della ruota ($s_2$, che si inserisce nel vano del pignone) e di un eventuale piccolissimo *gioco circonferenziale* ($g$) deve eguagliare esattamente il passo $p$ della dentatura:
     $ p = s_1 + s_2 + g $
