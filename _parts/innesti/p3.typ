@@ -158,7 +158,7 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
 #grid(
   columns: (1.3fr, 0.7fr),
   column-gutter: 1em,
-  align: (center + horizon, center + horizon),
+  align: (left + horizon, center + horizon),
   [#align(center)[
   #image("../../images/innesti/fig__parts_innesti_p3_4299.png", width: 85%)]
 ],
