@@ -923,27 +923,27 @@ Le campagne sperimentali sono raccolte nei diagrammi di R.E. Peterson (*Stress C
     row-gutter: 0.8em,
     align: (center + bottom, center + bottom),
     [
-      #fit-box(include "figs/fatica-fig03.typ")
+      #fit-box(include "figs/fatica/fatica-fig03.typ")
       #text(size: 7.5pt)[*Spallamento — Trazione*]
     ],
     [
-      #fit-box(include "figs/fatica-fig09.typ")
+      #fit-box(include "figs/fatica/fatica-fig09.typ")
       #text(size: 7.5pt)[*Spallamento — Flessione*]
     ],
     [
-      #fit-box(include "figs/fatica-fig04.typ")
+      #fit-box(include "figs/fatica/fatica-fig04.typ")
       #text(size: 7.5pt)[*Spallamento — Torsione*]
     ],
     [
-      #fit-box(include "figs/fatica-fig07.typ")
+      #fit-box(include "figs/fatica/fatica-fig07.typ")
       #text(size: 7.5pt)[*Gola — Trazione*]
     ],
     [
-      #fit-box(include "figs/fatica-fig06.typ")
+      #fit-box(include "figs/fatica/fatica-fig06.typ")
       #text(size: 7.5pt)[*Gola — Flessione*]
     ],
     [
-      #fit-box(include "figs/fatica-fig05.typ")
+      #fit-box(include "figs/fatica/fatica-fig05.typ")
       #text(size: 7.5pt)[*Gola — Torsione*]
     ],
   ),
@@ -963,19 +963,19 @@ Questa struttura riflette la *similitudine geometrica*: $K_t$ dipende soltanto d
     row-gutter: 0.6em,
     align: (center + bottom, center + bottom),
     [
-      #fit-box(include "figs/fatica-fig08.typ")
+      #fit-box(include "figs/fatica/fatica-fig08.typ")
       #text(size: 7.5pt)[*Lastra con spallamento in trazione*]
     ],
     [
-      #fit-box(include "figs/fatica-fig12.typ")
+      #fit-box(include "figs/fatica/fatica-fig12.typ")
       #text(size: 7.5pt)[*Lastra con intagli laterali a U in trazione*]
     ],
     [
-      #fit-box(include "figs/fatica-fig10.typ")
+      #fit-box(include "figs/fatica/fatica-fig10.typ")
       #text(size: 7.5pt)[*Lastra forata in flessione fuori piano (parametro $d\/h$)*]
     ],
     [
-      #fit-box(include "figs/fatica-fig11.typ")
+      #fit-box(include "figs/fatica/fatica-fig11.typ")
       #text(size: 7.5pt)[*Lastra forata in trazione (curva unica in $d\/b$)*]
     ],
   ),
@@ -1149,11 +1149,11 @@ Il parametro $A$ decresce con la tensione di snervamento $R_"eH"$ o $R_"p0.2"$. 
     column-gutter: 1em,
     align: (center + bottom, center + bottom),
     [
-      #fit-box(include "figs/fatica-fig01.typ")
+      #fit-box(include "figs/fatica/fatica-fig01.typ")
       #text(size: 8pt)[(a) Abaco sperimentale della sensibilità $q(r)$]
     ],
     [
-      #fit-box(include "figs/fatica-fig02.typ")
+      #fit-box(include "figs/fatica/fatica-fig02.typ")
       #text(size: 8pt)[(b) Parametro di Neuber $A(R_"eH", R_"p0.2")$]
     ],
   ),
