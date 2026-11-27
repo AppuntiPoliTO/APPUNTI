@@ -8,6 +8,11 @@
   width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body,)
 #let circ = sym.degree
 #let varphi = $phi$
+#let fit-box(body) = layout(size => {
+  let m = measure(body)
+  let k = if m.width > 0pt { calc.min(1, size.width / m.width) } else { 1 }
+  scale(k * 100%, body, reflow: true)
+})
 #set page(
   numbering: "1",
   number-align: bottom + right,
@@ -220,18 +225,15 @@ Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel
 #v(0.5em)
 
 #grid(
-  columns: (1.1fr, 0.9fr),
+  columns: (1.15fr, 0.85fr),
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
   [
-// FASE 2 - COSTRUZIONE
-#include "figs/ruote-dentate/ruote-dentate-fig05.typ"
-
-
-#include "figs/ruote-dentate/ruote-dentate-fig06.typ"
+    #fit-box(include "figs/ruote-dentate/ruote-dentate-fig05.typ")
+    #v(0.6em)
+    #fit-box(include "figs/ruote-dentate/ruote-dentate-fig06.typ")
   ],
   [
-    \
 ==== Le quattro circonferenze caratteristiche
     Procedendo dall'interno verso l'esterno della ruota dentata, la geometria radiale del dente è scandita da quattro circonferenze fondamentali:
 
@@ -245,17 +247,16 @@ Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel
     
     / Circonferenza di testa: è la circonferenza più esterna, che delimita superiormente il dente definendone il *troncamento* dal lato alto.
 
-    #v(1em)
+    #v(0.8em)
 
+    *Nomenclatura cinematica nel disegno:*
+    / Centri di rotazione ($O_1, O_2$): assi fissi del *pignone* (conduttore) e della *ruota* (condotta).
+    / Punto primitivo ($P$): punto di tangenza tra le circonferenze primitive.
+    / Estremi di contatto ($a, b$): punti di inizio ($a$) e fine ($b$) dell'ingranamento lungo la *linea di pressione*
   ]
 )
 
 #v(1em)
-
-*Nomenclatura cinematica nel disegno:*
-      / Centri di rotazione ($O_1, O_2$): assi fissi del *pignone* (conduttore) e della *ruota* (condotta).
-      / Punto primitivo ($P$): punto di tangenza tra le circonferenze primitive.
-      / Estremi di contatto ($a, b$): punti di inizio ($a$) e fine ($b$) dell'ingranamento lungo la *linea di pressione*
 
 ==== Parametri di proporzionamento: Passo e Modulo
 Indicato con $z$ (oppure $N$) il *numero di denti* complessivo della ruota e con $D = 2 r$ il *diametro primitivo*, si definiscono due grandezze fondamentali per la progettazione e l'unificazione degli ingranaggi:

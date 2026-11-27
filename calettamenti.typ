@@ -127,9 +127,9 @@ dove le lettere maiuscole si riferiscono ai fori (es. H) e quelle
 minuscole agli alberi. Spesso si utilizza un grado di qualità per
 l'albero pari a quello del foro meno uno (es. 16 H8/f7). Poiché la lavorazione produce quote che possono variare all'interno del
 campo di tolleranza, in fase di progetto è indispensabile valutare le
-due condizioni estreme dell'accoppiamento:],[#include "figs/calettamenti/calettamenti-fig03.typ"])
+due condizioni estreme dell'accoppiamento:],[])
 
-
+#include "figs/calettamenti/calettamenti-fig03.typ"
 
 
  1. #strong[Interferenza
