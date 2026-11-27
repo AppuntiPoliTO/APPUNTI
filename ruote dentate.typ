@@ -582,10 +582,8 @@ Nelle trasmissioni tra assi incidenti, la forma dei denti di una ruota conica è
       $ z' = (2 pi r_b) / p $
   ],
   [
-    #figure(
-      image("images/ruote-dentate/4d741021-6053-41b2-a86d-c4ffa4912f8f-13_644_676_527_416.jpg", width: 90%),
-      caption: [[libro di testo]],
-      supplement: none,
+   #image("images/fig_ruote_dentate_9559.png", width: 100%)
+
     )
   ]
 )
