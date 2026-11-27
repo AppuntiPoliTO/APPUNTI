@@ -1,3 +1,4 @@
+
 #import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
 
 #let nota(body) = block(width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body)
@@ -160,6 +161,6 @@ Una soluzione classica, largamente impiegata sui veicoli terrestri, è l'innesto
 
 #align(center)[
 #import "@preview/cetz:0.3.4": canvas, draw
-#include "../../figs/innesti/innesti-fig04.typ"
+#include "../../figs/p1-fig03.typ"
 [Innesto a frizione multidisco a comando meccanico a leva: sezione trasversale #box[$B$–$B$] e sezione assiale #box[$A$–$A$].])
 ]
