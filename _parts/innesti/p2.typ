@@ -68,7 +68,7 @@ Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la 
   [
     Negli *innesti centrifughi* il comando proviene dalla velocità di rotazione dell'albero motore. A basso regime o al minimo le molle di richiamo trattengono i ceppi distaccati dal tamburo, permettendo al motore di avviarsi a vuoto e ruotare al minimo senza trascinare la trasmissione; superata la velocità critica di taratura, la *forza centrifuga* vince il precarico elastico e preme le guarnizioni contro la superficie interna del tamburo, trasmettendo gradualmente il moto all'utilizzatore (soluzione tipica di motorscooter e ciclomotori, talvolta abbinata a una seconda serie di massette centrifughe sulla campana per l'avviamento a spinta o a pedali).
   ],
-  [
+  [  
   
   #fig-safe(include "../../figs/innesti/ecm-c13-p2-05.typ", max-h: 4.3cm)],
 )
