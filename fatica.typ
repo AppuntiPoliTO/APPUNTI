@@ -1338,12 +1338,7 @@ Poiché l'esponente $k$ amplifica fortemente ogni variazione di tensione sul num
 
 #pagebreak()
 
-#align(center)[
-  #block(width: 80%)[
-    #text(size: 16pt, weight: "bold")[Effetti dei trattamenti, della temperatura e dell'ambiente sulla resistenza a fatica]
-  ]
-]
-#v(0.4em)
+
 
 == Effetti dei trattamenti
 
@@ -1535,11 +1530,6 @@ Gli *acciai altoresistenziali* risultano molto più sensibili alla fatica-corros
 ]
 
 #pagebreak()
-
-#align(center)[
-  #text(size: 16pt, weight: "bold")[Fatica multiassiale]
-]
-#v(0.4em)
 
 == Fatica multiassiale
 
