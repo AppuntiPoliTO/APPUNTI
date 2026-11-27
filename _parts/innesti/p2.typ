@@ -1,5 +1,5 @@
 #import "../../figs/comuni/_helpers.typ": fig-safe, img-flag
-
+#set page(margin: 1.5cm)
 #let nota(body) = block(width: 100%, fill: luma(240), inset: 8pt, radius: 3pt, body)
 
 == Materiali e altri innesti
