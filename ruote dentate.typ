@@ -839,7 +839,8 @@ Per quanto riguarda le trasmissioni tra *alberi ad assi sghembi* (tipicamente or
     / Ruote ipoidi: soluzione alternativa a geometria *toroidale/iperboloidica* con denti curvi. Esse consentono un ingranamento molto graduale e silenzioso, riducendo sensibilmente le dimensioni del pignone e l'*ingombro complessivo* della trasmissione, ma richiedono una modellazione matematica complessa che esula da questa trattazione.
   ],
   align(center)[
-    #image("images/ruote-dentate/cb5ee1bc-b806-48b7-aed4-c871d2df87c7-03_372_626_790_993.jpg", width: 95%)
+    #image("images/fig_ruote_dentate_7466.png", width: 110%)
+
   ]
 )
 
