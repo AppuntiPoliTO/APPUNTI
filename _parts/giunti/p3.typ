@@ -176,6 +176,7 @@ I giunti ad elastomeri collegano due flange calettate mediante elementi interpos
     - *angolari tra $5 degree$ e $12 degree$*.
   ],
   [
-    #fig-safe(image("../../images/giunti/ecm-c12-p3-11.jpg"), max-h: 4.5cm)
+   #image("/images/fig__parts_giunti_p3_2328.png", width: 90%)
+
   ],
 )
