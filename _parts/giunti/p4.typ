@@ -157,7 +157,7 @@ Il *giunto Rzeppa* è un giunto sferico *omocinetico* compatto, formato da:
   gutter: 1em,
   [#fig-safe(include "../../figs/giunti/giunti-fig07.typ", max-h: 5.2cm)],
   [#align(center)[
-  #image("../../images/giunti/ecm-c12-p4-rzeppa-3d.jpg")
+  #image("../../images/giunti/ecm-c12-p4-rzeppa-3d.jpg", width: 50% )
 ]],
 )
 
