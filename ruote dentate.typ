@@ -301,9 +301,9 @@ Per mantenere la scala del dente proporzionata alla dimensione della ruota, la *
   columns: 2,
   gutter: 1em,
   [==== Grandezze del dente normale
-   Addendum ($a = m$): distanza radiale fra la circonferenza di testa e la circonferenza primitiva.
-    / Dedendum ($d = 1.25 m$): distanza radiale fra la circonferenza primitiva e quella di fondo (di piede).
-    / Altezza totale ($h = a + d = 2.25 m$): sviluppo radiale complessivo del dente.
+*Addendum* ($a = m$): distanza radiale fra la circonferenza di testa e la circonferenza primitiva. \
+*Dedendum* ($d = 1.25 m$): distanza radiale fra la circonferenza primitiva e quella di fondo (di piede). \
+*Altezza totale* ($h = a + d = 2.25 m$): sviluppo radiale complessivo del dente.
    ],
   [#align(center)[#include "figs/ruote-dentate/ruote-dentate-fig07.typ"]],
 )
