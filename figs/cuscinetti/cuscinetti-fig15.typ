@@ -1,6 +1,6 @@
 // Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 1cm, {
+#canvas(length: 0.8cm, {
   import draw: *
 
   content((2.6, 5.15), text(size: 10pt)[Più rigido, ma richiede registrazione], anchor: "west")
