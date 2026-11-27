@@ -487,23 +487,9 @@ Per evitare condizioni di interferenza geometrica alla base del dente durante l'
     $
     / Angolo di pressione ($alpha = Phi$): angolo formato dalla linea d'azione con la tangente comune alle circonferenze primitive.
     / Rapporto d'ingranamento ($k = i$): rapporto tra il numero di denti della ruota e del pignone nel caso di accoppiamento con una ruota di raggio finito.
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),
-  [
-
-    #v(0.5em)
-
     
-      *Utilizzo dei diagrammi:* \
+*Utilizzo dei diagrammi:* \
       In alternativa al calcolo analitico, posizionando direttamente il punto di lavoro sul diagramma a fianco in funzione del *rapporto di trasmissione* (o d'ingranamento) e dell'*angolo di pressione* scelto dal costruttore (anche per valori al di fuori dell'intervallo standard $20^degree / 25^degree$), è possibile leggere immediatamente in ordinata il *numero minimo di denti* del pignone.
-    ]
-  ,
-  [
-    #include "figs/ruote-dentate/ruote-dentate-fig11.typ"
-  ]
-)
 
 #v(1.5em)
 
