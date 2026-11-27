@@ -115,7 +115,7 @@ Nel dimensionamento pratico, noti la coppia di slittamento richiesta $M_s$, i li
   
   #fig-safe(include "../../figs/innesti/ecm-c13-p3-04.typ", max-h: 5.2cm)],
 )
-
+#pagebreak()
 === Cenni sui freni
 
 I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli innesti, ma dissipano l'energia cinetica per decelerare o arrestare l'organo rotante, operando spesso con transitori brevi ma molto intensi in termini di forze, pressioni e flussi termici.
