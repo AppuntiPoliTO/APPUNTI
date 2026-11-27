@@ -233,7 +233,7 @@ Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel
 ==== Le quattro circonferenze caratteristiche
     Procedendo dall'interno verso l'esterno della ruota dentata, la geometria radiale del dente è scandita da quattro circonferenze fondamentali:
 
-    #v(0.5em)
+
 
 *Circonferenza di piede (o di fondo)*: è la circonferenza più interna (generalmente di raggio inferiore al cerchio di base), in corrispondenza della quale la base del dente si raccorda con la *corona circolare* (corpo principale) della ruota dentata. \ 
 *Circonferenza di base*: è la circonferenza costruttiva che definisce il *sistema cinematico equivalente* cinghia-puleggia da cui si genera geometricamente il *profilo ad evolvente*. \
