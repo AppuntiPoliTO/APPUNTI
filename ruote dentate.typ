@@ -295,18 +295,23 @@ Per mantenere la scala del dente proporzionata alla dimensione della ruota, la *
 #v(0.5em)
 
 
-#align(center)[#include "figs/ruote-dentate/ruote-dentate-fig07.typ"]
 
-==== Grandezze del dente normale
+
+#grid(
+  columns: 2,
+  gutter: 1em,
+  [==== Grandezze del dente normale
     / Addendum ($a = m$): distanza radiale fra la circonferenza di testa e la circonferenza primitiva.
     / Dedendum ($d = 1.25 m$): distanza radiale fra la circonferenza primitiva e quella di fondo (di piede).
     / Altezza totale ($h = a + d = 2.25 m$): sviluppo radiale complessivo del dente.
-    / Larghezza di fascia ($b$): spessore assiale della ruota dentata.
-    / Spessore ($s = p / 2$): ampiezza curvilinea del pieno del dente sulla primitiva.
-    / Vano ($e = p / 2$): ampiezza curvilinea dello spazio libero sulla primitiva.
-    / Passo ($p = s + e$): distanza curvilinea tra due denti omologhi consecutivi.
+   ],
+  [#align(center)[#include "figs/ruote-dentate/ruote-dentate-fig07.typ"]],
+)
+ / Larghezza di fascia ($b$): spessore assiale della ruota dentata.
+ / Spessore ($s = p / 2$): ampiezza curvilinea del pieno del dente sulla primitiva.
+/ Vano ($e = p / 2$): ampiezza curvilinea dello spazio libero sulla primitiva.
+/ Passo ($p = s + e$): distanza curvilinea tra due denti omologhi consecutivi.
 #v(0.5em)
-
 ==== Significato fisico e giustificazione normativa
 Il sistema prende il nome di *proporzionamento modulare* proprio perché i coefficienti moltiplicativi applicati al modulo $m$ per ricavare le quote radiali sono predefiniti dalla normativa tecnica ($1$ per l'addendum e $1.25$ per il dedendum), determinando univocamente l'altezza totale $h = a + d = 2.25 m$. Nel dettaglio:
 
