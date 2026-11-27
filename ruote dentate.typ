@@ -376,6 +376,7 @@ Normalmente, nell'impostare il progetto dell'accoppiamento cinematico tra due ru
     Il *segno algebrico* traduce formalmente il significato fisico del verso di rotazione:
     - *Ruote esterne ($tau < 0$)*: il rapporto è convenzionalmente *negativo* perché le velocità angolari sono discordi in verso (se il pignone ruota in senso antiorario, la ruota deve necessariamente ruotare in senso orario per compatibilità cinematica nell'ingranamento).
     - *Ruote interne ($tau > 0$)*: il rapporto è *positivo* poiché le due ruote ruotano con verso concorde (stesso segno).
+    #pagebreak()
 ==== Rapporto d'ingranamento ($i$)
     Il cosiddetto *rapporto d'ingranamento*, indicato con la lettera minuscola $i$, mette in relazione le grandezze cinematiche e geometriche del *pignone* e della *ruota* indipendentemente da quale sia l'elemento motore o condotto:
     $ i = frac(omega_("pignone"), omega_("ruota")) = frac(z_("ruota"), z_("pignone")) >= 1 $
