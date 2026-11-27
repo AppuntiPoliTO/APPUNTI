@@ -962,15 +962,15 @@ Questa struttura riflette la *similitudine geometrica*: $K_t$ dipende soltanto d
       #text(size: 7.5pt)[*Lastra con spallamento in trazione*]
     ],
     [
-      #image("images/fatica/ECM01-5_peterson_lastra_intagli.png", height: 4.1cm)
+      #include "figs/fatica/fatica-fig12.typ"
       #text(size: 7.5pt)[*Lastra con intagli laterali a U in trazione*]
     ],
     [
-      #image("images/fatica/ECM01-5_peterson_foro_flessione.png", height: 4.4cm)
+      #include "figs/fatica/fatica-fig10.typ"
       #text(size: 7.5pt)[*Lastra forata in flessione fuori piano (parametro $d\/h$)*]
     ],
     [
-      #image("images/fatica/ECM01-5_peterson_foro_trazione.png", height: 4.4cm)
+      #include "figs/fatica/fatica-fig11.typ"
       #text(size: 7.5pt)[*Lastra forata in trazione (curva unica in $d\/b$)*]
     ],
   ),
