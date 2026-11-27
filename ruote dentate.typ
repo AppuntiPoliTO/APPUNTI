@@ -407,7 +407,8 @@ Ricordando inoltre che il diametro primitivo è espresso dal prodotto tra il mod
 #v(1em)
 
 #align(center)[
-  #image("images/ruote-dentate/4d741021-6053-41b2-a86d-c4ffa4912f8f-10_255_1195_2191_392.jpg", width: 80%)
+ #image("images/fig_ruote_dentate_6827.png", width: 100%)
+
 ]
 ==== Condizione geometrica di non interferenza
 Poiché i denti del pignone e della ruota condotta sono troncati in testa in corrispondenza delle rispettive circonferenze di *addendum* (o di testa), le intersezioni $a$ e $b$ di tali circonferenze con la retta d'azione delimitano il *segmento effettivo di contatto* $a$-$b$, lungo il quale il punto di contatto si muove attraversando il punto primitivo $P$.
