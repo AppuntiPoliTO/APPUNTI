@@ -20,9 +20,6 @@ La selezione comporta quindi un *compromesso progettuale*: le guarnizioni organi
   [#fig-safe(include "../../figs/innesti/ecm-c13-p2-02.typ")],
   [#fig-safe(include "../../figs/innesti/ecm-c13-p2-03.typ")],
 )
-#align(center, text(size: 8.5pt, fill: luma(80))[
-  Dipendenza dei coefficienti d'attrito $f$ (linea continua) e $f_0$ (tratteggiata) da pressione $p$, velocità di strisciamento $v$ e temperatura $T$ (curva 1: guarnizione organica; curva 2: materiale sinterizzato).
-])
 
 #v(0.4em)
 
