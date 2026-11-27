@@ -114,7 +114,9 @@ Negli *innesti di sopravanzo* (*ruote libere*) il comando dipende dalla differen
   [
     Esistono innesti azionati o accoppiati tramite fenomeni *elettromagnetici*: senza contatto meccanico — a *isteresi magnetica* o a *correnti parassite* (elemento condotto passivo accoppiato per induzione a un elemento motore attivo) — oppure a *flusso magnetico attraverso i dischi* (figura a lato), in cui gli *avvolgimenti* alimentati generano un flusso magnetico che attrae e serra il pacco dischi. Per una data corrente di eccitazione dell'elettromagnete, la coppia di innesto risulta sostanzialmente costante; i fenomeni di isteresi magnetica e correnti indotte comportano tuttavia dissipazione e *isteresi termica* da tenere sotto controllo.
   ],
-  [#fig-safe(image("../../images/innesti/ecm-c13-p2-elettromec.jpg"), max-h: 4.4cm)],
+  [#align(center)[
+  #image("/images/fig__parts_innesti_p2_7692.png", width: 105%)
+]]
 )
 
 ==== Innesti a particelle magnetiche e fluidi magnetoreologici
