@@ -138,8 +138,7 @@ I giunti ad elastomeri collegano due flange calettate mediante elementi interpos
     La coppia si trasmette per *compressione (pressione)* esercitata dai fianchi dei denti metallici sui lobi polimerici. L'elastomero svolge un'efficace azione di *smorzamento delle oscillazioni torsionali* (scegliendo la durezza *Shore* si può allontanare la frequenza naturale del sistema da risonanze critiche) e consente piccoli spostamenti assiali e la correzione di modesti *errori angolari*.
   ],
   [
-  
-
+    #fig-safe(image("../../images/giunti/ecm-c12-p3-09.jpg"), max-h: 4.5cm)
   ],
 )
 
