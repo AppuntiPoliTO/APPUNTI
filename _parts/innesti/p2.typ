@@ -79,7 +79,10 @@ Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la 
   columns: (1fr, 0.85fr),
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
-  [#fig-safe(include "../../figs/innesti/ecm-c13-p2-06.typ", max-h: 4.6cm)],
+  [
+  #align(center)[
+  #image("/images/fig__parts_innesti_p2_7161.png", width: 75%)
+]],
   [#fig-safe(image("../../images/innesti/ecm-c13-p2-07.jpg"), max-h: 4.4cm)],
 )
 
