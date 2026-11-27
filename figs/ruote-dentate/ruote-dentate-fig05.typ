@@ -1,7 +1,7 @@
 // Figura estratta da ruote dentate.typ (riga 556) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1cm, {
+#canvas(length: 0.9cm, {
   import draw: *
 
   // --- 1. DENTI DEL PIGNONE (GRIGIO CHIARO) ---
