@@ -1169,10 +1169,7 @@ Imposti i carichi di esercizio, i vincoli e le condizioni di interfaccia nella s
 
 #pagebreak()
 
-#align(center)[
-  #text(size: 16pt, weight: "bold")[Sicurezza a fatica]
-]
-#v(0.4em)
+
 
 == Sicurezza a fatica
 
