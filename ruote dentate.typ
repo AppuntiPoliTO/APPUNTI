@@ -224,13 +224,14 @@ Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel
 
 #v(0.5em)
 #pagebreak()
+==== Le quattro circonferenze caratteristiche
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1.5em,
-  align: (left + horizon, center + horizon),
+  align: (left + top, center + horizon),
   [
     
-==== Le quattro circonferenze caratteristiche
+
     Procedendo dall'interno verso l'esterno della ruota dentata, la geometria radiale del dente è scandita da quattro circonferenze fondamentali:
 
 
@@ -244,7 +245,6 @@ Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel
   [
   
   #fit-box(include "figs/ruote-dentate/ruote-dentate-fig05.typ")
-    #v(0.6em)
     #fit-box(include "figs/ruote-dentate/ruote-dentate-fig06.typ")
   ]
 )
