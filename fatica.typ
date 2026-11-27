@@ -1095,7 +1095,7 @@ Per i materiali duttili l'ipotesi di Von Mises compone le tensioni nella tension
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig100.typ"),
+      fit-box(include "figs/fatica/fatica-fig48.typ"),
     )
   ],
 )
@@ -1114,7 +1114,7 @@ Per i materiali duttili l'ipotesi di Von Mises compone le tensioni nella tension
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig101.typ"),
+      fit-box(include "figs/fatica/fatica-fig49.typ"),
     )
   ],
 )
@@ -1149,11 +1149,11 @@ Il parametro $A$ decresce con la tensione di snervamento $R_"eH"$ o $R_"p0.2"$. 
     column-gutter: 1em,
     align: (center + bottom, center + bottom),
     [
-      #fit-box(include "figs/fatica/fatica-fig102.typ")
+      #fit-box(include "figs/fatica/fatica-fig129.typ")
       #text(size: 8pt)[(a) Abaco sperimentale della sensibilità $q(r)$]
     ],
     [
-      #fit-box(include "figs/fatica/fatica-fig103.typ")
+      #fit-box(include "figs/fatica/fatica-fig130.typ")
       #text(size: 8pt)[(b) Parametro di Neuber $A(R_"eH", R_"p0.2")$]
     ],
   ),
@@ -1192,7 +1192,7 @@ $ sigma_(D-1)^C = C_L dot C_S dot C_F dot sigma_(D-1) $
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig104.typ"),
+      fit-box(include "figs/fatica/fatica-fig50.typ"),
     )
   ]
 )
@@ -1222,7 +1222,7 @@ Il *diagramma di Haigh* raccoglie le condizioni limite a durata fissata ($N = "c
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig105.typ"),
+      fit-box(include "figs/fatica/fatica-fig51.typ"),
     )
   ]
 )
@@ -1251,7 +1251,7 @@ Per verificare un componente a vita illimitata si posiziona $P(sigma_m^P, sigma_
 - *Tensione alternata costante e tensione media crescente.* Si presenta quando la pressione di esercizio subisce una deriva lenta mentre i disturbi vibratori restano invariati. A ordinata $sigma_a^P$ fissa, $P$ scorre in orizzontale verso destra fino a $sigma_m^"lim"$: è l'unico caso valutato sulle ascisse, con $C S = sigma_m^"lim" / sigma_m^P$.
 
 #figure(
-  fit-box(include "figs/fatica/fatica-fig106.typ"),
+  fit-box(include "figs/fatica/fatica-fig52.typ"),
 )
 
 Nel caso proporzionale verrebbe spontaneo confrontare le lunghezze dei due segmenti obliqui dall'origine al bordo e a $P$, ma calcolare le ipotenuse espone a errori operativi evitabili. Le normative impiegano perciò direttamente i rapporti sulle coordinate cartesiane, unificando la lettura sulle ordinate ($sigma_D^"lim" / sigma_a^P$) nei primi tre casi e riservando le ascisse al quarto.
@@ -1273,7 +1273,7 @@ $ sigma_m = sigma_m^"carichi" + sigma_"res" $
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig107.typ"),
+      fit-box(include "figs/fatica/fatica-fig100.typ"),
     )
   ],
 )
@@ -1291,7 +1291,7 @@ $ sigma_m = sigma_m^"carichi" + sigma_"res" $
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig108.typ"),
+      fit-box(include "figs/fatica/fatica-fig101.typ"),
     )
   ],
 )
@@ -1316,7 +1316,7 @@ La curva SN del componente si stima a partire da quella sperimentale della prove
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig109.typ"),
+      fit-box(include "figs/fatica/fatica-fig102.typ"),
     )
   ],
 )
@@ -1371,7 +1371,7 @@ Le *tensioni residue* ($sigma_"res"$) formano un campo di sforzi auto-equilibrat
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig110.typ"),
+      fit-box(include "figs/fatica/fatica-fig103.typ"),
     )
   ],
 )
@@ -1395,7 +1395,7 @@ Con il precarico compressivo $P' P$, la trazione esterna deve prima annullare $s
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig111.typ"),
+      fit-box(include "figs/fatica/fatica-fig104.typ"),
     )
   ],
 )
@@ -1415,7 +1415,7 @@ Brevettata da Föppl (1929) e industrializzata da Almen negli anni Trenta per le
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig112.typ"),
+      fit-box(include "figs/fatica/fatica-fig105.typ"),
     )
   ],
 )
@@ -1437,7 +1437,7 @@ Spesso il processo coincide con la generazione stessa della forma: è il caso de
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig113.typ"),
+      fit-box(include "figs/fatica/fatica-fig106.typ"),
     )
   ],
 )
@@ -1460,7 +1460,7 @@ I rivestimenti superficiali rispondono a requisiti estetici o proteggono da *cor
   {
     set par(justify: false)
     set text(hyphenate: false)
-    fit-box(include "figs/fatica/fatica-fig114.typ")
+    fit-box(include "figs/fatica/fatica-fig107.typ")
   },
 )
 
@@ -1487,7 +1487,7 @@ Nei processi termici le tensioni residue derivano da *cambiamenti di fase* local
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig115.typ"),
+      fit-box(include "figs/fatica/fatica-fig108.typ"),
     )
   ],
 )
@@ -1520,7 +1520,7 @@ Mentre un corpo libero si dilata senza tensioni, in una struttura vincolata — 
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig116.typ"),
+      fit-box(include "figs/fatica/fatica-fig109.typ"),
     )
   ],
 )
@@ -1566,7 +1566,7 @@ Passare dal provino al componente richiede sia banchi di prova multiassiali rapp
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig117.typ"),
+      fit-box(include "figs/fatica/fatica-fig110.typ"),
     )
   ],
 )
@@ -1588,7 +1588,7 @@ La trattazione di base affronta gli *stati multiassiali semplici*: la coincidenz
   ],
   [
     #figure(
-      fit-box(include "figs/fatica/fatica-fig118.typ"),
+      fit-box(include "figs/fatica/fatica-fig111.typ"),
     )
   ],
 )
@@ -1651,7 +1651,7 @@ Il fattore di carico $C_L$ va escluso da $sigma_(D-1)^C$: la correzione $0.85$ �
 $ "CS" = frac(overline("LH"), overline("PH")) = frac(sigma_D^"lim", sigma_(a,"eq")) $
 
 #figure(
-  fit-box(include "figs/fatica/fatica-fig119.typ"),
+  fit-box(include "figs/fatica/fatica-fig112.typ"),
 ) <fig:haigh-multi>
 
 Poiché a $sigma_(m,"eq")$ costante la similitudine dei triangoli con vertice in $R_m$ dà $sigma_D^"lim" / "CS" = (sigma_(D-1)^C / "CS")(1 - sigma_(m,"eq") / R_m)$, la @fig:haigh-multi (b) traccia direttamente la retta limite ridotta tra $sigma_(D-1)^C / "CS"$ e $R_m$: fissato il $"CS"$ minimo di progetto o normativa, ogni punto $P$ interno al triangolo ridotto è verificato.
@@ -1671,7 +1671,7 @@ $ sigma_(C,D-1) = C_F dot sigma_(D-1)^"tc" $
 Per valutare l'influenza delle tensioni medie in fatica multiassiale, *Sines* provò provini cilindrici in quattro combinazioni: (a) $sigma_m + sigma_a$, (b) $sigma_m + tau_a$, (c) $tau_m + tau_a$ e (d) $tau_m + sigma_a$. Nei diagrammi ottenuti, la resistenza cala nettamente al crescere della tensione media normale mentre resta costante con sola torsione media.
 
 #figure(
-  fit-box(include "figs/fatica/fatica-fig120.typ"),
+  fit-box(include "figs/fatica/fatica-fig113.typ"),
 )
 
 - *Casi a e b ($sigma_(m,1) + sigma_(m,2) != 0$).* La tensione media assiale $sigma_m$ rende non nulla la traccia del tensore medio; al crescere di $sigma_m$ l'ampiezza ammissibile ($sigma_a$ o $tau_a$) decresce sensibilmente.
