@@ -327,7 +327,7 @@ L'articolazione dei supporti richiede lo studio di combinazioni specifiche per g
 ],[],[
 #image("images/cuscinetti/esterno 1.png")
 ],[],[
-#image("images/cuscinetti/esterno 2.png")
+#include "figs/cuscinetti-fig03.typ"
 ],[Nelle configurazioni in opposizione (utilizzate ad esempio per ingranaggi lunghi e massivi che richiedono precisione e orizzontalità), due cuscinetti obliqui a sfere o a rulli conici vengono montati alle estremità dell'albero. Le piste avvolgono i corpi volventi in modo asimmetrico, creando rette d'azione inclinate che si oppongono a spinte assiali opposte, garantendo reazioni al momento di ribaltamento. Il sistema viene precaricato per annullare i giochi.],[
 #image("images/cuscinetti/opposizione.png", width:100%)
 ],[Nelle configurazioni flottanti, invece, si lascia un grado di libertà a entrambi i cuscinetti per permettere un adattamento bidirezionale senza sovraccaricare la struttura. Questo si ottiene lasciando un certo gioco assiale agli anelli esterni rispetto alla sede statorica, oppure, nel caso dei rulli, utilizzando anelli interni con un bordino solo da un lato. In questo modo si rende reversibile il grado di libertà assiale, suddividendolo tra i due cuscinetti della coppia.],[
