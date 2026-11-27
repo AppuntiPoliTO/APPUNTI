@@ -56,7 +56,10 @@ $ p(r) = frac("costante", r) = p_"max" dot frac(r_i, r) $
     Scomponendo $r_e^2 - r_i^2 = (r_e - r_i)(r_e + r_i)$ e riconoscendo l'espressione di $F$, la coppia si riduce alla forma compatta in funzione del raggio medio $r_m = (r_e + r_i) / 2$:
     $ M_s = f F r_m $
   ],
-  [#fig-safe(include "../../figs/innesti/ecm-c13-p3-03.typ", max-h: 4.8cm)],
+  [
+  
+  
+  #fig-safe(include "../../figs/innesti/ecm-c13-p3-03.typ", max-h: 4.8cm)],
 )
 
 #v(0.4em)
