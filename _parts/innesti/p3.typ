@@ -151,8 +151,8 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
 )
 
 #v(0.5em)
-
-#block(- *Freni a disco e pinza.* Il dimensionamento a frenatura, attrito, surriscaldamento e coppia è analogo a quello degli innesti piani a corona. Nella pinza un pistone idraulico serra pastiglie ad alto attrito contro un disco esposto (spesso ventilato o forato, con molle di richiamo per il distacco a riposo), garantendo elevata potenza frenante e rapido raffreddamento; le temperature raggiunte in tempi brevissimi (es. freni sportivi) impongono un rigoroso controllo dei flussi termici per prevenire degrado delle prestazioni, cedimenti e innesco di combustioni sui componenti adiacenti.
+#pagebreak()
+ *Freni a disco e pinza.* Il dimensionamento a frenatura, attrito, surriscaldamento e coppia è analogo a quello degli innesti piani a corona. Nella pinza un pistone idraulico serra pastiglie ad alto attrito contro un disco esposto (spesso ventilato o forato, con molle di richiamo per il distacco a riposo), garantendo elevata potenza frenante e rapido raffreddamento; le temperature raggiunte in tempi brevissimi (es. freni sportivi) impongono un rigoroso controllo dei flussi termici per prevenire degrado delle prestazioni, cedimenti e innesco di combustioni sui componenti adiacenti.
 
 #grid(
   columns: (1.3fr, 0.7fr),
