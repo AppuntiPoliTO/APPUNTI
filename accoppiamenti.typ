@@ -197,7 +197,7 @@ Qualora sia necessario accoppiare un albero e un mozzo cilindrici senza eseguire
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[1. Sistema a dischi a stella (Ringspann)]
 Costituito da elementi a forma di molla elastica troncoconica cedevole, sagomata con un profilo a greca sulla circonferenza. Applicando una forza assiale, il disco si inflette e tende ad appiattirsi; diminuendo il diametro interno e aumentando quello esterno, si produce un'azione di impuntamento (forzamento radiale) contro l'albero e il mozzo. L'effetto si moltiplica impacchettando in serie più dischi (fino a un massimo di 16).],[
-#image("images/accoppiamenti/Ringspann.png", width:50%)
+#include "figs/accoppiamenti-fig09.typ"
 ])
 
 #grid(
