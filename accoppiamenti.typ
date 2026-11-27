@@ -213,7 +213,7 @@ Anelli ondulati per stampaggio realizzati in nastro di acciaio temprato per moll
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[3. Accoppiamento con anelli conici]
 Si basa su una serie di anelli dalla superficie troncoconica divisi in due metà (superiore e inferiore). Un coperchio flangiato esterno, serrato tramite bulloni lungo l'asse, spinge questi elementi sul loro piano inclinato. L'avanzamento assiale si converte in spinta radiale e pressione di forzamento. Il vantaggio risiede nel perfetto controllo del precarico applicando una chiave dinamometrica alle viti. Lo svantaggio principale è che, lungo l'asse, gli anelli più distanti dalle viti di serraggio subiscono una forza assiale progressivamente inferiore, portando a una distribuzione della pressione radiale non uniforme sull'albero.],[
-#image("images/accoppiamenti/accoppiamenti conici industriali.png")
+#include "figs/accoppiamenti-fig10.typ"
 ])
 
 #grid(
