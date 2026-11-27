@@ -28,6 +28,19 @@ I coefficienti d'attrito variano in funzione di pressione (sollecitazione) $p$, 
 #nota[
   *Stick-slip.* Il coefficiente d'attrito cinetico $f$ è inferiore a quello statico $f_0$ del $10$–$20\%$. In prossimità del sincronismo (o subito dopo averlo raggiunto) questo scarto può innescare oscillazioni autoeccitate di adesione e scorrimento (*stick-slip*) con vibrazioni e rumorosità marcata.
 ]
+=== Innesti senza contatto ed elettromeccanici
+
+==== Giunti idraulici (fluidodinamici)
+
+#grid(
+  columns: (1.1fr, 0.9fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),
+  [
+    I *giunti idraulici* trasferiscono potenza senza contatto solido tramite un fluido tra due giranti affacciate: la girante motrice (*pompa*) accelera il fluido verso la palettatura della girante condotta (*turbina*). La coppia dipende non linearmente dalla velocità relativa; il sincronismo perfetto non è mai raggiungibile e lo *slittamento residuo* dissipa potenza anche a regime. Anche interponendo un diaframma per interrompere il flusso permane una minima coppia di trascinamento.
+  ],[
+  #image("/images/fig__parts_innesti_p2_0562.png", width: 110%)
+])
 
 === Innesti di sicurezza (limitatori di coppia)
 
@@ -77,19 +90,6 @@ Negli *innesti di sopravanzo* (*ruote libere*) il comando dipende dalla differen
   [#fig-safe(include "../../figs/innesti/ecm-c13-p2-08.typ", max-h: 4.3cm)],
 )
 
-=== Innesti senza contatto ed elettromeccanici
-
-==== Giunti idraulici (fluidodinamici)
-
-#grid(
-  columns: (1.1fr, 0.9fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),
-  [
-    I *giunti idraulici* trasferiscono potenza senza contatto solido tramite un fluido tra due giranti affacciate: la girante motrice (*pompa*) accelera il fluido verso la palettatura della girante condotta (*turbina*). La coppia dipende non linearmente dalla velocità relativa; il sincronismo perfetto non è mai raggiungibile e lo *slittamento residuo* dissipa potenza anche a regime. Anche interponendo un diaframma per interrompere il flusso permane una minima coppia di trascinamento.
-  ],[
-  #image("/images/fig__parts_innesti_p2_0562.png", width: 110%)
-])
 
 ==== Innesti elettromeccanici
 

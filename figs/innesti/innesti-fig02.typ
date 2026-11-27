@@ -1,6 +1,7 @@
+// Disegno creato con Studio di LocalTypst
+#import "@preview/cetz:0.3.4": canvas, draw
 // Figura estratta da _parts/innesti/p1.typ (riga 242) con LocalTypst
 #import "../comuni/_helpers.typ": fig-safe, img-flag
-#import "@preview/cetz:0.3.4": canvas, draw
 
 #canvas(length: 1.17cm, {
   import draw: *
@@ -214,9 +215,6 @@
   arc((12.6, 0), start: 337.8deg, stop: 382.2deg, radius: 0.74, anchor: "origin", stroke: 0.9pt)
   line((13.285, -0.279), (13.859, -0.611), stroke: 0.9pt)
   line((13.285, 0.279), (13.859, 0.611), stroke: 0.9pt)
-
-  // Arco blu d'attrito sullo spicchio superiore sinistro (da 94° a 146°)
-  arc((12.6, 0), start: 94.1deg, stop: 145.9deg, radius: 1.4, anchor: "origin", stroke: (paint: blue.lighten(20%), thickness: 2.2pt))
 
   // Freccia curva di rotazione attorno al mozzo (punta stealth piena)
   arc((12.6, 0), start: 18deg, stop: 245deg, radius: 0.42, anchor: "origin", mark: (start: "stealth", fill: black, scale: 0.58), stroke: 0.8pt)
