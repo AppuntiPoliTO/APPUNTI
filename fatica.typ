@@ -1144,11 +1144,11 @@ Il parametro $A$ decresce con la tensione di snervamento $R_"eH"$ o $R_"p0.2"$. 
     column-gutter: 1em,
     align: (center + bottom, center + bottom),
     [
-      #image("images/_doppioni/fatica/ECM01-5_sensibilita_intaglio_q.png", width: 100%)
+      #include "figs/fatica-fig01.typ"
       #text(size: 8pt)[(a) Abaco sperimentale della sensibilità $q(r)$]
     ],
     [
-      #image("images/fatica/ECM01-5_parametro_neuber_A.png", width: 100%)
+      #include "figs/fatica-fig02.typ"
       #text(size: 8pt)[(b) Parametro di Neuber $A(R_"eH", R_"p0.2")$]
     ],
   ),
