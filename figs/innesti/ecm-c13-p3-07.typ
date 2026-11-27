@@ -1,5 +1,5 @@
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 1cm, {
+#canvas(length: 1.4cm, {
   import draw: *
 
   line((-2.3, 0), (2.4, 0), stroke: (dash: "dash-dotted", thickness: 0.55pt))
