@@ -29,7 +29,7 @@ Durante lo strisciamento ($t_0$–$t_2$), la potenza termica generata eguaglia l
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    Su una corona circolare (o settore d'arco $phi$, con $phi = 2 pi$ per corona completa, modello valido sia per innesti che per freni a disco) compresa tra i raggi $r_i$ ed $r_e$, la forza assiale $F$ e la coppia di slittamento $M_s$ valgono:
+    Il modello di dimensionamento vale sia per gli innesti a disco sia per i freni a disco. Considerando una corona circolare (o un settore d'arco $phi$, con $phi = 2 pi$ per corona completa) compresa tra il raggio interno $r_i$ e quello esterno $r_e$, sull'elemento di superficie $d A = r thin d phi thin d r$ agisce la forza normale elementare $d F = p(r) thin d A$, che genera la forza tangenziale d'attrito $d F_t = f thin p(r) thin d A$ con braccio $r$. Integrando sull'intera area di contatto si ottengono la forza assiale di spinta $F$ e la coppia di slittamento $M_s$:
     $ F = integral_A p(r) thin d A = integral_(r_i)^(r_e) integral_0^phi p(r) thin r thin d phi thin d r $
     $ M_s = integral_A f dot p(r) thin r thin d A = integral_(r_i)^(r_e) integral_0^phi f dot p(r) dot r^2 thin d phi thin d r $
   ],
@@ -38,10 +38,10 @@ Durante lo strisciamento ($t_0$–$t_2$), la potenza termica generata eguaglia l
 
 #v(0.5em)
 
-Assumendo dischi rigidi ad accostamento parallelo (le cui superfici restano piane nonostante il consumo) e applicando la *legge di Archard* — modello generale di cedimento per *usura da sfregamento*, distinto dalla fatica da contatto — il tasso di riduzione dello spessore $h$ nell'unità di tempo risulta indipendente dal raggio:
+Per risolvere gli integrali occorre stabilire la legge di distribuzione radiale della pressione $p(r)$ (a disco nuovo la pressione è circa uniforme, ma il consumo più rapido alle velocità periferiche maggiori la ridistribuisce rapidamente durante il rodaggio). Assumendo dischi rigidi ad accostamento assiale parallelo — le cui superfici restano piane nonostante il consumo progressivo — lo spessore $h$ di materiale asportato nell'unità di tempo deve risultare uguale a ogni raggio $r$. Applicando la *legge di Archard* (modello generale di cedimento per *usura da sfregamento*, distinto dalla fatica da contatto hertziana), il rateo d'usura vale:
 $ frac(d h, d t) = frac(c_u, H) p(r) thin omega r = "costante" $
-dove $c_u$ è il coefficiente d'usura, $H$ la durezza del materiale di guarnizione e $omega r$ la velocità tangenziale locale di strisciamento. Essendo $omega$ uniforme, segue $p(r) dot r = "costante"$: la pressione massima si localizza sul raggio interno $r_i$ con distribuzione iperbolica:
-$ p(r) = p_"max" dot frac(r_i, r) $
+dove $c_u$ è il coefficiente d'usura della coppia di materiali, $H$ la durezza della guarnizione e $v(r) = omega r$ la velocità tangenziale locale di strisciamento. A velocità angolare $omega$ uniforme segue $p(r) dot r = "costante"$: la pressione decresce iperbolicamente verso l'esterno e raggiunge il valore massimo $p_"max"$ in corrispondenza del raggio minimo $r_i$:
+$ p(r) = frac("costante", r) = p_"max" dot frac(r_i, r) $
 
 #v(0.4em)
 
@@ -50,24 +50,32 @@ $ p(r) = p_"max" dot frac(r_i, r) $
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    Integrando $p(r)$ sulla corona circolare si ottengono:
-    $ F = p_"max" r_i phi (r_e - r_i) $
-    $ M_s = f p_"max" r_i phi frac(r_e^2 - r_i^2, 2) = f F r_m $
-    con raggio medio $r_m = (r_e + r_i) / 2$. Definiti l'efficacia $e = M_s / p_"max"$ (coppia trasmessa per unità di pressione massima ammissibile) e il rapporto geometrico $rho = r_e / r_i$, la condizione di ottimo $(d e) / (d rho) = 0$ deriva analiticamente — a partire dalla sola relazione empirica di Archard — i rapporti geometrici riportati sui manuali:
-    $ rho_0 = sqrt(3) quad arrow.r.double quad r_e approx 1.7 r_i , quad r_m approx 0.78 r_e $
+    Sostituendo la distribuzione iperbolica $p(r) = p_"max" r_i / r$ negli integrali (con $f$ uniforme sulla superficie) si ricavano:
+    $ F = p_"max" r_i integral_(r_i)^(r_e) integral_0^phi d phi thin d r = p_"max" r_i phi (r_e - r_i) $
+    $ M_s = f p_"max" r_i integral_(r_i)^(r_e) integral_0^phi r thin d phi thin d r = f p_"max" r_i phi frac(r_e^2 - r_i^2, 2) $
+    Scomponendo $r_e^2 - r_i^2 = (r_e - r_i)(r_e + r_i)$ e riconoscendo l'espressione di $F$, la coppia si riduce alla forma compatta in funzione del raggio medio $r_m = (r_e + r_i) / 2$:
+    $ M_s = f F r_m $
   ],
   [#fig-safe(include "../../figs/innesti/ecm-c13-p3-03.typ", max-h: 4.8cm)],
 )
 
-#v(0.5em)
+#v(0.4em)
 
-Per un innesto *monodisco* ($2$ coppie di superfici attive, fronte e retro del disco condotto, con $d_m = 2 r_m$), la coppia di slittamento e il valore massimo di picco (sostituendo all'attrito cinetico $f_c$ quello *statico di primo distacco* $f_0$) valgono:
-$ M_s = 2 f_c F r_m = f_c F d_m , quad M_p = f_0 F d_m $
-Per un innesto o freno *multidisco* con $z$ coppie di superfici d'attrito interfacciate in contatto, la coppia di slittamento e il valore massimo di picco risultano:
-$ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) , quad M_p approx frac(z f_0 F d_m, 2) $
+*Ottimizzazione geometrica della corona.* Fissato il raggio esterno $r_e$ (dettato dall'ingombro radiale disponibile) e la pressione massima ammissibile $p_"max"$ sul raggio interno, conviene scegliere il rapporto dei raggi $rho = r_e / r_i$ in modo da massimizzare l'*efficacia* $e = M_s / p_"max"$: se $rho arrow.r 1$ ($r_i arrow.r r_e$) l'area di contatto si annulla; se $rho arrow.r infinity$ ($r_i arrow.r 0$) il vincolo su $p_"max"$ riduce la forza trasmissibile e le zone interne lavorano con braccio piccolo. Esprimendo $r_i = r_e / rho$ nella formula di $M_s$ si ottiene:
+$ e = frac(M_s, p_"max") = frac(1, 2) f phi r_e^3 ( frac(1, rho) - frac(1, rho^3) ) $
+Imponendo la condizione di stazionarietà $(d e) / (d rho) = 0$ si ricava $3 / rho^4 - 1 / rho^2 = 0$, da cui discendono analiticamente — a partire dalla sola relazione empirica di Archard — i rapporti geometrici riportati nei manuali:
+$ rho_0 = sqrt(3) quad arrow.r.double quad r_e approx 1.7 r_i , quad r_m = frac(r_e + r_i, 2) approx 0.78 r_e $
+
+#v(0.4em)
+
+*Applicazione a innesti monodisco e multidisco.* Nel dimensionamento pratico, noti $M_s$ richiesta, i limiti del materiale ($f_c$, $f_0$, $p_"amm"$) e $r_e$, si fissano $r_i$ e $r_m$ col rapporto ottimo, si determina la forza assiale di comando $F$ dalla coppia e si verifica che la pressione massima sul bordo interno rispetti $p_"max" = F / (r_i phi (r_e - r_i)) <= p_"amm"$.
+- *Innesto monodisco.* Dispone di $2$ coppie di superfici attive (fronte e retro del disco condotto, con diametro medio $d_m = 2 r_m$): la coppia di slittamento e il valore massimo di picco statico (sostituendo a $f_c$ l'attrito *statico di primo distacco* $f_0$) valgono:
+  $ M_s = 2 f_c F r_m = f_c F d_m , quad M_p = f_0 F d_m $
+- *Innesto o freno multidisco.* Con $z$ coppie di superfici d'attrito interfacciate in contatto, la coppia di slittamento e il valore di picco risultano:
+  $ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) , quad M_p approx frac(z f_0 F d_m, 2) $
 
 #nota[
-  *Caduta di forza assiale nei multidisco.* Nei pacchi multidisco la forza normale effettiva tra i dischi più lontani dall'attuatore è solo *approssimativamente* pari alla forza di comando $F$, poiché parte della spinta viene dissipata dall'attrito di scorrimento sui profili scanalati (per questo nella formula compare il simbolo $approx$ e il numero di dischi è limitato).
+  *Caduta di forza assiale nei multidisco.* Nei pacchi multidisco la forza normale effettiva tra i dischi più lontani dall'attuatore è solo *approssimativamente* pari alla forza di comando $F$, poiché parte della spinta viene dissipata dall'attrito di scorrimento sui profili scanalati assiali (per questo compare il simbolo $approx$ e il numero di dischi $z$ è limitato anche da esigenze di ingombro e smaltimento termico al centro del pacco).
 ]
 
 ==== Innesti a frizione conici
