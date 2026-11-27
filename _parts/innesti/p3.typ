@@ -155,8 +155,7 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [#align(center)[
-  #image("images/fig__parts_innesti_p3_9670.png", width: 75%)
-]
+  #image("/images/fig__parts_innesti_p3_4299.png", width: 65%)]
 ],
   [#fig-safe(image("../../images/innesti/ecm-c13-p3-disco-foto.jpg"), max-h: 3.5cm)],
 )
