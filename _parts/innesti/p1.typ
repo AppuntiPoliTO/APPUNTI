@@ -88,14 +88,37 @@ Per assicurare un funzionamento regolare e ripetibile sono essenziali:
 
 #v(0.5em)
 
-Poiché il disco frizione è relativamente snello e torsionalmente cedevole — e la coppia erogata dal motore a combustione interna presenta continue fluttuazioni — sulla linea di trasmissione si propagano *vibrazioni torsionali* e strappi. Per assorbirli, il disco non è vincolato rigidamente al mozzo d'uscita ma vi è collegato tramite un *parastrappi* (fino alla soluzione più evoluta del *doppio volano*, introdotta sul mercato da Valeo): la coppia passa prima alla corona d'attrito, poi attraversa un set di *molle elicoidali cilindriche circonferenziali* — spesso abbinate a uno smorzatore ad attrito — e infine raggiunge il mozzo, rendendo l'innesto equivalente a un *giunto elastico torsionalmente cedevole*.
-
 #grid(
-  columns: (1fr, 1fr),
-  column-gutter: 0.8em,
-  align: (center + horizon, center + horizon),
-  [#fig-safe(image("../../images/innesti/ecm-c13-p1-06.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi su disco frizione])],
-  [#fig-safe(image("../../images/innesti/ecm-c13-p1-07.jpg"), max-h: 4.3cm, caption: text(size: 8.5pt, fill: luma(80))[Parastrappi in un doppio volano])]
+  columns: (1fr, 1.15fr),
+  column-gutter: 1em,
+  align: (left + horizon, center + horizon),
+  [
+    Poiché il disco frizione è relativamente snello e torsionalmente cedevole — e la coppia erogata dal motore a combustione interna presenta continue fluttuazioni — sulla linea di trasmissione si propagano *vibrazioni torsionali* e strappi. Per assorbirli, il disco non è vincolato rigidamente al mozzo d'uscita ma vi è collegato tramite un *parastrappi* (fino alla soluzione più evoluta del *doppio volano*, introdotta sul mercato da Valeo): la coppia passa prima alla corona d'attrito, poi attraversa un set di *molle elicoidali cilindriche circonferenziali* — spesso abbinate a uno smorzatore ad attrito — e infine raggiunge il mozzo, rendendo l'innesto equivalente a un *giunto elastico torsionalmente cedevole*.
+  ],
+  layout(size => {
+    let gap = 0.25cm
+    let max-h = 4.6cm
+    let col-w = (size.width - gap) / 2
+    let ref = measure(image("../../images/innesti/ecm-c13-p1-07.jpg"))
+    let kw = if ref.width > 0pt { col-w / ref.width } else { 1 }
+    let kh = if ref.height > 0pt { max-h / ref.height } else { 1 }
+    let k = calc.min(kw, kh)
+    let w = ref.width * k
+    let h = ref.height * k
+    grid(
+      columns: (1fr, 1fr),
+      column-gutter: gap,
+      align: (center + top, center + top),
+      figure(
+        box(width: w, height: h, clip: true, image("../../images/innesti/ecm-c13-p1-06.jpg", width: w, height: h, fit: "cover")),
+        caption: text(size: 8.5pt, fill: luma(80))[Parastrappi su disco frizione],
+      ),
+      figure(
+        image("../../images/innesti/ecm-c13-p1-07.jpg", width: w, height: h),
+        caption: text(size: 8.5pt, fill: luma(80))[Parastrappi in un doppio volano],
+      ),
+    )
+  }),
 )
 
 #v(0.5em)
