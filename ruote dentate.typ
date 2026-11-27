@@ -953,58 +953,7 @@ $ sigma_(x x, max) = (6 dot F dot l_0) / (b dot h^2) = (6 dot F dot l_0 / m_n^2)
 La tensione massima viene così correlata direttamente al modulo del dente $m_n$ e a un parametro adimensionale puramente geometrico (dipendente dal numero di denti $z$ e dall'angolo di pressione $alpha_n$), che Lewis indicò come *fattore di forma*. Nelle tabelle tecniche sono riportati sia il coefficiente $y_("Lewis")$ (indicato anche con $y_(L w)$) sia il suo reciproco $Y = 1 / y_(L w)$:
 
 #v(0.5em)
-
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (center + horizon, center + horizon),
-  [
-    #align(center)[
-      #table(
-        columns: 4,
-        align: (left, left, left, left),
-        [*Numero di denti*], [$bold(Y)$], [*Numero di denti*], [$bold(Y)$],
-        [12], [0.245], [28], [0.353],
-        [13], [0.261], [30], [0.359],
-        [14], [0.277], [34], [0.371],
-        [15], [0.290], [38], [0.384],
-        [16], [0.296], [43], [0.397],
-        [17], [0.303], [50], [0.409],
-        [18], [0.309], [60], [0.422],
-        [19], [0.314], [75], [0.435],
-        [20], [0.322], [100], [0.447],
-        [21], [0.328], [150], [0.460],
-        [22], [0.331], [300], [0.472],
-        [24], [0.337], [400], [0.480],
-        [26], [0.346], [Dentiera], [0.485],
-      )
-    ]
-  ],
-  [
-    #align(center)[
-      #table(
-        columns: 6,
-        align: (left, left, left, left, left, left),
-        table.cell(rowspan: 2)[*$z, z'$*], table.cell(colspan: 2, align: center)[$bold(alpha_n = 20^circle)$], table.cell(rowspan: 2)[*$z, z'$*], table.cell(colspan: 2, align: right)[$bold(alpha_n = 20^circle)$],
-        [$bold(Y)$], [$bold(y_(L w))$], [$bold(Y)$], [$bold(y_(L w))$],
-        [12], [0,245], [4,08], [28], [0,352], [2,84],
-        [13], [0,261], [3,83], [30], [0,358], [2,79],
-        [14], [0,276], [3,62], [34], [0,371], [2,70],
-        [15], [0,289], [3,46], [38], [0,383], [2,61],
-        [16], [0,295], [3,39], [43], [0,396], [2,53],
-        [17], [0,302], [3,31], [50], [0,408], [2,45],
-        [18], [0,308], [3,25], [60], [0,421], [2,38],
-        [19], [0,314], [3,18], [75], [0,434], [2,30],
-        [20], [0,32], [3,13], [100], [0,446], [2,24],
-        [21], [0,327], [3,06], [150], [0,459], [2,18],
-        [22], [0,33], [3,03], [300], [0,471], [2,12],
-        [24], [0,336], [2,98], [$infinity$], [0,484], [2,07],
-        [25], [0,346], [2,89], [], [], [],
-      )
-    ]
-  ]
-)
-
+#pagebreak()
 / Numero di denti virtuale ($z'$): nelle *ruote cilindriche a denti elicoidali*, per entrare in tabella si utilizza il numero di denti equivalente (o virtuale) $z'$ valutato nella sezione normale all'elica, in luogo del numero di denti reale $z$.
 
 
