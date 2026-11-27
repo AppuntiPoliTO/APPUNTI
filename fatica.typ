@@ -922,23 +922,23 @@ Le campagne sperimentali sono raccolte nei diagrammi di R.E. Peterson (*Stress C
       #text(size: 7.5pt)[*Spallamento — Trazione*]
     ],
     [
-      #image("images/fatica/ECM01-5_peterson_spallamento_flessione.png", width: 100%)
+      #include "figs/fatica/fatica-fig09.typ"
       #text(size: 7.5pt)[*Spallamento — Flessione*]
     ],
     [
-      #include "figs/fatica-fig04.typ"
+      #include "figs/fatica/fatica-fig04.typ"
       #text(size: 7.5pt)[*Spallamento — Torsione*]
     ],
     [
-      #image("images/fatica/ECM01-5_peterson_gola_trazione.png", width: 100%)
+      #include "figs/fatica/fatica-fig07.typ"
       #text(size: 7.5pt)[*Gola — Trazione*]
     ],
     [
-      #image("images/fatica/ECM01-5_peterson_gola_flessione.png", width: 100%)
+      #include "figs/fatica/fatica-fig06.typ"
       #text(size: 7.5pt)[*Gola — Flessione*]
     ],
     [
-      #image("images/fatica/ECM01-5_peterson_gola_torsione.png", width: 100%)
+      #include "figs/fatica/fatica-fig05.typ"
       #text(size: 7.5pt)[*Gola — Torsione*]
     ],
   ),
@@ -958,7 +958,7 @@ Questa struttura riflette la *similitudine geometrica*: $K_t$ dipende soltanto d
     row-gutter: 0.6em,
     align: (center + bottom, center + bottom),
     [
-      #image("images/fatica/ECM01-5_peterson_lastra_spallamento.png", height: 4.1cm)
+      #include "figs/fatica/fatica-fig08.typ"
       #text(size: 7.5pt)[*Lastra con spallamento in trazione*]
     ],
     [
