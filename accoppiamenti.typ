@@ -205,7 +205,7 @@ Costituito da elementi a forma di molla elastica troncoconica cedevole, sagomata
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[2. Anelli compensatori (Star)]
 Anelli ondulati per stampaggio realizzati in nastro di acciaio temprato per molle, visivamente simili alla forma di un "blister" per medicinali svuotato. Inserendo questo anello in una cava di forzamento tra albero e mozzo, le bugne in rilievo subiscono uno schiacciamento radiale. La rigidezza strutturale dei rilievi genera la pressione di contatto per attrito necessaria alla trasmissione.],[
-#image("images/accoppiamenti/star.png", width:50%)
+#image("images/fig_accoppiamenti_3133.png", width: 65%)
 ])
 
 #grid(
