@@ -112,7 +112,7 @@ di equilibrio elastico del sistema. La proiezione di questo punto
 sull'asse delle ordinate fornisce la pressione effettiva di forzamento
 $p$. La coordinata associata all'intersezione permette inoltre di
 determinare il diametro di calettamento esatto:
-$ D_c = frac(D_(a e) dot.op D_(m i) dot.op\(delta_a + delta_m\), delta_a dot.op D_(a e) + delta_m dot.op D_(m i)) $],[#image("images/calettamenti/diagramma di interferenza.png", width:100%)])
+$ D_c = frac(D_(a e) dot.op D_(m i) dot.op\(delta_a + delta_m\), delta_a dot.op D_(a e) + delta_m dot.op D_(m i)) $],[#include "figs/calettamenti-fig01.typ"])
 
 === Sistema di Tolleranze e Condizioni Estreme
 #grid(
@@ -127,7 +127,7 @@ dove le lettere maiuscole si riferiscono ai fori (es. H) e quelle
 minuscole agli alberi. Spesso si utilizza un grado di qualità per
 l'albero pari a quello del foro meno uno (es. 16 H8/f7). Poiché la lavorazione produce quote che possono variare all'interno del
 campo di tolleranza, in fase di progetto è indispensabile valutare le
-due condizioni estreme dell'accoppiamento:],[#image("images/calettamenti/diagramma incertezze.png")])
+due condizioni estreme dell'accoppiamento:],[#include "figs/calettamenti-fig02.typ"])
 
 
 
