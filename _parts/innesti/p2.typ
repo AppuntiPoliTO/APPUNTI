@@ -101,6 +101,7 @@ Negli *innesti di sopravanzo* (*ruote libere*) il comando dipende dalla differen
   ],
   [#fig-safe(include "../../figs/innesti/ecm-c13-p2-08.typ", max-h: 4.3cm)],
 )
+#include "../../figs/p2-fig01.typ"
 
 
 === Innesti ad azionamento elettromagnetico
