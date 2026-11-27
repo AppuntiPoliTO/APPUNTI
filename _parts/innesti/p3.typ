@@ -10,16 +10,15 @@ L'innesto trasmette una coppia variabile $M_s (t)$ tra l'organo motore e l'organ
 
 ==== Analisi della sincronizzazione e del surriscaldamento
 
-Il transitorio di sincronizzazione governa la dinamica della trasmissione e il carico termico sulle superfici d'attrito (nei freni vale lo stesso schema, con decelerazione dell'organo frenato fino all'eventuale arresto):
+Il transitorio di sincronizzazione governa la dinamica della trasmissione e il carico termico sulle superfici d'attrito (nei freni vale lo stesso schema, con decelerazione dell'organo frenato fino all'eventuale arresto). I tre diagrammi sovrapposti mostrano l'evoluzione temporale del comando (`on`/`off`), delle coppie in gioco ($M_r, M_s, M_p$) e delle velocità angolari ($omega_m, omega_u$ e relativa $omega_r = omega_m - omega_u$):
 
 #fig-safe(include "../../figs/p3-fig01.typ",max-h: 9.4cm)
 
+- *Inserimento e ritardo ($t^*$–$t_0$).* Dal comando in $t^*$, giochi, rigidezze elastiche e inerzia dell'attuatore (idraulico meno pronto dell'elettromagnetico) ritardano l'inizio effettivo del contatto fino a $t_0$; in questo intervallo non viene ancora trasmessa coppia utile superiore a quella a vuoto $M_0$.
+- *Inseguimento dell'utilizzatore ($t_0$–$t_2$).* Da $t_0$ la spinta $F$ porta la coppia d'attrito cinetico oltre $M_0$ e il motore inizia a decelerare ($omega_m$ scende); l'utilizzatore rimane invece fermo alla velocità iniziale finché, in $t_1$, la coppia trasmessa non supera la coppia resistente $M_r$ vincendo l'inerzia $I_u$. Da $t_1$ l'utilizzatore accelera ($omega_u$ sale) e la coppia di slittamento si porta al valore di regime $M_s$ (che in prima approssimazione si può ritenere costante, così come il coefficiente d'attrito cinetico $f_c$).
+- *Sincronismo ($t_2$).* Quando $omega_m = omega_u$ ($omega_r = 0$), lo strisciamento cessa e le superfici diventano solidali: il coefficiente d'attrito passa da cinetico ($f_c$) a statico ($f_0 > f_c$), generando un picco di coppia trasmissibile senza slittamento $M_p$. Superata la fase di accelerazione verso la velocità di regime — non essendoci più né inerzia dell'utilizzatore da vincere né dissipazione per strisciamento — la coppia trasmessa si stabilizza su $M_r$. Al disinserimento (comando `off`) avviene il transitorio inverso di disaccoppiamento, generalmente più rapido.
 
-- *Inserimento e ritardo ($t^*$–$t_0$).* Dal comando in $t^*$, giochi, rigidezze e inerzia dell'attuatore (idraulico meno pronto dell'elettromagnetico) ritardano l'inizio effettivo del contatto fino a $t_0$.
-- *Inseguimento dell'utilizzatore ($t_0$–$t_2$).* Al crescere della spinta $F$, la coppia d'attrito cinetico supera la coppia a vuoto $M_0$ e, in $t_1$, supera la coppia resistente $M_r$: l'utilizzatore accelera ($omega_u$ sale) mentre il motore decelera ($omega_m$ scende) e la coppia di slittamento si porta al valore di regime $M_s$ (che in prima approssimazione si può ritenere costante, così come il coefficiente d'attrito cinetico $f_c$).
-- *Sincronismo ($t_2$).* Quando $omega_m = omega_u$, lo strisciamento cessa e il coefficiente d'attrito passa da cinetico ($f_c$) a statico ($f_0$), generando un picco di coppia trasmissibile senza slittamento $M_p$; successivamente il sistema solidale riacquista velocità angolare fino alla velocità di regime e la coppia si stabilizza su $M_r$. Al disinserimento (comando `off`) avviene il transitorio inverso di disaccoppiamento, generalmente più rapido.
-
-Durante lo strisciamento ($t_0$–$t_2$), la potenza termica generata eguaglia la potenza dissipata per attrito $M_s (t) dot omega_r (t)$, dove $omega_r = omega_m - omega_u$: la temperatura sale e decade poi verso la temperatura ambiente, mentre l'energia dissipata in calore $E_d = integral_(t_0)^(t_2) M_s (t) thin omega_r (t) thin d t$ è rappresentata dall'area compresa tra le curve $omega_m (t)$ e $omega_u (t)$. In caso di azionamenti ripetuti con tempo medio di riattivazione $t_m$ (*duty cycle*), un raffreddamento incompleto tra cicli successivi produce accumulo termico progressivo e surriscaldamento. Per scegliere o progettare l'innesto vanno quindi definiti i valori delle coppie caratteristiche ($M_0$, $M_r$, $M_s$, $M_p$), la velocità di regime, la velocità relativa massima e la frequenza degli inserimenti.
+Durante lo strisciamento ($t_0$–$t_2$), la potenza termica generata eguaglia la potenza dissipata per attrito $M_s (t) dot omega_r (t)$, dove $omega_r = omega_m - omega_u$: la temperatura sale e decade poi verso la temperatura ambiente, mentre l'energia dissipata in calore $E_d = integral_(t_0)^(t_2) M_s (t) thin omega_r (t) thin d t$ è rappresentata dall'area compresa tra le curve $omega_m (t)$ e $omega_u (t)$. Questa area va contenuta per limitare il surriscaldamento delle superfici; per contro, un inserimento troppo rapido o impulsivo causerebbe un brusco salto fino al picco $M_p$ (effetto *colpo d'ariete*), con sovraccarichi dannosi per la trasmissione. In caso di azionamenti ripetuti, noto il tempo medio di riattivazione $t_m$ (*duty cycle*, intervallo tra due inserimenti successivi), è possibile stimare a priori il flusso termico medio e la temperatura raggiunta, verificando che un raffreddamento incompleto non produca accumulo termico progressivo. Per scegliere o progettare l'innesto vanno quindi definiti i valori delle coppie caratteristiche ($M_0$, $M_r$, $M_s$, $M_p$), la velocità di regime, la velocità relativa massima e la frequenza degli inserimenti.
 
 ==== Dimensionamento a usura delle superfici d'attrito
 
@@ -28,9 +27,9 @@ Durante lo strisciamento ($t_0$–$t_2$), la potenza termica generata eguaglia l
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    Su una corona circolare compresa tra i raggi $r_i$ ed $r_e$ su un arco di ampiezza $phi$, la forza assiale $F$ e la coppia di slittamento $M_s$ valgono:
-    $ F = integral_(r_i)^(r_e) integral_0^phi p(r) thin r thin d phi thin d r $
-    $ M_s = integral_(r_i)^(r_e) integral_0^phi f dot p(r) dot r^2 thin d phi thin d r $
+    Su una corona circolare (o settore d'arco $phi$, con $phi = 2 pi$ per corona completa, modello valido sia per innesti che per freni a disco) compresa tra i raggi $r_i$ ed $r_e$, la forza assiale $F$ e la coppia di slittamento $M_s$ valgono:
+    $ F = integral_A p(r) thin d A = integral_(r_i)^(r_e) integral_0^phi p(r) thin r thin d phi thin d r $
+    $ M_s = integral_A f dot p(r) thin r thin d A = integral_(r_i)^(r_e) integral_0^phi f dot p(r) dot r^2 thin d phi thin d r $
   ],
   [#fig-safe(include "../../figs/innesti/ecm-c13-p3-02.typ", max-h: 5.2cm)],
 )
@@ -39,7 +38,7 @@ Durante lo strisciamento ($t_0$–$t_2$), la potenza termica generata eguaglia l
 
 Assumendo dischi rigidi ad accostamento parallelo (le cui superfici restano piane nonostante il consumo) e applicando la *legge di Archard* — modello generale di cedimento per *usura da sfregamento*, distinto dalla fatica da contatto — il tasso di riduzione dello spessore $h$ nell'unità di tempo risulta indipendente dal raggio:
 $ frac(d h, d t) = frac(c_u, H) p(r) thin omega r = "costante" $
-dove $c_u$ è il coefficiente d'usura e $H$ la durezza del materiale di guarnizione. Essendo $omega$ uniforme, segue $p(r) dot r = "costante"$: la pressione massima si localizza sul raggio interno $r_i$ con distribuzione iperbolica:
+dove $c_u$ è il coefficiente d'usura, $H$ la durezza del materiale di guarnizione e $omega r$ la velocità tangenziale locale di strisciamento. Essendo $omega$ uniforme, segue $p(r) dot r = "costante"$: la pressione massima si localizza sul raggio interno $r_i$ con distribuzione iperbolica:
 $ p(r) = p_"max" dot frac(r_i, r) $
 
 #v(0.4em)
@@ -52,7 +51,7 @@ $ p(r) = p_"max" dot frac(r_i, r) $
     Integrando $p(r)$ sulla corona circolare si ottengono:
     $ F = p_"max" r_i phi (r_e - r_i) $
     $ M_s = f p_"max" r_i phi frac(r_e^2 - r_i^2, 2) = f F r_m $
-    con raggio medio $r_m = (r_e + r_i) / 2$. Definiti l'efficacia $e = M_s / p_"max"$ e il rapporto geometrico $rho = r_e / r_i$, la condizione di ottimo $(d e) / (d rho) = 0$ fornisce analiticamente i rapporti geometrici riportati sui manuali:
+    con raggio medio $r_m = (r_e + r_i) / 2$. Definiti l'efficacia $e = M_s / p_"max"$ (coppia trasmessa per unità di pressione massima ammissibile) e il rapporto geometrico $rho = r_e / r_i$, la condizione di ottimo $(d e) / (d rho) = 0$ deriva analiticamente — a partire dalla sola relazione empirica di Archard — i rapporti geometrici riportati sui manuali:
     $ rho_0 = sqrt(3) quad arrow.r.double quad r_e approx 1.7 r_i , quad r_m approx 0.78 r_e $
   ],
   [#fig-safe(include "../../figs/innesti/ecm-c13-p3-03.typ", max-h: 4.8cm)],
@@ -60,10 +59,10 @@ $ p(r) = p_"max" dot frac(r_i, r) $
 
 #v(0.5em)
 
-Per un innesto *monodisco* ($2$ coppie di superfici attive, fronte e retro, con $d_m = 2 r_m$), la coppia di slittamento e il valore massimo di picco (sostituendo all'attrito cinetico $f_c$ quello *statico di primo distacco* $f_0$) valgono:
+Per un innesto *monodisco* ($2$ coppie di superfici attive, fronte e retro del disco condotto, con $d_m = 2 r_m$), la coppia di slittamento e il valore massimo di picco (sostituendo all'attrito cinetico $f_c$ quello *statico di primo distacco* $f_0$) valgono:
 $ M_s = 2 f_c F r_m = f_c F d_m , quad M_p = f_0 F d_m $
-Per un innesto *multidisco* con $z$ superfici attive, la coppia di slittamento risulta:
-$ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) $
+Per un innesto o freno *multidisco* con $z$ coppie di superfici d'attrito interfacciate in contatto, la coppia di slittamento e il valore massimo di picco risultano:
+$ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) , quad M_p approx frac(z f_0 F d_m, 2) $
 
 #nota[
   *Caduta di forza assiale nei multidisco.* Nei pacchi multidisco la forza normale effettiva tra i dischi più lontani dall'attuatore è solo *approssimativamente* pari alla forza di comando $F$, poiché parte della spinta viene dissipata dall'attrito di scorrimento sui profili scanalati (per questo nella formula compare il simbolo $approx$ e il numero di dischi è limitato).
@@ -76,12 +75,12 @@ $ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) $
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    Negli innesti conici a singola coppia di superfici (semiangolo di conicità $alpha$), scomponendo l'azione normale $p thin d A$ e la forza d'attrito $f p thin d A$ lungo la generatrice nelle direzioni assiale e radiale, l'equilibrio assiale fornisce:
+    Negli innesti conici a singola coppia di superfici (semiangolo di conicità $alpha$), scomponendo l'azione normale $p thin d A$ (componente assiale $p sin alpha thin d A$ e radiale $p cos alpha thin d A$) e la forza d'attrito $f p thin d A$ lungo la generatrice (componente assiale $f p cos alpha thin d A$), l'equilibrio assiale fornisce:
     $ F = integral_A p (sin alpha + f cos alpha) thin d A $
     $ arrow.r.double quad integral_A p thin d A = frac(F, sin alpha + f cos alpha) $
     La coppia di slittamento diventa quindi:
-    $ M_s = frac(f F, sin alpha + f cos alpha) dot frac(r_e + r_i, 2) $
-    Ottimizzando il guadagno $g = M_s / F$ imponendo $(d g) / (d f) = 0$ si ricava la conicità ottimale:
+    $ M_s = integral_A f p thin d A dot frac(r_e + r_i, 2) = frac(f F, sin alpha + f cos alpha) dot frac(r_e + r_i, 2) $
+    Ottimizzando il guadagno $g = M_s / F$ (coppia trasmessa rispetto alla forza di comando assiale) imponendo $(d g) / (d f) = 0$ si ricava la conicità ottimale:
     $ tan alpha = 1 - f $
     (ad esempio, per $f = 0.3$ risulta $alpha approx 35 degree$).
   ],
@@ -90,9 +89,9 @@ $ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) $
 
 === Cenni sui freni
 
-I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli innesti, ma dissipano l'energia cinetica per decelerare o arrestare l'organo rotante.
+I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli innesti, ma dissipano l'energia cinetica per decelerare o arrestare l'organo rotante, operando spesso con transitori brevi ma molto intensi in termini di forze, pressioni e flussi termici.
 
-- *Freni multidisco.* Adottati per impieghi saltuari ad altissima energia, come nei carrelli aeronautici (es. ATR 42) per l'interruzione d'emergenza della corsa di decollo. Rispetto alle frizioni multidisco impiegano dischi portanti e materiali d'attrito più spessi — per sostenere la severa usura e il rapido riscaldamento — e carcasse forate aperte per accelerare la ventilazione centrifuga.
+- *Freni multidisco.* Adottati per impieghi saltuari ad altissima energia, come nei carrelli aeronautici (es. ATR 42) per l'interruzione d'emergenza della corsa di decollo (attuatori idraulici o elettromeccanici periferici premono il pacco dischi attorno al perno del carrello e ai cuscinetti ruota). Rispetto alle frizioni multidisco impiegano dischi portanti e materiali d'attrito più spessi — per sostenere la severa usura e il rapido riscaldamento — e carcasse forate aperte per accelerare lo smaltimento termico mediante ventilazione centrifuga.
 
 #grid(
   columns: (1.25fr, 0.75fr),
@@ -104,7 +103,7 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
 
 #v(0.5em)
 
-- *Freni a ceppi interni o esterni e tamburo.* Costruttivamente semplici, ispezionabili e affidabili; l'accostamento dei ceppi avviene per rotazione attorno a una cerniera o traslazione radiale tramite camma (a), cilindro idraulico singolo (b) o doppio (c) o articolazione (d). L'*usura è disuniforme* e la forza d'attrito può favorire l'accostamento (*ceppo avvolgente*, effetto autoamplificante) oppure opporvisi (*ceppo svolgente*).
+- *Freni a ceppi interni o esterni e tamburo.* Costruttivamente semplici, ispezionabili e affidabili; l'accostamento dei ceppi avviene per rotazione attorno a una cerniera o traslazione radiale tramite camma (a), cilindro idraulico singolo (b) o doppio (c) o articolazione (d). L'*usura è disuniforme*: la forza d'attrito tangenziale genera rispetto alla cerniera un momento che può favorire l'accostamento (*ceppo avvolgente*, effetto autoamplificante con pressione e consumo maggiori) oppure opporvisi (*ceppo svolgente*).
 
 #grid(
   columns: (1.35fr, 0.65fr),
@@ -116,7 +115,7 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
 
 #v(0.5em)
 
-- *Freni a disco e pinza.* Il dimensionamento a frenatura, attrito, surriscaldamento e coppia è analogo a quello degli innesti piani a corona. La pinza serra pastiglie ad alto attrito contro un disco esposto (spesso ventilato o forato), garantendo elevata potenza frenante e rapido raffreddamento; le temperature raggiunte in tempi brevissimi (es. freni sportivi) impongono un rigoroso controllo dei flussi termici per evitare il danneggiamento o l'innesco di combustioni sui componenti adiacenti.
+- *Freni a disco e pinza.* Il dimensionamento a frenatura, attrito, surriscaldamento e coppia è analogo a quello degli innesti piani a corona. Nella pinza un pistone idraulico serra pastiglie ad alto attrito contro un disco esposto (spesso ventilato o forato, con molle di richiamo per il distacco a riposo), garantendo elevata potenza frenante e rapido raffreddamento; le temperature raggiunte in tempi brevissimi (es. freni sportivi) impongono un rigoroso controllo dei flussi termici per prevenire degrado delle prestazioni, cedimenti e innesco di combustioni sui componenti adiacenti.
 
 #grid(
   columns: (1.3fr, 0.7fr),
@@ -128,7 +127,7 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
 
 #v(0.5em)
 
-- *Freni a nastro.* Impiegati in macchine agricole e d'officina per la semplicità costruttiva (pur risultando meno dissipativi e meno precisi), sfruttano l'avvolgimento di un nastro flessibile su un tamburo mediante una leva di comando (bracci $a$ e $b$, tensioni $T_1$ e $T_2$). La forza di comando $F$ e la coppia frenante dipendono dalla posizione del fulcro e dal rapporto tra i bracci di leva; il consumo risulta disuniforme, concentrandosi all'estremità maggiormente sollecitata.
+- *Freni a nastro.* Impiegati in macchine agricole e d'officina per la semplicità costruttiva (pur risultando meno dissipativi e meno precisi), sfruttano l'avvolgimento di un nastro flessibile su un tamburo mediante una leva di comando (bracci $a$ e $b$, tensioni $T_1$ e $T_2$). La forza di comando $F$ e la coppia frenante dipendono dalla posizione del fulcro e dal rapporto tra i bracci di leva; per effetto dell'attrito d'avvolgimento le azioni scambiate lungo l'arco di contatto crescono verso il ramo più teso ($T_1 != T_2$), rendendo il consumo disuniforme e concentrato all'estremità maggiormente sollecitata.
 
 #grid(
   columns: (1fr, 1fr),
