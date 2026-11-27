@@ -99,9 +99,9 @@ Negli *innesti di sopravanzo* (*ruote libere*) il comando dipende dalla differen
   [
     Il mozzo presenta rampe eccentriche (o profilo sagomato) su cui poggiano *rulli cilindrici* mantenuti in leggero contatto iniziale contro l'anello esterno da piccole molle elicoidali. Nel verso di lavoro (linea continua, _innestata_) i rulli si incuneano tra mozzo e tamburo trasmettendo coppia per attrito in modo continuo, silenzioso e *senza gioco d'imbocco* (evitando il passo discreto e il saltellamento tipici dell'arpionismo); nel verso opposto (linea tratteggiata, _libera_) comprimono le molle, liberando il tamburo.
   ],
-  [#fig-safe(include "../../figs/innesti/ecm-c13-p2-08.typ", max-h: 4.3cm)],
+  [#include "../../figs/p2-fig01.typ"],
 )
-#include "../../figs/p2-fig01.typ"
+
 
 
 === Innesti ad azionamento elettromagnetico
