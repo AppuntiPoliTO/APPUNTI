@@ -791,7 +791,7 @@ $ C_S = 1 " per " d <= 10 thin "mm", quad lim_(d -> oo) C_S approx C_(L,"medio")
 La nucleazione del danno a fatica nasce sempre da irregolarità superficiali in microscala. Anche partendo da una provetta lappata a specchio ($R_a <= 0.8 thin mu"m"$, a cui compete $C_F = 1$), una sollecitazione alternata genera progressivamente disordine cristallino lungo tre morfologie tipiche:
 
 #grid(
-  columns: (1.06fr, 0.94fr),
+  columns: (1.0fr, 0.94fr),
   column-gutter: 0.9em,
   align: (left + horizon, center + horizon),
   [
@@ -801,8 +801,7 @@ La nucleazione del danno a fatica nasce sempre da irregolarità superficiali in 
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig89.typ",
-      caption: [Meccanismi microscopici di nucleazione superficiale.],
+      include "figs/fatica/fatica-fig89.typ"
     )
   ],
 )
@@ -816,8 +815,7 @@ La nucleazione del danno a fatica nasce sempre da irregolarità superficiali in 
   ],
   [
     #figure(
-      image("images/fatica/ECM01-4_topografia_rugosita.png", width: 76%),
-      caption: [Rilievo microscopico 3D della rugosità con avvallamento acuto d'innesco.],
+      image("images/fatica/ECM01-4_topografia_rugosita.png", width: 76%)
     )
   ],
 )
@@ -837,8 +835,7 @@ Il coefficiente $C_F$ non dipende solo dalla rugosità $R_a$, ma è diagrammato 
   ],
   [
     #figure(
-      include "figs/fatica/fatica-fig90.typ",
-      caption: [Coefficiente di finitura superficiale $C_F (R_m, R_a)$ per acciai ($R_m$ fino a $1500 thin "MPa"$).],
+      include "figs/fatica/fatica-fig90.typ"
     )
   ],
 )
