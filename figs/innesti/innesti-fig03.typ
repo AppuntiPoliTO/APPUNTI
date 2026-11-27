@@ -1,6 +1,7 @@
+// Disegno creato con Studio di LocalTypst
+#import "@preview/cetz:0.3.4": canvas, draw
 // Figura estratta da _parts/innesti/p1.typ (riga 493) con LocalTypst
 #import "../comuni/_helpers.typ": fig-safe, img-flag
-#import "@preview/cetz:0.3.4": canvas, draw
 
 #canvas(length: 0.9cm, {
   import draw: *
@@ -274,11 +275,11 @@
   rect((4.28, 0.31), (4.60, 0.62), fill: white.transparentize(15%), stroke: none, radius: 1.5pt)
   content((4.44, 0.465), text(size: 11.5pt, fill: rgb("#e60000"))[*D*])
 
-  // Richiamo "campana"
+  // Richiamo "Campana"
   line((4.95, 2.32), (6.10, 2.68), stroke: 0.6pt)
-  content((6.18, 2.70), text(size: 10pt)[_campana_], anchor: "west")
+  content((6.18, 2.70), text(size: 10pt)[_Campana_], anchor: "west")
 
-  // Richiamo "spingidisco"
+  // Richiamo "Spingidisco"
   line((4.82, -1.55), (6.00, -2.35), stroke: 0.6pt)
-  content((6.08, -2.38), text(size: 10pt)[_spingidisco_], anchor: "west")
+  content((6.08, -2.38), text(size: 10pt)[_Spingidisco_], anchor: "west")
 })

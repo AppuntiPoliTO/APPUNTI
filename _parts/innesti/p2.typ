@@ -10,7 +10,7 @@ La scelta dei materiali bilancia un coefficiente d'attrito elevato e stabile —
 - *Guarnizioni organiche a secco.* La superficie resistente all'usura è in acciaio o ghisa (in alternativa ceramica per favorire la conduzione termica. L'attrito cinetico a secco raggiunge $f_c = 0.3$–$0.4$, con pressione ammissibile $p <= 1" MPa"$ e velocità di strisciamento $v <= 40" m/s"$. L'usura accelera oltre la temperatura critica di $150 degree"C"$ e il degrado diventa irreversibile sopra $300 degree"C"$.
 - *Materiali sinterizzati per carichi termici elevati.* Per dissipazioni gravose si eliminano le guarnizioni usando dischi sinterizzati ferro-bronzo contro acciaio: tollerano temperature limite di $400$–$600 degree"C"$ e pressioni fino a $p <= 2" MPa"$, con attrito inferiore ($f_c = 0.15$–$0.3$) e velocità massima ridotta ($v <= 25" m/s"$).
 
-I coefficienti d'attrito variano in funzione di pressione (sollecitazione) $p$, velocità di strisciamento $v$ e temperatura $T$; in particolare, superata la temperatura critica, il decadimento delle prestazioni è brusco per la guarnizione organica (curva 1) e più graduale per il materiale sinterizzato (curva 2):
+I coefficienti d'attrito variano in funzione di pressione (sollecitazione) $p$, velocità di strisciamento $v$ e temperatura $T$; in particolare, superata la temperatura critica, il decadimento delle prestazioni è brusco per la guarnizione organica (curva 1) e più graduale per il materiale sinterizzato (curva 2) dove la linea continua rappresenta l'attrito cinetico $f$ e la linea tratteggiata rappresenta l'attrito statico $f_0$.:
 
 #grid(
   columns: (1fr, 1fr, 1fr),
@@ -21,7 +21,6 @@ I coefficienti d'attrito variano in funzione di pressione (sollecitazione) $p$, 
   [#fig-safe(include "../../figs/innesti/ecm-c13-p2-03.typ")],
 )
 #align(center, text(size: 8.5pt, fill: luma(80))[
-  Curva 1: guarnizione organica (*ferodo*); curva 2: materiale sinterizzato ferro-bronzo. Linea continua: attrito cinetico $f$; linea tratteggiata: attrito statico $f_0$.
 ])
 
 #v(0.4em)
