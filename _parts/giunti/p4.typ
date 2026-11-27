@@ -127,25 +127,15 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
 - la *rigidezza flessionale* dei bracci delle forcelle (per mantenere allineate le sedi dei vincoli);
 - la *resistenza a fatica* (e statica) dei bracci delle forcelle e dei perni della crociera;
 - la *resistenza e durata a fatica* delle bronzine o dei cuscinetti a rullini.
-
+#pagebreak()
 === Giunto omocinetico Rzeppa
-
-#grid(
-  columns: (0.98fr, 1.02fr),
-  column-gutter: 1.2em,
-  align: (left + horizon, center + horizon),
-  [
-    Il *giunto Rzeppa* è un giunto sferico *omocinetico* compatto, formato da:
+Il *giunto Rzeppa* è un giunto sferico *omocinetico* compatto, formato da:
     - una *campana* esterna con cavità sferica provvista di piste ad asse circolare eccentriche rispetto alla superficie sferica;
     - un *anello (nucleo) interno* sferico con analoghe piste eccentriche;
     - *sfere d'acciaio* che trasmettono la coppia;
     - una *gabbia* che trattiene le sfere sul *piano omocinetico* (piano bisettore degli assi dei due alberi), assicurando l'omocineticità;
     - una *cuffia conica in gomma* che protegge il giunto e trattiene il grasso lubrificante.
-  ],
-  [
-    #fig-safe(include "../../figs/giunti/ecm-c12-p4-08.typ", max-h: 5.2cm)
-  ],
-)
+
 
 #v(0.4em)
 
@@ -157,7 +147,7 @@ Fissate le dimensioni (la crociera è l'elemento più critico e può fungere da 
     *Principio duale rispetto al cuscinetto volvente.* Le piste sono ricavate *longitudinalmente* anziché circonferenzialmente: in direzione assiale le sfere scorrono consentendo l'inclinazione $alpha$ ($beta$) tra gli alberi; in direzione circonferenziale i fianchi delle piste le bloccano lateralmente trasmettendo la coppia per contatto hertziano. Le piste possono avere sezione *circolare*, *ellittica* o ad *arco gotico* (cuspide centrale): i profili ellittico e ad arco gotico realizzano *quattro punti di contatto* caricando una retta d'azione o quella opposta a seconda del verso del moto.
   ],
   [
-    #fig-safe(include "../../figs/giunti/giunti-fig07.typ", max-h: 5.2cm)
+    #fig-safe(include "../../figs/giunti/ecm-c12-p4-08.typ", max-h: 5.2cm)
   ],
 )
 
