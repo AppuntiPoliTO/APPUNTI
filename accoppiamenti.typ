@@ -99,8 +99,10 @@ I principali vantaggi di questo collegamento sono l'economicità, la facilità d
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[Per questi motivi, l'uso delle chiavette è oggi limitato ad applicazioni particolari, con basse velocità di rotazione e momenti torcenti modesti (tali da generare tensioni tangenziali $tau$ nell'albero di circa 20÷30 MPa). La determinazione analitica del momento trasmissibile è complessa. A causa del forzamento radiale introdotto da un corpo discreto, la pressione non è assialsimmetrica. Si verifica un effetto di bordo laterale con incrementi locali di pressione alle estremità della chiavetta, mentre la parte opposta dell'albero viene spinta contro il mozzo. Sotto l'azione del momento torcente, la chiavetta tende a ruotare nella sua sede, modificando ulteriormente la distribuzione del carico.
+  align: (left + horizon, center + horizon),[Per questi motivi, l'uso delle chiavette è oggi limitato ad applicazioni particolari, con basse velocità di rotazione e momenti torcenti modesti (tali da generare tensioni tangenziali $tau$ nell'albero di circa 20÷30 MPa). La determinazione analitica del momento trasmissibile è complessa. A causa del forzamento radiale introdotto da un corpo discreto, la pressione non è assialsimmetrica. Si verifica un effetto di bordo laterale con incrementi locali di pressione alle estremità della chiavetta, mentre la parte opposta dell'albero viene spinta contro il mozzo. 
 ],[#include "figs/accoppiamenti/accoppiamenti-fig05.typ"])
+Sotto l'azione del momento torcente, la chiavetta tende a ruotare nella sua sede, modificando ulteriormente la distribuzione del carico.
+
 Poiché non si conosce a priori la distribuzione esatta delle forze di attrito, ci si affida a formule empiriche fornite dalla letteratura tecnica e confermate da analisi FEM. Il momento trasmissibile è dato da:
 $ M_T tilde.eq 0.04 dot.op (2.28 dot.op d + h) dot.op b dot.op L dot.op p_("amm") $
 dove $d$ è il diametro dell'albero, $h$ e $b$ sono le dimensioni unificate della chiavetta e $L$ è la sua lunghezza.
