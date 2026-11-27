@@ -46,9 +46,8 @@ I coefficienti d'attrito variano in funzione di pressione (sollecitazione) $p$, 
 
 Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la coppia trasmessa supera un valore limite preimpostato, proteggendo la trasmissione da sovraccarichi accidentali; i primi due schemi illustrano veri innesti autoadattativi a ripristino automatico (senza rottura di parti), mentre il terzo mostra a confronto un giunto rigido a frattura prestabilita:
 
-
 #align(center)[
-  #image("/images/fig__parts_innesti_p2_8387.png", width: 75%)
+  #image("/images/fig__parts_innesti_p2_2136.png", width: 75%)
 ]
 
 
