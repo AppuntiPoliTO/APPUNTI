@@ -1,5 +1,6 @@
-// Figura estratta da accoppiamenti.typ (riga 224) con LocalTypst
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
+// Figura estratta da accoppiamenti.typ (riga 224) con LocalTypst
 
 #canvas(length: 0.8cm, {
   import draw: *
