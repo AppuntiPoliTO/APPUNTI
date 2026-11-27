@@ -97,7 +97,10 @@ $ rho_0 = sqrt(3) quad arrow.r.double quad r_e approx 1.7 r_i , quad r_m = frac(
     $ tan alpha = 1 - f $
     (ad esempio, per $f = 0.3$ risulta $alpha approx 35 degree$).
   ],
-  [#fig-safe(include "../../figs/innesti/ecm-c13-p3-04.typ", max-h: 5.2cm)],
+  [
+  
+  
+  #fig-safe(include "../../figs/innesti/ecm-c13-p3-04.typ", max-h: 5.2cm)],
 )
 
 === Cenni sui freni
