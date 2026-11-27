@@ -73,12 +73,22 @@ $ rho_0 = sqrt(3) quad arrow.r.double quad r_e approx 1.7 r_i , quad r_m = frac(
 Nel dimensionamento pratico, noti la coppia di slittamento richiesta $M_s$, i limiti del materiale ($f_c$, $f_0$, $p_"amm"$) e l'ingombro radiale $r_e$, si fissano $r_i$ e $r_m$ col rapporto ottimo, si determina la forza assiale di comando $F$ dalla coppia e si verifica che la pressione massima sul raggio interno rispetti $p_"max" = F / (r_i phi (r_e - r_i)) <= p_"amm"$.
 
 - *Innesti a frizione monodisco.* Il disco condotto, rivestito su entrambe le facce, è serrato tra volano motore e spingidisco: le *coppie di superfici d'attrito attive sono due* (fronte e retro, con diametro medio $d_m = 2 r_m = r_e + r_i$). Poiché le due superfici lavorano in parallelo per la trasmissione della coppia ma sono attraversate assialmente in serie dalla stessa spinta $F$, la coppia di slittamento raddoppia mentre $p_"max"$ su ciascuna interfaccia resta determinata da $F$:
-  $ M_s = 2 f_c F r_m = f_c F d_m $
+  #grid(
+  columns: 2,
+  gutter: 1em,
+  [$ M_s = 2 f_c F r_m = f_c F d_m $
   Per determinare il *valore massimo della coppia* trasmissibile senza slittamento (al sincronismo / primo distacco) basta sostituire al coefficiente d'attrito cinetico $f_c$ quello *statico di primo distacco* $f_0$:
-  $ M_p = 2 f_0 F r_m = f_0 F d_m $
+  $ M_p = 2 f_0 F r_m = f_0 F d_m $],
+  [#include "../../figs/p3-fig04.typ"],
+)
 
-- *Innesti e freni multidisco.* Per trasmettere coppie elevate mantenendo ridotto l'ingombro radiale, si impaccano più dischi conduttori (sulla campana) e condotti (sul mozzo scanalato) alternati, ottenendo $z$ *coppie di superfici d'attrito interfacciate* in contatto. La coppia sviluppata durante lo slittamento e il corrispondente valore massimo statico (sostituendo $f_0$ a $f_c$) risultano:
-  $ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) , quad M_p approx z f_0 F r_m = frac(z f_0 F d_m, 2) $
+#grid(
+  columns: 2,
+  gutter: 1em,
+  [- *Innesti e freni multidisco.* Per trasmettere coppie elevate mantenendo ridotto l'ingombro radiale, si impaccano più dischi conduttori (sulla campana) e condotti (sul mozzo scanalato) alternati, ottenendo $z$ *coppie di superfici d'attrito interfacciate* in contatto. La coppia sviluppata durante lo slittamento e il corrispondente valore massimo statico (sostituendo $f_0$ a $f_c$) risultano:
+  $ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) , quad M_p approx z f_0 F r_m = frac(z f_0 F d_m, 2) $],
+  [#include "../../figs/p3-fig03.typ"],
+)
 
 #nota[
   *Caduta di forza assiale nei multidisco.* Nei pacchi multidisco la forza normale effettiva tra i dischi — in particolare tra quelli più lontani dal dispositivo di comando — è solo *approssimativamente* pari alla forza di comando $F$, poiché parte della spinta viene dissipata dall'attrito di scorrimento sui profili scanalati assiali (per questo compare il simbolo $approx$ e il numero di dischi $z$ è limitato anche da esigenze di ingombro e smaltimento termico al centro del pacco).
@@ -111,6 +121,8 @@ Nel dimensionamento pratico, noti la coppia di slittamento richiesta $M_s$, i li
 I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli innesti, ma dissipano l'energia cinetica per decelerare o arrestare l'organo rotante, operando spesso con transitori brevi ma molto intensi in termini di forze, pressioni e flussi termici.
 
 - *Freni multidisco.* Adottati per impieghi saltuari ad altissima energia, come nei carrelli aeronautici (es. ATR 42) per l'interruzione d'emergenza della corsa di decollo (attuatori idraulici o elettromeccanici periferici premono il pacco dischi attorno al perno del carrello e ai cuscinetti ruota). Rispetto alle frizioni multidisco impiegano dischi portanti e materiali d'attrito più spessi — per sostenere la severa usura e il rapido riscaldamento — e carcasse forate aperte per accelerare lo smaltimento termico mediante ventilazione centrifuga.
+
+
 
 #grid(
   columns: (1.25fr, 0.75fr),
