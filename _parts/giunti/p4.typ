@@ -204,17 +204,7 @@ $ overline(M) = M dot tan(beta / 2) $
 
 #v(0.4em)
 
-#grid(
-  columns: (0.95fr, 1.05fr),
-  column-gutter: 1.2em,
-  align: (left + horizon, center + horizon),
-  [
-    *Applicazioni:* compatto e adatto a elevati angoli di lavoro, è impiegato tipicamente nei *semiassi* degli autoveicoli a trazione anteriore (lato *mozzo ruota* sterzante e spesso lato *differenziale*) per assecondare sterzata ed escursione delle sospensioni.
-  ],
-  [
-    #fig-safe(image("../../images/giunti/ecm-c12-p4-12.jpg"), max-h: 4.3cm)
-  ],
-)
+*Applicazioni:* compatto e adatto a elevati angoli di lavoro, è impiegato tipicamente nei *semiassi* degli autoveicoli a trazione anteriore (lato *mozzo ruota* sterzante e spesso lato *differenziale*) per assecondare sterzata ed escursione delle sospensioni.
 
 === Giunto a tripode
 
