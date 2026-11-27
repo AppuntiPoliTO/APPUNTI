@@ -1,19 +1,11 @@
 {
   "branches": {
-    "doc/aldomoro-meccanica-dei-fluidi": {
-      "folder_name": "_ALDOMORO_ Meccanica dei Fluidi",
-      "branch": "doc/aldomoro-meccanica-dei-fluidi",
-      "last_commit_oid": "9f8e9359952dfc6e4388a74df4368049bcce4d6e",
+    "doc/ecm-0428415c": {
+      "folder_name": "ECM",
+      "branch": "doc/ecm-0428415c",
+      "last_commit_oid": "d37b491cb530ffb21848961589d3b98e09805d16",
       "pending_push": false,
-      "last_attempt_timestamp": "2026-11-10 14:41:24",
-      "last_error": null
-    },
-    "doc/aldomoro-ecm-2-e1329def": {
-      "folder_name": "_ALDOMORO__ECM_2",
-      "branch": "doc/aldomoro-ecm-2-e1329def",
-      "last_commit_oid": "2af63b9138af895a70ff376394034ed8ed6798c2",
-      "pending_push": false,
-      "last_attempt_timestamp": "2026-11-26 17:24:22",
+      "last_attempt_timestamp": "2026-11-27 13:19:16",
       "last_error": null
     },
     "doc/aldomoro-elettrotecnica": {
@@ -21,7 +13,31 @@
       "branch": "doc/aldomoro-elettrotecnica",
       "last_commit_oid": "1e0b4fb67303ee0f18f4cd8a718530674c356446",
       "pending_push": false,
-      "last_attempt_timestamp": "2026-11-26 17:24:15",
+      "last_attempt_timestamp": "2026-11-27 13:19:02",
+      "last_error": null
+    },
+    "doc/appunti-ecm-locale-e937698b": {
+      "folder_name": "Appunti_ECM_Locale",
+      "branch": "doc/appunti-ecm-locale-e937698b",
+      "last_commit_oid": "d165050196383029f4e3515026345bf1297ac0fc",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-27 13:19:12",
+      "last_error": null
+    },
+    "doc/aldomoro-fms": {
+      "folder_name": "_ALDOMORO_ fms",
+      "branch": "doc/aldomoro-fms",
+      "last_commit_oid": "2ad468d35bc2573982dc795fc274d5c874524e97",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-27 13:19:04",
+      "last_error": null
+    },
+    "doc/aldomoro-analisi-2": {
+      "folder_name": "_ALDOMORO_ Analisi 2",
+      "branch": "doc/aldomoro-analisi-2",
+      "last_commit_oid": "86fd2640b60eab3d21643bb44a77b6d0c51cd0ce",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-27 13:19:00",
       "last_error": null
     },
     "doc/succhiamicazzi": {
@@ -32,12 +48,20 @@
       "last_attempt_timestamp": "2026-11-10 14:41:33",
       "last_error": null
     },
+    "doc/aldomoro-meccanica-dei-fluidi": {
+      "folder_name": "_ALDOMORO_ Meccanica dei Fluidi",
+      "branch": "doc/aldomoro-meccanica-dei-fluidi",
+      "last_commit_oid": "9f8e9359952dfc6e4388a74df4368049bcce4d6e",
+      "pending_push": false,
+      "last_attempt_timestamp": "2026-11-10 14:41:24",
+      "last_error": null
+    },
     "doc/meccanica-dei-fluidi-ffb61bca": {
       "folder_name": "Meccanica_dei_Fluidi",
       "branch": "doc/meccanica-dei-fluidi-ffb61bca",
       "last_commit_oid": "3441c93e04bf36a145a7886794fd83420fb95a04",
       "pending_push": false,
-      "last_attempt_timestamp": "2026-11-26 17:24:20",
+      "last_attempt_timestamp": "2026-11-27 13:19:07",
       "last_error": null
     },
     "doc/aldomoro-ecm": {
@@ -48,28 +72,12 @@
       "last_attempt_timestamp": "2026-11-18 13:01:11",
       "last_error": null
     },
-    "doc/aldomoro-analisi-2": {
-      "folder_name": "_ALDOMORO_ Analisi 2",
-      "branch": "doc/aldomoro-analisi-2",
-      "last_commit_oid": "86fd2640b60eab3d21643bb44a77b6d0c51cd0ce",
+    "doc/aldomoro-ecm-2-e1329def": {
+      "folder_name": "_ALDOMORO__ECM_2",
+      "branch": "doc/aldomoro-ecm-2-e1329def",
+      "last_commit_oid": "2af63b9138af895a70ff376394034ed8ed6798c2",
       "pending_push": false,
-      "last_attempt_timestamp": "2026-11-26 17:24:13",
-      "last_error": null
-    },
-    "doc/appunti-ecm-locale-e937698b": {
-      "folder_name": "Appunti_ECM_Locale",
-      "branch": "doc/appunti-ecm-locale-e937698b",
-      "last_commit_oid": "d165050196383029f4e3515026345bf1297ac0fc",
-      "pending_push": false,
-      "last_attempt_timestamp": "2026-11-26 17:24:25",
-      "last_error": null
-    },
-    "doc/aldomoro-fms": {
-      "folder_name": "_ALDOMORO_ fms",
-      "branch": "doc/aldomoro-fms",
-      "last_commit_oid": "2ad468d35bc2573982dc795fc274d5c874524e97",
-      "pending_push": false,
-      "last_attempt_timestamp": "2026-11-26 17:24:18",
+      "last_attempt_timestamp": "2026-11-27 13:19:09",
       "last_error": null
     }
   }
