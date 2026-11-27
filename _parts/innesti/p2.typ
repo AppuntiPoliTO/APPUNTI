@@ -73,7 +73,16 @@ Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la 
   #fig-safe(include "../../figs/innesti/ecm-c13-p2-05.typ", max-h: 4.3cm)],
 )
 
+#pagebreak()
 ==== Innesto di sopravanzo ad arpionismo (ruota libera)
+
+#grid(
+  columns: (1fr, 0.85fr),
+  column-gutter: 1em,
+  align: (center + horizon, center + horizon),
+  [#fig-safe(include "../../figs/innesti/ecm-c13-p2-06.typ", max-h: 4.6cm)],
+  [#fig-safe(image("../../images/innesti/ecm-c13-p2-07.jpg"), max-h: 4.4cm)],
+)
 
 Negli *innesti di sopravanzo* (*ruote libere*) il comando dipende dalla differenza (e dal segno) delle velocità di rotazione tra organo motore e condotto: il collegamento si disinnesta automaticamente sia quando l'utilizzatore tende a superare in velocità l'organo motore nello stesso senso (*sopravanzo*, $omega_u > omega_m$), sia quando tende a invertire il verso di rotazione relativo, proteggendo la macchina motrice. A differenza dell'innesto centrifugo — in cui le molle mantengono il dispositivo *aperto* a riposo — nelle ruote libere le molle mantengono gli elementi *in presa*. Nel tipo ad *arpionismo*, il mozzo porta *nottolini* incernierati spinti verso l'esterno da molle: quando la velocità relativa ha il verso indicato dalla *linea rossa* in figura, i nottolini si impegnano stabilmente nei denti interni del tamburo trasmettendo coppia; nel verso opposto rientrano nelle sedi saltellando e strisciando a vuoto sui denti (soluzione impiegata, come le ruote libere ad attrito, nei rotori degli elicotteri per consentire l'autorotazione). L'angolo di inclinazione $alpha$ dei denti interni deve essere scelto in modo che le forze agenti sui nottolini ne favoriscano l'entrata in presa completa verso il fondo del vano, evitando espulsioni sotto carico.
 
