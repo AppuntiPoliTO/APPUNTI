@@ -35,7 +35,7 @@ rottura per fatica* dei due elementi. Il calettamento viene effettuato industria
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[La relazione tra il momento torcente trasmissibile e la pressione di forzamento si ricava analizzando le forze all'interfaccia. Sulla superficie di contatto agisce una forza normale di forzamento radiale. Considerando un elemento infinitesimo di superficie avente lunghezza pari a un arco $r dot.op d theta$ e profondità assiale $b$ (lunghezza dell'accoppiamento forzato), la forza normale è: $ d N = p dot.op b dot.op r dot.op d theta $ 
-],[#image("images/calettamenti/tr mom torc.png", width:70%)])
+],[#include "figs/calettamenti-fig03.typ"])
 Questa forza normale genera un'azione di attrito di direzione
 tangenziale se $f$ è il coefficiente di attrito tra i materiali la forza è definita come: 
 $ d T = f dot.op d N = f dot.op p dot.op b dot.op r dot.op d theta $  \
