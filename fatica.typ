@@ -638,10 +638,7 @@ Tutte le curve S–N e i poligoni di Haigh, Goodman--Smith, Moore o Rös appena 
 
 #pagebreak()
 
-#align(center)[
-  #text(size: 16pt, weight: "bold")[Fatica dei componenti meccanici: carico, scala e finitura]
-]
-#v(0.4em)
+
 
 == Da provetta a componente
 
