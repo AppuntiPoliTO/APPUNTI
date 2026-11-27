@@ -1703,11 +1703,6 @@ Per aggirare il dubbio si calcolavano talvolta due limiti di fatica distinti per
 
 #pagebreak()
 
-#align(center)[
-  #text(size: 16pt, weight: "bold")[Fatica ad ampiezza variabile]
-]
-#v(0.4em)
-
 == Fatica ad ampiezza variabile
 
 === Sollecitazioni ad ampiezza variabile e classificazione dei segnali
