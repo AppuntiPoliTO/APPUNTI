@@ -343,7 +343,7 @@ L'articolazione dei supporti richiede lo studio di combinazioni specifiche per g
 
 ==== Bloccaggio Assiale e Radiale
 #grid(
-  columns: (1.1fr, 1fr),
+  columns: (0.8fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Il bloccaggio assiale degli anelli sfrutta soluzioni costruttive simili al collegamento albero-mozzo. Tra le soluzioni costruttive si annoverano l'anello filettato (ghiera) che spinge sull'anello interno, piastre terminali fissate con viti in testa all'albero, coperchi terminali avvitati allo statore, anelli di ancoraggio (elastici) inseriti in apposite cave, collari di spallamento o bussole distanziali.],[
 #include "figs/cuscinetti/cuscinetti-fig14.typ"
