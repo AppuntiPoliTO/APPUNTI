@@ -37,7 +37,8 @@ Il giunto *BIBBY* (o a nastro a serpentina) collega due mozzi flangiati dentati 
     #fig-safe(include "../../figs/giunti/ecm-c12-p3-02.typ", max-h: 5.5cm)
   ],
   [
-    #fig-safe(image("../../images/giunti/ecm-c12-p3-bibby-3d.jpg", height: 5.5cm), max-h: 5.5cm)
+    #image("../../images/fig__parts_giunti_p3_4239.png", width: 75%)
+
   ],
 )
 

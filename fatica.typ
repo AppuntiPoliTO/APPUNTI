@@ -918,7 +918,7 @@ Le campagne sperimentali sono raccolte nei diagrammi di R.E. Peterson (*Stress C
     row-gutter: 0.6em,
     align: (center + bottom, center + bottom, center + bottom),
     [
-      #image("images/_doppioni/fatica/ECM01-5_peterson_spallamento_trazione.png", width: 100%)
+      #include "figs/fatica/fatica-fig03.typ"
       #text(size: 7.5pt)[*Spallamento — Trazione*]
     ],
     [
@@ -926,7 +926,7 @@ Le campagne sperimentali sono raccolte nei diagrammi di R.E. Peterson (*Stress C
       #text(size: 7.5pt)[*Spallamento — Flessione*]
     ],
     [
-      #image("images/_doppioni/fatica/ECM01-5_peterson_spallamento_torsione.png", width: 100%)
+      #include "figs/fatica-fig04.typ"
       #text(size: 7.5pt)[*Spallamento — Torsione*]
     ],
     [
@@ -1144,11 +1144,11 @@ Il parametro $A$ decresce con la tensione di snervamento $R_"eH"$ o $R_"p0.2"$. 
     column-gutter: 1em,
     align: (center + bottom, center + bottom),
     [
-      #include "figs/fatica-fig01.typ"
+      #include "figs/fatica/fatica-fig01.typ"
       #text(size: 8pt)[(a) Abaco sperimentale della sensibilità $q(r)$]
     ],
     [
-      #include "figs/fatica-fig02.typ"
+      #include "figs/fatica/fatica-fig02.typ"
       #text(size: 8pt)[(b) Parametro di Neuber $A(R_"eH", R_"p0.2")$]
     ],
   ),
