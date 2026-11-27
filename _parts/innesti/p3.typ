@@ -58,6 +58,7 @@ $ p(r) = frac("costante", r) = p_"max" dot frac(r_i, r) $
   ],
   [
   
+#include "../../figs/p3-fig02.typ"
   
   #fig-safe(include "../../figs/innesti/ecm-c13-p3-03.typ", max-h: 4.8cm)],
 )
