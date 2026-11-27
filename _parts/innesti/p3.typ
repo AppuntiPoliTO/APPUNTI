@@ -143,7 +143,7 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
   column-gutter: 0.8em,
   align: (center + horizon, center + horizon),
   [#align(center)[
-  #image("/images/fig__parts_innesti_p3_4753.png", width: 5%)
+  #image("/images/fig__parts_innesti_p3_4753.png", width: 85%)
 ]
 
 ],
