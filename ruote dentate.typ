@@ -227,8 +227,6 @@ Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel
 // FASE 2 - COSTRUZIONE
 #include "figs/ruote-dentate/ruote-dentate-fig05.typ"
 
-\
-
 
 #include "figs/ruote-dentate/ruote-dentate-fig06.typ"
   ],
