@@ -1,6 +1,6 @@
 // Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 0.8cm, {
+#canvas(length: 0.6cm, {
   import draw: *
   circle((0, 0), radius: 2.7, fill: black, stroke: none)
   line((2.5942, 0.9436), (1.7048, 0.5384), (1.6773, 0.5173), (1.6613, 0.4865), (1.6614, 0.4452), (1.6821, 0.4093), (1.7113, 0.3907), (1.7456, 0.3862), (2.7184, 0.4800), close: true, fill: white, stroke: none)
