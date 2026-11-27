@@ -77,9 +77,9 @@
 
   let scale-y = 0.44
   let z1 = 0.08
-  let mu = 0.22
-  let f = 0.84
-  let z2 = 0.16
+  let mu = 0.18
+  let f = 0.82
+  let z2 = 0.14
 
   let pts1 = ()
   let y1-max = 0.0
