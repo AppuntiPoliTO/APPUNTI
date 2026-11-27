@@ -120,28 +120,30 @@
     line((7.32, cy + sgn * 0.37), (10.05, cy + sgn * 0.37), stroke: 0.55pt)
   }
 
-  let x-pack = 7.36
-  for k in range(3) {
-    let xd = x-pack + k * 0.84
+  let x-pack = 7.38
+  for k in range(5) {
+    let xd = x-pack + k * 0.47
     for sgn in (1, -1) {
-      let y0 = calc.min(cy + sgn * 0.46, cy + sgn * 1.34)
-      let y1 = calc.max(cy + sgn * 0.46, cy + sgn * 1.34)
-      rect((xd, y0), (xd + 0.14, y1), fill: luma(165), stroke: 0.65pt)
-      rect((xd + 0.14, y0), (xd + 0.26, y1), fill: white, stroke: 0.7pt)
-      rect((xd + 0.26, y0), (xd + 0.40, y1), fill: luma(165), stroke: 0.65pt)
+      let y0 = calc.min(cy + sgn * 0.56, cy + sgn * 1.54)
+      let y1 = calc.max(cy + sgn * 0.56, cy + sgn * 1.54)
+      rect((xd, y0), (xd + 0.13, y1), fill: gray.transparentize(82%), stroke: 0.75pt)
+      hatch-rect(xd, y0, xd + 0.13, y1, step: 0.18, dir: 1)
     }
   }
-  for k in range(2) {
-    let xd = x-pack + 0.44 + k * 0.84
+  for k in range(4) {
+    let xd = x-pack + 0.19 + k * 0.47
     for sgn in (1, -1) {
-      let y0 = calc.min(cy + sgn * 0.58, cy + sgn * 1.54)
-      let y1 = calc.max(cy + sgn * 0.58, cy + sgn * 1.54)
-      rect((xd, y0), (xd + 0.34, y1), fill: gray.transparentize(82%), stroke: 0.8pt)
-      hatch-rect(xd, y0, xd + 0.34, y1, step: 0.20, dir: 1)
+      let yc0 = calc.min(cy + sgn * 0.37, cy + sgn * 1.34)
+      let yc1 = calc.max(cy + sgn * 0.37, cy + sgn * 1.34)
+      let yf0 = calc.min(cy + sgn * 0.56, cy + sgn * 1.34)
+      let yf1 = calc.max(cy + sgn * 0.56, cy + sgn * 1.34)
+      rect((xd + 0.06, yc0), (xd + 0.16, yc1), fill: white, stroke: 0.7pt)
+      rect((xd, yf0), (xd + 0.06, yf1), fill: luma(165), stroke: 0.6pt)
+      rect((xd + 0.16, yf0), (xd + 0.22, yf1), fill: luma(165), stroke: 0.6pt)
     }
   }
 
-  let xsp0 = 9.52
+  let xsp0 = 9.48
   let xsp1 = 10.12
   for sgn in (1, -1) {
     let y0 = calc.min(cy + sgn * 0.54, cy + sgn * 1.54)
@@ -170,7 +172,7 @@
   line((1.55, cy + 2.08), (6.95, cy + 1.25), stroke: 0.55pt + luma(50))
 
   content((1.25, cy - 2.20), text(size: 9pt, style: "italic")[spingidisco/i])
-  line((2.35, cy - 2.15), (9.82, cy - 1.15), stroke: 0.55pt + luma(50))
+  line((2.35, cy - 2.15), (9.80, cy - 1.15), stroke: 0.55pt + luma(50))
 
   // =========================================================================
   // PARTE INFERIORE: INNESTO MULTIDISCO ELETTROMAGNETICO (SEMISEZIONE)
@@ -211,22 +213,22 @@
   circle((3.36, 2.66), radius: 0.10, stroke: 0.7pt)
   line((2.65, 2.66), (4.10, 2.66), stroke: (dash: "dash-dotted", thickness: 0.45pt, paint: luma(80)))
 
-  let xpk0 = 3.92
+  let xpk0 = 3.94
   let dt = 0.23
   for k in range(9) {
     let x0 = xpk0 + k * dt
     let is-outer = calc.rem(k, 2) == 0
     if is-outer {
-      rect((x0, yhub + 0.12), (x0 + dt - 0.02, ydr-lo + 0.22), fill: gray.transparentize(78%), stroke: 0.7pt)
+      rect((x0, yhub + 0.12), (x0 + 0.15, ydr-lo + 0.22), fill: gray.transparentize(78%), stroke: 0.7pt)
     } else {
-      rect((x0, yhub - 0.14), (x0 + dt - 0.02, ydr-lo - 0.08), fill: luma(175), stroke: 0.7pt)
+      rect((x0, yhub - 0.14), (x0 + 0.15, ydr-lo - 0.08), fill: luma(175), stroke: 0.7pt)
     }
   }
-  line((xpk0, ydr-lo + 0.22), (xpk0 + 9 * dt, ydr-lo + 0.22), stroke: 0.65pt)
-  line((xpk0, yhub - 0.14), (xpk0 + 9 * dt, yhub - 0.14), stroke: 0.65pt)
+  line((xpk0 - 0.04, ydr-lo + 0.22), (5.97, ydr-lo + 0.22), stroke: 0.65pt)
+  line((xpk0 - 0.04, yhub - 0.14), (5.97, yhub - 0.14), stroke: 0.65pt)
 
-  let xpl0 = xpk0 + 9 * dt + 0.02
-  let xpl1 = xpl0 + 0.34
+  let xpl0 = 6.01
+  let xpl1 = 6.35
   rect((xpl0, yhub), (xpl1, ydr-lo), fill: gray.transparentize(82%), stroke: 0.9pt)
   hatch-rect(xpl0, yhub, xpl1, ydr-lo, step: 0.20, dir: -1)
 
