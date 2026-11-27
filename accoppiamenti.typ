@@ -30,7 +30,7 @@ La naturale estensione dell'analisi dei collegamenti albero-mozzo prevede lo stu
 $ D_m = frac(d_1 + d_2, 2) $
 $ tan alpha = frac(d_1 - d_2, 2 L) $
 dove $L$ è la lunghezza dell'accoppiamento nella direzione assiale.],[
-#image("images/accoppiamenti/accoppiamento conico.png",width:80%)]
+#include "figs/accoppiamenti-fig01.typ"]
 )
 
 #grid(
