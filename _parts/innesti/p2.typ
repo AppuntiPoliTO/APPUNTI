@@ -121,13 +121,13 @@ Negli *innesti di sopravanzo* (*ruote libere*) il comando dipende dalla differen
 )
 
 ==== Innesti a particelle magnetiche e fluidi magnetoreologici
-
+Analogamente al giunto idraulico, rotore motore e rotore condotto non hanno contatto solido diretto e sono separati da un'intercapedine contenente *polveri ferromagnetiche* (o *fluidi magnetoreologici* / *elettroreologici*, che variano la propria viscosità sotto campo magnetico o elettrico e possono lavorare anche come freni). A campo nullo la polvere non è strutturata ma, a differenza di altri innesti elettromagnetici, mantiene un minimo contatto con lieve *trascinamento residuo* (*residual drag*). Eccitando la bobina, le particelle si allineano lungo le linee di flusso in catene capaci di trasmettere sforzi di taglio $tau$: in un dispositivo molto compatto la risposta è quasi istantanea e la coppia è pressoché lineare con tensione/corrente di eccitazione (ideale per controllo continuo in catena chiusa e sistemi meccatronici *safety critical*). Dato lo slittamento parziale o continuo, il dimensionamento è governato dallo smaltimento termico (spesso migliorato con carcasse in alluminio o raffreddamento forzato ad aria)
 #grid(
   columns: (1.05fr, 0.95fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),
   [
-    Analogamente al giunto idraulico, rotore motore e rotore condotto non hanno contatto solido diretto e sono separati da un'intercapedine contenente *polveri ferromagnetiche* (o *fluidi magnetoreologici* / *elettroreologici*, che variano la propria viscosità sotto campo magnetico o elettrico e possono lavorare anche come freni). A campo nullo la polvere non è strutturata ma, a differenza di altri innesti elettromagnetici, mantiene un minimo contatto con lieve *trascinamento residuo* (*residual drag*). Eccitando la bobina, le particelle si allineano lungo le linee di flusso in catene capaci di trasmettere sforzi di taglio $tau$: in un dispositivo molto compatto la risposta è quasi istantanea e la coppia è pressoché lineare con tensione/corrente di eccitazione (ideale per controllo continuo in catena chiusa e sistemi meccatronici *safety critical*). Dato lo slittamento parziale o continuo, il dimensionamento è governato dallo smaltimento termico (spesso migliorato con carcasse in alluminio o raffreddamento forzato ad aria).
+    .
   ],
   [#fig-safe(image("../../images/innesti/ecm-c13-p2-particelle.jpg"), max-h: 4.5cm)],
 )
