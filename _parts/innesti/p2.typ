@@ -88,8 +88,8 @@ Negli *innesti di sopravanzo* (*ruote libere*) il comando dipende dalla differen
   [
     I *giunti idraulici* trasferiscono potenza senza contatto solido tramite un fluido tra due giranti affacciate (in analogia a due ventilatori posti di fronte): la girante motrice (*pompa*) accelera il fluido verso la palettatura della girante condotta (*turbina*). La coppia dipende non linearmente dalla velocità relativa; il sincronismo perfetto non è mai raggiungibile e lo *slittamento residuo* dissipa potenza anche a regime. Anche interponendo un diaframma per interrompere il flusso permane una minima coppia di trascinamento.
   ],[
-  #image("images/fig__parts_innesti_p2_0562.png", width: 75%)
-]],
+  #image("/images/fig__parts_innesti_p2_0562.png", width: 100%)
+]),
 )
 
 ==== Innesti elettromeccanici
