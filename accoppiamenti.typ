@@ -220,7 +220,7 @@ Si basa su una serie di anelli dalla superficie troncoconica divisi in due metà
 ])
 
 #grid(
-  columns: (1.4fr, 1fr),
+  columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[4. Sistema con bussola conica (Taper-lock)]
 Comprende un mozzo e una bussola con un unico piano inclinato conico (generalmente con semi-angolo ampio, es. 55°). Stringendo delle viti laterali (o grani) all'interno di sedi filettate per metà sul mozzo e per metà sulla bussola, si costringe la bussola ad avanzare assialmente chiudendo un intaglio (taglio) longitudinale. Questo movimento genera la stretta radiale.],[#include "figs/accoppiamenti/accoppiamenti-fig11.typ"
