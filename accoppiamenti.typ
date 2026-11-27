@@ -193,7 +193,7 @@ $ M_(T, m a x) = tau_("amm") dot.op frac(pi dot.op d^2 dot.op D, 4) $
 
 === Calettatori Commerciali e Industriali
 Qualora sia necessario accoppiare un albero e un mozzo cilindrici senza eseguire lavorazioni interne di cave o scanalature, si ricorre ai calettatori commerciali ad attrito. Questi dispositivi interposti si deformano o si posizionano in modo da generare una forte pressione radiale tra le parti, rendendole solidali.
-/pa
+
 #strong[1. Sistema a dischi a stella (Ringspann)]
 #grid(
   columns: (1fr, 1fr),
