@@ -193,12 +193,12 @@ $ M_(T, m a x) = tau_("amm") dot.op frac(pi dot.op d^2 dot.op D, 4) $
 
 === Calettatori Commerciali e Industriali
 Qualora sia necessario accoppiare un albero e un mozzo cilindrici senza eseguire lavorazioni interne di cave o scanalature, si ricorre ai calettatori commerciali ad attrito. Questi dispositivi interposti si deformano o si posizionano in modo da generare una forte pressione radiale tra le parti, rendendole solidali.
-
+#v(1em)
 #strong[1. Sistema a dischi a stella (Ringspann)]
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 1em,
-  align: (left + horizon, center + horizon),[
+  align: (left + top, center + top),[
 Costituito da elementi a forma di molla elastica troncoconica cedevole, sagomata con un profilo a greca sulla circonferenza. Applicando una forza assiale, il disco si inflette e tende ad appiattirsi; diminuendo il diametro interno e aumentando quello esterno, si produce un'azione di impuntamento (forzamento radiale) contro l'albero e il mozzo. L'effetto si moltiplica impacchettando in serie più dischi (fino a un massimo di 16).],[
 #include "figs/accoppiamenti/accoppiamenti-fig09.typ"
 ])
