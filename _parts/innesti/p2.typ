@@ -28,7 +28,6 @@ I coefficienti d'attrito variano in funzione di pressione (sollecitazione) $p$, 
 #nota[
   *Stick-slip.* Il coefficiente d'attrito cinetico $f$ è inferiore a quello statico $f_0$ del $10$–$20\%$. In prossimità del sincronismo (o subito dopo averlo raggiunto) questo scarto può innescare oscillazioni autoeccitate di adesione e scorrimento (*stick-slip*) con vibrazioni e rumorosità marcata.
 ]
-=== Innesti senza contatto ed elettromeccanici
 
 ==== Giunti idraulici (fluidodinamici)
 
@@ -41,6 +40,7 @@ I coefficienti d'attrito variano in funzione di pressione (sollecitazione) $p$, 
   ],[
   #image("/images/fig__parts_innesti_p2_0562.png", width: 110%)
 ])
+#pagebreak()
 
 === Innesti di sicurezza (limitatori di coppia)
 
