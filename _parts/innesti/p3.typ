@@ -12,6 +12,8 @@ L'innesto trasmette una coppia variabile $M_s (t)$ tra l'organo motore e l'organ
 
 Il transitorio di sincronizzazione governa la dinamica della trasmissione e il carico termico sulle superfici d'attrito (nei freni vale lo stesso schema, con decelerazione dell'organo frenato fino all'eventuale arresto):
 
+
+
 #fig-safe(include "../../figs/innesti/ecm-c13-p3-01.typ", max-h: 6.4cm)
 
 - *Inserimento e ritardo ($t^*$–$t_0$).* Dal comando in $t^*$, giochi, rigidezze e inerzia dell'attuatore (idraulico meno pronto dell'elettromagnetico) ritardano l'inizio effettivo del contatto fino a $t_0$.
