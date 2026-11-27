@@ -223,36 +223,17 @@ Dallo studio dell'accoppiamento ad evolvente di cerchio discendono tre propriet�
 Durante l'ingranamento, ciascun dente di una ruota si inserisce ciclicamente nel vano compreso tra due denti consecutivi della ruota coniugata. È quindi indispensabile attribuire al dente un'*estensione radiale finita e calibrata* affinché il punto di contatto possa scorrere liberamente sul fianco per tutta la durata dell'angolo di rotazione previsto, il quale risulta suddiviso in *angolo di accesso* (prima del centro di istantanea rotazione $P$) e *angolo di recesso* (dopo $P$). Tale proporzionamento deve evitare sia condizioni di *interferenza o incastro* geometrico, sia condizioni eccessivamente lasche che impedirebbero di mantenere la continuità del contatto lungo il *segmento di ingranamento* $a$-$b$.
 
 #v(0.5em)
-
+#fit-box(include "figs/ruote-dentate/ruote-dentate-fig05.typ")
+    #v(0.6em)
+    #fit-box(include "figs/ruote-dentate/ruote-dentate-fig06.typ")
 #grid(
   columns: (1.15fr, 0.85fr),
   column-gutter: 1.5em,
   align: (center + horizon, left + horizon),
   [
-    #fit-box(include "figs/ruote-dentate/ruote-dentate-fig05.typ")
-    #v(0.6em)
-    #fit-box(include "figs/ruote-dentate/ruote-dentate-fig06.typ")
+    
   ],
   [
-==== Le quattro circonferenze caratteristiche
-    Procedendo dall'interno verso l'esterno della ruota dentata, la geometria radiale del dente è scandita da quattro circonferenze fondamentali:
-
-    #v(0.5em)
-
-    / Circonferenza di piede (o di fondo): è la circonferenza più interna (generalmente di raggio inferiore al cerchio di base), in corrispondenza della quale la base del dente si raccorda con la *corona circolare* (corpo principale) della ruota dentata.
-    
-    / Circonferenza di base: è la circonferenza costruttiva che definisce il *sistema cinematico equivalente* cinghia-puleggia da cui si genera geometricamente il *profilo ad evolvente*.
-    
-    / Circonferenza primitiva: è la circonferenza cinematica di riferimento che rappresenta i due *rulli cilindrici ideali* premuti a contatto tra loro nel punto primitivo $P$.
-    
-    / Circonferenza di testa: è la circonferenza più esterna, che delimita superiormente il dente definendone il *troncamento* dal lato alto.
-
-    #v(0.8em)
-
-    *Nomenclatura cinematica nel disegno:*
-    / Centri di rotazione ($O_1, O_2$): assi fissi del *pignone* (conduttore) e della *ruota* (condotta).
-    / Punto primitivo ($P$): punto di tangenza tra le circonferenze primitive.
-    / Estremi di contatto ($a, b$): punti di inizio ($a$) e fine ($b$) dell'ingranamento lungo la *linea di pressione*
   ]
 )
 
