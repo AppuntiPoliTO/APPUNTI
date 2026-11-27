@@ -78,11 +78,11 @@ La forza specifica da applicare al singolo bullone si otterrà dividendo $F_("to
   columns: (1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[#strong[Mozzo con fessura diametrale]\ 
-Per elementi semplici e non soggetti a dinamiche inerziali gravose, si utilizza un mozzo dotato di una fessura diametrale, che lo rende simile a un morsetto elastico. Le due estremità flessibili vengono avvicinate tramite una o più viti. L'equilibrio del sistema si valuta calcolando i momenti rispetto all'apice della fessura. Il momento generato dalla forza totale delle viti $F_("tot viti")$ con braccio $a$ deve equilibrare il momento generato dalla forza di reazione $F$ (dovuta alla pressione sull'albero) con braccio $b$: $ F_("tot viti") dot.op a = F dot.op b $ La forza $F$ genera una pressione tra mozzo e albero pari a:
-$ p = frac(F, D_c dot.op L) $],[
+Per elementi semplici e non soggetti a dinamiche inerziali gravose, si utilizza un mozzo dotato di una fessura diametrale, che lo rende simile a un morsetto elastico. Le due estremità flessibili vengono avvicinate tramite una o più viti. L'equilibrio del sistema si valuta calcolando i momenti rispetto all'apice della fessura. Il momento generato dalla forza totale delle viti ],[
 #include "figs/accoppiamenti/accoppiamenti-fig04.typ"
 ])
-
+$F_("tot viti")$ con braccio $a$ deve equilibrare il momento generato dalla forza di reazione $F$ (dovuta alla pressione sull'albero) con braccio $b$: $ F_("tot viti") dot.op a = F dot.op b $ La forza $F$ genera una pressione tra mozzo e albero pari a:
+$ p = frac(F, D_c dot.op L) $
 
 
 

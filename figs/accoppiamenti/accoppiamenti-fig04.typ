@@ -1,6 +1,6 @@
 // Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 1cm, {
+#canvas(length: 0.8cm, {
   import draw: *
 
   rect((0, 0), (3.0, 5.3), fill: rgb("#f8f9fa"), stroke: none)
