@@ -1,6 +1,6 @@
 // Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 0.85cm, {
+#canvas(length: 0.7cm, {
   import draw: *
 
   // --- 1. DENTI DELLA RUOTA (RIEMPIMENTO ALLINEATO AI PROFILI) ---
