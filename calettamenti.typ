@@ -18,8 +18,7 @@
 = *Calettamenti e Collegamenti Mozzo-Albero*
 
 == Calettamento Mozzo-Albero
-#align(image("images/fig_calettamenti_5574.png")
-, width:70%), center)
+#align(image("images/fig_calettamenti_5574.png"), center))
 Un'applicazione fondamentale della teoria dei solidi assialsimmetrici è il collegamento *albero-mozzo*, comunemente noto come *calettamento*. L'obiettivo primario di questa soluzione costruttiva è il fissaggio
 solidale di accessori su un albero rotante, come ad esempio anelli interni di cuscinetti, ruote dentate, volani o dischi di turbina. Il metodo si basa sul *forzamento* per pressione tra la superficie interna
 del mozzo e la superficie esterna dell'albero, realizzando un contatto che impedisca lo *scorrimento relativo* e permetta ai due corpi di comportarsi come un'entità unica durante la rotazione. Per realizzare il calettamento, i due elementi vengono forzati l'uno
