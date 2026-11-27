@@ -12,9 +12,8 @@ L'innesto trasmette una coppia variabile $M_s (t)$ tra l'organo motore e l'organ
 
 Il transitorio di sincronizzazione governa la dinamica della trasmissione e il carico termico sulle superfici d'attrito (nei freni vale lo stesso schema, con decelerazione dell'organo frenato fino all'eventuale arresto):
 
+#fig-safe(include "../../figs/p3-fig01.typ",max-h: 9.4cm)
 
-
-#fig-safe(include "../../figs/innesti/ecm-c13-p3-01.typ", max-h: 6.4cm)
 
 - *Inserimento e ritardo ($t^*$–$t_0$).* Dal comando in $t^*$, giochi, rigidezze e inerzia dell'attuatore (idraulico meno pronto dell'elettromagnetico) ritardano l'inizio effettivo del contatto fino a $t_0$.
 - *Inseguimento dell'utilizzatore ($t_0$–$t_2$).* Al crescere della spinta $F$, la coppia d'attrito cinetico supera la coppia a vuoto $M_0$ e, in $t_1$, supera la coppia resistente $M_r$: l'utilizzatore accelera ($omega_u$ sale) mentre il motore decelera ($omega_m$ scende) e la coppia di slittamento si porta al valore di regime $M_s$ (che in prima approssimazione si può ritenere costante, così come il coefficiente d'attrito cinetico $f_c$).
