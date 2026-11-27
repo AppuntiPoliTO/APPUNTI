@@ -8,7 +8,7 @@
 
 L'innesto trasmette una coppia variabile $M_s (t)$ tra l'organo motore e l'organo condotto, ciascuno dotato di un momento d'inerzia ($I_m$ e $I_u$, di regola costanti) che rappresenta le inerzie del motore, dell'utilizzatore e dei relativi componenti della trasmissione ridotte all'asse di rotazione dell'innesto, soggetti rispettivamente alla coppia motrice $M_m$ e resistente $M_r$, inizialmente a velocità angolari distinte ($omega_(m,0) != omega_(u,0)$).
 
-==== Analisi della sincronizzazione e del surriscaldamento
+==== Analisi della sincronizzazione
 
 Il transitorio di sincronizzazione governa la dinamica della trasmissione e il carico termico sulle superfici d'attrito (nei freni vale lo stesso schema, con decelerazione dell'organo frenato fino all'eventuale arresto). I tre diagrammi sovrapposti mostrano l'evoluzione temporale del comando (`on`/`off`), delle coppie in gioco ($M_r, M_s, M_p$) e delle velocità angolari ($omega_m, omega_u$ e relativa $omega_r = omega_m - omega_u$):
 
@@ -18,7 +18,9 @@ Il transitorio di sincronizzazione governa la dinamica della trasmissione e il c
 - *Inseguimento dell'utilizzatore ($t_0$–$t_2$).* Da $t_0$ la spinta $F$ porta la coppia d'attrito cinetico oltre $M_0$ e il motore inizia a decelerare ($omega_m$ scende); l'utilizzatore rimane invece fermo alla velocità iniziale finché, in $t_1$, la coppia trasmessa non supera la coppia resistente $M_r$ vincendo l'inerzia $I_u$. Da $t_1$ l'utilizzatore accelera ($omega_u$ sale) e la coppia di slittamento si porta al valore di regime $M_s$ (che in prima approssimazione si può ritenere costante, così come il coefficiente d'attrito cinetico $f_c$).
 - *Sincronismo ($t_2$).* Quando $omega_m = omega_u$ ($omega_r = 0$), lo strisciamento cessa e le superfici diventano solidali: il coefficiente d'attrito passa da cinetico ($f_c$) a statico ($f_0 > f_c$), generando un picco di coppia trasmissibile senza slittamento $M_p$. Superata la fase di accelerazione verso la velocità di regime — non essendoci più né inerzia dell'utilizzatore da vincere né dissipazione per strisciamento — la coppia trasmessa si stabilizza su $M_r$. Al disinserimento (comando `off`) avviene il transitorio inverso di disaccoppiamento, generalmente più rapido.
 
-Durante lo strisciamento ($t_0$–$t_2$), la potenza termica generata eguaglia la potenza dissipata per attrito $M_s (t) dot omega_r (t)$, dove $omega_r = omega_m - omega_u$: la temperatura sale per un flusso di calore pari alla potenza dissipata e successivamente decade verso la temperatura ambiente, mentre l'energia dissipata in calore $E_d = integral_(t_0)^(t_2) M_s (t) thin omega_r (t) thin d t$ *è rappresentata dall'area compresa tra le curve $omega_m (t)$ e $omega_u (t)$*. Questa area va contenuta per limitare il riscaldamento delle superfici; per contro, un inserimento troppo rapido o impulsivo causerebbe un brusco salto fino al picco $M_p$ (effetto *colpo d'ariete*), con sovraccarichi dannosi per la trasmissione.
+==== Analisi del surriscaldamento
+
+Durante lo strisciamento ($t_0$–$t_2$), la potenza termica generata eguaglia la potenza dissipata per attrito $M_s (t) dot omega_r (t)$, dove $omega_r = omega_m - omega_u$: la temperatura sale per un flusso di calore pari alla potenza dissipata e successivamente decade verso la temperatura ambiente, mentre l'energia dissipata in calore $E_d = integral_(t_0)^(t_2) M_s (t) thin omega_r (t) thin d t$ è rappresentata dall'area compresa tra le curve $omega_m (t)$ e $omega_u (t)$. Questa area va contenuta per limitare il riscaldamento delle superfici; per contro, un inserimento troppo rapido o impulsivo causerebbe un brusco salto fino al picco $M_p$ (effetto *colpo d'ariete*), con sovraccarichi dannosi per la trasmissione.
 #pagebreak()
 *Tempo medio di riattivazione e duty cycle.* Un aspetto determinante — che non emerge direttamente dal diagramma del singolo transitorio — è il *tempo medio di riattivazione dell'innesto* $t_m$, cioè l'intervallo di tempo tra un inserimento e quello successivo imposto dal profilo di missione (studio del *duty cycle*). Anche quando il singolo ciclo di dissipazione è sotto controllo, azionamenti ripetuti a intervalli troppo ravvicinati non lasciano tempo sufficiente per smaltire il calore verso l'ambiente, generando accumulo termico (*isteresi termica*) e surriscaldamento progressivo dell'innesto. Stabilendo $t_m$, flusso di calore medio e temperatura raggiunta possono essere calcolati a priori. Per scegliere, acquistare o progettare l'innesto vanno quindi definiti i valori delle coppie caratteristiche ($M_0$, $M_r$, $M_s$, $M_p$), la velocità di regime, la velocità relativa massima e la frequenza degli inserimenti.
 
@@ -56,10 +58,7 @@ $ p(r) = frac("costante", r) = p_"max" dot frac(r_i, r) $
     Scomponendo $r_e^2 - r_i^2 = (r_e - r_i)(r_e + r_i)$ e riconoscendo l'espressione di $F$, la coppia si riduce alla forma compatta in funzione del raggio medio $r_m = (r_e + r_i) / 2$:
     $ M_s = f F r_m $
   ],
-  [
-  
-#include "../../figs/p3-fig02.typ"
-  ],
+  [#fig-safe(include "../../figs/p3-fig02.typ", max-h: 5.2cm)],
 )
 
 #v(0.4em)
@@ -69,16 +68,20 @@ $ e = frac(M_s, p_"max") = frac(1, 2) f phi r_e^3 ( frac(1, rho) - frac(1, rho^3
 Imponendo la condizione di stazionarietà $(d e) / (d rho) = 0$ si ricava $3 / rho^4 - 1 / rho^2 = 0$, da cui discendono analiticamente — a partire dalla sola relazione empirica di Archard — i rapporti geometrici riportati nei manuali:
 $ rho_0 = sqrt(3) quad arrow.r.double quad r_e approx 1.7 r_i , quad r_m = frac(r_e + r_i, 2) approx 0.78 r_e $
 
-#v(0.4em)
+==== Innesti a frizione monodisco e multidisco
 
-*Applicazione a innesti monodisco e multidisco.* Nel dimensionamento pratico, noti $M_s$ richiesta, i limiti del materiale ($f_c$, $f_0$, $p_"amm"$) e $r_e$, si fissano $r_i$ e $r_m$ col rapporto ottimo, si determina la forza assiale di comando $F$ dalla coppia e si verifica che la pressione massima sul bordo interno rispetti $p_"max" = F / (r_i phi (r_e - r_i)) <= p_"amm"$.
-- *Innesto monodisco.* Dispone di $2$ coppie di superfici attive (fronte e retro del disco condotto, con diametro medio $d_m = 2 r_m$): la coppia di slittamento e il valore massimo di picco statico (sostituendo a $f_c$ l'attrito *statico di primo distacco* $f_0$) valgono:
-  $ M_s = 2 f_c F r_m = f_c F d_m , quad M_p = f_0 F d_m $
-- *Innesto o freno multidisco.* Con $z$ coppie di superfici d'attrito interfacciate in contatto, la coppia di slittamento e il valore di picco risultano:
-  $ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) , quad M_p approx frac(z f_0 F d_m, 2) $
+Nel dimensionamento pratico, noti la coppia di slittamento richiesta $M_s$, i limiti del materiale ($f_c$, $f_0$, $p_"amm"$) e l'ingombro radiale $r_e$, si fissano $r_i$ e $r_m$ col rapporto ottimo, si determina la forza assiale di comando $F$ dalla coppia e si verifica che la pressione massima sul raggio interno rispetti $p_"max" = F / (r_i phi (r_e - r_i)) <= p_"amm"$.
+
+- *Innesti a frizione monodisco.* Il disco condotto, rivestito su entrambe le facce, è serrato tra volano motore e spingidisco: le *coppie di superfici d'attrito attive sono due* (fronte e retro, con diametro medio $d_m = 2 r_m = r_e + r_i$). Poiché le due superfici lavorano in parallelo per la trasmissione della coppia ma sono attraversate assialmente in serie dalla stessa spinta $F$, la coppia di slittamento raddoppia mentre $p_"max"$ su ciascuna interfaccia resta determinata da $F$:
+  $ M_s = 2 f_c F r_m = f_c F d_m $
+  Per determinare il *valore massimo della coppia* trasmissibile senza slittamento (al sincronismo / primo distacco) basta sostituire al coefficiente d'attrito cinetico $f_c$ quello *statico di primo distacco* $f_0$:
+  $ M_p = 2 f_0 F r_m = f_0 F d_m $
+
+- *Innesti e freni multidisco.* Per trasmettere coppie elevate mantenendo ridotto l'ingombro radiale, si impaccano più dischi conduttori (sulla campana) e condotti (sul mozzo scanalato) alternati, ottenendo $z$ *coppie di superfici d'attrito interfacciate* in contatto. La coppia sviluppata durante lo slittamento e il corrispondente valore massimo statico (sostituendo $f_0$ a $f_c$) risultano:
+  $ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) , quad M_p approx z f_0 F r_m = frac(z f_0 F d_m, 2) $
 
 #nota[
-  *Caduta di forza assiale nei multidisco.* Nei pacchi multidisco la forza normale effettiva tra i dischi più lontani dall'attuatore è solo *approssimativamente* pari alla forza di comando $F$, poiché parte della spinta viene dissipata dall'attrito di scorrimento sui profili scanalati assiali (per questo compare il simbolo $approx$ e il numero di dischi $z$ è limitato anche da esigenze di ingombro e smaltimento termico al centro del pacco).
+  *Caduta di forza assiale nei multidisco.* Nei pacchi multidisco la forza normale effettiva tra i dischi — in particolare tra quelli più lontani dal dispositivo di comando — è solo *approssimativamente* pari alla forza di comando $F$, poiché parte della spinta viene dissipata dall'attrito di scorrimento sui profili scanalati assiali (per questo compare il simbolo $approx$ e il numero di dischi $z$ è limitato anche da esigenze di ingombro e smaltimento termico al centro del pacco).
 ]
 
 ==== Innesti a frizione conici
