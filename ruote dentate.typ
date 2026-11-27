@@ -501,7 +501,7 @@ Per evitare condizioni di interferenza geometrica alla base del dente durante l'
     ]
   ,
   [
-    #image("images/ruote-dentate/4d741021-6053-41b2-a86d-c4ffa4912f8f-11_578_680_1927_1008.jpg", width: 90%)
+    #include "figs/ruote-dentate-fig01.typ"
   ]
 )
 

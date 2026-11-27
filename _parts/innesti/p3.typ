@@ -112,8 +112,8 @@ Nel dimensionamento pratico, noti la coppia di slittamento richiesta $M_s$, i li
   ],
   [
   
-  
-  #fig-safe(include "../../figs/innesti/ecm-c13-p3-04.typ", max-h: 5.2cm)],
+#include "../../figs/p3-fig05.typ"
+  ],
 )
 #pagebreak()
 === Cenni sui freni
@@ -142,7 +142,10 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
   columns: (1.35fr, 0.65fr),
   column-gutter: 0.8em,
   align: (center + horizon, center + horizon),
-  [#fig-safe(image("../../images/innesti/ecm-c13-p3-ceppi-schema.jpg"), max-h: 4.0cm)],
+  [#align(center)[
+  #image("/images/fig__parts_innesti_p3_7191.png", width: 75%)
+]
+],
   [#fig-safe(image("../../images/innesti/ecm-c13-p3-ceppi-foto.jpg"), max-h: 4.0cm)],
 )
 
