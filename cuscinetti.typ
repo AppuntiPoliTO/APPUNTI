@@ -343,8 +343,8 @@ L'articolazione dei supporti richiede lo studio di combinazioni specifiche per g
 
 ==== Bloccaggio Assiale e Radiale
 #grid(
-  columns: (0.8fr, 1fr),
-  column-gutter: 1em,
+  columns: (0.75fr, 1fr),
+  column-gutter: 2em,
   align: (left + horizon, center + horizon),[Il bloccaggio assiale degli anelli sfrutta soluzioni costruttive simili al collegamento albero-mozzo. Tra le soluzioni costruttive si annoverano l'anello filettato (ghiera) che spinge sull'anello interno, piastre terminali fissate con viti in testa all'albero, coperchi terminali avvitati allo statore, anelli di ancoraggio (elastici) inseriti in apposite cave, collari di spallamento o bussole distanziali.],[
 #include "figs/cuscinetti/cuscinetti-fig14.typ"
 ])
@@ -407,7 +407,7 @@ $ Delta T = frac(i_("max") + s, alpha dot.op d dot.op 10^3) $
 
 Dove $i_("max")$ è l'interferenza massima in $mu m$ e $s$ è il gioco aggiuntivo per il montaggio (ulteriori $30 div 100  mu m$).
 Esistono limiti stringenti per il riscaldamento, dettati dalle proprietà chimico-fisiche dei lubrificanti più che dai materiali strutturali: i cuscinetti non devono essere riscaldati oltre i 120°C e, se dotati di lubrificazione a vita, non oltre gli 80°C (indicativamente 70-80°C).
-
+#pagebreak()
 === Disposizioni Particolari: Cuscinetti Obliqui e Precarico
 
 I cuscinetti obliqui (a sfere o a rulli) sopportano carichi radiali e assiali. A causa della loro forma, un carico radiale genera una forza assiale interna che deve essere equilibrata da un'azione in senso opposto; per questo vengono montati in opposizione. I cuscinetti obliqui possono essere montati in tre disposizioni: in tandem (rette d'azione parallele, sopportano carichi assiali in un solo senso), a 'O' (rette d'azione divergenti verso l'asse di rotazione), o a 'X' (rette d'azione convergenti incrociandosi verso l'asse). La denominazione 'O' o 'X' si riferisce esclusivamente alla geometria delle rette d'azione (la risultante applicata dal corpo volvente sulle piste), mai agli assi geometrici dei corpi volventi.
