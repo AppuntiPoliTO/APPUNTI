@@ -1,6 +1,6 @@
 // Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 1cm, {
+#canvas(length: 0.5cm, {
   import draw: *
 
   line((0, -5.0), (12, -5.0), stroke: 0.9pt)
