@@ -1014,27 +1014,17 @@ Al crescere di $P$, il profilo tensionale evolve attraverso quattro stadi consec
 + *Stadio (d) — Completa plasticizzazione in $C$.* Quando anche il cuore $C$ raggiunge $R_"eH"$, l'intera sezione è snervata (*cerniera plastica*): esaurita la riserva elastica di recupero (*recovering*), un modesto aumento di $P$ porta tutte le fibre lungo il tratto plastico fino alla rottura duttile ($R_m$).
 
 ==== Criteri di verifica per sollecitazioni uniassiali
+#figure(
+      include "figs/fatica/fatica-fig94.typ",
+    )
 
-#grid(
-  columns: (1fr, 1fr),
-  column-gutter: 1em,
-  align: (left + horizon, center + horizon),
-  [
-    Il comportamento statico si classifica tramite l'allungamento percentuale a rottura $A\%$, misurato sul tratto calibrato ricomponendo le due metà del provino dopo trazione.
+ Il comportamento statico si classifica tramite l'allungamento percentuale a rottura $A\%$, misurato sul tratto calibrato ricomponendo le due metà del provino dopo trazione.
 
     Nei *materiali fragili* ($A < 5\%$) la curva $sigma$–$varepsilon$ resta quasi lineare fino alla decoesione improvvisa: una cricca innescata sul bordo $A$ propaga istantaneamente, perciò la verifica deve confrontare il picco effettivo con il carico unitario di rottura $R_m$:
 
     $ sigma^"max" = K_t dot sigma_"nom" < R_m $
 
     I *materiali duttili* ($A > 5\%$) mostrano invece uno snervamento evidente ($R_"eH"$) o convenzionale allo $0.2\%$ ($R_"p0.2"$), seguito da incrudimento e *strizione* prima della rottura.
-  ],
-  [
-    #figure(
-      include "figs/fatica/fatica-fig94.typ",
-    )
-  ],
-)
-
 Nei materiali duttili il criterio di verifica cambia secondo la definizione progettuale di cedimento (introducendo poi il coefficiente di sicurezza sul limite scelto):
 
 - *Primo snervamento.* Se non è ammessa alcuna plasticizzazione locale, il punto critico resta il bordo $A$ e si applica $K_t$ confrontando $sigma^"max" = K_t sigma_"nom"$ con $R_"eH"$ (o $R_"p0.2"$).
@@ -1079,6 +1069,8 @@ Per i materiali duttili l'ipotesi di Von Mises compone le tensioni nella tension
 === Effetto dell'intaglio a fatica: fattore $K_f$, sensibilità $q$ e metodi numerici
 
 ==== Fattore di riduzione della resistenza a fatica $K_f$ e confronto con $K_t$
+
+#v(1em)
 
 #grid(
   columns: (1fr, 1fr),

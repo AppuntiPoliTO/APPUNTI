@@ -4,7 +4,7 @@
 #let varepsilon = $epsilon$
 #let varepsilon = $epsilon$
 
-#canvas(length: 1.02cm, {
+#canvas(length: 1.5cm, {
   // BBox: x in [-0.3, 8.5] (dx=8.8), y in [-0.3, 5.0], length=0.92cm -> larghezza = 8.10 cm <= 8.2 cm
   import draw: *
 
