@@ -25,11 +25,6 @@
 #let varphi = $phi$
 #let varepsilon = $epsilon$
 
-#align(center)[
-  #text(size: 16pt, weight: "bold")[Caratterizzazione a fatica e diagrammi fondamentali]
-]
-#v(0.2em)
-
 
 #set heading(numbering: "1.")
 = *Resistenza a Fatica dei Materiali e dei Componenti*
