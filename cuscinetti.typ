@@ -346,7 +346,7 @@ L'articolazione dei supporti richiede lo studio di combinazioni specifiche per g
   columns: (1.1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Il bloccaggio assiale degli anelli sfrutta soluzioni costruttive simili al collegamento albero-mozzo. Tra le soluzioni costruttive si annoverano l'anello filettato (ghiera) che spinge sull'anello interno, piastre terminali fissate con viti in testa all'albero, coperchi terminali avvitati allo statore, anelli di ancoraggio (elastici) inseriti in apposite cave, collari di spallamento o bussole distanziali.],[
-#image("images/cuscinetti/bloccaggio 2.png",width:80%)
+#include "figs/cuscinetti-fig02.typ"
 ])
 
 #grid(
