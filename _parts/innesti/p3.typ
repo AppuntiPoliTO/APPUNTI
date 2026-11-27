@@ -58,7 +58,7 @@ $ p(r) = frac("costante", r) = p_"max" dot frac(r_i, r) $
     Scomponendo $r_e^2 - r_i^2 = (r_e - r_i)(r_e + r_i)$ e riconoscendo l'espressione di $F$, la coppia si riduce alla forma compatta in funzione del raggio medio $r_m = (r_e + r_i) / 2$:
     $ M_s = f F r_m $
   ],
-  [#fig-safe(include "../../figs/p3-fig02.typ", max-h: 5.2cm)],
+  [#fig-safe(include "../../figs/innesti/innesti-fig06.typ", max-h: 5.2cm)],
 )
 
 #v(0.4em)
@@ -79,7 +79,7 @@ Nel dimensionamento pratico, noti la coppia di slittamento richiesta $M_s$, i li
   [$ M_s = 2 f_c F r_m = f_c F d_m $
   Per determinare il *valore massimo della coppia* trasmissibile senza slittamento (al sincronismo / primo distacco) basta sostituire al coefficiente d'attrito cinetico $f_c$ quello *statico di primo distacco* $f_0$:
   $ M_p = 2 f_0 F r_m = f_0 F d_m $],
-  [#include "../../figs/p3-fig04.typ"],
+  [#include "../../figs/innesti/innesti-fig07.typ"],
 )
 
 #grid(
@@ -87,7 +87,7 @@ Nel dimensionamento pratico, noti la coppia di slittamento richiesta $M_s$, i li
   gutter: 1em,
   [- *Innesti e freni multidisco.* Per trasmettere coppie elevate mantenendo ridotto l'ingombro radiale, si impaccano più dischi conduttori (sulla campana) e condotti (sul mozzo scanalato) alternati, ottenendo $z$ *coppie di superfici d'attrito interfacciate* in contatto. La coppia sviluppata durante lo slittamento e il corrispondente valore massimo statico (sostituendo $f_0$ a $f_c$) risultano:
   $ M_s approx z f_c F r_m = frac(z f_c F d_m, 2) , quad M_p approx z f_0 F r_m = frac(z f_0 F d_m, 2) $],
-  [#include "../../figs/p3-fig03.typ"],
+  [#include "../../figs/innesti/innesti-fig08.typ"],
 )
 
 #nota[
@@ -112,7 +112,7 @@ Nel dimensionamento pratico, noti la coppia di slittamento richiesta $M_s$, i li
   ],
   [
   
-#include "../../figs/p3-fig05.typ"
+#include "../../figs/innesti/innesti-fig09.typ"
   ],
 )
 
@@ -129,7 +129,7 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [
-  #image("../../images/fig__parts_innesti_p3_9557.png", width: 75%)
+  #image("../../images/innesti/fig__parts_innesti_p3_9557.png", width: 75%)
 ],
   [#fig-safe(image("../../images/innesti/ecm-c13-p3-multidisco-foto.jpg"), max-h: 4.5cm)],
 )
@@ -143,7 +143,7 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
   column-gutter: 0.8em,
   align: (center + horizon, center + horizon),
   [#align(center)[
-  #image("../../images/fig__parts_innesti_p3_4753.png", width: 75%)
+  #image("../../images/innesti/fig__parts_innesti_p3_4753.png", width: 75%)
 ]
 
 ],
@@ -159,7 +159,7 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
   column-gutter: 1em,
   align: (center + horizon, center + horizon),
   [#align(center)[
-  #image("../../images/fig__parts_innesti_p3_4299.png", width: 65%)]
+  #image("../../images/innesti/fig__parts_innesti_p3_4299.png", width: 65%)]
 ],
   [#fig-safe(image("../../images/innesti/ecm-c13-p3-disco-foto.jpg"), max-h: 3.5cm)],
 )

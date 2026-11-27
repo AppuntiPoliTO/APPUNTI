@@ -327,7 +327,7 @@ L'articolazione dei supporti richiede lo studio di combinazioni specifiche per g
 ],[],[
 #image("images/cuscinetti/esterno 1.png")
 ],[],[
-#include "figs/cuscinetti-fig03.typ"
+#include "figs/cuscinetti/cuscinetti-fig13.typ"
 ],[Nelle configurazioni in opposizione (utilizzate ad esempio per ingranaggi lunghi e massivi che richiedono precisione e orizzontalità), due cuscinetti obliqui a sfere o a rulli conici vengono montati alle estremità dell'albero. Le piste avvolgono i corpi volventi in modo asimmetrico, creando rette d'azione inclinate che si oppongono a spinte assiali opposte, garantendo reazioni al momento di ribaltamento. Il sistema viene precaricato per annullare i giochi.],[
 #image("images/cuscinetti/opposizione.png", width:100%)
 ],[Nelle configurazioni flottanti, invece, si lascia un grado di libertà a entrambi i cuscinetti per permettere un adattamento bidirezionale senza sovraccaricare la struttura. Questo si ottiene lasciando un certo gioco assiale agli anelli esterni rispetto alla sede statorica, oppure, nel caso dei rulli, utilizzando anelli interni con un bordino solo da un lato. In questo modo si rende reversibile il grado di libertà assiale, suddividendolo tra i due cuscinetti della coppia.],[
@@ -346,7 +346,7 @@ L'articolazione dei supporti richiede lo studio di combinazioni specifiche per g
   columns: (1.1fr, 1fr),
   column-gutter: 1em,
   align: (left + horizon, center + horizon),[Il bloccaggio assiale degli anelli sfrutta soluzioni costruttive simili al collegamento albero-mozzo. Tra le soluzioni costruttive si annoverano l'anello filettato (ghiera) che spinge sull'anello interno, piastre terminali fissate con viti in testa all'albero, coperchi terminali avvitati allo statore, anelli di ancoraggio (elastici) inseriti in apposite cave, collari di spallamento o bussole distanziali.],[
-#include "figs/cuscinetti-fig02.typ"
+#include "figs/cuscinetti/cuscinetti-fig14.typ"
 ])
 
 #grid(
@@ -412,7 +412,7 @@ Esistono limiti stringenti per il riscaldamento, dettati dalle proprietà chimic
 
 I cuscinetti obliqui (a sfere o a rulli) sopportano carichi radiali e assiali. A causa della loro forma, un carico radiale genera una forza assiale interna che deve essere equilibrata da un'azione in senso opposto; per questo vengono montati in opposizione. I cuscinetti obliqui possono essere montati in tre disposizioni: in tandem (rette d'azione parallele, sopportano carichi assiali in un solo senso), a 'O' (rette d'azione divergenti verso l'asse di rotazione), o a 'X' (rette d'azione convergenti incrociandosi verso l'asse). La denominazione 'O' o 'X' si riferisce esclusivamente alla geometria delle rette d'azione (la risultante applicata dal corpo volvente sulle piste), mai agli assi geometrici dei corpi volventi.
 
-  #align(center)[#include "figs/cuscinetti-fig01.typ"]
+  #align(center)[#include "figs/cuscinetti/cuscinetti-fig15.typ"]
 
 
 Le coppie di cuscinetti possono essere fornite con gioco o con precarico (inteso come gioco negativo). Per definire il gioco o il precarico assiale iniziale, si utilizzano spesso dei distanziali interposti tra gli anelli. Il precarico si ottiene portando a contatto gli anelli e sfruttando la conicità fino in fondo. 

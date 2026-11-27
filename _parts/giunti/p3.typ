@@ -37,7 +37,7 @@ Il giunto *BIBBY* (o a nastro a serpentina) collega due mozzi flangiati dentati 
     #fig-safe(include "../../figs/giunti/ecm-c12-p3-02.typ", max-h: 5.5cm)
   ],
   [
-    #image("../../images/fig__parts_giunti_p3_4239.png", width: 85%)
+    #image("../../images/giunti/fig__parts_giunti_p3_4239.png", width: 85%)
 
   ],
 )
@@ -138,7 +138,7 @@ I giunti ad elastomeri collegano due flange calettate mediante elementi interpos
     La coppia si trasmette per *compressione (pressione)* esercitata dai fianchi dei denti metallici sui lobi polimerici. L'elastomero svolge un'efficace azione di *smorzamento delle oscillazioni torsionali* (scegliendo la durezza *Shore* si può allontanare la frequenza naturale del sistema da risonanze critiche) e consente piccoli spostamenti assiali e la correzione di modesti *errori angolari*.
   ],
   [
-    #image("../../images/fig__parts_giunti_p3_8890.png", width: 75%)
+    #image("../../images/giunti/fig__parts_giunti_p3_8890.png", width: 75%)
 
   ],
 )
@@ -177,6 +177,6 @@ I giunti ad elastomeri collegano due flange calettate mediante elementi interpos
   ]
 ,
   [
-   #image("../../images/fig__parts_giunti_p3_2162.png", width: 75%)
+   #image("../../images/giunti/fig__parts_giunti_p3_2162.png", width: 75%)
 ],
 )

@@ -1,133 +1,185 @@
-// Figura estratta da fatica.typ (riga 2519) con LocalTypst
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-
-#canvas(length: 1.1cm, {
-  // BBox: x in [0.0, 15.6] (dx=15.6), y in [-0.2, 5.6], length=1.0cm -> larghezza = 15.6 cm <= 17.0 cm
+#canvas(length: 1cm, {
   import draw: *
 
-  // Schema superiore del carico P e larghezza h
-  line((6.1, 5.25), (7.1, 5.25), stroke: 1pt)
-  arc((7.5, 5.25), start: 180deg, stop: 360deg, radius: 0.40, anchor: "origin", stroke: 1pt)
-  line((7.9, 5.25), (8.9, 5.25), stroke: 1pt)
-  line((6.1, 3.85), (7.1, 3.85), stroke: 1pt)
-  arc((7.5, 3.85), start: 0deg, stop: 180deg, radius: 0.40, anchor: "origin", stroke: 1pt)
-  line((7.9, 3.85), (8.9, 3.85), stroke: 1pt)
-  line((6.1, 3.85), (6.1, 5.25), stroke: 1pt)
-  line((8.9, 3.85), (8.9, 5.25), stroke: 1pt)
-  // Frecce P
-  line((6.1, 4.55), (5.2, 4.55), stroke: 1.2pt, mark: (end: ">", scale: 0.7))
-  line((8.9, 4.55), (9.8, 4.55), stroke: 1.2pt, mark: (end: ">", scale: 0.7))
-  content((5.55, 4.88), [#text(size: 8pt, weight: "bold")[$P$]], anchor: "center")
-  content((9.45, 4.88), [#text(size: 8pt, weight: "bold")[$P$]], anchor: "center")
-  // Quota h
-  line((7.5, 4.25), (7.5, 4.85), stroke: 0.55pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.5))
-  content((7.68, 4.55), [#text(size: 8pt)[$h$]], anchor: "west")
-  // Freccia P crescente
-  line((10.5, 4.55), (14.8, 4.55), stroke: (thickness: 0.75pt, paint: blue), mark: (end: ">", scale: 0.6))
-  content((12.65, 4.85), [#text(size: 7.5pt, fill: blue)[Carico assiale $P$ crescente]], anchor: "center")
+  rect((0, 0), (12, 9), stroke: 0.75pt + black)
 
-  // 4 pannelli orizzontali: (a), (b), (c), (d)
-  let x0s = (0.35, 4.25, 8.15, 12.05)
-  let labels = ("(a) Elastico", "(b) Snervamento in A", "(c) Zona B snerva", "(d) Cerniera plastica (C)")
+  line((2, 0), (2, 9), stroke: 0.5pt + black)
+  line((4, 0), (4, 9), stroke: 0.5pt + black)
+  line((6, 0), (6, 9), stroke: 0.5pt + black)
+  line((8, 0), (8, 9), stroke: 0.5pt + black)
+  line((10, 0), (10, 9), stroke: 0.5pt + black)
 
-  for idx in range(4) {
-    let x0 = x0s.at(idx)
-    let xsec = x0 + 0.85
-    let xbase = x0 + 1.55
-    let xreh = xbase + 1.15
+  line((0.4, 0), (0.4, 0.28), stroke: 0.5pt + black)
+  line((0.8, 0), (0.8, 0.28), stroke: 0.5pt + black)
+  line((1.2, 0), (1.2, 0.28), stroke: 0.5pt + black)
+  line((1.6, 0), (1.6, 0.28), stroke: 0.5pt + black)
+  line((2.4, 0), (2.4, 0.28), stroke: 0.5pt + black)
+  line((2.8, 0), (2.8, 0.28), stroke: 0.5pt + black)
+  line((3.2, 0), (3.2, 0.28), stroke: 0.5pt + black)
+  line((3.6, 0), (3.6, 0.28), stroke: 0.5pt + black)
+  line((4.4, 0), (4.4, 0.28), stroke: 0.5pt + black)
+  line((4.8, 0), (4.8, 0.28), stroke: 0.5pt + black)
+  line((5.2, 0), (5.2, 0.28), stroke: 0.5pt + black)
+  line((5.6, 0), (5.6, 0.28), stroke: 0.5pt + black)
+  line((6.4, 0), (6.4, 0.28), stroke: 0.5pt + black)
+  line((6.8, 0), (6.8, 0.28), stroke: 0.5pt + black)
+  line((7.2, 0), (7.2, 0.28), stroke: 0.5pt + black)
+  line((7.6, 0), (7.6, 0.28), stroke: 0.5pt + black)
+  line((8.4, 0), (8.4, 0.28), stroke: 0.5pt + black)
+  line((8.8, 0), (8.8, 0.28), stroke: 0.5pt + black)
+  line((9.2, 0), (9.2, 0.28), stroke: 0.5pt + black)
+  line((9.6, 0), (9.6, 0.28), stroke: 0.5pt + black)
+  line((10.4, 0), (10.4, 0.28), stroke: 0.5pt + black)
+  line((10.8, 0), (10.8, 0.28), stroke: 0.5pt + black)
+  line((11.2, 0), (11.2, 0.28), stroke: 0.5pt + black)
+  line((11.6, 0), (11.6, 0.28), stroke: 0.5pt + black)
 
-    // Titolo pannello
-    content((x0 + 1.55, 3.45), [#text(size: 7.5pt, weight: "bold")[#labels.at(idx)]], anchor: "center")
+  line((0.4, 9), (0.4, 8.72), stroke: 0.5pt + black)
+  line((0.8, 9), (0.8, 8.72), stroke: 0.5pt + black)
+  line((1.2, 9), (1.2, 8.72), stroke: 0.5pt + black)
+  line((1.6, 9), (1.6, 8.72), stroke: 0.5pt + black)
+  line((2.4, 9), (2.4, 8.72), stroke: 0.5pt + black)
+  line((2.8, 9), (2.8, 8.72), stroke: 0.5pt + black)
+  line((3.2, 9), (3.2, 8.72), stroke: 0.5pt + black)
+  line((3.6, 9), (3.6, 8.72), stroke: 0.5pt + black)
+  line((4.4, 9), (4.4, 8.72), stroke: 0.5pt + black)
+  line((4.8, 9), (4.8, 8.72), stroke: 0.5pt + black)
+  line((5.2, 9), (5.2, 8.72), stroke: 0.5pt + black)
+  line((5.6, 9), (5.6, 8.72), stroke: 0.5pt + black)
+  line((6.4, 9), (6.4, 8.72), stroke: 0.5pt + black)
+  line((6.8, 9), (6.8, 8.72), stroke: 0.5pt + black)
+  line((7.2, 9), (7.2, 8.72), stroke: 0.5pt + black)
+  line((7.6, 9), (7.6, 8.72), stroke: 0.5pt + black)
+  line((8.4, 9), (8.4, 8.72), stroke: 0.5pt + black)
+  line((8.8, 9), (8.8, 8.72), stroke: 0.5pt + black)
+  line((9.2, 9), (9.2, 8.72), stroke: 0.5pt + black)
+  line((9.6, 9), (9.6, 8.72), stroke: 0.5pt + black)
+  line((10.4, 9), (10.4, 8.72), stroke: 0.5pt + black)
+  line((10.8, 9), (10.8, 8.72), stroke: 0.5pt + black)
+  line((11.2, 9), (11.2, 8.72), stroke: 0.5pt + black)
+  line((11.6, 9), (11.6, 8.72), stroke: 0.5pt + black)
 
-    // Geometria lastra con due intagli semicircolari (altezza sezione netta: y in [0.75, 2.75])
-    line((x0, 3.10), (xsec - 0.35, 3.10), stroke: 0.9pt)
-    arc((xsec, 3.10), start: 180deg, stop: 360deg, radius: 0.35, anchor: "origin", stroke: 0.9pt)
-    line((xsec + 0.35, 3.10), (x0 + 1.35, 3.10), stroke: 0.9pt)
+  line((0, 0.45), (12, 0.45), stroke: 0.5pt + black)
+  line((0, 0.90), (12, 0.90), stroke: 0.5pt + black)
+  line((0, 1.35), (12, 1.35), stroke: 0.5pt + black)
+  line((0, 1.80), (12, 1.80), stroke: 0.5pt + black)
+  line((0, 2.25), (12, 2.25), stroke: 0.5pt + black)
+  line((0, 2.70), (12, 2.70), stroke: 0.5pt + black)
+  line((0, 3.15), (12, 3.15), stroke: 0.5pt + black)
+  line((0, 3.60), (12, 3.60), stroke: 0.5pt + black)
+  line((0, 4.05), (12, 4.05), stroke: 0.5pt + black)
+  line((0, 4.50), (12, 4.50), stroke: 0.5pt + black)
+  line((0, 4.95), (12, 4.95), stroke: 0.5pt + black)
+  line((0, 5.40), (12, 5.40), stroke: 0.5pt + black)
+  line((0, 5.85), (12, 5.85), stroke: 0.5pt + black)
+  line((0, 6.30), (12, 6.30), stroke: 0.5pt + black)
+  line((0, 6.75), (12, 6.75), stroke: 0.5pt + black)
+  line((0, 7.20), (12, 7.20), stroke: 0.5pt + black)
+  line((0, 7.65), (12, 7.65), stroke: 0.5pt + black)
+  line((0, 8.10), (12, 8.10), stroke: 0.5pt + black)
+  line((0, 8.55), (12, 8.55), stroke: 0.5pt + black)
 
-    line((x0, 0.40), (xsec - 0.35, 0.40), stroke: 0.9pt)
-    arc((xsec, 0.40), start: 0deg, stop: 180deg, radius: 0.35, anchor: "origin", stroke: 0.9pt)
-    line((xsec + 0.35, 0.40), (x0 + 1.35, 0.40), stroke: 0.9pt)
+  content((0.08, -0.15), text(size: 8.5pt)[0], anchor: "north")
+  content((4, -0.15), text(size: 8.5pt)[0.1], anchor: "north")
+  content((8, -0.15), text(size: 8.5pt)[0.2], anchor: "north")
+  content((12, -0.15), text(size: 8.5pt)[0.3], anchor: "north")
+  content((6, -0.5), text(size: 10pt)[$"r"/"h"$], anchor: "north")
 
-    // Linea asse sezione minima
-    line((xsec, 0.75), (xsec, 2.75), stroke: (dash: "dotted", thickness: 0.5pt))
+  content((-0.12, 0.00), text(size: 8.5pt)[1.0], anchor: "east")
+  content((-0.12, 0.45), text(size: 8.5pt)[1.1], anchor: "east")
+  content((-0.12, 0.90), text(size: 8.5pt)[1.2], anchor: "east")
+  content((-0.12, 1.35), text(size: 8.5pt)[1.3], anchor: "east")
+  content((-0.12, 1.80), text(size: 8.5pt)[1.4], anchor: "east")
+  content((-0.12, 2.25), text(size: 8.5pt)[1.5], anchor: "east")
+  content((-0.12, 2.70), text(size: 8.5pt)[1.6], anchor: "east")
+  content((-0.12, 3.15), text(size: 8.5pt)[1.7], anchor: "east")
+  content((-0.12, 3.60), text(size: 8.5pt)[1.8], anchor: "east")
+  content((-0.12, 4.05), text(size: 8.5pt)[1.9], anchor: "east")
+  content((-0.12, 4.50), text(size: 8.5pt)[2.0], anchor: "east")
+  content((-0.12, 4.95), text(size: 8.5pt)[2.1], anchor: "east")
+  content((-0.12, 5.40), text(size: 8.5pt)[2.2], anchor: "east")
+  content((-0.12, 5.85), text(size: 8.5pt)[2.3], anchor: "east")
+  content((-0.12, 6.30), text(size: 8.5pt)[2.4], anchor: "east")
+  content((-0.12, 6.75), text(size: 8.5pt)[2.5], anchor: "east")
+  content((-0.12, 7.20), text(size: 8.5pt)[2.6], anchor: "east")
+  content((-0.12, 7.65), text(size: 8.5pt)[2.7], anchor: "east")
+  content((-0.12, 8.10), text(size: 8.5pt)[2.8], anchor: "east")
+  content((-0.12, 8.55), text(size: 8.5pt)[2.9], anchor: "east")
+  content((-0.12, 9.00), text(size: 8.5pt)[3.0], anchor: "east")
+  content((-0.95, 5.60), text(size: 10.5pt)[$K_"t"$], anchor: "east")
 
-    // Linee di riferimento orizzontali dei bordi netti
-    line((xsec, 2.75), (xreh + 0.15, 2.75), stroke: (dash: "dotted", thickness: 0.45pt, paint: black.transparentize(60%)))
-    line((xsec, 0.75), (xreh + 0.15, 0.75), stroke: (dash: "dotted", thickness: 0.45pt, paint: black.transparentize(60%)))
+  bezier((2.06, 9.00), (4.0, 5.98), (2.6, 7.8), (3.3, 6.65), stroke: 1.8pt + black)
+  bezier((4.0, 5.98), (8.0, 3.75), (5.0, 4.95), (6.5, 4.18), stroke: 1.8pt + black)
+  bezier((8.0, 3.75), (12.0, 2.84), (9.3, 3.38), (10.7, 3.08), stroke: 1.8pt + black)
 
-    // Asse base tensioni (sigma = 0) e soglia R_eH
-    line((xbase, 0.55), (xbase, 2.95), stroke: 0.8pt)
-    line((xreh, 0.55), (xreh, 2.95), stroke: (dash: "dashed", thickness: 0.7pt, paint: red.transparentize(15%)))
-    content((xreh, 0.25), [#text(size: 7pt, fill: red.transparentize(10%))[$R_"eH"$]], anchor: "center")
+  bezier((1.58, 8.85), (4.0, 5.20), (2.1, 7.2), (3.0, 5.95), stroke: 1.8pt + black)
+  bezier((4.0, 5.20), (8.0, 3.24), (5.2, 4.25), (6.5, 3.65), stroke: 1.8pt + black)
+  bezier((8.0, 3.24), (12.0, 2.48), (9.3, 2.92), (10.7, 2.68), stroke: 1.8pt + black)
 
-    // Profili di tensione per i 4 stadi
-    if idx == 0 {
-      // (a) Elastico: orecchie di gatto < R_eH
-      let pts = ()
-      for k in range(25) {
-        let t = k / 24.0
-        let yy = 0.75 + 2.0 * t
-        let dy = calc.abs(t - 0.5) * 2.0
-        let sig = 0.28 + 0.55 * calc.pow(dy, 2.6)
-        pts.push((xbase + sig, yy))
-      }
-      line(..pts, stroke: (thickness: 1.1pt, paint: blue))
-      for fy in (0.75, 1.25, 1.75, 2.25, 2.75) {
-        let dy = calc.abs((fy - 0.75) / 2.0 - 0.5) * 2.0
-        let sig = 0.28 + 0.55 * calc.pow(dy, 2.6)
-        line((xbase, fy), (xbase + sig, fy), stroke: (thickness: 0.55pt, paint: blue.transparentize(30%)), mark: (end: ">", scale: 0.4))
-      }
-      circle((xsec, 2.75), radius: 0.06, fill: red.transparentize(10%), stroke: 0.5pt)
-      content((xsec - 0.20, 2.58), [#text(size: 7.5pt, weight: "bold", fill: red.transparentize(10%))[A]], anchor: "east")
-    } else if idx == 1 {
-      // (b) Primo snervamento in A (tocca esattamente R_eH)
-      let pts = ()
-      for k in range(25) {
-        let t = k / 24.0
-        let yy = 0.75 + 2.0 * t
-        let dy = calc.abs(t - 0.5) * 2.0
-        let sig = 0.46 + 0.69 * calc.pow(dy, 2.4)
-        pts.push((xbase + sig, yy))
-      }
-      line(..pts, stroke: (thickness: 1.1pt, paint: blue))
-      for fy in (0.75, 1.25, 1.75, 2.25, 2.75) {
-        let dy = calc.abs((fy - 0.75) / 2.0 - 0.5) * 2.0
-        let sig = 0.46 + 0.69 * calc.pow(dy, 2.4)
-        line((xbase, fy), (xbase + sig, fy), stroke: (thickness: 0.55pt, paint: blue.transparentize(30%)), mark: (end: ">", scale: 0.4))
-      }
-      circle((xsec, 2.75), radius: 0.055, fill: red.transparentize(10%), stroke: 0.5pt)
-      circle((xsec, 2.32), radius: 0.06, fill: black, stroke: 0.5pt)
-      content((xsec - 0.20, 2.32), [#text(size: 7.5pt, weight: "bold")[B]], anchor: "east")
-    } else if idx == 2 {
-      // (c) Zona intermedia B plasticizzata (plateau a R_eH)
-      rect((xbase, 2.30), (xreh, 2.75), fill: red.transparentize(84%), stroke: none)
-      rect((xbase, 0.75), (xreh, 1.20), fill: red.transparentize(84%), stroke: none)
-      line((xreh, 0.75), (xreh, 1.20), stroke: (thickness: 1.15pt, paint: red.transparentize(10%)))
-      line((xreh, 2.30), (xreh, 2.75), stroke: (thickness: 1.15pt, paint: red.transparentize(10%)))
-      let pts = ()
-      for k in range(17) {
-        let t = k / 16.0
-        let yy = 1.20 + 1.10 * t
-        let dy = calc.abs(t - 0.5) * 2.0
-        let sig = 0.78 + 0.37 * calc.pow(dy, 1.9)
-        pts.push((xbase + sig, yy))
-      }
-      line(..pts, stroke: (thickness: 1.1pt, paint: blue))
-      for fy in (0.75, 1.20, 1.75, 2.30, 2.75) {
-        let sig = if fy >= 2.29 or fy <= 1.21 { 1.15 } else { 0.78 }
-        line((xbase, fy), (xbase + sig, fy), stroke: (thickness: 0.55pt, paint: blue.transparentize(30%)), mark: (end: ">", scale: 0.4))
-      }
-      circle((xsec, 1.75), radius: 0.06, fill: blue, stroke: 0.5pt)
-      content((xsec - 0.20, 1.75), [#text(size: 7.5pt, weight: "bold", fill: blue)[C]], anchor: "east")
-    } else {
-      // (d) Completa plasticizzazione (cerniera plastica)
-      rect((xbase, 0.75), (xreh, 2.75), fill: red.transparentize(84%), stroke: none)
-      line((xreh, 0.75), (xreh, 2.75), stroke: (thickness: 1.2pt, paint: red.transparentize(10%)))
-      for fy in (0.75, 1.25, 1.75, 2.25, 2.75) {
-        line((xbase, fy), (xreh, fy), stroke: (thickness: 0.55pt, paint: red.transparentize(25%)), mark: (end: ">", scale: 0.4))
-      }
-      circle((xsec, 1.75), radius: 0.06, fill: red.transparentize(10%), stroke: 0.5pt)
-      content((xsec - 0.20, 1.75), [#text(size: 7.5pt, weight: "bold", fill: red.transparentize(10%))[C]], anchor: "east")
-    }
-  }
+  bezier((1.05, 7.72), (4.0, 3.28), (1.6, 5.3), (2.7, 3.92), stroke: 1.8pt + black)
+  bezier((4.0, 3.28), (8.0, 2.02), (5.2, 2.68), (6.6, 2.28), stroke: 1.8pt + black)
+  bezier((8.0, 2.02), (12.0, 1.54), (9.3, 1.82), (10.7, 1.66), stroke: 1.8pt + black)
+
+  bezier((0.92, 5.18), (4.0, 2.18), (1.45, 3.45), (2.65, 2.52), stroke: 1.8pt + black)
+  bezier((4.0, 2.18), (8.0, 1.50), (5.3, 1.88), (6.6, 1.65), stroke: 1.8pt + black)
+  bezier((8.0, 1.50), (12.0, 1.26), (9.3, 1.38), (10.7, 1.30), stroke: 1.8pt + black)
+
+  bezier((0.98, 2.56), (4.0, 1.00), (1.45, 1.68), (2.65, 1.18), stroke: 1.8pt + black)
+  bezier((4.0, 1.00), (8.0, 0.69), (5.3, 0.85), (6.6, 0.75), stroke: 1.8pt + black)
+  bezier((8.0, 0.69), (12.0, 0.53), (9.3, 0.63), (10.7, 0.58), stroke: 1.8pt + black)
+
+  content((12.95, 3.55), text(size: 9pt)[$"H"/"h"$], anchor: "center")
+
+  line((12.70, 2.95), (12.15, 2.86), stroke: 0.6pt + black, mark: (end: ">", fill: black, scale: 0.45))
+  content((12.76, 2.95), text(size: 8.5pt)[2], anchor: "west")
+
+  line((12.70, 2.48), (12.15, 2.48), stroke: 0.6pt + black, mark: (end: ">", fill: black, scale: 0.45))
+  content((12.76, 2.48), text(size: 8.5pt)[1.5], anchor: "west")
+
+  line((12.70, 1.60), (12.15, 1.55), stroke: 0.6pt + black, mark: (end: ">", fill: black, scale: 0.45))
+  content((12.76, 1.60), text(size: 8.5pt)[1.15], anchor: "west")
+
+  line((12.70, 1.15), (12.15, 1.25), stroke: 0.6pt + black, mark: (end: ">", fill: black, scale: 0.45))
+  content((12.76, 1.15), text(size: 8.5pt)[1.05], anchor: "west")
+
+  line((12.70, 0.65), (12.15, 0.55), stroke: 0.6pt + black, mark: (end: ">", fill: black, scale: 0.45))
+  content((12.76, 0.65), text(size: 8.5pt)[1.01], anchor: "west")
+
+  rect((8.88, 4.38), (11.42, 5.58), fill: white, stroke: 0.75pt + black)
+  content((10.15, 4.98), text(size: 9.5pt)[$sigma_"nom" = display("P" / ("h" dot "t"))$], anchor: "center")
+
+  rect((6.96, 6.02), (12.00, 8.85), fill: white, stroke: 0.75pt + black)
+
+  line((9.36, 8.27), (8.16, 8.27), (8.16, 6.73), (9.36, 6.73), stroke: 1.2pt + black)
+  arc((9.36, 8.27), start: 180deg, stop: 270deg, radius: 0.23, anchor: "origin", stroke: 1.2pt + black)
+  arc((9.36, 6.73), start: 90deg, stop: 180deg, radius: 0.23, anchor: "origin", stroke: 1.2pt + black)
+  line((9.36, 8.04), (10.58, 8.04), (10.58, 6.96), (9.36, 6.96), stroke: 1.2pt + black)
+
+  line((8.16, 8.27), (8.52, 8.53), (9.72, 8.53), (9.36, 8.27), stroke: 1.2pt + black)
+  arc((9.72, 8.53), start: 180deg, stop: 270deg, radius: 0.23, anchor: "origin", stroke: 1.2pt + black)
+  line((9.72, 8.30), (10.94, 8.30), (10.58, 8.04), stroke: 1.2pt + black)
+  line((10.94, 8.30), (10.94, 7.22), (10.58, 6.96), stroke: 1.2pt + black)
+  line((9.13, 8.04), (9.49, 8.30), stroke: 0.8pt + black)
+
+  line((7.96, 7.58), (7.16, 7.58), stroke: 1.6pt + black, mark: (end: ">", fill: black, scale: 0.55))
+  content((7.48, 7.92), text(size: 9pt)[P], anchor: "center")
+
+  line((11.08, 7.56), (11.88, 7.56), stroke: 1.6pt + black, mark: (end: ">", fill: black, scale: 0.55))
+  content((11.50, 7.90), text(size: 9pt)[P], anchor: "center")
+
+  line((8.48, 6.76), (8.48, 8.24), stroke: 0.6pt + black, mark: (start: ">", end: ">", fill: black, scale: 0.45))
+  content((8.72, 7.50), text(size: 8.5pt)[H], anchor: "center")
+
+  line((9.76, 6.99), (9.76, 8.01), stroke: 0.6pt + black, mark: (start: ">", end: ">", fill: black, scale: 0.45))
+  content((10.12, 7.50), text(size: 8.5pt)[h], anchor: "center")
+
+  line((9.56, 6.18), (9.24, 6.90), stroke: 0.6pt + black, mark: (end: ">", fill: black, scale: 0.45))
+  content((9.72, 6.20), text(size: 8.5pt)[r], anchor: "center")
+
+  line((10.58, 6.96), (10.58, 6.32), stroke: 0.5pt + black)
+  line((10.94, 7.22), (10.94, 6.58), stroke: 0.5pt + black)
+  line((10.60, 6.46), (10.92, 6.70), stroke: 0.6pt + black, mark: (start: ">", end: ">", fill: black, scale: 0.4))
+  content((10.88, 6.26), text(size: 8.5pt)[t], anchor: "center")
 })

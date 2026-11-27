@@ -36,7 +36,7 @@ La selezione comporta quindi un *compromesso progettuale*: le guarnizioni organi
   [
     I *giunti idraulici* trasferiscono potenza senza contatto solido — eliminando l'usura meccanica tra le superfici — tramite un fluido tra due giranti affacciate (in modo analogo a due ventilatori posti uno di fronte all'altro): la girante motrice (*pompa*) accelera il fluido verso la palettatura della girante condotta (*turbina*). La coppia dipende non linearmente dalla velocità relativa; il sincronismo perfetto non è mai raggiungibile e lo *slittamento residuo* dissipa potenza nel fluido anche a regime (sebbene in misura spesso ridotta rispetto all'esercizio). Inoltre, l'innesto non è mai del tutto disaccoppiabile: anche interponendo un diaframma per bloccare il flusso permane una minima coppia di trascinamento.
   ],[
-  #image("../../images/fig__parts_innesti_p2_0562.png", width: 110%)
+  #image("../../images/innesti/fig__parts_innesti_p2_0562.png", width: 110%)
 ])
 #pagebreak()
 
@@ -45,7 +45,7 @@ La selezione comporta quindi un *compromesso progettuale*: le guarnizioni organi
 Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la coppia trasmessa supera un valore limite preimpostato, proteggendo la trasmissione da sovraccarichi accidentali; i primi due schemi illustrano veri innesti autoadattativi a ripristino automatico (senza rottura di parti), mentre il terzo mostra a confronto un giunto rigido a frattura prestabilita:
 
 #align(center)[
-  #image("../../images/fig__parts_innesti_p2_2136.png", width: 75%)
+  #image("../../images/innesti/fig__parts_innesti_p2_2136.png", width: 75%)
 ]
 
 
@@ -66,7 +66,7 @@ Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la 
     Negli *innesti centrifughi* il comando proviene dalla velocità di rotazione dell'albero motore. A basso regime o al minimo le molle di richiamo trattengono i ceppi distaccati dal tamburo, permettendo al motore di avviarsi a vuoto e ruotare al minimo senza trascinare la trasmissione; superata la velocità critica di taratura, la *forza centrifuga* vince il precarico elastico e preme le guarnizioni contro la superficie interna del tamburo, trasmettendo gradualmente il moto all'utilizzatore (soluzione tipica di motorscooter e ciclomotori, talvolta abbinata a una seconda serie di massette centrifughe sulla campana per l'avviamento a spinta o a pedali).
   ],
   [  #align(center)[
-  #image("../../images/fig__parts_innesti_p2_8489.png", width: 95%)
+  #image("../../images/innesti/fig__parts_innesti_p2_8489.png", width: 95%)
 ]])
 
 #pagebreak()
@@ -78,7 +78,7 @@ Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la 
   align: (center + horizon, center + horizon),
   [
   #align(center)[
-  #image("../../images/fig__parts_innesti_p2_7161.png", width: 75%)
+  #image("../../images/innesti/fig__parts_innesti_p2_7161.png", width: 75%)
 ]],
   move(dy: 7pt)[#image("../../images/innesti/ecm-c13-p2-07.jpg", width: 75%)],
 )
@@ -113,13 +113,13 @@ Negli *innesti di sopravanzo* (*ruote libere*) il comando dipende dalla differen
     Esistono innesti azionati o accoppiati tramite fenomeni *elettromagnetici*: senza contatto meccanico — a *isteresi magnetica* o a *correnti parassite* (elemento condotto passivo accoppiato per induzione a un elemento motore attivo) — oppure a *flusso magnetico attraverso i dischi* (figura a lato), in cui gli *avvolgimenti* alimentati generano un flusso magnetico che attrae e serra il pacco dischi. Per una data corrente di eccitazione dell'elettromagnete, la coppia di innesto risulta sostanzialmente costante; i fenomeni di isteresi magnetica e correnti indotte comportano tuttavia dissipazione e *isteresi termica* da tenere sotto controllo.
   ],
   [#align(center)[
-  #image("../../images/fig__parts_innesti_p2_7692.png", width: 105%)
+  #image("../../images/innesti/fig__parts_innesti_p2_7692.png", width: 105%)
 ]]
 )
 ==== Innesti a particelle magnetiche e fluidi magnetoreologici
 Analogamente al giunto idraulico, rotore motore e rotore condotto non hanno contatto solido diretto e sono separati da un'intercapedine contenente *polveri ferromagnetiche* (o *fluidi magnetoreologici* / *elettroreologici*, che variano la propria viscosità sotto campo magnetico o elettrico e possono lavorare anche come freni). A campo nullo la polvere non è strutturata ma, a differenza di altri innesti elettromagnetici, mantiene un minimo contatto con lieve *trascinamento residuo* (*residual drag*). Eccitando la bobina, le particelle si allineano lungo le linee di flusso in catene capaci di trasmettere sforzi di taglio $tau$: in un dispositivo molto compatto la risposta è quasi istantanea e la coppia è pressoché lineare con tensione/corrente di eccitazione (ideale per controllo continuo in catena chiusa e sistemi meccatronici *safety critical*). Dato lo slittamento parziale o continuo, il dimensionamento è governato dallo smaltimento termico (spesso migliorato con carcasse in alluminio o raffreddamento forzato ad aria)
 
 #align(center)[
-  #image("../../images/fig__parts_innesti_p2_4747.png", width: 75%)
+  #image("../../images/innesti/fig__parts_innesti_p2_4747.png", width: 75%)
 ]
 

@@ -1,97 +1,59 @@
-// Figura estratta da fatica.typ (riga 1084) con LocalTypst
+// Figura estratta da fatica.typ (riga 349) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#let circ = sym.degree
-#let circ = sym.degree
-
-#canvas(length: 0.95cm, {
+#canvas(length: 1.15cm, {
+  // BBox: x in [-1.65, 10.1] (dx=11.75), y in [-1.15, 5.85], length=1.05cm -> larghezza = 12.34 cm <= 17.0 cm
   import draw: *
-  // BBox: x in [-5.1, 6.8] (dx=11.9), y in [-5.0, 6.4], length=0.95cm -> larghezza = 11.31 cm <= 11.5 cm
-
-  // Poligono di sicurezza campito
-  line(
-    (-4.0, -4.0),
-    (-2.2, -0.4),
-    (0.0, 1.8),
-    (3.3, 4.0),
-    (4.0, 4.0),
-    (3.3, 2.6),
-    (0.0, -1.8),
-    (-2.2, -4.0),
-    close: true,
-    fill: black.transparentize(90%),
-    stroke: none,
-  )
 
   // Assi principali
-  line((-5.0, 0.0), (6.2, 0.0), stroke: 0.75pt, mark: (end: ">"))
-  line((0.0, -4.8), (0.0, 5.8), stroke: 0.75pt, mark: (end: ">"))
-  content((6.3, 0.0), anchor: "west")[#text(size: 8.5pt)[$sigma_m$]]
-  content((0.0, 5.9), anchor: "south")[#text(size: 8.5pt)[$sigma_"max", sigma_"min"$]]
+  line((0, 0), (9.4, 0), stroke: 0.9pt, mark: (end: ">", scale: 0.7))
+  line((0, 0), (0, 5.0), stroke: 0.9pt, mark: (end: ">", scale: 0.7))
+  content((9.52, 0), text(size: 9pt)[$N$], anchor: "west")
+  content((-0.18, 4.92), text(size: 9pt)[$sigma_a$], anchor: "east")
 
-  // Bisettrice a 45 gradi, arco angolo e prolungamenti costruzione Goodman
-  line((-4.5, -4.5), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.65pt))
-  arc((0.0, 0.0), start: -180deg, stop: -135deg, radius: 1.05, anchor: "origin", stroke: 0.55pt)
-  content((-1.22, -0.44), anchor: "east")[#text(size: 7.5pt)[$45^circ$]]
+  // Linee di riferimento verticali e orizzontali
+  line((0.6, 0), (0.6, 4.25), stroke: (dash: "dotted", thickness: 0.6pt))
+  line((3.1, 0), (3.1, 4.65), stroke: (dash: "dashed", thickness: 0.65pt))
+  line((5.6, 0), (5.6, 0.12), stroke: 0.7pt)
+  line((6.2, 0), (6.2, 4.65), stroke: (dash: "dashed", thickness: 0.65pt))
+  line((0, 4.25), (0.6, 4.25), stroke: (dash: "dotted", thickness: 0.6pt))
+  line((0, 3.65), (3.1, 3.65), stroke: (dash: "dotted", thickness: 0.6pt))
+  line((0, 1.35), (6.2, 1.35), stroke: (dash: "dashed", thickness: 0.65pt))
 
-  line((3.3, 4.0), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((3.3, 2.6), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.6pt))
-  circle((5.4, 5.4), radius: 0.06, fill: black)
-  content((5.55, 5.4), anchor: "west")[#text(size: 8pt)[$(R_m, R_m)$]]
+  // Curva S-N nei tre regimi (acciai) + ramo inclinato leghe Al
+  bezier((0.6, 4.25), (3.1, 3.65), (1.6, 4.22), (2.4, 3.92), stroke: 1.15pt)
+  bezier((3.1, 3.65), (6.2, 1.35), (4.0, 3.08), (5.05, 1.85), stroke: 1.15pt)
+  line((6.2, 1.35), (8.8, 1.35), stroke: 1.15pt)
+  line((6.2, 1.35), (8.8, 0.95), stroke: (paint: rgb("#1f77b4"), dash: "dashed", thickness: 0.85pt))
+  content((8.90, 0.95), text(size: 7.5pt, fill: rgb("#1f77b4"))[leghe Al], anchor: "west")
 
-  // Linee di costruzione snervamento e proiezioni
-  line((0.0, 4.0), (3.3, 4.0), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((3.3, 4.0), (3.3, 2.6), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((4.0, 4.0), (4.0, 0.0), stroke: (dash: "dotted", thickness: 0.6pt))
-  line((0.0, -4.0), (-2.2, -4.0), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((-2.2, -4.0), (-2.2, -0.4), stroke: (dash: "dashed", thickness: 0.6pt))
+  // Punto di ginocchio
+  circle((6.2, 1.35), radius: 0.075, fill: red, stroke: red)
 
-  // Contorno poligono di sicurezza in tratto marcato
-  line(
-    (-4.0, -4.0),
-    (-2.2, -0.4),
-    (0.0, 1.8),
-    (3.3, 4.0),
-    (4.0, 4.0),
-    (3.3, 2.6),
-    (0.0, -1.8),
-    (-2.2, -4.0),
-    close: true,
-    stroke: 1.15pt,
-  )
+  // Etichette assi e livelli tensionali
+  content((-0.18, 4.25), text(size: 8.5pt)[$R_m$], anchor: "east")
+  content((-0.18, 3.65), text(size: 8pt)[$0.8"–"0.9 thin R_m$], anchor: "east")
+  content((-0.18, 1.35), text(size: 8.5pt)[$sigma_D$], anchor: "east")
 
-  // Punti notevoli A, B e quote assi (senza collisioni con linee di costruzione)
-  circle((3.3, 2.6), radius: 0.055, fill: black)
-  content((3.45, 2.45), anchor: "north-west")[#text(size: 8pt)[$A$]]
-  circle((4.0, 4.0), radius: 0.055, fill: black)
-  content((4.55, 3.75), anchor: "west")[#text(size: 8pt)[$B$]]
-  line((4.50, 3.77), (4.08, 3.96), stroke: 0.55pt, mark: (end: ">", scale: 0.5))
+  content((0.6, -0.20), text(size: 8.5pt)[$10^0$], anchor: "north")
+  content((3.1, -0.20), text(size: 8.5pt)[$10^3$], anchor: "north")
+  content((5.6, -0.20), text(size: 8.5pt)[$10^6$], anchor: "north")
 
-  content((-0.15, 4.0), anchor: "east")[#text(size: 8pt)[$R_"eH"$]]
-  content((-0.12, 1.92), anchor: "south-east")[#text(size: 8pt)[$+sigma_(D-1)$]]
-  content((0.15, -1.85), anchor: "west")[#text(size: 8pt)[$-sigma_(D-1)$]]
-  content((0.15, -4.0), anchor: "west")[#text(size: 8pt)[$-R_"eH"$]]
-  content((4.0, -0.15), anchor: "north")[#text(size: 8pt)[$R_"eH"$]]
+  // Nota ginocchio
+  line((6.2, -0.05), (6.2, -0.52), stroke: (paint: red, thickness: 0.55pt))
+  content((6.2, -0.60), text(size: 8pt, fill: red)[$N_"ginocchio" approx 2 dot 10^6 " (acciai)," quad 10^7 " (leghe Al)"$], anchor: "north")
 
-  // Ciclo 1: sicuro (blu) con indicazioni manubrio
-  line((1.65, 0.90), (1.65, 2.40), stroke: (paint: blue, thickness: 1.4pt))
-  line((1.65, 0.90), (1.65, 0.0), stroke: (dash: "dotted", paint: blue, thickness: 0.6pt))
-  circle((1.65, 2.40), radius: 0.055, fill: blue, stroke: blue)
-  circle((1.65, 1.65), radius: 0.055, fill: white, stroke: (paint: blue, thickness: 0.9pt))
-  circle((1.65, 0.90), radius: 0.055, fill: blue, stroke: blue)
-  content((1.52, 2.34), anchor: "east")[#text(size: 7pt, fill: blue)[$sigma_"max"$]]
-  content((1.52, 0.86), anchor: "east")[#text(size: 7pt, fill: blue)[$sigma_"min"$]]
-  content((1.65, -0.15), anchor: "north")[#text(size: 7.5pt, fill: blue)[$sigma_(m,1)$]]
+  // Delimitazioni e nomi dei regimi
+  line((0.65, 4.65), (3.05, 4.65), stroke: 0.65pt, mark: (start: ">", end: ">", scale: 0.55))
+  content((1.85, 4.80), align(center, text(size: 8pt)[Fatica \ oligociclica]), anchor: "south")
 
-  // Ciclo 2: uscente (rosso)
-  line((2.65, 1.30), (2.65, 4.00), stroke: (paint: red.transparentize(10%), thickness: 1.4pt))
-  line((2.65, 1.30), (2.65, 0.0), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.6pt))
-  circle((2.65, 4.00), radius: 0.055, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-  circle((2.65, 2.65), radius: 0.055, fill: white, stroke: (paint: red.transparentize(10%), thickness: 0.9pt))
-  circle((2.65, 1.30), radius: 0.055, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-  content((2.65, -0.15), anchor: "north")[#text(size: 7.5pt, fill: red.transparentize(10%))[$sigma_(m,2)$]]
+  line((3.15, 5.25), (8.80, 5.25), stroke: 0.65pt, mark: (start: ">", end: ">", scale: 0.55))
+  content((5.98, 5.38), text(size: 8pt, weight: "bold")[Fatica ad alto numero di cicli], anchor: "south")
 
-  // Legenda compatta in alto a sinistra
-  content((-4.7, 5.2), anchor: "north-west")[#text(size: 7.5pt, fill: blue, weight: "bold")[Ciclo 1: sicuro]]
-  content((-4.7, 4.6), anchor: "north-west")[#text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[Ciclo 2: uscente]]
+  content((4.65, 4.65), align(center, text(size: 8pt)[Resistenza \ *a termine*]), anchor: "center")
+  content((7.50, 4.65), align(center, text(size: 8pt)[Resistenza \ *a vita infinita*]), anchor: "center")
+
+  // Riquadro sigma_m e T costanti
+  rect((6.65, 2.30), (9.35, 3.05), stroke: (paint: red, thickness: 0.8pt), fill: white)
+  content((8.00, 2.675), align(center, text(size: 7.8pt, fill: red)[$sigma_m = "costante"$ \ $T = "costante"$]), anchor: "center")
 })

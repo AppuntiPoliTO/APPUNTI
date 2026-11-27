@@ -1,65 +1,180 @@
-// Figura estratta da fatica.typ (riga 2084) con LocalTypst
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-
-#canvas(length: 0.97cm, {
-  // BBox: x in [0.0, 10.55] (dx=10.55), y in [0.0, 6.45], length=0.77cm -> larghezza = 8.12 cm <= 10.0 cm
+#canvas(length: 1cm, {
   import draw: *
 
-  let map-x(rm) = 1.35 + ((rm - 200.0) / 100.0) * 0.56
-  let map-y(cf) = 1.00 + ((cf - 0.40) / 0.10) * 0.85
+  rect((0, 0), (12, 10), stroke: 1.0pt + black)
 
-  // Griglia cartesiana fedele a Slide 11: Rm in [200, 1500] (passo 100), CF in [0.4, 1.0] (passo 0.1)
-  for i in range(0, 14) {
-    let x = map-x(200 + i * 100)
-    line((x, 1.00), (x, 6.10), stroke: (paint: luma(195), thickness: 0.45pt))
-  }
-  for j in range(0, 7) {
-    let y = 1.00 + j * 0.85
-    line((1.35, y), (8.63, y), stroke: (paint: luma(195), thickness: 0.45pt))
-  }
-  rect((1.35, 1.00), (8.63, 6.10), stroke: (thickness: 0.9pt))
+  line((2, 0), (2, 10), stroke: 0.8pt + black)
+  line((4, 0), (4, 10), stroke: 0.8pt + black)
+  line((6, 0), (6, 10), stroke: 0.8pt + black)
+  line((8, 0), (8, 10), stroke: 0.8pt + black)
+  line((10, 0), (10, 10), stroke: 0.8pt + black)
 
-  // Tacche ed etichette asse Y (CF)
-  let cf_vals = ("0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0")
-  for j in range(0, 7) {
-    let y = 1.00 + j * 0.85
-    content((1.20, y), text(size: 7pt)[#cf_vals.at(j)], anchor: "east")
-  }
-  content((0.35, 3.55), text(size: 8.5pt, weight: "bold")[$C_F$], anchor: "center")
+  line((0, 0.5), (12, 0.5), stroke: 0.8pt + black)
+  line((0, 1.0), (12, 1.0), stroke: 0.8pt + black)
+  line((0, 1.5), (12, 1.5), stroke: 0.8pt + black)
+  line((0, 2.0), (12, 2.0), stroke: 0.8pt + black)
+  line((0, 2.5), (12, 2.5), stroke: 0.8pt + black)
+  line((0, 3.0), (12, 3.0), stroke: 0.8pt + black)
+  line((0, 3.5), (12, 3.5), stroke: 0.8pt + black)
+  line((0, 4.0), (12, 4.0), stroke: 0.8pt + black)
+  line((0, 4.5), (12, 4.5), stroke: 0.8pt + black)
+  line((0, 5.0), (12, 5.0), stroke: 0.8pt + black)
+  line((0, 5.5), (12, 5.5), stroke: 0.8pt + black)
+  line((0, 6.0), (12, 6.0), stroke: 0.8pt + black)
+  line((0, 6.5), (12, 6.5), stroke: 0.8pt + black)
+  line((0, 7.0), (12, 7.0), stroke: 0.8pt + black)
+  line((0, 7.5), (12, 7.5), stroke: 0.8pt + black)
+  line((0, 8.0), (12, 8.0), stroke: 0.8pt + black)
+  line((0, 8.5), (12, 8.5), stroke: 0.8pt + black)
+  line((0, 9.0), (12, 9.0), stroke: 0.8pt + black)
+  line((0, 9.5), (12, 9.5), stroke: 0.8pt + black)
 
-  // Etichette asse X (Rm ogni 200 MPa da 200 a 1400; bordo destro a 1500 MPa)
-  for k in range(0, 7) {
-    let rm = 200 + k * 200
-    content((map-x(rm), 0.82), text(size: 7pt)[#rm], anchor: "north")
-  }
-  content((4.99, 0.25), text(size: 8pt)[$R_m$ (MPa)], anchor: "center")
+  line((0.4, 0), (0.4, 0.25), stroke: 0.7pt + black)
+  line((0.8, 0), (0.8, 0.25), stroke: 0.7pt + black)
+  line((1.2, 0), (1.2, 0.25), stroke: 0.7pt + black)
+  line((1.6, 0), (1.6, 0.25), stroke: 0.7pt + black)
+  line((2.4, 0), (2.4, 0.25), stroke: 0.7pt + black)
+  line((2.8, 0), (2.8, 0.25), stroke: 0.7pt + black)
+  line((3.2, 0), (3.2, 0.25), stroke: 0.7pt + black)
+  line((3.6, 0), (3.6, 0.25), stroke: 0.7pt + black)
+  line((4.4, 0), (4.4, 0.25), stroke: 0.7pt + black)
+  line((4.8, 0), (4.8, 0.25), stroke: 0.7pt + black)
+  line((5.2, 0), (5.2, 0.25), stroke: 0.7pt + black)
+  line((5.6, 0), (5.6, 0.25), stroke: 0.7pt + black)
+  line((6.4, 0), (6.4, 0.25), stroke: 0.7pt + black)
+  line((6.8, 0), (6.8, 0.25), stroke: 0.7pt + black)
+  line((7.2, 0), (7.2, 0.25), stroke: 0.7pt + black)
+  line((7.6, 0), (7.6, 0.25), stroke: 0.7pt + black)
+  line((8.4, 0), (8.4, 0.25), stroke: 0.7pt + black)
+  line((8.8, 0), (8.8, 0.25), stroke: 0.7pt + black)
+  line((9.2, 0), (9.2, 0.25), stroke: 0.7pt + black)
+  line((9.6, 0), (9.6, 0.25), stroke: 0.7pt + black)
+  line((10.4, 0), (10.4, 0.25), stroke: 0.7pt + black)
+  line((10.8, 0), (10.8, 0.25), stroke: 0.7pt + black)
+  line((11.2, 0), (11.2, 0.25), stroke: 0.7pt + black)
+  line((11.6, 0), (11.6, 0.25), stroke: 0.7pt + black)
 
-  // Curve sperimentali CF(Rm, Ra) campionate ogni 100 MPa su [200, 1500]
-  let rms = (200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500)
-  let draw-cf(vals, st) = {
-    let pts = ()
-    for idx in range(0, rms.len()) {
-      pts.push((map-x(rms.at(idx)), map-y(vals.at(idx))))
-    }
-    line(..pts, stroke: st)
-  }
+  line((0.4, 10), (0.4, 9.75), stroke: 0.7pt + black)
+  line((0.8, 10), (0.8, 9.75), stroke: 0.7pt + black)
+  line((1.2, 10), (1.2, 9.75), stroke: 0.7pt + black)
+  line((1.6, 10), (1.6, 9.75), stroke: 0.7pt + black)
+  line((2.4, 10), (2.4, 9.75), stroke: 0.7pt + black)
+  line((2.8, 10), (2.8, 9.75), stroke: 0.7pt + black)
+  line((3.2, 10), (3.2, 9.75), stroke: 0.7pt + black)
+  line((3.6, 10), (3.6, 9.75), stroke: 0.7pt + black)
+  line((4.4, 10), (4.4, 9.75), stroke: 0.7pt + black)
+  line((4.8, 10), (4.8, 9.75), stroke: 0.7pt + black)
+  line((5.2, 10), (5.2, 9.75), stroke: 0.7pt + black)
+  line((5.6, 10), (5.6, 9.75), stroke: 0.7pt + black)
+  line((6.4, 10), (6.4, 9.75), stroke: 0.7pt + black)
+  line((6.8, 10), (6.8, 9.75), stroke: 0.7pt + black)
+  line((7.2, 10), (7.2, 9.75), stroke: 0.7pt + black)
+  line((7.6, 10), (7.6, 9.75), stroke: 0.7pt + black)
+  line((8.4, 10), (8.4, 9.75), stroke: 0.7pt + black)
+  line((8.8, 10), (8.8, 9.75), stroke: 0.7pt + black)
+  line((9.2, 10), (9.2, 9.75), stroke: 0.7pt + black)
+  line((9.6, 10), (9.6, 9.75), stroke: 0.7pt + black)
+  line((10.4, 10), (10.4, 9.75), stroke: 0.7pt + black)
+  line((10.8, 10), (10.8, 9.75), stroke: 0.7pt + black)
+  line((11.2, 10), (11.2, 9.75), stroke: 0.7pt + black)
+  line((11.6, 10), (11.6, 9.75), stroke: 0.7pt + black)
 
-  draw-cf((1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000, 1.000), (paint: blue, thickness: 1.15pt))
-  draw-cf((1.000, 0.990, 0.980, 0.973, 0.970, 0.967, 0.964, 0.961, 0.958, 0.955, 0.955, 0.955, 0.955, 0.955), (thickness: 0.95pt))
-  draw-cf((1.000, 0.984, 0.968, 0.953, 0.941, 0.932, 0.925, 0.920, 0.917, 0.915, 0.914, 0.913, 0.913, 0.913), (thickness: 0.95pt))
-  draw-cf((0.984, 0.965, 0.945, 0.927, 0.912, 0.901, 0.892, 0.884, 0.878, 0.872, 0.866, 0.863, 0.861, 0.860), (thickness: 0.95pt))
-  draw-cf((0.980, 0.950, 0.920, 0.892, 0.866, 0.843, 0.822, 0.804, 0.788, 0.774, 0.763, 0.755, 0.750, 0.750), (thickness: 0.95pt))
-  draw-cf((0.975, 0.932, 0.888, 0.845, 0.804, 0.768, 0.736, 0.707, 0.682, 0.663, 0.648, 0.637, 0.629, 0.623), (thickness: 0.95pt))
-  draw-cf((0.950, 0.900, 0.850, 0.802, 0.756, 0.716, 0.678, 0.645, 0.613, 0.582, 0.552, 0.525, 0.500, 0.478), (paint: red.transparentize(10%), thickness: 1.15pt))
+  content((-0.15, 0.0), text(size: 9pt)[1.0], anchor: "east")
+  content((-0.15, 0.5), text(size: 9pt)[1.1], anchor: "east")
+  content((-0.15, 1.0), text(size: 9pt)[1.2], anchor: "east")
+  content((-0.15, 1.5), text(size: 9pt)[1.3], anchor: "east")
+  content((-0.15, 2.0), text(size: 9pt)[1.4], anchor: "east")
+  content((-0.15, 2.5), text(size: 9pt)[1.5], anchor: "east")
+  content((-0.15, 3.0), text(size: 9pt)[1.6], anchor: "east")
+  content((-0.15, 3.5), text(size: 9pt)[1.7], anchor: "east")
+  content((-0.15, 4.0), text(size: 9pt)[1.8], anchor: "east")
+  content((-0.15, 4.5), text(size: 9pt)[1.9], anchor: "east")
+  content((-0.15, 5.0), text(size: 9pt)[2.0], anchor: "east")
+  content((-0.15, 5.5), text(size: 9pt)[2.1], anchor: "east")
+  content((-0.15, 6.0), text(size: 9pt)[2.2], anchor: "east")
+  content((-0.15, 6.5), text(size: 9pt)[2.3], anchor: "east")
+  content((-0.15, 7.0), text(size: 9pt)[2.4], anchor: "east")
+  content((-0.15, 7.5), text(size: 9pt)[2.5], anchor: "east")
+  content((-0.15, 8.0), text(size: 9pt)[2.6], anchor: "east")
+  content((-0.15, 8.5), text(size: 9pt)[2.7], anchor: "east")
+  content((-0.15, 9.0), text(size: 9pt)[2.8], anchor: "east")
+  content((-0.15, 9.5), text(size: 9pt)[2.9], anchor: "east")
+  content((-0.15, 10.0), text(size: 9pt)[3.0], anchor: "east")
 
-  // Etichette rugosità Ra sul bordo destro (x = 1500 MPa -> 8.63)
-  content((8.80, map-y(1.000)), text(size: 6.8pt, fill: blue, weight: "bold")[0.8], anchor: "west")
-  content((8.80, map-y(0.955)), text(size: 6.8pt)[1.6], anchor: "west")
-  content((8.80, map-y(0.913)), text(size: 6.8pt)[3.2], anchor: "west")
-  content((8.80, map-y(0.860)), text(size: 6.8pt)[6.3], anchor: "west")
-  content((8.80, map-y(0.750)), text(size: 6.8pt)[10], anchor: "west")
-  content((8.80, map-y(0.623)), text(size: 6.8pt)[40], anchor: "west")
-  content((8.80, map-y(0.478)), text(size: 6.8pt, fill: red.transparentize(10%), weight: "bold")[160], anchor: "west")
+  content((-1.15, 6.3), text(size: 11pt)[$K_t$], anchor: "center")
 
-  content((10.10, 3.55), text(size: 7.5pt)[Rugosità $R_a$ ($mu"m"$)], angle: 90deg, anchor: "center")
+  content((0.0, -0.35), text(size: 9.5pt)[0], anchor: "center")
+  content((4.0, -0.35), text(size: 9.5pt)[0.1], anchor: "center")
+  content((8.0, -0.35), text(size: 9.5pt)[0.2], anchor: "center")
+  content((12.0, -0.35), text(size: 9.5pt)[0.3], anchor: "center")
+  content((6.0, -0.8), text(size: 11pt)[r/d], anchor: "center")
+
+  bezier((1.75, 9.95), (4.0, 6.0), (2.3, 8.3), (3.1, 7.0), stroke: 2.2pt + black)
+  bezier((4.0, 6.0), (8.0, 3.45), (5.0, 4.9), (6.5, 4.0), stroke: 2.2pt + black)
+  bezier((8.0, 3.45), (12.0, 2.35), (9.5, 2.9), (10.8, 2.6), stroke: 2.2pt + black)
+
+  bezier((0.82, 10.0), (4.0, 4.5), (1.3, 7.7), (2.4, 5.6), stroke: 2.2pt + black)
+  bezier((4.0, 4.5), (8.0, 2.75), (5.2, 3.7), (6.5, 3.15), stroke: 2.2pt + black)
+  bezier((8.0, 2.75), (12.0, 2.1), (9.5, 2.4), (10.8, 2.22), stroke: 2.2pt + black)
+
+  bezier((0.75, 6.95), (4.0, 3.15), (0.9, 5.2), (2.2, 4.0), stroke: 2.2pt + black)
+  bezier((4.0, 3.15), (8.0, 2.0), (5.2, 2.65), (6.6, 2.25), stroke: 2.2pt + black)
+  bezier((8.0, 2.0), (12.0, 1.5), (9.5, 1.75), (10.8, 1.6), stroke: 2.2pt + black)
+
+  bezier((0.88, 4.15), (4.0, 2.05), (0.95, 3.2), (2.2, 2.55), stroke: 2.2pt + black)
+  bezier((4.0, 2.05), (8.0, 1.3), (5.2, 1.75), (6.6, 1.48), stroke: 2.2pt + black)
+  bezier((8.0, 1.3), (12.0, 1.07), (9.5, 1.18), (10.8, 1.12), stroke: 2.2pt + black)
+
+  content((12.9, 2.9), text(size: 9.5pt)[D/d], anchor: "center")
+
+  content((12.75, 2.35), text(size: 9.5pt)[>2], anchor: "west")
+  line((12.68, 2.35), (12.08, 2.35), stroke: 0.75pt + black, mark: (end: ">", fill: black, scale: 0.5))
+
+  content((12.75, 1.8), text(size: 9.5pt)[1.1], anchor: "west")
+  line((12.68, 1.82), (12.08, 2.05), stroke: 0.75pt + black, mark: (end: ">", fill: black, scale: 0.5))
+
+  content((12.75, 1.32), text(size: 9.5pt)[1.03], anchor: "west")
+  line((12.68, 1.36), (12.08, 1.48), stroke: 0.75pt + black, mark: (end: ">", fill: black, scale: 0.5))
+
+  content((12.75, 0.82), text(size: 9.5pt)[1.01], anchor: "west")
+  line((12.68, 0.88), (12.08, 1.06), stroke: 0.75pt + black, mark: (end: ">", fill: black, scale: 0.5))
+
+  rect((8.7, 3.65), (11.3, 5.05), fill: white, stroke: 0.8pt + black)
+  content((10.0, 4.35), text(size: 10.5pt)[$sigma_"nom" = display((4 P) / (pi d^2))$], anchor: "center")
+
+  rect((6.0, 5.5), (12.0, 9.5), fill: white, stroke: 0.8pt + black)
+
+  line((7.8, 7.5), (10.6, 7.5), stroke: (dash: "dash-dotted", thickness: 0.7pt, paint: black))
+  line((7.95, 6.3), (7.95, 8.7), stroke: (dash: "dash-dotted", thickness: 0.7pt, paint: black))
+  line((10.45, 6.3), (10.45, 8.7), stroke: (dash: "dash-dotted", thickness: 0.7pt, paint: black))
+
+  line((7.95, 8.4), (9.02, 8.4), stroke: 1.5pt + black)
+  arc((9.2, 8.33), start: 180deg, stop: 360deg, radius: 0.18, anchor: "origin", stroke: 1.5pt + black)
+  line((9.38, 8.4), (10.45, 8.4), stroke: 1.5pt + black)
+
+  line((7.95, 6.6), (9.02, 6.6), stroke: 1.5pt + black)
+  arc((9.2, 6.67), start: 0deg, stop: 180deg, radius: 0.18, anchor: "origin", stroke: 1.5pt + black)
+  line((9.38, 6.6), (10.45, 6.6), stroke: 1.5pt + black)
+
+  line((9.02, 6.67), (9.02, 8.33), stroke: 1.0pt + black)
+  line((9.38, 6.67), (9.38, 8.33), stroke: 1.0pt + black)
+
+  line((8.5, 6.6), (8.5, 8.4), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black, scale: 0.45))
+  content((8.73, 7.72), text(size: 9.5pt)[D], anchor: "center")
+
+  line((9.28, 8.15), (10.1, 8.15), stroke: 0.7pt + black)
+  line((9.28, 6.85), (10.1, 6.85), stroke: 0.7pt + black)
+  line((9.75, 6.85), (9.75, 8.15), stroke: 0.7pt + black, mark: (start: ">", end: ">", fill: black, scale: 0.45))
+  content((9.85, 7.62), text(size: 9.5pt)[d], anchor: "west")
+
+  line((9.45, 8.85), (9.2, 8.18), stroke: 0.7pt + black, mark: (end: ">", fill: black, scale: 0.45))
+  content((9.52, 8.98), text(size: 9.5pt)[r], anchor: "west")
+
+  line((7.58, 7.5), (6.8, 7.5), stroke: 1.6pt + black, mark: (end: ">", fill: black, scale: 0.65))
+  content((7.15, 7.9), text(size: 9.5pt)[P], anchor: "center")
+
+  line((10.75, 7.5), (11.53, 7.5), stroke: 1.6pt + black, mark: (end: ">", fill: black, scale: 0.65))
+  content((11.15, 7.9), text(size: 9.5pt)[P], anchor: "center")
 })

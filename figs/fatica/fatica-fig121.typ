@@ -1,114 +1,64 @@
-// Figura estratta da fatica.typ (riga 5297) con LocalTypst
+// Figura estratta da fatica.typ (riga 4608) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 0.68cm, {
-  // BBox: x in [-1.6, 26.8] (dx=28.4), y in [-3.8, 5.5], length=0.58cm -> larghezza = 16.47 cm <= 17.0 cm
-  import draw: line, circle, content
+#canvas(length: 1.15cm, {
+  // BBox: x in [-0.35, 6.85] (dx=7.20), y in [-0.40, 4.70], length=1.05cm -> larghezza = 7.56 cm <= 8.2 cm
+  import draw: line, rect, circle, bezier, content
 
-  let ym(v) = v / 100.0 * 1.35
-  let raw-pts = (
-    (0, 300), (1, 0), (2, 200), (3, -200), (4, 200),
-    (5, -150), (6, 100), (7, 0), (8, 100), (9, -100), (10, 300),
-  )
+  // Telaio fisso inferiore (orizzontale) + tratteggio d'incastro
+  line((1.5, 0.0), (4.5, 0.0), stroke: 1.05pt)
+  for hx in (1.7, 2.1, 2.5, 2.9, 3.3, 3.7, 4.1, 4.45) {
+    line((hx, 0.0), (hx - 0.20, -0.22), stroke: 0.6pt)
+  }
+  content((4.62, -0.05), anchor: "west", text(size: 7pt, fill: luma(50))[Telaio di supporto])
 
-  // --- Helper di griglia per un pannello ---
-  let draw-grid(x0) = {
-    for v in (-200, -150, -100, -50, 0, 50, 100, 150, 200, 250, 300) {
-      let yy = ym(v)
-      let is-major = calc.rem(v, 100) == 0
-      if is-major {
-        let p-col = if v == 0 { luma(165) } else { luma(215) }
-        line((x0, yy), (x0 + 10, yy), stroke: (paint: p-col, thickness: 0.45pt))
-        content((x0 - 0.18, yy), anchor: "east", text(size: 7pt)[#v])
-      } else {
-        line((x0, yy), (x0 + 10, yy), stroke: (paint: luma(230), thickness: 0.35pt, dash: "dotted"))
-      }
-    }
-    for gx in range(1, 11) {
-      line((x0 + gx, ym(-200)), (x0 + gx, ym(300)), stroke: (paint: luma(222), thickness: 0.35pt, dash: "dotted"))
-    }
-    line((x0, ym(-200)), (x0, ym(348)), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-    line((x0, ym(-200)), (x0 + 10.25, ym(-200)), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-    content((x0 - 0.15, ym(352)), anchor: "east", text(size: 7pt)[$sigma$ (MPa)])
-    content((x0 + 10.05, ym(-212)), anchor: "north", text(size: 7pt)[$t$])
+  // Telaio fisso sinistro (verticale) + tratteggio d'incastro
+  line((0.0, 1.65), (0.0, 4.25), stroke: 1.05pt)
+  for hy in (1.85, 2.25, 2.65, 3.05, 3.45, 3.85, 4.20) {
+    line((0.0, hy), (-0.22, hy - 0.20), stroke: 0.6pt)
   }
 
-  // --- Pannello (a): Bacino colmo (300 MPa) e ciclo 1 ---
-  draw-grid(0)
-  let pts-a = raw-pts.map(p => (p.at(0), ym(p.at(1))))
-  line(..pts-a, close: true, fill: rgb("#1f77b4").transparentize(84%), stroke: none)
-  line((0, ym(300)), (10, ym(300)), stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt, dash: "dashed"))
-  line(..pts-a, stroke: (paint: black, thickness: 1.05pt))
+  // Collare di carico e sezione alare della pala
+  rect((2.25, 2.55), (3.75, 3.65), radius: 0.08, fill: black.transparentize(90%), stroke: 0.9pt)
+  bezier((2.46, 3.10), (3.60, 3.04), (2.72, 3.48), (3.22, 3.30), stroke: 1.05pt)
+  bezier((2.46, 3.10), (3.60, 3.04), (2.72, 2.82), (3.22, 2.92), stroke: 1.05pt)
+  circle((2.82, 3.12), radius: 0.11, fill: black.transparentize(75%), stroke: 0.65pt)
 
-  // Valvola 1
-  circle((3, ym(-200)), radius: 0.095, fill: white, stroke: (paint: red.transparentize(10%), thickness: 0.9pt))
-  line((3, ym(-200) - 0.10), (3, ym(-258)), mark: (end: ">", scale: 0.5), stroke: (paint: red.transparentize(10%), thickness: 0.9pt))
-  content((3, ym(-266)), anchor: "north", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[Ciclo 1])
+  // Spostamenti simultanei sui due piani ortogonali
+  line((2.42, 4.02), (3.58, 4.02), mark: (start: ">", end: ">", scale: 0.50, fill: blue), stroke: (paint: blue, thickness: 0.85pt))
+  content((3.00, 4.14), anchor: "south", text(size: 7.5pt, fill: blue)[$Delta x(t)$])
 
-  // Quota Delta sigma_1
-  line((3, ym(-200)), (10.75, ym(-200)), stroke: (paint: luma(120), thickness: 0.5pt, dash: "dotted"))
-  line((10, ym(300)), (10.75, ym(300)), stroke: (paint: luma(120), thickness: 0.5pt, dash: "dotted"))
-  line((10.62, ym(-200)), (10.62, ym(300)), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.5), stroke: 0.65pt)
-  content((10.78, ym(55)), anchor: "west", text(size: 7pt)[$Delta sigma_1$ \ 500])
+  line((4.10, 2.68), (4.10, 3.52), mark: (start: ">", end: ">", scale: 0.50, fill: red.transparentize(10%)), stroke: (paint: red.transparentize(10%), thickness: 0.85pt))
+  content((4.22, 3.10), anchor: "west", text(size: 7.5pt, fill: red.transparentize(10%))[$Delta y(t)$])
 
-  content((5.0, ym(368)), anchor: "south", text(size: 7.5pt, weight: "bold")[(a) Bacino colmo e scarico principale])
+  // Attuatore verticale Fy(t) + cerniere di disaccoppiamento
+  line((2.80, 0.0), (3.00, 0.24), (3.20, 0.0), stroke: 0.8pt)
+  line((3.00, 0.33), (3.00, 0.62), stroke: 0.95pt)
+  rect((2.78, 0.62), (3.22, 1.56), fill: black.transparentize(86%), stroke: 0.95pt)
+  line((2.81, 1.12), (3.19, 1.12), stroke: 1.1pt)
+  line((3.00, 1.12), (3.00, 2.46), stroke: 0.95pt)
+  // Traccia cinematica tratteggiata (rotazione libera senza flessione parassita)
+  line((3.00, 0.24), (3.32, 2.52), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(95)))
+  circle((3.00, 0.24), radius: 0.09, fill: white, stroke: 0.95pt)
+  circle((3.00, 2.55), radius: 0.09, fill: white, stroke: 0.95pt)
+  content((2.64, 1.10), anchor: "east", text(size: 7.5pt, fill: red.transparentize(10%))[$F_y (t)$])
 
-  // --- Pannello (b): Svuotamento delle sacche residue (cicli 2-5) ---
-  let xb = 13.8
-  draw-grid(xb)
+  // Attuatore orizzontale Fx(t) + cerniere di disaccoppiamento
+  line((0.0, 2.90), (0.24, 3.10), (0.0, 3.30), stroke: 0.8pt)
+  line((0.33, 3.10), (0.60, 3.10), stroke: 0.95pt)
+  rect((0.60, 2.88), (1.50, 3.32), fill: black.transparentize(86%), stroke: 0.95pt)
+  line((1.05, 2.91), (1.05, 3.29), stroke: 1.1pt)
+  line((1.05, 3.10), (2.16, 3.10), stroke: 0.95pt)
+  line((0.24, 3.10), (2.22, 3.38), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(95)))
+  circle((0.24, 3.10), radius: 0.09, fill: white, stroke: 0.95pt)
+  circle((2.25, 3.10), radius: 0.09, fill: white, stroke: 0.95pt)
+  content((1.05, 3.46), anchor: "south", text(size: 7.5pt, fill: blue)[$F_x (t)$])
 
-  // Sacca 2 (200 -> 0)
-  line((xb + 0.333, ym(200)), (xb + 1, ym(0)), (xb + 2, ym(200)), close: true, fill: rgb("#1f77b4").transparentize(78%), stroke: none)
-  line((xb + 0.333, ym(200)), (xb + 2, ym(200)), stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt))
+  // Richiami esterni senza collisioni
+  line((4.25, 4.12), (3.76, 3.63), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
+  content((4.32, 4.18), anchor: "west", text(size: 7pt)[Sezione pala \ e collare])
 
-  // Sacca 3 (200 -> -150)
-  line((xb + 4, ym(200)), (xb + 5, ym(-150)), (xb + 6, ym(100)), (xb + 7, ym(0)), (xb + 8, ym(100)), (xb + 9, ym(-100)), (xb + 9.75, ym(200)), close: true, fill: rgb("#1f77b4").transparentize(89%), stroke: none)
-  line((xb + 4, ym(200)), (xb + 9.75, ym(200)), stroke: (paint: rgb("#1f77b4"), thickness: 0.8pt, dash: "dashed"))
-
-  // Sacca 4 (100 -> 0) e Sacca 5 (100 -> -100)
-  line((xb + 6, ym(100)), (xb + 7, ym(0)), (xb + 8, ym(100)), close: true, fill: rgb("#1f77b4").transparentize(66%), stroke: none)
-  line((xb + 6, ym(100)), (xb + 8, ym(100)), stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt))
-  line((xb + 8, ym(100)), (xb + 9, ym(-100)), (xb + 9.5, ym(100)), close: true, fill: rgb("#1f77b4").transparentize(66%), stroke: none)
-  line((xb + 8, ym(100)), (xb + 9.5, ym(100)), stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt))
-
-  // Profilo spezzato
-  let pts-b = raw-pts.map(p => (xb + p.at(0), ym(p.at(1))))
-  line(..pts-b, stroke: (paint: black, thickness: 1.05pt))
-
-  // Valvole 2..5 (con valvola 3 portata sotto quota -200 per zero collisioni)
-  for vpair in ((1, 0, "Ciclo 2"), (5, -150, "Ciclo 3"), (7, 0, "Ciclo 4"), (9, -100, "Ciclo 5")) {
-    let vx = xb + vpair.at(0)
-    let vy = ym(vpair.at(1))
-    let lbl = vpair.at(2)
-    circle((vx, vy), radius: 0.09, fill: white, stroke: (paint: red.transparentize(10%), thickness: 0.85pt))
-    if lbl == "Ciclo 3" {
-      line((vx, vy - 0.10), (vx, ym(-258)), mark: (end: ">", scale: 0.5), stroke: (paint: red.transparentize(10%), thickness: 0.85pt))
-      content((vx, ym(-266)), anchor: "north", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[#lbl])
-    } else {
-      line((vx, vy - 0.10), (vx, vy - 0.68), mark: (end: ">", scale: 0.48), stroke: (paint: red.transparentize(10%), thickness: 0.85pt))
-      content((vx, vy - 0.74), anchor: "north", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[#lbl])
-    }
-  }
-
-  // Quota Delta sigma_2 (0..200) centrata sulla sacca 2 senza toccare i versanti
-  line((xb + 1.0, ym(0) + 0.11), (xb + 1.0, ym(200)), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.44), stroke: 0.6pt)
-  content((xb + 0.80, ym(216)), anchor: "south-west", text(size: 7pt)[$Delta sigma_2 = 200$])
-
-  // Quota Delta sigma_4 (0..100) lungo la verticale della valvola 4 senza intersecare il versante
-  line((xb + 7.0, ym(0) + 0.11), (xb + 7.0, ym(100)), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.42), stroke: 0.6pt)
-  content((xb + 7.0, ym(116)), anchor: "south", text(size: 7pt)[$Delta sigma_4 = 100$])
-
-  // Quota interna Delta sigma_5 (-100..100)
-  line((xb + 9.15, ym(-100)), (xb + 10.55, ym(-100)), stroke: (paint: luma(120), thickness: 0.45pt, dash: "dotted"))
-  line((xb + 9.50, ym(100)), (xb + 10.55, ym(100)), stroke: (paint: luma(120), thickness: 0.45pt, dash: "dotted"))
-  line((xb + 10.45, ym(-100)), (xb + 10.45, ym(100)), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.48), stroke: 0.6pt)
-  content((xb + 10.60, ym(0)), anchor: "west", text(size: 7pt)[$Delta sigma_5$ \ 200])
-
-  // Quota esterna Delta sigma_3 (-150..200) senza incroci con quote interne
-  line((xb + 5.15, ym(-150)), (xb + 11.95, ym(-150)), stroke: (paint: luma(120), thickness: 0.45pt, dash: "dotted"))
-  line((xb + 9.75, ym(200)), (xb + 11.95, ym(200)), stroke: (paint: luma(120), thickness: 0.45pt, dash: "dotted"))
-  line((xb + 11.82, ym(-150)), (xb + 11.82, ym(200)), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.48), stroke: 0.6pt)
-  content((xb + 11.96, ym(135)), anchor: "west", text(size: 7pt)[$Delta sigma_3$ \ 350])
-
-  content((xb + 5.0, ym(368)), anchor: "south", text(size: 7.5pt, weight: "bold")[(b) Svuotamento delle sacche residue])
+  line((4.22, 1.58), (3.13, 2.48), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
+  line((4.22, 1.32), (3.13, 0.30), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
+  content((4.28, 1.45), anchor: "west", text(size: 7pt)[Cerniere di \ disaccoppiamento])
 })

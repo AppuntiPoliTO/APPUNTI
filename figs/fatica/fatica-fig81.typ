@@ -1,97 +1,79 @@
-// Figura estratta da fatica.typ (riga 1084) con LocalTypst
+// Figura estratta da fatica.typ (riga 1682) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#let circ = sym.degree
-#let circ = sym.degree
-
-#canvas(length: 0.95cm, {
+#canvas(length: 1.16cm, {
+  // BBox: x in [0.0, 16.0] (dx=16.0), y in [0.0, 5.7], length=1.0cm -> larghezza = 16.0 cm <= 17.0 cm
   import draw: *
-  // BBox: x in [-5.1, 6.8] (dx=11.9), y in [-5.0, 6.4], length=0.95cm -> larghezza = 11.31 cm <= 11.5 cm
 
-  // Poligono di sicurezza campito
-  line(
-    (-4.0, -4.0),
-    (-2.2, -0.4),
-    (0.0, 1.8),
-    (3.3, 4.0),
-    (4.0, 4.0),
-    (3.3, 2.6),
-    (0.0, -1.8),
-    (-2.2, -4.0),
-    close: true,
-    fill: black.transparentize(90%),
-    stroke: none,
-  )
+  // --- Pannello sinistro: Curve S-N sperimentali (sigma_a - N) ---
+  content((3.825, 5.15), anchor: "south", text(size: 8.5pt, weight: "bold")[Curve $S$-$N$ sperimentali ($sigma_a$)])
+  rect((1.2, 0.8), (6.45, 4.9), stroke: 0.9pt)
 
-  // Assi principali
-  line((-5.0, 0.0), (6.2, 0.0), stroke: 0.75pt, mark: (end: ">"))
-  line((0.0, -4.8), (0.0, 5.8), stroke: 0.75pt, mark: (end: ">"))
-  content((6.3, 0.0), anchor: "west")[#text(size: 8.5pt)[$sigma_m$]]
-  content((0.0, 5.9), anchor: "south")[#text(size: 8.5pt)[$sigma_"max", sigma_"min"$]]
+  // Griglia logaritmica decadi 10^2 .. 10^7 (1.05 u/decade)
+  for (i, lbl) in ($10^2$, $10^3$, $10^4$, $10^5$, $10^6$, $10^7$).enumerate() {
+    let x = 1.2 + i * 1.05
+    if i > 0 and i < 5 {
+      line((x, 0.8), (x, 4.9), stroke: (paint: black.transparentize(82%), thickness: 0.45pt))
+    }
+    line((x, 0.8), (x, 0.72), stroke: 0.6pt)
+    content((x, 0.64), anchor: "north", text(size: 7.5pt)[#lbl])
+  }
+  for y_g in (1.5, 2.2, 2.9, 3.6, 4.3) {
+    line((1.2, y_g), (6.45, y_g), stroke: (paint: black.transparentize(86%), thickness: 0.45pt))
+  }
 
-  // Bisettrice a 45 gradi, arco angolo e prolungamenti costruzione Goodman
-  line((-4.5, -4.5), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.65pt))
-  arc((0.0, 0.0), start: -180deg, stop: -135deg, radius: 1.05, anchor: "origin", stroke: 0.55pt)
-  content((-1.22, -0.44), anchor: "east")[#text(size: 7.5pt)[$45^circ$]]
+  // Ginocchio N_i = 2*10^6: x = 1.2 + 4.301 * 1.05 = 5.72
+  line((5.72, 0.8), (5.72, 4.9), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(40%)))
+  content((5.66, 4.76), anchor: "north-east", text(size: 7pt)[$N_i = 2 dot 10^6$])
 
-  line((3.3, 4.0), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((3.3, 2.6), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.6pt))
-  circle((5.4, 5.4), radius: 0.06, fill: black)
-  content((5.55, 5.4), anchor: "west")[#text(size: 8pt)[$(R_m, R_m)$]]
+  // Curva Flessione (blu) e Trazione-compressione (rosso) da 10^3 (x=2.25)
+  line((2.25, 4.55), (5.72, 3.15), (6.45, 3.15), stroke: 1.2pt + blue)
+  line((2.25, 3.85), (5.72, 2.20), (6.45, 2.20), stroke: 1.2pt + red)
+  line((1.2, 3.15), (5.72, 3.15), stroke: (dash: "dashed", thickness: 0.65pt, paint: blue))
+  line((1.2, 2.20), (5.72, 2.20), stroke: (dash: "dashed", thickness: 0.65pt, paint: red))
 
-  // Linee di costruzione snervamento e proiezioni
-  line((0.0, 4.0), (3.3, 4.0), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((3.3, 4.0), (3.3, 2.6), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((4.0, 4.0), (4.0, 0.0), stroke: (dash: "dotted", thickness: 0.6pt))
-  line((0.0, -4.0), (-2.2, -4.0), stroke: (dash: "dashed", thickness: 0.6pt))
-  line((-2.2, -4.0), (-2.2, -0.4), stroke: (dash: "dashed", thickness: 0.6pt))
+  // Etichette curve e asse Y sinistro
+  content((1.02, 4.82), anchor: "east", text(size: 8.5pt)[$sigma_a$])
+  content((1.02, 3.15), anchor: "east", text(size: 8pt, fill: blue)[$sigma_(D-1)^f$])
+  content((1.02, 2.20), anchor: "east", text(size: 8pt, fill: red)[$sigma_(D-1)^T$])
+  content((3.65, 4.08), anchor: "south-west", text(size: 8pt, fill: blue)[Flessione])
+  content((2.68, 2.68), anchor: "center", box(fill: white, inset: 1.5pt)[#text(size: 7.6pt, fill: red)[Trazione-compressione]])
+  line((3.98, 2.68), (4.63, 2.68), stroke: 0.55pt + red, mark: (end: ">", scale: 0.5, fill: red))
+  content((3.825, 0.25), anchor: "north", text(size: 8pt)[$N$ (cicli)])
 
-  // Contorno poligono di sicurezza in tratto marcato
-  line(
-    (-4.0, -4.0),
-    (-2.2, -0.4),
-    (0.0, 1.8),
-    (3.3, 4.0),
-    (4.0, 4.0),
-    (3.3, 2.6),
-    (0.0, -1.8),
-    (-2.2, -4.0),
-    close: true,
-    stroke: 1.15pt,
-  )
+  // Scarto C_L tra i due asintoti
+  line((6.45, 3.15), (6.80, 3.15), stroke: (dash: "dotted", thickness: 0.55pt))
+  line((6.45, 2.20), (6.80, 2.20), stroke: (dash: "dotted", thickness: 0.55pt))
+  line((6.70, 2.20), (6.70, 3.15), stroke: 0.7pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.55))
+  content((6.88, 2.675), anchor: "west", text(size: 7.5pt)[$C_L = 0.6 div 0.85$])
 
-  // Punti notevoli A, B e quote assi (senza collisioni con linee di costruzione)
-  circle((3.3, 2.6), radius: 0.055, fill: black)
-  content((3.45, 2.45), anchor: "north-west")[#text(size: 8pt)[$A$]]
-  circle((4.0, 4.0), radius: 0.055, fill: black)
-  content((4.55, 3.75), anchor: "west")[#text(size: 8pt)[$B$]]
-  line((4.50, 3.77), (4.08, 3.96), stroke: 0.55pt, mark: (end: ">", scale: 0.5))
+  // --- Pannello destro: Curva teorica unica (sigma_{a,eff} - N) ---
+  content((12.475, 5.15), anchor: "south", text(size: 8.5pt, weight: "bold")[Curva teorica unificata ($sigma_(a,"eff")$)])
+  rect((9.85, 0.8), (15.10, 4.9), stroke: 0.9pt)
 
-  content((-0.15, 4.0), anchor: "east")[#text(size: 8pt)[$R_"eH"$]]
-  content((-0.12, 1.92), anchor: "south-east")[#text(size: 8pt)[$+sigma_(D-1)$]]
-  content((0.15, -1.85), anchor: "west")[#text(size: 8pt)[$-sigma_(D-1)$]]
-  content((0.15, -4.0), anchor: "west")[#text(size: 8pt)[$-R_"eH"$]]
-  content((4.0, -0.15), anchor: "north")[#text(size: 8pt)[$R_"eH"$]]
+  for (i, lbl) in ($10^2$, $10^3$, $10^4$, $10^5$, $10^6$, $10^7$).enumerate() {
+    let x = 9.85 + i * 1.05
+    if i > 0 and i < 5 {
+      line((x, 0.8), (x, 4.9), stroke: (paint: black.transparentize(82%), thickness: 0.45pt))
+    }
+    line((x, 0.8), (x, 0.72), stroke: 0.6pt)
+    content((x, 0.64), anchor: "north", text(size: 7.5pt)[#lbl])
+  }
+  for y_g in (1.5, 2.2, 2.9, 3.6, 4.3) {
+    line((9.85, y_g), (15.10, y_g), stroke: (paint: black.transparentize(86%), thickness: 0.45pt))
+  }
 
-  // Ciclo 1: sicuro (blu) con indicazioni manubrio
-  line((1.65, 0.90), (1.65, 2.40), stroke: (paint: blue, thickness: 1.4pt))
-  line((1.65, 0.90), (1.65, 0.0), stroke: (dash: "dotted", paint: blue, thickness: 0.6pt))
-  circle((1.65, 2.40), radius: 0.055, fill: blue, stroke: blue)
-  circle((1.65, 1.65), radius: 0.055, fill: white, stroke: (paint: blue, thickness: 0.9pt))
-  circle((1.65, 0.90), radius: 0.055, fill: blue, stroke: blue)
-  content((1.52, 2.34), anchor: "east")[#text(size: 7pt, fill: blue)[$sigma_"max"$]]
-  content((1.52, 0.86), anchor: "east")[#text(size: 7pt, fill: blue)[$sigma_"min"$]]
-  content((1.65, -0.15), anchor: "north")[#text(size: 7.5pt, fill: blue)[$sigma_(m,1)$]]
+  // Ginocchio comune N_i = 2*10^6: x = 9.85 + 4.301 * 1.05 = 14.37
+  line((14.37, 0.8), (14.37, 4.9), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(40%)))
+  content((14.31, 4.76), anchor: "north-east", text(size: 7pt)[$N_i = 2 dot 10^6$])
 
-  // Ciclo 2: uscente (rosso)
-  line((2.65, 1.30), (2.65, 4.00), stroke: (paint: red.transparentize(10%), thickness: 1.4pt))
-  line((2.65, 1.30), (2.65, 0.0), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.6pt))
-  circle((2.65, 4.00), radius: 0.055, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-  circle((2.65, 2.65), radius: 0.055, fill: white, stroke: (paint: red.transparentize(10%), thickness: 0.9pt))
-  circle((2.65, 1.30), radius: 0.055, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-  content((2.65, -0.15), anchor: "north")[#text(size: 7.5pt, fill: red.transparentize(10%))[$sigma_(m,2)$]]
+  // Curva sovrapposta (blu + rosso tratteggiato) da 10^3 (x=10.90)
+  line((10.90, 3.85), (14.37, 2.20), (15.10, 2.20), stroke: 1.3pt + blue)
+  line((10.90, 3.85), (14.37, 2.20), (15.10, 2.20), stroke: (paint: red, thickness: 1.2pt, dash: "dashed"))
+  line((9.85, 2.20), (14.37, 2.20), stroke: (dash: "dashed", thickness: 0.65pt))
 
-  // Legenda compatta in alto a sinistra
-  content((-4.7, 5.2), anchor: "north-west")[#text(size: 7.5pt, fill: blue, weight: "bold")[Ciclo 1: sicuro]]
-  content((-4.7, 4.6), anchor: "north-west")[#text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[Ciclo 2: uscente]]
+  content((9.67, 4.82), anchor: "east", text(size: 8.5pt)[$sigma_(a,"eff")$])
+  content((9.67, 2.20), anchor: "east", text(size: 8pt)[$sigma_(D-1)^0$])
+  content((12.95, 3.30), anchor: "south", align(center, text(size: 8pt)[Flessione +\ Traz.-compr.]))
+  content((12.475, 0.25), anchor: "north", text(size: 8pt)[$N$ (cicli)])
 })

@@ -1,49 +1,67 @@
-// Figura estratta da fatica.typ (riga 3014) con LocalTypst
+// Figura estratta da fatica.typ (riga 2443) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.06cm, {
-  // BBox: x in [-0.20, 7.55] (dx=7.75), y in [-0.45, 4.15], length=0.96cm -> larghezza = 7.44 cm <= 8.2 cm
+#canvas(length: 1.1cm, {
+  // BBox: x in [-0.6, 6.8] (dx=7.4), y in [-0.1, 6.8], length=1.0cm -> larghezza = 7.4 cm <= 8.2 cm
   import draw: *
 
-  // Assi cartesiani
-  line((0, 0), (7.25, 0), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
-  content((7.25, -0.15), text(size: 7.5pt)[Tempo], anchor: "north-east")
-  line((0, 0), (0, 4.05), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
-  content((0.15, 3.98), text(size: 7.5pt)[Tensione], anchor: "west")
+  // Griglia parametrica: x in [0.6, 5.1] -> r/d in [0, 0.3], y in [0.9, 6.1] -> K_t in [1.0, 3.0]
+  for rd in (0.1, 0.2, 0.3) {
+    let xx = 0.6 + (rd / 0.3) * 4.5
+    line((xx, 0.9), (xx, 6.1), stroke: (dash: "dotted", thickness: 0.45pt, paint: black.transparentize(75%)))
+    line((xx, 0.9), (xx, 0.78), stroke: 0.7pt)
+    content((xx, 0.58), text(size: 7.5pt)[#rd], anchor: "center")
+  }
+  content((0.6, 0.58), text(size: 7.5pt)[0], anchor: "center")
+  content((5.62, 0.58), text(size: 8pt)[$r / d$], anchor: "center")
 
-  // Linee guida orizzontali tratteggiate
-  line((0, 3.4), (6.05, 3.4), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
-  line((0, 2.25), (5.45, 2.25), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
-  line((0, 1.1), (6.05, 1.1), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
+  for kt in (1.0, 1.5, 2.0, 2.5, 3.0) {
+    let yy = 0.9 + (kt - 1.0) * 2.6
+    if kt > 1.0 {
+      line((0.6, yy), (5.1, yy), stroke: (dash: "dotted", thickness: 0.45pt, paint: black.transparentize(75%)))
+    }
+    line((0.6, yy), (0.48, yy), stroke: 0.7pt)
+    content((0.40, yy), text(size: 7.5pt)[#kt], anchor: "east")
+  }
+  content((-0.25, 3.5), text(size: 8pt)[$K_t$], anchor: "east")
 
-  // Sinusoide con Bezier (punti di controllo a y0 +/- 1.333 * A)
-  let ym = 2.25
-  let amp = 1.15
-  let w = 1.05
-  let x0 = 0.20
-  let dy = 1.333 * amp
-  bezier((x0, ym), (x0 + w, ym), (x0 + 0.33 * w, ym + dy), (x0 + 0.67 * w, ym + dy), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((x0 + w, ym), (x0 + 2 * w, ym), (x0 + 1.33 * w, ym - dy), (x0 + 1.67 * w, ym - dy), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((x0 + 2 * w, ym), (x0 + 3 * w, ym), (x0 + 2.33 * w, ym + dy), (x0 + 2.67 * w, ym + dy), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((x0 + 3 * w, ym), (x0 + 4 * w, ym), (x0 + 3.33 * w, ym - dy), (x0 + 3.67 * w, ym - dy), stroke: (paint: blue, thickness: 1.1pt))
+  // Assi
+  line((0.6, 0.9), (5.38, 0.9), stroke: 0.9pt, mark: (end: ">", scale: 0.6))
+  line((0.6, 0.9), (0.6, 6.45), stroke: 0.9pt, mark: (end: ">", scale: 0.6))
 
-  // Quote verticali sul ciclo
-  line((0.725, 0), (0.725, 2.25), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((0.84, 1.35), text(size: 7.5pt)[$sigma_m$], anchor: "west")
+  // Limite D/d -> 1 (richiamo inferiore senza alcuna collisione con la curva 1.02)
+  line((0.6, 0.9), (5.1, 0.9), stroke: (dash: "dashed", thickness: 0.8pt, paint: blue))
+  line((2.85, 0.36), (2.85, 0.88), stroke: (thickness: 0.55pt, paint: blue), mark: (end: ">", scale: 0.45))
+  content((2.85, 0.30), text(size: 7pt, fill: blue)[Limite $D\/d -> 1$ ($K_t = 1$)], anchor: "north")
 
-  line((1.775, 0), (1.775, 1.10), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((1.89, 0.55), text(size: 7.5pt)[$sigma_"min"$], anchor: "west")
+  // Asintoto elastico r/d -> 0
+  line((0.98, 6.38), (0.68, 6.08), stroke: (thickness: 0.55pt, paint: red.transparentize(10%)), mark: (end: ">", scale: 0.48))
+  content((1.04, 6.42), text(size: 7pt, fill: red.transparentize(10%))[Singolarità elastica $r\/d -> 0$ ($K_t -> oo$)], anchor: "west")
 
-  line((2.825, 0), (2.825, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((2.94, 1.65), text(size: 7.5pt)[$sigma_"max"$], anchor: "west")
+  // Soglia fisica di snervamento locale (smussamento)
+  line((0.6, 4.95), (2.25, 4.95), stroke: (dash: "dashed", thickness: 0.75pt, paint: rgb("#1f77b4")))
+  content((2.32, 4.98), text(size: 6.8pt, fill: rgb("#1f77b4"))[Limite reale per \ snervamento locale], anchor: "west")
 
-  // Quote laterali di ampiezza
-  line((4.80, 2.25), (4.80, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((4.92, 2.83), text(size: 7.5pt)[$sigma_a$], anchor: "west")
-
-  line((4.80, 1.10), (4.80, 2.25), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((4.92, 1.68), text(size: 7.5pt)[$sigma_a$], anchor: "west")
-
-  line((5.75, 1.10), (5.75, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((5.87, 2.25), text(size: 7.5pt)[$Delta sigma = 2 sigma_a$], anchor: "west")
+  let curves = (
+    (label: [$D\/d = 2.0$], c: 0.30, p: 0.50, rmin: 0.022, col: red.transparentize(15%)),
+    (label: [$1.5$], c: 0.22, p: 0.48, rmin: 0.015, col: black),
+    (label: [$1.15$], c: 0.13, p: 0.45, rmin: 0.010, col: black),
+    (label: [$1.02$], c: 0.070, p: 0.42, rmin: 0.008, col: black.transparentize(30%)),
+  )
+  for cv in curves {
+    let pts = ()
+    let nsteps = 28
+    for i in range(nsteps + 1) {
+      let rd = cv.rmin + (0.30 - cv.rmin) * (i / nsteps)
+      let kt = 1.0 + cv.c / calc.pow(rd, cv.p)
+      if kt <= 3.0 {
+        let xx = 0.6 + (rd / 0.3) * 4.5
+        let yy = 0.9 + (kt - 1.0) * 2.6
+        pts.push((xx, yy))
+      }
+    }
+    line(..pts, stroke: (thickness: 1.05pt, paint: cv.col))
+    let last = pts.last()
+    content((last.at(0) + 0.12, last.at(1)), text(size: 7pt, fill: cv.col)[#cv.label], anchor: "west")
+  }
 })

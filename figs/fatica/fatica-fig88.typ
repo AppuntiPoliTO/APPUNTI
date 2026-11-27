@@ -1,75 +1,191 @@
-// Figura estratta da fatica.typ (riga 1886) con LocalTypst
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
+#canvas(length: 1cm, {
+  import draw: *
 
-#canvas(length: 1.68cm, {
-    // BBox: x in [-0.80, 5.20] (dx=6.00), y in [-0.85, 3.70], length=1.28cm -> larghezza = 7.68 cm <= 8.2 cm
-    import draw: *
+  rect((0, 0), (12, 8), stroke: 0.85pt + black, fill: none)
 
-    let map-x(d) = (d - 10.0) / 38.0
-    let map-y(cs) = (cs - 0.60) * 8.0
+  line((2, 0), (2, 8), stroke: 0.65pt + black)
+  line((4, 0), (4, 8), stroke: 0.65pt + black)
+  line((6, 0), (6, 8), stroke: 0.65pt + black)
+  line((8, 0), (8, 8), stroke: 0.65pt + black)
+  line((10, 0), (10, 8), stroke: 0.65pt + black)
 
-    // Griglia cartesiana (d ogni 10 mm da 10 a 200, C_S ogni 0.05)
-    for i in range(0, 20) {
-      let xg = map-x(10 + i * 10)
-      line((xg, 0), (xg, 3.20), stroke: 0.35pt + luma(205))
-    }
-    for j in range(0, 9) {
-      let yg = map-y(0.60 + j * 0.05)
-      line((0, yg), (5.00, yg), stroke: 0.35pt + luma(205))
-    }
+  line((0, 0.4), (12, 0.4), stroke: 0.65pt + black)
+  line((0, 0.8), (12, 0.8), stroke: 0.65pt + black)
+  line((0, 1.2), (12, 1.2), stroke: 0.65pt + black)
+  line((0, 1.6), (12, 1.6), stroke: 0.65pt + black)
+  line((0, 2.0), (12, 2.0), stroke: 0.65pt + black)
+  line((0, 2.4), (12, 2.4), stroke: 0.65pt + black)
+  line((0, 2.8), (12, 2.8), stroke: 0.65pt + black)
+  line((0, 3.2), (12, 3.2), stroke: 0.65pt + black)
+  line((0, 3.6), (12, 3.6), stroke: 0.65pt + black)
+  line((0, 4.0), (12, 4.0), stroke: 0.65pt + black)
+  line((0, 4.4), (12, 4.4), stroke: 0.65pt + black)
+  line((0, 4.8), (6, 4.8), stroke: 0.65pt + black)
+  line((0, 5.2), (6, 5.2), stroke: 0.65pt + black)
+  line((0, 5.6), (6, 5.6), stroke: 0.65pt + black)
+  line((0, 6.0), (6, 6.0), stroke: 0.65pt + black)
+  line((0, 6.4), (6, 6.4), stroke: 0.65pt + black)
+  line((0, 6.8), (6, 6.8), stroke: 0.65pt + black)
+  line((0, 7.2), (6, 7.2), stroke: 0.65pt + black)
+  line((0, 7.6), (12, 7.6), stroke: 0.65pt + black)
 
-    // Cornice degli assi
-    rect((0, 0), (5.00, 3.20), stroke: 0.85pt + black)
+  line((0.4, 0), (0.4, 0.18), stroke: 0.6pt + black)
+  line((0.8, 0), (0.8, 0.18), stroke: 0.6pt + black)
+  line((1.2, 0), (1.2, 0.18), stroke: 0.6pt + black)
+  line((1.6, 0), (1.6, 0.18), stroke: 0.6pt + black)
+  line((2.4, 0), (2.4, 0.18), stroke: 0.6pt + black)
+  line((2.8, 0), (2.8, 0.18), stroke: 0.6pt + black)
+  line((3.2, 0), (3.2, 0.18), stroke: 0.6pt + black)
+  line((3.6, 0), (3.6, 0.18), stroke: 0.6pt + black)
+  line((4.4, 0), (4.4, 0.18), stroke: 0.6pt + black)
+  line((4.8, 0), (4.8, 0.18), stroke: 0.6pt + black)
+  line((5.2, 0), (5.2, 0.18), stroke: 0.6pt + black)
+  line((5.6, 0), (5.6, 0.18), stroke: 0.6pt + black)
+  line((6.4, 0), (6.4, 0.18), stroke: 0.6pt + black)
+  line((6.8, 0), (6.8, 0.18), stroke: 0.6pt + black)
+  line((7.2, 0), (7.2, 0.18), stroke: 0.6pt + black)
+  line((7.6, 0), (7.6, 0.18), stroke: 0.6pt + black)
+  line((8.4, 0), (8.4, 0.18), stroke: 0.6pt + black)
+  line((8.8, 0), (8.8, 0.18), stroke: 0.6pt + black)
+  line((9.2, 0), (9.2, 0.18), stroke: 0.6pt + black)
+  line((9.6, 0), (9.6, 0.18), stroke: 0.6pt + black)
+  line((10.4, 0), (10.4, 0.18), stroke: 0.6pt + black)
+  line((10.8, 0), (10.8, 0.18), stroke: 0.6pt + black)
+  line((11.2, 0), (11.2, 0.18), stroke: 0.6pt + black)
+  line((11.6, 0), (11.6, 0.18), stroke: 0.6pt + black)
 
-    // Etichette asse Y
-    let y-vals = (0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00)
-    let y-strs = ("0.60", "0.65", "0.70", "0.75", "0.80", "0.85", "0.90", "0.95", "1.00")
-    for idx in range(0, y-vals.len()) {
-      let yy = map-y(y-vals.at(idx))
-      if y-strs.at(idx) == "0.70" {
-        content((-0.08, yy), anchor: "east")[#box(stroke: 0.7pt + red.transparentize(10%), inset: 1.5pt, fill: white)[#text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[0.70]]]
-      } else {
-        content((-0.10, yy), anchor: "east")[#text(size: 7pt)[#y-strs.at(idx)]]
-      }
-    }
-    content((0, 3.35), anchor: "south")[#text(size: 8pt, weight: "bold")[$C_S$]]
+  line((0.4, 8), (0.4, 7.82), stroke: 0.6pt + black)
+  line((0.8, 8), (0.8, 7.82), stroke: 0.6pt + black)
+  line((1.2, 8), (1.2, 7.82), stroke: 0.6pt + black)
+  line((1.6, 8), (1.6, 7.82), stroke: 0.6pt + black)
+  line((2.4, 8), (2.4, 7.82), stroke: 0.6pt + black)
+  line((2.8, 8), (2.8, 7.82), stroke: 0.6pt + black)
+  line((3.2, 8), (3.2, 7.82), stroke: 0.6pt + black)
+  line((3.6, 8), (3.6, 7.82), stroke: 0.6pt + black)
+  line((4.4, 8), (4.4, 7.82), stroke: 0.6pt + black)
+  line((4.8, 8), (4.8, 7.82), stroke: 0.6pt + black)
+  line((5.2, 8), (5.2, 7.82), stroke: 0.6pt + black)
+  line((5.6, 8), (5.6, 7.82), stroke: 0.6pt + black)
+  line((6.4, 8), (6.4, 7.82), stroke: 0.6pt + black)
+  line((6.8, 8), (6.8, 7.82), stroke: 0.6pt + black)
+  line((7.2, 8), (7.2, 7.82), stroke: 0.6pt + black)
+  line((7.6, 8), (7.6, 7.82), stroke: 0.6pt + black)
+  line((8.4, 8), (8.4, 7.82), stroke: 0.6pt + black)
+  line((8.8, 8), (8.8, 7.82), stroke: 0.6pt + black)
+  line((9.2, 8), (9.2, 7.82), stroke: 0.6pt + black)
+  line((9.6, 8), (9.6, 7.82), stroke: 0.6pt + black)
+  line((10.4, 8), (10.4, 7.82), stroke: 0.6pt + black)
+  line((10.8, 8), (10.8, 7.82), stroke: 0.6pt + black)
+  line((11.2, 8), (11.2, 7.82), stroke: 0.6pt + black)
+  line((11.6, 8), (11.6, 7.82), stroke: 0.6pt + black)
 
-    // Etichette asse X (ogni 20 mm da 10 a 190, bordo destro a 200)
-    for k in range(0, 10) {
-      let d = 10 + k * 20
-      content((map-x(d), -0.12), anchor: "north")[#text(size: 7pt)[#d]]
-    }
-    content((2.50, -0.48), anchor: "north")[#text(size: 7.5pt, weight: "bold")[$d$ [mm]]]
+  bezier((0.5, 4.30), (2.0, 2.24), (0.85, 3.0), (1.35, 2.55), stroke: 2.1pt + black)
+  bezier((2.0, 2.24), (4.0, 1.44), (2.6, 1.88), (3.3, 1.62), stroke: 2.1pt + black)
+  bezier((4.0, 1.44), (8.0, 0.78), (5.3, 1.12), (6.7, 0.90), stroke: 2.1pt + black)
+  bezier((8.0, 0.78), (12.0, 0.56), (9.3, 0.68), (10.7, 0.59), stroke: 2.1pt + black)
 
-    // Asintoto orizzontale C_S = 0.70
-    let y-asym = map-y(0.70)
-    line((0, y-asym), (5.12, y-asym), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
+  bezier((0.40, 6.76), (2.0, 3.44), (0.80, 5.0), (1.35, 4.05), stroke: 2.1pt + black)
+  bezier((2.0, 3.44), (4.0, 2.36), (2.6, 2.85), (3.3, 2.58), stroke: 2.1pt + black)
+  bezier((4.0, 2.36), (8.0, 1.46), (5.3, 1.98), (6.7, 1.66), stroke: 2.1pt + black)
+  bezier((8.0, 1.46), (12.0, 1.04), (9.3, 1.26), (10.7, 1.08), stroke: 2.1pt + black)
 
-    // Curva sperimentale C_S(d) fedele all'abaco (Slide 9)
-    let curve-data = (
-      (10, 1.000), (15, 0.950), (20, 0.910), (25, 0.883), (30, 0.862),
-      (40, 0.830), (50, 0.806), (60, 0.788), (70, 0.773), (80, 0.761),
-      (90, 0.750), (100, 0.741), (110, 0.733), (120, 0.726), (130, 0.720),
-      (140, 0.715), (150, 0.711), (160, 0.707), (170, 0.704), (180, 0.702),
-      (190, 0.700), (200, 0.700),
-    )
-    let curve-pts = curve-data.map(p => (map-x(p.at(0)), map-y(p.at(1))))
-    line(..curve-pts, stroke: 1.35pt + black)
+  bezier((0.65, 7.95), (2.0, 4.24), (0.95, 6.1), (1.40, 5.05), stroke: 2.1pt + black)
+  bezier((2.0, 4.24), (4.0, 2.76), (2.6, 3.55), (3.3, 3.08), stroke: 2.1pt + black)
+  bezier((4.0, 2.76), (8.0, 1.68), (5.3, 2.30), (6.7, 1.92), stroke: 2.1pt + black)
+  bezier((8.0, 1.68), (12.0, 1.15), (9.3, 1.45), (10.7, 1.20), stroke: 2.1pt + black)
 
-    // Etichetta curva Flessione e torsione
-    content((2.95, 2.65), anchor: "center")[
-      #box(fill: white, stroke: 0.6pt + black, inset: 2.5pt, radius: 1.5pt)[
-        #text(size: 7pt, weight: "bold")[Flessione e torsione]
-      ]
-    ]
-    line((2.05, 2.55), (map-x(46), map-y(0.816)), stroke: 0.6pt + black, mark: (end: ">", scale: 0.55))
+  bezier((0.82, 7.95), (2.0, 4.92), (1.15, 6.6), (1.55, 5.65), stroke: 2.1pt + black)
+  bezier((2.0, 4.92), (4.0, 3.36), (2.6, 4.25), (3.3, 3.72), stroke: 2.1pt + black)
+  bezier((4.0, 3.36), (8.0, 1.94), (5.3, 2.75), (6.7, 2.25), stroke: 2.1pt + black)
+  bezier((8.0, 1.94), (12.0, 1.25), (9.3, 1.65), (10.7, 1.32), stroke: 2.1pt + black)
 
-    // Etichetta asintoto C_L = 0.70
-    content((3.10, 0.36), anchor: "center")[
-      #box(fill: white, stroke: 0.6pt + red.transparentize(10%), inset: 2.2pt, radius: 1.5pt)[
-        #set align(center)
-        #text(size: 6.7pt)[Asintoto: valore medio $C_L = 0.70$ \ (trazione-compressione)]
-      ]
-    ]
-    line((2.40, 0.61), (2.40, y-asym - 0.02), stroke: 0.6pt + red.transparentize(10%), mark: (end: ">", scale: 0.55))
-  })
+  bezier((0.96, 7.98), (2.0, 5.28), (1.28, 6.8), (1.62, 5.95), stroke: 2.1pt + black)
+  bezier((2.0, 5.28), (4.0, 3.56), (2.6, 4.55), (3.3, 3.95), stroke: 2.1pt + black)
+  bezier((4.0, 3.56), (8.0, 2.06), (5.3, 2.95), (6.7, 2.40), stroke: 2.1pt + black)
+  bezier((8.0, 2.06), (12.0, 1.36), (9.3, 1.76), (10.7, 1.42), stroke: 2.1pt + black)
+
+  rect((6.0, 4.4), (12.0, 7.6), fill: white, stroke: 0.85pt + black)
+
+  line((7.7, 6.0), (10.3, 6.0), stroke: (dash: "dash-dotted", thickness: 0.65pt))
+  line((7.95, 5.15), (7.95, 6.85), stroke: (dash: "dash-dotted", thickness: 0.65pt))
+  line((10.1, 5.15), (10.1, 6.85), stroke: (dash: "dash-dotted", thickness: 0.65pt))
+
+  line((7.95, 6.72), (9.02, 6.72), stroke: 1.3pt + black)
+  line((9.02, 6.72), (9.02, 5.28), stroke: 1.3pt + black)
+  line((7.95, 5.28), (9.02, 5.28), stroke: 1.3pt + black)
+
+  arc((9.20, 6.72), start: 180deg, stop: 270deg, radius: 0.18, anchor: "origin", stroke: 1.3pt + black)
+  line((9.20, 6.54), (10.1, 6.54), stroke: 1.3pt + black)
+
+  arc((9.20, 5.28), start: 90deg, stop: 180deg, radius: 0.18, anchor: "origin", stroke: 1.3pt + black)
+  line((9.20, 5.46), (10.1, 5.46), stroke: 1.3pt + black)
+
+  line((8.48, 5.28), (8.48, 6.72), stroke: 0.65pt + black, mark: (start: ">", end: ">", fill: black, scale: 0.45))
+  content((8.73, 6.18), text(size: 8.5pt)[$D$])
+
+  line((9.56, 5.46), (9.56, 6.54), stroke: 0.65pt + black, mark: (start: ">", end: ">", fill: black, scale: 0.45))
+  content((9.82, 6.18), text(size: 8.5pt)[$d$])
+
+  line((9.48, 6.88), (9.10, 6.60), stroke: 0.65pt + black, mark: (end: ">", fill: black, scale: 0.45))
+  content((9.64, 6.94), text(size: 8.5pt)[$r$])
+
+  bezier((7.52, 5.15), (7.52, 6.80), (7.10, 5.45), (7.10, 6.50), stroke: 1.4pt + black)
+  line((7.62, 6.88), (7.30, 6.82), (7.48, 6.62), close: true, fill: black, stroke: 0.5pt + black)
+  content((6.75, 6.12), text(size: 8.5pt)[$M_"f"$])
+
+  bezier((10.44, 5.15), (10.44, 6.80), (10.86, 5.45), (10.86, 6.50), stroke: 1.4pt + black)
+  line((10.34, 6.88), (10.66, 6.82), (10.48, 6.62), close: true, fill: black, stroke: 0.5pt + black)
+  content((11.25, 6.12), text(size: 8.5pt)[$M_"f"$])
+
+  rect((7.82, 2.86), (10.80, 4.00), fill: white, stroke: 0.75pt + black)
+  content((9.31, 3.43), text(size: 9.5pt)[$sigma_"nom" = display((32 M_"f") / (pi d^3))$])
+
+  content((-0.12, 0.0), text(size: 8.5pt)[1.0], anchor: "east")
+  content((-0.12, 0.4), text(size: 8.5pt)[1.1], anchor: "east")
+  content((-0.12, 0.8), text(size: 8.5pt)[1.2], anchor: "east")
+  content((-0.12, 1.2), text(size: 8.5pt)[1.3], anchor: "east")
+  content((-0.12, 1.6), text(size: 8.5pt)[1.4], anchor: "east")
+  content((-0.12, 2.0), text(size: 8.5pt)[1.5], anchor: "east")
+  content((-0.12, 2.4), text(size: 8.5pt)[1.6], anchor: "east")
+  content((-0.12, 2.8), text(size: 8.5pt)[1.7], anchor: "east")
+  content((-0.12, 3.2), text(size: 8.5pt)[1.8], anchor: "east")
+  content((-0.12, 3.6), text(size: 8.5pt)[1.9], anchor: "east")
+  content((-0.12, 4.0), text(size: 8.5pt)[2.0], anchor: "east")
+  content((-0.12, 4.4), text(size: 8.5pt)[2.1], anchor: "east")
+  content((-0.12, 4.8), text(size: 8.5pt)[2.2], anchor: "east")
+  content((-0.12, 5.2), text(size: 8.5pt)[2.3], anchor: "east")
+  content((-0.12, 5.6), text(size: 8.5pt)[2.4], anchor: "east")
+  content((-0.12, 6.0), text(size: 8.5pt)[2.5], anchor: "east")
+  content((-0.12, 6.4), text(size: 8.5pt)[2.6], anchor: "east")
+  content((-0.12, 6.8), text(size: 8.5pt)[2.7], anchor: "east")
+  content((-0.12, 7.2), text(size: 8.5pt)[2.8], anchor: "east")
+  content((-0.12, 7.6), text(size: 8.5pt)[2.9], anchor: "east")
+  content((-0.12, 8.0), text(size: 8.5pt)[3.0], anchor: "east")
+
+  content((-1.0, 5.05), text(size: 10pt)[$K_"t"$], anchor: "east")
+
+  content((0.08, -0.14), text(size: 9pt)[0], anchor: "north")
+  content((4.0, -0.14), text(size: 9pt)[0.1], anchor: "north")
+  content((8.0, -0.14), text(size: 9pt)[0.2], anchor: "north")
+  content((12.0, -0.14), text(size: 9pt)[0.3], anchor: "north")
+  content((6.0, -0.18), text(size: 10pt)[$"r"/"d"$], anchor: "north")
+
+  content((12.88, 2.22), text(size: 9pt)[$"D"/"d"$], anchor: "center")
+
+  content((12.76, 1.72), text(size: 9pt)[6], anchor: "west")
+  line((12.60, 1.72), (12.08, 1.44), stroke: 0.7pt + black, mark: (end: ">", fill: black, scale: 0.5))
+
+  content((12.76, 1.32), text(size: 9pt)[3], anchor: "west")
+  line((12.64, 1.32), (12.10, 1.25), stroke: 0.7pt + black, mark: (end: ">", fill: black, scale: 0.5))
+
+  content((12.76, 0.92), text(size: 9pt)[1.5], anchor: "west")
+  line((12.72, 0.92), (12.12, 1.12), stroke: 0.7pt + black, mark: (end: ">", fill: black, scale: 0.5))
+
+  content((12.76, 0.52), text(size: 9pt)[1.1], anchor: "west")
+  line((12.72, 0.56), (12.12, 0.92), stroke: 0.7pt + black, mark: (end: ">", fill: black, scale: 0.5))
+
+  content((12.76, 0.14), text(size: 9pt)[1.01], anchor: "west")
+  line((12.68, 0.22), (12.20, 0.52), stroke: 0.7pt + black, mark: (end: ">", fill: black, scale: 0.5))
+})

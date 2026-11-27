@@ -1,77 +1,72 @@
-// Figura estratta da fatica.typ (riga 642) con LocalTypst
+// Figura estratta da fatica.typ (riga 1278) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.52cm, {
-  // BBox: x in [-0.95, 4.35] (dx=5.30), y in [-0.85, 4.05], length=1.42cm -> larghezza = 7.53 cm <= 8.2 cm
+#canvas(length: 1.00cm, {
   import draw: *
+  // BBox: x in [-4.1, 4.8] (dx=8.9), y in [-0.7, 4.5], length=0.90cm -> larghezza = 8.01 cm <= 8.2 cm
 
-  // Riquadro assi principali (x = log10(N) - 4, y = (sigma_a - 10)/30)
-  rect((0, 0), (4.0, 3.85), stroke: 0.9pt)
-
-  // Ticks asse X (10^4 .. 10^8)
-  for (xval, lbl) in ((0, $10^4$), (1, $10^5$), (2, $10^6$), (3, $10^7$), (4, $10^8$)) {
-    line((xval, 0), (xval, -0.07), stroke: 0.7pt)
-    line((xval, 3.85), (xval, 3.78), stroke: 0.55pt)
-    content((xval, -0.12), anchor: "north", text(size: 7pt)[#lbl])
-  }
-  content((2.0, -0.40), anchor: "north", text(size: 7.5pt)[$N$])
-
-  // Ticks asse Y (20 .. 120 MPa)
-  for s in (20, 40, 60, 80, 100, 120) {
-    let yval = (s - 10) / 30
-    line((0, yval), (-0.07, yval), stroke: 0.7pt)
-    line((4.0, yval), (3.93, yval), stroke: 0.55pt)
-    content((-0.11, yval), anchor: "east", text(size: 7pt)[#s])
-  }
-  content((-0.68, 1.92), angle: 90deg, anchor: "center", text(size: 7.5pt)[$sigma_a$ (MPa)])
-
-  // Riquadro parametri prova
-  content((3.85, 3.68), anchor: "north-east", text(size: 7pt)[
-    #align(right)[
-      M12 \
-      $sigma_m = 230$ MPa \
-      Weibull-2p
-    ]
-  ])
-
-  // Punti di rottura (x) distribuiti attorno a B50 tra B10 e B90
-  let xpts = (
-    (0.97, 3.33), (1.07, 3.33), (1.15, 3.33), (1.25, 3.33),
-    (1.50, 2.33), (1.62, 2.33), (1.71, 2.33), (1.80, 2.33), (1.91, 2.33),
-    (1.86, 1.67), (1.99, 1.67), (2.11, 1.67), (2.26, 1.67),
-    (2.04, 1.33), (2.18, 1.33), (2.31, 1.33), (2.48, 1.33),
-    (2.20, 1.00), (2.36, 1.00),
-    (2.34, 0.76),
+  // Poligono di sicurezza campito
+  line(
+    (-2.8, 0.0),
+    (-1.4, 1.4),
+    (1.87, 2.8),
+    (2.8, 2.8),
+    (0.0, 0.0),
+    close: true,
+    fill: black.transparentize(90%),
+    stroke: none,
   )
-  for (px, py) in xpts {
-    let d = 0.045
-    line((px - d, py - d), (px + d, py + d), stroke: 0.75pt)
-    line((px - d, py + d), (px + d, py - d), stroke: 0.75pt)
-  }
 
-  // Run-outs (o) a troncamento N = 10^7
-  let opts = (
-    (3.00, 1.33), (2.88, 1.00), (3.02, 1.00), (3.00, 0.67), (3.00, 0.33),
+  // Assi ortogonali (sigma_min, sigma_max)
+  line((-3.4, 0.0), (4.0, 0.0), stroke: 0.75pt, mark: (end: ">"))
+  line((0.0, -0.4), (0.0, 3.85), stroke: 0.75pt, mark: (end: ">"))
+  content((4.08, 0.0), anchor: "west")[#text(size: 8pt)[$sigma_"min"$]]
+  content((0.0, 3.92), anchor: "south")[#text(size: 8pt)[$sigma_"max"$]]
+
+  // Assi ruotati di 45 gradi (sigma_m e sigma_a) ben distanziati da Rm
+  line((0.0, 0.0), (4.05, 4.05), stroke: (paint: blue, thickness: 0.75pt), mark: (end: ">"))
+  line((0.0, 0.0), (-2.95, 2.95), stroke: (paint: blue, thickness: 0.75pt), mark: (end: ">"))
+  content((4.10, 4.10), anchor: "south-west")[#text(size: 8pt, fill: blue)[$sigma_m$]]
+  content((-3.00, 3.00), anchor: "south-east")[#text(size: 8pt, fill: blue)[$sigma_a$]]
+
+  // Raggi a rapporto R costante e prolungamenti
+  line((0.0, 0.0), (-3.2, 1.6), stroke: (dash: "dashed", thickness: 0.55pt))
+  content((-3.26, 1.6), anchor: "east")[#text(size: 7pt)[$R = -2$]]
+  content((-2.35, 2.15), anchor: "north-east")[#text(size: 7pt, fill: blue)[$R = -1$]]
+  content((0.12, 3.45), anchor: "west")[#text(size: 7pt)[$R = 0$]]
+  content((2.82, 2.52), anchor: "north-west")[#text(size: 7pt, fill: blue)[$R = 1$]]
+
+  // Costruzioni Goodman e snervamento
+  line((1.87, 2.8), (3.5, 3.5), stroke: (dash: "dashed", thickness: 0.6pt))
+  circle((3.5, 3.5), radius: 0.05, fill: black)
+  content((3.36, 3.56), anchor: "south-east")[#text(size: 7.5pt)[$R_m$]]
+  line((0.0, 2.8), (1.87, 2.8), stroke: (dash: "dotted", thickness: 0.6pt))
+  content((0.10, 2.85), anchor: "south-west")[#text(size: 7.5pt)[$R_"p0.2"$]]
+
+  // Contorno poligono di sicurezza
+  line(
+    (-2.8, 0.0),
+    (-1.4, 1.4),
+    (1.87, 2.8),
+    (2.8, 2.8),
+    (0.0, 0.0),
+    close: true,
+    stroke: 1.15pt,
   )
-  for (px, py) in opts {
-    circle((px, py), radius: 0.048, fill: white, stroke: 0.75pt + rgb("#1f77b4"))
-  }
 
-  // Curve iso-probabilità Weibull (B90, B50, B10)
-  line((1.18, 3.45), (2.38, 1.55), (4.0, 1.55), stroke: (paint: black.transparentize(35%), thickness: 0.85pt, dash: "dashed"))
-  content((3.42, 1.62), anchor: "south", text(size: 7pt)[$B_90$])
+  // Punto di lavoro P e proiezioni su entrambi i riferimenti
+  let px = 1.45
+  let py = 2.05
+  line((px, py), (px, 0.0), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.65pt))
+  line((px, py), (0.0, py), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.65pt))
+  line((px, py), (1.75, 1.75), stroke: (dash: "dotted", paint: blue, thickness: 0.65pt))
+  line((px, py), (-0.30, 0.30), stroke: (dash: "dotted", paint: blue, thickness: 0.65pt))
+  circle((px, py), radius: 0.065, fill: red.transparentize(10%), stroke: red.transparentize(10%))
+  content((px + 0.08, py + 0.06), anchor: "south-west")[#text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$]]
 
-  line((1.05, 3.45), (2.38, 1.15), (4.0, 1.15), stroke: (paint: black, thickness: 1.0pt))
-  content((3.42, 1.22), anchor: "south", text(size: 7pt, weight: "bold")[$B_50$])
-
-  line((0.92, 3.45), (2.38, 0.72), (4.0, 0.72), stroke: (paint: rgb("#1f77b4"), thickness: 1.0pt))
-  content((3.42, 0.79), anchor: "south", text(size: 7pt, fill: rgb("#1f77b4"), weight: "bold")[$B_10$])
-
-  // Legenda inferiore
-  line((0.35 - 0.045, -0.72 - 0.045), (0.35 + 0.045, -0.72 + 0.045), stroke: 0.75pt)
-  line((0.35 - 0.045, -0.72 + 0.045), (0.35 + 0.045, -0.72 - 0.045), stroke: 0.75pt)
-  content((0.48, -0.72), anchor: "west", text(size: 7pt)[rotture])
-
-  circle((1.75, -0.72), radius: 0.048, fill: white, stroke: 0.75pt + rgb("#1f77b4"))
-  content((1.88, -0.72), anchor: "west", text(size: 7pt)[*run-outs* (non rotture)])
+  // Etichette assi sigma_D-1 senza collisioni
+  line((-1.4, 1.4), (0.0, 1.4), stroke: (dash: "dotted", thickness: 0.5pt))
+  line((-1.4, 1.4), (-1.4, 0.0), stroke: (dash: "dotted", thickness: 0.5pt))
+  content((-1.4, -0.14), anchor: "north")[#text(size: 7.5pt)[$-sigma_(D-1)$]]
+  content((0.08, 1.42), anchor: "south-west")[#text(size: 7.5pt)[$sigma_(D-1)$]]
 })

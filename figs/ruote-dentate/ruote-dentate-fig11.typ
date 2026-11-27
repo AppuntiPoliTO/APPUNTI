@@ -1,124 +1,181 @@
-// Figura estratta da ruote dentate.typ (riga 1586) con LocalTypst
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-
 #canvas(length: 1cm, {
   import draw: *
 
-  // 1. CONTORNO DELLA FASCIA DENTATA (bordo superiore, inferiore e fratture laterali)
-  // Bordo superiore e inferiore (stroke: 1.2pt)
-  line((-2.95, 1.48), (2.50, 1.48), stroke: 1.2pt)
-  line((-2.95, 0.00), (2.50, 0.00), stroke: 1.2pt)
+  line((0, -5.0), (12, -5.0), stroke: 0.9pt)
+  line((0, 5.0), (12, 5.0), stroke: 0.9pt)
+  line((0, -5.0), (0, 5.0), stroke: 0.9pt)
+  line((12, -5.0), (12, 5.0), stroke: 0.9pt)
 
-  // Frattura sinistra (x ~ -2.95, da y = 0 a y = 1.48)
-  bezier((-2.95, 0.00), (-2.92, 0.50), (-3.02, 0.18), (-2.88, 0.35), stroke: 1.2pt)
-  bezier((-2.92, 0.50), (-3.00, 1.00), (-2.96, 0.68), (-3.05, 0.85), stroke: 1.2pt)
-  bezier((-3.00, 1.00), (-2.95, 1.48), (-2.92, 1.18), (-2.98, 1.32), stroke: 1.2pt)
+  line((0, -4.5), (12, -4.5), stroke: 0.4pt + luma(110))
+  line((0, -4.0), (12, -4.0), stroke: 0.4pt + luma(110))
+  line((0, -3.5), (12, -3.5), stroke: 0.4pt + luma(110))
+  line((0, -3.0), (12, -3.0), stroke: 0.4pt + luma(110))
+  line((0, -2.5), (12, -2.5), stroke: 0.4pt + luma(110))
+  line((0, -2.0), (12, -2.0), stroke: 0.4pt + luma(110))
+  line((0, -1.5), (12, -1.5), stroke: 0.4pt + luma(110))
+  line((0, -1.0), (12, -1.0), stroke: 0.4pt + luma(110))
+  line((0, -0.5), (12, -0.5), stroke: 0.4pt + luma(110))
+  line((0, 0.0), (12, 0.0), stroke: 0.65pt + black)
+  line((0, 0.5), (12, 0.5), stroke: 0.4pt + luma(110))
+  line((0, 1.0), (12, 1.0), stroke: 0.4pt + luma(110))
+  line((0, 1.5), (12, 1.5), stroke: 0.4pt + luma(110))
+  line((0, 2.0), (12, 2.0), stroke: 0.4pt + luma(110))
+  line((0, 2.5), (12, 2.5), stroke: 0.4pt + luma(110))
+  line((0, 3.0), (12, 3.0), stroke: 0.4pt + luma(110))
+  line((0, 3.5), (12, 3.5), stroke: 0.4pt + luma(110))
+  line((0, 4.0), (12, 4.0), stroke: 0.4pt + luma(110))
+  line((0, 4.5), (12, 4.5), stroke: 0.4pt + luma(110))
 
-  // Frattura destra (x ~ 2.50, da y = 0 a y = 1.48)
-  bezier((2.50, 0.00), (2.42, 0.50), (2.52, 0.18), (2.38, 0.35), stroke: 1.2pt)
-  bezier((2.42, 0.50), (2.48, 1.00), (2.46, 0.68), (2.52, 0.85), stroke: 1.2pt)
-  bezier((2.48, 1.00), (2.50, 1.48), (2.42, 1.18), (2.52, 1.32), stroke: 1.2pt)
+  line((0.803, -5.0), (0.803, 5.0), stroke: 0.4pt + luma(110))
+  line((1.499, -5.0), (1.499, 5.0), stroke: 0.4pt + luma(110))
+  line((2.113, -5.0), (2.113, 5.0), stroke: 0.4pt + luma(110))
+  line((2.662, -5.0), (2.662, 5.0), stroke: 0.4pt + luma(110))
+  line((3.159, -5.0), (3.159, 5.0), stroke: 0.35pt + luma(150))
+  line((3.612, -5.0), (3.612, 5.0), stroke: 0.35pt + luma(150))
+  line((4.030, -5.0), (4.030, 5.0), stroke: 0.35pt + luma(150))
+  line((4.416, -5.0), (4.416, 5.0), stroke: 0.35pt + luma(150))
+  line((4.775, -5.0), (4.775, 5.0), stroke: 0.4pt + luma(110))
+  line((5.112, -5.0), (5.112, 5.0), stroke: 0.35pt + luma(150))
+  line((5.428, -5.0), (5.428, 5.0), stroke: 0.35pt + luma(150))
+  line((5.725, -5.0), (5.725, 5.0), stroke: 0.35pt + luma(150))
+  line((6.007, -5.0), (6.007, 5.0), stroke: 0.35pt + luma(150))
+  line((6.275, -5.0), (6.275, 5.0), stroke: 0.4pt + luma(110))
+  line((7.437, -5.0), (7.437, 5.0), stroke: 0.4pt + luma(110))
+  line((8.388, -5.0), (8.388, 5.0), stroke: 0.4pt + luma(110))
+  line((9.191, -5.0), (9.191, 5.0), stroke: 0.4pt + luma(110))
+  line((9.887, -5.0), (9.887, 5.0), stroke: 0.4pt + luma(110))
+  line((10.501, -5.0), (10.501, 5.0), stroke: 0.4pt + luma(110))
+  line((11.050, -5.0), (11.050, 5.0), stroke: 0.4pt + luma(110))
 
-  // 2. TRACCE DEI DENTI ELICOIDALI (inclinate di 30deg rispetto alla verticale: dx = -0.854 su dy = 1.48)
-  // Coppia 1 (estrema sinistra, parziale)
-  line((-2.22, 0.00), (-2.96, 1.28), stroke: 0.5pt)
-  line((-2.12, 0.00), (-2.97, 1.48), stroke: 0.5pt)
+  line(
+    (4.750, -5.0), (4.258, -4.5), (3.816, -4.0), (3.419, -3.5), (3.060, -3.0),
+    (2.735, -2.5), (2.440, -2.0), (2.172, -1.5), (1.927, -1.0), (1.704, -0.5),
+    (1.499, 0.0), (1.312, 0.5), (1.140, 1.0), (0.982, 1.5), (0.837, 2.0),
+    (0.703, 2.5), (0.579, 3.0), (0.464, 3.5), (0.357, 4.0), (0.258, 4.5), (0.166, 5.0),
+    stroke: 1.0pt + black
+  )
 
-  // Coppia 2
-  line((-1.48, 0.00), (-2.33, 1.48), stroke: 0.5pt)
-  line((-1.38, 0.00), (-2.23, 1.48), stroke: 0.5pt)
+  line(
+    (5.638, -5.0), (4.701, -4.0), (3.937, -3.0), (3.304, -2.0), (2.775, -1.0),
+    (2.329, 0.0), (1.950, 1.0), (1.627, 2.0), (1.349, 3.0), (1.109, 4.0), (0.900, 5.0),
+    stroke: 1.0pt + black
+  )
 
-  // Coppia 3
-  line((-0.74, 0.00), (-1.59, 1.48), stroke: 0.5pt)
-  line((-0.64, 0.00), (-1.49, 1.48), stroke: 0.5pt)
+  line(
+    (6.614, -5.0), (5.675, -4.0), (4.903, -3.0), (4.259, -2.0), (3.715, -1.0),
+    (3.252, 0.0), (2.855, 1.0), (2.512, 2.0), (2.214, 3.0), (1.955, 4.0), (1.728, 5.0),
+    stroke: 1.0pt + black
+  )
 
-  // Coppia 4 (passante per a = (0, 0))
-  line((0.00, 0.00), (-0.85, 1.48), stroke: 0.5pt)
-  line((0.10, 0.00), (-0.75, 1.48), stroke: 0.5pt)
+  line(
+    (7.697, -5.0), (6.755, -4.0), (5.977, -3.0), (5.323, -2.0), (4.765, -1.0),
+    (4.286, 0.0), (3.872, 1.0), (3.510, 2.0), (3.194, 3.0), (2.916, 4.0), (2.669, 5.0),
+    stroke: 1.0pt + black
+  )
 
-  // Coppia 5 (intermedia tra a e c)
-  line((0.74, 0.00), (-0.11, 1.48), stroke: 0.5pt)
-  line((0.84, 0.00), (-0.01, 1.48), stroke: 0.5pt)
+  line(
+    (8.910, -5.0), (7.967, -4.0), (7.183, -3.0), (6.520, -2.0), (5.951, -1.0),
+    (5.457, 0.0), (5.026, 1.0), (4.648, 2.0), (4.313, 3.0), (4.016, 4.0), (3.751, 5.0),
+    stroke: 1.0pt + black
+  )
 
-  // Coppia 6 (passante per c = (1.48, 0))
-  line((1.48, 0.00), (0.63, 1.48), stroke: 0.5pt)
-  line((1.58, 0.00), (0.73, 1.48), stroke: 0.5pt)
+  line(
+    (10.290, -5.0), (9.344, -4.0), (8.556, -3.0), (7.885, -2.0), (7.305, -1.0),
+    (6.799, 0.0), (6.354, 1.0), (5.959, 2.0), (5.607, 3.0), (5.291, 4.0), (5.008, 5.0),
+    stroke: 1.0pt + black
+  )
 
-  // Coppia 7
-  line((2.22, 0.00), (1.37, 1.48), stroke: 0.5pt)
-  line((2.32, 0.00), (1.47, 1.48), stroke: 0.5pt)
+  line(
+    (11.885, -5.0), (10.939, -4.0), (10.147, -3.0), (9.469, -2.0), (8.880, -1.0),
+    (8.363, 0.0), (7.904, 1.0), (7.494, 2.0), (7.126, 3.0), (6.794, 4.0), (6.494, 5.0),
+    stroke: 1.0pt + black
+  )
 
-  // Coppia 8 (estrema destra, parziale)
-  line((2.46, 0.87), (2.11, 1.48), stroke: 0.5pt)
-  line((2.47, 1.03), (2.21, 1.48), stroke: 0.5pt)
+  rect((1.15, -0.32), (9.90, 0.68), stroke: 1.7pt + rgb("#e00000"), fill: none)
+  line((-1.55, -2.55), (4.25, -0.35), mark: (end: ">", fill: black, scale: 0.7), stroke: 0.9pt)
 
-  // 3. ASSI, SEZIONI A-A E B-B, E PROLUNGAMENTI DEL TRIANGOLO DEI PASSI
-  // Linea di sezione orizzontale A (tratto-punto)
-  line((-3.25, 0.68), (4.10, 0.68), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((4.10, 0.68), (4.10, 1.15), mark: (end: ">", fill: black), stroke: 0.5pt)
+  rect((1.50, 0.06), (2.06, 0.42), fill: white, stroke: none)
+  content((1.78, 0.24), text(size: 6.5pt)[30°], anchor: "center")
 
-  // Linea verticale per a - d (tratto-punto nella fascia, continua fuori)
-  line((0.00, -1.05), (0.00, 0.00), stroke: 0.5pt)
-  line((0.00, 0.00), (0.00, 1.48), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((0.00, 1.48), (0.00, 2.95), stroke: 0.5pt)
+  rect((2.31, 0.06), (3.08, 0.42), fill: white, stroke: none)
+  content((2.69, 0.24), text(size: 6.5pt)[27°30'], anchor: "center")
 
-  // Linea di sezione B-B (inclinata a 30deg rispetto all'orizzontale)
-  line((-2.35, -1.36), (-0.60, -0.35), stroke: 0.5pt)
-  line((-0.60, -0.35), (1.85, 1.07), stroke: (dash: "dash-dotted", thickness: 0.5pt))
-  line((1.85, 1.07), (4.10, 2.37), stroke: 0.5pt)
-  // Frecce alle estremita della sezione B-B
-  line((-2.35, -1.36), (-2.12, -1.76), mark: (end: ">", fill: black), stroke: 0.5pt)
-  line((4.10, 2.37), (4.33, 1.97), mark: (end: ">", fill: black), stroke: 0.5pt)
+  rect((3.34, 0.06), (3.92, 0.42), fill: white, stroke: none)
+  content((3.63, 0.24), text(size: 6.5pt)[25°], anchor: "center")
 
-  // Prolungamento della traccia per "a" in alto a sinistra (per quota p_n, fino a b)
-  line((-0.85, 1.48), (-1.62, 2.81), stroke: 0.5pt)
+  rect((4.38, 0.06), (5.16, 0.42), fill: white, stroke: none)
+  content((4.77, 0.24), text(size: 6.5pt)[22°30'], anchor: "center")
 
-  // Prolungamento della traccia per "c" in alto a sinistra (passa per d = (0, 2.56)) e in basso a destra
-  line((0.63, 1.48), (-0.52, 3.46), stroke: 0.5pt)
-  line((1.48, 0.00), (1.68, -0.35), stroke: 0.5pt)
+  rect((5.70, 0.06), (6.28, 0.42), fill: white, stroke: none)
+  content((5.99, 0.24), text(size: 6.5pt)[20°], anchor: "center")
 
-  // Segmento normale a-e (perpendicolare alle tracce dei denti, da (0,0) a (1.11, 0.64))
-  line((0.00, 0.00), (1.11, 0.64), stroke: 0.5pt)
+  rect((7.04, 0.06), (7.86, 0.42), fill: white, stroke: none)
+  content((7.45, 0.24), text(size: 6.5pt)[17°30'], anchor: "center")
 
-  // 4. QUOTE (p_n, p_t, p_x) E ARCHI DELL'ANGOLO D'ELICA (psi)
-  // Quota p_n (in alto a sinistra, inclinata a 30deg tra le due tracce prolungate)
-  line((-1.15, 2.68), (-1.53, 2.46), mark: (end: ">", fill: black), stroke: 0.5pt)
-  line((-0.78, 2.90), (-0.42, 3.10), mark: (end: ">", fill: black), stroke: 0.5pt)
+  rect((8.50, 0.06), (9.50, 0.42), fill: white, stroke: none)
+  content((9.00, 0.24), text(size: 6.5pt)[$theta = 15°$], anchor: "center")
 
-  // Quota p_t (in basso, tra x = 0 e x = 1.48)
-  line((1.48, 0.25), (1.48, -1.05), stroke: 0.5pt)
-  line((0.48, -0.82), (0.00, -0.82), mark: (end: ">", fill: black), stroke: 0.5pt)
-  line((1.00, -0.82), (1.48, -0.82), mark: (end: ">", fill: black), stroke: 0.5pt)
+  content((0.000, -5.18), text(size: 6.5pt)[$6$], anchor: "north")
+  content((0.803, -5.18), text(size: 6.5pt)[$7$], anchor: "north")
+  content((1.499, -5.18), text(size: 6.5pt)[$8$], anchor: "north")
+  content((2.113, -5.18), text(size: 6.5pt)[$9$], anchor: "north")
+  content((2.662, -5.18), text(size: 6.5pt)[$10$], anchor: "north")
+  content((4.775, -5.18), text(size: 6.5pt)[$15$], anchor: "north")
+  content((6.275, -5.18), text(size: 6.5pt)[$20$], anchor: "north")
+  content((7.437, -5.18), text(size: 6.5pt)[$25$], anchor: "north")
+  content((8.388, -5.18), text(size: 6.5pt)[$30$], anchor: "north")
+  content((9.191, -5.18), text(size: 6.5pt)[$35$], anchor: "north")
+  content((9.887, -5.18), text(size: 6.5pt)[$40$], anchor: "north")
+  content((10.501, -5.18), text(size: 6.5pt)[$45$], anchor: "north")
+  content((11.050, -5.18), text(size: 6.5pt)[$50$], anchor: "north")
+  content((12.000, -5.18), text(size: 6.5pt)[$60$], anchor: "north")
 
-  // Quota p_x (a destra, tra y = 0.00 e y = 2.56)
-  line((-0.20, 2.56), (3.42, 2.56), stroke: 0.5pt)
-  line((2.70, 0.00), (3.42, 0.00), stroke: 0.5pt)
-  line((3.05, 1.55), (3.05, 2.56), mark: (end: ">", fill: black), stroke: 0.5pt)
-  line((3.05, 1.00), (3.05, 0.00), mark: (end: ">", fill: black), stroke: 0.5pt)
+  content((0.000, 5.18), text(size: 6.5pt)[$6$], anchor: "south")
+  content((0.803, 5.18), text(size: 6.5pt)[$7$], anchor: "south")
+  content((1.499, 5.18), text(size: 6.5pt)[$8$], anchor: "south")
+  content((2.113, 5.18), text(size: 6.5pt)[$9$], anchor: "south")
+  content((2.662, 5.18), text(size: 6.5pt)[$10$], anchor: "south")
+  content((4.775, 5.18), text(size: 6.5pt)[$15$], anchor: "south")
+  content((6.275, 5.18), text(size: 6.5pt)[$20$], anchor: "south")
+  content((7.437, 5.18), text(size: 6.5pt)[$25$], anchor: "south")
+  content((8.388, 5.18), text(size: 6.5pt)[$30$], anchor: "south")
+  content((9.191, 5.18), text(size: 6.5pt)[$35$], anchor: "south")
+  content((9.887, 5.18), text(size: 6.5pt)[$40$], anchor: "south")
+  content((10.501, 5.18), text(size: 6.5pt)[$45$], anchor: "south")
+  content((11.050, 5.18), text(size: 6.5pt)[$50$], anchor: "south")
+  content((12.000, 5.18), text(size: 6.5pt)[$60$], anchor: "south")
 
-  // Arco superiore per psi (centro d = (0, 2.56), R = 0.85, tra 270deg e 300deg)
-  arc((0.00, 2.56), start: 248deg, stop: 270deg, radius: 0.85, anchor: "origin", mark: (end: ">", fill: black), stroke: 0.5pt)
-  arc((0.00, 2.56), start: 300deg, stop: 325deg, radius: 0.85, anchor: "origin", mark: (start: ">", fill: black), stroke: 0.5pt)
+  content((-0.14, 5.0), text(size: 6.5pt)[1,00], anchor: "east")
+  content((-0.14, 4.5), text(size: 6.5pt)[0,90], anchor: "east")
+  content((-0.14, 4.0), text(size: 6.5pt)[0,80], anchor: "east")
+  content((-0.14, 3.5), text(size: 6.5pt)[0,70], anchor: "east")
+  content((-0.14, 3.0), text(size: 6.5pt)[0,60], anchor: "east")
+  content((-0.14, 2.5), text(size: 6.5pt)[0,50], anchor: "east")
+  content((-0.14, 2.0), text(size: 6.5pt)[0,40], anchor: "east")
+  content((-0.14, 1.5), text(size: 6.5pt)[0,30], anchor: "east")
+  content((-0.14, 1.0), text(size: 6.5pt)[0,20], anchor: "east")
+  content((-0.14, 0.5), text(size: 6.5pt)[0,10], anchor: "east")
+  content((-0.14, 0.0), text(size: 6.5pt)[0,00], anchor: "east")
+  content((-0.14, -0.5), text(size: 6.5pt)[0,10], anchor: "east")
+  content((-0.14, -1.0), text(size: 6.5pt)[0,20], anchor: "east")
+  content((-0.14, -1.5), text(size: 6.5pt)[0,30], anchor: "east")
+  content((-0.14, -2.0), text(size: 6.5pt)[0,40], anchor: "east")
+  content((-0.14, -2.5), text(size: 6.5pt)[0,50], anchor: "east")
+  content((-0.14, -3.0), text(size: 6.5pt)[0,60], anchor: "east")
+  content((-0.14, -3.5), text(size: 6.5pt)[0,70], anchor: "east")
+  content((-0.14, -4.0), text(size: 6.5pt)[0,80], anchor: "east")
+  content((-0.14, -4.5), text(size: 6.5pt)[0,90], anchor: "east")
+  content((-0.14, -5.0), text(size: 6.5pt)[1,00], anchor: "east")
 
-  // Arco inferiore per psi (centro a = (0, 0), R = 1.00, tra 0deg e 30deg)
-  arc((0.00, 0.00), start: -24deg, stop: 0deg, radius: 1.00, anchor: "origin", mark: (end: ">", fill: black), stroke: 0.5pt)
-  arc((0.00, 0.00), start: 30deg, stop: 52deg, radius: 1.00, anchor: "origin", mark: (start: ">", fill: black), stroke: 0.5pt)
+  line((-0.88, 2.85), (-0.88, 5.00), stroke: 0.6pt)
+  content((-1.15, 3.92), text(size: 7.5pt)[Ruote esterne], angle: 90deg, anchor: "center")
 
-  // 5. ETICHETTE (tutte con text(size: 7pt))
-  content((-1.68, 2.95), text(size: 7pt)[$b$], anchor: "center")
-  content((-0.95, 2.80), text(size: 7pt)[$p_n$], anchor: "center")
-  content((0.18, 2.90), text(size: 7pt)[$d$], anchor: "center")
-  content((0.78, 2.28), text(size: 7pt)[$psi$], anchor: "center")
+  content((-1.15, 0.0), text(size: 7.5pt)[Rapporto di trasmissione], angle: 90deg, anchor: "center")
 
-  content((-0.20, -0.18), text(size: 7pt)[$a$], anchor: "center")
-  content((1.75, -0.18), text(size: 7pt)[$c$], anchor: "center")
-  content((1.78, 0.72), text(size: 7pt)[$e$], anchor: "center")
+  line((-0.88, -5.00), (-0.88, -2.85), stroke: 0.6pt)
+  content((-1.15, -3.92), text(size: 7.5pt)[Ruote interne], angle: 90deg, anchor: "center")
 
-  content((0.82, -0.45), text(size: 7pt)[$psi$], anchor: "center")
-  content((0.74, -0.82), text(size: 7pt)[$p_t$], anchor: "center")
-
-  content((3.08, 1.28), text(size: 7pt)[$p_x$], anchor: "center")
-  content((4.10, 1.38), text(size: 7pt)[$A$], anchor: "center")
-  content((4.48, 1.85), text(size: 7pt)[$B$], anchor: "center")
-  content((-1.98, -1.85), text(size: 7pt)[$B$], anchor: "center")
+  content((2.50, -5.85), text(size: 7.5pt)[Numero minimo dei denti], anchor: "center")
 })

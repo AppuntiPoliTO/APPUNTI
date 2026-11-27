@@ -385,7 +385,7 @@ Normalmente, nell'impostare il progetto dell'accoppiamento cinematico tra due ru
 
 
 #align(center)[
-  #image("images/fig_ruote_dentate_9437.png", width: 90%)
+  #image("images/ruote-dentate/fig_ruote_dentate_9437.png", width: 90%)
 
 ]
 === Condizioni per il corretto ingranamento
@@ -407,7 +407,7 @@ Ricordando inoltre che il diametro primitivo è espresso dal prodotto tra il mod
 #v(1em)
 
 #align(center)[
- #image("images/fig_ruote_dentate_6827.png", width: 100%)
+ #image("images/ruote-dentate/fig_ruote_dentate_6827.png", width: 100%)
 
 ]
 ==== Condizione geometrica di non interferenza
@@ -503,7 +503,7 @@ Per evitare condizioni di interferenza geometrica alla base del dente durante l'
     ]
   ,
   [
-    #include "figs/ruote-dentate-fig01.typ"
+    #include "figs/ruote-dentate/ruote-dentate-fig11.typ"
   ]
 )
 
@@ -582,7 +582,7 @@ Nelle trasmissioni tra assi incidenti, la forma dei denti di una ruota conica è
       $ z' = (2 pi r_b) / p $
   ],
   [
-   #image("images/fig_ruote_dentate_9559.png", width: 100%)
+   #image("images/ruote-dentate/fig_ruote_dentate_9559.png", width: 100%)
 
     )
   ]
@@ -623,9 +623,9 @@ Anche per le operazioni di dimensionamento delle *ruote cilindriche a dentatura 
       - *Passo assiale ($p_x$)*: distanza misurata lungo la direzione dell'asse di rotazione (segmento $a$-$d$).
   ],
   [
-#include "figs/ruote-dentate/ruote-dentate-fig11.typ"
-
 #include "figs/ruote-dentate/ruote-dentate-fig12.typ"
+
+#include "figs/ruote-dentate/ruote-dentate-fig13.typ"
 // FASE 3 - VERIFICA
 // 1. Verifica allineamento del fianco sinistro del dente centrale e della linea di quota:
 //    - Fianco: da (-0.70, 0.65) a (-0.34, 1.65) -> pendenza dy/dx = 1.00 / 0.36 = 2.778 (angolo 70.2deg, cioè phi_t = 19.8deg ~ 20deg).
@@ -705,7 +705,7 @@ dove $f$ rappresenta il *numero di filetti* (o principi) della vite e $N$ il num
     
   ],
   [
-#include "figs/ruote-dentate/ruote-dentate-fig13.typ"
+#include "figs/ruote-dentate/ruote-dentate-fig14.typ"
   ]
 )
 *Criteri pratici di dimensionamento della vite:*
@@ -783,7 +783,7 @@ Nelle ruote cilindriche a denti diritti, l'azione di contatto nel punto di ingra
     / Reazioni dell'albero ($F_(a 2)$, $T_(a 2)$): per garantire l'equilibrio statico e dinamico della ruota $2$, l'albero $a$ esercita sul mozzo una *coppia motrice* (o resistente) $T_(a 2)$ e una *forza di reazione* $F_(a 2)$, a sua volta articolata nelle componenti tangenziale $F_(a 2)^t$ e radiale $F_(a 2)^r$.
   ],
   align(center)[
-#include "figs/ruote-dentate/ruote-dentate-fig14.typ"
+#include "figs/ruote-dentate/ruote-dentate-fig15.typ"
   ]
 )
 
@@ -814,7 +814,7 @@ Nelle *ruote cilindriche a denti elicoidali*, i denti si sviluppano lungo la lar
   ],
   align(center)[
 // FASE 2 - COSTRUZIONE
-#include "figs/ruote-dentate/ruote-dentate-fig15.typ"
+#include "figs/ruote-dentate/ruote-dentate-fig16.typ"
   ]
 )
 
@@ -839,7 +839,7 @@ Per quanto riguarda le trasmissioni tra *alberi ad assi sghembi* (tipicamente or
     / Ruote ipoidi: soluzione alternativa a geometria *toroidale/iperboloidica* con denti curvi. Esse consentono un ingranamento molto graduale e silenzioso, riducendo sensibilmente le dimensioni del pignone e l'*ingombro complessivo* della trasmissione, ma richiedono una modellazione matematica complessa che esula da questa trattazione.
   ],
   align(center)[
-    #image("images/fig_ruote_dentate_7466.png", width: 110%)
+    #image("images/ruote-dentate/fig_ruote_dentate_7466.png", width: 110%)
 
   ]
 )
@@ -923,7 +923,7 @@ Compreso a grandi linee l'approccio, più nel dettaglio Lewis individua nell'*in
     / Geometria della sezione critica ($a$, $t$, $l$, $x$, $r_f$): la parabola inscritta risulta tangente ai raccordi di piede del dente (di raggio $r_f$) nei punti indicati con $a$, individuando la sezione critica di spessore $t$ posta a distanza $l$ dal punto di applicazione del carico (con sottotangente geometrica $x$).
   ],
   align(center)[
-#include "figs/ruote-dentate/ruote-dentate-fig16.typ"
+#include "figs/ruote-dentate/ruote-dentate-fig17.typ"
   ]
 )
 
@@ -947,10 +947,10 @@ Adottando ora la notazione classica in cui l'asse longitudinale della mensola è
   column-gutter: 1.5em,
   align: horizon,
   align(center)[
-#include "figs/ruote-dentate/ruote-dentate-fig17.typ"
+#include "figs/ruote-dentate/ruote-dentate-fig18.typ"
   ],
   align(center)[
-#include "figs/ruote-dentate/ruote-dentate-fig18.typ"
+#include "figs/ruote-dentate/ruote-dentate-fig19.typ"
   ]
 )
 

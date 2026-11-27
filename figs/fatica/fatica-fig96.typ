@@ -1,62 +1,130 @@
-// Figura estratta da fatica.typ (riga 2876) con LocalTypst
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-
-#canvas(length: 0.82cm, {
-  // BBox: x in [-0.1, 10.6] (dx=10.7), y in [-0.3, 5.6], length=0.72cm -> larghezza = 7.70 cm <= 8.2 cm
+#canvas(length: 1cm, {
   import draw: *
 
-  // --- Lastra forata in trazione P ---
-  rect((0.45, 1.3), (2.35, 4.7), stroke: 1.0pt)
-  circle((1.4, 3.0), radius: 0.40, fill: white, stroke: 0.9pt)
-  line((1.4, 4.7), (1.4, 5.45), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
-  line((1.4, 1.3), (1.4, 0.55), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
-  content((1.65, 5.20), anchor: "west", text(size: 8pt)[$P$])
-  content((1.65, 0.80), anchor: "west", text(size: 8pt)[$P$])
+  rect((0, 0), (8, 9), stroke: 0.75pt)
 
-  // Sezione A-A
-  line((0.12, 3.0), (2.68, 3.0), stroke: (dash: "dashed", thickness: 0.65pt))
-  content((0.12, 3.22), anchor: "south", text(size: 7pt)[A])
-  content((2.68, 3.22), anchor: "south", text(size: 7pt)[A])
-  content((1.4, 0.05), anchor: "center", text(size: 7.5pt)[Sez. A–A])
+  line((0, 0.45), (8, 0.45), stroke: 0.5pt)
+  line((0, 0.90), (8, 0.90), stroke: 0.5pt)
+  line((0, 1.35), (8, 1.35), stroke: 0.5pt)
+  line((0, 1.80), (8, 1.80), stroke: 0.5pt)
+  line((0, 2.25), (8, 2.25), stroke: 0.5pt)
+  line((0, 2.70), (8, 2.70), stroke: 0.5pt)
+  line((0, 3.15), (8, 3.15), stroke: 0.5pt)
+  line((0, 3.60), (8, 3.60), stroke: 0.5pt)
+  line((0, 4.05), (8, 4.05), stroke: 0.5pt)
+  line((0, 4.50), (8, 4.50), stroke: 0.5pt)
+  line((0, 4.95), (8, 4.95), stroke: 0.5pt)
+  line((0, 5.40), (8, 5.40), stroke: 0.5pt)
+  line((0, 5.85), (8, 5.85), stroke: 0.5pt)
+  line((0, 6.30), (8, 6.30), stroke: 0.5pt)
+  line((0, 6.75), (8, 6.75), stroke: 0.5pt)
+  line((0, 7.20), (8, 7.20), stroke: 0.5pt)
+  line((0, 7.65), (8, 7.65), stroke: 0.5pt)
+  line((0, 8.10), (8, 8.10), stroke: 0.5pt)
+  line((0, 8.55), (8, 8.55), stroke: 0.5pt)
 
-  // Tensioni schematiche nella lastra (staccate dal bordo esterno)
-  rect((0.45, 3.0), (1.00, 3.42), fill: black.transparentize(86%), stroke: 0.6pt)
-  content((0.72, 3.58), anchor: "south", text(size: 7pt)[$sigma_n$])
-  bezier((1.80, 3.92), (2.28, 3.42), (1.94, 3.55), (2.10, 3.45), stroke: 0.9pt + blue)
-  line((1.80, 3.0), (1.80, 3.92), stroke: 0.6pt + blue)
-  content((2.04, 4.10), anchor: "south", text(size: 7pt, fill: blue)[$sigma_t$])
+  line((2, 0), (2, 9), stroke: 0.5pt)
+  line((4, 0), (4, 9), stroke: 0.5pt)
+  line((6, 0), (6, 9), stroke: 0.5pt)
 
-  // Richiamo verso gli ingrandimenti
-  line((1.80, 3.0), (3.48, 2.80), stroke: (dash: "dotted", thickness: 0.6pt))
+  line((0.4, 0), (0.4, 0.22), stroke: 0.5pt)
+  line((0.8, 0), (0.8, 0.22), stroke: 0.5pt)
+  line((1.2, 0), (1.2, 0.22), stroke: 0.5pt)
+  line((1.6, 0), (1.6, 0.22), stroke: 0.5pt)
+  line((2.4, 0), (2.4, 0.22), stroke: 0.5pt)
+  line((2.8, 0), (2.8, 0.22), stroke: 0.5pt)
+  line((3.2, 0), (3.2, 0.22), stroke: 0.5pt)
+  line((3.6, 0), (3.6, 0.22), stroke: 0.5pt)
+  line((4.4, 0), (4.4, 0.22), stroke: 0.5pt)
+  line((4.8, 0), (4.8, 0.22), stroke: 0.5pt)
+  line((5.2, 0), (5.2, 0.22), stroke: 0.5pt)
+  line((5.6, 0), (5.6, 0.22), stroke: 0.5pt)
+  line((6.4, 0), (6.4, 0.22), stroke: 0.5pt)
+  line((6.8, 0), (6.8, 0.22), stroke: 0.5pt)
+  line((7.2, 0), (7.2, 0.22), stroke: 0.5pt)
+  line((7.6, 0), (7.6, 0.22), stroke: 0.5pt)
 
-  // --- Ingrandimento 1: Caso statico (K_t, con eventuale snervamento) ---
-  circle((4.9, 2.8), radius: 1.42, fill: luma(250), stroke: 0.85pt)
-  arc((3.05, 2.2), start: -26.7deg, stop: 62.6deg, radius: 1.0, anchor: "origin", stroke: 1.05pt)
-  line((4.05, 2.2), (6.19, 2.2), stroke: 0.75pt)
-  line((4.05, 2.2), (4.05, 3.82), stroke: 0.8pt + blue)
-  // Punta elastica piena + tratteggio di eventuale troncamento plastico raccordato esattamente alla curva
-  bezier((4.05, 3.82), (6.05, 2.75), (4.45, 3.12), (5.20, 2.82), stroke: 1.15pt + blue)
-  line((4.05, 3.46), (4.24, 3.46), stroke: (dash: "dashed", paint: blue.transparentize(15%), thickness: 0.8pt))
-  for (x, y) in ((4.24, 3.46), (4.55, 3.16), (4.95, 2.94), (5.35, 2.84), (5.75, 2.78)) {
-    line((x, 2.2), (x, y), stroke: 0.5pt + blue, mark: (end: ">", scale: 0.35, fill: blue))
-  }
-  content((4.9, 4.42), anchor: "south", text(size: 7.5pt, fill: blue, weight: "bold")[Statico ($K_t$)])
-  content((4.9, 1.15), anchor: "north", text(size: 6.8pt)[Picco pieno (o snerv.)])
+  line((0.4, 9), (0.4, 8.78), stroke: 0.5pt)
+  line((0.8, 9), (0.8, 8.78), stroke: 0.5pt)
+  line((1.2, 9), (1.2, 8.78), stroke: 0.5pt)
+  line((1.6, 9), (1.6, 8.78), stroke: 0.5pt)
+  line((2.4, 9), (2.4, 8.78), stroke: 0.5pt)
+  line((2.8, 9), (2.8, 8.78), stroke: 0.5pt)
+  line((3.2, 9), (3.2, 8.78), stroke: 0.5pt)
+  line((3.6, 9), (3.6, 8.78), stroke: 0.5pt)
+  line((4.4, 9), (4.4, 8.78), stroke: 0.5pt)
+  line((4.8, 9), (4.8, 8.78), stroke: 0.5pt)
+  line((5.2, 9), (5.2, 8.78), stroke: 0.5pt)
+  line((5.6, 9), (5.6, 8.78), stroke: 0.5pt)
+  line((6.4, 9), (6.4, 8.78), stroke: 0.5pt)
+  line((6.8, 9), (6.8, 8.78), stroke: 0.5pt)
+  line((7.2, 9), (7.2, 8.78), stroke: 0.5pt)
+  line((7.6, 9), (7.6, 8.78), stroke: 0.5pt)
 
-  // Linea di riferimento del picco statico
-  line((4.05, 3.82), (7.75, 3.82), stroke: (dash: "dotted", paint: black.transparentize(40%), thickness: 0.6pt))
+  bezier((0, 9.00), (4, 6.75), (1.2, 8.05), (2.6, 7.25), stroke: 2.2pt)
+  bezier((4, 6.75), (8, 5.58), (5.4, 6.25), (6.7, 5.88), stroke: 2.2pt)
 
-  // --- Ingrandimento 2: Caso ciclico a fatica (K_f) ---
-  circle((8.6, 2.8), radius: 1.42, fill: luma(250), stroke: 0.85pt)
-  arc((6.75, 2.2), start: -26.7deg, stop: 62.6deg, radius: 1.0, anchor: "origin", stroke: 1.05pt)
-  line((7.75, 2.2), (9.89, 2.2), stroke: 0.75pt)
-  line((7.75, 3.22), (7.75, 3.82), stroke: (dash: "dashed", paint: black.transparentize(45%), thickness: 0.65pt))
-  line((7.75, 2.2), (7.75, 3.22), stroke: 0.8pt + red.transparentize(10%))
-  bezier((7.75, 3.82), (9.75, 2.75), (8.15, 3.12), (8.90, 2.82), stroke: (dash: "dashed", paint: black.transparentize(45%), thickness: 0.65pt))
-  bezier((7.75, 3.22), (9.75, 2.75), (8.25, 3.02), (9.00, 2.80), stroke: 1.15pt + red.transparentize(10%))
-  for (x, y) in ((7.90, 3.14), (8.25, 2.99), (8.65, 2.88), (9.05, 2.81), (9.45, 2.77)) {
-    line((x, 2.2), (x, y), stroke: 0.5pt + red.transparentize(10%), mark: (end: ">", scale: 0.35, fill: red.transparentize(10%)))
-  }
-  content((8.6, 4.42), anchor: "south", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[A fatica ($K_f < K_t$)])
-  content((8.6, 1.15), anchor: "north", text(size: 6.8pt)[Picco dinamico smussato])
+  content((-0.12, 0.00), text(size: 8.5pt)[1.0], anchor: "east")
+  content((-0.12, 0.45), text(size: 8.5pt)[1.1], anchor: "east")
+  content((-0.12, 0.90), text(size: 8.5pt)[1.2], anchor: "east")
+  content((-0.12, 1.35), text(size: 8.5pt)[1.3], anchor: "east")
+  content((-0.12, 1.80), text(size: 8.5pt)[1.4], anchor: "east")
+  content((-0.12, 2.25), text(size: 8.5pt)[1.5], anchor: "east")
+  content((-0.12, 2.70), text(size: 8.5pt)[1.6], anchor: "east")
+  content((-0.12, 3.15), text(size: 8.5pt)[1.7], anchor: "east")
+  content((-0.12, 3.60), text(size: 8.5pt)[1.8], anchor: "east")
+  content((-0.12, 4.05), text(size: 8.5pt)[1.9], anchor: "east")
+  content((-0.12, 4.50), text(size: 8.5pt)[2.0], anchor: "east")
+  content((-0.12, 4.95), text(size: 8.5pt)[2.1], anchor: "east")
+  content((-0.12, 5.40), text(size: 8.5pt)[2.2], anchor: "east")
+  content((-0.12, 5.85), text(size: 8.5pt)[2.3], anchor: "east")
+  content((-0.12, 6.30), text(size: 8.5pt)[2.4], anchor: "east")
+  content((-0.12, 6.75), text(size: 8.5pt)[2.5], anchor: "east")
+  content((-0.12, 7.20), text(size: 8.5pt)[2.6], anchor: "east")
+  content((-0.12, 7.65), text(size: 8.5pt)[2.7], anchor: "east")
+  content((-0.12, 8.10), text(size: 8.5pt)[2.8], anchor: "east")
+  content((-0.12, 8.55), text(size: 8.5pt)[2.9], anchor: "east")
+  content((-0.12, 9.00), text(size: 8.5pt)[3.0], anchor: "east")
+
+  content((-0.95, 5.85), text(size: 11pt)[$K_t$], anchor: "east")
+
+  content((0.0, -0.15), text(size: 8.5pt)[0], anchor: "north")
+  content((2.0, -0.15), text(size: 8.5pt)[0.1], anchor: "north")
+  content((4.0, -0.15), text(size: 8.5pt)[0.2], anchor: "north")
+  content((6.0, -0.15), text(size: 8.5pt)[0.3], anchor: "north")
+  content((8.0, -0.15), text(size: 8.5pt)[0.4], anchor: "north")
+  content((5.0, -0.22), text(size: 9.5pt)[d/b], anchor: "north")
+
+  rect((0.95, 4.00), (4.25, 5.30), fill: white, stroke: 0.7pt)
+  content((2.60, 4.65), text(size: 10pt)[$sigma_"nom" = display(P / ((b - d) h))$])
+
+  rect((0.75, 0.75), (7.80, 3.55), fill: white, stroke: 0.7pt)
+
+  line((1.55, 1.72), (5.45, 1.72), (6.95, 3.12), (3.05, 3.12), close: true, fill: white, stroke: 1.2pt)
+  line((1.55, 1.50), (5.45, 1.50), (5.45, 1.72), (1.55, 1.72), close: true, fill: white, stroke: 1.2pt)
+  line((5.45, 1.50), (6.95, 2.90), (6.95, 3.12), (5.45, 1.72), close: true, fill: white, stroke: 1.2pt)
+
+  circle((4.25, 2.42), radius: (0.28, 0.14), stroke: 1.1pt)
+  arc((4.25, 2.27), start: 22deg, stop: 158deg, radius: (0.28, 0.14), anchor: "origin", stroke: 0.9pt)
+
+  line((2.45, 1.98), (2.45, 1.74), mark: (end: ">", fill: black, scale: 0.45), stroke: 0.55pt)
+  line((2.45, 1.15), (2.45, 1.48), mark: (end: ">", fill: black, scale: 0.45), stroke: 0.55pt)
+  content((2.50, 2.02), text(size: 8.5pt)[h], anchor: "west")
+
+  line((2.90, 1.74), (4.38, 3.10), mark: (start: ">", end: ">", fill: black, scale: 0.45), stroke: 0.55pt)
+  content((3.52, 2.55), text(size: 8.5pt)[b], anchor: "south-east")
+
+  line((4.25, 2.56), (5.12, 2.56), stroke: 0.45pt)
+  line((4.25, 2.28), (4.72, 2.28), stroke: 0.45pt)
+  line((5.25, 2.86), (4.95, 2.56), mark: (end: ">", fill: black, scale: 0.45), stroke: 0.55pt)
+  line((4.25, 1.98), (4.55, 2.28), mark: (end: ">", fill: black, scale: 0.45), stroke: 0.55pt)
+  content((5.18, 2.66), text(size: 8.5pt)[d], anchor: "west")
+
+  line((2.10, 2.38), (1.15, 2.38), mark: (end: ">", fill: black, scale: 0.75), stroke: 1.2pt)
+  content((1.75, 2.95), text(size: 9.5pt)[P])
+
+  line((6.50, 2.38), (7.45, 2.38), mark: (end: ">", fill: black, scale: 0.75), stroke: 1.2pt)
+  content((7.35, 2.95), text(size: 9.5pt)[P])
 })

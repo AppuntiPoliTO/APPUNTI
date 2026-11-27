@@ -161,6 +161,6 @@ Una soluzione classica, largamente impiegata sui veicoli terrestri, è l'innesto
 
 #align(center)[
 #import "@preview/cetz:0.3.4": canvas, draw
-#include "../../figs/p1-fig03.typ"
+#include "../../figs/innesti/innesti-fig05.typ"
 
 ]

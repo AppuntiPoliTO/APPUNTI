@@ -1,79 +1,77 @@
-// Figura estratta da fatica.typ (riga 1793) con LocalTypst
+// Figura estratta da fatica.typ (riga 642) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.55cm, {
-  // BBox: x in [-2.05, 2.90] (dx=4.95), y in [-2.20, 3.85], length=1.55cm -> larghezza = 7.67 cm <= 8.2 cm
+#canvas(length: 1.52cm, {
+  // BBox: x in [-0.95, 4.35] (dx=5.30), y in [-0.85, 4.05], length=1.42cm -> larghezza = 7.53 cm <= 8.2 cm
   import draw: *
 
-  let r1 = 0.58
-  let yc1 = 2.75
-  let r2 = 1.55
-  let yc2 = 0.0
-  let amp = 1.75
-  let x80 = 0.80 * amp
+  // Riquadro assi principali (x = log10(N) - 4, y = (sigma_a - 10)/30)
+  rect((0, 0), (4.0, 3.85), stroke: 0.9pt)
 
-  // --- Provino piccolo (sopra) ---
-  content((0, yc1 + r1 + 0.30), anchor: "south")[#text(size: 8pt, weight: "bold")[Provetta ($d = 8"–"12 thin "mm"$)]]
-
-  circle((0, yc1), radius: r1, fill: luma(228), stroke: 1pt + black)
-
-  // Calotta superiore campita tra 0.80*sigma_a e sigma_a (theta da 53.13deg a 126.87deg)
-  let cap1 = ()
-  for i in range(0, 25) {
-    let ang = 53.13deg + i * (73.74deg / 24)
-    cap1.push((r1 * calc.cos(ang), yc1 + r1 * calc.sin(ang)))
+  // Ticks asse X (10^4 .. 10^8)
+  for (xval, lbl) in ((0, $10^4$), (1, $10^5$), (2, $10^6$), (3, $10^7$), (4, $10^8$)) {
+    line((xval, 0), (xval, -0.07), stroke: 0.7pt)
+    line((xval, 3.85), (xval, 3.78), stroke: 0.55pt)
+    content((xval, -0.12), anchor: "north", text(size: 7pt)[#lbl])
   }
-  line(..cap1, close: true, fill: red.transparentize(65%), stroke: (paint: red.transparentize(10%), thickness: 0.75pt))
+  content((2.0, -0.40), anchor: "north", text(size: 7.5pt)[$N$])
 
-  // Assi di riferimento e profilo lineare
-  line((-1.90, yc1), (1.90, yc1), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(90)))
-  line((0, yc1 - r1 - 0.15), (0, yc1 + r1 + 0.15), stroke: (dash: "dotted", thickness: 0.55pt, paint: luma(110)))
-
-  // Frecce di picco +/- sigma_a
-  line((0, yc1 + r1), (amp, yc1 + r1), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
-  line((0, yc1 - r1), (-amp, yc1 - r1), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
-
-  // Livello 80% sigma_a e profilo di flessione
-  let y1_80 = yc1 + 0.80 * r1
-  line((-0.85, y1_80), (amp, y1_80), stroke: (paint: blue, thickness: 0.65pt, dash: "dashed"))
-  line((-amp, yc1 - r1), (amp, yc1 + r1), stroke: 1.1pt + blue)
-
-  // Etichette esterne con richiami anti-collisione
-  line((amp + 0.04, yc1 + r1), (amp + 0.16, yc1 + r1 + 0.12), stroke: 0.55pt + black)
-  content((amp + 0.18, yc1 + r1 + 0.12), anchor: "south-west")[#text(size: 7.5pt)[$sigma_a$]]
-
-  line((amp + 0.04, y1_80), (amp + 0.16, y1_80 - 0.14), stroke: 0.55pt + blue)
-  content((amp + 0.18, y1_80 - 0.14), anchor: "north-west")[#text(size: 7.5pt, fill: blue)[$80% thin sigma_a$]]
-
-  // --- Albero grande (sotto) ---
-  circle((0, yc2), radius: r2, fill: luma(228), stroke: 1pt + black)
-
-  let cap2 = ()
-  for i in range(0, 31) {
-    let ang = 53.13deg + i * (73.74deg / 30)
-    cap2.push((r2 * calc.cos(ang), yc2 + r2 * calc.sin(ang)))
+  // Ticks asse Y (20 .. 120 MPa)
+  for s in (20, 40, 60, 80, 100, 120) {
+    let yval = (s - 10) / 30
+    line((0, yval), (-0.07, yval), stroke: 0.7pt)
+    line((4.0, yval), (3.93, yval), stroke: 0.55pt)
+    content((-0.11, yval), anchor: "east", text(size: 7pt)[#s])
   }
-  line(..cap2, close: true, fill: red.transparentize(65%), stroke: (paint: red.transparentize(10%), thickness: 0.8pt))
+  content((-0.68, 1.92), angle: 90deg, anchor: "center", text(size: 7.5pt)[$sigma_a$ (MPa)])
 
-  // Assi di riferimento e profilo lineare
-  line((-1.90, yc2), (1.90, yc2), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(90)))
-  line((0, yc2 - r2 - 0.15), (0, yc2 + r2 + 0.15), stroke: (dash: "dotted", thickness: 0.55pt, paint: luma(110)))
+  // Riquadro parametri prova
+  content((3.85, 3.68), anchor: "north-east", text(size: 7pt)[
+    #align(right)[
+      M12 \
+      $sigma_m = 230$ MPa \
+      Weibull-2p
+    ]
+  ])
 
-  // Frecce di picco +/- sigma_a (identiche in ampiezza al provino)
-  line((0, yc2 + r2), (amp, yc2 + r2), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
-  line((0, yc2 - r2), (-amp, yc2 - r2), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
+  // Punti di rottura (x) distribuiti attorno a B50 tra B10 e B90
+  let xpts = (
+    (0.97, 3.33), (1.07, 3.33), (1.15, 3.33), (1.25, 3.33),
+    (1.50, 2.33), (1.62, 2.33), (1.71, 2.33), (1.80, 2.33), (1.91, 2.33),
+    (1.86, 1.67), (1.99, 1.67), (2.11, 1.67), (2.26, 1.67),
+    (2.04, 1.33), (2.18, 1.33), (2.31, 1.33), (2.48, 1.33),
+    (2.20, 1.00), (2.36, 1.00),
+    (2.34, 0.76),
+  )
+  for (px, py) in xpts {
+    let d = 0.045
+    line((px - d, py - d), (px + d, py + d), stroke: 0.75pt)
+    line((px - d, py + d), (px + d, py - d), stroke: 0.75pt)
+  }
 
-  // Livello 80% sigma_a, proiezione verticale comune e profilo di flessione
-  let y2_80 = yc2 + 0.80 * r2
-  line((x80, y1_80), (x80, y2_80), stroke: (paint: blue.transparentize(30%), thickness: 0.55pt, dash: "dotted"))
-  line((-1.25, y2_80), (amp, y2_80), stroke: (paint: blue, thickness: 0.65pt, dash: "dashed"))
-  line((-amp, yc2 - r2), (amp, yc2 + r2), stroke: 1.1pt + blue)
-  circle((x80, y1_80), radius: 0.042, fill: blue, stroke: none)
-  circle((x80, y2_80), radius: 0.042, fill: blue, stroke: none)
+  // Run-outs (o) a troncamento N = 10^7
+  let opts = (
+    (3.00, 1.33), (2.88, 1.00), (3.02, 1.00), (3.00, 0.67), (3.00, 0.33),
+  )
+  for (px, py) in opts {
+    circle((px, py), radius: 0.048, fill: white, stroke: 0.75pt + rgb("#1f77b4"))
+  }
 
-  // Etichette ben distanziate (delta y = 0.31 unità)
-  content((amp + 0.12, yc2 + r2 + 0.04), anchor: "south-west")[#text(size: 7.5pt)[$sigma_a$]]
-  content((amp + 0.12, y2_80 - 0.04), anchor: "north-west")[#text(size: 7.5pt, fill: blue)[$80% thin sigma_a$]]
+  // Curve iso-probabilità Weibull (B90, B50, B10)
+  line((1.18, 3.45), (2.38, 1.55), (4.0, 1.55), stroke: (paint: black.transparentize(35%), thickness: 0.85pt, dash: "dashed"))
+  content((3.42, 1.62), anchor: "south", text(size: 7pt)[$B_90$])
 
-  content((0, yc2 - r2 - 0.30), anchor: "north")[#text(size: 8pt, weight: "bold")[Albero grande ($d >> 12 thin "mm"$)]]
+  line((1.05, 3.45), (2.38, 1.15), (4.0, 1.15), stroke: (paint: black, thickness: 1.0pt))
+  content((3.42, 1.22), anchor: "south", text(size: 7pt, weight: "bold")[$B_50$])
+
+  line((0.92, 3.45), (2.38, 0.72), (4.0, 0.72), stroke: (paint: rgb("#1f77b4"), thickness: 1.0pt))
+  content((3.42, 0.79), anchor: "south", text(size: 7pt, fill: rgb("#1f77b4"), weight: "bold")[$B_10$])
+
+  // Legenda inferiore
+  line((0.35 - 0.045, -0.72 - 0.045), (0.35 + 0.045, -0.72 + 0.045), stroke: 0.75pt)
+  line((0.35 - 0.045, -0.72 + 0.045), (0.35 + 0.045, -0.72 - 0.045), stroke: 0.75pt)
+  content((0.48, -0.72), anchor: "west", text(size: 7pt)[rotture])
+
+  circle((1.75, -0.72), radius: 0.048, fill: white, stroke: 0.75pt + rgb("#1f77b4"))
+  content((1.88, -0.72), anchor: "west", text(size: 7pt)[*run-outs* (non rotture)])
 })
