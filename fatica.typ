@@ -1169,10 +1169,7 @@ Imposti i carichi di esercizio, i vincoli e le condizioni di interfaccia nella s
 
 #pagebreak()
 
-#align(center)[
-  #text(size: 16pt, weight: "bold")[Sicurezza a fatica]
-]
-#v(0.4em)
+
 
 == Sicurezza a fatica
 
@@ -1341,12 +1338,7 @@ Poiché l'esponente $k$ amplifica fortemente ogni variazione di tensione sul num
 
 #pagebreak()
 
-#align(center)[
-  #block(width: 80%)[
-    #text(size: 16pt, weight: "bold")[Effetti dei trattamenti, della temperatura e dell'ambiente sulla resistenza a fatica]
-  ]
-]
-#v(0.4em)
+
 
 == Effetti dei trattamenti
 
@@ -1539,11 +1531,6 @@ Gli *acciai altoresistenziali* risultano molto più sensibili alla fatica-corros
 
 #pagebreak()
 
-#align(center)[
-  #text(size: 16pt, weight: "bold")[Fatica multiassiale]
-]
-#v(0.4em)
-
 == Fatica multiassiale
 
 === Introduzione alla fatica multiassiale e classificazione degli stati di tensione
@@ -1715,11 +1702,6 @@ Per aggirare il dubbio si calcolavano talvolta due limiti di fatica distinti per
 )
 
 #pagebreak()
-
-#align(center)[
-  #text(size: 16pt, weight: "bold")[Fatica ad ampiezza variabile]
-]
-#v(0.4em)
 
 == Fatica ad ampiezza variabile
 
