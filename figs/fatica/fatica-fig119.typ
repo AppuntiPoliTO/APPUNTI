@@ -1,7 +1,7 @@
 // Figura estratta da fatica.typ (riga 5103) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 0.94cm, {
+#canvas(length: 1.04cm, {
   // BBox: x in [-1.35, 15.35] (dx=16.7), y in [-0.65, 5.15], length=0.94cm -> larghezza = 15.70 cm <= 17.0 cm
   import draw: *
 

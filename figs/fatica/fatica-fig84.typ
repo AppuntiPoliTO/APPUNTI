@@ -1,7 +1,7 @@
 // Figura estratta da fatica.typ (riga 1389) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.36cm, {
+#canvas(length: 1.46cm, {
   import draw: *
 
   content((2.5, 4.35), anchor: "south")[#text(size: 8.5pt, weight: "bold")[Scala log--log (equazione di Basquin)]]

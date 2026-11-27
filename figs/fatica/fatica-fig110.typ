@@ -4,7 +4,7 @@
 #let circ = sym.degree
 #let circ = sym.degree
 
-#canvas(length: 1.15cm, {
+#canvas(length: 1.25cm, {
   // BBox: x in [-0.6, 6.2] (dx=6.8), y in [-1.05, 5.35], length=1.15cm -> larghezza = 7.82 cm <= 8.2 cm
   import draw: line, circle, bezier, content
 
