@@ -1,4 +1,4 @@
-
+#import "@preview/cetz:0.3.4": canvas, draw
 #let circ = sym.degree
 
 #canvas(length: 1.5cm, {
