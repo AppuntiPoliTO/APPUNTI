@@ -1,79 +1,175 @@
-// Figura estratta da fatica.typ (riga 1793) con LocalTypst
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-
-#canvas(length: 1.55cm, {
-  // BBox: x in [-2.05, 2.90] (dx=4.95), y in [-2.20, 3.85], length=1.55cm -> larghezza = 7.67 cm <= 8.2 cm
+#canvas(length: 1cm, {
   import draw: *
 
-  let r1 = 0.58
-  let yc1 = 2.75
-  let r2 = 1.55
-  let yc2 = 0.0
-  let amp = 1.75
-  let x80 = 0.80 * amp
+  rect((0, 0), (12, 8.5), stroke: 0.75pt + black, fill: white)
 
-  // --- Provino piccolo (sopra) ---
-  content((0, yc1 + r1 + 0.30), anchor: "south")[#text(size: 8pt, weight: "bold")[Provetta ($d = 8"–"12 thin "mm"$)]]
+  line((0, 0.5), (12, 0.5), stroke: 0.5pt + black)
+  line((0, 1.0), (12, 1.0), stroke: 0.5pt + black)
+  line((0, 1.5), (12, 1.5), stroke: 0.5pt + black)
+  line((0, 2.0), (12, 2.0), stroke: 0.5pt + black)
+  line((0, 2.5), (12, 2.5), stroke: 0.5pt + black)
+  line((0, 3.0), (12, 3.0), stroke: 0.5pt + black)
+  line((0, 3.5), (12, 3.5), stroke: 0.5pt + black)
+  line((0, 4.0), (12, 4.0), stroke: 0.5pt + black)
+  line((0, 4.5), (12, 4.5), stroke: 0.5pt + black)
+  line((0, 5.0), (12, 5.0), stroke: 0.5pt + black)
+  line((0, 5.5), (12, 5.5), stroke: 0.5pt + black)
+  line((0, 6.0), (12, 6.0), stroke: 0.5pt + black)
+  line((0, 6.5), (12, 6.5), stroke: 0.5pt + black)
+  line((0, 7.0), (12, 7.0), stroke: 0.5pt + black)
+  line((0, 7.5), (12, 7.5), stroke: 0.5pt + black)
+  line((0, 8.0), (12, 8.0), stroke: 0.5pt + black)
 
-  circle((0, yc1), radius: r1, fill: luma(228), stroke: 1pt + black)
+  line((2.0, 0), (2.0, 8.5), stroke: 0.5pt + black)
+  line((4.0, 0), (4.0, 8.5), stroke: 0.5pt + black)
+  line((6.0, 0), (6.0, 8.5), stroke: 0.5pt + black)
+  line((8.0, 0), (8.0, 8.5), stroke: 0.5pt + black)
+  line((10.0, 0), (10.0, 8.5), stroke: 0.5pt + black)
 
-  // Calotta superiore campita tra 0.80*sigma_a e sigma_a (theta da 53.13deg a 126.87deg)
-  let cap1 = ()
-  for i in range(0, 25) {
-    let ang = 53.13deg + i * (73.74deg / 24)
-    cap1.push((r1 * calc.cos(ang), yc1 + r1 * calc.sin(ang)))
-  }
-  line(..cap1, close: true, fill: red.transparentize(65%), stroke: (paint: red.transparentize(10%), thickness: 0.75pt))
+  line((0.4, 0), (0.4, 0.25), stroke: 0.5pt + black)
+  line((0.8, 0), (0.8, 0.25), stroke: 0.5pt + black)
+  line((1.2, 0), (1.2, 0.25), stroke: 0.5pt + black)
+  line((1.6, 0), (1.6, 0.25), stroke: 0.5pt + black)
+  line((2.4, 0), (2.4, 0.25), stroke: 0.5pt + black)
+  line((2.8, 0), (2.8, 0.25), stroke: 0.5pt + black)
+  line((3.2, 0), (3.2, 0.25), stroke: 0.5pt + black)
+  line((3.6, 0), (3.6, 0.25), stroke: 0.5pt + black)
+  line((4.4, 0), (4.4, 0.25), stroke: 0.5pt + black)
+  line((4.8, 0), (4.8, 0.25), stroke: 0.5pt + black)
+  line((5.2, 0), (5.2, 0.25), stroke: 0.5pt + black)
+  line((5.6, 0), (5.6, 0.25), stroke: 0.5pt + black)
+  line((6.4, 0), (6.4, 0.25), stroke: 0.5pt + black)
+  line((6.8, 0), (6.8, 0.25), stroke: 0.5pt + black)
+  line((7.2, 0), (7.2, 0.25), stroke: 0.5pt + black)
+  line((7.6, 0), (7.6, 0.25), stroke: 0.5pt + black)
+  line((8.4, 0), (8.4, 0.25), stroke: 0.5pt + black)
+  line((8.8, 0), (8.8, 0.25), stroke: 0.5pt + black)
+  line((9.2, 0), (9.2, 0.25), stroke: 0.5pt + black)
+  line((9.6, 0), (9.6, 0.25), stroke: 0.5pt + black)
+  line((10.4, 0), (10.4, 0.25), stroke: 0.5pt + black)
+  line((10.8, 0), (10.8, 0.25), stroke: 0.5pt + black)
+  line((11.2, 0), (11.2, 0.25), stroke: 0.5pt + black)
+  line((11.6, 0), (11.6, 0.25), stroke: 0.5pt + black)
 
-  // Assi di riferimento e profilo lineare
-  line((-1.90, yc1), (1.90, yc1), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(90)))
-  line((0, yc1 - r1 - 0.15), (0, yc1 + r1 + 0.15), stroke: (dash: "dotted", thickness: 0.55pt, paint: luma(110)))
+  line((0.4, 8.5), (0.4, 8.25), stroke: 0.5pt + black)
+  line((0.8, 8.5), (0.8, 8.25), stroke: 0.5pt + black)
+  line((1.2, 8.5), (1.2, 8.25), stroke: 0.5pt + black)
+  line((1.6, 8.5), (1.6, 8.25), stroke: 0.5pt + black)
+  line((2.4, 8.5), (2.4, 8.25), stroke: 0.5pt + black)
+  line((2.8, 8.5), (2.8, 8.25), stroke: 0.5pt + black)
+  line((3.2, 8.5), (3.2, 8.25), stroke: 0.5pt + black)
+  line((3.6, 8.5), (3.6, 8.25), stroke: 0.5pt + black)
+  line((4.4, 8.5), (4.4, 8.25), stroke: 0.5pt + black)
+  line((4.8, 8.5), (4.8, 8.25), stroke: 0.5pt + black)
+  line((5.2, 8.5), (5.2, 8.25), stroke: 0.5pt + black)
+  line((5.6, 8.5), (5.6, 8.25), stroke: 0.5pt + black)
+  line((6.4, 8.5), (6.4, 8.25), stroke: 0.5pt + black)
+  line((6.8, 8.5), (6.8, 8.25), stroke: 0.5pt + black)
+  line((7.2, 8.5), (7.2, 8.25), stroke: 0.5pt + black)
+  line((7.6, 8.5), (7.6, 8.25), stroke: 0.5pt + black)
+  line((8.4, 8.5), (8.4, 8.25), stroke: 0.5pt + black)
+  line((8.8, 8.5), (8.8, 8.25), stroke: 0.5pt + black)
+  line((9.2, 8.5), (9.2, 8.25), stroke: 0.5pt + black)
+  line((9.6, 8.5), (9.6, 8.25), stroke: 0.5pt + black)
+  line((10.4, 8.5), (10.4, 8.25), stroke: 0.5pt + black)
+  line((10.8, 8.5), (10.8, 8.25), stroke: 0.5pt + black)
+  line((11.2, 8.5), (11.2, 8.25), stroke: 0.5pt + black)
+  line((11.6, 8.5), (11.6, 8.25), stroke: 0.5pt + black)
 
-  // Frecce di picco +/- sigma_a
-  line((0, yc1 + r1), (amp, yc1 + r1), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
-  line((0, yc1 - r1), (-amp, yc1 - r1), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
+  bezier((1.95, 8.30), (4.0, 5.05), (2.35, 7.10), (3.10, 5.75), stroke: 1.5pt + black)
+  bezier((4.0, 5.05), (8.0, 3.20), (5.10, 4.20), (6.50, 3.60), stroke: 1.5pt + black)
+  bezier((8.0, 3.20), (12.0, 2.40), (9.30, 2.85), (10.70, 2.60), stroke: 1.5pt + black)
 
-  // Livello 80% sigma_a e profilo di flessione
-  let y1_80 = yc1 + 0.80 * r1
-  line((-0.85, y1_80), (amp, y1_80), stroke: (paint: blue, thickness: 0.65pt, dash: "dashed"))
-  line((-amp, yc1 - r1), (amp, yc1 + r1), stroke: 1.1pt + blue)
+  bezier((1.75, 7.75), (4.0, 4.50), (2.25, 6.45), (3.10, 5.20), stroke: 1.5pt + black)
+  bezier((4.0, 4.50), (8.0, 2.75), (5.10, 3.65), (6.50, 3.15), stroke: 1.5pt + black)
+  bezier((8.0, 2.75), (12.0, 2.10), (9.30, 2.45), (10.70, 2.25), stroke: 1.5pt + black)
 
-  // Etichette esterne con richiami anti-collisione
-  line((amp + 0.04, yc1 + r1), (amp + 0.16, yc1 + r1 + 0.12), stroke: 0.55pt + black)
-  content((amp + 0.18, yc1 + r1 + 0.12), anchor: "south-west")[#text(size: 7.5pt)[$sigma_a$]]
+  bezier((1.55, 6.90), (4.0, 3.60), (2.15, 5.45), (3.00, 4.30), stroke: 1.5pt + black)
+  bezier((4.0, 3.60), (8.0, 2.15), (5.10, 2.85), (6.50, 2.45), stroke: 1.5pt + black)
+  bezier((8.0, 2.15), (12.0, 1.65), (9.30, 1.90), (10.70, 1.75), stroke: 1.5pt + black)
 
-  line((amp + 0.04, y1_80), (amp + 0.16, y1_80 - 0.14), stroke: 0.55pt + blue)
-  content((amp + 0.18, y1_80 - 0.14), anchor: "north-west")[#text(size: 7.5pt, fill: blue)[$80% thin sigma_a$]]
+  bezier((1.15, 5.35), (4.0, 2.30), (1.85, 3.70), (2.80, 2.80), stroke: 1.5pt + black)
+  bezier((4.0, 2.30), (8.0, 1.50), (5.20, 1.80), (6.60, 1.63), stroke: 1.5pt + black)
+  bezier((8.0, 1.50), (12.0, 1.22), (9.30, 1.38), (10.70, 1.28), stroke: 1.5pt + black)
 
-  // --- Albero grande (sotto) ---
-  circle((0, yc2), radius: r2, fill: luma(228), stroke: 1pt + black)
+  bezier((1.08, 3.00), (2.0, 1.90), (1.08, 2.50), (1.45, 2.18), stroke: 1.5pt + black)
+  bezier((2.0, 1.90), (4.0, 1.15), (2.55, 1.58), (3.25, 1.32), stroke: 1.5pt + black)
+  bezier((4.0, 1.15), (8.0, 0.75), (5.20, 0.90), (6.60, 0.80), stroke: 1.5pt + black)
+  bezier((8.0, 0.75), (12.0, 0.68), (9.30, 0.71), (10.70, 0.69), stroke: 1.5pt + black)
 
-  let cap2 = ()
-  for i in range(0, 31) {
-    let ang = 53.13deg + i * (73.74deg / 30)
-    cap2.push((r2 * calc.cos(ang), yc2 + r2 * calc.sin(ang)))
-  }
-  line(..cap2, close: true, fill: red.transparentize(65%), stroke: (paint: red.transparentize(10%), thickness: 0.8pt))
+  content((-0.12, 0.0), text(size: 9pt)[1.0], anchor: "east")
+  content((-0.12, 0.5), text(size: 9pt)[1.1], anchor: "east")
+  content((-0.12, 1.0), text(size: 9pt)[1.2], anchor: "east")
+  content((-0.12, 1.5), text(size: 9pt)[1.3], anchor: "east")
+  content((-0.12, 2.0), text(size: 9pt)[1.4], anchor: "east")
+  content((-0.12, 2.5), text(size: 9pt)[1.5], anchor: "east")
+  content((-0.12, 3.0), text(size: 9pt)[1.6], anchor: "east")
+  content((-0.12, 3.5), text(size: 9pt)[1.7], anchor: "east")
+  content((-0.12, 4.0), text(size: 9pt)[1.8], anchor: "east")
+  content((-0.12, 4.5), text(size: 9pt)[1.9], anchor: "east")
+  content((-0.12, 5.0), text(size: 9pt)[2.0], anchor: "east")
+  content((-0.12, 5.5), text(size: 9pt)[2.1], anchor: "east")
+  content((-0.12, 6.0), text(size: 9pt)[2.2], anchor: "east")
+  content((-0.12, 6.5), text(size: 9pt)[2.3], anchor: "east")
+  content((-0.12, 7.0), text(size: 9pt)[2.4], anchor: "east")
+  content((-0.12, 7.5), text(size: 9pt)[2.5], anchor: "east")
+  content((-0.12, 8.0), text(size: 9pt)[2.6], anchor: "east")
+  content((-0.12, 8.45), text(size: 9pt)[2.7], anchor: "east")
 
-  // Assi di riferimento e profilo lineare
-  line((-1.90, yc2), (1.90, yc2), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(90)))
-  line((0, yc2 - r2 - 0.15), (0, yc2 + r2 + 0.15), stroke: (dash: "dotted", thickness: 0.55pt, paint: luma(110)))
+  content((-1.15, 4.5), text(size: 11pt)[$K_"t"$], anchor: "east")
 
-  // Frecce di picco +/- sigma_a (identiche in ampiezza al provino)
-  line((0, yc2 + r2), (amp, yc2 + r2), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
-  line((0, yc2 - r2), (-amp, yc2 - r2), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
+  content((0.08, -0.15), text(size: 9.5pt)[0], anchor: "north")
+  content((4.0, -0.15), text(size: 9.5pt)[0.1], anchor: "north")
+  content((8.0, -0.15), text(size: 9.5pt)[0.2], anchor: "north")
+  content((12.0, -0.15), text(size: 9.5pt)[0.3], anchor: "north")
+  content((6.0, -0.20), text(size: 10.5pt)[r/d], anchor: "north")
 
-  // Livello 80% sigma_a, proiezione verticale comune e profilo di flessione
-  let y2_80 = yc2 + 0.80 * r2
-  line((x80, y1_80), (x80, y2_80), stroke: (paint: blue.transparentize(30%), thickness: 0.55pt, dash: "dotted"))
-  line((-1.25, y2_80), (amp, y2_80), stroke: (paint: blue, thickness: 0.65pt, dash: "dashed"))
-  line((-amp, yc2 - r2), (amp, yc2 + r2), stroke: 1.1pt + blue)
-  circle((x80, y1_80), radius: 0.042, fill: blue, stroke: none)
-  circle((x80, y2_80), radius: 0.042, fill: blue, stroke: none)
+  content((12.75, 3.5), text(size: 9pt)[D/d], anchor: "west")
+  content((12.75, 2.78), text(size: 9pt)[2], anchor: "west")
+  content((12.75, 2.28), text(size: 9pt)[1.5], anchor: "west")
+  content((12.75, 1.77), text(size: 9pt)[1.2], anchor: "west")
+  content((12.75, 1.28), text(size: 9pt)[1.05], anchor: "west")
+  content((12.75, 0.78), text(size: 9pt)[1.01], anchor: "west")
 
-  // Etichette ben distanziate (delta y = 0.31 unità)
-  content((amp + 0.12, yc2 + r2 + 0.04), anchor: "south-west")[#text(size: 7.5pt)[$sigma_a$]]
-  content((amp + 0.12, y2_80 - 0.04), anchor: "north-west")[#text(size: 7.5pt, fill: blue)[$80% thin sigma_a$]]
+  line((12.63, 2.75), (12.12, 2.45), stroke: 0.65pt + black, mark: (end: ">", fill: black, scale: 0.5))
+  line((12.63, 2.27), (12.12, 2.12), stroke: 0.65pt + black, mark: (end: ">", fill: black, scale: 0.5))
+  line((12.72, 1.75), (12.15, 1.68), stroke: 0.65pt + black, mark: (end: ">", fill: black, scale: 0.5))
+  line((12.78, 1.25), (12.15, 1.23), stroke: 0.65pt + black, mark: (end: ">", fill: black, scale: 0.5))
+  line((12.68, 0.75), (12.18, 0.72), stroke: 0.65pt + black, mark: (end: ">", fill: black, scale: 0.5))
 
-  content((0, yc2 - r2 - 0.30), anchor: "north")[#text(size: 8pt, weight: "bold")[Albero grande ($d >> 12 thin "mm"$)]]
+  rect((8.88, 3.60), (11.45, 5.02), fill: white, stroke: 0.65pt + black)
+  content((10.165, 4.31), text(size: 8.5pt)[$sigma_"nom" = (4 "P") / (pi "d"^2)$], anchor: "center")
+
+  rect((6.97, 5.26), (12.0, 8.27), fill: white, stroke: 0.65pt + black)
+
+  line((8.25, 6.72), (10.78, 6.72), stroke: (dash: "dash-dotted", thickness: 0.6pt, paint: black))
+  line((8.45, 5.75), (8.45, 7.80), stroke: (dash: "dash-dotted", thickness: 0.6pt, paint: black))
+  line((10.58, 5.75), (10.58, 7.80), stroke: (dash: "dash-dotted", thickness: 0.6pt, paint: black))
+
+  line((8.45, 7.60), (9.52, 7.60), stroke: 1.4pt + black)
+  line((8.45, 5.84), (9.52, 5.84), stroke: 1.4pt + black)
+  line((9.52, 5.84), (9.52, 7.60), stroke: 1.4pt + black)
+
+  arc((9.74, 7.60), start: 180deg, stop: 270deg, radius: 0.22, anchor: "origin", stroke: 1.4pt + black)
+  arc((9.74, 5.84), start: 90deg, stop: 180deg, radius: 0.22, anchor: "origin", stroke: 1.4pt + black)
+
+  line((9.74, 7.38), (10.58, 7.38), stroke: 1.4pt + black)
+  line((9.74, 6.06), (10.58, 6.06), stroke: 1.4pt + black)
+
+  line((8.98, 5.86), (8.98, 7.58), stroke: 0.55pt + black, mark: (start: ">", end: ">", fill: black, scale: 0.45))
+  content((9.10, 6.95), text(size: 8.5pt)[D], anchor: "west")
+
+  line((10.05, 6.08), (10.05, 7.36), stroke: 0.55pt + black, mark: (start: ">", end: ">", fill: black, scale: 0.45))
+  content((10.17, 6.92), text(size: 8.5pt)[d], anchor: "west")
+
+  line((9.98, 7.82), (9.63, 7.47), stroke: 0.55pt + black, mark: (end: ">", fill: black, scale: 0.45))
+  content((10.05, 7.85), text(size: 8.5pt)[r], anchor: "west")
+
+  line((8.03, 6.72), (7.28, 6.72), stroke: 1.3pt + black, mark: (end: ">", fill: black, scale: 0.7))
+  content((7.65, 6.95), text(size: 9pt)[P], anchor: "south")
+
+  line((10.95, 6.72), (11.70, 6.72), stroke: 1.3pt + black, mark: (end: ">", fill: black, scale: 0.7))
+  content((11.35, 6.95), text(size: 9pt)[P], anchor: "south")
 })

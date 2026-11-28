@@ -1,57 +1,84 @@
-// Figura estratta da fatica.typ (riga 3812) con LocalTypst
+// Figura estratta da fatica.typ (riga 3638) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 0.92cm, {
+#canvas(length: 0.86cm, {
   import draw: *
-  // BBox: x in [0.0, 9.5] (dx=9.5), y in [0.1, 6.5], length=0.82cm -> larghezza = 7.79 cm <= 8.2 cm
+  // BBox: x in [0.0, 9.8] (dx=9.8), y in [0.4, 6.6], length=0.76cm -> larghezza = 7.45 cm <= 8.2 cm
 
-  // a) Piegatura a freddo (lamiera + farfalla tensioni residue)
-  content((0.1, 6.28), anchor: "west", [#text(size: 7.3pt, weight: "bold")[a) Piegatura a freddo (dopo lo scarico)]])
+  // a) Micro-indentazione da pallinatura
+  content((0.1, 6.45), anchor: "west", [#text(size: 7.3pt, weight: "bold")[a) Micro-indentazione superficiale]])
 
-  // Mini-schema lamiera piegata a sinistra + cerchio di zoom
-  line((0.60, 5.65), (0.60, 4.45), stroke: 1.3pt)
-  arc((1.10, 4.45), start: 180deg, stop: 270deg, radius: 0.50, anchor: "origin", stroke: 1.3pt)
-  line((1.10, 3.95), (2.10, 3.95), stroke: 1.3pt)
-  circle((0.76, 4.10), radius: 0.30, stroke: (dash: "dashed", thickness: 0.55pt))
-  line((1.06, 4.15), (2.82, 4.65), stroke: (dash: "dotted", thickness: 0.5pt, paint: black.transparentize(45%)))
+  // Substrato elastico
+  rect((0.5, 3.65), (5.9, 4.42), fill: black.transparentize(90%), stroke: 0.85pt)
+  content((3.2, 4.02), anchor: "center", [#text(size: 6.8pt)[Cuore elastico]])
 
-  // Zoom gomito con distribuzione residua a farfalla nello spessore
-  // Centro di curvatura in (5.35, 5.75): r_ext = 2.55, r_med = 2.15, r_int = 1.75
-  arc((5.35, 5.75), start: 192deg, stop: 256deg, radius: 2.55, anchor: "origin", stroke: 1.0pt)
-  arc((5.35, 5.75), start: 192deg, stop: 256deg, radius: 1.75, anchor: "origin", stroke: 1.0pt)
-  arc((5.35, 5.75), start: 194deg, stop: 254deg, radius: 2.15, anchor: "origin", stroke: (dash: "dashed", thickness: 0.5pt, paint: black.transparentize(50%)))
+  // Strato compresso con impronta centrale e bordi rialzati
+  line(
+    (0.5, 4.42), (0.5, 5.02), (2.35, 5.02), (2.60, 5.15),
+    (2.90, 4.83), (3.20, 4.75), (3.50, 4.83), (3.80, 5.15),
+    (4.05, 5.02), (5.9, 5.02), (5.9, 4.42), close: true,
+    fill: blue.transparentize(82%), stroke: (paint: blue, thickness: 0.9pt),
+  )
 
-  // Sezione radiale a theta = 225 deg: P_ext=(3.55,3.95), P_med=(3.83,4.23), P_int=(4.11,4.51)
-  line((3.55, 3.95), (4.11, 4.51), stroke: 0.65pt)
-  line((3.55, 3.95), (3.46, 4.28), (3.83, 4.23), close: true, fill: blue.transparentize(78%), stroke: (paint: blue, thickness: 0.8pt))
-  line((3.83, 4.23), (4.20, 4.18), (4.11, 4.51), close: true, fill: red.transparentize(78%), stroke: (paint: red.transparentize(10%), thickness: 0.8pt))
+  // Frecce compressione laterale nello strato corticale
+  line((0.85, 4.72), (1.85, 4.72), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.65))
+  line((5.55, 4.72), (4.55, 4.72), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.65))
+  content((2.10, 4.72), anchor: "west", [#text(fill: blue, size: 6.8pt, weight: "bold")[$-$]])
+  content((4.30, 4.72), anchor: "east", [#text(fill: blue, size: 6.8pt, weight: "bold")[$-$]])
 
-  content((3.25, 3.82), anchor: "center", [#text(fill: blue, size: 8pt, weight: "bold")[$-$]])
-  content((4.38, 4.62), anchor: "center", [#text(fill: red.transparentize(10%), size: 8pt, weight: "bold")[$+$]])
+  // Sferetta dura in impatto
+  circle((3.2, 5.55), radius: 0.33, fill: black.transparentize(68%), stroke: 0.9pt)
+  line((3.2, 6.28), (3.2, 5.92), stroke: 1.0pt, mark: (end: ">", scale: 0.7))
+  content((3.38, 6.12), anchor: "west", [#text(size: 7pt)[$v$ (sferetta)]])
 
-  // Richiami senza incroci: intradosso (da lato concavo) ed estradosso (da sotto)
-  line((5.35, 5.12), (3.82, 5.02), stroke: 0.6pt, mark: (end: ">", scale: 0.6))
-  content((5.45, 5.12), anchor: "west", [#text(size: 6.9pt)[Fibre interne: #text(fill: red.transparentize(10%), weight: "bold")[$sigma_"res" (+)$]]])
-
-  line((5.35, 3.35), (4.52, 3.35), stroke: 0.6pt, mark: (end: ">", scale: 0.6))
-  content((5.45, 3.35), anchor: "west", [#text(size: 6.9pt)[Fibre esterne: #text(fill: blue, weight: "bold")[$sigma_"res" (-)$]]])
+  // Richiamo bordo sollevato e quota h_pall
+  line((4.65, 5.52), (3.86, 5.19), stroke: 0.55pt, mark: (end: ">", scale: 0.6))
+  content((4.72, 5.55), anchor: "west", [#text(size: 6.6pt)[Bordo sollevato]])
+  line((6.12, 4.42), (6.12, 5.02), stroke: 0.6pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.42))
+  content((6.30, 4.72), anchor: "west", [#text(size: 6.8pt)[$h_"pall" approx 1 "mm"$]])
+  content((6.30, 4.20), anchor: "west", [#text(fill: blue, size: 6.8pt, weight: "bold")[$sigma_"res" < 0$]])
 
   // Separatore
-  line((0.1, 2.95), (9.3, 2.95), stroke: (dash: "dotted", thickness: 0.6pt))
+  line((0.1, 3.30), (9.6, 3.30), stroke: (dash: "dotted", thickness: 0.6pt))
 
-  // b) Lavorazione a caldo: decarburazione
-  content((0.1, 2.58), anchor: "west", [#text(size: 7.3pt, weight: "bold")[b) Lavorazione a caldo: decarburazione]])
-  rect((0.9, 0.35), (4.9, 1.30), fill: black.transparentize(88%), stroke: 0.9pt)
-  content((2.9, 0.82), anchor: "center", [#text(size: 7pt)[Substrato (vincola il ritiro)]])
-  rect((0.9, 1.30), (4.9, 1.70), fill: red.transparentize(80%), stroke: 0.9pt)
+  // b) Sistema provino Almen
+  content((0.1, 2.96), anchor: "west", [#text(size: 7.3pt, weight: "bold")[b) Taratura con lamella Almen]])
 
-  // Frecce trazione sullo strato superficiale
-  line((0.9, 1.50), (0.25, 1.50), stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (end: ">"))
-  line((4.9, 1.50), (5.55, 1.50), stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (end: ">"))
-  content((5.75, 1.62), anchor: "west", [#text(fill: red.transparentize(10%), size: 7pt, weight: "bold")[$sigma_"res" (+)$]])
-  content((5.75, 1.15), anchor: "west", [#text(size: 6.9pt)[Pelle decarburata]])
+  // Fase 1: Lamella vincolata sotto getto
+  rect((0.45, 0.55), (3.65, 1.15), fill: black.transparentize(88%), stroke: 0.8pt)
+  content((2.05, 0.85), anchor: "center", [#text(size: 6.5pt)[Afferraggio]])
+  rect((0.70, 1.15), (3.40, 1.40), fill: blue.transparentize(80%), stroke: 0.8pt)
+  rect((0.88, 1.40), (1.12, 1.52), fill: black.transparentize(65%), stroke: 0.6pt)
+  rect((2.98, 1.40), (3.22, 1.52), fill: black.transparentize(65%), stroke: 0.6pt)
 
-  // Reazione decarburazione
-  line((2.5, 1.70), (3.1, 2.15), stroke: 0.8pt, mark: (end: ">"))
-  content((3.25, 2.18), anchor: "west", [#text(size: 7pt)[$"C" + "O"_2 -> "CO"_2$]])
+  // Ugello e getto di sferette
+  rect((1.82, 2.30), (2.28, 2.65), fill: black.transparentize(78%), stroke: 0.75pt)
+  line((1.90, 2.30), (1.50, 1.45), stroke: (dash: "dashed", thickness: 0.55pt))
+  line((2.20, 2.30), (2.60, 1.45), stroke: (dash: "dashed", thickness: 0.55pt))
+  line((2.05, 2.22), (2.05, 1.52), stroke: 0.7pt, mark: (end: ">", scale: 0.6))
+  content((2.42, 2.48), anchor: "west", [#text(size: 6.6pt)[Getto]])
+
+  // Freccia transizione
+  line((3.90, 1.15), (4.55, 1.15), stroke: 0.8pt, mark: (end: ">", scale: 0.65))
+
+  // Fase 2: Svincolo, incurvamento e misura freccia f
+  rect((4.85, 0.45), (9.35, 0.68), fill: black.transparentize(88%), stroke: 0.75pt)
+  circle((5.35, 0.80), radius: 0.12, fill: black.transparentize(70%), stroke: 0.7pt)
+  circle((8.85, 0.80), radius: 0.12, fill: black.transparentize(70%), stroke: 0.7pt)
+
+  // Corda di riferimento tratteggiata e lamella incurvata (picco intradosso y = 1.46)
+  line((5.15, 0.92), (9.05, 0.92), stroke: (dash: "dotted", thickness: 0.55pt))
+  bezier((5.05, 0.92), (9.15, 0.92), (6.35, 1.64), (7.85, 1.64), stroke: (paint: blue, thickness: 1.1pt))
+  bezier((5.05, 1.12), (9.15, 1.12), (6.35, 1.84), (7.85, 1.84), stroke: (paint: blue, thickness: 1.1pt))
+  line((5.05, 0.92), (5.05, 1.12), stroke: (paint: blue, thickness: 1.0pt))
+  line((9.15, 0.92), (9.15, 1.12), stroke: (paint: blue, thickness: 1.0pt))
+
+  // Comparatore e freccia d'arco f al centro dell'arco (pulita, zero sovrapposizioni)
+  circle((7.10, 2.42), radius: 0.35, fill: white, stroke: 0.8pt)
+  line((7.10, 2.42), (7.32, 2.59), stroke: (paint: red.transparentize(10%), thickness: 0.8pt))
+  line((7.10, 2.07), (7.10, 1.69), stroke: 0.75pt, mark: (end: ">", scale: 0.55))
+  content((7.58, 2.42), anchor: "west", [#text(size: 6.6pt)[Comparatore]])
+
+  line((7.10, 0.94), (7.10, 1.44), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45))
+  content((7.25, 1.18), anchor: "west", [#text(size: 7pt)[$f$]])
 })

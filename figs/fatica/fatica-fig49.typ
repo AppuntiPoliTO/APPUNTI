@@ -1,62 +1,97 @@
-// Figura estratta da fatica.typ (riga 2874) con LocalTypst
+// Figura estratta da fatica.typ (riga 1084) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 0.72cm, {
-  // BBox: x in [-0.1, 10.6] (dx=10.7), y in [-0.3, 5.6], length=0.72cm -> larghezza = 7.70 cm <= 8.2 cm
+#let circ = sym.degree
+#let circ = sym.degree
+
+#canvas(length: 0.95cm, {
   import draw: *
+  // BBox: x in [-5.1, 6.8] (dx=11.9), y in [-5.0, 6.4], length=0.95cm -> larghezza = 11.31 cm <= 11.5 cm
 
-  // --- Lastra forata in trazione P ---
-  rect((0.45, 1.3), (2.35, 4.7), stroke: 1.0pt)
-  circle((1.4, 3.0), radius: 0.40, fill: white, stroke: 0.9pt)
-  line((1.4, 4.7), (1.4, 5.45), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
-  line((1.4, 1.3), (1.4, 0.55), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
-  content((1.65, 5.20), anchor: "west", text(size: 8pt)[$P$])
-  content((1.65, 0.80), anchor: "west", text(size: 8pt)[$P$])
+  // Poligono di sicurezza campito
+  line(
+    (-4.0, -4.0),
+    (-2.2, -0.4),
+    (0.0, 1.8),
+    (3.3, 4.0),
+    (4.0, 4.0),
+    (3.3, 2.6),
+    (0.0, -1.8),
+    (-2.2, -4.0),
+    close: true,
+    fill: black.transparentize(90%),
+    stroke: none,
+  )
 
-  // Sezione A-A
-  line((0.12, 3.0), (2.68, 3.0), stroke: (dash: "dashed", thickness: 0.65pt))
-  content((0.12, 3.22), anchor: "south", text(size: 7pt)[A])
-  content((2.68, 3.22), anchor: "south", text(size: 7pt)[A])
-  content((1.4, 0.05), anchor: "center", text(size: 7.5pt)[Sez. A–A])
+  // Assi principali
+  line((-5.0, 0.0), (6.2, 0.0), stroke: 0.75pt, mark: (end: ">"))
+  line((0.0, -4.8), (0.0, 5.8), stroke: 0.75pt, mark: (end: ">"))
+  content((6.3, 0.0), anchor: "west")[#text(size: 8.5pt)[$sigma_m$]]
+  content((0.0, 5.9), anchor: "south")[#text(size: 8.5pt)[$sigma_"max", sigma_"min"$]]
 
-  // Tensioni schematiche nella lastra (staccate dal bordo esterno)
-  rect((0.45, 3.0), (1.00, 3.42), fill: black.transparentize(86%), stroke: 0.6pt)
-  content((0.72, 3.58), anchor: "south", text(size: 7pt)[$sigma_n$])
-  bezier((1.80, 3.92), (2.28, 3.42), (1.94, 3.55), (2.10, 3.45), stroke: 0.9pt + blue)
-  line((1.80, 3.0), (1.80, 3.92), stroke: 0.6pt + blue)
-  content((2.04, 4.10), anchor: "south", text(size: 7pt, fill: blue)[$sigma_t$])
+  // Bisettrice a 45 gradi, arco angolo e prolungamenti costruzione Goodman
+  line((-4.5, -4.5), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.65pt))
+  arc((0.0, 0.0), start: -180deg, stop: -135deg, radius: 1.05, anchor: "origin", stroke: 0.55pt)
+  content((-1.22, -0.44), anchor: "east")[#text(size: 7.5pt)[$45^circ$]]
 
-  // Richiamo verso gli ingrandimenti
-  line((1.80, 3.0), (3.48, 2.80), stroke: (dash: "dotted", thickness: 0.6pt))
+  line((3.3, 4.0), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.6pt))
+  line((3.3, 2.6), (5.4, 5.4), stroke: (dash: "dashed", thickness: 0.6pt))
+  circle((5.4, 5.4), radius: 0.06, fill: black)
+  content((5.55, 5.4), anchor: "west")[#text(size: 8pt)[$(R_m, R_m)$]]
 
-  // --- Ingrandimento 1: Caso statico (K_t, con eventuale snervamento) ---
-  circle((4.9, 2.8), radius: 1.42, fill: luma(250), stroke: 0.85pt)
-  arc((3.05, 2.2), start: -26.7deg, stop: 62.6deg, radius: 1.0, anchor: "origin", stroke: 1.05pt)
-  line((4.05, 2.2), (6.19, 2.2), stroke: 0.75pt)
-  line((4.05, 2.2), (4.05, 3.82), stroke: 0.8pt + blue)
-  // Punta elastica piena + tratteggio di eventuale troncamento plastico raccordato esattamente alla curva
-  bezier((4.05, 3.82), (6.05, 2.75), (4.45, 3.12), (5.20, 2.82), stroke: 1.15pt + blue)
-  line((4.05, 3.46), (4.24, 3.46), stroke: (dash: "dashed", paint: blue.transparentize(15%), thickness: 0.8pt))
-  for (x, y) in ((4.24, 3.46), (4.55, 3.16), (4.95, 2.94), (5.35, 2.84), (5.75, 2.78)) {
-    line((x, 2.2), (x, y), stroke: 0.5pt + blue, mark: (end: ">", scale: 0.35, fill: blue))
-  }
-  content((4.9, 4.42), anchor: "south", text(size: 7.5pt, fill: blue, weight: "bold")[Statico ($K_t$)])
-  content((4.9, 1.15), anchor: "north", text(size: 6.8pt)[Picco pieno (o snerv.)])
+  // Linee di costruzione snervamento e proiezioni
+  line((0.0, 4.0), (3.3, 4.0), stroke: (dash: "dashed", thickness: 0.6pt))
+  line((3.3, 4.0), (3.3, 2.6), stroke: (dash: "dashed", thickness: 0.6pt))
+  line((4.0, 4.0), (4.0, 0.0), stroke: (dash: "dotted", thickness: 0.6pt))
+  line((0.0, -4.0), (-2.2, -4.0), stroke: (dash: "dashed", thickness: 0.6pt))
+  line((-2.2, -4.0), (-2.2, -0.4), stroke: (dash: "dashed", thickness: 0.6pt))
 
-  // Linea di riferimento del picco statico
-  line((4.05, 3.82), (7.75, 3.82), stroke: (dash: "dotted", paint: black.transparentize(40%), thickness: 0.6pt))
+  // Contorno poligono di sicurezza in tratto marcato
+  line(
+    (-4.0, -4.0),
+    (-2.2, -0.4),
+    (0.0, 1.8),
+    (3.3, 4.0),
+    (4.0, 4.0),
+    (3.3, 2.6),
+    (0.0, -1.8),
+    (-2.2, -4.0),
+    close: true,
+    stroke: 1.15pt,
+  )
 
-  // --- Ingrandimento 2: Caso ciclico a fatica (K_f) ---
-  circle((8.6, 2.8), radius: 1.42, fill: luma(250), stroke: 0.85pt)
-  arc((6.75, 2.2), start: -26.7deg, stop: 62.6deg, radius: 1.0, anchor: "origin", stroke: 1.05pt)
-  line((7.75, 2.2), (9.89, 2.2), stroke: 0.75pt)
-  line((7.75, 3.22), (7.75, 3.82), stroke: (dash: "dashed", paint: black.transparentize(45%), thickness: 0.65pt))
-  line((7.75, 2.2), (7.75, 3.22), stroke: 0.8pt + red.transparentize(10%))
-  bezier((7.75, 3.82), (9.75, 2.75), (8.15, 3.12), (8.90, 2.82), stroke: (dash: "dashed", paint: black.transparentize(45%), thickness: 0.65pt))
-  bezier((7.75, 3.22), (9.75, 2.75), (8.25, 3.02), (9.00, 2.80), stroke: 1.15pt + red.transparentize(10%))
-  for (x, y) in ((7.90, 3.14), (8.25, 2.99), (8.65, 2.88), (9.05, 2.81), (9.45, 2.77)) {
-    line((x, 2.2), (x, y), stroke: 0.5pt + red.transparentize(10%), mark: (end: ">", scale: 0.35, fill: red.transparentize(10%)))
-  }
-  content((8.6, 4.42), anchor: "south", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[A fatica ($K_f < K_t$)])
-  content((8.6, 1.15), anchor: "north", text(size: 6.8pt)[Picco dinamico smussato])
+  // Punti notevoli A, B e quote assi (senza collisioni con linee di costruzione)
+  circle((3.3, 2.6), radius: 0.055, fill: black)
+  content((3.45, 2.45), anchor: "north-west")[#text(size: 8pt)[$A$]]
+  circle((4.0, 4.0), radius: 0.055, fill: black)
+  content((4.55, 3.75), anchor: "west")[#text(size: 8pt)[$B$]]
+  line((4.50, 3.77), (4.08, 3.96), stroke: 0.55pt, mark: (end: ">", scale: 0.5))
+
+  content((-0.15, 4.0), anchor: "east")[#text(size: 8pt)[$R_"eH"$]]
+  content((-0.12, 1.92), anchor: "south-east")[#text(size: 8pt)[$+sigma_(D-1)$]]
+  content((0.15, -1.85), anchor: "west")[#text(size: 8pt)[$-sigma_(D-1)$]]
+  content((0.15, -4.0), anchor: "west")[#text(size: 8pt)[$-R_"eH"$]]
+  content((4.0, -0.15), anchor: "north")[#text(size: 8pt)[$R_"eH"$]]
+
+  // Ciclo 1: sicuro (blu) con indicazioni manubrio
+  line((1.65, 0.90), (1.65, 2.40), stroke: (paint: blue, thickness: 1.4pt))
+  line((1.65, 0.90), (1.65, 0.0), stroke: (dash: "dotted", paint: blue, thickness: 0.6pt))
+  circle((1.65, 2.40), radius: 0.055, fill: blue, stroke: blue)
+  circle((1.65, 1.65), radius: 0.055, fill: white, stroke: (paint: blue, thickness: 0.9pt))
+  circle((1.65, 0.90), radius: 0.055, fill: blue, stroke: blue)
+  content((1.52, 2.34), anchor: "east")[#text(size: 7pt, fill: blue)[$sigma_"max"$]]
+  content((1.52, 0.86), anchor: "east")[#text(size: 7pt, fill: blue)[$sigma_"min"$]]
+  content((1.65, -0.15), anchor: "north")[#text(size: 7.5pt, fill: blue)[$sigma_(m,1)$]]
+
+  // Ciclo 2: uscente (rosso)
+  line((2.65, 1.30), (2.65, 4.00), stroke: (paint: red.transparentize(10%), thickness: 1.4pt))
+  line((2.65, 1.30), (2.65, 0.0), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.6pt))
+  circle((2.65, 4.00), radius: 0.055, fill: red.transparentize(10%), stroke: red.transparentize(10%))
+  circle((2.65, 2.65), radius: 0.055, fill: white, stroke: (paint: red.transparentize(10%), thickness: 0.9pt))
+  circle((2.65, 1.30), radius: 0.055, fill: red.transparentize(10%), stroke: red.transparentize(10%))
+  content((2.65, -0.15), anchor: "north")[#text(size: 7.5pt, fill: red.transparentize(10%))[$sigma_(m,2)$]]
+
+  // Legenda compatta in alto a sinistra
+  content((-4.7, 5.2), anchor: "north-west")[#text(size: 7.5pt, fill: blue, weight: "bold")[Ciclo 1: sicuro]]
+  content((-4.7, 4.6), anchor: "north-west")[#text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[Ciclo 2: uscente]]
 })

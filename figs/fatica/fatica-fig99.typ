@@ -1,63 +1,49 @@
-// Figura estratta da fatica.typ (riga 2676) con LocalTypst
+// Figura estratta da fatica.typ (riga 3010) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#let varepsilon = $epsilon$
-#let varepsilon = $epsilon$
-
-#canvas(length: 1.5cm, {
-  // BBox: x in [-0.3, 8.5] (dx=8.8), y in [-0.3, 5.0], length=0.92cm -> larghezza = 8.10 cm <= 8.2 cm
+#canvas(length: 0.96cm, {
+  // BBox: x in [-0.20, 7.55] (dx=7.75), y in [-0.45, 4.15], length=0.96cm -> larghezza = 7.44 cm <= 8.2 cm
   import draw: *
 
-  // --- (a) Materiale fragile (A < 5%) ---
-  content((1.10, 4.88), text(size: 7.2pt, weight: "bold")[(a) Fragile], anchor: "north")
-  line((0.35, 0.45), (1.95, 0.45), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-  line((0.35, 0.45), (0.35, 4.15), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-  content((2.02, 0.45), text(size: 7pt)[$varepsilon$], anchor: "west")
-  content((0.26, 4.15), text(size: 7pt)[$sigma$], anchor: "east")
+  // Assi cartesiani
+  line((0, 0), (7.25, 0), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
+  content((7.25, -0.15), text(size: 7.5pt)[Tempo], anchor: "north-east")
+  line((0, 0), (0, 4.05), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
+  content((0.15, 3.98), text(size: 7.5pt)[Tensione], anchor: "west")
 
-  line((0.35, 0.45), (0.98, 2.95), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
-  bezier((0.98, 2.95), (1.32, 3.55), (1.08, 3.25), (1.20, 3.42), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
-  circle((1.32, 3.55), radius: 0.055, fill: red.transparentize(10%), stroke: 0.5pt)
-  line((0.35, 3.55), (1.32, 3.55), stroke: (dash: "dashed", thickness: 0.5pt, paint: luma(100)))
-  content((0.27, 3.55), text(size: 7pt, fill: red.transparentize(10%))[$R_m$], anchor: "east")
+  // Linee guida orizzontali tratteggiate
+  line((0, 3.4), (6.05, 3.4), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
+  line((0, 2.25), (5.45, 2.25), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
+  line((0, 1.1), (6.05, 1.1), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
 
-  // --- (b) Duttile con snervamento evidente R_eH ---
-  content((4.00, 4.88), text(size: 7.2pt, weight: "bold")[(b) Duttile ($R_"eH"$)], anchor: "north")
-  line((2.95, 0.45), (5.10, 0.45), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-  line((2.95, 0.45), (2.95, 4.15), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-  content((5.17, 0.45), text(size: 7pt)[$varepsilon$], anchor: "west")
-  content((2.86, 4.15), text(size: 7pt)[$sigma$], anchor: "east")
+  // Sinusoide con Bezier (punti di controllo a y0 +/- 1.333 * A)
+  let ym = 2.25
+  let amp = 1.15
+  let w = 1.05
+  let x0 = 0.20
+  let dy = 1.333 * amp
+  bezier((x0, ym), (x0 + w, ym), (x0 + 0.33 * w, ym + dy), (x0 + 0.67 * w, ym + dy), stroke: (paint: blue, thickness: 1.1pt))
+  bezier((x0 + w, ym), (x0 + 2 * w, ym), (x0 + 1.33 * w, ym - dy), (x0 + 1.67 * w, ym - dy), stroke: (paint: blue, thickness: 1.1pt))
+  bezier((x0 + 2 * w, ym), (x0 + 3 * w, ym), (x0 + 2.33 * w, ym + dy), (x0 + 2.67 * w, ym + dy), stroke: (paint: blue, thickness: 1.1pt))
+  bezier((x0 + 3 * w, ym), (x0 + 4 * w, ym), (x0 + 3.33 * w, ym - dy), (x0 + 3.67 * w, ym - dy), stroke: (paint: blue, thickness: 1.1pt))
 
-  line((2.95, 0.45), (3.25, 2.55), stroke: (paint: blue, thickness: 1.1pt))
-  line((3.25, 2.55), (3.35, 2.32), (3.44, 2.40), (3.54, 2.35), (3.65, 2.38), stroke: (paint: blue, thickness: 1.0pt))
-  bezier((3.65, 2.38), (4.42, 3.65), (3.88, 3.25), (4.15, 3.65), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((4.42, 3.65), (4.88, 3.00), (4.62, 3.65), (4.78, 3.35), stroke: (paint: blue, thickness: 1.1pt))
-  circle((4.42, 3.65), radius: 0.055, fill: blue, stroke: 0.5pt)
+  // Quote verticali sul ciclo
+  line((0.725, 0), (0.725, 2.25), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
+  content((0.84, 1.35), text(size: 7.5pt)[$sigma_m$], anchor: "west")
 
-  line((2.95, 2.55), (3.25, 2.55), stroke: (dash: "dashed", thickness: 0.5pt, paint: luma(100)))
-  content((2.87, 2.55), text(size: 6.8pt, fill: blue)[$R_"eH"$], anchor: "east")
-  line((2.95, 3.65), (4.42, 3.65), stroke: (dash: "dashed", thickness: 0.5pt, paint: luma(100)))
-  content((2.87, 3.65), text(size: 7pt, fill: blue)[$R_m$], anchor: "east")
+  line((1.775, 0), (1.775, 1.10), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
+  content((1.89, 0.55), text(size: 7.5pt)[$sigma_"min"$], anchor: "west")
 
-  // --- (c) Duttile con snervamento convenzionale R_p0.2 ---
-  content((7.10, 4.88), text(size: 7.2pt, weight: "bold")[(c) Duttile ($R_"p0.2"$)], anchor: "north")
-  line((6.05, 0.45), (8.20, 0.45), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-  line((6.05, 0.45), (6.05, 4.15), stroke: 0.8pt, mark: (end: ">", scale: 0.45))
-  content((8.27, 0.45), text(size: 7pt)[$varepsilon$], anchor: "west")
-  content((5.96, 4.15), text(size: 7pt)[$sigma$], anchor: "east")
+  line((2.825, 0), (2.825, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
+  content((2.94, 1.65), text(size: 7.5pt)[$sigma_"max"$], anchor: "west")
 
-  line((6.05, 0.45), (6.32, 2.15), stroke: (paint: rgb("#1f77b4"), thickness: 1.1pt))
-  bezier((6.32, 2.15), (7.48, 3.65), (6.48, 3.15), (7.05, 3.65), stroke: (paint: rgb("#1f77b4"), thickness: 1.1pt))
-  bezier((7.48, 3.65), (7.95, 3.02), (7.68, 3.65), (7.85, 3.35), stroke: (paint: rgb("#1f77b4"), thickness: 1.1pt))
-  circle((7.48, 3.65), radius: 0.055, fill: rgb("#1f77b4"), stroke: 0.5pt)
+  // Quote laterali di ampiezza
+  line((4.80, 2.25), (4.80, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
+  content((4.92, 2.83), text(size: 7.5pt)[$sigma_a$], anchor: "west")
 
-  // Retta di scarico parallela allo 0.2% (pendenza 1.70/0.27 = 6.30 -> da (6.35, 0.45) a (6.68, 2.53))
-  line((6.35, 0.45), (6.68, 2.53), stroke: (dash: "dotted", thickness: 0.65pt, paint: black))
-  circle((6.68, 2.53), radius: 0.05, fill: white, stroke: 0.65pt)
-  content((6.42, 0.32), text(size: 6.4pt)[$0.2\%$], anchor: "north")
+  line((4.80, 1.10), (4.80, 2.25), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
+  content((4.92, 1.68), text(size: 7.5pt)[$sigma_a$], anchor: "west")
 
-  line((6.05, 2.53), (6.68, 2.53), stroke: (dash: "dashed", thickness: 0.5pt, paint: luma(100)))
-  content((5.97, 2.53), text(size: 6.6pt, fill: rgb("#1f77b4"))[$R_"p0.2"$], anchor: "east")
-  line((6.05, 3.65), (7.48, 3.65), stroke: (dash: "dashed", thickness: 0.5pt, paint: luma(100)))
-  content((5.97, 3.65), text(size: 7pt, fill: rgb("#1f77b4"))[$R_m$], anchor: "east")
+  line((5.75, 1.10), (5.75, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
+  content((5.87, 2.25), text(size: 7.5pt)[$Delta sigma = 2 sigma_a$], anchor: "west")
 })

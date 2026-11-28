@@ -1,53 +1,54 @@
-// Figura estratta da fatica.typ (riga 3889) con LocalTypst
+// Figura estratta da fatica.typ (riga 3739) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.1cm, {
-  // BBox: x in [0.0, 16.4] (dx=16.4), y in [0.0, 7.2], length=1cm -> larghezza = 16.4 cm <= 17.0 cm
+#canvas(length: 0.9cm, {
   import draw: *
+  // BBox: x in [-0.2, 9.9] (dx=10.1), y in [0.1, 4.6], length=0.8cm -> larghezza = 8.08 cm <= 8.2 cm
 
-  // Sfondo intestazione e riga alternata
-  rect((0.0, 6.0), (16.4, 7.2), fill: black.transparentize(86%), stroke: none)
-  rect((0.0, 1.95), (16.4, 3.9), fill: black.transparentize(94%), stroke: none)
+  // Pannello sinistro: albero rotante tra 3 rulli
+  circle((1.45, 2.3), radius: 0.82, fill: black.transparentize(90%), stroke: 1.0pt)
+  content((1.45, 2.3), anchor: "center", [#text(size: 7.2pt)[Albero]])
 
-  // Bordo esterno e griglia tabella
-  rect((0.0, 0.0), (16.4, 7.2), stroke: (paint: black, thickness: 1.0pt))
-  line((0.0, 6.0), (16.4, 6.0), stroke: (paint: black, thickness: 0.9pt))
-  line((0.0, 3.9), (16.4, 3.9), stroke: (paint: black.transparentize(55%), thickness: 0.55pt))
-  line((0.0, 1.95), (16.4, 1.95), stroke: (paint: black.transparentize(55%), thickness: 0.55pt))
+  // Rullo superiore (90 deg)
+  circle((1.45, 3.38), radius: 0.26, fill: black.transparentize(78%), stroke: 0.85pt)
+  line((1.45, 4.25), (1.45, 3.68), stroke: (paint: blue, thickness: 1.0pt), mark: (end: ">", scale: 0.75))
+  content((1.63, 4.02), anchor: "west", [#text(fill: blue, size: 7.5pt)[$F$]])
 
-  for x in (2.5, 5.6, 8.1, 10.7, 12.6) {
-    line((x, 0.0), (x, 7.2), stroke: (paint: black.transparentize(55%), thickness: 0.55pt))
+  // Rullo inferiore sinistro (210 deg)
+  circle((0.51, 1.76), radius: 0.26, fill: black.transparentize(78%), stroke: 0.85pt)
+  line((-0.10, 1.40), (0.25, 1.60), stroke: (paint: blue, thickness: 1.0pt), mark: (end: ">", scale: 0.75))
+  content((0.00, 1.15), anchor: "north", [#text(fill: blue, size: 7.5pt)[$F$]])
+
+  // Rullo inferiore destro (330 deg)
+  circle((2.39, 1.76), radius: 0.26, fill: black.transparentize(78%), stroke: 0.85pt)
+  line((3.00, 1.40), (2.65, 1.60), stroke: (paint: blue, thickness: 1.0pt), mark: (end: ">", scale: 0.75))
+  content((2.90, 1.15), anchor: "north", [#text(fill: blue, size: 7.5pt)[$F$]])
+
+  // Freccia rotazione
+  arc((1.45, 2.3), start: 15deg, stop: 60deg, radius: 1.12, anchor: "origin", stroke: 0.7pt, mark: (end: ">", scale: 0.65))
+  content((2.50, 3.15), anchor: "west", [#text(size: 6.8pt)[Rotazione]])
+
+  // Pannello destro: grafico log S-N comparativo
+  rect((5.4, 1.2), (9.8, 4.3), stroke: 0.8pt)
+  content((4.52, 2.75), angle: 90deg, anchor: "center", [#text(size: 7pt)[$sigma_a$ (% $R_m$)]])
+  content((7.6, 0.35), anchor: "north", [#text(size: 7.2pt)[Cicli a rottura, $N$]])
+
+  // Tacche asse X (10^4 .. 10^8)
+  for (pos, lbl) in ((5.4, $10^4$), (6.5, $10^5$), (7.6, $10^6$), (8.7, $10^7$), (9.8, $10^8$)) {
+    line((pos, 1.2), (pos, 1.32), stroke: 0.6pt)
+    content((pos, 0.96), anchor: "north", [#text(size: 6.5pt)[#lbl]])
   }
 
-  // Intestazioni colonna
-  content((1.25, 6.6), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.5pt, weight: "bold")[Rivestimento])))
-  content((4.05, 6.6), anchor: "center", box(width: 2.7cm, align(center, text(size: 7.5pt, weight: "bold")[Meccanismo / Stato residuo])))
-  content((6.85, 6.6), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.5pt, weight: "bold")[Fatica in aria])))
-  content((9.40, 6.6), anchor: "center", box(width: 2.2cm, align(center, text(size: 7.5pt, weight: "bold")[Fatica in ambiente corrosivo])))
-  content((11.65, 6.6), anchor: "center", box(width: 1.5cm, align(center, text(size: 7.5pt, weight: "bold")[Usura])))
-  content((14.50, 6.6), anchor: "center", box(width: 3.4cm, align(center, text(size: 7.5pt, weight: "bold")[Contromisure e rischi (infragilimento da H)])))
+  // Tacche asse Y (log10: 10, 20, 30, 50, 100)
+  for (yy, lbl) in ((1.20, "10"), (2.13, "20"), (2.68, "30"), (3.37, "50"), (4.30, "100")) {
+    line((5.4, yy), (5.52, yy), stroke: 0.6pt)
+    content((5.22, yy), anchor: "east", [#text(size: 6.5pt)[#lbl]])
+  }
 
-  // Riga 1: Cromatura / Nichelatura
-  content((1.25, 4.95), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[*Cromatura / Nichelatura*])))
-  content((4.05, 4.95), anchor: "center", box(width: 2.7cm, align(center, text(size: 7.2pt)[Riporto galvanico; tensioni residue di trazione ($sigma_"res" > 0$)])))
-  content((6.85, 4.95), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[#text(fill: red.transparentize(10%), weight: "bold")[Riduce] (cresce con $R_m$, durata e spessore)])))
-  content((9.40, 4.95), anchor: "center", box(width: 2.2cm, align(center, text(size: 7.2pt)[#text(fill: blue, weight: "bold")[Aumenta] (scherma il substrato)])))
-  content((11.65, 4.95), anchor: "center", box(width: 1.5cm, align(center, text(size: 7.2pt)[#text(fill: blue, weight: "bold")[Buona]])))
-  content((14.50, 4.95), anchor: "center", box(width: 3.4cm, align(center, text(size: 7.2pt)[Pallinatura o nitrurazione preventivi (Ni più sensibile); rischio infragilimento da H])))
+  // Curve S-N convergenti a ~55% R_m per N = 10^4
+  line((5.4, 3.48), (9.8, 2.72), stroke: (paint: blue, thickness: 1.2pt))
+  content((7.95, 3.25), anchor: "south", [#text(fill: blue, size: 7pt, weight: "bold")[Rullata]])
 
-  // Riga 2: Cadmiatura / Zincatura
-  content((1.25, 2.925), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[*Cadmiatura / Zincatura*])))
-  content((4.05, 2.925), anchor: "center", box(width: 2.7cm, align(center, text(size: 7.2pt)[Rivestimento protettivo senza stato residuo rilevante])))
-  content((6.85, 2.925), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[*Neutro* (nessun effetto significativo)])))
-  content((9.40, 2.925), anchor: "center", box(width: 2.2cm, align(center, text(size: 7.2pt)[#text(fill: blue, weight: "bold")[Aumenta] (scherma il metallo base)])))
-  content((11.65, 2.925), anchor: "center", box(width: 1.5cm, align(center, text(size: 7.2pt)[#text(fill: red.transparentize(10%), weight: "bold")[Scarsa]])))
-  content((14.50, 2.925), anchor: "center", box(width: 3.4cm, align(center, text(size: 7.2pt)[Controllo rigoroso del bagno galvanico contro infragilimento da idrogeno (H)])))
-
-  // Riga 3: Anodizzazione
-  content((1.25, 0.975), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[*Anodizzazione* \ (leghe leggere)])))
-  content((4.05, 0.975), anchor: "center", box(width: 2.7cm, align(center, text(size: 7.2pt)[Pellicola d'ossido rigida e fragile])))
-  content((6.85, 0.975), anchor: "center", box(width: 2.1cm, align(center, text(size: 7.2pt)[#text(fill: red.transparentize(10%), weight: "bold")[Riduce] (20%–30%)])))
-  content((9.40, 0.975), anchor: "center", box(width: 2.2cm, align(center, text(size: 7.2pt)[#text(fill: red.transparentize(10%), weight: "bold")[Peggiora] (sinergia con corrosione)])))
-  content((11.65, 0.975), anchor: "center", box(width: 1.5cm, align(center, text(size: 7.2pt)[Dura ma fragile al carico])))
-  content((14.50, 0.975), anchor: "center", box(width: 3.4cm, align(center, text(size: 7.2pt)[Rischio cricche precoci della pellicola sotto carico ciclico])))
+  line((5.4, 3.48), (9.3, 1.52), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
+  content((7.48, 2.02), anchor: "north-east", [#text(fill: red.transparentize(10%), size: 7pt, weight: "bold")[Non rullata]])
 })

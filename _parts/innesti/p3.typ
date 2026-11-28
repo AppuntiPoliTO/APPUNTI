@@ -147,7 +147,7 @@ I freni obbediscono alle stesse leggi di attrito, usura e bilancio termico degli
 ]
 
 ],
-  [#image("/images/fig__parts_innesti_p3_6000.png", width: 90%)
+  [#image("/images/innesti/fig__parts_innesti_p3_6000.png", width: 90%)
 ],
 )
 

@@ -1,65 +1,79 @@
-// Figura estratta da fatica.typ (riga 1194) con LocalTypst
+// Figura estratta da fatica.typ (riga 1793) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.22cm, {
+#canvas(length: 1.55cm, {
+  // BBox: x in [-2.05, 2.90] (dx=4.95), y in [-2.20, 3.85], length=1.55cm -> larghezza = 7.67 cm <= 8.2 cm
   import draw: *
-  // BBox: x in [-0.95, 5.35] (dx=6.30), y in [-0.65, 4.30], length=1.12cm -> larghezza = 7.06 cm <= 8.2 cm
 
-  let x_of(r) = 2.2 * (r + 1.0) // R in [-1, 1] -> x in [0, 4.4]
-  let sd = 1.35
-  let rp = 2.95
-  let rm = 3.80
-  let r_cut = 0.6825
-  let x_cut = x_of(r_cut) // 3.702
+  let r1 = 0.58
+  let yc1 = 2.75
+  let r2 = 1.55
+  let yc2 = 0.0
+  let amp = 1.75
+  let x80 = 0.80 * amp
 
-  // Campionamento curva limite da R = -1 a R_cut (regione sicura) e fino a R = 1
-  let safe_curve = ()
-  for k in range(0, 17) {
-    let rk = -1.0 + (r_cut + 1.0) * k / 16
-    let yk = 2.0 / ((1.0 - rk) / sd + (1.0 + rk) / rm)
-    safe_curve.push((x_of(rk), yk))
+  // --- Provino piccolo (sopra) ---
+  content((0, yc1 + r1 + 0.30), anchor: "south")[#text(size: 8pt, weight: "bold")[Provetta ($d = 8"–"12 thin "mm"$)]]
+
+  circle((0, yc1), radius: r1, fill: luma(228), stroke: 1pt + black)
+
+  // Calotta superiore campita tra 0.80*sigma_a e sigma_a (theta da 53.13deg a 126.87deg)
+  let cap1 = ()
+  for i in range(0, 25) {
+    let ang = 53.13deg + i * (73.74deg / 24)
+    cap1.push((r1 * calc.cos(ang), yc1 + r1 * calc.sin(ang)))
   }
-  let ext_curve = ()
-  for k in range(0, 9) {
-    let rk = r_cut + (1.0 - r_cut) * k / 8
-    let yk = 2.0 / ((1.0 - rk) / sd + (1.0 + rk) / rm)
-    ext_curve.push((x_of(rk), yk))
+  line(..cap1, close: true, fill: red.transparentize(65%), stroke: (paint: red.transparentize(10%), thickness: 0.75pt))
+
+  // Assi di riferimento e profilo lineare
+  line((-1.90, yc1), (1.90, yc1), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(90)))
+  line((0, yc1 - r1 - 0.15), (0, yc1 + r1 + 0.15), stroke: (dash: "dotted", thickness: 0.55pt, paint: luma(110)))
+
+  // Frecce di picco +/- sigma_a
+  line((0, yc1 + r1), (amp, yc1 + r1), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
+  line((0, yc1 - r1), (-amp, yc1 - r1), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
+
+  // Livello 80% sigma_a e profilo di flessione
+  let y1_80 = yc1 + 0.80 * r1
+  line((-0.85, y1_80), (amp, y1_80), stroke: (paint: blue, thickness: 0.65pt, dash: "dashed"))
+  line((-amp, yc1 - r1), (amp, yc1 + r1), stroke: 1.1pt + blue)
+
+  // Etichette esterne con richiami anti-collisione
+  line((amp + 0.04, yc1 + r1), (amp + 0.16, yc1 + r1 + 0.12), stroke: 0.55pt + black)
+  content((amp + 0.18, yc1 + r1 + 0.12), anchor: "south-west")[#text(size: 7.5pt)[$sigma_a$]]
+
+  line((amp + 0.04, y1_80), (amp + 0.16, y1_80 - 0.14), stroke: 0.55pt + blue)
+  content((amp + 0.18, y1_80 - 0.14), anchor: "north-west")[#text(size: 7.5pt, fill: blue)[$80% thin sigma_a$]]
+
+  // --- Albero grande (sotto) ---
+  circle((0, yc2), radius: r2, fill: luma(228), stroke: 1pt + black)
+
+  let cap2 = ()
+  for i in range(0, 31) {
+    let ang = 53.13deg + i * (73.74deg / 30)
+    cap2.push((r2 * calc.cos(ang), yc2 + r2 * calc.sin(ang)))
   }
+  line(..cap2, close: true, fill: red.transparentize(65%), stroke: (paint: red.transparentize(10%), thickness: 0.8pt))
 
-  // Regione sicura campita
-  let poly = ((0.0, 0.0), ..safe_curve, (4.4, rp), (4.4, 0.0))
-  line(..poly, close: true, fill: black.transparentize(88%), stroke: none)
+  // Assi di riferimento e profilo lineare
+  line((-1.90, yc2), (1.90, yc2), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(90)))
+  line((0, yc2 - r2 - 0.15), (0, yc2 + r2 + 0.15), stroke: (dash: "dotted", thickness: 0.55pt, paint: luma(110)))
 
-  // Assi principali
-  line((-0.15, 0.0), (4.95, 0.0), stroke: 0.8pt, mark: (end: ">", scale: 0.7))
-  line((0.0, -0.15), (0.0, 4.05), stroke: 0.8pt, mark: (end: ">", scale: 0.7))
-  content((5.05, 0.0), anchor: "west")[#text(size: 8pt)[$R$]]
-  content((0.0, 4.12), anchor: "south")[#text(size: 8pt)[$sigma_"max"$]]
+  // Frecce di picco +/- sigma_a (identiche in ampiezza al provino)
+  line((0, yc2 + r2), (amp, yc2 + r2), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
+  line((0, yc2 - r2), (-amp, yc2 - r2), stroke: 0.8pt + black, mark: (end: ">", scale: 0.6))
 
-  // Riferimenti verticali R = 0 e R = 1 e snervamento Rp0.2
-  line((2.2, 0.0), (2.2, 1.992), stroke: (dash: "dotted", thickness: 0.55pt))
-  line((4.4, 0.0), (4.4, rm), stroke: (dash: "dotted", thickness: 0.55pt))
-  line((0.0, rp), (x_cut, rp), stroke: (dash: "dotted", thickness: 0.6pt))
-  line((0.0, rm), (4.4, rm), stroke: (dash: "dotted", thickness: 0.55pt))
+  // Livello 80% sigma_a, proiezione verticale comune e profilo di flessione
+  let y2_80 = yc2 + 0.80 * r2
+  line((x80, y1_80), (x80, y2_80), stroke: (paint: blue.transparentize(30%), thickness: 0.55pt, dash: "dotted"))
+  line((-1.25, y2_80), (amp, y2_80), stroke: (paint: blue, thickness: 0.65pt, dash: "dashed"))
+  line((-amp, yc2 - r2), (amp, yc2 + r2), stroke: 1.1pt + blue)
+  circle((x80, y1_80), radius: 0.042, fill: blue, stroke: none)
+  circle((x80, y2_80), radius: 0.042, fill: blue, stroke: none)
 
-  // Ramo tratteggiato fino a Rm e contorno marcato regione sicura
-  line(..ext_curve, stroke: (dash: "dashed", paint: rgb("#1f77b4"), thickness: 0.8pt))
-  line(..safe_curve, (4.4, rp), stroke: 1.15pt)
-  line((4.4, rp), (4.4, 0.0), stroke: 0.85pt)
+  // Etichette ben distanziate (delta y = 0.31 unità)
+  content((amp + 0.12, yc2 + r2 + 0.04), anchor: "south-west")[#text(size: 7.5pt)[$sigma_a$]]
+  content((amp + 0.12, y2_80 - 0.04), anchor: "north-west")[#text(size: 7.5pt, fill: blue)[$80% thin sigma_a$]]
 
-  // Punti notevoli
-  circle((0.0, sd), radius: 0.055, fill: black)
-  circle((2.2, 1.992), radius: 0.05, fill: black)
-  circle((4.4, rm), radius: 0.055, fill: rgb("#1f77b4"), stroke: rgb("#1f77b4"))
-
-  // Etichette assi
-  content((0.0, -0.15), anchor: "north")[#text(size: 7.5pt)[$-1$]]
-  content((2.2, -0.15), anchor: "north")[#text(size: 7.5pt)[$0$]]
-  content((4.4, -0.15), anchor: "north")[#text(size: 7.5pt)[$+1$]]
-
-  content((-0.12, sd), anchor: "east")[#text(size: 7.5pt)[$sigma_(D-1)$]]
-  content((-0.12, rp), anchor: "east")[#text(size: 7.5pt)[$R_"p0.2"$]]
-  content((-0.12, rm), anchor: "east")[#text(size: 7.5pt)[$R_m$]]
-  content((2.15, 2.12), anchor: "south-east")[#text(size: 7pt)[$sigma_(D 0)$]]
-  content((3.25, 0.85), anchor: "center")[#text(size: 7.2pt, weight: "bold")[Zona sicura]]
+  content((0, yc2 - r2 - 0.30), anchor: "north")[#text(size: 8pt, weight: "bold")[Albero grande ($d >> 12 thin "mm"$)]]
 })

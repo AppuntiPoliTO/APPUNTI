@@ -1,64 +1,68 @@
-// Figura estratta da fatica.typ (riga 4608) con LocalTypst
+// Figura estratta da fatica.typ (riga 4401) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.15cm, {
-  // BBox: x in [-0.35, 6.85] (dx=7.20), y in [-0.40, 4.70], length=1.05cm -> larghezza = 7.56 cm <= 8.2 cm
-  import draw: line, rect, circle, bezier, content
+#canvas(length: 1.02cm, {
+  // BBox: x in [-1.1, 14.5] (dx=15.6), y in [-1.15, 3.9], length=0.92cm -> larghezza = 14.35 cm <= 17.0 cm
+  import draw: *
 
-  // Telaio fisso inferiore (orizzontale) + tratteggio d'incastro
-  line((1.5, 0.0), (4.5, 0.0), stroke: 1.05pt)
-  for hx in (1.7, 2.1, 2.5, 2.9, 3.3, 3.7, 4.1, 4.45) {
-    line((hx, 0.0), (hx - 0.20, -0.22), stroke: 0.6pt)
-  }
-  content((4.62, -0.05), anchor: "west", text(size: 7pt, fill: luma(50))[Telaio di supporto])
+  // --- Pannello (a): Calcolo di CS ---
+  line((-0.3, 0), (5.8, 0), stroke: 0.8pt, mark: (end: ">"))
+  line((0, -0.3), (0, 3.7), stroke: 0.8pt, mark: (end: ">"))
+  content((5.8, -0.22), anchor: "north", text(size: 8pt)[$sigma_m$])
+  content((-0.18, 3.7), anchor: "east", text(size: 8pt)[$sigma_a$])
 
-  // Telaio fisso sinistro (verticale) + tratteggio d'incastro
-  line((0.0, 1.65), (0.0, 4.25), stroke: 1.05pt)
-  for hy in (1.85, 2.25, 2.65, 3.05, 3.45, 3.85, 4.20) {
-    line((0.0, hy), (-0.22, hy - 0.20), stroke: 0.6pt)
-  }
+  line((0, 3.0), (5.2, 0), stroke: 1.1pt)
+  circle((0, 3.0), radius: 0.045, fill: black, stroke: none)
+  content((0.15, 3.10), anchor: "south-west", text(size: 8pt)[$sigma_(D-1)^C$])
+  circle((5.2, 0), radius: 0.045, fill: black, stroke: none)
+  content((5.2, -0.22), anchor: "north", text(size: 8pt)[$R_m$])
 
-  // Collare di carico e sezione alare della pala
-  rect((2.25, 2.55), (3.75, 3.65), radius: 0.08, fill: black.transparentize(90%), stroke: 0.9pt)
-  bezier((2.46, 3.10), (3.60, 3.04), (2.72, 3.48), (3.22, 3.30), stroke: 1.05pt)
-  bezier((2.46, 3.10), (3.60, 3.04), (2.72, 2.82), (3.22, 2.92), stroke: 1.05pt)
-  circle((2.82, 3.12), radius: 0.11, fill: black.transparentize(75%), stroke: 0.65pt)
+  line((1.9, 0), (1.9, 1.904), stroke: (paint: blue.darken(15%), thickness: 0.75pt))
+  line((0, 0.95), (1.9, 0.95), stroke: (dash: "dotted", thickness: 0.65pt))
+  line((0, 1.904), (1.9, 1.904), stroke: (dash: "dotted", thickness: 0.65pt))
 
-  // Spostamenti simultanei sui due piani ortogonali
-  line((2.42, 4.02), (3.58, 4.02), mark: (start: ">", end: ">", scale: 0.50, fill: blue), stroke: (paint: blue, thickness: 0.85pt))
-  content((3.00, 4.14), anchor: "south", text(size: 7.5pt, fill: blue)[$Delta x(t)$])
+  circle((1.9, 0), radius: 0.045, fill: black, stroke: none)
+  content((2.00, 0.08), anchor: "south-west", text(size: 7.5pt)[$H$])
+  content((1.9, -0.22), anchor: "north", text(size: 7.5pt)[$sigma_(m,"eq")$])
 
-  line((4.10, 2.68), (4.10, 3.52), mark: (start: ">", end: ">", scale: 0.50, fill: red.transparentize(10%)), stroke: (paint: red.transparentize(10%), thickness: 0.85pt))
-  content((4.22, 3.10), anchor: "west", text(size: 7.5pt, fill: red.transparentize(10%))[$Delta y(t)$])
+  circle((1.9, 0.95), radius: 0.06, fill: red, stroke: none)
+  content((2.06, 0.95), anchor: "west", text(fill: red, size: 8pt)[$P$])
+  content((-0.22, 0.95), anchor: "east", text(size: 7.5pt)[$sigma_(a,"eq")$])
 
-  // Attuatore verticale Fy(t) + cerniere di disaccoppiamento
-  line((2.80, 0.0), (3.00, 0.24), (3.20, 0.0), stroke: 0.8pt)
-  line((3.00, 0.33), (3.00, 0.62), stroke: 0.95pt)
-  rect((2.78, 0.62), (3.22, 1.56), fill: black.transparentize(86%), stroke: 0.95pt)
-  line((2.81, 1.12), (3.19, 1.12), stroke: 1.1pt)
-  line((3.00, 1.12), (3.00, 2.46), stroke: 0.95pt)
-  // Traccia cinematica tratteggiata (rotazione libera senza flessione parassita)
-  line((3.00, 0.24), (3.32, 2.52), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(95)))
-  circle((3.00, 0.24), radius: 0.09, fill: white, stroke: 0.95pt)
-  circle((3.00, 2.55), radius: 0.09, fill: white, stroke: 0.95pt)
-  content((2.64, 1.10), anchor: "east", text(size: 7.5pt, fill: red.transparentize(10%))[$F_y (t)$])
+  circle((1.9, 1.904), radius: 0.06, fill: blue, stroke: none)
+  content((2.04, 2.04), anchor: "south-west", text(fill: blue, size: 8pt)[$L$])
+  content((-0.22, 1.904), anchor: "east", text(size: 7.5pt)[$sigma_D^"lim"$])
 
-  // Attuatore orizzontale Fx(t) + cerniere di disaccoppiamento
-  line((0.0, 2.90), (0.24, 3.10), (0.0, 3.30), stroke: 0.8pt)
-  line((0.33, 3.10), (0.60, 3.10), stroke: 0.95pt)
-  rect((0.60, 2.88), (1.50, 3.32), fill: black.transparentize(86%), stroke: 0.95pt)
-  line((1.05, 2.91), (1.05, 3.29), stroke: 1.1pt)
-  line((1.05, 3.10), (2.16, 3.10), stroke: 0.95pt)
-  line((0.24, 3.10), (2.22, 3.38), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(95)))
-  circle((0.24, 3.10), radius: 0.09, fill: white, stroke: 0.95pt)
-  circle((2.25, 3.10), radius: 0.09, fill: white, stroke: 0.95pt)
-  content((1.05, 3.46), anchor: "south", text(size: 7.5pt, fill: blue)[$F_x (t)$])
+  content((2.6, -0.78), anchor: "north", text(size: 8pt)[*(a)* Calcolo di $"CS"$])
 
-  // Richiami esterni senza collisioni
-  line((4.25, 4.12), (3.76, 3.63), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
-  content((4.32, 4.18), anchor: "west", text(size: 7pt)[Sezione pala \ e collare])
+  // --- Pannello (b): Retta limite ridotta ---
+  line((8.1, 0), (13.3, 0), (8.1, 1.85), close: true, fill: black.transparentize(90%), stroke: none)
 
-  line((4.22, 1.58), (3.13, 2.48), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
-  line((4.22, 1.32), (3.13, 0.30), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
-  content((4.28, 1.45), anchor: "west", text(size: 7pt)[Cerniere di \ disaccoppiamento])
+  line((7.8, 0), (13.9, 0), stroke: 0.8pt, mark: (end: ">"))
+  line((8.1, -0.3), (8.1, 3.7), stroke: 0.8pt, mark: (end: ">"))
+  content((13.9, -0.22), anchor: "north", text(size: 8pt)[$sigma_m$])
+  content((7.92, 3.7), anchor: "east", text(size: 8pt)[$sigma_a$])
+
+  line((8.1, 3.0), (13.3, 0), stroke: (dash: "dashed", thickness: 0.8pt, paint: black.transparentize(35%)))
+  circle((8.1, 3.0), radius: 0.045, fill: black, stroke: none)
+  content((8.25, 3.10), anchor: "south-west", text(size: 8pt)[$sigma_(D-1)^C$])
+
+  line((8.1, 1.85), (13.3, 0), stroke: (paint: blue.darken(15%), thickness: 1.1pt))
+  circle((8.1, 1.85), radius: 0.045, fill: blue.darken(15%), stroke: none)
+  content((7.88, 1.85), anchor: "east", text(size: 7.5pt)[$frac(sigma_(D-1)^C, "CS")$])
+
+  circle((13.3, 0), radius: 0.045, fill: black, stroke: none)
+  content((13.3, -0.22), anchor: "north", text(size: 8pt)[$R_m$])
+
+  line((8.1, 0.95), (10.0, 0.95), stroke: (dash: "dotted", thickness: 0.65pt))
+  line((10.0, 0), (10.0, 0.95), stroke: (dash: "dotted", thickness: 0.65pt))
+  circle((10.0, 0.95), radius: 0.06, fill: red, stroke: none)
+  content((10.14, 0.88), anchor: "west", text(fill: red, size: 8pt)[$P$])
+  content((7.88, 0.95), anchor: "east", text(size: 7.5pt)[$sigma_(a,"eq")$])
+  content((10.0, -0.22), anchor: "north", text(size: 7.5pt)[$sigma_(m,"eq")$])
+
+  line((11.6, 2.2), (10.9, 0.45), stroke: (paint: black.transparentize(45%), thickness: 0.55pt), mark: (end: ">", scale: 0.5))
+  content((11.65, 2.25), anchor: "south", text(size: 7.5pt)[Area sicura per $"CS"$])
+
+  content((10.7, -0.78), anchor: "north", text(size: 8pt)[*(b)* Retta limite ridotta])
 })

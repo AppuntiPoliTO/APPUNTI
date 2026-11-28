@@ -80,7 +80,7 @@ Gli *innesti di sicurezza* interrompono autonomamente il collegamento quando la 
   #align(center)[
   #image("../../images/innesti/fig__parts_innesti_p2_7161.png", width: 75%)
 ]],
-  move(dy: 7pt)[#image("/images/fig__parts_innesti_p2_7169.png", width: 75%)
+  move(dy: 7pt)[#image("/images/innesti/fig__parts_innesti_p2_7169.png", width: 75%)
 
 ],
 )

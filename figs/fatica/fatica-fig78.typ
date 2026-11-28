@@ -1,72 +1,75 @@
-// Figura estratta da fatica.typ (riga 1278) con LocalTypst
+// Figura estratta da fatica.typ (riga 1886) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.00cm, {
-  import draw: *
-  // BBox: x in [-4.1, 4.8] (dx=8.9), y in [-0.7, 4.5], length=0.90cm -> larghezza = 8.01 cm <= 8.2 cm
+#canvas(length: 1.68cm, {
+    // BBox: x in [-0.80, 5.20] (dx=6.00), y in [-0.85, 3.70], length=1.28cm -> larghezza = 7.68 cm <= 8.2 cm
+    import draw: *
 
-  // Poligono di sicurezza campito
-  line(
-    (-2.8, 0.0),
-    (-1.4, 1.4),
-    (1.87, 2.8),
-    (2.8, 2.8),
-    (0.0, 0.0),
-    close: true,
-    fill: black.transparentize(90%),
-    stroke: none,
-  )
+    let map-x(d) = (d - 10.0) / 38.0
+    let map-y(cs) = (cs - 0.60) * 8.0
 
-  // Assi ortogonali (sigma_min, sigma_max)
-  line((-3.4, 0.0), (4.0, 0.0), stroke: 0.75pt, mark: (end: ">"))
-  line((0.0, -0.4), (0.0, 3.85), stroke: 0.75pt, mark: (end: ">"))
-  content((4.08, 0.0), anchor: "west")[#text(size: 8pt)[$sigma_"min"$]]
-  content((0.0, 3.92), anchor: "south")[#text(size: 8pt)[$sigma_"max"$]]
+    // Griglia cartesiana (d ogni 10 mm da 10 a 200, C_S ogni 0.05)
+    for i in range(0, 20) {
+      let xg = map-x(10 + i * 10)
+      line((xg, 0), (xg, 3.20), stroke: 0.35pt + luma(205))
+    }
+    for j in range(0, 9) {
+      let yg = map-y(0.60 + j * 0.05)
+      line((0, yg), (5.00, yg), stroke: 0.35pt + luma(205))
+    }
 
-  // Assi ruotati di 45 gradi (sigma_m e sigma_a) ben distanziati da Rm
-  line((0.0, 0.0), (4.05, 4.05), stroke: (paint: blue, thickness: 0.75pt), mark: (end: ">"))
-  line((0.0, 0.0), (-2.95, 2.95), stroke: (paint: blue, thickness: 0.75pt), mark: (end: ">"))
-  content((4.10, 4.10), anchor: "south-west")[#text(size: 8pt, fill: blue)[$sigma_m$]]
-  content((-3.00, 3.00), anchor: "south-east")[#text(size: 8pt, fill: blue)[$sigma_a$]]
+    // Cornice degli assi
+    rect((0, 0), (5.00, 3.20), stroke: 0.85pt + black)
 
-  // Raggi a rapporto R costante e prolungamenti
-  line((0.0, 0.0), (-3.2, 1.6), stroke: (dash: "dashed", thickness: 0.55pt))
-  content((-3.26, 1.6), anchor: "east")[#text(size: 7pt)[$R = -2$]]
-  content((-2.35, 2.15), anchor: "north-east")[#text(size: 7pt, fill: blue)[$R = -1$]]
-  content((0.12, 3.45), anchor: "west")[#text(size: 7pt)[$R = 0$]]
-  content((2.82, 2.52), anchor: "north-west")[#text(size: 7pt, fill: blue)[$R = 1$]]
+    // Etichette asse Y
+    let y-vals = (0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00)
+    let y-strs = ("0.60", "0.65", "0.70", "0.75", "0.80", "0.85", "0.90", "0.95", "1.00")
+    for idx in range(0, y-vals.len()) {
+      let yy = map-y(y-vals.at(idx))
+      if y-strs.at(idx) == "0.70" {
+        content((-0.08, yy), anchor: "east")[#box(stroke: 0.7pt + red.transparentize(10%), inset: 1.5pt, fill: white)[#text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[0.70]]]
+      } else {
+        content((-0.10, yy), anchor: "east")[#text(size: 7pt)[#y-strs.at(idx)]]
+      }
+    }
+    content((0, 3.35), anchor: "south")[#text(size: 8pt, weight: "bold")[$C_S$]]
 
-  // Costruzioni Goodman e snervamento
-  line((1.87, 2.8), (3.5, 3.5), stroke: (dash: "dashed", thickness: 0.6pt))
-  circle((3.5, 3.5), radius: 0.05, fill: black)
-  content((3.36, 3.56), anchor: "south-east")[#text(size: 7.5pt)[$R_m$]]
-  line((0.0, 2.8), (1.87, 2.8), stroke: (dash: "dotted", thickness: 0.6pt))
-  content((0.10, 2.85), anchor: "south-west")[#text(size: 7.5pt)[$R_"p0.2"$]]
+    // Etichette asse X (ogni 20 mm da 10 a 190, bordo destro a 200)
+    for k in range(0, 10) {
+      let d = 10 + k * 20
+      content((map-x(d), -0.12), anchor: "north")[#text(size: 7pt)[#d]]
+    }
+    content((2.50, -0.48), anchor: "north")[#text(size: 7.5pt, weight: "bold")[$d$ [mm]]]
 
-  // Contorno poligono di sicurezza
-  line(
-    (-2.8, 0.0),
-    (-1.4, 1.4),
-    (1.87, 2.8),
-    (2.8, 2.8),
-    (0.0, 0.0),
-    close: true,
-    stroke: 1.15pt,
-  )
+    // Asintoto orizzontale C_S = 0.70
+    let y-asym = map-y(0.70)
+    line((0, y-asym), (5.12, y-asym), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
 
-  // Punto di lavoro P e proiezioni su entrambi i riferimenti
-  let px = 1.45
-  let py = 2.05
-  line((px, py), (px, 0.0), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.65pt))
-  line((px, py), (0.0, py), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.65pt))
-  line((px, py), (1.75, 1.75), stroke: (dash: "dotted", paint: blue, thickness: 0.65pt))
-  line((px, py), (-0.30, 0.30), stroke: (dash: "dotted", paint: blue, thickness: 0.65pt))
-  circle((px, py), radius: 0.065, fill: red.transparentize(10%), stroke: red.transparentize(10%))
-  content((px + 0.08, py + 0.06), anchor: "south-west")[#text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$]]
+    // Curva sperimentale C_S(d) fedele all'abaco (Slide 9)
+    let curve-data = (
+      (10, 1.000), (15, 0.950), (20, 0.910), (25, 0.883), (30, 0.862),
+      (40, 0.830), (50, 0.806), (60, 0.788), (70, 0.773), (80, 0.761),
+      (90, 0.750), (100, 0.741), (110, 0.733), (120, 0.726), (130, 0.720),
+      (140, 0.715), (150, 0.711), (160, 0.707), (170, 0.704), (180, 0.702),
+      (190, 0.700), (200, 0.700),
+    )
+    let curve-pts = curve-data.map(p => (map-x(p.at(0)), map-y(p.at(1))))
+    line(..curve-pts, stroke: 1.35pt + black)
 
-  // Etichette assi sigma_D-1 senza collisioni
-  line((-1.4, 1.4), (0.0, 1.4), stroke: (dash: "dotted", thickness: 0.5pt))
-  line((-1.4, 1.4), (-1.4, 0.0), stroke: (dash: "dotted", thickness: 0.5pt))
-  content((-1.4, -0.14), anchor: "north")[#text(size: 7.5pt)[$-sigma_(D-1)$]]
-  content((0.08, 1.42), anchor: "south-west")[#text(size: 7.5pt)[$sigma_(D-1)$]]
-})
+    // Etichetta curva Flessione e torsione
+    content((2.95, 2.65), anchor: "center")[
+      #box(fill: white, stroke: 0.6pt + black, inset: 2.5pt, radius: 1.5pt)[
+        #text(size: 7pt, weight: "bold")[Flessione e torsione]
+      ]
+    ]
+    line((2.05, 2.55), (map-x(46), map-y(0.816)), stroke: 0.6pt + black, mark: (end: ">", scale: 0.55))
+
+    // Etichetta asintoto C_L = 0.70
+    content((3.10, 0.36), anchor: "center")[
+      #box(fill: white, stroke: 0.6pt + red.transparentize(10%), inset: 2.2pt, radius: 1.5pt)[
+        #set align(center)
+        #text(size: 6.7pt)[Asintoto: valore medio $C_L = 0.70$ \ (trazione-compressione)]
+      ]
+    ]
+    line((2.40, 0.61), (2.40, y-asym - 0.02), stroke: 0.6pt + red.transparentize(10%), mark: (end: ">", scale: 0.55))
+  })

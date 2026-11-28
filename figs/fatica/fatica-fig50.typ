@@ -1,49 +1,65 @@
-// Figura estratta da fatica.typ (riga 3010) con LocalTypst
+// Figura estratta da fatica.typ (riga 1194) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 0.96cm, {
-  // BBox: x in [-0.20, 7.55] (dx=7.75), y in [-0.45, 4.15], length=0.96cm -> larghezza = 7.44 cm <= 8.2 cm
+#canvas(length: 1.22cm, {
   import draw: *
+  // BBox: x in [-0.95, 5.35] (dx=6.30), y in [-0.65, 4.30], length=1.12cm -> larghezza = 7.06 cm <= 8.2 cm
 
-  // Assi cartesiani
-  line((0, 0), (7.25, 0), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
-  content((7.25, -0.15), text(size: 7.5pt)[Tempo], anchor: "north-east")
-  line((0, 0), (0, 4.05), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
-  content((0.15, 3.98), text(size: 7.5pt)[Tensione], anchor: "west")
+  let x_of(r) = 2.2 * (r + 1.0) // R in [-1, 1] -> x in [0, 4.4]
+  let sd = 1.35
+  let rp = 2.95
+  let rm = 3.80
+  let r_cut = 0.6825
+  let x_cut = x_of(r_cut) // 3.702
 
-  // Linee guida orizzontali tratteggiate
-  line((0, 3.4), (6.05, 3.4), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
-  line((0, 2.25), (5.45, 2.25), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
-  line((0, 1.1), (6.05, 1.1), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(45%)))
+  // Campionamento curva limite da R = -1 a R_cut (regione sicura) e fino a R = 1
+  let safe_curve = ()
+  for k in range(0, 17) {
+    let rk = -1.0 + (r_cut + 1.0) * k / 16
+    let yk = 2.0 / ((1.0 - rk) / sd + (1.0 + rk) / rm)
+    safe_curve.push((x_of(rk), yk))
+  }
+  let ext_curve = ()
+  for k in range(0, 9) {
+    let rk = r_cut + (1.0 - r_cut) * k / 8
+    let yk = 2.0 / ((1.0 - rk) / sd + (1.0 + rk) / rm)
+    ext_curve.push((x_of(rk), yk))
+  }
 
-  // Sinusoide con Bezier (punti di controllo a y0 +/- 1.333 * A)
-  let ym = 2.25
-  let amp = 1.15
-  let w = 1.05
-  let x0 = 0.20
-  let dy = 1.333 * amp
-  bezier((x0, ym), (x0 + w, ym), (x0 + 0.33 * w, ym + dy), (x0 + 0.67 * w, ym + dy), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((x0 + w, ym), (x0 + 2 * w, ym), (x0 + 1.33 * w, ym - dy), (x0 + 1.67 * w, ym - dy), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((x0 + 2 * w, ym), (x0 + 3 * w, ym), (x0 + 2.33 * w, ym + dy), (x0 + 2.67 * w, ym + dy), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((x0 + 3 * w, ym), (x0 + 4 * w, ym), (x0 + 3.33 * w, ym - dy), (x0 + 3.67 * w, ym - dy), stroke: (paint: blue, thickness: 1.1pt))
+  // Regione sicura campita
+  let poly = ((0.0, 0.0), ..safe_curve, (4.4, rp), (4.4, 0.0))
+  line(..poly, close: true, fill: black.transparentize(88%), stroke: none)
 
-  // Quote verticali sul ciclo
-  line((0.725, 0), (0.725, 2.25), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((0.84, 1.35), text(size: 7.5pt)[$sigma_m$], anchor: "west")
+  // Assi principali
+  line((-0.15, 0.0), (4.95, 0.0), stroke: 0.8pt, mark: (end: ">", scale: 0.7))
+  line((0.0, -0.15), (0.0, 4.05), stroke: 0.8pt, mark: (end: ">", scale: 0.7))
+  content((5.05, 0.0), anchor: "west")[#text(size: 8pt)[$R$]]
+  content((0.0, 4.12), anchor: "south")[#text(size: 8pt)[$sigma_"max"$]]
 
-  line((1.775, 0), (1.775, 1.10), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((1.89, 0.55), text(size: 7.5pt)[$sigma_"min"$], anchor: "west")
+  // Riferimenti verticali R = 0 e R = 1 e snervamento Rp0.2
+  line((2.2, 0.0), (2.2, 1.992), stroke: (dash: "dotted", thickness: 0.55pt))
+  line((4.4, 0.0), (4.4, rm), stroke: (dash: "dotted", thickness: 0.55pt))
+  line((0.0, rp), (x_cut, rp), stroke: (dash: "dotted", thickness: 0.6pt))
+  line((0.0, rm), (4.4, rm), stroke: (dash: "dotted", thickness: 0.55pt))
 
-  line((2.825, 0), (2.825, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((2.94, 1.65), text(size: 7.5pt)[$sigma_"max"$], anchor: "west")
+  // Ramo tratteggiato fino a Rm e contorno marcato regione sicura
+  line(..ext_curve, stroke: (dash: "dashed", paint: rgb("#1f77b4"), thickness: 0.8pt))
+  line(..safe_curve, (4.4, rp), stroke: 1.15pt)
+  line((4.4, rp), (4.4, 0.0), stroke: 0.85pt)
 
-  // Quote laterali di ampiezza
-  line((4.80, 2.25), (4.80, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((4.92, 2.83), text(size: 7.5pt)[$sigma_a$], anchor: "west")
+  // Punti notevoli
+  circle((0.0, sd), radius: 0.055, fill: black)
+  circle((2.2, 1.992), radius: 0.05, fill: black)
+  circle((4.4, rm), radius: 0.055, fill: rgb("#1f77b4"), stroke: rgb("#1f77b4"))
 
-  line((4.80, 1.10), (4.80, 2.25), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((4.92, 1.68), text(size: 7.5pt)[$sigma_a$], anchor: "west")
+  // Etichette assi
+  content((0.0, -0.15), anchor: "north")[#text(size: 7.5pt)[$-1$]]
+  content((2.2, -0.15), anchor: "north")[#text(size: 7.5pt)[$0$]]
+  content((4.4, -0.15), anchor: "north")[#text(size: 7.5pt)[$+1$]]
 
-  line((5.75, 1.10), (5.75, 3.40), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45, fill: black))
-  content((5.87, 2.25), text(size: 7.5pt)[$Delta sigma = 2 sigma_a$], anchor: "west")
+  content((-0.12, sd), anchor: "east")[#text(size: 7.5pt)[$sigma_(D-1)$]]
+  content((-0.12, rp), anchor: "east")[#text(size: 7.5pt)[$R_"p0.2"$]]
+  content((-0.12, rm), anchor: "east")[#text(size: 7.5pt)[$R_m$]]
+  content((2.15, 2.12), anchor: "south-east")[#text(size: 7pt)[$sigma_(D 0)$]]
+  content((3.25, 0.85), anchor: "center")[#text(size: 7.2pt, weight: "bold")[Zona sicura]]
 })

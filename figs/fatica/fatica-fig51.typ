@@ -1,59 +1,72 @@
-// Figura estratta da fatica.typ (riga 3086) con LocalTypst
+// Figura estratta da fatica.typ (riga 1278) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 0.74cm, {
-  // BBox: x in [-4.6, 5.55] (dx=10.15), y in [-0.6, 4.95], length=0.74cm -> larghezza = 7.51 cm <= 8.2 cm
+#canvas(length: 1.00cm, {
   import draw: *
+  // BBox: x in [-4.1, 4.8] (dx=8.9), y in [-0.7, 4.5], length=0.90cm -> larghezza = 8.01 cm <= 8.2 cm
 
-  // Assi principali
-  line((-4.6, 0), (5.10, 0), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
-  content((5.20, 0), text(size: 7.5pt)[$sigma_m$], anchor: "west")
-  line((0, 0), (0, 4.85), stroke: 0.75pt, mark: (end: ">", scale: 0.55, fill: black))
-  content((-0.18, 4.78), text(size: 7.5pt)[$sigma_a$], anchor: "east")
+  // Poligono di sicurezza campito
+  line(
+    (-2.8, 0.0),
+    (-1.4, 1.4),
+    (1.87, 2.8),
+    (2.8, 2.8),
+    (0.0, 0.0),
+    close: true,
+    fill: black.transparentize(90%),
+    stroke: none,
+  )
 
-  // Riquadro N = costante
-  rect((-4.45, 3.85), (-2.30, 4.55), stroke: 0.6pt)
-  content((-3.375, 4.20), text(size: 7pt)[$N = "costante"$], anchor: "center")
+  // Assi ortogonali (sigma_min, sigma_max)
+  line((-3.4, 0.0), (4.0, 0.0), stroke: 0.75pt, mark: (end: ">"))
+  line((0.0, -0.4), (0.0, 3.85), stroke: 0.75pt, mark: (end: ">"))
+  content((4.08, 0.0), anchor: "west")[#text(size: 8pt)[$sigma_"min"$]]
+  content((0.0, 3.92), anchor: "south")[#text(size: 8pt)[$sigma_"max"$]]
 
-  // Rette caratteristiche R = -infinito e R = 0 (tratteggio fine come da slide)
-  line((0, 0), (-2.5, 2.5), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(30%)))
-  content((-2.55, 2.55), text(size: 7pt)[$R = -infinity$], anchor: "south-east")
-  line((0, 0), (2.5, 2.5), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(30%)))
-  content((2.55, 2.55), text(size: 7pt)[$R = 0$], anchor: "south-west")
+  // Assi ruotati di 45 gradi (sigma_m e sigma_a) ben distanziati da Rm
+  line((0.0, 0.0), (4.05, 4.05), stroke: (paint: blue, thickness: 0.75pt), mark: (end: ">"))
+  line((0.0, 0.0), (-2.95, 2.95), stroke: (paint: blue, thickness: 0.75pt), mark: (end: ">"))
+  content((4.10, 4.10), anchor: "south-west")[#text(size: 8pt, fill: blue)[$sigma_m$]]
+  content((-3.00, 3.00), anchor: "south-east")[#text(size: 8pt, fill: blue)[$sigma_a$]]
 
-  // Limiti statici Rm (4.2) e Rp0.2 (3.2)
-  line((-4.2, 0), (0, 4.2), (4.2, 0), stroke: (thickness: 0.55pt, paint: black.transparentize(45%)))
-  line((-3.2, 0), (0, 3.2), (3.2, 0), stroke: (thickness: 0.55pt, paint: black.transparentize(45%)))
+  // Raggi a rapporto R costante e prolungamenti
+  line((0.0, 0.0), (-3.2, 1.6), stroke: (dash: "dashed", thickness: 0.55pt))
+  content((-3.26, 1.6), anchor: "east")[#text(size: 7pt)[$R = -2$]]
+  content((-2.35, 2.15), anchor: "north-east")[#text(size: 7pt, fill: blue)[$R = -1$]]
+  content((0.12, 3.45), anchor: "west")[#text(size: 7pt)[$R = 0$]]
+  content((2.82, 2.52), anchor: "north-west")[#text(size: 7pt, fill: blue)[$R = 1$]]
 
-  // Etichette sugli assi
-  content((-4.2, -0.18), text(size: 7pt)[$R_m$], anchor: "north")
-  content((-3.2, -0.18), text(size: 7pt)[$R_("p0.2")$], anchor: "north")
-  content((3.2, -0.18), text(size: 7pt)[$R_("p0.2")$], anchor: "north")
-  content((4.2, -0.18), text(size: 7pt)[$R_m$], anchor: "north")
-  content((-0.14, 4.22), text(size: 7pt)[$R_m$], anchor: "south-east")
-  content((-0.95, 3.60), text(size: 7pt)[$R_("p0.2")$], anchor: "east")
-  line((-0.90, 3.58), (-0.05, 3.22), stroke: 0.55pt, mark: (end: ">", scale: 0.45, fill: black))
+  // Costruzioni Goodman e snervamento
+  line((1.87, 2.8), (3.5, 3.5), stroke: (dash: "dashed", thickness: 0.6pt))
+  circle((3.5, 3.5), radius: 0.05, fill: black)
+  content((3.36, 3.56), anchor: "south-east")[#text(size: 7.5pt)[$R_m$]]
+  line((0.0, 2.8), (1.87, 2.8), stroke: (dash: "dotted", thickness: 0.6pt))
+  content((0.10, 2.85), anchor: "south-west")[#text(size: 7.5pt)[$R_"p0.2"$]]
 
-  // Poligono provino (tratteggiato, da sigma_D-1 = 1.9)
-  line((-3.2, 0), (-1.3, 1.9), (0, 1.9), (2.374, 0.826), (3.2, 0), stroke: (dash: "dashed", thickness: 0.75pt))
-  line((2.374, 0.826), (4.2, 0), stroke: (dash: "dotted", thickness: 0.55pt, paint: black.transparentize(45%)))
-  content((0.14, 1.95), text(size: 7pt)[$sigma_(D-1)$], anchor: "south-west")
+  // Contorno poligono di sicurezza
+  line(
+    (-2.8, 0.0),
+    (-1.4, 1.4),
+    (1.87, 2.8),
+    (2.8, 2.8),
+    (0.0, 0.0),
+    close: true,
+    stroke: 1.15pt,
+  )
 
-  // Poligono componente (continuo spesso, da sigma_D-1^C = 1.15)
-  line((-3.2, 0), (-1.609, 1.591), (0, 1.15), (2.823, 0.377), (3.2, 0), stroke: 1.2pt)
-  line((2.823, 0.377), (4.2, 0), stroke: (dash: "dotted", thickness: 0.55pt, paint: black.transparentize(45%)))
-  content((0.12, 1.12), text(size: 6.7pt)[$sigma_(D-1)^C$], anchor: "south-west")
+  // Punto di lavoro P e proiezioni su entrambi i riferimenti
+  let px = 1.45
+  let py = 2.05
+  line((px, py), (px, 0.0), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.65pt))
+  line((px, py), (0.0, py), stroke: (dash: "dotted", paint: red.transparentize(10%), thickness: 0.65pt))
+  line((px, py), (1.75, 1.75), stroke: (dash: "dotted", paint: blue, thickness: 0.65pt))
+  line((px, py), (-0.30, 0.30), stroke: (dash: "dotted", paint: blue, thickness: 0.65pt))
+  circle((px, py), radius: 0.065, fill: red.transparentize(10%), stroke: red.transparentize(10%))
+  content((px + 0.08, py + 0.06), anchor: "south-west")[#text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$]]
 
-  // Chiusura conservativa tratteggiata blu in compressione
-  line((-2.05, 1.15), (0, 1.15), stroke: (dash: "dashed", thickness: 0.9pt, paint: blue))
-
-  // Punto di lavoro P
-  circle((1.15, 0.45), radius: 0.07, fill: red.transparentize(10%), stroke: none)
-  content((1.28, 0.45), text(size: 7.5pt, weight: "bold")[$P$], anchor: "west")
-
-  // Richiami esterni per Provino e Componente
-  content((2.85, 2.00), text(size: 7pt)[Provino], anchor: "west")
-  line((2.80, 1.96), (1.75, 1.108), stroke: 0.6pt, mark: (end: ">", scale: 0.5, fill: black))
-  content((3.35, 1.15), text(size: 7pt)[Componente], anchor: "west")
-  line((3.30, 1.11), (2.25, 0.534), stroke: 0.6pt, mark: (end: ">", scale: 0.5, fill: black))
+  // Etichette assi sigma_D-1 senza collisioni
+  line((-1.4, 1.4), (0.0, 1.4), stroke: (dash: "dotted", thickness: 0.5pt))
+  line((-1.4, 1.4), (-1.4, 0.0), stroke: (dash: "dotted", thickness: 0.5pt))
+  content((-1.4, -0.14), anchor: "north")[#text(size: 7.5pt)[$-sigma_(D-1)$]]
+  content((0.08, 1.42), anchor: "south-west")[#text(size: 7.5pt)[$sigma_(D-1)$]]
 })

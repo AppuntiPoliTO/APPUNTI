@@ -1,46 +1,80 @@
-// Figura estratta da fatica.typ (riga 5012) con LocalTypst
+// Figura estratta da fatica.typ (riga 4797) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.04cm, {
-  // BBox: x in [-1.25, 7.25] (dx=8.5), y in [-0.75, 4.55], length=0.94cm -> larghezza = 7.99 cm <= 8.2 cm
-  import draw: *
+#canvas(length: 1.1cm, {
+  // BBox: x in [-1.05, 6.95] (dx=8.0), y in [-0.65, 4.80], length=1.0cm -> larghezza = 8.0 cm <= 8.2 cm
+  import draw: line, circle, content
 
-  // Assi
-  line((0, 0), (0, 4.4), stroke: 0.9pt, mark: (end: ">"))
-  line((0, 0), (6.7, 0), stroke: 0.9pt, mark: (end: ">"))
-  content((-0.18, 4.28), anchor: "east", text(size: 8.5pt)[$sigma_a$])
-  content((-0.18, 3.80), anchor: "east", text(size: 7pt)[$(Delta sigma)$])
-  content((6.75, -0.18), anchor: "north", text(size: 8.5pt)[$N$])
+  line((0, 0), (0, 4.65), stroke: 0.75pt, mark: (end: ">"))
+  line((0, 0), (6.15, 0), stroke: 0.75pt, mark: (end: ">"))
+  content((-0.15, 4.62), text(size: 8pt)[$sigma_a$], anchor: "east")
+  content((6.25, 0.0), text(size: 8pt)[$N$], anchor: "west")
 
-  // Istogramma a gradini decrescenti (n1..n6) con quote ampiezza blocco n_i
-  let blocks = (
-    (0.00, 1.02, 3.70, [$n_1$]),
-    (1.02, 1.95, 3.18, [$n_2$]),
-    (1.95, 2.83, 2.66, [$n_3$]),
-    (2.83, 3.67, 2.15, [$n_4$]),
-    (3.67, 4.48, 1.65, [$n_5$]),
-    (4.48, 5.25, 1.15, [$n_6$]),
-  )
-  line((0, 0), (0, -0.45), stroke: 0.5pt)
-  for (x0, x1, h, lbl) in blocks {
-    rect((x0, 0), (x1, h), fill: black.transparentize(90%), stroke: 0.85pt)
-    line((x1, 0), (x1, -0.45), stroke: 0.5pt)
-    line((x0 + 0.04, -0.22), (x1 - 0.04, -0.22), stroke: 0.5pt, mark: (start: ">", end: ">", scale: 0.38))
-    content(((x0 + x1) / 2, -0.32), anchor: "north", text(size: 7.2pt)[#lbl])
+  for d in range(5) {
+    let x0 = d * 1.1
+    for m in (1, 2, 3, 5, 7) {
+      let xg = x0 + 1.1 * calc.log(m, base: 10)
+      if xg <= 5.52 {
+        let p = if m == 1 { black.transparentize(65%) } else { black.transparentize(84%) }
+        let w = if m == 1 { 0.45pt } else { 0.35pt }
+        line((xg, 0), (xg, 4.2), stroke: (paint: p, thickness: w))
+      }
+    }
+  }
+  line((5.5, 0), (5.5, 4.2), stroke: (paint: black.transparentize(65%), thickness: 0.45pt))
+
+  for s in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) {
+    let yg = 4.2 * calc.log(s, base: 10)
+    let p = if s == 1 or s == 10 { black.transparentize(65%) } else { black.transparentize(82%) }
+    let w = if s == 1 or s == 10 { 0.45pt } else { 0.35pt }
+    line((0, yg), (5.5, yg), stroke: (paint: p, thickness: w))
   }
 
-  // Inviluppo continuo approssimante, troncamento a sigma_D e coda scartata
-  bezier((0, 3.88), (5.25, 1.15), (1.75, 3.42), (4.10, 2.02), stroke: (paint: blue, thickness: 1.2pt))
-  line((5.25, 1.15), (5.25, 0), stroke: (paint: blue, thickness: 1.2pt))
-  bezier((5.25, 1.15), (6.30, 0.52), (5.60, 0.94), (5.95, 0.72), stroke: (paint: black.transparentize(50%), dash: "dotted", thickness: 0.75pt))
+  content((-0.12, 4.20), text(size: 7pt)[1000], anchor: "east")
+  content((-0.12, 0.00), text(size: 7pt)[100], anchor: "east")
+  for d in range(5) {
+    let xd = d * 1.1
+    let exp = d + 2
+    content((xd, -0.18), text(size: 7pt)[$10^#exp$], anchor: "north")
+  }
 
-  // Linea del limite di fatica sigma_D
-  line((0, 1.15), (6.35, 1.15), stroke: (dash: "dashed", thickness: 0.7pt, paint: red.transparentize(10%)))
-  content((-0.15, 1.15), anchor: "east", text(size: 8pt, fill: red.transparentize(10%))[$sigma_D$])
+  let x-ng = 4.731
+  let y-d = 1.438
+  line((1.1, 4.2), (x-ng, y-d), (5.65, y-d), stroke: (paint: black, thickness: 1.15pt))
+  line((0, y-d), (x-ng, y-d), stroke: (dash: "dashed", thickness: 0.6pt, paint: black.transparentize(35%)))
+  content((-0.12, y-d), text(size: 7pt)[$sigma_D$], anchor: "east")
+  content((3.75, 3.55), text(size: 7.5pt)[$sigma_m = "cost"$], anchor: "west")
+  line((3.72, 3.45), (3.21, 2.65), stroke: (thickness: 0.55pt, paint: black.transparentize(25%)), mark: (end: ">", scale: 0.5))
 
-  // Etichette di richiamo senza sovrapposizioni
-  content((3.35, 3.52), anchor: "west", text(size: 7.5pt, fill: blue)[Inviluppo continuo])
-  line((3.28, 3.45), (2.62, 2.82), stroke: (paint: blue, thickness: 0.6pt), mark: (end: ">", scale: 0.5))
-  content((5.42, 1.92), anchor: "west", text(size: 7pt, fill: blue)[Troncamento\ a $sigma_D$])
-  line((5.58, 1.56), (5.28, 1.20), stroke: (paint: blue, thickness: 0.6pt), mark: (end: ">", scale: 0.5))
+  // Livello sigma_a2
+  let y2 = 2.945
+  let xn2-mis = 0.55
+  let xn2-rot = 2.75
+  line((0, y2), (xn2-rot, y2), stroke: (dash: "dotted", thickness: 0.7pt, paint: black.transparentize(20%)))
+  line((xn2-mis, y2), (xn2-mis, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: red.transparentize(15%)))
+  line((xn2-rot, y2), (xn2-rot, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: blue.transparentize(15%)))
+  circle((xn2-mis, y2), radius: 0.08, fill: red.transparentize(10%), stroke: none)
+  circle((xn2-rot, y2), radius: 0.08, fill: blue, stroke: none)
+  content((-0.12, y2), text(size: 7pt)[$sigma_"a2"$], anchor: "east")
+  content((xn2-mis, -0.18), text(size: 7pt, fill: red.transparentize(10%))[$n_2$], anchor: "north")
+  content((xn2-rot, -0.18), text(size: 7pt, fill: blue)[$N_2$], anchor: "north")
+
+  // Livello sigma_a1
+  let y1 = 2.108
+  let xn1-mis = 1.65
+  let xn1-rot = 3.85
+  line((0, y1), (xn1-rot, y1), stroke: (dash: "dotted", thickness: 0.7pt, paint: black.transparentize(20%)))
+  line((xn1-mis, y1), (xn1-mis, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: red.transparentize(15%)))
+  line((xn1-rot, y1), (xn1-rot, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: blue.transparentize(15%)))
+  circle((xn1-mis, y1), radius: 0.08, fill: red.transparentize(10%), stroke: none)
+  circle((xn1-rot, y1), radius: 0.08, fill: blue, stroke: none)
+  content((-0.12, y1), text(size: 7pt)[$sigma_"a1"$], anchor: "east")
+  content((xn1-mis, -0.18), text(size: 7pt, fill: red.transparentize(10%))[$n_1$], anchor: "north")
+  content((xn1-rot, -0.18), text(size: 7pt, fill: blue)[$N_1$], anchor: "north")
+
+  // Livello sotto sigma_D
+  let y3 = 0.65
+  line((0, y3), (5.55, y3), stroke: (dash: "dashed", thickness: 0.75pt, paint: black.transparentize(20%)), mark: (end: ">", scale: 0.6))
+  content((-0.12, y3), text(size: 7pt)[$sigma_"a3"$], anchor: "east")
+  content((5.62, y3), text(size: 7pt)[$N -> infinity$], anchor: "west")
 })

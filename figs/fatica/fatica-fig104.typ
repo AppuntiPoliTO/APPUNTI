@@ -1,84 +1,78 @@
-// Figura estratta da fatica.typ (riga 3638) con LocalTypst
+// Figura estratta da fatica.typ (riga 3415) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 0.86cm, {
+#canvas(length: 1.06cm, {
+  // BBox: x in [-0.80, 6.90] (dx=7.70), y in [-0.50, 4.95], length=0.96cm -> larghezza = 7.39 cm <= 8.2 cm
   import draw: *
-  // BBox: x in [0.0, 9.8] (dx=9.8), y in [0.4, 6.6], length=0.76cm -> larghezza = 7.45 cm <= 8.2 cm
 
-  // a) Micro-indentazione da pallinatura
-  content((0.1, 6.45), anchor: "west", [#text(size: 7.3pt, weight: "bold")[a) Micro-indentazione superficiale]])
+  let x-start = 1.10
+  let y-start = 4.10
+  let x-knee = 4.07
+  let y-prov = 2.15
+  let y-comp = 1.35
+  let x-end = 4.85
+  let x-no = 2.35
+  let y-no = 2.94
+  let y-a = 1.90
+  let x-nl = 3.48
+  let red-col = red.transparentize(10%)
 
-  // Substrato elastico
-  rect((0.5, 3.65), (5.9, 4.42), fill: black.transparentize(90%), stroke: 0.85pt)
-  content((3.2, 4.02), anchor: "center", [#text(size: 6.8pt)[Cuore elastico]])
+  // Linee guida geometriche (a 10^3 e al ginocchio 2*10^6)
+  line((0, y-start), (x-start, y-start), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(45%)))
+  line((x-start, 0), (x-start, y-start), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(45%)))
+  line((x-knee, 0), (x-knee, y-prov), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(45%)))
 
-  // Strato compresso con impronta centrale e bordi rialzati
-  line(
-    (0.5, 4.42), (0.5, 5.02), (2.35, 5.02), (2.60, 5.15),
-    (2.90, 4.83), (3.20, 4.75), (3.50, 4.83), (3.80, 5.15),
-    (4.05, 5.02), (5.9, 5.02), (5.9, 4.42), close: true,
-    fill: blue.transparentize(82%), stroke: (paint: blue, thickness: 0.9pt),
-  )
+  // Assi logaritmici
+  line((0, 0), (5.05, 0), stroke: 0.8pt, mark: (end: ">", scale: 0.5, fill: black))
+  line((0, 0), (0, 4.90), stroke: 0.8pt, mark: (end: ">", scale: 0.5, fill: black))
 
-  // Frecce compressione laterale nello strato corticale
-  line((0.85, 4.72), (1.85, 4.72), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.65))
-  line((5.55, 4.72), (4.55, 4.72), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.65))
-  content((2.10, 4.72), anchor: "west", [#text(fill: blue, size: 6.8pt, weight: "bold")[$-$]])
-  content((4.30, 4.72), anchor: "east", [#text(fill: blue, size: 6.8pt, weight: "bold")[$-$]])
+  // Tacche logaritmiche sull'asse N (decadi 10^2 .. 10^7, passo 0.90)
+  let labels-n = ($10^2$, $10^3$, $10^4$, $10^5$, $10^6$, $10^7$)
+  for d in range(0, 6) {
+    let xd = 0.20 + d * 0.90
+    line((xd, 0), (xd, 0.13), stroke: 0.7pt)
+    content((xd, -0.15), text(size: 7pt)[#labels-n.at(d)], anchor: "north")
+    if d < 5 {
+      for s in (2, 3, 4, 5, 6, 7, 8, 9) {
+        let xs = xd + 0.90 * calc.log(s, base: 10)
+        line((xs, 0), (xs, 0.06), stroke: 0.45pt)
+      }
+    }
+  }
 
-  // Sferetta dura in impatto
-  circle((3.2, 5.55), radius: 0.33, fill: black.transparentize(68%), stroke: 0.9pt)
-  line((3.2, 6.28), (3.2, 5.92), stroke: 1.0pt, mark: (end: ">", scale: 0.7))
-  content((3.38, 6.12), anchor: "west", [#text(size: 7pt)[$v$ (sferetta)]])
+  // Curve SN: provetta (tratteggiata) vs componente (continua)
+  line((x-start, y-start), (x-knee, y-prov), (x-end, y-prov), stroke: (dash: "dashed", thickness: 0.9pt, paint: black.transparentize(30%)))
+  line((x-start, y-start), (x-knee, y-comp), (x-end, y-comp), stroke: 1.15pt)
+  circle((x-start, y-start), radius: 0.045, fill: black)
 
-  // Richiamo bordo sollevato e quota h_pall
-  line((4.65, 5.52), (3.86, 5.19), stroke: 0.55pt, mark: (end: ">", scale: 0.6))
-  content((4.72, 5.55), anchor: "west", [#text(size: 6.6pt)[Bordo sollevato]])
-  line((6.12, 4.42), (6.12, 5.02), stroke: 0.6pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.42))
-  content((6.30, 4.72), anchor: "west", [#text(size: 6.8pt)[$h_"pall" approx 1 "mm"$]])
-  content((6.30, 4.20), anchor: "west", [#text(fill: blue, size: 6.8pt, weight: "bold")[$sigma_"res" < 0$]])
+  // Costruzione verifica a vita limitata (punto P, verifica in tensione e in durata)
+  line((x-no, 0), (x-no, y-a), stroke: (dash: "dashed", thickness: 0.65pt, paint: red-col))
+  line((0, y-a), (x-no, y-a), stroke: (dash: "dashed", thickness: 0.65pt, paint: red-col))
+  line((x-no, y-a), (x-no, y-no), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
+  line((x-no, y-no), (0, y-no), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
+  line((x-no, y-a), (x-nl, y-a), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
+  line((x-nl, y-a), (x-nl, 0), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
+  circle((x-no, y-a), radius: 0.055, fill: red-col, stroke: none)
 
-  // Separatore
-  line((0.1, 3.30), (9.6, 3.30), stroke: (dash: "dotted", thickness: 0.6pt))
+  // Etichette assi e livelli
+  content((-0.12, 4.82), text(size: 8pt)[$sigma_a$], anchor: "east")
+  content((5.15, 0), text(size: 8pt)[$N$], anchor: "west")
+  content((0.14, y-start + 0.14), text(size: 7.5pt)[$0.9(R_m - sigma_m)$], anchor: "south-west")
+  content((4.85, 4.35), text(size: 7.5pt)[$sigma_m = "cost."$], anchor: "east")
 
-  // b) Sistema provino Almen
-  content((0.1, 2.96), anchor: "west", [#text(size: 7.3pt, weight: "bold")[b) Taratura con lamella Almen]])
+  // Etichette ginocchio e curve
+  content((2.65, 3.25), text(size: 7pt, fill: black.transparentize(25%))[Provetta], anchor: "south-west")
+  content((4.46, 1.18), text(size: 7pt)[Componente], anchor: "north")
+  line((x-knee, 2.55), (x-knee, y-prov + 0.08), stroke: (thickness: 0.55pt, paint: black.transparentize(40%)), mark: (end: ">", scale: 0.45, fill: black.transparentize(40%)))
+  content((x-knee, 2.62), text(size: 7pt)[$2 dot 10^6$], anchor: "south")
 
-  // Fase 1: Lamella vincolata sotto getto
-  rect((0.45, 0.55), (3.65, 1.15), fill: black.transparentize(88%), stroke: 0.8pt)
-  content((2.05, 0.85), anchor: "center", [#text(size: 6.5pt)[Afferraggio]])
-  rect((0.70, 1.15), (3.40, 1.40), fill: blue.transparentize(80%), stroke: 0.8pt)
-  rect((0.88, 1.40), (1.12, 1.52), fill: black.transparentize(65%), stroke: 0.6pt)
-  rect((2.98, 1.40), (3.22, 1.52), fill: black.transparentize(65%), stroke: 0.6pt)
+  content((x-end + 0.08, y-prov), text(size: 7.5pt)[$sigma_"D,provetta"$], anchor: "west")
+  content((x-end + 0.08, y-comp), text(size: 7.5pt)[$sigma_"D,componente"$], anchor: "west")
 
-  // Ugello e getto di sferette
-  rect((1.82, 2.30), (2.28, 2.65), fill: black.transparentize(78%), stroke: 0.75pt)
-  line((1.90, 2.30), (1.50, 1.45), stroke: (dash: "dashed", thickness: 0.55pt))
-  line((2.20, 2.30), (2.60, 1.45), stroke: (dash: "dashed", thickness: 0.55pt))
-  line((2.05, 2.22), (2.05, 1.52), stroke: 0.7pt, mark: (end: ">", scale: 0.6))
-  content((2.42, 2.48), anchor: "west", [#text(size: 6.6pt)[Getto]])
-
-  // Freccia transizione
-  line((3.90, 1.15), (4.55, 1.15), stroke: 0.8pt, mark: (end: ">", scale: 0.65))
-
-  // Fase 2: Svincolo, incurvamento e misura freccia f
-  rect((4.85, 0.45), (9.35, 0.68), fill: black.transparentize(88%), stroke: 0.75pt)
-  circle((5.35, 0.80), radius: 0.12, fill: black.transparentize(70%), stroke: 0.7pt)
-  circle((8.85, 0.80), radius: 0.12, fill: black.transparentize(70%), stroke: 0.7pt)
-
-  // Corda di riferimento tratteggiata e lamella incurvata (picco intradosso y = 1.46)
-  line((5.15, 0.92), (9.05, 0.92), stroke: (dash: "dotted", thickness: 0.55pt))
-  bezier((5.05, 0.92), (9.15, 0.92), (6.35, 1.64), (7.85, 1.64), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((5.05, 1.12), (9.15, 1.12), (6.35, 1.84), (7.85, 1.84), stroke: (paint: blue, thickness: 1.1pt))
-  line((5.05, 0.92), (5.05, 1.12), stroke: (paint: blue, thickness: 1.0pt))
-  line((9.15, 0.92), (9.15, 1.12), stroke: (paint: blue, thickness: 1.0pt))
-
-  // Comparatore e freccia d'arco f al centro dell'arco (pulita, zero sovrapposizioni)
-  circle((7.10, 2.42), radius: 0.35, fill: white, stroke: 0.8pt)
-  line((7.10, 2.42), (7.32, 2.59), stroke: (paint: red.transparentize(10%), thickness: 0.8pt))
-  line((7.10, 2.07), (7.10, 1.69), stroke: 0.75pt, mark: (end: ">", scale: 0.55))
-  content((7.58, 2.42), anchor: "west", [#text(size: 6.6pt)[Comparatore]])
-
-  line((7.10, 0.94), (7.10, 1.44), stroke: 0.6pt, mark: (start: ">", end: ">", scale: 0.45))
-  content((7.25, 1.18), anchor: "west", [#text(size: 7pt)[$f$]])
+  // Etichette verifica a vita limitata (rosso)
+  content((-0.12, y-no), text(size: 7.5pt, fill: red-col)[$sigma_"No"$], anchor: "east")
+  content((-0.12, y-a), text(size: 7.5pt, fill: red-col)[$sigma_a$], anchor: "east")
+  content((x-no + 0.08, 0.22), text(size: 7.5pt, fill: red-col)[$N_o$], anchor: "south-west")
+  content((x-nl + 0.08, 0.22), text(size: 7.5pt, fill: red-col)[$N_L$], anchor: "south-west")
+  content((x-no - 0.08, y-a - 0.10), text(size: 7.5pt, fill: red-col)[$P$], anchor: "north-east")
 })

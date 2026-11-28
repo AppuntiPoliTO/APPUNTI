@@ -1,72 +1,71 @@
-// Figura estratta da fatica.typ (riga 4196) con LocalTypst
+// Figura estratta da fatica.typ (riga 3966) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#let circ = sym.degree
-#let circ = sym.degree
+#canvas(length: 0.9cm, {
+  // BBox: x in [0.0, 10.0] (dx=10.0), y in [0.3, 8.6], length=0.8cm -> larghezza = 8.00 cm <= 8.2 cm
+  import draw: *
 
-#canvas(length: 1.25cm, {
-  // BBox: x in [-0.6, 6.2] (dx=6.8), y in [-1.05, 5.35], length=1.15cm -> larghezza = 7.82 cm <= 8.2 cm
-  import draw: line, circle, bezier, content
+  // --- PANNELLO A: Trattamento superficiale (~1 mm / tempra induzione) ---
+  content((0.2, 8.35), anchor: "west", text(size: 7.3pt, weight: "bold")[A) Trattamento superficiale (\~1 mm / induzione)])
 
-  // Legenda orizzontale in alto
-  line((0.1, 5.20), (0.5, 5.20), stroke: (paint: blue, thickness: 1.1pt))
-  content((0.58, 5.20), anchor: "west", text(size: 7pt)[$sigma(t)$])
-  line((1.50, 5.20), (1.90, 5.20), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-  content((1.98, 5.20), anchor: "west", text(size: 7pt)[$tau(t)$ ($0^circ$ / sfas.)])
-  line((3.80, 5.20), (4.20, 5.20), stroke: (paint: orange, thickness: 0.95pt, dash: "dotted"))
-  content((4.28, 5.20), anchor: "west", text(size: 7pt)[$tau(t)$ ($180^circ$)])
+  // Sezione componente
+  rect((0.4, 4.9), (5.4, 6.75), fill: black.transparentize(92%), stroke: (paint: black, thickness: 0.9pt))
+  rect((0.4, 6.75), (5.4, 7.45), fill: blue.transparentize(82%), stroke: (paint: black, thickness: 1.0pt))
 
-  // Sottografico superiore: Carichi semplici (y0 = 3.35)
-  content((0.18, 4.78), anchor: "west", text(size: 7.5pt, weight: "bold")[Carichi semplici (in fase / controfase)])
-  line((0, 2.35), (0, 4.55), mark: (end: ">", scale: 0.65), stroke: 0.7pt)
-  line((0, 3.35), (5.80, 3.35), mark: (end: ">", scale: 0.65), stroke: 0.7pt)
-  content((-0.10, 4.45), anchor: "east", text(size: 7.5pt)[$sigma, tau$])
-  content((5.85, 3.35), anchor: "west", text(size: 7.5pt)[$t$])
+  content((2.9, 5.82), anchor: "center", text(size: 7pt)[Cuore tenace indeformato])
+  content((2.9, 7.82), anchor: "center", text(size: 7pt)[Espansione impedita (+0.5%)])
 
-  // sigma(t) superiore (A = 0.80, W = 1.80, 1.333*A = 1.066)
-  bezier((0.0, 3.35), (1.8, 3.35), (0.594, 4.416), (1.206, 4.416), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((1.8, 3.35), (3.6, 3.35), (2.394, 2.284), (3.006, 2.284), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((3.6, 3.35), (5.4, 3.35), (4.194, 4.416), (4.806, 4.416), stroke: (paint: blue, thickness: 1.1pt))
+  // Frecce compressione nello strato trattato
+  line((0.7, 7.1), (1.7, 7.1), stroke: (paint: blue, thickness: 1.0pt), mark: (end: ">", scale: 0.7))
+  line((5.1, 7.1), (4.1, 7.1), stroke: (paint: blue, thickness: 1.0pt), mark: (end: ">", scale: 0.7))
+  content((2.9, 7.1), anchor: "center", text(size: 7.2pt, fill: blue, weight: "bold")[$sigma_"res" < 0$])
 
-  // tau(t) in fase 0° (A = 0.50, W = 1.80, 1.333*A = 0.667)
-  bezier((0.0, 3.35), (1.8, 3.35), (0.594, 4.017), (1.206, 4.017), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-  bezier((1.8, 3.35), (3.6, 3.35), (2.394, 2.683), (3.006, 2.683), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-  bezier((3.6, 3.35), (5.4, 3.35), (4.194, 4.017), (4.806, 4.017), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
+  // Quota spessore ~1 mm e linea di proiezione interfaccia
+  line((5.55, 6.75), (5.55, 7.45), stroke: (paint: black, thickness: 0.6pt), mark: (start: "triangle", end: "triangle", fill: white, scale: 0.42))
+  content((5.72, 7.1), anchor: "west", text(size: 7pt)[\~1 mm])
+  line((5.4, 6.75), (8.1, 6.75), stroke: (paint: black.transparentize(45%), dash: "dotted", thickness: 0.55pt))
 
-  // tau(t) controfase 180° (A = 0.42, W = 1.80, 1.333*A = 0.560)
-  bezier((0.0, 3.35), (1.8, 3.35), (0.594, 2.790), (1.206, 2.790), stroke: (paint: orange, thickness: 0.95pt, dash: "dotted"))
-  bezier((1.8, 3.35), (3.6, 3.35), (2.394, 3.910), (3.006, 3.910), stroke: (paint: orange, thickness: 0.95pt, dash: "dotted"))
-  bezier((3.6, 3.35), (5.4, 3.35), (4.194, 2.790), (4.806, 2.790), stroke: (paint: orange, thickness: 0.95pt, dash: "dotted"))
+  // Profilo qualitativo auto-equilibrato sigma_res(z)
+  line((7.05, 7.45), (7.10, 6.95), (8.1, 6.75), (8.1, 7.45), close: true, fill: blue.transparentize(84%), stroke: none)
+  line((8.1, 6.75), (8.48, 6.50), (8.25, 5.05), (8.1, 5.05), close: true, fill: red.transparentize(86%), stroke: none)
+  line((8.1, 7.45), (8.1, 4.95), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.65))
+  line((6.8, 7.45), (9.6, 7.45), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.65))
+  line((7.05, 7.45), (7.10, 6.95), (8.1, 6.75), (8.48, 6.50), (8.25, 5.05), stroke: (paint: black, thickness: 1.1pt))
 
-  // Allineamento picchi/valli simultanei a x = 0.9
-  line((0.9, 2.82), (0.9, 4.30), stroke: (dash: "dotted", thickness: 0.6pt, paint: luma(80)))
-  circle((0.9, 4.15), radius: 0.045, fill: blue, stroke: none)
-  circle((0.9, 3.85), radius: 0.045, fill: red.transparentize(10%), stroke: none)
-  circle((0.9, 2.93), radius: 0.045, fill: orange, stroke: none)
+  content((7.3, 7.75), anchor: "center", text(size: 7pt, fill: blue, weight: "bold")[$-$])
+  content((8.7, 7.75), anchor: "center", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[$+$])
+  content((9.45, 7.75), anchor: "center", text(size: 7pt)[$sigma_"res"$])
+  content((8.1, 4.72), anchor: "center", text(size: 7pt)[$z$])
 
-  // Sottografico inferiore: Carichi complessi (y0 = 0.0)
-  content((0.18, 1.62), anchor: "west", text(size: 7.5pt, weight: "bold")[Carichi complessi (sfasati)])
-  line((0, -1.00), (0, 1.25), mark: (end: ">", scale: 0.65), stroke: 0.7pt)
-  line((0, 0.0), (5.80, 0.0), mark: (end: ">", scale: 0.65), stroke: 0.7pt)
-  content((-0.10, 1.15), anchor: "east", text(size: 7.5pt)[$sigma, tau$])
-  content((5.85, 0.0), anchor: "west", text(size: 7.5pt)[$t$])
+  // Separatore orizzontale
+  line((0.2, 4.35), (9.8, 4.35), stroke: (paint: black.transparentize(65%), dash: "dashed", thickness: 0.55pt))
 
-  // sigma(t) inferiore (A = 0.80, W = 1.80)
-  bezier((0.0, 0.0), (1.8, 0.0), (0.594, 1.066), (1.206, 1.066), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((1.8, 0.0), (3.6, 0.0), (2.394, -1.066), (3.006, -1.066), stroke: (paint: blue, thickness: 1.1pt))
-  bezier((3.6, 0.0), (5.4, 0.0), (4.194, 1.066), (4.806, 1.066), stroke: (paint: blue, thickness: 1.1pt))
+  // --- PANNELLO B: Gradiente termico locale (saldatura / rettifica) ---
+  content((0.2, 3.95), anchor: "west", text(size: 7.3pt, weight: "bold")[B) Gradiente termico locale (saldatura / rettifica)])
 
-  // tau(t) sfasata di Δφ = 72° (dx = 0.72, A = 0.50, W = 1.80)
-  bezier((0.0, -0.480), (0.72, 0.0), (0.242, -0.427), (0.482, -0.267), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-  bezier((0.72, 0.0), (2.52, 0.0), (1.314, 0.667), (1.926, 0.667), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-  bezier((2.52, 0.0), (4.32, 0.0), (3.114, -0.667), (3.726, -0.667), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
-  bezier((4.32, 0.0), (5.40, 0.480), (4.676, 0.400), (5.039, 0.560), stroke: (paint: red.transparentize(10%), thickness: 0.95pt, dash: "dashed"))
+  // Piastra con ZTA centrale
+  rect((0.4, 1.1), (5.4, 2.5), fill: black.transparentize(92%), stroke: (paint: black, thickness: 0.9pt))
+  rect((2.1, 1.1), (3.7, 2.5), fill: red.transparentize(82%), stroke: (paint: red.transparentize(25%), dash: "dashed", thickness: 0.7pt))
+  bezier((2.35, 2.5), (3.45, 2.5), (2.6, 2.95), (3.2, 2.95), stroke: (paint: red.transparentize(15%), thickness: 0.95pt))
 
-  // Linee di proiezione e quota Δφ tra i picchi (x = 0.9 e x = 1.62)
-  line((0.9, 0.0), (0.9, 1.12), stroke: (dash: "dotted", thickness: 0.6pt, paint: luma(80)))
-  line((1.62, 0.0), (1.62, 1.12), stroke: (dash: "dotted", thickness: 0.6pt, paint: luma(80)))
-  circle((0.9, 0.80), radius: 0.045, fill: blue, stroke: none)
-  circle((1.62, 0.50), radius: 0.045, fill: red.transparentize(10%), stroke: none)
-  line((0.9, 0.98), (1.62, 0.98), mark: (start: ">", end: ">", scale: 0.5), stroke: 0.65pt)
-  content((1.26, 1.07), anchor: "south", text(size: 7.5pt)[$Delta phi$])
+  content((2.9, 1.8), anchor: "center", text(size: 7.2pt, weight: "bold")[ZTA])
+  content((1.25, 1.8), anchor: "center", text(size: 7pt, fill: blue)[$sigma_"res" < 0$])
+  content((4.55, 1.8), anchor: "center", text(size: 7pt, fill: blue)[$sigma_"res" < 0$])
+  content((2.9, 3.35), anchor: "center", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[$sigma_"res" > 0$])
+  line((2.9, 3.16), (2.9, 2.82), stroke: (paint: black, thickness: 0.6pt), mark: (end: ">", scale: 0.6))
+  content((2.9, 0.55), anchor: "center", text(size: 7pt)[Raffreddamento differenziale vincolato])
+
+  // Profilo qualitativo sigma_res(x)
+  line((8.1, 0.7), (8.1, 3.1), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.65))
+  line((6.4, 1.6), (9.7, 1.6), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.65))
+
+  bezier((6.5, 1.6), (7.55, 1.6), (6.8, 1.05), (7.3, 1.05), stroke: (paint: blue, thickness: 1.1pt))
+  bezier((7.55, 1.6), (8.65, 1.6), (7.85, 3.05), (8.35, 3.05), stroke: (paint: red.transparentize(10%), thickness: 1.1pt))
+  bezier((8.65, 1.6), (9.65, 1.6), (8.9, 1.05), (9.4, 1.05), stroke: (paint: blue, thickness: 1.1pt))
+
+  content((8.1, 3.35), anchor: "center", text(size: 7pt)[$sigma_"res"$])
+  content((9.72, 1.78), anchor: "south-east", text(size: 7pt)[$x$])
+  content((8.48, 2.75), anchor: "west", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[$+$])
+  content((7.05, 0.88), anchor: "center", text(size: 7pt, fill: blue, weight: "bold")[$-$])
+  content((9.15, 0.88), anchor: "center", text(size: 7pt, fill: blue, weight: "bold")[$-$])
 })

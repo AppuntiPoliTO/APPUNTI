@@ -1,58 +1,118 @@
-// Figura estratta da fatica.typ (riga 2800) con LocalTypst
+// Figura estratta da fatica.typ (riga 934) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 0.72cm, {
-  // BBox: x in [-0.7, 10.3] (dx=11.0), y in [-0.6, 7.3], length=0.72cm -> larghezza = 7.92 cm <= 8.2 cm
+#let circ = sym.degree
+#let circ = sym.degree
+
+#canvas(length: 1.45cm, {
+  // BBox: x in [-4.55, 4.75] (dx=9.30), y in [-0.65, 4.68], length=1.35cm -> larghezza = 12.56 cm <= 17.0 cm
   import draw: *
 
-  // --- Micro-schema (a) Provino liscio ("u") ---
-  line((0.6, 6.75), (1.0, 6.75), (1.25, 6.60), (3.65, 6.60), (3.9, 6.75), (4.3, 6.75), stroke: 0.9pt)
-  line((0.6, 5.85), (1.0, 5.85), (1.25, 6.00), (3.65, 6.00), (3.9, 5.85), (4.3, 5.85), stroke: 0.9pt)
-  line((0.45, 6.30), (4.45, 6.30), stroke: (dash: "dashed", thickness: 0.5pt))
-  line((2.45, 7.12), (2.45, 6.60), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
-  line((2.45, 5.48), (2.45, 6.00), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
-  content((2.45, 7.18), anchor: "south", text(size: 7.5pt)[$d$])
-  content((2.45, 5.12), anchor: "center", text(size: 7pt)[(a) Provino liscio (u)])
+  let rm = 4.0
+  let rp = 3.0
+  let sd = 1.6
+  // Intersezione Goodman-snervamento trazione: (2.333, 0.667)
+  let x_gt = 2.333
+  let y_gt = 0.667
+  // Intersezione plateau-snervamento compressione: (-1.40, 1.60)
+  let x_pc = -1.40
 
-  // --- Micro-schema (b) Provino intagliato ("n") ---
-  line((5.2, 6.85), (6.80, 6.85), stroke: 0.9pt)
-  arc((7.05, 6.85), start: 180deg, stop: 360deg, radius: 0.25, anchor: "origin", stroke: 0.9pt)
-  line((7.30, 6.85), (8.9, 6.85), stroke: 0.9pt)
-  line((5.2, 5.75), (6.80, 5.75), stroke: 0.9pt)
-  arc((7.05, 5.75), start: 0deg, stop: 180deg, radius: 0.25, anchor: "origin", stroke: 0.9pt)
-  line((7.30, 5.75), (8.9, 5.75), stroke: 0.9pt)
-  line((5.05, 6.30), (9.05, 6.30), stroke: (dash: "dashed", thickness: 0.5pt))
-  line((7.05, 7.12), (7.05, 6.60), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
-  line((7.05, 5.48), (7.05, 6.00), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
-  content((7.05, 7.18), anchor: "south", text(size: 7.5pt)[$d$])
-  content((7.05, 5.12), anchor: "center", text(size: 7pt)[(b) Provino intagliato (n)])
+  // Triangolo di plasticizzazione (sicuro a fatica, plasticizzato staticamente)
+  line(
+    (x_gt, y_gt), (rm, 0), (rp, 0),
+    close: true,
+    fill: orange.transparentize(82%),
+    stroke: none,
+  )
 
-  // --- Diagramma log-log S_n vs N ---
-  line((0.6, 0.55), (0.6, 4.40), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
-  line((0.6, 0.55), (7.65, 0.55), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
+  // Poligono di sicurezza campito (fatica + snervamento)
+  line(
+    (-rp, 0), (x_pc, sd), (0, sd), (x_gt, y_gt), (rp, 0),
+    close: true,
+    fill: black.transparentize(86%),
+    stroke: 1.2pt,
+  )
 
-  // Tacche asse N
-  for (x, lbl) in ((1.2, $10^3$), (2.3, $10^4$), (3.4, $10^5$), (4.5, $10^6$), (5.6, $10^7$)) {
-    line((x, 0.55), (x, 0.70), stroke: 0.6pt)
-    content((x, 0.38), anchor: "north", text(size: 7pt)[#lbl])
+  // Assi principali
+  line((-4.45, 0), (4.55, 0), stroke: 0.9pt, mark: (end: ">", fill: black, scale: 0.75))
+  line((0, -0.15), (0, 4.52), stroke: 0.9pt, mark: (end: ">", fill: black, scale: 0.75))
+  content((4.58, -0.12), anchor: "north", text(size: 8.5pt)[$sigma_m$])
+  content((0, 4.58), anchor: "south", text(size: 8.5pt)[$sigma_a$])
+
+  // Inviluppo statico Rm (45 deg esterno)
+  line((-rm, 0), (0, rm), (rm, 0), stroke: (paint: black.transparentize(55%), thickness: 0.65pt, dash: "dotted"))
+
+  // Prosecuzioni rette di snervamento a 45 deg
+  line((x_pc, sd), (0, rp), stroke: (dash: "dashed", thickness: 0.75pt))
+  line((0, rp), (x_gt, y_gt), stroke: (dash: "dashed", thickness: 0.75pt))
+
+  // Prosecuzione retta di Goodman
+  line((x_gt, y_gt), (rm, 0), stroke: (dash: "dashed", thickness: 0.85pt))
+
+  // Parabola di Gerber (17 punti da x=0 a x=rm)
+  let gerber = ()
+  for k in range(0, 17) {
+    let xk = rm * k / 16
+    let yk = sd * (1 - (xk / rm) * (xk / rm))
+    gerber.push((xk, yk))
   }
-  content((4.1, -0.25), anchor: "center", text(size: 7.5pt)[Durata $N$ (cicli, scala log)])
-  content((-0.25, 2.45), anchor: "center", std.rotate(-90deg, reflow: true)[#text(size: 7.5pt)[Tensione nominale $S_n$]])
+  line(..gerber, stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt, dash: "dashed"))
 
-  // Curva provini lisci S_n(u)
-  line((1.2, 3.95), (4.4, 2.55), (6.5, 2.55), stroke: 1.15pt + blue)
-  content((2.9, 3.55), anchor: "south-west", text(size: 7.5pt, fill: blue)[Provini lisci])
-  content((5.55, 2.75), anchor: "south", text(size: 7.5pt, fill: blue)[$S_n (u)$])
+  // Punti sperimentali indicativi intorno alla parabola di Gerber
+  let exp_pts = ((0.45, 1.56), (0.95, 1.49), (1.68, 1.34), (2.25, 1.06), (2.90, 0.72), (3.45, 0.38))
+  for (px, py) in exp_pts {
+    circle((px, py), radius: 0.045, fill: black, stroke: none)
+  }
 
-  // Curva provini intagliati S_n(n)
-  line((1.2, 3.25), (4.4, 1.55), (6.5, 1.55), stroke: 1.15pt + red.transparentize(10%))
-  content((5.55, 1.35), anchor: "north", text(size: 7.5pt, fill: red.transparentize(10%))[$S_n (n)$])
-  content((1.05, 1.10), anchor: "west", text(size: 7.5pt, fill: red.transparentize(10%))[Provini intagliati])
-  line((2.15, 1.38), (2.45, 2.57), stroke: (paint: red.transparentize(10%), thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: red.transparentize(10%)))
+  // Raggi a rapporto di ciclo costante (R=0 e R=-inf)
+  line((0, 0), (2.70, 2.70), stroke: (paint: black.transparentize(40%), thickness: 0.65pt, dash: "dashed"))
+  content((2.76, 2.76), anchor: "south-west", text(size: 7.5pt)[$R = 0$])
 
-  // Rapporto K_f
-  line((6.5, 2.55), (7.10, 2.55), stroke: (dash: "dotted", thickness: 0.6pt))
-  line((6.5, 1.55), (7.10, 1.55), stroke: (dash: "dotted", thickness: 0.6pt))
-  line((6.85, 1.55), (6.85, 2.55), stroke: 0.75pt, mark: (start: ">", end: ">", scale: 0.5))
-  content((7.15, 2.05), anchor: "west", text(size: 7.5pt)[$K_f = frac(S_n (u), S_n (n))$])
+  line((0, 0), (-2.70, 2.70), stroke: (paint: black.transparentize(40%), thickness: 0.65pt, dash: "dashed"))
+  content((-2.76, 2.76), anchor: "south-east", text(size: 7.5pt)[$R = -infinity$])
+
+  // Punto di lavoro sicuro P e confronto verticale ISO con sigma_D
+  let wx = 1.30
+  let wy = 0.52
+  let wy_lim = sd * (1 - wx / rm) // 1.08
+  line((wx, 0), (wx, wy), (0, wy), stroke: (paint: red.transparentize(20%), thickness: 0.65pt, dash: "dotted"))
+  line((wx, wy), (wx, wy_lim), stroke: (paint: red.transparentize(20%), thickness: 0.65pt, dash: "dashed"))
+  circle((wx, wy_lim), radius: 0.045, fill: white, stroke: 0.75pt + red.transparentize(10%))
+  content((wx + 0.06, wy_lim + 0.03), anchor: "south-west", text(size: 7pt, fill: red.transparentize(10%))[$sigma_D$])
+  circle((wx, wy), radius: 0.06, fill: red.transparentize(10%), stroke: 0.7pt + black)
+  content((wx + 0.09, wy), anchor: "west", text(size: 7pt, fill: red.transparentize(10%), weight: "bold")[Lavoro])
+
+  // Etichette assi (senza collisioni)
+  content((-rm, -0.10), anchor: "north", text(size: 7.5pt)[$-R_m$])
+  content((-rp, -0.10), anchor: "north", text(size: 7.5pt)[$-R_"p0.2"$])
+  content((rp, -0.10), anchor: "north", text(size: 7.5pt)[$R_"p0.2"$])
+  content((rm, -0.10), anchor: "north", text(size: 7.5pt)[$R_m$])
+
+  content((-0.12, sd + 0.14), anchor: "south-east", text(size: 7.5pt)[$sigma_(D-1)$])
+  content((0.12, rp + 0.05), anchor: "south-west", text(size: 7.5pt)[$R_"p0.2"$])
+  content((0.12, rm + 0.03), anchor: "south-west", text(size: 7.5pt)[$R_m$])
+
+  // Etichette interne ed esterne con richiami
+  content((-1.08, 0.48), anchor: "center", text(size: 7.2pt, weight: "bold")[Poligono \ sicuro])
+
+  content((2.35, 2.05), anchor: "west", text(size: 7.2pt, fill: rgb("#1f77b4"))[Parabola di Gerber])
+  line((2.30, 2.03), (1.85, 1.28), stroke: (paint: rgb("#1f77b4"), thickness: 0.55pt), mark: (end: ">", fill: rgb("#1f77b4"), scale: 0.55))
+
+  content((3.40, 1.48), anchor: "south", text(size: 7.2pt)[Retta di Goodman])
+  line((3.28, 1.44), (2.72, 0.54), stroke: 0.55pt, mark: (end: ">", fill: black, scale: 0.55))
+
+  content((3.85, 0.92), anchor: "west", text(size: 6.8pt, fill: rgb("#b85d00"))[Plasticizzazione])
+  line((3.80, 0.88), (3.12, 0.20), stroke: (paint: rgb("#b85d00"), thickness: 0.55pt), mark: (end: ">", fill: rgb("#b85d00"), scale: 0.55))
+
+  content((-3.55, 1.45), anchor: "center", text(size: 7pt)[Snervamento \ ($plus.minus 45^circ$)])
+  line((-3.15, 1.20), (-2.30, 0.72), stroke: 0.55pt, mark: (end: ">", fill: black, scale: 0.55))
+
+  // Riquadro N = costante
+  rect((2.55, 3.45), (4.55, 4.30), fill: white, stroke: 0.7pt)
+  content((3.55, 3.875), anchor: "center", text(size: 7pt)[
+    #align(center)[
+      $N = text("costante")$ \
+      ($2 dot.op 10^6$ acciai)
+    ]
+  ])
 })

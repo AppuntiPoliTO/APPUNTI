@@ -1,80 +1,64 @@
-// Figura estratta da fatica.typ (riga 4797) con LocalTypst
+// Figura estratta da fatica.typ (riga 4608) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.1cm, {
-  // BBox: x in [-1.05, 6.95] (dx=8.0), y in [-0.65, 4.80], length=1.0cm -> larghezza = 8.0 cm <= 8.2 cm
-  import draw: line, circle, content
+#canvas(length: 1.15cm, {
+  // BBox: x in [-0.35, 6.85] (dx=7.20), y in [-0.40, 4.70], length=1.05cm -> larghezza = 7.56 cm <= 8.2 cm
+  import draw: line, rect, circle, bezier, content
 
-  line((0, 0), (0, 4.65), stroke: 0.75pt, mark: (end: ">"))
-  line((0, 0), (6.15, 0), stroke: 0.75pt, mark: (end: ">"))
-  content((-0.15, 4.62), text(size: 8pt)[$sigma_a$], anchor: "east")
-  content((6.25, 0.0), text(size: 8pt)[$N$], anchor: "west")
-
-  for d in range(5) {
-    let x0 = d * 1.1
-    for m in (1, 2, 3, 5, 7) {
-      let xg = x0 + 1.1 * calc.log(m, base: 10)
-      if xg <= 5.52 {
-        let p = if m == 1 { black.transparentize(65%) } else { black.transparentize(84%) }
-        let w = if m == 1 { 0.45pt } else { 0.35pt }
-        line((xg, 0), (xg, 4.2), stroke: (paint: p, thickness: w))
-      }
-    }
+  // Telaio fisso inferiore (orizzontale) + tratteggio d'incastro
+  line((1.5, 0.0), (4.5, 0.0), stroke: 1.05pt)
+  for hx in (1.7, 2.1, 2.5, 2.9, 3.3, 3.7, 4.1, 4.45) {
+    line((hx, 0.0), (hx - 0.20, -0.22), stroke: 0.6pt)
   }
-  line((5.5, 0), (5.5, 4.2), stroke: (paint: black.transparentize(65%), thickness: 0.45pt))
+  content((4.62, -0.05), anchor: "west", text(size: 7pt, fill: luma(50))[Telaio di supporto])
 
-  for s in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10) {
-    let yg = 4.2 * calc.log(s, base: 10)
-    let p = if s == 1 or s == 10 { black.transparentize(65%) } else { black.transparentize(82%) }
-    let w = if s == 1 or s == 10 { 0.45pt } else { 0.35pt }
-    line((0, yg), (5.5, yg), stroke: (paint: p, thickness: w))
+  // Telaio fisso sinistro (verticale) + tratteggio d'incastro
+  line((0.0, 1.65), (0.0, 4.25), stroke: 1.05pt)
+  for hy in (1.85, 2.25, 2.65, 3.05, 3.45, 3.85, 4.20) {
+    line((0.0, hy), (-0.22, hy - 0.20), stroke: 0.6pt)
   }
 
-  content((-0.12, 4.20), text(size: 7pt)[1000], anchor: "east")
-  content((-0.12, 0.00), text(size: 7pt)[100], anchor: "east")
-  for d in range(5) {
-    let xd = d * 1.1
-    let exp = d + 2
-    content((xd, -0.18), text(size: 7pt)[$10^#exp$], anchor: "north")
-  }
+  // Collare di carico e sezione alare della pala
+  rect((2.25, 2.55), (3.75, 3.65), radius: 0.08, fill: black.transparentize(90%), stroke: 0.9pt)
+  bezier((2.46, 3.10), (3.60, 3.04), (2.72, 3.48), (3.22, 3.30), stroke: 1.05pt)
+  bezier((2.46, 3.10), (3.60, 3.04), (2.72, 2.82), (3.22, 2.92), stroke: 1.05pt)
+  circle((2.82, 3.12), radius: 0.11, fill: black.transparentize(75%), stroke: 0.65pt)
 
-  let x-ng = 4.731
-  let y-d = 1.438
-  line((1.1, 4.2), (x-ng, y-d), (5.65, y-d), stroke: (paint: black, thickness: 1.15pt))
-  line((0, y-d), (x-ng, y-d), stroke: (dash: "dashed", thickness: 0.6pt, paint: black.transparentize(35%)))
-  content((-0.12, y-d), text(size: 7pt)[$sigma_D$], anchor: "east")
-  content((3.75, 3.55), text(size: 7.5pt)[$sigma_m = "cost"$], anchor: "west")
-  line((3.72, 3.45), (3.21, 2.65), stroke: (thickness: 0.55pt, paint: black.transparentize(25%)), mark: (end: ">", scale: 0.5))
+  // Spostamenti simultanei sui due piani ortogonali
+  line((2.42, 4.02), (3.58, 4.02), mark: (start: ">", end: ">", scale: 0.50, fill: blue), stroke: (paint: blue, thickness: 0.85pt))
+  content((3.00, 4.14), anchor: "south", text(size: 7.5pt, fill: blue)[$Delta x(t)$])
 
-  // Livello sigma_a2
-  let y2 = 2.945
-  let xn2-mis = 0.55
-  let xn2-rot = 2.75
-  line((0, y2), (xn2-rot, y2), stroke: (dash: "dotted", thickness: 0.7pt, paint: black.transparentize(20%)))
-  line((xn2-mis, y2), (xn2-mis, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: red.transparentize(15%)))
-  line((xn2-rot, y2), (xn2-rot, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: blue.transparentize(15%)))
-  circle((xn2-mis, y2), radius: 0.08, fill: red.transparentize(10%), stroke: none)
-  circle((xn2-rot, y2), radius: 0.08, fill: blue, stroke: none)
-  content((-0.12, y2), text(size: 7pt)[$sigma_"a2"$], anchor: "east")
-  content((xn2-mis, -0.18), text(size: 7pt, fill: red.transparentize(10%))[$n_2$], anchor: "north")
-  content((xn2-rot, -0.18), text(size: 7pt, fill: blue)[$N_2$], anchor: "north")
+  line((4.10, 2.68), (4.10, 3.52), mark: (start: ">", end: ">", scale: 0.50, fill: red.transparentize(10%)), stroke: (paint: red.transparentize(10%), thickness: 0.85pt))
+  content((4.22, 3.10), anchor: "west", text(size: 7.5pt, fill: red.transparentize(10%))[$Delta y(t)$])
 
-  // Livello sigma_a1
-  let y1 = 2.108
-  let xn1-mis = 1.65
-  let xn1-rot = 3.85
-  line((0, y1), (xn1-rot, y1), stroke: (dash: "dotted", thickness: 0.7pt, paint: black.transparentize(20%)))
-  line((xn1-mis, y1), (xn1-mis, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: red.transparentize(15%)))
-  line((xn1-rot, y1), (xn1-rot, 0), stroke: (dash: "dotted", thickness: 0.7pt, paint: blue.transparentize(15%)))
-  circle((xn1-mis, y1), radius: 0.08, fill: red.transparentize(10%), stroke: none)
-  circle((xn1-rot, y1), radius: 0.08, fill: blue, stroke: none)
-  content((-0.12, y1), text(size: 7pt)[$sigma_"a1"$], anchor: "east")
-  content((xn1-mis, -0.18), text(size: 7pt, fill: red.transparentize(10%))[$n_1$], anchor: "north")
-  content((xn1-rot, -0.18), text(size: 7pt, fill: blue)[$N_1$], anchor: "north")
+  // Attuatore verticale Fy(t) + cerniere di disaccoppiamento
+  line((2.80, 0.0), (3.00, 0.24), (3.20, 0.0), stroke: 0.8pt)
+  line((3.00, 0.33), (3.00, 0.62), stroke: 0.95pt)
+  rect((2.78, 0.62), (3.22, 1.56), fill: black.transparentize(86%), stroke: 0.95pt)
+  line((2.81, 1.12), (3.19, 1.12), stroke: 1.1pt)
+  line((3.00, 1.12), (3.00, 2.46), stroke: 0.95pt)
+  // Traccia cinematica tratteggiata (rotazione libera senza flessione parassita)
+  line((3.00, 0.24), (3.32, 2.52), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(95)))
+  circle((3.00, 0.24), radius: 0.09, fill: white, stroke: 0.95pt)
+  circle((3.00, 2.55), radius: 0.09, fill: white, stroke: 0.95pt)
+  content((2.64, 1.10), anchor: "east", text(size: 7.5pt, fill: red.transparentize(10%))[$F_y (t)$])
 
-  // Livello sotto sigma_D
-  let y3 = 0.65
-  line((0, y3), (5.55, y3), stroke: (dash: "dashed", thickness: 0.75pt, paint: black.transparentize(20%)), mark: (end: ">", scale: 0.6))
-  content((-0.12, y3), text(size: 7pt)[$sigma_"a3"$], anchor: "east")
-  content((5.62, y3), text(size: 7pt)[$N -> infinity$], anchor: "west")
+  // Attuatore orizzontale Fx(t) + cerniere di disaccoppiamento
+  line((0.0, 2.90), (0.24, 3.10), (0.0, 3.30), stroke: 0.8pt)
+  line((0.33, 3.10), (0.60, 3.10), stroke: 0.95pt)
+  rect((0.60, 2.88), (1.50, 3.32), fill: black.transparentize(86%), stroke: 0.95pt)
+  line((1.05, 2.91), (1.05, 3.29), stroke: 1.1pt)
+  line((1.05, 3.10), (2.16, 3.10), stroke: 0.95pt)
+  line((0.24, 3.10), (2.22, 3.38), stroke: (dash: "dashed", thickness: 0.55pt, paint: luma(95)))
+  circle((0.24, 3.10), radius: 0.09, fill: white, stroke: 0.95pt)
+  circle((2.25, 3.10), radius: 0.09, fill: white, stroke: 0.95pt)
+  content((1.05, 3.46), anchor: "south", text(size: 7.5pt, fill: blue)[$F_x (t)$])
+
+  // Richiami esterni senza collisioni
+  line((4.25, 4.12), (3.76, 3.63), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
+  content((4.32, 4.18), anchor: "west", text(size: 7pt)[Sezione pala \ e collare])
+
+  line((4.22, 1.58), (3.13, 2.48), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
+  line((4.22, 1.32), (3.13, 0.30), mark: (end: ">", scale: 0.45, fill: black), stroke: 0.6pt)
+  content((4.28, 1.45), anchor: "west", text(size: 7pt)[Cerniere di \ disaccoppiamento])
 })

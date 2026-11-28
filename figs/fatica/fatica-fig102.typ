@@ -1,78 +1,45 @@
-// Figura estratta da fatica.typ (riga 3415) con LocalTypst
+// Figura estratta da fatica.typ (riga 3298) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
 #canvas(length: 1.06cm, {
-  // BBox: x in [-0.80, 6.90] (dx=7.70), y in [-0.50, 4.95], length=0.96cm -> larghezza = 7.39 cm <= 8.2 cm
+  // BBox: x in [-3.1, 4.0] (dx=7.1), y in [-1.05, 2.75], length=0.96cm -> larghezza = 6.82 cm <= 8.2 cm
   import draw: *
 
-  let x-start = 1.10
-  let y-start = 4.10
-  let x-knee = 4.07
-  let y-prov = 2.15
-  let y-comp = 1.35
-  let x-end = 4.85
-  let x-no = 2.35
-  let y-no = 2.94
-  let y-a = 1.90
-  let x-nl = 3.48
-  let red-col = red.transparentize(10%)
+  line((-3.1, 0), (3.4, 0), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.5, fill: black))
+  content((3.5, 0), anchor: "west", text(size: 8pt)[$sigma_m$])
+  line((0, 0), (0, 2.55), stroke: (paint: black, thickness: 0.7pt), mark: (end: ">", scale: 0.5, fill: black))
+  content((-0.12, 2.48), anchor: "east", text(size: 8pt)[$sigma_a$])
 
-  // Linee guida geometriche (a 10^3 e al ginocchio 2*10^6)
-  line((0, y-start), (x-start, y-start), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(45%)))
-  line((x-start, 0), (x-start, y-start), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(45%)))
-  line((x-knee, 0), (x-knee, y-prov), stroke: (dash: "dotted", thickness: 0.6pt, paint: black.transparentize(45%)))
+  // Poligono a 4 tratti del componente (Goodman + tagli di Langer a Rp0.2 = 2.70)
+  line(
+    (-2.70, 0),
+    (-0.911, 1.789),
+    (1.990, 0.710),
+    (2.70, 0),
+    close: true,
+    stroke: (paint: black, thickness: 1.05pt),
+    fill: black.transparentize(92%),
+  )
+  content((-2.70, -0.14), anchor: "north", text(size: 7.5pt)[$R_"p0.2"$])
+  content((2.70, -0.14), anchor: "north", text(size: 7.5pt)[$R_"p0.2"$])
+  content((0.12, 1.48), anchor: "south-west", text(size: 7.5pt)[$sigma_(D-1)^C$])
 
-  // Assi logaritmici
-  line((0, 0), (5.05, 0), stroke: 0.8pt, mark: (end: ">", scale: 0.5, fill: black))
-  line((0, 0), (0, 4.90), stroke: 0.8pt, mark: (end: ">", scale: 0.5, fill: black))
+  // Punti P', P, P'' e frecce di traslazione
+  line((-0.39, 0.45), (-1.26, 0.45), stroke: (paint: black.transparentize(40%), thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: black))
+  line((-0.21, 0.45), (0.71, 0.45), stroke: (paint: black.transparentize(40%), thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: black))
+  circle((-1.35, 0.45), radius: 0.065, fill: red.transparentize(10%), stroke: none)
+  circle((-0.30, 0.45), radius: 0.065, fill: red.transparentize(10%), stroke: none)
+  circle((0.80, 0.45), radius: 0.065, fill: red.transparentize(10%), stroke: none)
+  content((-1.47, 0.45), anchor: "east", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P'$])
+  content((-0.30, 0.59), anchor: "south", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P$])
+  content((0.92, 0.45), anchor: "west", text(size: 7.5pt, fill: red.transparentize(10%), weight: "bold")[$P''$])
 
-  // Tacche logaritmiche sull'asse N (decadi 10^2 .. 10^7, passo 0.90)
-  let labels-n = ($10^2$, $10^3$, $10^4$, $10^5$, $10^6$, $10^7$)
-  for d in range(0, 6) {
-    let xd = 0.20 + d * 0.90
-    line((xd, 0), (xd, 0.13), stroke: 0.7pt)
-    content((xd, -0.15), text(size: 7pt)[#labels-n.at(d)], anchor: "north")
-    if d < 5 {
-      for s in (2, 3, 4, 5, 6, 7, 8, 9) {
-        let xs = xd + 0.90 * calc.log(s, base: 10)
-        line((xs, 0), (xs, 0.06), stroke: 0.45pt)
-      }
-    }
-  }
-
-  // Curve SN: provetta (tratteggiata) vs componente (continua)
-  line((x-start, y-start), (x-knee, y-prov), (x-end, y-prov), stroke: (dash: "dashed", thickness: 0.9pt, paint: black.transparentize(30%)))
-  line((x-start, y-start), (x-knee, y-comp), (x-end, y-comp), stroke: 1.15pt)
-  circle((x-start, y-start), radius: 0.045, fill: black)
-
-  // Costruzione verifica a vita limitata (punto P, verifica in tensione e in durata)
-  line((x-no, 0), (x-no, y-a), stroke: (dash: "dashed", thickness: 0.65pt, paint: red-col))
-  line((0, y-a), (x-no, y-a), stroke: (dash: "dashed", thickness: 0.65pt, paint: red-col))
-  line((x-no, y-a), (x-no, y-no), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
-  line((x-no, y-no), (0, y-no), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
-  line((x-no, y-a), (x-nl, y-a), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
-  line((x-nl, y-a), (x-nl, 0), stroke: (thickness: 0.85pt, paint: red-col), mark: (end: ">", scale: 0.5, fill: red-col))
-  circle((x-no, y-a), radius: 0.055, fill: red-col, stroke: none)
-
-  // Etichette assi e livelli
-  content((-0.12, 4.82), text(size: 8pt)[$sigma_a$], anchor: "east")
-  content((5.15, 0), text(size: 8pt)[$N$], anchor: "west")
-  content((0.14, y-start + 0.14), text(size: 7.5pt)[$0.9(R_m - sigma_m)$], anchor: "south-west")
-  content((4.85, 4.35), text(size: 7.5pt)[$sigma_m = "cost."$], anchor: "east")
-
-  // Etichette ginocchio e curve
-  content((2.65, 3.25), text(size: 7pt, fill: black.transparentize(25%))[Provetta], anchor: "south-west")
-  content((4.46, 1.18), text(size: 7pt)[Componente], anchor: "north")
-  line((x-knee, 2.55), (x-knee, y-prov + 0.08), stroke: (thickness: 0.55pt, paint: black.transparentize(40%)), mark: (end: ">", scale: 0.45, fill: black.transparentize(40%)))
-  content((x-knee, 2.62), text(size: 7pt)[$2 dot 10^6$], anchor: "south")
-
-  content((x-end + 0.08, y-prov), text(size: 7.5pt)[$sigma_"D,provetta"$], anchor: "west")
-  content((x-end + 0.08, y-comp), text(size: 7.5pt)[$sigma_"D,componente"$], anchor: "west")
-
-  // Etichette verifica a vita limitata (rosso)
-  content((-0.12, y-no), text(size: 7.5pt, fill: red-col)[$sigma_"No"$], anchor: "east")
-  content((-0.12, y-a), text(size: 7.5pt, fill: red-col)[$sigma_a$], anchor: "east")
-  content((x-no + 0.08, 0.22), text(size: 7.5pt, fill: red-col)[$N_o$], anchor: "south-west")
-  content((x-nl + 0.08, 0.22), text(size: 7.5pt, fill: red-col)[$N_L$], anchor: "south-west")
-  content((x-no - 0.08, y-a - 0.10), text(size: 7.5pt, fill: red-col)[$P$], anchor: "north-east")
+  // Proiezioni e quote inferiori
+  line((-1.35, 0.45), (-1.35, -0.78), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.6pt))
+  line((-0.30, 0.45), (-0.30, -0.78), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.6pt))
+  line((0.80, 0.45), (0.80, -0.78), stroke: (paint: black.transparentize(35%), dash: "dotted", thickness: 0.6pt))
+  line((-0.30, -0.56), (-1.35, -0.56), stroke: (paint: black, thickness: 0.65pt), mark: (end: ">", scale: 0.45, fill: black))
+  line((-0.30, -0.56), (0.80, -0.56), stroke: (paint: black, thickness: 0.65pt), mark: (end: ">", scale: 0.45, fill: black))
+  content((-0.825, -0.68), anchor: "north", text(size: 7.5pt)[$sigma_"res"(-)$])
+  content((0.25, -0.68), anchor: "north", text(size: 7.5pt)[$sigma_"res"(+)$])
 })

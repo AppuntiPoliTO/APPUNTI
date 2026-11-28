@@ -1,74 +1,87 @@
-// Figura estratta da fatica.typ (riga 4701) con LocalTypst
+// Figura estratta da fatica.typ (riga 4486) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.1cm, {
-  // BBox: x in [-0.7, 7.3] (dx=8.0), y in [-0.85, 5.25], length=1.0cm -> larghezza = 8.0 cm <= 8.2 cm
-  import draw: line, bezier, content
+#canvas(length: 0.84cm, {
+  // BBox: x in [0.0, 20.0] (dx=20.0), y in [0.0, 9.4], length=0.74cm -> larghezza = 14.80 cm <= 17.0 cm
+  import draw: *
 
-  // --- Pannello superiore: segnale irregolare periodico ---
-  line((0, 2.95), (0, 5.15), stroke: 0.7pt, mark: (end: ">"))
-  line((-0.1, 3.8), (6.6, 3.8), stroke: 0.7pt, mark: (end: ">"))
-  content((-0.18, 5.05), text(size: 8pt)[$sigma$], anchor: "east")
-  content((6.72, 3.8), text(size: 8pt)[$t$], anchor: "west")
+  let draw-cell(ox, oy, label, mode) = {
+    rect(
+      (ox, oy),
+      (ox + 9.5, oy + 4.4),
+      stroke: (paint: black.transparentize(78%), thickness: 0.6pt),
+      radius: 0.15,
+    )
+    content((ox + 0.30, oy + 4.18), anchor: "north-west", [#text(size: 8.5pt, weight: "bold")[#label]])
 
-  let wave = (
-    (0.00, 0.15), (0.10, 0.55), (0.20, 0.75), (0.30, 0.25),
-    (0.40, -0.40), (0.52, -0.05), (0.65, 0.45), (0.75, 0.05),
-    (0.85, -0.65), (0.98, -0.15), (1.10, 0.55), (1.22, 0.20),
-    (1.35, -0.25), (1.45, 0.35), (1.55, 0.85), (1.68, 0.10),
-    (1.80, -0.75), (1.92, -0.20), (2.05, 0.35), (2.15, 0.05),
-    (2.25, -0.35), (2.35, 0.15), (2.45, 0.50), (2.60, 0.15),
-  )
-  for x0 in (0.3, 2.9) {
-    let pts = wave.map(p => (x0 + p.at(0), 3.8 + p.at(1)))
-    line(..pts, stroke: (paint: black, thickness: 0.85pt))
-  }
-  let tail = wave.slice(0, 9).map(p => (5.5 + p.at(0), 3.8 + p.at(1)))
-  line(..tail, stroke: (paint: black, thickness: 0.85pt))
+    // Provino cilindrico 2D a sinistra
+    let yc = oy + 2.55
+    line(
+      (ox + 0.25, yc),
+      (ox + 3.20, yc),
+      stroke: (dash: "dashed", thickness: 0.5pt, paint: black.transparentize(50%)),
+    )
+    line(
+      (ox + 0.45, yc + 0.44), (ox + 0.90, yc + 0.44), (ox + 1.20, yc + 0.27),
+      (ox + 2.25, yc + 0.27), (ox + 2.55, yc + 0.44), (ox + 3.00, yc + 0.44),
+      (ox + 3.00, yc - 0.44), (ox + 2.55, yc - 0.44), (ox + 2.25, yc - 0.27),
+      (ox + 1.20, yc - 0.27), (ox + 0.90, yc - 0.44), (ox + 0.45, yc - 0.44),
+      close: true,
+      fill: black.transparentize(88%),
+      stroke: 0.95pt,
+    )
 
-  line((0.3, 3.05), (0.3, 5.05), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(35%)))
-  line((2.9, 3.05), (2.9, 5.05), stroke: (dash: "dashed", thickness: 0.55pt, paint: black.transparentize(35%)))
-  line((0.3, 4.92), (2.9, 4.92), stroke: 0.6pt, mark: (start: "triangle", end: "triangle", fill: white, scale: 0.6))
-  content((1.6, 5.02), text(size: 7.5pt)[$T$], anchor: "south")
+    // Vettori di carico applicati (blu: tensione media, rosso: alternata)
+    if mode == "a" {
+      line((ox + 3.30, yc + 0.36), (ox + 4.30, yc + 0.36), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.7))
+      content((ox + 3.80, yc + 0.54), anchor: "south", [#text(size: 7.5pt, fill: blue)[$sigma_m$]])
+      line((ox + 3.30, yc - 0.36), (ox + 4.30, yc - 0.36), stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (start: ">", end: ">", scale: 0.7))
+      content((ox + 3.80, yc - 0.54), anchor: "north", [#text(size: 7.5pt, fill: red.transparentize(10%))[$sigma_a$]])
+    } else if mode == "b" {
+      line((ox + 3.30, yc + 0.42), (ox + 4.30, yc + 0.42), stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.7))
+      content((ox + 3.80, yc + 0.60), anchor: "south", [#text(size: 7.5pt, fill: blue)[$sigma_m$]])
+      arc((ox + 3.55, yc - 0.42), start: -68deg, stop: 68deg, radius: (0.24, 0.36), anchor: "origin", stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (start: ">", end: ">", scale: 0.48))
+      content((ox + 4.02, yc - 0.42), anchor: "west", [#text(size: 7.5pt, fill: red.transparentize(10%))[$tau_a$]])
+    } else if mode == "c" {
+      arc((ox + 3.55, yc + 0.45), start: -68deg, stop: 68deg, radius: (0.24, 0.36), anchor: "origin", stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.48))
+      content((ox + 4.02, yc + 0.45), anchor: "west", [#text(size: 7.5pt, fill: blue)[$tau_m$]])
+      arc((ox + 3.55, yc - 0.45), start: -68deg, stop: 68deg, radius: (0.24, 0.36), anchor: "origin", stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (start: ">", end: ">", scale: 0.48))
+      content((ox + 4.02, yc - 0.45), anchor: "west", [#text(size: 7.5pt, fill: red.transparentize(10%))[$tau_a$]])
+    } else {
+      arc((ox + 3.55, yc + 0.46), start: -68deg, stop: 68deg, radius: (0.24, 0.36), anchor: "origin", stroke: (paint: blue, thickness: 0.9pt), mark: (end: ">", scale: 0.48))
+      content((ox + 4.02, yc + 0.46), anchor: "west", [#text(size: 7.5pt, fill: blue)[$tau_m$]])
+      line((ox + 3.30, yc - 0.42), (ox + 4.30, yc - 0.42), stroke: (paint: red.transparentize(10%), thickness: 0.9pt), mark: (start: ">", end: ">", scale: 0.7))
+      content((ox + 3.80, yc - 0.58), anchor: "north", [#text(size: 7.5pt, fill: red.transparentize(10%))[$sigma_a$]])
+    }
 
-  // --- Pannello inferiore: scomposizione in tre pacchetti con ampiezza e media distinte ---
-  line((0, -0.15), (0, 2.15), stroke: 0.7pt, mark: (end: ">"))
-  line((-0.1, 0.0), (6.6, 0.0), stroke: 0.7pt, mark: (end: ">"))
-  content((-0.18, 2.08), text(size: 8pt)[$sigma$], anchor: "east")
-  content((6.72, 0.0), text(size: 8pt)[$t$], anchor: "west")
+    // Condizione sulle tensioni medie principali
+    let cond = if mode == "a" or mode == "b" {
+      $sigma_(m,1) + sigma_(m,2) != 0$
+    } else {
+      $sigma_(m,1) + sigma_(m,2) = 0$
+    }
+    content((ox + 1.75, oy + 0.72), anchor: "center", [#text(size: 7.5pt)[#cond]])
 
-  let trains = (
-    (0.20, 3, 0.28, 1.18, 0.66),
-    (2.05, 4, 0.21, 0.88, 0.45),
-    (3.90, 5, 0.17, 0.62, 0.27),
-  )
-  for tr in trains {
-    let xs = tr.at(0)
-    let nc = tr.at(1)
-    let wh = tr.at(2)
-    let ym = tr.at(3)
-    let amp = tr.at(4)
-    let xe = xs + 2 * nc * wh
-    line((xs - 0.05, ym), (xe + 0.05, ym), stroke: (dash: "dashed", thickness: 0.65pt, paint: blue.transparentize(20%)))
-    for i in range(nc) {
-      let xa = xs + 2 * i * wh
-      let xb = xa + wh
-      let xc = xb + wh
-      bezier((xa, ym), (xb, ym), (xa + 0.33 * wh, ym + 1.333 * amp), (xa + 0.67 * wh, ym + 1.333 * amp), stroke: (paint: black, thickness: 0.85pt))
-      bezier((xb, ym), (xc, ym), (xb + 0.33 * wh, ym - 1.333 * amp), (xb + 0.67 * wh, ym - 1.333 * amp), stroke: (paint: black, thickness: 0.85pt))
+    // Diagramma qualitativo a destra
+    let ax0 = ox + 5.75
+    let ay0 = oy + 0.95
+    line((ax0 - 0.35, ay0), (ax0 + 3.15, ay0), stroke: 0.75pt, mark: (end: ">", scale: 0.65))
+    line((ax0, ay0 - 0.10), (ax0, ay0 + 2.65), stroke: 0.75pt, mark: (end: ">", scale: 0.65))
+
+    let xlabel = if mode == "a" or mode == "b" { $sigma_m$ } else { $tau_m$ }
+    let ylabel = if mode == "a" or mode == "d" { $sigma_a$ } else { $tau_a$ }
+    content((ax0 + 3.15, ay0 - 0.16), anchor: "north-east", [#text(size: 7.5pt)[#xlabel]])
+    content((ax0 - 0.12, ay0 + 2.55), anchor: "east", [#text(size: 7.5pt)[#ylabel]])
+
+    if mode == "a" or mode == "b" {
+      line((ax0 - 0.25, ay0 + 2.25), (ax0 + 2.60, ay0 + 0.35), stroke: (paint: rgb("#1f77b4"), thickness: 1.15pt))
+    } else {
+      line((ax0 - 0.25, ay0 + 1.55), (ax0 + 2.60, ay0 + 1.55), stroke: (paint: rgb("#1f77b4"), thickness: 1.15pt))
     }
   }
-  content((5.72, 0.62), text(size: 7.2pt, fill: blue)[$sigma_"mi"$], anchor: "west")
 
-  line((1.96, -0.35), (1.96, 1.92), stroke: (dash: "dotted", thickness: 0.5pt, paint: black.transparentize(40%)))
-  line((3.81, -0.35), (3.81, 1.92), stroke: (dash: "dotted", thickness: 0.5pt, paint: black.transparentize(40%)))
-
-  line((0.20, -0.28), (1.88, -0.28), stroke: 0.55pt, mark: (start: ">", end: ">", scale: 0.55))
-  content((1.04, -0.40), text(size: 7pt)[$n_1, sigma_"a1", sigma_"m1"$], anchor: "north")
-
-  line((2.05, -0.28), (3.73, -0.28), stroke: 0.55pt, mark: (start: ">", end: ">", scale: 0.55))
-  content((2.89, -0.40), text(size: 7pt)[$n_2, sigma_"a2", sigma_"m2"$], anchor: "north")
-
-  line((3.90, -0.28), (5.60, -0.28), stroke: 0.55pt, mark: (start: ">", end: ">", scale: 0.55))
-  content((4.75, -0.40), text(size: 7pt)[$n_3, sigma_"a3", sigma_"m3"$], anchor: "north")
+  draw-cell(0.0, 5.0, "a)", "a")
+  draw-cell(10.5, 5.0, "b)", "b")
+  draw-cell(0.0, 0.0, "c)", "c")
+  draw-cell(10.5, 0.0, "d)", "d")
 })

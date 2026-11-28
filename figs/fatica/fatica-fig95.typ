@@ -1,168 +1,58 @@
-// Disegno creato con Studio di LocalTypst
+// Figura estratta da fatica.typ (riga 2800) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-#canvas(length: 1cm, {
+
+#canvas(length: 0.72cm, {
+  // BBox: x in [-0.7, 10.3] (dx=11.0), y in [-0.6, 7.3], length=0.72cm -> larghezza = 7.92 cm <= 8.2 cm
   import draw: *
 
-  rect((0, 0), (10, 10), fill: white, stroke: 0.8pt + black)
+  // --- Micro-schema (a) Provino liscio ("u") ---
+  line((0.6, 6.75), (1.0, 6.75), (1.25, 6.60), (3.65, 6.60), (3.9, 6.75), (4.3, 6.75), stroke: 0.9pt)
+  line((0.6, 5.85), (1.0, 5.85), (1.25, 6.00), (3.65, 6.00), (3.9, 5.85), (4.3, 5.85), stroke: 0.9pt)
+  line((0.45, 6.30), (4.45, 6.30), stroke: (dash: "dashed", thickness: 0.5pt))
+  line((2.45, 7.12), (2.45, 6.60), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
+  line((2.45, 5.48), (2.45, 6.00), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
+  content((2.45, 7.18), anchor: "south", text(size: 7.5pt)[$d$])
+  content((2.45, 5.12), anchor: "center", text(size: 7pt)[(a) Provino liscio (u)])
 
-  line((2, 0), (2, 10), stroke: 0.6pt + black)
-  line((4, 0), (4, 10), stroke: 0.6pt + black)
-  line((6, 0), (6, 10), stroke: 0.6pt + black)
-  line((8, 0), (8, 10), stroke: 0.6pt + black)
+  // --- Micro-schema (b) Provino intagliato ("n") ---
+  line((5.2, 6.85), (6.80, 6.85), stroke: 0.9pt)
+  arc((7.05, 6.85), start: 180deg, stop: 360deg, radius: 0.25, anchor: "origin", stroke: 0.9pt)
+  line((7.30, 6.85), (8.9, 6.85), stroke: 0.9pt)
+  line((5.2, 5.75), (6.80, 5.75), stroke: 0.9pt)
+  arc((7.05, 5.75), start: 0deg, stop: 180deg, radius: 0.25, anchor: "origin", stroke: 0.9pt)
+  line((7.30, 5.75), (8.9, 5.75), stroke: 0.9pt)
+  line((5.05, 6.30), (9.05, 6.30), stroke: (dash: "dashed", thickness: 0.5pt))
+  line((7.05, 7.12), (7.05, 6.60), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
+  line((7.05, 5.48), (7.05, 6.00), stroke: 0.55pt, mark: (end: ">", scale: 0.45))
+  content((7.05, 7.18), anchor: "south", text(size: 7.5pt)[$d$])
+  content((7.05, 5.12), anchor: "center", text(size: 7pt)[(b) Provino intagliato (n)])
 
-  line((0, 0.5), (10, 0.5), stroke: 0.5pt + black)
-  line((0, 1.0), (10, 1.0), stroke: 0.5pt + black)
-  line((0, 1.5), (10, 1.5), stroke: 0.5pt + black)
-  line((0, 2.0), (10, 2.0), stroke: 0.5pt + black)
-  line((0, 2.5), (10, 2.5), stroke: 0.5pt + black)
-  line((0, 3.0), (10, 3.0), stroke: 0.5pt + black)
-  line((0, 3.5), (10, 3.5), stroke: 0.5pt + black)
-  line((0, 4.0), (10, 4.0), stroke: 0.5pt + black)
-  line((0, 4.5), (10, 4.5), stroke: 0.5pt + black)
-  line((0, 5.0), (10, 5.0), stroke: 0.5pt + black)
-  line((0, 5.5), (10, 5.5), stroke: 0.5pt + black)
-  line((0, 6.0), (10, 6.0), stroke: 0.5pt + black)
-  line((0, 6.5), (10, 6.5), stroke: 0.5pt + black)
-  line((0, 7.0), (10, 7.0), stroke: 0.5pt + black)
-  line((0, 7.5), (10, 7.5), stroke: 0.5pt + black)
-  line((0, 8.0), (10, 8.0), stroke: 0.5pt + black)
-  line((0, 8.5), (10, 8.5), stroke: 0.5pt + black)
-  line((0, 9.0), (10, 9.0), stroke: 0.5pt + black)
-  line((0, 9.5), (10, 9.5), stroke: 0.5pt + black)
+  // --- Diagramma log-log S_n vs N ---
+  line((0.6, 0.55), (0.6, 4.40), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
+  line((0.6, 0.55), (7.65, 0.55), stroke: 0.85pt, mark: (end: ">", scale: 0.55))
 
-  line((0.4, 0), (0.4, 0.22), stroke: 0.5pt + black)
-  line((0.8, 0), (0.8, 0.22), stroke: 0.5pt + black)
-  line((1.2, 0), (1.2, 0.22), stroke: 0.5pt + black)
-  line((1.6, 0), (1.6, 0.22), stroke: 0.5pt + black)
-  line((2.4, 0), (2.4, 0.22), stroke: 0.5pt + black)
-  line((2.8, 0), (2.8, 0.22), stroke: 0.5pt + black)
-  line((3.2, 0), (3.2, 0.22), stroke: 0.5pt + black)
-  line((3.6, 0), (3.6, 0.22), stroke: 0.5pt + black)
-  line((4.4, 0), (4.4, 0.22), stroke: 0.5pt + black)
-  line((4.8, 0), (4.8, 0.22), stroke: 0.5pt + black)
-  line((5.2, 0), (5.2, 0.22), stroke: 0.5pt + black)
-  line((5.6, 0), (5.6, 0.22), stroke: 0.5pt + black)
-  line((6.4, 0), (6.4, 0.22), stroke: 0.5pt + black)
-  line((6.8, 0), (6.8, 0.22), stroke: 0.5pt + black)
-  line((7.2, 0), (7.2, 0.22), stroke: 0.5pt + black)
-  line((7.6, 0), (7.6, 0.22), stroke: 0.5pt + black)
-  line((8.4, 0), (8.4, 0.22), stroke: 0.5pt + black)
-  line((8.8, 0), (8.8, 0.22), stroke: 0.5pt + black)
-  line((9.2, 0), (9.2, 0.22), stroke: 0.5pt + black)
-  line((9.6, 0), (9.6, 0.22), stroke: 0.5pt + black)
+  // Tacche asse N
+  for (x, lbl) in ((1.2, $10^3$), (2.3, $10^4$), (3.4, $10^5$), (4.5, $10^6$), (5.6, $10^7$)) {
+    line((x, 0.55), (x, 0.70), stroke: 0.6pt)
+    content((x, 0.38), anchor: "north", text(size: 7pt)[#lbl])
+  }
+  content((4.1, -0.25), anchor: "center", text(size: 7.5pt)[Durata $N$ (cicli, scala log)])
+  content((-0.25, 2.45), anchor: "center", std.rotate(-90deg, reflow: true)[#text(size: 7.5pt)[Tensione nominale $S_n$]])
 
-  line((0.4, 10), (0.4, 9.78), stroke: 0.5pt + black)
-  line((0.8, 10), (0.8, 9.78), stroke: 0.5pt + black)
-  line((1.2, 10), (1.2, 9.78), stroke: 0.5pt + black)
-  line((1.6, 10), (1.6, 9.78), stroke: 0.5pt + black)
-  line((2.4, 10), (2.4, 9.78), stroke: 0.5pt + black)
-  line((2.8, 10), (2.8, 9.78), stroke: 0.5pt + black)
-  line((3.2, 10), (3.2, 9.78), stroke: 0.5pt + black)
-  line((3.6, 10), (3.6, 9.78), stroke: 0.5pt + black)
-  line((4.4, 10), (4.4, 9.78), stroke: 0.5pt + black)
-  line((4.8, 10), (4.8, 9.78), stroke: 0.5pt + black)
-  line((5.2, 10), (5.2, 9.78), stroke: 0.5pt + black)
-  line((5.6, 10), (5.6, 9.78), stroke: 0.5pt + black)
-  line((6.4, 10), (6.4, 9.78), stroke: 0.5pt + black)
-  line((6.8, 10), (6.8, 9.78), stroke: 0.5pt + black)
-  line((7.2, 10), (7.2, 9.78), stroke: 0.5pt + black)
-  line((7.6, 10), (7.6, 9.78), stroke: 0.5pt + black)
-  line((8.4, 10), (8.4, 9.78), stroke: 0.5pt + black)
-  line((8.8, 10), (8.8, 9.78), stroke: 0.5pt + black)
-  line((9.2, 10), (9.2, 9.78), stroke: 0.5pt + black)
-  line((9.6, 10), (9.6, 9.78), stroke: 0.5pt + black)
+  // Curva provini lisci S_n(u)
+  line((1.2, 3.95), (4.4, 2.55), (6.5, 2.55), stroke: 1.15pt + blue)
+  content((2.9, 3.55), anchor: "south-west", text(size: 7.5pt, fill: blue)[Provini lisci])
+  content((5.55, 2.75), anchor: "south", text(size: 7.5pt, fill: blue)[$S_n (u)$])
 
-  content((0.05, -0.35), text(size: 8.5pt)[0], anchor: "center")
-  content((2.0, -0.35), text(size: 8.5pt)[0.1], anchor: "center")
-  content((4.0, -0.35), text(size: 8.5pt)[0.2], anchor: "center")
-  content((6.0, -0.35), text(size: 8.5pt)[0.3], anchor: "center")
-  content((7.1, -0.38), text(size: 9pt)[$"d"/"b"$], anchor: "center")
-  content((8.0, -0.35), text(size: 8.5pt)[0.4], anchor: "center")
-  content((10.0, -0.35), text(size: 8.5pt)[0.5], anchor: "center")
+  // Curva provini intagliati S_n(n)
+  line((1.2, 3.25), (4.4, 1.55), (6.5, 1.55), stroke: 1.15pt + red.transparentize(10%))
+  content((5.55, 1.35), anchor: "north", text(size: 7.5pt, fill: red.transparentize(10%))[$S_n (n)$])
+  content((1.05, 1.10), anchor: "west", text(size: 7.5pt, fill: red.transparentize(10%))[Provini intagliati])
+  line((2.15, 1.38), (2.45, 2.57), stroke: (paint: red.transparentize(10%), thickness: 0.6pt), mark: (end: ">", scale: 0.45, fill: red.transparentize(10%)))
 
-  content((-0.15, 0.0), text(size: 8.5pt)[1.0], anchor: "east")
-  content((-0.15, 0.5), text(size: 8.5pt)[1.1], anchor: "east")
-  content((-0.15, 1.0), text(size: 8.5pt)[1.2], anchor: "east")
-  content((-0.15, 1.5), text(size: 8.5pt)[1.3], anchor: "east")
-  content((-0.15, 2.0), text(size: 8.5pt)[1.4], anchor: "east")
-  content((-0.15, 2.5), text(size: 8.5pt)[1.5], anchor: "east")
-  content((-0.15, 3.0), text(size: 8.5pt)[1.6], anchor: "east")
-  content((-0.15, 3.5), text(size: 8.5pt)[1.7], anchor: "east")
-  content((-0.15, 4.0), text(size: 8.5pt)[1.8], anchor: "east")
-  content((-0.15, 4.5), text(size: 8.5pt)[1.9], anchor: "east")
-  content((-0.15, 5.0), text(size: 8.5pt)[2.0], anchor: "east")
-  content((-0.15, 5.5), text(size: 8.5pt)[2.1], anchor: "east")
-  content((-0.15, 6.0), text(size: 8.5pt)[2.2], anchor: "east")
-  content((-0.15, 6.5), text(size: 8.5pt)[2.3], anchor: "east")
-  content((-0.15, 7.0), text(size: 8.5pt)[2.4], anchor: "east")
-  content((-0.15, 7.5), text(size: 8.5pt)[2.5], anchor: "east")
-  content((-0.15, 8.0), text(size: 8.5pt)[2.6], anchor: "east")
-  content((-0.15, 8.5), text(size: 8.5pt)[2.7], anchor: "east")
-  content((-0.15, 9.0), text(size: 8.5pt)[2.8], anchor: "east")
-  content((-0.15, 9.5), text(size: 8.5pt)[2.9], anchor: "east")
-  content((-0.15, 10.0), text(size: 8.5pt)[3.0], anchor: "east")
-
-  content((-1.15, 6.4), text(size: 10pt)[$K_"t"$], anchor: "center")
-
-  rect((8.65, 6.2), (9.5, 6.95), fill: white, stroke: none)
-  content((9.08, 6.58), text(size: 9.5pt)[0], anchor: "center")
-
-  rect((6.4, 2.75), (7.55, 6.1), fill: white, stroke: none)
-  content((6.7, 5.65), text(size: 9.5pt)[0.25], anchor: "west")
-  content((6.7, 4.82), text(size: 9.5pt)[0.5], anchor: "west")
-  content((6.7, 3.92), text(size: 9.5pt)[1], anchor: "west")
-  content((6.7, 3.02), text(size: 9.5pt)[2], anchor: "west")
-
-  rect((8.45, 3.75), (9.55, 4.35), fill: white, stroke: none)
-  content((9.0, 4.05), text(size: 9pt)[$"d"/"h"$], anchor: "center")
-
-  rect((8.15, 0.72), (8.9, 1.35), fill: white, stroke: none)
-  content((8.52, 1.05), text(size: 10pt)[$infinity$], anchor: "center")
-
-  bezier((0.0, 10.0), (4.0, 7.6), (1.3, 8.95), (2.6, 8.2), stroke: 2.1pt + black)
-  bezier((4.0, 7.6), (10.0, 5.75), (6.0, 6.7), (8.2, 6.02), stroke: 2.1pt + black)
-
-  bezier((0.0, 8.85), (6.0, 5.65), (1.8, 7.38), (3.9, 6.38), stroke: 2.1pt + black)
-
-  bezier((0.0, 7.6), (6.0, 4.7), (1.8, 6.35), (3.9, 5.38), stroke: 2.1pt + black)
-
-  bezier((0.0, 6.25), (6.0, 3.85), (1.8, 5.25), (3.9, 4.4), stroke: 2.1pt + black)
-
-  bezier((0.0, 5.15), (6.0, 2.98), (1.8, 4.22), (3.9, 3.48), stroke: 2.1pt + black)
-
-  bezier((0.0, 4.25), (4.0, 2.68), (1.3, 3.55), (2.6, 3.05), stroke: 2.1pt + black)
-  bezier((4.0, 2.68), (10.0, 1.32), (6.0, 2.12), (8.0, 1.66), stroke: 2.1pt + black)
-
-  rect((0.12, 0.75), (3.7, 2.38), fill: white, stroke: 0.7pt + black)
-  content((1.91, 1.56), text(size: 10pt)[$sigma_"nom" = frac(6 dot "M", ("b" - "d")"h"^2)$], anchor: "center")
-
-  rect((4.75, 7.45), (9.65, 10.0), fill: white, stroke: 0.7pt + black)
-  line((4.75, 10.0), (9.65, 10.0), stroke: 1.4pt + white)
-
-  bezier((5.18, 9.48), (5.2, 7.82), (5.0, 9.0), (5.0, 8.3), stroke: 1.2pt + black, mark: (end: ">", fill: black, scale: 0.55))
-  content((5.72, 9.45), text(size: 9pt)[M], anchor: "center")
-
-  bezier((9.04, 9.68), (9.02, 8.02), (9.22, 9.2), (9.22, 8.5), stroke: 1.2pt + black, mark: (end: ">", fill: black, scale: 0.55))
-  content((9.46, 9.45), text(size: 9pt)[M], anchor: "center")
-
-  line((5.4, 8.1), (7.65, 8.1), (8.95, 9.6), (6.7, 9.6), close: true, fill: white, stroke: 1.2pt + black)
-  line((5.4, 7.85), (7.65, 7.85), (7.65, 8.1), (5.4, 8.1), close: true, fill: white, stroke: 1.2pt + black)
-  line((7.65, 7.85), (8.95, 9.35), (8.95, 9.6), (7.65, 8.1), close: true, fill: white, stroke: 1.2pt + black)
-
-  line((6.0, 8.1), (6.0, 8.58), stroke: 0.55pt + black, mark: (start: ">", fill: black, scale: 0.45))
-  line((6.0, 7.85), (6.0, 7.48), stroke: 0.55pt + black, mark: (start: ">", fill: black, scale: 0.45))
-  content((6.24, 8.42), text(size: 8.5pt)[h], anchor: "center")
-
-  line((6.2, 8.2), (7.38, 9.56), stroke: 0.55pt + black, mark: (start: ">", end: ">", fill: black, scale: 0.45))
-  rect((6.5, 8.75), (6.88, 9.15), fill: white, stroke: none)
-  content((6.68, 8.95), text(size: 8.5pt)[b], anchor: "center")
-
-  arc((7.18, 8.95), start: 0deg, stop: 360deg, radius: (0.2, 0.16), anchor: "origin", stroke: 1.1pt + black)
-  arc((7.18, 8.79), start: 25deg, stop: 155deg, radius: (0.18, 0.12), anchor: "origin", stroke: 0.9pt + black)
-
-  line((7.18, 9.11), (7.72, 9.11), stroke: 0.55pt + black)
-  line((7.18, 8.79), (7.52, 8.79), stroke: 0.55pt + black)
-  line((7.64, 9.11), (7.82, 9.38), stroke: 0.55pt + black, mark: (start: ">", fill: black, scale: 0.45))
-  line((7.42, 8.79), (7.22, 8.48), stroke: 0.55pt + black, mark: (start: ">", fill: black, scale: 0.45))
-  content((8.02, 9.08), text(size: 8.5pt)[d], anchor: "center")
+  // Rapporto K_f
+  line((6.5, 2.55), (7.10, 2.55), stroke: (dash: "dotted", thickness: 0.6pt))
+  line((6.5, 1.55), (7.10, 1.55), stroke: (dash: "dotted", thickness: 0.6pt))
+  line((6.85, 1.55), (6.85, 2.55), stroke: 0.75pt, mark: (start: ">", end: ">", scale: 0.5))
+  content((7.15, 2.05), anchor: "west", text(size: 7.5pt)[$K_f = frac(S_n (u), S_n (n))$])
 })

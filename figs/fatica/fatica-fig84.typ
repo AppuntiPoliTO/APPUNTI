@@ -1,63 +1,166 @@
-// Figura estratta da fatica.typ (riga 1989) con LocalTypst
+// Disegno creato con Studio di LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
-
-#canvas(length: 0.96cm, {
-  // BBox: x in [0.0, 10.0] (dx=10.0), y in [0.15, 4.35], length=0.76cm -> larghezza = 7.60 cm <= 8.2 cm
+#canvas(length: 1cm, {
   import draw: *
 
-  // Carico alternato superiore
-  line((3.2, 3.80), (6.8, 3.80), mark: (start: ">", end: ">", scale: 0.65), stroke: (thickness: 0.8pt))
-  content((5.0, 3.98), text(size: 7pt, weight: "bold")[Carico alternato], anchor: "south")
+  line((2.0, 0), (2.0, 8.5), stroke: 0.5pt)
+  line((4.0, 0), (4.0, 8.5), stroke: 0.5pt)
+  line((6.0, 0), (6.0, 8.5), stroke: 0.5pt)
+  line((8.0, 0), (8.0, 8.5), stroke: 0.5pt)
+  line((10.0, 0), (10.0, 8.5), stroke: 0.5pt)
 
-  // Etichette dei tre meccanismi
-  content((1.75, 2.88), align(center, text(size: 6.8pt, weight: "bold")[Creste e\ avvallamenti]), anchor: "south")
-  content((5.00, 2.98), text(size: 6.8pt, weight: "bold")[Ondulazioni], anchor: "south")
-  content((8.25, 2.88), align(center, text(size: 6.8pt, weight: "bold")[Estrusione\ a bande]), anchor: "south")
+  line((0, 0.5), (12.0, 0.5), stroke: 0.5pt)
+  line((0, 1.0), (12.0, 1.0), stroke: 0.5pt)
+  line((0, 1.5), (12.0, 1.5), stroke: 0.5pt)
+  line((0, 2.0), (12.0, 2.0), stroke: 0.5pt)
+  line((0, 2.5), (12.0, 2.5), stroke: 0.5pt)
+  line((0, 3.0), (12.0, 3.0), stroke: 0.5pt)
+  line((0, 3.5), (12.0, 3.5), stroke: 0.5pt)
+  line((0, 4.0), (12.0, 4.0), stroke: 0.5pt)
+  line((0, 4.5), (12.0, 4.5), stroke: 0.5pt)
+  line((0, 5.0), (12.0, 5.0), stroke: 0.5pt)
+  line((0, 5.5), (12.0, 5.5), stroke: 0.5pt)
+  line((0, 6.0), (12.0, 6.0), stroke: 0.5pt)
+  line((0, 6.5), (12.0, 6.5), stroke: 0.5pt)
+  line((0, 7.0), (12.0, 7.0), stroke: 0.5pt)
+  line((0, 7.5), (12.0, 7.5), stroke: 0.5pt)
+  line((0, 8.0), (12.0, 8.0), stroke: 0.5pt)
 
-  // Fondo campito del materiale sottostante
-  rect((0.3, 0.95), (9.7, 2.15), fill: black.transparentize(90%), stroke: none)
-  for ix in range(0, 22) {
-    let x0 = 0.4 + ix * 0.42
-    line((x0, 0.95), (x0 + 0.35, 1.65), stroke: (paint: black.transparentize(68%), thickness: 0.45pt))
-  }
-  line((0.3, 0.95), (9.7, 0.95), stroke: (thickness: 0.65pt))
+  line((0.4, 0), (0.4, 0.25), stroke: 0.5pt)
+  line((0.8, 0), (0.8, 0.25), stroke: 0.5pt)
+  line((1.2, 0), (1.2, 0.25), stroke: 0.5pt)
+  line((1.6, 0), (1.6, 0.25), stroke: 0.5pt)
+  line((2.4, 0), (2.4, 0.25), stroke: 0.5pt)
+  line((2.8, 0), (2.8, 0.25), stroke: 0.5pt)
+  line((3.2, 0), (3.2, 0.25), stroke: 0.5pt)
+  line((3.6, 0), (3.6, 0.25), stroke: 0.5pt)
+  line((4.4, 0), (4.4, 0.25), stroke: 0.5pt)
+  line((4.8, 0), (4.8, 0.25), stroke: 0.5pt)
+  line((5.2, 0), (5.2, 0.25), stroke: 0.5pt)
+  line((5.6, 0), (5.6, 0.25), stroke: 0.5pt)
+  line((6.4, 0), (6.4, 0.25), stroke: 0.5pt)
+  line((6.8, 0), (6.8, 0.25), stroke: 0.5pt)
+  line((7.2, 0), (7.2, 0.25), stroke: 0.5pt)
+  line((7.6, 0), (7.6, 0.25), stroke: 0.5pt)
+  line((8.4, 0), (8.4, 0.25), stroke: 0.5pt)
+  line((8.8, 0), (8.8, 0.25), stroke: 0.5pt)
+  line((9.2, 0), (9.2, 0.25), stroke: 0.5pt)
+  line((9.6, 0), (9.6, 0.25), stroke: 0.5pt)
+  line((10.4, 0), (10.4, 0.25), stroke: 0.5pt)
+  line((10.8, 0), (10.8, 0.25), stroke: 0.5pt)
+  line((11.2, 0), (11.2, 0.25), stroke: 0.5pt)
+  line((11.6, 0), (11.6, 0.25), stroke: 0.5pt)
 
-  // Separatori verticali tra i tre regimi
-  line((3.35, 0.95), (3.35, 2.80), stroke: (paint: black.transparentize(55%), dash: "dotted", thickness: 0.55pt))
-  line((6.70, 0.95), (6.70, 2.80), stroke: (paint: black.transparentize(55%), dash: "dotted", thickness: 0.55pt))
+  line((0.4, 8.5), (0.4, 8.25), stroke: 0.5pt)
+  line((0.8, 8.5), (0.8, 8.25), stroke: 0.5pt)
+  line((1.2, 8.5), (1.2, 8.25), stroke: 0.5pt)
+  line((1.6, 8.5), (1.6, 8.25), stroke: 0.5pt)
+  line((2.4, 8.5), (2.4, 8.25), stroke: 0.5pt)
+  line((2.8, 8.5), (2.8, 8.25), stroke: 0.5pt)
+  line((3.2, 8.5), (3.2, 8.25), stroke: 0.5pt)
+  line((3.6, 8.5), (3.6, 8.25), stroke: 0.5pt)
+  line((4.4, 8.5), (4.4, 8.25), stroke: 0.5pt)
+  line((4.8, 8.5), (4.8, 8.25), stroke: 0.5pt)
+  line((5.2, 8.5), (5.2, 8.25), stroke: 0.5pt)
+  line((5.6, 8.5), (5.6, 8.25), stroke: 0.5pt)
+  line((6.4, 8.5), (6.4, 8.25), stroke: 0.5pt)
+  line((6.8, 8.5), (6.8, 8.25), stroke: 0.5pt)
+  line((7.2, 8.5), (7.2, 8.25), stroke: 0.5pt)
+  line((7.6, 8.5), (7.6, 8.25), stroke: 0.5pt)
+  line((8.4, 8.5), (8.4, 8.25), stroke: 0.5pt)
+  line((8.8, 8.5), (8.8, 8.25), stroke: 0.5pt)
+  line((9.2, 8.5), (9.2, 8.25), stroke: 0.5pt)
+  line((9.6, 8.5), (9.6, 8.25), stroke: 0.5pt)
+  line((10.4, 8.5), (10.4, 8.25), stroke: 0.5pt)
+  line((10.8, 8.5), (10.8, 8.25), stroke: 0.5pt)
+  line((11.2, 8.5), (11.2, 8.25), stroke: 0.5pt)
+  line((11.6, 8.5), (11.6, 8.25), stroke: 0.5pt)
 
-  // 1) Creste e avvallamenti (ridge and groove)
-  line(
-    (0.30, 2.15), (0.70, 2.15), (1.02, 2.58), (1.34, 1.92),
-    (1.68, 2.66), (2.00, 1.88), (2.34, 2.56), (2.66, 2.15), (3.70, 2.15),
-    stroke: (thickness: 1.05pt),
-  )
+  rect((0, 0), (12.0, 8.5), fill: none, stroke: 0.9pt)
 
-  // 2) Ondulazioni (undulations) con bezier raccordate (1.333 * A)
-  bezier((3.70, 2.15), (4.35, 2.15), (3.91, 2.483), (4.14, 2.483), stroke: (thickness: 1.05pt))
-  bezier((4.35, 2.15), (5.00, 2.15), (4.56, 1.817), (4.79, 1.817), stroke: (thickness: 1.05pt))
-  bezier((5.00, 2.15), (5.65, 2.15), (5.21, 2.483), (5.44, 2.483), stroke: (thickness: 1.05pt))
-  bezier((5.65, 2.15), (6.30, 2.15), (5.86, 1.817), (6.09, 1.817), stroke: (thickness: 1.05pt))
+  bezier((0.46, 4.10), (2.00, 1.38), (0.65, 2.35), (1.30, 1.75), stroke: 2.3pt)
+  bezier((2.00, 1.38), (4.00, 0.72), (2.60, 1.05), (3.30, 0.82), stroke: 2.3pt)
+  bezier((4.00, 0.72), (8.00, 0.48), (5.20, 0.55), (6.50, 0.50), stroke: 2.3pt)
+  bezier((8.00, 0.48), (12.00, 0.40), (9.50, 0.45), (10.80, 0.41), stroke: 2.3pt)
 
-  // 3) Estrusione a bande di scorrimento (slipband extrusion)
-  line(
-    (6.30, 2.15), (7.30, 2.15), (7.55, 1.92), (8.05, 2.62),
-    (8.18, 2.50), (7.86, 2.06), (8.28, 2.60), (8.40, 2.48),
-    (8.16, 2.15), (9.70, 2.15),
-    stroke: (thickness: 1.05pt),
-  )
-  // Piani di scorrimento e micro-vuoti coalescenti interni
-  line((7.15, 1.35), (7.55, 1.92), stroke: (paint: black.transparentize(35%), dash: "dashed", thickness: 0.55pt))
-  line((7.56, 1.48), (7.86, 2.06), stroke: (paint: black.transparentize(35%), dash: "dashed", thickness: 0.55pt))
-  circle((7.34, 1.62), radius: 0.045, fill: white, stroke: (thickness: 0.6pt))
-  circle((7.25, 1.49), radius: 0.042, fill: white, stroke: (thickness: 0.6pt))
+  bezier((0.44, 6.85), (1.60, 3.90), (0.65, 5.20), (1.10, 4.45), stroke: 2.3pt)
+  bezier((1.60, 3.90), (4.00, 1.60), (2.25, 3.00), (3.10, 2.00), stroke: 2.3pt)
+  bezier((4.00, 1.60), (8.00, 0.85), (5.20, 1.15), (6.60, 0.95), stroke: 2.3pt)
+  bezier((8.00, 0.85), (12.00, 0.65), (9.50, 0.72), (10.80, 0.66), stroke: 2.3pt)
 
-  // Punti critici di innesco
-  circle((2.00, 1.88), radius: 0.16, stroke: (paint: red, thickness: 1.0pt), fill: red.transparentize(80%))
-  circle((4.675, 1.90), radius: 0.16, stroke: (paint: red, thickness: 1.0pt), fill: red.transparentize(80%))
-  circle((7.55, 1.92), radius: 0.16, stroke: (paint: red, thickness: 1.0pt), fill: red.transparentize(80%))
+  bezier((0.45, 8.40), (1.60, 4.55), (0.72, 6.50), (1.15, 5.30), stroke: 2.3pt)
+  bezier((1.60, 4.55), (4.00, 2.25), (2.25, 3.45), (3.10, 2.68), stroke: 2.3pt)
+  bezier((4.00, 2.25), (8.00, 1.30), (5.20, 1.72), (6.60, 1.46), stroke: 2.3pt)
+  bezier((8.00, 1.30), (12.00, 1.02), (9.50, 1.14), (10.80, 1.03), stroke: 2.3pt)
 
-  // Legenda inferiore
-  circle((2.65, 0.45), radius: 0.13, stroke: (paint: red, thickness: 1.0pt), fill: red.transparentize(80%))
-  content((2.92, 0.45), text(size: 6.8pt)[Sito di innesco della micro-cricca], anchor: "west")
+  rect((6.95, 5.00), (12.00, 7.90), fill: white, stroke: 1.0pt)
+
+  line((8.25, 6.45), (10.75, 6.45), stroke: (dash: "dash-dotted", thickness: 0.75pt))
+  line((8.43, 5.25), (8.43, 7.65), stroke: (dash: "dash-dotted", thickness: 0.75pt))
+  line((10.57, 5.25), (10.57, 7.65), stroke: (dash: "dash-dotted", thickness: 0.75pt))
+
+  line((8.43, 7.40), (9.50, 7.40), stroke: 1.5pt)
+  line((8.43, 5.50), (9.50, 5.50), stroke: 1.5pt)
+  line((9.50, 7.40), (9.50, 5.50), stroke: 1.5pt)
+  arc((9.72, 7.36), start: 180deg, stop: 270deg, radius: 0.22, anchor: "origin", stroke: 1.5pt)
+  arc((9.72, 5.54), start: 90deg, stop: 180deg, radius: 0.22, anchor: "origin", stroke: 1.5pt)
+  line((9.72, 7.14), (10.57, 7.14), stroke: 1.5pt)
+  line((9.72, 5.76), (10.57, 5.76), stroke: 1.5pt)
+
+  line((8.97, 7.37), (8.97, 5.53), stroke: 0.6pt, mark: (start: ">", end: ">", fill: black, scale: 0.45))
+  content((9.10, 6.72), text(size: 10pt)[$"D"$], anchor: "west")
+
+  line((10.03, 7.11), (10.03, 5.79), stroke: 0.6pt, mark: (start: ">", end: ">", fill: black, scale: 0.45))
+  content((10.15, 6.72), text(size: 10pt)[$"d"$], anchor: "west")
+
+  line((10.02, 7.60), (9.61, 7.25), stroke: 0.6pt, mark: (end: ">", fill: black, scale: 0.45))
+  content((10.07, 7.62), text(size: 10pt)[$"r"$], anchor: "west")
+
+  arc((7.75, 6.45), start: 65deg, stop: 315deg, radius: (0.26, 0.68), anchor: "origin", stroke: 1.5pt, mark: (end: ">", fill: black, scale: 0.55))
+  content((7.85, 7.50), text(size: 10pt)[$"M"_"t"$])
+
+  arc((11.25, 6.45), start: -70deg, stop: 150deg, radius: (0.26, 0.68), anchor: "origin", stroke: 1.5pt, mark: (end: ">", fill: black, scale: 0.55))
+  content((11.30, 7.50), text(size: 10pt)[$"M"_"t"$])
+
+  rect((8.00, 3.10), (10.85, 4.50), fill: white, stroke: 1.0pt)
+  content((9.425, 3.80), text(size: 11.5pt)[$tau_"nom" = (16 "M"_"t") / (pi "d"^3)$])
+
+  content((-0.15, 0.0), text(size: 9.5pt)[$"1.0"$], anchor: "east")
+  content((-0.15, 0.5), text(size: 9.5pt)[$"1.1"$], anchor: "east")
+  content((-0.15, 1.0), text(size: 9.5pt)[$"1.2"$], anchor: "east")
+  content((-0.15, 1.5), text(size: 9.5pt)[$"1.3"$], anchor: "east")
+  content((-0.15, 2.0), text(size: 9.5pt)[$"1.4"$], anchor: "east")
+  content((-0.15, 2.5), text(size: 9.5pt)[$"1.5"$], anchor: "east")
+  content((-0.15, 3.0), text(size: 9.5pt)[$"1.6"$], anchor: "east")
+  content((-0.15, 3.5), text(size: 9.5pt)[$"1.7"$], anchor: "east")
+  content((-0.15, 4.0), text(size: 9.5pt)[$"1.8"$], anchor: "east")
+  content((-0.15, 4.5), text(size: 9.5pt)[$"1.9"$], anchor: "east")
+  content((-0.15, 5.0), text(size: 9.5pt)[$"2.0"$], anchor: "east")
+  content((-0.15, 5.5), text(size: 9.5pt)[$"2.1"$], anchor: "east")
+  content((-0.15, 6.0), text(size: 9.5pt)[$"2.2"$], anchor: "east")
+  content((-0.15, 6.5), text(size: 9.5pt)[$"2.3"$], anchor: "east")
+  content((-0.15, 7.0), text(size: 9.5pt)[$"2.4"$], anchor: "east")
+  content((-0.15, 7.5), text(size: 9.5pt)[$"2.5"$], anchor: "east")
+  content((-0.15, 8.0), text(size: 9.5pt)[$"2.6"$], anchor: "east")
+  content((-0.15, 8.5), text(size: 9.5pt)[$"2.7"$], anchor: "east")
+
+  content((-1.35, 4.75), text(size: 13pt)[$K_"t"$])
+
+  content((0.0, -0.32), text(size: 10pt)[$"0"$])
+  content((4.0, -0.32), text(size: 10pt)[$"0.1"$])
+  content((8.0, -0.32), text(size: 10pt)[$"0.2"$])
+  content((12.0, -0.32), text(size: 10pt)[$"0.3"$])
+
+  content((6.0, -0.45), text(size: 12pt)[$"r"/"d"$])
+
+  content((13.0, 2.40), text(size: 10.5pt)[$"D"/"d"$])
+
+  line((12.75, 1.38), (12.03, 1.03), stroke: 0.7pt, mark: (end: ">", fill: black, scale: 0.5))
+  content((12.78, 1.40), text(size: 10.5pt)[$"2"$], anchor: "west")
+
+  line((12.75, 0.85), (12.03, 0.66), stroke: 0.7pt, mark: (end: ">", fill: black, scale: 0.5))
+  content((12.78, 0.90), text(size: 10.5pt)[$"1.2"$], anchor: "west")
+
+  line((12.75, 0.40), (12.03, 0.40), stroke: 0.7pt, mark: (end: ">", fill: black, scale: 0.5))
+  content((12.78, 0.40), text(size: 10.5pt)[$"1.1"$], anchor: "west")
 })

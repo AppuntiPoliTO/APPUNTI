@@ -1,55 +1,46 @@
-// Figura estratta da fatica.typ (riga 5218) con LocalTypst
+// Figura estratta da fatica.typ (riga 5012) con LocalTypst
 #import "@preview/cetz:0.3.4": canvas, draw
 
-#canvas(length: 1.1cm, {
-  // BBox: x in [-0.65, 7.35] (dx=8.0), y in [0.10, 4.30], length=1.0cm -> larghezza = 8.00 cm <= 8.2 cm
-  import draw: line, rect, circle, content
+#canvas(length: 1.04cm, {
+  // BBox: x in [-1.25, 7.25] (dx=8.5), y in [-0.75, 4.55], length=0.94cm -> larghezza = 7.99 cm <= 8.2 cm
+  import draw: *
 
-  let period-pts = (
-    (0.35, 0.55), (0.75, -0.25), (1.10, 0.25), (1.45, -0.55),
-    (1.80, 1.00), (2.15, -0.35), (2.50, 0.45), (2.90, -0.85),
-    (3.35, 0.55), (3.75, -0.25), (4.10, 0.25), (4.45, -0.55),
-    (4.80, 1.00), (5.15, -0.35), (5.50, 0.45), (5.90, -0.85),
-    (6.35, 0.55), (6.75, -0.25),
+  // Assi
+  line((0, 0), (0, 4.4), stroke: 0.9pt, mark: (end: ">"))
+  line((0, 0), (6.7, 0), stroke: 0.9pt, mark: (end: ">"))
+  content((-0.18, 4.28), anchor: "east", text(size: 8.5pt)[$sigma_a$])
+  content((-0.18, 3.80), anchor: "east", text(size: 7pt)[$(Delta sigma)$])
+  content((6.75, -0.18), anchor: "north", text(size: 8.5pt)[$N$])
+
+  // Istogramma a gradini decrescenti (n1..n6) con quote ampiezza blocco n_i
+  let blocks = (
+    (0.00, 1.02, 3.70, [$n_1$]),
+    (1.02, 1.95, 3.18, [$n_2$]),
+    (1.95, 2.83, 2.66, [$n_3$]),
+    (2.83, 3.67, 2.15, [$n_4$]),
+    (3.67, 4.48, 1.65, [$n_5$]),
+    (4.48, 5.25, 1.15, [$n_6$]),
   )
-  let amp = 0.62
+  line((0, 0), (0, -0.45), stroke: 0.5pt)
+  for (x0, x1, h, lbl) in blocks {
+    rect((x0, 0), (x1, h), fill: black.transparentize(90%), stroke: 0.85pt)
+    line((x1, 0), (x1, -0.45), stroke: 0.5pt)
+    line((x0 + 0.04, -0.22), (x1 - 0.04, -0.22), stroke: 0.5pt, mark: (start: ">", end: ">", scale: 0.38))
+    content(((x0 + x1) / 2, -0.32), anchor: "north", text(size: 7.2pt)[#lbl])
+  }
 
-  // --- Pannello superiore: finestra periodica generica ---
-  let y-top = 3.05
-  rect((0.95, y-top - 0.62), (3.95, y-top + 0.72), fill: black.transparentize(92%), stroke: none)
-  line((0.0, y-top), (7.00, y-top), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-  line((0.0, y-top - 0.72), (0.0, y-top + 0.85), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-  content((-0.12, y-top + 0.83), anchor: "east", text(size: 7.5pt)[$sigma$])
-  content((7.08, y-top), anchor: "west", text(size: 7.5pt)[$t$])
+  // Inviluppo continuo approssimante, troncamento a sigma_D e coda scartata
+  bezier((0, 3.88), (5.25, 1.15), (1.75, 3.42), (4.10, 2.02), stroke: (paint: blue, thickness: 1.2pt))
+  line((5.25, 1.15), (5.25, 0), stroke: (paint: blue, thickness: 1.2pt))
+  bezier((5.25, 1.15), (6.30, 0.52), (5.60, 0.94), (5.95, 0.72), stroke: (paint: black.transparentize(50%), dash: "dotted", thickness: 0.75pt))
 
-  let top-pts = period-pts.map(p => (p.at(0), y-top + amp * p.at(1)))
-  line(..top-pts, stroke: (paint: black, thickness: 0.95pt))
+  // Linea del limite di fatica sigma_D
+  line((0, 1.15), (6.35, 1.15), stroke: (dash: "dashed", thickness: 0.7pt, paint: red.transparentize(10%)))
+  content((-0.15, 1.15), anchor: "east", text(size: 8pt, fill: red.transparentize(10%))[$sigma_D$])
 
-  line((0.95, y-top - 0.65), (0.95, y-top + 0.82), stroke: (paint: luma(90), thickness: 0.75pt, dash: "dashed"))
-  line((3.95, y-top - 0.65), (3.95, y-top + 0.82), stroke: (paint: luma(90), thickness: 0.75pt, dash: "dashed"))
-  line((0.95, y-top + 0.86), (3.95, y-top + 0.86), mark: (start: ">", end: ">", scale: 0.45), stroke: 0.65pt)
-  content((2.45, y-top + 0.94), anchor: "south", text(size: 7.2pt)[Finestra generica ($T$)])
-
-  // --- Pannello inferiore: finestra traslata "periodico tra max" ---
-  let y-bot = 0.90
-  let y-max = y-bot + amp * 1.00
-  rect((1.80, y-bot - 0.62), (4.80, y-max), fill: rgb("#1f77b4").transparentize(86%), stroke: none)
-  line((0.0, y-bot), (7.00, y-bot), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-  line((0.0, y-bot - 0.72), (0.0, y-bot + 0.85), mark: (end: ">", scale: 0.5), stroke: 0.65pt)
-  content((-0.12, y-bot + 0.83), anchor: "east", text(size: 7.5pt)[$sigma$])
-  content((7.08, y-bot), anchor: "west", text(size: 7.5pt)[$t$])
-
-  let bot-pts = period-pts.map(p => (p.at(0), y-bot + amp * p.at(1)))
-  line(..bot-pts, stroke: (paint: black, thickness: 0.95pt))
-
-  line((1.80, y-max), (4.80, y-max), stroke: (paint: rgb("#1f77b4"), thickness: 0.85pt, dash: "dashed"))
-  line((1.80, y-bot - 0.65), (1.80, y-max + 0.16), stroke: (paint: rgb("#1f77b4"), thickness: 1.2pt))
-  line((4.80, y-bot - 0.65), (4.80, y-max + 0.16), stroke: (paint: rgb("#1f77b4"), thickness: 1.2pt))
-  circle((1.80, y-max), radius: 0.055, fill: rgb("#1f77b4"), stroke: none)
-  circle((4.80, y-max), radius: 0.055, fill: rgb("#1f77b4"), stroke: none)
-
-  content((1.66, y-max + 0.04), anchor: "east", text(size: 7.2pt, fill: rgb("#1f77b4"))[$sigma_"max"$])
-  content((4.94, y-max + 0.04), anchor: "west", text(size: 7.2pt, fill: rgb("#1f77b4"))[$sigma_"max"$])
-  line((1.80, y-max + 0.22), (4.80, y-max + 0.22), mark: (start: ">", end: ">", scale: 0.45), stroke: (paint: rgb("#1f77b4"), thickness: 0.75pt))
-  content((3.30, y-max + 0.30), anchor: "south", text(size: 7.2pt, fill: rgb("#1f77b4"), weight: "bold")[Periodico tra max ($T$)])
+  // Etichette di richiamo senza sovrapposizioni
+  content((3.35, 3.52), anchor: "west", text(size: 7.5pt, fill: blue)[Inviluppo continuo])
+  line((3.28, 3.45), (2.62, 2.82), stroke: (paint: blue, thickness: 0.6pt), mark: (end: ">", scale: 0.5))
+  content((5.42, 1.92), anchor: "west", text(size: 7pt, fill: blue)[Troncamento\ a $sigma_D$])
+  line((5.58, 1.56), (5.28, 1.20), stroke: (paint: blue, thickness: 0.6pt), mark: (end: ">", scale: 0.5))
 })
