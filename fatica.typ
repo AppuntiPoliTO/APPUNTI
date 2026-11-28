@@ -1871,7 +1871,7 @@ Quando $sigma_m$ è costante su tutti i livelli, il cumulativo si traduce in una
   ],
   [
     #figure(
-      image("images/_doppioni/fatica/ECM01-9_cumulativo_3d.png", width: 92%),
+      image("images/fatica/ECM01-9_cumulativo_3d.png", width: 92%),
     ) <fig:cumulativo-3d>
   ],
 )
